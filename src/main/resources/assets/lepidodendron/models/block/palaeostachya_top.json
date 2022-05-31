@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/palaeostachya_t_c",
+"w":"lepidodendron:blocks/palaeostachya_t_c",
+"ee":"lepidodendron:blocks/palaeostachya_t_e",
+"ww":"lepidodendron:blocks/palaeostachya_t_w"
+}
+}

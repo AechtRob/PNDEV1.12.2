@@ -1,0 +1,10 @@
+{
+  "parent": "lepidodendron:block/4x4_8pointedplant",
+  "textures": {
+    "e": "lepidodendron:blocks/rufloria_top_t",
+    "w": "lepidodendron:blocks/rufloria_top_t",
+    "ee": "lepidodendron:blocks/rufloria_top_t_e",
+    "ww": "lepidodendron:blocks/rufloria_top_t_w",
+    "particle": "lepidodendron:blocks/rufloria_top_t"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/dirt_prehistoric_ground_var4",
+    "particle": "lepidodendron:blocks/dirt_prehistoric_ground_var4"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:namacalathus_1"},
+      {"model": "lepidodendron:namacalathus_1", "y": 90},
+      {"model": "lepidodendron:namacalathus_1", "y": 180},
+      {"model": "lepidodendron:namacalathus_1", "y": 270},
+      {"model": "lepidodendron:namacalathus_1"},
+      {"model": "lepidodendron:namacalathus_2", "y": 90},
+      {"model": "lepidodendron:namacalathus_2", "y": 180},
+      {"model": "lepidodendron:namacalathus_2", "y": 270},
+      {"model": "lepidodendron:namacalathus_3"},
+      {"model": "lepidodendron:namacalathus_3", "y": 90},
+      {"model": "lepidodendron:namacalathus_3", "y": 180},
+      {"model": "lepidodendron:namacalathus_3", "y": 270}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:namacalathus_side_1"},
+      {"model": "lepidodendron:namacalathus_side_2"},
+      {"model": "lepidodendron:namacalathus_side_3"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:namacalathus_side_1", "y": 90},
+      {"model": "lepidodendron:namacalathus_side_2", "y": 90},
+      {"model": "lepidodendron:namacalathus_side_3", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:namacalathus_side_1", "y": 180},
+      {"model": "lepidodendron:namacalathus_side_2", "y": 180},
+      {"model": "lepidodendron:namacalathus_side_3", "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:namacalathus_side_1", "y": 270},
+      {"model": "lepidodendron:namacalathus_side_2", "y": 270},
+      {"model": "lepidodendron:namacalathus_side_3", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:namacalathus_1"},
+      {"model": "lepidodendron:namacalathus_1", "y": 90},
+      {"model": "lepidodendron:namacalathus_1", "y": 180},
+      {"model": "lepidodendron:namacalathus_1", "y": 270},
+      {"model": "lepidodendron:namacalathus_2"},
+      {"model": "lepidodendron:namacalathus_2", "y": 90},
+      {"model": "lepidodendron:namacalathus_2", "y": 180},
+      {"model": "lepidodendron:namacalathus_2", "y": 270},
+      {"model": "lepidodendron:namacalathus_3"},
+      {"model": "lepidodendron:namacalathus_3", "y": 90},
+      {"model": "lepidodendron:namacalathus_3", "y": 180},
+      {"model": "lepidodendron:namacalathus_3", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:namacalathus_1", "x": 180},
+      {"model": "lepidodendron:namacalathus_1", "y": 90, "x": 180},
+      {"model": "lepidodendron:namacalathus_1", "y": 180, "x": 180},
+      {"model": "lepidodendron:namacalathus_1", "y": 270, "x": 180},
+      {"model": "lepidodendron:namacalathus_2", "x": 180},
+      {"model": "lepidodendron:namacalathus_2", "y": 90, "x": 180},
+      {"model": "lepidodendron:namacalathus_2", "y": 180, "x": 180},
+      {"model": "lepidodendron:namacalathus_2", "y": 270, "x": 180},
+      {"model": "lepidodendron:namacalathus_3", "x": 180},
+      {"model": "lepidodendron:namacalathus_3", "y": 90, "x": 180},
+      {"model": "lepidodendron:namacalathus_3", "y": 180, "x": 180},
+      {"model": "lepidodendron:namacalathus_3", "y": 270, "x": 180}
+    ]
+  }
+}

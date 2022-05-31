@@ -1,0 +1,66 @@
+{
+    "multipart": [
+        {   "when": { "facing": "north", "joined": false },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_stem_corner_1", "y": 180 }
+			    ]
+        },
+         {   "when": { "facing": "south", "joined": false },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_stem_corner_1" }
+			    ]
+        },
+         {   "when": { "facing": "east", "joined": false },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_stem_corner_1", "y": 270 }
+			    ]
+        },
+         {   "when": { "facing": "west", "joined": false },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_stem_corner_1", "y": 90 }
+			    ]
+        },
+
+        {   "when": { "facing": "north", "joined": true },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_corner_1_join", "y": 180 }
+			    ]
+        },
+         {   "when": { "facing": "south", "joined": true },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_corner_1_join" }
+			    ]
+        },
+         {   "when": { "facing": "east", "joined": true },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_corner_1_join", "y": 270 }
+			    ]
+        },
+         {   "when": { "facing": "west", "joined": true },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_corner_1_join", "y": 90 }
+			    ]
+        },
+
+		{   "when": { "facing": "north" },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_leaves", "y": 180 }
+			    ]
+        },
+        {   "when": { "facing": "south" },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_leaves" }
+			    ]
+        },
+        {   "when": { "facing": "east" },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_leaves", "y": 270 }
+			    ]
+        },
+        {   "when": { "facing": "west" },
+            "apply": [
+			      {"model": "lepidodendron:ankyropteris_leaves", "y": 90 }
+			    ]
+        }
+        ]
+}

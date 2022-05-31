@@ -1,0 +1,15 @@
+{
+  "multipart" : [
+    {	"when": { "topshoot": "true" },
+        "apply": [
+          {"model": "lepidodendron:crinoid_scyphocrinus_top"},
+          {"model": "lepidodendron:crinoid_scyphocrinus_top_var"}
+        ]
+    },
+    {
+      "when": {"topshoot": "false" },
+      "apply": {"model": "lepidodendron:crinoid_scyphocrinus"}
+    }
+  ]
+
+}

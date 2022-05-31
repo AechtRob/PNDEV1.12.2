@@ -1,0 +1,56 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"e": "lepidodendron:blocks/silver_treefern_1_e",
+		"ee": "lepidodendron:blocks/silver_treefern_1_ee",
+		"w": "lepidodendron:blocks/silver_treefern_1_w",
+		"ww": "lepidodendron:blocks/silver_treefern_1_ww",
+		"edown": "lepidodendron:blocks/silver_treefern_l_e",
+		"eedown": "lepidodendron:blocks/silver_treefern_l_ee",
+		"wdown": "lepidodendron:blocks/silver_treefern_l_w",
+		"wwdown": "lepidodendron:blocks/silver_treefern_l_ww",
+		"particle": "lepidodendron:blocks/silver_treefern_1_e"
+	},
+	"elements": [
+		{
+			"name": "e",
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#e"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#w"}
+			}
+		},
+		{
+			"name": "ee",
+			"from": [-16, 0, 8],
+			"to": [0, 16, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#ee"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#ww"}
+			}
+		},
+		{
+			"name": "edown",
+			"from": [-16, -16, 8],
+			"to": [0, 0, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#eedown"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#wwdown"}
+			}
+		},
+		{
+			"name": "eedown",
+			"from": [0, -16, 8],
+			"to": [16, 0, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#edown"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#wdown"}
+			}
+		}
+	]
+}

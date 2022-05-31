@@ -1,0 +1,8 @@
+{
+	"parent": "lepidodendron:block/bench_left_join",
+	"textures": {
+		"metal": "blocks/gold_block"
+	}
+}
+
+

@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "lepidodendron:blocks/calamites_fibre",
+    "metal": "lepidodendron:blocks/calamites_fibre"
+  }
+}
+
+

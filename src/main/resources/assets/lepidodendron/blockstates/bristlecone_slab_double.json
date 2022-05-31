@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:bristlecone_slab_double"
+    }
+  }
+}

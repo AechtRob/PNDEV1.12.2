@@ -1,0 +1,17 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/dendrograptus_2_side",
+        "bottom": "lepidodendron:blocks/dendrograptus_2_side"
+    },
+    "elements": [
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" }
+            }
+        }
+    ]
+}

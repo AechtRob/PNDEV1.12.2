@@ -1,0 +1,30 @@
+{
+	"name": "Lunaspis",
+	"icon": "lepidodendron:lunaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_lunaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lunaspis",
+			"title": "Lunaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Petalichthyida$(br)>Macropetalichthyidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/lunaspis.png"],
+			"title": "Lunaspis broili",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lunaspis",
+			"type": "text",
+			"text": "Lunaspis comes from the Greek 'Luna' meaning moon, and 'aspis' meaning shield. Lunaspis is a petalichthyid placoderm that lived in shallow marine habitats. They are flat with elongated pectoral spines and shortened thoracic armor with dorsally facing eyes. They also have long and thing tails similar to rays and skates."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lunaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

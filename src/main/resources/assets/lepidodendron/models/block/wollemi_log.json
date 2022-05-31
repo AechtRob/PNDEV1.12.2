@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/wollemi_log_end",
+    "up": "lepidodendron:blocks/wollemi_log_end",
+    "north": "lepidodendron:blocks/wollemi_log",
+    "east": "lepidodendron:blocks/wollemi_log",
+    "south": "lepidodendron:blocks/wollemi_log",
+    "west": "lepidodendron:blocks/wollemi_log",
+    "particle": "lepidodendron:blocks/wollemi_log_end"
+  }
+}

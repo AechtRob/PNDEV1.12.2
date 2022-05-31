@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:redwood_fruit_1"},
+      {"model": "lepidodendron:redwood_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:redwood_fruit_block_inventory"
+    }
+  }
+}

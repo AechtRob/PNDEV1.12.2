@@ -1,0 +1,30 @@
+{
+	"name": "Dunkleosteus",
+	"icon": "paleopedia:devonian/devonian_icon/dunkleosteus_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_dunkleosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dunkleosteus",
+			"title": "Dunkleosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Athrodira$(br)>Dunkleosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/dunkleosteus.png"],
+			"title": "Dunkleosteus terrelli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dunkleosteus",
+			"type": "text",
+			"text": "Dunkleosteus is a famous placoderm fish and was among the largest to have ever lived, growing to roughly 8.7 meters. Dunkleosteus had a four bar linkage mechanism for jaw opening which incorporates the skull and the shield. It was suggested that it preyed on armored animals such as ammonites or other placoderms because its teeth plates were strong enough to easily crush armor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dunkleosteus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+		}
+	]
+}

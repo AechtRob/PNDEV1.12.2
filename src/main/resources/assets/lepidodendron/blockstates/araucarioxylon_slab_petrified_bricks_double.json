@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:araucarioxylon_slab_petrified_bricks_double"
+    }
+  }
+}

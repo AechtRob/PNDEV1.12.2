@@ -1,0 +1,30 @@
+{
+	"name": "Permotarbus",
+	"icon": "paleopedia:permian/permian_icon/permotarbus_icon.png",
+	"category": "patchouli:permian",
+	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trigonotarbid",
+			"title": "Permotarbus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarbida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/permotarbus.png"],
+			"title": "P. schuberti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

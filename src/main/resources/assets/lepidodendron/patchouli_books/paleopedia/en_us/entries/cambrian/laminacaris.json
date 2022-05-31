@@ -1,0 +1,30 @@
+{
+	"name": "Laminacaris",
+	"icon": "lepidodendron:laminacaris_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_laminacaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_laminacaris",
+			"title": "Laminacaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/laminacaris.png"],
+			"title": "L. chimera",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laminacaris",
+			"type": "text",
+			"text": "Laminacaris, a species formerly assigned to Anomalocaris, was a large radiodont which lived and ate in a similar fashion to other anomalocarids, using their appendages to catch and eat smaller prey. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laminacaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

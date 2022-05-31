@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:walchia_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:walchia_planks",
+    "count": 4
+  }
+}

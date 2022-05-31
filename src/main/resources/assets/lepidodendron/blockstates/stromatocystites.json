@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:stromatocystites_1"},
+      {"model": "lepidodendron:stromatocystites_2"},
+      {"model": "lepidodendron:stromatocystites_3"},
+      {"model": "lepidodendron:stromatocystites_4"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:stromatocystites_1", "x": 90},
+      {"model": "lepidodendron:stromatocystites_2", "x": 90},
+      {"model": "lepidodendron:stromatocystites_3", "x": 90},
+      {"model": "lepidodendron:stromatocystites_4", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:stromatocystites_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:stromatocystites_2", "x": 90, "y": 90},
+      {"model": "lepidodendron:stromatocystites_3", "x": 90, "y": 90},
+      {"model": "lepidodendron:stromatocystites_4", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:stromatocystites_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:stromatocystites_2", "x": 90, "y": 180},
+      {"model": "lepidodendron:stromatocystites_3", "x": 90, "y": 180},
+      {"model": "lepidodendron:stromatocystites_4", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:stromatocystites_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:stromatocystites_2", "x": 90, "y": 270},
+      {"model": "lepidodendron:stromatocystites_3", "x": 90, "y": 270},
+      {"model": "lepidodendron:stromatocystites_4", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:stromatocystites_1"},
+      {"model": "lepidodendron:stromatocystites_2"},
+      {"model": "lepidodendron:stromatocystites_3"},
+      {"model": "lepidodendron:stromatocystites_4"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:stromatocystites_1", "x": 180},
+      {"model": "lepidodendron:stromatocystites_2", "x": 180},
+      {"model": "lepidodendron:stromatocystites_3", "x": 180},
+      {"model": "lepidodendron:stromatocystites_4", "x": 180}
+    ]
+  }
+}

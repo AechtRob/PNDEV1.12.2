@@ -1,0 +1,30 @@
+{
+	"name": "Urocordylus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/urocordylus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_urocordylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_urocordylus",
+			"title": "Urocordylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Lepospondyli$(br)>Nectridea$(br)>Urocordylidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/urocordylus.png"],
+			"title": "U. wandesfordii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_urocordylus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_urocordylus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

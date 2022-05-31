@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "lepidodendron:blocks/hay_thatch_bundle_end",
+        "side": "lepidodendron:blocks/hay_thatch_bundle"
+    }
+}

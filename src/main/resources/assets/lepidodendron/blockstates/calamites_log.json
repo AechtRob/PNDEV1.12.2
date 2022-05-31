@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:calamites_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:calamites_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:calamites_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:calamites_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:calamites_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:calamites_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:calamites_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

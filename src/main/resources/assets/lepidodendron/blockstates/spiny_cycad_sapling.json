@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:spiny_cycad_sapling" },
+        "stage=1": { "model": "lepidodendron:spiny_cycad_sapling" }
+    }
+}

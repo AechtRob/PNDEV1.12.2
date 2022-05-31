@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:czekanowskia_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:czekanowskia_planks",
+    "count": 4
+  }
+}

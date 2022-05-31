@@ -1,0 +1,30 @@
+{
+	"name": "Elginia",
+	"icon": "paleopedia:permian/permian_icon/elginia_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_elginia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elginia",
+			"title": "Elginia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/elginia.png"],
+			"title": "Elginia mirabilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elginia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elginia",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

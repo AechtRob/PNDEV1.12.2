@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/anomozamites_leaves_e",
+"w":"lepidodendron:blocks/anomozamites_leaves_w"
+}
+}

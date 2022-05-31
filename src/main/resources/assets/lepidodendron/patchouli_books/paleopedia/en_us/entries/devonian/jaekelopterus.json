@@ -1,0 +1,30 @@
+{
+	"name": "Jaekelopterus",
+	"icon": "paleopedia:devonian/devonian_icon/jaekelopterus_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_jaekelopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jaekelopterus",
+			"title": "Jaekelopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Eurypterida$(br)>Pterygotioidea$(br)>Pterygotidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/jaekelopterus.png"],
+			"title": "J. rhenaniae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jaekelopterus",
+			"type": "text",
+			"text": "Jaekelopterus was a large predatory eurypterid which is known to have lived in fresh and brackish water. Jaekelopterus exhibited gigantism, and it showed a lightweight adaptation like Arthropleura, which allowed it to grow so huge. Discovery of the eyes show that it had high visual acuity and had many lenses in their compound eyes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jaekelopterus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

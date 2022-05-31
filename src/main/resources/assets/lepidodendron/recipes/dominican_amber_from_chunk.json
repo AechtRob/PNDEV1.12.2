@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:dominican_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:dominican_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:dominican_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:dominican_amber_chunk"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:dominican_amber_block",
+    "count": 1
+  }
+}

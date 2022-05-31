@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:araucarioxylon_slab_petrified"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:araucarioxylon_slab_petrified_top"
+    }
+  }
+}

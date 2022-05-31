@@ -1,0 +1,9 @@
+{
+    "multipart": [
+		{ 	"apply": { "model": "lepidodendron:phyllotheca" } },
+    	
+        {   "when": { "water": true },
+            "apply": { "model": "lepidodendron:phyllotheca_lower_stem" }
+        }
+    ]
+}

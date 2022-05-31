@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:equisites_strobilus"}
+    ],
+	"inventory": [
+      	{"model": "lepidodendron:equisites_strobilus"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:equisites_strobilus", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:equisites_strobilus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:equisites_strobilus", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:equisites_strobilus", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:equisites_strobilus"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:equisites_strobilus", "x": 180}
+    ]
+  }
+}

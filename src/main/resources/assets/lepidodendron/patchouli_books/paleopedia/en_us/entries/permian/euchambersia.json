@@ -1,0 +1,30 @@
+{
+	"name": "Euchambersia",
+	"icon": "paleopedia:permian/permian_icon/euchambersia_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_euchambersia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_euchambersia",
+			"title": "Euchambersia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/euchambersia.png"],
+			"title": "E. mirabilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_euchambersia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_euchambersia",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

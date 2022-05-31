@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:agathis_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:agathis_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:agathis_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:agathis_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:agathis_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:agathis_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:agathis_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

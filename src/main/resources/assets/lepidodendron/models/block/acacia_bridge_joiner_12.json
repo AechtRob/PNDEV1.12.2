@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "blocks/planks_acacia",
+    "metal": "blocks/redstone_block"
+  }
+}
+

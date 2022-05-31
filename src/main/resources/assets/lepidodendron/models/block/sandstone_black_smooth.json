@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "lepidodendron:blocks/sandstone_black_top",
+    "side": "lepidodendron:blocks/sandstone_black_smooth"
+  }
+}

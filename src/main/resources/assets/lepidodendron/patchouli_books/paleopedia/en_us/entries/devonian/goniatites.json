@@ -1,0 +1,30 @@
+{
+	"name": "Goniatites",
+	"icon": "lepidodendron:shell_goniatites",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_goniatites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_goniatites",
+			"title": "Goniatites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)$(l)Habitat:$() Aquatic$(br2)>Ammonoidea$(br)>Goniatitida$(br)>Goniatitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/goniatites.png"],
+			"title": "Goniatites sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goniatites",
+			"type": "text",
+			"text": "Goniatites is a small ammonite which looked quite similar to more well known mesozoic ammonites. It had a wavy shell patterning like some other ammonites. Gonitites lived mainly in shallow oceans rather than open oceans, though some were found in open ocean sediments."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_goniatites",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+		}
+	]
+}

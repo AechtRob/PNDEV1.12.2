@@ -1,0 +1,30 @@
+{
+	"name": "template",
+	"icon": "lepidodendron:",
+	"category": "lepidodendron:",
+	"turnin": "lepidodendron:pf_adv_book_tartuosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tartuosteus",
+			"title": "template",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:/.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tartuosteus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tartuosteus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

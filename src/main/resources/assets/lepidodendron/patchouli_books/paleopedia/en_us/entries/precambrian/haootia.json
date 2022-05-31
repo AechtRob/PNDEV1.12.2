@@ -1,0 +1,30 @@
+{
+	"name": "Haootia",
+	"icon": "lepidodendron:haootia",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_haootia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_haootia",
+			"title": "Haootia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)>Cnidaria$(br)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/haootia.png"],
+			"title": "H. quadriformis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haootia",
+			"type": "text",
+			"text": "Haootia is a cocktail looking animal which has been determined to be a cnidarian. It was probably stationary, feeding while being anchored to the ocean floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haootia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

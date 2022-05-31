@@ -1,0 +1,6 @@
+{
+    "name": "Precambrian",
+    "description": "$(l)The wacky life before the Paleozoic Era",
+    "icon": "paleopedia:category_icon/icon_precambrian.png",
+    "sortnum": 0
+}

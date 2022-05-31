@@ -1,0 +1,30 @@
+{
+	"name": "Whatcheeria",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/whatcheeria_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_whatcheeria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_whatcheeria",
+			"title": "Whatcheeria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Stegocephalia$(br)>Whatcheeriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/whatcheeria.png"],
+			"title": "W. deltae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_whatcheeria",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_whatcheeria",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

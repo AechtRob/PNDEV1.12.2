@@ -1,0 +1,30 @@
+{
+	"name": "Walliserops",
+	"icon": "lepidodendron:walliserops_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_walliserops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_walliserops",
+			"title": "Walliserops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Acastidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/walliserops.png"],
+			"title": "Walliserops trifurcatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_walliserops",
+			"type": "text",
+			"text": "Walliserops is a trilobite that has a trident like protrusion at the tip of the head. The purpose of the trident is poorly understood, though they may have served a function similar to the horns of modern beetles like rhinoceros beetles. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_walliserops",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

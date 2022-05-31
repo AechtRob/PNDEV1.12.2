@@ -1,0 +1,6 @@
+{
+    "name": "Plants",
+    "description": "$(l)PLANTS!",
+    "icon": "lepidodendron:calamites_sapling",
+    "sortnum": 15
+}

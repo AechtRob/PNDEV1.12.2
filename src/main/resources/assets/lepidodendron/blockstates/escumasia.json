@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:escumasia_1"},
+        {"model": "lepidodendron:escumasia_2"},
+        {"model": "lepidodendron:escumasia_3"},
+        {"model": "lepidodendron:escumasia_4"},
+        {"model": "lepidodendron:escumasia_1", "y": 90},
+        {"model": "lepidodendron:escumasia_2", "y": 90},
+        {"model": "lepidodendron:escumasia_3", "y": 90},
+        {"model": "lepidodendron:escumasia_4", "y": 90}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:escumasia_side_1"},
+        {"model": "lepidodendron:escumasia_side_2"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:escumasia_side_1", "y": 90},
+      {"model": "lepidodendron:escumasia_side_2", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:escumasia_side_1", "y": 180},
+      {"model": "lepidodendron:escumasia_side_2", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:escumasia_side_1", "y": 270},
+      {"model": "lepidodendron:escumasia_side_2", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:escumasia_1"},
+      {"model": "lepidodendron:escumasia_2"},
+      {"model": "lepidodendron:escumasia_3"},
+      {"model": "lepidodendron:escumasia_4"},
+      {"model": "lepidodendron:escumasia_1", "y": 90},
+      {"model": "lepidodendron:escumasia_2", "y": 90},
+      {"model": "lepidodendron:escumasia_3", "y": 90},
+      {"model": "lepidodendron:escumasia_4", "y": 90}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:escumasia_1", "x": 180},
+      {"model": "lepidodendron:escumasia_2", "x": 180},
+      {"model": "lepidodendron:escumasia_3", "x": 180},
+      {"model": "lepidodendron:escumasia_4", "x": 180},
+      {"model": "lepidodendron:escumasia_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:escumasia_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:escumasia_3", "x": 180, "y": 90},
+      {"model": "lepidodendron:escumasia_4", "x": 180, "y": 90}
+    ]
+  }
+}

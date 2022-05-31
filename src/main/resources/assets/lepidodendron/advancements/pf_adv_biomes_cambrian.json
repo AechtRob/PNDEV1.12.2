@@ -1,0 +1,56 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_cambrian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_cambrian.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"cambrian_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_biome"
+			}
+		},
+		"cambrian_estuary_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_estuary_helper"
+			}
+		},
+		"cambrian_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_sea"
+			}
+		},
+		"cambrian_estuary": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_estuary"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"cambrian_land",
+			"cambrian_estuary_helper"
+		],
+		[
+			"cambrian_sea"
+		],
+		[
+			"cambrian_estuary"
+		]
+	]
+}

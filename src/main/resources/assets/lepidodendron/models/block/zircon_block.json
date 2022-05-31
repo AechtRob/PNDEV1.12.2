@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/zircon_block",
+    "particle": "lepidodendron:blocks/zircon_block"
+  }
+}

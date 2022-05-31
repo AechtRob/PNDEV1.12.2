@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/horsetail_flower",
+    "particle": "lepidodendron:blocks/horsetail_flower"
+  }
+}

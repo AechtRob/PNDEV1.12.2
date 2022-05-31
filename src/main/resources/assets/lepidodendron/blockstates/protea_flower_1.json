@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:protea_flower_1"},
+      	{"model": "lepidodendron:protea_flower_1_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:protea_flower_1", "x": 90},
+       	{"model": "lepidodendron:protea_flower_1_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:protea_flower_1", "x": 90, "y": 90},
+      	{"model": "lepidodendron:protea_flower_1_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:protea_flower_1", "x": 90, "y": 180},
+      	{"model": "lepidodendron:protea_flower_1_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:protea_flower_1", "x": 90, "y": 270},
+      	{"model": "lepidodendron:protea_flower_1_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:protea_flower_1"},
+      	{"model": "lepidodendron:protea_flower_1_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:protea_flower_1", "x": 180},
+      	{"model": "lepidodendron:protea_flower_1_rot", "x": 180}
+    ]
+  }
+}

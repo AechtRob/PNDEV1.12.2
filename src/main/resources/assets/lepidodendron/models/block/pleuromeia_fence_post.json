@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "lepidodendron:blocks/pleuromeia_log",
+    "particle": "lepidodendron:blocks/pleuromeia_log"
+  }
+}

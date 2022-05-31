@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sycamore_planks"
+    },
+    "1": {
+      "item": "lepidodendron:sycamore_planks"
+    },
+    "2": {
+      "item": "lepidodendron:sycamore_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sycamore_slab",
+    "data": 0,
+    "count": 6
+  }
+}

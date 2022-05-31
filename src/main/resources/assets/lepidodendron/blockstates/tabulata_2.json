@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:tabulata_2"},
+      {"model": "lepidodendron:tabulata_2_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:tabulata_2_side"},
+      {"model": "lepidodendron:tabulata_2_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:tabulata_2_side", "y": 90},
+      {"model": "lepidodendron:tabulata_2_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:tabulata_2_side", "y": 180},
+      {"model": "lepidodendron:tabulata_2_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:tabulata_2_side", "y": 270},
+      {"model": "lepidodendron:tabulata_2_side_var", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:tabulata_2"},
+      {"model": "lepidodendron:tabulata_2_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:tabulata_2", "x": 180},
+      {"model": "lepidodendron:tabulata_2_var", "x": 180}
+    ]
+  }
+}

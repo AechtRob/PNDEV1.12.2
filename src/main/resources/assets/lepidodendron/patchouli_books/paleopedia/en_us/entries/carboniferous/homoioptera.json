@@ -1,0 +1,30 @@
+{
+	"name": "Homoioptera",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/homoioptera_icon.png",
+	"category": "patchouli:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"title": "Homoioptera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Homoiopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/homoioptera.png"],
+			"title": "H. gigantea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

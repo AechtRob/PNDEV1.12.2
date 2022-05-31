@@ -1,0 +1,14 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemRope"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:rope",
+    "count": 1
+  }
+}

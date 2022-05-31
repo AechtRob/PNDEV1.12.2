@@ -1,0 +1,50 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetIron"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetIron"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetIron"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "4": {
+      "item": "minecraft:bucket"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "blockIron"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "plankWood"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:resin_extractor",
+    "count": 1
+  }
+}

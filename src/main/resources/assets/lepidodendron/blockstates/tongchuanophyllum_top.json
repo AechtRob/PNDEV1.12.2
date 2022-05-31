@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:tongchuanophyllum_inventory"
+    },
+    "var=0": {"model": "lepidodendron:tongchuanophyllum_top_1"},
+    "var=1": {"model": "lepidodendron:tongchuanophyllum_top_2"},
+    "var=2": {"model": "lepidodendron:tongchuanophyllum_top_3"},
+    "var=3": {"model": "lepidodendron:tongchuanophyllum_top_4"}
+  }
+}

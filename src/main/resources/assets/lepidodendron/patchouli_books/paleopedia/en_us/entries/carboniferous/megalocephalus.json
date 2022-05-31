@@ -1,0 +1,30 @@
+{
+	"name": "Megalocephalus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/megalocephalus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_megalocephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megalocephalus",
+			"title": "Megalocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Tetrapoda$(br)>Baphetidae$(br)>Loxommatinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/megalocephalus.png"],
+			"title": "Megalocephalus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalocephalus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalocephalus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:mirabilis_fruit_1"},
+      {"model": "lepidodendron:mirabilis_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:mirabilis_fruit_block_inventory"
+    }
+  }
+}

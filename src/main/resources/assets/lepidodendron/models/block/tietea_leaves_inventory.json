@@ -1,0 +1,24 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:items/tietea_leaf_inventory",
+        "down": "lepidodendron:items/tietea_leaf_inventory",
+        "up": "lepidodendron:items/tietea_leaf_inventory",
+        "north": "lepidodendron:items/tietea_leaf_inventory",
+        "south": "lepidodendron:items/tietea_leaf_inventory",
+        "west": "lepidodendron:items/tietea_leaf_inventory",
+        "east": "lepidodendron:items/tietea_leaf_inventory"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

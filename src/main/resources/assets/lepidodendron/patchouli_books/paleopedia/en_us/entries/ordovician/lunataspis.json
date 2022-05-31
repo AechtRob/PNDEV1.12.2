@@ -1,0 +1,30 @@
+{
+	"name": "Lunataspis",
+	"icon": "lepidodendron:lunataspis_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_lunataspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lunataspis",
+			"title": "Lunataspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Xiphosura$(br)>Xiphosurida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/lunataspis.png"],
+			"title": "Lunataspis aurora",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lunataspis",
+			"type": "text",
+			"text": "Lunataspis is the oldest known xiphosuran and it bore resemblence to horseshoe crabs, suggesting they may have lived in a way similar to modern horseshoe crabs. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lunataspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

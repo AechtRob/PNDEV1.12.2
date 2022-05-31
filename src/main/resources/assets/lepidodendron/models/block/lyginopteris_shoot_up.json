@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/lyginopteris_leaves_shoot",
+    "particle": "lepidodendron:blocks/lyginopteris_leaves_shoot"
+  }
+}

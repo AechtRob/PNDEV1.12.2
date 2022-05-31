@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:pambikalbae",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:pambikalbae",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:pambikalbae",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:pambikalbae",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:pambikalbae",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:pambikalbae",
+      "y": 0
+    }
+  }
+}

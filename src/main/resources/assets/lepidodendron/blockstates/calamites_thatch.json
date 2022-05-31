@@ -1,0 +1,92 @@
+{
+  "multipart": [
+  	
+    { "when": { "AND": [
+    	{ "facing": "north" },
+		{ "inner": false },
+		{ "outer": false }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch" }
+    },
+    { "when": { "AND": [
+    	{ "facing": "south" },
+		{ "inner": false },
+		{ "outer": false }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch", "y": 180 }
+    },
+	{ "when": { "AND": [
+    	{ "facing": "west" },
+		{ "inner": false },
+		{ "outer": false }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch", "y": 270 }
+    },
+	{ "when": { "AND": [
+    	{ "facing": "east" },
+		{ "inner": false },
+		{ "outer": false }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch", "y": 90 }
+    },
+
+
+	{ "when": { "AND": [
+    	{ "outer": true },
+		{ "nw": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_outer" }
+    },
+    { "when": { "AND": [
+    	{ "outer": true },
+		{ "ne": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_outer", "y": 90 }
+    },
+    { "when": { "AND": [
+    	{ "outer": true },
+		{ "sw": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_outer", "y": 270 }
+    },
+    { "when": { "AND": [
+    	{ "outer": true },
+		{ "se": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_outer", "y": 180 }
+    },
+
+    { "when": { "AND": [
+    	{ "inner": true },
+		{ "nw": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_inner" }
+    },
+    { "when": { "AND": [
+    	{ "inner": true },
+		{ "ne": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_inner", "y": 90 }
+    },
+    { "when": { "AND": [
+    	{ "inner": true },
+		{ "sw": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_inner", "y": 270 }
+    },
+    { "when": { "AND": [
+    	{ "inner": true },
+		{ "se": true }
+    	]},
+      "apply": { "model": "lepidodendron:calamites_thatch_inner", "y": 180 }
+    },
+    
+	{ "when": { "facing": "up" },
+      "apply": { "model": "lepidodendron:calamites_thatch_flat" }
+    },
+    { "when": { "facing": "down" },
+      "apply": { "model": "lepidodendron:calamites_thatch_flat", "x": 180 }
+    }
+
+  ]
+}

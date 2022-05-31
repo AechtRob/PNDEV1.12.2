@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "lepidodendron:blocks/calamites_door_bottom",
+        "top": "lepidodendron:blocks/calamites_door_top"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:prototaxites_block"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:prototaxites_chunk",
+    "count": 9
+  }
+}

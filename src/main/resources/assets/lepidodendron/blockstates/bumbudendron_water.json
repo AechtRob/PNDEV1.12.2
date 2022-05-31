@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bumbudendron_water_1"},
+      {"model": "lepidodendron:bumbudendron_water_2"}
+    ]
+  }
+}

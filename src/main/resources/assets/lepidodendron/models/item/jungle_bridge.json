@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:item/bridge_item",
+  "textures": {
+    "wood": "blocks/planks_jungle"
+  }
+}

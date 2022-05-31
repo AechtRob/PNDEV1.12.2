@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/liriodendronlogend",
+    "up": "lepidodendron:blocks/liriodendronlogend",
+    "north": "lepidodendron:blocks/liriodendronlog",
+    "east": "lepidodendron:blocks/liriodendronlog",
+    "south": "lepidodendron:blocks/liriodendronlog",
+    "west": "lepidodendron:blocks/liriodendronlog",
+    "particle": "lepidodendron:blocks/liriodendronlogend"
+  }
+}

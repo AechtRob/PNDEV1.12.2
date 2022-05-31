@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "lepidodendron:blocks/dawn_redwood_planks",
+    "particle": "lepidodendron:blocks/dawn_redwood_planks"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Procynosuchus",
+	"icon": "paleopedia:permian/permian_icon/procynosuchus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_procynosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_procynosuchus",
+			"title": "Procynosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/procynosuchus.png"],
+			"title": "Procynosuchus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_procynosuchus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_procynosuchus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

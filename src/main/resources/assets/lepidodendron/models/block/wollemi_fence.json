@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "lepidodendron:blocks/wollemi_planks",
+    "particle": "lepidodendron:blocks/wollemi_planks"
+  }
+}

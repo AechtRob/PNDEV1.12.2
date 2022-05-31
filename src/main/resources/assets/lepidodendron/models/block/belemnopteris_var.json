@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/belemnopteris_var",
+    "particle": "lepidodendron:blocks/belemnopteris_var"
+  }
+}

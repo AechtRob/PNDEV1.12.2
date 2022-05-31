@@ -1,0 +1,30 @@
+{
+	"name": "Deiroceras",
+	"icon": "paleopedia:ordosil/ordosil_icon/shell_deiroceras.png:",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_deiroceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_deiroceras",
+			"title": "Deiroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Actinocerida$(br)>Ormoceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/deiroceras.png"],
+			"title": "Deiroceras hollardi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_deiroceras",
+			"type": "text",
+			"text": "Deiroceras is a genus of orthocone from the Ordovician to Devonian periods. It was relatively large and looked similar to other orthocones of the time like Orthoceras. It likely hunted prey by waiting in the reefs and pouncing when prey swam by."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_deiroceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:calamites_branch"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:calamites_planks",
+    "count": 2
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:ancyrocrinus"},
+        {"model": "lepidodendron:ancyrocrinus_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:ancyrocrinus_side"},
+      {"model": "lepidodendron:ancyrocrinus_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:ancyrocrinus_side", "y": 90},
+      {"model": "lepidodendron:ancyrocrinus_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:ancyrocrinus_side", "y": 180},
+      {"model": "lepidodendron:ancyrocrinus_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:ancyrocrinus_side", "y": 270},
+      {"model": "lepidodendron:ancyrocrinus_side_var", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:ancyrocrinus"},
+      {"model": "lepidodendron:ancyrocrinus_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:ancyrocrinus", "x": 180},
+      {"model": "lepidodendron:ancyrocrinus_var", "x": 180}
+    ]
+  }
+}

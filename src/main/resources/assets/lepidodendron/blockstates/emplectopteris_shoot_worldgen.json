@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    { 	"apply": { "model": "lepidodendron:emplectopteris_shoot" } },
+
+    {   "when": { "water": true },
+      "apply": { "model": "lepidodendron:emplectopteris_roots_down" }
+    }
+  ]
+}

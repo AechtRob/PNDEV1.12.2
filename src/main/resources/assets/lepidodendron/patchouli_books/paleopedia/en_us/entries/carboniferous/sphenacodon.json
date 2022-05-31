@@ -1,0 +1,30 @@
+{
+	"name": "Sphenacodon",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/sphenacodon_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_sphenacodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sphenacodon",
+			"title": "Sphenacodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Synapsida$(br)>Sphenacodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/sphenacodon.png"],
+			"title": "Sphenacodon ferox",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphenacodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphenacodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

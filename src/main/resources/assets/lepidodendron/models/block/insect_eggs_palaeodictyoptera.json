@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/insect_eggs",
+	"textures": {
+		"texture": "lepidodendron:blocks/insect_eggs_palaeodictyoptera"
+	}
+}

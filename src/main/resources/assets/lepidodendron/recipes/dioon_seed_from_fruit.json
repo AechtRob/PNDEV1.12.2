@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:dioon_cone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:dioon_seed",
+    "count": 1
+  }
+}

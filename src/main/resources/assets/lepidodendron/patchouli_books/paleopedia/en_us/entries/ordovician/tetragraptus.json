@@ -1,0 +1,30 @@
+{
+	"name": "Tetragraptus",
+	"icon": "paleopedia:ordosil/ordosil_icon/tetragraptus_icon.png",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_tetragraptus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tetragraptus",
+			"title": "Tetragraptus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Pterobranchia$(br)>Graptoloidea$(br)>Dichograptidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/tetragraptus.png"],
+			"title": "Tetragraptus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tetragraptus",
+			"type": "text",
+			"text": "Tetragraptus was a genus of graptolites from the Ordovician period. It was a colonial animal and likely floated around the oceans in life."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tetragraptus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food(Unrealistic)$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

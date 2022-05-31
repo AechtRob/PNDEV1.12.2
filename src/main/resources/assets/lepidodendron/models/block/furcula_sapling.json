@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/furcula_sapling",
+    "particle": "lepidodendron:blocks/furcula_sapling"
+  }
+}

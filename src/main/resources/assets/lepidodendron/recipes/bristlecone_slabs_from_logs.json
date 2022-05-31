@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:bristlecone_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:bristlecone_planks",
+    "count": 4
+  }
+}

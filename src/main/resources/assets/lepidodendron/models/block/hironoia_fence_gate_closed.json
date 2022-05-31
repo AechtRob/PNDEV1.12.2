@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/hironoia_planks",
+    "particle": "lepidodendron:blocks/hironoia_planks"
+    }
+}

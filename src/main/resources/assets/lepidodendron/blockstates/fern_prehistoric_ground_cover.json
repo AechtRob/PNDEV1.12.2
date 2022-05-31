@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "snowy=false": [
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var0" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var0", "y": 90 },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var1" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var1", "y": 90 },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var2" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var2", "y": 90 },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var3" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var3", "y": 90 },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var4" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var4", "y": 90 },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var5" },
+      {"model": "lepidodendron:fern_prehistoric_ground_cover_var5", "y": 90 }
+
+    ],
+    "snowy=true": [
+      { "model": "lepidodendron:fern_prehistoric_ground_cover_snowed" }
+    ]
+  }
+}

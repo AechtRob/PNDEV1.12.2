@@ -1,0 +1,30 @@
+{
+	"name": "Odaraia",
+	"icon": "lepidodendron:odaraia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_odaraia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_odaraia",
+			"title": "Odaraia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Crustacea$(br)>Hymenocarina$(br)>Odaraiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/odaraia.png"],
+			"title": "Odaraia alata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_odaraia",
+			"type": "text",
+			"text": "Odaraia is a crustacean from the middle Cambrian. It had a large pair of eyes at the front of its body and a tube shaped body with 45 pairs of limbs and 3 tail fins."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_odaraia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

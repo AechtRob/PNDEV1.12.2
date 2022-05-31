@@ -1,0 +1,51 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "listAllfishraw"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "itemAlgae"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "listAllfishraw"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "itemAlgae"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "listAllfishraw"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "itemAlgae"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "listAllfishraw"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "itemAlgae"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "listAllfishraw"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:fish_food",
+    "count": 32
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/tongchuanophyllum_inventory",
+    "particle": "lepidodendron:items/tongchuanophyllum_inventory"
+  }
+}

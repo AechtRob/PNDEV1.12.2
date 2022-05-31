@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "snowy=false": [ 
+        	{"model": "lepidodendron:lush_prehistoric_ground_cover" },
+        	{"model": "lepidodendron:lush_prehistoric_ground_cover", "y": 90 }
+        	
+       ],
+        "snowy=true": [
+        	{ "model": "lepidodendron:lush_prehistoric_ground_cover_snowed" },
+        	{ "model": "lepidodendron:lush_prehistoric_ground_cover_snowed", "y": 90 }
+        ]
+    }
+}

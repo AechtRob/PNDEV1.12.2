@@ -1,0 +1,30 @@
+{
+	"name": "Kerygmachela",
+	"icon": "lepidodendron:kerygmachela_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_kerygmachela",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kerygmachela",
+			"title": "Kerygmachela",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Lobopodia$(br)>Dinocaridida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/kerygmachela.png"],
+			"title": "K. kierkegaardi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kerygmachela",
+			"type": "text",
+			"text": "Kerygmachela is a gilled lobopodian from northern Greenland. Its appendages were shaped like a grappler and it probably ate very small prey given that its mouth was relatively small."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kerygmachela",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

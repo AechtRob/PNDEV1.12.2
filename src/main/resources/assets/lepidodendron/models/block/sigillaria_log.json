@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/sigillaria_log_end",
+    "up": "lepidodendron:blocks/sigillaria_log_end",
+    "north": "lepidodendron:blocks/sigillaria_log",
+    "east": "lepidodendron:blocks/sigillaria_log",
+    "south": "lepidodendron:blocks/sigillaria_log",
+    "west": "lepidodendron:blocks/sigillaria_log",
+    "particle": "lepidodendron:blocks/sigillaria_log_end"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "1": {
+      "item": "minecraft:sponge",
+      "data": 32767
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:phial",
+    "count": 8
+  }
+}

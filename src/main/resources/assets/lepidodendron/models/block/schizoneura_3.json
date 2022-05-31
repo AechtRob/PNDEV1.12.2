@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/schizoneura_3_e",
+"w":"lepidodendron:blocks/schizoneura_3_w"
+}
+}

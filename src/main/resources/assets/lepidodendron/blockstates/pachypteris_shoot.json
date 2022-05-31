@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pachypteris_shoot", "weight": 2 },
+      {"model": "lepidodendron:pachypteris_shoot_flower"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:pachypteris_shoot_inventory"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:flint"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "wingInsect"
+    }
+  },
+  "result": {
+    "item": "minecraft:arrow",
+    "count": 4
+  }
+}

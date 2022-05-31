@@ -1,0 +1,972 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_n"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_n",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_n",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_n",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ne"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ne",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ne",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ne",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ns"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ns",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_nse"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_nse",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_nse",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_nse",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_nsew"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_d"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dn"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dn",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dn",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dn",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dne"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dne",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dne",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dne",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dns"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dns",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dnse"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dnse",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dnse",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dnse",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": false,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_dnsew"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_u"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_un"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_un",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_un",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_un",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_une"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_une",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_une",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_une",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_uns"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_uns",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_unse"
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_unse",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_unse",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_unse",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": false,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_unsew"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_ud"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udn"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udn",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udn",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udn",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udne"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udne",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udne",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udne",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udns"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udns",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": false
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udnse"
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": false,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udnse",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": false,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udnse",
+        "y": 180,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": false,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udnse",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "down": true,
+        "east": true,
+        "north": true,
+        "south": true,
+        "up": true,
+        "west": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_udnsew"
+      }
+    },
+
+
+    {
+      "when": {
+        "waternorth": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water"
+      }
+    },
+    {
+      "when": {
+        "watereast": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "watersouth": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "waterwest": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "waterup": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "waterdown": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "x": 270
+      }
+    }
+
+  ]
+}

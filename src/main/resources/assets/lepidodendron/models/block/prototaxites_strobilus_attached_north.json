@@ -1,0 +1,24 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/prototaxites_strobilus",
+        "down": "lepidodendron:blocks/prototaxites_strobilus",
+        "up": "lepidodendron:blocks/prototaxites_strobilus",
+        "north": "lepidodendron:blocks/prototaxites_strobilus",
+        "south": "lepidodendron:blocks/prototaxites_strobilus",
+        "west": "lepidodendron:blocks/prototaxites_strobilus",
+        "east": "lepidodendron:blocks/prototaxites_strobilus"
+    },
+    "elements": [
+        {   "from": [9, -8, 0 ],
+            "to": [ 9, 8, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

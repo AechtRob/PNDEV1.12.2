@@ -1,0 +1,49 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "3": {
+      "item": "minecraft:string"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "5": {
+      "item": "minecraft:string"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:hay_thatch",
+    "count": 6
+  }
+}

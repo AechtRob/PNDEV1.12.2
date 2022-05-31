@@ -1,0 +1,47 @@
+{
+  "multipart": [
+  	
+    { "when": { "OR": [
+    	{ "facing": "north" },
+		{ "south": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat", "x": 90 }
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "east" },
+		{ "west": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat", "x": 90, "y": 90 }
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "south" },
+		{ "north": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat", "x": 90, "y": 180 }
+    },
+
+    { "when": { "OR": [
+    	{ "facing": "west" },
+		{ "east": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat", "x": 90, "y": 270 }
+    },
+
+    { "when": { "OR": [
+    	{ "facing": "up" },
+		{ "down": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat" }
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "down" },
+		{ "up": true }
+    	]},
+      "apply": { "model": "lepidodendron:green_algae_mat", "x": 180 }
+    }
+    
+  ]
+}

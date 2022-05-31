@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:podocarp_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:podocarp_seed",
+    "count": 1
+  }
+}

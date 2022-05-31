@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:baiera_centre_1"},
+    "var=true": {"model": "lepidodendron:baiera_centre_2"}
+    }
+}

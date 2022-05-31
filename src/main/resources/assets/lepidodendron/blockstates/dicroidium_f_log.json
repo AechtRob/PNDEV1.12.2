@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:dicroidium_f_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:dicroidium_f_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:dicroidium_f_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:dicroidium_f_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:dicroidium_f_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:dicroidium_f_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:dicroidium_f_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

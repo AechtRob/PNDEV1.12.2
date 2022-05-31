@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:equisetites_stem"
+    },
+    "4": {
+      "item": "lepidodendron:equisetites_stem"
+    },
+    "5": {
+      "item": "lepidodendron:equisetites_stem"
+    },
+    "6": {
+      "item": "lepidodendron:equisetites_stem"
+    },
+    "7": {
+      "item": "lepidodendron:equisetites_stem"
+    },
+    "8": {
+      "item": "lepidodendron:equisetites_stem"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:equisetites_pallisade",
+    "count": 4
+  }
+}

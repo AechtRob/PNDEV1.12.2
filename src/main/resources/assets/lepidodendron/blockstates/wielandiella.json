@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:wielandiella_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:wielandiella"
+    }
+  }
+}

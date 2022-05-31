@@ -1,0 +1,25 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "34 ",
+    " 7 "
+  ],
+  "key": {
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "itemFungus"
+    },
+    "4": {
+      "item": "minecraft:sugar"
+    },
+    "7": {
+      "item": "minecraft:spider_eye"
+    }
+  },
+  "result": {
+    "item": "minecraft:fermented_spider_eye",
+    "count": 1
+  }
+}

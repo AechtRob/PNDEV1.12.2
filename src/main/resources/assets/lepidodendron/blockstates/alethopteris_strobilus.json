@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:alethopteris_strobilus"},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:alethopteris_strobilus", "x": 90},
+       	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:alethopteris_strobilus", "x": 90, "y": 90},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:alethopteris_strobilus", "x": 90, "y": 180},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:alethopteris_strobilus", "x": 90, "y": 270},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:alethopteris_strobilus"},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:alethopteris_strobilus", "x": 180},
+      	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 180}
+    ]
+  }
+}

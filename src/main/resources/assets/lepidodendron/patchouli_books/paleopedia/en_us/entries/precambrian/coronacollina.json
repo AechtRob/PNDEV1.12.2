@@ -1,0 +1,30 @@
+{
+	"name": "Coronacollina",
+	"icon": "lepidodendron:coronacollina",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_coronacollina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coronacollina",
+			"title": "Coronacollina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/coronacollina.png"],
+			"title": "Coronacollina acula",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coronacollina",
+			"type": "text",
+			"text": "Coronacollina is a multicellular organism from the ediacaran period. It looks like a mound raised with up to four 'sticks' holding it up. It is unknown where in the classification tree this animal belonged."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coronacollina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

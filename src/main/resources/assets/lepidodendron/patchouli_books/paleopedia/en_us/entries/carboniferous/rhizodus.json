@@ -1,0 +1,30 @@
+{
+	"name": "Rhizodus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/rhizodus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_rhizodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhizodus",
+			"title": "Rhizodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Aquatic$(br2)>Sarcopterygii$(br)>Rhizodontida$(br)>Rhizodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/rhizodus.png"],
+			"title": "Rhizodus hibberti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhizodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhizodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

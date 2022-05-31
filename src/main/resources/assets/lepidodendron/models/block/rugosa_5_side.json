@@ -1,0 +1,27 @@
+{
+    "parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/rugosa_5_b_side",
+        "plant_b": "lepidodendron:blocks/rugosa_5_b_side",
+        "plant_t": "lepidodendron:blocks/rugosa_5_t"
+    },
+    "elements": [
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant_b" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant_b" }
+            }
+        },
+        {   "from": [ 8, 16, 0 ],
+            "to": [ 8, 32, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant_t" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant_t" }
+            }
+        }
+
+    ]
+}

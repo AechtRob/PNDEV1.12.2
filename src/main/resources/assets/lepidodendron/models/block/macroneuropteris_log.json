@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/macroneuropteris_log_end",
+    "up": "lepidodendron:blocks/macroneuropteris_log_end",
+    "north": "lepidodendron:blocks/macroneuropteris_log",
+    "east": "lepidodendron:blocks/macroneuropteris_log",
+    "south": "lepidodendron:blocks/macroneuropteris_log",
+    "west": "lepidodendron:blocks/macroneuropteris_log",
+    "particle": "lepidodendron:blocks/macroneuropteris_log_end"
+  }
+}

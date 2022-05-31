@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/umaltolepis_c",
+"w":"lepidodendron:blocks/umaltolepis_c",
+"ee":"lepidodendron:blocks/umaltolepis_e",
+"ww":"lepidodendron:blocks/umaltolepis_w"
+}
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Gigantospongia",
+	"icon": "lepidodendron:gigantospongia",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_gigantospongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gigantospongia",
+			"title": "Gigantospongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Demospongea$(br)>Agelasida$(br)>Auriculospongiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Gigantospongia.png"],
+			"title": "G. discoforma",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigantospongia",
+			"type": "text",
+			"text": "Gigantospongia is a giant Permian sponge which has a disc like shape. It may have grown attached to rocks similar to some types of mushroom attached to tree logs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigantospongia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

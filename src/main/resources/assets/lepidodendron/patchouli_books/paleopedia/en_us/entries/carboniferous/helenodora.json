@@ -1,0 +1,30 @@
+{
+	"name": "Helenodora",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/helenodora_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_helenodora",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helenodora",
+			"title": "Helenodora",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/helenodora.png"],
+			"title": "H. inopinata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helenodora",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helenodora",
+			"type": "text",
+			"text": "$(l)Eats:$() Moss$(br)$(l)Breeds with:$() Moss$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

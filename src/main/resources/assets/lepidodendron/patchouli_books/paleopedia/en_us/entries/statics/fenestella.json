@@ -1,0 +1,30 @@
+{
+	"name": "Fenestella",
+	"icon": "lepidodendron:fenestella_1",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_fenestella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fenestella",
+			"title": "Fenestella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bryozoa$(br)>Fenestrida$(br)>Fenestellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Fenestella.png"],
+			"title": "Fenestella sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fenestella",
+			"type": "text",
+			"text": "Fenestella is a fan shaped bryozoan with a netted appearance. Fenestella comes from the Latin wod fenestra meaning 'window' for the window like openings in its mesh. Its skeleton consisted of stiff branches that are interconnected by narrow crossbars. It was a colonial animal with multiple colonies inhabiting each branch."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fenestella",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

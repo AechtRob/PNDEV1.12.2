@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:psaronius_leaves_small"
+    },
+    "facing=north": {
+      "model": "lepidodendron:psaronius_leaves_small",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:psaronius_leaves_small",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:psaronius_leaves_small",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:psaronius_leaves_small",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:psaronius_leaves_small_shoot"
+    },
+    "facing=down": {
+      "model": "lepidodendron:psaronius_leaves_small_shoot", 
+      "x": 180
+    }
+  }
+}

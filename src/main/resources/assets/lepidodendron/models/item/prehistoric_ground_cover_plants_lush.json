@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lepidodendron:items/prehistoric_ground_cover_plants_lush_inventory"
+  }
+}

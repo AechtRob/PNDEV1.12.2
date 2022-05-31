@@ -1,0 +1,70 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/dicksonia_c",
+        "c": "lepidodendron:blocks/dicksonia_c_3",
+        "e": "lepidodendron:blocks/dicksonia_e_3",
+        "w": "lepidodendron:blocks/dicksonia_w_3",
+        "cc": "lepidodendron:blocks/dicksonia_c_4",
+        "down": "lepidodendron:blocks/dicksonia_branch_end",
+        "up": "lepidodendron:blocks/dicksonia_branch_end",
+        "north": "lepidodendron:blocks/dicksonia_branch",
+        "south": "lepidodendron:blocks/dicksonia_branch",
+        "west": "lepidodendron:blocks/dicksonia_branch",
+        "east": "lepidodendron:blocks/dicksonia_branch"
+        },
+    
+    "elements": [
+
+		{"name":"northc1",
+			"from":[4, 13, 4],"to":[12, 13, 0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"up":{"texture":"#c","uv":[4.0,4.0,12.0,0.0]},
+			"down":{"texture":"#c","uv":[4.0,0.0,12.0,4.0]}}},
+
+		{"name":"northc2",
+			"from":[0, 13, 0],"to":[16, 13, -4],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"up":{"texture":"#c","uv":[0.0,8.0,16.0,4.0]},
+			"down":{"texture":"#c","uv":[0.0,4.0,16.0,8.0]}}},
+			
+
+		{"name":"northe",
+			"from":[16, 12.5, 4],"to":[32, 12.5, -4],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"up":{"texture":"#e","uv":[0.0,8.0,16.0,0.0]},
+			"down":{"texture":"#e","uv":[0.0,0.0,16.0,8.0]}}},
+
+		{"name":"northw",
+			"from":[-16, 13.5, 4],"to":[0, 13.5, -4],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"up":{"texture":"#w","uv":[0.0,8.0,16.0,0.0]},
+			"down":{"texture":"#w","uv":[0.0,0.0,16.0,8.0]}}},
+
+		{"name":"northcc",
+			"from":[0, 13, -4],"to":[16, 13, -16],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"up":{"texture":"#cc","uv":[0.0,16.0,16.0,0.0]},
+			"down":{"texture":"#cc","uv":[0.0,0,16.0,16.0]}}},
+
+		{"name":"northmid",
+			"from": [ 7, 12, -4 ],
+            "to": [ 9, 14, 4 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "north":  { "uv": [ 7, 14, 8, 16 ], "texture": "#up" },
+                "south":  { "uv": [ 7, 14, 8, 16 ], "texture": "#down" },
+                "east": { "uv": [ 7, 4, 8, 12 ], "texture": "#north" },
+                "west": { "uv": [ 7, 4, 8, 12 ], "texture": "#south" },
+                "up":  { "uv": [ 7, 4, 8, 12 ], "texture": "#east" },
+                "down":  { "uv": [ 7, 4, 8, 12 ],  "texture": "#west" }
+            }
+        }
+	
+	   ]
+}

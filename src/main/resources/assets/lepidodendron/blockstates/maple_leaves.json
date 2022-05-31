@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:maple_leaves"},
+      {"model": "lepidodendron:maple_leaves_2"},
+      {"model": "lepidodendron:maple_leaves_3"},
+      {"model": "lepidodendron:maple_leaves_4"},
+      {"model": "lepidodendron:maple_leaves_5"},
+      {"model": "lepidodendron:maple_leaves_6"},
+      {"model": "lepidodendron:maple_leaves_7"},
+      {"model": "lepidodendron:maple_leaves_8"}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Wiwaxia",
+	"icon": "lepidodendron:wiwaxia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_wiwaxia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wiwaxia",
+			"title": "Wiwaxia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca(?)$(br2)>Wiwaxiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/wiwaxia.png"],
+			"title": "W. corrugata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wiwaxia",
+			"type": "text",
+			"text": "Wiwaxia is a Cambrian animal of uncertain placement that looked like a tiny slug like animal with several pairs of spines on its back. It was bilaterally symmetrical and had an elliptical body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wiwaxia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

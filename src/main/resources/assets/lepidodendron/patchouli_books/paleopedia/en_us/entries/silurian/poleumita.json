@@ -1,0 +1,30 @@
+{
+	"name": "Poleumita",
+	"icon": "lepidodendron:poleumita_item",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_poleumita",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_poleumita",
+			"title": "Poleumita",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Euomphalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/poleumita.png"],
+			"title": "Poleumita sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poleumita",
+			"type": "text",
+			"text": "Poleumita is a medium sized a sea snail. It is known to have lived during the Silurian period. It likely fed and moved in ways similar to today's sea snails."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poleumita",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Hit to Pick Up"
+		}
+	]
+}

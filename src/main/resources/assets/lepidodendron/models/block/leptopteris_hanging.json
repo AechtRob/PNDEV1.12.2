@@ -1,0 +1,65 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"d": "lepidodendron:blocks/leptopteris_hanging_d",
+		"u": "lepidodendron:blocks/leptopteris_hanging_u",
+		"d2": "lepidodendron:blocks/leptopteris_hanging_d2",
+		"particle": "lepidodendron:blocks/leptopteris_hanging_d"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 8],
+			"to": [16, 16, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#u"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#u"}
+			}
+		},
+		{
+			"from": [0, -16, 8],
+			"to": [16, 0, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#d"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#d"}
+			}
+		},
+		{
+			"from": [16, 0, -8],
+			"to": [16, 16, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#u"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#u"}
+			}
+		},
+		{
+			"from": [16, -16, -8],
+			"to": [16, 0, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [16, 8, 8]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#d2"},
+				"west": {"uv": [16, 0, 0, 16], "texture": "#d2"}
+			}
+		},
+		{
+			"from": [16, 0, 8],
+			"to": [16, 16, 24],
+			"rotation": {"angle": -45, "axis": "y", "origin": [16, 8, 8]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#u"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#u"}
+			}
+		},
+		{
+			"from": [16, -16, 8],
+			"to": [16, 0, 24],
+			"rotation": {"angle": -45, "axis": "y", "origin": [16, 8, 8]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#d2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#d2"}
+			}
+		}
+	]
+}

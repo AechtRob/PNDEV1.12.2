@@ -1,0 +1,30 @@
+{
+	"name": "Bothriolepis",
+	"icon": "lepidodendron:bothriolepis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_bothriolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bothriolepis",
+			"title": "Bothriolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian.$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Antiarchi$(br)>Bothriolepididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/bothriolepis.png"],
+			"title": "Bothriolepis rex",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
+			"type": "text",
+			"text": "Bothriolepis is a chocolate brown and red placoderm which lives in the shallower parts of the Devonian waterways, their body is armored with thick plates of bones, characteristic of this grouping. There were spines on either side of its head armor, and it like other similar placoderms, are thought to have been bottom feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

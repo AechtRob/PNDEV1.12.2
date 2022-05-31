@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:archaeopteris_slab_double"
+    }
+  }
+}

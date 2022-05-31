@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/calamites_sapling",
+    "particle": "lepidodendron:blocks/calamites_sapling"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:sigillaria_strobilus"
+    },
+    "facing=north": {
+      "model": "lepidodendron:sigillaria_strobilus",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:sigillaria_strobilus",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:sigillaria_strobilus",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:sigillaria_strobilus",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:sigillaria_strobilus"
+    },
+    "facing=down": {
+      "model": "lepidodendron:sigillaria_strobilus",
+      "x": 180
+    }
+  }
+}

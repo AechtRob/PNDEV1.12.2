@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/stick_bundle_end",
+    "up": "lepidodendron:blocks/stick_bundle_end",
+    "north": "lepidodendron:blocks/stick_bundle",
+    "east": "lepidodendron:blocks/stick_bundle",
+    "south": "lepidodendron:blocks/stick_bundle",
+    "west": "lepidodendron:blocks/stick_bundle",
+    "particle": "lepidodendron:blocks/stick_bundle_end"
+  }
+}

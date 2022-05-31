@@ -1,0 +1,30 @@
+{
+	"name": "Groenlandaspis",
+	"icon": "prehistoricfloraintegration:dna_groenlandaspis",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_groenlandaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_groenlandaspis",
+			"title": "Groenlandaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/groenlandaspis.png"],
+			"title": "Groenlandaspis mirabilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_groenlandaspis",
+			"type": "text",
+			"text": "Groenlandaspis is a rare example of a fossil that gives us insight into the coloration of the animal when it lived. Because of this, we know that Groenlandaspis was rusty red on the top with a countershade of white. In life, it probably was a benthic feeder, swimming along the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_groenlandaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

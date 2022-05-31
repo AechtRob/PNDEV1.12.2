@@ -1,0 +1,30 @@
+{
+	"name": "Kodymirus",
+	"icon": "lepidodendron:kodymirus_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_kodymirus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kodymirus",
+			"title": "Kodymirus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/kodymirus.png"],
+			"title": "Kodymirus vagans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kodymirus",
+			"type": "text",
+			"text": "Kodymirus is an early artiopod which bears resemblence to eurypterids and it tended to live in brackish waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kodymirus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

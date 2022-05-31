@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:swamp_horsetail_land"},
+      {"model": "lepidodendron:swamp_horsetail_land_var"}
+    ]
+  }
+}

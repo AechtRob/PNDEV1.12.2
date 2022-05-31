@@ -1,0 +1,30 @@
+{
+	"name": "Pulmonoscorpius",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/pulmonoscorpius_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_pulmonoscorpius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pulmonoscorpius",
+			"title": "Pulmonoscorpius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/pulmonoscorpius.png"],
+			"title": "P. kirktonensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pulmonoscorpius",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pulmonoscorpius",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Carried on Back$(br)$(l)Method of Obtaining:$() Kill female for Babies"
+		}
+	]
+}

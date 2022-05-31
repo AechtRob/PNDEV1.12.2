@@ -1,0 +1,30 @@
+{
+	"name": "Bandringa",
+	"icon": "lepidodendron:bandringa_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_bandringa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bandringa",
+			"title": "Bandringa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Ctenacanthiformes$(br)>Bandringidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/bandringa.png"],
+			"title": "Bandringa rayi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bandringa",
+			"type": "text",
+			"text": "Bandringa is a long snouted elasmobranch from the Carboniferous period. It fed by suction feeding and used its long snout and needle like spines to hunt in murky waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bandringa",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

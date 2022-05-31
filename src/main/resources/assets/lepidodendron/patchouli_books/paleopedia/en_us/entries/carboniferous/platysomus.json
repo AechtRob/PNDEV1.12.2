@@ -1,0 +1,30 @@
+{
+	"name": "Platysomus",
+	"icon": "lepidodendron:platysomus_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_platysomus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_platysomus",
+			"title": "Platysomus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Platysomidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/platysomus.png"],
+			"title": "Platysomus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platysomus",
+			"type": "text",
+			"text": "Platysomus is a disc shaped palaeoniscid fish which has been found worldwide. It was pretty small, about 18 cm long and had a flattened body and elongated dorsal and anal fins. It is thought to have fed on plankton."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platysomus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

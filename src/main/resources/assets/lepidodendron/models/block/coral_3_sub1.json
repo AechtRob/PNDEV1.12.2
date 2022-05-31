@@ -1,0 +1,48 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/reef_block_variant3",
+		"particle": "lepidodendron:blocks/reef_block_variant3"
+	},
+	"elements": [
+		{
+			"name": "Sub1",
+			"from": [-0.02, 0.03, -3.0],
+			"to": [8.98, 10.03, 7.0],
+			"faces": {
+				"north": {"uv": [0, 0, 9, 10], "texture": "#texture"},
+				"east": {"uv": [0, 0, 10, 10], "texture": "#texture"},
+				"south": {"uv": [7, 0, 16, 10], "texture": "#texture"},
+				"west": {"uv": [0, 0, 12, 10], "texture": "#texture"},
+				"up": {"uv": [0, 0, 9, 10], "texture": "#texture"},
+				"down": {"uv": [0, 0, 9, 10], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Sub1",
+			"from": [-3.02, 0.02, 0.0],
+			"to": [-0.02, 10.02, 7.0],
+			"faces": {
+				"north": {"uv": [0, 0, 10, 10], "texture": "#texture"},
+				"east": {"uv": [0, 0, 10, 10], "texture": "#texture"},
+				"south": {"uv": [4, 0, 7, 10], "texture": "#texture"},
+				"west": {"uv": [3, 0, 10, 10], "texture": "#texture"},
+				"up": {"uv": [9, 0, 12, 7], "texture": "#texture"},
+				"down": {"uv": [0, 0, 3, 7], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Sub1",
+			"from": [-3.02, 0.04, -3.0],
+			"to": [-0.02, 10.04, -0.0],
+			"faces": {
+				"north": {"uv": [9, 0, 12, 10], "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 10], "texture": "#texture"},
+				"south": {"uv": [0, 0, 3, 10], "texture": "#texture"},
+				"west": {"uv": [0, 0, 3, 10], "texture": "#texture"},
+				"up": {"uv": [9, 7, 12, 10], "texture": "#texture"},
+				"down": {"uv": [0, 0, 3, 3], "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,199 @@
+{
+  "variants": {
+    "age=0,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=1,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=2,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=3,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=4,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=5,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=6,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=7,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=8,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=9,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=10,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=11,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=12,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=13,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=14,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+    "age=15,bottom=false,stem=false": {
+      "model": "lepidodendron:guangdedendron_2"
+    },
+
+    "age=0,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=1,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=2,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=3,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=4,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=5,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=6,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=7,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=8,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=9,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=10,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=11,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=12,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=13,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=14,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+    "age=15,bottom=true,stem=false": {
+      "model": "lepidodendron:guangdedendron_1"
+    },
+
+    "age=0,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=1,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=2,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=3,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=4,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=5,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=6,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=7,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=8,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=9,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=10,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=11,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=12,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=13,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=14,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=15,bottom=true,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+
+    "age=0,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=1,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=2,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=3,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=4,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=5,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=6,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=7,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=8,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=9,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=10,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=11,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=12,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=13,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=14,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    },
+    "age=15,bottom=false,stem=true": {
+      "model": "lepidodendron:guangdedendron_stem"
+    }
+  }
+}

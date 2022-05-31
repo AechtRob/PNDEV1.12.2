@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:haootia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:haootia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:haootia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:haootia", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:haootia", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:haootia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:haootia", "x": 180}
+    ]
+  }
+}

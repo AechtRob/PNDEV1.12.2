@@ -1,0 +1,30 @@
+{
+	"name": "Ebenaqua",
+	"icon": "lepidodendron:ebenaqua_raw",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_ebenaqua",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ebenaqua",
+			"title": "Ebenaqua",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Bobasatraniiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/ebenaqua.png"],
+			"title": "Ebenaqua ritchei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ebenaqua",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ebenaqua",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

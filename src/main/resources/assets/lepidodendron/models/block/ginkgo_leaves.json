@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/ginkgo_leaves",
+    "particle": "lepidodendron:blocks/ginkgo_leaves"
+  }
+}

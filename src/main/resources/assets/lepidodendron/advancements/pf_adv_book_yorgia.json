@@ -1,0 +1,23 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:yorgia_bucket"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_yorgia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_yorgia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_yorgia"
+		}
+	}
+}
+
+
+

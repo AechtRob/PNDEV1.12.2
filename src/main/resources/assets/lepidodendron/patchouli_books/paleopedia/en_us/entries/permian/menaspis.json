@@ -1,0 +1,30 @@
+{
+	"name": "Menaspis",
+	"icon": "lepidodendron:menaspis_raw",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_menaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_menaspis",
+			"title": "Menaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Chimaeriformes$(br)>Menaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/menaspis.png"],
+			"title": "Menaspis armata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_menaspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_menaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

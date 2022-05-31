@@ -1,0 +1,30 @@
+{
+	"name": "Namacalathus",
+	"icon": "lepidodendron:namacalathus",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_namacalathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_namacalathus",
+			"title": "Namacalathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/namacalathus.png"],
+			"title": "N. hermanastes",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_namacalathus",
+			"type": "text",
+			"text": "Namacalathus is a problematic metazoan animal from the ediacaran. It may have been an ancestor to brachiopods and worms and it may have also lived alongside Cloudina."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_namacalathus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

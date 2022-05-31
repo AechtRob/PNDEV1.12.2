@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:woodenlog"
+    },
+    "facing=south": {
+      "model": "lepidodendron:woodenlog"
+    },
+    "facing=north": {
+      "model": "lepidodendron:woodenlog"
+    },
+    "facing=east": {
+      "model": "lepidodendron:woodenlog",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:woodenlog",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:woodenlog",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:woodenlog",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

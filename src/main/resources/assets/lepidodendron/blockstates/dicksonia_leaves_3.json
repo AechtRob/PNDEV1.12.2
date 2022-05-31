@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:dicksonia_leaves_3"
+    },
+    "facing=north": {
+      "model": "lepidodendron:dicksonia_leaves_3",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:dicksonia_leaves_3",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:dicksonia_leaves_3",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:dicksonia_leaves_3",
+      "x": 90,
+      "y": 270
+    },
+    
+    "facing=up": {
+      "model": "lepidodendron:dicksonia_leaves_shoot"
+    },
+    "facing=down": {
+      "model": "lepidodendron:dicksonia_leaves_shoot",
+      "x": 180
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+		{"model": "lepidodendron:baikalophyllum_centre" },
+		{"model": "lepidodendron:baikalophyllum_centre_seeds" }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:swamp_horsetail_water_nospore"},
+      {"model": "lepidodendron:swamp_horsetail_water_nospore_var"},
+      {"model": "lepidodendron:swamp_horsetail_water_nospore_var2"}
+    ]
+  }
+}

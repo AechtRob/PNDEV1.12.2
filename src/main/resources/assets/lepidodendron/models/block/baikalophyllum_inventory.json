@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/baikalophyllum_inventory",
+    "particle": "lepidodendron:items/baikalophyllum_inventory"
+  }
+}

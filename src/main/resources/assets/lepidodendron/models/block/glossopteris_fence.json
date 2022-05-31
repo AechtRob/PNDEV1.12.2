@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "lepidodendron:blocks/glossopteris_planks",
+    "particle": "lepidodendron:blocks/glossopteris_planks"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Mimetaster",
+	"icon": "lepidodendron:mimetaster_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_mimetaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mimetaster",
+			"title": "Mimetaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/mimetaster.png", "paleopedia:devonian/MimetasterOrange.png", "paleopedia:devonian/MimetasterPurple.png", "paleopedia:devonian/MimetasterRed.png", "paleopedia:devonian/MimetasterRedOrange.png", "paleopedia:devonian/MimetasterWhite.png"],
+			"title": "Mimetaster hexagonalis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mimetaster",
+			"type": "text",
+			"text": "Mimetaster is an aquatic arthropod closely related to the Cambrian Marrella. It was extremely common in the area that it was found, leading to scientists believing that they lived in small groups, so they would likely have died and fossilized together. Mimetaster looked quite strange, with 6 spines protruding from its head and 2 long arms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mimetaster",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

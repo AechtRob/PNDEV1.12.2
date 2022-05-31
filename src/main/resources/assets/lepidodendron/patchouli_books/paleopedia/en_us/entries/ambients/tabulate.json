@@ -1,0 +1,30 @@
+{
+	"name": "Tabulate Coral",
+	"icon": "lepidodendron:tabulata_1",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_tabulate",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tabulate",
+			"title": "Tabulate Coral",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/tabulate.png"],
+			"title": "Tabulata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tabulate",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tabulate",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

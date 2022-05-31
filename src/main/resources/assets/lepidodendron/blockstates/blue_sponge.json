@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:blue_sponge"},
+		{"model": "lepidodendron:blue_sponge_var"},
+      	{"model": "lepidodendron:blue_sponge_small"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:blue_sponge_side"},
+		{"model": "lepidodendron:blue_sponge_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:blue_sponge_side", "y": 90},
+      	{"model": "lepidodendron:blue_sponge_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:blue_sponge_side", "y": 180},
+      	{"model": "lepidodendron:blue_sponge_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:blue_sponge_side","y": 270},
+      	{"model": "lepidodendron:blue_sponge_side_var","y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:blue_sponge"},
+		{"model": "lepidodendron:blue_sponge_var"},
+      	{"model": "lepidodendron:blue_sponge_small"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:blue_sponge", "x": 180},
+      	{"model": "lepidodendron:blue_sponge_var", "x": 180},
+      	{"model": "lepidodendron:blue_sponge_small", "x": 180}
+    ]
+  }
+}

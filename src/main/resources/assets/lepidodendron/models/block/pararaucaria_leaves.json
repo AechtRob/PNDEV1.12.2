@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/pararaucaria_leaves",
+    "particle": "lepidodendron:blocks/pararaucaria_leaves"
+  }
+}

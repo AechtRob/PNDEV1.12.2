@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:herpetogaster"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:herpetogaster"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:herpetogaster", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:herpetogaster", "y": 180}
+    ],
+
+    "facing=west": [
+      	{"model": "lepidodendron:herpetogaster", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:herpetogaster"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:herpetogaster", "x": 180}
+    ]
+  }
+}

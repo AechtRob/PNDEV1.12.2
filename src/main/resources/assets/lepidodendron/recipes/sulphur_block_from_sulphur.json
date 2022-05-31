@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sulphur"
+    },
+    "1": {
+      "item": "lepidodendron:sulphur"
+    },
+    "2": {
+      "item": "lepidodendron:sulphur"
+    },
+    "3": {
+      "item": "lepidodendron:sulphur"
+    },
+    "4": {
+      "item": "lepidodendron:sulphur"
+    },
+    "5": {
+      "item": "lepidodendron:sulphur"
+    },
+    "6": {
+      "item": "lepidodendron:sulphur"
+    },
+    "7": {
+      "item": "lepidodendron:sulphur"
+    },
+    "8": {
+      "item": "lepidodendron:sulphur"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sulphur_block",
+    "count": 1
+  }
+}

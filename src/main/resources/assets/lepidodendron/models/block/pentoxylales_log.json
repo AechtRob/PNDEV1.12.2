@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/pentoxylales_log_end",
+    "up": "lepidodendron:blocks/pentoxylales_log_end",
+    "north": "lepidodendron:blocks/pentoxylales_log",
+    "east": "lepidodendron:blocks/pentoxylales_log",
+    "south": "lepidodendron:blocks/pentoxylales_log",
+    "west": "lepidodendron:blocks/pentoxylales_log",
+    "particle": "lepidodendron:blocks/pentoxylales_log_end"
+  }
+}

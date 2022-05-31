@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/fence_gate_closed_thin_inventory",
+    "textures": {
+        "texture": "lepidodendron:blocks/rufloria_log",
+    "particle": "lepidodendron:blocks/rufloria_log"
+    }
+}

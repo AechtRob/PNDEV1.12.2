@@ -1,0 +1,30 @@
+{
+	"name": "Dickinsonia",
+	"icon": "paleopedia:precambrian/precambrian_icon/dickinsonia_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_dickinsonia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dickinsonia",
+			"title": "Dickinsonia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Proarticulata$(br)>Dipleurozoa$(br)>Dickinsoniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/dickinsonia.png"],
+			"title": "D. costata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
+			"type": "text",
+			"text": "Dickinsonia is a basal animal of the ediacaran period. It resembles a bilaterally symmetric ribbed oval. It is known only from imprint fossils and perhaps some trace fossils."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dickinsonia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

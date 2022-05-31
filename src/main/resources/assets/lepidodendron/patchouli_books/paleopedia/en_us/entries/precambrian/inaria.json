@@ -1,0 +1,30 @@
+{
+	"name": "Inaria",
+	"icon": "lepidodendron:inaria",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_inaria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_inaria",
+			"title": "Inaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Cnidaria?$(br)>Anthozoa?"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/inaria.png"],
+			"title": "Inaria karli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inaria",
+			"type": "text",
+			"text": "Inaria is a garlic shaped animal that lived embedded to the ocean floors. It had a bulbous base with a tube extending out of it. It likely ived in a deep sea environment."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inaria",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

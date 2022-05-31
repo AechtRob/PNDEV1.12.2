@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:marattia_top"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:marattia_top"
+    }
+  }
+}

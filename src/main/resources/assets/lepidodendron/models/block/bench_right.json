@@ -1,0 +1,77 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#metal"
+	},
+	"elements": [
+		{
+			"name": "backR",
+			"from": [0.5, 0, 1],
+			"to": [1.5, 16, 2],
+			"faces": {
+				"north": {"uv": [11, 1, 12, 16], "texture": "#metal"},
+				"east": {"uv": [10, 1, 11, 16], "texture": "#metal"},
+				"south": {"uv": [12, 1, 13, 16], "texture": "#metal"},
+				"west": {"uv": [13, 1, 14, 16], "texture": "#metal"},
+				"up": {"uv": [5, 10, 6, 11], "texture": "#metal"},
+				"down": {"uv": [6, 11, 7, 12], "texture": "#metal"}
+			}
+		},
+		{
+			"name": "frontR",
+			"from": [0.5, 0, 9],
+			"to": [1.5, 6.2, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -2]},
+			"faces": {
+				"north": {"uv": [2, 1.8, 3, 8], "texture": "#metal"},
+				"east": {"uv": [4, 4.8, 5, 11], "texture": "#metal"},
+				"south": {"uv": [9, 1.8, 10, 8], "texture": "#metal"},
+				"west": {"uv": [12, 6.8, 13, 13], "texture": "#metal"},
+				"up": {"uv": [6, 9, 7, 10], "texture": "#metal"},
+				"down": {"uv": [7, 8, 8, 9], "texture": "#metal"}
+			}
+		},
+		{
+			"name": "sideRU",
+			"from": [0.5, 9, 2],
+			"to": [1.5, 10, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 7, 7, 8], "texture": "#metal"},
+				"east": {"uv": [10.5, 3, 4, 4], "texture": "#metal"},
+				"south": {"uv": [7, 7, 6, 8], "texture": "#metal"},
+				"west": {"uv": [10.5, 4, 4, 5], "texture": "#metal"},
+				"up": {"uv": [4, 5, 3, 11.5], "texture": "#metal"},
+				"down": {"uv": [5, 5, 4, 11.5], "texture": "#metal"}
+			}
+		},
+		{
+			"name": "sideRU2",
+			"from": [0.5, 5, 2],
+			"to": [1.5, 6, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 7, 7, 8], "texture": "#metal"},
+				"east": {"uv": [11, 3, 4, 4], "texture": "#metal"},
+				"south": {"uv": [7, 7, 6, 8], "texture": "#metal"},
+				"west": {"uv": [11, 4, 4, 5], "texture": "#metal"},
+				"up": {"uv": [4, 5, 3, 12], "texture": "#metal"},
+				"down": {"uv": [5, 5, 4, 12], "texture": "#metal"}
+			}
+		},
+		{
+			"name": "sideRD",
+			"from": [0.55, 6, 9],
+			"to": [1.45, 10, 10],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [1.5, 6, 9.5]},
+			"faces": {
+				"north": {"uv": [6, 6, 5, 10], "texture": "#metal"},
+				"east": {"uv": [7, 6, 6, 10], "texture": "#metal"},
+				"south": {"uv": [8, 6, 7, 10], "texture": "#metal"},
+				"west": {"uv": [9, 6, 8, 10], "texture": "#metal"},
+				"up": {"uv": [12.9, 11, 12, 12], "texture": "#metal"},
+				"down": {"uv": [13.9, 11, 13, 12], "texture": "#metal"}
+			}
+		}
+	]
+}

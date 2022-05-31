@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/podozamites_leaves",
+    "particle": "lepidodendron:blocks/podozamites_leaves"
+  }
+}

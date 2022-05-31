@@ -1,0 +1,65 @@
+{
+	"textures": {
+		"centre": "lepidodendron:blocks/silver_treefern_2_c",
+		"centreup": "lepidodendron:blocks/silver_treefern_3_c",
+		"particle": "lepidodendron:blocks/silver_treefern_2_c"
+	},
+	"ambientocclusion":false,
+	"elements":[
+
+		{"name":"n",
+			"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],
+			"faces":{
+				"east":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"e",
+			"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],
+			"faces":{
+				"north":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"nup",
+			"from":[8.0,16.0,0.0],"to":[8.0,32.0,16.0],
+			"faces":{
+				"east":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"eup",
+			"from":[0.0,16.0,8.0],"to":[16.0,32.0,8.0],
+			"faces":{
+				"north":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+		{"name":"diagn",
+			"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"east":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diage",
+			"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"north":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diagnup",
+			"from":[8.0,16.0,0.0],"to":[8.0,32.0,16.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"east":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diageup",
+			"from":[0.0,16.0,8.0],"to":[16.0,32.0,8.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"north":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centreup","uv":[0.0,0.0,16.0,16.0]}}}
+
+
+	]
+}

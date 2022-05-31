@@ -1,0 +1,25 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/alethflowerside",
+        "down": "lepidodendron:blocks/alethflowersideb",
+        "up": "lepidodendron:blocks/alethflowersidet",
+        "north": "lepidodendron:blocks/alethflowerside",
+        "south": "lepidodendron:blocks/alethflowerside",
+        "west": "lepidodendron:blocks/alethflowerside",
+        "east": "lepidodendron:blocks/alethflowerside"
+    },
+    "elements": [
+        {   "from": [ 7, 0, 7 ],
+            "to": [ 10, 4, 10 ],
+            "faces": {
+                "down":  { "uv": [ 7, 13, 10, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 7, 13, 10, 16 ], "texture": "#up" },
+                "north": { "uv": [ 7, 13, 10, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 7, 13, 10, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 7, 13, 10, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 7, 13, 10, 16 ],  "texture": "#east" }
+            }
+        }
+    ]
+}

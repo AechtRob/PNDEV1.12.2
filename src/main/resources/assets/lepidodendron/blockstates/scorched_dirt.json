@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:scorched_dirt" },
+      { "model": "lepidodendron:scorched_dirt", "y": 90 },
+      { "model": "lepidodendron:scorched_dirt", "y": 180 },
+      { "model": "lepidodendron:scorched_dirt", "y": 270 }
+    ]
+  }
+}

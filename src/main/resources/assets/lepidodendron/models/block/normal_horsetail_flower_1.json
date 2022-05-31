@@ -1,0 +1,45 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/horsetail",
+        "flower": "lepidodendron:blocks/horsetail_flower",
+        "top": "lepidodendron:blocks/horsetail",
+        "bottom": "lepidodendron:blocks/horsetail"
+    },
+    "elements": [
+         {  "from": [ -5, 0, 8 ],
+            "to": [ 6, 16, 8 ],
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 2, 0, 13, 16 ], "texture": "#flower" },
+                "south": { "uv": [ 2, 0, 13, 16 ], "texture": "#flower" }
+            }
+        },
+        {   "from": [ 1, 0, 3 ],
+            "to": [ 1, 16, 13 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 2, 0, 13, 16 ], "texture": "#flower" },
+                "west": { "uv": [ 2, 0, 13, 16 ], "texture": "#flower" }
+            }
+        },
+
+
+        {   "from": [ 8, 0, -5 ],
+            "to": [ 8, 8, 6 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 2, 0, 13, 8 ], "texture": "#top" },
+                "west": { "uv": [ 2, 0, 13, 8 ], "texture": "#top" }
+            }
+        },
+        {   "from": [ 3, 0, 1 ],
+            "to": [ 13, 8, 1 ],
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 2, 0, 13, 8 ], "texture": "#top" },
+                "south": { "uv": [ 2, 0, 13, 8 ], "texture": "#top" }
+            }
+        }
+    ]
+}

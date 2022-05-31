@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:ginkgo_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:ginkgo_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:ginkgo_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:ginkgo_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:ginkgo_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:ginkgo_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:ginkgo_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

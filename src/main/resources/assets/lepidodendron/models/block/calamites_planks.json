@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/calamites_fibre",
+    "particle": "lepidodendron:blocks/calamites_fibre"
+  }
+}

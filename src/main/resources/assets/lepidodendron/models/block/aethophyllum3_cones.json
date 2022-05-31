@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/aethophyllum3_cones",
+    "particle": "lepidodendron:blocks/aethophyllum3_cones"
+  }
+}

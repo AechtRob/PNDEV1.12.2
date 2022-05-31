@@ -1,0 +1,30 @@
+{
+	"name": "Batofasciculus",
+	"icon": "paleopedia:cambrian/cambrian_icon/batofasciculus_icon.png",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_batofasciculus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_batofasciculus",
+			"title": "Batofasciculus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ctenophora$(br)>Scleroctenophora"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/batofasciculus.png"],
+			"title": "B. ramificans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_batofasciculus",
+			"type": "text",
+			"text": "Batofasciculus is an extinct comb jelly from the Cambrian period. It reached about 5 centimeters in diameter and it probably just floated around, eating micro organisms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_batofasciculus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

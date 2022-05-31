@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:clay_red_ball"
+    },
+    {
+      "item": "lepidodendron:clay_red_ball"
+    },
+    {
+      "item": "lepidodendron:clay_red_ball"
+    },
+    {
+      "item": "lepidodendron:clay_red_ball"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:clay_red",
+    "count": 1
+  }
+}

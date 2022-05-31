@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 180 }
+    ],
+    "facing=north": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180 }
+    ],
+    "facing=south": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 180 }
+    ],
+    "facing=east": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 90 }
+    ],
+    "facing=west": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 270 }
+    ],
+    "facing=up": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 180 }
+    ],
+    "facing=down": [
+     	{"model": "lepidodendron:xenocladia_stem_corner", "x": 180, "y": 180 }
+    ]
+    
+  }
+}

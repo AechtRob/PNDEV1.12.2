@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:prototaxites_block"
+    },
+    "facing=south": {
+      "model": "lepidodendron:prototaxites_block"
+    },
+    "facing=north": {
+      "model": "lepidodendron:prototaxites_block"
+    },
+    "facing=east": {
+      "model": "lepidodendron:prototaxites_block",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:prototaxites_block",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:prototaxites_block",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:prototaxites_block",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

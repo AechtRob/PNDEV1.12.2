@@ -1,0 +1,30 @@
+{
+	"name": "Orthrozanclus",
+	"icon": "paleopedia:cambrian/cambrian_icon/orthrozanclus_icon.png",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_orthrozanclus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_orthrozanclus",
+			"title": "Orthrozanclus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Mollusca$(br2)>Halkieriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/orthrozanclus.png"],
+			"title": "O. reburrus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthrozanclus",
+			"type": "text",
+			"text": "O. reburrus is a species of Orthrozanclus with wild spines along its body. Compared to the Chengjiang version, O. elongata, whose spines were more orderly and similar length, O. reburrus' spines had long spines and a slim body that tapered towards the rear and was convex on the top."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_orthrozanclus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

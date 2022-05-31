@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tribrachidium_1"},
+      {"model": "lepidodendron:tribrachidium_2"},
+      {"model": "lepidodendron:tribrachidium_3"},
+      {"model": "lepidodendron:tribrachidium_4"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:tribrachidium_1", "x": 90},
+      {"model": "lepidodendron:tribrachidium_2", "x": 90},
+      {"model": "lepidodendron:tribrachidium_3", "x": 90},
+      {"model": "lepidodendron:tribrachidium_4", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:tribrachidium_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:tribrachidium_2", "x": 90, "y": 90},
+      {"model": "lepidodendron:tribrachidium_3", "x": 90, "y": 90},
+      {"model": "lepidodendron:tribrachidium_4", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:tribrachidium_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:tribrachidium_2", "x": 90, "y": 180},
+      {"model": "lepidodendron:tribrachidium_3", "x": 90, "y": 180},
+      {"model": "lepidodendron:tribrachidium_4", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:tribrachidium_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:tribrachidium_2", "x": 90, "y": 270},
+      {"model": "lepidodendron:tribrachidium_3", "x": 90, "y": 270},
+      {"model": "lepidodendron:tribrachidium_4", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:tribrachidium_1"},
+      {"model": "lepidodendron:tribrachidium_2"},
+      {"model": "lepidodendron:tribrachidium_3"},
+      {"model": "lepidodendron:tribrachidium_4"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:tribrachidium_1", "x": 180},
+      {"model": "lepidodendron:tribrachidium_2", "x": 180},
+      {"model": "lepidodendron:tribrachidium_3", "x": 180},
+      {"model": "lepidodendron:tribrachidium_4", "x": 180}
+    ]
+  }
+}

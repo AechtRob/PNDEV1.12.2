@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/psilophyton",
+    "particle": "lepidodendron:blocks/psilophyton"
+  }
+}

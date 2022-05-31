@@ -1,0 +1,30 @@
+{
+	"name": "Aeger",
+	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
+	"category": "lepidodendron:triassic",
+	"turnin": "lepidodendron:pf_adv_book_aeger",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aeger",
+			"title": "Aeger",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Crustacea$(br)>Malacostraca$(br)>Decapoda$(br)>Aegeridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:triassic/aegerred.png", "paleopedia:triassic/aegerbrown.png"],
+			"title": "Aeger elegans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aeger",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aeger",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

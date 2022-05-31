@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/stiff_cycad_sapling",
+    "particle": "lepidodendron:blocks/stiff_cycad_sapling"
+  }
+}

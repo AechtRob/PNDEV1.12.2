@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/anomozamites_flower",
+    "particle": "lepidodendron:blocks/anomozamites_flower"
+  }
+}

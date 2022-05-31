@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/ginkgo_planks",
+    "particle": "lepidodendron:blocks/ginkgo_planks"
+  }
+}

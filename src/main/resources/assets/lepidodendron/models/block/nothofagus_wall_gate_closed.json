@@ -1,0 +1,7 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/nothofagus_planks",
+    "particle": "lepidodendron:blocks/nothofagus_planks"
+    }
+}

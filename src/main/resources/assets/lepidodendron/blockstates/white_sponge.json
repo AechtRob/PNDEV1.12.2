@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:white_sponge"},
+      	{"model": "lepidodendron:white_sponge_small"},
+      	{"model": "lepidodendron:white_sponge_rot"},
+      	{"model": "lepidodendron:white_sponge_small_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:white_sponge_side"},
+      	{"model": "lepidodendron:white_sponge_small_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:white_sponge_side", "y": 90},
+      	{"model": "lepidodendron:white_sponge_small_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:white_sponge_side", "y": 180},
+      	{"model": "lepidodendron:white_sponge_small_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:white_sponge_side","y": 270},
+      	{"model": "lepidodendron:white_sponge_small_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:white_sponge"},
+      	{"model": "lepidodendron:white_sponge_small"},
+      	{"model": "lepidodendron:white_sponge_rot"},
+      	{"model": "lepidodendron:white_sponge_small_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:white_sponge", "x": 180},
+      	{"model": "lepidodendron:white_sponge_small", "x": 180},
+      	{"model": "lepidodendron:white_sponge_rot", "x": 180},
+      	{"model": "lepidodendron:white_sponge_small_rot", "x": 180}
+    ]
+  }
+}

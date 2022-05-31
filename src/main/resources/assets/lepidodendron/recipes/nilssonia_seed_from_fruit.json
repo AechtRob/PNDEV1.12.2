@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:nilssonia_cone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:nilssonia_seed",
+    "count": 1
+  }
+}

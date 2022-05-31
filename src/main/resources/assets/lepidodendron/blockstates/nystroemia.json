@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:nystroemia_inventory"
+    },
+    "normal": {
+    "model": "lepidodendron:nystroemia"}
+  }
+}

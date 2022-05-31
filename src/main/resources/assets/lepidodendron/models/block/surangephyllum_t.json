@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/surangephyllum_t",
+    "particle": "lepidodendron:blocks/surangephyllum_t"
+  }
+}

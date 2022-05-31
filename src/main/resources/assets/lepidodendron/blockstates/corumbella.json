@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:corumbella_1"},
+      {"model": "lepidodendron:corumbella_1", "y": 90},
+      {"model": "lepidodendron:corumbella_1", "y": 180},
+      {"model": "lepidodendron:corumbella_1", "y": 270},
+      {"model": "lepidodendron:corumbella_1"},
+      {"model": "lepidodendron:corumbella_2", "y": 90},
+      {"model": "lepidodendron:corumbella_2", "y": 180},
+      {"model": "lepidodendron:corumbella_2", "y": 270},
+      {"model": "lepidodendron:corumbella_3"},
+      {"model": "lepidodendron:corumbella_3", "y": 90},
+      {"model": "lepidodendron:corumbella_3", "y": 180},
+      {"model": "lepidodendron:corumbella_3", "y": 270}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:corumbella_side_1"},
+      {"model": "lepidodendron:corumbella_side_2"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:corumbella_side_1", "y": 90},
+      {"model": "lepidodendron:corumbella_side_2", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:corumbella_side_1", "y": 180},
+      {"model": "lepidodendron:corumbella_side_2", "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:corumbella_side_1", "y": 270},
+      {"model": "lepidodendron:corumbella_side_2", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:corumbella_1"},
+      {"model": "lepidodendron:corumbella_1", "y": 90},
+      {"model": "lepidodendron:corumbella_1", "y": 180},
+      {"model": "lepidodendron:corumbella_1", "y": 270},
+      {"model": "lepidodendron:corumbella_2"},
+      {"model": "lepidodendron:corumbella_2", "y": 90},
+      {"model": "lepidodendron:corumbella_2", "y": 180},
+      {"model": "lepidodendron:corumbella_2", "y": 270},
+      {"model": "lepidodendron:corumbella_3"},
+      {"model": "lepidodendron:corumbella_3", "y": 90},
+      {"model": "lepidodendron:corumbella_3", "y": 180},
+      {"model": "lepidodendron:corumbella_3", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:corumbella_1", "x": 180},
+      {"model": "lepidodendron:corumbella_1", "y": 90, "x": 180},
+      {"model": "lepidodendron:corumbella_1", "y": 180, "x": 180},
+      {"model": "lepidodendron:corumbella_1", "y": 270, "x": 180},
+      {"model": "lepidodendron:corumbella_2", "x": 180},
+      {"model": "lepidodendron:corumbella_2", "y": 90, "x": 180},
+      {"model": "lepidodendron:corumbella_2", "y": 180, "x": 180},
+      {"model": "lepidodendron:corumbella_2", "y": 270, "x": 180},
+      {"model": "lepidodendron:corumbella_3", "x": 180},
+      {"model": "lepidodendron:corumbella_3", "y": 90, "x": 180},
+      {"model": "lepidodendron:corumbella_3", "y": 180, "x": 180},
+      {"model": "lepidodendron:corumbella_3", "y": 270, "x": 180}
+    ]
+  }
+}

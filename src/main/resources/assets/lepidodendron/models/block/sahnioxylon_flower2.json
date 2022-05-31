@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/sahnioxylon_flower_small2",
+    "particle": "lepidodendron:blocks/sahnioxylon_flower_small2"
+  }
+}

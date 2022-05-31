@@ -1,0 +1,30 @@
+{
+	"name": "Eglonaspis",
+	"icon": "lepidodendron:eglonaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_eglonaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eglonaspis",
+			"title": "Eglonaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes (Rare)$(br2)>Heterostraci$(br)>Amphiaspidida$(br)>Eglonaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/eglonaspis.png"],
+			"title": "Eglonaspis rostrata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eglonaspis",
+			"type": "text",
+			"text": " "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eglonaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

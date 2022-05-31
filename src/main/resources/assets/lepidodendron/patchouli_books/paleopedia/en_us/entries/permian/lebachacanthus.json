@@ -1,0 +1,30 @@
+{
+	"name": "Lebachacanthus",
+	"icon": "paleopedia:permian/permian/lebachacanthus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_lebachacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lebachacanthus",
+			"title": "Lebachacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aquatic$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Xenacanthida$(br)>Diplodoselachidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/lebachacanthus.png"],
+			"title": "L. senckenbergianus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lebachacanthus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lebachacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

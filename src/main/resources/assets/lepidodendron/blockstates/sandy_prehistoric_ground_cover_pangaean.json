@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "snowy=false": [ 
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_pangaean", "weight": 2 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_light_pangaean", "weight": 3 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_pangaean", "weight": 2, "y": 90 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_light_pangaean", "weight": 3, "y": 90 }
+       ],
+        "snowy=true": [
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed_pangaean" },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed_pangaean", "y": 90 }
+        ]
+    }
+}

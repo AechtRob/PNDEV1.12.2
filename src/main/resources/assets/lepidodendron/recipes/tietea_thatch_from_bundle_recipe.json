@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:tietea_thatch_bundle"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:tietea_thatch",
+    "count": 9
+  }
+}

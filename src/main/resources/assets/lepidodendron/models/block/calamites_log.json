@@ -1,0 +1,12 @@
+{
+  "parent": "lepidodendron:block/cube_noao",
+  "textures": {
+    "down": "lepidodendron:blocks/calamites_log_end",
+    "up": "lepidodendron:blocks/calamites_log_end",
+    "north": "lepidodendron:blocks/calamites_log",
+    "east": "lepidodendron:blocks/calamites_log",
+    "south": "lepidodendron:blocks/calamites_log",
+    "west": "lepidodendron:blocks/calamites_log",
+    "particle": "lepidodendron:blocks/calamites_log_end"
+  }
+}

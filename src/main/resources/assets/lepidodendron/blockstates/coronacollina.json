@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:coronacollina"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:coronacollina"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:coronacollina", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:coronacollina", "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:coronacollina", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:coronacollina"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:coronacollina", "X": 180}
+    ]
+  }
+}

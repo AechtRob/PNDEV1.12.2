@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:calamophyton_log"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "5": {
+      "item": "lepidodendron:calamophyton_log"
+    },
+    "6": {
+      "item": "lepidodendron:calamophyton_log"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "8": {
+      "item": "lepidodendron:calamophyton_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:calamophyton_fence_thin",
+    "count": 3
+  }
+}

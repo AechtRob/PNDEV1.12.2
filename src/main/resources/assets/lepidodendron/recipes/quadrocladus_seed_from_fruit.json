@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:quadrocladus_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:quadrocladus_seed",
+    "count": 1
+  }
+}

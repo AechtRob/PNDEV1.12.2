@@ -1,0 +1,68 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sphenacodon_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_sphenacodon.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_sphenacodon.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_sphenacodon"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

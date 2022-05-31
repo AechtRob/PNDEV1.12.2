@@ -1,0 +1,30 @@
+{
+	"name": "Prosictodon",
+	"icon": "paleopedia:permian/permian_icon/prosictodon_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_prosictodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prosictodon",
+			"title": "Prosictodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/prosictodon.png"],
+			"title": "P. dubei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prosictodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prosictodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest (Burrow)"
+		}
+	]
+}

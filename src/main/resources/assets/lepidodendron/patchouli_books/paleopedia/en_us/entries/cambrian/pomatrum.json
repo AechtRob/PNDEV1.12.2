@@ -1,0 +1,30 @@
+{
+	"name": "Pomatrum",
+	"icon": "lepidodendron:pomatrum_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_pomatrum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pomatrum",
+			"title": "Pomatrum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Didazoonidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/pomatrum.png"],
+			"title": "P. ventralis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pomatrum",
+			"type": "text",
+			"text": "Pomatrum is a vetulicolian, an enigmatic animal from the early Cambrian which had a tube shaped body and a tail. They also had every gill slits on the side of its body and a mouth at the end of the body, with no eyes."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pomatrum",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

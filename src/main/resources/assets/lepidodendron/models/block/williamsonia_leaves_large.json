@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/williamsonia_leaves_large_e",
+"w":"lepidodendron:blocks/williamsonia_leaves_large_w"
+}
+}

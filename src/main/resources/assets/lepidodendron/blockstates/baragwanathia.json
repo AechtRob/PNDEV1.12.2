@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:baragwanathia_1"},
+      {"model": "lepidodendron:baragwanathia_2"},
+      {"model": "lepidodendron:baragwanathia_3"}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Acanthostomatops",
+	"icon": "paleopedia:permian/permian_icon/acanthostomatops_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_acanthostomatops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acanthostomatops",
+			"title": "Acanthostomatops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/acanthostomatops.png"],
+			"title": "A. vorax",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish/Meat$(br)$(l)Breeds with:$() Raw Fish/Meat$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

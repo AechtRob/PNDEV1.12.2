@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:phasmatocycas_shoot"}
+    ],
+
+    "inventory": {
+      "model": "lepidodendron:phasmatocycas_shoot_inventory"
+    }
+  }
+}

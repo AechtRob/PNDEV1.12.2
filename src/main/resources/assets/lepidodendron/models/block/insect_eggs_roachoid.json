@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/trigonotarbid_eggs",
+	"textures": {
+		"texture": "lepidodendron:entities/roachoid_eggs"
+	}
+}

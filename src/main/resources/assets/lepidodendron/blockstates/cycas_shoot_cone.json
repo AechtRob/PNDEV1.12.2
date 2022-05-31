@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cycas_shoot_cone"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:cycas_shoot_inventory"
+    }
+  }
+}

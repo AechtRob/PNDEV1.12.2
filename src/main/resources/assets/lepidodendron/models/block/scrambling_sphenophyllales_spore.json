@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/sphenophyllales1_c_var",
+"w":"lepidodendron:blocks/sphenophyllales1_c_var",
+"ee":"lepidodendron:blocks/sphenophyllales1_e_var",
+"ww":"lepidodendron:blocks/sphenophyllales1_w_var"
+}
+}

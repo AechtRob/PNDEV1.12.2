@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:petriellales_1"},
+      {"model": "lepidodendron:petriellales_2"},
+      {"model": "lepidodendron:petriellales_3"},
+      {"model": "lepidodendron:petriellales_4"},
+      {"model": "lepidodendron:petriellales_5"},
+      {"model": "lepidodendron:petriellales_6"},
+      {"model": "lepidodendron:petriellales_7"},
+      {"model": "lepidodendron:petriellales_8"}
+    ]
+  }
+}

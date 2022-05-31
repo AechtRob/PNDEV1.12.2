@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:devonian_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:devonian_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:devonian_portal_ns"
+    }
+  }
+}

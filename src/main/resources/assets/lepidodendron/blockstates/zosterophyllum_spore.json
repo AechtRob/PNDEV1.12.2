@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:zosterophyllum_spore1"},
+      {"model": "lepidodendron:zosterophyllum_spore2"},
+      {"model": "lepidodendron:zosterophyllum_spore3"},
+      {"model": "lepidodendron:zosterophyllum_spore1_var"},
+      {"model": "lepidodendron:zosterophyllum_spore2_var"},
+      {"model": "lepidodendron:zosterophyllum_spore3_var"}
+    ]
+  }
+}

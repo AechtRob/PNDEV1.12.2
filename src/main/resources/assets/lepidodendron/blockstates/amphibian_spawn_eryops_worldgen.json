@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amphibian_spawn_eryops"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:amphibian_spawn_eryops", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:amphibian_spawn_eryops", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:amphibian_spawn_eryops", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:amphibian_spawn_eryops", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:amphibian_spawn_eryops"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:amphibian_spawn_eryops", "x": 180}
+    ]
+  }
+}

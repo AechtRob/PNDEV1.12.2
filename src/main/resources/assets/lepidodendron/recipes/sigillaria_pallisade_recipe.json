@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:sigillaria_stem"
+    },
+    "4": {
+      "item": "lepidodendron:sigillaria_stem"
+    },
+    "5": {
+      "item": "lepidodendron:sigillaria_stem"
+    },
+    "6": {
+      "item": "lepidodendron:sigillaria_stem"
+    },
+    "7": {
+      "item": "lepidodendron:sigillaria_stem"
+    },
+    "8": {
+      "item": "lepidodendron:sigillaria_stem"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sigillaria_pallisade",
+    "count": 4
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "variants": {
+    "age=0,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=1,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=2,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=3,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=4,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=5,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=6,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=7,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=8,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=9,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=10,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=11,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=12,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=13,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=14,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+    "age=15,base=false,lower=false": {
+      "model": "lepidodendron:eremopteris"
+    },
+	"age=0,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=1,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=2,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=3,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=4,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=5,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=6,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=7,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=8,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=9,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=10,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=11,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=12,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=13,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=14,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=15,base=true,lower=false": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+
+
+    "age=0,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=1,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=2,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=3,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=4,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=5,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=6,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=7,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=8,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=9,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=10,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=11,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=12,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=13,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=14,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+    "age=15,base=true,lower=true": {
+      "model": "lepidodendron:eremopteris_base"
+    },
+
+
+    "age=0,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=1,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=2,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=3,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=4,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=5,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=6,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=7,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=8,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=9,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=10,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=11,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=12,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=13,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=14,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    },
+    "age=15,base=false,lower=true": {
+      "model": "lepidodendron:eremopteris_lower"
+    }
+  }
+}

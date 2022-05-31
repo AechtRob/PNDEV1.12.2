@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nelumbo_leaves"},
+      {"model": "lepidodendron:nelumbo_leaves_large"},
+      {"model": "lepidodendron:nelumbo_leaves_var"},
+      {"model": "lepidodendron:nelumbo_leaves_large_var"}
+    ]
+  }
+}

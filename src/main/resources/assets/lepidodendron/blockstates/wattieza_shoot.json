@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:wattieza_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:wattieza_shoot_inventory"
+    }
+  }
+}

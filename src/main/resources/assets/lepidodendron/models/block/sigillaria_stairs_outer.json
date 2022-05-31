@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/sigillaria_wood",
+    "top": "lepidodendron:blocks/sigillaria_wood",
+    "side": "lepidodendron:blocks/sigillaria_wood"
+  }
+}

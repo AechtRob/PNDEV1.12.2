@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:quadrocladus"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:quadrocladus_inventory"
+    }
+  }
+}

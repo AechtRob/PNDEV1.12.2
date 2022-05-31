@@ -1,0 +1,30 @@
+{
+	"name": "Antarcticarcinus",
+	"icon": "lepidodendron:antarcticarcinus_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_antarcticarcinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_antarcticarcinus",
+			"title": "Antarcticarcinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Cold Sea$(br2)>Euthycarcinoidea$(br)>Euthycarcinida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/antarcticarcinus.png"],
+			"title": "A. pagoda",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_antarcticarcinus",
+			"type": "text",
+			"text": "Antarcticarcinus is a euthycarcinoid from the Carboniferous period. It is distinguished by a pair of spines extending from its carapace and it could probably traverse onto land for short periods of time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_antarcticarcinus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Bobasatrania",
+	"icon": "lepidodendron:bobasatrania_raw",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_bobasatrania",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bobasatrania",
+			"title": "Bobasatrania",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Chondrostei$(br)>Bobasatraniiformes$(br)>Bobasatraniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/bobasatrania.png"],
+			"title": "B. canadensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobasatrania",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bobasatrania",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

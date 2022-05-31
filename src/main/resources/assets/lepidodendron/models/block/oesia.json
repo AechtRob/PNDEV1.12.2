@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/oesia_inventory",
+    "particle": "lepidodendron:items/oesia_inventory"
+  }
+}

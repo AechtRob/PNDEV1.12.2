@@ -1,0 +1,30 @@
+{
+	"name": "Phantaspis",
+	"icon": "lepidodendron:phantaspis_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_phantaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phantaspis",
+			"title": "Phantaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br)>Ptychopariida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/phantaspis.png"],
+			"title": "P. auritus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phantaspis",
+			"type": "text",
+			"text": "Phantaspis is a Cambrian trilobite which had a specialized cephalon that resembled a plow. Its cephalon likely helped it to disrupt the sediment in order to bring out prey for it to feed on."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phantaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

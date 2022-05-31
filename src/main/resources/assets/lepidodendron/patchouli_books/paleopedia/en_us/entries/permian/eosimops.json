@@ -1,0 +1,30 @@
+{
+	"name": "Eosimops",
+	"icon": "paleopedia:permian/permian_icon/eosimops_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_eosimops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eosimops",
+			"title": "Eosimops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/eosimops.png"],
+			"title": "Eosimops newtoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eosimops",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eosimops",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest (Burrow)"
+		}
+	]
+}

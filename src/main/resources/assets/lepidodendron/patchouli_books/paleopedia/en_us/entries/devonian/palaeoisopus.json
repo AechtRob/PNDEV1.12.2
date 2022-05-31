@@ -1,0 +1,30 @@
+{
+	"name": "Palaeoisopus",
+	"icon": "lepidodendron:palaeoisopus_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_palaeoisopus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeoisopus",
+			"title": "Palaeoisopus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Pycnogonida$(br)>Palaeoisopoda$(br)>Palaeoisopodidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/palaeoisopus.png"],
+			"title": "P. problematicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeoisopus",
+			"type": "text",
+			"text": "Palaeoisopus is a large sea spider. Each margin of its body was covered by tubercles and the head is defined by ring like segmentation. Its large eyes and oar like legs suggest a nektonic visual predator, that may have preyed on crinoids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeoisopus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

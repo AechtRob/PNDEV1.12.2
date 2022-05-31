@@ -1,0 +1,23 @@
+{
+"ambientocclusion":false,
+"textures":{
+	"particle":"lepidodendron:blocks/palaeostachya_stem_leaves",
+	"e":"lepidodendron:blocks/palaeostachya_stem_leaves",
+	"w":"lepidodendron:blocks/palaeostachya_stem_leaves"
+	},
+"elements":[
+	
+{"name":"n",
+"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],"shade":false,
+"faces":{
+"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+
+{"name":"e",
+"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}}
+
+]
+}

@@ -1,0 +1,39 @@
+{
+    "parent": "lepidodendron:block/insect_eggs_archoblattina",
+    "display": {
+        "thirdperson": {
+            "rotation": [
+                10,
+                -45,
+                170
+            ],
+            "translation": [
+                0,
+                1.5,
+                -2.75
+            ],
+            "scale": [
+                0.375,
+                0.375,
+                0.375
+            ]
+        },
+        "ground": {
+            "rotation": [
+                10,
+                -45,
+                170
+            ],
+            "translation": [
+                0,
+                6,
+                -2.75
+            ],
+            "scale": [
+                0.375,
+                0.375,
+                0.375
+            ]
+        }
+    }
+}

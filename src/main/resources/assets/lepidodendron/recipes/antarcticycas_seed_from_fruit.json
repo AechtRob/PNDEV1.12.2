@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:antarcticycas_cone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:antarcticycas_seed",
+    "count": 1
+  }
+}

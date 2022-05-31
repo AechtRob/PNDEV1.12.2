@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:stauropteris", "weight": 2 },
+      {"model": "lepidodendron:stauropteris_small"}
+    ]
+  }
+}

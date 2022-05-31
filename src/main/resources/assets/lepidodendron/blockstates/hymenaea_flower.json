@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:hymenaea_flower_up"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:hymenaea_flower", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:hymenaea_flower", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:hymenaea_flower", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:hymenaea_flower", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:hymenaea_flower_up"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:hymenaea_flower_up", "x": 180}
+    ]
+  }
+}

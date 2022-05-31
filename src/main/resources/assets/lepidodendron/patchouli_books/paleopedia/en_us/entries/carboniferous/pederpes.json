@@ -1,0 +1,30 @@
+{
+	"name": "Pederpes",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/pederpes_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_pederpes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pederpes",
+			"title": "Pederpes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Stegocephalia$(br)>Whatcheeriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/pederpes.png"],
+			"title": "Pederpes finneyae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pederpes",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pederpes",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

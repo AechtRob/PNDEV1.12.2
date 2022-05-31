@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:magnolia_slab_double"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/tietea_branch",
+        "down": "lepidodendron:blocks/tietea_branch_end",
+        "up": "lepidodendron:blocks/tietea_branch_end",
+        "north": "lepidodendron:blocks/tietea_branch",
+        "south": "lepidodendron:blocks/tietea_branch",
+        "west": "lepidodendron:blocks/tietea_branch",
+        "east": "lepidodendron:blocks/tietea_branch"
+
+    },
+    
+    "elements": [
+        {   "from": [ 6, 0, 6 ],
+            "to": [ 10, 16, 10 ],
+            "faces": {
+                "down":  { "uv": [ 6, 12, 9, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 6, 12, 9, 16 ], "texture": "#up" },
+                "north": { "uv": [ 6, 0, 9, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 6, 0, 9, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 6, 0, 9, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 6, 0, 9, 16 ],  "texture": "#east" }
+            }
+        }
+    ]
+}

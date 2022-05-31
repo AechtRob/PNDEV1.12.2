@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/ginkgo_log_end",
+    "up": "lepidodendron:blocks/ginkgo_log_end",
+    "north": "lepidodendron:blocks/ginkgo_log",
+    "east": "lepidodendron:blocks/ginkgo_log",
+    "south": "lepidodendron:blocks/ginkgo_log",
+    "west": "lepidodendron:blocks/ginkgo_log",
+    "particle": "lepidodendron:blocks/ginkgo_log_end"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Mesosaurus",
+	"icon": "paleopedia:permian/permian_icon/mesosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_mesosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mesosaurus",
+			"title": "Mesosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aquatic$(br2)>Parareptilia$(br)>Mesosauria$(br)>Mesosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/mesosaurus.png"],
+			"title": "M. tenuidens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mesosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mesosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

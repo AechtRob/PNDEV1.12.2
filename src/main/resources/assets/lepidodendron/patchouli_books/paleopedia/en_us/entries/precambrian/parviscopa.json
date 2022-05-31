@@ -1,0 +1,30 @@
+{
+	"name": "Parviscopa",
+	"icon": "lepidodendron:parviscopa",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_parviscopa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parviscopa",
+			"title": "Parviscopa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/parviscopa.png"],
+			"title": "P. bonavistensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parviscopa",
+			"type": "text",
+			"text": "Parviscopa is a frondose like animal from the ediacaran period. Like many other ediacaran biota, it probably lived in deep sea environments as sessile suspension feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parviscopa",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

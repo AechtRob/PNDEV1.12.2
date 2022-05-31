@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:glossopteris_strobilus"},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:glossopteris_strobilus", "x": 90},
+       	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:glossopteris_strobilus", "x": 90, "y": 90},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:glossopteris_strobilus", "x": 90, "y": 180},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:glossopteris_strobilus", "x": 90, "y": 270},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:glossopteris_strobilus"},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:glossopteris_strobilus", "x": 180},
+      	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 180}
+    ]
+  }
+}

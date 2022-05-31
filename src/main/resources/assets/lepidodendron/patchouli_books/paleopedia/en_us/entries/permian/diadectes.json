@@ -1,0 +1,30 @@
+{
+	"name": "Diadectes",
+	"icon": "paleopedia:permian/permian_icon/diadectes_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_diadectes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diadectes",
+			"title": "Diadectes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Diadectomorpha$(br)>Diadectidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/diadectes.png"],
+			"title": "D. sideropelicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diadectes",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diadectes",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

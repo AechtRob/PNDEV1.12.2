@@ -1,0 +1,30 @@
+{
+	"name": "Siberion",
+	"icon": "lepidodendron:siberion_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_siberion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_siberion",
+			"title": "Siberion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/siberion.png"],
+			"title": "S. lenaicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siberion",
+			"type": "text",
+			"text": "Siberion is a worm like Cambrian lobopodian organism with two grasping proboscis at the end of its head and many pairs of legs on its body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siberion",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

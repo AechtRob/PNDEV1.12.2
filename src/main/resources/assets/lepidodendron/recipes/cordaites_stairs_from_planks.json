@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:cordaites_planks"
+    },
+    "3": {
+      "item": "lepidodendron:cordaites_planks"
+    },
+    "4": {
+      "item": "lepidodendron:cordaites_planks"
+    },
+    "6": {
+      "item": "lepidodendron:cordaites_planks"
+    },
+    "7": {
+      "item": "lepidodendron:cordaites_planks"
+    },
+    "8": {
+      "item": "lepidodendron:cordaites_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:cordaites_stairs",
+    "count": 4
+  }
+}

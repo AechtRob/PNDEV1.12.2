@@ -1,0 +1,30 @@
+{
+	"name": "Marrella",
+	"icon": "lepidodendron:marrella_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_marrella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_marrella",
+			"title": "Marrella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida$(br)>Marrellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/marrella.png"],
+			"title": "M. splendens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_marrella",
+			"type": "text",
+			"text": "Marrella is a strange arthropod that is thought to have been a bottom dwelling marine scavenger. A specimen was also discovered in the act of moulting. Even though it resembled trilobites, it was no closely rlated to it than any other arthropod."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_marrella",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

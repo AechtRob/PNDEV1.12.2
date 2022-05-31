@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/podozamites_planks",
+    "particle": "lepidodendron:blocks/podozamites_planks"
+  }
+}

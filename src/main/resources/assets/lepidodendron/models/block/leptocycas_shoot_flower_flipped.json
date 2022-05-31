@@ -1,0 +1,11 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant_hanging_flipped",
+"textures":{
+"tc":"lepidodendron:blocks/leptocycas_shoot_t_flower",
+"te":"lepidodendron:blocks/leptocycas_shoot_t_e",
+"tw":"lepidodendron:blocks/leptocycas_shoot_t_w",
+"bc":"lepidodendron:blocks/leptocycas_shoot_b",
+"be":"lepidodendron:blocks/leptocycas_shoot_b_e",
+"bw":"lepidodendron:blocks/leptocycas_shoot_b_w"
+}
+}

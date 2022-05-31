@@ -1,0 +1,30 @@
+{
+	"name": "Carolowilhelmina",
+	"icon": "paleopedia:devonian/devonian_icon/carolowilhelmina_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_carolowilhelmina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_carolowilhelmina",
+			"title": "Carolowilhelmina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/carolowilhelmina.png"],
+			"title": "C. geognostica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carolowilhelmina",
+			"type": "text",
+			"text": "Carolowilhelmina is an arthrodire placoderm of the Middle Devonian. It was a long snouted pelagic fish. The environment it lived it may have been filled with algae."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_carolowilhelmina",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

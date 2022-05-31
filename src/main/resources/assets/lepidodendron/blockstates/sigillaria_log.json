@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:sigillaria_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:sigillaria_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:sigillaria_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:sigillaria_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:sigillaria_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:sigillaria_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:sigillaria_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

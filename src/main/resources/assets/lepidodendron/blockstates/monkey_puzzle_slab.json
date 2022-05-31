@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:monkey_puzzle_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:monkey_puzzle_slab_top"
+    }
+  }
+}

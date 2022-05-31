@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sulphur_vent_1"},
+      {"model": "lepidodendron:sulphur_vent_2"},
+      {"model": "lepidodendron:sulphur_vent_3"}
+    ]
+  }
+}

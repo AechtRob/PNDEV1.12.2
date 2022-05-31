@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/mirabilis_log_end",
+    "up": "lepidodendron:blocks/mirabilis_log_end",
+    "north": "lepidodendron:blocks/mirabilis_log",
+    "east": "lepidodendron:blocks/mirabilis_log",
+    "south": "lepidodendron:blocks/mirabilis_log",
+    "west": "lepidodendron:blocks/mirabilis_log",
+    "particle": "lepidodendron:blocks/mirabilis_log_end"
+  }
+}

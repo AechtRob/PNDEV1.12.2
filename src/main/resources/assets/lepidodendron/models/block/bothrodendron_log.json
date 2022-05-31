@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/bothrodendron_log_end",
+    "up": "lepidodendron:blocks/bothrodendron_log_end",
+    "north": "lepidodendron:blocks/bothrodendron_log",
+    "east": "lepidodendron:blocks/bothrodendron_log",
+    "south": "lepidodendron:blocks/bothrodendron_log",
+    "west": "lepidodendron:blocks/bothrodendron_log",
+    "particle": "lepidodendron:blocks/bothrodendron_log_end"
+  }
+}

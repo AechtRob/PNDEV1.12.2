@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:parviscopa",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:parviscopa",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:parviscopa",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:parviscopa",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:parviscopa",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:parviscopa",
+      "y": 0
+    }
+  }
+}

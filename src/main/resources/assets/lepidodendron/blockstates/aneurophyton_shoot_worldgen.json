@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:aneurophyton_shoot" },
+      {"model": "lepidodendron:aneurophyton_shoot", "y": 90 },
+      {"model": "lepidodendron:aneurophyton_shoot_flipped" },
+      {"model": "lepidodendron:aneurophyton_shoot_flipped", "y": 90 }
+      
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:aneurophyton_shoot_inventory"
+    }
+  }
+}

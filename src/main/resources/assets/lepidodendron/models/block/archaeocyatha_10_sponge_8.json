@@ -1,0 +1,35 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/archaeocyatha_10",
+		"particle": "lepidodendron:blocks/archaeocyatha_10"
+	},
+	"elements": [
+		{
+			"name": "sponge8",
+			"from": [3.99, 17.99, 6.99],
+			"to": [5.99, 18.99, 9.99],
+			"faces": {
+				"north": {"uv": [7, 0, 9, 1], "texture": "#texture"},
+				"east": {"uv": [7, 0, 10, 1], "texture": "#texture"},
+				"south": {"uv": [7, 0, 9, 1], "texture": "#texture"},
+				"west": {"uv": [7, 0, 10, 1], "texture": "#texture"},
+				"up": {"uv": [7, 0, 9, 3], "texture": "#texture"},
+				"down": {"uv": [7, 0, 9, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "sponge8",
+			"from": [1.99, 15.99, 4.99],
+			"to": [5.99, 17.99, 9.99],
+			"faces": {
+				"north": {"uv": [6, 4, 11, 6], "texture": "#texture"},
+				"east": {"uv": [6, 4, 11, 6], "texture": "#texture"},
+				"south": {"uv": [6, 4, 11, 6], "texture": "#texture"},
+				"west": {"uv": [6, 4, 11, 6], "texture": "#texture"},
+				"up": {"uv": [6, 4, 10, 9], "texture": "#texture"},
+				"down": {"uv": [6, 4, 10, 9], "texture": "#texture"}
+			}
+		}
+	]
+}

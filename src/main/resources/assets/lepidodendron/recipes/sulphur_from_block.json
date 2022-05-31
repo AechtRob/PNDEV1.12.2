@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:sulphur_block"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:sulphur",
+    "count": 9
+  }
+}

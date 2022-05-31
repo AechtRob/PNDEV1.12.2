@@ -1,0 +1,40 @@
+{
+	"textures": {
+	    "e": "lepidodendron:blocks/black_treefern_0306",
+	    "ee": "lepidodendron:blocks/black_treefern_0307",
+	    "w": "lepidodendron:blocks/black_treefern_0302",
+	    "ww": "lepidodendron:blocks/black_treefern_0301",
+	    "wdown": "lepidodendron:blocks/black_treefern_0402",
+		"edown": "lepidodendron:blocks/black_treefern_0406",
+		"eedown": "lepidodendron:blocks/black_treefern_0407",
+	    "particle": "lepidodendron:blocks/black_treefern_0306"
+	},
+	"ambientocclusion":false,
+	"elements":[		
+
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+		"faces":{
+		"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+		
+		{"name":"ee",
+		"from":[16.0,0.0,8.0],"to":[32.0,16.0,8.0],"shade":false,
+		"faces":{
+		"north":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"edown",
+		"from":[0.0,-16.0,8.0],"to":[16.0,0.0,8.0],"shade":false,
+		"faces":{
+
+		"south":{"texture":"#edown","uv":[0.0,0.0,16.0,16.0]},
+		"north":{"texture":"#wdown","uv":[0.0,0.0,16.0,16.0]}}},
+		
+		{"name":"eedown",
+		"from":[16.0,-16.0,8.0],"to":[32.0,0.0,8.0],"shade":false,
+		"faces":{
+		"south":{"texture":"#eedown","uv":[0.0,0.0,16.0,16.0]}}}
+
+]
+}

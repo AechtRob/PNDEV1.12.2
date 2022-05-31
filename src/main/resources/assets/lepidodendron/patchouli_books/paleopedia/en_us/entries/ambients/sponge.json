@@ -1,0 +1,30 @@
+{
+	"name": "Sponge",
+	"icon": "lepidodendron:blue_sponge",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_sponge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sponge",
+			"title": "Sponge",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/sponge.png"],
+			"title": "Porifera",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sponge",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sponge",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

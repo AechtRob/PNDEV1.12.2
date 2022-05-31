@@ -1,0 +1,36 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/petalocrinus",
+		"particle": "lepidodendron:blocks/petalocrinus",
+		"stem": "lepidodendron:blocks/petalocrinus_stem"
+	},
+	"elements": [
+		{
+			"from": [0, 16, -1],
+			"to": [16, 16, 15],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 16, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#texture"}
+			}
+		},
+
+		{   "from": [ 0.8, 0, 8 ],
+			"to": [ 15.2, 16, 8 ],
+			"shade": false,
+			"faces": {
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" }
+			}
+		},
+		{   "from": [ 8, 0, 0.8 ],
+			"to": [ 8, 16, 15.2 ],
+			"shade": false,
+			"faces": {
+				"west": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" }
+			}
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/sulphur_block",
+    "particle": "lepidodendron:blocks/sulphur_block"
+  }
+}

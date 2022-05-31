@@ -1,0 +1,30 @@
+{
+	"name": "Thelodus",
+	"icon": "lepidodendron:thelodus_raw",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_thelodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thelodus",
+			"title": "Thelodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Thelodonti$(br)>Thelodontiformes$(br)>Coelolepidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/thelodus.png"],
+			"title": "Thelodus parvidens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thelodus",
+			"type": "text",
+			"text": "Thelodus is a flat jawless fish from the Silurian period. Thelodus is known mainly from scales and impressions in rocks. It could have been up to a meter in length and they probably fed by sucking in prey with their mouths. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thelodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

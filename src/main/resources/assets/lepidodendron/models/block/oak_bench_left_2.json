@@ -1,0 +1,12 @@
+{
+	"parent": "lepidodendron:block/bench_left",
+	"textures": {
+		"metal": "blocks/gold_block"
+	}
+}
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/pseudobornia_3_c",
+"w":"lepidodendron:blocks/pseudobornia_3_c",
+"ee":"lepidodendron:blocks/pseudobornia_3_e",
+"ww":"lepidodendron:blocks/pseudobornia_3_w"
+}
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Cyathocrinus",
+	"icon": "lepidodendron:crinoid_cyathocrinus",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_cyathocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyathocrinus",
+			"title": "Cyathocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cyathocrinitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Cyathocrinus.png"],
+			"title": "C. multibrachiatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyathocrinus",
+			"type": "text",
+			"text": "Cyathocrinus is a crinoid which lived as a stationary intermediate level epifaunal suspension feeders. It probably ate planktonic creatures in the surrounding waters."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyathocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

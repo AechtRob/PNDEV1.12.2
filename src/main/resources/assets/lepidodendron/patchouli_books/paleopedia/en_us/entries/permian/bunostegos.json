@@ -1,0 +1,30 @@
+{
+	"name": "Bunostegos",
+	"icon": "paleopedia:permian/permian_icon/bunostegos_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_bunostegos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bunostegos",
+			"title": "Bunostegos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/bunostegos.png"],
+			"title": "B. akokanensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bunostegos",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bunostegos",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

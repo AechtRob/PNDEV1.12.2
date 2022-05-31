@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "lepidodendron:blocks/archaeopteris_door_bottom",
+        "top": "lepidodendron:blocks/archaeopteris_door_top"
+    }
+}

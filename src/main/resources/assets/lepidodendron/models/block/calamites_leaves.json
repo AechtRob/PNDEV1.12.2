@@ -1,0 +1,24 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/calamites_leaves",
+        "down": "lepidodendron:blocks/calamites_leaves",
+        "up": "lepidodendron:blocks/calamites_leaves",
+        "north": "lepidodendron:blocks/calamites_leaves",
+        "south": "lepidodendron:blocks/calamites_leaves",
+        "west": "lepidodendron:blocks/calamites_leaves",
+        "east": "lepidodendron:blocks/calamites_leaves"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

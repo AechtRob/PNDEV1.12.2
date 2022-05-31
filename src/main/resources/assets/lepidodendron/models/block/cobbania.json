@@ -1,0 +1,55 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/cobbania",
+        "texture": "lepidodendron:blocks/cobbania",
+        "roots": "lepidodendron:blocks/cobbania_roots",
+        "flower": "lepidodendron:blocks/cobbania_flower"
+    },
+    "elements": [
+        {   "from": [0, 0, 0 ],
+            "to": [ 16, 1, 16 ],
+            "faces": {
+                "up": { "uv": [ 0, 0, 16, 16 ],  "texture": "#texture" },
+                "down": { "uv": [ 16, 0, 0, 16 ],  "texture": "#texture", "cullface": "down" }
+            }
+        },
+		{   "from": [ 0.8, -16, 8 ],
+            "to": [ 15.2, 0, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#roots" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#roots" }
+            }
+        },
+        {   "from": [ 8, -16, 0.8 ],
+            "to": [ 8, 0, 15.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#roots" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#roots" }
+            }
+        },
+		{   "from": [ 4, 0, 8 ],
+            "to": [ 12, 8, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#flower" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#flower" }
+            }
+        },
+        {   "from": [ 8, 0, 4 ],
+            "to": [ 8, 8, 12 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#flower" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#flower" }
+            }
+        }
+        
+    ]
+}

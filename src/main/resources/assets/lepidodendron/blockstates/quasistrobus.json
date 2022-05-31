@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:quasistrobus_inventory"
+    },
+    "normal": {"model": "lepidodendron:quasistrobus"}
+  }
+}

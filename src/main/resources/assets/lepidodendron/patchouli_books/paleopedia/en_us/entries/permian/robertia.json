@@ -1,0 +1,30 @@
+{
+	"name": "Robertia",
+	"icon": "paleopedia:permian/permian_icon/robertia_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_robertia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_robertia",
+			"title": "Robertia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/robertia.png"],
+			"title": "R. broomiana",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_robertia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_robertia",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest (Burrow)"
+		}
+	]
+}

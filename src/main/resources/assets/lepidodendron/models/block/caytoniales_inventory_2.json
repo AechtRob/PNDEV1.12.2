@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/caytoniales_inventory_var",
+    "particle": "lepidodendron:items/caytoniales_inventory_var"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:lepidodendron_strobilus"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:lepidodendron_strobilus", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:lepidodendron_strobilus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:lepidodendron_strobilus", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:lepidodendron_strobilus", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:lepidodendron_strobilus"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:lepidodendron_strobilus", "x": 180}
+    ]
+  }
+}

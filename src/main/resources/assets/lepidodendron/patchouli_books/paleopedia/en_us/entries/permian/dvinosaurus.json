@@ -1,0 +1,30 @@
+{
+	"name": "Dvinosaurus",
+	"icon": "paleopedia:permian/permian_icon/dvinosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_dvinosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dvinosaurus",
+			"title": "Dvinosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/dvinosaurus.png"],
+			"title": "Dvinosaurus primus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

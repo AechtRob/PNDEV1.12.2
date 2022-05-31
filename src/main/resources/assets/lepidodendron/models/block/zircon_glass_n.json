@@ -1,0 +1,38 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "lepidodendron:blocks/zircon_glass",
+        "glass": "lepidodendron:blocks/zircon_glass",
+		"westface": "lepidodendron:blocks/zircon_glass_1",
+		"eastface": "lepidodendron:blocks/zircon_glass_3"
+    },
+    "elements": [
+
+        {   "_comment": "east",
+            "from": [ 15, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#glass"},
+                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastface" },
+                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#westface", "cullface": "east" }
+            }
+        },
+        {   "_comment": "west",
+            "from": [ 0, 0, 0 ],
+            "to": [ 1, 16, 16 ],
+            "faces": {
+                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#glass" },
+                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastface", "cullface": "west" },
+                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#westface" }
+            }
+        },
+        {   "_comment": "north",
+            "from": [ 0, 0, 15 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "up":    { "uv": [ 0, 0,  16, 1 ], "texture": "#glass" },
+                "north": { "uv": [ 0, 0,  16, 16 ], "texture": "#glass", "cullface": "north" },
+                "south": { "uv": [ 0, 0,  16, 16 ], "texture": "#glass" }
+            }
+        }
+    ]
+}

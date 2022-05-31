@@ -1,0 +1,110 @@
+{   "parent": "lepidodendron:block/block_noao",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/prototaxites_stem",
+        "all": "lepidodendron:blocks/prototaxites_stem",
+        "base": "lepidodendron:blocks/prototaxites"
+    },
+    "elements": [
+        {   "from": [ 7, 2, 8 ],
+            "to": [ 11, 16, 10 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 8, 2, 7 ],
+            "to": [ 10, 16, 11 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+        
+
+
+        
+        {   "from": [ 6, 0, 8 ],
+            "to": [ 12, 2, 10 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 8, 0, 6 ],
+            "to": [ 10, 2, 12 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 7, 0, 7 ],
+            "to": [ 11, 2, 11 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+
+		{
+		      "from": [
+		        0,
+		        0,
+		        0
+		      ],
+		      "to": [
+		        16,
+		        1,
+		        16
+		      ],
+		      "faces": {
+		        "down": {
+		          "uv": [
+		            0,
+		            0,
+		            16,
+		            16
+		          ],
+		          "texture": "#base",
+		          "cullface": "down"
+		        },
+		        "up": {
+		          "uv": [
+		            0,
+		            0,
+		            16,
+		            16
+		          ],
+		          "texture": "#base"
+		        }
+		      }
+		    }
+
+        
+    ]
+}

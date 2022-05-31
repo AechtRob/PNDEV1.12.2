@@ -1,0 +1,30 @@
+{
+	"textures": {
+	    "e": "lepidodendron:blocks/coniopteris_0205",
+		"w": "lepidodendron:blocks/coniopteris_0201",
+		"eu": "lepidodendron:blocks/coniopteris_0105",
+		"ed": "lepidodendron:blocks/coniopteris_0305",
+		"wd": "lepidodendron:blocks/coniopteris_0301",
+		"particle": "lepidodendron:items/coniopteris_inventory"
+	},
+	"ambientocclusion":false,
+	"elements":[		
+
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+		"faces":{
+			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"eu",
+			"from":[0.0,16.0,8.0],"to":[16.0,32.0,8.0],"shade":false,
+			"faces":{
+				"south":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"ed",
+			"from":[0.0,-16.0,8.0],"to":[16.0,0.0,8.0],"shade":false,
+			"faces":{
+				"north":{"texture":"#wd","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#ed","uv":[0.0,0.0,16.0,16.0]}}}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Parexus",
+	"icon": "lepidodendron:parexus_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_parexus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_parexus",
+			"title": "Parexus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/parexus.png"],
+			"title": "Parexus recurvus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parexus",
+			"type": "text",
+			"text": "Parexus is an acanthodian fish that has spines on each of its fins.$(br)Parexus had a large anterior dorsal fin spine. As it was quite small, it was probably preyed upon by larger predatory fish like the placoderms of its time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_parexus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

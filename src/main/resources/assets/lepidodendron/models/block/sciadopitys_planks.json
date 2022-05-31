@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/sciadopitys_wood",
+    "particle": "lepidodendron:blocks/sciadopitys_wood"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Lungmenshanaspis",
+	"icon": "lepidodendron:lungmenshanaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_lungmenshanaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lungmenshanaspis",
+			"title": "Lungmenshanaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Galeaspida$(br)>Huananaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/lungmenshanaspis.png"],
+			"title": "L. kiangyouensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lungmenshanaspis",
+			"type": "text",
+			"text": "Lungmenshanaspis is a galeaspid jawless fish from the Devonian. It, like other galeaspids, had peculiar openings on the top of its head and Lungmenshanaspis also had 2 long spines coming out from either side of its head and a long rod extending from the tip of its head outward giving it an appearance similar to a sword."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lungmenshanaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

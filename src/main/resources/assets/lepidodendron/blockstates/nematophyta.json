@@ -1,0 +1,48 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:nematophyta_1" },
+      { "model": "lepidodendron:nematophyta_2" },
+      { "model": "lepidodendron:nematophyta_3" },
+      { "model": "lepidodendron:nematophyta_4" }
+    ],
+    "facing=north": [
+      { "model": "lepidodendron:nematophyta_1", "x": 90 },
+      { "model": "lepidodendron:nematophyta_2", "x": 90 },
+      { "model": "lepidodendron:nematophyta_3", "x": 90 },
+      { "model": "lepidodendron:nematophyta_4", "x": 90 }
+    ],
+    "facing=east": [
+      { "model": "lepidodendron:nematophyta_1", "x": 90, "y": 90 },
+      { "model": "lepidodendron:nematophyta_2", "x": 90, "y": 90 },
+      { "model": "lepidodendron:nematophyta_3", "x": 90, "y": 90 },
+      { "model": "lepidodendron:nematophyta_4", "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      { "model": "lepidodendron:nematophyta_1", "x": 90, "y": 180 },
+      { "model": "lepidodendron:nematophyta_2", "x": 90, "y": 180 },
+      { "model": "lepidodendron:nematophyta_3", "x": 90, "y": 180 },
+      { "model": "lepidodendron:nematophyta_4", "x": 90, "y": 180 }
+    ],
+
+    "facing=west": [
+      { "model": "lepidodendron:nematophyta_1", "x": 90, "y": 270 },
+      { "model": "lepidodendron:nematophyta_2", "x": 90, "y": 270 },
+      { "model": "lepidodendron:nematophyta_3", "x": 90, "y": 270 },
+      { "model": "lepidodendron:nematophyta_4", "x": 90, "y": 270 }
+    ],
+
+    "facing=up": [
+      { "model": "lepidodendron:nematophyta_1" },
+      { "model": "lepidodendron:nematophyta_2" },
+      { "model": "lepidodendron:nematophyta_3" },
+      { "model": "lepidodendron:nematophyta_4" }
+    ],
+    "facing=down": [
+      { "model": "lepidodendron:nematophyta_1", "x": 180 },
+      { "model": "lepidodendron:nematophyta_2", "x": 180 },
+      { "model": "lepidodendron:nematophyta_3", "x": 180 },
+      { "model": "lepidodendron:nematophyta_4", "x": 180 }
+    ]
+  }
+}

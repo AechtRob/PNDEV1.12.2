@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:arborea",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:arborea",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:arborea",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:arborea",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:arborea",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:arborea",
+      "y": 0
+    }
+  }
+}

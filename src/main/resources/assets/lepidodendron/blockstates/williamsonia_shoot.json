@@ -1,0 +1,11 @@
+{
+  "variants": {
+  	
+    "inventory": {
+      "model": "lepidodendron:williamsonia_shoot_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:williamsonia_shoot"
+    }
+  }
+}

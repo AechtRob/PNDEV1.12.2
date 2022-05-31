@@ -1,0 +1,30 @@
+{
+	"name": "Tegopelte",
+	"icon": "lepidodendron:tegopelte_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_tegopelte",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tegopelte",
+			"title": "Tegopelte",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Trilobitomorpha$(br2)>Conciliterga"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/tegopelte.png"],
+			"title": "T. gigas",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tegopelte",
+			"type": "text",
+			"text": "Tegopelte is a soft bodied arthropod from the middle Cambrian whose trackways are also known. It was a flat animal that lived along the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tegopelte",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

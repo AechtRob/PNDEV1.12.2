@@ -1,0 +1,30 @@
+{
+	"name": "Vestinautilus",
+	"icon": "lepidodendron:shell_vestinautilus",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_vestinautilus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vestinautilus",
+			"title": "Vestinautilus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Maraine$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Nautilida$(br)>Trigonoceratoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/vestinautilus.png"],
+			"title": "V. cariniferous",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vestinautilus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vestinautilus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+		}
+	]
+}

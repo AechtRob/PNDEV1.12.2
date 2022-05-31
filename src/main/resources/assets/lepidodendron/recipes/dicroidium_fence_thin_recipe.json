@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:dicroidium_stem"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "5": {
+      "item": "lepidodendron:dicroidium_stem"
+    },
+    "6": {
+      "item": "lepidodendron:dicroidium_stem"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "8": {
+      "item": "lepidodendron:dicroidium_stem"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:dicroidium_fence_thin",
+    "count": 3
+  }
+}

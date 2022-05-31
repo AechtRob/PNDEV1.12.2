@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/silver_treefern_shoot_inventory",
+    "particle": "lepidodendron:items/silver_treefern_shoot_inventory"
+  }
+}

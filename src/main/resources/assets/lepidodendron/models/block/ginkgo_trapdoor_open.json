@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_open",
+  "textures": {
+    "texture": "lepidodendron:blocks/ginkgo_trapdoor",
+    "planktexture": "lepidodendron:blocks/ginkgo_planks",
+    "particle": "lepidodendron:blocks/ginkgo_trapdoor"
+  }
+}

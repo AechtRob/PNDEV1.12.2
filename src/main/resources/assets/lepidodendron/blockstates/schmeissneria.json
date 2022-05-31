@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:schmeissneria_inventory"
+    },
+    "var=0": {"model": "lepidodendron:schmeissneria_0"},
+    "var=1": {"model": "lepidodendron:schmeissneria_0"},
+    "var=2": {"model": "lepidodendron:schmeissneria_2"},
+    "var=3": {"model": "lepidodendron:schmeissneria_2"}
+  }
+}

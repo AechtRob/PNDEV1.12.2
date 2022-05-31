@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/cordaites_log_top",
+    "up": "lepidodendron:blocks/cordaites_log_top",
+    "north": "lepidodendron:blocks/cordaites_log",
+    "east": "lepidodendron:blocks/cordaites_log",
+    "south": "lepidodendron:blocks/cordaites_log",
+    "west": "lepidodendron:blocks/cordaites_log",
+    "particle": "lepidodendron:blocks/cordaites_log_top"
+  }
+}

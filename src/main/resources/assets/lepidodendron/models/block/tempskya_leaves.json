@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/tempskya_leaves",
+    "particle": "lepidodendron:blocks/tempskya_leaves"
+  }
+}

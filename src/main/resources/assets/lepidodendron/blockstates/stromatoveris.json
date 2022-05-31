@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:stromatoveris",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:stromatoveris",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:stromatoveris",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:stromatoveris",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:stromatoveris",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:stromatoveris",
+      "y": 0
+    }
+  }
+}

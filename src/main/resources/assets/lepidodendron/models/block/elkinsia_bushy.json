@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/elkinsia_bushy",
+    "particle": "lepidodendron:blocks/elkinsia_bushy"
+  }
+}

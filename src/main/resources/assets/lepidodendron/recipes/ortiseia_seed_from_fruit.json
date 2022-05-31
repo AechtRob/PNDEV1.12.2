@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:ortiseia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:ortiseia_seed",
+    "count": 1
+  }
+}

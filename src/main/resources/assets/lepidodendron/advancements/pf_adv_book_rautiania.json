@@ -1,0 +1,98 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rautiania_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_rautiania.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rautiania.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rautiania"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

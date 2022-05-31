@@ -1,0 +1,43 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/psaronius_leaf_c_e",
+        "e": "lepidodendron:blocks/psaronius_leaf_b_e",
+        "w": "lepidodendron:blocks/psaronius_leaf_b_w",
+        "down": "lepidodendron:blocks/psaronius_branch_end",
+        "up": "lepidodendron:blocks/psaronius_branch_end",
+        "north": "lepidodendron:blocks/psaronius_branch",
+        "south": "lepidodendron:blocks/psaronius_branch",
+        "west": "lepidodendron:blocks/psaronius_branch",
+        "east": "lepidodendron:blocks/psaronius_branch"
+    },
+    
+    "elements": [
+		{"name":"e",
+			"from":[8.0,-8.0,9.0],"to":[24.0,8.0,9.0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 9 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+		{"name":"w",
+			"from":[-8.0,-8.0,9.0],"to":[8.0,8.0,9.0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 9 ], "axis": "y", "angle": -45, "rescale": false },
+			"faces":{
+			"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"mid",
+			"from": [ 7, 0, 7 ],
+            "to": [ 9, 16, 9 ],
+            "faces": {
+                "down":  { "uv": [ 7, 14, 8, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 7, 14, 8, 16 ], "texture": "#up" },
+                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#east" }
+            }
+        }
+	
+    ]
+}

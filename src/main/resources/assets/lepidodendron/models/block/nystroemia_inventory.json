@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/nystroemia_inventory",
+    "particle": "lepidodendron:items/nystroemia_inventory"
+  }
+}

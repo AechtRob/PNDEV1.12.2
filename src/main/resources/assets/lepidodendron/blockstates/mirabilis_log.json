@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:mirabilis_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:mirabilis_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:mirabilis_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:mirabilis_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:mirabilis_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:mirabilis_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:mirabilis_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

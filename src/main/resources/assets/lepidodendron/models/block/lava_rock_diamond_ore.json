@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/lava_rock_diamond_ore",
+    "particle": "lepidodendron:blocks/lava_rock_diamond_ore"
+  }
+}

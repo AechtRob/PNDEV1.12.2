@@ -1,0 +1,30 @@
+{
+	"name": "Maclurina",
+	"icon": "lepidodendron:maclurina_item",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_maclurina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_maclurina",
+			"title": "Maclurina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Macluritoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/maclurina.png"],
+			"title": "Maclurina manitobensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maclurina",
+			"type": "text",
+			"text": "Macluria is a relatively large Ordovician to Devonian gastropod. The base of its shell is generally flat and the upper side is concave. Maclurina likely would have behaved like modern sea snails in life."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_maclurina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Hit to Pick Up"
+		}
+	]
+}

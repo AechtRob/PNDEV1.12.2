@@ -1,0 +1,86 @@
+{   "parent": "block/block",
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/araucarioxylon_fruit",
+        "all": "lepidodendron:blocks/araucarioxylon_fruit"
+    },
+    "elements": [
+		{   "from": [ 7, 11, 7 ],
+            "to": [ 10, 12, 10 ],
+            "faces": {
+                "down":  { "uv": [ 7, 7, 9, 9 ], "texture": "#all" },
+                "up":    { "uv": [ 7, 7, 9, 9 ], "texture": "#all" },
+              	"north": { "uv": [ 7, 2, 9, 2 ], "texture": "#all" },
+                "south": { "uv": [ 7, 2, 9, 2 ], "texture": "#all" },
+                "west":  { "uv": [ 7, 2, 9, 2 ], "texture": "#all" },
+                "east":  { "uv": [ 7, 2, 9, 2 ], "texture": "#all" }
+            }
+        },        
+        {   "from": [ 5, 10, 5 ],
+            "to": [ 12, 11, 12 ],
+            "faces": {
+                "down":  { "uv": [ 5, 5, 11, 11 ], "texture": "#all" },
+                "up":    { "uv": [ 5, 5, 11, 11 ], "texture": "#all" },
+                "north": { "uv": [ 5, 3, 11, 3 ], "texture": "#all" },
+                "south": { "uv": [ 5, 3, 11, 3 ], "texture": "#all" },
+                "west":  { "uv": [ 5, 3, 11, 3 ], "texture": "#all" },
+                "east":  { "uv": [ 5, 3, 11, 3 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 4, 8, 4 ],
+            "to": [ 13, 10, 13 ],
+            "faces": {
+                "down":  { "uv": [ 4, 4, 12, 12 ], "texture": "#all" },
+                "up":    { "uv": [ 4, 4, 12, 12 ], "texture": "#all" },
+                "north": { "uv": [ 4, 4, 12, 5 ], "texture": "#all" },
+                "south": { "uv": [ 4, 4, 12, 5 ], "texture": "#all" },
+                "west":  { "uv": [ 4, 4, 12, 5 ], "texture": "#all" },
+                "east":  { "uv": [ 4, 4, 12, 5 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 3, 4, 3 ],
+            "to": [ 14, 8, 14 ],
+            "faces": {
+                "down":  { "uv": [ 3, 3, 13, 13 ], "texture": "#all" },
+                "up":    { "uv": [ 3, 3, 13, 13 ], "texture": "#all" },
+                "north": { "uv": [ 3, 6, 13, 9 ], "texture": "#all" },
+                "south": { "uv": [ 3, 6, 13, 9 ], "texture": "#all" },
+                "west":  { "uv": [ 3, 6, 13, 9 ], "texture": "#all" },
+                "east":  { "uv": [ 3, 6, 13, 9 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 4, 2, 4 ],
+            "to": [ 13, 4, 13 ],
+            "faces": {
+                "down":  { "uv": [ 4, 4, 12, 12 ], "texture": "#all" },
+                "up":    { "uv": [ 4, 4, 12, 12 ], "texture": "#all" },
+                "north": { "uv": [ 4, 10, 12, 11 ], "texture": "#all" },
+                "south": { "uv": [ 4, 10, 12, 11 ], "texture": "#all" },
+                "west":  { "uv": [ 4, 10, 12, 11 ], "texture": "#all" },
+                "east":  { "uv": [ 4, 10, 12, 11 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 5, 1, 5 ],
+            "to": [ 12, 2, 12 ],
+            "faces": {
+                "down":  { "uv": [ 5, 5, 11, 11 ], "texture": "#all" },
+                "up":    { "uv": [ 5, 5, 11, 11 ], "texture": "#all" },
+                "north": { "uv": [ 5, 12, 11, 12 ], "texture": "#all" },
+                "south": { "uv": [ 5, 12, 11, 12 ], "texture": "#all" },
+                "west":  { "uv": [ 5, 12, 11, 12 ], "texture": "#all" },
+                "east":  { "uv": [ 5, 12, 11, 12 ], "texture": "#all" }
+            }
+        },
+        {   "from": [ 7, 0, 7 ],
+            "to": [ 10, 1, 10 ],
+            "faces": {
+                "down":  { "uv": [ 7, 7, 9, 13 ], "texture": "#all" },
+                "up":    { "uv": [ 7, 7, 9, 13 ], "texture": "#all" },
+                "north": { "uv": [ 7, 13, 9, 13 ], "texture": "#all" },
+                "south": { "uv": [ 7, 13, 9, 13 ], "texture": "#all" },
+                "west":  { "uv": [ 7, 13, 9, 13 ], "texture": "#all" },
+                "east":  { "uv": [ 7, 13, 9, 13 ], "texture": "#all" }
+            }
+        }
+    ]
+}

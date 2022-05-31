@@ -1,0 +1,30 @@
+{
+	"name": "Labidosaurus",
+	"icon": "paleopedia:permian/permian_icon/labidosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_labidosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_labidosaurus",
+			"title": "Labidosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Captorhinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/labidosaurus.png"],
+			"title": "L. hamatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_labidosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_labidosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

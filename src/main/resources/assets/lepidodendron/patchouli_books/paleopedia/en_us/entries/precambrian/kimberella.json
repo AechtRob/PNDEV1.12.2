@@ -1,0 +1,30 @@
+{
+	"name": "Kimberella",
+	"icon": "paleopedia:precambrian/precambrian_icon/kimberella_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_kimberella",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kimberella",
+			"title": "Kimberella",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Bilateria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/kimberella.png"],
+			"title": "K. quadrata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "Kimberella was a slug like ediacaran organism that lived in shallow waters, which were more well oxygenated. It probably grazed on microbial mats as its main source of food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kimberella",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

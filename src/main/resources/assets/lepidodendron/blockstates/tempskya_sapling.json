@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:tempskya_sapling" },
+        "stage=1": { "model": "lepidodendron:tempskya_sapling" }
+    }
+}

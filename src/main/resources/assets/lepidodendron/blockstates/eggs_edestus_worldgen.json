@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:eggs_edestus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:eggs_edestus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:eggs_edestus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:eggs_edestus", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:eggs_edestus", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:eggs_edestus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:eggs_edestus", "x": 180}
+    ]
+  }
+}

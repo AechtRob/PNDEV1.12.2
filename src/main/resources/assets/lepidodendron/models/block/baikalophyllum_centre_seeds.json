@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/baikalophyllum_c_e_seed",
+"w":"lepidodendron:blocks/baikalophyllum_c_w_seed"
+}
+}

@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:castericystis"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:castericystis", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:castericystis", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:castericystis", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:castericystis", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:castericystis"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:castericystis", "x": 180}
+    ]
+  }
+}

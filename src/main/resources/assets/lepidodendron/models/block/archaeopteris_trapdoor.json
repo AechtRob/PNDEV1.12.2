@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_bottom",
+  "textures": {
+    "texture": "lepidodendron:blocks/archaeopteris_trapdoor",
+    "planktexture": "lepidodendron:blocks/archaeopteris_planks",
+    "particle": "lepidodendron:blocks/archaeopteris_trapdoor"
+  }
+}

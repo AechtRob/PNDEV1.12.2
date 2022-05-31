@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:bjuvia_cone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:bjuvia_seed",
+    "count": 1
+  }
+}

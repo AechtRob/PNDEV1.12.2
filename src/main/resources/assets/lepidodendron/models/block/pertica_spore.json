@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/pertica_spores",
+    "particle": "lepidodendron:blocks/pertica_spores"
+  }
+}

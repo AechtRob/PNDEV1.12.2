@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:glossopterisplanks"
+    },
+    "1": {
+      "item": "lepidodendron:glossopterisplanks"
+    },
+    "2": {
+      "item": "lepidodendron:glossopterisplanks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:glossopterisslab",
+    "data": 0,
+    "count": 6
+  }
+}

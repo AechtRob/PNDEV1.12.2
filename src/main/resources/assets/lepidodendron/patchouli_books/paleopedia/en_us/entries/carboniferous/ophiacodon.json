@@ -1,0 +1,30 @@
+{
+	"name": "Ophiacodon",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/ophiacodon_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_ophiacodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ophiacodon",
+			"title": "Ophiacodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Synapsida$(br)>Ophiacodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/ophiacodon.png"],
+			"title": "Ophiacodon sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ophiacodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ophiacodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

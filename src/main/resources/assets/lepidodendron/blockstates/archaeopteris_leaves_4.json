@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:archaeopteris_leaves_4"
+    },
+    "facing=north": {
+      "model": "lepidodendron:archaeopteris_leaves_4",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:archaeopteris_leaves_4",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:archaeopteris_leaves_4",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:archaeopteris_leaves_4",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:archaeopteris_leaves_4"
+    },
+    "facing=down": {
+      "model": "lepidodendron:archaeopteris_leaves_4",
+      "x": 180
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:odontopteris_stem"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:odontopteris_stem_ne",
+    "count": 1
+  }
+}

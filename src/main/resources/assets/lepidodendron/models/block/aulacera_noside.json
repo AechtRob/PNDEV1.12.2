@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/aulacera",
+        "inside": "lepidodendron:blocks/aulacera",
+        "particle": "lepidodendron:blocks/aulacera"
+    },
+    "elements": [
+        {   "from": [ 4, 4, 4 ],
+            "to": [ 12, 12, 12 ],
+            "faces": {
+                "north": { "texture": "#inside" }
+            }
+        }
+    ]
+}

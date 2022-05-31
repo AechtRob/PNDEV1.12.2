@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:dark_orange_sponge_1"},
+      	{"model": "lepidodendron:dark_orange_sponge_2"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:dark_orange_sponge_1_side"},
+      	{"model": "lepidodendron:dark_orange_sponge_2_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:dark_orange_sponge_1_side", "y": 90},
+      	{"model": "lepidodendron:dark_orange_sponge_2_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:dark_orange_sponge_1_side", "y": 180},
+      	{"model": "lepidodendron:dark_orange_sponge_2_side", "y": 180}
+    ],
+
+    "facing=west": [
+      	{"model": "lepidodendron:dark_orange_sponge_1_side", "y": 270},
+      	{"model": "lepidodendron:dark_orange_sponge_2_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:dark_orange_sponge_1"},
+      	{"model": "lepidodendron:dark_orange_sponge_2"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:dark_orange_sponge_1", "x": 180},
+      	{"model": "lepidodendron:orange_sponge_small", "x": 180}
+    ]
+  }
+}

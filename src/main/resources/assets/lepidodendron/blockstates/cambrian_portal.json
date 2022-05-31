@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:cambrian_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:cambrian_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:cambrian_portal_ns"
+    }
+  }
+}

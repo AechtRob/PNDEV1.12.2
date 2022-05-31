@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ctenis_shoot_cone"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:ctenis_shoot_inventory"
+    }
+  }
+}

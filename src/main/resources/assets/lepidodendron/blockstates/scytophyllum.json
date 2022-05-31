@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:scytophyllum"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:scytophyllum_inventory"
+    }
+  }
+}

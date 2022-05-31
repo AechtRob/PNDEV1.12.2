@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:oesia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:oesia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:oesia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:oesia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:oesia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:oesia",
+      "y": 0
+    }
+  }
+}

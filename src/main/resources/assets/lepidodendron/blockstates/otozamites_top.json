@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+		{"model": "lepidodendron:otozamites_top", "weight": 2 },
+		{"model": "lepidodendron:otozamites_top_seeds" }
+    ]
+  }
+}

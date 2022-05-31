@@ -1,0 +1,25 @@
+{
+	"parent": "lepidodendron:block/block_noao",
+	 "textures": {
+        "particle": "lepidodendron:blocks/flowersidew",
+        "down": "lepidodendron:blocks/flowersideb",
+        "up": "lepidodendron:blocks/flowersidet",
+        "north": "lepidodendron:blocks/flowersiden",
+        "south": "lepidodendron:blocks/flowersides",
+        "west": "lepidodendron:blocks/flowersidew",
+        "east": "lepidodendron:blocks/flowersidee"
+    },
+    "elements": [
+        {   "from": [ 6, 0, 6 ],
+            "to": [ 11, 8, 11 ],
+            "faces": {
+                "down":  { "uv": [ 6, 10, 11, 15 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 6, 10, 11, 15 ], "texture": "#up" },
+                "north": { "uv": [ 6, 9, 11, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 6, 9, 11, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 6, 9, 11, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 6, 9, 11, 16 ],  "texture": "#east" }
+            }
+        }
+    ]
+}

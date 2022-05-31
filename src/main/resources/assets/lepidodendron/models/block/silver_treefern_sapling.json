@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/silver_treefern_sapling",
+    "particle": "lepidodendron:blocks/silver_treefern_sapling"
+  }
+}

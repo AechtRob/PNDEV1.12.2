@@ -1,0 +1,7 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/araucaria_wood",
+    "particle": "lepidodendron:blocks/araucaria_wood"
+    }
+}

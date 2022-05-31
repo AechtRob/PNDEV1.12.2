@@ -1,0 +1,125 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/junk",
+                    "weight": 10,
+                    "quality": -2
+                },
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/treasure",
+                    "weight": 5,
+                    "quality": 2
+                },
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/fish",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_dimension_id",
+							"dimid": 0,
+							"entity": "this"
+                    	}
+                    ]
+                },
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/fish",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_dimension_id",
+							"dimid": -1,
+							"entity": "this"
+                    	}
+                    ]
+                },
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/fish",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_dimension_id",
+							"dimid": 1,
+							"entity": "this"
+                    	}
+                    ]
+                },
+                {
+                    "type": "loot_table",
+                    "name": "minecraft:gameplay/fishing/fish",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_biomes",
+							"biomes": ["lepidodendron:devonian_ocean","lepidodendron:devonian_ocean_deep"],
+							"entity": "this"
+						}
+                    ]
+                },
+                {
+                    "type": "loot_table",
+                    "name": "lepidodendron:gameplay/fishing/fish_devonian",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_biomes",
+							"biomes": ["lepidodendron:devonian_hypersaline_sinkhole","lepidodendron:devonian_hypersaline_sinkhole_transition"],
+							"entity": "this"
+						}
+                    ]
+                },
+                {
+                  "type": "loot_table",
+                  "name": "lepidodendron:gameplay/fishing/fish_cambrian",
+                  "weight": 85,
+                  "quality": -1,
+                  "conditions": [
+                    {
+                      "condition": "lepidodendron:in_biomes",
+                      "biomes": ["lepidodendron:cambrian_sea"],
+                      "entity": "this"
+                    }
+                  ]
+                },
+                {
+                  "type": "loot_table",
+                  "name": "lepidodendron:gameplay/fishing/fish_cambrian_estuary",
+                  "weight": 85,
+                  "quality": -1,
+                  "conditions": [
+                    {
+                      "condition": "lepidodendron:in_biomes",
+                      "biomes": ["lepidodendron:cambrian_estuary", "lepidodendron:cambrian_estuary_helper", "lepidodendron:cambrian_biome"],
+                      "entity": "this"
+                    }
+                  ]
+                },
+                {
+                    "type": "loot_table",
+                    "name": "lepidodendron:gameplay/fishing/fish_cambrian",
+                    "weight": 85,
+                    "quality": -1,
+					"conditions": [
+                    	{
+							"condition": "lepidodendron:in_dimension_name",
+							"dimname": "cambrian",
+							"entity": "this"
+                    	}
+                    ]
+                }
+            ]
+        }
+    ]
+}

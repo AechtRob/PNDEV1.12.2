@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_open",
+  "textures": {
+    "texture": "lepidodendron:blocks/hironoia_trapdoor",
+    "planktexture": "lepidodendron:blocks/hironoia_planks",
+    "particle": "lepidodendron:blocks/hironoia_trapdoor"
+  }
+}

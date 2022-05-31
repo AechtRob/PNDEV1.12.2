@@ -1,0 +1,30 @@
+{
+	"name": "Lycocercus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/lycocercus_icon.png",
+	"category": "patchouli:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"title": "Lycocercus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Lycocercidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/lycocercus.png"],
+			"title": "Lycocercus pictus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

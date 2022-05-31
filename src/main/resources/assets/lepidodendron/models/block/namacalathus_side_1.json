@@ -1,0 +1,18 @@
+{
+    "parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/namacalathus_side_1",
+        "plant": "lepidodendron:blocks/namacalathus_side_1"
+    },
+    "elements": [
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant" }
+            }
+        }
+
+    ]
+}

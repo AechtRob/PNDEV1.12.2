@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:adoketophyton"},
+      {"model": "lepidodendron:adoketophyton2"},
+      {"model": "lepidodendron:adoketophyton3"},
+      {"model": "lepidodendron:adoketophyton_var"},
+      {"model": "lepidodendron:adoketophyton2_var"},
+      {"model": "lepidodendron:adoketophyton3_var"}
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/banksia_log",
+        "inside": "lepidodendron:blocks/banksia_log",
+        "particle": "lepidodendron:blocks/banksia_log"
+    },
+    "elements": [
+
+        {   "from": [ 4, 4, 0 ],
+            "to": [ 12, 12, 4 ],
+            "faces": {
+                "down":  { "texture": "#texture" },
+                "up":    { "texture": "#texture" },
+                "north": { "texture": "#texture", "cullface":"north" },
+                "west":  { "texture": "#texture" },
+                "east":  { "texture": "#texture" }
+            }
+        }
+    ]
+}

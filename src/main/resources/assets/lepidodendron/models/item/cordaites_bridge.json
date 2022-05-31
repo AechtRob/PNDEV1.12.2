@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:item/bridge_item",
+  "textures": {
+    "wood": "lepidodendron:blocks/cordaites_planks"
+  }
+}

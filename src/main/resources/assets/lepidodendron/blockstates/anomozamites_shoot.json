@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:anomozamites_shoot"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:anomozamites_shoot_inventory"
+    }
+  }
+}

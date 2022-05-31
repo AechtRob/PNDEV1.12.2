@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/liriodendronsapling",
+    "particle": "lepidodendron:blocks/liriodendronsapling"
+  }
+}

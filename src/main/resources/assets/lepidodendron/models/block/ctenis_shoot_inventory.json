@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/ctenis_shoot_inventory",
+    "particle": "lepidodendron:items/ctenis_shoot_inventory"
+  }
+}

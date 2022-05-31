@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:sphenobaiera_slab_double"
+    }
+  }
+}

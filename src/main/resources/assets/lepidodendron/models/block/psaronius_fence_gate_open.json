@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/fence_gate_open_thin",
+    "textures": {
+        "texture": "lepidodendron:blocks/psaronius_branch",
+    "particle": "lepidodendron:blocks/psaronius_branch"
+    }
+}

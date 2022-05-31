@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:ephedra"
+    },
+    "normal": [
+      {"model": "lepidodendron:ephedra", "weight": 2},
+      {"model": "lepidodendron:ephedra_large"}
+    ]
+  }
+}

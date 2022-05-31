@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:sycamore_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:sycamore_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:sycamore_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:sycamore_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:sycamore_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:sycamore_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:sycamore_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

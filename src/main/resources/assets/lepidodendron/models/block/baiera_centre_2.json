@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/baiera2_c_e",
+"w":"lepidodendron:blocks/baiera2_c_w"
+}
+}

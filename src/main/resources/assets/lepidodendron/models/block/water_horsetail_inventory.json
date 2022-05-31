@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/water_horsetail_inventory",
+    "particle": "lepidodendron:items/water_horsetail_inventory"
+  }
+}

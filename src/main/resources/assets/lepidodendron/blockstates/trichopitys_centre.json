@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:trichopitys_centre_1"},
+    "var=true": {"model": "lepidodendron:trichopitys_centre_2"}
+    }
+}

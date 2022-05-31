@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ibyka_1"},
+      {"model": "lepidodendron:ibyka_2"}
+    ]
+  }
+}

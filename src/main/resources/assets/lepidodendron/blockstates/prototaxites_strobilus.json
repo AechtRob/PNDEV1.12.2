@@ -1,0 +1,62 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:prototaxites_strobilus"
+    },
+    "attached=false,facing=north": {
+      "model": "lepidodendron:prototaxites_strobilus",
+      "x": 90
+    },
+    "attached=false,facing=east": {
+      "model": "lepidodendron:prototaxites_strobilus",
+      "x": 90,
+      "y": 90
+    },
+    "attached=false,facing=south": {
+      "model": "lepidodendron:prototaxites_strobilus",
+      "x": 90,
+      "y": 180
+    },
+    "attached=false,facing=west": {
+      "model": "lepidodendron:prototaxites_strobilus",
+      "x": 90,
+      "y": 270
+    },
+    "attached=false,facing=up": {
+      "model": "lepidodendron:prototaxites_strobilus"
+    },
+    "attached=false,facing=down": {
+      "model": "lepidodendron:prototaxites_strobilus",
+      "x": 180
+    },
+    
+
+    "attached=true,facing=north": {
+      "model": "lepidodendron:prototaxites_strobilus_attached_north",
+      "x": 90
+    },
+    "attached=true,facing=east": {
+      "model": "lepidodendron:prototaxites_strobilus_attached",
+      "x": 90,
+      "y": 90
+    },
+    "attached=true,facing=south": {
+      "model": "lepidodendron:prototaxites_strobilus_attached",
+      "x": 90,
+      "y": 180
+    },
+    "attached=true,facing=west": {
+      "model": "lepidodendron:prototaxites_strobilus_attached",
+      "x": 90,
+      "y": 270
+    },
+    "attached=true,facing=up": {
+      "model": "lepidodendron:prototaxites_strobilus_attached"
+    },
+    "attached=true,facing=down": {
+      "model": "lepidodendron:prototaxites_strobilus_attached",
+      "x": 180
+    }
+    
+  }
+}

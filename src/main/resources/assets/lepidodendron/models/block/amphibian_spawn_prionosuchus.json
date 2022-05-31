@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/amphibian_spawn",
+	"textures": {
+		"texture": "lepidodendron:blocks/mobspawn_prionosuchus"
+	}
+}

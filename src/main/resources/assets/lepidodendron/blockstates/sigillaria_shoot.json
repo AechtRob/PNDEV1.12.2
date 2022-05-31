@@ -1,0 +1,10 @@
+{
+  "variants": {
+  	"normal": {
+  		"model": "lepidodendron:sigillaria_shoot"
+    },
+    "inventory": {
+      "model": "lepidodendron:sigillaria_shoot_inventory"
+    }
+  }
+}

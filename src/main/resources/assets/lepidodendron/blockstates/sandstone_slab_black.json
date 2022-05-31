@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:sandstone_slab_black"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:sandstone_slab_black_top"
+    }
+  }
+}

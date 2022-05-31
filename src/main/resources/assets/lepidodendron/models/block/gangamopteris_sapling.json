@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/gangamopteris_sapling",
+    "particle": "lepidodendron:blocks/gangamopteris_sapling"
+  }
+}

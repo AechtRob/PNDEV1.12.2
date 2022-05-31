@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:araucarioxylon_planks_petrified_bricks"},
+      {"model": "lepidodendron:araucarioxylon_planks_petrified_bricks", "y": 90 },
+      {"model": "lepidodendron:araucarioxylon_planks_petrified_bricks", "y": 180 },
+      {"model": "lepidodendron:araucarioxylon_planks_petrified_bricks", "y": 270 }
+    ]
+  }
+}

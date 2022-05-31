@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/fence_side_thin",
+  "textures": {
+    "texture": "lepidodendron:blocks/phasmatocycas_log",
+    "particle": "lepidodendron:blocks/phasmatocycas_log"
+  }
+}

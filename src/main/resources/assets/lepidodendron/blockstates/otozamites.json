@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:otozamites_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:otozamites"
+    }
+  }
+}

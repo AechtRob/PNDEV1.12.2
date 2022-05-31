@@ -1,0 +1,30 @@
+{
+	"name": "Cyclolobus",
+	"icon": "lepidodendron:shell_cylolobus",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_cyclolobus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyclolobus",
+			"title": "Cyclolobus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Cyclolobidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/cyclolobus.png"],
+			"title": "Cyclolobus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclolobus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclolobus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+		}
+	]
+}

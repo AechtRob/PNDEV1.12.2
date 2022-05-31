@@ -1,0 +1,30 @@
+{
+	"name": "Sacabambaspis",
+	"icon": "lepidodendron:sacabambaspis_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_sacabambaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sacabambaspis",
+			"title": "Sacabambaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Pteraspidomorphi$(br)>Sacabambaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/sacabambaspis.png"],
+			"title": "S. janvieri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sacabambaspis",
+			"type": "text",
+			"text": "Sacabambaspis is a jawless fish from the Ordovician period. It lived in shallow waters and was about 25 cm long. Its head shield was made of 2 plates that met at its sides. Its eyes were close to the tip of the head and the rest of the body was covered in strap like scales behind the head shield"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sacabambaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

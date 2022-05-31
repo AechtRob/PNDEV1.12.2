@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:fungus_7" }
+    ],
+    "facing=north": [
+      { "model": "lepidodendron:fungus_7", "x": 90 }
+    ],
+    "facing=east": [
+      { "model": "lepidodendron:fungus_7", "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      { "model": "lepidodendron:fungus_7", "x": 90, "y": 180 }
+    ],
+
+    "facing=west": [
+      { "model": "lepidodendron:fungus_7", "x": 90, "y": 270 }
+    ],
+
+    "facing=up": [
+      { "model": "lepidodendron:fungus_7" }
+    ],
+    "facing=down": [
+      { "model": "lepidodendron:fungus_7", "x": 180 }
+    ]
+  }
+}

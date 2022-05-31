@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/eremopteris_c",
+"w":"lepidodendron:blocks/eremopteris_c",
+"ee":"lepidodendron:blocks/eremopteris_e",
+"ww":"lepidodendron:blocks/eremopteris_w"
+}
+}

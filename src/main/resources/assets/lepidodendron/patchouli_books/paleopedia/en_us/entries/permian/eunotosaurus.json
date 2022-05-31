@@ -1,0 +1,30 @@
+{
+	"name": "Eunotosaurus",
+	"icon": "paleopedia:permian/permian_icon/eunotosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_eunotosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eunotosaurus",
+			"title": "Eunotosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/eunotosaurus.png"],
+			"title": "E. africanus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eunotosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

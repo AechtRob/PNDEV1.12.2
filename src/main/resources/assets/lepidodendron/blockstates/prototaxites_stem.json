@@ -1,0 +1,15 @@
+{
+    "variants": {
+        "ground=false,section=0": { "model": "lepidodendron:prototaxites0" },
+        "ground=false,section=1": { "model": "lepidodendron:prototaxites1" },
+        "ground=false,section=2": { "model": "lepidodendron:prototaxites2" },
+        "ground=false,section=3": { "model": "lepidodendron:prototaxites3" },
+        "ground=false,section=4": { "model": "lepidodendron:prototaxites4" },
+        
+        "ground=true,section=0": { "model": "lepidodendron:prototaxites0_ground" },
+        "ground=true,section=1": { "model": "lepidodendron:prototaxites1_ground" },
+        "ground=true,section=2": { "model": "lepidodendron:prototaxites2_ground" },
+        "ground=true,section=3": { "model": "lepidodendron:prototaxites3_ground" },
+        "ground=true,section=4": { "model": "lepidodendron:prototaxites4_ground" }
+    }
+}

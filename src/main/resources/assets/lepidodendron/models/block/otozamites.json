@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/otozamites_b_e",
+"w":"lepidodendron:blocks/otozamites_b_w"
+}
+}

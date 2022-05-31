@@ -1,0 +1,30 @@
+{
+	"name": "Gyracanthides",
+	"icon": "lepidodendron:gyracanthides_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_gyracanthides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gyracanthides",
+			"title": "Gyracanthides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Gyracanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/gyracanthides.png"],
+			"title": "Gyracanthides murrayi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gyracanthides",
+			"type": "text",
+			"text": "Gyracanthides is an acanthodian with a long pectoral spine. It was dorsoventrally flat and had a laterally compressed caudal fin. Its scales were thin and slightly concave and it had a pair of spines on its fins."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gyracanthides",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

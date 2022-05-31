@@ -1,0 +1,30 @@
+{
+	"name": "Acanthodes",
+	"icon": "lepidodendron:acanthodes_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_acanthodes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acanthodes",
+			"title": "Acanthodes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian to Permian $(br2)$(l)Habitat:$() Oceans, Lakes in later periods$(br2)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/acanthodes.png"],
+			"title": "Acanthodes sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthodes",
+			"type": "text",
+			"text": "Acanthodes was a small early shark, sometimes dubbed a spiny shark. It was most prevalent in the Carboniferous and Early Permian. The fish inhabited the oceans and lakes and likely would have been hunted by larger predatory fish like chondrichthyans. Acanthodes possessed no teeth so it was presumed to have been a filter feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthodes",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

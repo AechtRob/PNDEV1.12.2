@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:monkey_puzzle_slab_double"
+    }
+  }
+}

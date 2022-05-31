@@ -1,0 +1,30 @@
+{
+	"name": "Mixopterus",
+	"icon": "paleopedia:ordosil/ordosil_icon/mixopterus_icon.png",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_mixopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_mixopterus",
+			"title": "Mixopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Eurypterida$(br)>Carcinosomatoidea$(br)>Mixopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/mixopterus.png"],
+			"title": "Mixopterus multispinosus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixopterus",
+			"type": "text",
+			"text": "Mixopterus is a genus of eurypterid from the late Silurian period. Its claws were laced with spines for grasping and catching prey. It also had paddle like appendages meaning it was a good swimmer. Mixopertus probably mated in a similar fashion to horseshoe crabs as there are preserved evidence of its reproductive glands. Mixopterus may have also been able to walk on the ocean floor with its middle 2 specialized limbs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_mixopterus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

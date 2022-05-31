@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:thucydia_inventory"
+    },
+    "var=false": {"model": "lepidodendron:thucydia_var"},
+    "var=true": {"model": "lepidodendron:thucydia"}
+  }
+}

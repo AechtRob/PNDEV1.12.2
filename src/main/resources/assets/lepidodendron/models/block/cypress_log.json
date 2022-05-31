@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/cypress_log_end",
+    "up": "lepidodendron:blocks/cypress_log_end",
+    "north": "lepidodendron:blocks/cypress_log",
+    "east": "lepidodendron:blocks/cypress_log",
+    "south": "lepidodendron:blocks/cypress_log",
+    "west": "lepidodendron:blocks/cypress_log",
+    "particle": "lepidodendron:blocks/cypress_log_end"
+  }
+}

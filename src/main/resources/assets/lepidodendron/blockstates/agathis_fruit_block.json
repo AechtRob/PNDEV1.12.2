@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:agathis_fruit_1"},
+      {"model": "lepidodendron:agathis_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:agathis_fruit_block_inventory"
+    }
+  }
+}

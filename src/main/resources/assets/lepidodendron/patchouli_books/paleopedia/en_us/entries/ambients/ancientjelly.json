@@ -1,0 +1,30 @@
+{
+	"name": "Ancient Jellyfish",
+	"icon": "paleopedia:ambients/ambients_icon/ancientjelly_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_ancientjelly",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ancientjelly",
+			"title": "Ancient Jellyfish",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/ancientjelly_lightpink.png", "paleopedia:ambients/ancientjelly_blue.png", "paleopedia:ambients/ancientjelly_green.png", "paleopedia:ambients/ancientjelly_pink.png"],
+			"title": "Ancient Jellyfish",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ancientjelly",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ancientjelly",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

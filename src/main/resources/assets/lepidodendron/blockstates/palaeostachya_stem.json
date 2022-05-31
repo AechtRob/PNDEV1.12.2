@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+    	{"model": "lepidodendron:palaeostachya_stem"},
+    	{"model": "lepidodendron:palaeostachya_stem_leaves"}
+    	]
+    }
+}

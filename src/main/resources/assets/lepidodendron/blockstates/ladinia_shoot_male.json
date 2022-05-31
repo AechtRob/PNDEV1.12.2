@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ladinia_shoot_male"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:ladinia_shoot_male_inventory"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/baltic_amber_bricks",
+    "top": "lepidodendron:blocks/baltic_amber_bricks",
+    "side": "lepidodendron:blocks/baltic_amber_bricks"
+  }
+}

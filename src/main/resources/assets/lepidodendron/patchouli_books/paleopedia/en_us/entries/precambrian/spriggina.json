@@ -1,0 +1,30 @@
+{
+	"name": "Spriggina",
+	"icon": "paleopedia:precambrian/precambrian_icon/spriggina_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_spriggina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spriggina",
+			"title": "Spriggina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Sprigginidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/spriggina.png"],
+			"title": "S. floundersi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spriggina",
+			"type": "text",
+			"text": "Spriggina is a bilaterian animal from the late ediacaran period. It is made up of several interlocking plates and many fused segments. It was probably predatory."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spriggina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

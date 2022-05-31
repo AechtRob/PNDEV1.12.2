@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:stick_bundle"
+    },
+    "facing=south": {
+      "model": "lepidodendron:stick_bundle"
+    },
+    "facing=north": {
+      "model": "lepidodendron:stick_bundle"
+    },
+    "facing=east": {
+      "model": "lepidodendron:stick_bundle",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:stick_bundle",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:stick_bundle",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:stick_bundle",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

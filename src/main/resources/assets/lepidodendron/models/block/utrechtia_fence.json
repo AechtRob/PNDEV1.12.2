@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/fence_side_thin",
+  "textures": {
+    "texture": "lepidodendron:blocks/utrechtia_stem",
+    "particle": "lepidodendron:blocks/utrechtia_stem"
+  }
+}

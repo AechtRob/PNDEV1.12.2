@@ -1,0 +1,24 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:bone_wand"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_silurian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_silurian.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"show_toast": true,
+	"announce_to_chat": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "enter_pf_silurian"
+		}
+	},
+  "rewards": {
+	  "experience": 20
+  }
+}

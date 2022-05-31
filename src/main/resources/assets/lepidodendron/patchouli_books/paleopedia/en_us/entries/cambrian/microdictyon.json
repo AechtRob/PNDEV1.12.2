@@ -1,0 +1,30 @@
+{
+	"name": "Microdictyon",
+	"icon": "lepidodendron:microdictyon_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_microdictyon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_microdictyon",
+			"title": "Microdictyon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Onychophora"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/microdictyon.png"],
+			"title": "M. effusum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microdictyon",
+			"type": "text",
+			"text": "Microdictyon was an armored worm like animal placed within Onychophora. It had 10 pairs of sclerites on the sides matched with a pair of tentacle like feetand its body was tube shaped."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_microdictyon",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

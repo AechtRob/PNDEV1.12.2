@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:taxodium_knee"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:taxodium_planks",
+    "count": 2
+  }
+}

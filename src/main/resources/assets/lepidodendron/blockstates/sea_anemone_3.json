@@ -1,0 +1,114 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {"model": "lepidodendron:anemone_3_tentacles", "x": 90 },
+        {"model": "lepidodendron:anemone_3_tentacles_var", "x": 90 }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base",
+        "x": 90,
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {"model": "lepidodendron:anemone_3_tentacles", "x": 90, "y": 90 },
+        {"model": "lepidodendron:anemone_3_tentacles_var", "x": 90, "y": 90 }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base",
+        "x": 90,
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+          {"model": "lepidodendron:anemone_3_tentacles", "x": 90, "y": 180 },
+          {"model": "lepidodendron:anemone_3_tentacles_var", "x": 90, "y": 180 }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base",
+        "x": 90,
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {"model": "lepidodendron:anemone_3_tentacles", "x": 90, "y": 270 },
+        {"model": "lepidodendron:anemone_3_tentacles_var", "x": 90, "y": 270 }
+      ]
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base"
+      }
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": [
+        {"model": "lepidodendron:anemone_3_tentacles" },
+        {"model": "lepidodendron:anemone_3_tentacles_var" }
+      ]
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": {
+        "model": "lepidodendron:anemone_3_base",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": [
+        {"model": "lepidodendron:anemone_3_tentacles", "x": 180 },
+        {"model": "lepidodendron:anemone_3_tentacles_var", "x": 180 }
+      ]
+    }
+  ]
+}

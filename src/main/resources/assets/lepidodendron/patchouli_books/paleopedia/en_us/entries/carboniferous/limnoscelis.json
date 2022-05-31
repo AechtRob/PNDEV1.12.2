@@ -1,0 +1,30 @@
+{
+	"name": "Limnoscelis",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/limnoscelis_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_limnoscelis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_limnoscelis",
+			"title": "Limnoscelis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Reptiliomorpha$(br)>Diadectomorpha$(br)>Limnoscelidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/limnoscelis.png"],
+			"title": "L. paludis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_limnoscelis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_limnoscelis",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

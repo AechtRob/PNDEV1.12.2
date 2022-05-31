@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/archaeopteris_planks",
+    "particle": "lepidodendron:blocks/archaeopteris_planks"
+  }
+}

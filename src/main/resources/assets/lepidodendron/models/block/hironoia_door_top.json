@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "lepidodendron:blocks/hironoia_door_bottom",
+        "top": "lepidodendron:blocks/hironoia_door_top"
+    }
+}

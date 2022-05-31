@@ -1,0 +1,143 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:jellyfish_palaeo_1_bucket"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_book_palaeojelly1.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_palaeojelly1.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ancientjelly"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

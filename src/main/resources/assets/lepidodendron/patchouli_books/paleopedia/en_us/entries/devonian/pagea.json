@@ -1,0 +1,30 @@
+{
+	"name": "Pagea",
+	"icon": "paleopedia:devonian/devonian_icon/pagea_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_pagea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pagea",
+			"title": "Pagea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Eurypterida$(br)>Stylonuroidea$(br)>Stylonuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/pagea.png"],
+			"title": "Pagea sturrocki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pagea",
+			"type": "text",
+			"text": "Pagea is a stylonurid eurypterid, that lived throughout the Devonian period. It was quite large and the third and fourth prosomal appendages had double rows of flat spines. The eyes were located closer to the center of its head carapace. As it was a stylonurine, it likely moved across the ocean floor with its pointed legs in search of food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pagea",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

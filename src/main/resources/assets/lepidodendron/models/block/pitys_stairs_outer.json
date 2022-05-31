@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/pitys_planks",
+    "top": "lepidodendron:blocks/pitys_planks",
+    "side": "lepidodendron:blocks/pitys_planks"
+  }
+}

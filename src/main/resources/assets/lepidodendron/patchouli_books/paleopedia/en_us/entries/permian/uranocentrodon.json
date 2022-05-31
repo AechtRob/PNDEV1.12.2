@@ -1,0 +1,30 @@
+{
+	"name": "Uranocentrodon",
+	"icon": "paleopedia:permian/permian_icon/uranocentrodon_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_uranocentrodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uranocentrodon",
+			"title": "Uranocentrodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Sterospondyli$(br)>Rhinesuchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/uranocentrodon.png"],
+			"title": "U. senekalensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uranocentrodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uranocentrodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

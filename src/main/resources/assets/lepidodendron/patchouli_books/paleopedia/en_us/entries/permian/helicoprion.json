@@ -1,0 +1,30 @@
+{
+	"name": "Helicoprion",
+	"icon": "paleopedia:permian/permian_icon/helicoprion_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_helicoprion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helicoprion",
+			"title": "Helicoprion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Eugeneodontida$(br)>Helicoprionidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/helicoprion.png"],
+			"title": "H. bessonowi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helicoprion",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helicoprion",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

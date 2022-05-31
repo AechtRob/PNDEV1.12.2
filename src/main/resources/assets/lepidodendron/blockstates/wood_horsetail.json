@@ -1,0 +1,53 @@
+{
+  "variants": {
+  	"inventory": [
+      {"model": "lepidodendron:normal_horsetail_inventory"}
+  		],
+    "normal": [
+      {"model": "lepidodendron:normal_horsetail_1"},
+      {"model": "lepidodendron:normal_horsetail_1", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_1", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_1", "y": 270},
+
+      {"model": "lepidodendron:normal_horsetail_2"},
+      {"model": "lepidodendron:normal_horsetail_2", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_2", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_2", "y": 270},
+
+      {"model": "lepidodendron:normal_horsetail_3"},
+      {"model": "lepidodendron:normal_horsetail_3", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_3", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_3", "y": 270},
+
+      {"model": "lepidodendron:normal_horsetail_4"},
+      {"model": "lepidodendron:normal_horsetail_4", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_4", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_4", "y": 270},
+
+      {"model": "lepidodendron:normal_horsetail_5", "weight": 6 },
+      
+      {"model": "lepidodendron:normal_horsetail_flower_1"},
+      {"model": "lepidodendron:normal_horsetail_flower_1", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_flower_1", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_flower_1", "y": 270},
+      
+      {"model": "lepidodendron:normal_horsetail_flower_2"},
+      {"model": "lepidodendron:normal_horsetail_flower_2", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_flower_2", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_flower_2", "y": 270},
+      
+      {"model": "lepidodendron:normal_horsetail_flower_3"},
+      {"model": "lepidodendron:normal_horsetail_flower_3", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_flower_3", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_flower_3", "y": 270},
+      
+      {"model": "lepidodendron:normal_horsetail_flower_4"},
+      {"model": "lepidodendron:normal_horsetail_flower_4", "y": 90},
+      {"model": "lepidodendron:normal_horsetail_flower_4", "y": 180},
+      {"model": "lepidodendron:normal_horsetail_flower_4", "y": 270},
+
+      {"model": "lepidodendron:normal_horsetail_flower_5", "weight": 6 }
+      
+    ]
+  }
+}

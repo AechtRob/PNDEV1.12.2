@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:redwood_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:redwood_slab_top"
+    }
+  }
+}

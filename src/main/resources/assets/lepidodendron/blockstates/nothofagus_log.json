@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:nothofagus_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:nothofagus_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:nothofagus_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:nothofagus_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:nothofagus_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:nothofagus_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:nothofagus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

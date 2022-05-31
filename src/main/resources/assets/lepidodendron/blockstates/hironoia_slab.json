@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:hironoia_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:hironoia_slab_top"
+    }
+  }
+}

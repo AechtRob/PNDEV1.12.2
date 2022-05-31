@@ -1,0 +1,30 @@
+{
+	"name": "Yohoia",
+	"icon": "lepidodendron:yohoia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_yohoia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yohoia",
+			"title": "Yohoia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Megacheira$(br2)>Yohoiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/yohoia.png"],
+			"title": "Y. tenuis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yohoia",
+			"type": "text",
+			"text": "Yohoia is a tiny megacheiran from the middle Cambrian period which is characterized by a segmented body with frontal grasping appendages and many rows of legs on its body. It was suggested to be a mainly benthic feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yohoia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:podocarp_slab_double"
+    }
+  }
+}

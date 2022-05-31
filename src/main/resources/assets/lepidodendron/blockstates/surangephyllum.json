@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:surangephyllum_inventory"
+    },
+    "var=false": {"model": "lepidodendron:surangephyllum"},
+    "var=true": {"model": "lepidodendron:surangephyllum_var"}
+  }
+}

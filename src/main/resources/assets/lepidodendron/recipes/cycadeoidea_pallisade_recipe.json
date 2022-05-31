@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:cycadeoidea_log"
+    },
+    "4": {
+      "item": "lepidodendron:cycadeoidea_log"
+    },
+    "5": {
+      "item": "lepidodendron:cycadeoidea_log"
+    },
+    "6": {
+      "item": "lepidodendron:cycadeoidea_log"
+    },
+    "7": {
+      "item": "lepidodendron:cycadeoidea_log"
+    },
+    "8": {
+      "item": "lepidodendron:cycadeoidea_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:cycadeoidea_pallisade",
+    "count": 4
+  }
+}

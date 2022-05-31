@@ -1,0 +1,54 @@
+{
+"ambientocclusion":false,
+"textures":{
+	"particle":"lepidodendron:items/neocalamites_inventory",
+	"w": "lepidodendron:blocks/neocalamites_top_b_w",
+	"e": "lepidodendron:blocks/neocalamites_top_b_e",
+	"wt": "lepidodendron:blocks/neocalamites_top_t_w",
+	"et": "lepidodendron:blocks/neocalamites_top_t_e"
+	},
+"elements":[
+{"name":"n",
+"from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
+"faces":{
+"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"e",
+"from":[8.0,0.0,8.0],"to":[24.0,16.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"s",
+"from":[8.0,0.0,8.0],"to":[8.0,16.0,24.0],"shade":false,
+"faces":{
+"east":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"w",
+"from":[-8.0,0.0,8.0],"to":[8.0,16.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+
+{"name":"nt",
+"from":[8.0,16.0,-8.0],"to":[8.0,32.0,8.0],"shade":false,
+"faces":{
+"east":{"texture":"#et","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#wt","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"et",
+"from":[8.0,16.0,8.0],"to":[24.0,32.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#wt","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#et","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"st",
+"from":[8.0,16.0,8.0],"to":[8.0,32.0,24.0],"shade":false,
+"faces":{
+"east":{"texture":"#wt","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#et","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"wt",
+"from":[-8.0,16.0,8.0],"to":[8.0,32.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#et","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#wt","uv":[0.0,0.0,16.0,16.0]}}}
+
+]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Inostrancevia",
+	"icon": "paleopedia:permian/permian_icon/inostrancevia_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_inostrancevia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_inostrancevia",
+			"title": "Inostrancevia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/inostrancevia.png"],
+			"title": "I. alexandri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inostrancevia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inostrancevia",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

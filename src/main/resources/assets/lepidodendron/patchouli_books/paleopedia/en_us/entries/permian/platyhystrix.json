@@ -1,0 +1,30 @@
+{
+	"name": "Platyhystrix",
+	"icon": "paleopedia:permian/permian_icon/platyhystrix_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_platyhystrix",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_platyhystrix",
+			"title": "Platyhystrix",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/platyhystrix.png"],
+			"title": "P. rugosus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platyhystrix",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platyhystrix",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

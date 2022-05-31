@@ -1,0 +1,93 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rhizodus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_rhizodus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rhizodus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rhizodus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

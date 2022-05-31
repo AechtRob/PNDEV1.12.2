@@ -1,0 +1,27 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/fenestella_3",
+        "particle": "lepidodendron:blocks/fenestella_3"
+    },
+    "elements": [
+        {
+            "from": [7, -3, 0],
+            "to": [7, 13, 16],
+            "rotation": {"angle": 22.5, "axis": "z", "origin": [0, 0, 0]},
+            "faces": {
+                "east": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+                "west": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+            }
+        },
+        {
+            "from": [7, 3, 0],
+            "to": [7, 19, 16],
+            "rotation": {"angle": -22.5, "axis": "z", "origin": [0, 0, 0]},
+            "faces": {
+                "east": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+                "west": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+            }
+        }
+    ]
+}

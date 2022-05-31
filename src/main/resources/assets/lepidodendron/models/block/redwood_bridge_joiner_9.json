@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "lepidodendron:blocks/redwood_planks",
+    "metal": "blocks/lapis_block"
+  }
+}
+
+

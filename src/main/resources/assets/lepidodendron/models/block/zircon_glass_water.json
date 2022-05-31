@@ -1,0 +1,17 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"water": "blocks/water_still"
+	},
+	"elements": [
+		{
+			"name": "water",
+			"from": [0, 0, 0.001],
+			"to": [16, 16, 0.001],
+			"color": 0,
+			"faces": {
+				"south": {"uv": [0, 0, 16, 16], "texture": "#water", "tintindex": 0}
+			}
+		}
+	]
+}

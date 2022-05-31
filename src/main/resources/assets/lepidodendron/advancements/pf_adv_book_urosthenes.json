@@ -1,0 +1,39 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:urosthenes_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_urosthenes.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_urosthenes.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_urosthenes"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

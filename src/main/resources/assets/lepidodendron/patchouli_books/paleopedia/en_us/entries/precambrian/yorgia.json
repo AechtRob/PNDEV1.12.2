@@ -1,0 +1,30 @@
+{
+	"name": "Yorgia",
+	"icon": "paleopedia:precambrian/precambrian_icon/yorgia_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_yorgia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yorgia",
+			"title": "Yorgia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Proarticulata$(br)>Cephalozoa$(br)>Yorgiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/yorgia.png"],
+			"title": "Yorgia waggoneri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yorgia",
+			"type": "text",
+			"text": "Yorgia is a disc like ediacaran organism with no appendages and several segments to its body. It moved along the sea floor as evidenced by trace fossils associated with Yorgia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yorgia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

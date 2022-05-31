@@ -1,0 +1,30 @@
+{
+	"name": "Cambroraster",
+	"icon": "lepidodendron:cambroraster_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_cambroraster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cambroraster",
+			"title": "Cambroraster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/cambroraster.png"],
+			"title": "Cambroraster falcatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cambroraster",
+			"type": "text",
+			"text": "Cambroraster is a genus of hurdiid radiodont describled in 2019. It was relatively large, up to 30 cm long and it had a horseshoe shaped dorsal carapace. It likely fed by sifting through the sediment with its oral cone and frontal appendages, with had hooked spines."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cambroraster",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/anomozamites_shoot_inventory",
+    "particle": "lepidodendron:items/anomozamites_shoot_inventory"
+  }
+}

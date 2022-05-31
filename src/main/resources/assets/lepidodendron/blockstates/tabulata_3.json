@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:tabulata_3"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:tabulata_3_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:tabulata_3_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:tabulata_3_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:tabulata_3_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:tabulata_3"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:tabulata_3", "x": 180}
+    ]
+  }
+}

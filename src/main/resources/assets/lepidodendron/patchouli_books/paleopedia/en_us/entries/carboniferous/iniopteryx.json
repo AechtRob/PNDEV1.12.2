@@ -1,0 +1,30 @@
+{
+	"name": "Iniopteryx",
+	"icon": "lepidodendron:iniopteryx_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_iniopteryx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_iniopteryx",
+			"title": "Iniopteryx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Iniopterygiformes$(br)>Iniopterygidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/iniopteryx.png"],
+			"title": "Iniopteryx rushlaui",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iniopteryx",
+			"type": "text",
+			"text": "Iniopteryx is a cartilaginous fish from the Carboniferous that bore some similarities to flying fish though it is uncertain whether they could actually leap out of the water. It had specialized spines and fins which resembled wings, though it could have been a benthic feeder instead of a gliding fish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_iniopteryx",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

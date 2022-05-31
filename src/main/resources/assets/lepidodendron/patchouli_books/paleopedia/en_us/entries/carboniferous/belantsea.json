@@ -1,0 +1,30 @@
+{
+	"name": "Belantsea",
+	"icon": "lepidodendron:belantsea_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_belantsea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_belantsea",
+			"title": "Belantsea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Belantseidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/belantsea.png"],
+			"title": "Belantsea montana",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belantsea",
+			"type": "text",
+			"text": "Belantsea is a petalodontid cartilaginous fish from the Carboniferous. It had a leaf shaped body and triangular teeth which it used to eat bryozoans, sponges and crinoids. It was likely a slow swimmer but could had great maneuverability."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_belantsea",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

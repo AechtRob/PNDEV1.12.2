@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/bristlecone_log_end",
+    "up": "lepidodendron:blocks/bristlecone_log_end",
+    "north": "lepidodendron:blocks/bristlecone_log",
+    "east": "lepidodendron:blocks/bristlecone_log",
+    "south": "lepidodendron:blocks/bristlecone_log",
+    "west": "lepidodendron:blocks/bristlecone_log",
+    "particle": "lepidodendron:blocks/bristlecone_log_end"
+  }
+}

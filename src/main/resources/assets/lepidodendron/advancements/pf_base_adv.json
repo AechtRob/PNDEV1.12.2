@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "lepidodendron:sapling"
+        },
+        "title": {
+            "translate": "advancements.pf_base.title"
+        },
+        "description": {
+            "translate": "advancements.pf_base.description"
+        },
+        "background": "lepidodendron:textures/blocks/calamites_fibre.png",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden" : false
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

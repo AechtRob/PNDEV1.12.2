@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/lesleya_inventory",
+    "particle": "lepidodendron:items/lesleya_inventory"
+  }
+}

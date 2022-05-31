@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1", "x": 180, "y": 180 }
+    ],
+    "facing=north": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1", "x": 180 }
+    ],
+    "facing=south": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1", "x": 180, "y": 180 }
+    ],
+    "facing=east": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1", "x": 180, "y": 90 }
+    ],
+    "facing=west": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1", "x": 180, "y": 270 }
+    ],
+    "facing=up": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1" }
+    ],
+    "facing=down": [
+     	{"model": "lepidodendron:nilssoniocladus_stem_corner_1" }
+    ]
+    
+  }
+}

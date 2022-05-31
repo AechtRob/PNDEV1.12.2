@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:gangamopteris_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:gangamopteris_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:gangamopteris_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:gangamopteris_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:gangamopteris_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:gangamopteris_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:gangamopteris_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

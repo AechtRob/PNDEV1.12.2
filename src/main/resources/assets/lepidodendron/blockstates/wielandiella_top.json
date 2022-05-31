@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+		{"model": "lepidodendron:wielandiella_top", "weight": 2 },
+		{"model": "lepidodendron:wielandiella_top_seeds" },
+		{"model": "lepidodendron:wielandiella_top_seeds_var" }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus"},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 90},
+       	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 90, "y": 90},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 90, "y": 180},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 90, "y": 270},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus"},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 180},
+      	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 180}
+    ]
+  }
+}

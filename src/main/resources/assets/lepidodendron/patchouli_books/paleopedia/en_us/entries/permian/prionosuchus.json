@@ -1,0 +1,30 @@
+{
+	"name": "Prionosuchus",
+	"icon": "paleopedia:permian/permian_icon/prionosuchus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_prionosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_prionosuchus",
+			"title": "Prionosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Archegosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/prionosuchus.png"],
+			"title": "P. plummeri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prionosuchus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_prionosuchus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

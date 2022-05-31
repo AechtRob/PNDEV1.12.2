@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cooksonia1"},
+      {"model": "lepidodendron:cooksonia2"},
+      {"model": "lepidodendron:cooksonia3"},
+      {"model": "lepidodendron:cooksonia1_var"},
+      {"model": "lepidodendron:cooksonia2_var"},
+      {"model": "lepidodendron:cooksonia3_var"}
+    ]
+  }
+}

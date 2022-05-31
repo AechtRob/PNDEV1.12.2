@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/dicksonia_log",
+        "inside": "lepidodendron:blocks/dicksonia_log",
+        "particle": "lepidodendron:blocks/dicksonia_log"
+    },
+    "elements": [
+        {   "from": [ 4, 4, 4 ],
+            "to": [ 12, 12, 12 ],
+            "faces": {
+                "north": { "texture": "#inside" }
+            }
+        }
+    ]
+}

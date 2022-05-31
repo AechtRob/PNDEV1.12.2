@@ -1,0 +1,30 @@
+{
+	"name": "Cheirurus",
+	"icon": "lepidodendron:cheirurus_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_cheirurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cheirurus",
+			"title": "Cheirurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/cheirurus.png"],
+			"title": "Cheirurus ingricus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cheirurus",
+			"type": "text",
+			"text": "Cheirurus is a genus of trilobite from that lived mainly in marine environments. It became extinct in the Middle Devonian and probably fed on small sedimentary animals. Its name comes from the Greek cheir(hand) and oura(tail)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cheirurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

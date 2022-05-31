@@ -1,0 +1,30 @@
+{
+	"name": "Claudiosaurus",
+	"icon": "paleopedia:permian/permian_icon/claudiosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_claudiosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_claudiosaurus",
+			"title": "Claudiosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Eosuchia$(br)>Claudiosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/claudiosaurus.png"],
+			"title": "C. germaini",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_claudiosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_claudiosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

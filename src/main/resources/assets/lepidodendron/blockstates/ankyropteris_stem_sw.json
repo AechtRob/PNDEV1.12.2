@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner" }
+    ],
+    "facing=north,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner", "y": 180 }
+    ],
+    "facing=south,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner" }
+    ],
+    "facing=east,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner", "y": 270 }
+    ],
+    "facing=west,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner", "y": 90 }
+    ],
+    "facing=up,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner" }
+    ],
+    "facing=down,joined=false": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner" }
+    ],
+
+    "facing=north,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join", "y": 180 }
+    ],
+    "facing=south,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join" }
+    ],
+    "facing=east,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join", "y": 270 }
+    ],
+    "facing=west,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join", "y": 90 }
+    ],
+    "facing=up,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join" }
+    ],
+    "facing=down,joined=true": [
+     	{"model": "lepidodendron:ankyropteris_corner_join" }
+    ]
+    
+  }
+}

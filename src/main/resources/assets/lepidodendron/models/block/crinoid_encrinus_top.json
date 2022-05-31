@@ -1,0 +1,22 @@
+{
+"ambientocclusion":false,
+"textures":{
+	"particle":"lepidodendron:items/encrinus_inventory",
+	"c": "lepidodendron:blocks/encrinus"
+	},
+"elements":[
+	
+		{"name":"n",
+		"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],"shade":false,
+		"faces":{
+		"east":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]},
+		"west":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+		"faces":{
+		"north":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]}}}
+
+	]
+}

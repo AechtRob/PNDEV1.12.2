@@ -1,0 +1,30 @@
+{
+	"name": "Kalbarria",
+	"icon": "lepidodendron:kalbarria_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_kalbarria",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kalbarria",
+			"title": "Kalbarria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Freshwater$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/kalbarria.png"],
+			"title": "Kalbarria brimmellae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalbarria",
+			"type": "text",
+			"text": "Kalbarria is a Euthycarcinoid, an early arthropod that lived during the Ordovician period. Kalbarria was found in freshwater deposits, suggesting a freshwater lifestyle, and it probably came onto land to lay eggs like modern horseshoe crabs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kalbarria",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

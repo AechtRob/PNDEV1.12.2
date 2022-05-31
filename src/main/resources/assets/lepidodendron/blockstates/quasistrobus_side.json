@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "side=0": {
+      "model": "lepidodendron:quasistrobus_corner"
+    },
+    "side=1": {
+      "model": "lepidodendron:quasistrobus_side"
+    },
+    "side=2": {
+      "model": "lepidodendron:quasistrobus_corner", "y": 90
+    },
+    "side=3": {
+      "model": "lepidodendron:quasistrobus_side", "y": 270
+    },
+    "side=4": {
+      "model": "lepidodendron:quasistrobus_side", "y": 90
+    },
+    "side=5": {
+      "model": "lepidodendron:quasistrobus_corner", "y": 270
+    },
+    "side=6": {
+      "model": "lepidodendron:quasistrobus_side", "y": 180
+    },
+    "side=7": {
+      "model": "lepidodendron:quasistrobus_corner", "y": 180
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Vivaxosaurus",
+	"icon": "paleopedia:permian/permian_icon/vivaxosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_vivaxosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_vivaxosaurus",
+			"title": "Vivaxosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/vivaxosaurus.png"],
+			"title": "Vivaxosaurus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vivaxosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vivaxosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

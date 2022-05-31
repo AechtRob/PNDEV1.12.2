@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:rotten_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:rotten_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:rotten_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:rotten_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:rotten_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:rotten_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:rotten_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

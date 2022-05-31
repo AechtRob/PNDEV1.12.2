@@ -1,0 +1,30 @@
+{
+	"name": "Kokomopterus",
+	"icon": "paleopedia:ordosil/ordosil_icon/kokomopterus_icon.png",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_kokomopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kokomopterus",
+			"title": "Kokomopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Eurypterida$(br)>Kokomopteroidea$(br)>Kokomopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/kokomopterus.png"],
+			"title": "K. longicaudatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kokomopterus",
+			"type": "text",
+			"text": "Kokomopterus is a eurypterid from Indiana, named for the city of Kokomo. Like stylonurids, it lacked the paddle shaped appendages and instead had pointed appendages, better suited for walking than swimming. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kokomopterus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:todites_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:todites_shoot_inventory"
+    }
+  }
+}

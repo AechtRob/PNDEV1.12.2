@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/guangdedendron_top_nospore_e",
+"w":"lepidodendron:blocks/guangdedendron_top_nospore_w"
+}
+}

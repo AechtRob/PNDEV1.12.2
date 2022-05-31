@@ -1,0 +1,22 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/archaeocyatha_9",
+		"particle": "lepidodendron:blocks/archaeocyatha_9"
+	},
+	"elements": [
+		{
+			"name": "sponge10",
+			"from": [-2.99, 0, 7.99],
+			"to": [0, 2.02, 12.99],
+			"faces": {
+				"north": {"uv": [0, 0, 5, 2], "texture": "#texture"},
+				"east": {"uv": [0, 0, 5, 2], "texture": "#texture"},
+				"south": {"uv": [0, 0, 5, 2], "texture": "#texture"},
+				"west": {"uv": [0, 0, 5, 2], "texture": "#texture"},
+				"up": {"uv": [12, 6, 15, 11], "texture": "#texture"},
+				"down": {"uv": [4, 10, 7, 15], "texture": "#texture"}
+			}
+		}
+	]
+}

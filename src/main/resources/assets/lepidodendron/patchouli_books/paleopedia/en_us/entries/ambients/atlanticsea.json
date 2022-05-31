@@ -1,0 +1,30 @@
+{
+	"name": "Atlantic Sea Nettle",
+	"icon": "paleopedia:ambients/ambient_icon/atlanticsea_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish7",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish7",
+			"title": "Atlantic Sea Nettle",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_atlantic.png"],
+			"title": "C. quinquecirrha",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish7",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish7",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

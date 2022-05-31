@@ -1,0 +1,20 @@
+{   "parent": "block/block",
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/calamophyton_log",
+        "particle": "lepidodendron:blocks/calamophyton_log"
+    },
+    "elements": [
+        {   "from": [ 5, 13, 5 ],
+            "to": [ 11, 15, 11 ],
+            "faces": {
+                "up": { "uv": [ 5, 5, 11, 11 ], "texture": "#texture" },
+                "down": { "uv": [ 5, 5, 11, 11 ], "texture": "#texture" },
+                "north": { "uv": [ 5, 14, 11, 16 ], "texture": "#texture" },
+                "south": { "uv": [ 5, 14, 11, 16 ], "texture": "#texture" },
+                "west":  { "uv": [ 5, 14, 11, 16 ], "texture": "#texture" },
+                "east":  { "uv": [ 5, 14, 11, 16 ], "texture": "#texture" }
+            }
+        }
+    ]
+}

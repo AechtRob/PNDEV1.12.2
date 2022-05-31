@@ -1,0 +1,30 @@
+{
+	"name": "Xenusion",
+	"icon": "lepidodendron:xenusion_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_xenusion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xenusion",
+			"title": "Xenusion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Xenusia$(br2)>Protonychophora$(br2)>Xenusiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/xenusion.png"],
+			"title": "X. auerswaldae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenusion",
+			"type": "text",
+			"text": "Xenusion is a worm like lobopodian from the early Cambrian which had spines on its tube like body and pairs of annulated legs similar to modern onychophorans."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenusion",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

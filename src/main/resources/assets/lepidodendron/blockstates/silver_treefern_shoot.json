@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:silver_treefern_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:silver_treefern_shoot_inventory"
+    }
+  }
+}

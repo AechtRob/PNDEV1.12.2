@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/fence_gate_closed_thin",
+    "textures": {
+        "texture": "lepidodendron:blocks/dicroidium_stem",
+    "particle": "lepidodendron:blocks/dicroidium_stem"
+    }
+}

@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/sigillaria_shoot_b_e",
+"w":"lepidodendron:blocks/sigillaria_shoot_b_w"
+}
+}

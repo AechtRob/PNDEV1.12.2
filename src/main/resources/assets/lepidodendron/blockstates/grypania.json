@@ -1,0 +1,28 @@
+{
+	"variants": {
+		"facing=north": [
+			{"model": "lepidodendron:grypania", "y": 180},
+			{"model": "lepidodendron:grypania_var", "y": 180}
+		],
+		"facing=south": [
+			{"model": "lepidodendron:grypania"},
+			{"model": "lepidodendron:grypania_var"}
+		],
+		"facing=west": [
+			{"model": "lepidodendron:grypania", "y": -270},
+			{"model": "lepidodendron:grypania_var", "y": -270}
+		],
+		"facing=east": [
+			{"model": "lepidodendron:grypania", "y": -90},
+			{"model": "lepidodendron:grypania_var", "y": -90}
+		],
+		"facing=up": [
+			{"model": "lepidodendron:grypania"},
+			{"model": "lepidodendron:grypania_var"}
+		],
+		"facing=down": [
+			{"model": "lepidodendron:grypania"},
+			{"model": "lepidodendron:grypania_var"}
+		]
+	}
+}

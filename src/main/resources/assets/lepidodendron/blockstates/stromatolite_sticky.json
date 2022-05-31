@@ -1,0 +1,26 @@
+{
+	"multipart" : [
+		{	"when": { "topshoot": "true" },
+			"apply": {"model": "lepidodendron:stromatolite"}
+		},
+		{	"when": { "topshoot": "true", "north": "false" },
+			"apply": {"model": "lepidodendron:stromatolite_edge"}
+		},
+		{	"when": { "topshoot": "true", "east": "false" },
+			"apply": {"model": "lepidodendron:stromatolite_edge", "y": 90 }
+		},
+		{	"when": { "topshoot": "true", "south": "false" },
+			"apply": {"model": "lepidodendron:stromatolite_edge", "y": 180 }
+		},
+		{	"when": { "topshoot": "true", "west": "false" },
+			"apply": {"model": "lepidodendron:stromatolite_edge", "y": 270 }
+		},
+		{	"when": { "topshoot": "true" },
+			"apply": {"model": "lepidodendron:stromatolite_stem" }
+		},
+		{	"when": { "topshoot": "false" },
+			"apply": {"model": "lepidodendron:stromatolite_lower"}
+		}
+	]
+
+}

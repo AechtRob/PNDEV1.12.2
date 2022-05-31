@@ -1,0 +1,53 @@
+{
+  "variants": {
+  	"inventory": [
+      {"model": "lepidodendron:field_horsetail_inventory"}
+  		],
+    "normal": [
+      {"model": "lepidodendron:field_horsetail_1", "weight": 4},
+      {"model": "lepidodendron:field_horsetail_1", "weight": 4, "y": 90},
+      {"model": "lepidodendron:field_horsetail_1", "weight": 4, "y": 180},
+      {"model": "lepidodendron:field_horsetail_1", "weight": 4, "y": 270},
+
+      {"model": "lepidodendron:field_horsetail_2", "weight": 4},
+      {"model": "lepidodendron:field_horsetail_2", "weight": 4, "y": 90},
+      {"model": "lepidodendron:field_horsetail_2", "weight": 4, "y": 180},
+      {"model": "lepidodendron:field_horsetail_2", "weight": 4, "y": 270},
+
+      {"model": "lepidodendron:field_horsetail_3", "weight": 4},
+      {"model": "lepidodendron:field_horsetail_3", "weight": 4, "y": 90},
+      {"model": "lepidodendron:field_horsetail_3", "weight": 4, "y": 180},
+      {"model": "lepidodendron:field_horsetail_3", "weight": 4, "y": 270},
+
+      {"model": "lepidodendron:field_horsetail_4", "weight": 4},
+      {"model": "lepidodendron:field_horsetail_4", "weight": 4, "y": 90},
+      {"model": "lepidodendron:field_horsetail_4", "weight": 4, "y": 180},
+      {"model": "lepidodendron:field_horsetail_4", "weight": 4, "y": 270},
+
+      {"model": "lepidodendron:field_horsetail_5", "weight": 24 },
+      
+      {"model": "lepidodendron:field_horsetail_flower_1"},
+      {"model": "lepidodendron:field_horsetail_flower_1", "y": 90},
+      {"model": "lepidodendron:field_horsetail_flower_1", "y": 180},
+      {"model": "lepidodendron:field_horsetail_flower_1", "y": 270},
+      
+      {"model": "lepidodendron:field_horsetail_flower_2"},
+      {"model": "lepidodendron:field_horsetail_flower_2", "y": 90},
+      {"model": "lepidodendron:field_horsetail_flower_2", "y": 180},
+      {"model": "lepidodendron:field_horsetail_flower_2", "y": 270},
+      
+      {"model": "lepidodendron:field_horsetail_flower_3"},
+      {"model": "lepidodendron:field_horsetail_flower_3", "y": 90},
+      {"model": "lepidodendron:field_horsetail_flower_3", "y": 180},
+      {"model": "lepidodendron:field_horsetail_flower_3", "y": 270},
+      
+      {"model": "lepidodendron:field_horsetail_flower_4"},
+      {"model": "lepidodendron:field_horsetail_flower_4", "y": 90},
+      {"model": "lepidodendron:field_horsetail_flower_4", "y": 180},
+      {"model": "lepidodendron:field_horsetail_flower_4", "y": 270},
+
+      {"model": "lepidodendron:field_horsetail_flower_5" }
+      
+    ]
+  }
+}

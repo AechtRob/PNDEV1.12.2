@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "lepidodendron:items/fossil_hammer"
+  }
+}

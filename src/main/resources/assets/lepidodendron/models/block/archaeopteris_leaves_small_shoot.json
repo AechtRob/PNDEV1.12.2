@@ -1,0 +1,38 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/archaeopteris_leaf_large_3_c",
+        
+        "c1": "lepidodendron:blocks/archaeopteris_leaf_small_1_c",
+
+        "tc": "lepidodendron:blocks/archaeopteris_leaf_small_2_c",
+        "tl": "lepidodendron:blocks/archaeopteris_leaf_small_2_l",
+        "tr": "lepidodendron:blocks/archaeopteris_leaf_small_2_r"
+        
+    },
+    
+    "elements": [
+
+        {"name":"centrens",
+        	"from": [ 0, 0, 8 ],
+            "to": [ 16, 8, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 16, 0, 0, 8 ], "texture": "#tc" },
+                "south": { "uv": [ 0, 0, 16, 8 ], "texture": "#tc" }
+            }
+        },
+        {"name":"centreew",
+        	"from": [ 8, 0, 0 ],
+            "to": [ 8, 8, 16 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 16, 0, 0, 8 ], "texture": "#tc" },
+                "east": { "uv": [ 0, 0, 16, 8 ], "texture": "#tc" }
+            }
+        }
+	
+    ]
+}

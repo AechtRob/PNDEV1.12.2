@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bradgatia"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bradgatia", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bradgatia", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bradgatia", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:bradgatia", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:bradgatia"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bradgatia", "x": 180}
+    ]
+  }
+}

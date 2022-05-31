@@ -1,0 +1,37 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "3": {
+      "item": "lepidodendron:woodenplanks"
+    },
+    "4": {
+      "item": "lepidodendron:woodenplanks"
+    },
+    "5": {
+      "item": "lepidodendron:woodenplanks"
+    },
+    "6": {
+      "item": "lepidodendron:woodenplanks"
+    },
+    "7": {
+      "item": "lepidodendron:woodenplanks"
+    },
+    "8": {
+      "item": "lepidodendron:woodenplanks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:woodentrapdoor",
+    "count": 2
+  }
+}

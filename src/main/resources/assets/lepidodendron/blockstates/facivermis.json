@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:facivermis",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:facivermis",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:facivermis",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:facivermis",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:facivermis",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:facivermis",
+      "y": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/prehistoric_ground_cover_var",
+    "textures": {
+    	"particle": "lepidodendron:blocks/pangaean_prehistoric_ground_var11",
+        "var": "lepidodendron:blocks/pangaean_prehistoric_ground_var11"
+    }
+}

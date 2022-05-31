@@ -1,0 +1,30 @@
+{
+	"name": "Cyclonema",
+	"icon": "lepidodendron:cyclonema_item",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_cyclonema",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cyclonema",
+			"title": "Cyclonema",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Euomphalina$(br)>Platyceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/cyclonema.png"],
+			"title": "Cyclonema sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclonema",
+			"type": "text",
+			"text": "Cyclonema is a tiny marine gastropod that scourged the ancient oceans. It was most common during the Ordovician period and its numbers began dwindling in the later periods. Cyclonema would have looked very similar to modern sea snails and probably lived in a similar fashion, filling similar niches."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cyclonema",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Hit to Pick Up"
+		}
+	]
+}

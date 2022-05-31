@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:tabulata_block_2"}
+    ],
+    "facing=north,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2", "x": 90}
+    ],
+    "facing=east,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2", "x": 90, "y": 90}
+    ],
+    "facing=south,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2", "x": 90, "y": 180}
+    ],
+    
+    "facing=west,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2", "x": 90, "y": 270}
+    ],
+
+    "facing=up,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2"}
+    ],
+    "facing=down,water=false": [
+      	{"model": "lepidodendron:tabulata_block_2", "x": 180}
+    ],
+
+
+    "facing=north,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water", "x": 90}
+    ],
+    "facing=east,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water", "x": 90, "y": 90}
+    ],
+    "facing=south,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water", "x": 90, "y": 180}
+    ],
+
+    "facing=west,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water", "x": 90, "y": 270}
+    ],
+
+    "facing=up,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water"}
+    ],
+    "facing=down,water=true": [
+      {"model": "lepidodendron:tabulata_block_2_water", "x": 180}
+    ]
+  }
+}

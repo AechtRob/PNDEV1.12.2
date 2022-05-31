@@ -1,0 +1,30 @@
+{
+	"name": "Phlegethontia",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/phlegethontia_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_phlegethontia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phlegethontia",
+			"title": "Phlegethontia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Aistopoda$(br)>Phlegethontiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/phlegethontia.png"],
+			"title": "Phlegethontia sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phlegethontia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phlegethontia",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/dicroidium_stem",
+        "down": "lepidodendron:blocks/dicroidium_stem_end",
+        "up": "lepidodendron:blocks/dicroidium_stem_end",
+        "north": "lepidodendron:blocks/dicroidium_stem",
+        "south": "lepidodendron:blocks/dicroidium_stem",
+        "west": "lepidodendron:blocks/dicroidium_stem",
+        "east": "lepidodendron:blocks/dicroidium_stem"
+
+    },
+    
+    "elements": [
+        {   "from": [ 6, 0, 6 ],
+            "to": [ 10, 16, 10 ],
+            "faces": {
+                "down":  { "uv": [ 6, 12, 9, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 6, 12, 9, 16 ], "texture": "#up" },
+                "north": { "uv": [ 6, 0, 9, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 6, 0, 9, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 6, 0, 9, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 6, 0, 9, 16 ],  "texture": "#east" }
+            }
+        }
+    ]
+}

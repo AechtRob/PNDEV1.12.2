@@ -1,0 +1,30 @@
+{
+	"name": "Ellipsocephalus",
+	"icon": "lepidodendron:ellipsocephalus_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_ellipsocephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ellipsocephalus",
+			"title": "Ellipsocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Ptychopariida$(br)>Ellipsocephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/ellipsocephalus.png"],
+			"title": "Ellipsocephalus hoffi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ellipsocephalus",
+			"type": "text",
+			"text": "Ellipsocephalus had an oval shape, and had 12 thoracic segments. It was a blind trilobite and it probably inhabited poorly lit benthic environments in the ancient Cambrian seas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ellipsocephalus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

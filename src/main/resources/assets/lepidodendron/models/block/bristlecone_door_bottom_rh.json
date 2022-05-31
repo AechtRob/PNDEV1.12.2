@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "lepidodendron:blocks/bristlecone_door_bottom",
+        "top": "lepidodendron:blocks/bristlecone_door_top"
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_inventory" }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone" }
+    ],
+    "facing=north,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone","x": 90 }
+    ],
+    "facing=east,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone", "x": 90, "y": 90 }
+    ],
+    "facing=south,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone", "x": 90, "y": 180 }
+    ],
+    "facing=west,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone", "x": 90, "y": 270 }
+    ],
+    "facing=up,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone" }
+    ],
+    "facing=down,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_cone", "x": 180 }
+    ],
+
+
+    "facing=north,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 90 }
+    ],
+    "facing=east,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 90, "y": 90 }
+    ],
+    "facing=south,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 90, "y": 180 }
+    ],
+    "facing=west,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 90, "y": 270 }
+    ],
+    "facing=up,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone" }
+    ],
+    "facing=down,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 180 }
+    ]
+  }
+}

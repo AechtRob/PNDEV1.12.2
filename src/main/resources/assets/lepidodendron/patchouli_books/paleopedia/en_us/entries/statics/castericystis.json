@@ -1,0 +1,30 @@
+{
+	"name": "Castericystis",
+	"icon": "lepidodendron:castericystis",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_castericystis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_castericystis",
+			"title": "Castericystis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Soluta$(br)>Syringocrinida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Castericystis.png"],
+			"title": "Castericystis vali",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_castericystis",
+			"type": "text",
+			"text": "Castericystis is a marine and relatively short echinoderm that lived as a suspension feeder, like other echinoderms. It had a bulb like segment attached to the end of its stalk and it was covered with spines."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_castericystis",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

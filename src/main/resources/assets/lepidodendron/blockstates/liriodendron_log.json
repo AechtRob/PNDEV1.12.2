@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:liriodendron_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:liriodendron_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:liriodendron_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:liriodendron_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:liriodendron_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:liriodendron_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:liriodendron_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Hemicyclaspis",
+	"icon": "lepidodendron:hemicyclaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_hemicyclaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hemicyclaspis",
+			"title": "Hemicyclaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteostraci$(br)>Ateleaspidiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/hemicyclaspis.png"],
+			"title": "H. murchisoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hemicyclaspis",
+			"type": "text",
+			"text": "Hemicyclaspis, like the closely related Cephalaspis was probably a bottom feeder, using its shovel shaped head to dig up prey as it foraged the ocean floor for food. It was likely a better swimmer than its relatives because it had a more hydrodynamic head shield"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hemicyclaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

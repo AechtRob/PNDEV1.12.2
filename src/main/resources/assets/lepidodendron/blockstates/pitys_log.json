@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:pitys_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:pitys_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:pitys_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:pitys_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:pitys_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:pitys_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:pitys_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites"},
+      {"model": "lepidodendron:cystoid_pseudocrinites_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites_side"},
+      {"model": "lepidodendron:cystoid_pseudocrinites_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites_side", "y": 90},
+      {"model": "lepidodendron:cystoid_pseudocrinites_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites_side", "y": 180},
+      {"model": "lepidodendron:cystoid_pseudocrinites_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites_side", "y": 270},
+      {"model": "lepidodendron:cystoid_pseudocrinites_side_var", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites"},
+      {"model": "lepidodendron:cystoid_pseudocrinites_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:cystoid_pseudocrinites", "x": 180},
+      {"model": "lepidodendron:cystoid_pseudocrinites_var", "x": 180}
+    ]
+  }
+}

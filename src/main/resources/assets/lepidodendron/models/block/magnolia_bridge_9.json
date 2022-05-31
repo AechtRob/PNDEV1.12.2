@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/magnoliawood",
+    "metal": "blocks/lapis_block"
+  }
+}
+
+

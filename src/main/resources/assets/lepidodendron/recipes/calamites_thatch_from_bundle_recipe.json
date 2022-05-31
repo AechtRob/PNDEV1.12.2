@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:calamites_thatch_bundle"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:calamites_thatch",
+    "count": 9
+  }
+}

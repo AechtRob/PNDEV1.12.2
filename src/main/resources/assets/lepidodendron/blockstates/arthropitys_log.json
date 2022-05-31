@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:arthropitys_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:arthropitys_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:arthropitys_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:arthropitys_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:arthropitys_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:arthropitys_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:arthropitys_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

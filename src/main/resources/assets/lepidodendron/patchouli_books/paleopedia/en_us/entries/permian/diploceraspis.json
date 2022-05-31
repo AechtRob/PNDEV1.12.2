@@ -1,0 +1,30 @@
+{
+	"name": "Diploceraspis",
+	"icon": "paleopedia:permian/permian_icon/diploceraspis_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_diploceraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diploceraspis",
+			"title": "Diploceraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Lepospndyli$(br)>Nectridea$(br)>Diplocaulidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/diploceraspis.png"],
+			"title": "Diploceraspis burkei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diploceraspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diploceraspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+  "ambientocclusion":false,
+  "textures": {
+    "te": "lepidodendron:blocks/odontopteris_leaves_t_e",
+    "tw": "lepidodendron:blocks/odontopteris_leaves_t_w",
+    "be": "lepidodendron:blocks/odontopteris_leaves_b_e",
+    "bw": "lepidodendron:blocks/odontopteris_leaves_b_w",
+    "nub": "lepidodendron:blocks/odontopteris_stem",
+    "particle": "lepidodendron:blocks/odontopteris_leaves_t_e"
+  },
+
+	"elements":[
+		{"name":"nub",
+		"from": [7, 14, 14], "to":[9, 16, 16], "shade":false,
+		"faces": {
+			"south": {"texture": "#nub","uv": [7, 7, 9, 9], "cullface": "south"},
+			"east": {"texture": "#nub","uv": [7, 7, 9, 9]},
+			"west": {"texture": "#nub","uv": [7, 7, 9, 9]},
+			"up": {"texture": "#nub","uv": [7, 7, 9, 9]},
+			"down": {"texture": "#nub","uv": [7, 7, 9, 9]}
+			}
+		},
+		{"name":"te",
+		"from": [8, 0, 14], "to":[24, 16, 14], "shade":false,
+		"faces": {
+			"south": {"texture": "#te","uv": [0, 0, 16, 16]},
+			"north": {"texture": "#te","uv": [16, 0, 0, 16]}
+			}
+		},
+		{"name":"tw",
+		"from": [-8, 0, 14], "to":[8, 16, 14], "shade":false,
+		"faces": {
+			"south": {"texture": "#tw","uv": [0, 0, 16, 16]},
+			"north": {"texture": "#tw","uv": [16, 0, 0, 16]}
+			}
+		},
+		
+		{"name":"te",
+		"from": [8, -16, 14], "to":[24, 0, 14], "shade":false,
+		"faces": {
+			"south": {"texture": "#be","uv": [0, 0, 16, 16]},
+			"north": {"texture": "#be","uv": [16, 0, 0, 16]}
+			}
+		},
+		{"name":"tw",
+		"from": [-8, -16, 14], "to":[8, 0, 14], "shade":false,
+		"faces": {
+			"south": {"texture": "#bw","uv": [0, 0, 16, 16]},
+			"north": {"texture": "#bw","uv": [16, 0, 0, 16]}
+			}
+		}
+
+
+	]
+}
+

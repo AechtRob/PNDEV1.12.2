@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge_side",
+  "textures": {
+    "wood": "blocks/planks_oak",
+    "metal": "lepidodendron:blocks/iron_bridge"
+  }
+}
+
+

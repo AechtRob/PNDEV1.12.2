@@ -1,0 +1,18 @@
+{
+"ambientocclusion":false,
+"textures":{
+	"particle":"lepidodendron:blocks/quasistrobus_2_ee",
+	"e":"lepidodendron:blocks/quasistrobus_2_ee",
+	"w":"lepidodendron:blocks/quasistrobus_2_ww"
+	},
+"elements":[
+{"name":"n",
+"from":[7.0, 0.0, -1],
+"to":[7.0, 16.0, 15],"shade":false, 
+"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+"faces":{
+"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}}
+
+]
+}

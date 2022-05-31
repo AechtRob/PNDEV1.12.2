@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:dicranophyllum_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:dicranophyllum_seed",
+    "count": 1
+  }
+}

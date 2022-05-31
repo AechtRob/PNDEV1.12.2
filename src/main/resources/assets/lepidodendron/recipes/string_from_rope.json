@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:rope"
+    }
+  ],
+  "result": {
+    "item": "minecraft:string",
+    "count": 3
+  }
+}

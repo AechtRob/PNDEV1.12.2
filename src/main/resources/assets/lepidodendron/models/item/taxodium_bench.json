@@ -1,0 +1,14 @@
+{
+  "parent": "lepidodendron:item/bench_item",
+  "textures": {
+    "wood": "lepidodendron:blocks/taxodium_planks"
+  }
+}
+
+
+
+
+
+
+
+

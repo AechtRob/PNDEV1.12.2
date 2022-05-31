@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:hermanophyton_shoot_cone"},
+      {"model": "lepidodendron:hermanophyton_stem_cone"},
+      {"model": "lepidodendron:hermanophyton_stem_cone_var"},
+      {"model": "lepidodendron:hermanophyton_bend_cone"},
+      {"model": "lepidodendron:hermanophyton_bend_cone_var"},
+      {"model": "lepidodendron:hermanophyton_bend_cone", "y": 90},
+      {"model": "lepidodendron:hermanophyton_bend_cone_var", "y": 90},
+      {"model": "lepidodendron:hermanophyton_bend_cone", "y": 180},
+      {"model": "lepidodendron:hermanophyton_bend_cone_var", "y": 180},
+      {"model": "lepidodendron:hermanophyton_bend_cone", "y": 270},
+      {"model": "lepidodendron:hermanophyton_bend_cone_var", "y": 270}
+    ]
+  }
+}

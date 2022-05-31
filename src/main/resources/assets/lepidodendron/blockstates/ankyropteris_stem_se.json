@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1", "x": 180, "y": 180 }
+    ],
+    "facing=north": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1", "x": 180 }
+    ],
+    "facing=south": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1", "x": 180, "y": 180 }
+    ],
+    "facing=east": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1", "x": 180, "y": 90 }
+    ],
+    "facing=west": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1", "x": 180, "y": 270 }
+    ],
+    "facing=up": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1" }
+    ],
+    "facing=down": [
+     	{"model": "lepidodendron:ankyropteris_stem_corner_1" }
+    ]
+    
+  }
+}

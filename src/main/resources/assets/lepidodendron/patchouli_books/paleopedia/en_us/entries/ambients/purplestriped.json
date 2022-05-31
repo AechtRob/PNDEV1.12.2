@@ -1,0 +1,30 @@
+{
+	"name": "Purple Striped Jelly",
+	"icon": "paleopedia:ambient/ambient_icon/purplestriped_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish5",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish5",
+			"title": "Purple Striped Jelly",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_purpleStriped.png"],
+			"title": "Pelagia noctiluca",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish5",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish5",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

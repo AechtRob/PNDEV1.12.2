@@ -1,0 +1,30 @@
+{
+	"name": "Campbellodus",
+	"icon": "lepidodendron:campbellodus_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_campbellodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_campbellodus",
+			"title": "Campbellodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Ptychodontida$(br)>Ptychodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/campbellodus.png"],
+			"title": "Campbellodus decipiens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_campbellodus",
+			"type": "text",
+			"text": "Campbellodus had short spinal plates and a high dorsal spine, it also had a long tail. They did not have as much armor as other placoderms but their teeth were still made of bony plates."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_campbellodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

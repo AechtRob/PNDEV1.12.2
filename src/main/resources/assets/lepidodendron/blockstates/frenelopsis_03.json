@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:frenelopsis_inventory"
+    },
+    "normal": {"model": "lepidodendron:frenelopsis_03"}
+  }
+}

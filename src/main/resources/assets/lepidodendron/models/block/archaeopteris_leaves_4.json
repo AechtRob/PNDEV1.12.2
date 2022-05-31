@@ -1,0 +1,37 @@
+{
+	
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/archaeopteris_leaf_large_4_c",
+        "c": "lepidodendron:blocks/archaeopteris_leaf_large_4_c",
+        "e": "lepidodendron:blocks/archaeopteris_leaf_large_4_r",
+        "w": "lepidodendron:blocks/archaeopteris_leaf_large_4_l"
+        },
+    
+    "elements": [
+		{"name":"e",
+			"from":[16.0,0.0,8.0],"to":[32.0,16.0,8.0],"shade":false,
+			"rotation": { "origin": [ 16, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+		{"name":"w",
+			"from":[-16.0,0.0,8.0],"to":[0.0,16.0,8.0],"shade":false,
+			"rotation": { "origin": [ 0, 8, 8 ], "axis": "y", "angle": -45, "rescale": false },
+			"faces":{
+			"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+		{"name":"c1",
+			"from":[0.0,0.0,8.0],"to":[16.0,5.0,8.0],"shade":false,
+			"faces":{
+			"north":{"texture":"#c","uv":[0.0,11.0,16.0,16.0]},
+			"south":{"texture":"#c","uv":[0.0,11.0,16.0,16.0]}}},
+			
+		{"name":"c2",
+			"from":[0.0,5.0,7.0],"to":[16.0,16.0,7.0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": -22.5, "rescale": false },
+			"faces":{
+			"north":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]}}}
+	   ]
+}

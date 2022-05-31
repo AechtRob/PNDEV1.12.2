@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/fence_inventory_thin",
+  "textures": {
+    "texture": "lepidodendron:blocks/gigantopterid_log",
+    "particle": "lepidodendron:blocks/gigantopterid_log"
+  }
+}

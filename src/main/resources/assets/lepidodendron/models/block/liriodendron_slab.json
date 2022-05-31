@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/liriodendronwood",
+    "top": "lepidodendron:blocks/liriodendronwood",
+    "side": "lepidodendron:blocks/liriodendronwood"
+  }
+}

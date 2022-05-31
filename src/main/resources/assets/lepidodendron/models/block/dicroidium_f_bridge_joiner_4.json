@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "lepidodendron:blocks/dicroidium_f_planks",
+    "metal": "blocks/emerald_block"
+  }
+}
+
+

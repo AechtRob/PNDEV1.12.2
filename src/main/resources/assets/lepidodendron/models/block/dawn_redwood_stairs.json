@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/dawn_redwood_planks",
+    "top": "lepidodendron:blocks/dawn_redwood_planks",
+    "side": "lepidodendron:blocks/dawn_redwood_planks"
+  }
+}

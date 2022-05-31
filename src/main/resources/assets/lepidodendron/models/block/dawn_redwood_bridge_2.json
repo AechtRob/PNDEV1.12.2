@@ -1,0 +1,10 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/dawn_redwood_planks",
+    "metal": "blocks/gold_block"
+  }
+}
+
+
+

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "inventory": [
+      { "model": "lepidodendron:xenocladia_shoot_inventory" }
+    ],
+    "normal": [
+      { "model": "lepidodendron:xenocladia_shoot" }
+    ],
+    "facing=north": [
+      { "model": "lepidodendron:xenocladia_shoot", "x": 90 }
+    ],
+    "facing=east": [
+      { "model": "lepidodendron:xenocladia_shoot","x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      { "model": "lepidodendron:xenocladia_shoot", "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+      { "model": "lepidodendron:xenocladia_shoot", "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+      { "model": "lepidodendron:xenocladia_shoot" }
+    ],
+    "facing=down": [
+      { "model": "lepidodendron:xenocladia_shoot", "x": 180 }
+    ]
+  }
+}

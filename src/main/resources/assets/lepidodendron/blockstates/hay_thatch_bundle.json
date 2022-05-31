@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "lepidodendron:hay_thatch_bundle" },
+        "axis=z": { "model": "lepidodendron:hay_thatch_bundle", "x": 90 },
+        "axis=x": { "model": "lepidodendron:hay_thatch_bundle", "x": 90, "y": 90 }
+    }
+}

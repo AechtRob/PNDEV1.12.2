@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "lepidodendron:blocks/magnoliawood",
+    "particle": "lepidodendron:blocks/magnoliawood"
+  }
+}

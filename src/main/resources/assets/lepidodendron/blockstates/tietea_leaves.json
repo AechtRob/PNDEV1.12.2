@@ -1,0 +1,38 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:tietea_leaves"
+    },
+    "inventory": {
+      "model": "lepidodendron:tietea_leaves_inventory"
+    },
+    "facing=north": {
+      "model": "lepidodendron:tietea_leaves",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:tietea_leaves",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:tietea_leaves",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:tietea_leaves",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:tietea_leaves_shoot"
+    },
+    "facing=down": {
+      "model": "lepidodendron:tietea_leaves_shoot",
+      "x": 180
+    }
+  }
+}

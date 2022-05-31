@@ -1,0 +1,30 @@
+{
+	"name": "Opsieobuthus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/opsieobuthus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_opsieobuthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_opsieobuthus",
+			"title": "Opsieobuthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Scorpiones$(br)>Centromachidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/opsieobuthus.png"],
+			"title": "Opsieobuthus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opsieobuthus",
+			"type": "text",
+			"text": "Opsieobuthus is a small scorpion whose species was found from the Carboniferous and Early Permian. It likely made burrows and looked very similar to modern scorpions. It may have also lived a similar lifestyle as modern scorpions."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opsieobuthus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Carried on Back$(br)$(l)Method of Obtaining:$() Kill female for babies"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Sidneyia",
+	"icon": "lepidodendron:sidneyia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_sidneyia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sidneyia",
+			"title": "Sidneyia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br2)>Artiopoda$(br2)>Vicissicaudata"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/sidneyia.png"],
+			"title": "S. inexpectans",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sidneyia",
+			"type": "text",
+			"text": "Sidneyia is an extinct arthropod from the early Cambrian that was thought to have been a benthic carnivore and scavenger that searched for hard-shelled prey on the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sidneyia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

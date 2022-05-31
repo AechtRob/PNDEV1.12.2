@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:equisites_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:equisites_shoot_side"
+    },
+    "facing=east": {
+      "model": "lepidodendron:equisites_shoot_side",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:equisites_shoot_side",
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:equisites_shoot_side",
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:equisites_shoot"
+    },
+    "facing=down": {
+      "model": "lepidodendron:equisites_shoot",
+      "x": 180
+    }
+  }
+}

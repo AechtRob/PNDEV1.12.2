@@ -1,0 +1,30 @@
+{
+	"name": "Palaeotarbus",
+	"icon": "paleopedia:ordosil/ordosil_icon/palaeotarbus_icon.png",
+	"category": "patchouli:silurian",
+	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trigonotarbid",
+			"title": "Palaeotarbus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarbida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/palaeotarbus.png"],
+			"title": "Palaeotarbus jerami",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"type": "text",
+			"text": "Palaeotarbus was an early trigonotarbid from the Silurian period. It likely had limited visual acuity and probably ate smaller animals. Its build is similar to other trigonotarbids, with an appearance resembling a tick."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

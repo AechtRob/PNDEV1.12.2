@@ -1,0 +1,30 @@
+{
+	"name": "Yawunik",
+	"icon": "lepidodendron:yawunik_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_yawunik",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yawunik",
+			"title": "Yawunik",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Megacheira"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/yawunik.png"],
+			"title": "Y. kootenayi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yawunik",
+			"type": "text",
+			"text": "Yawunik was a Cambrian arthropod from the Burgess shale with large frontal appendages that looked like giant claws relative to the body. It was named after a primordial sea monster in Ktunaxa mythology."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yawunik",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

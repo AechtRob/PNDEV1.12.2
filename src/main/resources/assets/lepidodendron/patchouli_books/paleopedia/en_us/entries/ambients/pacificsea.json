@@ -1,0 +1,30 @@
+{
+	"name": "Pacific Sea Nettle",
+	"icon": "paleopedia:ambients/ambients_icon/pacificsea_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish3",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish3",
+			"title": "Pacific Sea Nettle",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_pacific.png"],
+			"title": "C. fuscescens",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish3",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish3",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

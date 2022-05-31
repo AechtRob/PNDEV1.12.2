@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:zygopteris_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:zygopteris_shoot_inventory"
+    }
+  }
+}

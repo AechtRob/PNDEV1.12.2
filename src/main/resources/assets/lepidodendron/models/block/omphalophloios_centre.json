@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/omphalophloios_t_b_e",
+"w":"lepidodendron:blocks/omphalophloios_t_b_w"
+}
+}

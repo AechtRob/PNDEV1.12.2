@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cordaites_fruit_1"},
+      {"model": "lepidodendron:cordaites_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:cordaites_fruit_block_inventory"
+    }
+  }
+}

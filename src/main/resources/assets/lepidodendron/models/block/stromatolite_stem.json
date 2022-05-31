@@ -1,0 +1,23 @@
+{
+  "parent": "lepidodendron:block/block_noao",
+  "textures": {
+        "particle": "lepidodendron:blocks/stromatolite_stem",
+        "texture": "lepidodendron:blocks/stromatolite_stem" 
+    },
+    "elements": [
+
+        {   "from": [ 0, 0, 0 ],
+            "to": [ 16, 10, 16 ],
+            "faces": {
+                "down":  {"uv": [ 0, 0, 16, 10 ], "texture": "#texture", "cullface": "down" },
+                "north": {"uv": [ 0, 0, 16, 10 ], "texture": "#texture", "cullface": "north" },
+                "south": {"uv": [ 0, 0, 16, 10 ], "texture": "#texture", "cullface": "south" },
+                "west":  {"uv": [ 0, 0, 16, 10 ], "texture": "#texture", "cullface": "west" },
+                "east":  {"uv": [ 0, 0, 16, 10 ], "texture": "#texture", "cullface": "east" }
+            }
+        }
+
+        
+        
+    ]
+}

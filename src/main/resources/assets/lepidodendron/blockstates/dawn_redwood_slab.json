@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "half=bottom,variant=default": [
+      {"model": "lepidodendron:dawn_redwood_slab", "weight": 10},
+      {"model": "lepidodendron:dawn_redwood_slab_knot"}
+    ],
+    "half=top,variant=default": [
+      {"model": "lepidodendron:dawn_redwood_slab_top", "weight": 10},
+      {"model": "lepidodendron:dawn_redwood_slab_top_knot"}
+    ]
+  }
+}

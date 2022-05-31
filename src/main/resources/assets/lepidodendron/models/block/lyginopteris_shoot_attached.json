@@ -1,0 +1,50 @@
+{
+  "ambientocclusion":false,
+  "textures": {
+    "te": "lepidodendron:blocks/lyginopteris_leaves_t_e",
+    "tw": "lepidodendron:blocks/lyginopteris_leaves_t_w",
+    "be": "lepidodendron:blocks/lyginopteris_leaves_b_e",
+    "bw": "lepidodendron:blocks/lyginopteris_leaves_b_w",
+    "nub": "lepidodendron:blocks/lyginopteris_stem",
+    "particle": "lepidodendron:blocks/lyginopteris_leaves_t_e"
+  },
+
+	"elements": [
+		{
+			"from": [8, -8, -14],
+			"to": [24, 8, -14],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 0, -14]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#be"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#be"}
+			}
+		},
+		{
+			"from": [-8, -8, -14],
+			"to": [8, 8, -14],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0, -14]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#bw"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#bw"}
+			}
+		},
+		{
+			"from": [-8, 8, -14],
+			"to": [8, 24, -14],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 0, -14]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#tw"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#tw"}
+			}
+		},
+		{
+			"from": [8, 8, -14],
+			"to": [24, 24, -14],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 0, -14]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#te"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#te"}
+			}
+		}
+	]
+}

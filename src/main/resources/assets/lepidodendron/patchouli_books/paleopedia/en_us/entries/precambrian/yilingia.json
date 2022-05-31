@@ -1,0 +1,30 @@
+{
+	"name": "Yilingia",
+	"icon": "paleopedia:precambrian/precambrian_icon/yilingia_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_yilingia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_yilingia",
+			"title": "Yilingia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Animalia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/yilingia.png"],
+			"title": "Y. spiciformis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yilingia",
+			"type": "text",
+			"text": "Yilingia was a worm like animal from the ediacaran period. It was segmented, similar to many arthropods. Yilingia seems to be the oldest known animal capable of moving on its own."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yilingia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

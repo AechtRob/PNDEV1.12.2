@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:inaria"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:inaria", "x": 90},
+      {"model": "lepidodendron:inaria_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:inaria", "x": 90, "y": 90},
+      {"model": "lepidodendron:inaria_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:inaria", "x": 90, "y": 180},
+      {"model": "lepidodendron:inaria_var", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:inaria", "x": 90, "y": 270},
+      {"model": "lepidodendron:inaria_var", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:inaria"},
+      {"model": "lepidodendron:inaria_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:inaria", "x": 180},
+      {"model": "lepidodendron:inaria_var", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": [
+      {"model": "lepidodendron:czekanowskia_slab_double"}
+    ]
+  }
+}

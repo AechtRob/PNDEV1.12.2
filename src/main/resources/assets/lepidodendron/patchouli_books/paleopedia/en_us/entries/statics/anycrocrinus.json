@@ -1,0 +1,30 @@
+{
+	"name": "Ancyrocrinus",
+	"icon": "lepidodendron:crinoid_ancyrocrinus",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_anycrocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anycrocrinus",
+			"title": "Ancyrocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Ancyrocrinus.png"],
+			"title": "A. crozonensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anycrocrinus",
+			"type": "text",
+			"text": "Ancyrocrinus was a Devonian crinoid that was a suspension feeder. It lived attached to the seafloor and it had many little 'branches' extending from the top end of its stalk."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anycrocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

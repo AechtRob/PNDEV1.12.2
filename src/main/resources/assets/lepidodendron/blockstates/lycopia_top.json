@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "var=0": {"model": "lepidodendron:lycopia_top_0"},
+    "var=1": {"model": "lepidodendron:lycopia_top_1"},
+    "var=2": {"model": "lepidodendron:lycopia_top_2"}
+    }
+}

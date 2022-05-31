@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/fence_side_thin",
+  "textures": {
+    "texture": "lepidodendron:blocks/calamophyton_log",
+    "particle": "lepidodendron:blocks/calamophyton_log"
+  }
+}

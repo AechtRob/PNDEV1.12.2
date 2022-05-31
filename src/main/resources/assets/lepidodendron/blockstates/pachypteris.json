@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:pachypteris"
+    },
+    "deep=false": {
+      "model": "lepidodendron:pachypteris"
+    },
+    "deep=true": {
+      "model": "lepidodendron:pachypteris_deep"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:pachypteris_inventory"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:charnia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:charnia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:charnia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:charnia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:charnia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:charnia",
+      "y": 0
+    }
+  }
+}

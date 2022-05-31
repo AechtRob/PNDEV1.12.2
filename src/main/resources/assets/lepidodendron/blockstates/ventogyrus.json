@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ventogyrus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2, "x": 90},
+      {"model": "lepidodendron:ventogyrus_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2, "x": 90, "y": 90},
+      {"model": "lepidodendron:ventogyrus_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2, "x": 90, "y": 180},
+      {"model": "lepidodendron:ventogyrus_var", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2, "x": 90, "y": 270},
+      {"model": "lepidodendron:ventogyrus_var", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2},
+      {"model": "lepidodendron:ventogyrus_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:ventogyrus", "weight": 2, "x": 180},
+      {"model": "lepidodendron:ventogyrus_var", "x": 180}
+    ]
+  }
+}

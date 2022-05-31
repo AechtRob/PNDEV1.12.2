@@ -1,0 +1,30 @@
+{
+	"name": "Spathicephalus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/spathicephalus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_spathicephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spathicephalus",
+			"title": "Spathicephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() $(br2)>Elpistostegalia$(br)>Stegocephalia$(br)>Baphetoidea$(br)>Spathicephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/spathicephalus.png"],
+			"title": "Spathicephalus mirus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spathicephalus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

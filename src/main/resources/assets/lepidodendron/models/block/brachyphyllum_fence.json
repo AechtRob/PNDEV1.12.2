@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "lepidodendron:blocks/brachyphyllum_planks",
+    "particle": "lepidodendron:blocks/brachyphyllum_planks"
+  }
+}

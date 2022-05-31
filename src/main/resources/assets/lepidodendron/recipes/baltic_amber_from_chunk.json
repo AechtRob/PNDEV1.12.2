@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:baltic_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:baltic_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:baltic_amber_chunk"
+    },
+    {
+      "item": "lepidodendron:baltic_amber_chunk"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:baltic_amber_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "lepidodendron:blocks/brownstone_smooth",
+    "top": "lepidodendron:blocks/brownstone_smooth_top",
+    "side": "lepidodendron:blocks/brownstone_smooth"
+  }
+}

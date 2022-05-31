@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:furcifolium_1"},
+      {"model": "lepidodendron:furcifolium_2"},
+      {"model": "lepidodendron:furcifolium_3"},
+      {"model": "lepidodendron:furcifolium_4"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:furcifolium_inventory"
+    }
+  }
+}

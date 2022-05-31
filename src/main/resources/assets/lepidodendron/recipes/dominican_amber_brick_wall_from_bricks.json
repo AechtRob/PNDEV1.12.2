@@ -1,0 +1,32 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    },
+    "1": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    },
+    "2": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    },
+    "3": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    },
+    "4": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    },
+    "5": {
+      "item": "lepidodendron:dominican_amber_bricks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:dominican_amber_brick_wall",
+    "count": 6
+  }
+}

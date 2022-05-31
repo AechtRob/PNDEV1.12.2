@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:banksia_1_flower"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:banksia_1_flower", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:banksia_1_flower", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:banksia_1_flower", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:banksia_1_flower", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:banksia_1_flower"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:banksia_1_flower", "x": 180}
+    ]
+  }
+}

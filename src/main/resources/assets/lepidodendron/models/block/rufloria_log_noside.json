@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/rufloria_log",
+        "inside": "lepidodendron:blocks/rufloria_log",
+        "particle": "lepidodendron:blocks/rufloria_log"
+    },
+    "elements": [
+        {   "from": [ 6, 6, 6 ],
+            "to": [ 10, 10, 10 ],
+            "faces": {
+                "north": { "texture": "#inside" }
+            }
+        }
+    ]
+}

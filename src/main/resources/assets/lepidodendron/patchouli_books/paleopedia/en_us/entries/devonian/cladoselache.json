@@ -1,0 +1,30 @@
+{
+	"name": "Cladoselache",
+	"icon": "paleopedia:devonian/devonian_icon/cladoselache_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_cladoselache",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cladoselache",
+			"title": "Cladoselache",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Cladoselachidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/cladoselache.png"],
+			"title": "Cladoselache sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cladoselache",
+			"type": "text",
+			"text": "Cladoselache was an early Chondrichthyan which an abundance of well preserved fossils. Even internal organs were preserved in some specimens. Cladoselache looked similar to mackerel sharks while the head was like that of a frill shark. In life, it was probably a fast marine predator and it had a spine on its dorsal fin like that of Hybodonts and Xenacanthids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cladoselache",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Shark Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

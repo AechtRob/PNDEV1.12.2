@@ -1,0 +1,64 @@
+{
+	"parent": "block/half_slab",
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "blocks/itemframe_background",
+		"particle": "blocks/itemframe_background"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [4, 0.05, 0],
+			"to": [12, 0.05, 16],
+			"faces": {
+				"up": {"uv": [4, 0, 12, 16], "texture": "#texture"},
+				"down": {"uv": [4, 0, 12, 16], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [0, 0.051, 4],
+			"to": [16, 0.051, 12],
+			"faces": {
+				"up": {"uv": [0, 4, 16, 12], "texture": "#texture"},
+				"down": {"uv": [0, 4, 16, 12], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [1, 0.051, 1],
+			"to": [4, 0.051, 4],
+			"faces": {
+				"up": {"uv": [0, 0, 3, 3], "texture": "#texture"},
+				"down": {"uv": [0, 13, 3, 16], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [1, 0.051, 12],
+			"to": [4, 0.051, 15],
+			"faces": {
+				"up": {"uv": [0, 13, 3, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 3, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [12, 0.051, 12],
+			"to": [15, 0.051, 15],
+			"faces": {
+				"up": {"uv": [13, 13, 16, 16], "texture": "#texture"},
+				"down": {"uv": [13, 0, 16, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [12, 0.051, 1],
+			"to": [15, 0.051, 4],
+			"faces": {
+				"up": {"uv": [13, 0, 16, 3], "texture": "#texture"},
+				"down": {"uv": [13, 13, 16, 16], "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:funisia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:funisia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:funisia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:funisia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:funisia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:funisia",
+      "y": 0
+    }
+  }
+}

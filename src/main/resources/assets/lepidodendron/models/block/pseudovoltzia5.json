@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/pseudovoltzia_5_e",
+"w":"lepidodendron:blocks/pseudovoltzia_5_w"
+}
+}

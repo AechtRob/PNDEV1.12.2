@@ -1,0 +1,30 @@
+{
+	"name": "Amphibamus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/amphibamus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_amphibamus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_amphibamus",
+			"title": "Amphibamus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Freshwater$(br2)>Temnospondyli$(br)>Amphibamidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/amphibamus.png"],
+			"title": "A. grandiceps",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amphibamus",
+			"type": "text",
+			"text": "Amphibamus is a Carboniferous temnospondyl that was about 20 cm long. It had a flat head and body and may have spent most of its time in the water, though it could go onto land."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amphibamus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn Like Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

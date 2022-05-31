@@ -1,0 +1,30 @@
+{
+	"name": "Traumatocrinus",
+	"icon": "lepidodendron:crinoid_traumatocrinus",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_traumatocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_traumatocrinus",
+			"title": "Traumatocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Traumatocrinus.png"],
+			"title": "Traumatocrinus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_traumatocrinus",
+			"type": "text",
+			"text": "Traumatocrinus is a Triassic crinoid which would have, in life, grown from the bottoms of floating driftwood. Traumatocrinus lived in open ocean environments alongside the diverse amounts of bivalves, ammonites and fish. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_traumatocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/agathis_planks",
+    "top": "lepidodendron:blocks/agathis_planks",
+    "side": "lepidodendron:blocks/agathis_planks"
+  }
+}

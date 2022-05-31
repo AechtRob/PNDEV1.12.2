@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:zircon"
+    },
+    "1": {
+      "item": "lepidodendron:zircon"
+    },
+    "2": {
+      "item": "lepidodendron:zircon"
+    },
+    "3": {
+      "item": "lepidodendron:zircon"
+    },
+    "4": {
+      "item": "lepidodendron:zircon"
+    },
+    "5": {
+      "item": "lepidodendron:zircon"
+    },
+    "6": {
+      "item": "lepidodendron:zircon"
+    },
+    "7": {
+      "item": "lepidodendron:zircon"
+    },
+    "8": {
+      "item": "lepidodendron:zircon"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:zircon_block",
+    "count": 1
+  }
+}

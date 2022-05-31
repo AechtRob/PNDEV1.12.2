@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/fence_gate_closed_thin_inventory",
+    "textures": {
+        "texture": "lepidodendron:blocks/aneurophyton_log",
+    "particle": "lepidodendron:blocks/aneurophyton_log"
+    }
+}

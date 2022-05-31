@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:pseudovoltzia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:pseudovoltzia_seed",
+    "count": 1
+  }
+}

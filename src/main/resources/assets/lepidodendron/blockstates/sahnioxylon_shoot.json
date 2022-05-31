@@ -1,0 +1,10 @@
+{
+  "variants": {
+  	"normal": {
+  		"model": "lepidodendron:sahnioxylon_shoot"
+    },
+    "inventory": {
+      "model": "lepidodendron:sahnioxylon_shoot_inventory"
+    }
+  }
+}

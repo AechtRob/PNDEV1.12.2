@@ -1,0 +1,44 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5 },
+		{ "model": "lepidodendron:williamsonia_leaves_large" },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2 }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5 },
+		{ "model": "lepidodendron:williamsonia_leaves_large" },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2 }
+    ],
+    "facing=north": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5, "x": 90 },
+		{ "model": "lepidodendron:williamsonia_leaves_large", "x": 90 },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2, "x": 90 }
+    ],
+    "facing=east": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5, "x": 90, "y": 90 },
+		{ "model": "lepidodendron:williamsonia_leaves_large", "x": 90, "y": 90 },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2, "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5, "x": 90, "y": 180 },
+		{ "model": "lepidodendron:williamsonia_leaves_large", "x": 90, "y": 180 },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2, "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5, "x": 90, "y": 270 },
+		{ "model": "lepidodendron:williamsonia_leaves_large", "x": 90, "y": 270 },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2, "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5 },
+		{ "model": "lepidodendron:williamsonia_leaves_large" },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2 }
+    ],
+    "facing=down": [
+		{ "model": "lepidodendron:williamsonia_leaves", "weight": 5, "x": 180 },
+		{ "model": "lepidodendron:williamsonia_leaves_large", "x": 180 },
+		{ "model": "lepidodendron:williamsonia_flower", "weight": 2, "x": 180 }
+    ]
+  }
+}

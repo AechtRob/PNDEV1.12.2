@@ -1,0 +1,106 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:proterogyrinus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_proterogyrinus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_proterogyrinus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_proterogyrinus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

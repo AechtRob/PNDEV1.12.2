@@ -1,0 +1,14 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:peony_flower"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "data": 9,
+    "count": 1
+  }
+}

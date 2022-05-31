@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:triassic_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:triassic_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:triassic_portal_ns"
+    }
+  }
+}

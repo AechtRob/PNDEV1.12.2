@@ -1,0 +1,30 @@
+{
+	"name": "Xenacanthus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/xenacanthus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_xenacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xenacanthus",
+			"title": "Xenacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Selachimorpha$(br)>Xenacanthida$(br)>Xenacanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/xenacanthus.png"],
+			"title": "Xenacanthus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenacanthus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xenacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:artocarpus_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:artocarpus_slab_top"
+    }
+  }
+}

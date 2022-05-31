@@ -1,0 +1,30 @@
+{
+	"name": "Acanthostega",
+	"icon": "paleopedia:devonian/devonian_icon/acanthostega_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_acanthostega",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acanthostega",
+			"title": "Acanthostega",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Aquatic$(br2)>Stegocephalia$(br)>Acanthostegidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/acanthostega.png"],
+			"title": "Acanthostega gunnari.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostega",
+			"type": "text",
+			"text": " "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acanthostega",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw and Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn-like Eggs underwater$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

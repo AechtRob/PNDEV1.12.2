@@ -1,0 +1,27 @@
+{
+    "name": "",
+    "icon": "paleopedia:triassic/triassic_icon/.png",
+    "category": "lepidodendron:triassic",
+    "pages": [
+        {
+            "type": "text",
+            "text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+        },
+	{
+            "type": "image",
+            "images": ["paleopedia:triassic/.png"],
+            "title": "",
+ 	    "text": ""
+        },
+	{
+	
+		"type": "text",
+		"text": ""
+	},
+	{
+	
+		"type": "text",
+		"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+	}
+    ]
+}

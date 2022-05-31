@@ -1,0 +1,92 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#wood"
+	},
+	"elements": [
+		{
+			"name": "base1",
+			"from": [0, 6.01, 2],
+			"to": [16, 6.01, 4],
+			"faces": {
+				"up": {"uv": [0, 14, 16, 16], "texture": "#wood"},
+				"down": {"uv": [0, 14, 16, 16], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "base2",
+			"from": [0, 6.01, 4.33],
+			"to": [16, 6.01, 6.33],
+			"faces": {
+				"up": {"uv": [0, 12, 16, 14], "texture": "#wood"},
+				"down": {"uv": [0, 12, 16, 14], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "base3",
+			"from": [0, 6.01, 6.75],
+			"to": [16, 6.01, 8.75],
+			"faces": {
+				"up": {"uv": [0, 10, 16, 12], "texture": "#wood"},
+				"down": {"uv": [0, 10, 16, 12], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "baselip",
+			"from": [0, 6.01, 9],
+			"to": [16, 6.01, 11],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 6.01, 9]},
+			"faces": {
+				"up": {"uv": [0, 6, 16, 8], "texture": "#wood"},
+				"down": {"uv": [0, 6, 16, 8], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "back1",
+			"from": [0, 6.5, 2.01],
+			"to": [16, 8.5, 2.01],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#wood"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "back2",
+			"from": [0, 9.333, 2.01],
+			"to": [16, 11.333, 2.01],
+			"faces": {
+				"north": {"uv": [0, 2, 16, 4], "texture": "#wood"},
+				"south": {"uv": [0, 2, 16, 4], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "back3",
+			"from": [0, 12.25, 2.01],
+			"to": [16, 14.25, 2.01],
+			"faces": {
+				"north": {"uv": [0, 5, 16, 7], "texture": "#wood"},
+				"south": {"uv": [0, 5, 16, 7], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "back4",
+			"from": [0, 15, 2.01],
+			"to": [16, 16, 2.01],
+			"rotation": {"angle": 0, "axis": "x", "origin": [8, 14.5, 2]},
+			"faces": {
+				"north": {"uv": [0, 4, 16, 5], "texture": "#wood"},
+				"south": {"uv": [0, 4, 16, 5], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "back5",
+			"from": [0, 16, 2.01],
+			"to": [16, 17, 2.01],
+			"rotation": {"angle": -45, "axis": "x", "origin": [8, 16, 2.01]},
+			"faces": {
+				"north": {"uv": [0, 3, 16, 4], "texture": "#wood"},
+				"south": {"uv": [0, 3, 16, 4], "texture": "#wood"}
+			}
+		}
+	]
+}

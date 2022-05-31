@@ -1,0 +1,30 @@
+{
+	"name": "Weigeltisaurus",
+	"icon": "paleopedia:permian/permian_icon/weigeltisaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_weigeltisaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_weigeltisaurus",
+			"title": "Weigeltisaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Weigeltisauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/weigeltisaurus.png"],
+			"title": "W. jaekeli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_weigeltisaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_weigeltisaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

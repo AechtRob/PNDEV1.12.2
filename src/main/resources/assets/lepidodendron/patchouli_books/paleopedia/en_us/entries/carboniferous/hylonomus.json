@@ -1,0 +1,30 @@
+{
+	"name": "Hylonomus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/hylonomus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_hylonomus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hylonomus",
+			"title": "Hylonomus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carbonifeorus$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Romeriida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/hylonomus.png"],
+			"title": "Hylonomus lyelli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hylonomus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hylonomus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

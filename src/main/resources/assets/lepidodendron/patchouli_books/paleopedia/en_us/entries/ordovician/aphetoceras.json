@@ -1,0 +1,30 @@
+{
+	"name": "Aphetoceras",
+	"icon": "paleopedia:ordosil/ordosil_icon/shell_aphetoceras.png",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_aphetoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aphetoceras",
+			"title": "Aphetoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Nautiloidea$(br)>Tarphycerida$(br)>Estonioceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/aphetoceras.png"],
+			"title": "A. americanum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphetoceras",
+			"type": "text",
+			"text": "Aphetoceras had a loosely coiled shell, representing early stages of the nautiloid shell as it began to curl inward. The chambers of Aphetoceras were empty. It probably lived similar to some other nautiloids and ammonites, slowly swimming around and eating smaller prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphetoceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+		}
+	]
+}

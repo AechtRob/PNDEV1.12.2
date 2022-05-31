@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/marattia_b_c",
+"w":"lepidodendron:blocks/marattia_b_c",
+"ee":"lepidodendron:blocks/marattia_b_e",
+"ww":"lepidodendron:blocks/marattia_b_w"
+}
+}

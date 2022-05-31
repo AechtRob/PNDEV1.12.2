@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "lepidodendron:blocks/equisetites_reed",
+		"particle": "lepidodendron:blocks/equisetites_reed"
+	}
+}

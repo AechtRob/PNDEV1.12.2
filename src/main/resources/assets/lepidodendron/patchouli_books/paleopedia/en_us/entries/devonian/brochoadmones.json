@@ -1,0 +1,30 @@
+{
+	"name": "Brochoadmones",
+	"icon": "lepidodendron:brochoadmones_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_brochoadmones",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brochoadmones",
+			"title": "Brochoadmones",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/brochoadmones.png"],
+			"title": "Brochoadmones milesi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brochoadmones",
+			"type": "text",
+			"text": "Brochoadmones is an acanthodian with an uncertain placement within the class. It had a raised black with a small head and many tiny paired fins, each with spines."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brochoadmones",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

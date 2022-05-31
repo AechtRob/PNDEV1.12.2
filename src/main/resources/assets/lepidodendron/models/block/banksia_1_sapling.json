@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/banksia_1_sapling",
+    "particle": "lepidodendron:blocks/banksia_1_sapling"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:gogia"},
+        {"model": "lepidodendron:gogia_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:gogia_side"},
+      {"model": "lepidodendron:gogia_side_var"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:gogia_side", "y": 90},
+      {"model": "lepidodendron:gogia_side_var", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:gogia_side", "y": 180},
+      {"model": "lepidodendron:gogia_side_var", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:gogia_side", "y": 270},
+      {"model": "lepidodendron:gogia_side_var", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:gogia"},
+      {"model": "lepidodendron:gogia_var"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:gogia", "x": 180},
+      {"model": "lepidodendron:gogia_var", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+  	"0": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "1": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "2": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "3": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "4": {
+      "item": "minecraft:dye",
+      "data": 15
+    },
+    "5": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "6": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "7": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    },
+    "8": {
+      "item": "lepidodendron:prehistoric_ground_cover",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lush_prehistoric_ground_cover",
+    "count": 8
+  }
+}

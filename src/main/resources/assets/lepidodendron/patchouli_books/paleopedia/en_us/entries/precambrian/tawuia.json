@@ -1,0 +1,30 @@
+{
+	"name": "Tawuia",
+	"icon": "lepidodendron:tawuia",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_tawuia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tawuia",
+			"title": "Tawuia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Neoproterozoic$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/tawuia.png"],
+			"title": "Tawuia sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tawuia",
+			"type": "text",
+			"text": "Tawuia is a disc shaped organism from the Neoproterozoic and it looks a bit like a sausage, probably living anchored to the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tawuia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/hironoia_log_end",
+    "up": "lepidodendron:blocks/hironoia_log_end",
+    "north": "lepidodendron:blocks/hironoia_log",
+    "east": "lepidodendron:blocks/hironoia_log",
+    "south": "lepidodendron:blocks/hironoia_log",
+    "west": "lepidodendron:blocks/hironoia_log",
+    "particle": "lepidodendron:blocks/hironoia_log_end"
+  }
+}

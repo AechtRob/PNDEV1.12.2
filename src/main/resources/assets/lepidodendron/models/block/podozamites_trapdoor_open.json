@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_open",
+  "textures": {
+    "texture": "lepidodendron:blocks/podozamites_trapdoor",
+    "planktexture": "lepidodendron:blocks/podozamites_planks",
+    "particle": "lepidodendron:blocks/podozamites_trapdoor"
+  }
+}

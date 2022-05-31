@@ -1,0 +1,24 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/calamites_strobilus",
+        "down": "lepidodendron:blocks/calamites_strobilus",
+        "up": "lepidodendron:blocks/calamites_strobilus",
+        "north": "lepidodendron:blocks/calamites_strobilus",
+        "south": "lepidodendron:blocks/calamites_strobilus",
+        "west": "lepidodendron:blocks/calamites_strobilus",
+        "east": "lepidodendron:blocks/calamites_strobilus"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

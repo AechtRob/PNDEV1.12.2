@@ -1,0 +1,26 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:dye",
+      "data": 15
+    },
+    "1": {
+      "item": "lepidodendron:nilssoniopteris_seeds"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:nilssoniopteris",
+    "count": 1
+  }
+}

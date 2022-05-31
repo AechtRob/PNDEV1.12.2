@@ -1,0 +1,41 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:green_chara_algae_1"},
+      	{"model": "lepidodendron:green_chara_algae_1_var"},
+      	{"model": "lepidodendron:green_chara_algae_2"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:green_chara_algae_1", "x": 90},
+      	{"model": "lepidodendron:green_chara_algae_1_var", "x": 90},
+       	{"model": "lepidodendron:green_chara_algae_2", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:green_chara_algae_1", "x": 90, "y": 90},
+      	{"model": "lepidodendron:green_chara_algae_1_var", "x": 90, "y": 90},
+      	{"model": "lepidodendron:green_chara_algae_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:green_chara_algae_1", "x": 90, "y": 180},
+      	{"model": "lepidodendron:green_chara_algae_1_var", "x": 90, "y": 180},
+      	{"model": "lepidodendron:green_chara_algae_2", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:green_chara_algae_1", "x": 90, "y": 270},
+      	{"model": "lepidodendron:green_chara_algae_1_var", "x": 90, "y": 270},
+      	{"model": "lepidodendron:green_chara_algae_2", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:green_chara_algae_1"},
+      	{"model": "lepidodendron:green_chara_algae_1_var"},
+      	{"model": "lepidodendron:green_chara_algae_2"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:green_chara_algae_1", "x": 180},
+      	{"model": "lepidodendron:green_chara_algae_1_var", "x": 180},
+      	{"model": "lepidodendron:green_chara_algae_2", "x": 180}
+    ]
+  }
+}

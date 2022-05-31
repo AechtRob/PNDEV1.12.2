@@ -1,0 +1,30 @@
+{
+	"name": "Phanerotinus",
+	"icon": "lepidodendron:phanerotinus_item",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_phanerotinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_phanerotinus",
+			"title": "Phanerotinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/phanerotinus.png"],
+			"title": "Phanerotinus cristatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phanerotinus",
+			"type": "text",
+			"text": "Phanerotinus was a Devonian to Carboniferous aquatic gastropod. It had a long shell which was coiled at the end. In life, it probably did not move much, being a suspension feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_phanerotinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Hit to pick up"
+		}
+	]
+}

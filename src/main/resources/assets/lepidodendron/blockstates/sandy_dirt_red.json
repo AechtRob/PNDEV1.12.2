@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:sandy_dirt_red" },
+      { "model": "lepidodendron:sandy_dirt_red", "y": 90 },
+      { "model": "lepidodendron:sandy_dirt_red", "y": 180 },
+      { "model": "lepidodendron:sandy_dirt_red", "y": 270 }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/cypress_leaves",
+    "particle": "lepidodendron:blocks/cypress_leaves"
+  }
+}

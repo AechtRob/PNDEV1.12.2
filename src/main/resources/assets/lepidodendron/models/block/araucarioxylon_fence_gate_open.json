@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_gate_open",
+    "textures": {
+        "texture": "lepidodendron:blocks/araucarioxylon_wood",
+    "particle": "lepidodendron:blocks/araucarioxylon_wood"
+    }
+}

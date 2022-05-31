@@ -1,0 +1,25 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/tribrachidium",
+		"particle": "lepidodendron:blocks/tribrachidium"
+	},
+	"elements": [
+		{
+			"from": [3, 0.02, 4],
+			"to": [8, 0.02, 9],
+			"faces": {
+				"up": {"uv": [2, 2, 14, 14], "texture": "#texture"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [8, 0.02, 10],
+			"to": [13, 0.02, 15],
+			"faces": {
+				"up": {"uv": [2, 2, 14, 14], "texture": "#texture"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Asaphus",
+	"icon": "lepidodendron:asaphus_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_asaphus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_asaphus",
+			"title": "Asaphus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/asaphus.png"],
+			"title": "Asaphus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_asaphus",
+			"type": "text",
+			"text": "Asaphus' headshield and tailshield are semicircular and without a border and are roughly the same size. It had small protruding eyes raised on a stalk. Its name comes from the Greek asaphes(indistinct)."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_asaphus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

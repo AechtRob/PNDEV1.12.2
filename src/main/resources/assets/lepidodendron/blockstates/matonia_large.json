@@ -1,0 +1,54 @@
+{
+
+    	"multipart": [
+	    	{"apply": [
+		    		{ "model": "lepidodendron:matonia_stem_base_1", "weight": 2 },
+		    		{ "model": "lepidodendron:matonia_stem_base_2" },
+		    		{ "model": "lepidodendron:matonia_stem_base_large", "weight": 2 }
+	    		]
+	    	},
+	
+			{"when": { "facing": "north" },
+				"apply": [
+				      {"model": "lepidodendron:matonia_double_1", "y": 180 },
+				      {"model": "lepidodendron:matonia_double_2", "y": 180 }
+			     ]
+			},
+	
+			{"when": { "facing": "south" },
+				"apply": [
+				      {"model": "lepidodendron:matonia_double_1"},
+				      {"model": "lepidodendron:matonia_double_2"}
+			     ]
+			},
+	
+			{"when": { "facing": "east" },
+				"apply": [
+				      {"model": "lepidodendron:matonia_double_1", "y": -90 },
+				      {"model": "lepidodendron:matonia_double_2", "y": -90 }
+			     ]
+			},
+	
+			{"when": { "facing": "west" },
+				"apply": [
+				      {"model": "lepidodendron:matonia_double_1", "y": 90 },
+				      {"model": "lepidodendron:matonia_double_2", "y": 90 }
+			     ]
+			},
+	
+			{"when": { "facing": "up" },
+				"apply": [
+				      {"model": "lepidodendron:matonia_double_1"},
+				      {"model": "lepidodendron:matonia_double_2"}
+			     ]
+			},
+	
+			{"when": { "facing": "down" },
+				"apply": [
+				     {"model": "lepidodendron:matonia_double_1"},
+				      {"model": "lepidodendron:matonia_double_2"}
+			     ]
+			}
+		]
+
+}

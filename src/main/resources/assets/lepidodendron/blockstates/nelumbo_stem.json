@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nelumbo_stem"},
+      {"model": "lepidodendron:nelumbo_stem_var"}
+    ]
+  }
+}

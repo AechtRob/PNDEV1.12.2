@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/telemachus_leaves",
+    "particle": "lepidodendron:blocks/telemachus_leaves"
+  }
+}

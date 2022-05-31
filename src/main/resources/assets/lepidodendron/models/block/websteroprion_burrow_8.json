@@ -1,0 +1,7 @@
+{
+  "parent": "lepidodendron:block/websteroprion_burrow",
+  "textures": {
+    "texture": "lepidodendron:blocks/silty_dirt",
+    "base": "lepidodendron:blocks/websteroprion_burrow_dirt"
+  }
+}

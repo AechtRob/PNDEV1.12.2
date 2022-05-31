@@ -1,0 +1,30 @@
+{
+	"name": "Attercopus",
+	"icon": "paleopedia:devonian/devonian_icon/attercopus_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_attercopus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_attercopus",
+			"title": "Attercopus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Uraraneida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/attercopus.png"],
+			"title": "A. fimbriunguis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attercopus",
+			"type": "text",
+			"text": "Originally thought to be a trigonotarbid, Attercopus was later redescribed as the most primitve version of a true spider. Attercopus did not have spinnerets, however, it still would have produced silk from spigots located across the abdomen. It also had a segmented tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_attercopus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Raw Bug Meat$(br)$(l)Egg Type:$() Small Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

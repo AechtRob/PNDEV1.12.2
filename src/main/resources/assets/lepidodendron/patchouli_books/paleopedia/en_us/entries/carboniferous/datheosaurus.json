@@ -1,0 +1,30 @@
+{
+	"name": "Datheosaurus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/datheosaurus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_datheosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_datheosaurus",
+			"title": "Datheosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Cotylosauria$(br)>Caseidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/datheosaurus.png"],
+			"title": "D. macrourus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_datheosaurus",
+			"type": "text",
+			"text": "Datheosaurus is a caseid from the Carboniferous to Permian periods. It was related to the larger, wider, Cotylorhynchus of the Permian. It had a long whip like tail and they were herbivorous animals."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_datheosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": [
+        { "model": "lepidodendron:leaf_litter" },
+        { "model": "lepidodendron:leaf_litter", "x": 90 },
+        { "model": "lepidodendron:leaf_litter", "x": 180 },
+        { "model": "lepidodendron:leaf_litter", "x": 270 },
+        { "model": "lepidodendron:leaf_litter", "y": 90 },
+        { "model": "lepidodendron:leaf_litter", "y": 90, "x": 90 },
+        { "model": "lepidodendron:leaf_litter", "y": 90, "x": 180 },
+        { "model": "lepidodendron:leaf_litter", "y": 90, "x": 270 },
+        { "model": "lepidodendron:leaf_litter", "y": 180 },
+        { "model": "lepidodendron:leaf_litter", "y": 180, "x": 90 },
+        { "model": "lepidodendron:leaf_litter", "y": 180, "x": 180 },
+        { "model": "lepidodendron:leaf_litter", "y": 180, "x": 270 },
+        { "model": "lepidodendron:leaf_litter", "y": 270 },
+        { "model": "lepidodendron:leaf_litter", "y": 270, "x": 90 },
+        { "model": "lepidodendron:leaf_litter", "y": 270, "x": 180 },
+        { "model": "lepidodendron:leaf_litter", "y": 270, "x": 270 }
+    ]
+  }
+}

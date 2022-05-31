@@ -1,0 +1,27 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:items/rhynia_inventory",
+        "bottom": "lepidodendron:blocks/rhynia_land_2_nospore"
+    },
+    "elements": [
+        {   "from": [ 0, 0, 8 ],
+            "to": [ 16, 16, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
+            }
+        },
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
+            }
+        }
+    ]
+}

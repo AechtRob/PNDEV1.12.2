@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:crinoid_vadarocrinus"},
+      {"model": "lepidodendron:crinoid_vadarocrinus", "y": 90},
+      {"model": "lepidodendron:crinoid_vadarocrinus", "y": 180},
+      {"model": "lepidodendron:crinoid_vadarocrinus", "y": 270}
+    ]
+  }
+}

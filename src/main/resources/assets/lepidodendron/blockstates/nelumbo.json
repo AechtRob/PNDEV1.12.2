@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:nelumbo"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:nelumbo_inventory"
+    }
+  }
+}

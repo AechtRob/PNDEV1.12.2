@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tetraxylopteris"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:tetraxylopteris_inventory"
+    }
+  }
+}

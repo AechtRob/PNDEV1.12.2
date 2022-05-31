@@ -1,0 +1,30 @@
+{
+	"name": "Listracanthus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/listracanthus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_listracanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_listracanthus",
+			"title": "Listracanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>$(o)incertae sedis$()$(br)>Listracanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/listracanthus.png"],
+			"title": "Listracanthus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_listracanthus",
+			"type": "text",
+			"text": "Listracanthus is a chondrichthyan with uncertain affinities and it is primarily known from their many dentricles that line the top of its body. It has a long, slender, snake like body and a whip like tail and it was an active hunter."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_listracanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

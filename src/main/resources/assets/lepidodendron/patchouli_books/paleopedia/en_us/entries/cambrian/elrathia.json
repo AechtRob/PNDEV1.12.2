@@ -1,0 +1,30 @@
+{
+	"name": "Elrathia",
+	"icon": "lepidodendron:elrathia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_elrathia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_elrathia",
+			"title": "Elrathia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/elrathia.png"],
+			"title": "Elrathia kingii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elrathia",
+			"type": "text",
+			"text": "Elrathia was a trilobite that likely occupied the exaerobic zone of the deep waters. It probably foraged for food in the benthic environments using its antenna."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_elrathia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

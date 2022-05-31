@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dead_plant_bleached_1"},
+      {"model": "lepidodendron:dead_plant_bleached_2"},
+      {"model": "lepidodendron:dead_plant_bleached_3"}
+    ]
+  }
+}

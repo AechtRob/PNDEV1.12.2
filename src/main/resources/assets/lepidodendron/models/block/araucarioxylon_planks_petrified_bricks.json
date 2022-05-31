@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/bricks3",
+    "up": "lepidodendron:blocks/bricks1",
+    "north": "lepidodendron:blocks/bricks3",
+    "east": "lepidodendron:blocks/bricks2",
+    "south": "lepidodendron:blocks/bricks2",
+    "west": "lepidodendron:blocks/bricks1",
+    "particle": "lepidodendron:blocks/bricks3"
+  }
+}

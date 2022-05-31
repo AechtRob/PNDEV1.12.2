@@ -1,0 +1,49 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "stemHorsetail"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "stemHorsetail"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "stemHorsetail"
+    },
+    "3": {
+      "item": "minecraft:string"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHorsetail"
+    },
+    "5": {
+      "item": "minecraft:string"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHorsetail"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHorsetail"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHorsetail"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:calamites_thatch",
+    "count": 6
+  }
+}

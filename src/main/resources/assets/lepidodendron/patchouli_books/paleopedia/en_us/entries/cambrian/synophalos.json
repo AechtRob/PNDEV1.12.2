@@ -1,0 +1,30 @@
+{
+	"name": "Synophalos",
+	"icon": "lepidodendron:synophalos_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_synophalos",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_synophalos",
+			"title": "Synophalos",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Arthropoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/synophalos.png"],
+			"title": "S. xynos",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_synophalos",
+			"type": "text",
+			"text": "Synophalos was a shrimp like animal from the Cambrian that was found in mass amounts all linked together, giving it the nickname 'chain shrimp.' It was discovered in the Chengjiang Lagerstatte in Yunnan, China."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_synophalos",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

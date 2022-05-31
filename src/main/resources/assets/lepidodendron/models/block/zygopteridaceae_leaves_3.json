@@ -1,0 +1,50 @@
+{
+	
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/zygopteridaceae_c",
+        "c": "lepidodendron:blocks/zygopteridaceae_c_3",
+        "e": "lepidodendron:blocks/zygopteridaceae_e_3",
+        "w": "lepidodendron:blocks/zygopteridaceae_w_3",
+        "down": "lepidodendron:blocks/zygopteridaceae_branch_end",
+        "up": "lepidodendron:blocks/zygopteridaceae_branch_end",
+        "north": "lepidodendron:blocks/zygopteridaceae_branch",
+        "south": "lepidodendron:blocks/zygopteridaceae_branch",
+        "west": "lepidodendron:blocks/zygopteridaceae_branch",
+        "east": "lepidodendron:blocks/zygopteridaceae_branch"
+    },
+    
+    "elements": [
+		{"name":"e",
+			"from":[15.0,0,11.0],"to":[31.0,16.0,11.0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 22.5, "rescale": false },
+			"faces":{
+			"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+		{"name":"w",
+			"from":[-15.0,0,11.0],"to":[1,16.0,11.0],"shade":false,
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": -22.5, "rescale": false },
+			"faces":{
+			"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+		{"name":"c",
+			"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+			"faces":{
+			"north":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]},
+			"south":{"texture":"#c","uv":[16.0,0.0,0.0,16.0]}}},
+
+		{"name":"mid",
+			"from": [ 7, 0, 7 ],
+            "to": [ 9, 16, 9 ],"shade":false,
+            "faces": {
+                "down":  { "uv": [ 7, 14, 8, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 7, 14, 8, 16 ], "texture": "#up" },
+                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#east" }
+            }
+        }
+	
+    ]
+}

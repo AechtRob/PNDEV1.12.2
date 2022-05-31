@@ -1,0 +1,30 @@
+{
+	"name": "Drepanaspis",
+	"icon": "lepidodendron:drepanaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_drepanaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_drepanaspis",
+			"title": "Drepanaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Heterostraci$(br)>Pteraspidiformes$(br)>Psammosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/drepanaspis.png"],
+			"title": "D. gemuendenensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_drepanaspis",
+			"type": "text",
+			"text": "Drepanaspis was a primitive agnathan or jawless fish from the Early Devonian. It was very flattened and heavily armored and its mouth faced upwards. Its eyes were spaced widely apart and it probably was a benthic feeder, scourging the ocean floor for food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_drepanaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

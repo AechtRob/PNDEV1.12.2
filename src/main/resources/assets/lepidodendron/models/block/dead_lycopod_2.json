@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/dead_lycopod_2",
+    "particle": "lepidodendron:blocks/dead_lycopod_2"
+  }
+}

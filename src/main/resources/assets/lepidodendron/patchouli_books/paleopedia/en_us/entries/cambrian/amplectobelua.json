@@ -1,0 +1,30 @@
+{
+	"name": "Amplectobelua",
+	"icon": "lepidodendron:amplectobelua_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_amplectobelua",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_amplectobelua",
+			"title": "Amplectobelua",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/amplectobelua.png"],
+			"title": "A. symbrachiata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amplectobelua",
+			"type": "text",
+			"text": "Amplectobelua, meaning 'embracing beast,' is a cambrian radiodont. It was a free swimming predator that probably preyed on the abundant trilobites which were found all over the world. Amplectobelua had a gnathobase like structure, being able to rotate and shred prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_amplectobelua",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

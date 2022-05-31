@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:resin_extractor"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:resin_extractor_full", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:resin_extractor_full"}
+    ]
+  }
+}

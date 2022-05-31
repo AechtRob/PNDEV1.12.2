@@ -1,0 +1,30 @@
+{
+	"name": "Dunbaria",
+	"icon": "paleopedia:permian/permian_icon/dunaria_icon.png",
+	"category": "patchouli:permian",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"title": "Dunbaria",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Dunbaria$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/dunbaria.png"],
+			"title": "D. quinquefasciata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

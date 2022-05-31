@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:cycadeoidea_leaves_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:cycadeoidea_leaves"
+    }
+  }
+}

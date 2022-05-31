@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:monkeypuzzle_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:monkeypuzzle_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:monkeypuzzle_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:monkeypuzzle_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:monkeypuzzle_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:monkeypuzzle_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:monkeypuzzle_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

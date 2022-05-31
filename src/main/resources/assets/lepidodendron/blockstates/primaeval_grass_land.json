@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:primeval_grass_land", "weight": 2},
+      {"model": "lepidodendron:primeval_grass_land_var"}
+    ]
+  }
+}

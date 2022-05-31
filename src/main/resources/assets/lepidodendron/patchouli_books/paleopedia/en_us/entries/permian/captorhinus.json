@@ -1,0 +1,30 @@
+{
+	"name": "Captorhinus",
+	"icon": "paleopedia:permian/permian_icon/captorhinus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_captorhinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_captorhinus",
+			"title": "Captorhinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Captorhinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/captorhinus.png"],
+			"title": "Captorhinus aguti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_captorhinus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_captorhinus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

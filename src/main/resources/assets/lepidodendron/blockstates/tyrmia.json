@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:tyrmia_inventory"
+    },
+    "normal": {
+      "model": "lepidodendron:tyrmia"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/odontopteris_stem",
+    "up": "lepidodendron:blocks/odontopteris_stem",
+    "north": "lepidodendron:blocks/odontopteris_stem",
+    "east": "lepidodendron:blocks/odontopteris_stem",
+    "south": "lepidodendron:blocks/odontopteris_stem",
+    "west": "lepidodendron:blocks/odontopteris_stem",
+    "particle": "lepidodendron:blocks/odontopteris_stem"
+  }
+}

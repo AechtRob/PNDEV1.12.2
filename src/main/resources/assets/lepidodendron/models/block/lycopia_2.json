@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/lycopia2_b",
+    "particle": "lepidodendron:blocks/lycopia2_b"
+  }
+}

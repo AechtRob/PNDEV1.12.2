@@ -1,0 +1,11 @@
+{
+	"parent": "lepidodendron:block/bench_right",
+	"textures": {
+		"metal": "blocks/diamond_block"
+	}
+}
+
+
+
+
+

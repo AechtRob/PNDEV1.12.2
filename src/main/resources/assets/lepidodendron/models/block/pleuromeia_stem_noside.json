@@ -1,0 +1,16 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/pleuromeia_log",
+        "inside": "lepidodendron:blocks/pleuromeia_log",
+        "particle": "lepidodendron:blocks/pleuromeia_log"
+    },
+    "elements": [
+        {   "from": [ 6, 6, 6 ],
+            "to": [ 10, 10, 10 ],
+            "faces": {
+                "north": { "texture": "#inside" }
+            }
+        }
+    ]
+}

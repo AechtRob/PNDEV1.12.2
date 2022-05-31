@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:brachyphyllum_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:brachyphyllum_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:brachyphyllum_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:brachyphyllum_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:brachyphyllum_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:brachyphyllum_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:brachyphyllum_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

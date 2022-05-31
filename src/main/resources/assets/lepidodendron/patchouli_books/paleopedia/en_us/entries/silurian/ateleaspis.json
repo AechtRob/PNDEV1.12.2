@@ -1,0 +1,30 @@
+{
+	"name": "Ateleaspis",
+	"icon": "lepidodendron:ateleaspis_raw",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_ateleaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ateleaspis",
+			"title": "Ateleaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteostraci$(br)>Ateleaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/ateleaspis.png"],
+			"title": "Ateleaspis tessellata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ateleaspis",
+			"type": "text",
+			"text": " "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ateleaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

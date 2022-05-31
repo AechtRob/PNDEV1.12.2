@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/plant_fossil_4_var",
+    "particle": "lepidodendron:blocks/plant_fossil_4"
+  }
+}

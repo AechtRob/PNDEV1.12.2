@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dendrograptus_1"},
+      {"model": "lepidodendron:dendrograptus_2"},
+      {"model": "lepidodendron:dendrograptus_1_rot"},
+      {"model": "lepidodendron:dendrograptus_2_rot"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:dendrograptus_1_side"},
+      {"model": "lepidodendron:dendrograptus_2_side"}
+      ],
+      "facing=east": [
+      {"model": "lepidodendron:dendrograptus_1_side", "y": 90},
+      {"model": "lepidodendron:dendrograptus_2_side", "y": 90}
+      ],
+      "facing=south": [
+      {"model": "lepidodendron:dendrograptus_1_side", "y": 180},
+      {"model": "lepidodendron:dendrograptus_2_side", "y": 180}
+      ],
+
+      "facing=west": [
+      {"model": "lepidodendron:dendrograptus_1_side","y": 270},
+      {"model": "lepidodendron:dendrograptus_2_side","y": 270}
+      ],
+
+    "facing=up": [
+      {"model": "lepidodendron:dendrograptus_1"},
+      {"model": "lepidodendron:dendrograptus_2" },
+      {"model": "lepidodendron:dendrograptus_1_rot"},
+      {"model": "lepidodendron:dendrograptus_2_rot" }
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:dendrograptus_1", "x": 180},
+      {"model": "lepidodendron:dendrograptus_2", "x": 180},
+      {"model": "lepidodendron:dendrograptus_1_rot", "x": 180},
+      {"model": "lepidodendron:dendrograptus_2_rot", "x": 180}
+    ]
+  }
+}

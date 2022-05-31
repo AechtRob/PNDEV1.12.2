@@ -1,0 +1,30 @@
+{
+	"name": "Basiloceras",
+	"icon": "lepidodendron:shell_basiloceras",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_basiloceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_basiloceras",
+			"title": "Basiloceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Oncoceratida$(br)>Acleistoceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/basiloceras.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_basiloceras",
+			"type": "text",
+			"text": " "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_basiloceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+		}
+	]
+}

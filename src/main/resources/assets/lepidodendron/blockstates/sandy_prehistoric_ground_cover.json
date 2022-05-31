@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "snowy=false": [ 
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover", "weight": 2 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_light", "weight": 3 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover", "weight": 2, "y": 90 },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_light", "weight": 3, "y": 90 }
+       ],
+        "snowy=true": [
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed" },
+        	{"model": "lepidodendron:sandy_prehistoric_ground_cover_snowed", "y": 90 }
+        ]
+    }
+}

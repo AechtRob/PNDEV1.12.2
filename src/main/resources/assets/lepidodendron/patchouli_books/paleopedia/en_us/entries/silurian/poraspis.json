@@ -1,0 +1,30 @@
+{
+	"name": "Poraspis",
+	"icon": "lepidodendron:poraspis_raw",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_poraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_poraspis",
+			"title": "Poraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/poraspis.png"],
+			"title": "Poraspis sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poraspis",
+			"type": "text",
+			"text": "Poraspis is a heterostracan jawless fish that lived during the Silurian to Devonian periods. Poraspis was more torpedo shaped and had spines lining its top and bottom sides."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poraspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

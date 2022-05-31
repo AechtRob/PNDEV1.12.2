@@ -1,0 +1,30 @@
+{
+	"name": "Acrolepis",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/acrolepis_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_acrolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_acrolepis",
+			"title": "Acrolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/acrolepis.png"],
+			"title": "Acrolepis sedgwicki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acrolepis",
+			"type": "text",
+			"text": "Acrolepis is a bony fish whose name means 'tip scale.' It was a large piscivore and was an apex predatory in its locality. They ate mainly Palaeonisciforme fish and used their teeth to hold prey in place and tear out the edible parts into smaller pieces for consumption."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_acrolepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

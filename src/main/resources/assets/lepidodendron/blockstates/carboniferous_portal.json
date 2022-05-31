@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:carboniferous_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:carboniferous_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:carboniferous_portal_ns"
+    }
+  }
+}

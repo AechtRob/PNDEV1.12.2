@@ -1,0 +1,41 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:asteroxylon1"},
+      {"model": "lepidodendron:asteroxylon2"},
+      {"model": "lepidodendron:asteroxylon3"},
+      {"model": "lepidodendron:asteroxylon4"},
+      {"model": "lepidodendron:asteroxylon5"},
+      {"model": "lepidodendron:asteroxylon6"},
+      {"model": "lepidodendron:asteroxylon7"},
+      {"model": "lepidodendron:asteroxylon8"},
+      
+      {"model": "lepidodendron:asteroxylon1", "y":90},
+      {"model": "lepidodendron:asteroxylon2", "y":90},
+      {"model": "lepidodendron:asteroxylon3", "y":90},
+      {"model": "lepidodendron:asteroxylon4", "y":90},
+      {"model": "lepidodendron:asteroxylon5", "y":90},
+      {"model": "lepidodendron:asteroxylon6", "y":90},
+      {"model": "lepidodendron:asteroxylon7", "y":90},
+      {"model": "lepidodendron:asteroxylon8", "y":90},
+      
+      {"model": "lepidodendron:asteroxylon1", "y":180},
+      {"model": "lepidodendron:asteroxylon2", "y":180},
+      {"model": "lepidodendron:asteroxylon3", "y":180},
+      {"model": "lepidodendron:asteroxylon4", "y":180},
+      {"model": "lepidodendron:asteroxylon5", "y":180},
+      {"model": "lepidodendron:asteroxylon6", "y":180},
+      {"model": "lepidodendron:asteroxylon7", "y":1800},
+      {"model": "lepidodendron:asteroxylon8", "y":180},
+      
+      {"model": "lepidodendron:asteroxylon1", "y":270},
+      {"model": "lepidodendron:asteroxylon2", "y":270},
+      {"model": "lepidodendron:asteroxylon3", "y":270},
+      {"model": "lepidodendron:asteroxylon4", "y":270},
+      {"model": "lepidodendron:asteroxylon5", "y":270},
+      {"model": "lepidodendron:asteroxylon6", "y":270},
+      {"model": "lepidodendron:asteroxylon7", "y":270},
+      {"model": "lepidodendron:asteroxylon8", "y":270}
+    ]
+  }
+}

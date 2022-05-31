@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:mud_dried"
+    },
+    "1": {
+      "item": "lepidodendron:mud_dried"
+    },
+    "3": {
+      "item": "lepidodendron:mud_dried"
+    },
+    "4": {
+      "item": "lepidodendron:mud_dried"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:mud_bricks",
+    "count": 4
+  }
+}

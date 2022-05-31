@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "normal": [
+      		{"model": "lepidodendron:prehistoric_ground_cover_var0", "weight": 3},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var1"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var2"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var3", "weight": 8},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var4"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var5", "weight": 10},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var6"},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var7", "weight": 5},
+        	
+        	{"model": "lepidodendron:prehistoric_ground_cover_var0", "weight": 3, "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var1", "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var2", "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var3", "weight": 8, "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var4", "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var5", "weight": 10, "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var6", "y": 90},
+        	{"model": "lepidodendron:prehistoric_ground_cover_var7", "weight": 5, "y": 90}
+    ]
+  }
+}

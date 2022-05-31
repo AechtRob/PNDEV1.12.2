@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:glossopterislog"
+    },
+    "facing=south": {
+      "model": "lepidodendron:glossopterislog"
+    },
+    "facing=north": {
+      "model": "lepidodendron:glossopterislog"
+    },
+    "facing=east": {
+      "model": "lepidodendron:glossopterislog",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:glossopterislog",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:glossopterislog",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:glossopterislog",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:coniopteris"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:coniopteris_inventory"
+    }
+  }
+}

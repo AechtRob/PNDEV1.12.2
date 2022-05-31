@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:telemachus_planks"
+    },
+    "3": {
+      "item": "lepidodendron:telemachus_planks"
+    },
+    "4": {
+      "item": "lepidodendron:telemachus_planks"
+    },
+    "6": {
+      "item": "lepidodendron:telemachus_planks"
+    },
+    "7": {
+      "item": "lepidodendron:telemachus_planks"
+    },
+    "8": {
+      "item": "lepidodendron:telemachus_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:telemachus_stairs",
+    "count": 4
+  }
+}

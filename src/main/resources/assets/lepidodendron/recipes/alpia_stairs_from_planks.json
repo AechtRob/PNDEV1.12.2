@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:alpia_planks"
+    },
+    "3": {
+      "item": "lepidodendron:alpia_planks"
+    },
+    "4": {
+      "item": "lepidodendron:alpia_planks"
+    },
+    "6": {
+      "item": "lepidodendron:alpia_planks"
+    },
+    "7": {
+      "item": "lepidodendron:alpia_planks"
+    },
+    "8": {
+      "item": "lepidodendron:alpia_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:alpia_stairs",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/bristlecone_sapling",
+    "particle": "lepidodendron:blocks/bristlecone_sapling"
+  }
+}

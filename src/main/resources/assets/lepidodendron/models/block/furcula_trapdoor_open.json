@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_open",
+  "textures": {
+    "texture": "lepidodendron:blocks/furcula_trapdoor",
+    "planktexture": "lepidodendron:blocks/furcula_planks",
+    "particle": "lepidodendron:blocks/furcula_trapdoor"
+  }
+}

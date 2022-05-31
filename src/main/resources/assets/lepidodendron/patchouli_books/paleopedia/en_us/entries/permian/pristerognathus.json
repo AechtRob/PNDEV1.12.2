@@ -1,0 +1,30 @@
+{
+	"name": "Pristerognathus",
+	"icon": "paleopedia:permian/permian_icon/pristerognathus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_pristerognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
+			"title": "Pristerognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/pristerognathus.png"],
+			"title": "P. vanderbyli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

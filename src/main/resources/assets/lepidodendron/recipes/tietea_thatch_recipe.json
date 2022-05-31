@@ -1,0 +1,46 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:tietea_branch"
+    },
+    "1": {
+      "item": "lepidodendron:tietea_branch"
+    },
+    "2": {
+      "item": "lepidodendron:tietea_branch"
+    },
+    "3": {
+      "item": "minecraft:string"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "leavesTietea"
+    },
+    "5": {
+      "item": "minecraft:string"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "leavesTietea"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "leavesTietea"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "leavesTietea"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:tietea_thatch",
+    "count": 6
+  }
+}

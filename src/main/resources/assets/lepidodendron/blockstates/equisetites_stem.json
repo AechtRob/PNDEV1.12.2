@@ -1,0 +1,42 @@
+{
+    "multipart": [
+        {   "when": { "facing": "north" },
+            "apply": { "model": "lepidodendron:equisites_stem", "x": 90 }
+        },
+        {   "when": { "facing": "south" },
+            "apply": { "model": "lepidodendron:equisites_stem", "x": 90, "y": 180 }
+        },
+        {   "when": { "facing": "west" },
+            "apply": { "model": "lepidodendron:equisites_stem", "x": 90, "y": 270 }
+        },
+        {   "when": { "facing": "east" },
+            "apply": { "model": "lepidodendron:equisites_stem", "x": 90, "y": 90 }
+        },
+        {   "when": { "facing": "up" },
+            "apply": { "model": "lepidodendron:equisites_stem" }
+        },
+        {   "when": { "facing": "down" },
+            "apply": { "model": "lepidodendron:equisites_stem" }
+        },
+        
+        {   "when": { "north": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub", "x": 90 }
+        },
+        {   "when": { "south": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub", "x": 270 }
+        },
+        {   "when": { "east": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub", "x": 90, "y": 90 }
+        },
+        {   "when": { "west": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub", "x": 90, "y": 270 }
+        },
+        {   "when": { "up": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub" }
+        },
+        {   "when": { "down": "true" },
+            "apply": { "model": "lepidodendron:equisites_stem_stub", "x": 180 }
+        }
+        
+    ]
+}

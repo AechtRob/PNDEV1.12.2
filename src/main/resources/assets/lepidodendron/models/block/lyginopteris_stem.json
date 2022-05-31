@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/lyginopteris_stem",
+    "up": "lepidodendron:blocks/lyginopteris_stem",
+    "north": "lepidodendron:blocks/lyginopteris_stem",
+    "east": "lepidodendron:blocks/lyginopteris_stem",
+    "south": "lepidodendron:blocks/lyginopteris_stem",
+    "west": "lepidodendron:blocks/lyginopteris_stem",
+    "particle": "lepidodendron:blocks/lyginopteris_stem"
+  }
+}

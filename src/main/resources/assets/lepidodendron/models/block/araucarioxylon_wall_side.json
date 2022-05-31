@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_side",
+    "textures": {
+        "wall": "lepidodendron:blocks/araucarioxylon_wood_petrified"
+    }
+}

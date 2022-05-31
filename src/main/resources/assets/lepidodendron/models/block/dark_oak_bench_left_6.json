@@ -1,0 +1,11 @@
+{
+	"parent": "lepidodendron:block/bench_left",
+	"textures": {
+		"metal": "lepidodendron:blocks/baltic_amber"
+	}
+}
+
+
+
+
+

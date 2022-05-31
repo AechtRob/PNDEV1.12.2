@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:lava_rock_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:lava_rock_slab_top"
+    }
+  }
+}

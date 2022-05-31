@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/magnolialog_top",
+    "up": "lepidodendron:blocks/magnolialog_top",
+    "north": "lepidodendron:blocks/magnolialog",
+    "east": "lepidodendron:blocks/magnolialog",
+    "south": "lepidodendron:blocks/magnolialog",
+    "west": "lepidodendron:blocks/magnolialog",
+    "particle": "lepidodendron:blocks/magnolialog_top"
+  }
+}

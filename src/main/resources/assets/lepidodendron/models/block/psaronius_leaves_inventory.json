@@ -1,0 +1,24 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:items/psaronius_leaf_inventory",
+        "down": "lepidodendron:items/psaronius_leaf_inventory",
+        "up": "lepidodendron:items/psaronius_leaf_inventory",
+        "north": "lepidodendron:items/psaronius_leaf_inventory",
+        "south": "lepidodendron:items/psaronius_leaf_inventory",
+        "west": "lepidodendron:items/psaronius_leaf_inventory",
+        "east": "lepidodendron:items/psaronius_leaf_inventory"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

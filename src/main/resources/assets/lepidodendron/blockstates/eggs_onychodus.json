@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:eggs_onychodus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:eggs_onychodus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:eggs_onychodus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:eggs_onychodus", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:eggs_onychodus", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:eggs_onychodus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:eggs_onychodus", "x": 180}
+    ]
+  }
+}

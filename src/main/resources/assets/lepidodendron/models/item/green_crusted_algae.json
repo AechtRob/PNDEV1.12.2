@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "lepidodendron:blocks/green_crusted_algae_t"
+    }
+}

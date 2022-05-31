@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:black_treefern_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:black_treefern_shoot_side_02", "y": -90
+    },
+    "facing=east": {
+      "model": "lepidodendron:black_treefern_shoot_side_02"
+    },
+    "facing=south": {
+      "model": "lepidodendron:black_treefern_shoot_side_02", "y": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:black_treefern_shoot_side_02", "y": 180
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:thaumaptilon",
+      "y": 0
+    }
+  }
+}

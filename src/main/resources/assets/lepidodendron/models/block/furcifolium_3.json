@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/furcifolium_small1",
+    "particle": "lepidodendron:blocks/furcifolium_small1"
+  }
+}

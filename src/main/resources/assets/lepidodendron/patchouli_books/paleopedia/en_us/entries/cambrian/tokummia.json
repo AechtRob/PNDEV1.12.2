@@ -1,0 +1,30 @@
+{
+	"name": "Tokummia",
+	"icon": "lepidodendron:tokummia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_tokummia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tokummia",
+			"title": "Tokummia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Hymenocarina$(br2)>Protocarididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/tokummia.png"],
+			"title": "T. katalepsis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tokummia",
+			"type": "text",
+			"text": "Tokummia is a hymenocarid arthropod from the Burgess Shale which had a shell covering its body and the front of the animal had mandibles with pincers which it used to grab soft bodied prey. It was a bottom feeder and was able to walk on the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tokummia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

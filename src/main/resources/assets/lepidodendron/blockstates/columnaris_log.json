@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:columnaris_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:columnaris_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:columnaris_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:columnaris_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:columnaris_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:columnaris_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:columnaris_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

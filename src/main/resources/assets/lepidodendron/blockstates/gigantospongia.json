@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:gigantospongia"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:gigantospongia", "x": 90},
+      {"model": "lepidodendron:gigantospongia_var", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:gigantospongia", "x": 90, "y": 90},
+      {"model": "lepidodendron:gigantospongia_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:gigantospongia", "x": 90, "y": 180},
+      {"model": "lepidodendron:gigantospongia_var", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:gigantospongia", "x": 90, "y": 270},
+      {"model": "lepidodendron:gigantospongia_var", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:gigantospongia"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:gigantospongia", "x": 180}
+    ]
+  }
+}

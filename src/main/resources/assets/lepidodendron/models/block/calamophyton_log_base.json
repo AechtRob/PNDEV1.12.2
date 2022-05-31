@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/calamophyton_log_base",
+    "particle": "lepidodendron:blocks/calamophyton_log_base"
+  }
+}

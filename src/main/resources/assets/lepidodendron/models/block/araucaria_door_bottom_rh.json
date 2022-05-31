@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "lepidodendron:blocks/araucaria_door_bottom",
+        "top": "lepidodendron:blocks/araucaria_door_top"
+    }
+}

@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/caytoniales_b_e_var",
+"w":"lepidodendron:blocks/caytoniales_b_w_var"
+}
+}

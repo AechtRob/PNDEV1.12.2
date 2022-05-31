@@ -1,0 +1,24 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "down": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "up": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "north": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "south": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "west": "lepidodendron:items/zygopteridaceae_leaves_inventory",
+        "east": "lepidodendron:items/zygopteridaceae_leaves_inventory"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

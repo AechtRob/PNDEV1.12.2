@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pachypteris_top"},
+      {"model": "lepidodendron:pachypteris_top_bushy"},
+      {"model": "lepidodendron:pachypteris_top_tall"}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/araucaria_wood",
+    "particle": "lepidodendron:blocks/araucaria_wood"
+  }
+}

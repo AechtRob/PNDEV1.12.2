@@ -1,0 +1,100 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/reef_block_variant7",
+		"particle": "lepidodendron:blocks/reef_block_variant7"
+	},
+	"elements": [
+		{
+			"name": "Bracket1",
+			"from": [3, 12.01, 16],
+			"to": [11, 13.01, 21],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 5, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 5, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 8, 5], "texture": "#texture"},
+				"down": {"uv": [0, 0, 8, 5], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket2",
+			"from": [0.01, 11.01, 16],
+			"to": [14.01, 12.01, 23],
+			"faces": {
+				"north": {"uv": [0, 0, 14, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 7, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 14, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 7, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 14, 7], "texture": "#texture"},
+				"down": {"uv": [0, 0, 14, 7], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket3",
+			"from": [3, 10.01, 16],
+			"to": [11, 11.01, 22],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 6, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 6, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 8, 6], "texture": "#texture"},
+				"down": {"uv": [0, 0, 8, 6], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket3",
+			"from": [3, 9.01, 16],
+			"to": [11, 10.01, 19],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 3, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 8, 3], "texture": "#texture"},
+				"down": {"uv": [0, 0, 8, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket4",
+			"from": [3, 11.01, 26],
+			"to": [11, 12.01, 28],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 2, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 8, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 2, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 8, 2], "texture": "#texture"},
+				"down": {"uv": [0, 0, 8, 2], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket5",
+			"from": [5, 7.01, 16],
+			"to": [9, 9.01, 19],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 2], "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 2], "texture": "#texture"},
+				"south": {"uv": [0, 0, 4, 2], "texture": "#texture"},
+				"west": {"uv": [0, 0, 3, 2], "texture": "#texture"},
+				"up": {"uv": [0, 0, 4, 3], "texture": "#texture"},
+				"down": {"uv": [0, 0, 4, 3], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Bracket6",
+			"from": [1, 11.01, 23],
+			"to": [13, 12.01, 26],
+			"faces": {
+				"north": {"uv": [0, 0, 12, 1], "texture": "#texture"},
+				"east": {"uv": [0, 0, 3, 1], "texture": "#texture"},
+				"south": {"uv": [0, 0, 12, 1], "texture": "#texture"},
+				"west": {"uv": [0, 0, 3, 1], "texture": "#texture"},
+				"up": {"uv": [0, 0, 12, 3], "texture": "#texture"},
+				"down": {"uv": [0, 0, 12, 3], "texture": "#texture"}
+			}
+		}
+	]
+}

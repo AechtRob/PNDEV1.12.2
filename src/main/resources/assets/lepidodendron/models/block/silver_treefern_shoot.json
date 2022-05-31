@@ -1,0 +1,65 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+	    "centre": "lepidodendron:blocks/silver_treefern_1_c",
+	    "centredown": "lepidodendron:blocks/silver_treefern_l_c",
+	    "particle": "lepidodendron:blocks/silver_treefern_1_c"
+	},
+	"elements":[		
+
+		{"name":"n",
+		"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],
+		"faces":{
+		"east":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+		"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"e",
+		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],
+		"faces":{
+		"north":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"ndown",
+		"from":[8.0,-16.0,0.0],"to":[8.0,0.0,16.0],
+		"faces":{
+		"east":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]},
+		"west":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"edown",
+		"from":[0.0,-16.0,8.0],"to":[16.0,0.0,8.0],
+		"faces":{
+		"north":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]},
+		"south":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+		{"name":"diagn",
+			"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"east":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diage",
+			"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"north":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diagndown",
+			"from":[8.0,-16.0,0.0],"to":[8.0,0.0,16.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"east":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]},
+				"west":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]}}},
+
+		{"name":"diagedown",
+			"from":[0.0,-16.0,8.0],"to":[16.0,0.0,8.0],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+			"faces":{
+				"north":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]},
+				"south":{"texture":"#centredown","uv":[0.0,0.0,16.0,16.0]}}}
+
+
+]
+}

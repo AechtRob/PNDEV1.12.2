@@ -1,0 +1,30 @@
+{
+	"name": "Furcacauda",
+	"icon": "lepidodendron:furcacauda_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_furcacauda",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_furcacauda",
+			"title": "Furcacauda",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/furcacauda.png"],
+			"title": "Furcacauda heintzae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furcacauda",
+			"type": "text",
+			"text": "Furcacauda was a deep water jawless fish. Its tail looked like a crescent and its body plan was quite reminiscent of modern tropical fish. It was discovered that Furcacauda may have had a stomach, being the first vertebrate to do so, meaning that stomachs developed before jaws."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furcacauda",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:green_filamentous_algae"},
+      {"model": "lepidodendron:green_filamentous_algae", "y": 90 },
+      {"model": "lepidodendron:green_filamentous_algae", "y": 180 },
+      {"model": "lepidodendron:green_filamentous_algae", "y": 270 }
+    ]
+  }
+}

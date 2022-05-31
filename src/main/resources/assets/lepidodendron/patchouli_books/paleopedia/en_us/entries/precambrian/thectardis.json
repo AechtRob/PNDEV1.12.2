@@ -1,0 +1,30 @@
+{
+	"name": "Thectardis",
+	"icon": "lepidodendron:thectardis",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_thectardis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thectardis",
+			"title": "Thectardis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/thectardis.png"],
+			"title": "T. avalonensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thectardis",
+			"type": "text",
+			"text": "Thectardis is a cone shaped ediacaran organism. When alive, it probably stuck to microbial mats, standing on the tips like a pin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thectardis",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

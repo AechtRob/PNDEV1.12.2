@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:pitys_strobilus"},
+      	{"model": "lepidodendron:pitys_strobilus_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:pitys_strobilus", "x": 90},
+       	{"model": "lepidodendron:pitys_strobilus_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:pitys_strobilus", "x": 90, "y": 90},
+      	{"model": "lepidodendron:pitys_strobilus_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:pitys_strobilus", "x": 90, "y": 180},
+      	{"model": "lepidodendron:pitys_strobilus_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:pitys_strobilus", "x": 90, "y": 270},
+      	{"model": "lepidodendron:pitys_strobilus_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:pitys_strobilus"},
+      	{"model": "lepidodendron:pitys_strobilus_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:pitys_strobilus", "x": 180},
+      	{"model": "lepidodendron:pitys_strobilus_rot", "x": 180}
+    ]
+  }
+}

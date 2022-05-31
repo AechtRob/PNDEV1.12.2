@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/stauropteris_small",
+    "particle": "lepidodendron:blocks/stauropteris_small"
+  }
+}

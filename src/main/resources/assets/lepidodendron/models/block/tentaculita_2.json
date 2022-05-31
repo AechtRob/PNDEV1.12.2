@@ -1,0 +1,7 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "lepidodendron:blocks/tentaculita_2",
+		"particle": "lepidodendron:items/tentaculita_inventory"
+	}
+}

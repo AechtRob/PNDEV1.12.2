@@ -1,0 +1,72 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"c": "lepidodendron:blocks/silver_treefern_2_c",
+		"e": "lepidodendron:blocks/silver_treefern_2_e",
+		"ee": "lepidodendron:blocks/silver_treefern_2_ee",
+		"w": "lepidodendron:blocks/silver_treefern_2_w",
+		"ww": "lepidodendron:blocks/silver_treefern_2_ww",
+		"cu": "lepidodendron:blocks/silver_treefern_3_c",
+		"eu": "lepidodendron:blocks/silver_treefern_3_e",
+		"eeu": "lepidodendron:blocks/silver_treefern_3_ee",
+		"wu": "lepidodendron:blocks/silver_treefern_3_w",
+		"particle": "lepidodendron:blocks/silver_treefern_2_c"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0.01],
+			"to": [16, 16, 0.01],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#w"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#e"}
+			}
+		},
+		{
+			"from": [-4, 0, 0.01],
+			"to": [0, 16, 0.01],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [4, 0, 0, 16], "texture": "#c"},
+				"south": {"uv": [12, 0, 16, 16], "texture": "#c"}
+			}
+		},
+		{
+			"from": [16, 0, 0],
+			"to": [32, 16, 0],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#ww"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#ee"}
+			}
+		},
+
+
+		{
+			"from": [0, 16, 0.01],
+			"to": [16, 32, 0.01],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#wu"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#eu"}
+			}
+		},
+		{
+			"from": [-4, 16, 0.01],
+			"to": [0, 32, 0.01],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"north": {"uv": [4, 0, 0, 16], "texture": "#cu"},
+				"south": {"uv": [12, 0, 16, 16], "texture": "#cu"}
+			}
+		},
+		{
+			"from": [16, 16, 0],
+			"to": [32, 32, 0],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 8, 0]},
+			"faces": {
+				"south": {"uv": [0, 0, 16, 16], "texture": "#eeu"}
+			}
+		}
+	]
+}

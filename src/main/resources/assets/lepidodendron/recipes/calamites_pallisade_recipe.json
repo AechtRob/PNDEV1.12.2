@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:calamites_branch"
+    },
+    "4": {
+      "item": "lepidodendron:calamites_branch"
+    },
+    "5": {
+      "item": "lepidodendron:calamites_branch"
+    },
+    "6": {
+      "item": "lepidodendron:calamites_branch"
+    },
+    "7": {
+      "item": "lepidodendron:calamites_branch"
+    },
+    "8": {
+      "item": "lepidodendron:calamites_branch"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:calamites_pallisade",
+    "count": 4
+  }
+}

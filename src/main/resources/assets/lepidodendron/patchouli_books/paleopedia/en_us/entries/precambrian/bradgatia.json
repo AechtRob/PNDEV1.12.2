@@ -1,0 +1,30 @@
+{
+	"name": "Bradgatia",
+	"icon": "lepidodendron:bradgatia",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_bradgatia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bradgatia",
+			"title": "Bradgatia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Rangeomorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/bradgatia.png"],
+			"title": "B. linfordensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bradgatia",
+			"type": "text",
+			"text": "Bradgatia is a cabbage looking ediacaran organism. It grew from about 8-22 cm but was towered over by the Charnia and Charniodiscus which lived in the same areas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bradgatia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

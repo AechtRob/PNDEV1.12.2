@@ -1,0 +1,62 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"shoot": "lepidodendron:blocks/hermanophyton_shoot_cone",
+		"e": "lepidodendron:blocks/hermanophyton_stem_var_e",
+		"w": "lepidodendron:blocks/hermanophyton_stem_var_w",
+		"c": "lepidodendron:blocks/hermanophyton_stem_var_crosspiece",
+		"particle": "lepidodendron:blocks/hermanophyton_shoot"
+	},
+	"elements": [
+		{
+			"name": "w",
+			"from": [7, 0, -2],
+			"to": [7, 16, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, -2]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#w"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#w"}
+			}
+		},
+		{
+			"name": "w",
+			"from": [-1.5, 0, 8],
+			"to": [14.5, 16, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 8, 6]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#c"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#c"}
+			}
+		},
+		{
+			"name": "e",
+			"from": [7, 0, 14],
+			"to": [7, 16, 30],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, -2]},
+			"faces": {
+				"east": {"uv": [16, 0, 0, 16], "texture": "#e"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#e"}
+			}
+		},
+		{
+			"name": "shoot",
+			"from": [7, 10, 14],
+			"to": [7, 26, 30],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 24, 22]},
+			"faces": {
+				"east": {"uv": [0, 0, 16, 16], "texture": "#shoot"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#shoot"}
+			}
+		},
+		{
+			"name": "shoot",
+			"from": [-1, 10, 22],
+			"to": [15, 26, 22],
+			"rotation": {"angle": 45, "axis": "y", "origin": [7, 24, 22]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#shoot"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#shoot"}
+			}
+		}
+	]
+}

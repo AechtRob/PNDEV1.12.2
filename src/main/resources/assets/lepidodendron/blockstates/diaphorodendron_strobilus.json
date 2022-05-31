@@ -1,0 +1,35 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:diaphorodendron_strobilus"
+    },
+    "facing=north": {
+      "model": "lepidodendron:diaphorodendron_strobilus",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:diaphorodendron_strobilus",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:diaphorodendron_strobilus",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:diaphorodendron_strobilus",
+      "x": 90,
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "lepidodendron:diaphorodendron_strobilus"
+    },
+    "facing=down": {
+      "model": "lepidodendron:diaphorodendron_strobilus",
+      "x": 180
+    }
+  }
+}

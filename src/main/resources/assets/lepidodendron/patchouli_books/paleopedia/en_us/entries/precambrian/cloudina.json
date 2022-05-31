@@ -1,0 +1,30 @@
+{
+	"name": "Cloudina",
+	"icon": "lepidodendron:cloudina",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_cloudina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cloudina",
+			"title": "Cloudina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Cloudinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/cloudina.png"],
+			"title": "Cloudina sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cloudina",
+			"type": "text",
+			"text": "Cloudina is an ediacaran animal of uncertain placement. They consist of many cones nested within each other. Their mode of life is currently still in debate and unresolved."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cloudina",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

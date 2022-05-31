@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "particle": "lepidodendron:blocks/prehistoric_ground",
+        "bottom": "lepidodendron:blocks/prehistoric_ground",
+        "top": "lepidodendron:blocks/dirt_prehistoric_ground_fern_prairie_var0",
+        "side": "lepidodendron:blocks/dirt_prehistoric_ground_fern_prairie_side_snowed"
+    }
+}

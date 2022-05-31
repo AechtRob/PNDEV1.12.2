@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/furcifolium_large1_e",
+"w":"lepidodendron:blocks/furcifolium_large1_w"
+}
+}

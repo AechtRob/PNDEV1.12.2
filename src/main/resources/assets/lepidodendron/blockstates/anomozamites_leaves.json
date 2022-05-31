@@ -1,0 +1,35 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:anomozamites_leaves_inventory" }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2 }
+    ],
+    "facing=north": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3, "x": 90 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2, "x": 90 }
+    ],
+    "facing=east": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3, "x": 90, "y": 90 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2, "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3, "x": 90, "y": 180 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2, "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3, "x": 90, "y": 270 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2, "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3 },
+		{ "model": "lepidodendron:anomozamites_flower",  "weight": 2}
+    ],
+    "facing=down": [
+		{ "model": "lepidodendron:anomozamites_leaves", "weight": 3, "x": 180 },
+		{ "model": "lepidodendron:anomozamites_flower", "weight": 2, "x": 180 }
+    ]
+  }
+}

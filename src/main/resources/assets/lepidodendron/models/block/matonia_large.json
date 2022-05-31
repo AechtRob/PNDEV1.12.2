@@ -1,0 +1,18 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "centre": "lepidodendron:blocks/matonia_leaf_small",
+    "particle": "lepidodendron:blocks/matonia_leaf_small"
+  },
+  "elements": [
+        {   "from": [ 0, 8, 0 ],
+            "to": [ 16, 8, 16 ],
+            "shade": false,
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": 22.5, "rescale": false },
+            "faces": {
+                "up": { "uv": [ 0, 0, 16, 16 ], "texture": "#centre" },
+                "down": { "uv": [ 0, 0, 16, 16 ], "texture": "#centre", "rotation": 180 }
+            }
+        }
+	]
+}

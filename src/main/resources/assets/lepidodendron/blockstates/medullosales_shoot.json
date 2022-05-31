@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:medullosales_shoot", "weight": 2 },
+      {"model": "lepidodendron:medullosales_shoot_var", "weight": 2 },
+
+      {"model": "lepidodendron:medullosales_shoot", "weight": 2, "y": 90 },
+      {"model": "lepidodendron:medullosales_shoot_var", "weight": 2, "y": 90 }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:medullosales_shoot_inventory"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:baiera_inventory"
+    },
+    "var=false": {"model": "lepidodendron:baiera_1"},
+    "var=true": {"model": "lepidodendron:baiera_2"}
+  }
+}

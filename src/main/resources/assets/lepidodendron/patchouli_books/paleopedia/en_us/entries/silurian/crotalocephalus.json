@@ -1,0 +1,30 @@
+{
+	"name": "Crotalocephalus",
+	"icon": "lepidodendron:crotalocephalus_raw",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_crotalocephalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_crotalocephalus",
+			"title": "Crotalocephalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/crotalocephalus.png"],
+			"title": "Crotalocephalus struszi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crotalocephalus",
+			"type": "text",
+			"text": "Crotalocephalus is a trilobite from the Silurian to Devonian periods. It is characterized by a longer and slender looking body compared to other traditionally oval shaped trilobites. Crotalocephalus was probably a bottom feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_crotalocephalus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

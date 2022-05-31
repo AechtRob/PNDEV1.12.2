@@ -1,0 +1,41 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:arkarua_1"},
+      {"model": "lepidodendron:arkarua_2"},
+      {"model": "lepidodendron:arkarua_3"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:arkarua_1", "x": 90},
+      {"model": "lepidodendron:arkarua_2", "x": 90},
+      {"model": "lepidodendron:arkarua_3", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:arkarua_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:arkarua_2", "x": 90, "y": 90},
+      {"model": "lepidodendron:arkarua_3", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:arkarua_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:arkarua_2", "x": 90, "y": 180},
+      {"model": "lepidodendron:arkarua_3", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:arkarua_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:arkarua_2", "x": 90, "y": 270},
+      {"model": "lepidodendron:arkarua_3", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:arkarua_1"},
+      {"model": "lepidodendron:arkarua_2"},
+      {"model": "lepidodendron:arkarua_3"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:arkarua_1", "x": 180},
+      {"model": "lepidodendron:arkarua_2", "x": 180},
+      {"model": "lepidodendron:arkarua_3", "x": 180}
+    ]
+  }
+}

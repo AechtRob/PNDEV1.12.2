@@ -1,0 +1,30 @@
+{
+	"name": "Lystrosaurus",
+	"icon": "paleopedia:permian/permian_icon/lystrosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_lystrosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lystrosaurus",
+			"title": "Lystrosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Lystrosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/lystrosaurus.png"],
+			"title": "Lystrosaurus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lystrosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lystrosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

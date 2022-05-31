@@ -1,0 +1,30 @@
+{
+	"name": "Tullimonstrum",
+	"icon": "lepidodendron:tullimonstrum_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_tullimonstrum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_tullimonstrum",
+			"title": "Tullimonstrum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Bilateria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/tullimonstrum.png"],
+			"title": "T. gregarium",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tullimonstrum",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tullimonstrum",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:artocarpus_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:artocarpus_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:artocarpus_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:artocarpus_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:artocarpus_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:artocarpus_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:artocarpus_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

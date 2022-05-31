@@ -1,0 +1,8 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "lepidodendron:blocks/zircon_glass",
+        "glass": "lepidodendron:blocks/zircon_glass"
+    },
+    "elements": [
+    ]
+}

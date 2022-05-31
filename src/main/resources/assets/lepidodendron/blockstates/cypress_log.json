@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:cypress_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:cypress_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:cypress_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:cypress_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:cypress_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:cypress_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:cypress_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

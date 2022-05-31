@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:maple_sapling" },
+        "stage=1": { "model": "lepidodendron:maple_sapling" }
+    }
+}

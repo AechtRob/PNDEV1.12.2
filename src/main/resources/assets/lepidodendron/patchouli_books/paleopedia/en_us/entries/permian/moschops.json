@@ -1,0 +1,30 @@
+{
+	"name": "Moschops",
+	"icon": "paleopedia:permian/permian_icon/moschops_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_moschops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_moschops",
+			"title": "Moschops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/moschops.png"],
+			"title": "Moschops capensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_moschops",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_moschops",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

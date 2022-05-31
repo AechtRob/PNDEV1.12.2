@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:baltic_amber_brick_slab_double"
+    }
+  }
+}

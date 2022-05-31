@@ -1,0 +1,30 @@
+{
+	"name": "Coccosteus",
+	"icon": "lepidodendron:coccosteus_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_coccosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coccosteus",
+			"title": "Coccosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Placodermi$(br)>Arthrodira$(br)>Coccosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/coccosteus.png"],
+			"title": "Coccosteus cuspidatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coccosteus",
+			"type": "text",
+			"text": "Coccosteus' name comes from the Greek 'kokkos' meaning berry and 'osteon' meaning bone. It was about 24 centimeters in length, and some subspecies may have been freshwater species. Coccosteus had an internal joint between its neck and skull which allowed the mouth to open wider, possibly allowing it to eat larger prey"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coccosteus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

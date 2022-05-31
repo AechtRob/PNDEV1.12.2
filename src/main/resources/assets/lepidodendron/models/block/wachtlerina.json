@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/wachtlerina_1_e",
+"w":"lepidodendron:blocks/wachtlerina_1_w"
+}
+}

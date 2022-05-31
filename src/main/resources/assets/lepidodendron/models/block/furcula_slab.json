@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/furcula_planks",
+    "top": "lepidodendron:blocks/furcula_planks",
+    "side": "lepidodendron:blocks/furcula_planks"
+  }
+}

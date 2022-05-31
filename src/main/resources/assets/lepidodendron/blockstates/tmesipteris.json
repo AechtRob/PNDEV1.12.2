@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:tmesipteris"},
+      {"model": "lepidodendron:tmesipteris_dbl"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:tmesipteris"},
+      {"model": "lepidodendron:tmesipteris_dbl"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:tmesipteris", "y": 90},
+      {"model": "lepidodendron:tmesipteris_dbl", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:tmesipteris", "y": 180},
+      {"model": "lepidodendron:tmesipteris_dbl", "y": 180}
+    ],
+    
+    "facing=west": [
+      {"model": "lepidodendron:tmesipteris", "y": 270},
+      {"model": "lepidodendron:tmesipteris_dbl", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:tmesipteris"},
+      {"model": "lepidodendron:tmesipteris_dbl"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:tmesipteris"},
+      {"model": "lepidodendron:tmesipteris_dbl"}
+    ]
+  }
+}

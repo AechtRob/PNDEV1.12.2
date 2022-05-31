@@ -1,0 +1,30 @@
+{
+	"name": "Roach",
+	"icon": "paleopedia:ambients/ambient_icon/roach_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_roachoid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_roachoid",
+			"title": "Roach",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/roach1.png", "paleopedia:ambients/roach2.png", "paleopedia:ambients/roach3.png"],
+			"title": "Blattodea",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_roachoid",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_roachoid",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

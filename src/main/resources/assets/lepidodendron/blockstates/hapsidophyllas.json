@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:hapsidophyllas",
+      "y": 0
+    }
+  }
+}

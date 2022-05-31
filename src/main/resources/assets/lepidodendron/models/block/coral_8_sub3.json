@@ -1,0 +1,22 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/reef_block_variant8",
+		"particle": "lepidodendron:blocks/reef_block_variant8"
+	},
+	"elements": [
+		{
+			"name": "Sub3",
+			"from": [14, 0.02, -1],
+			"to": [20, 7.02, 5],
+			"faces": {
+				"north": {"uv": [0, 0, 6, 7], "texture": "#texture"},
+				"east": {"uv": [0, 0, 6, 7], "texture": "#texture"},
+				"south": {"uv": [0, 0, 6, 7], "texture": "#texture"},
+				"west": {"uv": [0, 0, 6, 7], "texture": "#texture"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#texture"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#texture"}
+			}
+		}
+	]
+}

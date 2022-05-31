@@ -1,0 +1,30 @@
+{
+	"name": "Haikouichthys",
+	"icon": "paleopedia:cambrian/cambrian_icon/haikouichthys_icon.png",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_haikouichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_haikouichthys",
+			"title": "Haikouichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Agnatha$(br)>Myllokunmingiida$(br)>Myllokunmingiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/haikouichthys.png"],
+			"title": "H. ercaicunensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haikouichthys",
+			"type": "text",
+			"text": "Haikouichthys is a genus of craniate fish-like animal from the Cambrian period. It had a body plan that resembled that of modern lancelot fish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_haikouichthys",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

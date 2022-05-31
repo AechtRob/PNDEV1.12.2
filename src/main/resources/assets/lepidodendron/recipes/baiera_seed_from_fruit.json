@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:baiera_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:baiera_seed",
+    "count": 1
+  }
+}

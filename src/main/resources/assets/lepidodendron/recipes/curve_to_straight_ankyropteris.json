@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:nilssoniocladus_stem"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:nilssoniocladus_stem_ne",
+    "count": 1
+  }
+}

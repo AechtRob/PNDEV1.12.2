@@ -1,0 +1,30 @@
+{
+	"name": "Hibernaspis",
+	"icon": "lepidodendron:hibernaspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_hibernaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hibernaspis",
+			"title": "Hibernaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes (Rare)$(br2)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Hibernaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/hibernaspis.png"],
+			"title": "Hibernaspis macrolepis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hibernaspis",
+			"type": "text",
+			"text": "Hibernaspis is a jawless fish which was a benthic animal that likely lived most of its life buried in the sand, feeding off micro organisms. The edges of its head shield had many small ridges and it had a pair of tiny degenerated eyes at th tip of the head. It lived in a series of hypersaline lagoons along with other species of Amphiaspids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hibernaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

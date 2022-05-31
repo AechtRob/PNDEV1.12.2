@@ -1,0 +1,53 @@
+{
+  "parent": "lepidodendron:block/cube_noao",
+  "textures": {
+    "large": "lepidodendron:blocks/ankyropteris_leaves_large",
+    "small": "lepidodendron:blocks/ankyropteris_leaves_small",
+    "particle": "lepidodendron:blocks/ankyropteris_leaves_large"
+  },
+
+ "elements": [
+        {   "from": [ 0, 15.5, 0 ],
+            "to": [ 16, 15.5, 8 ],
+			"rotation": { "origin": [ 8, 15.5, 0 ], "axis": "x", "angle": -45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 8 ],  "texture": "#large", "rotation": 180 },
+                "up":    { "uv": [ 16, 0, 0, 8 ], "texture": "#large"}
+             
+            }
+        },
+        {   "from": [ 0, 18.5, 7.25 ],
+            "to": [ 16, 18.5, 15.25 ],
+			"rotation": { "origin": [ 8, 15.5, 0 ], "axis": "x", "angle": -22.5, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 8, 16, 16 ],  "texture": "#large", "rotation": 180 },
+                "up":    { "uv": [ 16, 8, 0, 16 ], "texture": "#large"}
+             
+            }
+        },
+
+
+		{   "from": [ 0, 15.6, 0 ],
+            "to": [ 16, 15.6, 16 ],
+			"rotation": { "origin": [ 8, 15.5, 0 ], "axis": "y", "angle": -45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ],  "texture": "#small", "rotation": 180 },
+                "up":    { "uv": [ 16, 0, 0, 16 ], "texture": "#small"}
+             
+            }
+        },
+        {   "from": [ 0, 15.4, 0 ],
+            "to": [ 16, 15.4, 16 ],
+			"rotation": { "origin": [ 8, 15.5, 0 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ],  "texture": "#small", "rotation": 180 },
+                "up":    { "uv": [ 16, 0, 0, 16 ], "texture": "#small"}
+             
+            }
+        }
+
+
+        
+    ]
+
+}

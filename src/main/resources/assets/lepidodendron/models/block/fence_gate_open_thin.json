@@ -1,0 +1,169 @@
+{
+	"ambientocclusion": false,
+	"parent": "block/block",
+	"textures": {
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"name": "Left-hand post",
+			"from": [-3, 0, 6.01],
+			"to": [1, 15.99, 9.99],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 11], "texture": "#texture"},
+				"east": {"uv": [7, 0, 9, 11], "texture": "#texture"},
+				"south": {"uv": [0, 0, 2, 11], "texture": "#texture"},
+				"west": {"uv": [7, 0, 9, 11], "texture": "#texture", "cullface": "west"},
+				"up": {"uv": [0, 7, 2, 9], "texture": "#texture"},
+				"down": {"uv": [0, 7, 2, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Right-hand post",
+			"from": [15, 0, 6.02],
+			"to": [19, 15.98, 9.98],
+			"faces": {
+				"north": {"uv": [14, 0, 16, 11], "texture": "#texture"},
+				"east": {"uv": [7, 0, 9, 11], "texture": "#texture", "cullface": "east"},
+				"south": {"uv": [14, 0, 16, 11], "texture": "#texture"},
+				"west": {"uv": [7, 0, 9, 11], "texture": "#texture"},
+				"up": {"uv": [14, 7, 16, 9], "texture": "#texture"},
+				"down": {"uv": [14, 7, 16, 9], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Lower horizontal bar of right-hand gate door",
+			"from": [13, 3, 8],
+			"to": [15, 5, 22],
+			"faces": {
+				"north": {"uv": [2, 7, 4, 9], "texture": "#texture"},
+				"east": {"uv": [2, 7, 16, 9], "texture": "#texture"},
+				"south": {"uv": [2, 7, 4, 9], "texture": "#texture"},
+				"west": {"uv": [2, 7, 16, 9], "texture": "#texture"},
+				"up": {"uv": [2, 7, 16, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [2, 7, 16, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Sidepiece",
+			"from": [13, 5, 8],
+			"to": [15, 13, 10],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 15], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 15], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Sidepiece",
+			"from": [13, 5, 20],
+			"to": [15, 13, 22],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 15], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 15], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 15], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Crossbar",
+			"from": [13, 6, 10],
+			"to": [15, 8, 12],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Crossbar",
+			"from": [13, 7, 12],
+			"to": [15, 9, 14],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Crossbar",
+			"from": [13, 10, 18],
+			"to": [15, 12, 20],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Crossbar",
+			"from": [13, 8, 14],
+			"to": [15, 10, 16],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Crossbar",
+			"from": [13, 9, 16],
+			"to": [15, 11, 18],
+			"color": 6,
+			"faces": {
+				"north": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"east": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"south": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"west": {"uv": [10, 7, 12, 9], "texture": "#texture"},
+				"up": {"uv": [10, 7, 12, 9], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [10, 7, 12, 9], "rotation": 90, "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Upper horizontal bar of right-hand gate door",
+			"from": [13, 13, 8],
+			"to": [15, 15, 22],
+			"faces": {
+				"north": {"uv": [2, 1, 16, 3], "texture": "#texture"},
+				"east": {"uv": [2, 1, 16, 3], "texture": "#texture"},
+				"south": {"uv": [2, 1, 16, 3], "texture": "#texture"},
+				"west": {"uv": [2, 1, 16, 3], "texture": "#texture"},
+				"up": {"uv": [2, 1, 16, 3], "rotation": 270, "texture": "#texture"},
+				"down": {"uv": [2, 1, 16, 3], "rotation": 90, "texture": "#texture"}
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation": [30, 45, 0],
+			"translation": [0, -1, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"head": {
+			"translation": [0, -3, -6]
+		}
+	}
+}

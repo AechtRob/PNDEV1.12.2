@@ -1,0 +1,72 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cornulitida_1"},
+      {"model": "lepidodendron:cornulitida_2"},
+      {"model": "lepidodendron:cornulitida_3"},
+      {"model": "lepidodendron:cornulitida_4"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:cornulitida_1"},
+      {"model": "lepidodendron:cornulitida_2"},
+      {"model": "lepidodendron:cornulitida_3"},
+      {"model": "lepidodendron:cornulitida_4"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:cornulitida_1", "y": 90},
+      {"model": "lepidodendron:cornulitida_2", "y": 90},
+      {"model": "lepidodendron:cornulitida_3", "y": 90},
+      {"model": "lepidodendron:cornulitida_4", "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:cornulitida_1", "y": 180},
+      {"model": "lepidodendron:cornulitida_2", "y": 180},
+      {"model": "lepidodendron:cornulitida_3", "y": 180},
+      {"model": "lepidodendron:cornulitida_4", "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:cornulitida_1", "y": 270},
+      {"model": "lepidodendron:cornulitida_2", "y": 270},
+      {"model": "lepidodendron:cornulitida_3", "y": 270},
+      {"model": "lepidodendron:cornulitida_4", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:cornulitida_1"},
+      {"model": "lepidodendron:cornulitida_2"},
+      {"model": "lepidodendron:cornulitida_3"},
+      {"model": "lepidodendron:cornulitida_4"},
+      {"model": "lepidodendron:cornulitida_1", "y": 90},
+      {"model": "lepidodendron:cornulitida_2", "y": 90},
+      {"model": "lepidodendron:cornulitida_3", "y": 90},
+      {"model": "lepidodendron:cornulitida_4", "y": 90},
+      {"model": "lepidodendron:cornulitida_1", "y": 180},
+      {"model": "lepidodendron:cornulitida_2", "y": 180},
+      {"model": "lepidodendron:cornulitida_3", "y": 180},
+      {"model": "lepidodendron:cornulitida_4", "y": 180},
+      {"model": "lepidodendron:cornulitida_1", "y": 270},
+      {"model": "lepidodendron:cornulitida_2", "y": 270},
+      {"model": "lepidodendron:cornulitida_3", "y": 270},
+      {"model": "lepidodendron:cornulitida_4", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:cornulitida_1", "x": 180},
+      {"model": "lepidodendron:cornulitida_2", "x": 180},
+      {"model": "lepidodendron:cornulitida_3", "x": 180},
+      {"model": "lepidodendron:cornulitida_4", "x": 180},
+      {"model": "lepidodendron:cornulitida_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:cornulitida_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:cornulitida_3", "x": 180, "y": 90},
+      {"model": "lepidodendron:cornulitida_4", "x": 180, "y": 90},
+      {"model": "lepidodendron:cornulitida_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:cornulitida_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:cornulitida_3", "x": 180, "y": 180},
+      {"model": "lepidodendron:cornulitida_4", "x": 180, "y": 180},
+      {"model": "lepidodendron:cornulitida_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:cornulitida_2", "x": 180, "y": 270},
+      {"model": "lepidodendron:cornulitida_3", "x": 180, "y": 270},
+      {"model": "lepidodendron:cornulitida_4", "x": 180, "y": 270}
+    ]
+  }
+}

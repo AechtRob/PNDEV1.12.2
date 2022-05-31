@@ -1,0 +1,32 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_precambrian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_precambrian.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"precambrian_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:precambrian_biome"
+			}
+		},
+		"precambrian_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:precambrian_sea"
+			}
+		}
+	}
+}

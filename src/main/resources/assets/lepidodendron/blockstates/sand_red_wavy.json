@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:sand_red_wavy_1" },
+      { "model": "lepidodendron:sand_red_wavy_2" }
+    ]
+  }
+}

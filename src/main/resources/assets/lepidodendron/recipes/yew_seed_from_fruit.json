@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:yew_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:yew_seed",
+    "count": 1
+  }
+}

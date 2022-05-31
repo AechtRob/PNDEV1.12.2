@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:coniopteris"
+    },
+    "facing=north": {
+      "model": "lepidodendron:coniopteris_side_02", "y": -90
+    },
+    "facing=east": {
+      "model": "lepidodendron:coniopteris_side_02"
+    },
+    "facing=south": {
+      "model": "lepidodendron:coniopteris_side_02", "y": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:coniopteris_side_02", "y": 180
+    }
+  }
+}

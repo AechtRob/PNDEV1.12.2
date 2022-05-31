@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:zamites_shoot"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:zamites_shoot_inventory"
+    }
+  }
+}

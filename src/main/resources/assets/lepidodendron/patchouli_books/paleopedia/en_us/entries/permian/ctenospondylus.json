@@ -1,0 +1,30 @@
+{
+	"name": "Ctenospondylus",
+	"icon": "paleopedia:permian/permian_icon/ctenospondylus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_ctenospondylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ctenospondylus",
+			"title": "Ctenospondylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Synapsida$(br)>Sphenacodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/ctenospondylus.png"],
+			"title": "Ctenospondylus casei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ctenospondylus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ctenospondylus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

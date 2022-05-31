@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/red_leafy_algae_small",
+    "particle": "lepidodendron:blocks/red_leafy_algae_small"
+  }
+}

@@ -1,0 +1,25 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:yilingia_bucket"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_yilingia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_yilingia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_yilingia"
+		}
+	}
+}
+
+
+
+
+

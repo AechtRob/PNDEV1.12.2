@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:noeggerathiales_shoot_flower", "weight": 2 },
+      {"model": "lepidodendron:noeggerathiales_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:noeggerathiales_shoot_inventory"
+    }
+  }
+}

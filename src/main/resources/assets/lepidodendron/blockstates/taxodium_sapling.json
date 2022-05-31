@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:taxodium_sapling" },
+        "stage=1": { "model": "lepidodendron:taxodium_sapling" }
+    }
+}

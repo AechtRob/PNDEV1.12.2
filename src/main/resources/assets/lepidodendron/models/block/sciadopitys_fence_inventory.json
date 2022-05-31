@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/sciadopitys_wood",
+    "particle": "lepidodendron:blocks/sciadopitys_wood"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:cordaites_slab_double"
+    }
+  }
+}

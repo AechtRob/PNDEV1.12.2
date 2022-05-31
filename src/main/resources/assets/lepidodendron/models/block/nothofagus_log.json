@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/nothofagus_log_end",
+    "up": "lepidodendron:blocks/nothofagus_log_end",
+    "north": "lepidodendron:blocks/nothofagus_log",
+    "east": "lepidodendron:blocks/nothofagus_log",
+    "south": "lepidodendron:blocks/nothofagus_log",
+    "west": "lepidodendron:blocks/nothofagus_log",
+    "particle": "lepidodendron:blocks/nothofagus_log_end"
+  }
+}

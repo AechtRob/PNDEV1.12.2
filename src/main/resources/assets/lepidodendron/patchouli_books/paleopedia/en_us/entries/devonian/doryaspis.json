@@ -1,0 +1,30 @@
+{
+	"name": "Doryaspis",
+	"icon": "paleopedia:devonian/devonian_icon/doryaspis_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_doryaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_doryaspis",
+			"title": "Doryaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Heterostraci$(br)>Pteraspidiformes$(br)>Protopteraspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/doryaspis.png"],
+			"title": "Doryaspis nathorsti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_doryaspis",
+			"type": "text",
+			"text": "Doryaspis is a primitive jawless fish which had canteen shaped body armor and branchial plates which extended out and curved downward in a triangular shape. Its name comes from the Greek 'doru' meaning spear and 'aspis' meaning shield, because of the way it looked, having what looks like a spear, extending out from above its mouth. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_doryaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

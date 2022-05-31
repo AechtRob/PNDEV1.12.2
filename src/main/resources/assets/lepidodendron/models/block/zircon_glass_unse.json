@@ -1,0 +1,19 @@
+{   "parent": "block/block",
+    "textures": {
+        "particle": "lepidodendron:blocks/zircon_glass",
+        "glass": "lepidodendron:blocks/zircon_glass",
+		"eastwestface": "lepidodendron:blocks/zircon_glass_38",
+		"clearglass": "lepidodendron:blocks/zircon_glass_26"
+    },
+    "elements": [
+        {   "_comment": "west",
+            "from": [ 0, 0, 0 ],
+            "to": [ 1, 16, 16 ],
+            "faces": {
+                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#clearglass" },
+                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface", "cullface": "west" },
+                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface" }
+            }
+        }
+    ]
+}

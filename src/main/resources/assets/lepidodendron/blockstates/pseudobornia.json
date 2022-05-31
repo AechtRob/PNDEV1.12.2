@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "age=0,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=1,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=2,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=3,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=4,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=5,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=6,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=7,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=8,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=9,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=10,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=11,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=12,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=13,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=14,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+    "age=15,base=false": {
+      "model": "lepidodendron:pseudobornia"
+    },
+	"age=0,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=1,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=2,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=3,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=4,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=5,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=6,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=7,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=8,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=9,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=10,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=11,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=12,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=13,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=14,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    },
+    "age=15,base=true": {
+      "model": "lepidodendron:pseudobornia_base"
+    }
+  }
+}

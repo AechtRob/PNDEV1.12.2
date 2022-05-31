@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:hymenaea_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:hymenaea_planks",
+    "count": 4
+  }
+}

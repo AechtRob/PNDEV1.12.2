@@ -1,0 +1,41 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:hironoia_flower"},
+      	{"model": "lepidodendron:hironoia_flower_angle"},
+      	{"model": "lepidodendron:hironoia_flower_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:hironoia_flower", "x": 90},
+      	{"model": "lepidodendron:hironoia_flower_angle", "x": 90},
+       	{"model": "lepidodendron:hironoia_flower_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:hironoia_flower", "x": 90, "y": 90},
+      	{"model": "lepidodendron:hironoia_flower_angle", "x": 90, "y": 90},
+      	{"model": "lepidodendron:hironoia_flower_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:hironoia_flower", "x": 90, "y": 180},
+      	{"model": "lepidodendron:hironoia_flower_angle", "x": 90, "y": 180},
+      	{"model": "lepidodendron:hironoia_flower_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:hironoia_flower", "x": 90, "y": 270},
+      	{"model": "lepidodendron:hironoia_flower_angle", "x": 90, "y": 270},
+      	{"model": "lepidodendron:hironoia_flower_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:hironoia_flower"},
+      	{"model": "lepidodendron:hironoia_flower_angle"},
+      	{"model": "lepidodendron:hironoia_flower_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:hironoia_flower", "x": 180},
+      	{"model": "lepidodendron:hironoia_flower_angle", "x": 180},
+      	{"model": "lepidodendron:hironoia_flower_rot", "x": 180}
+    ]
+  }
+}

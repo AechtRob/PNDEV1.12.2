@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:lepidocystis"},
+      {"model": "lepidodendron:lepidocystis_var"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:lepidocystis", "x": 90},
+      {"model": "lepidodendron:lepidocystis_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:lepidocystis", "x": 90, "y": 90},
+      {"model": "lepidodendron:lepidocystis_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:lepidocystis", "x": 90, "y": 180},
+      {"model": "lepidodendron:lepidocystis_var", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:lepidocystis", "x": 90, "y": 270},
+      {"model": "lepidodendron:lepidocystis_var", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:lepidocystis"},
+      {"model": "lepidodendron:lepidocystis_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:lepidocystis", "x": 180},
+      {"model": "lepidodendron:lepidocystis_var", "x": 180}
+    ]
+  }
+}

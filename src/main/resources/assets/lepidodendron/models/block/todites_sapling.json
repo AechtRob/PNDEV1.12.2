@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/todites_sapling",
+    "particle": "lepidodendron:blocks/todites_sapling"
+  }
+}

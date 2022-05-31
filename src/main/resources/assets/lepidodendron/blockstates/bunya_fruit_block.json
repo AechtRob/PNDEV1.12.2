@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bunya_fruit_1"},
+      {"model": "lepidodendron:bunya_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:bunya_fruit_block_inventory"
+    }
+  }
+}

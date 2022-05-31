@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:rugosa_5"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:rugosa_5_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:rugosa_5_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:rugosa_5_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:rugosa_5_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:rugosa_5"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:rugosa_5", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "variants": 
+  {"inventory": {
+      "model": "lepidodendron:scrambling_sphenophyllales_inventory"
+    },
+    "normal": [
+      {"model": "lepidodendron:scrambling_sphenophyllales"},
+      {"model": "lepidodendron:scrambling_sphenophyllales_spore"}
+    ]
+  }
+}

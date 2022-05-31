@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/liriodendronwood",
+    "metal": "lepidodendron:blocks/dominican_amber"
+  }
+}
+
+

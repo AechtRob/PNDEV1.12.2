@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dioon_shoot", "weight": 2},
+      {"model": "lepidodendron:dioon_shoot_flower"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:dioon_shoot_inventory"
+    }
+  }
+}

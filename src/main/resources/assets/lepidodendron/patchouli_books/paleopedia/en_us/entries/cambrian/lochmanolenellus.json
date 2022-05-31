@@ -1,0 +1,30 @@
+{
+	"name": "Lochmanolenellus",
+	"icon": "paleopedia:cambrian/cambrian_icon/lochmanolenellus_icon.png",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_lochmanolenellus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lochmanolenellus",
+			"title": "Lochmanolenellus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br2)>Redlichiida$(br2)>Biceratopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/lochmanolenellus.png"],
+			"title": "L. subquadratus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lochmanolenellus",
+			"type": "text",
+			"text": "Lochmanolenellus was a Cambrian bottom dwelling trilobite which had a pentangular cephalon and lived by scourging the sea floor for food."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lochmanolenellus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:sciadopitys_slab_double"
+    }
+  }
+}

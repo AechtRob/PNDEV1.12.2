@@ -1,0 +1,30 @@
+{
+	"name": "Arandaspis",
+	"icon": "lepidodendron:arandaspis_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_arandaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arandaspis",
+			"title": "Arandaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Pteraspidomorphi$(br)>Arandaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/arandaspis.png"],
+			"title": "A. prionotolepis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arandaspis",
+			"type": "text",
+			"text": "Arandaspis is a primitive jawless fish whose name comes from a local aboriginal tribe, the Aranda(also called the Arrernte). It was about 15cm long and had a streamlined body covered in rows of armored scutes. The front of the body and head were protected by hard plates with openings for eyes, nostrils and gills. It was probably a filter feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arandaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Cheloniellon",
+	"icon": "lepidodendron:cheloniellon_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_cheloniellon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cheloniellon",
+			"title": "Cheloniellon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/cheloniellon.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cheloniellon",
+			"type": "text",
+			"text": " "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cheloniellon",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

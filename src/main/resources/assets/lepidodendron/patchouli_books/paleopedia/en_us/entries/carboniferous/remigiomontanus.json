@@ -1,0 +1,30 @@
+{
+	"name": "Remigiomontanus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/remigiomontanus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_remigiomontanus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_remigiomontanus",
+			"title": "Remigiomontanus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Synapsida$(br)>Edaphosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/remigiomontanus.png"],
+			"title": "R. robustus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_remigiomontanus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_remigiomontanus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

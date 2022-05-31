@@ -1,0 +1,7 @@
+{
+    "parent": "block/wall_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/dicroidium_f_planks",
+    "particle": "lepidodendron:blocks/dicroidium_f_planks"
+    }
+}

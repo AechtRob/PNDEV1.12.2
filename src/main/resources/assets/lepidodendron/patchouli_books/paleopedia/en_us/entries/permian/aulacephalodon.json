@@ -1,0 +1,30 @@
+{
+	"name": "Aulacephalodon",
+	"icon": "paleopedia:permian/permian_icon/aulacephalodon_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_aulacephalodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aulacephalodon",
+			"title": "Aulacephalodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Geikiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/aulacephalodon.png"],
+			"title": "A. bainii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aulacephalodon",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aulacephalodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:adoketophyton_spore"},
+      {"model": "lepidodendron:adoketophyton_spore2"},
+      {"model": "lepidodendron:adoketophyton_spore3"},
+      {"model": "lepidodendron:adoketophyton_spore_var"},
+      {"model": "lepidodendron:adoketophyton_spore2_var"},
+      {"model": "lepidodendron:adoketophyton_spore3_var"}
+    ]
+  }
+}

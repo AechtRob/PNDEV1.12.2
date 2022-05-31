@@ -1,0 +1,30 @@
+{
+	"name": "Swartpuntia",
+	"icon": "lepidodendron:swartpuntia",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_swartpuntia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_swartpuntia",
+			"title": "Swartpuntia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Erniettomorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/swartpuntia.png"],
+			"title": "S. germsi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_swartpuntia",
+			"type": "text",
+			"text": "Swartpuntia is a leaf like organism that consists of a stem and several leaf shaped petaloid extensions. It is quite small, and it likely lived in shallow water habitats."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_swartpuntia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

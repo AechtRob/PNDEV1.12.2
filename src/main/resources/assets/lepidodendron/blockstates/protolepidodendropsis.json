@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "section=0": { "model": "lepidodendron:protolepidodendropsis_0" },
+    "section=1": { "model": "lepidodendron:protolepidodendropsis_1" },
+    "section=2": { "model": "lepidodendron:protolepidodendropsis_2" },
+    "section=3": { "model": "lepidodendron:protolepidodendropsis_3" },
+    "section=4": { "model": "lepidodendron:protolepidodendropsis_4" }
+  }
+}

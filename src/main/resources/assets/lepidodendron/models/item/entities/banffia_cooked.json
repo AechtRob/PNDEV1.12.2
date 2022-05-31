@@ -1,0 +1,15 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lepidodendron:items/entities/banffia_cooked"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.275,
+        0.275,
+        0.275
+      ]
+    }
+  }
+}

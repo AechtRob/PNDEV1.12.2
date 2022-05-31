@@ -1,0 +1,29 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/equisites_branch",
+        "down": "lepidodendron:blocks/equisites_branch_end",
+        "up": "lepidodendron:blocks/equisites_branch_end",
+        "north": "lepidodendron:blocks/equisites_branch",
+        "south": "lepidodendron:blocks/equisites_branch",
+        "west": "lepidodendron:blocks/equisites_branch",
+        "east": "lepidodendron:blocks/equisites_branch"
+
+    },
+    
+    "elements": [
+        {   "from": [ 5, 0, 5 ],
+            "to": [ 11, 16, 11 ],
+            "faces": {
+                "down":  { "uv": [ 5, 10, 11, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 5, 10, 11, 16 ], "texture": "#up" },
+                "north": { "uv": [ 5, 0, 11, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 5, 0, 11, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 5, 0, 11, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 5, 0, 11, 16 ],  "texture": "#east" }
+            }
+        }
+
+	    
+    ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/redwood_planks",
+    "top": "lepidodendron:blocks/redwood_planks",
+    "side": "lepidodendron:blocks/redwood_planks"
+  }
+}

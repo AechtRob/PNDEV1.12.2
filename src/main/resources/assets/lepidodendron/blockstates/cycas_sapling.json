@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:cycas_sapling" },
+        "stage=1": { "model": "lepidodendron:cycas_sapling" }
+    }
+}

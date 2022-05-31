@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:trichopitys_inventory"
+    },
+    "var=false": {"model": "lepidodendron:trichopitys_1"},
+    "var=true": {"model": "lepidodendron:trichopitys_2"}
+  }
+}

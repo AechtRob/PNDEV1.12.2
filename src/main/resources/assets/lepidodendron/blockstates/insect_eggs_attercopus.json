@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:insect_eggs_attercopus"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:insect_eggs_attercopus", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:insect_eggs_attercopus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:insect_eggs_attercopus", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:insect_eggs_attercopus", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:insect_eggs_attercopus"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:insect_eggs_attercopus", "x": 180}
+    ]
+  }
+}

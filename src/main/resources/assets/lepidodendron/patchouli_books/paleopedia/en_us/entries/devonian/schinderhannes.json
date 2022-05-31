@@ -1,0 +1,30 @@
+{
+	"name": "Schinderhannes",
+	"icon": "lepidodendron:schinderhannes_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_schinderhannes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_schinderhannes",
+			"title": "Schinderhannes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/schinderhannes.png"],
+			"title": "S. bartelsi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schinderhannes",
+			"type": "text",
+			"text": "Schinderhannes is a hurdiid radiodont known from the Devonian of Germany. Its discovery proved that radiodonts had lasted a lot longer than previously thought and that there was a ghost lineage spanning the later Ordovician and Silurian periods. Schinderhannes was likely a predator which swam quickly around to catch smaller prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_schinderhannes",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Bucket/Egg Collection Phial"
+		}
+	]
+}

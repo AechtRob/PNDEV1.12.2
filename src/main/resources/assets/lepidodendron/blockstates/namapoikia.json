@@ -1,0 +1,59 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:namapoikia_1"},
+      {"model": "lepidodendron:namapoikia_2"},
+      {"model": "lepidodendron:namapoikia_3"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:namapoikia_1", "x": 90},
+      {"model": "lepidodendron:namapoikia_2", "x": 90},
+      {"model": "lepidodendron:namapoikia_3", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:namapoikia_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:namapoikia_2", "x": 90, "y": 90},
+      {"model": "lepidodendron:namapoikia_3", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:namapoikia_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:namapoikia_2", "x": 90, "y": 180},
+      {"model": "lepidodendron:namapoikia_3", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:namapoikia_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:namapoikia_2", "x": 90, "y": 270},
+      {"model": "lepidodendron:namapoikia_3", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:namapoikia_1"},
+      {"model": "lepidodendron:namapoikia_2"},
+      {"model": "lepidodendron:namapoikia_3"},
+      {"model": "lepidodendron:namapoikia_1", "y": 90 },
+      {"model": "lepidodendron:namapoikia_2", "y": 90},
+      {"model": "lepidodendron:namapoikia_3", "y": 90},
+      {"model": "lepidodendron:namapoikia_1", "y": 180 },
+      {"model": "lepidodendron:namapoikia_2", "y": 180 },
+      {"model": "lepidodendron:namapoikia_3", "y": 180 },
+      {"model": "lepidodendron:namapoikia_1", "y": 270 },
+      {"model": "lepidodendron:namapoikia_2", "y": 270},
+      {"model": "lepidodendron:namapoikia_3", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:namapoikia_1", "x": 180},
+      {"model": "lepidodendron:namapoikia_2", "x": 180},
+      {"model": "lepidodendron:namapoikia_3", "x": 180},
+      {"model": "lepidodendron:namapoikia_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:namapoikia_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:namapoikia_3", "x": 180, "y": 90},
+      {"model": "lepidodendron:namapoikia_1", "x": 180, "y": 180 },
+      {"model": "lepidodendron:namapoikia_2", "x": 180, "y": 180 },
+      {"model": "lepidodendron:namapoikia_3", "x": 180, "y": 180 },
+      {"model": "lepidodendron:namapoikia_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:namapoikia_2", "x": 180, "y": 270},
+      {"model": "lepidodendron:namapoikia_3", "x": 180, "y": 270}
+    ]
+  }
+}

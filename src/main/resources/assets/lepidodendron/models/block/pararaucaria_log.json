@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/pararaucaria_log_end",
+    "up": "lepidodendron:blocks/pararaucaria_log_end",
+    "north": "lepidodendron:blocks/pararaucaria_log",
+    "east": "lepidodendron:blocks/pararaucaria_log",
+    "south": "lepidodendron:blocks/pararaucaria_log",
+    "west": "lepidodendron:blocks/pararaucaria_log",
+    "particle": "lepidodendron:blocks/pararaucaria_log_end"
+  }
+}

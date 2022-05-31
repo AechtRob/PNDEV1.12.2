@@ -1,0 +1,30 @@
+{
+	"name": "Bivalve",
+	"icon": "lepidodendron:",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_bivalve",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bivalve",
+			"title": "Bivalve",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/bivalve.png"],
+			"title": "Bivalvia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bivalve",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

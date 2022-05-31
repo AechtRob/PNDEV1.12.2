@@ -1,0 +1,30 @@
+{
+	"name": "Lithomantis",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/lithomantis_icon.png",
+	"category": "patchouli:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"title": "Lithomantis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Lithomantidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/lithomantis.png"],
+			"title": "Lithomantis varius",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:wollemi_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:wollemi_seed",
+    "count": 1
+  }
+}

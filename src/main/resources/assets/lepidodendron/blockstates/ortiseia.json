@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:ortiseia"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:ortiseia_inventory"
+    }
+  }
+}

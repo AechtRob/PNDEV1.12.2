@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_gate_open",
+    "textures": {
+        "texture": "lepidodendron:blocks/czekanowskia_planks",
+    "particle": "lepidodendron:blocks/czekanowskia_planks"
+    }
+}

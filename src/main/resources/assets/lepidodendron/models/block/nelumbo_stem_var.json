@@ -1,0 +1,31 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/nelumbo_leaf_b",
+        "bottom": "lepidodendron:blocks/nelumbo_leaf_b"
+    },
+    "elements": [
+        
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" }
+            }
+        },
+
+        {   "from": [ 0, 0, 8 ],
+            "to": [ 16, 16, 8 ],
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
+                "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" }
+            }
+        }
+    ]
+}

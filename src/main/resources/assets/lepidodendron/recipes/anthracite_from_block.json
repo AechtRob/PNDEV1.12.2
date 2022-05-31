@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:anthracite_block"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:anthracite",
+    "count": 9
+  }
+}

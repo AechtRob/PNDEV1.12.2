@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "1": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "2": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "3": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "4": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "5": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "6": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "7": {
+      "item": "lepidodendron:prototaxites_chunk"
+    },
+    "8": {
+      "item": "lepidodendron:prototaxites_chunk"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:prototaxites_block",
+    "count": 1
+  }
+}

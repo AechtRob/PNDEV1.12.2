@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/archaeopteris_planks",
+    "top": "lepidodendron:blocks/archaeopteris_planks",
+    "side": "lepidodendron:blocks/archaeopteris_planks"
+  }
+}

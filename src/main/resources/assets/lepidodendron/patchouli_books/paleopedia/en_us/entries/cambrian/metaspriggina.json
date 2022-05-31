@@ -1,0 +1,30 @@
+{
+	"name": "Metaspriggina",
+	"icon": "lepidodendron:metaspriggina_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_metaspriggina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_metaspriggina",
+			"title": "Metaspriggina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Chordata$(br)>Metaspriggiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/metaspriggina.png"],
+			"title": "M. walcotti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_metaspriggina",
+			"type": "text",
+			"text": "Metaspriggina is an early chordate that bore similarities to Pikaia and Haikouichthys. It is one of the earliest vetebrates, and it possessed two upward facing eyes and lacked fins. They were probably filter feeders, swimming above the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_metaspriggina",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

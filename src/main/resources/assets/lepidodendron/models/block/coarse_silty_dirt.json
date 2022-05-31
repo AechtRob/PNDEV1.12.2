@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/coarse_silty_dirt",
+    "particle": "lepidodendron:blocks/coarse_silty_dirt"
+  }
+}

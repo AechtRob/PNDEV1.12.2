@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/brachyphyllum_planks",
+    "top": "lepidodendron:blocks/brachyphyllum_planks",
+    "side": "lepidodendron:blocks/brachyphyllum_planks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/lichen_var5",
+        "texture": "lepidodendron:blocks/lichen_var5"
+    },
+    "elements": [
+        {   "from": [0, 0, 0 ],
+            "to": [ 16, 0.05, 16 ],
+            "faces": {
+                "up": { "uv": [ 0, 0, 16, 16 ],  "texture": "#texture" },
+                "down": { "uv": [ 16, 0, 0, 16 ],  "texture": "#texture", "cullface": "down"  }
+            }
+        }
+    ]
+}

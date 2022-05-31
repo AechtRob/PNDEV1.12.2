@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:hymenaea_slab_double"
+    }
+  }
+}

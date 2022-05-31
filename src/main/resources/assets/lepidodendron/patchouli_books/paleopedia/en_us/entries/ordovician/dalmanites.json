@@ -1,0 +1,30 @@
+{
+	"name": "Dalmanites",
+	"icon": "lepidodendron:dalmanites_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_dalmanites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dalmanites",
+			"title": "Dalmanites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Dalmanitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/dalmanites.png"],
+			"title": "Dalmanites sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dalmanites",
+			"type": "text",
+			"text": "Dalmanites is a small trilobite with slightly convex exoskeletons. Its head is semicircular and the tail is pointed. Like other trilobites, Dalmanites would have been a bottom feeder, foraging for food on the ocean floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dalmanites",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

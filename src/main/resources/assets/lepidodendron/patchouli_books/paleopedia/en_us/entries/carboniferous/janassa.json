@@ -1,0 +1,30 @@
+{
+	"name": "Janassa",
+	"icon": "lepidodendron:janassa_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_janassa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_janassa",
+			"title": "Janassa",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Holocephali$(br)>Petalodontiformes$(br)>Janassidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/janassa.png"],
+			"title": "J. bituminosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_janassa",
+			"type": "text",
+			"text": "Janassa is a superficially skate looking holocephalian from the Carbonierous. It was likely a benthic feeder and its teeth shape suggests that it crushed and ate shellfish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_janassa",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

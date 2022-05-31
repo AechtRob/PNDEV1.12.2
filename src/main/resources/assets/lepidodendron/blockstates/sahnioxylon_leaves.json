@@ -1,0 +1,35 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:sahnioxylon_flower_inventory" }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:sahnioxylon_flower1" },
+		{ "model": "lepidodendron:sahnioxylon_flower2" }
+    ],
+    "facing=north": [
+		{ "model": "lepidodendron:sahnioxylon_flower1", "x": 90 },
+		{ "model": "lepidodendron:sahnioxylon_flower2", "x": 90 }
+    ],
+    "facing=east": [
+		{ "model": "lepidodendron:sahnioxylon_flower1", "x": 90, "y": 90 },
+		{ "model": "lepidodendron:sahnioxylon_flower2", "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+		{ "model": "lepidodendron:sahnioxylon_flower1", "x": 90, "y": 180 },
+		{ "model": "lepidodendron:sahnioxylon_flower2", "x": 90, "y": 180 }
+    ],
+    "facing=west": [
+		{ "model": "lepidodendron:sahnioxylon_flower1", "x": 90, "y": 270 },
+		{ "model": "lepidodendron:sahnioxylon_flower2", "x": 90, "y": 270 }
+    ],
+    "facing=up": [
+		{ "model": "lepidodendron:sahnioxylon_flower1" },
+		{ "model": "lepidodendron:sahnioxylon_flower2" }
+    ],
+    "facing=down": [
+		{ "model": "lepidodendron:sahnioxylon_flower1", "x": 180 },
+		{ "model": "lepidodendron:sahnioxylon_flower2", "x": 180 }
+    ]
+  }
+}

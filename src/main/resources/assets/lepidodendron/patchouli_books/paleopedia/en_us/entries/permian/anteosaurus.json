@@ -1,0 +1,30 @@
+{
+	"name": "Anteosaurus",
+	"icon": "paleopedia:permian/permian_icon/anteosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_anteosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_anteosaurus",
+			"title": "Anteosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/anteosaurus.png"],
+			"title": "A. magnificus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anteosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_anteosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

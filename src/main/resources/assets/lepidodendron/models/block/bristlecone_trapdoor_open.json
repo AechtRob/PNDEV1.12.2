@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_open",
+  "textures": {
+    "texture": "lepidodendron:blocks/bristlecone_trapdoor",
+    "planktexture": "lepidodendron:blocks/bristlecone_planks",
+    "particle": "lepidodendron:blocks/bristlecone_trapdoor"
+  }
+}

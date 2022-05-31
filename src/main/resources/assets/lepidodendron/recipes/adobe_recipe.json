@@ -1,0 +1,48 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "3": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "4": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "5": {
+      "item": "lepidodendron:carboniferous_mud"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "leavesHay"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:adobe_bricks",
+    "count": 6
+  }
+}

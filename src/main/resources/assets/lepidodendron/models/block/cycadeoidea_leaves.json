@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/cycadeoidea_leaves_e",
+"w":"lepidodendron:blocks/cycadeoidea_leaves_w"
+}
+}

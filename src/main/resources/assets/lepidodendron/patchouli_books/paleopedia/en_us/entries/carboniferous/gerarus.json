@@ -1,0 +1,30 @@
+{
+	"name": "Gerarus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/gerarus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_gerarus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gerarus",
+			"title": "Gerarus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Titanoptera$(br)>Geraridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/gerarus.png"],
+			"title": "G. collaris",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gerarus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gerarus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

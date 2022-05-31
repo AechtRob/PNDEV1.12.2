@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:araucarites_fruit_1"},
+      {"model": "lepidodendron:araucarites_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:araucarites_fruit_block_inventory"
+    }
+  }
+}

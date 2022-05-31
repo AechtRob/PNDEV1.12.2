@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:bothrodendron_slab_double"
+    }
+  }
+}

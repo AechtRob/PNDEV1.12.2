@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:podocarp_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:podocarp_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:podocarp_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:podocarp_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:podocarp_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:podocarp_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:podocarp_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

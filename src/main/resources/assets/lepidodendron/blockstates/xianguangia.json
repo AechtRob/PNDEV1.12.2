@@ -1,0 +1,72 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:xianguangia_1"},
+      {"model": "lepidodendron:xianguangia_2"},
+      {"model": "lepidodendron:xianguangia_3"},
+      {"model": "lepidodendron:xianguangia_4"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:xianguangia_1", "x": 90},
+      {"model": "lepidodendron:xianguangia_2", "x": 90},
+      {"model": "lepidodendron:xianguangia_3", "x": 90},
+      {"model": "lepidodendron:xianguangia_4", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:xianguangia_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:xianguangia_2", "x": 90, "y": 90},
+      {"model": "lepidodendron:xianguangia_3", "x": 90, "y": 90},
+      {"model": "lepidodendron:xianguangia_4", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:xianguangia_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:xianguangia_2", "x": 90, "y": 180},
+      {"model": "lepidodendron:xianguangia_3", "x": 90, "y": 180},
+      {"model": "lepidodendron:xianguangia_4", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:xianguangia_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:xianguangia_2", "x": 90, "y": 270},
+      {"model": "lepidodendron:xianguangia_3", "x": 90, "y": 270},
+      {"model": "lepidodendron:xianguangia_4", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:xianguangia_1"},
+      {"model": "lepidodendron:xianguangia_2"},
+      {"model": "lepidodendron:xianguangia_3"},
+      {"model": "lepidodendron:xianguangia_4"},
+      {"model": "lepidodendron:xianguangia_1", "y": 90},
+      {"model": "lepidodendron:xianguangia_2", "y": 90},
+      {"model": "lepidodendron:xianguangia_3", "y": 90},
+      {"model": "lepidodendron:xianguangia_4", "y": 90},
+      {"model": "lepidodendron:xianguangia_1", "y": 180},
+      {"model": "lepidodendron:xianguangia_2", "y": 180},
+      {"model": "lepidodendron:xianguangia_3", "y": 180},
+      {"model": "lepidodendron:xianguangia_4", "y": 180},
+      {"model": "lepidodendron:xianguangia_1", "y": 270},
+      {"model": "lepidodendron:xianguangia_2", "y": 270},
+      {"model": "lepidodendron:xianguangia_3", "y": 270},
+      {"model": "lepidodendron:xianguangia_4", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:xianguangia_1", "x": 180},
+      {"model": "lepidodendron:xianguangia_2", "x": 180},
+      {"model": "lepidodendron:xianguangia_3", "x": 180},
+      {"model": "lepidodendron:xianguangia_4", "x": 180},
+      {"model": "lepidodendron:xianguangia_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:xianguangia_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:xianguangia_3", "x": 180, "y": 90},
+      {"model": "lepidodendron:xianguangia_4", "x": 180, "y": 90},
+      {"model": "lepidodendron:xianguangia_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:xianguangia_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:xianguangia_3", "x": 180, "y": 180},
+      {"model": "lepidodendron:xianguangia_4", "x": 180, "y": 180},
+      {"model": "lepidodendron:xianguangia_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:xianguangia_2", "x": 180, "y": 270},
+      {"model": "lepidodendron:xianguangia_3", "x": 180, "y": 270},
+      {"model": "lepidodendron:xianguangia_4", "x": 180, "y": 270}
+    ]
+  }
+}

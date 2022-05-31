@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:thrombolite"},
+      {"model": "lepidodendron:thrombolite", "y": 90},
+      {"model": "lepidodendron:thrombolite", "y": 180},
+      {"model": "lepidodendron:thrombolite", "y": 270}
+    ]
+  }
+}

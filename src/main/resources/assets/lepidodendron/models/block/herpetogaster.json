@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/entities/herpetogaster_inventory",
+    "particle": "lepidodendron:items/entities/herpetogaster_inventory"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:wollemi_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:wollemi_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:wollemi_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:wollemi_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:wollemi_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:wollemi_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:wollemi_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

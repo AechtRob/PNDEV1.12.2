@@ -1,0 +1,30 @@
+{
+	"name": "Meganeuropsis",
+	"icon": "paleopedia:permian/permian_icon/meganeuropsis_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_meganeuropsis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_meganeuropsis",
+			"title": "Meganeuropsis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Odonatoptera$(br)>Meganisoptera$(br)>Meganeuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/meganeuropsis.png"],
+			"title": "M. americana",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_meganeuropsis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_meganeuropsis",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

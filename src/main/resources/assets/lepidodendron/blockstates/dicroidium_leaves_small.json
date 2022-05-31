@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:dicroidium_leaves_small"
+    },
+    "inventory": {
+      "model": "lepidodendron:dicroidium_leaves_small_inventory"
+    },
+    "facing=north": [
+      {"model": "lepidodendron:dicroidium_leaves_small", "x": 90 },
+      {"model": "lepidodendron:dicroidium_leaves_small_flower", "x": 90 }
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:dicroidium_leaves_small", "x": 90, "y": 90},
+      {"model": "lepidodendron:dicroidium_leaves_small_flower", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:dicroidium_leaves_small", "x": 90, "y": 180},
+      {"model": "lepidodendron:dicroidium_leaves_small_flower", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      {"model": "lepidodendron:dicroidium_leaves_small", "x": 90, "y": 270},
+      {"model": "lepidodendron:dicroidium_leaves_small_flower", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:dicroidium_leaves_small_shoot"},
+      {"model": "lepidodendron:dicroidium_leaves_small_shoot_flower", "weight": 3}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:dicroidium_leaves_small_shoot", "x": 180},
+      {"model": "lepidodendron:dicroidium_leaves_small_shoot_flower", "x": 180, "weight": 3}
+    ]
+  }
+}

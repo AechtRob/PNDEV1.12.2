@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/dicroidium_f_sapling",
+    "particle": "lepidodendron:blocks/dicroidium_f_sapling"
+  }
+}

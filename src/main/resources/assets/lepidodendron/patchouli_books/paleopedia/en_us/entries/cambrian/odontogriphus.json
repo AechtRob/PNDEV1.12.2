@@ -1,0 +1,30 @@
+{
+	"name": "Odontogriphus",
+	"icon": "lepidodendron:odontogriphus_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_odontogriphus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_odontogriphus",
+			"title": "Odontogriphus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Odontogriphidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/odontogriphus.png"],
+			"title": "O. omalus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_odontogriphus",
+			"type": "text",
+			"text": "Odontogriphus was a slug like animal from the middle Cambrian which was bilaterally symmetric. It had a single muscular foot and a shell on its back."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_odontogriphus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

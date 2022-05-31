@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/furcula_log_end",
+    "up": "lepidodendron:blocks/furcula_log_end",
+    "north": "lepidodendron:blocks/furcula_log",
+    "east": "lepidodendron:blocks/furcula_log",
+    "south": "lepidodendron:blocks/furcula_log",
+    "west": "lepidodendron:blocks/furcula_log",
+    "particle": "lepidodendron:blocks/furcula_log_end"
+  }
+}

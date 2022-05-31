@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:cobbania"},
+      {"model": "lepidodendron:cobbania", "y": 90 },
+      {"model": "lepidodendron:cobbania", "y": 180 },
+      {"model": "lepidodendron:cobbania", "y": 270 }
+    ]
+  }
+}

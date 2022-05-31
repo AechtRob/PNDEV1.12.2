@@ -1,0 +1,30 @@
+{
+	"name": "Furcaster",
+	"icon": "lepidodendron:furcaster_item",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_furcaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_furcaster",
+			"title": "Furcaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Ophiuroidea$(br)>Oegophiurida$(br)>Protasteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/furcaster.png"],
+			"title": "Furcaster palaeozoicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furcaster",
+			"type": "text",
+			"text": "Furcaster is an ancient brittle star that is known from the Hunsrück Slate lagerstatte. It behaved like modern brittle stars. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furcaster",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

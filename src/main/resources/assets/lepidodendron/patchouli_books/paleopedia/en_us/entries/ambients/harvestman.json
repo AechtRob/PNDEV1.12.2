@@ -1,0 +1,30 @@
+{
+	"name": "Harvestman",
+	"icon": "paleopedia:ambients/ambient_icon/harvestman_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_harvestman",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_harvestman",
+			"title": "Harvestman",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/harvestman.png"],
+			"title": "Opiliones",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harvestman",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harvestman",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

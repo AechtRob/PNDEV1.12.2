@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:anthracite"
+    },
+    "1": {
+      "item": "lepidodendron:anthracite"
+    },
+    "2": {
+      "item": "lepidodendron:anthracite"
+    },
+    "3": {
+      "item": "lepidodendron:anthracite"
+    },
+    "4": {
+      "item": "lepidodendron:anthracite"
+    },
+    "5": {
+      "item": "lepidodendron:anthracite"
+    },
+    "6": {
+      "item": "lepidodendron:anthracite"
+    },
+    "7": {
+      "item": "lepidodendron:anthracite"
+    },
+    "8": {
+      "item": "lepidodendron:anthracite"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:anthracite_block",
+    "count": 1
+  }
+}

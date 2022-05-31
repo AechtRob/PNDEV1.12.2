@@ -1,0 +1,30 @@
+{
+	"name": "Alacaris",
+	"icon": "lepidodendron:alacaris_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_alacaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_alacaris",
+			"title": "Alacaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Camrbian$(br2)$(l)Habitat:$() Marine$(br2)>Fuxianhuiida$(br)>Chengjiangocarididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/alacaris.png"],
+			"title": "Alacaris mirabilis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alacaris",
+			"type": "text",
+			"text": "Alacaris is a fuxianhuiid arthropod from the Cambrian. They reached 12 cm in length and its front limbs were used for feeding, using the rhythmic movement of the legs to bring food towards the mouth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_alacaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

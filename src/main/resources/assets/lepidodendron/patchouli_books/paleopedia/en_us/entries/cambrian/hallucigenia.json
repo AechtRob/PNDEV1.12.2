@@ -1,0 +1,30 @@
+{
+	"name": "Hallucigenia",
+	"icon": "lepidodendron:hallucigenia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_hallucigenia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hallucigenia",
+			"title": "Hallucigenia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Panarthropoda$(br)>Hallucishaniids$(br)>Hallucigeniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/hallucigenia.png"],
+			"title": "Hallucigenia sparsa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hallucigenia",
+			"type": "text",
+			"text": "Hallucigenia was a Cambrian lobopod known from articulated fossils in the Burgess Shale. They have long spines along the upper portion of their body and the underside of its body was lined with tentacles, used for walking on the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hallucigenia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

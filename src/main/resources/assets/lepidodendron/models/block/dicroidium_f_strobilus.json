@@ -1,0 +1,8 @@
+{
+    "parent": "lepidodendron:block/side_plant_bushy",
+    "textures": {
+        "1": "lepidodendron:blocks/dicroidium_f_strobilus",
+        "2": "lepidodendron:blocks/dicroidium_f_strobilus",
+        "3": "lepidodendron:blocks/dicroidium_f_strobilus"
+    }
+}

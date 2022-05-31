@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/czekanowskia_log_end",
+    "up": "lepidodendron:blocks/czekanowskia_log_end",
+    "north": "lepidodendron:blocks/czekanowskia_log",
+    "east": "lepidodendron:blocks/czekanowskia_log",
+    "south": "lepidodendron:blocks/czekanowskia_log",
+    "west": "lepidodendron:blocks/czekanowskia_log",
+    "particle": "lepidodendron:blocks/czekanowskia_log_end"
+  }
+}

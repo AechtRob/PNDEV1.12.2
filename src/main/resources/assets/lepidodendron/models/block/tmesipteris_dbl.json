@@ -1,0 +1,55 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/tmesipteris_dbl_t",
+        "north": "lepidodendron:blocks/tmesipteris_dbl_t",
+        "south": "lepidodendron:blocks/tmesipteris_dbl_t",
+        "west": "lepidodendron:blocks/tmesipteris_dbl_t",
+        "east": "lepidodendron:blocks/tmesipteris_dbl_t",
+        
+        "northd": "lepidodendron:blocks/tmesipteris_dbl_b",
+        "southd": "lepidodendron:blocks/tmesipteris_dbl_b",
+        "westd": "lepidodendron:blocks/tmesipteris_dbl_b",
+        "eastd": "lepidodendron:blocks/tmesipteris_dbl_b"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "faces": {
+                
+                "east": { "uv": [ 16, 0, 0, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 0, 0, 16, 16 ],  "texture": "#west" }
+                
+            }
+        },
+        {   "from": [-2.5, 0, 10.5 ],
+            "to": [ 13.5, 11, 10.5 ],
+            "faces": {
+                
+                "north": { "uv": [ 16, 5, 0, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 0, 5, 16, 16 ],  "texture": "#south" }
+                
+            }
+        },
+
+        {   "from": [8, -16, 0 ],
+            "to": [ 8, 0, 16 ],
+            "faces": {
+                
+                "east": { "uv": [ 16, 0, 0, 16 ],  "texture": "#eastd" },
+                "west": { "uv": [ 0, 0, 16, 16 ],  "texture": "#westd" }
+                
+            }
+        },
+        {   "from": [-2.5, -16, 10.5 ],
+            "to": [ 13.5, 0, 10.5 ],
+            "faces": {
+                
+                "north": { "uv": [ 16, 0, 0, 16 ],  "texture": "#northd" },
+                "south": { "uv": [ 0, 0, 16, 16 ],  "texture": "#southd" }
+                
+            }
+        }
+        
+    ]
+}

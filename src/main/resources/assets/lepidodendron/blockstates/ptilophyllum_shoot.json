@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:ptilophyllum_shoot"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:ptilophyllum_shoot_inventory"
+    }
+  }
+}

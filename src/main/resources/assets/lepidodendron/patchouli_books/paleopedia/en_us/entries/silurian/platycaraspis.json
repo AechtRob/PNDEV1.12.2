@@ -1,0 +1,30 @@
+{
+	"name": "Platycaraspis",
+	"icon": "lepidodendron:platycaraspis_raw",
+	"category": "lepidodendron:silurian",
+	"turnin": "lepidodendron:pf_adv_book_platycaraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_platycaraspis",
+			"title": "Platycaraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Galeaspida$(br)>Dayongaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/platycaraspis.png"],
+			"title": "P. tianshanensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platycaraspis",
+			"type": "text",
+			"text": "Platycaraspis was a jawless fish from the Silurian with a very unique headshield. Like other galeaspids, which all had weird looking headshields, Platycaraspis also had a hole on the top of its head, which was not its actual mouth. It probably was an active swimmer, and searched for food on the seafloor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_platycaraspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

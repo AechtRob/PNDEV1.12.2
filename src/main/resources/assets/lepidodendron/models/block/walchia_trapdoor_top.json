@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_top",
+  "textures": {
+    "texture": "lepidodendron:blocks/walchia_trapdoor",
+    "planktexture": "lepidodendron:blocks/walchia_planks",
+    "particle": "lepidodendron:blocks/walchia_trapdoor"
+  }
+}

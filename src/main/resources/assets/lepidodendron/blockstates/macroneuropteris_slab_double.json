@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:macroneuropteris_slab_double"
+    }
+  }
+}

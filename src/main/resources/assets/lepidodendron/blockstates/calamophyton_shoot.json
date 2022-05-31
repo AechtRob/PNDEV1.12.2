@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:calamophyton_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:calamophyton_shoot_inventory"
+    }
+  }
+}

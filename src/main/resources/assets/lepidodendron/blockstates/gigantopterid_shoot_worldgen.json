@@ -1,0 +1,17 @@
+{
+    "multipart": [
+		{ 	"apply": { "model": "lepidodendron:gigantopterid_shoot" } },
+    	
+        {   "when": { "stem": true },
+            "apply": { "model": "lepidodendron:gigantopterid_stem" }
+        },
+
+        {   "when": { "top": true },
+            "apply": [
+            	{ "model": "lepidodendron:gigantopterid_flower" },
+				{ "model": "lepidodendron:gigantopterid_noflower" }
+            ]
+        }
+        
+    ]
+}

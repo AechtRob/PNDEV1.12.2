@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:stiff_cycad_shoot"}
+    ],
+
+    "inventory": {
+      "model": "lepidodendron:stiff_cycad_shoot_inventory"
+    }
+  }
+}

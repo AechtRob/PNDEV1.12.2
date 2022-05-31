@@ -1,0 +1,149 @@
+{
+  "multipart": [
+  	
+    { "when": { "OR": [
+    	{ "facing": "north" },
+		{ "south": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1", "x": 90 },
+        { "model": "lepidodendron:lichen_var2", "x": 90 },
+        { "model": "lepidodendron:lichen_var3", "x": 90 },
+        { "model": "lepidodendron:lichen_var4", "x": 90 },
+        { "model": "lepidodendron:lichen_var5", "x": 90 },
+        { "model": "lepidodendron:lichen_var6", "x": 90 },
+        { "model": "lepidodendron:lichen_var7", "x": 90 },
+        { "model": "lepidodendron:lichen_var8", "x": 90 },
+        { "model": "lepidodendron:lichen_var9", "x": 90 },
+        { "model": "lepidodendron:lichen_var10", "x": 90 },
+        { "model": "lepidodendron:lichen_var11", "x": 90 },
+        { "model": "lepidodendron:lichen_var12", "x": 90 },
+        { "model": "lepidodendron:lichen_var13", "x": 90 },
+        { "model": "lepidodendron:lichen_var14", "x": 90 },
+        { "model": "lepidodendron:lichen_var15", "x": 90 },
+        { "model": "lepidodendron:lichen_var16", "x": 90 }
+        ]
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "east" },
+		{ "west": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var2", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var3", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var4", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var5", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var6", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var7", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var8", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var9", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var10", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var11", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var12", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var13", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var14", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var15", "x": 90, "y": 90 },
+        { "model": "lepidodendron:lichen_var16", "x": 90, "y": 90 }
+        ]
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "south" },
+		{ "north": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var2", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var3", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var4", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var5", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var6", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var7", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var8", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var9", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var10", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var11", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var12", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var13", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var14", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var15", "x": 90, "y": 180 },
+        { "model": "lepidodendron:lichen_var16", "x": 90, "y": 180 }
+        ]
+    },
+
+    { "when": { "OR": [
+    	{ "facing": "west" },
+		{ "east": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var2", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var3", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var4", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var5", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var6", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var7", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var8", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var9", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var10", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var11", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var12", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var13", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var14", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var15", "x": 90, "y": 270 },
+        { "model": "lepidodendron:lichen_var16", "x": 90, "y": 270 }
+        ]
+    },
+
+    { "when": { "OR": [
+    	{ "facing": "up" },
+		{ "down": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1" },
+        { "model": "lepidodendron:lichen_var2" },
+        { "model": "lepidodendron:lichen_var3" },
+        { "model": "lepidodendron:lichen_var4" },
+        { "model": "lepidodendron:lichen_var5" },
+        { "model": "lepidodendron:lichen_var6" },
+        { "model": "lepidodendron:lichen_var7" },
+        { "model": "lepidodendron:lichen_var8" },
+        { "model": "lepidodendron:lichen_var9" },
+        { "model": "lepidodendron:lichen_var10" },
+        { "model": "lepidodendron:lichen_var11" },
+        { "model": "lepidodendron:lichen_var12" },
+        { "model": "lepidodendron:lichen_var13" },
+        { "model": "lepidodendron:lichen_var14" },
+        { "model": "lepidodendron:lichen_var15" },
+        { "model": "lepidodendron:lichen_var16" }
+        ]
+    },
+    
+    { "when": { "OR": [
+    	{ "facing": "down" },
+		{ "up": true }
+    	]},
+      "apply": [
+        { "model": "lepidodendron:lichen_var1", "x": 180 },
+        { "model": "lepidodendron:lichen_var2", "x": 180 },
+        { "model": "lepidodendron:lichen_var3", "x": 180 },
+        { "model": "lepidodendron:lichen_var4", "x": 180 },
+        { "model": "lepidodendron:lichen_var5", "x": 180 },
+        { "model": "lepidodendron:lichen_var6", "x": 180 },
+        { "model": "lepidodendron:lichen_var7", "x": 180 },
+        { "model": "lepidodendron:lichen_var8", "x": 180 },
+        { "model": "lepidodendron:lichen_var9", "x": 180 },
+        { "model": "lepidodendron:lichen_var10", "x": 180 },
+        { "model": "lepidodendron:lichen_var11", "x": 180 },
+        { "model": "lepidodendron:lichen_var12", "x": 180 },
+        { "model": "lepidodendron:lichen_var13", "x": 180 },
+        { "model": "lepidodendron:lichen_var14", "x": 180 },
+        { "model": "lepidodendron:lichen_var15", "x": 180 },
+        { "model": "lepidodendron:lichen_var16", "x": 180 }
+        ]
+    }
+    
+  ]
+}

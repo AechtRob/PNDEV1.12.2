@@ -1,0 +1,30 @@
+{
+	"name": "Pantylus",
+	"icon": "paleopedia:permian/permian_icon/pantylus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_pantylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pantylus",
+			"title": "Pantylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Recumbirostra$(br)>Pantylidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/pantylus.png"],
+			"title": "Pantylus cordatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pantylus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pantylus",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

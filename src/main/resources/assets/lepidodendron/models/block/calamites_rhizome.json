@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/calamites_log",
+    "up": "lepidodendron:blocks/calamites_log",
+    "north": "lepidodendron:blocks/calamites_log",
+    "east": "lepidodendron:blocks/calamites_log",
+    "south": "lepidodendron:blocks/calamites_log",
+    "west": "lepidodendron:blocks/calamites_log",
+    "particle": "lepidodendron:blocks/calamites_log"
+  }
+}

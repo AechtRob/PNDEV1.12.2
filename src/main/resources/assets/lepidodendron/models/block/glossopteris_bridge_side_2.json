@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge_side",
+  "textures": {
+    "wood": "lepidodendron:blocks/glossopteris_planks",
+    "metal": "blocks/gold_block"
+  }
+}
+
+

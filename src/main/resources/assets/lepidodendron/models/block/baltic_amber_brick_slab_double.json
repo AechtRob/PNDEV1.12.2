@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/baltic_amber_bricks",
+    "particle": "lepidodendron:blocks/baltic_amber_bricks"
+  }
+}

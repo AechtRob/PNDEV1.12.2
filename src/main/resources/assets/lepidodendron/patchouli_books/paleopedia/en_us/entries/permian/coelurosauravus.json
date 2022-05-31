@@ -1,0 +1,30 @@
+{
+	"name": "Coelurosauravus",
+	"icon": "paleopedia:permian/permian_icon/coelurosauravus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_coelurosauravus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_coelurosauravus",
+			"title": "Coelurosauravus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Weigeltisauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/coelurosauravus.png"],
+			"title": "C. elivensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coelurosauravus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coelurosauravus",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

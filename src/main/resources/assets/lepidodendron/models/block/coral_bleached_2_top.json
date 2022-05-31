@@ -1,0 +1,33 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/reef_block_bleached_2",
+		"particle": "lepidodendron:blocks/reef_block_bleached_2"
+	},
+	"elements": [
+		{
+			"name": "Top1",
+			"from": [4.98, 16, 3.98],
+			"to": [12.98, 21.98, 10.98],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 6], "texture": "#texture"},
+				"east": {"uv": [0, 0, 7, 6], "texture": "#texture"},
+				"south": {"uv": [0, 0, 8, 6], "texture": "#texture"},
+				"west": {"uv": [0, 0, 7, 6], "texture": "#texture"},
+				"up": {"uv": [0, 0, 8, 7], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "Top2",
+			"from": [5.98, 16, 4.98],
+			"to": [14.98, 19.98, 13.98],
+			"faces": {
+				"north": {"uv": [0, 0, 9, 3], "texture": "#texture"},
+				"east": {"uv": [0, 0, 9, 4], "texture": "#texture"},
+				"south": {"uv": [0, 0, 9, 4], "texture": "#texture"},
+				"west": {"uv": [0, 0, 9, 3], "texture": "#texture"},
+				"up": {"uv": [0, 0, 9, 9], "texture": "#texture"}
+			}
+		}
+	]
+}

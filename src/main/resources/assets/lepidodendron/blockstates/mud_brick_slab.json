@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:mud_brick_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:mud_brick_slab_top"
+    }
+  }
+}

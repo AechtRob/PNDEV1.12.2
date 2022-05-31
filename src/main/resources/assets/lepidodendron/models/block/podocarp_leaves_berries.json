@@ -1,0 +1,6 @@
+{
+    "parent": "block/leaves",
+    "textures": {
+        "all": "lepidodendron:blocks/podocarp_leaves_berries"
+    }
+}

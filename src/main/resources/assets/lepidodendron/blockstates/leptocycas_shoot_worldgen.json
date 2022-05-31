@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:leptocycas_shoot", "weight": 2 },
+      {"model": "lepidodendron:leptocycas_shoot_var", "weight": 2 },
+      {"model": "lepidodendron:leptocycas_shoot_flower"},
+      {"model": "lepidodendron:leptocycas_shoot_flower_var"},
+
+      {"model": "lepidodendron:leptocycas_shoot", "weight": 2, "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_var", "weight": 2, "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_flower", "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_flower_var", "y": 90 },
+
+      
+      {"model": "lepidodendron:leptocycas_shoot_flipped", "weight": 2 },
+      {"model": "lepidodendron:leptocycas_shoot_var_flipped", "weight": 2 },
+      {"model": "lepidodendron:leptocycas_shoot_flower_flipped"},
+      {"model": "lepidodendron:leptocycas_shoot_flower_var_flipped"},
+
+      {"model": "lepidodendron:leptocycas_shoot_flipped", "weight": 2, "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_var_flipped", "weight": 2, "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_flower_flipped", "y": 90 },
+      {"model": "lepidodendron:leptocycas_shoot_flower_var_flipped", "y": 90 }
+      
+    ]
+  }
+}

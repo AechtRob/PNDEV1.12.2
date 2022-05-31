@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:wattieza_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:wattieza_shoot_side_02", "y": -90
+    },
+    "facing=east": {
+      "model": "lepidodendron:wattieza_shoot_side_02"
+    },
+    "facing=south": {
+      "model": "lepidodendron:wattieza_shoot_side_02", "y": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:wattieza_shoot_side_02", "y": 180
+    }
+  }
+}

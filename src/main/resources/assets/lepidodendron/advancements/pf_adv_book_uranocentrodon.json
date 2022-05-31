@@ -1,0 +1,40 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:uranocentrodon_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_uranocentrodon.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_uranocentrodon.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_uranocentrodon"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

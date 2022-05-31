@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:baltic_amber_block"
+    },
+    "3": {
+      "item": "lepidodendron:baltic_amber_block"
+    },
+    "4": {
+      "item": "lepidodendron:baltic_amber_block"
+    },
+    "6": {
+      "item": "lepidodendron:baltic_amber_block"
+    },
+    "7": {
+      "item": "lepidodendron:baltic_amber_block"
+    },
+    "8": {
+      "item": "lepidodendron:baltic_amber_block"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:baltic_amber_stairs",
+    "count": 4
+  }
+}

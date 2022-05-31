@@ -1,0 +1,30 @@
+{
+	"name": "Rayonnoceras",
+	"icon": "lepidodendron:shell_rayonnoceras",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_rayonnoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rayonnoceras",
+			"title": "Rayonnoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Pseudorthocerida$(br)>Carbactinoceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/rayonnoceras.png"],
+			"title": "R. solidiforme",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rayonnoceras",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rayonnoceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+		}
+	]
+}

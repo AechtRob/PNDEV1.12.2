@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:hermanophyton_shoot"},
+      {"model": "lepidodendron:hermanophyton_stem"},
+      {"model": "lepidodendron:hermanophyton_stem_var"},
+      {"model": "lepidodendron:hermanophyton_bend"},
+      {"model": "lepidodendron:hermanophyton_bend_var"},
+      {"model": "lepidodendron:hermanophyton_bend", "y": 90},
+      {"model": "lepidodendron:hermanophyton_bend_var", "y": 90},
+      {"model": "lepidodendron:hermanophyton_bend", "y": 180},
+      {"model": "lepidodendron:hermanophyton_bend_var", "y": 180},
+      {"model": "lepidodendron:hermanophyton_bend", "y": 270},
+      {"model": "lepidodendron:hermanophyton_bend_var", "y": 270}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:hermanophyton_shoot"
+    }
+  }
+}

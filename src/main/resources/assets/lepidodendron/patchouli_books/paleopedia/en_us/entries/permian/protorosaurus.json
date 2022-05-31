@@ -1,0 +1,30 @@
+{
+	"name": "Protorosaurus",
+	"icon": "paleopedia:permian/permian_icon/protorosaurus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_protorosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protorosaurus",
+			"title": "Protorosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Archosauromorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/protorosaurus.png"],
+			"title": "P. speneri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protorosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protorosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

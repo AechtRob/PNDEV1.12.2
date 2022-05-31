@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "var=false": {"model": "lepidodendron:surangephyllum_t"},
+    "var=true": {"model": "lepidodendron:surangephyllum_t_var"}
+    }
+}

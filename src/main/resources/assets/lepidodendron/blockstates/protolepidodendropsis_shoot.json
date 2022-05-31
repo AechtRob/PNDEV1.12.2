@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:protolepidodendropsis_5" },
+        "stage=1": [
+            { "model": "lepidodendron:protolepidodendropsis_6" },
+            { "model": "lepidodendron:protolepidodendropsis_6var" }
+        ]
+    }
+}

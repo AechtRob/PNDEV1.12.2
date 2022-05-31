@@ -1,0 +1,23 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:bone_wand"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_rejuvenate.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_rejuvenate.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_rejuvenate"
+		}
+	},
+  "rewards": {
+	  "experience": 20
+  }
+}

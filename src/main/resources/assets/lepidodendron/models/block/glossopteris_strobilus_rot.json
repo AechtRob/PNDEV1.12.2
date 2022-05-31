@@ -1,0 +1,26 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/glossflowerside",
+        "down": "lepidodendron:blocks/glossflowersideb",
+        "up": "lepidodendron:blocks/glossflowersidet",
+        "north": "lepidodendron:blocks/glossflowerside",
+        "south": "lepidodendron:blocks/glossflowerside",
+        "west": "lepidodendron:blocks/glossflowerside",
+        "east": "lepidodendron:blocks/glossflowerside"
+    },
+    "elements": [
+        {   "from": [ 7, 0, 7 ],
+            "to": [ 10, 4, 10 ],
+			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "faces": {
+                "down":  { "uv": [ 7, 13, 10, 16 ],  "texture": "#down", "cullface": "down" },
+                "up":    { "uv": [ 7, 13, 10, 16 ], "texture": "#up" },
+                "north": { "uv": [ 7, 13, 10, 16 ],  "texture": "#north" },
+                "south": { "uv": [ 7, 13, 10, 16 ],  "texture": "#south" },
+                "west":  { "uv": [ 7, 13, 10, 16 ], "texture": "#west" },
+                "east":  { "uv": [ 7, 13, 10, 16 ],  "texture": "#east" }
+            }
+        }
+    ]
+}

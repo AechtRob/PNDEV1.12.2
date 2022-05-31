@@ -1,0 +1,13 @@
+{
+  "parent": "lepidodendron:item/bench_item",
+  "textures": {
+    "wood": "lepidodendron:blocks/telemachus_planks"
+  }
+}
+
+
+
+
+
+
+

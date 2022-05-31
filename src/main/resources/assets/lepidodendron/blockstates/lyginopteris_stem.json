@@ -1,0 +1,73 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:lyginopteris_stem_1", "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2" },
+     	{"model": "lepidodendron:lyginopteris_stem_3" },
+     	{"model": "lepidodendron:lyginopteris_stem_4" },
+     	{"model": "lepidodendron:lyginopteris_stem_5" }
+    ],
+    "facing=north,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top", "y": 180 }
+    ],
+    "facing=south,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top" }
+    ],
+    "facing=east,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top", "y": 270 }
+    ],
+    "facing=west,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top", "y": 90 }
+    ],
+    "facing=up,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top" }
+    ],
+    "facing=down,topshoot=true": [
+      {"model": "lepidodendron:lyginopteris_top" }
+    ],
+
+    "facing=north,topshoot=false": [
+      {"model": "lepidodendron:lyginopteris_stem_1", "y": 180, "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2", "y": 180 },
+     	{"model": "lepidodendron:lyginopteris_stem_3", "y": 180 },
+     	{"model": "lepidodendron:lyginopteris_stem_4", "y": 180 },
+     	{"model": "lepidodendron:lyginopteris_stem_5", "y": 180 }
+    ],
+    "facing=south,topshoot=false": [
+      	{"model": "lepidodendron:lyginopteris_stem_1", "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2" },
+     	{"model": "lepidodendron:lyginopteris_stem_3" },
+     	{"model": "lepidodendron:lyginopteris_stem_4" },
+     	{"model": "lepidodendron:lyginopteris_stem_5" }
+    ],
+    "facing=east,topshoot=false": [
+      	{"model": "lepidodendron:lyginopteris_stem_1", "y": 270, "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2", "y": 270 },
+     	{"model": "lepidodendron:lyginopteris_stem_3", "y": 270 },
+     	{"model": "lepidodendron:lyginopteris_stem_4", "y": 270 },
+     	{"model": "lepidodendron:lyginopteris_stem_5", "y": 270 }
+    ],
+    "facing=west,topshoot=false": [
+      	{"model": "lepidodendron:lyginopteris_stem_1", "y": 90, "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2", "y": 90 },
+     	{"model": "lepidodendron:lyginopteris_stem_3", "y": 90 },
+     	{"model": "lepidodendron:lyginopteris_stem_4", "y": 90 },
+     	{"model": "lepidodendron:lyginopteris_stem_5", "y": 90 }
+    ],
+    "facing=up,topshoot=false": [
+      	{"model": "lepidodendron:lyginopteris_stem_1", "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2" },
+     	{"model": "lepidodendron:lyginopteris_stem_3" },
+     	{"model": "lepidodendron:lyginopteris_stem_4" },
+     	{"model": "lepidodendron:lyginopteris_stem_5" }
+    ],
+    "facing=down,topshoot=false": [
+      	{"model": "lepidodendron:lyginopteris_stem_1", "weight": 3},
+     	{"model": "lepidodendron:lyginopteris_stem_2" },
+     	{"model": "lepidodendron:lyginopteris_stem_3" },
+     	{"model": "lepidodendron:lyginopteris_stem_4" },
+     	{"model": "lepidodendron:lyginopteris_stem_5" }
+    ]
+    
+  }
+}

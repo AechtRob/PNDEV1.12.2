@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:elkinsia", "weight": 4},
+      {"model": "lepidodendron:elkinsia_bushy"}
+    ]
+  }
+}

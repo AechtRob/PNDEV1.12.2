@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/dominican_amber_ore",
+    "particle": "lepidodendron:blocks/dominican_amber_ore"
+  }
+}

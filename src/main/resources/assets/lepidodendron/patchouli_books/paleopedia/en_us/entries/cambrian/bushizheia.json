@@ -1,0 +1,30 @@
+{
+	"name": "Bushizheia",
+	"icon": "lepidodendron:bushizheia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_bushizheia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bushizheia",
+			"title": "Bushizheia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Euarthropoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/bushizheia.png"],
+			"title": "Bushizheia yangi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bushizheia",
+			"type": "text",
+			"text": "Bushizheia is a euarthropod species from the Cambrian period from the Chengjiang Lagerstatte. It had a segmented body and 2 long appendages at the head, probably used for grasping prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bushizheia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

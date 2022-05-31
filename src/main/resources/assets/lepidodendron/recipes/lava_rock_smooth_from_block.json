@@ -1,0 +1,19 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "lepidodendron:lava_rock"
+      }
+    ]
+  },
+  "result": {
+    "item": "lepidodendron:lava_rock_polished",
+    "count": 4
+  }
+}

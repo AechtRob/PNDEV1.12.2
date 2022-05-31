@@ -1,0 +1,30 @@
+{
+	"name": "Selenopeltis",
+	"icon": "lepidodendron:selenopeltis_raw",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_selenopeltis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_selenopeltis",
+			"title": "Selenopeltis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Odontopleurida$(br)>Odontopleuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/selenopeltis.png"],
+			"title": "Selenopeltis buchi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_selenopeltis",
+			"type": "text",
+			"text": "Selenopeltis is a trilobite with many long curved spins on the sides of its body. It  was quite small, reaching up to 16 cm and it was probably a detritivore."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_selenopeltis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

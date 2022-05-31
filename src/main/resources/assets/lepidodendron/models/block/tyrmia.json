@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/tyrmia_b_e",
+"w":"lepidodendron:blocks/tyrmia_b_w"
+}
+}

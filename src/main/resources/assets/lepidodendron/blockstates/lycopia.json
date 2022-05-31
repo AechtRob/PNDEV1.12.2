@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:lycopia_inventory"
+    },
+    "var=0": {"model": "lepidodendron:lycopia_0"},
+    "var=1": {"model": "lepidodendron:lycopia_1"},
+    "var=2": {"model": "lepidodendron:lycopia_2"}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/marattia_inventory",
+    "particle": "lepidodendron:items/marattia_inventory"
+  }
+}

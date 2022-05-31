@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "1": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "2": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:araucarioxylon_slab_petrified",
+    "data" : 0,
+    "count": 6
+  }
+}

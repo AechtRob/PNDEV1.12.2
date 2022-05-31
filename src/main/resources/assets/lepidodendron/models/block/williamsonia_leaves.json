@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/williamsonia_shoot_small",
+    "particle": "lepidodendron:blocks/williamsonia_shoot_small"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:bjuvia_shoot_cone"
+    },
+    
+    "inventory": {
+      "model": "lepidodendron:bjuvia_shoot_inventory"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Akmonistion",
+	"icon": "lepidodendron:akmonistion_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_akmonistion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_akmonistion",
+			"title": "Akmonistion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Symmoriidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/akmonistion.png"],
+			"title": "A. zangerli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_akmonistion",
+			"type": "text",
+			"text": "Akmonistion is a holocephalian from the Early Carboniferous. It is distinguished by an unusual enlarged formation of the dorsal fin with an unknown function. Its first dorsal fin looked like an anvil, referring to its name, which comes from the Ancient Greek, akmon 'anvil' and istion 'sail.'"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_akmonistion",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

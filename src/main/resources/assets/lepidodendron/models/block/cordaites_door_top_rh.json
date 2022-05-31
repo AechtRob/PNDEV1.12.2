@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "lepidodendron:blocks/cordaites_door_bottom",
+        "top": "lepidodendron:blocks/cordaites_door_top"
+    }
+}

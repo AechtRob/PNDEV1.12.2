@@ -1,0 +1,30 @@
+{
+	"name": "Delitzschala",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/delitzschala_icon.png",
+	"category": "patchouli:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"title": "Delitzschala",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/delitzschala.png"],
+			"title": "D. bitterfeldensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

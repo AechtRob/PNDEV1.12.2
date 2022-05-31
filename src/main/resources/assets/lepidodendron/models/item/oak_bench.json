@@ -1,0 +1,6 @@
+{
+  "parent": "lepidodendron:item/bench_item",
+  "textures": {
+    "wood": "blocks/planks_oak"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:aethophyllum_fruit_1"},
+      {"model": "lepidodendron:aethophyllum_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:aethophyllum_fruit_block_inventory"
+    }
+  }
+}

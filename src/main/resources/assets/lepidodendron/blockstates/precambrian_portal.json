@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "lepidodendron:precambrian_portal_ew"
+    },
+    "axis=x": {
+      "model": "lepidodendron:precambrian_portal_ns"
+    },
+    "inventory": {
+      "model": "lepidodendron:precambrian_portal_ns"
+    }
+  }
+}

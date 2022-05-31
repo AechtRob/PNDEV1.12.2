@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:silver_treefern_shoot"
+    },
+    "facing=north": {
+      "model": "lepidodendron:silver_treefern_shoot_side", "y": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:silver_treefern_shoot_side", "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:silver_treefern_shoot_side", "y": -90
+    },
+    "facing=west": {
+      "model": "lepidodendron:silver_treefern_shoot_side"
+    }
+  }
+}

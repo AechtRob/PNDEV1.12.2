@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bristlecone_fruit_1"},
+      {"model": "lepidodendron:bristlecone_fruit_2"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:bristlecone_fruit_block_inventory"
+    }
+  }
+}

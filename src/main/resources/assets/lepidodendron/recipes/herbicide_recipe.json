@@ -1,0 +1,29 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "3": {
+      "item": "minecraft:fish",
+      "data": 3
+    },
+    "4": {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    "5": {
+      "item": "minecraft:poisonous_potato"
+    },
+    "7": {
+      "item": "minecraft:potion",
+      "data": 32767
+    }
+  },
+  "result": {
+    "item": "lepidodendron:herbicide",
+    "count": 1
+  }
+}

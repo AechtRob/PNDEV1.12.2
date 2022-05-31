@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:siphusauctum_1"},
+        {"model": "lepidodendron:siphusauctum_1_var"},
+        {"model": "lepidodendron:siphusauctum_2"},
+        {"model": "lepidodendron:siphusauctum_2_var"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:siphusauctum_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:siphusauctum_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:siphusauctum_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:siphusauctum_side", "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:siphusauctum_1"},
+      {"model": "lepidodendron:siphusauctum_1_var"},
+      {"model": "lepidodendron:siphusauctum_2"},
+      {"model": "lepidodendron:siphusauctum_2_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:siphusauctum_1", "x": 180},
+      {"model": "lepidodendron:siphusauctum_1_var", "x": 180},
+      {"model": "lepidodendron:siphusauctum_2", "x": 180},
+      {"model": "lepidodendron:siphusauctum_2_var", "x": 180}
+    ]
+  }
+}

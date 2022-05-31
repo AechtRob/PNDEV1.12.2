@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:podozamites_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:podozamites_seed",
+    "count": 1
+  }
+}

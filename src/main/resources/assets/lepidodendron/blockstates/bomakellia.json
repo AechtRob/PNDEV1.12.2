@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:bomakellia",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:bomakellia",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:bomakellia",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:bomakellia",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:bomakellia",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:bomakellia",
+      "y": 0
+    }
+  }
+}

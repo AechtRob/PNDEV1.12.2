@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:arthropitys_slab_double"
+    }
+  }
+}

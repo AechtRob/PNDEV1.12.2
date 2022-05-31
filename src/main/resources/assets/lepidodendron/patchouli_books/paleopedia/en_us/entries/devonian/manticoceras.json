@@ -1,0 +1,30 @@
+{
+	"name": "Manticoceras",
+	"icon": "lepidodendron:shell_manticoceras",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_manticoceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_manticoceras",
+			"title": "Manticoceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Ammonoidea$(br)>Ammonitida$(br)>Gephuroceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/manticoceras.png"],
+			"title": "Manticoceras sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_manticoceras",
+			"type": "text",
+			"text": "Manticoceras is a gephuroceratid ammonite who are fast moving nektonic carnivores. They were quite small, comparable to Goniatites. Manticoceras lived throughout the Devonian period in marine environments."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_manticoceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs"
+		}
+	]
+}

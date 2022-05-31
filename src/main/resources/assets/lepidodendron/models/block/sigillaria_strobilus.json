@@ -1,0 +1,24 @@
+{
+	"parent": "block/cube",
+    "textures": {
+        "particle": "lepidodendron:blocks/sigillaria_strobilus",
+        "down": "lepidodendron:blocks/sigillaria_strobilus",
+        "up": "lepidodendron:blocks/sigillaria_strobilus",
+        "north": "lepidodendron:blocks/sigillaria_strobilus",
+        "south": "lepidodendron:blocks/sigillaria_strobilus",
+        "west": "lepidodendron:blocks/sigillaria_strobilus",
+        "east": "lepidodendron:blocks/sigillaria_strobilus"
+    },
+    "elements": [
+        {   "from": [8, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "faces": {
+                
+                
+                "east": { "uv": [ 0, 0, 16, 16 ],  "texture": "#east" },
+                "west": { "uv": [ 16, 0, 0, 16 ],  "texture": "#west" }
+                
+            }
+        }
+    ]
+}

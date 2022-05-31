@@ -1,0 +1,9 @@
+{
+"parent":"lepidodendron:block/4x4_4pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/nelumbo_c",
+"w":"lepidodendron:blocks/nelumbo_c",
+"ee":"lepidodendron:blocks/nelumbo_e",
+"ww":"lepidodendron:blocks/nelumbo_w"
+}
+}

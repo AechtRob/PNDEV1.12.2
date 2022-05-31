@@ -1,0 +1,101 @@
+{
+    "pools": [
+        {
+			"name": "cambrian_fish",
+            "rolls": 1,
+            "entries": [
+                {
+                "type": "item",
+                "name": "lepidodendron:amplectobelua_raw",
+                "weight": 6.25
+                },
+
+                {
+                "type": "item",
+                "name": "lepidodendron:bushizheia_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:diania_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:eoredlichia_raw",
+                "weight": 6.25
+                },
+
+                {
+                "type": "item",
+                "name": "lepidodendron:haikouichthys_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:jianshanopodia_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:laminacaris_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:lyrarapax_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:microdictyon_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:nectocaris_raw",
+                "weight": 6.25
+                },
+
+
+                {
+                "type": "item",
+                "name": "lepidodendron:paucipodia_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:pomatrum_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:retifacies_raw",
+                "weight": 0
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:sidneyia_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:synophalos_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:wiwaxia_raw",
+                "weight": 6.25
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:yunnanozoon_raw",
+                "weight": 6.25
+                }
+
+
+            ]
+        }
+    ]
+}

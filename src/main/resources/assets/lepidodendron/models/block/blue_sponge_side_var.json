@@ -1,0 +1,26 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "lepidodendron:blocks/blue_sponge_small",
+        "top": "lepidodendron:blocks/blue_sponge_t_var",
+        "bottom": "lepidodendron:blocks/blue_sponge_side_b"
+    },
+    "elements": [
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" }
+            }
+        },
+        {   "from": [ 8, 16, 0 ],
+            "to": [ 8, 32, 16 ],
+            "shade": false,
+            "faces": {
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
+                "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#top" }
+            }
+        }
+    ]
+}

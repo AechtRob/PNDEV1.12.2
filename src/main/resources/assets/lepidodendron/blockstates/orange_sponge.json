@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:orange_sponge"},
+      	{"model": "lepidodendron:orange_sponge_small"},
+      	{"model": "lepidodendron:orange_sponge_rot"},
+      	{"model": "lepidodendron:orange_sponge_small_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:orange_sponge_side"},
+      	{"model": "lepidodendron:orange_sponge_small_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:orange_sponge_side", "y": 90},
+      	{"model": "lepidodendron:orange_sponge_small_side",  "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:orange_sponge_side", "y": 180},
+      	{"model": "lepidodendron:orange_sponge_small_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:orange_sponge_side", "y": 270},
+      	{"model": "lepidodendron:orange_sponge_small_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:orange_sponge"},
+      	{"model": "lepidodendron:orange_sponge_small"},
+      	{"model": "lepidodendron:orange_sponge_rot"},
+      	{"model": "lepidodendron:orange_sponge_small_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:orange_sponge", "x": 180},
+      	{"model": "lepidodendron:orange_sponge_small", "x": 180},
+      	{"model": "lepidodendron:orange_sponge_rot", "x": 180},
+      	{"model": "lepidodendron:orange_sponge_small_rot", "x": 180}
+    ]
+  }
+}

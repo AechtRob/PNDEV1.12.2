@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "lepidodendron:blocks/podozamites_door_bottom",
+        "top": "lepidodendron:blocks/podozamites_door_top"
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:walchia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:walchia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:walchia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:walchia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:walchia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:walchia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:walchia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

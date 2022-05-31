@@ -1,0 +1,30 @@
+{
+	"name": "Herpetogaster",
+	"icon": "lepidodendron:herpetogaster",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_herpetogaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_herpetogaster",
+			"title": "Herpetogaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Deuterostomia$(br)>Cambroernida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/herpetogaster.png"],
+			"title": "Herpetogaster collinsi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "Herpetogaster is an animal from the Cambrian period. It had a pair of branching tentacles and a flexible body which was curved like a horn. It was divided into at least 13 segments. Its mouth was located between the tentacles and they were probably gregarious species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

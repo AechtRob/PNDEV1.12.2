@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:amphibian_spawn_ichthyostega", "x": 180}
+    ]
+  }
+}

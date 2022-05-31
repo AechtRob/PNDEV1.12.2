@@ -1,0 +1,68 @@
+{
+  "variants": {
+    "age=0": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=1": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=2": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=3": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=4": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=5": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=6": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=7": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=8": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=9": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=10": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=11": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=12": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=13": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=14": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ],
+    "age=15": [
+      {"model": "lepidodendron:guangdedendron_top"},
+      {"model": "lepidodendron:guangdedendron_top_rot"}
+    ]
+  }
+}

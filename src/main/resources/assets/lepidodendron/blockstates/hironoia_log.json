@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:hironoia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:hironoia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:hironoia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:hironoia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:hironoia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:hironoia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:hironoia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

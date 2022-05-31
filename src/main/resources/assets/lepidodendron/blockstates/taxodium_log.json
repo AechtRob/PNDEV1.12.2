@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:taxodium_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:taxodium_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:taxodium_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:taxodium_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:taxodium_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:taxodium_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:taxodium_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

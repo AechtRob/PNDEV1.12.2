@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:wollemi_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:wollemi_planks",
+    "count": 4
+  }
+}

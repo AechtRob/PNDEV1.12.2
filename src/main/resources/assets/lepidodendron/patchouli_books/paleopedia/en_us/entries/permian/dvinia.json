@@ -1,0 +1,30 @@
+{
+	"name": "Dvinia",
+	"icon": "paleopedia:permian/permian_icon/dvinia_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_dvinia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dvinia",
+			"title": "Dvinia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/dvinia.png"],
+			"title": "Dvinia prima",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dvinia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dvinia",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+    "multipart": [
+		{ 	"apply": { "model": "lepidodendron:equisetites_reed" } },
+    	
+        {   "when": { "water": true },
+            "apply": { "model": "lepidodendron:equisetites_reed_down" }
+        }
+    ]
+}

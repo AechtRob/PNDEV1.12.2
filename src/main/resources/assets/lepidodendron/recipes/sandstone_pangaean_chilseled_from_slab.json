@@ -1,0 +1,20 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "lepidodendron:sandstone_slab_pangaean",
+        "data": 0
+      }
+    ]
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_pangaean_carved",
+    "count": 1
+  }
+}

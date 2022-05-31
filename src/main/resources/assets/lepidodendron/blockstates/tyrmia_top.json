@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+		{"model": "lepidodendron:tyrmia_top" },
+		{"model": "lepidodendron:tyrmia_top_seeds" }
+    ]
+  }
+}

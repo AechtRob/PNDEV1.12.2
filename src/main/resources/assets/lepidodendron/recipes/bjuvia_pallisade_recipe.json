@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:bjuvia_log"
+    },
+    "4": {
+      "item": "lepidodendron:bjuvia_log"
+    },
+    "5": {
+      "item": "lepidodendron:bjuvia_log"
+    },
+    "6": {
+      "item": "lepidodendron:bjuvia_log"
+    },
+    "7": {
+      "item": "lepidodendron:bjuvia_log"
+    },
+    "8": {
+      "item": "lepidodendron:bjuvia_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:bjuvia_pallisade",
+    "count": 4
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Barrel Jelly",
+	"icon": "paleopedi:ambients/ambient_icon/barrel_icon.png",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish4",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish4",
+			"title": "Barrel Jelly",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_barrel.png"],
+			"title": "Rhizostoma pulmo",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish4",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish4",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:pteridinium",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:pteridinium",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:pteridinium",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:pteridinium",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:pteridinium",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:pteridinium",
+      "y": 0
+    }
+  }
+}

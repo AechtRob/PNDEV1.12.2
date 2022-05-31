@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/brachyphyllum_log_end",
+    "up": "lepidodendron:blocks/brachyphyllum_log_end",
+    "north": "lepidodendron:blocks/brachyphyllum_log",
+    "east": "lepidodendron:blocks/brachyphyllum_log",
+    "south": "lepidodendron:blocks/brachyphyllum_log",
+    "west": "lepidodendron:blocks/brachyphyllum_log",
+    "particle": "lepidodendron:blocks/brachyphyllum_log_end"
+  }
+}

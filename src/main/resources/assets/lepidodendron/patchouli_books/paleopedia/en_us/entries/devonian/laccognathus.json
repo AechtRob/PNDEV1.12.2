@@ -1,0 +1,30 @@
+{
+	"name": "Laccognathus",
+	"icon": "paleopedia:devonian/devonian_icon/laccognathus_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_laccognathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_laccognathus",
+			"title": "Laccognathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Porolepiformes$(br)>Holoptychiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/laccognathus.png"],
+			"title": "Laccognathus panderi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laccognathus",
+			"type": "text",
+			"text": "Laccognathus was a lobe finned fish with short dorsoventrally flattened heads. Large areas of its skin was stretched out over solid plates of bone, and the bone was composed of dense fibers that meant that exchange of oxygen through the skin was not likely by Laccognathus. It is suggested that Laccognathus could have moved onto land for short periods of time to traverse different bodies of water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_laccognathus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw/Cooked Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

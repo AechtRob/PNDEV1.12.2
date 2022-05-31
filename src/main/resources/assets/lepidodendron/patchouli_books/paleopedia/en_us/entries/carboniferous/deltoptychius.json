@@ -1,0 +1,30 @@
+{
+	"name": "Deltoptychius",
+	"icon": "lepidodendron:deltoptychius_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_deltoptychius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_deltoptychius",
+			"title": "Deltoptychius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Chimaeriformes$(br)>Deltoptychiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/deltoptychius.png"],
+			"title": "D. gibberuius",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_deltoptychius",
+			"type": "text",
+			"text": "Deltoptychius is a cartilaginous fish from the Carboniferous. It had a similar appearance to modern day chimaeras, having a long whip like tail and large pectoral fins which it used to glide through the water. It may have lived in deeper water environments due to its large eyes and it probably hunted shellfish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_deltoptychius",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

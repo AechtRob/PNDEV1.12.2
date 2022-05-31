@@ -1,0 +1,30 @@
+{
+	"name": "Thrinacodus",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/thrinacodus_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_thrinacodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thrinacodus",
+			"title": "Thrinacodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Thrinacodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/thrinacodus.png"],
+			"title": "Thrinacodus gracia",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrinacodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thrinacodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

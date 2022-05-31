@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:coarse_sandy_dirt_black" },
+      { "model": "lepidodendron:coarse_sandy_dirt_black", "y": 90 },
+      { "model": "lepidodendron:coarse_sandy_dirt_black", "y": 180 },
+      { "model": "lepidodendron:coarse_sandy_dirt_black", "y": 270 }
+    ]
+  }
+}

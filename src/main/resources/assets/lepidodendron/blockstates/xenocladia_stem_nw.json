@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "normal": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1" }
+    ],
+    "facing=north,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1", "y": 180 }
+    ],
+    "facing=south,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1" }
+    ],
+    "facing=east,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1", "y": 270 }
+    ],
+    "facing=west,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1", "y": 90 }
+    ],
+    "facing=up,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1" }
+    ],
+    "facing=down,joined=false": [
+     	{"model": "lepidodendron:xenocladia_stem_corner_1" }
+    ],
+
+    "facing=north,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join", "y": 180 }
+    ],
+    "facing=south,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join" }
+    ],
+    "facing=east,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join", "y": 270 }
+    ],
+    "facing=west,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join", "y": 90 }
+    ],
+    "facing=up,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join" }
+    ],
+    "facing=down,joined=true": [
+     	{"model": "lepidodendron:xenocladia_corner_1_join" }
+    ]
+    
+  }
+}

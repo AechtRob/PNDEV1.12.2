@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/wielandiella_inventory",
+    "particle": "lepidodendron:items/wielandiella_inventory"
+  }
+}

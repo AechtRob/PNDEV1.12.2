@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/wachtlerina_inventory",
+    "particle": "lepidodendron:items/wachtlerina_inventory"
+  }
+}

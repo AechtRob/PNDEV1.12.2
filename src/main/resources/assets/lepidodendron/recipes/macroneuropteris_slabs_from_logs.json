@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:macroneuropteris_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:macroneuropteris_planks",
+    "count": 4
+  }
+}

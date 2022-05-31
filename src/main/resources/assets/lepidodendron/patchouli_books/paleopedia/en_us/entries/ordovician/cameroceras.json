@@ -1,0 +1,30 @@
+{
+	"name": "Cameroceras",
+	"icon": "paleopedia:ordosil/ordosil_icon/shell_cameroceras.png",
+	"category": "lepidodendron:ordovician",
+	"turnin": "lepidodendron:pf_adv_book_cameroceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cameroceras",
+			"title": "Cameroceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Nautiloidea$(br)>Endocerida$(br)>Endoceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ordosil/cameroceras.png"],
+			"title": "C. trentonense",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cameroceras",
+			"type": "text",
+			"text": "Cameroceras (chambered horn) is a giant orthocone living during the Ordovician to Silurian periods. It inhabitied shallow seas and became very diverse during the Upper Ordovician but dropped after the Ordovician-Silurian extinction event. It may have been and ambush predator that lunged on prey and consumed them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cameroceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+		}
+	]
+}

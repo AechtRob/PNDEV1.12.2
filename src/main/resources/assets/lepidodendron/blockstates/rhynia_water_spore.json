@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:rhynia_water_1_spore"},
+      {"model": "lepidodendron:rhynia_water_2_spore"}
+    ]
+  }
+}

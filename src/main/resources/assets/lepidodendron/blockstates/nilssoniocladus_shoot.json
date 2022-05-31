@@ -1,0 +1,60 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_inventory" }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot" }
+    ],
+    "facing=north,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2, "x": 90 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower","x": 90 }
+    ],
+    "facing=east,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2,"x": 90, "y": 90 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower","x": 90, "y": 90 }
+    ],
+    "facing=south,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2, "x": 90, "y": 180 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower", "x": 90, "y": 180 }
+    ],
+    "facing=west,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2, "x": 90, "y": 270 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower", "x": 90, "y": 270 }
+    ],
+    "facing=up,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower" }
+    ],
+    "facing=down,vine=false": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2, "x": 180 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower", "x": 180 }
+    ],
+
+
+    "facing=north,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2,"x": 90 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached","x": 90 }
+    ],
+    "facing=east,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2,"x": 90, "y": 90 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached","x": 90, "y": 90 }
+    ],
+    "facing=south,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2, "x": 90, "y": 180 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached", "x": 90, "y": 180 }
+    ],
+    "facing=west,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2, "x": 90, "y": 270 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached", "x": 90, "y": 270 }
+    ],
+    "facing=up,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached" }
+    ],
+    "facing=down,vine=true": [
+		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2, "x": 180 },
+		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached", "x": 180 }
+    ]
+  }
+}

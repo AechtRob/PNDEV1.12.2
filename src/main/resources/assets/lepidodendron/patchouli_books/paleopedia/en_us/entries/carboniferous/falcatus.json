@@ -1,0 +1,30 @@
+{
+	"name": "Falcatus",
+	"icon": "lepidodendron:falcatus_raw",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_falcatus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_falcatus",
+			"title": "Falcatus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Symmoriiformes$(br)>Falcatidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/falcatus.png"],
+			"title": "Falcatus falcatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_falcatus",
+			"type": "text",
+			"text": "Falcatus is a symmoriid cartilaginous fish from the Carboniferous period which has displayed sexual dimorphism. The males had a long spiny structure on top of its head whereas the females lacked this spine. They were relatively small and and the males were larger than the females."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_falcatus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

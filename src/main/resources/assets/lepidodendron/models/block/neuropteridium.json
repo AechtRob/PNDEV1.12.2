@@ -1,0 +1,55 @@
+{
+"ambientocclusion":false,
+"textures":{
+	"particle": "lepidodendron:items/neuropteridium_inventory",
+	"e": "lepidodendron:blocks/neuropteridium_b_e",
+	"w": "lepidodendron:blocks/neuropteridium_b_w",
+	"e1": "lepidodendron:blocks/neuropteridium_t_e",
+	"w1": "lepidodendron:blocks/neuropteridium_t_w"
+	},
+"elements":[
+{"name":"n",
+"from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
+"faces":{
+"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"e",
+"from":[8.0,0.0,8.0],"to":[24.0,16.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"s",
+"from":[8.0,0.0,8.0],"to":[8.0,16.0,24.0],"shade":false,
+"faces":{
+"east":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"w",
+"from":[-8.0,0.0,8.0],"to":[8.0,16.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+
+{"name":"n1",
+"from":[8.0,16.0,-8.0],"to":[8.0,32.0,8.0],"shade":false,
+"faces":{
+"east":{"texture":"#e1","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#w1","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"e1",
+"from":[8.0,16.0,8.0],"to":[24.0,32.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#w1","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#e1","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"s1",
+"from":[8.0,16.0,8.0],"to":[8.0,32.0,24.0],"shade":false,
+"faces":{
+"east":{"texture":"#w1","uv":[0.0,0.0,16.0,16.0]},
+"west":{"texture":"#e1","uv":[0.0,0.0,16.0,16.0]}}},
+{"name":"w1",
+"from":[-8.0,16.0,8.0],"to":[8.0,32.0,8.0],"shade":false,
+"faces":{
+"north":{"texture":"#e1","uv":[0.0,0.0,16.0,16.0]},
+"south":{"texture":"#w1","uv":[0.0,0.0,16.0,16.0]}}}
+]
+}

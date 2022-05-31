@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/nilssoniopteris",
+    "particle": "lepidodendron:blocks/nilssoniopteris"
+  }
+}

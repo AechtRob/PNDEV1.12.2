@@ -1,0 +1,7 @@
+{
+"parent":"lepidodendron:block/8pointedplant",
+"textures":{
+"e":"lepidodendron:blocks/thucydia_2_e",
+"w":"lepidodendron:blocks/thucydia_2_w"
+}
+}

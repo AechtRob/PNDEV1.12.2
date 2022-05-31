@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:sciadopitys_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:sciadopitys_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:sciadopitys_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:sciadopitys_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:sciadopitys_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:sciadopitys_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:sciadopitys_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

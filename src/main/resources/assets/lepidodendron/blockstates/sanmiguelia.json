@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:sanmiguelia"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:sanmiguelia_inventory"
+    }
+  }
+}

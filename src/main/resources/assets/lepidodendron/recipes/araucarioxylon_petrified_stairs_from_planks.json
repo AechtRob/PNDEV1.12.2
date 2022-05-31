@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "3": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "4": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "6": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "7": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    },
+    "8": {
+      "item": "lepidodendron:araucarioxylon_planks_petrified"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:araucarioxylon_stairs_petrified",
+    "count": 4
+  }
+}

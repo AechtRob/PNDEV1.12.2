@@ -1,0 +1,7 @@
+{
+    "parent": "block/fence_gate_open",
+    "textures": {
+        "texture": "lepidodendron:blocks/dawn_redwood_planks",
+    "particle": "lepidodendron:blocks/dawn_redwood_planks"
+    }
+}

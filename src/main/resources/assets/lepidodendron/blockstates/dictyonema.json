@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dictyonema"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:dictyonema_side", "y": 90}
+      ],
+      "facing=east": [
+      {"model": "lepidodendron:dictyonema_side", "y": 180}
+      ],
+      "facing=south": [
+      {"model": "lepidodendron:dictyonema_side", "y": 270}
+      ],
+
+      "facing=west": [
+      {"model": "lepidodendron:dictyonema_side"}
+      ],
+
+    "facing=up": [
+      {"model": "lepidodendron:dictyonema"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:dictyonema", "x": 180}
+    ]
+  }
+}

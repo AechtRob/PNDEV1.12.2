@@ -1,0 +1,30 @@
+{
+	"name": "Eoandromeda",
+	"icon": "paleopedia:precambrian/precambrian_icon/eoandromeda_icon.png",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_eoandromeda",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_eoandromeda",
+			"title": "Eoandromeda",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:precambrian/eoandromeda.png"],
+			"title": "E. octobranchiata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
+			"type": "text",
+			"text": "Eoandromeda is an ediacaran organism consisting of 8 radial spiral arms curved in a circular shape. It bears resemblance to ctenophores and echinoderms but there is insufficient evidence to classify the animal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoandromeda",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Reproductive Blob$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

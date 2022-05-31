@@ -1,0 +1,27 @@
+ {
+  "ambientocclusion": false,
+  "textures": {
+    "stem": "lepidodendron:blocks/matonia_stem_large",
+    "particle": "lepidodendron:blocks/matonia_leaf_small"
+  },
+  "elements": [
+  		{  "from": [ 0, 0, 8 ],
+            "to": [ 16, 16, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" }
+            }
+        },
+        {   "from": [ 8, 0, 0 ],
+            "to": [ 8, 16, 16 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#stem" }
+            }
+        }
+	]
+}

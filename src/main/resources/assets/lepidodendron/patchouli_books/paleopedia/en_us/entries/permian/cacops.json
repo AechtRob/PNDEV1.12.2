@@ -1,0 +1,30 @@
+{
+	"name": "Cacops",
+	"icon": "paleopedia:permian/permian_icon/cacops_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_cacops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cacops",
+			"title": "Cacops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/cacops.png"],
+			"title": "C. aspidephorus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cacops",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cacops",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw Meat$(br)$(l)Breeds with:$() Raw Meat$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

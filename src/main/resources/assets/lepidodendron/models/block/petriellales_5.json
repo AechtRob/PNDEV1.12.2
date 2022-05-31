@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/petriellales_var5",
+    "particle": "lepidodendron:blocks/petriellales_var5"
+  }
+}

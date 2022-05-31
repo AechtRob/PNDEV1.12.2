@@ -1,0 +1,30 @@
+{
+	"name": "Onychodus",
+	"icon": "paleopedia:devonian/devonian_icon/onychodus_icon.png",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_onychodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_onychodus",
+			"title": "Onychodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Sarcopterygii$(br)>Onychodontida$(br)>Onychodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/Onychodus.png"],
+			"title": "Onychodus sigmoides",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychodus",
+			"type": "text",
+			"text": "Onychodus is a sarcopterygian predatory fish. Its bottom jaw had razor sharp, tusk-like teeth of which some jutted outwards. It is believed to have been an ambush predator, hiding among the Devonian reefs and lunging at passing prey. Its posterior dorsal fin was very powerful, allowing for quick capture of prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_onychodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

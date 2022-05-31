@@ -1,0 +1,30 @@
+{
+	"name": "Terataspis",
+	"icon": "lepidodendron:terataspis_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_terataspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_terataspis",
+			"title": "Terataspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/terataspis.png"],
+			"title": "Terataspis grandis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_terataspis",
+			"type": "text",
+			"text": "Terataspis was a large trilobite that lived in shallow seas. It was very spiny, with its entire body covered in spines and tubercles of varying sizes. Its thorax comprised of around 11 segments. Terataspis was probably a detritivore that preyed on small burrowing animals like worms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_terataspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

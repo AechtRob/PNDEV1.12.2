@@ -1,0 +1,62 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "top": "lepidodendron:blocks/dictyonema",
+        "base": "lepidodendron:blocks/dictyonema_base",
+        "particle": "lepidodendron:blocks/dictyonema"
+    },
+    "elements": [
+        {
+            "from": [8, 5, 0],
+            "to": [8, 21, 16],
+            "rotation": {"angle": 45, "axis": "z", "origin": [8, 5, 8]},
+            "faces": {
+                "east": {"uv": [0, 0, 16, 16], "texture": "#top"},
+                "west": {"uv": [0, 0, 16, 16], "texture": "#top"}
+            }
+        },
+        {
+            "from": [8, 5, 0],
+            "to": [8, 21, 16],
+            "rotation": {"angle": -45, "axis": "z", "origin": [8, 5, 8]},
+            "faces": {
+                "east": {"uv": [0, 0, 16, 16], "texture": "#top"},
+                "west": {"uv": [0, 0, 16, 16], "texture": "#top"}
+            }
+        },
+        {
+            "from": [0, 5, 8],
+            "to": [16, 21, 8],
+            "rotation": {"angle": 45, "axis": "x", "origin": [8, 5, 8]},
+            "faces": {
+                "north": {"uv": [0, 0, 16, 16], "texture": "#top"},
+                "south": {"uv": [0, 0, 16, 16], "texture": "#top"}
+            }
+        },
+        {
+            "from": [0, 5, 8],
+            "to": [16, 21, 8],
+            "rotation": {"angle": -45, "axis": "x", "origin": [8, 5, 8]},
+            "faces": {
+                "north": {"uv": [0, 0, 16, 16], "texture": "#top"},
+                "south": {"uv": [0, 0, 16, 16], "texture": "#top"}
+            }
+        },
+        {
+            "from": [8, 0, 0],
+            "to": [8, 16, 16],
+            "faces": {
+                "east": {"uv": [0, 0, 16, 16], "texture": "#base"},
+                "west": {"uv": [0, 0, 16, 16], "texture": "#base"}
+            }
+        },
+        {
+            "from": [0, 0, 8],
+            "to": [16, 16, 8],
+            "faces": {
+                "north": {"uv": [0, 0, 16, 16], "texture": "#base"},
+                "south": {"uv": [0, 0, 16, 16], "texture": "#base"}
+            }
+        }
+    ]
+}

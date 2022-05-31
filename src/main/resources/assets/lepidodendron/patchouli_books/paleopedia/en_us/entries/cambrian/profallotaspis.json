@@ -1,0 +1,30 @@
+{
+	"name": "Profallotaspis",
+	"icon": "paleopedia:cambrian/cambrian_icon/profallotaspis_icon.png",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_profallotaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_profallotaspis",
+			"title": "Profallotaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br2)>Redlichiida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/profallotaspis.png"],
+			"title": "P. jakutensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_profallotaspis",
+			"type": "text",
+			"text": "Profallotaspis is a large trilobite known from only the cephalon, reconstructed using its close relative, Fallotaspis. It probably lived on the ocean floor, eating other small body animals."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_profallotaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

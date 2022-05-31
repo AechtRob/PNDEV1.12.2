@@ -1,0 +1,9 @@
+{
+	"name": "item.lepidodendron.paleopedia.name",
+	"landing_text": "item.lepidodendron.paleopedia_text.name",
+	"book_texture": "patchouli:textures/gui/book_cyan.png",
+	"creative_tab": "tablepidodendronmisc",
+	"model": "lepidodendron:pnbook",
+	"show_progress": false,
+	"version": 1
+}

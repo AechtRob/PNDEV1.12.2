@@ -1,0 +1,30 @@
+{
+	"name": "Estemmenosuchus",
+	"icon": "paleopedia:permian/permian_icon/estemmenosuchus_icon.png",
+	"category": "lepidodendron:permian",
+	"turnin": "lepidodendron:pf_adv_book_estemmenosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_estemmenosuchus",
+			"title": "Estemmenosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:permian/estemmenosuchus.png"],
+			"title": "E. uralensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_estemmenosuchus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_estemmenosuchus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}

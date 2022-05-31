@@ -1,0 +1,20 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/bjuvia_log",
+        "inside": "lepidodendron:blocks/bjuvia_log",
+        "particle": "lepidodendron:blocks/bjuvia_log"
+    },
+    "elements": [
+        {   "from": [ 5, 5, 0 ],
+            "to": [ 11, 11, 5 ],
+            "faces": {
+                "down":  { "texture": "#texture" },
+                "up":    { "texture": "#texture" },
+                "north": { "texture": "#texture", "cullface":"north" },
+                "west":  { "texture": "#texture" },
+                "east":  { "texture": "#texture" }
+            }
+        }
+    ]
+}

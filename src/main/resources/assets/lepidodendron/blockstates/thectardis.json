@@ -1,0 +1,33 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:thectardis"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:thectardis", "x": 90},
+      {"model": "lepidodendron:thectardis_var", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:thectardis", "x": 90, "y": 90},
+      {"model": "lepidodendron:thectardis_var", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:thectardis", "x": 90, "y": 180},
+      {"model": "lepidodendron:thectardis_var", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:thectardis", "x": 90, "y": 270},
+      {"model": "lepidodendron:thectardis_var", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:thectardis"},
+      {"model": "lepidodendron:thectardis_var"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:thectardis", "x": 180},
+      {"model": "lepidodendron:thectardis_var", "x": 180}
+    ]
+  }
+}

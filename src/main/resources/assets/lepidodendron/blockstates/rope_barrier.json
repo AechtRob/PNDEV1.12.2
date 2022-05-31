@@ -1,0 +1,43 @@
+{
+    "multipart": [
+        {   "when": { "variant": 0 },
+            "apply": {"model": "lepidodendron:rope_barrier_0"}
+        },
+        {   "when": { "variant": 1 },
+            "apply": {"model": "lepidodendron:rope_barrier_1"}
+        },
+        {   "when": { "variant": 2 },
+            "apply": {"model": "lepidodendron:rope_barrier_2"}
+        },
+        {   "when": { "variant": 3 },
+            "apply": {"model": "lepidodendron:rope_barrier_3"}
+        },
+        {   "when": { "variant": 4 },
+            "apply": {"model": "lepidodendron:rope_barrier_4"}
+        },
+        {   "when": { "variant": 5 },
+            "apply": {"model": "lepidodendron:rope_barrier_5"}
+        },
+        {   "when": { "variant": 6 },
+            "apply": {"model": "lepidodendron:rope_barrier_6"}
+        },
+        {   "when": { "variant": 7 },
+            "apply": {"model": "lepidodendron:rope_barrier_7"}
+        },
+        {   "when": { "variant": 8 },
+            "apply": {"model": "lepidodendron:rope_barrier_8"}
+        },
+        {   "when": { "variant": 9 },
+            "apply": {"model": "lepidodendron:rope_barrier_9"}
+        },
+        {   "when": { "variant": 10 },
+            "apply": {"model": "lepidodendron:rope_barrier_10"}
+        },
+        {   "when": { "variant": 11 },
+            "apply": {"model": "lepidodendron:rope_barrier_11"}
+        },
+        {   "when": { "variant": 12 },
+            "apply": {"model": "lepidodendron:rope_barrier_12"}
+        }
+    ]
+}

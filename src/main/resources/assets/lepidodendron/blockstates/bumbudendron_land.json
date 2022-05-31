@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bumbudendron_land_1"},
+      {"model": "lepidodendron:bumbudendron_land_2"},
+      {"model": "lepidodendron:bumbudendron_land_3"},
+      {"model": "lepidodendron:bumbudendron_land_4"},
+      {"model": "lepidodendron:bumbudendron_land_5"},
+      {"model": "lepidodendron:bumbudendron_land_6"}
+    ]
+  }
+}

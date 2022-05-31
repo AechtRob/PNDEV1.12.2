@@ -1,0 +1,56 @@
+{
+  "variants": {
+  	"inventory": [
+		{ "model": "lepidodendron:lyginopteris_shoot_inventory" }
+    ],
+  	"normal": [
+		{ "model": "lepidodendron:lyginopteris_shoot_up" }
+    ],
+    "facing=north,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot", "y": 180, "weight": 2 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var", "y": 180 }
+    ],
+    "facing=east,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot", "weight": 2, "y": 270 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var", "y": 270 }
+    ],
+    "facing=south,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot", "weight": 2 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var" }
+    ],
+    "facing=west,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot", "weight": 2, "y": 90 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var", "y": 90 }
+    ],
+    "facing=up,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot_up"}
+    ],
+    "facing=down,vine=false": [
+		{ "model": "lepidodendron:lyginopteris_shoot_up", "x": 180 }
+    ],
+
+
+    "facing=north,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_attached", "y": 180, "weight": 2 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var_attached", "y": 180 }
+    ],
+    "facing=east,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_attached", "weight": 2, "y": 270 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var_attached", "y": 270 }
+    ],
+    "facing=south,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_attached", "weight": 2 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var_attached" }
+    ],
+    "facing=west,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_attached", "weight": 2, "y": 90 },
+		{ "model": "lepidodendron:lyginopteris_shoot_var_attached", "y": 90 }
+    ],
+    "facing=up,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_up"}
+    ],
+    "facing=down,vine=true": [
+		{ "model": "lepidodendron:lyginopteris_shoot_up", "x": 180 }
+    ]
+  }
+}

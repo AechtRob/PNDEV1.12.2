@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": -270
+    },
+    "facing=east": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": -90
+    },
+    "facing=up": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": 0
+    },
+    "facing=down": {
+      "model": "lepidodendron:shell_manticoceras",
+      "y": 0
+    }
+  }
+}

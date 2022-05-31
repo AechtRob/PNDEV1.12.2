@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:gangamopteris_slab_double"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"name": "Opabinia",
+	"icon": "lepidodendron:opabinia_raw",
+	"category": "lepidodendron:cambrian",
+	"turnin": "lepidodendron:pf_adv_book_opabinia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_opabinia",
+			"title": "Opabinia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Dinocaridida$(br)>Opabiniidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:cambrian/opabinia.png"],
+			"title": "O. regalis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opabinia",
+			"type": "text",
+			"text": "Opabinia is a middle Cambrian dinocarid which had a single proboscis at its head which it would use to catch food and pass to its mouth at the underside of its head. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opabinia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

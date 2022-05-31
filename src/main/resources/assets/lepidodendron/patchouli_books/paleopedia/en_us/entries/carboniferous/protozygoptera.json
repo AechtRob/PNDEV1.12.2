@@ -1,0 +1,30 @@
+{
+	"name": "Protozygoptera",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/protozygoptera_icon.png",
+	"category": "lepidodendron:carboniferous",
+	"turnin": "lepidodendron:pf_adv_book_protozygoptera",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_protozygoptera",
+			"title": "Protozygoptera",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Odonatoptera$(br)>Protozygoptera"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/protozygoptera.png"],
+			"title": "Protozygoptera",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protozygoptera",
+			"type": "text",
+			"text": "Protozygoptera is a suborder of the Odonatoptera order. They are medium sized prehistoric winged insects which looked like dragonflies and were related to them. They were predatory insects which but would have had to compete with the larger griffinflies of their time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_protozygoptera",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dioon_shoot_cone"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:dioon_shoot_inventory"
+    }
+  }
+}

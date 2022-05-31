@@ -1,0 +1,17 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "texture": "lepidodendron:blocks/archaeopteris_log",
+        "inside": "lepidodendron:blocks/archaeopteris_log",
+        "particle": "lepidodendron:blocks/archaeopteris_log"
+    },
+    "elements": [
+        {   "from": [ 7, 7, 7 ],
+            "to": [ 9, 9, 9 ],
+            "shade":false,
+            "faces": {
+                "north": { "texture": "#inside", "rotation": 90 }
+            }
+        }
+    ]
+}

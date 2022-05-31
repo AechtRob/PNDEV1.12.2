@@ -1,0 +1,30 @@
+{
+	"name": "Sea Anemone",
+	"icon": "lepidodendron:sea_anemone_1",
+	"category": "lepidodendron:ambients",
+	"turnin": "lepidodendron:pf_adv_book_seaanemone",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_seaanemone",
+			"title": "Sea Anemone",
+			"type": "quest",
+			"text": ""
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/anemone.png"],
+			"title": "Actiniaria",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_seaanemone",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_seaanemone",
+			"type": "text",
+			"text": ""
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sigillaria_planks"
+    },
+    "1": {
+      "item": "lepidodendron:sigillaria_planks"
+    },
+    "2": {
+      "item": "lepidodendron:sigillaria_planks"
+    },
+    "3": {
+      "item": "lepidodendron:sigillaria_planks"
+    },
+    "4": {
+      "item": "lepidodendron:sigillaria_planks"
+    },
+    "5": {
+      "item": "lepidodendron:sigillaria_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sigillaria_door_item",
+    "count": 3
+  }
+}

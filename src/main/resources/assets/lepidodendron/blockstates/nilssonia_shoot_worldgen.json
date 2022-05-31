@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nilssonia_shoot", "weight": 2 },
+      {"model": "lepidodendron:nilssonia_shoot_flower"}
+    ]
+  }
+}

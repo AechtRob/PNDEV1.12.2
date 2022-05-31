@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:brown_algae_2"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:brown_algae_2_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:brown_algae_2_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:brown_algae_2_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:brown_algae_2_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:brown_algae_2"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:brown_algae_2", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "lepidodendron:blocks/phyllotheca_stem",
+        "particle": "lepidodendron:items/phyllotheca_inventory"
+    }
+}

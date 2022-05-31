@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/telemachus_planks",
+    "top": "lepidodendron:blocks/telemachus_planks",
+    "side": "lepidodendron:blocks/telemachus_planks"
+  }
+}

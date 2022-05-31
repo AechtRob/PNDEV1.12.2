@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:woodenslab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:woodenslab_top"
+    }
+  }
+}

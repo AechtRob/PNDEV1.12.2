@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:red_tufted_algae_1"},
+      	{"model": "lepidodendron:red_tufted_algae_2"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:red_tufted_algae_1_side"},
+       	{"model": "lepidodendron:red_tufted_algae_2_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:red_tufted_algae_1_side", "y": 90},
+      	{"model": "lepidodendron:red_tufted_algae_2_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:red_tufted_algae_1_side", "y": 180},
+      	{"model": "lepidodendron:red_tufted_algae_2_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:red_tufted_algae_1_side", "y": 270},
+      	{"model": "lepidodendron:red_tufted_algae_2_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:red_tufted_algae_1"},
+      	{"model": "lepidodendron:red_tufted_algae_2"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:red_tufted_algae_1", "x": 180},
+      	{"model": "lepidodendron:red_tufted_algae_2", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/tetraxylopteris_inventory",
+    "particle": "lepidodendron:items/tetraxylopteris_inventory"
+  }
+}

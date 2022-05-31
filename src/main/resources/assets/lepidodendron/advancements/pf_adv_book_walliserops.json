@@ -1,0 +1,34 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:walliserops_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_walliserops.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_walliserops.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_walliserops"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

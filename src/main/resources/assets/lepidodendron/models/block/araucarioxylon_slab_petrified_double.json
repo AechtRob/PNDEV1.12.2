@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/araucarioxylon_wood_petrified",
+    "particle": "lepidodendron:blocks/araucarioxylon_wood_petrified"
+  }
+}

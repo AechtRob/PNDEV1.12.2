@@ -1,0 +1,9 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/gangamopteris_planks",
+    "metal": "lepidodendron:blocks/zircon_block"
+  }
+}
+
+

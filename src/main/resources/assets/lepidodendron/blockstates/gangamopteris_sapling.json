@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "stage=0": { "model": "lepidodendron:gangamopteris_sapling" },
+        "stage=1": { "model": "lepidodendron:gangamopteris_sapling" }
+    }
+}

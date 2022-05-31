@@ -1,0 +1,11 @@
+{
+	"parent": "lepidodendron:block/bench_right_join",
+	"textures": {
+		"metal": "blocks/lapis_block"
+	}
+}
+
+
+
+
+

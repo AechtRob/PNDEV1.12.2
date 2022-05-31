@@ -1,0 +1,45 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:bivalve_lithiotis_1"},
+      {"model": "lepidodendron:bivalve_lithiotis_2"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 90, "y": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 90, "y": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 90, "y": 180}
+    ],
+    "facing=west": [
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 90, "y": 270},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      {"model": "lepidodendron:bivalve_lithiotis_1"},
+      {"model": "lepidodendron:bivalve_lithiotis_2"},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "y": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "y": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "y": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "y": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "y": 270},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 180, "y": 90},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 180, "y": 180},
+      {"model": "lepidodendron:bivalve_lithiotis_1", "x": 180, "y": 270},
+      {"model": "lepidodendron:bivalve_lithiotis_2", "x": 180, "y": 270}
+    ]
+  }
+}

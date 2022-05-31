@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/glossopteris_log_top",
+    "up": "lepidodendron:blocks/glossopteris_log_top",
+    "north": "lepidodendron:blocks/glossopteris_log",
+    "east": "lepidodendron:blocks/glossopteris_log",
+    "south": "lepidodendron:blocks/glossopteris_log",
+    "west": "lepidodendron:blocks/glossopteris_log",
+    "particle": "lepidodendron:blocks/glossopteris_log_top"
+  }
+}

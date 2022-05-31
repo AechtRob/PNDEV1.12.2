@@ -1,0 +1,30 @@
+{
+	"name": "Gemuendina",
+	"icon": "lepidodendron:gemuendina_raw",
+	"category": "lepidodendron:devonian",
+	"turnin": "lepidodendron:pf_adv_book_gemuendina",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gemuendina",
+			"title": "Gemuendina",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Rhenanida$(br)>Asterosteidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:devonian/gemuendina.png"],
+			"title": "Gemuendina stuertzi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gemuendina",
+			"type": "text",
+			"text": "Despite its looks, Gemuendina was a placoderm and not a ray. Like rays, it had wing like pectoral fins, and had a flat body. It had an upward facing mouth which meant it probably suctioned prey that swam overhead instead of sifting through the sediment like modern rays. Size range includes anywhere from 30 to 100 centimeters in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gemuendina",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

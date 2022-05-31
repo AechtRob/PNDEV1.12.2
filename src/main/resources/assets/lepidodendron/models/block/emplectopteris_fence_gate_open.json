@@ -1,0 +1,7 @@
+{
+    "parent": "lepidodendron:block/fence_gate_open_thin",
+    "textures": {
+        "texture": "lepidodendron:blocks/emplectopteris_log",
+    "particle": "lepidodendron:blocks/emplectopteris_log"
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:rufloria_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:rufloria_seed",
+    "count": 1
+  }
+}

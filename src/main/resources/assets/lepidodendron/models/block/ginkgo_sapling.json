@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:blocks/ginkgo_sapling",
+    "particle": "lepidodendron:blocks/ginkgo_sapling"
+  }
+}

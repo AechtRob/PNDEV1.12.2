@@ -1,0 +1,30 @@
+{
+	"name": "Lithiotis",
+	"icon": "lepidodendron:bivalve_lithiotis",
+	"category": "lepidodendron:static",
+	"turnin": "lepidodendron:pf_adv_book_lithiotis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lithiotis",
+			"title": "Lithiotis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:statics/Lithiotis.png"],
+			"title": "Lithiotis sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lithiotis",
+			"type": "text",
+			"text": "Lithiotis is a long bivalve that grew in groups, giving it a crystal or rock spikes appearance. Individually, they are reminiscent of modern razor shells. They are infaunal bottom dwellers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lithiotis",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Punch/Shears"
+		}
+	]
+}

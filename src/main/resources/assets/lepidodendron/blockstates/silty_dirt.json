@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:silty_dirt" },
+      { "model": "lepidodendron:silty_dirt", "y": 90 },
+      { "model": "lepidodendron:silty_dirt", "y": 180 },
+      { "model": "lepidodendron:silty_dirt", "y": 270 }
+    ]
+  }
+}

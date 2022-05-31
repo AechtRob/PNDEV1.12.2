@@ -1,0 +1,24 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1",
+    "2"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:diamond_block"
+    },
+    "1": {
+      "item": "lepidodendron:bottle_of_resin"
+    },
+    "2": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:bone_wand",
+    "count": 1
+  }
+}

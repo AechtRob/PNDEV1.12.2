@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:branched_sponge"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:branched_sponge_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:branched_sponge_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:branched_sponge_side", "y": 180}
+    ],
+
+    "facing=west": [
+      	{"model": "lepidodendron:branched_sponge_side", "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:branched_sponge"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:branched_sponge", "x": 180}
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "ambientocclusion":false,
+  "textures": {
+    "e": "lepidodendron:blocks/rufloria_bottom",
+    "w": "lepidodendron:blocks/rufloria_bottom",
+    "ee": "lepidodendron:blocks/rufloria_bottom_e",
+    "ww": "lepidodendron:blocks/rufloria_bottom_w",
+    "log": "lepidodendron:blocks/rufloria_log",
+    "particle": "lepidodendron:blocks/rufloria_bottom"
+  },
+
+  "elements":[
+
+      {"name":"n",
+        "from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],"shade":false,
+        "faces":{
+          "east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
+          "west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
+
+      {"name":"e",
+      "from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
+      "faces":{
+      "north":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
+      "south":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+
+      {"name":"nw",
+      "from":[8.0,0.0,-7.0],"to":[8.0,16.0,8.0],"shade":false,
+      "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":45.0},
+      "faces":{
+      "east":{"texture":"#ee","uv":[0.0,0.0,15.0,16.0]},
+      "west":{"texture":"#ww","uv":[0.0,0.0,15.0,16.0]}}},
+
+      {"name":"ne",
+      "from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
+      "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":-45.0},
+      "faces":{
+      "east":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]},
+      "west":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]}}},
+
+      {"name":"se",
+      "from":[8.0,0.0,8.0],"to":[8.0,16.0,23.0],"shade":false,
+      "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":45.0},
+      "faces":{
+      "east":{"texture":"#ww","uv":[0.0,0.0,15.0,16.0]},
+      "west":{"texture":"#ee","uv":[0.0,0.0,15.0,16.0]}}},
+
+      {"name":"sw",
+      "from":[8.0,0.0,8.0],"to":[8.0,16.0,24.0],"shade":false,
+      "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":-45.0},
+      "faces":{
+      "east":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]},
+      "west":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+      {"name":"nn",
+      "from":[8.0,0.0,-16.0],"to":[8.0,16.0,0.0],"shade":false,
+      "faces":{
+      "east":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]},
+      "west":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]}}},
+
+      {"name":"ee",
+      "from":[16.0,0.0,8.0],"to":[32.0,16.0,8.0],"shade":false,
+      "faces":{
+      "north":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]},
+      "south":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]}}},
+
+      {"name":"ss",
+      "from":[8.0,0.0,16],"to":[8.0,16.0,32],"shade":false,
+      "faces":{
+      "east":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]},
+      "west":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]}}},
+
+      {"name":"ww",
+      "from":[-16.0,0.0,8.0],"to":[0,16.0,8.0],"shade":false,
+      "faces":{
+      "north":{"texture":"#ee","uv":[0.0,0.0,16.0,16.0]},
+      "south":{"texture":"#ww","uv":[0.0,0.0,16.0,16.0]}}},
+
+
+    {"name":"log",
+      "from":[6,0,6],"to":[10,3,10],"shade":false,
+      "faces":{
+        "north":{"texture":"#log","uv":[6.0,13.0,10.0,16.0]},
+        "south":{"texture":"#log","uv":[6.0,13.0,10.0,16.0]},
+        "east":{"texture":"#log","uv":[6.0,13.0,10.0,16.0]},
+        "west":{"texture":"#log","uv":[6.0,13.0,10.0,16.0]},
+        "up":{"texture":"#log","uv":[6.0,6.0,10.0,10.0]},
+        "down":{"texture":"#log","uv":[6.0,6.0,10.0,10.0]}}
+    }
+  ]
+}

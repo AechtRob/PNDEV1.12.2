@@ -1,0 +1,21 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/anemone_8",
+		"particle": "lepidodendron:blocks/anemone_8"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [10, 4, 10],
+			"faces": {
+				"north": {"uv": [0, 10, 6, 16], "texture": "#0"},
+				"east": {"uv": [0, 10, 6, 16], "texture": "#0"},
+				"south": {"uv": [0, 10, 6, 16], "texture": "#0"},
+				"west": {"uv": [0, 10, 6, 16], "texture": "#0"},
+				"up": {"uv": [0, 6, 4, 10], "texture": "#0"},
+				"down": {"uv": [1, 7, 3, 9], "texture": "#0"}
+			}
+		}
+	]
+}

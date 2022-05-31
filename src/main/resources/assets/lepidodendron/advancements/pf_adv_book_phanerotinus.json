@@ -1,0 +1,129 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:phanerotinus_item"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_phanerotinus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_phanerotinus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_phanerotinus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

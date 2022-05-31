@@ -1,0 +1,101 @@
+{
+  "variants": {
+    "age=0,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=1,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=2,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=3,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=4,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=5,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=6,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=7,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=8,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=9,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=10,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=11,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=12,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=13,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=14,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+    "age=15,topshoot=false": {
+      "model": "lepidodendron:nereocystis_kelp"
+    },
+
+    "age=0,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=1,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=2,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=3,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=4,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=5,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=6,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=7,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=8,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=9,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=10,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=11,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=12,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=13,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=14,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    },
+    "age=15,topshoot=true": {
+      "model": "lepidodendron:nereocystis_kelp_top"
+    }
+  }
+}

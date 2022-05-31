@@ -1,0 +1,16 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/archaeocyatha_reef_1"
+	},
+	"elements": [
+		{
+			"name": "Empty",
+			"from": [0, 0, 0],
+			"to": [0, 0, 0],
+			"faces": {
+				"down": {"uv": [0, 0, 0, 0], "texture": "#particle"}
+			}
+		}
+	]
+}

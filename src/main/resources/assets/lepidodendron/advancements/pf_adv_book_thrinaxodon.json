@@ -1,0 +1,53 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:thrinaxodon_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_thrinaxodon.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_thrinaxodon.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_thrinaxodon"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

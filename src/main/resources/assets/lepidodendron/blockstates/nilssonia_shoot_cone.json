@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:nilssonia_shoot_cone", "weight": 2 }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:nilssonia_shoot_inventory"
+    }
+  }
+}

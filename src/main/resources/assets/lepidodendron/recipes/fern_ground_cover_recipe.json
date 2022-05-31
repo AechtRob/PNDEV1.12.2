@@ -1,0 +1,51 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+  	"0": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "plantFern"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "dirt"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:fern_prehistoric_ground_cover",
+    "count": 8
+  }
+}
