@@ -324,7 +324,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
             this.walk(forelegR2, speed, 0.6F, false, 1, 0.3F, f2, 0.5F);
             this.walk(forelegR3, speed, 0.2F, false, 1, 0.1F, f2, 0.5F);
 
-            this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
+            //this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
             this.chainSwing(Tail, speed, 0.1F, -0.2, f2, 0.5F);
             this.chainSwing(Torso, speed, 0.1F, -0.2, f2, 0.7F);
             //this.bob(body, speed*2, 0.3F, false, f2, 1F);
@@ -350,7 +350,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
             this.chainWaveExtended(FrontL, speed, -0.3F, -1, 0F, f2, 1);
             this.chainWaveExtended(FrontR, speed, -0.3F, -1, 3F, f2, 1);
 
-            this.chainWave(Tail, speed, 0.012F, -0.2, f2, 0.5F);
+            //this.chainWave(Tail, speed, 0.012F, -0.2, f2, 0.5F);
             this.chainSwing(Tail, speed, 0.35F, -3.3, f2, 0.6F);
             this.chainSwing(Torso, speed, 0.2F, -0.12, f2, 0.7F);
             this.swing(body, speed, 0.15F, true, 0, 0, f2, 1);
