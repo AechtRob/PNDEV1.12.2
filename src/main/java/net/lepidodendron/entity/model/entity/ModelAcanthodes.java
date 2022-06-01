@@ -6,7 +6,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-
+//Pollo
 public class ModelAcanthodes extends AdvancedModelBase {
     public AdvancedModelRenderer Bodyfront;
     public AdvancedModelRenderer Gills;
