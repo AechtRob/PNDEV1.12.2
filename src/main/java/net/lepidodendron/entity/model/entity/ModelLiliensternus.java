@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraLiliensternus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLiliensternus extends AdvancedModelBaseExtended {
@@ -345,7 +346,28 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.7f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(45);
+        this.Neckbase.rotateAngleY = (float) Math.toRadians(20);
+        this.Neckbase.rotateAngleX = (float) Math.toRadians(-30);
+        this.Neckmiddle.rotateAngleY = (float) Math.toRadians(23);
+        this.Neckmiddle.rotateAngleX = (float) Math.toRadians(10);
+        this.Neckend.rotateAngleY = (float) Math.toRadians(18);
+        this.Neckend.rotateAngleX = (float) Math.toRadians(40);
+        this.Rightupperarm.rotateAngleX = (float) Math.toRadians(-50);
+        this.Rightupperarm.rotateAngleZ = (float) Math.toRadians(30);
+        this.Leftupperarm.rotateAngleX = (float) Math.toRadians(-20);
+        this.Leftlowerarm.rotateAngleZ = (float) Math.toRadians(10);
+        this.Head.rotateAngleX = (float) Math.toRadians(30);
+        this.Bodyfront.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

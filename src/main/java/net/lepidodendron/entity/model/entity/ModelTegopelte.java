@@ -130,8 +130,10 @@ public class ModelTegopelte extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         //this.body.offsetZ = 0.1F;
         this.body.render(0.014F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

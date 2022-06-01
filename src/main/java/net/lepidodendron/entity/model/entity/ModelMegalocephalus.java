@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMegalocephalus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMegalocephalus extends AdvancedModelBase {
@@ -276,7 +277,29 @@ public class ModelMegalocephalus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.25f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(23);
+        this.Head.rotateAngleX = (float) Math.toRadians(-20);
+        this.Head.rotateAngleY = (float) Math.toRadians(-25);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-21);
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(-11);
+        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(-11);
+        this.Hips.rotateAngleY = (float) Math.toRadians(-15);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(15);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail5.rotateAngleY = (float) Math.toRadians(5);
+        this.Hips.offsetZ = -0.8F;
+        this.Hips.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

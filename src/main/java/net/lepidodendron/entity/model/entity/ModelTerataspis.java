@@ -411,8 +411,10 @@ public class ModelTerataspis extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.base.offsetZ = -0.04F;
         this.base.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

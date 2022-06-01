@@ -195,6 +195,7 @@ public class ModelCladoselache extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.rotateAngleX = (float) Math.toRadians(-15);
         this.body1.rotateAngleX = (float) Math.toRadians(5);
@@ -206,6 +207,7 @@ public class ModelCladoselache extends AdvancedModelBase {
         this.caudalfin.rotateAngleX = (float) Math.toRadians(10);
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
         this.body.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

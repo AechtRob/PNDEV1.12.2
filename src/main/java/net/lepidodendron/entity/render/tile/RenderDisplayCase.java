@@ -74,6 +74,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelEoredlichia modelEoredlichia;
     private static final ResourceLocation TEXTURE_EURYPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
     private final ModelEurypterus modelEurypterus;
+    private static final ResourceLocation TEXTURE_HAIKOUICHTHYS_FIN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys_transparent.png");
     private static final ResourceLocation TEXTURE_HAIKOUICHTHYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/haikouichthys.png");
     private final ModelHaikouichthys modelHaikouichthys;
     private static final ResourceLocation TEXTURE_HALLUCIGENIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hallucigenia.png");
@@ -608,7 +609,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelCambroraster.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemCanadaspisRaw.block) {
-                        double offset = 0.15;
+                        double offset = 0.36;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -637,6 +638,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.4,1.4,1.4);
                         this.bindTexture(TEXTURE_CANADASPIS);
                         modelCanadaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -1020,6 +1022,16 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.4,0.4,0.4);
                         this.bindTexture(TEXTURE_HAIKOUICHTHYS);
                         modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                        GlStateManager.pushMatrix();
+                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                        GlStateManager.enableNormalize();
+                        GlStateManager.enableBlend();
+                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        this.bindTexture(TEXTURE_HAIKOUICHTHYS_FIN);
+                        modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                        GlStateManager.disableBlend();
+                        GlStateManager.disableNormalize();
+                        GlStateManager.popMatrix();
                     }
                     else if (itemstack.getItem() == ItemHallucigeniaRaw.block) {
                         double offset = 0.17;

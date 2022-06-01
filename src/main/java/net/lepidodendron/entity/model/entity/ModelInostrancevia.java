@@ -6,6 +6,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraInostrancevia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelInostrancevia extends AdvancedModelBaseExtended {
@@ -242,7 +243,18 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.775f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.head.rotateAngleX = (float) Math.toRadians(24);
+        this.lowerjaw1.rotateAngleX = (float) Math.toRadians(46);
+        this.neck.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

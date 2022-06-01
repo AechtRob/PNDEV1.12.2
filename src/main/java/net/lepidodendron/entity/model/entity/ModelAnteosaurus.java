@@ -304,9 +304,11 @@ public class ModelAnteosaurus extends AdvancedModelBaseExtended {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.Lowerjawbase.rotateAngleX = (float)Math.toRadians(45);
         this.Head.rotateAngleX = (float)Math.toRadians(-15);
         this.Neck.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

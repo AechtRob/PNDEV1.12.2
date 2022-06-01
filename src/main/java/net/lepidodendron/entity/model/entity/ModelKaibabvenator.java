@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelKaibabvenator extends AdvancedModelBase {
@@ -225,7 +226,17 @@ public class ModelKaibabvenator extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.all.render(f5 * 1.00F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.lowerjaw.rotateAngleX = (float) Math.toRadians(26);
+        this.head.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

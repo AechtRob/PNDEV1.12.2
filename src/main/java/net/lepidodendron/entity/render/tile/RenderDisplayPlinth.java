@@ -46,6 +46,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelHibbertopterus modelHibbertopterus;
     private static final ResourceLocation TEXTURE_HYLONOMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus.png");
     private final ModelHylonomus modelHylonomus;
+    private static final ResourceLocation TEXTURE_ICHTHYOSTEGA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ichthyostega.png");
+    private final ModelIchthyostega modelIchthyostega;
+    private static final ResourceLocation TEXTURE_LABIDOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus.png");
+    private final ModelLabidosaurus modelLabidosaurus;
+    private static final ResourceLocation TEXTURE_MEGALOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalocephalus.png");
+    private final ModelMegalocephalus modelMegalocephalus;
+    private static final ResourceLocation TEXTURE_MESOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mesosaurus.png");
+    private final ModelMesosaurus modelMesosaurus;
+    private static final ResourceLocation TEXTURE_OMNIDENS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens.png");
+    private final ModelOmnidens modelOmnidens;
     private static final ResourceLocation TEXTURE_PROSICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
     private static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
@@ -62,6 +72,11 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelDvinia = new ModelDvinia();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
+        this.modelIchthyostega = new ModelIchthyostega();
+        this.modelLabidosaurus = new ModelLabidosaurus();
+        this.modelMegalocephalus = new ModelMegalocephalus();
+        this.modelMesosaurus = new ModelMesosaurus();
+        this.modelOmnidens = new ModelOmnidens();
         this.modelGerarus = new ModelGerarus();
 
     }
@@ -197,6 +212,62 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_HYLONOMUS);
                         GlStateManager.scale(0.13F,0.13F,0.13F);
                         modelHylonomus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemIchthyostegaRaw.block) {
+                        double offset = 0.12;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_ICHTHYOSTEGA);
+                        GlStateManager.rotate(5,-1,0,0);
+                        GlStateManager.scale(0.28F,0.28F,0.28F);
+                        modelIchthyostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemLabidosaurusRaw.block) {
+                        double offset = 0.58;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_LABIDOSAURUS);
+                        GlStateManager.scale(0.24F,0.24F,0.24F);
+                        modelLabidosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemMegalocephalusRaw.block) {
+                        double offset = 0.38;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_MEGALOCEPHALUS);
+                        GlStateManager.scale(0.16F,0.16F,0.16F);
+                        modelMegalocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemMesosaurusRaw.block) {
+                        double offset = 0.04;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_MESOSAURUS);
+                        GlStateManager.scale(0.07F,0.07F,0.07F);
+                        modelMesosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemOmnidensRaw.block) {
+                        double offset = 0.58;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_OMNIDENS);
+                        GlStateManager.scale(0.24F,0.24F,0.24F);
+                        modelOmnidens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemProsictodonRaw.block) {
                         double offset = 0.16;

@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraOmnidens;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOmnidens extends AdvancedModelBase {
@@ -616,7 +617,31 @@ public class ModelOmnidens extends AdvancedModelBase {
         //this.head.render(f5 * 0.2F);
         this.body6.render(f5 * 0.36F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        //this.Upperjaw1.rotateAngleX = (float) Math.toRadians(23);
+        //this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(-23);
+        this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
+        this.body4.rotateAngleX = (float) Math.toRadians(-15);
+        this.body3.rotateAngleX = (float) Math.toRadians(-10);
+        this.body2.rotateAngleX = (float) Math.toRadians(-5);
+        this.body1.rotateAngleX = (float) Math.toRadians(5);
+        this.head.rotateAngleX = (float) Math.toRadians(15);
+        this.body5.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body4.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body3.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body2.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body1.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.head.rotateAngleY = (float) Math.toRadians(-7.5);
+        this.body6.offsetZ = -2.5F;
+        this.body6.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

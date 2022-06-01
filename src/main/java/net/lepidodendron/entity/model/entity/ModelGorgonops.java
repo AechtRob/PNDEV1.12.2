@@ -232,8 +232,10 @@ public class ModelGorgonops extends AdvancedModelBaseExtended {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(46);
         this.Neck.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
