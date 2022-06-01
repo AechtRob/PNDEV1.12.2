@@ -75,12 +75,12 @@ public class EntityPrehistoricFloraPantylus extends EntityPrehistoricFloraSwimmi
 
 	protected float getAISpeedSwimmingAmphibian() {
 		//return 0;
-		float calcSpeed = 0.365F;
+		float calcSpeed = 0.165F;
 		if (this.isReallyInWater()) {
-			calcSpeed= 0.395f;
+			calcSpeed= 0.185f;
 		}
 		if (this.getIsFast()) {
-			calcSpeed= 0.425f;
+			calcSpeed= 0.205f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
