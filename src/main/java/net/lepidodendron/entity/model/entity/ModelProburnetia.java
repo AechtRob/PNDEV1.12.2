@@ -417,8 +417,8 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
             speed = speed * 1.9F;
         }
 
-        this.RFrontLeg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 1, f2, 1.5F);;
-        this.RFrontLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 4, f2, 1.5F);;
+        this.RFrontLeg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.8), false, 1, f2, 1.5F);;
+        this.RFrontLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.8), false, 4, f2, 1.5F);;
         this.RBackLeg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 4, f2, 1.5F);;
         this.RBackLeg3.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 1, f2, 1.5F);;
 
