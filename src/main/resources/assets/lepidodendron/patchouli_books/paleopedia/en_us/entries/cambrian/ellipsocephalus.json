@@ -1,5 +1,6 @@
 {
 	"name": "Ellipsocephalus",
+	"read_by_default": true,
 	"icon": "lepidodendron:ellipsocephalus_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_ellipsocephalus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

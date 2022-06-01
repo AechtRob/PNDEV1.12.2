@@ -1,5 +1,6 @@
 {
 	"name": "Yilingia",
+	"read_by_default": true,
 	"icon": "paleopedia:precambrian/precambrian_icon/yilingia_icon.png",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_yilingia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

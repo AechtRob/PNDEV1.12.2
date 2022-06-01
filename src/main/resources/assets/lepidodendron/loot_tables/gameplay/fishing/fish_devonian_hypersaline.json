@@ -1,0 +1,32 @@
+{
+    "pools": [
+        {
+			"name": "devonian_hypersaline",
+            "rolls": 1,
+            "entries": [
+                {
+                "type": "item",
+                "name": "lepidodendron:eglonaspis_raw",
+                "weight": 22
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:gabreyaspis_raw",
+                "weight": 22
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:hibernaspis_raw",
+                "weight": 28
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:pelurgaspis_raw",
+                "weight": 28
+                }
+
+
+            ]
+        }
+    ]
+}

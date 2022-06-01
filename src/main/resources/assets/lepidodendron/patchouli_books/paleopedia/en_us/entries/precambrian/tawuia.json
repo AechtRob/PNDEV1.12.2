@@ -1,5 +1,6 @@
 {
 	"name": "Tawuia",
+	"read_by_default": true,
 	"icon": "lepidodendron:tawuia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_tawuia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Bothriolepis",
+	"read_by_default": true,
 	"icon": "lepidodendron:bothriolepis_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_bothriolepis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

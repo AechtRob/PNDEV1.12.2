@@ -1,5 +1,6 @@
 {
 	"name": "Gyracanthides",
+	"read_by_default": true,
 	"icon": "lepidodendron:gyracanthides_raw",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_gyracanthides",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

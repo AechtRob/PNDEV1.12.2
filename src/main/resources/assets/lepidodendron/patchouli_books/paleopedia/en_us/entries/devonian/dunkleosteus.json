@@ -1,5 +1,6 @@
 {
 	"name": "Dunkleosteus",
+	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/dunkleosteus_icon.png",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_dunkleosteus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Sea Anemone",
+	"read_by_default": true,
 	"icon": "lepidodendron:sea_anemone_1",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_seaanemone",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

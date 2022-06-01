@@ -1,5 +1,6 @@
 {
 	"name": "Burykhia",
+	"read_by_default": true,
 	"icon": "lepidodendron:burykhia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_burykhia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

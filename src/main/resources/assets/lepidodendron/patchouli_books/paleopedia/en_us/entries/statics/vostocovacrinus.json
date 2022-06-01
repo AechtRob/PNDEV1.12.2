@@ -1,5 +1,6 @@
 {
 	"name": "Vostocovacrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_vostocovacrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_vostocovacrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

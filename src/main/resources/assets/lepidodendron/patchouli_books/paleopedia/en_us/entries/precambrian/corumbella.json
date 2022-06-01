@@ -1,5 +1,6 @@
 {
 	"name": "Corumbella",
+	"read_by_default": true,
 	"icon": "lepidodendron:corumbella",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_corumbella",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

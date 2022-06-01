@@ -1,5 +1,6 @@
 {
 	"name": "Xianguangia",
+	"read_by_default": true,
 	"icon": "lepidodendron:xianguangia",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_xianguangia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

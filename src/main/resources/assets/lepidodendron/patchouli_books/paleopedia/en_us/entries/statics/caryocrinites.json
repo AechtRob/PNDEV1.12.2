@@ -1,5 +1,6 @@
 {
 	"name": "Caryocrinites",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_caryocrinites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_caryocrinites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

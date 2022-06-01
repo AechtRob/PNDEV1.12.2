@@ -1,5 +1,6 @@
 {
 	"name": "Endoceras",
+	"read_by_default": true,
 	"icon": "paleopedia:ordosil/ordosil_icon/shell_endoceras.png",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_endoceras",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Gogia",
+	"read_by_default": true,
 	"icon": "lepidodendron:gogia",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_gogia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

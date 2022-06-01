@@ -1,5 +1,6 @@
 {
 	"name": "Cyclolobus",
+	"read_by_default": true,
 	"icon": "lepidodendron:shell_cylolobus",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_cyclolobus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

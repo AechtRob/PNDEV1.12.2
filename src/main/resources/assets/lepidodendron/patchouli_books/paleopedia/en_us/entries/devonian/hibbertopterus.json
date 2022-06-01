@@ -1,5 +1,6 @@
 {
 	"name": "Hibbertopterus",
+	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/hibbertopterus_icon.png",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_hibbertopterus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Inaria",
+	"read_by_default": true,
 	"icon": "lepidodendron:inaria",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_inaria",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Haootia",
+	"read_by_default": true,
 	"icon": "lepidodendron:haootia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_haootia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

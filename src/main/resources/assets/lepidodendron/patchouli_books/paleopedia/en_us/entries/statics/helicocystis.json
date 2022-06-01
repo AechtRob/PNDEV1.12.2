@@ -1,5 +1,6 @@
 {
 	"name": "Helicocystis",
+	"read_by_default": true,
 	"icon": "lepidodendron:helicocystis",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_helicocystis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

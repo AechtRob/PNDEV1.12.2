@@ -1,5 +1,6 @@
 {
 	"name": "Parviscopa",
+	"read_by_default": true,
 	"icon": "lepidodendron:parviscopa",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_parviscopa",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

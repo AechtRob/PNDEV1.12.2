@@ -1,5 +1,6 @@
 {
 	"name": "Cupressocrinites",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_cupressocrinites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_cupressocrinites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

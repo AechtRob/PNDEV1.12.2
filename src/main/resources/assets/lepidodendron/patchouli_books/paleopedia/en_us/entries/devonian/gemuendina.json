@@ -1,5 +1,6 @@
 {
 	"name": "Gemuendina",
+	"read_by_default": true,
 	"icon": "lepidodendron:gemuendina_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_gemuendina",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

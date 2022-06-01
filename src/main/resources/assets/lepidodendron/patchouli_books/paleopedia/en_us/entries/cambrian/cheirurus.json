@@ -1,5 +1,6 @@
 {
 	"name": "Cheirurus",
+	"read_by_default": true,
 	"icon": "lepidodendron:cheirurus_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_cheirurus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

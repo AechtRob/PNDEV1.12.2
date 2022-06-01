@@ -127,7 +127,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
         long l = this.random.nextLong() / 2 * 2 + 1;
         this.random.setSeed((long) x * k + (long) z * l ^ this.world.getSeed());
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, false);
-        if (this.random.nextInt(4) == 0 && biome != BiomeCarboniferousMarsh.biome && biome != BiomeCarboniferousIce.biome && biome != BiomeCarboniferousIceSpikes.biome && biome != BiomeCarboniferousIceEdge.biome && biome != BiomeCarboniferousBeach.biome && biome != BiomeCarboniferousOceanShore.biome)
+        if (this.random.nextInt(4) == 0 && biome != BiomeCarboniferousMarsh.biome && biome != BiomeCarboniferousIce.biome && biome != BiomeCarboniferousIceSpikes.biome && biome != BiomeCarboniferousIceEdge.biome && biome != BiomeCarboniferousBeach.biome && biome != BiomeCarboniferousOceanShore.biome && biome != BiomeCarboniferousOceanCliff.biome)
             if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                     net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
                 int i1 = this.random.nextInt(16) + 8;
@@ -145,7 +145,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
 
-            if (biome == BiomeCarboniferousBeach.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome) {
+            if (biome == BiomeCarboniferousBeach.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome || biome == BiomeCarboniferousOceanCliff.biome) {
                 String[] MobString = new String[0];
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanPF);
@@ -158,7 +158,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                 }
                 ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
             }
-            if (biome == BiomeCarboniferousHills.biome || biome == BiomeCarboniferousHillsCentre.biome || biome == BiomeCarboniferousHillsEdge.biome) {
+            if (biome == BiomeCarboniferousHills.biome || biome == BiomeCarboniferousHillsEdge.biome) {
                 String[] MobString = new String[0];
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsPF);
@@ -197,7 +197,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                 }
                 ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
             }
-            if (biome == BiomeCarboniferousSwamp.biome || biome == BiomeCarboniferousSwampBurnt.biome || biome == BiomeCarboniferousSwampHills.biome) {
+            if (biome == BiomeCarboniferousSwamp.biome || biome == BiomeCarboniferousSwampHills.biome) {
                 String[] MobString = new String[0];
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampPF);
@@ -207,6 +207,19 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                 }
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampReborn);
+                }
+                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
+            }
+            if (biome == BiomeCarboniferousSwampBurnt.biome) {
+                String[] MobString = new String[0];
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampPF);
+                }
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampReborn);
                 }
                 ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
             }
@@ -521,7 +534,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                         else {
                             if (Math.random() > 0.4 && j1 >= i - 10) {
                                 if (Math.random() > 0.75) {
-                                    if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome) {
+                                    if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome || biome == BiomeCarboniferousOceanCliff.biome) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
                                     }
                                     else {
@@ -529,7 +542,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                                     }
                                 }
                                 else {
-                                    if (biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome  || biome == BiomeCarboniferousBeach.biome) {
+                                    if (biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome  || biome == BiomeCarboniferousOceanCliff.biome || biome == BiomeCarboniferousBeach.biome) {
                                         chunkPrimerIn.setBlockState(i1, j1, l, BlockCoarseSandyDirt.block.getDefaultState());
                                     }
                                     else {
@@ -543,7 +556,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                                     if (Math.random() > 0.6 && j1 >= i - 10) {
                                         if (Math.random() > 0.75) {
 
-                                            if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome) {
+                                            if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome || biome == BiomeCarboniferousOceanCliff.biome) {
                                                 chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
                                             }
                                             else {
@@ -554,7 +567,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
                                             //chunkPrimerIn.setBlockState(i1, j1, l, Blocks.DIRT.getStateFromMeta(1));
                                         }
                                         else {
-                                            if (biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome  || biome == BiomeCarboniferousBeach.biome) {
+                                            if (biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome  || biome == BiomeCarboniferousBeach.biome || biome == BiomeCarboniferousOceanCliff.biome) {
                                                 chunkPrimerIn.setBlockState(i1, j1, l, BlockCoarseSandyDirt.block.getDefaultState());
                                             }
                                             else {

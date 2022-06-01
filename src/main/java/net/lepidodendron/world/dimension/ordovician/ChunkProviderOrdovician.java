@@ -144,13 +144,6 @@ public class ChunkProviderOrdovician implements IChunkGenerator {
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
 
-            if (biome == BiomeOrdovicianLand.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsLandPF);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
             if (biome == BiomeOrdovicianSea.biome || biome == BiomeOrdovicianSpongeForest.biome) {
                 String[] MobString = new String[0];
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {

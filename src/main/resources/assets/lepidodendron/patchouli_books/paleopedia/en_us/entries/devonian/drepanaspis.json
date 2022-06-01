@@ -1,5 +1,6 @@
 {
 	"name": "Drepanaspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:drepanaspis_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_drepanaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

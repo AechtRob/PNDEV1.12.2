@@ -1,5 +1,6 @@
 {
 	"name": "Psarolepis",
+	"read_by_default": true,
 	"icon": "lepidodendron:psarolepis_raw",
 	"category": "lepidodendron:silurian",
 	"turnin": "lepidodendron:pf_adv_book_psarolepis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

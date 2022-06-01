@@ -1,5 +1,6 @@
 {
 	"name": "Pikaia",
+	"read_by_default": true,
 	"icon": "lepidodendron:pikaia_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_pikaia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

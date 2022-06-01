@@ -1,5 +1,6 @@
 {
 	"name": "Platysomus",
+	"read_by_default": true,
 	"icon": "lepidodendron:platysomus_raw",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_platysomus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Tabulate Coral",
+	"read_by_default": true,
 	"icon": "lepidodendron:tabulata_1",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_tabulate",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

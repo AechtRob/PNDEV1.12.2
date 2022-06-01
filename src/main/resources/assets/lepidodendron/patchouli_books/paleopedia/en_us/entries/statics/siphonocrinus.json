@@ -1,5 +1,6 @@
 {
 	"name": "Siphonocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_siphonocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_siphonocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

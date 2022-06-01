@@ -1,5 +1,6 @@
 {
 	"name": "Facivermis",
+	"read_by_default": true,
 	"icon": "lepidodendron:facivermis",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_facivermis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

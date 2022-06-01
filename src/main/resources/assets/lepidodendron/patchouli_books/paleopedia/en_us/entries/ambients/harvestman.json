@@ -1,5 +1,6 @@
 {
 	"name": "Harvestman",
+	"read_by_default": true,
 	"icon": "paleopedia:ambients/ambient_icon/harvestman_icon.png",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_harvestman",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

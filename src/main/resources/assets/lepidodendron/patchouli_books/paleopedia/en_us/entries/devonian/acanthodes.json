@@ -1,5 +1,6 @@
 {
 	"name": "Acanthodes",
+	"read_by_default": true,
 	"icon": "lepidodendron:acanthodes_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_acanthodes",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

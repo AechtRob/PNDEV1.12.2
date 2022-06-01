@@ -1,5 +1,6 @@
 {
 	"name": "Compass Jelly",
+	"read_by_default": true,
 	"icon": "paleopedia:ambients/ambients_icon/compass_icon.png",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish2",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

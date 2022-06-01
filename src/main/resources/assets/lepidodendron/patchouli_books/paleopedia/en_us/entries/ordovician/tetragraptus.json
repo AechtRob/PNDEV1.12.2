@@ -1,5 +1,6 @@
 {
 	"name": "Tetragraptus",
+	"read_by_default": true,
 	"icon": "paleopedia:ordosil/ordosil_icon/tetragraptus_icon.png",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_tetragraptus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

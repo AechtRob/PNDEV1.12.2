@@ -1,5 +1,6 @@
 {
 	"name": "Ausia",
+	"read_by_default": true,
 	"icon": "lepidodendron:ausia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_ausia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

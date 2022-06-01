@@ -1,5 +1,6 @@
 {
 	"name": "Hyneria",
+	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/hyneria_icon.png",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_hyneria",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Bradgatia",
+	"read_by_default": true,
 	"icon": "lepidodendron:bradgatia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_bradgatia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

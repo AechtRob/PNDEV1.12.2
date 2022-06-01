@@ -1,5 +1,6 @@
 {
 	"name": "Metaspriggina",
+	"read_by_default": true,
 	"icon": "lepidodendron:metaspriggina_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_metaspriggina",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

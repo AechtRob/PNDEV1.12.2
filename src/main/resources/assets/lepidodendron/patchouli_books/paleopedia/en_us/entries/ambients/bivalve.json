@@ -1,5 +1,6 @@
 {
 	"name": "Bivalve",
+	"read_by_default": true,
 	"icon": "lepidodendron:",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_bivalve",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

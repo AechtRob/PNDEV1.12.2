@@ -1,5 +1,6 @@
 {
 	"name": "Primocandelabrum",
+	"read_by_default": true,
 	"icon": "lepidodendron:primocandelabrum_1",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_primocandelabrum",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Mixopterus",
+	"read_by_default": true,
 	"icon": "paleopedia:ordosil/ordosil_icon/mixopterus_icon.png",
 	"category": "lepidodendron:silurian",
 	"turnin": "lepidodendron:pf_adv_book_mixopterus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Scutosaurus",
+	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/scutosaurus_icon.png",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_scutosaurus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Isotelus",
+	"read_by_default": true,
 	"icon": "lepidodendron:isotelus_raw",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_isotelus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

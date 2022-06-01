@@ -1,5 +1,6 @@
 {
 	"name": "Eucalyptocrinites",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_eucalyptocrinites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_eucalytocrinites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

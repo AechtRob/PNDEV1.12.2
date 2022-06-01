@@ -1,5 +1,6 @@
 {
 	"name": "Encrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_encrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_encrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

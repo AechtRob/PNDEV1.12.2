@@ -1,5 +1,6 @@
 {
 	"name": "Spinoaequalis",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/spinoaequalis_icon.png",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_spinoaequalis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Terataspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:terataspis_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_terataspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

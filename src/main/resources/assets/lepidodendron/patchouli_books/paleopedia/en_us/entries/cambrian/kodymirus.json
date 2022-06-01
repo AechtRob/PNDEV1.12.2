@@ -1,5 +1,6 @@
 {
 	"name": "Kodymirus",
+	"read_by_default": true,
 	"icon": "lepidodendron:kodymirus_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_kodymirus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

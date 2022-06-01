@@ -1,5 +1,6 @@
 {
 	"name": "Castericystis",
+	"read_by_default": true,
 	"icon": "lepidodendron:castericystis",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_castericystis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Kalbarria",
+	"read_by_default": true,
 	"icon": "lepidodendron:kalbarria_raw",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_kalbarria",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

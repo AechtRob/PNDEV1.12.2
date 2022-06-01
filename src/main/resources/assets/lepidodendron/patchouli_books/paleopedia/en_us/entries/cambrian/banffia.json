@@ -1,5 +1,6 @@
 {
 	"name": "Banffia",
+	"read_by_default": true,
 	"icon": "lepidodendron:banffia_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_banffia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

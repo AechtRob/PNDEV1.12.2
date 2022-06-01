@@ -1,5 +1,6 @@
 {
 	"name": "Fenestella",
+	"read_by_default": true,
 	"icon": "lepidodendron:fenestella_1",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_fenestella",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

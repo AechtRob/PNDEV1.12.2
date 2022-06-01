@@ -1,5 +1,6 @@
 {
 	"name": "Lyracystis",
+	"read_by_default": true,
 	"icon": "lepidodendron:lyracystis",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_lyracystis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Batofasciculus",
+	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/batofasciculus_icon.png",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_batofasciculus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

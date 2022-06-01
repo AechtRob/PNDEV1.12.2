@@ -1,5 +1,6 @@
 {
 	"name": "Rayonnoceras",
+	"read_by_default": true,
 	"icon": "lepidodendron:shell_rayonnoceras",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_rayonnoceras",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

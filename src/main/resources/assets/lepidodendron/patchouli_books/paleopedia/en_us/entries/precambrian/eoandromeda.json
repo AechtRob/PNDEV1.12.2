@@ -1,5 +1,6 @@
 {
 	"name": "Eoandromeda",
+	"read_by_default": true,
 	"icon": "paleopedia:precambrian/precambrian_icon/eoandromeda_icon.png",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_eoandromeda",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

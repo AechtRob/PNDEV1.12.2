@@ -1,0 +1,56 @@
+{
+    "pools": [
+        {
+			"name": "fish_ordovician_ice",
+            "rolls": 1,
+            "entries": [
+
+                {
+                "type": "item",
+                "name": "lepidodendron:cheirurus_raw",
+                "weight": 28.9473684210526
+                },
+
+
+
+
+
+                {
+                "type": "item",
+                "name": "lepidodendron:hungioides_raw",
+                "weight": 21.7105263157895
+                },
+
+
+
+
+
+
+
+
+                {
+                "type": "item",
+                "name": "lepidodendron:panderodus_raw",
+                "weight": 5.92105263157895
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:promissum_raw",
+                "weight": 6.57894736842105
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:sacabambaspis_raw",
+                "weight": 13.1578947368421
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:selenopeltis_raw",
+                "weight": 23.6842105263158
+                }
+
+
+            ]
+        }
+    ]
+}

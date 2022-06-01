@@ -1,5 +1,6 @@
 {
 	"name": "Spriggina",
+	"read_by_default": true,
 	"icon": "paleopedia:precambrian/precambrian_icon/spriggina_icon.png",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_spriggina",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Lebachacanthus",
+	"read_by_default": true,
 	"icon": "paleopedia:permian/permian/lebachacanthus_icon.png",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_lebachacanthus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

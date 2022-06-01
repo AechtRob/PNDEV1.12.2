@@ -1,5 +1,6 @@
 {
 	"name": "Pteridinium",
+	"read_by_default": true,
 	"icon": "lepidodendron:pteridinium",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_pteridinium",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

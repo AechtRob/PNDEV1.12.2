@@ -1,5 +1,6 @@
 {
 	"name": "Lion's Mane Jelly",
+	"read_by_default": true,
 	"icon": "paleopedia:ambients/ambient_icon/lions_icon.png",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

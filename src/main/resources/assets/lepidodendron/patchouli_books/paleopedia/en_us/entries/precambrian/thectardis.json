@@ -1,5 +1,6 @@
 {
 	"name": "Thectardis",
+	"read_by_default": true,
 	"icon": "lepidodendron:thectardis",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_thectardis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

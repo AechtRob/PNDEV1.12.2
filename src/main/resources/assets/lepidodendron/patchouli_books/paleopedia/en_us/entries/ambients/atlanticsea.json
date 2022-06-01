@@ -1,5 +1,6 @@
 {
 	"name": "Atlantic Sea Nettle",
+	"read_by_default": true,
 	"icon": "paleopedia:ambients/ambient_icon/atlanticsea_icon.png",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish7",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

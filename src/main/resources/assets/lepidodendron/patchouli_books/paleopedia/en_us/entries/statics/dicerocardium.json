@@ -1,5 +1,6 @@
 {
 	"name": "Dicerocardium",
+	"read_by_default": true,
 	"icon": "lepidodendron:bivalve_dicerocardium",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_dicerocardium",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

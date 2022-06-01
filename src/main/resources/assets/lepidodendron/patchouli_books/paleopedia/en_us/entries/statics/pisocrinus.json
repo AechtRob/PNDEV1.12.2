@@ -1,5 +1,6 @@
 {
 	"name": "Pisocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_pisocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_pisocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

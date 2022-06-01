@@ -1,5 +1,6 @@
 {
 	"name": "Canadaspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:canadaspis_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_canadaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

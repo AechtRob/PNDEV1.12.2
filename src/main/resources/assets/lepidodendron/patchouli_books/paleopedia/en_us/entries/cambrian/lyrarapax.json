@@ -1,5 +1,6 @@
 {
 	"name": "Lyrarapax",
+	"read_by_default": true,
 	"icon": "lepidodendron:lyrarapax_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_lyrarapax",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

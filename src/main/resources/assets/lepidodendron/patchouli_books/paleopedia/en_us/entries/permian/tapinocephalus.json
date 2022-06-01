@@ -1,5 +1,6 @@
 {
 	"name": "Tapinocephalus",
+	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/tapinocephalus_icon.png",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_tapinocephalus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

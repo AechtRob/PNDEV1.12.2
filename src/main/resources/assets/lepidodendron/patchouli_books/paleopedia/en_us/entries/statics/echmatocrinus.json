@@ -1,5 +1,6 @@
 {
 	"name": "Echmatocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:echmatocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_echmatocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

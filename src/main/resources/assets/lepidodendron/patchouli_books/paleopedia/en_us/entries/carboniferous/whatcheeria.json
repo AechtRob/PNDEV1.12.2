@@ -1,5 +1,6 @@
 {
 	"name": "Whatcheeria",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/whatcheeria_icon.png",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_whatcheeria",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

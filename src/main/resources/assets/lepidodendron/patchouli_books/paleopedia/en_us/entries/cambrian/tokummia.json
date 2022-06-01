@@ -1,5 +1,6 @@
 {
 	"name": "Tokummia",
+	"read_by_default": true,
 	"icon": "lepidodendron:tokummia_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_tokummia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

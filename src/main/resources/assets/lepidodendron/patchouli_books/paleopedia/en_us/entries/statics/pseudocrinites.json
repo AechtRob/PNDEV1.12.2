@@ -1,5 +1,6 @@
 {
 	"name": "Pseudocrinites",
+	"read_by_default": true,
 	"icon": "lepidodendron:cystoid_pseudocrinites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_pseudocrinites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Bolboporites",
+	"read_by_default": true,
 	"icon": "lepidodendron:cystoid_bolboporites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_bolboporites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

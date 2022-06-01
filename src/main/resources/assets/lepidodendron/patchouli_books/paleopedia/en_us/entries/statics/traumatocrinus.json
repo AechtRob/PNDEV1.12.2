@@ -1,5 +1,6 @@
 {
 	"name": "Traumatocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_traumatocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_traumatocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

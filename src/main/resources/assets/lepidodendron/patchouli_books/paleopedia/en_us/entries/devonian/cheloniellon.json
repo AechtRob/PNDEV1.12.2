@@ -1,5 +1,6 @@
 {
 	"name": "Cheloniellon",
+	"read_by_default": true,
 	"icon": "lepidodendron:cheloniellon_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_cheloniellon",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

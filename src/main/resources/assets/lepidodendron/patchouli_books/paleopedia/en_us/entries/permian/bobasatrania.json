@@ -1,5 +1,6 @@
 {
 	"name": "Bobasatrania",
+	"read_by_default": true,
 	"icon": "lepidodendron:bobasatrania_raw",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_bobasatrania",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

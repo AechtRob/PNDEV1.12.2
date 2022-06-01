@@ -1,5 +1,6 @@
 {
 	"name": "Maclurina",
+	"read_by_default": true,
 	"icon": "lepidodendron:maclurina_item",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_maclurina",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

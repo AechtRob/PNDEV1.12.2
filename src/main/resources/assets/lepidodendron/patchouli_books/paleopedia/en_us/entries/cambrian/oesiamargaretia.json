@@ -1,5 +1,6 @@
 {
 	"name": "Oesia/Margaretia",
+	"read_by_default": true,
 	"icon": "lepidodendron:oesia",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_oesia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

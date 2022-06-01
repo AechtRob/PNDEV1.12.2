@@ -1,0 +1,57 @@
+{
+    "pools": [
+        {
+			"name": "devonian_swamp",
+            "rolls": 1,
+            "entries": [
+                {
+                "type": "item",
+                "name": "lepidodendron:acanthostega_raw",
+                "weight": 13.4453781512605
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:adelopthalmus_raw",
+                "weight": 11.7647058823529
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:cephalaspis_raw",
+                "weight": 13.4453781512605
+                },
+
+                {
+                "type": "item",
+                "name": "lepidodendron:ericixerxes_raw",
+                "weight": 15.1260504201681
+                },
+
+                {
+                "type": "item",
+                "name": "lepidodendron:groenlandaspis_raw",
+                "weight": 25.2100840336134
+                },
+
+
+
+                {
+                "type": "item",
+                "name": "lepidodendron:laccognathus_raw",
+                "weight": 3.36134453781513
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:panderichthys_raw",
+                "weight": 10.9243697478992
+                },
+                {
+                "type": "item",
+                "name": "lepidodendron:parmastega_raw",
+                "weight": 6.72268907563025
+                }
+
+
+            ]
+        }
+    ]
+}

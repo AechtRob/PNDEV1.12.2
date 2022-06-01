@@ -73,8 +73,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         int var3 = var2.length;
 
         //System.err.println("spawnerlen " + var3);
-
-        for(int var4 = 0; var4 < var3; ++var4) {
+        int trySpawn = 0;
+        for(int var4 = 0; var4 < var3; ++var4) { //run over every mob to spawn with max of five tries per chunk
+            if (trySpawn >= Math.min(Math.max(1, Math.round((double)var3/5D)), 5)) {
+                return;
+            }
             errFound = false;
             String checkEntity = var2[var4].trim();
             if (onlyWater) {
@@ -643,13 +646,14 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             //System.err.println("Spawning " + mobToSpawn + " with locationID " + locationID + " at: " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
                                                             //System.err.println("maxSpawn: " + maxSpawn);
                                                             //System.err.println("weight: " + weight);
-                                                            double weighter = 500;
-                                                            if (locationID == 2) {
-                                                                weighter = 800;
+                                                            double weighter = 500D;
+                                                            if (locationID == 2 || locationID == 6 || locationID == 7) {
+                                                                weighter = 800D;
                                                             }
                                                             if (locationID == 1) {
-                                                                weighter = 100;
+                                                                weighter = 100D;
                                                             }
+                                                            trySpawn += 1;
                                                             if ((Math.random() * weighter) <= (double)weight) {
                                                                 //System.err.println("Trying......");
                                                                 int spawnQty = rand.nextInt(maxSpawn) + 1;

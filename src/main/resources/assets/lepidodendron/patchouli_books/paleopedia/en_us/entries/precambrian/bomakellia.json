@@ -1,5 +1,6 @@
 {
 	"name": "Bomakellia",
+	"read_by_default": true,
 	"icon": "lepidodendron:bomakellia",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_bomakellia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

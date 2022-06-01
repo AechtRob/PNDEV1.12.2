@@ -144,13 +144,6 @@ public class ChunkProviderSilurian implements IChunkGenerator {
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
 
-            if (biome == BiomeSilurianLand.biome || biome == BiomeSilurianLushPatch.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsLandPF);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
             if (biome == BiomeSilurianSea.biome) {
                 String[] MobString = new String[0];
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {

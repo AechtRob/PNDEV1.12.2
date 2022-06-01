@@ -1,5 +1,6 @@
 {
 	"name": "Profallotaspis",
+	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/profallotaspis_icon.png",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_profallotaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

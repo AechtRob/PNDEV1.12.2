@@ -1,5 +1,6 @@
 {
 	"name": "Scyphocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_scyphocrinus_item",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_scyphocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

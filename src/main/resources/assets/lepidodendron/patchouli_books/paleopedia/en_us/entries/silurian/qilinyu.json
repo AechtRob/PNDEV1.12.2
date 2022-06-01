@@ -1,5 +1,6 @@
 {
 	"name": "Qilinyu",
+	"read_by_default": true,
 	"icon": "lepidodendron:qilinyu_raw",
 	"category": "lepidodendron:silurian",
 	"turnin": "lepidodendron:pf_adv_book_qilinyu",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Schinderhannes",
+	"read_by_default": true,
 	"icon": "lepidodendron:schinderhannes_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_schinderhannes",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

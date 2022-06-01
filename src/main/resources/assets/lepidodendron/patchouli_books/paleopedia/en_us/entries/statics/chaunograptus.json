@@ -1,5 +1,6 @@
 {
 	"name": "Chaunograptus",
+	"read_by_default": true,
 	"icon": "lepidodendron:chaunograptus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_chaunograptus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

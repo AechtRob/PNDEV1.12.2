@@ -1,5 +1,6 @@
 {
 	"name": "Doryaspis",
+	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/doryaspis_icon.png",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_doryaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

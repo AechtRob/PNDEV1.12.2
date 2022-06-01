@@ -1,5 +1,6 @@
 {
 	"name": "Mimetaster",
+	"read_by_default": true,
 	"icon": "lepidodendron:mimetaster_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_mimetaster",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

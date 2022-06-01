@@ -1,5 +1,6 @@
 {
 	"name": "Coelacanthus",
+	"read_by_default": true,
 	"icon": "lepidodendron:coelacanthus_raw",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_coelacanthus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

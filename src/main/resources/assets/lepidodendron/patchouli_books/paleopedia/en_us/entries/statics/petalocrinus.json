@@ -1,5 +1,6 @@
 {
 	"name": "Petalocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_petalocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_petalocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

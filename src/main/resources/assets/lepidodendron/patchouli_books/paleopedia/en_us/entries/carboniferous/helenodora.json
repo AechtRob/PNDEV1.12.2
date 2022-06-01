@@ -1,5 +1,6 @@
 {
 	"name": "Helenodora",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/helenodora_icon.png",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_helenodora",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

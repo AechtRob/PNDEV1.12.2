@@ -1,5 +1,6 @@
 {
 	"name": "Permotarbus",
+	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/permotarbus_icon.png",
 	"category": "patchouli:permian",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

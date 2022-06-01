@@ -1,5 +1,6 @@
 {
 	"name": "Omnidens",
+	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/omnidens_icon.png",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_omnidens",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

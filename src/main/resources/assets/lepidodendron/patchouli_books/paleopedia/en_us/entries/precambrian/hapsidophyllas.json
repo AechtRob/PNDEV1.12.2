@@ -1,5 +1,6 @@
 {
 	"name": "Hapsidophyllas",
+	"read_by_default": true,
 	"icon": "lepidodendron:hapsidophyllas",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_hapsidophyllas",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

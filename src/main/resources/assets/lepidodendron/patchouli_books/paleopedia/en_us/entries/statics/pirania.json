@@ -1,5 +1,6 @@
 {
 	"name": "Pirania",
+	"read_by_default": true,
 	"icon": "lepidodendron:pirania",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_pirania",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

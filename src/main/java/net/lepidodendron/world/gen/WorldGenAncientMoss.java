@@ -5,6 +5,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -157,7 +158,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 			String stringEgg = "";
 			int i;
 
-			if (dimID == LepidodendronConfig.dimSilurian) {
+			if (dimID == LepidodendronConfig.dimSilurian && worldIn.getBiome(pos) == BiomeSilurianLushPatch.biome) {
 				i = rand.nextInt(2); //Trigonotarbid or Eoarthropleura
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";}
@@ -172,12 +173,13 @@ public class WorldGenAncientMoss extends WorldGenerator
 			}
 
 			if (dimID == LepidodendronConfig.dimCarboniferous) {
-				i = rand.nextInt(5); //Trigonotarbids etc
+				i = rand.nextInt(6); //Trigonotarbids etc
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
 				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_gerarus";}
 				if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archoblattina";}
 				if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+				if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 			}
 
 			if (dimID == LepidodendronConfig.dimPermian) {

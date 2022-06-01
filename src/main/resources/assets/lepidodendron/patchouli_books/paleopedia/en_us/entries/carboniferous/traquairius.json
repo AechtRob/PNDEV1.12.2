@@ -1,5 +1,6 @@
 {
 	"name": "Traquairius",
+	"read_by_default": true,
 	"icon": "lepidodendron:traquairius_raw",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_traquairius",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

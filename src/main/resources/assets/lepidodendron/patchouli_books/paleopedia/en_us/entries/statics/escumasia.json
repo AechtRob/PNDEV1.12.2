@@ -1,5 +1,6 @@
 {
 	"name": "Escumasia",
+	"read_by_default": true,
 	"icon": "lepidodendron:escumasia",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_escumasia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

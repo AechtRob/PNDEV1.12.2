@@ -1,5 +1,6 @@
 {
 	"name": "Herpetogaster",
+	"read_by_default": true,
 	"icon": "lepidodendron:herpetogaster",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_herpetogaster",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

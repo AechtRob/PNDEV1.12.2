@@ -1,5 +1,6 @@
 {
 	"name": "Furcacauda",
+	"read_by_default": true,
 	"icon": "lepidodendron:furcacauda_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_furcacauda",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Charniodiscus",
+	"read_by_default": true,
 	"icon": "lepidodendron:charniodiscus",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_charniodiscus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

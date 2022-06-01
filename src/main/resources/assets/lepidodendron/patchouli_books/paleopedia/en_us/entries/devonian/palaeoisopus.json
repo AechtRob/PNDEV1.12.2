@@ -1,5 +1,6 @@
 {
 	"name": "Palaeoisopus",
+	"read_by_default": true,
 	"icon": "lepidodendron:palaeoisopus_raw",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_palaeoisopus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

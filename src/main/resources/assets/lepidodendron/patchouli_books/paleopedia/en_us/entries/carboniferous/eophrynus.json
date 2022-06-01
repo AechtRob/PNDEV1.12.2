@@ -1,5 +1,6 @@
 {
 	"name": "Eophrynus",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/eophrynus_icon.png",
 	"category": "patchouli:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

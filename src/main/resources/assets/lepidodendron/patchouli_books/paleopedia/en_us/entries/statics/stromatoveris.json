@@ -1,5 +1,6 @@
 {
 	"name": "Stromatoveris",
+	"read_by_default": true,
 	"icon": "lepidodendron:stromatoveris",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_stromatoveris",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

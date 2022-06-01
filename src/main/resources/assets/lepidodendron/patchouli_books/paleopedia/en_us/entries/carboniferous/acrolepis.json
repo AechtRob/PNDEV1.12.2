@@ -1,5 +1,6 @@
 {
 	"name": "Acrolepis",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/acrolepis_icon.png",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_acrolepis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

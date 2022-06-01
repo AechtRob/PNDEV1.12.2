@@ -1,5 +1,6 @@
 {
 	"name": "Arandaspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:arandaspis_raw",
 	"category": "lepidodendron:ordovician",
 	"turnin": "lepidodendron:pf_adv_book_arandaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

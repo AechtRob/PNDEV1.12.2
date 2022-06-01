@@ -1,5 +1,6 @@
 {
 	"name": "Precambrian Jellyfish",
+	"read_by_default": true,
 	"icon": "paleopedia:precambrian/precambrian_icon/precambrianjelly_icon.png",
 	"category": "lepidodendron:precambrian",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish_precambrian",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

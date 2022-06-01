@@ -1,5 +1,6 @@
 {
 	"name": "Pagea",
+	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/pagea_icon.png",
 	"category": "lepidodendron:devonian",
 	"turnin": "lepidodendron:pf_adv_book_pagea",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

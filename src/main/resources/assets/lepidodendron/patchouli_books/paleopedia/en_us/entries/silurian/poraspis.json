@@ -1,5 +1,6 @@
 {
 	"name": "Poraspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:poraspis_raw",
 	"category": "lepidodendron:silurian",
 	"turnin": "lepidodendron:pf_adv_book_poraspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

@@ -1,5 +1,6 @@
 {
 	"name": "Menaspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:menaspis_raw",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_menaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

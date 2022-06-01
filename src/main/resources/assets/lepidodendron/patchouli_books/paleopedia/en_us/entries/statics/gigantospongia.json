@@ -1,5 +1,6 @@
 {
 	"name": "Gigantospongia",
+	"read_by_default": true,
 	"icon": "lepidodendron:gigantospongia",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_gigantospongia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

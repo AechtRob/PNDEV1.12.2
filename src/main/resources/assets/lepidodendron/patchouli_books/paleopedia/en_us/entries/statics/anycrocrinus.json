@@ -1,5 +1,6 @@
 {
 	"name": "Ancyrocrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_ancyrocrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_anycrocrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

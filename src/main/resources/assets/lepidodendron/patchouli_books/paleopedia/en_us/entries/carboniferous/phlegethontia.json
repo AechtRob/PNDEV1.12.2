@@ -1,5 +1,6 @@
 {
 	"name": "Phlegethontia",
+	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/phlegethontia_icon.png",
 	"category": "lepidodendron:carboniferous",
 	"turnin": "lepidodendron:pf_adv_book_phlegethontia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

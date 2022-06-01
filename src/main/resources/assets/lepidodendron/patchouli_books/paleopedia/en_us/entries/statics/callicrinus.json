@@ -1,5 +1,6 @@
 {
 	"name": "Callicrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_callicrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_callicrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

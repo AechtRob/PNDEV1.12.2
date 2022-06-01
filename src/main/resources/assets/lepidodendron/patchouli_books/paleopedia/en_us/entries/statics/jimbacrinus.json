@@ -1,5 +1,6 @@
 {
 	"name": "Jimbacrinus",
+	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_jimbacrinus",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_jimbacrinus",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

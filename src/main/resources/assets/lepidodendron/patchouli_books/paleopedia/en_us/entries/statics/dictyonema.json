@@ -1,5 +1,6 @@
 {
 	"name": "Dictyonema",
+	"read_by_default": true,
 	"icon": "lepidodendron:dictyonema",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_dictyonema",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

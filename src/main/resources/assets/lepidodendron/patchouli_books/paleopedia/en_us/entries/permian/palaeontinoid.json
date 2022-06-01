@@ -1,5 +1,6 @@
 {
 	"name": "Palaeontinoid",
+	"read_by_default": true,
 	"icon": "paleopedia:",
 	"category": "lepidodendron:permian/permian_icon/palaeontinoid_icon.png",
 	"turnin": "lepidodendron:pf_adv_book_palaeontinoid",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

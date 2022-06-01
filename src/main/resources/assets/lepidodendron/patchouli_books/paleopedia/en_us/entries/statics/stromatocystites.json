@@ -1,5 +1,6 @@
 {
 	"name": "Stromatocystites",
+	"read_by_default": true,
 	"icon": "lepidodendron:stromatocystites",
 	"category": "lepidodendron:static",
 	"turnin": "lepidodendron:pf_adv_book_stromatocystites",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

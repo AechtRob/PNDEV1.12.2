@@ -1,5 +1,6 @@
 {
 	"name": "Barrel Jelly",
+	"read_by_default": true,
 	"icon": "paleopedi:ambients/ambient_icon/barrel_icon.png",
 	"category": "lepidodendron:ambients",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish4",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

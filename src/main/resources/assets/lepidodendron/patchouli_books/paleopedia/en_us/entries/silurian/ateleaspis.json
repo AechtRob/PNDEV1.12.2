@@ -1,5 +1,6 @@
 {
 	"name": "Ateleaspis",
+	"read_by_default": true,
 	"icon": "lepidodendron:ateleaspis_raw",
 	"category": "lepidodendron:silurian",
 	"turnin": "lepidodendron:pf_adv_book_ateleaspis",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

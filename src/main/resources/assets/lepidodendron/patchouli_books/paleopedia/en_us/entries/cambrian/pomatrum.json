@@ -1,5 +1,6 @@
 {
 	"name": "Pomatrum",
+	"read_by_default": true,
 	"icon": "lepidodendron:pomatrum_raw",
 	"category": "lepidodendron:cambrian",
 	"turnin": "lepidodendron:pf_adv_book_pomatrum",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+

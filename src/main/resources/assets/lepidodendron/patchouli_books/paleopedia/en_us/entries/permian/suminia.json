@@ -1,5 +1,6 @@
 {
 	"name": "Suminia",
+	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/suminia_icon.png",
 	"category": "lepidodendron:permian",
 	"turnin": "lepidodendron:pf_adv_book_suminia",
@@ -28,3 +29,4 @@
 		}
 	]
 }
+
