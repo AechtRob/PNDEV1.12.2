@@ -324,10 +324,10 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         }
         if (DatheosaurusEntity.getAnimation() == DatheosaurusEntity.ROAR_ANIMATION) {
             this.walk(tail, (0.06F*0.9F) * 1.5F, 0.2F, false, 0,0.2f, f2, 1F);
-            this.walk(tail2, (0.06F*0.9F) * 1.5F, 0.1F, false, 0.01F,0.1f, f2, 1F);
-            this.walk(tail3, (0.06F*0.9F) * 1.5F, 0.1F, false, 0.02F,0.1f, f2, 1F);
-            this.walk(tail4, (0.06F*0.9F) * 1.5F, 0.1F, false, 0.03F,0.1f, f2, 1F);
-            this.chainSwing(Tail, (0.06F * 0.9F) * 2F * 3F, 0.4F, 0.5F, f2, 1F);
+            this.walk(tail2, (0.06F*0.9F) * 1.5F, 0.125F, false, 0.015F,0.1f, f2, 1F);
+            this.walk(tail3, (0.06F*0.9F) * 1.5F, 0.125F, false, 0.03F,0.1f, f2, 1F);
+            this.walk(tail4, (0.06F*0.9F) * 1.5F, 0.125F, false, 0.045F,0.1f, f2, 1F);
+            this.chainSwing(Tail, (0.06F * 0.9F) * 2F * 3F, 0.275F, 0.5F, f2, 1F);
         }
         else {
             //this.chainWave(Tail, (0.06F*0.9F), 0.02F, 0.1F, f2, 1F);
