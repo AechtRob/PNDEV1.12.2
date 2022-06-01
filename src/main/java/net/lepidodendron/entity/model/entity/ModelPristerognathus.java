@@ -313,10 +313,10 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
             speed = speed * 1.9F;
         }
 
-        this.Leftupperarm.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 1, f2, 1.5F);;
-        this.Rightupperarm.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 4, f2, 1.5F);;
-        this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 4, f2, 1.5F);;
-        this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 1, f2, 1.5F);;
+        this.Leftupperarm.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.2), false, 1, f2, 1.5F);;
+        this.Rightupperarm.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.2), false, 4, f2, 1.5F);;
+        this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.8), false, 4, f2, 1.5F);;
+        this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.8), false, 1, f2, 1.5F);;
 
         this.flap(Leftupperarm, speed, -0.1F, true, 4, -0.1F, f2, 1F);
         this.flap(Rightupperarm, speed, 0.1F, true, 7, 0.1F, f2, 1F);
