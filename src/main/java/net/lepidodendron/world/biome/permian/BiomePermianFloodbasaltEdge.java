@@ -76,7 +76,7 @@ public class BiomePermianFloodbasaltEdge extends ElementsLepidodendronMod.ModEle
 		@Override
 		public int getSkyColorByTemp(float par1)
 		{
-			if (LepidodendronConfig.doFog) {
+			if (LepidodendronConfig.renderFog) {
 				return 0x808080;
 			}
 			return super.getSkyColorByTemp(par1);

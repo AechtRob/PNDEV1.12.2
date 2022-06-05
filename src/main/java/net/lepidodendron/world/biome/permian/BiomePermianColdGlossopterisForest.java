@@ -62,6 +62,7 @@ public class BiomePermianColdGlossopterisForest extends ElementsLepidodendronMod
 		protected static final WorldGenGlossopterisTree GLOSSOPTERIS_TREE = new WorldGenGlossopterisTree(false);
 		protected static final WorldGenCordaitesTree CORDAITES_TREE = new WorldGenCordaitesTree(false);
 		protected static final WorldGenWalchiaTree WALCHIA_TREE = new WorldGenWalchiaTree(false);
+		//protected static final WorldGenTietea TIETEA_TREE = new WorldGenTietea(false);
 		protected static final WorldGenGlossopterisBush GLOSSOPTERIS_BUSH_GENERATOR = new WorldGenGlossopterisBush();
 
 		protected static final WorldGenTreeLog GLOSSOPTERIS_LOG_GENERATOR = new WorldGenTreeLog(BlockGlossopterisLog.block);
@@ -89,6 +90,9 @@ public class BiomePermianColdGlossopterisForest extends ElementsLepidodendronMod
 
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
+			//if (Math.random() > 0.975) {
+			//	return TIETEA_TREE;
+			//}
 			if (Math.random() > 0.08) {
 				return GLOSSOPTERIS_TREE;
 			}

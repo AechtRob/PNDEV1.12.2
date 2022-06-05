@@ -129,7 +129,7 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 
 		int multiplier = 1;
 		if (biome == BiomeDevonianOceanDeadReef.biome) {
-			multiplier = 10;
+			multiplier = 15;
 		}
 
 		for (int i = 0; i < (12 * multiplier); i++) {

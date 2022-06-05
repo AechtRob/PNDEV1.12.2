@@ -5,6 +5,14 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -110,6 +118,35 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 		)
 			biomeCriteria = true;
+
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeO = (BiomeOrdovician) biome;
+			if (biomeO.getBiomeType() != EnumBiomeTypeOrdovician.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeS = (BiomeSilurian) biome;
+			if (biomeS.getBiomeType() != EnumBiomeTypeSilurian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeDevonian) {
+			BiomeDevonian biomeD = (BiomeDevonian) biome;
+			if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCarboniferous) {
+			BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
+			if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 

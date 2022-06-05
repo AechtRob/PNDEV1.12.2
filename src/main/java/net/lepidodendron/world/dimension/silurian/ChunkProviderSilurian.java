@@ -1,10 +1,8 @@
 package net.lepidodendron.world.dimension.silurian;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGravelWavy;
 import net.lepidodendron.block.BlockSandWavy;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.silurian.*;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSand;
@@ -20,7 +18,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
 import java.util.Random;
@@ -143,28 +140,7 @@ public class ChunkProviderSilurian implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-
-            if (biome == BiomeSilurianSea.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsOceanPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeSilurianLushPatch.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsLandPF);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-
+            ChunkGenSpawner.executeProcedure(false, this.world, new BlockPos(i, 0, j), this.random, null);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

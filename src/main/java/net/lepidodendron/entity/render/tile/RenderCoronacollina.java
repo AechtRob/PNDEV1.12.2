@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCoronacollina;
 import net.lepidodendron.entity.model.tile.ModelCoronacollina;
@@ -30,12 +31,18 @@ public class RenderCoronacollina extends TileEntitySpecialRenderer<BlockCoronaco
         this.bindTexture(TEXTURE);
         ModelCoronacollina modelCoronacollina = this.modelCoronacollina;
         GlStateManager.pushMatrix();
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.disableLighting();
+        }
         GlStateManager.translate(x + 0.5, y + 0.66, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(45, 0F, 1F, 0F);
         GlStateManager.scale(0.22,0.22,0.22);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelCoronacollina.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.enableLighting();
+        }
         GlStateManager.popMatrix();
     }
 }

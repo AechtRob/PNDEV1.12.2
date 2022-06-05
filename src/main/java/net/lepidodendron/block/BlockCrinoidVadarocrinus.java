@@ -124,7 +124,7 @@ public class BlockCrinoidVadarocrinus extends ElementsLepidodendronMod.ModElemen
 
 
 		if (biome == BiomeDevonianOceanDeadReef.biome) {
-			multiplier = 10;
+			multiplier = 15;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.dimension.jurassic;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.jurassic.*;
 import net.lepidodendron.world.gen.WorldGenJurassicVolcanos;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
@@ -12,7 +13,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
@@ -170,9 +170,12 @@ public class ChunkProviderJurassic implements IChunkGenerator {
         biome.decorate(this.world, this.random, new BlockPos(i, 0, j));
         net.minecraftforge.common.MinecraftForge.EVENT_BUS
                 .post(new net.minecraftforge.event.terraingen.DecorateBiomeEvent.Post(this.world, this.random, blockpos));
+
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
-                net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS))
-            WorldEntitySpawner.performWorldGenSpawning(this.world, biome, i + 8, j + 8, 16, 16, this.random);
+                net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
+            ChunkGenSpawner.executeProcedure(false, this.world, new BlockPos(i, 0, j), this.random, null);
+        }
+
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);
         BlockFalling.fallInstantly = false;
     }

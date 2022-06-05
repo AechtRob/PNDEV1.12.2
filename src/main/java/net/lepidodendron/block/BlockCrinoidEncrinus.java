@@ -15,6 +15,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -171,6 +172,11 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 		if (biome == BiomeDevonianOceanDeadReef.biome) {
+			multiplier = 15;
+		}
+
+		//int multiplier = 1;
+		if (biome == BiomeSilurianSeaGarden.biome) {
 			multiplier = 10;
 		}
 
@@ -185,7 +191,7 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up()) && ((BlockCustom) block).isWaterBlock(world, blockpos1.up(2))) {
 							BlockPos blockpos2 = blockpos1.down();
-							int j = 1 + random.nextInt(random.nextInt(random.nextInt(BlockCustom.crinoidheight) + 1) + 1);
+							int j = crinoidHeight(world, blockpos1, random);
 							j = Math.min(BlockCustom.crinoidheight, j);
 							for (int k = 0; k < j; ++k)
 								if (((BlockCustom) block).canBlockStay(world, blockpos1)
@@ -197,6 +203,15 @@ public class BlockCrinoidEncrinus extends ElementsLepidodendronMod.ModElement {
 				}
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
+	}
+
+	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
+		if (worldIn.getBiome(pos) ==  BiomeSilurianSeaGarden.biome) {
+			if (random.nextInt(8) != 0) {
+				return BlockCrinoidEncrinus.BlockCustom.crinoidheight;
+			}
+		}
+		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidEncrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {

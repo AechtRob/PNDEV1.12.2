@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockHapsidophyllas;
 import net.lepidodendron.entity.model.tile.ModelHapsidophyllas;
@@ -29,12 +30,18 @@ public class RenderHapsidophyllas extends TileEntitySpecialRenderer<BlockHapsido
         }
         this.bindTexture(TEXTURE);
         ModelHapsidophyllas modelHapsidophyllas = this.modelHapsidophyllas;
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.disableLighting();
+        }
         GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + 1.21, z + 0.5);
         GlStateManager.scale(0.5,0.5,0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelHapsidophyllas.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.enableLighting();
+        }
         GlStateManager.popMatrix();
     }
 }

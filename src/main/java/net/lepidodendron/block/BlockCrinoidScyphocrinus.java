@@ -9,6 +9,7 @@ import net.lepidodendron.item.ItemHoldfast;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -123,7 +124,12 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 		if (!biomeCriteria)
 			return;
 
-		for (int i = 0; i < 3; i++) {
+		int multiplier = 1;
+		if (biome == BiomeSilurianSeaGarden.biome) {
+			multiplier = 5;
+		}
+
+		for (int i = 0; i < 3 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -136,7 +142,7 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 						if (((BlockCustom) block).isWaterBlock(world, blockpos1) && ((BlockCustom) block).isWaterBlock(world, blockpos1.down()) && ((BlockCustom) block).isWaterBlock(world, blockpos1.down(2))) {
 							if (world.getBlockState(blockpos1.up()).getMaterial() == Material.WATER && world.isAirBlock(blockpos1.up(2))) {
 								world.setBlockState(blockpos1.up(2), BlockCrinoidScyphocrinusFloat.block.getDefaultState());
-								int j = 1 + random.nextInt(random.nextInt(random.nextInt(BlockCustom.crinoidheight) + 1) + 1);
+								int j = crinoidHeight(world, blockpos1, random);
 								j = Math.min(BlockCustom.crinoidheight, j);
 								for (int k = 0; k < j; ++k)
 									if (((BlockCustom) block).canBlockStay(world, blockpos1)
@@ -149,6 +155,15 @@ public class BlockCrinoidScyphocrinus extends ElementsLepidodendronMod.ModElemen
 				}
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
+	}
+
+	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
+		if (worldIn.getBiome(pos) ==  BiomeSilurianSeaGarden.biome) {
+			if (random.nextInt(8) != 0) {
+				return BlockCrinoidScyphocrinus.BlockCustom.crinoidheight;
+			}
+		}
+		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidScyphocrinus.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {

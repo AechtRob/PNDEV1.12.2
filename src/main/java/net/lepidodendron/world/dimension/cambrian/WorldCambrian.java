@@ -87,7 +87,7 @@ public class WorldCambrian extends ElementsLepidodendronMod.ModElement {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public Vec3d getFogColor(float par1, float par2) {
-			if (!LepidodendronConfig.doFog) {
+			if (!LepidodendronConfig.renderFog) {
 				return super.getFogColor(par1, par2);
 			}
 			//return new Vec3d(0.51, 0.39, 0.29);
@@ -141,7 +141,7 @@ public class WorldCambrian extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public boolean doesXZShowFog(int par1, int par2) {
-			if (!LepidodendronConfig.doFog) {
+			if (!LepidodendronConfig.renderFog) {
 				return super.doesXZShowFog(par1, par2);
 			}
 			if (world.isRaining()) {

@@ -5,6 +5,14 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -116,6 +124,56 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimJurassic)
 		)
 			biomeCriteria = true;
+
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeO = (BiomeOrdovician) biome;
+			if (biomeO.getBiomeType() != EnumBiomeTypeOrdovician.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeS = (BiomeSilurian) biome;
+			if (biomeS.getBiomeType() != EnumBiomeTypeSilurian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeDevonian) {
+			BiomeDevonian biomeD = (BiomeDevonian) biome;
+			if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeCarboniferous) {
+			BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
+			if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomePermian) {
+			BiomePermian biomeP = (BiomePermian) biome;
+			if (biomeP.getBiomeType() != EnumBiomeTypePermian.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeTriassic) {
+			BiomeTriassic biomeT = (BiomeTriassic) biome;
+			if (biomeT.getBiomeType() != EnumBiomeTypeTriassic.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeJurassic) {
+			BiomeJurassic biomeJ = (BiomeJurassic) biome;
+			if (biomeJ.getBiomeType() != EnumBiomeTypeJurassic.Ocean) {
+				biomeCriteria = false;
+			}
+		}
+
 		if (!biomeCriteria)
 			return;
 

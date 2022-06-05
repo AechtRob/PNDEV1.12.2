@@ -86,7 +86,7 @@ public class WorldDevonian extends ElementsLepidodendronMod.ModElement {
 		@Override
 		@SideOnly(Side.CLIENT)
 		public Vec3d getFogColor(float par1, float par2) {
-			if (!LepidodendronConfig.doFog) {
+			if (!LepidodendronConfig.renderFog) {
 				return super.getFogColor(par1, par2);
 			}
 
@@ -148,7 +148,7 @@ public class WorldDevonian extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public boolean doesXZShowFog(int par1, int par2) {
-			if (!LepidodendronConfig.doFog) {
+			if (!LepidodendronConfig.renderFog) {
 				return super.doesXZShowFog(par1, par2);
 			}
 			if (world.isRaining()) {

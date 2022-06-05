@@ -109,7 +109,7 @@ public class BlockXenocladiaShoot extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -198,7 +198,7 @@ public class BlockXenocladiaShoot extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 		}
-		
+
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
 		{

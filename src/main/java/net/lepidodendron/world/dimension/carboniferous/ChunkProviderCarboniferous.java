@@ -1,6 +1,5 @@
 package net.lepidodendron.world.dimension.carboniferous;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
@@ -20,7 +19,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
 import java.util.Random;
@@ -144,86 +142,7 @@ public class ChunkProviderCarboniferous implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-
-            if (biome == BiomeCarboniferousBeach.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome || biome == BiomeCarboniferousOceanCliff.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeCarboniferousHills.biome || biome == BiomeCarboniferousHillsEdge.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeCarboniferousMarsh.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIcePF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIceFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIceReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeCarboniferousSwamp.biome || biome == BiomeCarboniferousSwampHills.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-            if (biome == BiomeCarboniferousSwampBurnt.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampReborn);
-                }
-                ChunkGenSpawner.executeProcedure(false, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-
+            ChunkGenSpawner.executeProcedure(false, this.world, new BlockPos(i, 0, j), this.random, null);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

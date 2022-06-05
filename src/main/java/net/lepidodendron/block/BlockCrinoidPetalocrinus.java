@@ -6,7 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.ItemHoldfast;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -104,7 +104,7 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = true;
 		}
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome != BiomeSilurianSeaGarden.biome
 		)
 			biomeCriteria = false;
 		if (!biomeCriteria)
@@ -114,6 +114,10 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 		if (dimID == LepidodendronConfig.dimSilurian
 		) {
 			multiplier = 2;
+		}
+
+		if (biome == BiomeSilurianSeaGarden.biome) {
+			multiplier = 10;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.ItemHoldfast;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -104,6 +105,11 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 		if (dimID == LepidodendronConfig.dimSilurian
 		) {
 			multiplier = 4;
+		}
+
+		//int multiplier = 1;
+		if (biome == BiomeSilurianSeaGarden.biome) {
+			multiplier = 10;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

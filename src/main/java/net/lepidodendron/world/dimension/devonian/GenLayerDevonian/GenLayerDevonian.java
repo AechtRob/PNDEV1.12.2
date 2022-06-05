@@ -21,10 +21,12 @@ public class GenLayerDevonian {
         biomes = new GenLayerDevonianDeepOcean(1100L, biomes);
         biomes = new GenLayerDevonianShallowOcean(1300L, biomes);
         biomes = new GenLayerDevonianDeadReefs(387L, biomes);
+        biomes = new GenLayerDiversifyGilboa(1009L, biomes);
         biomes = new GenLayerZoom(1000L, biomes);
         biomes = new GenLayerDiversifyDevonian(1001L, biomes);
         //biomes = new GenLayerDevonianDeadReefs(387L, biomes);
         biomes = new GenLayerSpringsDevonian(955L, biomes);
+        //biomes = new GenLayerDiversifyGilboa(1009L, biomes);
         biomes = new GenLayerFuzzyZoom(1009L, biomes);
         biomes = new GenLayerSpikesDevonian(950L, biomes);
         biomes = new GenLayerSinkholesDevonian(850L, biomes);

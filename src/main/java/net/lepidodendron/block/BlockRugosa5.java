@@ -177,6 +177,7 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 				) {
 			dimWeight = 1.5;
 		}
+
 		int minWaterDepth = (int) Math.round(15D * dimWeight);
 		int maxWaterDepth = (int) Math.round(100D * dimWeight);
 		int startHeight = world.getSeaLevel() - maxWaterDepth;

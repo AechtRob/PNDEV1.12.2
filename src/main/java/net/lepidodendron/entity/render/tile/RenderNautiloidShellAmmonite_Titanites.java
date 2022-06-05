@@ -33,6 +33,8 @@ public class RenderNautiloidShellAmmonite_Titanites extends TileEntitySpecialRen
         ModelAmmonite150cmShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.8D;
         GlStateManager.pushMatrix();
+        GlStateManager.disableLighting();
+        GlStateManager.disableCull();
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.22, z + 0.5);
@@ -48,6 +50,8 @@ public class RenderNautiloidShellAmmonite_Titanites extends TileEntitySpecialRen
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         }
         modelNautiloidShell.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.enableCull();
+        GlStateManager.enableLighting();
         GlStateManager.popMatrix();
     }
 }

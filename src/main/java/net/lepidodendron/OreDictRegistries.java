@@ -904,8 +904,8 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemPoraspisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemPoraspisCooked.block);
 
-		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDelitzschalaRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDelitzschalaRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemPalaeodictyopteraCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeodictyopteraCooked.block);

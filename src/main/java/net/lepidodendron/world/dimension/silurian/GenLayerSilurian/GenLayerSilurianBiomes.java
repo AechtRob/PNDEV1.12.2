@@ -12,14 +12,19 @@ public class GenLayerSilurianBiomes extends GenLayer {
     public  int OS_OCEAN_ID =  Biome.getIdForBiome(OS_OCEAN);
     public  Biome OS_LAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:silurian_land"));
     public  int OS_LAND_ID =  Biome.getIdForBiome(OS_LAND);
-    public  Biome OS_OCEAN_ICE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:silurian_sea_ice"));
-    public  int OS_OCEAN_ICE_ID =  Biome.getIdForBiome(OS_OCEAN_ICE);
+    public  Biome OS_OCEAN_GARDEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:silurian_sea_garden"));
+    public  int OS_OCEAN_GARDEN_ID =  Biome.getIdForBiome(OS_OCEAN_GARDEN);
 
     private final int OSBiomes[] = new int[] {
         OS_OCEAN_ID,
         OS_OCEAN_ID,
         OS_OCEAN_ID,
-        OS_OCEAN_ICE_ID,
+        OS_OCEAN_ID,
+        OS_OCEAN_ID,
+        OS_OCEAN_ID,
+        OS_OCEAN_GARDEN_ID,
+        OS_LAND_ID,
+        OS_LAND_ID,
         OS_LAND_ID,
         OS_LAND_ID
     };

@@ -353,7 +353,7 @@ public class SkyRendererPermian extends IRenderHandler {
         //To factor down matching the sky colouration to grey
         // }
         //else {
-        if (LepidodendronConfig.doFog) {
+        if (LepidodendronConfig.renderFog) {
             f16 = (1.0F - theWorld.getRainStrength(partialTicks))*(1-ash2);
         }
         else {

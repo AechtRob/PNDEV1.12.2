@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockParviscopa;
 import net.lepidodendron.entity.model.tile.ModelParviscopa;
@@ -30,11 +31,17 @@ public class RenderParviscopa extends TileEntitySpecialRenderer<BlockParviscopa.
         this.bindTexture(TEXTURE);
         ModelParviscopa modelParviscopa = this.modelParviscopa;
         GlStateManager.pushMatrix();
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.disableLighting();
+        }
         GlStateManager.translate(x + 0.5, y + 0.6, z + 0.5);
         GlStateManager.scale(0.22,0.22,0.22);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelParviscopa.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.enableLighting();
+        }
         GlStateManager.popMatrix();
     }
 }

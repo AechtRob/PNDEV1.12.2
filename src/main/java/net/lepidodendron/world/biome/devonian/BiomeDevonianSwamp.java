@@ -44,7 +44,7 @@ public class BiomeDevonianSwamp extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("devonian_swamp");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);
-			decorator.treesPerChunk = 4;
+			decorator.treesPerChunk = 3;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -69,6 +69,8 @@ public class BiomeDevonianSwamp extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenTreeLogWater ARCHAEOPTERIS_LOG_WATER_GENERATOR = new WorldGenTreeLogWater(BlockArchaeopterisLog.block);
 		protected static final WorldGenStauropteris STAUROPTERIS_GENERATOR = new WorldGenStauropteris();
 
+		protected static final WorldGenSigillariaSmall SIGILLARIA_GENERATOR = new WorldGenSigillariaSmall();
+
 		protected static final WorldGenSandyDirt SANDY_DIRT_GENERATOR = new WorldGenSandyDirt();
 		protected static final WorldGenWaterSideSandyDirt WATERSIDE_SANDY_DIRT_GENERATOR = new WorldGenWaterSideSandyDirt();
 		protected static final WorldGenSiltyDirt SILTY_DIRT_GENERATOR = new WorldGenSiltyDirt();
@@ -83,6 +85,7 @@ public class BiomeDevonianSwamp extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
 		protected static final WorldGenSelaginella SELAGINELLA_GENERATOR = new WorldGenSelaginella();
+		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -238,6 +241,25 @@ public class BiomeDevonianSwamp extends ElementsLepidodendronMod.ModElement {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					STAUROPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SIGILLARIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 80; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SLIMY_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

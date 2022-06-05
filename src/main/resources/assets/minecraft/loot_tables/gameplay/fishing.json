@@ -145,7 +145,7 @@
                 "conditions": [
                   {
                     "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:devonian_ocean","lepidodendron:devonian_ocean_deep"],
+                    "biomes": ["lepidodendron:devonian_forest","lepidodendron:devonian_beach","lepidodendron:devonian_ocean","lepidodendron:devonian_ocean_deep"],
                     "entity": "this"
                   }
                 ]
@@ -184,7 +184,7 @@
                 "conditions": [
                   {
                     "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:devonian_floodplain", "lepidodendron:devonian_forest", "lepidodendron:devonian_hills", "lepidodendron:devonian_beach"],
+                    "biomes": ["lepidodendron:devonian_gilboa", "lepidodendron:devonian_floodplain", "lepidodendron:devonian_forest"],
                     "entity": "this"
                   }
                 ]

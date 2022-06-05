@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCharnia;
 import net.lepidodendron.entity.model.tile.ModelCharnia;
@@ -30,10 +31,16 @@ public class RenderCharnia extends TileEntitySpecialRenderer<BlockCharnia.TileEn
         this.bindTexture(TEXTURE);
         ModelCharnia modelCharnia = this.modelCharnia;
         GlStateManager.pushMatrix();
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.disableLighting();
+        }
         GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         modelCharnia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
+            GlStateManager.enableLighting();
+        }
         GlStateManager.popMatrix();
     }
 }

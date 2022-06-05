@@ -434,6 +434,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_NEST);
+                GlStateManager.disableCull();
                 switch (nestType) {
                     case 0:
                     default:
@@ -449,6 +450,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                         this.nest_bowl_medium.renderAll(1.2f);
                         break;
                 }
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
 

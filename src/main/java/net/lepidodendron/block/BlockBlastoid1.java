@@ -185,7 +185,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
 		if (biome == BiomeDevonianOceanDeadReef.biome) {
-			multiplier = 10;
+			multiplier = 15;
 		}
 
 		for (int i = 0; i < (12 * multiplier); i++) {

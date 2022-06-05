@@ -149,7 +149,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 					for (int i = 0; i < 10; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
 						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0)  && world.getBiome(blockpos1) != BiomeDevonianSprings.biome ) {
-							int j = 1 + random.nextInt(random.nextInt(18) + 2);
+							int j = 1 + random.nextInt(random.nextInt(12) + 2);
 							j = Math.max(3, j);
 							int heightCheck = 3;
 							boolean spaceCheck = true;

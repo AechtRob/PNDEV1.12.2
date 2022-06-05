@@ -172,7 +172,7 @@ public class BlockYellowSponge extends ElementsLepidodendronMod.ModElement {
 		}
 		if (biome == BiomeOrdovicianSpongeForest.biome)
 		{
-			multiplier = 10;
+			multiplier = 20;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

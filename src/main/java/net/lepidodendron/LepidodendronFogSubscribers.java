@@ -43,7 +43,7 @@ public class LepidodendronFogSubscribers {
 		double y = player.posY;
 		Block b = event.getState().getBlock();
 
-		if (!LepidodendronConfig.doFog) {
+		if (!LepidodendronConfig.renderFog) {
 			return;
 		}
 
@@ -121,7 +121,7 @@ public class LepidodendronFogSubscribers {
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogColors event) {
 
-		if (LepidodendronConfig.doFog) {
+		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
 			//Biome biome = player.world.getBiome(player.getPosition());
@@ -254,7 +254,7 @@ public class LepidodendronFogSubscribers {
 
 	public float getFogDensity(Entity player) {
 
-		if (LepidodendronConfig.doFog) {
+		if (LepidodendronConfig.renderFog) {
 
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			//Block b = event.getState().getBlock();
@@ -362,7 +362,7 @@ public class LepidodendronFogSubscribers {
 	public void onEvent(EntityViewRenderEvent.FogDensity event) {
 
 		//NB NOT BEING USED:
-		if (LepidodendronConfig.doFog && 1 == 2) {
+		if (LepidodendronConfig.renderFog && 1 == 2) {
 
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			Block b = event.getState().getBlock();

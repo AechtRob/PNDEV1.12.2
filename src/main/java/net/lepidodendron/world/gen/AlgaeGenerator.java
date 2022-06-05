@@ -76,7 +76,11 @@ public class AlgaeGenerator extends WorldGenerator
 			|| (this.algae == BlockRedSponge.block)
 			|| (this.algae == BlockBrownSponge.block)
 			|| (this.algae == BlockBranchedSponge.block)
-			|| (this.algae == BlockGigantospongia.block)) {
+			|| (this.algae == BlockGigantospongia.block)
+			|| (this.algae == BlockFenestellaGiantBlue.block)
+			|| (this.algae == BlockFenestellaGiantOrange.block)
+			|| (this.algae == BlockFenestellaGiantRed.block)
+			|| (this.algae == BlockFenestellaGiantYellow.block)) {
 		bound = 4;
 	}
 
@@ -107,6 +111,10 @@ public class AlgaeGenerator extends WorldGenerator
 					|| (this.algae == BlockBrownSponge.block)
 					|| (this.algae == BlockBranchedSponge.block)
 					|| (this.algae == BlockGigantospongia.block)
+					|| (this.algae == BlockFenestellaGiantBlue.block)
+					|| (this.algae == BlockFenestellaGiantOrange.block)
+					|| (this.algae == BlockFenestellaGiantRed.block)
+					|| (this.algae == BlockFenestellaGiantYellow.block)
 				) {
 					int yy = 1;
 					while (yy <= 4 && waterDepthCheckMin) {
@@ -141,6 +149,10 @@ public class AlgaeGenerator extends WorldGenerator
 						&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 						&& (this.algae != BlockCystoidPseudocrinites.block) //this is preferred on the sides
 						&& (this.algae != BlockGigantospongia.block) //this is preferred on the sides
+						&& (this.algae != BlockFenestellaGiantBlue.block) //this is preferred on the sides
+						&& (this.algae != BlockFenestellaGiantOrange.block) //this is preferred on the sides
+						&& (this.algae != BlockFenestellaGiantRed.block) //this is preferred on the sides
+						&& (this.algae != BlockFenestellaGiantYellow.block) //this is preferred on the sides
 					)
 					{
 						if (this.algae != BlockCrinoidPetalocrinus.block && this.algae != BlockCrinoidVadarocrinus.block) {

@@ -9,6 +9,8 @@ import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.devonian.BiomeDevonianHypersalineSinkhole;
+import net.lepidodendron.world.biome.devonian.BiomeDevonianHypersalineSinkholeTransition;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
@@ -70,7 +72,8 @@ public class BlockEurypteridEggsAdelophthalmus extends ElementsLepidodendronMod.
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeD = (BiomeDevonian) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean
+					&& biome != BiomeDevonianHypersalineSinkhole.biome && biome != BiomeDevonianHypersalineSinkholeTransition.biome) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

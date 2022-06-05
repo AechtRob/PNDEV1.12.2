@@ -105,6 +105,9 @@ public class BlockSigillariaStem extends ElementsLepidodendronMod.ModElement {
 					attachmentblock = true;
 					leavesblock = true;
 				}
+				if (worldIn.getBlockState(pos.down()) != BlockSigillariaLog.block) {
+					attachmentblock = false;
+				}
 			}
 			
 			if (block == BlockSigillariaStrobilus.block) {

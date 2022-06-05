@@ -41,7 +41,7 @@ public class RecipeCookedMeats extends ElementsLepidodendronMod.ModElement {
 		GameRegistry.addSmelting(new ItemStack(ItemCamerocerasRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemOrthocerasRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemPoraspisRaw.block, (int) (1)), new ItemStack(ItemPoraspisCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemPalaeodictyopteraRaw.block, (int) (1)), new ItemStack(ItemPalaeodictyopteraCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPalaeodictyopteraDelitzschalaRaw.block, (int) (1)), new ItemStack(ItemPalaeodictyopteraCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemLimnoscelisRaw.block, (int) (1)), new ItemStack(ItemLimnoscelisCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemSchinderhannesRaw.block, (int) (1)), new ItemStack(ItemSchinderhannesCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTitanichthysRaw.block, (int) (1)), new ItemStack(ItemTitanichthysCooked.block, (int) (1)), 0.35F);

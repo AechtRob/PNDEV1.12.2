@@ -1,0 +1,57 @@
+{
+	"parent": "lepidodendron:block/cube_noao",
+    "textures": {
+        "particle": "lepidodendron:blocks/slimy_algae_base",
+        "texture": "lepidodendron:blocks/slimy_algae_base",
+        "plantup": "lepidodendron:blocks/slimy_algae_water_t",
+        "plantdown": "lepidodendron:blocks/slimy_algae_water_b"
+    },
+    "elements": [
+        {   "from": [0, -16, 0 ],
+            "to": [ 16, -15.95, 16 ],
+            "faces": {
+                "up": { "uv": [ 0, 0, 16, 16 ],  "texture": "#texture" },
+                "down": { "uv": [ 16, 0, 0, 16 ],  "texture": "#texture", "cullface": "down" }
+            }
+        },
+		{   "from": [ 0.8, 0, 8 ],
+            "to": [ 15.2, 16, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantup" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantup" }
+            }
+        },
+        {   "from": [ 8, 0, 0.8 ],
+            "to": [ 8, 16, 15.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantup" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantup" }
+            }
+        },
+
+
+        {   "from": [ 0.8, -16, 8 ],
+            "to": [ 15.2, 0, 8 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantdown" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantdown" }
+            }
+        },
+        {   "from": [ 8, -16, 0.8 ],
+            "to": [ 8, 0, 15.2 ],
+            "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantdown" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantdown" }
+            }
+        }
+        
+    ]
+}

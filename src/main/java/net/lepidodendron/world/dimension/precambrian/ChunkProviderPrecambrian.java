@@ -1,11 +1,9 @@
 package net.lepidodendron.world.dimension.precambrian;
 
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockBacterialLayer;
 import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.block.BlockToxicMud;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrianSea;
 import net.lepidodendron.world.gen.WorldGenPrecambrianLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSand;
@@ -21,7 +19,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.List;
 import java.util.Random;
@@ -152,21 +149,7 @@ public class ChunkProviderPrecambrian implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-
-            if (biome == BiomePrecambrianSea.biome) {
-                String[] MobString = new String[0];
-                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsPF);
-                }
-                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsFA);
-                }
-                if (LepidodendronConfig.doSpawnsReborn) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsReborn);
-                }
-                ChunkGenSpawner.executeProcedure(true, MobString, this.world, new BlockPos(i, 0, j), this.random);
-            }
-
+            ChunkGenSpawner.executeProcedure(true, this.world, new BlockPos(i, 0, j), this.random, null);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

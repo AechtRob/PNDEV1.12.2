@@ -15,6 +15,7 @@ import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIcebergs;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
+import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -161,7 +162,7 @@ public class BlockTabulata_Block3 extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
-		int multiplier = 1;
+		double multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimSilurian)
 		) {
 			multiplier = 4;
@@ -179,6 +180,10 @@ public class BlockTabulata_Block3 extends ElementsLepidodendronMod.ModElement {
 		int minWaterDepth = 2 * dimWeight;
 		int maxWaterDepth = 20;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
+
+		if (biome == BiomeSilurianSeaGarden.biome) {
+			multiplier = 0.5;
+		}
 
 		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

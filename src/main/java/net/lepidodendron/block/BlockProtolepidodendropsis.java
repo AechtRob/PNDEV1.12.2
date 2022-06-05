@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.devonian.BiomeDevonianGilboa;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSwamp;
 import net.minecraft.block.Block;
@@ -135,6 +136,10 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 
 		if (biome == BiomeDevonianSwamp.biome) {
 			GenChance = 128;
+		}
+
+		if (biome == BiomeDevonianGilboa.biome) {
+			GenChance = 256;
 		}
 
 		int maxheight = LepidodendronConfig.maxheightProtolepidodendropsis;

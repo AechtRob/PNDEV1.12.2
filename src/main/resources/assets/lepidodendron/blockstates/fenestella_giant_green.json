@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:fenestella_giant_green"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:fenestella_giant_green", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:fenestella_giant_green", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:fenestella_giant_green", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:fenestella_giant_green", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:fenestella_giant_green"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:fenestella_giant_green", "x": 180}
+    ]
+  }
+}

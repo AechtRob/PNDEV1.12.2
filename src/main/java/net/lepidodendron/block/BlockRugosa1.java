@@ -9,6 +9,7 @@ import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousOceanCliff;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
@@ -176,6 +177,11 @@ public class BlockRugosa1 extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 				) {
 			dimWeight = 2;
+		}
+		if ((biome == BiomeCarboniferousOceanCliff.biome)
+		) {
+			dimWeight = 1;
+			multiplier = 6;
 		}
 		int minWaterDepth = 4 * dimWeight;
 		int maxWaterDepth = 15;

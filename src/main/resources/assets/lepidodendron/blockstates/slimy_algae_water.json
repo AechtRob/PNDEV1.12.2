@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:slimy_algae_water"},
+      {"model": "lepidodendron:slimy_algae_water_var"},
+      {"model": "lepidodendron:slimy_algae_water_small"},
+      {"model": "lepidodendron:slimy_algae_water_small_var"}
+    ]
+  }
+}

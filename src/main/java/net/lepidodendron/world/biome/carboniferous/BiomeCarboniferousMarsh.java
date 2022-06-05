@@ -126,6 +126,7 @@ public class BiomeCarboniferousMarsh extends ElementsLepidodendronMod.ModElement
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
 		protected static final WorldGenTreeLog DIAPHORODENDRON_LOG_GENERATOR = new WorldGenTreeLog(BlockDiaphorodendronLog.block);
 		protected static final WorldGenTreeLog BOTHRODENDRON_LOG_GENERATOR = new WorldGenTreeLog(BlockBothrodendronLog.block);
+		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 
 		protected static final WorldGenMud MUD_GENERATOR = new WorldGenMud();
 		public static final PropertyEnum<BlockDoublePlant.EnumPlantType> VARIANT = PropertyEnum.<BlockDoublePlant.EnumPlantType>create("variant", BlockDoublePlant.EnumPlantType.class);
@@ -372,6 +373,15 @@ public class BiomeCarboniferousMarsh extends ElementsLepidodendronMod.ModElement
 					SELAGINELLA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 80; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SLIMY_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 192; ++i)
 				{

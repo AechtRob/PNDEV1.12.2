@@ -130,6 +130,7 @@ public class BiomeCarboniferousSwampHills extends ElementsLepidodendronMod.ModEl
 		protected static final WorldGenCalamites CALAMITES = new WorldGenCalamites(false);
 		protected static final WorldGenTreeLog CALAMITES_LOG_GENERATOR = new WorldGenTreeLog(BlockCalamitesLog.block);
 		protected static final WorldGenFungiSimple SIMPLE_FUNGI_GENERATOR = new WorldGenFungiSimple();
+		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
 
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
@@ -338,7 +339,16 @@ public class BiomeCarboniferousSwampHills extends ElementsLepidodendronMod.ModEl
 	            OMPHALOPHLOIOS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 	        }
 
-	        
+
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 80; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SLIMY_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 	        for (int i = 0; i < 120; ++i)
 	        {
