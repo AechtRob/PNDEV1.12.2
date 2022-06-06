@@ -67,6 +67,11 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 		maxHealthAgeable = 12D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return false;
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

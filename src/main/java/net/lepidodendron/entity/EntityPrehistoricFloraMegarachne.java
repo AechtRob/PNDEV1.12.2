@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraMegarachne extends EntityPrehistoricFloraEury
 		maxHealthAgeable = 5D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "late Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

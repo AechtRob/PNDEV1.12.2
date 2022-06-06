@@ -8,16 +8,14 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemBucketLaccognathus;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -25,7 +23,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
@@ -51,6 +48,11 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		maxWidth = 0.8F;
 		maxHeight = 0.65F;
 		maxHealthAgeable = 20.0D;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
 	}
 
 	public static String getPeriod() {return "Devonian";}
@@ -231,27 +233,6 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		return LepidodendronMod.LACCOGNATHUS_LOOT;
 	}
 
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (this.getAgeScale() < 0.5) { //Only catch babies
-			ItemStack itemstack = player.getHeldItem(hand);
-
-			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.WATER_BUCKET) {
-					player.inventory.clearMatchingItems(new ItemStack(Items.WATER_BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-					SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
-					player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					ItemStack itemstack1 = new ItemStack(ItemBucketLaccognathus.block, (int) (1));
-					itemstack1.setCount(1);
-					ItemHandlerHelper.giveItemToPlayer(player, itemstack1);
-					this.setDead();
-					return true;
-				}
-			}
-		}
-
-		return super.processInteract(player, hand);
-	}
 
 	@Override
 	public void travel(float strafe, float vertical, float forward) {

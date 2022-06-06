@@ -20,7 +20,7 @@ public class RenderHeterosteus extends RenderLiving<EntityPrehistoricFloraHetero
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHeterosteus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.2F) {
+        if (entity.isSmall()) {
             return RenderHeterosteus.TEXTURE_BABY;
         }
         return RenderHeterosteus.TEXTURE;

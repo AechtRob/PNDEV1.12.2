@@ -20,7 +20,7 @@ public class RenderAntineosteus extends RenderLiving<EntityPrehistoricFloraAntin
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAntineosteus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.2F) {
+        if (entity.isSmall()) {
             return RenderAntineosteus.TEXTURE_BABY;
         }
         return RenderAntineosteus.TEXTURE;

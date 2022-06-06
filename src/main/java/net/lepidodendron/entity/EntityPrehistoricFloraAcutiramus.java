@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraAcutiramus extends EntityPrehistoricFloraEury
 		maxHealthAgeable = 16D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "late Silurian - early Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

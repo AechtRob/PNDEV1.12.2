@@ -47,6 +47,11 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 		maxHealthAgeable = 25.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Ordovician";}
 
 	public static String getHabitat() {return "Aquatic";}

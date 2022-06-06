@@ -2,6 +2,7 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
+import net.lepidodendron.entity.render.RenderHandler;
 import net.lepidodendron.palaeobotanist.entity.Villager;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.Summoner;
@@ -893,6 +894,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(new LepidodendronFogSubscribers());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronWandHandler());
 		MinecraftForge.EVENT_BUS.register(new LepidodendronHoeHandler());
+		MinecraftForge.EVENT_BUS.register(new LepidodendronBucketHandler());
 
 		ModTriggers.registerTriggers();
 		LootConditionManager.registerCondition(new EntityInDimensionName.Serializer());

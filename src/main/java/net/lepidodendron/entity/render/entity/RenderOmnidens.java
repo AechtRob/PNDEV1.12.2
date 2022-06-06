@@ -21,7 +21,7 @@ public class RenderOmnidens extends RenderLiving<EntityPrehistoricFloraOmnidens>
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOmnidens entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderOmnidens.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

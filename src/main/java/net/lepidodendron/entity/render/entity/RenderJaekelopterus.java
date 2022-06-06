@@ -21,7 +21,7 @@ public class RenderJaekelopterus extends RenderLiving<EntityPrehistoricFloraJaek
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraJaekelopterus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderJaekelopterus.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

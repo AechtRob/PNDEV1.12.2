@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraProterogyrinus extends EntityPrehistoricFlora
 		maxHealthAgeable = 18.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "mid Carboniferous";}
 
 	public static String getHabitat() {return "Amphibious";}

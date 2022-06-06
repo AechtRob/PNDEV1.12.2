@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraBalanerpeton extends EntityPrehistoricFloraSw
 		maxHealthAgeable = 10.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Carboniferous";}
 
 	public static String getHabitat() {return "Amphibious";}

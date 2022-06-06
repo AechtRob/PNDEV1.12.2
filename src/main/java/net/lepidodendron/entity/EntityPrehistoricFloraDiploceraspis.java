@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 		maxHealthAgeable = 6.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {
 		return "Permian";
 	}

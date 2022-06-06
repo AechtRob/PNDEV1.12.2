@@ -57,6 +57,11 @@ public class EntityPrehistoricFloraAcanthostomatops extends EntityPrehistoricFlo
 	}
 
 	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
+	@Override
 	public int getAttackLength() {
 		return 15;
 	}

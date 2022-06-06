@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraRhizodus extends EntityPrehistoricFloraAgeabl
 		maxHealthAgeable = 28.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.25;
+	}
+
 	public static String getPeriod() {return "early - mid Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

@@ -20,7 +20,7 @@ public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopte
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMixopterus entity) {
         float scale = entity.getAgeScale();
-        if (scale < 0.5F) {
+        if (entity.isSmall()) {
             return RenderMixopterus.TEXTURE_BABY;
         }
         return RenderMixopterus.TEXTURE;

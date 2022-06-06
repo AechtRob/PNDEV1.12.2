@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraListracanthus extends EntityPrehistoricFloraA
 		maxHealthAgeable = 30;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "late Carboniferous - Permian - early Triassic";}
 
 	public static String getHabitat() {return "Aquatic";}

@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraMegalocephalus extends EntityPrehistoricFlora
 		maxHealthAgeable = 18.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "late Carboniferous";}
 
 	public static String getHabitat() {return "Amphibious";}

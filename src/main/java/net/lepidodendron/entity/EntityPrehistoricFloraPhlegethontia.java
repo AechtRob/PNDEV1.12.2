@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 		maxHealthAgeable = 18.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	public static String getHabitat() {return "Aquatic";}

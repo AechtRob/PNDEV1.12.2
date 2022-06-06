@@ -21,7 +21,7 @@ public class RenderHibbertopterus extends RenderLiving<EntityPrehistoricFloraHib
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHibbertopterus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderHibbertopterus.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

@@ -46,6 +46,12 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
 
     protected abstract float getAISpeedEurypterid();
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();

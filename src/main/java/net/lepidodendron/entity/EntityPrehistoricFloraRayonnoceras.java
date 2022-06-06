@@ -44,6 +44,11 @@ public class EntityPrehistoricFloraRayonnoceras extends EntityPrehistoricFloraNa
 		maxHealthAgeable = 46.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.3;
+	}
+
 	public static String getPeriod() {return "Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

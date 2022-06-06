@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraPoleumita extends EntityPrehistoricFloraTrilo
 	}
 
 	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
+	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));

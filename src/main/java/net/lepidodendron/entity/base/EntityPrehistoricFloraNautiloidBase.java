@@ -47,6 +47,12 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
     protected void initEntityAI() {
     }
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     @Override
     protected void entityInit() {
         super.entityInit();

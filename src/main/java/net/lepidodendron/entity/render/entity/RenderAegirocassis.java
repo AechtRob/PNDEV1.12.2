@@ -21,7 +21,7 @@ public class RenderAegirocassis extends RenderLiving<EntityPrehistoricFloraAegir
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAegirocassis entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderAegirocassis.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

@@ -7,22 +7,22 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockEurypteridEggsEurypterus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
-import net.lepidodendron.item.entities.ItemBucketEurypterus;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
@@ -46,6 +46,11 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Silurian";}
@@ -248,30 +253,7 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 	protected ResourceLocation getLootTable() {
 		 		if (!this.isPFAdult()) {
 			return LepidodendronMod.EURYPTERUS_LOOT_YOUNG;
-		}return LepidodendronMod.EURYPTERUS_LOOT;
-	}
-
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-	{
-		if (this.getAgeScale() < 0.5F) { //Only catch babies
-			ItemStack itemstack = player.getHeldItem(hand);
-
-			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.WATER_BUCKET) {
-					player.inventory.clearMatchingItems(new ItemStack(Items.WATER_BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-					SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
-					player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					ItemStack itemstack1 = new ItemStack(ItemBucketEurypterus.block, (int) (1));
-					itemstack1.setCount(1);
-					ItemHandlerHelper.giveItemToPlayer(player, itemstack1);
-					this.setDead();
-					return true;
-				}
-			}
-		}
-
-		return super.processInteract(player, hand);
+		} return LepidodendronMod.EURYPTERUS_LOOT;
 	}
 
 }

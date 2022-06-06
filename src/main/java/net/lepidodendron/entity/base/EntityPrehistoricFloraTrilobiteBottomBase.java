@@ -75,6 +75,12 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     @Override
     public boolean isBreedingItem(ItemStack stack)
     {

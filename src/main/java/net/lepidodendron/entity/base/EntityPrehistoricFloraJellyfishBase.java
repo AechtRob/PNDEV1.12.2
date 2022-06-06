@@ -73,6 +73,12 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
     }
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     @Override
     public boolean isPushedByWater()
     {

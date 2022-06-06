@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 		maxHealthAgeable = 4;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Triassic - Jurassic";}
 
 	public static String getHabitat() {return "Aquatic";}

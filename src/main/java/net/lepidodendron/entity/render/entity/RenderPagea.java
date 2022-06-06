@@ -21,7 +21,7 @@ public class RenderPagea extends RenderLiving<EntityPrehistoricFloraPagea> {
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPagea entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderPagea.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

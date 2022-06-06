@@ -14,9 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
@@ -73,8 +71,10 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 			//Get this chunk and the adjacent one:
 			int chunkx = playerIn.chunkCoordX;
 			int chunkz = playerIn.chunkCoordZ;
-			int i = chunkx * 16;
-			int j = chunkz * 16;
+			int ii = (chunkx * 16) - 16;
+			int jj = (chunkz * 16) - 16;
+			int i = ii;
+			int j = jj;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -83,8 +83,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 8, 8, new Random());
 			}
 
-			i = (chunkx * 16) + 16;
-			j = (chunkz * 16);
+			i = ii + 16;
+			j = jj;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -93,8 +93,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) + 16;
-			j = (chunkz * 16) + 16;
+			i = ii + 16;
+			j = jj + 16;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -103,8 +103,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) + 16;
-			j = (chunkz * 16) - 16;
+			i = ii + 16;
+			j = jj - 16;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -113,8 +113,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) - 16;
-			j = (chunkz * 16);
+			i = ii - 16;
+			j = jj;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -123,8 +123,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) - 16;
-			j = (chunkz * 16) + 16;
+			i = ii - 16;
+			j = jj + 16;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -133,8 +133,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) - 16;
-			j = (chunkz * 16) - 16;
+			i = ii - 16;
+			j = jj - 16;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -143,8 +143,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) + 16;
-			j = (chunkz * 16);
+			i = ii + 16;
+			j = jj;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -153,8 +153,8 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
-			i = (chunkx * 16) - 16;
-			j = (chunkz * 16);
+			i = ii - 16;
+			j = jj;
 			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null);
@@ -162,6 +162,10 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				Biome biome = worldIn.getBiome(new BlockPos(i, 0, j));
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
+
+			SoundEvent soundevent =(SoundEvent) SoundEvent.REGISTRY
+					.getObject(new ResourceLocation("lepidodendron:respawner"));
+			playerIn.getEntityWorld().playSound(playerIn, playerIn.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 		}

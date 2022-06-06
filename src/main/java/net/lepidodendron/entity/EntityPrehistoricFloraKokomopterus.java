@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraKokomopterus extends EntityPrehistoricFloraEu
 		maxHealthAgeable = 6D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
+	}
+
 	public static String getPeriod() {return "Silurian";}
 
 	public static String getHabitat() {return "Aquatic";}

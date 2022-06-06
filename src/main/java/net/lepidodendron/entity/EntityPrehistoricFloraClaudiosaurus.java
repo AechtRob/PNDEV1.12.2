@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {
 		return "late Permian - early Triassic";
 	}

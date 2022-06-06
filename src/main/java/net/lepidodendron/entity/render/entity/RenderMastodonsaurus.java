@@ -19,7 +19,7 @@ public class RenderMastodonsaurus extends RenderLiving<EntityPrehistoricFloraMas
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMastodonsaurus entity) {
         float scale = entity.getAgeScale();
-        if (scale < 0.15F) {
+        if (entity.isSmall()) {
             return RenderMastodonsaurus.TEXTURE_YOUNG;
         }
         return RenderMastodonsaurus.TEXTURE;

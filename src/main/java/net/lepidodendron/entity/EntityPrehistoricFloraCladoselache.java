@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraCladoselache extends EntityPrehistoricFloraAg
 		maxHealthAgeable = 22.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

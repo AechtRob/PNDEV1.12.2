@@ -80,6 +80,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return false;
     }
 
+    public abstract boolean isSmall();
+
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
+
     @Override
     public float getEyeHeight() {
         return Math.max(super.getEyeHeight(), 0.2F);

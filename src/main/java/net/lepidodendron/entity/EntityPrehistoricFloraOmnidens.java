@@ -68,6 +68,11 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 		LOOK_ANIMATION = Animation.create(120);
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Cambrian";}
 
 	public static String getHabitat() {return "Aquatic";}

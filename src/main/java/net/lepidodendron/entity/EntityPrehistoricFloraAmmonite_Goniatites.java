@@ -43,6 +43,11 @@ public class EntityPrehistoricFloraAmmonite_Goniatites extends EntityPrehistoric
 		maxHealthAgeable = 3;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic";}
 
 	public static String getHabitat() {return "Aquatic";}

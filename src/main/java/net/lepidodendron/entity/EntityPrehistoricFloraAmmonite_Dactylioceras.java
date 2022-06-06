@@ -42,6 +42,11 @@ public class EntityPrehistoricFloraAmmonite_Dactylioceras extends EntityPrehisto
 		maxHealthAgeable = 3;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Jurassic";}
 
 	public static String getHabitat() {return "Aquatic";}

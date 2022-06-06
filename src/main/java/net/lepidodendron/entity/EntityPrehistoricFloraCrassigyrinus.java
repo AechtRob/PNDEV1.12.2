@@ -57,6 +57,11 @@ public class EntityPrehistoricFloraCrassigyrinus extends EntityPrehistoricFloraS
 		maxHealthAgeable = 24.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
+	}
+
 	public static String getPeriod() {return "Carboniferous";}
 
 	public static String getHabitat() {return "Amphibious";}

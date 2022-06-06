@@ -42,6 +42,11 @@ public class EntityPrehistoricFloraCooperoceras extends EntityPrehistoricFloraNa
 		maxHealthAgeable = 2.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Aquatic";}

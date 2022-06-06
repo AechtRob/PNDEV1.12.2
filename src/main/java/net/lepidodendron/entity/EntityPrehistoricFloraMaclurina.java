@@ -44,6 +44,11 @@ public class EntityPrehistoricFloraMaclurina extends EntityPrehistoricFloraTrilo
 		enablePersistence();
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Ordovician";}
 
 	public static String getHabitat() {return "Aquatic";}

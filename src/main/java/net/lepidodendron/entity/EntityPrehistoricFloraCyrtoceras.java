@@ -42,6 +42,11 @@ public class EntityPrehistoricFloraCyrtoceras extends EntityPrehistoricFloraNaut
 		maxHealthAgeable = 4.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

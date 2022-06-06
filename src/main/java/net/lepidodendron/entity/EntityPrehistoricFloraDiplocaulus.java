@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraDiplocaulus extends EntityPrehistoricFloraSwi
 		maxHealthAgeable = 10.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.8;
+	}
+
 	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	public static String getHabitat() {return "Amphibious";}

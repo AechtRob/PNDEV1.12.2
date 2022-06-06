@@ -64,6 +64,11 @@ public class EntityPrehistoricFloraSpathicephalus extends EntityPrehistoricFlora
 		FEED_ANIMATION = Animation.create(120);
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "mid Carboniferous";}
 
 	public static String getHabitat() {return "Amphibious";}

@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 		maxHealthAgeable = 26.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "[late Carboniferous -] early Permian";}
 
 	public static String getHabitat() {return "Amphibious";}

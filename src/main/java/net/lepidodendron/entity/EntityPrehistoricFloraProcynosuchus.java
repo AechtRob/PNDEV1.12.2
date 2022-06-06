@@ -56,6 +56,16 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return false;
+	}
+
+	@Override
+	public String getBucketMessage() {
+		return "will not go into buckets";
+	}
+
 	public float getTravelSpeed() {
 		return this.getAISpeedSwimmingAmphibian();
 	}

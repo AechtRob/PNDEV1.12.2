@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraDracopristis extends EntityPrehistoricFloraAg
 		maxHealthAgeable = 28.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

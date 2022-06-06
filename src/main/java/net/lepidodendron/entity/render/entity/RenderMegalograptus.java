@@ -20,7 +20,7 @@ public class RenderMegalograptus extends RenderLiving<EntityPrehistoricFloraMega
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMegalograptus entity) {
         float scale = entity.getAgeScale();
-        if (scale < 0.5F) {
+        if (entity.isSmall()) {
             return RenderMegalograptus.TEXTURE_BABY;
         }
         return RenderMegalograptus.TEXTURE;

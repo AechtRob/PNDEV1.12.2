@@ -1,5 +1,15 @@
 {
   
+  
+  "respawner": {
+    "sounds": [
+      {
+        "name": "lepidodendron:respawner",
+        "stream": false
+      }
+    ]
+  },
+  
   "wet_crunch_plants": {
     "sounds": [
       {

@@ -57,6 +57,11 @@ public class EntityPrehistoricFloraHyneria extends EntityPrehistoricFloraAgeable
 		maxHealthAgeable = 28.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

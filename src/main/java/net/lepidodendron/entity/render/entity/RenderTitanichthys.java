@@ -22,7 +22,7 @@ public class RenderTitanichthys extends RenderLiving<EntityPrehistoricFloraTitan
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTitanichthys entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.2F) {
+        if (entity.isSmall()) {
             return RenderTitanichthys.TEXTURE_BABY;
         }
         return RenderTitanichthys.TEXTURE;

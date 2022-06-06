@@ -45,6 +45,11 @@ public class EntityPrehistoricFloraPhanerotinus extends EntityPrehistoricFloraTr
 	}
 
 	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
+	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (OreDictionary.containsMatch(false, OreDictionary.getOres("itemAlgae"), stack));

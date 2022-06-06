@@ -44,6 +44,11 @@ public class EntityPrehistoricFloraCyclonema extends EntityPrehistoricFloraTrilo
 		enablePersistence();
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
 	public static String getHabitat() {return "Aquatic Gastropod";}

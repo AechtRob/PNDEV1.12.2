@@ -10,21 +10,19 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.item.entities.ItemBucketShonisaurus;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.*;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
@@ -48,6 +46,11 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 		maxWidth = 3.59F;
 		maxHeight = 3.99F;
 		maxHealthAgeable = 100.0D;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.075;
 	}
 
 	public static String getPeriod() {return "Triassic";}
@@ -80,7 +83,7 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	public int getAdultAge() {
-		return 96000;
+		return 156000;
 	}
 
 	@Override
@@ -211,29 +214,6 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 			return LepidodendronMod.SHONISAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.SHONISAURUS_LOOT;
-	}
-
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-	{
-		if (this.getAgeScale() < 0.1) { //Only catch babies
-			ItemStack itemstack = player.getHeldItem(hand);
-
-			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.WATER_BUCKET) {
-					player.inventory.clearMatchingItems(new ItemStack(Items.WATER_BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-					SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
-					player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-					ItemStack itemstack1 = new ItemStack(ItemBucketShonisaurus.block, (int) (1));
-					itemstack1.setCount(1);
-					ItemHandlerHelper.giveItemToPlayer(player, itemstack1);
-					this.setDead();
-					return true;
-				}
-			}
-		}
-
-		return super.processInteract(player, hand);
 	}
 
 }

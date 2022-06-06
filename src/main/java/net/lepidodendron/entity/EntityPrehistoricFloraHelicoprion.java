@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 	}
 
 	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.3;
+	}
+
+	@Override
 	public int getTalkInterval() {
 		return 225;
 	}

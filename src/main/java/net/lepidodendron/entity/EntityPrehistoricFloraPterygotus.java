@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraPterygotus extends EntityPrehistoricFloraEury
 		maxHealthAgeable = 15D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "late Silurian - Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

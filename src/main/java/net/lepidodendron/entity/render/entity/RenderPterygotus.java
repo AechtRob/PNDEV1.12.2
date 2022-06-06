@@ -21,7 +21,7 @@ public class RenderPterygotus extends RenderLiving<EntityPrehistoricFloraPterygo
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPterygotus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderPterygotus.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {

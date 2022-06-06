@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 		maxHealthAgeable = 56.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.25;
+	}
+
 	public static String getPeriod() {return "early Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

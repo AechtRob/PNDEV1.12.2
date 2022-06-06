@@ -20,7 +20,7 @@ public class RenderKokomopterus extends RenderLiving<EntityPrehistoricFloraKokom
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraKokomopterus entity) {
         float scale = entity.getAgeScale();
-        if (scale < 0.5F) {
+        if (entity.isSmall()) {
             return RenderKokomopterus.TEXTURE_BABY;
         }
         return RenderKokomopterus.TEXTURE;

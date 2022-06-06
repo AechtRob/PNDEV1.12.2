@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 		maxHealthAgeable = 20.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
+	}
+
 	public static String getPeriod() {return "early- to mid-Permian";}
 
 	public static String getHabitat() {return "Amphibious";}

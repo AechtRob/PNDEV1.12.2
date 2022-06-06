@@ -1,0 +1,18 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+       "type": "forge:ore_dict",
+        "ore": "blockFossil"
+    }
+  ],
+  "result": {
+    "item": "patchouli:guide_book",
+    "count": 1,
+    "nbt": {"patchouli:book":"lepidodendron:paleopedia"}
+  }
+}

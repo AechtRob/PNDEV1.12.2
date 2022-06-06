@@ -39,7 +39,9 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         }
     }
 
-    //private Animation animation = NO_ANIMATION;
+    public String getBucketMessage() {
+        return "is too grown up to fit into a bucket";
+    }
 
     protected void initEntityAI() {}
 
@@ -49,6 +51,8 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
     }
 
     public abstract String getTexture();
+
+    public abstract boolean isSmall();
 
     @Override
     protected void applyEntityAttributes() {

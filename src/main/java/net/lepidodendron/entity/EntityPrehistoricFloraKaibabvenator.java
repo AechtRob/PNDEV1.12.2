@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 		maxHealthAgeable = 48.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.2;
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Aquatic";}

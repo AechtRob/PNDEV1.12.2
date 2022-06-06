@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 		maxHealthAgeable = 42.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.3;
+	}
+
 	public static String getPeriod() {return "early Permian";}
 
 	public static String getHabitat() {return "Amphibious";}

@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraMelosaurus extends EntityPrehistoricFloraSwim
 		maxHealthAgeable = 30.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Amphibious";}

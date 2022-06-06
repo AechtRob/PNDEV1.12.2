@@ -59,6 +59,11 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 		maxHealthAgeable = 64.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.25;
+	}
+
 	public static String getPeriod() {return "Triassic";}
 
 	public static String getHabitat() {return "Amphibious";}

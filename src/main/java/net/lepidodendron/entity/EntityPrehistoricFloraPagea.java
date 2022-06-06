@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraPagea extends EntityPrehistoricFloraEurypteri
 		maxHealthAgeable = 18D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.4;
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

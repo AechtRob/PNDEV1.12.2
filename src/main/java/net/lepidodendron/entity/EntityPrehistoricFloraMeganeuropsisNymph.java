@@ -6,14 +6,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
 import net.lepidodendron.entity.ai.EurypteridWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
-import net.lepidodendron.item.entities.ItemBucketMeganeuropsisNymph;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
@@ -21,7 +18,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 
@@ -44,6 +40,11 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 5.0D;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return true;
 	}
 
 	public static String getPeriod() {return "early Permian";}
@@ -207,26 +208,4 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 		return LepidodendronMod.MEGANEUROPSIS_LOOT;
 	}
 
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-	{
-		ItemStack itemstack = player.getHeldItem(hand);
-
-		if (!itemstack.isEmpty())
-		{
-			if (itemstack.getItem() == Items.WATER_BUCKET)
-			{
-				player.inventory.clearMatchingItems(new ItemStack(Items.WATER_BUCKET, (int) (1)).getItem(), -1, (int) 1, null);
-				SoundEvent soundevent = SoundEvents.ITEM_BUCKET_FILL;
-				player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-				ItemStack itemstack1 = new ItemStack(ItemBucketMeganeuropsisNymph.block, (int) (1));
-				itemstack1.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(player, itemstack1);
-				this.setDead();
-				return true;
-			}
-		}
-
-		return super.processInteract(player, hand);
-	}
 }

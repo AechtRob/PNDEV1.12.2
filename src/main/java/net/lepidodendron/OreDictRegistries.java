@@ -122,6 +122,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		} catch (Exception e) {
 		}
 
+		//Fossils
+		OreDictionary.registerOre("blockFossil", BlockPlantFossil.block);
+
 		//Wood:
 		OreDictionary.registerOre("plankWood", BlockStickBundle.block);
 

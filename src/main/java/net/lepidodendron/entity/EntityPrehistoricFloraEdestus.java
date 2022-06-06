@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraEdestus extends EntityPrehistoricFloraAgeable
 		maxHealthAgeable = 42.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.2;
+	}
+
 	public static String getPeriod() {return "late Carboniferous";}
 
 	public static String getHabitat() {return "Aquatic";}

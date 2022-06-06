@@ -42,6 +42,11 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 		maxHealthAgeable = 8.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.5;
+	}
+
 	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
 	public static String getHabitat() {return "Aquatic";}

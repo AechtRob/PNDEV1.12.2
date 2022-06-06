@@ -43,6 +43,11 @@ public class EntityPrehistoricFloraAmmonite_Coroniceras extends EntityPrehistori
 		maxHealthAgeable = 4;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Jurassic";}
 
 	public static String getHabitat() {return "Aquatic";}

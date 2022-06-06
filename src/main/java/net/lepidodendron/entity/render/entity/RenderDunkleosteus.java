@@ -20,7 +20,7 @@ public class RenderDunkleosteus extends RenderLiving<EntityPrehistoricFloraDunkl
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDunkleosteus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.2F) {
+        if (entity.isSmall()) {
             return RenderDunkleosteus.TEXTURE_BABY;
         }
         return RenderDunkleosteus.TEXTURE;

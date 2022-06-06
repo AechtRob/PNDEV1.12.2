@@ -43,6 +43,11 @@ public class EntityPrehistoricFloraAmmonite_Cylolobus extends EntityPrehistoricF
 		maxHealthAgeable = 4;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Aquatic";}

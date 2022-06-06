@@ -44,6 +44,11 @@ public class EntityPrehistoricFloraOrthoceras extends EntityPrehistoricFloraNaut
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public boolean isSmall() {
+		return this.getAgeScale() < 0.2;
+	}
+
 	public static String getPeriod() {return "Ordovician - Silurian";}
 
 	public static String getHabitat() {return "Aquatic";}

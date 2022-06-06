@@ -21,7 +21,7 @@ public class RenderAcutiramus extends RenderLiving<EntityPrehistoricFloraAcutira
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAcutiramus entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.4F) {
+        if (entity.isSmall()) {
             return RenderAcutiramus.TEXTURE_BABY;
         }
         else if (scale < 0.7F) {
