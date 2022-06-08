@@ -4,10 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -52,8 +53,9 @@ public class BlockRhacophyton extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:rhacophyton", "inventory"));
 	}
 
-	public static class BlockCustomFlower extends BlockBush {
+	public static class BlockCustomFlower extends SeedSporeBushBase {
 		public BlockCustomFlower() {
+			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
@@ -118,6 +120,21 @@ public class BlockRhacophyton extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return Block.EnumOffsetType.XZ;
 	    }
+
+		@Override
+		public Block planted() {
+			return BlockRhacophyton.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 	
 }

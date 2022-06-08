@@ -99,7 +99,7 @@ public class ItemIsoetesItem extends ElementsLepidodendronMod.ModElement {
 	                        CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)playerIn, blockpos1, itemstack);
 	                    }
 	
-	                    if (!playerIn.capabilities.isCreativeMode)
+	                    if (!playerIn.capabilities.isCreativeMode && itemstack.getItem() == this)
 	                    {
 	                        itemstack.shrink(1);
 	                    }

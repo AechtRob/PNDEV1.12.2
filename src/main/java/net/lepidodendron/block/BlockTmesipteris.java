@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
@@ -19,7 +20,6 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -171,8 +171,8 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
         return false;
     }
 
-	public static class BlockCustom extends Block {
-		public static final PropertyDirection FACING = BlockDirectional.FACING;
+	public static class BlockCustom extends SeedSporeFacingBlockBase {
+
 		public BlockCustom() {
 			super(Material.PLANTS);
 			setTranslationKey("pf_tmesipteris");
@@ -381,5 +381,14 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockTmesipteris.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

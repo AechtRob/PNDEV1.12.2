@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -64,7 +65,7 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	public static final PropertyBool DEEP = PropertyBool.create("deep");
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeBlockBase {
 	    
 		public BlockCustom() {
 			super(Material.WATER);
@@ -322,5 +323,14 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockPachypteris.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

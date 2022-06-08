@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -45,7 +46,7 @@ public class BlockAnkyropterisStemNW extends ElementsLepidodendronMod.ModElement
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:ankyropteris_stem_nw", "inventory"));
 	//}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeFacingBlockBase {
 	
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool JOINED = PropertyBool.create("joined");
@@ -289,5 +290,14 @@ public class BlockAnkyropterisStemNW extends ElementsLepidodendronMod.ModElement
 
 		@Override public boolean isLadder(IBlockState state, IBlockAccess world, BlockPos pos, EntityLivingBase entity) { return true; }
 
+		@Override
+		public Block planted() {
+			return BlockAnkyropterisSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

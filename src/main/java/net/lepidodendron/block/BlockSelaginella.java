@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -69,7 +70,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:selaginella", "inventory"));
 	}
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -1429,6 +1430,15 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		@Override
+		public Block planted() {
+			return BlockSelaginella.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 
 	public static class TileEntityCustom extends TileEntity {

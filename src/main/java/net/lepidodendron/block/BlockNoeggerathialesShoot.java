@@ -2,6 +2,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -54,7 +55,7 @@ public class BlockNoeggerathialesShoot extends ElementsLepidodendronMod.ModEleme
 		//		new ModelResourceLocation("lepidodendron:noeggerathiales_shoot_worldgen", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_noeggerathiales_shoot_worldgen");
@@ -251,5 +252,14 @@ public class BlockNoeggerathialesShoot extends ElementsLepidodendronMod.ModEleme
 			return true;
 		}
 
+		@Override
+		public Block planted() {
+			return BlockNoeggerathialesSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

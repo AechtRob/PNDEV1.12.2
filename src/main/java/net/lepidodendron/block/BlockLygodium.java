@@ -4,9 +4,9 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeVineBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockVine;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -59,7 +59,7 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:lygodium", "inventory"));
 	}
-	public static class BlockCustom extends BlockVine {
+	public static class BlockCustom extends SeedSporeVineBase {
 		public BlockCustom() {
 			//super(Material.VINE);
 			setSoundType(SoundType.PLANT);
@@ -114,5 +114,14 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockLygodium.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

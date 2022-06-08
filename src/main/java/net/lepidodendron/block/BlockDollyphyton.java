@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -12,7 +13,6 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -69,9 +69,8 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:dollyphyton", "inventory"));
 	}
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
-		
-		public static final PropertyDirection FACING = BlockDirectional.FACING;
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
+
 		public static final PropertyBool NORTH = PropertyBool.create("north");
    		public static final PropertyBool EAST = PropertyBool.create("east");
 	    public static final PropertyBool SOUTH = PropertyBool.create("south");
@@ -1427,6 +1426,16 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 				world.spawnEntity(entityToSpawn);
 				//System.err.println("Spawned " + entityToSpawn);
 			}
+		}
+
+		@Override
+		public Block planted() {
+			return BlockDollyphyton.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
 		}
 	}
 

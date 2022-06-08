@@ -4,9 +4,9 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemWaterHorsetailItem;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -15,6 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -53,7 +54,7 @@ public class BlockWaterHorsetail extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:water_horsetail", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable {
+	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -116,7 +117,7 @@ public class BlockWaterHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(ItemWaterHorsetailItem.block, (int) (1));
+			return new ItemStack(blockItem(), (int) (1));
 		}
 
 		@Override
@@ -125,7 +126,7 @@ public class BlockWaterHorsetail extends ElementsLepidodendronMod.ModElement {
 				drops.add(new ItemStack(Blocks.AIR, (int) (1)));
 			}
 			else {
-				drops.add(new ItemStack(ItemWaterHorsetailItem.block, (int) (1)));
+				drops.add(new ItemStack(blockItem(), (int) (1)));
 			}
 		}
 
@@ -274,5 +275,19 @@ public class BlockWaterHorsetail extends ElementsLepidodendronMod.ModElement {
 	    }
 
 
+		@Override
+		public Block planted() {
+			return BlockWaterHorsetail.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 0;
+		}
+
+		@Override
+		public Item blockItem() {
+			return ItemWaterHorsetailItem.block;
+		}
 	}
 }

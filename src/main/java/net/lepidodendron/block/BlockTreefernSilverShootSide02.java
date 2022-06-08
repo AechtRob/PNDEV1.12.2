@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
@@ -54,7 +55,7 @@ public class BlockTreefernSilverShootSide02 extends ElementsLepidodendronMod.Mod
 	//			new ModelResourceLocation("lepidodendron:silver_treefern_shoot_side_02", "inventory"));
 	//}
 	
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeBlockBase {
 
 		public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
@@ -260,5 +261,14 @@ public class BlockTreefernSilverShootSide02 extends ElementsLepidodendronMod.Mod
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockTreefernSilverSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureBothrodendronStrobilusNeighbourBlockChanges;
 import net.minecraft.block.Block;
@@ -63,7 +64,7 @@ public class BlockBothrodendronStrobilus extends ElementsLepidodendronMod.ModEle
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:bothrodendron_strobilus", "inventory"));
 	}
-	public static class BlockCustom extends Block implements ITileEntityProvider {
+	public static class BlockCustom extends SeedSporeBlockBase implements ITileEntityProvider {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -246,7 +247,16 @@ public class BlockBothrodendronStrobilus extends ElementsLepidodendronMod.ModEle
 				}
 		    }
 	    }
-	    
+
+		@Override
+		public Block planted() {
+			return BlockBothrodendronSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 
 	public static class TileEntityCustom extends TileEntity {

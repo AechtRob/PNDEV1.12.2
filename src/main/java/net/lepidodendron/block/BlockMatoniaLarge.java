@@ -4,11 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -58,9 +59,10 @@ public class BlockMatoniaLarge extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:matonia_large", "inventory"));
 	}
 
-	public static class BlockCustomFlower extends BlockBush {
+	public static class BlockCustomFlower extends SeedSporeBushBase {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustomFlower() {
+			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
@@ -171,6 +173,21 @@ public class BlockMatoniaLarge extends ElementsLepidodendronMod.ModElement {
 	        tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Override
+		public Block planted() {
+			return BlockMatoniaLarge.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 	
 }

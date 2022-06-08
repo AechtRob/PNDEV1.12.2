@@ -5,13 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSwamp;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -183,7 +183,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends SeedSporeReedBase {
 
 		public static final PropertyBool BASE = PropertyBool.create("base");
 		public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
@@ -362,6 +362,20 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			super.onBlockAdded(world, pos, state);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockPseudobornia.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 	
 	public boolean shouldGenerateInDimension(int id, int[] dims) {

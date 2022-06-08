@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -61,7 +62,7 @@ public class BlockNematophyta extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:nematophyta", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNematophyta.BlockCustom.SPREADABLE).ignore(BlockNematophyta.BlockCustom.NORTH).ignore(BlockNematophyta.BlockCustom.SOUTH).ignore(BlockNematophyta.BlockCustom.EAST).ignore(BlockNematophyta.BlockCustom.WEST).ignore(BlockNematophyta.BlockCustom.UP).ignore(BlockNematophyta.BlockCustom.DOWN).build());
 	}
-	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
+	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -1347,5 +1348,14 @@ public class BlockNematophyta extends ElementsLepidodendronMod.ModElement {
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockNematophyta.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

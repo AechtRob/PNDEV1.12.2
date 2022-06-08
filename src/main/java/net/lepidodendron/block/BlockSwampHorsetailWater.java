@@ -4,9 +4,9 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -15,6 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
@@ -53,7 +54,7 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 	//			new ModelResourceLocation("lepidodendron:archaefructus", "inventory"));
 	//}
 
-	public static class BlockCustom extends BlockLilyPad implements IGrowable, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeLilyPadBase implements IGrowable, net.minecraftforge.common.IShearable {
 		public BlockCustom() {
 			//super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
@@ -309,5 +310,19 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 	        return EnumOffsetType.XZ;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockSwampHorsetailWaterNoSpore.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return ItemSwampHorsetailItem.block;
+		}
 	}
 }

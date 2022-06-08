@@ -5,9 +5,9 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
-public abstract class SeedSporeBushBase extends BlockBush {
+public abstract class SeedSporeBushLilyPadBase extends BlockBush {
 
-    public SeedSporeBushBase(Material materialIn) {
+    public SeedSporeBushLilyPadBase(Material materialIn) {
         super(materialIn);
     }
 

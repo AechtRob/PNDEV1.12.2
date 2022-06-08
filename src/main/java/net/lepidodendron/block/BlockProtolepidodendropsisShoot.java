@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -53,7 +54,7 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:encblue_log", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).build());
 	}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeBlockBase {
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 
@@ -190,7 +191,16 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
 			return BlockFaceShape.UNDEFINED;
 		}
-		
-    }
+
+		@Override
+		public Block planted() {
+			return BlockProtolepidodendropsis.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+	}
 
 }

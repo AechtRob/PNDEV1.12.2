@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -51,7 +52,7 @@ public class BlockPachypterisTop extends ElementsLepidodendronMod.ModElement {
 	//			new ModelResourceLocation("lepidodendron:isoetes", "inventory"));
 	//}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeBlockBase {
 
 		protected static final AxisAlignedBB PACHYPTERIS_TOP_AABB = new AxisAlignedBB(0D, -1D, 0D, 1D, 1D, 1D);
 		
@@ -197,5 +198,14 @@ public class BlockPachypterisTop extends ElementsLepidodendronMod.ModElement {
 	    	super.breakBlock(worldIn, pos, state);
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockPachypteris.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

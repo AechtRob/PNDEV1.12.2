@@ -1,0 +1,385 @@
+
+package net.lepidodendron.item;
+
+import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockLycopiaTop;
+import net.lepidodendron.block.base.*;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockVine;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
+
+@ElementsLepidodendronMod.ModElement.Tag
+public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:spore_collection_envelope")
+	public static final Item block = null;
+	public ItemCollectionEnvelope(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.spore_collection_envelope);
+	}
+
+	@Override
+	public void initElements() {
+		elements.items.add(() -> new ItemCustom());
+	}
+
+	@SideOnly(Side.CLIENT)
+	@Override
+	public void registerModels(ModelRegistryEvent event) {
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"));
+	}
+	public static class ItemCustom extends Item {
+		public ItemCustom() {
+			setMaxDamage(0);
+			maxStackSize = 64;
+			setTranslationKey("pf_spore_collection_envelope");
+			setRegistryName("spore_collection_envelope");
+			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Override
+		public String getTranslationKey(ItemStack stack) {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().getString("plant") != null) {
+					if (!stack.getTagCompound().getString("plant").equalsIgnoreCase("")) {
+						String itemString = stack.getTagCompound().getString("plant");
+						itemString = itemString.replace(LepidodendronMod.MODID + ":", "");
+						return "item.pf_envelope_" + itemString;
+					}
+				}
+			}
+			return super.getTranslationKey(stack);
+		}
+
+		@Override
+		public int getItemEnchantability() {
+			return 0;
+		}
+
+		@Override
+		public int getMaxItemUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
+		public float getDestroySpeed(ItemStack par1ItemStack, IBlockState par2Block) {
+			return 1F;
+		}
+
+		@Override
+		public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
+		{
+			ItemStack itemstack = player.getHeldItem(hand);
+
+			if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack))
+			{
+				return EnumActionResult.FAIL;
+			}
+			//else
+			if (itemstack.hasTagCompound()) {
+				if (itemstack.getTagCompound().getString("plant") != null) {
+					if (!itemstack.getTagCompound().getString("plant").equalsIgnoreCase("")) {
+						ResourceLocation locationBlock = new ResourceLocation(itemstack.getTagCompound().getString("plant"));
+						Block plantBlock = ForgeRegistries.BLOCKS.getValue(locationBlock);
+
+						int offsetY = itemstack.getTagCompound().getInteger("offsetY");
+						boolean willEmpty = itemRand.nextInt(3) == 0;
+						if (plantBlock != null && plantBlock != Blocks.AIR) {
+							//If it's a vine:
+							if (plantBlock instanceof BlockVine) {
+								if (worldIn.isAirBlock(pos.offset(facing))
+										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
+								) {
+									//We can plant this here!
+									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
+											.withProperty(BlockVine.NORTH, facing.getOpposite() == EnumFacing.NORTH)
+											.withProperty(BlockVine.SOUTH, facing.getOpposite() == EnumFacing.SOUTH)
+											.withProperty(BlockVine.EAST, facing.getOpposite() == EnumFacing.EAST)
+											.withProperty(BlockVine.WEST, facing.getOpposite() == EnumFacing.WEST)
+											.withProperty(BlockVine.UP, facing.getOpposite() == EnumFacing.UP));
+									plantBlock.onBlockAdded(worldIn, pos.offset(facing), plantBlock.getDefaultState());
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									return EnumActionResult.SUCCESS;
+								}
+							}
+							//If it's a moss:
+							else if (plantBlock instanceof SeedSporeFacingBlockBase) {
+								if (worldIn.isAirBlock(pos.offset(facing))
+										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
+								) {
+									//We can plant this here!
+									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
+											.withProperty(SeedSporeFacingBlockBase.FACING, facing));
+									plantBlock.onBlockAdded(worldIn, pos.offset(facing), plantBlock.getDefaultState());
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									return EnumActionResult.SUCCESS;
+
+								}
+							}
+							//If it's a directional block:
+							else if (plantBlock instanceof SeedSporeFacingBlockBase) {
+								if (worldIn.isAirBlock(pos.offset(facing))
+										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
+								) {
+									//We can plant this here!
+									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
+											.withProperty(SeedSporeFacingBlockBase.FACING, facing));
+									plantBlock.onBlockAdded(worldIn, pos.offset(facing), plantBlock.getDefaultState());
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									return EnumActionResult.SUCCESS;
+
+								}
+							}
+							//If it's a floater:
+							else if (plantBlock instanceof SeedSporeLilyPadBase
+								|| plantBlock instanceof SeedSporeBushLilyPadBase) {
+								SeedSporeLilyPadBase blockPlant = (SeedSporeLilyPadBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
+
+								//We can plant this here!
+								ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+								if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
+									itemstack.shrink(1);
+									ItemHandlerHelper.giveItemToPlayer(player, envelope);
+								}
+								if (result.getType() == EnumActionResult.SUCCESS) {
+									return EnumActionResult.SUCCESS;
+								}
+
+							}
+							//If it's not a vine or floater:
+							else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))
+									&& plantBlock.canPlaceBlockAt(worldIn, pos.up(offsetY))
+							) {
+								if (plantBlock instanceof SeedSporeReedBase) {
+									SeedSporeReedBase blockPlant = (SeedSporeReedBase) plantBlock;
+									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+									if (itemPlant != null) {
+										ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
+										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+										if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
+											itemstack.shrink(1);
+											ItemHandlerHelper.giveItemToPlayer(player, envelope);
+										}
+										if (result.getType() == EnumActionResult.SUCCESS) {
+											return EnumActionResult.SUCCESS;
+										}
+									}
+								}
+								else if (plantBlock instanceof SeedSporeBushBase) {
+									SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+									if (itemPlant != null) {
+										ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
+										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+										if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
+											itemstack.shrink(1);
+											ItemHandlerHelper.giveItemToPlayer(player, envelope);
+										}
+										if (result.getType() == EnumActionResult.SUCCESS) {
+											return EnumActionResult.SUCCESS;
+										}
+									}
+								}
+
+								//We can plant this here!
+								SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+								player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+								worldIn.setBlockState(pos.up(offsetY), plantBlock.getDefaultState());
+								plantBlock.onBlockAdded(worldIn, pos.up(offsetY), plantBlock.getDefaultState());
+								ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+								if (!player.isCreative() && willEmpty) {
+									itemstack.shrink(1);
+									ItemHandlerHelper.giveItemToPlayer(player, envelope);
+								}
+								return EnumActionResult.SUCCESS;
+							}
+						}
+						//Vanilla ferns:
+						else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))
+								&& Blocks.DOUBLE_PLANT.getStateFromMeta(3).getBlock().canPlaceBlockAt(worldIn, pos.up(offsetY))
+								&& itemstack.getTagCompound().getString("plant").equalsIgnoreCase("large_fern")) {
+							//We can plant this here!
+							SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+							player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							worldIn.setBlockState(pos.up(offsetY), Blocks.DOUBLE_PLANT.getStateFromMeta(3));
+							Blocks.DOUBLE_PLANT.getStateFromMeta(3).getBlock().onBlockPlacedBy(worldIn, pos.up(offsetY), Blocks.DOUBLE_PLANT.getStateFromMeta(3), player, itemstack);
+							ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+							if (!player.isCreative() && willEmpty) {
+								itemstack.shrink(1);
+								ItemHandlerHelper.giveItemToPlayer(player, envelope);
+							}
+							return EnumActionResult.SUCCESS;
+						}
+						else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))
+								&& Blocks.TALLGRASS.getStateFromMeta(2).getBlock().canPlaceBlockAt(worldIn, pos.up(offsetY))
+								&& itemstack.getTagCompound().getString("plant").equalsIgnoreCase("small_fern")) {
+							//We can plant this here!
+							SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+							player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							worldIn.setBlockState(pos.up(offsetY), Blocks.TALLGRASS.getStateFromMeta(2));
+							ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+							if (!player.isCreative() && willEmpty) {
+								itemstack.shrink(1);
+								ItemHandlerHelper.giveItemToPlayer(player, envelope);
+							}
+							return EnumActionResult.SUCCESS;
+						}
+					}
+				}
+			}
+
+			if (collectSpores(itemstack, worldIn, pos, player, hand))
+			{
+				return EnumActionResult.SUCCESS;
+			}
+			return EnumActionResult.PASS;
+		}
+
+		public static boolean collectSpores(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player, @javax.annotation.Nullable EnumHand hand)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().getString("plant") != null) {
+					if (!stack.getTagCompound().getString("plant").equalsIgnoreCase("")) {
+						return false;
+					}
+				}
+			}
+
+			IBlockState iblockstate = worldIn.getBlockState(target);
+			Block blockTarget = iblockstate.getBlock();
+			String nbtBlock = "";
+
+			if (!worldIn.isRemote) {
+				boolean collected = false;
+				EntityItem entityToSpawn = null;
+				int nbtOffsetY = 0;
+				ItemStack spores = null;
+
+				if (blockTarget instanceof SeedSporeBushBase) {
+					SeedSporeBushBase blockEnvelope = (SeedSporeBushBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeLeavesBase) {
+					SeedSporeLeavesBase blockEnvelope = (SeedSporeLeavesBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+			 	else if (blockTarget instanceof SeedSporeReedBase) {
+					SeedSporeReedBase blockEnvelope = (SeedSporeReedBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeBlockBase) {
+					if (blockTarget == BlockLycopiaTop.block) {
+						if (iblockstate.getValue(BlockLycopiaTop.VAR) != 0 && iblockstate.getValue(BlockLycopiaTop.VAR) != 1) {
+							return false;
+						}
+					}
+					SeedSporeBlockBase blockEnvelope = (SeedSporeBlockBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeVineBase) {
+					SeedSporeVineBase blockEnvelope = (SeedSporeVineBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeLilyPadBase) {
+					SeedSporeLilyPadBase blockEnvelope = (SeedSporeLilyPadBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeBushLilyPadBase) {
+					SeedSporeBushLilyPadBase blockEnvelope = (SeedSporeBushLilyPadBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+				else if (blockTarget instanceof SeedSporeFacingBlockBase) {
+					SeedSporeFacingBlockBase blockEnvelope = (SeedSporeFacingBlockBase) blockTarget;
+					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
+					nbtOffsetY = blockEnvelope.offsetY();
+					collected = true;
+				}
+
+				//Vanilla ferns:
+				else if (blockTarget == Blocks.DOUBLE_PLANT.getStateFromMeta(3).getBlock() && LepidodendronConfig.doPropagationVanilla) {
+					nbtBlock = "large_fern";
+					nbtOffsetY = 1;
+					collected = true;
+				}
+				else if (blockTarget == Blocks.TALLGRASS.getStateFromMeta(2).getBlock() && LepidodendronConfig.doPropagationVanilla) {
+					nbtBlock = "small_fern";
+					nbtOffsetY = 1;
+					collected = true;
+				}
+
+				if (collected) {
+					stack.shrink(1);
+					spores = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+					if (!spores.hasTagCompound()) {
+						spores.setTagCompound(new NBTTagCompound());
+					}
+					spores.getTagCompound().setString("plant", nbtBlock);
+					spores.getTagCompound().setInteger("offsetY", nbtOffsetY);
+					if (!player.isCreative()) {
+						ItemHandlerHelper.giveItemToPlayer(player, spores);
+					}
+
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+	}
+
+}

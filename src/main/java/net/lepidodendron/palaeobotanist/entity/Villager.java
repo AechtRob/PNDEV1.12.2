@@ -5,7 +5,7 @@ import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.item.ItemBottleOfResin;
 import net.lepidodendron.item.ItemFossilHammer;
 import net.lepidodendron.item.ItemHerbicide;
-import net.lepidodendron.item.ItemSporeCollectionEnvelope;
+import net.lepidodendron.item.ItemCollectionEnvelope;
 import net.lepidodendron.palaeobotanist.village.PalaeobotanistHouse;
 import net.lepidodendron.palaeobotanist.village.VillageComponentPalaeobotanistHouse;
 import net.minecraft.enchantment.Enchantment;
@@ -48,7 +48,7 @@ public class Villager {
 
         palaeoCareer.addTrade(4, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(16, 16)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(1, 1)));
-        palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemSporeCollectionEnvelope.block, new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemCollectionEnvelope.block, new EntityVillager.PriceInfo(1, 1)));
 
         palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.TIME_REVERSAL, new EntityVillager.PriceInfo(64, 64)));
 

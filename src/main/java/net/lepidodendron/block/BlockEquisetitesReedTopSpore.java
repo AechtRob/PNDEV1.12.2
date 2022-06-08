@@ -3,13 +3,14 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.item.ItemEquisetitesReedItem;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -45,7 +46,7 @@ public class BlockEquisetitesReedTopSpore extends ElementsLepidodendronMod.ModEl
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:equisetites_reed_shoot_spore", "inventory"));
 	//}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends SeedSporeReedBase {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -113,6 +114,20 @@ public class BlockEquisetitesReedTopSpore extends ElementsLepidodendronMod.ModEl
 				world.setBlockToAir(pos);
 			}
 		}
-		
+
+		@Override
+		public Block planted() {
+			return BlockEquisetitesReed.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return ItemEquisetitesReedItem.block;
+		}
 	}
 }

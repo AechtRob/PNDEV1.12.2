@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -56,7 +57,7 @@ public class BlockTreefernBlackShoot extends ElementsLepidodendronMod.ModElement
 		//		new ModelResourceLocation("lepidodendron:black_treefern_shoot_worldgen", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_black_treefern_shoot_worldgen");
@@ -233,5 +234,14 @@ public class BlockTreefernBlackShoot extends ElementsLepidodendronMod.ModElement
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockTreefernBlackSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

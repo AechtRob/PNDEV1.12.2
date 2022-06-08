@@ -3,12 +3,13 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -45,7 +46,7 @@ public class BlockPseudobornia3 extends ElementsLepidodendronMod.ModElement {
 	//	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 	//			new ModelResourceLocation("lepidodendron:pseudobornia_3", "inventory"));
 	//}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends SeedSporeReedBase {
 		public BlockCustomFlower() {
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(null);
@@ -118,6 +119,20 @@ public class BlockPseudobornia3 extends ElementsLepidodendronMod.ModElement {
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
 		}
-		
+
+		@Override
+		public Block planted() {
+			return BlockPseudobornia.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 }
