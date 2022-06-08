@@ -85,7 +85,9 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
             if (this.PrehistoricFloraAgeableFishBase.getNavigator().noPath()) {
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + 0.5D, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraAgeableFishBase.posX - this.PrehistoricFloraAgeableFishBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraAgeableFishBase.posZ - this.PrehistoricFloraAgeableFishBase.getPosition().getZ();
+                    this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

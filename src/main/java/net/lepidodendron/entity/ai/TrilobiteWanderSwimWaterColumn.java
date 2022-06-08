@@ -68,7 +68,10 @@ public class TrilobiteWanderSwimWaterColumn extends AnimationAINoAnimation<Entit
             if (this.PrehistoricFloraTrilobiteSwimBase.getNavigator().noPath()) {
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraTrilobiteSwimBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() - 0.99D  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraTrilobiteSwimBase.posX - this.PrehistoricFloraTrilobiteSwimBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraTrilobiteSwimBase.posZ - this.PrehistoricFloraTrilobiteSwimBase.getPosition().getZ();
+
+                    this.PrehistoricFloraTrilobiteSwimBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() - 0.99D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

@@ -56,7 +56,10 @@ public class TrilobiteWanderBottom extends AnimationAINoAnimation<EntityPrehisto
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraTrilobiteBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraTrilobiteBase.posX - this.PrehistoricFloraTrilobiteBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraTrilobiteBase.posZ - this.PrehistoricFloraTrilobiteBase.getPosition().getZ();
+
+                    this.PrehistoricFloraTrilobiteBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

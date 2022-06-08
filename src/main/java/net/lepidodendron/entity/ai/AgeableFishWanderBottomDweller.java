@@ -70,7 +70,10 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())-1D  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraAgeableFishBase.posX - this.PrehistoricFloraAgeableFishBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraAgeableFishBase.posZ - this.PrehistoricFloraAgeableFishBase.getPosition().getZ();
+
+                    this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())-1D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

@@ -92,7 +92,10 @@ public class WalkingAmphibianWander extends AnimationAINoAnimation<EntityPrehist
                     }
                 }
                 if (vec3 != null) {
-                    this.PrehistoricFloraWalkingAmphibianBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraWalkingAmphibianBase.posX - this.PrehistoricFloraWalkingAmphibianBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraWalkingAmphibianBase.posZ - this.PrehistoricFloraWalkingAmphibianBase.getPosition().getZ();
+
+                    this.PrehistoricFloraWalkingAmphibianBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
                     this.mustUpdate = false;
                     return true;
                 }

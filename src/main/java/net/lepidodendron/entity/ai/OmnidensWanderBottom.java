@@ -56,7 +56,10 @@ public class OmnidensWanderBottom extends AnimationAINoAnimation<net.lepidodendr
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.EntityPrehistoricFloraOmnidens.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.EntityPrehistoricFloraOmnidens.posX - this.EntityPrehistoricFloraOmnidens.getPosition().getX();
+                    double Zoffset = this.EntityPrehistoricFloraOmnidens.posZ - this.EntityPrehistoricFloraOmnidens.getPosition().getZ();
+
+                    this.EntityPrehistoricFloraOmnidens.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

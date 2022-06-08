@@ -39,7 +39,10 @@ public class LandEntitySwimmingAI extends EntityAIBase
         BlockPos vec3 = this.findTarget();
 
         if (vec3 != null && (this.entity.isSwimmingInWater() || this.entity.isInLava())) {
-            this.entity.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5D, vec3.getZ() + 0.5D, this.speed);
+            double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+            double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+
+            this.entity.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY()) + 0.5D, vec3.getZ() + 0.5D + Zoffset, this.speed);
             this.mustUpdate = false;
             return true;
         }

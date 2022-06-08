@@ -31,7 +31,7 @@ import net.minecraftforge.items.ItemHandlerHelper;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemSporeCollectionEnvelopeBACKUP extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:spore_collection_envelope")
+	@GameRegistry.ObjectHolder("lepidodendron:spore_collection_envelope_bk")
 	public static final Item block = null;
 	public ItemSporeCollectionEnvelopeBACKUP(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.spore_collection_envelope);
@@ -45,14 +45,14 @@ public class ItemSporeCollectionEnvelopeBACKUP extends ElementsLepidodendronMod.
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope_bk", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
 			maxStackSize = 64;
-			setTranslationKey("pf_spore_collection_envelope");
-			setRegistryName("spore_collection_envelope");
+			setTranslationKey("pf_spore_collection_envelope_bk");
+			setRegistryName("spore_collection_envelope_bk");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 

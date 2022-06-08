@@ -67,7 +67,10 @@ public class JellyfishWander extends AnimationAINoAnimation<EntityPrehistoricFlo
             if (this.PrehistoricFloraJellyfishBase.getNavigator().noPath()) {
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraJellyfishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + 0.5D, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+                    double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+
+                    this.PrehistoricFloraJellyfishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

@@ -61,7 +61,10 @@ public class EurypteridWander extends AnimationAINoAnimation<EntityPrehistoricFl
             if (this.PrehistoricFloraEurypteridBase.getNavigator().noPath()) {
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() - 0.99D  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraEurypteridBase.posX - this.PrehistoricFloraEurypteridBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraEurypteridBase.posZ - this.PrehistoricFloraEurypteridBase.getPosition().getZ();
+
+                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() - 0.99D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

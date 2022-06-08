@@ -82,7 +82,10 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
             vec3 = this.findBlockTarget(32);
         }
         if (vec3 != null) {
-            this.PrehistoricFloraLandBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D, 1.0);
+            double Xoffset = this.PrehistoricFloraLandBase.posX - this.PrehistoricFloraLandBase.getPosition().getX();
+            double Zoffset = this.PrehistoricFloraLandBase.posZ - this.PrehistoricFloraLandBase.getPosition().getZ();
+
+            this.PrehistoricFloraLandBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
             return true;
         }
 

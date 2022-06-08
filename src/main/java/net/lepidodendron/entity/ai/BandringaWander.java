@@ -72,7 +72,10 @@ public class BandringaWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 if (vec3 != null) {
                     double feedAdj = 0.5d;
                     if (this.PrehistoricFloraBandringa.isHungry()) {feedAdj = -1D;}
-                    this.PrehistoricFloraBandringa.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + feedAdj, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraBandringa.posX - this.PrehistoricFloraBandringa.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraBandringa.posZ - this.PrehistoricFloraBandringa.getPosition().getZ();
+
+                    this.PrehistoricFloraBandringa.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + feedAdj, vec3.getZ() + 0.5D + Zoffset, 1.0);
                     //System.err.println("Vector target: " + (vec3.getX() + 0.5D) + " " + (vec3.getY() + feedAdj) + " " + (vec3.getZ() + 0.5D));
                     return true;
                 }

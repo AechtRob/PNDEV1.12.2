@@ -574,25 +574,32 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 				if (EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().noPath()) {
 					BlockPos vec3 = this.findAirOrLandTarget();
 					if (vec3 != null) {
-						EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, EntityPrehistoricFloraWeigeltisaurus.this.posY, vec3.getZ() + 0.5D, 0.3);
+						double Xoffset = EntityPrehistoricFloraWeigeltisaurus.this.posX - EntityPrehistoricFloraWeigeltisaurus.this.getPosition().getX();
+						double Zoffset = EntityPrehistoricFloraWeigeltisaurus.this.posZ - EntityPrehistoricFloraWeigeltisaurus.this.getPosition().getZ();
+
+						EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, EntityPrehistoricFloraWeigeltisaurus.this.posY, vec3.getZ() + 0.5D + Zoffset, 0.3);
 
 						return true;
 					}
 					else {
 						int ii = rand.nextInt(4);
 						vec3 = EntityPrehistoricFloraWeigeltisaurus.this.getPosition();
+						double Xoffset = EntityPrehistoricFloraWeigeltisaurus.this.posX - EntityPrehistoricFloraWeigeltisaurus.this.getPosition().getX();
+						double Zoffset = EntityPrehistoricFloraWeigeltisaurus.this.posZ - EntityPrehistoricFloraWeigeltisaurus.this.getPosition().getZ();
+
+
 						switch (ii) {
 							case 0:
-								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() + 1D + 0.5D, 0, 0, 0.2);
+								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() + 1D + 0.5D + Xoffset, 0, 0 + Zoffset, 0.2);
 								return true;
 							case 1:
-								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() - 1D + 0.5D, 0, 0, 0.2);
+								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(vec3.getX() - 1D + 0.5D + Xoffset, 0, 0 + Zoffset, 0.2);
 								return true;
 							case 2:
-								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(0, 0, vec3.getZ() + 1D + 0.5D, 0.2);
+								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(0 + Xoffset, 0, vec3.getZ() + 1D + 0.5D + Zoffset, 0.2);
 								return true;
 							case 3:
-								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(0, 0, vec3.getZ() - 1D + 0.5D, 0.2);
+								EntityPrehistoricFloraWeigeltisaurus.this.getNavigator().tryMoveToXYZ(0 + Xoffset, 0, vec3.getZ() - 1D + 0.5D + Zoffset, 0.2);
 								return true;
 						}
 					}

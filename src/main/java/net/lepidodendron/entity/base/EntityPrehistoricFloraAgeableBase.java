@@ -585,13 +585,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.isEntityAlive())
         {
             ++ii;
-            if (!LepidodendronConfig.doMultiplyMobs) {
-                if (ii <= 10) {
+            //if (!LepidodendronConfig.doMultiplyMobs) {
+            //    if (ii <= 10 && ii > 0) {
                     //Don't use this ticker if multiplication is off, unless we are over breeding limit:
                     //this ticker is set to 24000 by some AI, so we do want it to run up at that level sometimes
-                    ii = 0;
-                }
-            }
+            //        ii = 0;
+            //     }
+            //}
             //limit at 24000 + 6000 (one MC day plus 5 minutes) and then reset:
             if (ii >= 30000) {ii = 0;}
             this.setTicks(ii);

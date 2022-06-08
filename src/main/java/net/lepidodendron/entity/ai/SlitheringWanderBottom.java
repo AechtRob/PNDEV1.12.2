@@ -56,7 +56,10 @@ public class SlitheringWanderBottom extends AnimationAINoAnimation<EntityPrehist
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraSlitheringWaterBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraSlitheringWaterBase.posX - this.PrehistoricFloraSlitheringWaterBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraSlitheringWaterBase.posZ - this.PrehistoricFloraSlitheringWaterBase.getPosition().getZ();
+
+                    this.PrehistoricFloraSlitheringWaterBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

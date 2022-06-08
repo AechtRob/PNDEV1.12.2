@@ -72,7 +72,10 @@ public class TartuosteusWander extends AnimationAINoAnimation<EntityPrehistoricF
                 if (vec3 != null) {
                     double feedAdj = 0.5d;
                     if (this.PrehistoricFloraTartuosteus.isHungry()) {feedAdj = -1D;}
-                    this.PrehistoricFloraTartuosteus.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + feedAdj, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraTartuosteus.posX - this.PrehistoricFloraTartuosteus.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraTartuosteus.posZ - this.PrehistoricFloraTartuosteus.getPosition().getZ();
+
+                    this.PrehistoricFloraTartuosteus.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + feedAdj, vec3.getZ() + 0.5D + Zoffset, 1.0);
                     //System.err.println("Vector target: " + (vec3.getX() + 0.5D) + " " + (vec3.getY() + feedAdj) + " " + (vec3.getZ() + 0.5D));
                     return true;
                 }

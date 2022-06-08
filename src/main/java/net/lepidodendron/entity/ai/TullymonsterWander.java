@@ -72,7 +72,10 @@ public class TullymonsterWander extends AnimationAINoAnimation<EntityPrehistoric
                 if (vec3 != null) {
                     double feedAdj = 0.5d;
                     if (this.PrehistoricFloraTullimonstrum.isHungry()) {feedAdj = -1D;}
-                    this.PrehistoricFloraTullimonstrum.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + feedAdj, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraTullimonstrum.posX - this.PrehistoricFloraTullimonstrum.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraTullimonstrum.posZ - this.PrehistoricFloraTullimonstrum.getPosition().getZ();
+
+                    this.PrehistoricFloraTullimonstrum.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + feedAdj, vec3.getZ() + 0.5D + Zoffset, 1.0);
                     //System.err.println("Vector target: " + (vec3.getX() + 0.5D) + " " + (vec3.getY() + feedAdj) + " " + (vec3.getZ() + 0.5D));
                     return true;
                 }

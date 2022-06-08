@@ -93,8 +93,11 @@ public class FlyingLandWanderAvoidWaterAI extends EntityAIBase
 
     public void startExecuting()
     {
+        double Xoffset = this.entity.posX - this.entity.getPosition().getX();
+        double Zoffset = this.entity.posZ - this.entity.getPosition().getZ();
+
         //System.err.println(this.getClass() + " " + this.entity.getNavigator() + " move to " + this.x + " " + this.y + " " + this.z);
-        this.entity.getNavigator().tryMoveToXYZ(this.x, this.y, this.z, this.speed);
+        this.entity.getNavigator().tryMoveToXYZ(this.x + Xoffset, this.y, this.z + Zoffset , this.speed);
     }
 
     public void makeUpdate()

@@ -67,7 +67,10 @@ public class NautiloidWander extends AnimationAINoAnimation<EntityPrehistoricFlo
             if (this.PrehistoricFloraNautiloidBase.getNavigator().noPath()) {
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraNautiloidBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, vec3.getY() + 0.5D, vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraNautiloidBase.posX - this.PrehistoricFloraNautiloidBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraNautiloidBase.posZ - this.PrehistoricFloraNautiloidBase.getPosition().getZ();
+
+                    this.PrehistoricFloraNautiloidBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

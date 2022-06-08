@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	
 	@Override
 	public boolean laysEggs() {
-		return true;
+		return false;
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
@@ -278,21 +278,21 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 
-		//System.err.println("Ticks: " + this.getTicks());
-
 		//Lay eggs perhaps:
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying()) && this.getTicks() > 0
 				&& (BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP)
 				|| BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockOnSide(world, this.getPosition().down(), EnumFacing.UP))
 				&& (BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockAt(world, this.getPosition())
 				|| BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockAt(world, this.getPosition().down()))
-			){
+		){
 			if (Math.random() > 0.5) {
 				this.setTicks(-50); //Flag this as stationary for egg-laying
 			}
 		}
-		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0 && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+
+		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
+			System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnMastodonsaurus.block.getDefaultState();
 			if (BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnMastodonsaurus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

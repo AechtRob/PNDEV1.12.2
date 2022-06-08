@@ -393,6 +393,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                 IBlockState eggs = getEggBlockState();
                 this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 world.setBlockState(this.getPosition(), eggs);
+                this.setLaying(false);
                 this.setTicks(0);
             } else {
                 if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down())) {
@@ -400,6 +401,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                     IBlockState eggs = getEggBlockState();
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     world.setBlockState(this.getPosition().down(), eggs);
+                    this.setLaying(false);
                     this.setTicks(0);
                 } else {
                     if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition().down(2))) {
@@ -407,6 +409,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
                         IBlockState eggs = getEggBlockState();
                         this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                         world.setBlockState(this.getPosition().down(2), eggs);
+                        this.setLaying(false);
                         this.setTicks(0);
                     }
                 }

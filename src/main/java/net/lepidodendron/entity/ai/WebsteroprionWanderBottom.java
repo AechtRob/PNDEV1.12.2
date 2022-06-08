@@ -56,7 +56,10 @@ public class WebsteroprionWanderBottom extends AnimationAINoAnimation<EntityPreh
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraWebsteroprion.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraWebsteroprion.posX - this.PrehistoricFloraWebsteroprion.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraWebsteroprion.posZ - this.PrehistoricFloraWebsteroprion.getPosition().getZ();
+
+                    this.PrehistoricFloraWebsteroprion.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())  , vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     return true;
                 }

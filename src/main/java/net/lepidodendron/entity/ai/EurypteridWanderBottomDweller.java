@@ -62,7 +62,10 @@ public class EurypteridWanderBottomDweller extends AnimationAINoAnimation<Entity
 
                 BlockPos vec3 = this.findWaterTarget();
                 if (vec3 != null) {
-                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY())-1D  , vec3.getZ() + 0.5D, 1.0);
+                    double Xoffset = this.PrehistoricFloraEurypteridBase.posX - this.PrehistoricFloraEurypteridBase.getPosition().getX();
+                    double Zoffset = this.PrehistoricFloraEurypteridBase.posZ - this.PrehistoricFloraEurypteridBase.getPosition().getZ();
+
+                    this.PrehistoricFloraEurypteridBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY())-1D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
                     //System.err.println("Movetotarget: " + vec3.getX() + " " + vec3.getY() + " " + vec3.getZ());
                     return true;
                 }
