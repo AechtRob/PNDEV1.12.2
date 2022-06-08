@@ -3188,4 +3188,8 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3184;
     public static final int zosterophyllum_spore = 3185;
 
+    public static final int paranaichthys_raw = 3186;
+
+    public static final int paranaichthys_cooked = 3186;
+
 }
