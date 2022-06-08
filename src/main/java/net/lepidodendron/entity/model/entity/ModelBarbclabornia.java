@@ -206,7 +206,7 @@ public class ModelBarbclabornia extends AdvancedModelBase {
         this.chainWave(fishTail, speed * still, 0.02F * still, -3, f2, 0.8F * still);
         this.chainSwing(fishTail, speed * still, 0.4F * still, -3, f2, 0.6F * still);
         if (e.isInWater()) {
-            this.swing(body, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(body, speed * 0.6F, 0.15F, true, 0, 0, f2, 1);
         }
         else {
             this.swing(body, speed, 0.1F, true, 0, 0, f2, 0.5F);

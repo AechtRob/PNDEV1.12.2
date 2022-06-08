@@ -249,7 +249,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Bobasatrania.offsetY = 0.3F;
+        this.Bobasatrania.offsetY = 0.55F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3,this.Body4,this.Body5};
@@ -259,8 +259,10 @@ public class ModelBobasatrania extends AdvancedModelBase {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(fishTail, speed, 0.1F, -1.5, f2, 1);
+            this.chainSwing(fishTail, speed, 0.15F, -1.5, f2, 1);
             this.swing(Bobasatrania, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(PectoralL, (float) (speed * 0.65), 0.3F, true, 0, 0, f2, 1);
+            this.swing(PectoralR, (float) (speed * 0.65), -0.3F, true, 0, 0, f2, 1);
             this.walk(jaw, (float) (speed * 0.75), 0.2F, true, 0, -0.2F, f2, 1);
             if (!e.isInWater()) {
                 this.Bobasatrania.rotateAngleZ = (float) Math.toRadians(90);

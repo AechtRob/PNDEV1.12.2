@@ -46,7 +46,7 @@ public class LepidodendronMod {
 	public static final String NAME = "Prehistoric Nature";
 	public static final String VERSION = "51.0-ALPHA";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
-	@SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
+    @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
 	@Mod.Instance(MODID)
 	public static LepidodendronMod instance;
