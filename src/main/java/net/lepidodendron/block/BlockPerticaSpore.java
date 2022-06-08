@@ -30,7 +30,7 @@ public class BlockPerticaSpore extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:pertica_spore")
 	public static final Block block = null;
 	public BlockPerticaSpore(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.pertica_spores);
+		super(instance, LepidodendronSorter.pertica_spore);
 	}
 
 	@Override

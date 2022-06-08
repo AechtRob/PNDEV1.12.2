@@ -4,7 +4,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockArthropitysLeaves;
 import net.lepidodendron.block.BlockArthropitysLog;
+import net.lepidodendron.block.BlockArthropitysStrobilus;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -91,65 +95,81 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x, yy, z + 3, world, BlockArthropitysLog.block, EnumFacing.EAST);
 			ProcedureTreeLog.executeProcedure(x, yy, z - 3, world, BlockArthropitysLog.block, EnumFacing.EAST);
 			ProcedureTreeLeaf.executeProcedure(x + 2, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 2, yy, z, world);
 			ProcedureTreeLeaf.executeProcedure(x + 4, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 4, yy, z, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 4, yy, z, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 2, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 2, yy, z, world);
 			ProcedureTreeLeaf.executeProcedure(x - 4, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 4, yy, z, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 4, yy, z, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x, yy, z + 2, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z + 2, world);
 			ProcedureTreeLeaf.executeProcedure(x, yy, z + 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z + 4, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x, yy, z + 4, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x, yy, z - 2, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z - 2, world);
 			ProcedureTreeLeaf.executeProcedure(x, yy, z - 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z - 2, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x, yy, z - 4, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 3, yy, z - 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 3, yy, z - 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 3, yy, z - 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 3, yy, z + 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 3, yy, z + 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 3, yy, z + 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 3, yy, z - 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 3, yy, z - 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 3, yy, z - 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 3, yy, z + 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 3, yy, z + 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 3, yy, z + 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 1, yy, z + 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 1, yy, z + 3, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 1, yy, z + 3, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 1, yy, z + 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 1, yy, z + 3, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 1, yy, z + 3, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 1, yy, z - 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 1, yy, z - 3, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 1, yy, z - 3, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 1, yy, z - 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 1, yy, z - 3, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 1, yy, z - 3, world);
@@ -169,65 +189,81 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x, yy, z + 4, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x, yy, z - 4, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLeaf.executeProcedure(x + 3, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 3, yy, z, world);
 			ProcedureTreeLeaf.executeProcedure(x + 5, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 5, yy, z, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 5, yy, z, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 3, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 3, yy, z, world);
 			ProcedureTreeLeaf.executeProcedure(x - 5, yy, z, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 5, yy, z, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 5, yy, z, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x, yy, z + 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z + 3, world);
 			ProcedureTreeLeaf.executeProcedure(x, yy, z + 5, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z + 5, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x, yy, z + 5, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x, yy, z - 3, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z - 3, world);
 			ProcedureTreeLeaf.executeProcedure(x, yy, z - 5, world, BlockArthropitysLeaves.block);
+			addStrobilus(x, yy, z - 5, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x, yy, z - 5, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 4, yy, z - 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 4, yy, z - 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 4, yy, z - 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 4, yy, z + 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 4, yy, z + 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 4, yy, z + 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 4, yy, z - 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 4, yy, z - 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 4, yy, z - 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 4, yy, z + 1, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 4, yy, z + 1, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 4, yy, z + 1, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 1, yy, z + 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 1, yy, z + 4, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 1, yy, z + 4, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 1, yy, z + 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 1, yy, z + 4, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 1, yy, z + 4, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x - 1, yy, z - 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x - 1, yy, z - 4, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x - 1, yy, z - 4, world);
 			}
 			ProcedureTreeLeaf.executeProcedure(x + 1, yy, z - 4, world, BlockArthropitysLeaves.block);
+			addStrobilus(x + 1, yy, z - 4, world);
 			//Random vines for world-gen only:
 			if ((vines) && (Math.random() > 0.95)) {
 				ProcedureVines.executeProcedure(x + 1, yy, z - 4, world);
@@ -258,14 +294,14 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x - 1, yy, z + 4, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x + 1, yy, z - 4, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x - 1, yy, z - 4, world, BlockArthropitysLog.block, EnumFacing.NORTH);
-			ProcedureLeavesAroundLog.executeProcedure(x + 4, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 4, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 4, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 4, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z + 4, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z + 4, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z - 4, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z - 4, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 4, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 4, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 4, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 4, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 1, yy, z + 4, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 1, yy, z + 4, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 1, yy, z - 4, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 1, yy, z - 4, world, BlockArthropitysLeaves.block, 1, 0);
 
 			yy = yy + 1;
 			ProcedureTreeLog.executeProcedure(x, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
@@ -325,14 +361,14 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x - 1, yy, z + 3, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x + 1, yy, z - 3, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x - 1, yy, z - 3, world, BlockArthropitysLog.block, EnumFacing.NORTH);
-			ProcedureLeavesAroundLog.executeProcedure(x + 3, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 3, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 3, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 3, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z + 3, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z + 3, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x + 1, yy, z - 3, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 1, yy, z - 3, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 3, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 3, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 3, yy, z + 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 3, yy, z - 1, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 1, yy, z + 3, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 1, yy, z + 3, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 1, yy, z - 3, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 1, yy, z - 3, world, BlockArthropitysLeaves.block, 1, 0);
 
 			yy = yy + 1;
 			ProcedureTreeLog.executeProcedure(x, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
@@ -354,20 +390,72 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x - 2, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x, yy, z + 2, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			ProcedureTreeLog.executeProcedure(x, yy, z - 2, world, BlockArthropitysLog.block, EnumFacing.NORTH);
-			ProcedureLeavesAroundLog.executeProcedure(x + 2, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x - 2, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 2, world, BlockArthropitysLeaves.block, 1, 0);
-			ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 2, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x + 2, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x - 2, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x, yy, z + 2, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x, yy, z - 2, world, BlockArthropitysLeaves.block, 1, 0);
 
 			yy = yy + 1;
 			ProcedureTreeLog.executeProcedure(x, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 
 			yy = yy + 1;
 			ProcedureTreeLog.executeProcedure(x, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
-			ProcedureLeavesAroundLog.executeProcedure(x, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
+			leavesAroundLog(x, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
 
 			ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfig.genAnkyropterisArthropitys, SaplingSpawn);
 		}
 	}
+
+	public static void leavesAroundLog(int x, int y, int z, World world, Block blockLeaf, int layers, double chance) {
+
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure((x - 1), y, z, world, blockLeaf);
+			addStrobilus((x - 1), y, z, world);
+		}
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure(x, y, z, world, blockLeaf);
+			//addStrobilus(x, y, z, world);
+		}
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure((x + 1), y, z, world, blockLeaf);
+			addStrobilus((x + 1), y, z, world);
+		}
+
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure(x, (y + 1), z, world, blockLeaf);
+			addStrobilus(x, (y + 1), z, world);
+		}
+
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure(x, (y - 1), z, world, blockLeaf);
+			//addStrobilus(x, (y - 1), z, world);
+		}
+
+
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure(x, y, (z - 1), world, blockLeaf);
+			addStrobilus(x, y, (z - 1), world);
+		}
+
+		if (Math.random() > chance) {
+			ProcedureTreeLeaf.executeProcedure(x, y, (z + 1), world, blockLeaf);
+			addStrobilus(x, y, (z + 1), world);
+		}
+	}
+
+	public static void addStrobilus(int x, int y, int z, World world) {
+		if ((Math.random() > 0.7) && (world.isAirBlock(new BlockPos(x, y + 1, z)))) {
+			world.setBlockState(new BlockPos(x, y + 1, z), BlockArthropitysStrobilus.block.getDefaultState(), 3);
+			if (!world.isRemote) {
+				BlockPos _bp = new BlockPos(x, y + 1, z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				IBlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().setBoolean("decayable", (true));
+				world.notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+		}
+	}
+
 			
 }

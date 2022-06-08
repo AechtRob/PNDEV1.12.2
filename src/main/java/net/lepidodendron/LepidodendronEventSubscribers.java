@@ -247,6 +247,15 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 		}
+		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
+				&& (!(event.getItemStack().getItem() instanceof ItemShears)) && LepidodendronConfig.doPropagationVanilla
+				&& event.getHand() == EnumHand.MAIN_HAND) {
+			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
+					|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
+
+			}
+		}
 	}
 
 	@SubscribeEvent //Vanilla plants drops modifications: replace saplings with seeds etc.

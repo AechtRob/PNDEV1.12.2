@@ -7,8 +7,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.text.TextFormatting;
 
 public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarbclabornia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia.png");
@@ -22,7 +20,7 @@ public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarb
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBarbclabornia entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (scale < 0.2F) {
+        if (entity.isSmall()) {
             return RenderBarbclabornia.TEXTURE_BABY;
         }
         return RenderBarbclabornia.TEXTURE;

@@ -378,7 +378,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             return;
         }
 
-        System.err.println("Running");
+        //System.err.println("Running");
 
         String mobToSpawn;
         String nbtStr = "";

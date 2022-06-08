@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:arthropitys_strobilus"},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:arthropitys_strobilus", "x": 90},
+       	{"model": "lepidodendron:arthropitys_strobilus_rot", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:arthropitys_strobilus", "x": 90, "y": 90},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:arthropitys_strobilus", "x": 90, "y": 180},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:arthropitys_strobilus", "x": 90, "y": 270},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot", "x": 90, "y": 270}
+    ],
+
+    "facing=up": [
+      	{"model": "lepidodendron:arthropitys_strobilus"},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:arthropitys_strobilus", "x": 180},
+      	{"model": "lepidodendron:arthropitys_strobilus_rot", "x": 180}
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -147,7 +148,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 		return false;
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeFacingBlockBase {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
     
@@ -300,6 +301,15 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Propagation: spores");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
-		
+
+		@Override
+		public Block planted() {
+			return BlockLeptopteris.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }
