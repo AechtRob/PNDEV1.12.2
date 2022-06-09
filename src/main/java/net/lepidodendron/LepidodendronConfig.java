@@ -28,7 +28,8 @@ public class LepidodendronConfig {
     public static boolean renderEdiacaranLighting = true;
     public static boolean renderCustomSkies = true;
     public static boolean blockSkeletonHorse = true;
-
+    public static boolean meteorites = true;
+    
     public static boolean doShrinkBiomes = false;
 
     public static boolean renderFog = true;
@@ -8435,6 +8436,11 @@ public class LepidodendronConfig {
         showTooltips = prop.getBoolean();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "meteorites", meteorites);
+        prop.setComment("Enable meteors in the Precambrian dimension [default: true]");
+        meteorites = prop.getBoolean();
+        propOrder.add(prop.getName());
+        
         prop = cfg.get("Global Mobs", "blockSkeletonHorse", blockSkeletonHorse);
         prop.setComment("Prevent Skeleton Horses from being able to exist in the mod's Prehistoric dimensions (useful to prevent trap horses spawning) [default: true]");
         blockSkeletonHorse = prop.getBoolean();
@@ -8446,7 +8452,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "doLowRes", doLowRes);
-        prop.setComment("User lower-resolution textures for some of the smaller mobs so that their style fits in better [default: false]");
+        prop.setComment("Use lower-resolution textures for some of the smaller mobs so that their style fits in better [default: false]");
         doLowRes = prop.getBoolean();
         propOrder.add(prop.getName());
 

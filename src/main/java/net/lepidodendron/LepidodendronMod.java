@@ -865,7 +865,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PLACERIAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/placerias"));
 	public static final ResourceLocation PLACERIAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/placerias_young"));
 	public static final int ENTITY_MEGANEURA_NYMPH = 358;
-
+	public static final int ENTITY_METEOR = 359;
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
