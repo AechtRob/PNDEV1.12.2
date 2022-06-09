@@ -9,11 +9,13 @@ import net.lepidodendron.item.ItemLilacFlower;
 import net.lepidodendron.item.ItemPeonyFlower;
 import net.lepidodendron.item.ItemRoseFlower;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrianBiome;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -33,6 +35,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -41,6 +44,28 @@ import java.util.Random;
 
 public class LepidodendronEventSubscribers {
 
+	@SubscribeEvent //Spawn Hadean meteors
+	public void meteors(WorldTickEvent event) {
+		if(event.world != null && !event.world.isRemote && LepidodendronConfig.meteorites) {
+			if(event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently.
+				if(!event.world.playerEntities.isEmpty()) {
+					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
+					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100),300,(p.posZ+ event.world.rand.nextInt(201) - 100));
+					if(p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
+						if(event.world.getBiome(pos) == BiomePrecambrianBiome.biome)
+						{
+							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());					
+							meteor.motionX = event.world.rand.nextDouble() - 0.5;
+							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+							event.world.spawnEntity(meteor);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	
 	@SubscribeEvent //BlockTrap Horses
 	public void onSpawn(EntityJoinWorldEvent event) {
 		if (LepidodendronConfig.blockSkeletonHorse) {

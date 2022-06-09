@@ -376,7 +376,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_cynognathus", EntityPrehistoricFloraCynognathus.class, LepidodendronMod.ENTITY_CYNOGNATHUS, 82,0,0);
         registerEntity("prehistoric_flora_placerias", EntityPrehistoricFloraPlacerias.class, LepidodendronMod.ENTITY_PLACERIAS, 82,0,0);
         registerEntity("prehistoric_flora_meganeura_nymph", EntityPrehistoricFloraMeganeuraNymph.class, LepidodendronMod.ENTITY_MEGANEURA_NYMPH, 82,-3362466,-1978994);
-
+        registerEntityNoEgg("prehistoric_flora_meteor", EntityPrehistoricFloraMeteor.class, LepidodendronMod.ENTITY_METEOR, 1000);
 
     }
 

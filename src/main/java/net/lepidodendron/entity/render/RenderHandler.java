@@ -2199,6 +2199,12 @@ public class RenderHandler {
                 return new RenderMeganeuraNymph(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMeteor.class, new IRenderFactory<EntityPrehistoricFloraMeteor>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMeteor> createRenderFor(RenderManager manager) {
+                return new RenderMeteor(manager);
+            }
+        });
 
 
         //Tile Entities Ediacaran (etc):

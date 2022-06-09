@@ -3078,5 +3078,5 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 3074;
     public static final int zosterophyllum = 3075;
     public static final int zosterophyllum_spore = 3076;
-
+    public static final int meteorite = 3077;
 }
