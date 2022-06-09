@@ -1258,10 +1258,12 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
-			worldIn.setBlockToAir(pos);
-			if (!(worldIn.isRemote)) {
-				SoundEvent soundevent = SoundEvents.BLOCK_GRAVEL_BREAK;
-				((WorldServer) entityIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			if (entityIn.onGround){
+				worldIn.setBlockToAir(pos);
+				if (!(worldIn.isRemote)) {
+					SoundEvent soundevent = SoundEvents.BLOCK_GRAVEL_BREAK;
+					((WorldServer) entityIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				}
 			}
 			super.onEntityCollision(worldIn, pos, state, entityIn);
 		}

@@ -46,19 +46,40 @@ public class LepidodendronEventSubscribers {
 
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {
-		if(event.world != null && !event.world.isRemote && LepidodendronConfig.meteorites) {
+		boolean spawnShower = false;
+		if(event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
 			if(event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently.
 				if(!event.world.playerEntities.isEmpty()) {
 					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
 					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100),300,(p.posZ+ event.world.rand.nextInt(201) - 100));
 					if(p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
 						if(event.world.getBiome(pos) == BiomePrecambrianBiome.biome)
+						spawnShower = (event.world.rand.nextInt(50) == 0);
 						{
 							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());					
 							meteor.motionX = event.world.rand.nextDouble() - 0.5;
 							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
 							event.world.spawnEntity(meteor);
 						}
+						if (spawnShower) {
+							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());
+							meteor.motionX = event.world.rand.nextDouble() - 0.5;
+							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+							event.world.spawnEntity(meteor);
+							if (event.world.rand.nextInt(3) == 0) {
+								EntityPrehistoricFloraMeteor meteor2 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+								meteor.motionX = event.world.rand.nextDouble() - 0.5;
+								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+								event.world.spawnEntity(meteor2);
+							}
+							if (event.world.rand.nextInt(3) == 0) {
+								EntityPrehistoricFloraMeteor meteor3 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+								meteor.motionX = event.world.rand.nextDouble() - 0.5;
+								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+								event.world.spawnEntity(meteor3);
+							}
+						}
+
 					}
 				}
 			}

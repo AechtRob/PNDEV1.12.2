@@ -4,20 +4,13 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -44,15 +37,16 @@ public class BlockMeteorite extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:meteorite", "inventory"));
 	}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends BlockOre {
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.BLACK);
+			super(MapColor.BLACK);
 			setHardness(1.25F);
 			setResistance(4.2F);
 			this.setSoundType(SoundType.STONE);
-			setHarvestLevel("pickaxe", 0);
+			setHarvestLevel("pickaxe", 1); //Iron weapons needed
 			setTranslationKey("pf_meteorite");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
+
 	}
 }

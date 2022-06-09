@@ -28,7 +28,7 @@ public class LepidodendronConfig {
     public static boolean renderEdiacaranLighting = true;
     public static boolean renderCustomSkies = true;
     public static boolean blockSkeletonHorse = true;
-    public static boolean meteorites = true;
+    public static boolean doMeteorites = true;
     
     public static boolean doShrinkBiomes = false;
 
@@ -8436,9 +8436,9 @@ public class LepidodendronConfig {
         showTooltips = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "meteorites", meteorites);
+        prop = cfg.get("Global World-Gen", "doMeteorites", doMeteorites);
         prop.setComment("Enable meteors in the Precambrian dimension [default: true]");
-        meteorites = prop.getBoolean();
+        doMeteorites = prop.getBoolean();
         propOrder.add(prop.getName());
         
         prop = cfg.get("Global Mobs", "blockSkeletonHorse", blockSkeletonHorse);
