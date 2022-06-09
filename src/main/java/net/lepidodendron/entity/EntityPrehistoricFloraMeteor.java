@@ -1,22 +1,13 @@
 package net.lepidodendron.entity;
 
-//import trinity.util.IConstantRenderer;
-
 import javax.annotation.Nullable;
 
-import nc.capability.radiation.source.IRadiationSource;
 import net.lepidodendron.world.gen.MeteoriteImpact;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
-import net.minecraft.entity.effect.EntityLightningBolt;
-import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Explosion;
@@ -105,7 +96,6 @@ public class EntityPrehistoricFloraMeteor extends Entity {
     }
 
     protected Explosion explode() {
-		//float f = (float) (6);
 		Explosion explosion = new Explosion(world, this, posX, posY, posZ, 6, true, true);
         explosion.doExplosionA();
         explosion.doExplosionB(true);
