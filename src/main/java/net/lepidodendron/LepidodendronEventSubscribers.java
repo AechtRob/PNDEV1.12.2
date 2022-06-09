@@ -353,6 +353,11 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 
+			if (item == Items.APPLE &&
+				(event.getState().getBlock() == Blocks.LEAVES
+						|| event.getState().getBlock() == Blocks.LEAVES2) ) {
+				event.getDrops().remove(i);
+			}
 			block = Block.getBlockFromItem(item);
 			if (block instanceof BlockSapling) {
 				if (item == (new ItemStack(Blocks.SAPLING, (int) (1), 0).getItem())) { //Oak

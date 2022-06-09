@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:apple_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:apple_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:apple_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:apple_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:apple_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:apple_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:apple_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
