@@ -1,0 +1,26 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "lepidodendron:sandstone_black"
+      },
+      {
+        "item": "lepidodendron:sandstone_black_smooth"
+      },
+      {
+        "item": "lepidodendron:sandstone_black_carved"
+      }
+    ]
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_stairs_black",
+    "count": 4
+  }
+}

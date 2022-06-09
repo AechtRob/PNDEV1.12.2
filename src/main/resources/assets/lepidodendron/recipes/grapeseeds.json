@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:grapes"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:grape_seeds",
+    "count": 6
+  }
+}

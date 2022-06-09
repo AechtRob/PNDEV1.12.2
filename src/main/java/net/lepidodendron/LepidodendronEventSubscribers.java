@@ -5,14 +5,14 @@ import net.lepidodendron.block.BlockDisplayCaseMagnifying;
 import net.lepidodendron.block.BlockDisplayPlinth;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.*;
-import net.lepidodendron.item.ItemLilacFlower;
-import net.lepidodendron.item.ItemPeonyFlower;
-import net.lepidodendron.item.ItemRoseFlower;
+import net.lepidodendron.item.*;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrianBiome;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockDoublePlant;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
@@ -353,35 +353,31 @@ public class LepidodendronEventSubscribers {
 				}
 			}
 
-			IBlockState state = block.getDefaultState();
+			block = Block.getBlockFromItem(item);
 			if (block instanceof BlockSapling) {
-				BlockPlanks.EnumType type = state.getValue(BlockSapling.TYPE);
-				if (type == BlockPlanks.EnumType.SPRUCE
-						|| type == BlockPlanks.EnumType.BIRCH
-						|| type == BlockPlanks.EnumType.JUNGLE
-						|| type == BlockPlanks.EnumType.ACACIA
-						|| type == BlockPlanks.EnumType.DARK_OAK
-						|| type == BlockPlanks.EnumType.OAK) {
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (1), 0).getItem())) { //Oak
 					event.getDrops().remove(i);
-					switch (type) {
-						case SPRUCE:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-
-						case BIRCH:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-
-						case JUNGLE:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-
-						case ACACIA:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-
-						case DARK_OAK:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-
-						case OAK:
-							event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
-					}
+					event.getDrops().add(i, new ItemStack(ItemOakAcorn.block, 1));
+				}
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 1).getItem())) { //Spruce
+					event.getDrops().remove(i);
+					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+				}
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 2).getItem())) { //Birch
+					event.getDrops().remove(i);
+					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+				}
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 3).getItem())) { //Jungle
+					event.getDrops().remove(i);
+					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+				}
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 4).getItem())) { //Acacia
+					event.getDrops().remove(i);
+					event.getDrops().add(i, new ItemStack(Blocks.AIR, 1));
+				}
+				if (item == (new ItemStack(Blocks.SAPLING, (int) (2), 6).getItem())) { //Dark Oak
+					event.getDrops().remove(i);
+					event.getDrops().add(i, new ItemStack(ItemOakDarkAcorn.block, 1));
 				}
 			}
 			if (event.getState().getBlock() instanceof BlockDoublePlant) {
@@ -417,6 +413,9 @@ public class LepidodendronEventSubscribers {
 			{
 				event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS,1, 1));
 			}
+		}
+		if (event.getState().getBlock() == Blocks.VINE) {
+			event.getDrops().add(i, new ItemStack(ItemGrapes.block,1));
 		}
 	}
 

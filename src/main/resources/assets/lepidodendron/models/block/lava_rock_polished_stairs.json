@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/lava_rock_polished",
+    "top": "lepidodendron:blocks/lava_rock_polished",
+    "side": "lepidodendron:blocks/lava_rock_polished"
+  }
+}

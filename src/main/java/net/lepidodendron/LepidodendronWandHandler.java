@@ -57,7 +57,7 @@ public class LepidodendronWandHandler {
                         if (itemPetrified.getPlantStack() != null) {
                             Frame.setDisplayedItem(itemPetrified.getPlantStack());
                             world.addWeatherEffect(new EntityLightningBolt(world, (int) e.getPosition().getX(), (int) e.getPosition().getY(), (int) e.getPosition().getZ(), true));
-                            if (!player.capabilities.isCreativeMode) {
+                            if (!player.capabilities.isCreativeMode && wandstack.getItemDamage() < (wandstack.getMaxDamage() - 1)) {
                                 wandstack.damageItem(1, player);
                             }
                             ModTriggers.REJUVENATE.trigger((EntityPlayerMP)player);

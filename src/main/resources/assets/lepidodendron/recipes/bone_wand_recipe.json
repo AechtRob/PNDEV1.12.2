@@ -2,18 +2,24 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "0",
-    "1",
-    "2"
+    "023",
+    " 4 ",
+    " 7 "
   ],
   "key": {
     "0": {
-      "item": "minecraft:diamond_block"
+      "item": "minecraft:diamond"
     },
-    "1": {
+    "0": {
+      "item": "minecraft:diamond"
+    },
+    "0": {
+      "item": "minecraft:diamond"
+    },
+    "4": {
       "item": "lepidodendron:bottle_of_resin"
     },
-    "2": {
+    "7": {
       "item": "minecraft:bone"
     }
   },

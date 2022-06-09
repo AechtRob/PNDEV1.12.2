@@ -60,19 +60,29 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setMaxDamage(500);
+			setMaxDamage(250);
 			maxStackSize = 1;
 			setTranslationKey("pf_bone_wand");
 			setRegistryName("bone_wand");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
+		public boolean functioningWand(ItemStack stack) {
+			return this.getDamage(stack) < (this.getMaxDamage() - 1);
+		}
+
+		@Override
+		public String getTranslationKey(ItemStack stack) {
+			if (!functioningWand(stack)) {
+				return "item.pf_bone_wand_spent";
+			}
+			return super.getTranslationKey();
+		}
+
 		@Override
 		public int getItemEnchantability() {
 			return 1;
 		}
-
-
 
 		@Override
 		public int getMaxItemUseDuration(ItemStack itemstack) {
@@ -89,6 +99,15 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 				float hitZ) {
 			BlockPos pos1 = pos.offset(facing);
 			ItemStack itemstack = entity.getHeldItem(hand);
+
+			//Test:
+			if (itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
+				itemstack.damageItem(1, entity);
+			}
+
+			if (!functioningWand(itemstack)) {
+				return EnumActionResult.FAIL;
+			}
 			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, itemstack);
 			//System.err.println(levelEnchantment);
 			if (levelEnchantment > 0) {
@@ -116,14 +135,14 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 						|| portalSpawnPermian
 						|| portalSpawnTriassic
 						|| portalSpawnJurassic) {
-						if (!entity.capabilities.isCreativeMode) {
+						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 							itemstack.damageItem(1, entity);
 						}
 						return EnumActionResult.SUCCESS;
 					}
 					else if (facing != EnumFacing.DOWN) {
 						if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
-							if (!entity.capabilities.isCreativeMode) {
+							if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 								itemstack.damageItem(1, entity);
 							}
 							entity.swingArm(EnumHand.MAIN_HAND);
@@ -133,7 +152,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 				}
 				else if (facing != EnumFacing.DOWN) {
 					if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
-						if (!entity.capabilities.isCreativeMode) {
+						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 							itemstack.damageItem(1, entity);
 						}
 						entity.swingArm(EnumHand.MAIN_HAND);
@@ -175,7 +194,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 									world.spawnEntity(entityToSpawn);
 									itemstack.shrink(1);
 									world.addWeatherEffect(new EntityLightningBolt(world, (int) currentEntity.getPosition().getX(), (int) currentEntity.getPosition().getY(), (int) currentEntity.getPosition().getZ(), true));
-									if (!player.capabilities.isCreativeMode) {
+									if (!player.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 										wandstack.damageItem(1, player);
 									}
 									ModTriggers.REJUVENATE.trigger((EntityPlayerMP) player);

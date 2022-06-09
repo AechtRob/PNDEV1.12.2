@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:lava_cobble_molten_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:lava_cobble_molten_slab_top"
+    }
+  }
+}

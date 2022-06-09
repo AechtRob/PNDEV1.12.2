@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/lava_cobble",
+    "top": "lepidodendron:blocks/lava_cobble",
+    "side": "lepidodendron:blocks/lava_cobble"
+  }
+}

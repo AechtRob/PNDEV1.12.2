@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:lava_cobble_slab_double"
+    }
+  }
+}
