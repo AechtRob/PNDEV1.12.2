@@ -2,7 +2,7 @@
 	"name": "Ventogyrus",
 	"read_by_default": true,
 	"icon": "lepidodendron:ventogyrus",
-	"category": "lepidodendron:",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ventogyrus",
 	"pages": [
 		{

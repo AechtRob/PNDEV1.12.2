@@ -2,7 +2,7 @@
 	"name": "Bothriolepis",
 	"read_by_default": true,
 	"icon": "lepidodendron:bothriolepis_raw",
-	"category": "lepidodendron:devonian",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_bothriolepis",
 	"pages": [
 		{

@@ -2,14 +2,14 @@
 	"name": "Xenusion",
 	"read_by_default": true,
 	"icon": "lepidodendron:xenusion_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_xenusion",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_xenusion",
 			"title": "Xenusion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Xenusia$(br2)>Protonychophora$(br2)>Xenusiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Xenusia$(br)>Protonychophora$(br)>Xenusiidae"
 		},
 		{
 			"type": "image",

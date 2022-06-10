@@ -2,7 +2,7 @@
 	"name": "Cyclonema",
 	"read_by_default": true,
 	"icon": "lepidodendron:cyclonema_item",
-	"category": "lepidodendron:ordovician",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cyclonema",
 	"pages": [
 		{

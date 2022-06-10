@@ -2,7 +2,7 @@
 	"name": "Homaloneura",
 	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/homaloneura_icon.png",
-	"category": "patchouli:carboniferous",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Burykhia",
 	"read_by_default": true,
 	"icon": "lepidodendron:burykhia",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_burykhia",
 	"pages": [
 		{

@@ -1,8 +1,8 @@
 {
 	"name": "Palaeontinoid",
 	"read_by_default": true,
-	"icon": "paleopedia:",
-	"category": "lepidodendron:permian/permian_icon/palaeontinoid_icon.png",
+	"icon": "lepidodendron:permian/permian_icon/palaeontinoid_icon.png",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeontinoid",
 	"pages": [
 		{

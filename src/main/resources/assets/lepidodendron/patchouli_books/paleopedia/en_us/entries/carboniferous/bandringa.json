@@ -2,7 +2,7 @@
 	"name": "Bandringa",
 	"read_by_default": true,
 	"icon": "lepidodendron:bandringa_raw",
-	"category": "lepidodendron:carboniferous",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_bandringa",
 	"pages": [
 		{

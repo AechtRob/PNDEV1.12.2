@@ -2,7 +2,7 @@
 	"name": "Namapoikia",
 	"read_by_default": true,
 	"icon": "lepidodendron:namapoikia",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_namapoikia",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Gondwanascorpio",
 	"read_by_default": true,
 	"icon": "paleopedia:devonian/devonian_icon/gondwanascorpio_icon.png",
-	"category": "lepidodendron:devonian",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gondwanascorpio",
 	"pages": [
 		{

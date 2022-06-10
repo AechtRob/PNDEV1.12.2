@@ -2,7 +2,7 @@
 	"name": "Manticoceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_manticoceras",
-	"category": "lepidodendron:devonian",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_manticoceras",
 	"pages": [
 		{

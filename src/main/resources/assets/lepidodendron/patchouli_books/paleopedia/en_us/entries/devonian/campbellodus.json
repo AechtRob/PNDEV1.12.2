@@ -2,7 +2,7 @@
 	"name": "Campbellodus",
 	"read_by_default": true,
 	"icon": "lepidodendron:campbellodus_raw",
-	"category": "lepidodendron:devonian",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_campbellodus",
 	"pages": [
 		{

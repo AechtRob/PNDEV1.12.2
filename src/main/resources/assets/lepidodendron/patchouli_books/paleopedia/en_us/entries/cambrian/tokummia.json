@@ -2,14 +2,14 @@
 	"name": "Tokummia",
 	"read_by_default": true,
 	"icon": "lepidodendron:tokummia_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_tokummia",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_tokummia",
 			"title": "Tokummia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Hymenocarina$(br2)>Protocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Hymenocarina$(br)>Protocarididae"
 		},
 		{
 			"type": "image",

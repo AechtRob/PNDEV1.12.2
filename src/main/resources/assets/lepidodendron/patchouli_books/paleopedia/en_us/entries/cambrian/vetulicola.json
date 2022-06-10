@@ -2,14 +2,14 @@
 	"name": "Vetulicola",
 	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/vetulicola_icon.png",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vetulicola",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_vetulicola",
 			"title": "Vetulicola",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Vetulicolia$(br2)>Vetulicolida$(br2)>Vetulicolata$(br2)>Vetulicolidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Vetulicolia$(br)>Vetulicolida$(br)>Vetulicolata$(br)>Vetulicolidae"
 		},
 		{
 			"type": "image",

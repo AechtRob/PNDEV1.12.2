@@ -1,31 +1,32 @@
 {
-  "name": "",
-  "read_by_default": true,
-  "icon": "paleopedia:triassic/triassic_icon/.png",
-  "category": "lepidodendron:triassic",
-  "turnin": "lepidodendron:pf_adv_book_xxxxx",
-  "pages": [
-    {
-      "trigger": "lepidodendron:pf_adv_book_xxxxx",
-      "title": "",
-      "type": "quest",
-      "text": ""
-    },
-    {
-      "type": "image",
-      "images": ["paleopedia:triassic/.png"],
-      "title": "",
-      "text": ""
-      },
-    {
-      "advancement": "lepidodendron:pf_adv_book_xxxxx",
-      "type": "text",
-      "text": ""
-    },
-    {
-      "advancement": "lepidodendron:pf_adv_book_xxxxx",
-      "type": "text",
-      "text": ""
-    }
-  ]
+	"name": "template",
+	"read_by_default": true,
+	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_",
+			"title": "template",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:triassic/.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
 }
+

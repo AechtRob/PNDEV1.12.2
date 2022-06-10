@@ -2,7 +2,7 @@
 	"name": "Charnia",
 	"read_by_default": true,
 	"icon": "lepidodendron:charnia",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_charnia",
 	"pages": [
 		{

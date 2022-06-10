@@ -2,7 +2,7 @@
 	"name": "Coelurosauravus",
 	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/coelurosauravus_icon.png",
-	"category": "lepidodendron:permian",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_coelurosauravus",
 	"pages": [
 		{

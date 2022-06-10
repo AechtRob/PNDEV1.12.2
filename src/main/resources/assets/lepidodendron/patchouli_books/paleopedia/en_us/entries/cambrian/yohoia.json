@@ -2,14 +2,14 @@
 	"name": "Yohoia",
 	"read_by_default": true,
 	"icon": "lepidodendron:yohoia_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_yohoia",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_yohoia",
 			"title": "Yohoia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br2)>Megacheira$(br2)>Yohoiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Megacheira$(br)>Yohoiidae"
 		},
 		{
 			"type": "image",

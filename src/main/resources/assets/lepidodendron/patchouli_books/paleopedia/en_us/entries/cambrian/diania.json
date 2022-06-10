@@ -2,7 +2,7 @@
 	"name": "Diania",
 	"read_by_default": true,
 	"icon": "lepidodendron:diania_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diania",
 	"pages": [
 		{

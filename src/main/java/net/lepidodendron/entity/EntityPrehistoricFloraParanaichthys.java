@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraParanaichthys extends EntityPrehistoricFloraF
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.25f;
+		return 0.2f;
 	}
 
 	@Override

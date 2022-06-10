@@ -2,7 +2,7 @@
 	"name": "Walliserops",
 	"read_by_default": true,
 	"icon": "lepidodendron:walliserops_raw",
-	"category": "lepidodendron:devonian",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_walliserops",
 	"pages": [
 		{

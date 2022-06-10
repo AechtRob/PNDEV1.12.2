@@ -2,7 +2,7 @@
 	"name": "Grypania",
 	"read_by_default": true,
 	"icon": "lepidodendron:grypania",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_grypania",
 	"pages": [
 		{

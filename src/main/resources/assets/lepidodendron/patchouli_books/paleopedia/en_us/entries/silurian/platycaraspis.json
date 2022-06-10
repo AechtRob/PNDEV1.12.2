@@ -2,7 +2,7 @@
 	"name": "Platycaraspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:platycaraspis_raw",
-	"category": "lepidodendron:silurian",
+	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_platycaraspis",
 	"pages": [
 		{

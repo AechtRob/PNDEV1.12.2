@@ -2,14 +2,14 @@
 	"name": "Retifacies",
 	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/retifacies_icon.png",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_retifacies",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_retifacies",
 			"title": "Retifacies",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Arthropoda$(br2)>Artiopoda$(br2)>Trilobitomorpha"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Arthropoda$(br)>Artiopoda$(br)>Trilobitomorpha"
 		},
 		{
 			"type": "image",

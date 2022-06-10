@@ -2,7 +2,7 @@
 	"name": "Nectocaris",
 	"read_by_default": true,
 	"icon": "lepidodendron:nectocaris_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_nectocaris",
 	"pages": [
 		{
