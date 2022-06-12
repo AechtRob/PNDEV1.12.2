@@ -70,6 +70,15 @@ public class BiomePrecambrianSea extends ElementsLepidodendronMod.ModElement {
 	    }
 
 		@Override
+		public int getSkyColorByTemp(float par1)
+		{
+			if (LepidodendronConfig.renderFog) {
+				return 0xC81400;
+			}
+			return super.getSkyColorByTemp(par1);
+		}
+
+		@Override
 	    public void decorate(World worldIn, Random rand, BlockPos pos)
 	    {
 
