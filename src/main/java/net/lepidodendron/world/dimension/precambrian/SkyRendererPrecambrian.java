@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class SkyRendererPrecambrian extends IRenderHandler {
 
-    public static final ResourceLocation MOON_PHASES_TEXTURES = new ResourceLocation("lepidodendron:textures/environment/moon_phases_big.png");
+    public static final ResourceLocation MOON_PHASES_TEXTURES = new ResourceLocation("textures/environment/moon_phases.png");
     public static final ResourceLocation SUN_TEXTURES = new ResourceLocation("textures/environment/sun.png");
     public boolean vboEnabled;
     public final VertexFormat vertexBufferFormat;
@@ -326,7 +326,7 @@ public class SkyRendererPrecambrian extends IRenderHandler {
         bufferbuilder.pos((double)f17, 100.0D, (double)f17).tex(1.0D, 1.0D).endVertex();
         bufferbuilder.pos((double)(-f17), 100.0D, (double)f17).tex(0.0D, 1.0D).endVertex();
         tessellator.draw();
-        f17 = 20.0F;
+        f17 = 35.0F;//This sets the size of the Moon in the sky.
         mc.renderEngine.bindTexture(MOON_PHASES_TEXTURES);
         int k1 = theWorld.getMoonPhase();
         int i2 = k1 % 4;
