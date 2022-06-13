@@ -997,7 +997,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //Buildburrow:
                                                                         pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos);
                                                                         world.setBlockState(pos.down(), BlockNest.block.getDefaultState());
-                                                                        TileEntity te = world.getTileEntity(pos.down());
+                                                                        TileEntity te = world.getTileEntity(pos);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityCustom) {
                                                                                 te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
@@ -1010,22 +1010,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                         if (EntityLandBase.hasNest()) {
                                                                             //Spawn a nest under the mob:
-                                                                            if (locationID == 5) { //on trees:
-                                                                                world.setBlockState(pos, BlockNest.block.getDefaultState());
-                                                                                TileEntity te = world.getTileEntity(pos);
-                                                                                if (te != null) {
-                                                                                    if (te instanceof BlockNest.TileEntityCustom) {
-                                                                                        te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                            else { //on ground, so bury the nest in the ground
-                                                                                world.setBlockState(pos.down(), BlockNest.block.getDefaultState());
-                                                                                TileEntity te = world.getTileEntity(pos.down());
-                                                                                if (te != null) {
-                                                                                    if (te instanceof BlockNest.TileEntityCustom) {
-                                                                                        te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
-                                                                                    }
+                                                                           world.setBlockState(pos, BlockNest.block.getDefaultState());
+                                                                            TileEntity te = world.getTileEntity(pos);
+                                                                            if (te != null) {
+                                                                                if (te instanceof BlockNest.TileEntityCustom) {
+                                                                                    te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
                                                                                 }
                                                                             }
                                                                         }
