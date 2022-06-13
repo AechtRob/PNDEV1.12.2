@@ -2,6 +2,7 @@
 package net.lepidodendron.world.biome.precambrian;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.util.math.BlockPos;
