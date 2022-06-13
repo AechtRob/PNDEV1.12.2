@@ -3,7 +3,10 @@ package net.lepidodendron.world.biome;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.world.gen.WorldGenAppleTree;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
@@ -29,7 +32,7 @@ public class BiomeAppleOrchard extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		BiomeManager.addSpawnBiome(biome);
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, 2));
+		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(biome, 2));
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
 	}
 
@@ -56,5 +59,47 @@ public class BiomeAppleOrchard extends ElementsLepidodendronMod.ModElement {
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
 			return new WorldGenAppleTree(false);
 		}
+
+		@Override
+		public void decorate(World worldIn, Random rand, BlockPos pos)
+		{
+			int i = rand.nextInt(5) - 3;
+			this.addDoublePlants(worldIn, rand, pos, i);
+			super.decorate(worldIn, rand, pos);
+		}
+
+		public void addDoublePlants(World p_185378_1_, Random p_185378_2_, BlockPos p_185378_3_, int p_185378_4_)
+		{
+			for (int i = 0; i < p_185378_4_; ++i)
+			{
+				int j = p_185378_2_.nextInt(3);
+
+				if (j == 0)
+				{
+					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.SYRINGA);
+				}
+				else if (j == 1)
+				{
+					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.ROSE);
+				}
+				else if (j == 2)
+				{
+					DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.PAEONIA);
+				}
+
+				for (int k = 0; k < 5; ++k)
+				{
+					int l = p_185378_2_.nextInt(16) + 8;
+					int i1 = p_185378_2_.nextInt(16) + 8;
+					int j1 = p_185378_2_.nextInt(p_185378_1_.getHeight(p_185378_3_.add(l, 0, i1)).getY() + 32);
+
+					if (DOUBLE_PLANT_GENERATOR.generate(p_185378_1_, p_185378_2_, new BlockPos(p_185378_3_.getX() + l, j1, p_185378_3_.getZ() + i1)))
+					{
+						break;
+					}
+				}
+			}
+		}
+
 	}
 }

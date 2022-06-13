@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		maxHealthAgeable = 0.8D;
 	}
 
+	@Override
+	public String getEggNBT() {
+		return LepidodendronMod.MODID + ":insect_eggs_pneumodesmus";
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
 	public static String getHabitat() {return "Terrestrial";}
@@ -62,11 +67,6 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean laysEggs() {
 		return true;
-	}
-
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_pneumodesmusa";
 	}
 
 	@Override

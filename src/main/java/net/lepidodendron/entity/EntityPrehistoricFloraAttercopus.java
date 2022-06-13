@@ -50,6 +50,10 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 		enablePersistence();
 	}
 
+	@Override
+	public String getEggNBT() {
+		return LepidodendronMod.MODID + ":insect_eggs_attercopus";
+	}
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
@@ -87,9 +91,6 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 	public boolean laysEggs() {
 		return true;
 	}
-
-	@Override
-	public String tagEgg () {return "insect_eggs_attercopus";}
 
 	@Override
 	public int getAnimationTick() {

@@ -34,7 +34,7 @@ public class BlockAmphibianSpawnBalanerpeton extends ElementsLepidodendronMod.Mo
 	@GameRegistry.ObjectHolder("lepidodendron:amphibian_spawn_balanerpeton_worldgen")
 	public static final Block block = null;
 	public BlockAmphibianSpawnBalanerpeton(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.amphibian_spawn_balanerpeton);
+		super(instance, LepidodendronSorter.amphibian_spawn_balanerpeton_worldgen);
 	}
 
 	@Override

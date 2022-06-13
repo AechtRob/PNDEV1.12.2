@@ -77,11 +77,6 @@ public class EntityPrehistoricFloraLabidosaurus extends EntityPrehistoricFloraLa
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_labidosaurus";
-	}
-
 	protected float getAISpeedLand() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

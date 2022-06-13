@@ -2,7 +2,6 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
-import net.lepidodendron.entity.render.RenderHandler;
 import net.lepidodendron.palaeobotanist.entity.Villager;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.Summoner;
@@ -53,6 +52,7 @@ public class LepidodendronMod {
 	public ElementsLepidodendronMod elements = new ElementsLepidodendronMod();
 
 	public static final ResourceLocation PALAEOBOTANIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeobotanist_chest"));
+	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
 
 	public static final int ENTITY_WALLISEROPS = 1;
 	public static final ResourceLocation WALLISEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/walliserops"));

@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.item.entities.ItemEggsPurlovia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -56,18 +55,8 @@ public class EntityPrehistoricFloraPurlovia extends EntityPrehistoricFloraDiicto
 	public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
-	public String tagEgg() {
-		return "eggs_purlovia";
-	}
-
-	@Override
 	public boolean hasAlarm() {
 		return false;
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsPurlovia.block, 1);
 	}
 
 	protected float getAISpeedLand() {

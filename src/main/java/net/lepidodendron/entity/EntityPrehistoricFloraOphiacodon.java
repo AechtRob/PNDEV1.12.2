@@ -76,11 +76,6 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_ophiacodon";
-	}
-
 	protected float getAISpeedLand() {
 		float calcSpeed = 0.288F;
 		if (this.getTicks() < 0) {

@@ -77,11 +77,6 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_hylonomus";
-	}
-
 	protected float getAISpeedLand() {
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

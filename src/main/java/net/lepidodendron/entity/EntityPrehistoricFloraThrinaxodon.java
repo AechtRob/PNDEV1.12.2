@@ -8,7 +8,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.item.entities.ItemEggsThrinaxodon;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -84,17 +83,7 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 	public int getAmbientTalkInterval() {
 		return 160;
 	}
-	
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsThrinaxodon.block, 1);
-	}
-	
-	@Override
-	public String tagEgg() {
-		return "eggs_thrinaxodon";
-	}
-	
+
 	protected float getAISpeedLand() {
 		float speedBase = 0.378F;
 		if (this.getTicks() < 0) {

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
@@ -50,7 +49,7 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
     @Override
     public boolean shouldExecute() {
 
-        if (!(this.PrehistoricFloraAgeableBase.laysEggs() && this.PrehistoricFloraAgeableBase.getCanBreed() && LepidodendronConfig.doMultiplyMobs)) {
+        if (!(this.PrehistoricFloraAgeableBase.laysEggs() && this.PrehistoricFloraAgeableBase.getCanBreed())) {
             return false;
         }
 
@@ -72,12 +71,6 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
                 }
             }
 
-            if (this.PrehistoricFloraAgeableBase instanceof EntityPrehistoricFloraPlateosaurus) {
-                EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.PrehistoricFloraAgeableBase;
-                if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
-                    return false;
-                }
-            }
         }
         //System.err.println("Ticks: " + this.PrehistoricFloraAgeableBase.getTicks());
 
@@ -87,32 +80,56 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
         BlockPos vec3 = null;
 
         Path path = this.PrehistoricFloraAgeableBase.getNavigator().getPath();
-        if (!this.PrehistoricFloraAgeableBase.getNavigator().noPath() && path != null) {
+
+        if ((!this.PrehistoricFloraAgeableBase.getNavigator().noPath()) && path != null) {
+
             xx = this.PrehistoricFloraAgeableBase.getNavigator().getPath().getFinalPathPoint().x;
             yy = this.PrehistoricFloraAgeableBase.getNavigator().getPath().getFinalPathPoint().y;
             zz = this.PrehistoricFloraAgeableBase.getNavigator().getPath().getFinalPathPoint().z;
             BlockPos pos = new BlockPos(xx, yy, zz);
             World world = this.PrehistoricFloraAgeableBase.world;
 
-            if (this.PrehistoricFloraAgeableBase.isMyNest(world, pos)) {
-                vec3 = pos;
+            if (!this.PrehistoricFloraAgeableBase.isLayableNest(world,  pos)) {
+                if (this.PrehistoricFloraAgeableBase.getRNG().nextFloat() < 0.033F) {
+                    this.PrehistoricFloraAgeableBase.getNavigator().clearPath();
+                }
             }
-            else {
+
+            if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos)) {
+                vec3 = pos;
+            } else {
                 vec3 = this.findBlockTarget(32);
             }
+
         }
         else {
-            vec3 = this.findBlockTarget(32);
+            vec3 = this.findRandomBlockTarget(32);
         }
-        if (vec3 != null) {
-            double Xoffset = this.PrehistoricFloraAgeableBase.posX - this.PrehistoricFloraAgeableBase.getPosition().getX();
-            double Zoffset = this.PrehistoricFloraAgeableBase.posZ - this.PrehistoricFloraAgeableBase.getPosition().getZ();
 
-            this.PrehistoricFloraAgeableBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D + Zoffset, 1.0);
+        if (vec3 != null) {
+            this.PrehistoricFloraAgeableBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D, 1.0);
+            if (((this.PrehistoricFloraAgeableBase.getNavigator().noPath()) || path == null)) {
+                BlockPos pos = new BlockPos(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5, vec3.getZ() + 0.5D);
+                if (this.PrehistoricFloraAgeableBase.getNestLocation() == pos && this.PrehistoricFloraAgeableBase.getPosition() != pos) {
+                    this.PrehistoricFloraAgeableBase.setNestLocation(null);
+                }
+            }
             return true;
         }
 
         return false;
+    }
+
+    public BlockPos findBlockTarget(int dist) {
+        if (this.PrehistoricFloraAgeableBase.getNestLocation() != null) {
+            if (this.PrehistoricFloraAgeableBase.isLayableNest(this.PrehistoricFloraAgeableBase.world, this.PrehistoricFloraAgeableBase.getNestLocation())) {
+                return this.PrehistoricFloraAgeableBase.getNestLocation();
+            }
+            else {
+                this.PrehistoricFloraAgeableBase.setNestLocation(null);
+            }
+        }
+        return this.PrehistoricFloraAgeableBase.findNest(this.PrehistoricFloraAgeableBase, dist, true);
     }
 
     @Override
@@ -125,20 +142,22 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
-    public BlockPos findBlockTarget(int dist) {
+    public BlockPos findRandomBlockTarget(int dist) {
         Random rand = this.PrehistoricFloraAgeableBase.getRNG();
         if (this.PrehistoricFloraAgeableBase.getAttackTarget() == null) {
             for (int i = 0; i < 64; i++) {
                 BlockPos randPos = this.PrehistoricFloraAgeableBase.getPosition().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt((int) (dist/2)+1) - (int) (dist/4), rand.nextInt(dist+1) - (int) (dist/2));
                 World world = this.PrehistoricFloraAgeableBase.world;
-                if (this.PrehistoricFloraAgeableBase.isMyNest(world, randPos)) {
+                if (this.PrehistoricFloraAgeableBase.isLayableNest(world, randPos)) {
                     if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
                         return randPos;
                     }
                 }
             }
         }
-        return null;
+        dist = dist/2;
+        BlockPos randPos = this.PrehistoricFloraAgeableBase.getPosition().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt((int) (dist/2)+1) - (int) (dist/4), rand.nextInt(dist+1) - (int) (dist/2));
+        return randPos;
     }
 
 

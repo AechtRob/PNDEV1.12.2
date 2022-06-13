@@ -259,6 +259,12 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					removed = true;
 				}
 
+				else if (blockTarget == BlockInsectEggsHarvestman.block) {
+					phial = new ItemStack(ItemPhialEggsHarvestman.block, (int) (1));
+					collected = true;
+					removed = true;
+				}
+
 				else if (blockTarget == BlockAmphibianSpawnAmphibamus.block || blockTarget == BlockAmphibianSpawnAmphibamusPlaceable.block) {
 					phial = new ItemStack(ItemPhialEggsAmphibamus.block, (int) (1));
 					collected = true;
@@ -505,6 +511,10 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					}
 					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_gerarus")) {
 						phial = new ItemStack(ItemPhialEggsGerarus.block, (int) (1));
+						collected = true;
+					}
+					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_harvestman")) {
+						phial = new ItemStack(ItemPhialEggsHarvestman.block, (int) (1));
 						collected = true;
 					}
 

@@ -1,7 +1,6 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
@@ -12,7 +11,6 @@ import net.lepidodendron.block.BlockSandSticky;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.item.entities.ItemEggsDiictodon;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -26,10 +24,6 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -54,8 +48,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	private boolean screaming;
 	private int alarmCooldown;
 
-	protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraDiictodon.class, DataSerializers.OPTIONAL_BLOCK_POS);
-
 	public EntityPrehistoricFloraDiictodon(World world) {
 		super(world);
 		//setSize(0.6F, 0.35F);
@@ -76,70 +68,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@Override
 	public boolean hasNest() {
 		return true;
-	}
-
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		if (compound.hasKey("PosX")) {
-			int i = compound.getInteger("PosX");
-			int j = compound.getInteger("PosY");
-			int k = compound.getInteger("PosZ");
-			this.dataManager.set(NEST_BLOCK_POS, Optional.of(new BlockPos(i, j, k)));
-		} else {
-			this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
-		}
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound) {
-		super.writeEntityToNBT(compound);
-		if (this.getNestLocation() != null) {
-			compound.setInteger("PosX", this.getNestLocation().getX());
-			compound.setInteger("PosY", this.getNestLocation().getY());
-			compound.setInteger("PosZ", this.getNestLocation().getZ());
-		}
-	}
-
-	@Nullable
-	public BlockPos getNestLocation() {
-		return (BlockPos) ((Optional) this.dataManager.get(NEST_BLOCK_POS)).orNull();
-	}
-
-	public void setNestLocation(@Nullable BlockPos pos) {
-		this.dataManager.set(NEST_BLOCK_POS, Optional.fromNullable(pos));
-	}
-
-	public BlockPos findNest(Entity entity, int dist) {
-		int xx;
-		int yy;
-		int zz;
-		BlockPos randPos;
-		xx = -dist;
-		while (xx <= dist) {
-			yy = (int) -Math.round((double) dist / 2D);
-			while (yy <= (int) Math.round((double) dist / 2D)) {
-				zz = -dist;
-				while (zz <= dist) {
-					if (entity.getPosition().getY() + yy >= 1 && entity.getPosition().getY() + yy <= 255) {
-						randPos = entity.getPosition().add(xx, yy, zz);
-						World world = this.world;
-						if (this.isMyNest(world, randPos)) {
-							if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
-								return randPos;
-							}
-						}
-					}
-					zz += 1;
-				}
-				yy += 1;
-			}
-			xx += 1;
-		}
-		return null;
 	}
 
 	public boolean hasAlarm() {
@@ -169,11 +97,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsDiictodon.block, 1);
-	}
-
-	@Override
 	public int getAttackLength() {
 		return 20;
 	}
@@ -193,11 +116,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_diictodon";
-	}
-	
 	protected float getAISpeedLand() {
 		float speedBase = 0.348F;
 		if (this.getTicks() < 0) {
@@ -321,22 +239,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 			this.playAlarmSound();
 		}
 
-		if (!world.isRemote) {
-			if ((double) this.getTicks() / 200D == (int) Math.round((double) this.getTicks() / 200D)) {
-				@Nullable BlockPos pos = this.getNestLocation();
-				if (pos == null) {
-					this.setNestLocation(this.findNest(this, 2));
-				} else {
-					if (!world.isBlockLoaded(pos)) {
-						this.setNestLocation(this.findNest(this, 2));
-					}
-					else if (!isMyNest(world, pos)) {
-						this.setNestLocation(this.findNest(this, 2));
-					}
-				}
-			}
-		}
-
 		super.onEntityUpdate();
 	}
 
@@ -376,16 +278,16 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 	public boolean testLay(World world, BlockPos pos) {
 		//System.err.println("Testing laying conditions");
-
-		if (isMyNest(world, pos)) {
+		BlockPos posNest = pos;
+		if (isLayableNest(world, posNest)) {
 			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(new BlockPos(pos), "egg");
+			}.getValue(new BlockPos(posNest), "egg");
 
 			//System.err.println("eggRenderType " + eggRenderType);
 

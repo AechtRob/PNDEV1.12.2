@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.item.entities.ItemEggsGorgonops;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -82,16 +81,6 @@ public class EntityPrehistoricFloraSauroctonus extends EntityPrehistoricFloraLan
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_sauroctonus";
-	}
-
-    @Override
-    public ItemStack eggItemStack() {
-        return new ItemStack(ItemEggsGorgonops.block, 1);
-    }
-	
 	protected float getAISpeedLand() {
 		float speedBase = 0.325F;
 		if (this.getTicks() < 0) {
@@ -225,7 +214,7 @@ public class EntityPrehistoricFloraSauroctonus extends EntityPrehistoricFloraLan
     public boolean testLay(World world, BlockPos pos) {
         //System.err.println("Testing laying conditions");
 
-        if (isMyNest(world, pos)) {
+        if (isLayableNest(world, pos)) {
             String eggRenderType = new Object() {
                 public String getValue(BlockPos pos, String tag) {
                     TileEntity tileEntity = world.getTileEntity(pos);

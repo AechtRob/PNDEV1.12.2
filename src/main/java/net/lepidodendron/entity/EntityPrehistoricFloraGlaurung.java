@@ -48,9 +48,6 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 	}
 
 	@Override
-	public String tagEgg () {return "eggs_glaurung";}
-
-	@Override
 	public boolean testLay(World world, BlockPos pos) {
 		return (
 				nestBlockMatch(world, pos)

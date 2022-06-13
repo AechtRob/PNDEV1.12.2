@@ -66,6 +66,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return livingdata;
     }
 
+
     public boolean canSwim() {
         return true;
     }

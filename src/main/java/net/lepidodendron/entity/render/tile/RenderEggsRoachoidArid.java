@@ -2,7 +2,7 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockInsectEggsRoachoidArid;
-import net.lepidodendron.entity.model.tile.ModelTrigonotarbidEggs;
+import net.lepidodendron.entity.model.tile.ModelInsectEggs;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -13,12 +13,12 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEggsRoachoidArid extends TileEntitySpecialRenderer<BlockInsectEggsRoachoidArid.TileEntityCustom> {
 
-    private final ModelTrigonotarbidEggs insect_eggs;
+    private final ModelInsectEggs insect_eggs;
     private static final ResourceLocation TEXTURE_ROACHOID_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_eggs.png");
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderEggsRoachoidArid() {
-        this.insect_eggs = new ModelTrigonotarbidEggs();
+        this.insect_eggs = new ModelInsectEggs();
     }
 
     @Override

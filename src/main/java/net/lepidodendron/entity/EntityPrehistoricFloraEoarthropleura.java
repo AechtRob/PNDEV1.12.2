@@ -49,6 +49,11 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 		maxHealthAgeable = 0.8D;
 	}
 
+	@Override
+	public String getEggNBT() {
+		return LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";
+	}
+
 	public static String getPeriod() {return "Silurian - Devonian";}
 
 	public static String getHabitat() {return "Terrestrial";}
@@ -63,11 +68,6 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 		return true;
 	}
 
-	@Override
-	public String tagEgg () {
-		return "insect_eggs_eoarthropleura";
-	}
-	
 	@Override
 	public int getAdultAge() {
 		return 0;

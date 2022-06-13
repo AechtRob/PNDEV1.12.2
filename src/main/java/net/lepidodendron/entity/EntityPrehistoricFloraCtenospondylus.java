@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.item.entities.ItemEggsCtenospondylus;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -82,16 +81,6 @@ public class EntityPrehistoricFloraCtenospondylus extends EntityPrehistoricFlora
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_ctenospondylus";
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsCtenospondylus.block, 1);
-	}
-	
 	protected float getAISpeedLand() {
 		float speedBase = 0.265F;
 		if (this.getTicks() < 0) {
@@ -218,16 +207,16 @@ public class EntityPrehistoricFloraCtenospondylus extends EntityPrehistoricFlora
 
 	public boolean testLay(World world, BlockPos pos) {
 		//System.err.println("Testing laying conditions");
-
-		if (isMyNest(world, pos)) {
+		BlockPos posNest = pos;
+		if (isLayableNest(world, posNest)) {
 			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getString(tag);
 					return "";
 				}
-			}.getValue(new BlockPos(pos), "egg");
+			}.getValue(new BlockPos(posNest), "egg");
 
 			//System.err.println("eggRenderType " + eggRenderType);
 

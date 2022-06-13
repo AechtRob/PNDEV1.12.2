@@ -128,11 +128,6 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		return true;
 	}
 
-	@Override
-	public String tagEgg() {
-		return "eggs_dvinia";
-	}
-	
 	protected float getAISpeedLand() {
 		float speedBase = 0.377F;
 		if (this.getTicks() < 0) {

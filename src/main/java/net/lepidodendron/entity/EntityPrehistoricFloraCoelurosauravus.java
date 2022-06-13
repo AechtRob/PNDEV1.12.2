@@ -5,8 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockLeafLitter;
-import net.lepidodendron.item.entities.ItemEggsCoelurosauravus;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -47,14 +45,6 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	@Override
 	protected float getAISpeedLand() {
 		return 0.377F;
-	}
-
-	@Override
-	public String tagEgg () {return "eggs_coelurosauravus";}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsCoelurosauravus.block, 1);
 	}
 
 	@Override
