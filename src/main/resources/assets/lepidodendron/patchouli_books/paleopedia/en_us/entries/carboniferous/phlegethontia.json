@@ -2,7 +2,7 @@
 	"name": "Phlegethontia",
 	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/phlegethontia_icon.png",
-	"category": "lepidodendron:carboniferous",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_phlegethontia",
 	"pages": [
 		{

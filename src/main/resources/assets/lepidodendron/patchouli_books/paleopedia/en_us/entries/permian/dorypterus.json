@@ -2,7 +2,7 @@
 	"name": "Dorypterus",
 	"read_by_default": true,
 	"icon": "lepidodendron:dorypterus_raw",
-	"category": "lepidodendron:permian",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dorypterus",
 	"pages": [
 		{

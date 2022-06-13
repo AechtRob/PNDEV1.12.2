@@ -2,7 +2,7 @@
 	"name": "Maclurina",
 	"read_by_default": true,
 	"icon": "lepidodendron:maclurina_item",
-	"category": "lepidodendron:ordovician",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_maclurina",
 	"pages": [
 		{

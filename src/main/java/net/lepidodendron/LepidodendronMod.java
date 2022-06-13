@@ -765,6 +765,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation BARBCLABORNIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/barbclabornia_young"));
 	public static final int ENTITY_LEBACHACANTHUS = 321;
 	public static final ResourceLocation LEBACHACANTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lebachacanthus"));
+	public static final ResourceLocation LEBACHACANTHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lebachacanthus_young"));
 	public static final int ENTITY_PARANAICHTHYS = 322;
 	public static final ResourceLocation PARANAICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paranaichthys"));
 	public static final int ENTITY_DIPLOCAULUS = 323;

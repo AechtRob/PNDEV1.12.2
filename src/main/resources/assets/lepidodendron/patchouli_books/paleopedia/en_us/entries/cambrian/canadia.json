@@ -1,31 +1,31 @@
 {
-	"name": "template",
+	"name": "Canadia",
 	"read_by_default": true,
-	"icon": "lepidodendron:",
-	"category": "lepidodendron:",
+	"icon": "lepidodendron:canadia_raw",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_canadia",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_canadia",
-			"title": "template",
+			"title": "Canadia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Annelida$(br)>Polychaeta"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:/.png"],
-			"title": "",
+			"images": ["paleopedia:cambrian/Canadia.png"],
+			"title": "C. spinosa",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_canadia",
 			"type": "text",
-			"text": ""
+			"text": "Canadia is a polychaete worm from the Burgess shale. It had many tentacle like protrusions along its body and it would have been a carnivorous free swimmer."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_canadia",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

@@ -2,7 +2,7 @@
 	"name": "Palaeotarbus",
 	"read_by_default": true,
 	"icon": "paleopedia:ordosil/ordosil_icon/palaeotarbus_icon.png",
-	"category": "patchouli:silurian",
+	"category": "patchouli:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
 	"pages": [
 		{

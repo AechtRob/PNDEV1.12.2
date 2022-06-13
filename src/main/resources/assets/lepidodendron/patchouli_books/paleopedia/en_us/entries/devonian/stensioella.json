@@ -1,31 +1,31 @@
 {
-	"name": "template",
+	"name": "Stensioella",
 	"read_by_default": true,
-	"icon": "lepidodendron:",
-	"category": "lepidodendron:",
+	"icon": "lepidodendron:stensioella_raw",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_stensioella",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_stensioella",
-			"title": "template",
+			"title": "Stensioella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Placodermi$(br)>Stensioellida$(br)>Stensioellidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:/.png"],
-			"title": "",
+			"images": ["paleopedia:devonian/Stensioella.png"],
+			"title": "S. heintzi",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stensioella",
 			"type": "text",
-			"text": ""
+			"text": "Stensioella is a fish of uncertain placement. It is debated whether or not the animal was a placoderm and it had some resemblences to later holocephalians. They had wing like fins and were likely bottom dwelling fish."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stensioella",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

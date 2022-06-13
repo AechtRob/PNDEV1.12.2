@@ -2,7 +2,7 @@
 	"name": "Odaraia",
 	"read_by_default": true,
 	"icon": "lepidodendron:odaraia_raw",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_odaraia",
 	"pages": [
 		{

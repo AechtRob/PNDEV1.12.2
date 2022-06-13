@@ -2,7 +2,7 @@
 	"name": "Thelodus",
 	"read_by_default": true,
 	"icon": "lepidodendron:thelodus_raw",
-	"category": "lepidodendron:silurian",
+	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_thelodus",
 	"pages": [
 		{

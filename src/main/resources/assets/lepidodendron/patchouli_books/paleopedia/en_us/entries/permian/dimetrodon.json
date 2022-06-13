@@ -2,7 +2,7 @@
 	"name": "Dimetrodon",
 	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/dimetrodon_icon.png",
-	"category": "lepidodendron:permian",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dimetrodon",
 	"pages": [
 		{

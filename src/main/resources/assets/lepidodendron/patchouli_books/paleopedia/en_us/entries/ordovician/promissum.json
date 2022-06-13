@@ -2,7 +2,7 @@
 	"name": "Promissum",
 	"read_by_default": true,
 	"icon": "lepidodendron:promissum_raw",
-	"category": "lepidodendron:ordovician",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_promissum",
 	"pages": [
 		{

@@ -2,7 +2,7 @@
 	"name": "Archosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:permian/permian_icon/archosaurus_icon.png",
-	"category": "lepidodendron:permian",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_archosaurus",
 	"pages": [
 		{

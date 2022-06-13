@@ -2,7 +2,7 @@
 	"name": "Lunataspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:lunataspis_raw",
-	"category": "lepidodendron:ordovician",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_lunataspis",
 	"pages": [
 		{

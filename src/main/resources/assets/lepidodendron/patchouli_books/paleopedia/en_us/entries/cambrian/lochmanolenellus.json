@@ -2,14 +2,14 @@
 	"name": "Lochmanolenellus",
 	"read_by_default": true,
 	"icon": "paleopedia:cambrian/cambrian_icon/lochmanolenellus_icon.png",
-	"category": "lepidodendron:cambrian",
+	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lochmanolenellus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_lochmanolenellus",
 			"title": "Lochmanolenellus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br2)>Redlichiida$(br2)>Biceratopsidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br)>Redlichiida$(br)>Biceratopsidae"
 		},
 		{
 			"type": "image",

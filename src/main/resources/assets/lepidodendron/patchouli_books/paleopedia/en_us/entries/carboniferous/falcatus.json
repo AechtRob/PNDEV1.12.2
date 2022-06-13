@@ -2,7 +2,7 @@
 	"name": "Falcatus",
 	"read_by_default": true,
 	"icon": "lepidodendron:falcatus_raw",
-	"category": "lepidodendron:carboniferous",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_falcatus",
 	"pages": [
 		{

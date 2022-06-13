@@ -1,0 +1,6 @@
+{
+    "name": "Silurian Animals",
+    "icon": "paleopedia:ordosil/ordosil_icon/acutiramus_icon.png",
+    "parent": "lepidodendron:silurian",
+    "sortnum": 1
+}

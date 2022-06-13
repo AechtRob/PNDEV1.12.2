@@ -2,7 +2,7 @@
 	"name": "Ebenaqua",
 	"read_by_default": true,
 	"icon": "lepidodendron:ebenaqua_raw",
-	"category": "lepidodendron:permian",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ebenaqua",
 	"pages": [
 		{
