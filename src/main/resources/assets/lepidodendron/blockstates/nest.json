@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "bird=false,mound=false": {
+      "model": "lepidodendron:nest_fluff"
+    },
+    "bird=false,mound=true": {
+      "model": "lepidodendron:nest_fluff"
+    },
+    "bird=true,mound=false": {
+      "model": "lepidodendron:nest"
+    },
+    "bird=true,mound=true": {
+      "model": "lepidodendron:nest"
+    }
+  }
+}

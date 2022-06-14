@@ -996,7 +996,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //Spawn a nest and burrow for the:
                                                                         //Buildburrow:
                                                                         pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos);
-                                                                        world.setBlockState(pos, BlockNest.block.getDefaultState());
+                                                                        world.setBlockState(pos.down(), BlockNest.block.getDefaultState());
                                                                         TileEntity te = world.getTileEntity(pos);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityCustom) {
@@ -1010,7 +1010,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                         if (EntityLandBase.hasNest()) {
                                                                             //Spawn a nest under the mob:
-                                                                            world.setBlockState(pos, BlockNest.block.getDefaultState());
+                                                                           world.setBlockState(pos, BlockNest.block.getDefaultState());
                                                                             TileEntity te = world.getTileEntity(pos);
                                                                             if (te != null) {
                                                                                 if (te instanceof BlockNest.TileEntityCustom) {

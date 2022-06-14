@@ -124,9 +124,6 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 	}
 
 	@Override
-	public String tagEgg () {return "";}
-
-	@Override
 	public boolean isAIDisabled() {
 		return false;
 	}

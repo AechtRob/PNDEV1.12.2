@@ -4,9 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.item.entities.ItemEggsRautiania;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -47,14 +45,6 @@ public class EntityPrehistoricFloraRautiania extends EntityPrehistoricFloraWeige
 	@Override
 	protected float getAISpeedLand() {
 		return 0.385F;
-	}
-
-	@Override
-	public String tagEgg () {return "eggs_rautiania";}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsRautiania.block, 1);
 	}
 
 	@Override

@@ -11,7 +11,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.item.entities.ItemEggsClaudiosaurus;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -87,18 +86,8 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public String tagEgg() {
-		return "eggs_claudiosaurus";
-	}
-
-	@Override
 	public boolean placesNest() {
 		return true;
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsClaudiosaurus.block, 1);
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {

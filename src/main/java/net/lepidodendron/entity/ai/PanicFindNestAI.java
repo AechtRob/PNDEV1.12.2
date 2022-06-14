@@ -2,7 +2,6 @@ package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -16,13 +15,13 @@ import javax.annotation.Nullable;
 
 public class PanicFindNestAI extends EntityAIBase
 {
-    protected final EntityPrehistoricFloraLandBase creature;
+    protected final EntityPrehistoricFloraAgeableBase creature;
     protected double speed;
     protected double randPosX;
     protected double randPosY;
     protected double randPosZ;
 
-    public PanicFindNestAI(EntityPrehistoricFloraLandBase creature, double speedIn)
+    public PanicFindNestAI(EntityPrehistoricFloraAgeableBase creature, double speedIn)
     {
         this.creature = creature;
         this.speed = speedIn;
@@ -78,7 +77,7 @@ public class PanicFindNestAI extends EntityAIBase
             BlockPos pathPos = new BlockPos(xx, yy, zz);
             World world = creature.world;
 
-            if (creature.isMyNest(world, pathPos)) {
+            if (creature.isHomeableNest(world, pathPos)) {
                 this.randPosX = pathPos.getX();
                 this.randPosY = pathPos.getY();
                 this.randPosZ = pathPos.getZ();
@@ -123,14 +122,10 @@ public class PanicFindNestAI extends EntityAIBase
     }
 
     public BlockPos findBlockTarget(int dist) {
-        if (this.creature instanceof EntityPrehistoricFloraDiictodon) {
-            EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.creature;
-            if (Diictodon.getNestLocation() != null) {
-                return Diictodon.getNestLocation();
-            }
-            return Diictodon.findNest(Diictodon, dist);
+        if (this.creature.getNestLocation() != null) {
+            return this.creature.getNestLocation();
         }
-        return null;
+        return this.creature.findNest(this.creature, dist, false);
     }
 
     public void startExecuting()

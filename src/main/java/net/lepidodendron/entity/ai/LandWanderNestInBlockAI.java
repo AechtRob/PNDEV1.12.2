@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
@@ -48,7 +47,7 @@ public class LandWanderNestInBlockAI extends AnimationAINoAnimation<EntityPrehis
     @Override
     public boolean shouldExecute() {
 
-        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getCanBreed() && LepidodendronConfig.doMultiplyMobs)) {
+        if (!(this.PrehistoricFloraLandBase.laysEggs() && this.PrehistoricFloraLandBase.getCanBreed())) {
             return false;
         }
 

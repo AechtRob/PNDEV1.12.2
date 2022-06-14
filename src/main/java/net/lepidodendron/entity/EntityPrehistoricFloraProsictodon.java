@@ -3,10 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.item.entities.ItemEggsProsictodon;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -35,16 +33,6 @@ public class EntityPrehistoricFloraProsictodon extends EntityPrehistoricFloraDii
 		maxWidth = 0.22F;
 		maxHeight = 0.25F;
 		maxHealthAgeable = 8.0D;
-	}
-
-	@Override
-	public String tagEgg() {
-		return "eggs_prosictodon";
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsProsictodon.block, 1);
 	}
 
 	protected float getAISpeedLand() {

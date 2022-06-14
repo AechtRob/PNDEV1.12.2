@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 		enablePersistence();
 	}
 
+	@Override
+	public String getEggNBT() {
+		return LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev";
+	}
+
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
@@ -87,9 +92,6 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeocharinus extends EntityPr
 	public boolean laysEggs() {
 		return true;
 	}
-
-	@Override
-	public String tagEgg () {return "insect_eggs_trigonotarbid_dev";}
 
 	@Override
 	public int getAnimationTick() {

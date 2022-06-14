@@ -4,17 +4,18 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -25,6 +26,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemEgg;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -35,7 +37,6 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -65,10 +66,8 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("nest"));
-		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
-
-	public static final PropertyInteger TYPE = PropertyInteger.create("type", 0, 25);
 
 	@Override
 	public void init(FMLInitializationEvent event) {
@@ -78,12 +77,14 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-		//		new ModelResourceLocation("lepidodendron:lepidodendron_door", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNest.TYPE).build());
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation("lepidodendron:nest", "inventory"));
 	}
 
 	public static class BlockCustom extends Block implements IShearable {
+
+		public static final PropertyBool MOUND = PropertyBool.create("mound");
+		public static final PropertyBool BIRD = PropertyBool.create("bird");
 
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -91,16 +92,53 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.PLANT);
 			setLightLevel(0F);
 			setLightOpacity(0);
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMobile.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(MOUND, false).withProperty(BIRD, true));
+
+		}
+
+		@Override
+		public Material getMaterial(IBlockState state) {
+			if (state.getValue(BIRD)) {
+				return Material.PLANTS;
+			}
+			return Material.SAND;
+		}
+
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{MOUND, BIRD});
+		}
+
+		public IBlockState getStateFromMeta(int meta)
+		{
+			return this.getDefaultState();
+		}
+
+		public int getMetaFromState(IBlockState state)
+		{
+			return 0;
 		}
 
 		@Override
 		public SoundType getSoundType(IBlockState state, World world, BlockPos pos, @Nullable Entity entity)
 		{
-			if (this.isMound(world, pos)) {
-				return SoundType.SAND;
+			if (state.getValue(BIRD)) {
+				return SoundType.PLANT;
 			}
-			return SoundType.PLANT;
+			return SoundType.SAND;
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			boolean isMound = false;
+			if (worldIn instanceof World) {
+				isMound = (isMound((World) worldIn, pos));
+			}
+			boolean isBird = (worldIn.getBlockState(pos.down()).getMaterial() == Material.LEAVES
+				|| worldIn.getBlockState(pos.down()).getMaterial() == Material.WOOD);
+
+			return state.withProperty(MOUND, isMound).withProperty(BIRD, (isBird && !isMound));
 		}
 
 		public static boolean isMound(World world, BlockPos pos) {
@@ -113,108 +151,19 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				}
 			}.getValue(pos, "creature");
 
-			if (nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_claudiosaurus")
-				|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_glaurung")
-				|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_rautiania")
-				|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_coelurosauravus")
-			) {
-				return true;
+			if (!nestType.equalsIgnoreCase("")) {
+				EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(nestType));
+				if (ee != null) {
+					Entity entityEggs = ee.newInstance(world);
+					if (entityEggs instanceof EntityPrehistoricFloraLandBase) {
+						EntityPrehistoricFloraLandBase entityLand = (EntityPrehistoricFloraLandBase) entityEggs;
+						if (entityLand.isNestMound()) {
+							return true;
+						}
+					}
+				}
 			}
 			return false;
-		}
-
-		@Override
-		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{TYPE});
-		}
-
-		@Override
-		public IBlockState getStateFromMeta(int meta)
-		{
-			return this.getDefaultState();
-		}
-
-		@Override
-		public int getMetaFromState(IBlockState state)
-		{
-			return 0;
-		}
-
-		@Override
-		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-		{
-			IBlockState stateDown = worldIn.getBlockState(pos.down());
-			int type = 0; //generic
-			if (stateDown.getMaterial() == Material.GROUND) {type = 1;} //dirt
-			if (stateDown.getMaterial() == Material.SAND) {type = 2;} //gravel
-			if (stateDown == Blocks.SAND.getStateFromMeta(0)
-					|| stateDown.getBlock() == BlockSandSticky.block
-					|| stateDown.getBlock() == BlockSandWavy.block
-					|| stateDown.getBlock() == BlockSandWavySticky.block
-			) {type = 3;} //white sand
-			if (stateDown == Blocks.SAND.getStateFromMeta(1)
-					|| stateDown.getBlock() == BlockSandRedSticky.block
-					|| stateDown.getBlock() == BlockSandRedWavy.block
-					|| stateDown.getBlock() == BlockSandRedWavySticky.block
-			) {type = 4;} //red sand
-			if (stateDown.getBlock() == BlockSandPangaean.block
-					|| stateDown.getBlock() == BlockSandPangaeanSticky.block
-					|| stateDown.getBlock() == BlockSandPangaeanWavy.block
-					|| stateDown.getBlock() == BlockSandPangaeanWavySticky.block
-			) {type = 5;} //pangaean sand
-			if (stateDown.getMaterial() == Material.CLAY) {type = 6;} //clay
-			if (stateDown.getBlock() == BlockRedClay.block) {type = 7;} //red clay
-			if (stateDown.getBlock() == BlockSiltyDirt.block
-					|| stateDown.getBlock() == BlockCoarseSiltyDirt.block
-			) {type = 8;} //silty dirt
-			if (stateDown.getBlock() == BlockSandBlack.block
-					|| stateDown.getBlock() == BlockSandBlackSticky.block
-					|| stateDown.getBlock() == BlockSandBlackWavy.block
-					|| stateDown.getBlock() == BlockSandBlackWavySticky.block
-			) {type = 9;} //black sand
-			if (stateDown.getBlock() == BlockSandyDirt.block
-					|| stateDown.getBlock() == BlockCoarseSandyDirt.block
-			) {type = 10;} //sandy dirt
-			if (stateDown.getBlock() == BlockPrehistoricGroundLush.block
-			) {type = 11;} //lush
-			if (stateDown.getBlock() == BlockSandyDirtBlack.block
-					|| stateDown.getBlock() == BlockCoarseSandyDirtBlack.block
-			) {type = 12;} //black sandy dirt
-			if (stateDown.getBlock() == BlockSandyDirtPangaean.block
-					|| stateDown.getBlock() == BlockCoarseSandyDirtPangaean.block
-			) {type = 13;} //pangaean sandy dirt
-			if (stateDown.getBlock() == BlockSandyDirtRed.block
-					|| stateDown.getBlock() == BlockCoarseSandyDirtRed.block
-			) {type = 14;} //red sandy dirt
-			if (stateDown.getBlock() == BlockPrehistoricGroundSand.block
-			) {type = 15;} //white sandy prehistoric ground
-			if (stateDown.getBlock() == BlockPrehistoricGroundSandRed.block
-			) {type = 16;} //red sandy prehistoric ground
-			if (stateDown.getBlock() == BlockPrehistoricGroundSandPangaean.block
-			) {type = 17;} //pangaean sandy prehistoric ground
-			if (stateDown.getBlock() == BlockPrehistoricGroundSandBlack.block
-			) {type = 18;} //black sandy prehistoric ground
-			if (stateDown.getBlock() == BlockPrehistoricGroundFern.block
-			) {type = 19;} //ferny prehistoric ground
-			if (stateDown.getBlock() == BlockPrehistoricGroundMossy.block
-			) {type = 20;} //Mossy prehistoric ground
-			if (stateDown.getBlock() == BlockLeafLitter.block
-			) {type = 21;} //Leaflitter
-			if (stateDown.getBlock() == Blocks.DIRT.getStateFromMeta(3).getBlock()
-			) {type = 22;} //Podzol
-			if (stateDown.getBlock() == BlockCarboniferousMud.block
-			) {type = 23;} //Mud
-			if (stateDown.getBlock() == BlockPrehistoricGroundBasic.block
-			) {type = 24;} //regular prehistoric ground
-			if (stateDown.getBlock() == BlockScorchedEarth.block
-			) {type = 25;} //scorched dirt
-
-			return state.withProperty(TYPE, type);
-		}
-
-		@Override
-		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
-			return true;
 		}
 
 		@Override
@@ -222,6 +171,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			if (this.isMound(worldIn, pos)) {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.0625, 0.9375));
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875, 0, 0.1875, 0.8125, 0.125, 0.8125));
+			}
+			else if (!this.getActualState(state, worldIn, pos).getValue(BIRD)){
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.05, 0, 0.05, 0.95, 0.2, 0.95));
 			}
 		}
 
@@ -233,16 +185,10 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 					return new AxisAlignedBB(0.0, 0, 0.0, 1.0, 0.125, 1.0);
 				}
 			}
-			return new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.5, 0.875);
-		}
-
-		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			ItemStack stack = getNestItemStack(world, pos);
-			if (stack != null) {
-				return stack;
+			if (state.getValue(BIRD)) {
+				return new AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 0.6, 1.0);
 			}
-			return super.getPickBlock(state, target, world, pos, player);
+			return new AxisAlignedBB(0.0, 0.0, 0.0, 1.0, 0.2, 1.0);
 		}
 
 		@Override
@@ -265,44 +211,13 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Nullable
 		public static ItemStack getEggItemStack(@Nullable String stringEgg) {
-			if (!stringEgg.equals("")) {
-				//Get the item itself:
-				return new ItemStack(getEggItem(stringEgg), 1);
+			stringEgg = stringEgg.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+			String eggs = LepidodendronMod.MODID + ":eggs_" + stringEgg;
+			Item eggItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(eggs));
+			if (eggItem != null) {
+				return new ItemStack(eggItem, 1);
 			}
 			return null;
-		}
-
-		@Nullable
-		public static ItemStack getNestItemStack(World world, BlockPos pos) {
-			//Get the matching nest item for the nbt applied:
-			String nestType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(pos, "creature");
-
-			if (!nestType.equals("")) {
-				//Get the item itself:
-				return new ItemStack(getNestItem(nestType), 1);
-			}
-			return null;
-		}
-
-		@Nullable
-		public static Item getNestItem(String nest) {
-			nest = LepidodendronMod.MODID + ":nest_" + nest.substring(32);
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(nest));
-			return item;
-		}
-
-		@Nullable
-		public static Item getEggItem(String egg) {
-			Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(egg));
-			//System.err.println("Eggitem: " + item);
-			return item;
 		}
 
 		@Nullable
@@ -389,10 +304,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
-			ItemStack nestStack = getNestItemStack((World) world, pos);
-			if (nestStack != null) {
-				return NonNullList.withSize(1, new ItemStack(nestStack.getItem(), (int) (1)));
-			}
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
 
@@ -404,7 +315,10 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
-			return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			if (state.getValue(MOUND)) {
+				return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
+			}
+			return EnumBlockRenderType.MODEL;
 		}
 
 		@Override
@@ -446,47 +360,48 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		{
-			if (this.isMound(world, pos)) {
-				return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-			}
-			String eggRenderType = "";
-			eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+			if (!world.isRemote) {
+				if (this.isMound(world, pos)) {
+					return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 				}
-			}.getValue(new BlockPos(pos), "egg");
-
-			if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || eggRenderType.equals(""))
-			{
-				return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-			}
-			else {
-				if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					ItemStack stackEggs = getEggItemStack(eggRenderType);
-					if (stackEggs != null) {
-						stackEggs.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackEggs);
-						TileEntity te = world.getTileEntity(pos);
-						if (te != null) {
-							te.getTileData().setString("egg", "");
-							if (te instanceof TileEntityCustom) {
-								TileEntityCustom tee = (TileEntityCustom) te;
-								tee.setInventorySlotContents(0, ItemStack.EMPTY);
-							}
-						}
-						IBlockState bstate = world.getBlockState(pos);
-						world.notifyBlockUpdate(pos, bstate, bstate, 3);
-						if (!player.capabilities.isCreativeMode) {
-							AggroMob(world, pos, getNestOwner(world, pos), player, false);
-						}
-						return true;
+				String eggRenderType = "";
+				eggRenderType = new Object() {
+					public String getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getString(tag);
+						return "";
 					}
+				}.getValue(new BlockPos(pos), "egg");
+
+				if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || eggRenderType.equals("")) {
+					return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
+				} else {
+					if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
+						ItemStack stackEggs = getEggItemStack(eggRenderType);
+						if (stackEggs != null) {
+							stackEggs.setCount(1);
+							ItemHandlerHelper.giveItemToPlayer(player, stackEggs);
+							TileEntity te = world.getTileEntity(pos);
+							if (te != null) {
+								te.getTileData().setString("egg", "");
+								if (te instanceof TileEntityCustom) {
+									TileEntityCustom tee = (TileEntityCustom) te;
+									tee.setInventorySlotContents(0, ItemStack.EMPTY);
+								}
+							}
+							IBlockState bstate = world.getBlockState(pos);
+							world.notifyBlockUpdate(pos, bstate, bstate, 3);
+							if (!player.capabilities.isCreativeMode) {
+								AggroMob(world, pos, getNestOwner(world, pos), player, false);
+							}
+							return true;
+						}
+					}
+					return true;
 				}
-				return true;
 			}
+			return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 		}
 
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {

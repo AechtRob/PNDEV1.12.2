@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.pathfinding.Path;
@@ -72,23 +71,32 @@ public class NightFindNestAI extends AnimationAINoAnimation<EntityPrehistoricFlo
         BlockPos vec3 = null;
 
         Path path = this.PrehistoricFloraLandBase.getNavigator().getPath();
-        if (vec3 == null && !this.PrehistoricFloraLandBase.getNavigator().noPath() && path != null) {
+        if ((!this.PrehistoricFloraLandBase.getNavigator().noPath()) && path != null) {
             xx = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().x;
             yy = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().y;
             zz = this.PrehistoricFloraLandBase.getNavigator().getPath().getFinalPathPoint().z;
             BlockPos pos = new BlockPos(xx, yy, zz);
             World world = this.PrehistoricFloraLandBase.world;
-            if (this.PrehistoricFloraLandBase.isMyNest(world, pos)) {
+            if (this.PrehistoricFloraLandBase.isHomeableNest(world, pos)) {
                 vec3 = pos;
             } else {
                 vec3 = this.findBlockTarget(32);
             }
         }
-        if (vec3 == null) {
+        else {
             vec3 = this.findRandomBlockTarget(32);
         }
+
         if (vec3 != null) {
+
             this.PrehistoricFloraLandBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5D  , vec3.getZ() + 0.5D, 1.0);
+            if (((this.PrehistoricFloraLandBase.getNavigator().noPath()) || path == null)) {
+                BlockPos pos = new BlockPos(vec3.getX() + 0.5D, Math.floor(vec3.getY()) + 0.5, vec3.getZ() + 0.5D);
+                if (this.PrehistoricFloraLandBase.getNestLocation() == pos && this.PrehistoricFloraLandBase.getPosition() != pos) {
+                    this.PrehistoricFloraLandBase.setNestLocation(null);
+                }
+            }
+
             return true;
         }
 
@@ -106,14 +114,10 @@ public class NightFindNestAI extends AnimationAINoAnimation<EntityPrehistoricFlo
     }
 
     public BlockPos findBlockTarget(int dist) {
-        if (this.PrehistoricFloraLandBase instanceof EntityPrehistoricFloraDiictodon) {
-            EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) this.PrehistoricFloraLandBase;
-            if (Diictodon.getNestLocation() != null) {
-                return Diictodon.getNestLocation();
-            }
-            return Diictodon.findNest(Diictodon, dist);
+        if (this.PrehistoricFloraLandBase.getNestLocation() != null) {
+            return this.PrehistoricFloraLandBase.getNestLocation();
         }
-        return null;
+        return this.PrehistoricFloraLandBase.findNest(this.PrehistoricFloraLandBase, dist, false);
     }
 
     public BlockPos findRandomBlockTarget(int dist) {
@@ -122,7 +126,7 @@ public class NightFindNestAI extends AnimationAINoAnimation<EntityPrehistoricFlo
             for (int i = 0; i < 64; i++) {
                 BlockPos randPos = this.PrehistoricFloraLandBase.getPosition().add(rand.nextInt(dist+1) - (int) (dist/2), rand.nextInt((int) (dist/2)+1) - (int) (dist/4), rand.nextInt(dist+1) - (int) (dist/2));
                 World world = this.PrehistoricFloraLandBase.world;
-                if (this.PrehistoricFloraLandBase.isMyNest(world, randPos)) {
+                if (this.PrehistoricFloraLandBase.isHomeableNest(world, randPos)) {
                     if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
                         return randPos;
                     }
@@ -131,6 +135,5 @@ public class NightFindNestAI extends AnimationAINoAnimation<EntityPrehistoricFlo
         }
         return null;
     }
-
 
 }

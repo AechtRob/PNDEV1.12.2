@@ -59,11 +59,6 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		return true;
 	}
 
-	@Override
-	public String tagEgg () {
-		return "";
-	}
-
 	@Override //Spawn as baby so it grows:
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);

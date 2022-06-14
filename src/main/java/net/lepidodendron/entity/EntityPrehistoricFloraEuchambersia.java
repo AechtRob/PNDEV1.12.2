@@ -8,7 +8,6 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.item.entities.ItemEggsEuchambersia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -60,18 +59,8 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 	public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
-	public String tagEgg() {
-		return "eggs_euchambersia";
-	}
-
-	@Override
 	public boolean hasAlarm() {
 		return true;
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsEuchambersia.block, 1);
 	}
 
 	protected float getAISpeedLand() {

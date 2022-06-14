@@ -14,7 +14,6 @@ import net.lepidodendron.entity.util.PathNavigateGliding;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.item.entities.ItemBugRaw;
-import net.lepidodendron.item.entities.ItemEggsWeigeltisaurus;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
@@ -181,14 +180,6 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 	@Override
 	public boolean laysEggs() {
 		return true;
-	}
-
-	@Override
-	public String tagEgg () {return "eggs_weigeltisaurus";}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsWeigeltisaurus.block, 1);
 	}
 
 	@Override

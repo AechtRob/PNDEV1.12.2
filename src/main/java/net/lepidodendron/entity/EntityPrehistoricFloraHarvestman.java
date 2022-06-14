@@ -51,6 +51,10 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 		enablePersistence();
 	}
 
+	@Override
+	public String getEggNBT() {
+		return LepidodendronMod.MODID + ":insect_eggs_harvestman";
+	}
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
@@ -88,9 +92,6 @@ public class EntityPrehistoricFloraHarvestman extends EntityPrehistoricFloraLand
 	public boolean laysEggs() {
 		return true;
 	}
-
-	@Override
-	public String tagEgg () {return "insect_eggs_harvestman";}
 
 	@Override
 	public int getAnimationTick() {

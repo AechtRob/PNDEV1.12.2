@@ -29,6 +29,7 @@ public class LepidodendronConfig {
     public static boolean renderCustomSkies = true;
     public static boolean blockSkeletonHorse = true;
     public static boolean doMeteorites = true;
+    public static boolean fixApples = true;
     
     public static boolean doShrinkBiomes = false;
 
@@ -8439,6 +8440,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doMeteorites", doMeteorites);
         prop.setComment("Enable meteors in the Precambrian dimension [default: true]");
         doMeteorites = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "fixApples", fixApples);
+        prop.setComment("Make apples drop exclusively from apple trees [default: true]");
+        fixApples = prop.getBoolean();
         propOrder.add(prop.getName());
         
         prop = cfg.get("Global Mobs", "blockSkeletonHorse", blockSkeletonHorse);

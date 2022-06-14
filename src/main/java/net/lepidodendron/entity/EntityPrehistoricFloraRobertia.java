@@ -3,10 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.item.entities.ItemEggsRobertia;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -35,16 +33,6 @@ public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiicto
 		maxWidth = 0.20F;
 		maxHeight = 0.20F;
 		maxHealthAgeable = 8.0D;
-	}
-
-	@Override
-	public String tagEgg() {
-		return "eggs_robertia";
-	}
-
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsRobertia.block, 1);
 	}
 
 	protected float getAISpeedLand() {

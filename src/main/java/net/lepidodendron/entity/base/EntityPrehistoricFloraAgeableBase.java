@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.base;
 
+import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
@@ -7,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -29,10 +31,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -52,6 +51,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+    protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
     //public float minSize;
     public float minWidth;
@@ -78,6 +78,57 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Nullable
+    public BlockPos getNestLocation() {
+        return (BlockPos) ((Optional) this.dataManager.get(NEST_BLOCK_POS)).orNull();
+    }
+
+    public void setNestLocation(@Nullable BlockPos pos) {
+        this.dataManager.set(NEST_BLOCK_POS, Optional.fromNullable(pos));
+    }
+
+    public String getEggNBT() {
+        return getEntityId(this);
+    }
+
+    public BlockPos findNest(Entity entity, int dist, boolean empty) {
+        int xx;
+        int yy;
+        int zz;
+        BlockPos randPos;
+        xx = -dist;
+        while (xx <= dist) {
+            yy = (int) -Math.round((double) dist / 2D);
+            while (yy <= (int) Math.round((double) dist / 2D)) {
+                zz = -dist;
+                while (zz <= dist) {
+                    if (entity.getPosition().getY() + yy >= 1 && entity.getPosition().getY() + yy <= 255) {
+                        randPos = entity.getPosition().add(xx, yy, zz);
+                        World world = this.world;
+                        if (!empty) {
+                            if (this.isHomeableNest(world, randPos)) {
+                                if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                                    return randPos;
+                                }
+                            }
+                        }
+                        else {
+                            if (this.isLayableNest(world, randPos)) {
+                                if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                                    return randPos;
+                                }
+                            }
+                        }
+                    }
+                    zz += 1;
+                }
+                yy += 1;
+            }
+            xx += 1;
+        }
+        return null;
+    }
+
     public boolean canSpawnOnLeaves() {
         return false;
     }
@@ -89,6 +140,29 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean hasNest() {return false;}
 
     public boolean placesNest() {return false;}
+
+    public boolean isHomeableNest (World world, BlockPos pos) {
+        if (world.getBlockState(pos).getBlock() == BlockNest.block) {
+            //System.err.println("Testing layable");
+            TileEntity te = world.getTileEntity(pos);
+            if (te instanceof BlockNest.TileEntityCustom) {
+                String nestType = new Object() {
+                    public String getValue(BlockPos pos1, String tag) {
+                        TileEntity tileEntity = world.getTileEntity(pos1);
+                        if (tileEntity != null)
+                            return tileEntity.getTileData().getString(tag);
+                        return "";
+                    }
+                }.getValue(pos, "creature");
+
+                if (nestType.equalsIgnoreCase("")
+                        || isMyNest(world, pos)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public boolean isMyNest(World world, BlockPos pos) {
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
@@ -111,19 +185,51 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
+    public ResourceLocation getEggTexture() {
+        String entityString = this.getEntityString();
+        entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+        return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+    }
+
+    public int getEggType() { //0-3
+        return 0; //Default to small eggs
+    }
+
+    public boolean isNestMound() {
+        return false;
+    }
+
+    public boolean isLayableNest(World world, BlockPos pos) {
+        //is empty of eggs, and either belongs to me or is empty:
+        if (world.getBlockState(pos).getBlock() == BlockNest.block) {
+            //System.err.println("Testing layable");
+            TileEntity te = world.getTileEntity(pos);
+            if (te instanceof BlockNest.TileEntityCustom) {
+
+                String eggType = new Object() {
+                    public String getValue(BlockPos pos1, String tag) {
+                        TileEntity tileEntity = world.getTileEntity(pos1);
+                        if (tileEntity != null)
+                            return tileEntity.getTileData().getString(tag);
+                        return "";
+                    }
+                }.getValue(pos, "egg");
+
+                if (eggType.equalsIgnoreCase("")
+                    && isHomeableNest(world, pos)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean nestBlockMatch(World world, BlockPos pos) {
         return false;
     }
 
     public boolean divesToLay() {
         return false;
-    }
-
-    public String tagEgg () {return "";}
-
-    @Nullable
-    public ItemStack eggItemStack() {
-        return null;
     }
 
     public boolean grappleEntityAsMob(Entity entity) {
@@ -189,6 +295,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
+        this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
         this.setScaleForAge(false);
     }
 
@@ -409,6 +516,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setBoolean("laying", this.laying);
         compound.setInteger("mateable", this.getMateable());
+        if (this.getNestLocation() != null) {
+            compound.setInteger("PosX", this.getNestLocation().getX());
+            compound.setInteger("PosY", this.getNestLocation().getY());
+            compound.setInteger("PosZ", this.getNestLocation().getZ());
+        }
     }
 
     //@Override
@@ -421,6 +533,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.inPFLove = compound.getInteger("InPFLove");
         this.laying = compound.getBoolean("laying");
         this.setMateable(compound.getInteger("mateable"));
+        if (compound.hasKey("PosX")) {
+            int i = compound.getInteger("PosX");
+            int j = compound.getInteger("PosY");
+            int k = compound.getInteger("PosZ");
+            this.dataManager.set(NEST_BLOCK_POS, Optional.of(new BlockPos(i, j, k)));
+        } else {
+            this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
+        }
     }
 
     @Override
@@ -580,6 +700,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
+        if (!world.isRemote) { //Do every 30 seconds provided we're not trying to lay eggs
+            if (!this.getLaying()
+                    && ((double) this.getTicks() / 600D == (int) Math.round((double) this.getTicks() / 600D))) {
+                @Nullable BlockPos pos = this.getNestLocation();
+                if (pos == null) {
+                    this.setNestLocation(this.findNest(this, 2, false));
+                } else {
+                    if (!world.isBlockLoaded(pos)) {
+                        this.setNestLocation(this.findNest(this, 2, false));
+                    }
+                    else if (!isHomeableNest(world, pos)) {
+                        this.setNestLocation(this.findNest(this, 2, false));
+                    }
+                }
+            }
+        }
+
         //General ticker (for babies etc.)
         int ii = this.getTicks();
         if (this.isEntityAlive())
@@ -680,70 +817,38 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         //Lay eggs perhaps:
         if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
         ) {
-            if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
+            if (this.testLay(world, this.getPosition()) && this.getTicks() > 0
             ) {
-                if (Math.random() > 0.5) {
+                //if (Math.random() > 0.5) {
                     this.setTicks(-50); //Flag this as stationary for egg-laying
                     this.setAnimation(LAY_ANIMATION);
-                }
+                //}
             }
-            if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > -30 && this.getTicks() < 0) {
+            if (this.testLay(world, this.getPosition()) && this.getTicks() > -30 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
-                String stringEgg = LepidodendronMod.MODID + ":" + this.tagEgg();
                 //this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                 if (this.testLay(world, this.getPosition())) {
+                    BlockPos nestPos = this.getPosition();
                     if (this.placesNest()) {
-                        world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
-                        TileEntity te = world.getTileEntity(this.getPosition());
+                        world.setBlockState(nestPos, BlockNest.block.getDefaultState());
+                        TileEntity te = world.getTileEntity(nestPos);
                         te.getTileData().setString("creature", getEntityId(this));
                     }
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                    TileEntity te = world.getTileEntity(this.getPosition());
+                    TileEntity te = world.getTileEntity(nestPos);
                     if (te != null) {
-                        te.getTileData().setString("egg", stringEgg);
+                        te.getTileData().setString("egg", this.getEggNBT());
+                        te.getTileData().setString("creature", getEntityId(this));
                         if (te instanceof TileEntityLockableLoot) {
-                            ItemStack stack = this.eggItemStack();
+                            ItemStack stack = BlockNest.BlockCustom.getEggItemStack(getEntityId(this));
                             stack.setCount(1);
                             ((TileEntityLockableLoot) te).setInventorySlotContents((int) (0), stack);
                         }
                     }
-                    IBlockState state = world.getBlockState(this.getPosition());
-                    world.notifyBlockUpdate(this.getPosition(), state, state, 3);
-                    this.setLaying(false);
-                } else if (this.testLay(world, this.getPosition().down())) {
-                    if (this.placesNest()) {
-                        world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
-                        TileEntity te = world.getTileEntity(this.getPosition());
-                        te.getTileData().setString("creature", getEntityId(this));
-                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                        te = world.getTileEntity(this.getPosition());
-                        if (te != null) {
-                            te.getTileData().setString("egg", stringEgg);
-                            if (te instanceof TileEntityLockableLoot) {
-                                ItemStack stack = this.eggItemStack();
-                                stack.setCount(1);
-                                ((TileEntityLockableLoot) te).setInventorySlotContents((int) (0), stack);
-                            }
-                        }
-                        IBlockState state = world.getBlockState(this.getPosition());
-                        world.notifyBlockUpdate(this.getPosition(), state, state, 3);
-                    }
-                    else {
-                        this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-                        TileEntity te = world.getTileEntity(this.getPosition().down());
-                        if (te != null) {
-                            te.getTileData().setString("egg", stringEgg);
-                            if (te instanceof TileEntityLockableLoot) {
-                                ItemStack stack = this.eggItemStack();
-                                stack.setCount(1);
-                                ((TileEntityLockableLoot) te).setInventorySlotContents((int) (0), stack);
-                            }
-                        }
-                        IBlockState state = world.getBlockState(this.getPosition().down());
-                        world.notifyBlockUpdate(this.getPosition().down(), state, state, 3);
-                    }
+                    IBlockState state = world.getBlockState(nestPos);
+                    world.notifyBlockUpdate(nestPos, state, state, 3);
                     this.setLaying(false);
                 }
                 this.setTicks(0);
@@ -759,6 +864,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             mobid = entry.getRegistryName().toString();
         }
         return mobid;
+    }
+
+    public boolean renderMound(Entity entityIn) {
+        if (entityIn instanceof EntityPrehistoricFloraClaudiosaurus
+                || entityIn instanceof EntityPrehistoricFloraGlaurung
+                || entityIn instanceof EntityPrehistoricFloraRautiania
+                || entityIn instanceof EntityPrehistoricFloraCoelurosauravus
+        ) {
+            return true;
+        }
+        return false;
     }
 
     public boolean testLay(World world, BlockPos pos) {

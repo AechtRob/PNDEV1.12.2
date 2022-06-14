@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.item.entities.ItemEggsArchosaurus;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -84,20 +83,10 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
-	public String tagEgg() {
-		return "eggs_archosaurus";
-	}
-
-	@Override
 	public boolean placesNest() {
 		return true;
 	}
 
-	@Override
-	public ItemStack eggItemStack() {
-		return new ItemStack(ItemEggsArchosaurus.block, 1);
-	}
-	
 	protected float getAISpeedLand() {
 		float speedBase = 0.365F;
 		if (this.getTicks() < 0) {

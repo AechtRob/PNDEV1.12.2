@@ -104,7 +104,8 @@ public class StructureGlossBush3 extends ElementsLepidodendronMod.ModElement {
 				int j = height;
 				//IBlockState blockAt = world.getBlockState(new BlockPos(i, j + 1, k));
 				boolean blockCriteria = false;
-				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS)
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS
+					|| (world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
 					blockCriteria = true;
 				if (!blockCriteria)
 					continue;

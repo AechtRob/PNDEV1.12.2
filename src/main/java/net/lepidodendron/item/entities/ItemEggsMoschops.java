@@ -43,6 +43,7 @@ public class ItemEggsMoschops extends ElementsLepidodendronMod.ModElement {
 		public String getMobString() {
 			return LepidodendronMod.MODID + ":prehistoric_flora_moschops";
 		}
+
 	}
 
 }
