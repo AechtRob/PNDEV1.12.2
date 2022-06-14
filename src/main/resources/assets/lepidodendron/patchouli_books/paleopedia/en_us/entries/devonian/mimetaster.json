@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mimetaster",
 			"title": "Mimetaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Marrellomorpha$(br)>Marrellida$(br)>Mimetasteridae"
 		},
 		{
 			"type": "image",

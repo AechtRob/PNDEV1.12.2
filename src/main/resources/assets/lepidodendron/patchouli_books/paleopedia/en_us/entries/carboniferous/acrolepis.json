@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acrolepis",
 			"title": "Acrolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Aquatic$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Acrolepidae"
 		},
 		{
 			"type": "image",

@@ -1,5 +1,6 @@
 {
-    "name": "Cambrian Plants",
+    "name": "Cambrian Plants and Statics",
+    "description": "Plants/Static Animals of the Cambrian",
     "icon": "lepidodendron:dinomischus",
     "parent": "lepidodendron:cambrian",
     "sortnum": 2

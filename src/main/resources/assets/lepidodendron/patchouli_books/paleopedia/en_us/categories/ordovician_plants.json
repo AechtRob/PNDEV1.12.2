@@ -1,5 +1,6 @@
 {
-    "name": "Ordovician Plants",
+    "name": "Ordovician Plants and Statics",
+    "description": "Plants/Static Animals of the Ordovician",
     "icon": "lepidodendron:aulacera",
     "parent": "lepidodendron:ordovician",
     "sortnum": 2

@@ -1,0 +1,32 @@
+{
+	"name": "Compass Jelly",
+	"read_by_default": true,
+	"icon": "paleopedia:ambients/ambients_icon/compass_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish2",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish2",
+			"title": "Compass Jelly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Chrysaora"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_compass.png"],
+			"title": "C. hysoscella",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish2",
+			"type": "text",
+			"text": "The compass jelly is a coastal jellyfish that generally lives in temperate regions of the northeastern Atlantic Ocean. It has radial symmetry and brown markings shaped like V's on it bell. They generally feed on marine invertebrates and plankton."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish2",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

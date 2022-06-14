@@ -1,6 +1,7 @@
 {
     "name": "Permian Animals",
-    "icon": "paleopedia:permian/permian_icon/acrolepis_icon.png",
+    "description": "Animals of the Permian",
+    "icon": "paleopedia:carboniferous/carboniferous_icon/acrolepis_icon.png",
     "parent": "lepidodendron:permian",
     "sortnum": 1
 }

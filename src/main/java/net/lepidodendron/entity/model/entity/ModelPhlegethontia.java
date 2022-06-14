@@ -174,6 +174,10 @@ public class ModelPhlegethontia extends AdvancedModelBase {
         this.resetToDefaultPose();
         this.Bodytruemiddle.offsetY = 1.1F; //72
 
+        //test code, using -1.2F as an alternator
+        f2 *= -1.2F;
+
+
         EntityPrehistoricFloraPhlegethontia Phlegethontia = (EntityPrehistoricFloraPhlegethontia) e;
 
         this.faceTarget(f3, f4, 8, Head);
@@ -181,6 +185,10 @@ public class ModelPhlegethontia extends AdvancedModelBase {
         float speed = 0.2F;
         //AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
         //AdvancedModelRenderer[] Torso = {this.Head, this.Neck, this.Bodyfront, this.Bodymiddle, this.Hips};
+
+        //test chunk code, we need to use an alternater for the swing amount instead of f2 in this case.
+        this.swing(Head, speed, 0.4F, false, 0, 0F, f2, 0.5F);
+        //end test chunk
 
         if (!Phlegethontia.isReallyInWater()) { //flop about on land
 

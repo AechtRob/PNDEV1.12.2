@@ -1,5 +1,6 @@
 {
     "name": "Cretaceous Animals",
+    "description": "Animals of the Cretaceous (None Yet)",
     "icon": "lepidodendron:shell_parapuzosia",
     "parent": "lepidodendron:cretaceous",
     "sortnum": 1

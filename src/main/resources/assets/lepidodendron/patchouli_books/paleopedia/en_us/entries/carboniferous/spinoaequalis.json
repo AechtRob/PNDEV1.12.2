@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_spinoaequalis",
 			"title": "Spinoaequalis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Araeoscelidia"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Freshwater-Terrestrial$(br2)>Reptilia$(br)>Araeoscelidia"
 		},
 		{
 			"type": "image",
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_spinoaequalis",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

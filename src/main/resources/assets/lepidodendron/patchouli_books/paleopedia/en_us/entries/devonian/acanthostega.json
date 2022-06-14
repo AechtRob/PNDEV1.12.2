@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthostega",
 			"title": "Acanthostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Aquatic$(br2)>Stegocephalia$(br)>Acanthostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Stegocephalia$(br)>Acanthostegidae"
 		},
 		{
 			"type": "image",

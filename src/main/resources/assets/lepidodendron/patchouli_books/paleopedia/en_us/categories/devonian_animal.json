@@ -1,5 +1,6 @@
 {
     "name": "Devonian Animals",
+    "description": "Animals of the Devonian",
     "icon": "lepidodendron:acanthodes_raw",
     "parent": "lepidodendron:devonian",
     "sortnum": 1

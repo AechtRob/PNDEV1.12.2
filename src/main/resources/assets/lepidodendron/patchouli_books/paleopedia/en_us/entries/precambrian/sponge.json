@@ -1,0 +1,32 @@
+{
+	"name": "Sponge",
+	"read_by_default": true,
+	"icon": "lepidodendron:blue_sponge",
+	"category": "lepidodendron:precambrian",
+	"turnin": "lepidodendron:pf_adv_book_sponge",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_sponge",
+			"title": "Sponge",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran+$(br2)$(l)Habitat:$() Marine$(br2)>Animalia$(br)>Porifera"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/sponge.png"],
+			"title": "Porifera",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sponge",
+			"type": "text",
+			"text": "Sponges are basal animals that are multicellular organisms with bodies full of pores which allows water to circulate through it. They typically grow on the ocean floor and are generally filter feeders, feeding by filtering out food particles from the water that flows through them."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sponge",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

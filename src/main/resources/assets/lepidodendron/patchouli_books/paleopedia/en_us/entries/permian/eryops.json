@@ -2,14 +2,14 @@
 	"name": "Eryops",
 	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/eryops_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eryops",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_eryops",
 			"title": "Eryops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Freshwater-Terrestrial$(br)>Temnospondyli$(br)>Eryopidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater-Terrestrial$(br)>Temnospondyli$(br)>Eryopidae"
 		},
 		{
 			"type": "image",

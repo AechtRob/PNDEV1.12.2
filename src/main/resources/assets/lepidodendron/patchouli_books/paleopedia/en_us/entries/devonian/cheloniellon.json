@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cheloniellon",
 			"title": "Cheloniellon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Artiopoda$(br)>Cheloniellida$(br)>Cheloniellidae"
 		},
 		{
 			"type": "image",

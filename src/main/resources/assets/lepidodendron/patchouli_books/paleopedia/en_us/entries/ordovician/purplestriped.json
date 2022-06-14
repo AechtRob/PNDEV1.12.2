@@ -1,0 +1,32 @@
+{
+	"name": "Purple Striped Jelly",
+	"read_by_default": true,
+	"icon": "paleopedia:ambient/ambient_icon/purplestriped_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish5",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish5",
+			"title": "Purple Striped Jelly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Pelagiidae$(br)>$(o)Pelagia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_purpleStriped.png"],
+			"title": "Pelagia noctiluca",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish5",
+			"type": "text",
+			"text": "The Purple striped jellyfish is a purple colored jellyfish that is found worldwide in tropical and temperate seas. They are bioluminescent and can produce light that is visible to humans during nighttime and in low light areas. Its sting can cause painful rashes for 1-2 weeks but is not fatal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish5",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

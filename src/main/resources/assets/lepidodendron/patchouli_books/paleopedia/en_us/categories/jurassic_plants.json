@@ -1,5 +1,6 @@
 {
-    "name": "Jurassic Plants",
+    "name": "Jurassic Plants and Statics",
+    "description": "Plants/Static Animals of the Jurassic",
     "icon": "lepidodendron:archaeopteris_sapling",
     "parent": "lepidodendron:jurassic",
     "sortnum": 2
