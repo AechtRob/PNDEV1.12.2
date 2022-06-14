@@ -1,0 +1,8 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/nest_fluff"
+	},
+	"elements": [
+	]
+}

@@ -41,20 +41,14 @@ public class ProcedureWorldGenAulacera extends ElementsLepidodendronMod.ModEleme
 			) {			
 			//world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 			
-			//Tree height: 1-8 blocks
-			TreeHeight = 1 + Math.round(Math.random() * 7);
+			//Tree height: 3-10 blocks
+			TreeHeight = 3 + Math.round(Math.random() * 7D);
 
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BlockAulacera.block.getDefaultState(), 3);
-
-			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-			$_dependencies.put("x", x);
-			$_dependencies.put("y", y + 1);
-			$_dependencies.put("z", z);
-			$_dependencies.put("world", world);
-			$_dependencies.put("TreeHeight", TreeHeight);
-			$_dependencies.put("counter", counter);
-			//System.err.println("Y2 = " + (y + 1));
-			ProcedureWorldGenAulaceraBranch.executeProcedure($_dependencies);
+			int ii = 0;
+			while (ii <= TreeHeight && BlockAulacera.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) y + ii, (int) z))) {
+				world.setBlockState(new BlockPos((int) x, (int) y + ii, (int) z), BlockAulacera.block.getDefaultState(), 3);
+				ii += 1;
+			}
 				
 		}
 	}

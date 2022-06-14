@@ -4,13 +4,13 @@
       "model": "lepidodendron:nest_fluff"
     },
     "bird=false,mound=true": {
-      "model": "lepidodendron:nest_fluff"
+      "model": "lepidodendron:nest_no_nest"
     },
     "bird=true,mound=false": {
       "model": "lepidodendron:nest"
     },
     "bird=true,mound=true": {
-      "model": "lepidodendron:nest"
+      "model": "lepidodendron:nest_no_nest"
     }
   }
 }

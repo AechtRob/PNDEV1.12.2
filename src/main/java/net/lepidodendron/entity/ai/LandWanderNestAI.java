@@ -49,7 +49,7 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
     @Override
     public boolean shouldExecute() {
 
-        if (!(this.PrehistoricFloraAgeableBase.laysEggs() && this.PrehistoricFloraAgeableBase.getCanBreed())) {
+        if (!(this.PrehistoricFloraAgeableBase.laysEggs() && this.PrehistoricFloraAgeableBase.getLaying())) {
             return false;
         }
 

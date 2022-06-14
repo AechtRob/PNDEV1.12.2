@@ -90,6 +90,11 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		return true;
 	}
 
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
 	protected float getAISpeedSwimmingAmphibian() {
 		float calcSpeed = 0.14F;
 		if (this.isReallyInWater()) {

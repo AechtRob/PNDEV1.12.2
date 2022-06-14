@@ -43,6 +43,11 @@ public class EntityPrehistoricFloraCoelurosauravus extends EntityPrehistoricFlor
 	}
 
 	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	@Override
 	protected float getAISpeedLand() {
 		return 0.377F;
 	}

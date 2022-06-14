@@ -188,7 +188,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public ResourceLocation getEggTexture() {
         String entityString = this.getEntityString();
         entityString = entityString.replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-        return new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        ResourceLocation resourceLocation = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eggs_" + entityString + ".png");
+        if (resourceLocation == null) { //splice in something obvious so we can see it is broken!
+            return new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");
+        }
+        return resourceLocation;
     }
 
     public int getEggType() { //0-3
@@ -832,7 +836,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 if (this.testLay(world, this.getPosition())) {
                     BlockPos nestPos = this.getPosition();
                     if (this.placesNest()) {
-                        world.setBlockState(nestPos, BlockNest.block.getDefaultState());
+                        world.setBlockState(nestPos, BlockNest.block.getDefaultState(), 3);
                         TileEntity te = world.getTileEntity(nestPos);
                         te.getTileData().setString("creature", getEntityId(this));
                     }

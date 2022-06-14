@@ -40,7 +40,8 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
         //EnumFacing facing = EnumFacing.NORTH;
 
         int eggType = 0;
-        ResourceLocation TEXTURE_EGG = null;
+        //splice in something obvious so we can see it is broken!
+        ResourceLocation TEXTURE_EGG = new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png");;
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         if (entity != null && entity.hasWorld() && world.getBlockState(pos).getBlock() == BlockNest.block) {
