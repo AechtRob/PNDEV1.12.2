@@ -224,7 +224,6 @@ public class ModelStensioella extends AdvancedModelBase {
             this.swing(backRightFin, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
 
 
-
             if (!e.isInWater()) {
                 this.head.offsetY = 1.45F;
                 this.bob(head, -speed, 5F, false, f2, 1);

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_groenlandaspis",
 			"title": "Groenlandaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Aquatic$(br2)>Placodermi$(br)>Arthrodira$(br)>Groenlandaspididae"
 		},
 		{
 			"type": "image",

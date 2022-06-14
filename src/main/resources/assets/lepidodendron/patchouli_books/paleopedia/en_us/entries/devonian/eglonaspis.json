@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eglonaspis",
 			"title": "Eglonaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes (Rare)$(br2)>Heterostraci$(br)>Amphiaspidida$(br)>Eglonaspididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes$(br2)>Heterostraci$(br)>Amphiaspidida$(br)>Eglonaspididae"
 		},
 		{
 			"type": "image",

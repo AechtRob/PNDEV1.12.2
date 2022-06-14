@@ -1,5 +1,6 @@
 {
-    "name": "Triassic Plants",
+    "name": "Triassic Plants and Statics",
+    "description": "Plants/Static Animals of the Triassic",
     "icon": "lepidodendron:dicroidium_sapling",
     "parent": "lepidodendron:triassic",
     "sortnum": 2

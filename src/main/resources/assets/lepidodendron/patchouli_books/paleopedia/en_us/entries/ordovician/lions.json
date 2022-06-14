@@ -1,0 +1,32 @@
+{
+	"name": "Lion's Mane Jelly",
+	"read_by_default": true,
+	"icon": "paleopedia:ambients/ambient_icon/lions_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish6",
+			"title": "Lion's Mane Jelly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Maarine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Cyaneidae$(br)>$(o)Cyanea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_lions.png"],
+			"title": "Cyanea capillata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish6",
+			"type": "text",
+			"text": "text": "The lion's mane jellyfish is a large arctic jellyfish that lives in the northern Atlantic and Pacific Oceans as well as the North Sea and the English Channel. It uses its stinging tentacles to capture and eat prey such as fish, zooplankton and smaller jellyfish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish6",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

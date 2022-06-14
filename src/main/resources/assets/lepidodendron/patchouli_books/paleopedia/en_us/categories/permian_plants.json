@@ -1,5 +1,6 @@
 {
-    "name": "Permian Plants",
+    "name": "Permian Plants and Statics",
+    "description": "Plants/Static Animals of the Permian",
     "icon": "lepidodendron:glossopteris_sapling",
     "parent": "lepidodendron:permian",
     "sortnum": 2

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hibbertopterus",
 			"title": "Hibbertopterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Aquatic$(br2)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Eurypterida$(br)>Stylonurina$(br)>Hibbertopteridae"
 		},
 		{
 			"type": "image",

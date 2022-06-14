@@ -1,0 +1,32 @@
+{
+	"name": "Moon Jelly",
+	"read_by_default": true,
+	"icon": "paleopedia:ambients/ambient_icon/moon_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_jellyfish1",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_jellyfish1",
+			"title": "Moon Jelly",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Scyphozoa$(br)>Semaeostomeae$(br)>Ulmaridae$(br)>$(o)Aurelia"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:ambients/jelly_moon.png"],
+			"title": "Aurelia aurita",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish1",
+			"type": "text",
+			"text": "The moon jellyfish is an almost entirely translucent jellyfish. It had a distinct purple markings on the center of the bell and its tentacles were extremely short. They are often found in estuaries and harbors and they generally feed on planktonic mollusks and crustaceans."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_jellyfish1",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

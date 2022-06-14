@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phlegethontia",
 			"title": "Phlegethontia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() $(br2)>Aistopoda$(br)>Phlegethontiidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Aistopoda$(br)>Phlegethontiidae"
 		},
 		{
 			"type": "image",
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_phlegethontia",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

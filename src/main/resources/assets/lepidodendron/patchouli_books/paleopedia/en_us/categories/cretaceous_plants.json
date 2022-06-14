@@ -1,5 +1,6 @@
 {
-    "name": "Cretaceous Plants",
+    "name": "Cretaceous Plants and Statics",
+    "description": "Plants/Static Animals of the Cretaceous",
     "icon": "lepidodendron:ginkgo_sapling",
     "parent": "lepidodendron:cretaceous",
     "sortnum": 2

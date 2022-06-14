@@ -1,5 +1,6 @@
 {
     "name": "Jurassic Animals",
+    "description": "Animals of the Jurassic (None Yet)",
     "icon": "lepidodendron:shell_titanites",
     "parent": "lepidodendron:jurassic",
     "sortnum": 1
