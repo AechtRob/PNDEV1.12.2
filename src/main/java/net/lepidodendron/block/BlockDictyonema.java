@@ -9,6 +9,7 @@ import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -143,11 +144,16 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 		if (!biomeCriteria)
 			return;
 
+		int multiplier = 1;
+		if (biome == BiomeOrdovicianSpongeForest.biome) {
+			multiplier = 8;
+		}
+
 		int minWaterDepth = 2;
 		int maxWaterDepth = 25;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
-		for (int i = 0; i < (12); i++) {
+		for (int i = 0; i < 12 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;

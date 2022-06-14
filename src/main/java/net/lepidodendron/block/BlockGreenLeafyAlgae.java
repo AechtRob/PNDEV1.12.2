@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIcebergs;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicOceanClamBeds;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -132,6 +133,10 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 				|| biome == BiomeOrdovicianSeaIcebergs.biome
 		)
 			multiplier = 24;
+
+		if (biome == BiomeOrdovicianSpongeForest.biome
+		)
+			multiplier = 12;
 
 		if (biome == BiomeTriassicOceanClamBeds.biome
 		)

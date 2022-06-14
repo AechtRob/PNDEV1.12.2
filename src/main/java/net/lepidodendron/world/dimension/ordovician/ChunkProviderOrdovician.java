@@ -1,9 +1,11 @@
 package net.lepidodendron.world.dimension.ordovician;
 
+import net.lepidodendron.block.BlockCoral;
 import net.lepidodendron.block.BlockGravelWavy;
 import net.lepidodendron.block.BlockSandWavy;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianLand;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSand;
@@ -11,6 +13,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -374,7 +377,31 @@ public class ChunkProviderOrdovician implements IChunkGenerator {
                             iblockstate = AIR;
                             iblockstate1 = STONE;
                             if (Math.random() > 0.7) {
-                                chunkPrimerIn.setBlockState(i1, j1, l, Blocks.STONE.getDefaultState());
+                                if (biome == BiomeOrdovicianSpongeForest.biome && j1 < i - 6) {
+                                    int r = rand.nextInt(6);
+                                    switch (r) {
+                                        case 0: default:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, BlockCoral.block.getDefaultState().withProperty(BlockCoral.FACING, EnumFacing.NORTH));
+                                            break;
+                                        case 1:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, BlockCoral.block.getDefaultState().withProperty(BlockCoral.FACING, EnumFacing.EAST));
+                                            break;
+                                        case 2:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, BlockCoral.block.getDefaultState().withProperty(BlockCoral.FACING, EnumFacing.SOUTH));
+                                            break;
+                                        case 3:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, BlockCoral.block.getDefaultState().withProperty(BlockCoral.FACING, EnumFacing.WEST));
+                                            break;
+                                        case 4:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, Blocks.STONE.getDefaultState());
+                                            break;
+                                        case 5:
+                                            chunkPrimerIn.setBlockState(i1, j1, l, Blocks.STONE.getDefaultState());
+                                    }
+                                }
+                                else {
+                                    chunkPrimerIn.setBlockState(i1, j1, l, Blocks.STONE.getDefaultState());
+                                }
                             }
                             else {
                                 if (Math.random() > 0.6) {

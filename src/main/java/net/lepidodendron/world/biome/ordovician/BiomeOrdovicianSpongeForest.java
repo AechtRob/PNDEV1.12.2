@@ -62,6 +62,7 @@ public class BiomeOrdovicianSpongeForest extends ElementsLepidodendronMod.ModEle
 		protected static final WorldGenEdwardsiphyton EDWARDSIPHYTON_GENERATOR = new WorldGenEdwardsiphyton();
 		protected static final WorldGenReef REEF_GENERATOR = new WorldGenReef();
 		protected static final WorldGenAulaceraSponge AULACERA_GENERATOR = new WorldGenAulaceraSponge();
+		protected static final WorldGenThamnobeatriceaSponge THAMNOBEATRICEA_GENERATOR = new WorldGenThamnobeatriceaSponge();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -104,7 +105,7 @@ public class BiomeOrdovicianSpongeForest extends ElementsLepidodendronMod.ModEle
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
-				for (int i = 0; i < 256; ++i)
+				for (int i = 0; i < 192; ++i)
 				{
 					//if (rand.nextInt(6) == 0) {
 						int j = rand.nextInt(16) + 8;
@@ -118,6 +119,23 @@ public class BiomeOrdovicianSpongeForest extends ElementsLepidodendronMod.ModEle
 						) {
 							AULACERA_GENERATOR.generate(worldIn, rand, pos1);
 						}
+					//}
+				}
+
+				for (int i = 0; i < 92; ++i)
+				{
+					//if (rand.nextInt(6) == 0) {
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					BlockPos pos1 = pos.add(j, l, k);
+					if (
+							(pos1.getY() < worldIn.getSeaLevel() - 1)
+									&& (worldIn.getBlockState(pos1).getMaterial() == Material.WATER)
+									&& (worldIn.getBlockState(pos1.up()).getMaterial() == Material.WATER)
+					) {
+						THAMNOBEATRICEA_GENERATOR.generate(worldIn, rand, pos1);
+					}
 					//}
 				}
 			}

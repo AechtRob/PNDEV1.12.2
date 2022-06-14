@@ -2548,9 +2548,9 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanosuchus) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTiarajudens) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_TITANOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+					ModTriggers.CLICK_TIARAJUDENS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
@@ -2754,8 +2754,922 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraLochmanolenellus) {
+			if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+				ModTriggers.CLICK_LOCHMANOLENELLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+			event.getEntityPlayer().swingArm(event.getHand());
+			event.setCanceled(true);
+			return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAstraspis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+			ModTriggers.CLICK_ASTRASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+	}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPanderodus) {
+			if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PANDERODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+	}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCalvapilosa) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CALVAPILOSA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBoothiaspis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BOOTHIASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHolonema) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HOLONEMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDrotops) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DROTOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHeliopeltis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HELIOPELTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLanceaspis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LANCEASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMontecaris) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_MONTECARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraRhenocystis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_RHENOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraWillwerathia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_WILLWERATHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraParmastega) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PARMASTEGA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTiktaalik) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TIKTAALIK.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraReticulolepis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_RETICULOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDeltoptychius) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DELTOPTYCHIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraFadenia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_FADENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraFalcatus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_FALCATUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraOrodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ORODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraParatarrasius) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PARATARRASIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSyllipsimopodi) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SYLLIPSIMOPODI.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraThrinacodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_THRINACODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTyrannophontes) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TYRANNOPHONTES.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraUrocordylus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_UROCORDYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEdaphosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EDAPHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraArthropleura) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ARTHROPLEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCobelodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_COBELODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMegactenoptetalus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_MEGACTENOPTETALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraRubidgea) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_RUBIDGEA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEndothiodon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ENDOTHIODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAustrolimulus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_AUSTROLIMULUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBeishanichthys) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BEISHANICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBirgeria) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BIRGERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBrembodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BREMBODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCaturus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CATURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraChinlea) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CHINLEA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDapedium) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DAPEDIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraForeyia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_FOREYIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHybodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HYBODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLuoxiongichthys) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LUOXIONGICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPotanichthys) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_POTANICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAeger) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_AEGER.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAulacoceras) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_AULACOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBesanosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BESANOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCartorhynchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CARTORHYNCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCyamodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CYAMODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCymbospondylus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CYMBOSPONDYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEorhynchochelys) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EORHYNCHOCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEretomorphis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ERETOMORPHIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHenodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HENODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLimulid) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LIMULID.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraKeichousaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_KEICHOUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraNothosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_NOTHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraOpolanka) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_OPOLANKA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPanzhousaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PANZHOUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPlacodus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PLACODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSclerocormus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SCLEROCORMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTriadobatrachus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TRIADOBATRACHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraYunguisaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_YUNGUISAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraArizonasaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ARIZONASAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAtopodentatus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ATOPODENTATUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBatrachotomus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BATRACHOTOMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraClevosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CLEVOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDesmatosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DESMATOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDoswellia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DOSWELLIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraDrepanosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_DREPANOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEffigia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EFFIGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraErythrosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ERYTHROSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEuparkeria) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EUPARKERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEusaurosphargis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EUSAUROSPHARGIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraGerrothorax) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_GERROTHORAX.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHyperodapedon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HYPERODAPEDON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHypsognathus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HYPSOGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraHypuronector) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_HYPURONECTOR.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLagosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LAGOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLessemsaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LESSEMSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLongisquama) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LONGISQUAMA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLotosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LOTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMegazostrodon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_MEGAZOSTRODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMetoposaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_METOPOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMorganucodon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_MORGANUCODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraMussaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_MUSSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraOrnithosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ORNITHOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTeleocrater) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TELEOCRATER.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPoposaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_POPOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPostosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_POSTOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraProganochelys) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PROGANOCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraPseudotherium) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_PSEUDOTHERIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSaurosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SAUROSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraRutiodon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_RUTIODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraScleromochlus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SCLEROMOCHLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSharovipteryx) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SHAROVIPTERYX.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSilesaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SILESAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSilosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SILOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSmilosuchus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SMILOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSmok) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SMOK.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSphenotitan) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_SPHENOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraStagonolepis) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_STAGONOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraStanocephalosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_STANOCEPHALOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTanystropheus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TANYSTROPHEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTeraterpeton) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TERATERPETON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTeyujagua) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TEYUJAGUA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraThecodontosaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_THECODONTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraVancleava) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_VANCLEAVA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraXinpusaurus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_XINPUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraAustriadactylus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_AUSTRIADACTYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCaelestiventus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CAELESTIVENTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraCaviramus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_CAVIRAMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraEudimorphodon) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_EUDIMORPHODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraItalophlebia) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_ITALOPHLEBIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTitanoptera) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_TITANOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraNagini) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_NAGINI.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraBrachydectes) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_BRACHYDECTES.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraLysorophus) {
+		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+		ModTriggers.CLICK_LYSOROPHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		}
+		event.getEntityPlayer().swingArm(event.getHand());
+		event.setCanceled(true);
+		return;
+		}
 
-			//Pu this at the end so as to trigger its children above in preference first:
+		
+
+		//Put this at the end so as to trigger its children above in preference first:
 			else if (event.getTarget() instanceof EntityPrehistoricFloraDiictodon) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_DIICTODON.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -2764,6 +3678,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			
 
 		}
 	}

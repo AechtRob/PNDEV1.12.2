@@ -43,6 +43,11 @@ public class EntityPrehistoricFloraRautiania extends EntityPrehistoricFloraWeige
 	}
 
 	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	@Override
 	protected float getAISpeedLand() {
 		return 0.385F;
 	}

@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -132,16 +131,16 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 			boolean isMound = false;
-			if (worldIn instanceof World) {
-				isMound = (isMound((World) worldIn, pos));
-			}
+			//if (worldIn instanceof World) {
+				isMound = (isMound( worldIn, pos));
+			//}
 			boolean isBird = (worldIn.getBlockState(pos.down()).getMaterial() == Material.LEAVES
 				|| worldIn.getBlockState(pos.down()).getMaterial() == Material.WOOD);
 
 			return state.withProperty(MOUND, isMound).withProperty(BIRD, (isBird && !isMound));
 		}
 
-		public static boolean isMound(World world, BlockPos pos) {
+		public static boolean isMound(IBlockAccess world, BlockPos pos) {
 			String nestType = new Object() {
 				public String getValue(BlockPos pos1, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos1);
@@ -152,16 +151,24 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			}.getValue(pos, "creature");
 
 			if (!nestType.equalsIgnoreCase("")) {
-				EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(nestType));
-				if (ee != null) {
-					Entity entityEggs = ee.newInstance(world);
-					if (entityEggs instanceof EntityPrehistoricFloraLandBase) {
-						EntityPrehistoricFloraLandBase entityLand = (EntityPrehistoricFloraLandBase) entityEggs;
-						if (entityLand.isNestMound()) {
-							return true;
-						}
-					}
+				if (nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_claudiosaurus")
+						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_glaurung")
+						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_rautiania")
+						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_coelurosauravus")
+				) {
+					return true;
 				}
+				//Dangit the entity isn't available to a IBlockAccess to check!
+				//EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(nestType));
+				//if (ee != null) {
+				//	Entity entityEggs = ee.newInstance(world);
+				//	if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
+				//		EntityPrehistoricFloraAgeableBase entityLand = (EntityPrehistoricFloraAgeableBase) entityEggs;
+				//		if (entityLand.isNestMound()) {
+				//			return true;
+				//		}
+				//	}
+				//}
 			}
 			return false;
 		}
