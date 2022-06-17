@@ -491,6 +491,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_nagini", EntityPrehistoricFloraNagini.class, LepidodendronMod.ENTITY_NAGINI, 82,-14408664,-2904003);
         registerEntity("prehistoric_flora_brachydectes", EntityPrehistoricFloraBrachydectes.class, LepidodendronMod.ENTITY_BRACHYDECTES, 82,-11321555,-9286870);
         registerEntity("prehistoric_flora_lysorophus", EntityPrehistoricFloraLysorophus.class, LepidodendronMod.ENTITY_LYSOROPHUS, 82,-5591189,-11908033);
+        registerEntity("prehistoric_flora_parhybodus", EntityPrehistoricFloraParhybodus.class, LepidodendronMod.ENTITY_PARHYBODUS, 82,0,0);
 
     }
 

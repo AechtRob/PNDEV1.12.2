@@ -2889,6 +2889,12 @@ public class RenderHandler {
         return new RenderLysorophus(manager);
         }
             });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParhybodus.class, new IRenderFactory<EntityPrehistoricFloraParhybodus>() {
+        @Override
+        public Render<? super EntityPrehistoricFloraParhybodus> createRenderFor(RenderManager manager) {
+                return new RenderParhybodus(manager);
+            }
+        });
 
 
         //Tile Entities Ediacaran (etc):

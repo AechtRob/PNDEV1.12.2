@@ -1131,6 +1131,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation BRACHYDECTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/brachydectes"));
 	public static final int ENTITY_LYSOROPHUS = 473;
 	public static final ResourceLocation LYSOROPHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lysorophus"));
+	public static final int ENTITY_PARHYBODUS = 474;
+	public static final ResourceLocation PARHYBODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parhybodus"));
 
 	
 	
