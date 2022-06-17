@@ -2763,10 +2763,10 @@ public class RenderHandler {
         return new RenderSilesaurus(manager);
         }
             });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSilosuchus.class, new IRenderFactory<EntityPrehistoricFloraSilosuchus>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSillosuchus.class, new IRenderFactory<EntityPrehistoricFloraSillosuchus>() {
         @Override
-        public Render<? super EntityPrehistoricFloraSilosuchus> createRenderFor(RenderManager manager) {
-        return new RenderSilosuchus(manager);
+        public Render<? super EntityPrehistoricFloraSillosuchus> createRenderFor(RenderManager manager) {
+        return new RenderSillosuchus(manager);
         }
             });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSmilosuchus.class, new IRenderFactory<EntityPrehistoricFloraSmilosuchus>() {

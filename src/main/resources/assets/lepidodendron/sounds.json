@@ -3579,5 +3579,159 @@
         "stream": false
       }
     ]
+  },
+
+  "sillosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sillosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "sillosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sillosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:sillosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "sillosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:sillosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "effigia_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:effigia_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_living05",
+        "stream": false
+      }
+    ]
+  },
+  "effigia_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:effigia_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:effigia_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "effigia_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:effigia_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  
+  "edaphosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:edaphosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_living06",
+        "stream": false
+      }
+    ]
+  },
+  "edaphosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:edaphosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:edaphosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "edaphosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:edaphosaurus_death",
+        "stream": false
+      }
+    ]
   }
+  
+  
 }

@@ -30,14 +30,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSilosuchus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public int ambientSoundTime;
 
-	public EntityPrehistoricFloraSilosuchus(World world) {
+	public EntityPrehistoricFloraSillosuchus(World world) {
 		super(world);
 		//setSize(0.6F, 0.35F);
 		experienceValue = 0;
@@ -169,19 +169,19 @@ public class EntityPrehistoricFloraSilosuchus extends EntityPrehistoricFloraLand
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:silosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:silosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:silosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:sillosuchus_death"));
 	}
 
 	@Override
@@ -263,9 +263,9 @@ public class EntityPrehistoricFloraSilosuchus extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.SILOSUCHUS_LOOT_YOUNG;
+			return LepidodendronMod.SILLOSUCHUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.SILOSUCHUS_LOOT;
+		return LepidodendronMod.SILLOSUCHUS_LOOT;
 	}
 
 }
