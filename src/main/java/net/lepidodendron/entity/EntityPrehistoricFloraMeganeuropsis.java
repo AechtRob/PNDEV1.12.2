@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeuropsis;
 import net.lepidodendron.entity.ai.EatMeatItemsAIFlyingInsect;
 import net.lepidodendron.entity.ai.EntityHurtByTargetSmallerThanMeAI;
@@ -41,6 +42,9 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -61,12 +65,17 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 
 	public EntityPrehistoricFloraMeganeuropsis(World world) {
 		super(world);
-		setSize(1.0F, 0.42F);
+		setSize(0.65F, 0.42F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
 		ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+	}
+
+	@Override
+	public boolean canJar() {
+		return true;
 	}
 
 	@Override
@@ -301,7 +310,6 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		//return null;
 		return LepidodendronMod.MEGANEUROPSIS_LOOT;
 	}
 
@@ -417,6 +425,25 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 				}
 			}
 		}
+	}
+
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.MEGANEUROPSIS_LOOT_JAR;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
 	}
 
 }

@@ -2,8 +2,10 @@ package net.lepidodendron.world.dimension.precambrian;
 
 import net.lepidodendron.block.BlockBacterialLayer;
 import net.lepidodendron.block.BlockLavaRock;
+import net.lepidodendron.block.BlockMeteorite;
 import net.lepidodendron.block.BlockToxicMud;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrianBiome;
 import net.lepidodendron.world.gen.WorldGenPrecambrianLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockSand;
@@ -366,9 +368,15 @@ public class ChunkProviderPrecambrian implements IChunkGenerator {
                                 iblockstate = FLUID;
                             }
                         }
+
                         j = k;
                         if (j1 >= i - 1) {
-                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
+                            if (biome == BiomePrecambrianBiome.biome && rand.nextInt(600) == 0) {
+                                chunkPrimerIn.setBlockState(i1, j1, l, BlockMeteorite.block.getDefaultState());
+                            }
+                            else {
+                                chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
+                            }
                             //} else if (j1 < i - 7 - k) {
                         } else if (j1 < i - 1) {
                             iblockstate = AIR;

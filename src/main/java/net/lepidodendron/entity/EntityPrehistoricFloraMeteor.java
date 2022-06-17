@@ -1,20 +1,15 @@
 package net.lepidodendron.entity;
 
-import javax.annotation.Nullable;
-
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.world.gen.MeteoriteImpact;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityPrehistoricFloraMeteor extends Entity {
 
@@ -79,10 +74,23 @@ public class EntityPrehistoricFloraMeteor extends Entity {
         this.motionY *= 0.9800000190734863D;
         //this.motionZ *= 0.9800000190734863D;
 
+        boolean doGriefing = world.getGameRules().getBoolean("mobGriefing");
+        if (!LepidodendronConfig.doMeteoritesGriefing) {
+            doGriefing = false;
+        }
+        if (!world.playerEntities.isEmpty() && doGriefing) {
+            for (EntityPlayer currentPlayer : world.playerEntities) {
+                if ((currentPlayer.isSpectator()) || (currentPlayer.isCreative())) {
+                    doGriefing = false;
+                    break;
+                }
+            }
+        }
+
         if (this.onGround)
         {
         	this.setDead();
-            if (!world.isRemote)
+            if (!world.isRemote && doGriefing)
             {
             	MeteoriteImpact worldGen = new MeteoriteImpact(this.explode());
             	BlockPos pos = new BlockPos((int)posX, (int)posY, (int)posZ);

@@ -80,7 +80,7 @@ public class ItemEggsPulmonoscorpius extends ElementsLepidodendronMod.ModElement
 						if (Math.random() >= 0.8) {
 							nbtStr = "{AgeTicks:0,IsBaby:true,Babies:true}";
 						}
-						if (worldIn.isRemote) {
+						if (!worldIn.isRemote) {
 							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraScorpion_Pulmonoscorpius.class).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 

@@ -3518,5 +3518,66 @@
         "stream": false
       }
     ]
+  },
+
+  "postosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:postosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "postosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:postosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "postosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:postosuchus_death",
+        "stream": false
+      }
+    ]
+  },
+  "postosuchus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:postosuchus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:postosuchus_roar02",
+        "stream": false
+      }
+    ]
   }
 }

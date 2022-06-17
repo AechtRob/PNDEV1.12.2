@@ -25,6 +25,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -43,11 +46,16 @@ public class EntityPrehistoricFloraTrigonotarbid_Cryptomartus extends EntityPreh
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		minWidth = 0.1F;
-		maxWidth = 0.3F;
-		maxHeight = 0.3F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public boolean canJar() {
+		return true;
 	}
 
 	@Override
@@ -231,6 +239,25 @@ public class EntityPrehistoricFloraTrigonotarbid_Cryptomartus extends EntityPreh
 			}
 		}
 		return false;
+	}
+
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.CYRPTOMARTUS_JAR_LOOT;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
 	}
 
 }

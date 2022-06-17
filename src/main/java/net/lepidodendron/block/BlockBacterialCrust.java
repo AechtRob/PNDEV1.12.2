@@ -20,6 +20,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -1258,6 +1259,13 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+			if (entityIn instanceof EntityPlayer) {
+				EntityPlayer playerIn = (EntityPlayer) entityIn;
+				if (playerIn.isSneaking()) {
+					super.onEntityCollision(worldIn, pos, state, entityIn);
+					return;
+				}
+			}
 			if (entityIn.onGround){
 				worldIn.setBlockToAir(pos);
 				if (!(worldIn.isRemote)) {
