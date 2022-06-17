@@ -2,7 +2,7 @@
 	"name": "Sponge",
 	"read_by_default": true,
 	"icon": "lepidodendron:blue_sponge",
-	"category": "lepidodendron:precambrian",
+	"category": "lepidodendron:precambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_sponge",
 	"pages": [
 		{
