@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraScorpion;
 import net.lepidodendron.item.entities.ItemBugRaw;
@@ -18,6 +19,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -36,14 +40,19 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.10F;
-		maxWidth = 0.69F;
-		maxHeight = 0.40F;
+		maxWidth = 0.35F;
+		maxHeight = 0.35F;
 		if (getIsBaby()) {
 			maxHealthAgeable = 4.0D;
 		}
 		else {
 			maxHealthAgeable = 6.0D;
 		}
+	}
+
+	@Override
+	public boolean canJar() {
+		return true;
 	}
 
 	@Override
@@ -63,7 +72,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (this.getBabies() && (!this.getIsBaby())) {
-			return LepidodendronMod.PULMONOSCORPIUS_LOOT;
+			return LepidodendronMod.BUG_LOOT;
 		}
 		return null;
 	}
@@ -115,6 +124,25 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 			}
 		}
 		super.onDeath(cause);
+	}
+
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.PULMONOSCORPIUS_LOOT;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
 	}
 
 }

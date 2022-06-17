@@ -4,10 +4,16 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -26,11 +32,16 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		minWidth = 0.10F;
-		maxWidth = 0.69F;
+		maxWidth = 0.49F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 5.0D;
 		setNoAI(!true);
 		enablePersistence();
+	}
+
+	@Override
+	public boolean canJar() {
+		return true;
 	}
 
 	public static String getPeriod() {return "Permian";}
@@ -72,6 +83,25 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.GLAURUNG_LOOT;
+	}
+
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.GLAURUNG_LOOT_JAR;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
 	}
 
 }

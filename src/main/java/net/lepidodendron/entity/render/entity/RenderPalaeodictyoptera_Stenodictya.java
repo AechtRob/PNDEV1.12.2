@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.EntityPrehistoricFloraPalaeodictyoptera_Stenodictya;
 import net.lepidodendron.entity.model.entity.ModelPalaeodictyoptera;
 import net.minecraft.client.renderer.GlStateManager;
@@ -50,6 +51,15 @@ public class RenderPalaeodictyoptera_Stenodictya extends RenderLiving<EntityPreh
                 GlStateManager.translate(0.0F, 0.5F, 0.0F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         }
+    }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPalaeodictyoptera_Stenodictya entity, float f) {
+        float scale = 1.0F;
+        if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
+            scale = 0.6F;
+        }
+        GlStateManager.scale(scale, scale, scale);
     }
 
 }

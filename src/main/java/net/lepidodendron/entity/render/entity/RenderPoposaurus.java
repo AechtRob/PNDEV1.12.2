@@ -3,19 +3,27 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPoposaurus;
 import net.lepidodendron.entity.model.entity.ModelPoposaurus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextFormatting;
 
 public class RenderPoposaurus extends RenderLiving<EntityPrehistoricFloraPoposaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poposaurus.png");
+    private static final ResourceLocation TEXTURE_POPO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poposaurus_popo.png");
 
     public RenderPoposaurus(RenderManager mgr) {
-        super(mgr, new ModelPoposaurus(), 0.0f);
+        super(mgr, new ModelPoposaurus(), 0.5f);
     }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPoposaurus entity) {
+        String s = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        if (s != null && ("Popo".equalsIgnoreCase(s)))
+        {
+            return RenderPoposaurus.TEXTURE_POPO;
+        }
         return RenderPoposaurus.TEXTURE;
     }
 
@@ -24,36 +32,11 @@ public class RenderPoposaurus extends RenderLiving<EntityPrehistoricFloraPoposau
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPoposaurus entity, float f) {
+        float scale = entity.getAgeScale();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.42F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

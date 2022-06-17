@@ -45,8 +45,8 @@ public class LepidodendronEventSubscribers {
 	public void meteors(WorldTickEvent event) {
 		boolean spawnShower = false;
 		if(event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
-			if(event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently.
-				if(!event.world.playerEntities.isEmpty()) {
+			if( event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently, default 6000
+				if (!event.world.playerEntities.isEmpty()) {
 					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
 					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100),300,(p.posZ+ event.world.rand.nextInt(201) - 100));
 					if(p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {

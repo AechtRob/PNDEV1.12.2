@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
@@ -34,10 +35,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -133,6 +131,9 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         this.dataManager.register(MATEABLE, 0);
     }
 
+    public boolean canJar() {
+        return false;
+    }
 
     public boolean getIsMoving() {
         return this.dataManager.get(ISMOVING);
@@ -339,6 +340,20 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         return false;
     }
 
+    protected void setSizer(float width, float height)
+    {
+        if (width != this.width || height != this.height)
+        {
+            float f = this.width;
+            this.width = width;
+            this.height = height;
+            if (this.width < f) {
+                double d0 = (double) width / 2.0D;
+                this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+            }
+        }
+    }
+
     public void onEntityUpdate()
     {
         super.onEntityUpdate();
@@ -357,10 +372,13 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             }
         }
 
-        //if (this instanceof EntityPrehistoricFloraGerarus) {
-        //    System.err.println(this.getClass() + " FlyCooldown: " + this.getFlyCooldown());
-        //    System.err.println(this.getClass() + " WanderCooldown: " + this.getWanderCooldown());
-        //}
+        if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block
+                && this.canJar()) {
+            this.setEntityBoundingBox(new AxisAlignedBB(this.posX - 0.05, this.posY, this.posZ - 0.05, this.posX + 0.05, this.posY + 0.1, this.posZ + 0.05));
+        }
+        else {
+            this.setSizer(this.width, this.height);
+        }
 
         //General ticker (for babies etc.)
         int ii = this.getTicks();
@@ -428,6 +446,8 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             }
         }
     }
+
+
 
     public boolean testLay(World world, BlockPos pos) {
         return false;

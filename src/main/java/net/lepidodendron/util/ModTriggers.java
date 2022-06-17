@@ -22,6 +22,7 @@ public class ModTriggers
     public static final CustomTrigger ENTER_CRETACEOUS = new CustomTrigger("enter_pf_cretaceous");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
+    public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
 
     //Knowledge of blocks:
     public static final CustomTrigger CLICK_LEPIDODENDRON = new CustomTrigger("pf_book_lepidodendron");
@@ -497,6 +498,7 @@ public class ModTriggers
             ENTER_CRETACEOUS,
             REJUVENATE,
             USE_CAGE,
+            USE_JAR,
 
             //Blocks:
             CLICK_LEPIDODENDRON,

@@ -42,6 +42,7 @@ advancements.pf_base_knowledge.description=Palaeopedia knoweldge
 advancements.pf_base_knowledge.title=Prehistoric Nature
 
 advancements.pf_adv_use_cage.description=Trap something in a cage
+advancements.pf_adv_use_jar.description=Trap something in a glass jar
 advancements.pf_adv_book_lepidodendron.title=Lepidodendron
 advancements.pf_adv_book_lepidodendron.description=Gain knowledge of Lepidodendron trees for your Palaeopedia
 advancements.pf_adv_book_tullimonstrum.title=Tullimonstrum
@@ -49,6 +50,7 @@ advancements.pf_adv_book_tullimonstrum.description=Gain knowledge of Tullimonstr
 advancements.pf_adv_book_vivaxosaurus.title=Vivaxosaurus
 advancements.pf_adv_book_vivaxosaurus.description=Gain knowledge of Vivaxosaurus for your Palaeopedia
 advancements.pf_adv_use_cage.title=Trapper
+advancements.pf_adv_use_jar.title=Butterfly Hunter
 enchantment.pf_time_reversal=Time Reversal
 
 advancements.pf_adv_biomes_precambrian.title=Precambrian Explorer

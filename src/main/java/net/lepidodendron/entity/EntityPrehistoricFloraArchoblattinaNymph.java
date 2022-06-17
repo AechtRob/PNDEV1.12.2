@@ -3,6 +3,8 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
@@ -13,11 +15,14 @@ import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -43,6 +48,11 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
+	}
+
+	@Override
+	public boolean canJar() {
+		return true;
 	}
 
 	public static String getPeriod() {return "Carboniferous";}
@@ -195,6 +205,25 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 	protected Item getDropItem() {
 		return null;
 		//return new ItemStack(ItemAcanthodesMeat.block, (int) (1)).getItem();
+	}
+
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
+	{
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.ARCHOBLATTINA_NYMPH_LOOT_JAR;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))
+			{
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		}
+		else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
 	}
 
 }

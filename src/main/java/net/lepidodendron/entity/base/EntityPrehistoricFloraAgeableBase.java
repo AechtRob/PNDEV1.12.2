@@ -8,7 +8,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
-import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraClaudiosaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraCoelurosauravus;
+import net.lepidodendron.entity.EntityPrehistoricFloraGlaurung;
+import net.lepidodendron.entity.EntityPrehistoricFloraRautiania;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -53,6 +56,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
+    private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
+
     //public float minSize;
     public float minWidth;
     public float maxWidth;
@@ -85,6 +90,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public void setNestLocation(@Nullable BlockPos pos) {
         this.dataManager.set(NEST_BLOCK_POS, Optional.fromNullable(pos));
+    }
+
+    public boolean canJar() {
+        return false;
     }
 
     public String getEggNBT() {

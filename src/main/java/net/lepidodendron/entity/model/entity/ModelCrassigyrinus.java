@@ -41,7 +41,7 @@ public class ModelCrassigyrinus extends AdvancedModelBaseExtended {
         this.textureHeight = 128;
 
         this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(0.0F, 27.0F, 4.0F);
+        this.body.setRotationPoint(0.0F, 27.0F, 0.0F);
         this.body.cubeList.add(new ModelBox(body, 0, 0, -3.5F, -11.0F, -13.75F, 7, 8, 15, 0.0F, false));
 
         this.head = new AdvancedModelRenderer(this);
@@ -55,8 +55,10 @@ public class ModelCrassigyrinus extends AdvancedModelBaseExtended {
         this.upperjaw.cubeList.add(new ModelBox(upperjaw, 40, 15, -3.0F, -4.0F, -8.0F, 6, 4, 8, 0.0F, false));
         this.upperjaw.cubeList.add(new ModelBox(upperjaw, 0, 0, -3.0F, -3.5F, -7.5F, 6, 1, 1, 0.01F, false));
         this.upperjaw.cubeList.add(new ModelBox(upperjaw, 60, 17, -3.0F, -2.0F, -12.0F, 6, 2, 4, 0.0F, false));
-        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 45, 0, -3.0F, -0.25F, -10.9F, 6, 1, 8, -0.01F, false));
-        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 5, 2, -2.5F, -0.25F, -11.9F, 5, 1, 0, 0.0F, false));
+        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 45, 0, -3.0F, -0.5F, -10.9F, 6, 1, 8, -0.01F, false));
+        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 5, 2, -2.5F, -0.5F, -11.9F, 5, 1, 0, 0.0F, false));
+        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 0, 87, -1.5F, 0.0F, -11.0F, 3, 1, 0, 0.0F, false));
+        this.upperjaw.cubeList.add(new ModelBox(upperjaw, 0, 87, -2.0F, 0.0F, -10.0F, 4, 1, 3, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
         this.cube_r1.setRotationPoint(0.0F, -2.0F, -12.0F);
@@ -70,8 +72,8 @@ public class ModelCrassigyrinus extends AdvancedModelBaseExtended {
         this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 0, 75, -3.0F, -2.9F, -3.0F, 6, 3, 3, -0.01F, false));
         this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 60, 9, -3.0F, 0.0F, -5.0F, 6, 3, 5, 0.0F, false));
         this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 43, 56, -3.0F, 0.0F, -12.0F, 6, 1, 7, 0.0F, false));
-        this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 54, 27, -3.0F, -0.75F, -11.4F, 6, 1, 8, -0.02F, false));
-        this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 5, 3, -2.5F, -0.75F, -11.875F, 5, 1, 0, 0.0F, false));
+        this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 54, 27, -3.0F, -0.5F, -11.4F, 6, 1, 8, -0.02F, false));
+        this.lowerjaw.cubeList.add(new ModelBox(lowerjaw, 5, 3, -2.5F, -0.5F, -11.875F, 5, 1, 0, 0.0F, false));
 
         this.cube_r2 = new AdvancedModelRenderer(this);
         this.cube_r2.setRotationPoint(0.0F, 1.0F, -12.0F);

@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraPostosuchus;
 import net.lepidodendron.entity.model.entity.ModelPostosuchus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +12,7 @@ public class RenderPostosuchus extends RenderLiving<EntityPrehistoricFloraPostos
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/postosuchus.png");
 
     public RenderPostosuchus(RenderManager mgr) {
-        super(mgr, new ModelPostosuchus(), 0.0f);
+        super(mgr, new ModelPostosuchus(), 0.6f);
     }
 
     @Override
@@ -24,35 +25,11 @@ public class RenderPostosuchus extends RenderLiving<EntityPrehistoricFloraPostos
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraPostosuchus entity, float f) {
+        float scale = entity.getAgeScale();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.6F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

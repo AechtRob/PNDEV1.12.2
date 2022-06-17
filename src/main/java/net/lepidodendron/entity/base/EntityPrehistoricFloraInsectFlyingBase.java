@@ -28,10 +28,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -75,6 +72,10 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             this.chainBuffer = new ChainBuffer();
         }
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
+    }
+
+    public boolean canJar() {
+        return false;
     }
 
     public int getAttackLength() {
@@ -343,6 +344,20 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             yct += 1;
         }
         return true;
+    }
+
+    protected void setSizer(float width, float height)
+    {
+        if (width != this.width || height != this.height)
+        {
+            float f = this.width;
+            this.width = width;
+            this.height = height;
+            if (this.width < f) {
+                double d0 = (double) width / 2.0D;
+                this.setEntityBoundingBox(new AxisAlignedBB(this.posX - d0, this.posY, this.posZ - d0, this.posX + d0, this.posY + (double) this.height, this.posZ + d0));
+            }
+        }
     }
 
     public void onEntityUpdate()
@@ -690,6 +705,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         public FlightMoveHelper(EntityPrehistoricFloraInsectFlyingBase insect) {
             super(insect);
             this.speed = EntityPrehistoricFloraInsectFlyingBase.this.getAISpeedInsect();
+
         }
 
         public void onUpdateMoveHelper() {
