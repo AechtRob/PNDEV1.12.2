@@ -478,6 +478,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_NAGINI = new CustomTrigger("pf_book_nagini");
     public static final CustomTrigger CLICK_BRACHYDECTES = new CustomTrigger("pf_book_brachydectes");
     public static final CustomTrigger CLICK_LYSOROPHUS = new CustomTrigger("pf_book_lysorophus");
+    public static final CustomTrigger CLICK_PARHYBODUS = new CustomTrigger("pf_book_parhybodus");
 
 
 
@@ -953,8 +954,8 @@ public class ModTriggers
             CLICK_TITANOPTERA,
             CLICK_NAGINI,
             CLICK_BRACHYDECTES,
-            CLICK_LYSOROPHUS
-
+            CLICK_LYSOROPHUS,
+            CLICK_PARHYBODUS
 
     };
 
