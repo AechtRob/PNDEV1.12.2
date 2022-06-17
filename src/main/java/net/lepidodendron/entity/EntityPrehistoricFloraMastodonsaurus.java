@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
