@@ -1,19 +1,19 @@
 {
-	"name": "template",
+	"name": "",
 	"read_by_default": true,
 	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "template",
+			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:triassic/.png"],
+			"images": ["paleopedia:carboniferous/.png"],
 			"title": "",
 			"text": ""
 		},

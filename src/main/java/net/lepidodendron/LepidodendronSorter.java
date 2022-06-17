@@ -3098,4 +3098,23 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3094;
     public static final int zosterophyllum_spore = 3095;
 
+    public static final int astraspis_raw = 3096;
+    public static final int astraspis_cooked = 3097;
+    public static final int boothiaspis_raw = 3098;
+    public static final int boothiaspis_cooked = 3099;
+    public static final int panderodus_raw = 3100;
+    public static final int panderodus_cooked = 3101;
+    public static final int brembodus_raw = 3102;
+    public static final int brembodus_cooked = 3103;
+    public static final int dapedium_raw = 3104;
+    public static final int dapedium_cooked = 3105;
+    public static final int falcatus_raw = 3106;
+    public static final int falcatus_cooked = 3107;
+    public static final int beishanichthys_raw = 3108;
+    public static final int beishanichthys_cooked = 3109;
+    public static final int deltoptychius_raw = 3110;
+    public static final int deltoptychius_cooked = 3111;
+    public static final int foreyia_raw = 3112;
+    public static final int foreyia_cooked = 3113;
+
 }
