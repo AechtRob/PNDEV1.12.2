@@ -1,0 +1,32 @@
+{
+	"name": "Allenypterus",
+	"read_by_default": true,
+	"icon": "lepidodendron:allenypterus_raw",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_allenypterus",
+			"title": "Allenypterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps/Marshes$(br2)>Sarcopterygii$(br)>Hadronectoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:carboniferous/Allenypterus.png"],
+			"title": "A. montanus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_allenypterus",
+			"type": "text",
+			"text": "Allenypterus is a lobe finned fish from the Bear Gulch Limestone. It had a rain drop shaped body and lived in shallow freshwater environments."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_allenypterus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+
