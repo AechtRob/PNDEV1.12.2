@@ -48,6 +48,7 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
     public void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:fossil_hammer", "inventory"));
     }
+
     private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
             super(ToolMaterial.IRON, Sets.newHashSet(BlockPlantFossil.block));
@@ -72,8 +73,6 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
             }
             return multimap;
         }
-
-
 
         @Override
         public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
