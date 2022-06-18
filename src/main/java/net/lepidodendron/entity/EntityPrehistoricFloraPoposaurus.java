@@ -135,14 +135,14 @@ public class EntityPrehistoricFloraPoposaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityLookIdleAI(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
+		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 	

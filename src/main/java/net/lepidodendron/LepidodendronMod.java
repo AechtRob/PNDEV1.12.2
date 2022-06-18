@@ -946,6 +946,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation UROCORDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urocordylus"));
 	public static final int ENTITY_EDAPHOSAURUS = 384;
 	public static final ResourceLocation EDAPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/edaphosaurus"));
+	public static final ResourceLocation EDAPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/edaphosaurus_young"));
 	public static final int ENTITY_ARTHROPLEURA = 385;
 	public static final ResourceLocation ARTHROPLEURA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/arthropleura"));
 	public static final int ENTITY_COBELODUS = 386;
@@ -1088,9 +1089,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation SHAROVIPTERYX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sharovipteryx"));
 	public static final int ENTITY_SILESAURUS = 452;
 	public static final ResourceLocation SILESAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/silesaurus"));
-	public static final int ENTITY_SILOSUCHUS = 453;
-	public static final ResourceLocation SILOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/silosuchus"));
-	public static final ResourceLocation SILOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/silosuchus_young"));
+	public static final int ENTITY_SILLOSUCHUS = 453;
+	public static final ResourceLocation SILLOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sillosuchus"));
+	public static final ResourceLocation SILLOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sillosuchus_young"));
 	public static final int ENTITY_SMILOSUCHUS = 454;
 	public static final ResourceLocation SMILOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smilosuchus"));
 	public static final int ENTITY_SMOK = 455;

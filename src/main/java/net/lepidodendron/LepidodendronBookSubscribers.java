@@ -3498,9 +3498,9 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraSilosuchus) {
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSillosuchus) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_SILOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		ModTriggers.CLICK_SILLOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
 		event.setCanceled(true);

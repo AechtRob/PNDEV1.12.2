@@ -457,7 +457,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SCLEROMOCHLUS = new CustomTrigger("pf_book_scleromochlus");
     public static final CustomTrigger CLICK_SHAROVIPTERYX = new CustomTrigger("pf_book_sharovipteryx");
     public static final CustomTrigger CLICK_SILESAURUS = new CustomTrigger("pf_book_silesaurus");
-    public static final CustomTrigger CLICK_SILOSUCHUS = new CustomTrigger("pf_book_silosuchus");
+    public static final CustomTrigger CLICK_SILLOSUCHUS = new CustomTrigger("pf_book_sillosuchus");
     public static final CustomTrigger CLICK_SMILOSUCHUS = new CustomTrigger("pf_book_smilosuchus");
     public static final CustomTrigger CLICK_SMOK = new CustomTrigger("pf_book_smok");
     public static final CustomTrigger CLICK_SPHENOTITAN = new CustomTrigger("pf_book_sphenotitan");
@@ -934,7 +934,7 @@ public class ModTriggers
             CLICK_SCLEROMOCHLUS,
             CLICK_SHAROVIPTERYX,
             CLICK_SILESAURUS,
-            CLICK_SILOSUCHUS,
+            CLICK_SILLOSUCHUS,
             CLICK_SMILOSUCHUS,
             CLICK_SMOK,
             CLICK_SPHENOTITAN,

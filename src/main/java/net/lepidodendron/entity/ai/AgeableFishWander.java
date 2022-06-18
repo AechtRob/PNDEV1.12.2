@@ -20,8 +20,15 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
     protected double straightness;
     protected int surfacelove;
     protected boolean persistent;
+    protected int executionChance;
+    protected boolean mustUpdate;
 
     public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove, boolean persistent)
+    {
+        this(PrehistoricFloraAgeableFishBase, animation, straightness, surfacelove, persistent, 1);
+    }
+
+    public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove, boolean persistent, int chanceStill)
     {
         super(PrehistoricFloraAgeableFishBase);
         setMutexBits(4);
@@ -30,6 +37,7 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
         this.straightness = straightness;
         this.surfacelove = surfacelove; //-10 to +10
         this.persistent = persistent;
+        this.executionChance = chanceStill; //1 upwards, with 1 being no chance to be still
     }
 
     public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove)
@@ -65,11 +73,23 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
 
     }
 
+    public void makeUpdate()
+    {
+        this.mustUpdate = true;
+    }
+
     @Override
     public boolean shouldExecute() {
         if (!this.PrehistoricFloraAgeableFishBase.isInWater()) {
             return false;
         }
+
+        if (!this.mustUpdate) {
+            if (this.entity.getRNG().nextInt(this.executionChance) != 0) {
+                return false;
+            }
+        }
+
         if (this.PrehistoricFloraAgeableFishBase.getRNG().nextFloat() < 0.5F || this.persistent) {
             Path path = this.PrehistoricFloraAgeableFishBase.getNavigator().getPath();
             if (
@@ -88,11 +108,12 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
                     double Xoffset = this.PrehistoricFloraAgeableFishBase.posX - this.PrehistoricFloraAgeableFishBase.getPosition().getX();
                     double Zoffset = this.PrehistoricFloraAgeableFishBase.posZ - this.PrehistoricFloraAgeableFishBase.getPosition().getZ();
                     this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
-
+                    this.mustUpdate = false;
                     return true;
                 }
             }
             else {
+                this.mustUpdate = false;
                 return true;
             }
         }

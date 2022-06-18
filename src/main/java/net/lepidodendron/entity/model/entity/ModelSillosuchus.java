@@ -3,14 +3,14 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilosuchus;
+import net.lepidodendron.entity.EntityPrehistoricFloraSillosuchus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
-public class ModelSilosuchus extends AdvancedModelBaseExtended {
+public class ModelSillosuchus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended bodyback;
     private final AdvancedModelRendererExtended legL;
     private final AdvancedModelRendererExtended legL2;
@@ -55,7 +55,7 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
 
     private ModelAnimator animator;
 
-    public ModelSilosuchus() {
+    public ModelSillosuchus() {
         this.textureWidth = 144;
         this.textureHeight = 144;
 
@@ -336,8 +336,8 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
         this.resetToDefaultPose();
         this.bodyback.offsetY = 0F;
 
-        EntityPrehistoricFloraSilosuchus Silosuchus = (EntityPrehistoricFloraSilosuchus) e;
-        float masterSpeed = Silosuchus.getTravelSpeed();
+        EntityPrehistoricFloraSillosuchus Sillosuchus = (EntityPrehistoricFloraSillosuchus) e;
+        float masterSpeed = Sillosuchus.getTravelSpeed();
 
         this.faceTarget(f3, f4, 10, neck);
         this.faceTarget(f3, f4, 10, neck2);
@@ -355,7 +355,7 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
 
         //AdvancedModelRenderer[] Whole = {this.neck2, this.neck, this.body, this.body2, this.body3, this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
 
-        if (Silosuchus.getAnimation() == Silosuchus.LAY_ANIMATION) {
+        if (Sillosuchus.getAnimation() == Sillosuchus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);
             //Other stuff
@@ -363,9 +363,9 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
             return;
         }
         
-        if (!Silosuchus.isReallyInWater()) {
+        if (!Sillosuchus.isReallyInWater()) {
 
-            if (f3 == 0.0F || !Silosuchus.getIsMoving()) {
+            if (f3 == 0.0F || !Sillosuchus.getIsMoving()) {
                 this.chainSwing(Neck, 0.05F, 0.10F, 0.5, f2, 0.8F);
                 this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                 this.chainFlap(Tail, (0.2F*0.6F), 0.10F, 0.2F, f2, 1F);
@@ -374,7 +374,7 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
                 return;
            }
 
-            if (Silosuchus.getIsFast()) { //Running
+            if (Sillosuchus.getIsFast()) { //Running
                 float speed = masterSpeed / 2.1F;
                 //this.body.offsetY = 0.75F;
                 this.legL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.225), false, 3, f2, 1.5F);
@@ -485,7 +485,7 @@ public class ModelSilosuchus extends AdvancedModelBaseExtended {
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraSilosuchus e = (EntityPrehistoricFloraSilosuchus) entity;
+        EntityPrehistoricFloraSillosuchus e = (EntityPrehistoricFloraSillosuchus) entity;
         animator.update(entity);
         this.resetToDefaultPose();
         setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
