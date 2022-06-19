@@ -933,6 +933,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation FALCATUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/falcatus"));
 	public static final int ENTITY_ORODUS = 378;
 	public static final ResourceLocation ORODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orodus"));
+	public static final ResourceLocation ORODUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/orodus_young"));
 	public static final int ENTITY_PARATARRASIUS = 379;
 	public static final ResourceLocation PARATARRASIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paratarrasius"));
 	public static final int ENTITY_SYLLIPSIMOPODI = 380;

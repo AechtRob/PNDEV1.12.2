@@ -74,9 +74,9 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.085F;
+		float calcSpeed = 0.065F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.267f;
+			calcSpeed = 0.197f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs

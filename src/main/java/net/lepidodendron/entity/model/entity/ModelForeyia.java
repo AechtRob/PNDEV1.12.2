@@ -237,8 +237,8 @@ public class ModelForeyia extends AdvancedModelBase {
             speed = 0.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainSwing(fishTail, speed, 0.35F, 0, f2, 1);
-            this.walk(lowerjaw, (float) (speed * 0.75), (float)Math.toRadians(27.5), true, 0, 0.5F, f2, 1);
+            this.chainSwing(fishTail, speed, 0.27F, 0, f2, 1);
+            this.walk(lowerjaw, (float) (speed * 0.25), (float)Math.toRadians(27.5), true, 0, 0.5F, f2, 1);
 
             this.walk(pectoralfinL, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
             this.swing(pectoralfinL, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
@@ -250,7 +250,7 @@ public class ModelForeyia extends AdvancedModelBase {
             this.swing(pelvicfinR, (float) (speed * 0.75), 0.11F, true, 1.5F, 0, f2, 1);
 
 
-            this.swing(body, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(body, speed, 0.15F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
                 this.body.offsetY = 1.16F;
