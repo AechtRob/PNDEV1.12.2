@@ -46,7 +46,7 @@ public class BlockEggsHelicoprionPlaceable extends ElementsLepidodendronMod.ModE
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_helicoprion", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_helicoprion", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsHelicoprionPlaceable.BlockCustom.LEVEL).build());
 	}
 	

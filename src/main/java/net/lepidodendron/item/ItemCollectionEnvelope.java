@@ -11,6 +11,7 @@ import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,8 +47,25 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"));
+
+		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"),
+				new ModelResourceLocation("lepidodendron:spore_collection_envelope_full", "inventory")
+
+		);
+
+		ModelLoader.setCustomMeshDefinition(block, stack -> {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().getString("plant") != null) {
+					if (!stack.getTagCompound().getString("plant").equalsIgnoreCase(""))
+						return new ModelResourceLocation("lepidodendron:spore_collection_envelope_full", "inventory");
+				}
+			}
+			return new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory");
+		});
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
@@ -90,6 +108,13 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 		public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 		{
 			ItemStack itemstack = player.getHeldItem(hand);
+
+
+			if (itemstack.hasTagCompound()) {
+				NBTTagCompound compound = itemstack.getTagCompound();
+				System.err.println("NBT: " + compound.toString());
+			}
+
 
 			if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack))
 			{

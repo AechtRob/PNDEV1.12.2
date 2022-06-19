@@ -46,7 +46,7 @@ public class BlockEggsEdestusPlaceable extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_edestus", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_edestus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsEdestusPlaceable.BlockCustom.LEVEL).build());
 	}
 	

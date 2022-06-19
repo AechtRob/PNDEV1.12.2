@@ -2,7 +2,7 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "023",
+    "012",
     " 4 ",
     " 7 "
   ],
@@ -10,10 +10,10 @@
     "0": {
       "item": "minecraft:diamond"
     },
-    "0": {
+    "1": {
       "item": "minecraft:diamond"
     },
-    "0": {
+    "2": {
       "item": "minecraft:diamond"
     },
     "4": {

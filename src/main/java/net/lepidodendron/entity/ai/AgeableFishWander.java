@@ -20,15 +20,15 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
     protected double straightness;
     protected int surfacelove;
     protected boolean persistent;
-    protected int executionChance;
+    protected double chanceStill;
     protected boolean mustUpdate;
 
     public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove, boolean persistent)
     {
-        this(PrehistoricFloraAgeableFishBase, animation, straightness, surfacelove, persistent, 1);
+        this(PrehistoricFloraAgeableFishBase, animation, straightness, surfacelove, persistent, 0D);
     }
 
-    public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove, boolean persistent, int chanceStill)
+    public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove, boolean persistent, double chanceStill)
     {
         super(PrehistoricFloraAgeableFishBase);
         setMutexBits(4);
@@ -37,7 +37,7 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
         this.straightness = straightness;
         this.surfacelove = surfacelove; //-10 to +10
         this.persistent = persistent;
-        this.executionChance = chanceStill; //1 upwards, with 1 being no chance to be still
+        this.chanceStill = chanceStill; //0-1
     }
 
     public AgeableFishWander(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, double straightness, int surfacelove)
@@ -85,7 +85,7 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
         }
 
         if (!this.mustUpdate) {
-            if (this.entity.getRNG().nextInt(this.executionChance) != 0) {
+            if (this.entity.getRNG().nextDouble() < chanceStill) {
                 return false;
             }
         }

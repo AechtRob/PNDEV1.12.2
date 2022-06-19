@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:phoenicopsis_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:phoenicopsis_seed",
+    "count": 1
+  }
+}

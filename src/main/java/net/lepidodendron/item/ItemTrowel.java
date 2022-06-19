@@ -1,8 +1,10 @@
 package net.lepidodendron.item;
 
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockPlantFossil;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.material.Material;
@@ -15,8 +17,8 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -46,9 +48,10 @@ public class ItemTrowel extends ElementsLepidodendronMod.ModElement {
     public void registerModels(ModelRegistryEvent event) {
         ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:trowel", "inventory"));
     }
-    private static class ItemToolCustom extends ItemSpade {
+    private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
-            super(ToolMaterial.IRON);
+            super(ToolMaterial.IRON, Sets.newHashSet(
+                    BlockPlantFossil.block));
             setMaxDamage(500);
             setMaxStackSize(1);
             this.setCreativeTab(TabLepidodendronMisc.tab);
@@ -78,7 +81,7 @@ public class ItemTrowel extends ElementsLepidodendronMod.ModElement {
                 if (entityLiving instanceof EntityPlayer) {
                     EntityPlayer player = (EntityPlayer) entityLiving;
                     if (!player.capabilities.isCreativeMode) {
-                        stack.damageItem(5, entityLiving);
+                        stack.damageItem(1, entityLiving);
                     }
                 }
                 else {

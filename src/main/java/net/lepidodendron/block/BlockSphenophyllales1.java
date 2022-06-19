@@ -6,16 +6,19 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemTrowel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -29,6 +32,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -62,6 +66,26 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setTranslationKey("pf_sphenophyllales_1");
 			setRegistryName("sphenophyllales_1");
+		}
+
+		@Override
+		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+					&&
+					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					)
+			) {
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				worldIn.spawnEntity(entityToSpawn);
+			}
+			else {
+				super.harvestBlock(worldIn, player, pos, state, te, stack);
+			}
 		}
 
 		@Override

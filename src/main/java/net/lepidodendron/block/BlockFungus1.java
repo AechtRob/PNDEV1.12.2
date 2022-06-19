@@ -60,6 +60,7 @@ public class BlockFungus1 extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fungus_1", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockFungus1.BlockCustom.SPREADABLE).ignore(BlockFungus1.BlockCustom.NORTH).ignore(BlockFungus1.BlockCustom.SOUTH).ignore(BlockFungus1.BlockCustom.EAST).ignore(BlockFungus1.BlockCustom.WEST).ignore(BlockFungus1.BlockCustom.UP).ignore(BlockFungus1.BlockCustom.DOWN).build());
 	}
+
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -489,7 +490,12 @@ public class BlockFungus1 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+			if (LepidodendronConfig.doPropagation) {
+				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+			}
+			else {
+				return new ItemStack(this, (int) (1)).getItem();
+			}
 		}
 
 		@Override

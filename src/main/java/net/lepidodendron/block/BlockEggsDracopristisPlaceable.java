@@ -46,7 +46,7 @@ public class BlockEggsDracopristisPlaceable extends ElementsLepidodendronMod.Mod
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_dracopristis", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_dracopristis", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsDracopristisPlaceable.BlockCustom.LEVEL).build());
 	}
 	

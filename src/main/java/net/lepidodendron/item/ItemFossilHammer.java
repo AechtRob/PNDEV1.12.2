@@ -1,7 +1,6 @@
 package net.lepidodendron.item;
 
 import com.google.common.collect.Multimap;
-import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockPlantFossil;
@@ -51,7 +50,7 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
 
     private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
-            super(ToolMaterial.IRON, Sets.newHashSet(BlockPlantFossil.block));
+            super(ToolMaterial.IRON, null);
             setMaxDamage(500);
             setMaxStackSize(1);
             this.setCreativeTab(TabLepidodendronMisc.tab);
@@ -81,7 +80,7 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
                 if (entityLiving instanceof EntityPlayer) {
                     EntityPlayer player = (EntityPlayer) entityLiving;
                     if (!player.capabilities.isCreativeMode) {
-                        stack.damageItem(5, entityLiving);
+                        stack.damageItem(2, entityLiving);
                     }
                 }
                 else {

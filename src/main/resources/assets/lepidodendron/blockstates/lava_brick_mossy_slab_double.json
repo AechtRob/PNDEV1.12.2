@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:lava_brick_mossy_slab_double"
+    }
+  }
+}

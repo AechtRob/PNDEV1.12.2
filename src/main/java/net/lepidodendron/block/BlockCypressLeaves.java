@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemTelemachusFruit;
+import net.lepidodendron.item.ItemCypressFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -128,10 +128,10 @@ public class BlockCypressLeaves extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				return new ItemStack(ItemTelemachusFruit.block, (int) (1)).getItem();
+				return new ItemStack(ItemCypressFruit.block, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockTelemachusSapling.block);
+				return Item.getItemFromBlock(BlockCypressSapling.block);
 			}
 		}
 

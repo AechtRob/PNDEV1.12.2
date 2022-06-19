@@ -46,7 +46,7 @@ public class BlockEggsListracanthusPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_listracanthus", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_listracanthus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsListracanthusPlaceable.BlockCustom.LEVEL).build());
 	}
 	

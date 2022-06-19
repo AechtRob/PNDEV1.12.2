@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBeishanichthysCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:beishanichthyscooked")
+	@GameRegistry.ObjectHolder("lepidodendron:beishanichthys_cooked")
 	public static final Item block = null;
 	public ItemBeishanichthysCooked(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.beishanichthys_cooked);
@@ -29,13 +29,13 @@ public class ItemBeishanichthysCooked extends ElementsLepidodendronMod.ModElemen
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/beishanichthyscooked", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/beishanichthys_cooked", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
-			setTranslationKey("pf_beishanichthyscooked");
-			setRegistryName("beishanichthyscooked");
+			setTranslationKey("pf_beishanichthys_cooked");
+			setRegistryName("beishanichthys_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

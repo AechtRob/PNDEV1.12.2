@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:jar_small_item"
+			"item": "lepidodendron:glass_jar_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_use_jar.title"

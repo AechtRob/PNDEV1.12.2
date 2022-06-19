@@ -23,6 +23,7 @@ public class ModTriggers
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
     public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
+    public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
 
     //Knowledge of blocks:
     public static final CustomTrigger CLICK_LEPIDODENDRON = new CustomTrigger("pf_book_lepidodendron");
@@ -391,7 +392,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_EDAPHOSAURUS = new CustomTrigger("pf_book_edaphosaurus");
     public static final CustomTrigger CLICK_ARTHROPLEURA = new CustomTrigger("pf_book_arthropleura");
     public static final CustomTrigger CLICK_COBELODUS = new CustomTrigger("pf_book_cobelodus");
-    public static final CustomTrigger CLICK_MEGACTENOPTETALUS = new CustomTrigger("pf_book_megactenoptetalus");
+    public static final CustomTrigger CLICK_MEGACTENOPETALUS = new CustomTrigger("pf_book_megactenopetalus");
     public static final CustomTrigger CLICK_RUBIDGEA = new CustomTrigger("pf_book_rubidgea");
     public static final CustomTrigger CLICK_ENDOTHIODON = new CustomTrigger("pf_book_endothiodon");
     public static final CustomTrigger CLICK_AUSTROLIMULUS = new CustomTrigger("pf_book_austrolimulus");
@@ -500,6 +501,7 @@ public class ModTriggers
             REJUVENATE,
             USE_CAGE,
             USE_JAR,
+            EPHEDRA,
 
             //Blocks:
             CLICK_LEPIDODENDRON,
@@ -868,7 +870,7 @@ public class ModTriggers
             CLICK_EDAPHOSAURUS,
             CLICK_ARTHROPLEURA,
             CLICK_COBELODUS,
-            CLICK_MEGACTENOPTETALUS,
+            CLICK_MEGACTENOPETALUS,
             CLICK_RUBIDGEA,
             CLICK_ENDOTHIODON,
             CLICK_AUSTROLIMULUS,

@@ -46,7 +46,7 @@ public class BlockEggsKaibabvenatorPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_kaibabvenator", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_kaibabvenator", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsKaibabvenatorPlaceable.BlockCustom.LEVEL).build());
 	}
 	

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemPhoenicopsisFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -14,7 +15,6 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -128,8 +128,7 @@ public class BlockPhoenicopsisLeaves extends ElementsLepidodendronMod.ModElement
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				// Drop air and use the fruit method instead:
-				return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+				return new ItemStack(ItemPhoenicopsisFruit.block, (int) (1)).getItem();
 			}
 			else {
 				return Item.getItemFromBlock(BlockPhoenicopsisSapling.block);

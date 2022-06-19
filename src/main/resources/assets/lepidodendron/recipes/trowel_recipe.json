@@ -1,0 +1,35 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 12",
+    " 45",
+    "6  "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:trowel",
+    "count": 1
+  }
+}

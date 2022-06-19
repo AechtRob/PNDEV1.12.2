@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:ephedra_fruit"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_eat_ephedra.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_eat_ephedra.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_eat_ephedra"
+		}
+	}
+}

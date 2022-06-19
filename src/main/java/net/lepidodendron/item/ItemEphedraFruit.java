@@ -4,9 +4,11 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
@@ -39,6 +41,7 @@ public class ItemEphedraFruit extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:ephedra_fruit", "inventory"));
 	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(1, 0.2f, false);
@@ -60,6 +63,9 @@ public class ItemEphedraFruit extends ElementsLepidodendronMod.ModElement {
 			if (entity instanceof EntityLivingBase) {
 				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SPEED, (int) 300, (int) 3));
 				entity.attackEntityFrom(DamageSource.GENERIC, (float) 5);
+				if (entity instanceof EntityPlayerMP) {
+					ModTriggers.EPHEDRA.trigger((EntityPlayerMP)entity);
+				}
 			}
 		}
 

@@ -3,10 +3,6 @@
     "normal": [
       {"model": "lepidodendron:pararaucaria_fruit_1"},
       {"model": "lepidodendron:pararaucaria_fruit_2"}
-    ],
-    
-    "inventory": {
-      "model": "lepidodendron:pararaucaria_fruit_block_inventory"
-    }
+    ]
   }
 }

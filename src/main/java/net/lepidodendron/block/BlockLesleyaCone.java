@@ -5,11 +5,13 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemLesleyaCone;
+import net.lepidodendron.item.ItemTrowel;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -70,6 +72,34 @@ public class BlockLesleyaCone extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
+		}
+
+		@Override
+		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+					&&
+					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					)
+			) {
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLesleya.block, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				worldIn.spawnEntity(entityToSpawn);
+			}
+			else {
+				if (Math.random() > 0.66 && !LepidodendronConfig.doPropagation) {
+					//Spawn another sapling:
+					if (!worldIn.isRemote) {
+						EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLesleya.block, (int) (1)));
+						entityToSpawn.setPickupDelay(10);
+						worldIn.spawnEntity(entityToSpawn);
+					}
+				}
+				super.harvestBlock(worldIn, player, pos, state, te, stack);
+			}
 		}
 
 		@Override
@@ -179,19 +209,6 @@ public class BlockLesleyaCone extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
 			return new ItemStack(BlockLesleya.block, (int) (1));
-		}
-
-		@Override
-		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			super.harvestBlock(worldIn, player, pos, state, te, stack);
-			if (Math.random() > 0.66 && !LepidodendronConfig.doPropagation) {
-				//Spawn another sapling:
-				if (!worldIn.isRemote) {
-					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockLesleyaCone.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
-					worldIn.spawnEntity(entityToSpawn);
-				}
-			}
 		}
 
 		@Override

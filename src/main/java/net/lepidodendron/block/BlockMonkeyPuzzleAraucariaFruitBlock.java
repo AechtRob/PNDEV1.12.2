@@ -50,7 +50,7 @@ public class BlockMonkeyPuzzleAraucariaFruitBlock extends ElementsLepidodendronM
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:monkey_puzzle_araucaria_fruit_block", "inventory"));
+				new ModelResourceLocation("lepidodendron:pararaucaria_fruit_block", "inventory"));
 	}
 	public static class BlockCustom extends BlockFalling {
 		public BlockCustom() {

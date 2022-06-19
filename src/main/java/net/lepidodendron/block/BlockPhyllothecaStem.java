@@ -2,9 +2,11 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPhyllothecaItem;
+import net.lepidodendron.item.ItemTrowel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,9 +16,11 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -70,6 +74,36 @@ public class BlockPhyllothecaStem extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
+		}
+
+		@Override
+		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+					&&
+					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
+							|| (worldIn.getBlockState(pos.down()).getMaterial() == Material.WATER
+							&& worldIn.getBlockState(pos.down()).getBlock() != this
+							&& worldIn.getBlockState(pos.down()).getBlock() != BlockPhyllotheca.block
+							&& (
+							worldIn.getBlockState(pos.down(2)).getMaterial() == Material.GROUND
+									|| worldIn.getBlockState(pos.down(2)).getMaterial() == Material.SAND
+									|| worldIn.getBlockState(pos.down(2)).getMaterial() == Material.ROCK
+									|| worldIn.getBlockState(pos.down(2)).getMaterial() == Material.CLAY
+									|| worldIn.getBlockState(pos.down(2)).getMaterial() == Material.GRASS)
+					)
+					)
+			) {
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				worldIn.spawnEntity(entityToSpawn);
+			}
+			else {
+				super.harvestBlock(worldIn, player, pos, state, te, stack);
+			}
 		}
 
 		@Override

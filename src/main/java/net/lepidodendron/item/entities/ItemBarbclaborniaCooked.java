@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBarbclaborniaCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:barbclabornia__cooked")
+	@GameRegistry.ObjectHolder("lepidodendron:barbclabornia_cooked")
 	public static final Item block = null;
 	public ItemBarbclaborniaCooked(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.barbclabornia_cooked);
@@ -29,13 +29,13 @@ public class ItemBarbclaborniaCooked extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/barbclabornia__cooked", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/barbclabornia_cooked", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
-			setTranslationKey("pf_barbclabornia__cooked");
-			setRegistryName("barbclabornia__cooked");
+			setTranslationKey("pf_barbclabornia_cooked");
+			setRegistryName("barbclabornia_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

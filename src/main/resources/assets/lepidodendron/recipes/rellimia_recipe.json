@@ -1,25 +1,61 @@
 {
   "group": "lepidodendron",
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "0",
-    "1",
-    "2"
-  ],
-  "key": {
-    "0": {
-      "item": "minecraft:water_bucket"
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "type": "minecraft:item_nbt",
+      "item": "lepidodendron:spore_collection_envelope",
+	  "nbt": {"plant":"lepidodendron:rellimia", "offsetY":1}
     },
-    "1": {
-      "item": "lepidodendron:rellimia_spores"
-    },
-    "2": {
+    {
       "type": "forge:ore_dict",
       "ore": "dirt"
     }
-  },
+  ],
   "result": {
     "item": "lepidodendron:rellimia",
     "count": 8
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

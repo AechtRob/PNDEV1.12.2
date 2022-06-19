@@ -5,18 +5,19 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
+import net.lepidodendron.item.ItemTrowel;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
@@ -26,11 +27,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -44,14 +45,14 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom());
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:adoketophyton_spore", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				//new ModelResourceLocation("lepidodendron:adoketophyton_spore", "inventory"));
 	}
 	public static class BlockCustom extends SeedSporeBushBase implements IGrowable {
 		public BlockCustom() {
@@ -73,6 +74,26 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 		}
 
 		@Override
+		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+					&&
+					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
+							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					)
+			) {
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAdoketophyton.block, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				worldIn.spawnEntity(entityToSpawn);
+			}
+			else {
+				super.harvestBlock(worldIn, player, pos, state, te, stack);
+			}
+		}
+
+		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 100;
 		}
@@ -84,7 +105,7 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

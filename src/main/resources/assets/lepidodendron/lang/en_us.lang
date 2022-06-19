@@ -7,6 +7,9 @@ advancements.pf_base_cambrian_discovery.title=Cambrian expert
 advancements.pf_adv_biomes_cambrian.title=Cambrian Explorer
 advancements.pf_adv_biomes_cambrian.description=Find all of the Cambrian biomes
 
+advancements.pf_adv_eat_ephedra.title=Zoom!
+advancements.pf_adv_eat_ephedra.description=Cope with an ephedrine hit
+
 advancements.pf_adv_book_palaeojelly1.description=Gain knowledge of Ancient Jellyfish for your Palaeopedia
 advancements.pf_adv_book_palaeojelly1.title=Ancient Jellyfish
 advancements.pf_adv_book_anomalocaris.description=Gain knowledge of Anomalocaris for your Palaeopedia
@@ -636,6 +639,7 @@ item.pf_field_horsetail_spores.name=Envelope of Field Horsetail Spores
 item.pf_fish_food.name=Fish Food
 item.pf_foozia_spores.name=Envelope of Foozia Spores
 item.pf_fossil_hammer.name=Fossil Hammer
+item.pf_trowel.name=Botanical Trowel
 item.pf_furcacauda_bucket.name=Bucket of Furcacauda
 item.pf_furcacauda_cooked.name=Cooked Furcacauda Meat
 item.pf_furcacauda_raw.name=Raw Furcacauda Meat

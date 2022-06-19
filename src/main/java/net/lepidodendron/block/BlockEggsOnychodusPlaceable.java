@@ -46,7 +46,7 @@ public class BlockEggsOnychodusPlaceable extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_onychodus", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_onychodus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsOnychodusPlaceable.BlockCustom.LEVEL).build());
 	}
 	

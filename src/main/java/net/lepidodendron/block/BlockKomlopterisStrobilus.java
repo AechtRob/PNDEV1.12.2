@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemKomlopterisSeeds;
 import net.lepidodendron.procedure.ProcedureKomlopterisStrobilusNeighbourBlockChanges;
@@ -68,7 +69,7 @@ public class BlockKomlopterisStrobilus extends ElementsLepidodendronMod.ModEleme
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:komlopteris_strobilus", "inventory"));
 	}
-	public static class BlockCustom extends Block implements ITileEntityProvider, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeBlockBase implements ITileEntityProvider, net.minecraftforge.common.IShearable {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -278,7 +279,16 @@ public class BlockKomlopterisStrobilus extends ElementsLepidodendronMod.ModEleme
 	        }
 	    }
 
-	    
+
+		@Override
+		public Block planted() {
+			return BlockKomlopterisSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 
 	public static class TileEntityCustom extends TileEntity {

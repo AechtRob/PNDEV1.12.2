@@ -2367,10 +2367,10 @@ public class RenderHandler {
         return new RenderCobelodus(manager);
         }
             });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegactenoptetalus.class, new IRenderFactory<EntityPrehistoricFloraMegactenoptetalus>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegactenopetalus.class, new IRenderFactory<EntityPrehistoricFloraMegactenopetalus>() {
         @Override
-        public Render<? super EntityPrehistoricFloraMegactenoptetalus> createRenderFor(RenderManager manager) {
-        return new RenderMegactenoptetalus(manager);
+        public Render<? super EntityPrehistoricFloraMegactenopetalus> createRenderFor(RenderManager manager) {
+        return new RenderMegactenopetalus(manager);
         }
             });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRubidgea.class, new IRenderFactory<EntityPrehistoricFloraRubidgea>() {

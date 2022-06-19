@@ -46,7 +46,7 @@ public class BlockEggsCladoselachePlaceable extends ElementsLepidodendronMod.Mod
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_cladoselache", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_cladoselache", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsCladoselachePlaceable.BlockCustom.LEVEL).build());
 	}
 	

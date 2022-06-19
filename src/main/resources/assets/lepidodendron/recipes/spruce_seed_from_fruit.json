@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:spruce_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:spruce_seed",
+    "count": 1
+  }
+}

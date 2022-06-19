@@ -12,6 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -55,8 +56,25 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:glass_jar_item", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:spore_collection_envelope", "inventory"));
+
+		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:glass_jar_item", "inventory"),
+				new ModelResourceLocation("lepidodendron:glass_jar_item_full", "inventory")
+
+		);
+
+		ModelLoader.setCustomMeshDefinition(block, stack -> {
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().getString("mob_name") != null) {
+					if (!stack.getTagCompound().getString("mob_name").equalsIgnoreCase(""))
+						return new ModelResourceLocation("lepidodendron:glass_jar_item_full", "inventory");
+				}
+			}
+			return new ModelResourceLocation("lepidodendron:glass_jar_item", "inventory");
+		});
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setTranslationKey("pf_glass_jar_item");

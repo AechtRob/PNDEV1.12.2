@@ -46,7 +46,7 @@ public class BlockEggsHyneriaPlaceable extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:eggs_hyneria", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/eggs_hyneria", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEggsHyneriaPlaceable.BlockCustom.LEVEL).build());
 	}
 	
