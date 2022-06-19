@@ -65,6 +65,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_PROTEROGYRINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
     private final ModelProterogyrinus modelProterogyrinus;
     private static final ResourceLocation TEXTURE_PROSICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
+    private static final ResourceLocation TEXTURE_REMIGIOMONTANUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/remigiomontanus.png");
+    private final ModelRemigiomontanus modelRemigiomontanus;
     private static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
@@ -89,6 +91,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelPlatyhystrix = new ModelPlatyhystrix();
         this.modelProcynosuchus = new ModelProcynosuchus();
         this.modelProterogyrinus = new ModelProterogyrinus();
+        this.modelRemigiomontanus = new ModelRemigiomontanus();
         this.modelGerarus = new ModelGerarus();
 
     }
@@ -324,6 +327,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_PROTEROGYRINUS);
                         GlStateManager.scale(0.4F,0.4F,0.4F);
                         modelProterogyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemRemigiomontanusRaw.block) {
+                        double offset = 0.52;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_REMIGIOMONTANUS);
+                        GlStateManager.scale(0.22F,0.22F,0.22F);
+                        modelRemigiomontanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemProsictodonRaw.block) {
                         double offset = 0.16;
