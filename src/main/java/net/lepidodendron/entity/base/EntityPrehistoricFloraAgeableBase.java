@@ -55,7 +55,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
-    private static final DataParameter<Float> SIZEVAR = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.FLOAT);
 
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
@@ -305,7 +304,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
         this.dataManager.register(TICKS, rand.nextInt(24000));
-        this.dataManager.register(SIZEVAR, 0.9F + (float)Math.random());
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
         this.dataManager.register(ISMOVING, false);
@@ -387,10 +385,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.set(MATEABLE, ticks);
     }
 
-    public float getSizeVar() {return this.dataManager.get(SIZEVAR);}
-
-    public void setSizeVar(float sizevar) { this.dataManager.set(SIZEVAR, sizevar);}
-
     public boolean getCanBreed() {
         return (this.isPFAdult() &&
                 (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
@@ -448,7 +442,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setAgeTicks(this.getAdultAge() - 1);
-        this.setSizeVar(0.9F + (float)Math.random());
         this.setMateable(0);
         this.setTicks(0);
         this.setIsFast(false);
@@ -520,9 +513,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public float getAgeScale() {
         float step = 1F / ((float)this.getAdultAge() + 1F);
         if (this.getAgeTicks() >= this.getAdultAge()) {
-            return this.getSizeVar();
+            return 1F;
         }
-        return Math.max((this.minWidth/this.maxWidth) * this.getSizeVar(), (step * (float)this.getAgeTicks() * this.getSizeVar()));
+        return Math.max((this.minWidth/this.maxWidth), (step * (float)this.getAgeTicks()));
     }
 
     //@Override
@@ -535,7 +528,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setBoolean("isFast", this.getIsFast());
         compound.setInteger("InPFLove", this.inPFLove);
         compound.setBoolean("laying", this.laying);
-        compound.setFloat("sizevariant", this.getSizeVar());
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
             compound.setInteger("PosX", this.getNestLocation().getX());
@@ -553,7 +545,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setIsFast(compound.getBoolean("isFast"));
         this.inPFLove = compound.getInteger("InPFLove");
         this.laying = compound.getBoolean("laying");
-        this.setSizeVar(compound.getFloat("sizevariant"));
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
             int i = compound.getInteger("PosX");

@@ -1,9 +1,7 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -12,7 +10,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -40,8 +37,6 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraTiarajudens(World world) {
 		super(world);
@@ -51,29 +46,18 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.18F;
-		maxWidth = 1.85F;
-		maxHeight = 2.70F;
-		maxHealthAgeable = 38.0D;
-		NOISE_ANIMATION = Animation.create(20);
+		maxWidth = 0.65F;
+		maxHeight = 0.65F;
+		maxHealthAgeable = 16.0D;
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "mid Permian";}
 
-	public static String getHabitat() {return "Terrestrial Gorgonopsid";}
+	public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
 	public boolean hasNest() {
 		return true;
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
-	}
-
-	@Override
-	public int getRoarLength() {
-		return 32;
 	}
 
 	@Override
@@ -97,28 +81,24 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.5115F;
+		float speedBase = 0.485F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.50F;
+			speedBase = speedBase * 1.56F;
 		}
 		return speedBase;
 	}
 
 	@Override
 	public int getTalkInterval() {
-		return 440;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 180;
+		return 80;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 128000;
+		return 64000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -134,27 +114,25 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(8, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		tasks.addTask(4, new PanicAI(this, 1.6D));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityAILookIdle(this));
+		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-		this.targetTasks.addTask(4, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(5, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
+					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 	
@@ -172,37 +150,14 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			SoundEvent soundevent = this.getAmbientAmbientSound();
-			if (soundevent != null)
-			{
-				if (this.getAnimation() == NO_ANIMATION) {
-					this.setAnimation(NOISE_ANIMATION);
-					//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-				}
-			}
-		}
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiarajudens_roar"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:tiarajudens_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:tiarajudens_idle"));
 	}
 
 	@Override

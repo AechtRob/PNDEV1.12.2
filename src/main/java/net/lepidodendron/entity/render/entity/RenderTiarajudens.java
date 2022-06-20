@@ -29,7 +29,7 @@ public class RenderTiarajudens extends RenderLiving<EntityPrehistoricFloraTiaraj
     protected void preRenderCallback(EntityPrehistoricFloraTiarajudens entity, float f) {
         float scale = entity.getAgeScale();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = entity.width * scale * 0.225F;
     }
 
 }

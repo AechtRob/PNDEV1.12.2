@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -169,7 +170,7 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
                 else {
                     randPos = this.PrehistoricFloraAgeableFishBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(9) - 4, rand.nextInt(17) - 8);
                 }
-                if (this.PrehistoricFloraAgeableFishBase.divesToLay() && this.PrehistoricFloraAgeableFishBase.getCanBreed()) {
+                if (this.PrehistoricFloraAgeableFishBase.divesToLay() && this.PrehistoricFloraAgeableFishBase.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.PrehistoricFloraAgeableFishBase.getLaying())) {
                     //Target the water bottom to lay (within reason):
                     BlockPos randPosVar = randPos;
                     if (this.PrehistoricFloraAgeableFishBase.world.getBlockState(randPos).getMaterial() == Material.WATER && !isAtBottom(randPos) && Math.random() < 0.90) {
