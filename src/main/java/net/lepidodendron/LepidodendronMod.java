@@ -1117,6 +1117,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation XINPUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus"));
 	public static final int ENTITY_AUSTRIADACTYLUS = 465;
 	public static final ResourceLocation AUSTRIADACTYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austriadactylus"));
+	public static final ResourceLocation AUSTRIADACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austriadactylus_young"));
 	public static final int ENTITY_CAELESTIVENTUS = 466;
 	public static final ResourceLocation CAELESTIVENTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caelestiventus"));
 	public static final int ENTITY_CAVIRAMUS = 467;

@@ -13,7 +13,7 @@ public class LandWanderAvoidWaterAI extends EntityAIBase
     protected double y;
     protected double z;
     protected final double speed;
-    protected int executionChance;
+    protected int executionChance; //an integer fom 1 upwards, where 1 means not still
     protected int executionChanceInWater;
     protected boolean mustUpdate;
 
