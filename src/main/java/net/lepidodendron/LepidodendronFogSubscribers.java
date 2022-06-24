@@ -83,7 +83,7 @@ public class LepidodendronFogSubscribers {
 					BlockPos pos = player.getPosition().add(x, 0, z);
 					Biome biome = player.world.getBiome(pos);
 					float density = this.getFogDensity(player);
-					float biomeFog = getBiomeFactor(biome);
+					float biomeFog = getBiomeFactor(biome); //==0?
 					float foggy = biomeFog + (density * 5000F);
 					fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
 					divider++;
@@ -93,26 +93,13 @@ public class LepidodendronFogSubscribers {
 			near = (fog / (float) divider);
 			far = f1;
 
-			GlStateManager.setFogDensity(this.getFogDensity(player));
-
-			//if (event.getFogMode() == -1) {
-			//	GlStateManager.setFogStart(0.0F);
-			//	GlStateManager.setFogEnd(far);
-			//} else {
-
+			float density = this.getFogDensity(player);
+			GlStateManager.setFogDensity(density);
+			if (density != 0) {
 				GlStateManager.setFogStart(near * 0.05F);
-				GlStateManager.setFogEnd(far * 0.5F);
-
-			//}
-
-			//if (GLContext.getCapabilities().GL_NV_fog_distance) {
-			//	GlStateManager.glFogi(34138, 34139);
-			//}
-
-			//GlStateManager.setFogStart(near * 0.25F);
-			//GlStateManager.setFogEnd(far);
-			//GlStateManager.setFogDensity(0);
-			//GlStateManager.setFogDensity(getFogDensity(b, player, world.getBiome(player.getPosition()), world, world.getBlockState(player.getPosition())));
+			}
+			//GlStateManager.setFogEnd(Math.max(far, 240) * 0.5F);
+			GlStateManager.setFogEnd(far);
 
 		}
 	}
@@ -248,7 +235,7 @@ public class LepidodendronFogSubscribers {
 				return 150;
 			}
 		}
-		return 100;
+		return 0;
 	}
 
 
@@ -267,6 +254,7 @@ public class LepidodendronFogSubscribers {
 			int fogBottom = 78;
 			int fogTop = 98;
 			float backgroundFog = 0.0000F;
+			float backgroundFog2 = 0.0010F;
 			float fullFogAddition = 0.0985F;
 			float fog = 0;
 			float fog1 = 0;
@@ -304,26 +292,26 @@ public class LepidodendronFogSubscribers {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 										|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
-									fog = backgroundFog * 7F;
+									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome instanceof BiomeCarboniferous && player.posY >= player.world.getSeaLevel() - 4) {
 								BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 								if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
 										|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
-									fog = backgroundFog * 7F;
+									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome instanceof BiomeDevonian && player.posY >= player.world.getSeaLevel() - 4) {
 								BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
 								if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp) {
-									fog = backgroundFog * 7F;
+									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
 									&& biome instanceof BiomeJurassic && player.posY >= player.world.getSeaLevel() - 4) {
 								BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
-									fog = backgroundFog * 4F;
+									fog = backgroundFog2 * 5F;
 								}
 							}
 
@@ -334,17 +322,14 @@ public class LepidodendronFogSubscribers {
 									fog1 = fog1 * d;
 								}
 							} else if (player.posY < player.world.getSeaLevel() - 4) {
-								fog1 = backgroundFog * 2F;
-								fog = backgroundFog * 2F;
+								fog1 = backgroundFog2 * 2F; //needs gradient with height
+								fog = backgroundFog2 * 2F; //needs gradient with height
 							} else {
 								fog1 = backgroundFog;
 							}
 
 							return (float) Math.max((double) fog, (double) fog1);
-							//GlStateManager.setFog(GlStateManager.FogMode.EXP2);
-							//System.err.println("Render fog: " + doFog);
-							//event.setDensity((float) doFog);
-							//event.setCanceled(true);
+
 						}
 					}
 				}

@@ -364,7 +364,7 @@ public class ModelAcrolepis extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Acrolepis.rotateAngleZ = (float) Math.toRadians(90);
-            this.Acrolepis.offsetY = 1.15F;
+            this.Acrolepis.offsetY = 1.05F;
             this.bob(Acrolepis, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F * still);

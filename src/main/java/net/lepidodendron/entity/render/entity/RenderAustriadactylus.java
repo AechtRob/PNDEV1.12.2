@@ -11,7 +11,7 @@ public class RenderAustriadactylus extends RenderLiving<EntityPrehistoricFloraAu
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/austriadactylus.png");
 
     public RenderAustriadactylus(RenderManager mgr) {
-        super(mgr, new ModelAustriadactylus(), 0.0f);
+        super(mgr, new ModelAustriadactylus(), 0.12f);
     }
 
     @Override

@@ -705,8 +705,7 @@
       }
     ]
   },
-
-
+  
   "dimetrodon_idle": {
     "sounds": [
       {
@@ -767,8 +766,7 @@
       }
     ]
   },
-
-
+  
   "inostrancevia_idle": {
     "sounds": [
       {
@@ -3728,6 +3726,226 @@
     "sounds": [
       {
         "name": "lepidodendron:edaphosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "austriadactylus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:austriadactylus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "austriadactylus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:austriadactylus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:austriadactylus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "austriadactylus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:austriadactylus_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "caelestiventus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caelestiventus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "caelestiventus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caelestiventus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caelestiventus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "caelestiventus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caelestiventus_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "caviramus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caviramus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "caviramus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caviramus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:caviramus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "caviramus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:caviramus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "eudimorphodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eudimorphodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_living07",
+        "stream": false
+      }
+    ]
+  },
+  "eudimorphodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eudimorphodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:eudimorphodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "eudimorphodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:eudimorphodon_death",
         "stream": false
       }
     ]

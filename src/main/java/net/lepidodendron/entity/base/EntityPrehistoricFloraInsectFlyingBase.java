@@ -528,7 +528,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         if (this.getAttachmentPos() == null) {
             sitTickCt = 0;
-            if(collided && sitCooldown == 0 && !onGround){
+            if (collided && sitCooldown == 0 && !onGround){
                 sitCooldown = 5;
                 Vec3d vec3d = this.getPositionEyes(0);
                 Vec3d vec3d1 = this.getLook(0);

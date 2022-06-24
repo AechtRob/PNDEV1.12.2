@@ -11,7 +11,7 @@ public class RenderCaelestiventus extends RenderLiving<EntityPrehistoricFloraCae
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caelestiventus.png");
 
     public RenderCaelestiventus(RenderManager mgr) {
-        super(mgr, new ModelCaelestiventus(), 0.0f);
+        super(mgr, new ModelCaelestiventus(), 0.15f);
     }
 
     @Override
@@ -25,6 +25,7 @@ public class RenderCaelestiventus extends RenderLiving<EntityPrehistoricFloraCae
     }
 
 }
+
 
 
 
