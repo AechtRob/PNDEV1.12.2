@@ -11,7 +11,7 @@ public class RenderEudimorphodon extends RenderLiving<EntityPrehistoricFloraEudi
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eudimorphodon.png");
 
     public RenderEudimorphodon(RenderManager mgr) {
-        super(mgr, new ModelEudimorphodon(), 0.0f);
+        super(mgr, new ModelEudimorphodon(), 0.10f);
     }
 
     @Override
@@ -25,6 +25,9 @@ public class RenderEudimorphodon extends RenderLiving<EntityPrehistoricFloraEudi
     }
 
 }
+
+
+
 
 
 

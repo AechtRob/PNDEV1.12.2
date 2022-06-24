@@ -11,7 +11,7 @@ public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramu
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caviramus.png");
 
     public RenderCaviramus(RenderManager mgr) {
-        super(mgr, new ModelCaviramus(), 0.0f);
+        super(mgr, new ModelCaviramus(), 0.12f);
     }
 
     @Override
@@ -25,6 +25,8 @@ public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramu
     }
 
 }
+
+
 
 
 

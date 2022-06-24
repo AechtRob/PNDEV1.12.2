@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 	}
 
 	protected double getAISpeedFly() {
-		return 0.85D;
+		return 0.35D;
 	}
 
 	@Override
@@ -123,12 +123,12 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 
 	@Override
 	public int flyLength() {
-		return 1800;
+		return 3600;
 	}
 
 	@Override
 	public int walkLength() {
-		return 1800;
+		return 600;
 	}
 
 	@Override

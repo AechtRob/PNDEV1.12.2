@@ -1120,10 +1120,13 @@ public class LepidodendronMod {
 	public static final ResourceLocation AUSTRIADACTYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austriadactylus_young"));
 	public static final int ENTITY_CAELESTIVENTUS = 466;
 	public static final ResourceLocation CAELESTIVENTUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caelestiventus"));
+	public static final ResourceLocation CAELESTIVENTUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caelestiventus_young"));
 	public static final int ENTITY_CAVIRAMUS = 467;
 	public static final ResourceLocation CAVIRAMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caviramus"));
+	public static final ResourceLocation CAVIRAMUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/caviramus_young"));
 	public static final int ENTITY_EUDIMORPHODON = 468;
 	public static final ResourceLocation EUDIMORPHODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eudimorphodon"));
+	public static final ResourceLocation EUDIMORPHODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eudimorphodon_young"));
 	public static final int ENTITY_ITALOPHLEBIA = 469;
 	public static final ResourceLocation ITALOPHLEBIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/italophlebia"));
 	public static final int ENTITY_TITANOPTERA = 470;

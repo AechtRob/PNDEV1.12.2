@@ -1,6 +1,5 @@
 package net.lepidodendron.entity.base;
 
-import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
@@ -39,9 +38,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     private int walkTick;
     public Animation FLY_ANIMATION;
     public Animation UNFLY_ANIMATION;
+    private BlockPos targetBlock;
 
     private static final DataParameter<Boolean> FLYING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableFlyingBase.class, DataSerializers.BOOLEAN);
-    protected static final DataParameter<Optional<BlockPos>> FLYTARGET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableFlyingBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
     public EntityPrehistoricFloraAgeableFlyingBase(World world) {
         super(world);
@@ -84,18 +83,17 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     @Nullable
     public BlockPos getFlyTarget() {
-        return (BlockPos) ((Optional) this.dataManager.get(FLYTARGET)).orNull();
+        return this.targetBlock;
     }
 
     public void setFlyTarget(@Nullable BlockPos pos) {
-        this.dataManager.set(FLYTARGET, Optional.fromNullable(pos));
+        this.targetBlock = pos;
     }
 
     @Override
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(FLYING, false);
-        this.dataManager.register(FLYTARGET, Optional.absent());
         this.setScaleForAge(false);
     }
 
@@ -104,7 +102,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setIsFlying(false);
         this.flyTick = 0;
-        this.walkTick = 0;
+        this.walkTick = this.rand.nextInt(this.walkLength() + 1);
         return livingdata;
     }
 
@@ -116,9 +114,9 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         compound.setInteger("pfwalktick", this.walkTick);
         BlockPos blockpos = this.getFlyTarget();
         if (blockpos != null) {
-            compound.setInteger("PosX", blockpos.getX());
-            compound.setInteger("PosY", blockpos.getY());
-            compound.setInteger("PosZ", blockpos.getZ());
+            compound.setInteger("TargetPosX", blockpos.getX());
+            compound.setInteger("TargetPosY", blockpos.getY());
+            compound.setInteger("TargetPosZ", blockpos.getZ());
         }
     }
 
@@ -127,13 +125,13 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         this.setIsFlying(compound.getBoolean("pfflying"));
         this.flyTick = compound.getInteger("pfflytick");
         this.walkTick = compound.getInteger("pfwalktick");
-        if (compound.hasKey("PosX")) {
-            int i = compound.getInteger("PosX");
-            int j = compound.getInteger("PosY");
-            int k = compound.getInteger("PosZ");
-            this.dataManager.set(FLYTARGET, Optional.of(new BlockPos(i, j, k)));
+        if (compound.hasKey("TargetPosX")) {
+            int i = compound.getInteger("TargetPosX");
+            int j = compound.getInteger("TargetPosY");
+            int k = compound.getInteger("TargetPosZ");
+            this.targetBlock = new BlockPos(i, j, k);
         } else {
-            this.dataManager.set(FLYTARGET, Optional.absent());
+            this.targetBlock = null;
         }
     }
 
@@ -266,18 +264,17 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         return f * f + f1 * f1 + f2 * f2;
     }
 
-    public static BlockPos getBlockInView(EntityPrehistoricFloraAgeableFlyingBase FlyingBase) {
-        float radius = 0.75F * (0.7F * 4) * -3 - FlyingBase.getRNG().nextInt(20);
-        float neg = FlyingBase.getRNG().nextBoolean() ? 1 : -1;
-        float angle = (0.01745329251F * FlyingBase.renderYawOffset) + 3.15F + (FlyingBase.getRNG().nextFloat() * neg);
-        double extraX = radius * MathHelper.sin((float) (Math.PI + angle));
-        double extraZ = radius * MathHelper.cos(angle);
-        BlockPos radialPos = new BlockPos(FlyingBase.posX + extraX, 0, FlyingBase.posZ + extraZ);
-        BlockPos ground = FlyingBase.world.getHeight(radialPos);
-        int distFromGround = (int) FlyingBase.posY - ground.getY();
-        BlockPos newPos = radialPos.up(distFromGround < flightHeight() ? (int) Math.min(255, FlyingBase.posY + FlyingBase.getRNG().nextInt(25) - 8) : (int) FlyingBase.posY + FlyingBase.getRNG().nextInt(3) - 1);
-
-        if (!isTargetBlocked(FlyingBase, new Vec3d(newPos)) && FlyingBase.getDistanceSqToCenter(newPos) > 6) {
+    public static BlockPos getInterimBlockTarget(EntityPrehistoricFloraAgeableFlyingBase flier) {
+        float f = flier.getRNG().nextBoolean() ? 1 : -1;
+        float radius = 0.75F * (0.7F * 4) * -3 - flier.rand.nextInt(20);
+        float angle = (0.01745329251F * flier.renderYawOffset) + 3.15F + (flier.rand.nextFloat() * f);
+        double dX = radius * MathHelper.sin((float) (Math.PI + angle));
+        double dZ = radius * MathHelper.cos(angle);
+        BlockPos pos = new BlockPos(flier.posX + dX, 0, flier.posZ + dZ);
+        BlockPos ground = flier.world.getHeight(pos);
+        int distFromGround = (int) flier.posY - ground.getY();
+        BlockPos newPos = pos.up(distFromGround < flightHeight() ? (int) Math.min(255, flier.posY + flier.rand.nextInt(25) - 8) : (int) flier.posY + flier.rand.nextInt(3) - 1);
+        if (!isTargetBlocked(flier, new Vec3d(newPos)) && flier.getDistanceSqToCenter(newPos) > 6) {
             return newPos;
         }
         return null;
@@ -285,13 +282,13 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
     public static boolean isTargetBlocked(Entity entity, Vec3d target) {
         if (target != null) {
-            RayTraceResult rayTrace = entity.world.rayTraceBlocks(new Vec3d(entity.getPosition()), target, false);
-            if (rayTrace != null && rayTrace.hitVec != null) {
-                BlockPos sidePos = rayTrace.getBlockPos();
-                BlockPos pos = new BlockPos(rayTrace.hitVec);
+            RayTraceResult rayTraceResult = entity.world.rayTraceBlocks(new Vec3d(entity.getPosition()), target, false);
+            if (rayTraceResult != null && rayTraceResult.hitVec != null) {
+                BlockPos side = rayTraceResult.getBlockPos();
+                BlockPos pos = new BlockPos(rayTraceResult.hitVec);
                 //System.err.println("Is this block blocked? " + entity.world.getBlockState(pos).getBlock() + " " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
                 //System.err.println("blocked " + (!entity.world.isAirBlock(pos) || !entity.world.isAirBlock(sidePos)));
-                return !entity.world.isAirBlock(pos) || !entity.world.isAirBlock(sidePos);
+                return !entity.world.isAirBlock(side) || !entity.world.isAirBlock(pos);
             }
         }
         return false;
@@ -302,35 +299,30 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         double maxDist = Math.max(3, bbLength * bbLength);
         if (this.getFlyTarget() != null && isTargetInAir() && this.isReallyFlying()) {
             if (this.getDistanceSquared(new Vec3d(this.getFlyTarget().getX() + 0.5D, this.getFlyTarget().getY() + 0.5D, this.getFlyTarget().getZ() + 0.5D)) > maxDist){
-                double targetX = this.getFlyTarget().getX() + 0.5D - posX;
-                double targetY = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;
-                double targetZ = this.getFlyTarget().getZ() + 0.5D - posZ;
-                motionX += (Math.signum(targetX) * 0.5D - motionX) * 0.100000000372529 * this.getAISpeedFly();
-                motionY += (Math.signum(targetY) * 0.5D - motionY) * 0.100000000372529 * 2;
-                motionZ += (Math.signum(targetZ) * 0.5D - motionZ) * 0.100000000372529 * this.getAISpeedFly();
+                double xPos = this.getFlyTarget().getX() + 0.5D - posX;
+                double yPos = Math.min(this.getFlyTarget().getY(), 256) + 1D - posY;
+                double zPos = this.getFlyTarget().getZ() + 0.5D - posZ;
+                motionX += (Math.signum(xPos) * 0.5D - motionX) * 0.1 * this.getAISpeedFly();
+                motionY += (Math.signum(yPos) * 0.5D - motionY) * 0.2;
+                motionZ += (Math.signum(zPos) * 0.5D - motionZ) * 0.1 * this.getAISpeedFly();
                 float angle = (float) (Math.atan2(motionZ, motionX) * 180.0D / Math.PI) - 90.0F;
                 float rotation = MathHelper.wrapDegrees(angle - rotationYaw);
-                moveForward = 0.5F;
+                moveForward = (float) this.getAISpeedFly();
                 prevRotationYaw = rotationYaw;
-                if(Math.abs(motionX) > 0.12 || Math.abs(motionZ) > 0.12){
+                if (Math.abs(motionX) > 0.12 || Math.abs(motionZ) > 0.12){
                     rotationYaw += rotation;
                 }
             }
             else {
-                this.onReachTarget(this.getFlyTarget());
                 this.setFlyTarget(null);
             }
         }
         else {
             this.setFlyTarget(null);
         }
-        if (collidedHorizontally) {
+        if (this.collidedHorizontally) {
             this.setFlyTarget(null);
-
         }
-    }
-
-    protected void onReachTarget(BlockPos Target) {
     }
 
     public boolean isAboveOrInWater() {
@@ -627,9 +619,14 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         public BlockPos getFlyTarget(){
             BlockPos pos = null;
             for (int i = 0; i < 24; i++) {
-                pos = getBlockInView(flier);
-                if (pos != null && flier.world.getBlockState(pos).getMaterial() == Material.AIR && !isTargetBlocked(flier, new Vec3d(pos))) {
-                    return pos;
+                pos = getInterimBlockTarget(flier);
+                if (pos != null) {
+                    BlockPos ground = flier.world.getHeight(new BlockPos(pos.getX(), 0, pos.getZ()));
+                    pos = new BlockPos(pos.getX(), Math.min(pos.getY(), ground.getY() + flightHeight() + flier.rand.nextInt(5) - 2), pos.getZ());
+                    if (flier.world.getBlockState(pos).getMaterial() == Material.AIR
+                            && !isTargetBlocked(flier, new Vec3d(pos))) {
+                        return pos;
+                    }
                 }
             }
             return pos;
