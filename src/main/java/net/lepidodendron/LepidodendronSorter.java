@@ -3119,5 +3119,9 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 3115;
     public static final int zosterophyllum = 3116;
     public static final int zosterophyllum_spore = 3117;
+    public static final int eggs_orodus_worldgen = 3118;
+    public static final int eggs_orodus = 3119;
+
+    public static final int phial_eggs_orodus = 3120;
 
 }

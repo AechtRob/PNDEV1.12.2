@@ -451,6 +451,12 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					removed = true;
 				}
 
+				else if (blockTarget == BlockEggsOrodus.block || blockTarget == BlockEggsOrodusPlaceable.block) {
+					phial = new ItemStack(ItemPhialEggsOrodus.block, (int) (1));
+					collected = true;
+					removed = true;
+				}
+
 				else if (blockTarget == BlockRottenLog.block
 					|| blockTarget == BlockAncientMoss.block
 					|| blockTarget == BlockDollyphyton.block
