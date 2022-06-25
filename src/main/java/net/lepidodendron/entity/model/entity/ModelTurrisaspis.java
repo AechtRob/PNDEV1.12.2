@@ -213,7 +213,7 @@ public class ModelTurrisaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Body.render(f5 * 0.09F);
+        this.Body.render(f5 * 0.14F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

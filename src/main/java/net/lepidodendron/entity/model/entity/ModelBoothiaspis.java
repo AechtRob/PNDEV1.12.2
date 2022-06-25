@@ -114,7 +114,7 @@ public class ModelBoothiaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.head.render(f5 * 0.128F * 1.4F);
+        this.head.render(f5 * 0.128F * 2F);
     }
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
@@ -139,14 +139,14 @@ public class ModelBoothiaspis extends AdvancedModelBase {
         this.resetToDefaultPose();
         this.head.offsetY = 1.2F;
 
-        AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
+        AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         float speed = 0.5F;
         if (!e.isInWater()) {
             speed = 0.99F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed*0.5F, 0.08F, -3, f2, 1);
-            this.chainSwing(fishTail, speed*0.5F, 0.335F, -2.6, f2, 1);
+            this.chainSwing(fishTail, speed*0.5F, 0.235F, -2.6, f2, 1);
             this.swing(head, speed*0.5F, 0.16F, true, 0, 0, f2, 1);
 
             if (!e.isInWater()) {

@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.2;
+		return this.getAgeScale() < 0.35;
 	}
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;
@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.339f;
+		float AIspeed = 0.3f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.5F;
 		}
@@ -107,7 +107,7 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() ));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0, true));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 10, 0, true));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));

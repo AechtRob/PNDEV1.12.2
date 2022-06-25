@@ -327,7 +327,7 @@ public class ModelOrodus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Orodus.render(0.028F);
+        this.Orodus.render(0.025F);
     }
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
@@ -351,7 +351,7 @@ public class ModelOrodus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Orodus.offsetY = 0.25F;
+        this.Orodus.offsetY = 0.75F;
 
         AdvancedModelRenderer[] fishTail = {this.Body4, this.Body5, this.Body6, this.Body7, this.Body8, this.Body9};
 
@@ -392,7 +392,7 @@ public class ModelOrodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Orodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Orodus.offsetY = 0.25F;
+            this.Orodus.offsetY = 0.85F;
             this.bob(Orodus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

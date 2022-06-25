@@ -394,7 +394,7 @@ public class ModelRetifacies extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Retifacies.offsetY = 0.91F;
+        this.Retifacies.offsetY = 0.9F;
 
         AdvancedModelRenderer[] legsL = {this.LLeg1, this.LLeg2, this.LLeg3, this.LLeg4, this.LLeg5, this.LLeg6, this.Lleg7, this.Lleg8, this.LLeg9};
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3, this.RLeg4, this.RLeg5, this.RLeg6, this.RLeg7, this.RLeg8, this.RLeg9};
