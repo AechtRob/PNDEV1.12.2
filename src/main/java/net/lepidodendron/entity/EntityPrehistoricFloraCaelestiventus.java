@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraCaelestiventus extends EntityPrehistoricFlora
 	}
 
 	public static int flightHeight() {
-		return 25;
+		return 15;
 	}
 
 	public static String getPeriod() {return "Triassic";}

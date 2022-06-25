@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 	}
 
 	public static int flightHeight() {
-		return 20;
+		return 15;
 	}
 
 	public static String getPeriod() {return "Triassic";}

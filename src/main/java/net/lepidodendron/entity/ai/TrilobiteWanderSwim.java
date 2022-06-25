@@ -60,7 +60,7 @@ public class TrilobiteWanderSwim extends AnimationAINoAnimation<EntityPrehistori
                             && (!isDirectPathBetweenPoints(this.PrehistoricFloraTrilobiteSwimBase, this.PrehistoricFloraTrilobiteSwimBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z))))
                             ||
                             (path != null && path.getFinalPathPoint() != null
-                                    && this.PrehistoricFloraTrilobiteSwimBase.getDistanceSq(path.getFinalPathPoint().x + 0.5, path.getFinalPathPoint().y + 0.5, path.getFinalPathPoint().z + 0.5) < Math.pow(this.PrehistoricFloraTrilobiteSwimBase.width,2))
+                                    && this.PrehistoricFloraTrilobiteSwimBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraTrilobiteSwimBase.width,2))
             )
             {
                 this.PrehistoricFloraTrilobiteSwimBase.getNavigator().clearPath();

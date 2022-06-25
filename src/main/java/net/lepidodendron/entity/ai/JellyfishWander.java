@@ -59,7 +59,7 @@ public class JellyfishWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                             && (!isDirectPathBetweenPoints(this.PrehistoricFloraJellyfishBase, this.PrehistoricFloraJellyfishBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z))))
                             ||
                             (path != null && path.getFinalPathPoint() != null
-                                    && this.PrehistoricFloraJellyfishBase.getDistanceSq(path.getFinalPathPoint().x + 0.5, path.getFinalPathPoint().y + 0.5, path.getFinalPathPoint().z + 0.5) < Math.pow(this.PrehistoricFloraJellyfishBase.width,2))
+                                    && this.PrehistoricFloraJellyfishBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraJellyfishBase.width,2))
             )
             {
                 this.PrehistoricFloraJellyfishBase.getNavigator().clearPath();

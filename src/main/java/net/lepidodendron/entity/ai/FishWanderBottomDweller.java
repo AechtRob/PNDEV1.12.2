@@ -75,7 +75,7 @@ public class FishWanderBottomDweller extends AnimationAINoAnimation<EntityPrehis
                             && (!isDirectPathBetweenPoints(this.PrehistoricFloraFishBase, this.PrehistoricFloraFishBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z))))
                             ||
                             (path != null && path.getFinalPathPoint() != null
-                                    && this.PrehistoricFloraFishBase.getDistanceSq(path.getFinalPathPoint().x + 0.5, path.getFinalPathPoint().y + 0.5, path.getFinalPathPoint().z + 0.5) < Math.pow(this.PrehistoricFloraFishBase.width,2))
+                                    && this.PrehistoricFloraFishBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraFishBase.width,2))
             )
             {
                 this.PrehistoricFloraFishBase.getNavigator().clearPath();

@@ -127,7 +127,7 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.03/(double)this.getAgeScale(), -2, true));
+		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 0.1, -2, true));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 
@@ -162,6 +162,7 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(48.0D);
 	}
 
 	@Override
