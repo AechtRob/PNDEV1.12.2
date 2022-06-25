@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraAustriadactylus extends EntityPrehistoricFlor
 	}
 
 	public static int flightHeight() {
-		return 40; //default
+		return 28;
 	}
 
 	public static String getPeriod() {return "Triassic";}

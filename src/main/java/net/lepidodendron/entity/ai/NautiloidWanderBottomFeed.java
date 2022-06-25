@@ -57,7 +57,7 @@ public class NautiloidWanderBottomFeed extends AnimationAINoAnimation<EntityPreh
                             && (!isDirectPathBetweenPoints(this.PrehistoricFloraNautiloidBase, this.PrehistoricFloraNautiloidBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z))))
                             ||
                             (path != null && path.getFinalPathPoint() != null
-                                    && this.PrehistoricFloraNautiloidBase.getDistanceSq(path.getFinalPathPoint().x + 0.5, path.getFinalPathPoint().y + 0.5, path.getFinalPathPoint().z + 0.5) < Math.pow(this.PrehistoricFloraNautiloidBase.width,2))
+                                    && this.PrehistoricFloraNautiloidBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraNautiloidBase.width,2))
             )
             {
                 this.PrehistoricFloraNautiloidBase.getNavigator().clearPath();
