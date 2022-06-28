@@ -1,7 +1,7 @@
 {
 	"name": "Bivalve",
 	"read_by_default": true,
-	"icon": "lepidodendron:",
+	"icon": "lepidodendron:bivalve_cream",
 	"category": "lepidodendron:ordovician_plants",
 	"turnin": "lepidodendron:pf_adv_book_bivalve",
 	"pages": [

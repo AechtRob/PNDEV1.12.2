@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helenodora",
 			"title": "Helenodora",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Burnt Swamp$(br2)>Onychophora$(br)>Ontonychophora$(br)>Helenodoridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_helenodora",
 			"type": "text",
-			"text": ""
+			"text": "Helenodora is an onychophoran worm from the Carboniferous. It may have lived on land or underwater."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helenodora",

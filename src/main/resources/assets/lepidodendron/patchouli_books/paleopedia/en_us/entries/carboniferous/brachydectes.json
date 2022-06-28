@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Brachydectes",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/brachydectes_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_brachydectes",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"title": "Brachydectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps/Marshes$(br2)>Lysorophia$(br)>Lysorophidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
-			"title": "",
+			"images": ["paleopedia:carboniferous/Brachydectes.png"],
+			"title": "B. elongatus",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_brachydectes",
 			"type": "text",
-			"text": ""
+			"text": "Brachydectes is a 50 cm long Lysorophian amphibian that lived from the late Carboniferous to early Permian periods. Brachydectes had a rather small head and reduced limbs, which seems to be a hallmark for Lysorophians."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_brachydectes",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

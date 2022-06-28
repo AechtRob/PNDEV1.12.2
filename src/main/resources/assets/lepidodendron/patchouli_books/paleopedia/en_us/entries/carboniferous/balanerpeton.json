@@ -2,30 +2,30 @@
 	"name": "Balanerpeton",
 	"read_by_default": true,
 	"icon": "lepidodendron:balanerpeton_raw",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_balanerpeton",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_balanerpeton",
 			"title": "Balanerpeton",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Temnospondyli$(br)>Dendrerpetontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:carboniferous/Balanerpeton.png"],
-			"title": "",
+			"title": "B. woodi",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_balanerpeton",
 			"type": "text",
-			"text": ""
+			"text": "Balanerpeton is a half meter long amphibian from the Early Carboniferous. It may have been capable of hearing high frequency sounds and it would have respired by gulping air instead of expanding its chest to take in air."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_balanerpeton",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

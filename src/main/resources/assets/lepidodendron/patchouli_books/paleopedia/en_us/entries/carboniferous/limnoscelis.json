@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_limnoscelis",
 			"title": "Limnoscelis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>Reptiliomorpha$(br)>Diadectomorpha$(br)>Limnoscelidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Reptiliomorpha$(br)>Diadectomorpha$(br)>Limnoscelidae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_limnoscelis",
 			"type": "text",
-			"text": ""
+			"text": "Limnoscelis is a tetrapod from the Late Carboniferous that was semi aquatic. It had both amphibian and reptilian features. It may have used the water to look for food, such as fish and to hide from predators."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_limnoscelis",
 			"type": "text",
-			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "$(l)Eats:$() Raw Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

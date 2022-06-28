@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gerarus",
 			"title": "Gerarus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps/Marshes$(br2)>Insecta$(br)>Titanoptera$(br)>Geraridae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamp/Marsh/Burnt Swamp$(br2)>Insecta$(br)>Archaeorthoptera$(br)>Geraridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerarus",
 			"type": "text",
-			"text": ""
+			"text": "Gerarus is one of the most abundant Carboniferous insects. They had a wingspan of up to 10cm and had sharp spines on its thorax."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gerarus",
