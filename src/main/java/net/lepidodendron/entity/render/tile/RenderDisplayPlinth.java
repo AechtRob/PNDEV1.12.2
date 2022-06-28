@@ -70,6 +70,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
     private static final ResourceLocation TEXTURE_SPATHICEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
     private final ModelSpathicephalus modelSpathicephalus;
+    private static final ResourceLocation TEXTURE_SUMINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/suminia.png");
+    private final ModelSuminia modelSuminia;
     private static final ResourceLocation TEXTURE_TETRACERATOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetraceratops.png");
     private final ModelTetraceratops modelTetraceratops;
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
@@ -97,6 +99,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelProterogyrinus = new ModelProterogyrinus();
         this.modelRemigiomontanus = new ModelRemigiomontanus();
         this.modelSpathicephalus = new ModelSpathicephalus();
+        this.modelSuminia = new ModelSuminia();
         this.modelTetraceratops = new ModelTetraceratops();
         this.modelGerarus = new ModelGerarus();
 
@@ -355,6 +358,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_SPATHICEPHALUS);
                         GlStateManager.scale(0.16F,0.16F,0.16F);
                         modelSpathicephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemSuminiaRaw.block) {
+                        double offset = 0.21;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_SUMINIA);
+                        GlStateManager.scale(0.09F,0.09F,0.09F);
+                        modelSuminia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemTetraceratopsRaw.block) {
                         double offset = 0.43;
