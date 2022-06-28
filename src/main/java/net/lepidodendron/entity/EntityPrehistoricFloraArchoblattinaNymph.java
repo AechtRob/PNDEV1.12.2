@@ -6,12 +6,12 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
+import net.lepidodendron.entity.ai.LandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new LandEntitySwimmingAI(this, 0.75, true));
-		tasks.addTask(1, new EntityAIWanderAvoidWater(this, 1.0D));
+		tasks.addTask(1, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(2, new EntityAILookIdle(this));
 	}
 

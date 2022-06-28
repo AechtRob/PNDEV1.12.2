@@ -7,6 +7,7 @@ import net.minecraft.entity.ai.EntityAIBase;
 
 public abstract class AnimationAINoAnimation<T extends Entity & IAnimatedEntity> extends EntityAIBase {
     protected T entity;
+    protected int ticksAI;
 
     public AnimationAINoAnimation(T entity) {
         this.entity = entity;

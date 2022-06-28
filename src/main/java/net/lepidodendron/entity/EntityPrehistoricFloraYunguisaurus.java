@@ -1,27 +1,24 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Optional;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEggsSaivodus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -36,12 +33,11 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAgeableFishBase {
+	private static final DataParameter<Integer> CYCLETICK = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	//ticks which tracks the cycle of the flipper
-	public int cycleLength;
 
 	public EntityPrehistoricFloraYunguisaurus(World world) {
 		super(world);
@@ -61,27 +57,34 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 	@Override
 	public void entityInit() {
 		super.entityInit();
+		this.dataManager.register(CYCLETICK, 0);
+	}
 
-		this.cycleLength = 0;
+	public int getCycleTick() {
+		return this.dataManager.get(CYCLETICK);
+	}
+
+	public void setCycleTick(int cycleTick) {
+		this.dataManager.set(CYCLETICK, cycleTick);
 	}
 
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.cycleLength = 0;
+		this.setCycleTick(0);
 		return livingdata;
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
-		compound.setInteger("CycleLength", this.cycleLength);
+		compound.setInteger("cycleTick", this.getCycleTick());
 
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.cycleLength = compound.getInteger("CycleLength");
+		this.setCycleTick(compound.getInteger("cycleTick"));
 	}
 
 
@@ -233,21 +236,15 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 		return 20;
 	}
 
-	public int getCycleLength() {
-		return this.cycleLength;
-	}
-
 	@Override
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
-
-		if (world.isRemote) {
-			this.cycleLength++;
-			if (this.cycleLength > maxCycleTick()) {
-				this.cycleLength = 0;
+		if (!world.isRemote) {
+			this.setCycleTick(this.getCycleTick() + 1);
+			if (this.getCycleTick() >= maxCycleTick()) {
+				this.setCycleTick(0);
 			}
 		}
-
 	}
 
 	@Override

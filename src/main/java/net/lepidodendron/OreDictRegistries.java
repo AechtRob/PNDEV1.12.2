@@ -3730,13 +3730,47 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockWachtlerina.block);
 		OreDictionary.registerOre("plant", BlockThucydia.block);
 		OreDictionary.registerOre("plant", BlockOrtiseia.block);
-		OreDictionary.registerOre("plant", new ItemStack(Blocks.TALLGRASS, 1, 2));
-		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 		OreDictionary.registerOre("plant", BlockPetriellales.block);
 		OreDictionary.registerOre("plant", BlockSanmiguelia.block);
 		OreDictionary.registerOre("plant", BlockConiopteris.block);
 		OreDictionary.registerOre("plant", BlockXihuphyllum.block);
 		OreDictionary.registerOre("plant", ItemMacrotaeniopterisItem.block);
+
+
+		//Vanilla plants:
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.TALLGRASS, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.TALLGRASS, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.TALLGRASS, 1, 2));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 5));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 2));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 3));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 4));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 5));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 2));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 3));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.VINE, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.WATERLILY, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.YELLOW_FLOWER, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 0));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 1));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 2));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 3));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 4));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 5));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 6));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 7));
+		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 8));
 	}
 
 

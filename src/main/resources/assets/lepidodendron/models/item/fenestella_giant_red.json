@@ -1,6 +1,22 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "lepidodendron:blocks/fenestella_giant_red"
+  "parent": "lepidodendron:block/fenestella_giant_red",
+  "display": {
+    "gui": {
+      "rotation": [
+        10,
+        -45,
+        5
+      ],
+      "translation": [
+        -1.0,
+        1.5,
+        -2.75
+      ],
+      "scale": [
+        0.4250,
+        0.4250,
+        0.4250
+      ]
+    }
   }
 }

@@ -8,18 +8,23 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,8 +46,97 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:phial", "inventory"));
+		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:phial", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_acutiramus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_attercopus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_carcinosoma", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_eoarthropleura", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_eurypterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_hibbertopterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_jaekelopterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_kokomopterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_megarachne", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_mixopterus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pagea", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_palaeodictyoptera", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_palaeodictyoptera_perm", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pneumodesmus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pterygotus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_trigonotarbid_carb", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_trigonotarbid_dev", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_trigonotarbid_os", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_trigonotarbid_perm", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_amphibamus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_ichthyostega", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_limnoscelis", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_megalocephalus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_cladoselache", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_dracopristis", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_hyneria", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_onychodus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_rhizodus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_xenacanthus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_spathicephalus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_eryops", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_helicoprion", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pederpes", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_acanthostega", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_platyhystrix", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_archoblattina", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_roachoid_arid", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_gerarus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_roachoid_forest", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_roachoid_swamp", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_meganeuropsis", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_proterogyrinus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_prionosuchus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_listracanthus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_edestus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pholiderpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_acanthostomatops", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_kaibabvenator", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_kaibabvenator", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_saivodus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_phlegethontia", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_antarcticarcinus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_crassigyrinus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_mastodonsaurus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_megalograptus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_harvestman", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_adelophthalmus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_meganeura", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_diplocaulus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_diploceraspis", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_cacops", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_dasyceps", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_dvinosaurus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_melosaurus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_pantylus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_uranocentrodon", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_balanerpeton", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_barbclabornia", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_lebachacanthus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_orodus", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_protozygoptera", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_palaeontinid", "inventory")
+
+			);
+
+		ModelLoader.setCustomMeshDefinition(block, stack -> {
+			if (stack.hasTagCompound()) {
+				if (!ItemPhial.ItemCustom.isBlockFromItemStack(stack)) {
+					return new ModelResourceLocation("lepidodendron:phial", "inventory");
+				} else {
+					String resourcelocation = stack.getTagCompound().getString("id_eggs");
+					String mobname = ItemPhial.ItemCustom.getEggStr(resourcelocation);
+					return new ModelResourceLocation(LepidodendronMod.MODID +":entities/phial_eggs_" + mobname, "inventory");
+				}
+			}
+			else return new ModelResourceLocation("lepidodendron:phial", "inventory");
+		});
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
@@ -50,6 +144,15 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_phial");
 			setRegistryName("phial");
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		public String getTranslationKey(ItemStack stack)
+		{
+			if (isBlockFromItemStack(stack)) {
+				String resourcelocation = stack.getTagCompound().getString("id_eggs");
+				return "item.phial_eggs_" + getEggStr(resourcelocation);
+			}
+			return super.getTranslationKey(stack);
 		}
 
 		@Override
@@ -82,377 +185,57 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				{
 					return EnumActionResult.SUCCESS;
 				}
+				else {
+					if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack)) {
+						return EnumActionResult.FAIL;
+					}
+					if (!isBlockFromItemStack(itemstack)) {
+						return EnumActionResult.FAIL; //The phial is empty!
+					}
+					String resourcelocation = itemstack.getTagCompound().getString("id_eggs");
+					Block placeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation (resourcelocation));
+					if (placeBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)) {
+						worldIn.setBlockState(pos.offset(facing), placeBlock.getStateForPlacement(worldIn, pos.offset(facing), facing, hitX, hitY, hitZ, 0, (EntityLivingBase) player));
+						SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
+						worldIn.playSound(player, pos.offset(facing), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						ItemStack phial = new ItemStack(ItemPhial.block, (int) (1));
+						if (!player.isCreative()) {
+							phial.setCount(1);
+							itemstack.shrink(1);
+							ItemHandlerHelper.giveItemToPlayer(player, phial);
+						}
+						return EnumActionResult.SUCCESS;
+					}
+				}
 			}
 			return EnumActionResult.PASS;
 		}
 
-		public static boolean collectEggs(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player, @javax.annotation.Nullable EnumHand hand)
+		public boolean collectEggs(ItemStack stack, World worldIn, BlockPos target, EntityPlayer player, @javax.annotation.Nullable EnumHand hand)
 		{
+
+			if (isBlockFromItemStack(stack)) {
+				return false; //The phial is already full!
+			}
+
 			IBlockState iblockstate = worldIn.getBlockState(target);
 			Block blockTarget = iblockstate.getBlock();
 
 			if (!worldIn.isRemote) {
 				boolean collected = false;
 				boolean removed = false;
+				String strPhial = "";
 				EntityItem entityToSpawn = null;
-				ItemStack phial = null;
+				ItemStack phial = new ItemStack(ItemPhial.block, 1);
 
-				if (blockTarget == BlockEggsCladoselache.block || blockTarget ==BlockEggsCladoselachePlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsCladoselache.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsDracopristis.block || blockTarget == BlockEggsDracopristisPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsDracopristis.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsHyneria.block || blockTarget == BlockEggsHyneriaPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsHyneria.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsOnychodus.block || blockTarget == BlockEggsOnychodusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsOnychodus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsRhizodus.block || blockTarget == BlockEggsRhizodusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsRhizodus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsXenacanthus.block || blockTarget == BlockEggsXenacanthusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsXenacanthus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsAcutiramus.block || blockTarget == BlockEurypteridEggsAcutiramusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAcutiramus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsCarcinosoma.block || blockTarget == BlockEurypteridEggsCarcinosomaPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsCarcinosoma.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsEurypterus.block || blockTarget == BlockEurypteridEggsEurypterusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsEurypterus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsAdelophthalmus.block || blockTarget == BlockEurypteridEggsAdelophthalmusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAdelophthalmus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsHibbertopterus.block || blockTarget == BlockEurypteridEggsHibbertopterusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsHibbertopterus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsJaekelopterus.block || blockTarget == BlockEurypteridEggsJaekelopterusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsJaekelopterus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsKokomopterus.block || blockTarget == BlockEurypteridEggsKokomopterusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsKokomopterus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsMegarachne.block || blockTarget == BlockEurypteridEggsMegarachnePlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMegarachne.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsMixopterus.block || blockTarget == BlockEurypteridEggsMixopterusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMixopterus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsPagea.block || blockTarget == BlockEurypteridEggsPageaPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPagea.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsPalaeodictyoptera.block || blockTarget == BlockInsectEggsPalaeodictyopteraPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPalaeodictyoptera.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsPalaeodictyopteraPerm.block || blockTarget == BlockInsectEggsPalaeodictyopteraPlaceablePerm.block) {
-					phial = new ItemStack(ItemPhialEggsPalaeodictyopteraPerm.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsMeganeuropsis.block || blockTarget == BlockInsectEggsMeganeuropsisPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMeganeuropsis.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsPterygotus.block || blockTarget == BlockEurypteridEggsPterygotusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPterygotus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsAttercopus.block) {
-					phial = new ItemStack(ItemPhialEggsAttercopus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsEoarthropleura.block) {
-					phial = new ItemStack(ItemPhialEggsEoarthropleura.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsPneumodesmus.block) {
-					phial = new ItemStack(ItemPhialEggsPneumodesmus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsTrigonotarbidCarb.block) {
-					phial = new ItemStack(ItemPhialEggsTrigonotarbidCarb.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsTrigonotarbidDev.block) {
-					phial = new ItemStack(ItemPhialEggsTrigonotarbidDev.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsTrigonotarbidOS.block) {
-					phial = new ItemStack(ItemPhialEggsTrigonotarbidOS.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsTrigonotarbidPerm.block) {
-					phial = new ItemStack(ItemPhialEggsTrigonotarbidPerm.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsHarvestman.block) {
-					phial = new ItemStack(ItemPhialEggsHarvestman.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnAmphibamus.block || blockTarget == BlockAmphibianSpawnAmphibamusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAmphibamus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnIchthyostega.block || blockTarget == BlockAmphibianSpawnIchthyostegaPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsIchthyostega.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnLimnoscelis.block || blockTarget == BlockAmphibianSpawnLimnoscelisPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsLimnoscelis.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnMegalocephalus.block || blockTarget == BlockAmphibianSpawnMegalocephalusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMegalocephalus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnSpathicephalus.block || blockTarget == BlockAmphibianSpawnSpathicephalusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsSpathicephalus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnEryops.block || blockTarget == BlockAmphibianSpawnEryopsPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsEryops.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnAcanthostega.block || blockTarget == BlockAmphibianSpawnAcanthostegaPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAcanthostega.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnPlatyhystrix.block || blockTarget == BlockAmphibianSpawnPlatyhystrixPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPlatyhystrix.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnPederpes.block || blockTarget == BlockAmphibianSpawnPederpesPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPederpes.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnProterogyrinus.block || blockTarget == BlockAmphibianSpawnProterogyrinusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsProterogyrinus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsListracanthus.block || blockTarget == BlockEggsListracanthusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsListracanthus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnPrionosuchus.block || blockTarget == BlockAmphibianSpawnPrionosuchusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPrionosuchus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnPholiderpeton.block || blockTarget == BlockAmphibianSpawnPholiderpetonPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPholiderpeton.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsEdestus.block || blockTarget == BlockEggsEdestusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsEdestus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnAcanthostomatops.block || blockTarget == BlockAmphibianSpawnAcanthostomatopsPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAcanthostomatops.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsKaibabvenator.block || blockTarget == BlockEggsKaibabvenatorPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsKaibabvenator.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsSaivodus.block || blockTarget == BlockEggsSaivodusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsSaivodus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsHelicoprion.block || blockTarget == BlockEggsHelicoprionPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsHelicoprion.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsAntarcticarcinus.block || blockTarget == BlockEurypteridEggsAntarcticarcinusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsAntarcticarcinus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnCrassigyrinus.block || blockTarget == BlockAmphibianSpawnCrassigyrinusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsCrassigyrinus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEurypteridEggsMegalograptus.block || blockTarget == BlockEurypteridEggsMegalograptusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMegalograptus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockInsectEggsMeganeura.block || blockTarget == BlockInsectEggsMeganeuraPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMeganeura.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnDiplocaulus.block || blockTarget == BlockAmphibianSpawnDiplocaulusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsDiplocaulus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnDiploceraspis.block || blockTarget == BlockAmphibianSpawnDiploceraspisPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsDiploceraspis.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnCacops.block || blockTarget == BlockAmphibianSpawnCacopsPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsCacops.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnDasyceps.block || blockTarget == BlockAmphibianSpawnDasycepsPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsDasyceps.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnDvinosaurus.block || blockTarget == BlockAmphibianSpawnDvinosaurusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsDvinosaurus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnMelosaurus.block || blockTarget == BlockAmphibianSpawnMelosaurusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsMelosaurus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnPantylus.block || blockTarget == BlockAmphibianSpawnPantylusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsPantylus.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnUranocentrodon.block || blockTarget == BlockAmphibianSpawnUranocentrodonPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsUranocentrodon.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockAmphibianSpawnBalanerpeton.block || blockTarget == BlockAmphibianSpawnBalanerpetonPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsBalanerpeton.block, (int) (1));
-					collected = true;
-					removed = true;
-				}
-
-				else if (blockTarget == BlockEggsOrodus.block || blockTarget == BlockEggsOrodusPlaceable.block) {
-					phial = new ItemStack(ItemPhialEggsOrodus.block, (int) (1));
+				if (blockTarget instanceof BlockMobSpawn
+					|| blockTarget instanceof BlockInsectEggs) {
+					RayTraceResult raytraceresult = this.rayTrace(worldIn, player, true);
+					//System.err.println("blockTarget: " + blockTarget);
+					//System.err.println("raytraceresult: " + raytraceresult);
+					blockTarget = Block.getBlockFromItem(blockTarget.getPickBlock(iblockstate, raytraceresult, worldIn, target, player).getItem());
+					//System.err.println("blockTargetPick: " + blockTarget);
+					strPhial = blockTarget.getRegistryName().toString();
 					collected = true;
 					removed = true;
 				}
@@ -465,79 +248,16 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				) {
 					String eggRenderType = new Object() {
 						public String getValue(BlockPos pos, String tag) {
-							TileEntity tileEntity = worldIn.getTileEntity(pos);
-							if (tileEntity != null)
-								return tileEntity.getTileData().getString(tag);
-							return "";
+						TileEntity tileEntity = worldIn.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getString(tag);
+						return "";
 						}
 					}.getValue(new BlockPos(target), "egg");
-					if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os")) {
-						phial = new ItemStack(ItemPhialEggsTrigonotarbidOS.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev")) {
-						phial = new ItemStack(ItemPhialEggsTrigonotarbidDev.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb")) {
-						phial = new ItemStack(ItemPhialEggsTrigonotarbidCarb.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm")) {
-						phial = new ItemStack(ItemPhialEggsTrigonotarbidPerm.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_attercopus")) {
-						phial = new ItemStack(ItemPhialEggsAttercopus.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_pneumodesmus")) {
-						phial = new ItemStack(ItemPhialEggsPneumodesmus.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_eoarthropleura")) {
-						phial = new ItemStack(ItemPhialEggsEoarthropleura.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_archoblattina")) {
-						phial = new ItemStack(ItemPhialEggsArchoblattina.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_arid")) {
-						phial = new ItemStack(ItemPhialEggsRoachoidArid.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_forest")) {
-						phial = new ItemStack(ItemPhialEggsRoachoidForest.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp")) {
-						phial = new ItemStack(ItemPhialEggsRoachoidSwamp.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_gerarus")) {
-						phial = new ItemStack(ItemPhialEggsGerarus.block, (int) (1));
-						collected = true;
-					}
-					else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_harvestman")) {
-						phial = new ItemStack(ItemPhialEggsHarvestman.block, (int) (1));
-						collected = true;
-					}
 
-					else if (blockTarget == BlockEggsSaivodus.block || blockTarget == BlockEggsSaivodusPlaceable.block) {
-						phial = new ItemStack(ItemPhialEggsSaivodus.block, (int) (1));
+					if (!eggRenderType.equalsIgnoreCase("")) {
+						strPhial = eggRenderType;
 						collected = true;
-						removed = true;
-					}
-
-					else if (blockTarget == BlockEggsKaibabvenator.block || blockTarget == BlockEggsKaibabvenatorPlaceable.block) {
-						phial = new ItemStack(ItemPhialEggsKaibabvenator.block, (int) (1));
-						collected = true;
-						removed = true;
-					}
-
-
-					if (collected) {
 						IBlockState state = worldIn.getBlockState(target);
 						TileEntity te = worldIn.getTileEntity(target);
 						if (te != null) {
@@ -551,39 +271,35 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 					if (removed) {
 						worldIn.setBlockToAir(target);
 					}
+
 					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_FILL;
 					worldIn.playSound(player, target, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 					stack.shrink(1);
-					//if (!player.isCreative()) {
-						if (player.inventory.getFirstEmptyStack() == -1) {
-							//Is there room for this in an existing stack?
-							int i = 1;
-							int slotSpace = 0;
-							while (i <= 32 && slotSpace == 0) {
-								if (player.inventory.getStackInSlot(i).getItem() == phial.getItem()
-										&& player.inventory.getStackInSlot(i).getCount() < phial.getMaxStackSize()) {
-									phial.setCount(1);
-									ItemHandlerHelper.giveItemToPlayer(player, phial);
-									slotSpace=i;
-								}
-								i += 1;
-							}
-							if (slotSpace == 0) { //No slots free in main inventory so just drop the item:
-								entityToSpawn = new EntityItem(worldIn, target.getX() + 0.5, target.getY(), target.getZ() + 0.5, phial);
-								entityToSpawn.setPickupDelay(10);
-								worldIn.spawnEntity(entityToSpawn);
-							}
-						} else {
-							phial.setCount(1);
-							ItemHandlerHelper.giveItemToPlayer(player, phial);
-						}
-					//}
-
+					phial.setCount(1);
+					NBTTagCompound stackNBT = new NBTTagCompound();
+					phial.setTagCompound(stackNBT);
+					phial.getTagCompound().setString("id_eggs", strPhial);
+					ItemHandlerHelper.giveItemToPlayer(player, phial);
 					return true;
 				}
 			}
 
 			return false;
+		}
+
+		public static boolean isBlockFromItemStack(ItemStack stack) {
+			if (stack.hasTagCompound() == false
+					|| !stack.getTagCompound().hasKey("id_eggs")) return false;
+
+			return true;
+		}
+
+		public static String getEggStr(String string) {
+			string = string.replace("lepidodendron:eggs_", "");
+			string = string.replace("lepidodendron:amphibian_spawn_", "");
+			string = string.replace("lepidodendron:eurypterid_eggs_", "");
+			string = string.replace("lepidodendron:insect_eggs_", "");
+			return string;
 		}
 
 	}

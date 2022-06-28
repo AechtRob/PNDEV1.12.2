@@ -14,6 +14,7 @@ import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
@@ -103,6 +104,22 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
     @Override
     public int getTalkInterval() {
         return 120;
+    }
+
+    @Override
+    public void playLivingSound() {
+        if (this.isReallyInWater()) return;
+        if (this.getAnimation() != null) {
+            if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+                this.setAnimation(ROAR_ANIMATION);
+                SoundEvent soundevent = this.getAmbientSound();
+
+                if (soundevent != null)
+                {
+                    this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+                }
+            }
+        }
     }
 
     @Override

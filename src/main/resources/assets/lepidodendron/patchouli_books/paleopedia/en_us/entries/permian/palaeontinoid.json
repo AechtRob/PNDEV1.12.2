@@ -1,29 +1,29 @@
 {
-	"name": "Palaeontinoid",
+	"name": "Palaeontinid",
 	"read_by_default": true,
-	"icon": "lepidodendron:permian/permian_icon/palaeontinoid_icon.png",
+	"icon": "lepidodendron:permian/permian_icon/palaeontinid_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_palaeontinoid",
+	"turnin": "lepidodendron:pf_adv_book_palaeontinid",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_palaeontinoid",
-			"title": "Palaeontinoid",
+			"trigger": "lepidodendron:pf_adv_book_palaeontinid",
+			"title": "Palaeontinid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian-Cretaceous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinoidea"
+			"text": "$(l)Temporal Range:$() Permian-Cretaceous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Hemiptera$(br)>Auchenorrhyncha$(br)>Cicadomorpha$(br)>Palaeontinidea"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/palaeontinoid.png"],
-			"title": "Superfamily: Palaeontinoidea",
+			"images": ["paleopedia:permian/palaeontinid.png"],
+			"title": "Superfamily: Palaeontinidea",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeontinoid",
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeontinoid",
+			"advancement": "lepidodendron:pf_adv_book_palaeontinid",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

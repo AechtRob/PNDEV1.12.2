@@ -19,6 +19,9 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
@@ -39,6 +42,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFloraAgeableBase {
+
+    private static final DataParameter<Integer> PFDRINKING = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
+
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
     public ChainBuffer chainBuffer;
@@ -46,7 +52,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public Animation EAT_ANIMATION;
     public Animation DRINK_ANIMATION;
     private int inPFLove;
-    private int PFdrinking;
+    private BlockPos drinkingFrom;
 
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);
@@ -66,6 +72,12 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         return livingdata;
     }
 
+    @Override
+    protected void entityInit() {
+        super.entityInit();
+        this.dataManager.register(PFDRINKING, rand.nextInt(1000));
+        this.setScaleForAge(false);
+    }
 
     public boolean canSwim() {
         return true;
@@ -82,12 +94,12 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public void writeEntityToNBT(NBTTagCompound compound)
     {
         super.writeEntityToNBT(compound);
-        compound.setInteger("drinking", this.PFdrinking);
+        compound.setInteger("drinking", this.getPFDrinking());
     }
 
     public void readEntityFromNBT(NBTTagCompound compound) {
         super.readEntityFromNBT(compound);
-        this.PFdrinking = compound.getInteger("drinking");
+        this.setIsDrinking(compound.getInteger("drinking"));
     }
 
     public boolean drinksWater() {
@@ -97,62 +109,81 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public boolean isDrinking()
     {
         if (this.drinksWater()) {
-            EnumFacing facing = this.getAdjustedHorizontalFacing();
-            boolean test1 = (this.PFdrinking < 100
+            boolean test = (this.getPFDrinking() <= 0
                     && !world.isRemote
                     && !this.getIsFast()
                     && !this.getIsMoving()
                     && this.DRINK_ANIMATION.getDuration() > 0
                     && this.getAnimation() == NO_ANIMATION
                     && !this.isReallyInWater()
-                    && this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.WATER
-            );
-            boolean test2 = false;
-            if (facing == EnumFacing.NORTH && test1) {
-                test2 = (this.posZ - (double) this.getPosition().getZ() <= 0.6D);
+                    &&
+                        (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
+                        || this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
+                        )
+                );
+            if (test) {
+                //Which one is water?
+                EnumFacing facing = null;
+                if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
+                    facing = EnumFacing.NORTH;
+                }
+                else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
+                    facing = EnumFacing.SOUTH;
+                }
+                else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
+                    facing = EnumFacing.EAST;
+                }
+                else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
+                    facing = EnumFacing.WEST;
+                }
+                if (facing != null) {
+                    this.drinkingFrom = this.getPosition().offset(facing);
+                    this.faceBlock(this.drinkingFrom, 1000, 1000);
+                }
             }
-            if (facing == EnumFacing.SOUTH && test1) {
-                test2 = (this.posZ - (double) this.getPosition().getZ() >= 0.6D);
-            }
-            if (facing == EnumFacing.WEST && test1) {
-                test2 = (this.posX - (double) this.getPosition().getX() <= 0.6D);
-            }
-            if (facing == EnumFacing.EAST && test1) {
-                test2 = (this.posX - (double) this.getPosition().getX() >= 0.6D);
-            }
-
-            return (test1 && test2);
+            return test;
         }
         else {
-        //Is GRAZING!
-        EnumFacing facing = this.getAdjustedHorizontalFacing();
-        boolean test1 = (this.PFdrinking < 100
-                && !world.isRemote
-                && !this.getIsFast()
-                && !this.getIsMoving()
-                && this.DRINK_ANIMATION.getDuration() > 0
-                && this.getAnimation() == NO_ANIMATION
-                && !this.isReallyInWater()
-                && (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
-                || this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS)
-        );
-        boolean test2 = false;
-        if (facing == EnumFacing.NORTH && test1) {
-            test2 = (this.posZ - (double) this.getPosition().getZ() <= 0.6D);
+            //Is GRAZING!
+            EnumFacing facing = this.getAdjustedHorizontalFacing();
+            boolean test = (this.getPFDrinking() <= 0
+                    && !world.isRemote
+                    && !this.getIsFast()
+                    && !this.getIsMoving()
+                    && this.DRINK_ANIMATION.getDuration() > 0
+                    && this.getAnimation() == NO_ANIMATION
+                    && !this.isReallyInWater()
+                    && (this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GROUND
+                    || this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS)
+            );
+            if (test) {
+                //Which one is water?
+                facing = null;
+                if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GROUND
+                    || this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.GRASS) {
+                    facing = EnumFacing.NORTH;
+                }
+                else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.GRASS) {
+                    facing = EnumFacing.SOUTH;
+                }
+                else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.GRASS) {
+                    facing = EnumFacing.EAST;
+                }
+                else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GROUND
+                        || this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.GRASS) {
+                    facing = EnumFacing.WEST;
+                }
+                if (facing != null) {
+                    this.drinkingFrom = this.getPosition().offset(facing);
+                    this.faceBlock(this.drinkingFrom, 1000, 1000);
+                }
+            }
+            return test;
         }
-        if (facing == EnumFacing.SOUTH && test1) {
-            test2 = (this.posZ - (double) this.getPosition().getZ() >= 0.6D);
-        }
-        if (facing == EnumFacing.WEST && test1) {
-            test2 = (this.posX - (double) this.getPosition().getX() <= 0.6D);
-        }
-        if (facing == EnumFacing.EAST && test1) {
-            test2 = (this.posX - (double) this.getPosition().getX() >= 0.6D);
-        }
-
-        return (test1 && test2);
-    }
-
     }
 
     public void faceBlock(BlockPos pos, float maxYawIncrease, float maxPitchIncrease)
@@ -189,7 +220,11 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void setIsDrinking(int val)
     {
-        this.PFdrinking = val;
+        this.dataManager.set(PFDRINKING, val);
+    }
+
+    public int getPFDrinking() {
+        return this.dataManager.get(PFDRINKING);
     }
 
     @Override
@@ -199,8 +234,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 || (!(this.navigator instanceof PathNavigateSwimmerTopLayer))) {
                 this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
                 this.navigator = new PathNavigateSwimmerTopLayer(this, world);
-
-                //System.err.println(this.getClass() + " Navigator changed to " + this.navigator);
             }
         }
 
@@ -209,7 +242,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 || (!(this.navigator instanceof PathNavigateGroundNoWater))) {
                 this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
                 this.navigator = new PathNavigateGroundNoWater(this, world);
-                //System.err.println(this.getClass() + "Navigator changed to " + this.navigator);
             }
         }
     }
@@ -231,6 +263,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public boolean attackEntityFrom(DamageSource ds, float i) {
         this.setIsDrinking(1000);
         this.setAnimation(NO_ANIMATION);
+        this.getNavigator().clearPath();
+        this.drinkingFrom = null;
         return super.attackEntityFrom(ds, i);
     }
 
@@ -332,8 +366,17 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         if (this.isDrinking()) {
             //System.err.println("Is drinking");
             this.setAnimation(DRINK_ANIMATION);
-            this.setIsDrinking(rand.nextInt(800) + 700);
+            //this.setIsDrinking(rand.nextInt(800) + 700);
         }
+        if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() == DRINK_ANIMATION.getDuration() - 1) {
+            this.setIsDrinking(rand.nextInt(800) + 700);
+            this.getNavigator().clearPath();
+            this.drinkingFrom = null;
+        }
+        if (this.drinkingFrom != null) {
+            this.faceBlock(this.drinkingFrom, 1000, 1000);
+        }
+
     }
 
     public void onLivingUpdate()
@@ -348,7 +391,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             --this.jumpTicks;
         }
 
-        if (this.newPosRotationIncrements > 0 && !this.canPassengerSteer()) {
+        if (this.newPosRotationIncrements > 0 && !this.canPassengerSteer() && this.getAnimation() != DRINK_ANIMATION) {
             double d0 = this.posX + (this.interpTargetX - this.posX) / (double) this.newPosRotationIncrements;
             double d1 = this.posY + (this.interpTargetY - this.posY) / (double) this.newPosRotationIncrements;
             double d2 = this.posZ + (this.interpTargetZ - this.posZ) / (double) this.newPosRotationIncrements;
@@ -447,9 +490,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             --this.inPFLove;
         }
 
-        if (this.PFdrinking > 0)
+        if (this.getPFDrinking() > 0)
         {
-            --this.PFdrinking;
+            this.setIsDrinking(this.getPFDrinking() - 1);
         }
 
         if (this.getMateable() < 0) {
@@ -463,7 +506,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         }
 
         if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
-            this.faceEntity(this.getGrappleTarget(), 100F, 100F);
+            this.faceEntity(this.getGrappleTarget(), 1000F, 1000F);
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
@@ -711,7 +754,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
                 float turn = (EntityBase.getMaxTurnDistancePerTick());
                 float f9 = (float) (MathHelper.atan2(d1, d0) * (180D / Math.PI)) - 90;
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION) {
+                    this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, f9, turn);
+                }
                 //this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
 
                 //float speed = getAISpeedLand();
@@ -779,7 +824,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
+                if (this.EntityBase.getAnimation() != DRINK_ANIMATION) {
+                    this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
+                }
                 float speed = getAISpeedSwimmingLand();
                 this.EntityBase.setAIMoveSpeed(speed);
 

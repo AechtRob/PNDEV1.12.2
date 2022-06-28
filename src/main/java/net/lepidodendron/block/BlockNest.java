@@ -150,25 +150,19 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				}
 			}.getValue(pos, "creature");
 
+			boolean isMound = new Object() {
+				public boolean getValue(BlockPos pos1, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos1);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getBoolean(tag);
+					return false;
+				}
+			}.getValue(pos, "isMound");
+
 			if (!nestType.equalsIgnoreCase("")) {
-				if (nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_claudiosaurus")
-						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_glaurung")
-						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_rautiania")
-						|| nestType.equalsIgnoreCase("lepidodendron:prehistoric_flora_coelurosauravus")
-				) {
+				if (isMound) {
 					return true;
 				}
-				//Dangit the entity isn't available to a IBlockAccess to check!
-				//EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(nestType));
-				//if (ee != null) {
-				//	Entity entityEggs = ee.newInstance(world);
-				//	if (entityEggs instanceof EntityPrehistoricFloraAgeableBase) {
-				//		EntityPrehistoricFloraAgeableBase entityLand = (EntityPrehistoricFloraAgeableBase) entityEggs;
-				//		if (entityLand.isNestMound()) {
-				//			return true;
-				//		}
-				//	}
-				//}
 			}
 			return false;
 		}

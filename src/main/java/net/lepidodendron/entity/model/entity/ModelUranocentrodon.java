@@ -11,16 +11,6 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelUranocentrodon extends AdvancedModelBaseExtended {
-    private final AdvancedModelRenderer body;
-    private final AdvancedModelRenderer forelegL;
-    private final AdvancedModelRenderer forelegL2;
-    private final AdvancedModelRenderer forelegL3;
-    private final AdvancedModelRenderer forelegR;
-    private final AdvancedModelRenderer forelegR2;
-    private final AdvancedModelRenderer forelegR3;
-    private final AdvancedModelRenderer body2;
-    private final AdvancedModelRenderer body3;
-    private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer body4;
     private final AdvancedModelRenderer hindlegL;
     private final AdvancedModelRenderer hindlegL2;
@@ -32,6 +22,16 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer tail2;
     private final AdvancedModelRenderer tail3;
     private final AdvancedModelRenderer tail4;
+    private final AdvancedModelRenderer body3;
+    private final AdvancedModelRenderer cube_r1;
+    private final AdvancedModelRenderer body2;
+    private final AdvancedModelRenderer body;
+    private final AdvancedModelRenderer forelegL;
+    private final AdvancedModelRenderer forelegL2;
+    private final AdvancedModelRenderer forelegL3;
+    private final AdvancedModelRenderer forelegR;
+    private final AdvancedModelRenderer forelegR2;
+    private final AdvancedModelRenderer forelegR3;
     private final AdvancedModelRenderer neck;
     private final AdvancedModelRenderer cube_r2;
     private final AdvancedModelRenderer cube_r3;
@@ -64,67 +64,9 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
         this.textureWidth = 128;
         this.textureHeight = 128;
 
-        this.body = new AdvancedModelRenderer(this);
-        this.body.setRotationPoint(0.0F, 24.0F, -18.0F);
-        this.body.cubeList.add(new ModelBox(body, 0, 17, -6.0F, -6.0F, 12.5F, 12, 6, 10, 0.0F, false));
-
-        this.forelegL = new AdvancedModelRenderer(this);
-        this.forelegL.setRotationPoint(5.75F, -2.0F, 14.25F);
-        this.body.addChild(forelegL);
-        this.setRotateAngle(forelegL, 0.0F, -0.3491F, 0.1745F);
-        this.forelegL.cubeList.add(new ModelBox(forelegL, 84, 20, -0.5F, -1.0F, -1.5F, 5, 2, 3, 0.0F, false));
-
-        this.forelegL2 = new AdvancedModelRenderer(this);
-        this.forelegL2.setRotationPoint(4.0F, 0.0F, 0.0F);
-        this.forelegL.addChild(forelegL2);
-        this.setRotateAngle(forelegL2, 0.0F, 1.2217F, 0.0F);
-        this.forelegL2.cubeList.add(new ModelBox(forelegL2, 84, 46, -0.25F, -1.0F, -1.0F, 4, 2, 2, -0.01F, false));
-
-        this.forelegL3 = new AdvancedModelRenderer(this);
-        this.forelegL3.setRotationPoint(3.0F, 0.0F, 0.25F);
-        this.forelegL2.addChild(forelegL3);
-        this.setRotateAngle(forelegL3, 0.1309F, 0.5236F, -0.0436F);
-        this.forelegL3.cubeList.add(new ModelBox(forelegL3, 84, 42, 0.25F, 0.0F, -1.5F, 3, 1, 3, 0.0F, false));
-
-        this.forelegR = new AdvancedModelRenderer(this);
-        this.forelegR.setRotationPoint(-5.75F, -2.0F, 14.25F);
-        this.body.addChild(forelegR);
-        this.setRotateAngle(forelegR, 0.0F, 0.3491F, -0.1745F);
-        this.forelegR.cubeList.add(new ModelBox(forelegR, 0, 84, -4.5F, -1.0F, -1.5F, 5, 2, 3, 0.0F, false));
-
-        this.forelegR2 = new AdvancedModelRenderer(this);
-        this.forelegR2.setRotationPoint(-4.0F, 0.0F, 0.0F);
-        this.forelegR.addChild(forelegR2);
-        this.setRotateAngle(forelegR2, 0.0F, -1.2217F, 0.0F);
-        this.forelegR2.cubeList.add(new ModelBox(forelegR2, 83, 5, -3.75F, -1.0F, -1.0F, 4, 2, 2, -0.01F, false));
-
-        this.forelegR3 = new AdvancedModelRenderer(this);
-        this.forelegR3.setRotationPoint(-3.0F, 0.0F, 0.25F);
-        this.forelegR2.addChild(forelegR3);
-        this.setRotateAngle(forelegR3, 0.1309F, -0.5236F, 0.0436F);
-        this.forelegR3.cubeList.add(new ModelBox(forelegR3, 59, 0, -3.25F, 0.0F, -1.5F, 3, 1, 3, 0.0F, false));
-
-        this.body2 = new AdvancedModelRenderer(this);
-        this.body2.setRotationPoint(0.0F, -3.0F, 22.0F);
-        this.body.addChild(body2);
-        this.body2.cubeList.add(new ModelBox(body2, 0, 0, -5.5F, -3.0F, -0.5F, 11, 6, 11, -0.01F, false));
-
-        this.body3 = new AdvancedModelRenderer(this);
-        this.body3.setRotationPoint(0.0F, 0.0F, 10.5F);
-        this.body2.addChild(body3);
-        this.setRotateAngle(body3, 0F, 0.0F, 0.0F);
-        this.body3.cubeList.add(new ModelBox(body3, 35, 8, -4.5F, -2.5F, -1.0F, 9, 5, 9, 0.0F, false));
-        this.body3.cubeList.add(new ModelBox(body3, 44, 48, -4.0F, -2.9F, -1.0F, 8, 1, 9, -0.01F, false));
-
-        this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(0.0F, 2.5F, -0.5F);
-        this.body3.addChild(cube_r1);
-        this.setRotateAngle(cube_r1, 0.0436F, 0.0F, 0.0F);
-        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 21, 58, -4.0F, -0.5F, -0.5F, 8, 1, 9, 0.0F, false));
-
         this.body4 = new AdvancedModelRenderer(this);
-        this.body4.setRotationPoint(0.0F, -0.5F, 8.0F);
-        this.body3.addChild(body4);
+        this.body4.setRotationPoint(0.0F, 20.5F, 22.5F);
+        this.setRotateAngle(body4, -0.0436F, 0.0F, 0.0F);
         this.body4.cubeList.add(new ModelBox(body4, 35, 24, -4.0F, -2.0F, -1.0F, 8, 5, 9, -0.02F, false));
 
         this.hindlegL = new AdvancedModelRenderer(this);
@@ -166,13 +108,13 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(0.0F, 0.25F, 8.0F);
         this.body4.addChild(tail);
-        this.setRotateAngle(tail, 0, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.0087F, 0.0F, 0.0F);
         this.tail.cubeList.add(new ModelBox(tail, 55, 58, -3.0F, -1.5F, -1.0F, 6, 4, 9, 0.0F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
         this.tail2.setRotationPoint(0.0F, 0.25F, 8.0F);
         this.tail.addChild(tail2);
-        this.setRotateAngle(tail2, 0F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0436F, 0.0F, 0.0F);
         this.tail2.cubeList.add(new ModelBox(tail2, 21, 68, -2.0F, -1.75F, -1.0F, 4, 4, 9, -0.01F, false));
 
         this.tail3 = new AdvancedModelRenderer(this);
@@ -185,8 +127,67 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
         this.tail3.addChild(tail4);
         this.tail4.cubeList.add(new ModelBox(tail4, 0, 47, -1.0F, -0.75F, -1.0F, 2, 2, 13, 0.0F, false));
 
+        this.body3 = new AdvancedModelRenderer(this);
+        this.body3.setRotationPoint(0.0F, 0.5F, 0.0F);
+        this.body4.addChild(body3);
+        this.setRotateAngle(body3, 0.0393F, 0.0F, 0.0F);
+        this.body3.cubeList.add(new ModelBox(body3, 35, 8, -4.5F, -2.5F, -9.0F, 9, 5, 9, 0.0F, false));
+        this.body3.cubeList.add(new ModelBox(body3, 44, 48, -4.0F, -2.9F, -9.0F, 8, 1, 9, -0.01F, false));
+
+        this.cube_r1 = new AdvancedModelRenderer(this);
+        this.cube_r1.setRotationPoint(0.0F, 2.5F, -8.5F);
+        this.body3.addChild(cube_r1);
+        this.setRotateAngle(cube_r1, 0.0436F, 0.0F, 0.0F);
+        this.cube_r1.cubeList.add(new ModelBox(cube_r1, 21, 58, -4.0F, -0.5F, -0.5F, 8, 1, 9, 0.0F, false));
+
+        this.body2 = new AdvancedModelRenderer(this);
+        this.body2.setRotationPoint(0.0F, 0.0F, -8.0F);
+        this.body3.addChild(body2);
+        this.body2.cubeList.add(new ModelBox(body2, 0, 0, -5.5F, -3.0F, -11.0F, 11, 6, 11, -0.01F, false));
+
+        this.body = new AdvancedModelRenderer(this);
+        this.body.setRotationPoint(0.0F, -1.0F, -10.0F);
+        this.body2.addChild(body);
+        this.body.cubeList.add(new ModelBox(body, 0, 17, -6.0F, -2.0F, -10.0F, 12, 6, 10, 0.0F, false));
+
+        this.forelegL = new AdvancedModelRenderer(this);
+        this.forelegL.setRotationPoint(5.75F, 2.0F, -8.25F);
+        this.body.addChild(forelegL);
+        this.setRotateAngle(forelegL, 0.0F, -0.3491F, 0.1745F);
+        this.forelegL.cubeList.add(new ModelBox(forelegL, 84, 20, -0.5F, -1.0F, -1.5F, 5, 2, 3, 0.0F, false));
+
+        this.forelegL2 = new AdvancedModelRenderer(this);
+        this.forelegL2.setRotationPoint(4.0F, 0.0F, 0.0F);
+        this.forelegL.addChild(forelegL2);
+        this.setRotateAngle(forelegL2, 0.0F, 1.2217F, 0.0F);
+        this.forelegL2.cubeList.add(new ModelBox(forelegL2, 84, 46, -0.25F, -1.0F, -1.0F, 4, 2, 2, -0.01F, false));
+
+        this.forelegL3 = new AdvancedModelRenderer(this);
+        this.forelegL3.setRotationPoint(3.0F, 0.0F, 0.25F);
+        this.forelegL2.addChild(forelegL3);
+        this.setRotateAngle(forelegL3, 0.1309F, 0.5236F, -0.0436F);
+        this.forelegL3.cubeList.add(new ModelBox(forelegL3, 84, 42, 0.25F, 0.0F, -1.5F, 3, 1, 3, 0.0F, false));
+
+        this.forelegR = new AdvancedModelRenderer(this);
+        this.forelegR.setRotationPoint(-5.75F, 2.0F, -8.25F);
+        this.body.addChild(forelegR);
+        this.setRotateAngle(forelegR, 0.0F, 0.3491F, -0.1745F);
+        this.forelegR.cubeList.add(new ModelBox(forelegR, 0, 84, -4.5F, -1.0F, -1.5F, 5, 2, 3, 0.0F, false));
+
+        this.forelegR2 = new AdvancedModelRenderer(this);
+        this.forelegR2.setRotationPoint(-4.0F, 0.0F, 0.0F);
+        this.forelegR.addChild(forelegR2);
+        this.setRotateAngle(forelegR2, 0.0F, -1.2217F, 0.0F);
+        this.forelegR2.cubeList.add(new ModelBox(forelegR2, 83, 5, -3.75F, -1.0F, -1.0F, 4, 2, 2, -0.01F, false));
+
+        this.forelegR3 = new AdvancedModelRenderer(this);
+        this.forelegR3.setRotationPoint(-3.0F, 0.0F, 0.25F);
+        this.forelegR2.addChild(forelegR3);
+        this.setRotateAngle(forelegR3, 0.1309F, -0.5236F, 0.0436F);
+        this.forelegR3.cubeList.add(new ModelBox(forelegR3, 59, 0, -3.25F, 0.0F, -1.5F, 3, 1, 3, 0.0F, false));
+
         this.neck = new AdvancedModelRenderer(this);
-        this.neck.setRotationPoint(0.0F, -3.0F, 12.5F);
+        this.neck.setRotationPoint(0.0F, 1.0F, -10.0F);
         this.body.addChild(neck);
         this.neck.cubeList.add(new ModelBox(neck, 0, 33, -5.5F, -2.5F, -8.0F, 11, 5, 9, 0.0F, false));
 

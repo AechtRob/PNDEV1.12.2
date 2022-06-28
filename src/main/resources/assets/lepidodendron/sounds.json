@@ -173,6 +173,35 @@
       }
     ]
   },
+
+  "protozygoptera_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:protozygoptera_idle01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:protozygoptera_idle02",
+        "stream": false
+      }
+    ]
+  },
+  "protozygoptera_flight": {
+    "sounds": [
+      {
+        "name": "lepidodendron:protozygoptera_flight01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:protozygoptera_flight02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:protozygoptera_flight03",
+        "stream": false
+      }
+    ]
+  },
   
   "limnoscelis_idle": {
     "sounds": [
@@ -3946,6 +3975,128 @@
     "sounds": [
       {
         "name": "lepidodendron:eudimorphodon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "shonisaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shonisaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_living07",
+        "stream": false
+      }
+    ]
+  },
+  "shonisaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shonisaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "shonisaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shonisaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "shonisaurus_blowhole": {
+    "sounds": [
+      {
+        "name": "lepidodendron:shonisaurus_blowhole01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_blowhole02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:shonisaurus_blowhole03",
+        "stream": false
+      }
+    ]
+  },
+  
+  "desmatosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:desmatosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "desmatosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:desmatosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:desmatosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "desmatosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:desmatosuchus_death",
         "stream": false
       }
     ]

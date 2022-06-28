@@ -254,7 +254,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PALAEODICTYOPTERA = new CustomTrigger("pf_book_palaeodictyoptera");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
-    public static final CustomTrigger CLICK_PALAEONTINOID = new CustomTrigger("pf_book_palaeontinoid");
+    public static final CustomTrigger CLICK_PALaeontinid = new CustomTrigger("pf_book_palaeontinid");
     public static final CustomTrigger CLICK_PANDERICHTHYS = new CustomTrigger("pf_book_panderichthys");
     public static final CustomTrigger CLICK_PANTYLUS = new CustomTrigger("pf_book_pantylus");
     public static final CustomTrigger CLICK_PARADOXIDES = new CustomTrigger("pf_book_paradoxides");
@@ -732,7 +732,7 @@ public class ModTriggers
             CLICK_PALAEODICTYOPTERA,
             CLICK_PALAEOISOPUS,
             CLICK_ANCIENT_JELLY,
-            CLICK_PALAEONTINOID,
+            CLICK_PALaeontinid,
             CLICK_PANDERICHTHYS,
             CLICK_PANTYLUS,
             CLICK_PARADOXIDES,

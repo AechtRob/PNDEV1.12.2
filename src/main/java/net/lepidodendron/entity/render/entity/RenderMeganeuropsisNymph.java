@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeganeuropsisNymph;
 import net.lepidodendron.entity.model.entity.ModelMeganeuropsisNymph;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -18,13 +17,6 @@ public class RenderMeganeuropsisNymph extends RenderLiving<EntityPrehistoricFlor
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMeganeuropsisNymph entity) {
         return RenderMeganeuropsisNymph.TEXTURE;
-    }
-
-    @Override
-    protected void preRenderCallback(EntityPrehistoricFloraMeganeuropsisNymph entity, float f) {
-        float scale = entity.getAgeScale();
-        GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
     }
 
 }
