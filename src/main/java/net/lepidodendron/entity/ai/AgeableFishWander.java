@@ -112,11 +112,13 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
                     this.PrehistoricFloraAgeableFishBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
 
                     this.mustUpdate = false;
+                    this.ticksAI = 600;
                     return true;
                 }
             }
             else {
                 this.mustUpdate = false;
+                this.ticksAI = 600;
                 return true;
             }
         }
@@ -132,14 +134,20 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
 
     @Override
     public boolean shouldContinueExecuting() {
-
-
+        //System.err.println("ticksAI: " + this.ticksAI);
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.PrehistoricFloraAgeableFishBase.getNavigator().clearPath();
+            return false;
+        }
 
         if (this.PrehistoricFloraAgeableFishBase.getNavigator().noPath()) {
             //System.err.println("No path found 2a");
             return false;
         }
         Path path = this.PrehistoricFloraAgeableFishBase.getNavigator().getPath();
+
+        //System.err.println("EndPathPoint: " + (new BlockPos(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z)));
 
         if ((!isDirectPathBetweenPoints(this.PrehistoricFloraAgeableFishBase, this.PrehistoricFloraAgeableFishBase.getPositionVector(), new Vec3d(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z)))
             ||

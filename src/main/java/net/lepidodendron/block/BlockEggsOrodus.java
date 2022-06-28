@@ -75,8 +75,8 @@ public class BlockEggsOrodus extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 			else if (biome instanceof BiomePermian) {
-				BiomePermian biomeC = (BiomePermian) biome;
-				if (biomeC.getBiomeType() == EnumBiomeTypePermian.Ocean) {
+				BiomePermian biomeP = (BiomePermian) biome;
+				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Ocean) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

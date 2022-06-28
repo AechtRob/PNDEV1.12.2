@@ -1858,9 +1858,9 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeontinoid) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeontinid) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_PALAEONTINOID.trigger((EntityPlayerMP) event.getEntityPlayer());
+					ModTriggers.CLICK_PALaeontinid.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
@@ -2138,7 +2138,8 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraProtozygoptera) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraProtozygoptera
+					|| event.getTarget() instanceof EntityPrehistoricFloraProtozygopteraNymph) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_PROTOZYGOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
@@ -2882,7 +2883,7 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraFadenia) {
+		else if (event.getTarget() instanceof EntityPrehistoricFloraFadeniaCarboniferous) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_FADENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
@@ -3634,7 +3635,9 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraTitanoptera) {
+		else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraGigatitan
+			|| event.getTarget() instanceof EntityPrehistoricFloraTitanopteraMesotitan
+			|| event.getTarget() instanceof EntityPrehistoricFloraTitanopteraClatrotitan) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_TITANOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}

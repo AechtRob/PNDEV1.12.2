@@ -58,10 +58,6 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 	public static String getHabitat() {return "Aquatic";}
 
 	@Override
-	public void playLivingSound() {
-	}
-
-	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraShonisaurus(this.world);
 	}
@@ -88,11 +84,34 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.2849f;
+		float AIspeed = 0.3549f;
 		if (this.getIsFast()) {
-			AIspeed = AIspeed * 2.2F;
+			AIspeed = AIspeed * 2.0F;
 		}
 		return AIspeed;
+	}
+
+	@Override
+	public void playLivingSound() {
+		if (!this.isReallyInWater()) {
+			return;
+		}
+		if (this.getAnimation() != null) {
+			SoundEvent soundevent = null;
+			if (this.world.isAirBlock(this.getPosition().up())) {
+				soundevent = this.getBlowholeSound();
+			}
+			else {
+				soundevent = this.getAmbientSound();
+			}
+			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
+				this.setAnimation(ROAR_ANIMATION);
+				if (soundevent != null)
+				{
+					this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+				}
+			}
+		}
 	}
 
 	@Override
@@ -123,8 +142,8 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
+			|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 
@@ -163,22 +182,35 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:shonisaurus_idle"));
+	}
+
+	public SoundEvent getBlowholeSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:shonisaurus_blowhole"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+		if (this.isReallyInWater()) {
+			return (SoundEvent) SoundEvent.REGISTRY
+					.getObject(new ResourceLocation("lepidodendron:shonisaurus_hurt"));
+		}
+		else {
+			return this.getBlowholeSound();
+		}
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:shonisaurus_death"));
 	}
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F;
+		return 1.0F + (this.getAgeScale() * 5F);
 	}
 
 	@Override

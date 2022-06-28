@@ -5,15 +5,12 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -22,9 +19,7 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -57,9 +52,36 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		boolean match = false;
+		if (!match) {
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS)
+					&& world.isAirBlock(pos));
+		}
+		return match;
+	}
+
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
 	public static String getPeriod() {return "late Carboniferous - early Permian";}
 
-		public static String getHabitat() {return "Terrestrial Pelycosaur";}
+	public static String getHabitat() {return "Terrestrial Pelycosaur";}
 
     @Override
 	public String getTexture() {
@@ -101,7 +123,6 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(0.0F + size, 0.0F + size, 0.0F + size);
 	}
-
 
 	@Override
 	public float getEyeHeight()
@@ -196,41 +217,6 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
-	public boolean testLay(World world, BlockPos pos) {
-		if (
-				world.getBlockState(pos).getBlock() == BlockRottenLog.block
-		) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(pos), "egg");
-			if (eggRenderType.equals("")) {
-				//There is a space, is the orientation correct?
-				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
-					EnumFacing facing = world.getBlockState(pos).getValue(FACING);
-					BlockFaceShape faceshape = world.getBlockState(pos.down()).getBlockFaceShape(world, pos.down(), EnumFacing.UP);
-					if (!((facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH)
-							&& faceshape != BlockFaceShape.SOLID)) {
-						//This is solid for laying:
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		return (testLay(world, pos.down()) || testLay(world, pos)) ;
 	}
 
 	@Override

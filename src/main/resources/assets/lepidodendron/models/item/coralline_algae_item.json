@@ -1,21 +1,21 @@
 {
   "parent": "lepidodendron:block/coralline_algae",
   "display": {
-    "thirdperson": {
+    "gui": {
       "rotation": [
         10,
         -45,
-        170
+        0
       ],
       "translation": [
         0,
-        1.5,
+        3.5,
         -2.75
       ],
       "scale": [
-        0.375,
-        0.375,
-        0.375
+        0.475,
+        0.475,
+        0.475
       ]
     }
   }

@@ -7,8 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -16,7 +15,6 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -48,6 +46,33 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		maxWidth = 0.76F;
 		maxHeight = 1.2F;
 		maxHealthAgeable = 32.0D;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		boolean match = false;
+		if (!match) {
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS)
+					&& world.isAirBlock(pos));
+		}
+		return match;
+	}
+
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
 	}
 
 	public static String getPeriod() {return "late Carboniferous - early Permian";}
@@ -196,30 +221,6 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 
 		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
 
-	}
-
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
-	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	@Override

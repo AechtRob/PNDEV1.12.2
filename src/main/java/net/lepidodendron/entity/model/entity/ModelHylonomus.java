@@ -184,8 +184,8 @@ public class ModelHylonomus extends AdvancedModelBase {
 
         EntityPrehistoricFloraHylonomus Hylonomus = (EntityPrehistoricFloraHylonomus) e;
 
-        this.faceTarget(f3, f4, 2, neck);
-        this.faceTarget(f3, f4, 1, head);
+        this.faceTarget(f3, f4, 8, neck);
+        this.faceTarget(f3, f4, 5, head);
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.pelvis};

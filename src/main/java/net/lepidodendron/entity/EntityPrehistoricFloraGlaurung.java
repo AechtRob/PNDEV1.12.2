@@ -74,7 +74,8 @@ public class EntityPrehistoricFloraGlaurung extends EntityPrehistoricFloraWeigel
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		boolean match = false;
 		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND)
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS)
 					&& world.isAirBlock(pos));
 		}
 		return match;

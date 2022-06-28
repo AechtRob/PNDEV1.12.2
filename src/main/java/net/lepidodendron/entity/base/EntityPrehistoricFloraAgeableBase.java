@@ -8,10 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
-import net.lepidodendron.entity.EntityPrehistoricFloraClaudiosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraCoelurosauravus;
-import net.lepidodendron.entity.EntityPrehistoricFloraGlaurung;
-import net.lepidodendron.entity.EntityPrehistoricFloraRautiania;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -848,6 +844,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         world.setBlockState(nestPos, BlockNest.block.getDefaultState(), 3);
                         TileEntity te = world.getTileEntity(nestPos);
                         te.getTileData().setString("creature", getEntityId(this));
+                        te.getTileData().setBoolean("isMound", this.isNestMound());
                     }
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
@@ -877,17 +874,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             mobid = entry.getRegistryName().toString();
         }
         return mobid;
-    }
-
-    public boolean renderMound(Entity entityIn) {
-        if (entityIn instanceof EntityPrehistoricFloraClaudiosaurus
-                || entityIn instanceof EntityPrehistoricFloraGlaurung
-                || entityIn instanceof EntityPrehistoricFloraRautiania
-                || entityIn instanceof EntityPrehistoricFloraCoelurosauravus
-        ) {
-            return true;
-        }
-        return false;
     }
 
     public boolean testLay(World world, BlockPos pos) {

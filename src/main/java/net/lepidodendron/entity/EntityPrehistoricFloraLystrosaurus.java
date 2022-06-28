@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
@@ -32,7 +31,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDiictodon {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -47,7 +46,7 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraLa
 		enablePersistence();
 		minWidth = 0.18F;
 		maxWidth = 0.82F;
-		maxHeight = 1.01F;
+		maxHeight = 0.99F;
 		maxHealthAgeable = 18.0D;
 	}
 
@@ -58,6 +57,11 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public boolean hasNest() {
 		return true;
+	}
+
+	@Override
+	public boolean hasAlarm() {
+		return false;
 	}
 
 	@Override
