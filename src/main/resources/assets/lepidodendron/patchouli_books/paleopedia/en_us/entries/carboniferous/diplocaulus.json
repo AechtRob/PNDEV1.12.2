@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Diplocaulus",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/diplocaulus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_diplocaulus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_diplocaulus",
+			"title": "Diplocaulus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous-Permian$(br2)$(l)Habitat:$() Swamps$(br2)>Lepospondyli$(br)>Nectridea$(br)>Diplocaulidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
-			"title": "",
+			"images": ["paleopedia:carboniferous/Diplocaulus.png"],
+			"title": "D. magicornis",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_diplocaulus",
 			"type": "text",
-			"text": ""
+			"text": "Diplocaulus is an amphibian from the Carboniferous-Permian which sported a distinct boomerang shaped head. It reached up to 1.5m long and was likely mostly aquatic. Its tail would have been its main force of locomotion."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_diplocaulus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Amphibian Spawn$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

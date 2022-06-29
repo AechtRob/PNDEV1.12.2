@@ -3075,4 +3075,33 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3071;
     public static final int zosterophyllum_spore = 3072;
 
+    public static final int luoxiongichthys_raw = 3123;
+    public static final int luoxiongichthys_cooked = 3124;
+    public static final int paratarrasius_raw = 3125;
+    public static final int paratarrasius_cooked = 3126;
+    public static final int hybodus_raw = 3127;
+    public static final int hybodus_cooked = 3128;
+    public static final int parhybodus_raw = 3129;
+    public static final int parhybodus_cooked = 3130;
+    public static final int holonema_raw = 3131;
+    public static final int holonema_cooked = 3132;
+    public static final int thrinacodus_raw = 3133;
+    public static final int drotops_raw = 3134;
+    public static final int drotops_cooked = 3135;
+    public static final int lanceaspis_raw = 3136;
+    public static final int lanceaspis_cooked = 3137;
+    public static final int calvapilosa_raw = 3138;
+    public static final int calvapilosa_cooked = 3139;
+    public static final int heliopeltis_raw = 3140;
+    public static final int heliopeltis_cooked = 3141;
+    public static final int cobelodus_raw = 3142;
+    public static final int cobelodus_cooked = 3143;
+    public static final int chinlea_raw = 3144;
+    public static final int chinlea_cooked = 3145;
+    public static final int palaeoniscum_raw = 3146;
+    public static final int palaeoniscum_cooked = 3147;
+    public static final int thrinacodus_cooked = 3148;
+
+
+
 }

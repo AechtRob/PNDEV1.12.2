@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arthropleura",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

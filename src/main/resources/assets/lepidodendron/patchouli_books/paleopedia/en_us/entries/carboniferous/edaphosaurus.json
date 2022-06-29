@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Edaphosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/edaphosaurus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_edaphosaurus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_edaphosaurus",
+			"title": "Edaphosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps/Hills$(br2)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
-			"title": "",
+			"images": ["paleopedia:carboniferous/Edaphosaurus.png"],
+			"title": "E. cruciger",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Edaphosaurus is a large herbivorous animal which lived in the Late Carboniferous and into the Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }

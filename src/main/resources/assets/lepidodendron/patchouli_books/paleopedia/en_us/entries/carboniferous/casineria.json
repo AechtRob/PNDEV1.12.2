@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Casineria",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "lepidodendron:casineria_raw",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_casineria",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_casineria",
+			"title": "Casineria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamp$(br2)>Amniota(?)"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
-			"title": "",
+			"images": ["paleopedia:carboniferous/Casineria.png"],
+			"title": "C. kiddi",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_casineria",
 			"type": "text",
-			"text": ""
+			"text": "Casineria is a small tetrapod from the Carboniferous period, it was seen as a transitional fossil between amphibian and reptile. Its small size would have given it an advantage in hunting invertebrates."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_casineria",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }
