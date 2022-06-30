@@ -38,7 +38,7 @@ public class BiomeTriassicDesertSandy extends ElementsLepidodendronMod.ModElemen
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
 			//super(new BiomeProperties("Permian Desert").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled().setWaterColor(10990706));
-			super(new BiomeProperties("Triassic Sandy Desert").setRainfall(0.0F).setBaseHeight(0.127F).setHeightVariation(0.05F).setTemperature(2.5F).setRainDisabled().setWaterColor(16767282));
+			super(new BiomeProperties("Triassic Desert Dunes").setRainfall(0.0F).setBaseHeight(0.127F).setHeightVariation(0.05F).setTemperature(2.5F).setRainDisabled().setWaterColor(16767282));
 			setRegistryName("triassic_desert_sandy");
 			topBlock = BlockSandRedWavy.block.getDefaultState();
 			fillerBlock = Blocks.SAND.getStateFromMeta(1);

@@ -18,6 +18,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -67,7 +68,10 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		boolean match = false;
 		if (!match) {
 			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS)
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
 					&& world.isAirBlock(pos));
 		}
 		return match;
@@ -201,10 +205,6 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public void onLivingUpdate() {

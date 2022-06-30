@@ -245,7 +245,7 @@ public class EntityPrehistoricFloraMegarachne extends EntityPrehistoricFloraEury
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEurypteridEggsMegarachne.block.getDefaultState();
 			if (BlockEurypteridEggsMegarachne.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsMegarachne.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

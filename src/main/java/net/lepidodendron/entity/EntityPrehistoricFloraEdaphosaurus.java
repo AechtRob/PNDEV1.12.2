@@ -14,6 +14,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -63,7 +64,10 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		boolean match = false;
 		if (!match) {
 			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS)
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
 					&& world.isAirBlock(pos));
 		}
 		return match;
@@ -136,7 +140,7 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(4, new PanicAI(this, 1.6D));
-		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderNestInBlockAI(this));
 		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -199,10 +203,6 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public void onLivingUpdate() {

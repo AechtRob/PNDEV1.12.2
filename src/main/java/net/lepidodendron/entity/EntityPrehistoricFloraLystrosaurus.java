@@ -186,10 +186,6 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public void onLivingUpdate() {

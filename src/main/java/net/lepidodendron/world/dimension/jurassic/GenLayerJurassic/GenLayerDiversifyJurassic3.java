@@ -1,7 +1,7 @@
 package net.lepidodendron.world.dimension.jurassic.GenLayerJurassic;
 
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.jurassic.*;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassicGarrigue;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;

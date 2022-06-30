@@ -9,9 +9,9 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockRottenLog;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -178,10 +178,6 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public void onLivingUpdate() {

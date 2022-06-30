@@ -13,7 +13,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -175,10 +174,6 @@ public class EntityPrehistoricFloraKalbarria extends EntityPrehistoricFloraSwimm
 		return 120;
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {

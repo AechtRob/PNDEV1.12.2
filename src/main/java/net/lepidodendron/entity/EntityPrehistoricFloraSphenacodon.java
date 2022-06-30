@@ -67,7 +67,9 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 		if (!match) {
 			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
 					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND && world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
 					&& world.isAirBlock(pos));
 		}
 		return match;
@@ -145,7 +147,7 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 45));
 		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -211,10 +213,6 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public void onLivingUpdate() {

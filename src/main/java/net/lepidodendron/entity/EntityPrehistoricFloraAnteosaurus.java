@@ -243,10 +243,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
 	
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public int headbutTick() {

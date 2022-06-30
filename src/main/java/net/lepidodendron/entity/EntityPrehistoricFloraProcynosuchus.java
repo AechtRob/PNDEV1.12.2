@@ -65,10 +65,6 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		return "will not go into buckets";
 	}
 
-	public float getTravelSpeed() {
-		return this.getAISpeedSwimmingAmphibian();
-	}
-
 	public static String getPeriod() {
 		return "late Permian";
 	}
@@ -105,6 +101,7 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		//System.err.println("Speed " + (Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed));
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
 	}
 
@@ -251,10 +248,6 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {

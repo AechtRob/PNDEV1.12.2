@@ -6,7 +6,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
@@ -118,11 +117,6 @@ public abstract class EntityPrehistoricFloraEurypteridBase extends EntityPrehist
     @Override
     public int getTalkInterval() {
         return 120;
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 1 + this.world.rand.nextInt(3);
     }
 
     public boolean isReallyInWater() {

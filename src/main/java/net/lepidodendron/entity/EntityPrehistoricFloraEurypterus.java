@@ -237,7 +237,7 @@ public class EntityPrehistoricFloraEurypterus extends EntityPrehistoricFloraEury
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEurypteridEggsEurypterus.block.getDefaultState();
 			if (BlockEurypteridEggsEurypterus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsEurypterus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

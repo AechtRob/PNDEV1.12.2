@@ -64,6 +64,15 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         }
     }
 
+    @Override
+    protected int getExperiencePoints(EntityPlayer player) {
+        int i = (int) Math.round(this.getMaxHealth()/4D);
+        if (i < 1) {
+            return 0;
+        }
+        return this.world.rand.nextInt(i);
+    }
+
     @Nullable
     @Override
     public EntityAgeable createChild(EntityAgeable ageable) {
@@ -219,11 +228,6 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
             this.inPFLove = 0;
             return super.attackEntityFrom(ds, i);
         }
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 1 + this.world.rand.nextInt(3);
     }
 
     public boolean isReallyInWater() {

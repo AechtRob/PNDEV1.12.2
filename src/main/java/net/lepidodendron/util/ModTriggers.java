@@ -381,7 +381,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TIKTAALIK = new CustomTrigger("pf_book_tiktaalik");
     public static final CustomTrigger CLICK_RETICULOLEPIS = new CustomTrigger("pf_book_reticulolepis");
     public static final CustomTrigger CLICK_DELTOPTYCHIUS = new CustomTrigger("pf_book_deltoptychius");
-    public static final CustomTrigger CLICK_FADENIA = new CustomTrigger("pf_book_fadenia");
+    public static final CustomTrigger CLICK_FADENIA_CARBONIFEROUS = new CustomTrigger("pf_book_fadenia_carboniferous");
+    public static final CustomTrigger CLICK_FADENIA_PERMOTRIASSIC = new CustomTrigger("pf_book_fadenia_permotriassic");
     public static final CustomTrigger CLICK_FALCATUS = new CustomTrigger("pf_book_falcatus");
     public static final CustomTrigger CLICK_ORODUS = new CustomTrigger("pf_book_orodus");
     public static final CustomTrigger CLICK_PARATARRASIUS = new CustomTrigger("pf_book_paratarrasius");
@@ -859,7 +860,8 @@ public class ModTriggers
             CLICK_TIKTAALIK,
             CLICK_RETICULOLEPIS,
             CLICK_DELTOPTYCHIUS,
-            CLICK_FADENIA,
+            CLICK_FADENIA_CARBONIFEROUS,
+            CLICK_FADENIA_PERMOTRIASSIC,
             CLICK_FALCATUS,
             CLICK_ORODUS,
             CLICK_PARATARRASIUS,

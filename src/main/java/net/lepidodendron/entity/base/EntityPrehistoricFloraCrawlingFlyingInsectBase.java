@@ -73,6 +73,15 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         LAY_ANIMATION = Animation.create(this.getLayLength());
     }
 
+    @Override
+    protected int getExperiencePoints(EntityPlayer player) {
+        int i = (int) Math.round(this.getMaxHealth()/4D);
+        if (i < 1) {
+            return 0;
+        }
+        return this.world.rand.nextInt(i);
+    }
+
     public void selectNavigator () {
         if (this.getIsFlying()) {
             if ((!(this.moveHelper instanceof EntityPrehistoricFloraCrawlingFlyingInsectBase.FlightMoveHelper))
@@ -328,11 +337,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
     @Override
     public int getTalkInterval() {
         return 120;
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 1 + this.world.rand.nextInt(3);
     }
 
     @Override

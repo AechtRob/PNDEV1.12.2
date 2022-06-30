@@ -207,10 +207,6 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {
@@ -262,7 +258,7 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnDiploceraspis.block.getDefaultState();
 			if (BlockAmphibianSpawnDiploceraspis.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnDiploceraspis.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

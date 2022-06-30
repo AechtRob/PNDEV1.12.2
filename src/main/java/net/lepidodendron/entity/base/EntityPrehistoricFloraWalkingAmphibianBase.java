@@ -9,7 +9,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
@@ -120,11 +119,6 @@ public abstract class EntityPrehistoricFloraWalkingAmphibianBase extends EntityP
                 }
             }
         }
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 2 + this.world.rand.nextInt(3);
     }
 
     @Override

@@ -2,14 +2,14 @@
 	"name": "Hemicyclaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:hemicyclaspis_raw",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_hemicyclaspis",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_hemicyclaspis",
 			"title": "Hemicyclaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteostraci$(br)>Ateleaspidiformes"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteostraci$(br)>Ateleaspidiformes"
 		},
 		{
 			"type": "image",

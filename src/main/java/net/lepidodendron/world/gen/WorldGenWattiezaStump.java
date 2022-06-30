@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockWattiezaLog;
+import net.lepidodendron.block.BlockWattiezaSapling;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;

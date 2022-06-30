@@ -1101,6 +1101,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation SILLOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sillosuchus_young"));
 	public static final int ENTITY_SMILOSUCHUS = 454;
 	public static final ResourceLocation SMILOSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smilosuchus"));
+	public static final ResourceLocation SMILOSUCHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smilosuchus_young"));
 	public static final int ENTITY_SMOK = 455;
 	public static final ResourceLocation SMOK_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smok"));
 	public static final ResourceLocation SMOK_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smok_young"));

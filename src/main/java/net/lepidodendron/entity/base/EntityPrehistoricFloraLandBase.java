@@ -13,7 +13,6 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
@@ -57,7 +56,14 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);
         //this.setPathPriority(PathNodeType.WATER, -1.0F);
-        this.selectNavigator();
+        if (this.isSwimmingInWater() && this.canSwim()) {
+            this.moveHelper = new EntityPrehistoricFloraLandBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+        }
+        else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+            this.moveHelper = new EntityPrehistoricFloraLandBase.WanderMoveHelper();
+            this.navigator = new PathNavigateGroundNoWater(this, world);
+        }
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
@@ -342,11 +348,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     @Override
     public int getTalkInterval() {
         return 120;
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 1 + this.world.rand.nextInt(3);
     }
 
     @Override

@@ -104,6 +104,15 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	}
 
+	@Override
+	protected int getExperiencePoints(EntityPlayer player) {
+		int i = (int) Math.round(this.getMaxHealth()/4D);
+		if (i < 1) {
+			return 0;
+		}
+		return this.world.rand.nextInt(i);
+	}
+
 	public abstract boolean dropsEggs();
 
 	@Override
@@ -269,11 +278,6 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	@Override
 	public int getTalkInterval() {
 		return 120;
-	}
-
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 1 + this.world.rand.nextInt(3);
 	}
 
 	@Override

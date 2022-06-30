@@ -130,7 +130,7 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 4));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
 		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.93, 80));
@@ -139,6 +139,7 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(6, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityPrehistoricFloraAgeableFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
@@ -149,8 +150,8 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-				//		|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
+				|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 
@@ -173,7 +174,7 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -229,10 +230,6 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {

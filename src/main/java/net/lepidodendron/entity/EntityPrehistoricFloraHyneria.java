@@ -213,7 +213,7 @@ public class EntityPrehistoricFloraHyneria extends EntityPrehistoricFloraAgeable
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEggsHyneria.block.getDefaultState();
 			if (BlockEggsHyneria.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsHyneria.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

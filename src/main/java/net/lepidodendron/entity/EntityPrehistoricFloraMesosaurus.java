@@ -207,10 +207,6 @@ public class EntityPrehistoricFloraMesosaurus extends EntityPrehistoricFloraSwim
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {

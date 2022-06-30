@@ -3,9 +3,9 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.block.BlockLygodium;
 import net.lepidodendron.block.BlockBushyAraucariaLeaves;
 import net.lepidodendron.block.BlockBushyAraucariaLog;
+import net.lepidodendron.block.BlockLygodium;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassicFloodplainForested;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;

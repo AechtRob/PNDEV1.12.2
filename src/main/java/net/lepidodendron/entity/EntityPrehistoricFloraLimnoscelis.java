@@ -198,10 +198,6 @@ public class EntityPrehistoricFloraLimnoscelis extends EntityPrehistoricFloraSwi
 		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
 	}
 
-	@Override
-	protected int getExperiencePoints(EntityPlayer player) {
-		return 2 + this.world.rand.nextInt(3);
-	}
 
 	@Override
 	public boolean isOnLadder() {
@@ -256,7 +252,7 @@ public class EntityPrehistoricFloraLimnoscelis extends EntityPrehistoricFloraSwi
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockAmphibianSpawnLimnoscelis.block.getDefaultState();
 			if (BlockAmphibianSpawnLimnoscelis.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockAmphibianSpawnLimnoscelis.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

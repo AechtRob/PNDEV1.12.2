@@ -10,7 +10,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
@@ -33,7 +32,29 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
 
     public EntityPrehistoricFloraSwimmingAmphibianBase(World world) {
         super(world);
-        this.selectNavigator();
+
+        if (this.isInWater()) {
+            this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmer(this, world);
+            this.isWaterNavigator = true;
+            this.isSeekingWater = false;
+        }
+        else {
+            if (isNearWater(this, this.getPosition())) {
+                this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+                this.navigator = new PathNavigateAmphibian(this, world);
+                this.isWaterNavigator = false;
+                this.isSeekingWater = false;
+            }
+            else {//Find water!
+                this.moveHelper = new EntityPrehistoricFloraSwimmingAmphibianBase.WanderMoveHelper();
+                this.navigator = new PathNavigateAmphibianFindWater(this, world);
+                this.setPathPriority(PathNodeType.WATER, 10F);
+                this.isWaterNavigator = false;
+                this.isSeekingWater = true;
+            }
+        }
+
         //this.setPathPriority(PathNodeType.WATER, 5.0F);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
@@ -73,6 +94,10 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 }
             }
         }
+    }
+
+    public float getTravelSpeed() {
+        return this.getAISpeedSwimmingAmphibian();
     }
 
     @Override
@@ -160,12 +185,6 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 }
             }
         }
-    }
-
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 2 + this.world.rand.nextInt(3);
     }
 
     @Override
@@ -427,9 +446,9 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
 
 
                 //Land:
-                if (!this.EntityBase.isInWater()) {
-                    this.EntityBase.setAIMoveSpeed((float) (0.6f * this.speed * getAISpeedSwimmingAmphibian()));
-                }
+                //if (!this.EntityBase.isInWater()) {
+                //    this.EntityBase.setAIMoveSpeed((float) (0.6f * this.speed * getAISpeedSwimmingAmphibian()));
+                //}
 
                 if (
                     (this.EntityBase.collidedHorizontally)

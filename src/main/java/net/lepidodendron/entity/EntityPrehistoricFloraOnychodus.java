@@ -216,7 +216,7 @@ public class EntityPrehistoricFloraOnychodus extends EntityPrehistoricFloraAgeab
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEggsOnychodus.block.getDefaultState();
 			if (BlockEggsOnychodus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsOnychodus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

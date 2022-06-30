@@ -251,7 +251,7 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEurypteridEggsCarcinosoma.block.getDefaultState();
 			if (BlockEurypteridEggsCarcinosoma.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEurypteridEggsCarcinosoma.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

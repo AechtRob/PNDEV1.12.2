@@ -61,6 +61,15 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         }
     }
 
+    @Override
+    protected int getExperiencePoints(EntityPlayer player) {
+        int i = (int) Math.round(this.getMaxHealth()/4D);
+        if (i < 1) {
+            return 0;
+        }
+        return this.world.rand.nextInt(i);
+    }
+
     @Nullable
     @Override
     public EntityAgeable createChild(EntityAgeable ageable) {
@@ -215,11 +224,6 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
     @Override
     public int getTalkInterval() {
         return 120;
-    }
-
-    @Override
-    protected int getExperiencePoints(EntityPlayer player) {
-        return 1 + this.world.rand.nextInt(3);
     }
 
     @Override

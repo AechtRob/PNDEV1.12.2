@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraXenacanthus extends EntityPrehistoricFloraAge
 
 		if (!world.isRemote && spaceCheckEggs() && this.isInWater() && this.isPFAdult() && this.getTicks() > -30 && this.getTicks() < 0) {
 			//Is stationary for egg-laying:
-			System.err.println("Test2");
+			//System.err.println("Test2");
 			IBlockState eggs = BlockEggsXenacanthus.block.getDefaultState();
 			if (BlockEggsXenacanthus.block.canPlaceBlockOnSide(world, this.getPosition(), EnumFacing.UP) && BlockEggsXenacanthus.block.canPlaceBlockAt(world, this.getPosition())) {
 				world.setBlockState(this.getPosition(), eggs);

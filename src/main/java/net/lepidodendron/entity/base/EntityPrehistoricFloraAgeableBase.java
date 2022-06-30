@@ -237,6 +237,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return false;
     }
 
+    @Override
+    protected int getExperiencePoints(EntityPlayer player) {
+        int i = (int) Math.round(this.getMaxHealthAgeable()/4D);
+        if (i < 1) {
+            return 0;
+        }
+        return this.world.rand.nextInt(i);
+    }
+
     public boolean divesToLay() {
         return false;
     }

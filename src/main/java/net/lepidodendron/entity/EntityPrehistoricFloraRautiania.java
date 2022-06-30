@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -74,7 +75,11 @@ public class EntityPrehistoricFloraRautiania extends EntityPrehistoricFloraWeige
 	public boolean nestBlockMatch(World world, BlockPos pos) {
 		boolean match = false;
 		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND)
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
+					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
+					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
+					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
+						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
 					&& world.isAirBlock(pos));
 		}
 		return match;
