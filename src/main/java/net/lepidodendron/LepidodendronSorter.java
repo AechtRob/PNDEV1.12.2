@@ -3101,4 +3101,11 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3097;
     public static final int zosterophyllum_spore = 3098;
 
+    public static final int eggs_hybodus_worldgen = 3099;
+    public static final int eggs_hybodus = 3100;
+    public static final int eggs_parhybodus_worldgen = 3101;
+    public static final int eggs_parhybodus = 3102;
+    public static final int eggs_cobelodus_worldgen = 3103;
+    public static final int eggs_cobelodus = 3104;
+
 }
