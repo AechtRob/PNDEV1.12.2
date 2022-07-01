@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraCasineria extends EntityPrehistoricFloraLandB
 		minWidth = 0.1F;
 		maxWidth = 0.538F;
 		maxHeight = 0.42F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

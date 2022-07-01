@@ -1042,6 +1042,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation ERYTHROSUCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/erythrosuchus"));
 	public static final int ENTITY_EUPARKERIA = 428;
 	public static final ResourceLocation EUPARKERIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/euparkeria"));
+	public static final ResourceLocation EUPARKERIA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/euparkeria_young"));
+	public static final ResourceLocation EUPARKERIA_JAR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/euparkeria_jar"));
 	public static final int ENTITY_EUSAUROSPHARGIS = 429;
 	public static final ResourceLocation EUSAUROSPHARGIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eusaurosphargis"));
 	public static final int ENTITY_GERROTHORAX = 430;

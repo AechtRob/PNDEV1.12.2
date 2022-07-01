@@ -635,6 +635,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.grappleTarget = entityGrappleTarget;
     }
 
+    public boolean panics() {
+        return false;
+    }
+
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
@@ -649,7 +653,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.setEatTarget(null);
                 }
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null);
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
 
         }
 

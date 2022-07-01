@@ -159,7 +159,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new NightFindNestAI(this));
 		tasks.addTask(4, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(5, new PanicFindNestAI(this, 1.6D));
+		tasks.addTask(5, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -167,6 +167,11 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1.5));
 		}
+
+	@Override
+	public boolean panics() {
+		return true;
+	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)

@@ -173,7 +173,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicFindNestAI(this, 1.6D));
+		tasks.addTask(4, new PanicFindNestAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new GrappleAI(this, 1.0D, false, this.getLookLength(), this.getGrappleAnimation(), 0.225));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 40));
@@ -184,6 +184,11 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraCrawlingFlyingInsectBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(2, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0));
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
 	}
 
 	@Override

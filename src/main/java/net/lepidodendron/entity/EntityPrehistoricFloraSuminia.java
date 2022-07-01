@@ -179,13 +179,18 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 		tasks.addTask(1, new EntityTemptAI(this, 1, true, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(3, new AttackAI(this, 1.6D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicScreamAI(this, 1.6D));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderAvoidWaterClimbingAI(this, 1.0D, 5));
 		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
 		tasks.addTask(9, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1.5));
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
 	}
 
 	@Override
