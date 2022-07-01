@@ -158,7 +158,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		tasks.addTask(2, new AgeableFlyingBaseWanderFly(this));
 		tasks.addTask(3, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new PanicAI(this, 1.6D));
+		tasks.addTask(5, new PanicAI(this, 1.0));
 		tasks.addTask(6, new LandWanderNestAI(this));
 		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D, 20));
 		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -167,6 +167,11 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
 	}
 
 	@Override

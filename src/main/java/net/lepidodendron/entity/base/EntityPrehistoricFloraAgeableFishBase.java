@@ -154,6 +154,14 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         }
     }
 
+    public float maxTurnAngle() {
+        if (this.width <= 0.5) {
+            return 10F;
+        }
+        float i = Math.min(this.width - 0.5F, 2.5F) - 0.5F; //returns a number from 0 to 2
+        return 10F - (i * 4.5F); //returns a number from 10 to 1
+    }
+
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -257,7 +265,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 1.0F);
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 
@@ -292,7 +300,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 2.0F);
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 

@@ -2,14 +2,14 @@
 	"name": "Edaphosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/edaphosaurus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_edaphosaurus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_edaphosaurus",
 			"title": "Edaphosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps/Hills$(br2)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Swamps/Hills$(br2)>Synapsida$(br)>Sphenacomorpha$(br)>Edaphosauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",
 			"type": "text",
-			"text": "Edaphosaurus is a large herbivorous animal which lived in the Late Carboniferous and into the Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon."
+			"text": "Edaphosaurus is a large herbivorous animal which lived in the earliest Permian period. It had a large sail with many knobs on each spine and was preyed upon by the famous Dimetrodon."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_edaphosaurus",

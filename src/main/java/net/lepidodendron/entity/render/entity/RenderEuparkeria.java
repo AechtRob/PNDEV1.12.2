@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraEuparkeria;
 import net.lepidodendron.entity.model.entity.ModelEuparkeria;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -24,51 +25,11 @@ public class RenderEuparkeria extends RenderLiving<EntityPrehistoricFloraEuparke
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraEuparkeria entity, float f) {
+        float scale = entity.getAgeScale() * 1.125F;
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.1F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

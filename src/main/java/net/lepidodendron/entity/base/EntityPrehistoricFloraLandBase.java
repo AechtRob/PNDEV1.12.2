@@ -478,7 +478,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setAttackTarget(null);
                 this.setEatTarget(null);
             }
-            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null);
+            this.setIsFast(this.getAttackTarget() != null || this.getEatTarget() != null || (this.getRevengeTarget() != null & this.panics()) || (this.isBurning() & this.panics()));
+
         }
 
         if (!this.isPFAdult())
