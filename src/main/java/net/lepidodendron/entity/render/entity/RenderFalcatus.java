@@ -32,7 +32,7 @@ public class RenderFalcatus extends RenderLiving<EntityPrehistoricFloraFalcatus>
     }
 
     protected void preRenderCallback(EntityPrehistoricFloraFalcatus entity, float f) {
-        float scale = entity.getRenderSizeModifier();
+        float scale = entity.getAgeScale();
         if (entity.getIsFemale()) {
             scale = scale * 0.8F;
         }

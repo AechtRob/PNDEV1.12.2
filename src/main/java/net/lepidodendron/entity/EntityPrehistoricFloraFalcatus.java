@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -30,25 +29,27 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
+
+	private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraShringasaurus.class, DataSerializers.BOOLEAN);
 	public ChainBuffer chainBuffer;
-
-	private int animationTick;
-	private Animation animation = NO_ANIMATION;
-
-	private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.BOOLEAN);
 
 	public EntityPrehistoricFloraFalcatus(World world) {
 		super(world);
-		setSize(0.2F, 0.25F);
+		//setSize(0.4F, 0.4F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-
+		//minSize = 0.2F;
+		//maxSize = 1.0F;
+		minWidth = 0.1F;
+		maxWidth = 0.2F;
+		maxHeight = 0.25F;
+		maxHealthAgeable = 9.0D;
 	}
 
 	@Override
@@ -65,42 +66,6 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBa
 	}
 
 	@Override
-	public boolean dropsEggs() {
-		return true;
-	}
-
-
-	@Override
-	protected float getAISpeedFish() {
-		float AIspeed = 0.224F;
-		return AIspeed;
-	}
-
-	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
-	}
-	@Override
-	public Animation[] getAnimations() {
-		return null;
-	}
-
-	@Override
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
@@ -112,6 +77,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBa
 		this.setIsFemale(rand.nextInt(2) == 0);
 		return livingdata;
 	}
+
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
@@ -132,15 +98,43 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBa
 	}
 
 	@Override
+	public boolean dropsEggs() {
+		return true;
+	}
+	
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 0;
+	} //Only adults!
+
+	@Override
+	protected float getAISpeedFish() {
+		float AIspeed = 0.324F;
+		if (this.getIsFast()) {
+			AIspeed = AIspeed * 3F;
+		}
+		return AIspeed;
+	}
+
+	@Override
 	protected boolean isBase() {
 		return false;
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
-
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
+		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
+		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 	}
 
 	@Override
@@ -205,6 +199,9 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBa
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
 
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
@@ -213,11 +210,16 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraFishBa
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(ATTACK_ANIMATION);
 			//System.err.println("set attack");
 		}
 		return false;
 	}
 
+	@Override
+	public float getAgeScale() {
+		return 1;
+	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);

@@ -184,6 +184,7 @@ public class ModelFalcatus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.28F);
     }
     public void renderStatic(float f) {
@@ -212,7 +213,7 @@ public class ModelFalcatus extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.tail1, this.tail2, this.tail3};
         float speed = 0.4F;
-        EntityPrehistoricFloraFishBase ee = (EntityPrehistoricFloraFishBase) e;
+        EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (!e.isInWater()) {
             speed = 0.7F;
         }
@@ -234,6 +235,20 @@ public class ModelFalcatus extends AdvancedModelBase {
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }
+    }
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
+        animator.update(entity);
+        this.resetToDefaultPose();
+        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+
+        animator.setAnimation(e.ATTACK_ANIMATION);
+        animator.startKeyframe(5);
+        animator.rotate(this.head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.mouth, (float) Math.toRadians(22.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(4);
+        animator.resetKeyframe(3);
     }
 
 
