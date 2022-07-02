@@ -978,6 +978,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation FOREYIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/foreyia"));
 	public static final int ENTITY_HYBODUS = 398;
 	public static final ResourceLocation HYBODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hybodus"));
+	public static final ResourceLocation HYBODUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hybodus_young"));
 	public static final int ENTITY_LUOXIONGICHTHYS = 399;
 	public static final ResourceLocation LUOXIONGICHTHYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/luoxiongichthys"));
 	public static final int ENTITY_POTANICHTHYS = 400;
@@ -1151,6 +1152,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation LYSOROPHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lysorophus"));
 	public static final int ENTITY_PARHYBODUS = 474;
 	public static final ResourceLocation PARHYBODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parhybodus"));
+	public static final ResourceLocation PARHYBODUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parhybodus_young"));
 	public static final int ENTITY_PROTOZYGOPTERA_NYMPH = 475;
 	public static final int ENTITY_TITANOPTERA_MESOTITAN = 476;
 	public static final ResourceLocation TITANOPTERA_MESOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_mesotitan"));
@@ -1160,6 +1162,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation TITANOPTERA_NYMPH_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/titanoptera_nymph"));
 	public static final int ENTITY_FADENIA_PERMOTRIASSIC = 479;
 	public static final ResourceLocation FADENIA_PERMOTRIASSIC_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/fadenia_permotriassic"));
+	public static final int ENTITY_PALAEONISCUM = 480;
+	public static final ResourceLocation PALAEONISCUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeoniscum"));
+	public static final int ENTITY_LONCHIDION = 481;
+	public static final ResourceLocation LONCHIDION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchidion"));
 
 
 	@Mod.EventHandler
