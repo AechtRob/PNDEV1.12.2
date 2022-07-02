@@ -292,9 +292,9 @@ public class ModelParhybodus extends AdvancedModelBase {
         else {
             this.swing(Hybodus, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(leftFrontFin, (float) (speed * 0.65), 0.2F, false, 0.8F, 0, f2, 0.5F);
+        this.flap(leftFrontFin, (float) (speed * 0.65), 0.4F, false, 0.8F, 0, f2, 0.5F);
         this.swing(leftFrontFin, (float) (speed * 0.65), 0.1F, true, 0, 0, f2, 0.5F);
-        this.flap(rightFrontFin, (float) (speed * 0.65), -0.2F, false, 0.8F, 0, f2, 0.5F);
+        this.flap(rightFrontFin, (float) (speed * 0.65), -0.4F, false, 0.8F, 0, f2, 0.5F);
         this.swing(rightFrontFin, (float) (speed * 0.65), -0.1F, true, 0, 0, f2, 0.5F);
 
         this.flap(leftBackFin, (float) (speed * 0.65), 0.2F, false, 1.8F, 0, f2, 0.5F);
