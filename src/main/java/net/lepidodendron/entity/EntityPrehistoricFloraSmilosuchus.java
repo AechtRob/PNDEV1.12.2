@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 		minWidth = 0.15F;
 		maxWidth = 1.65F;
 		maxHeight = 0.99F;
-		maxHeightLand = 1.76F;
+		maxHeightLand = 1.66F;
 		maxHealthAgeable = 76.0D;
 	}
 

@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.8;
+		return this.getAgeScale() < 0.6;
 	}
 
 	public static String getPeriod() {return "Devonian";}

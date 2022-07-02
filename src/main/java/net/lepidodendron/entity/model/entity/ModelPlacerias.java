@@ -25,12 +25,15 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended neck2_r1;
     private final AdvancedModelRendererExtended head2;
     private final AdvancedModelRendererExtended beak1;
+    private final AdvancedModelRendererExtended beak1_r1;
     private final AdvancedModelRendererExtended beak2;
     private final AdvancedModelRendererExtended beak3;
     private final AdvancedModelRendererExtended beak4;
     private final AdvancedModelRendererExtended tusk1;
+    private final AdvancedModelRendererExtended tusk2_r1;
     private final AdvancedModelRendererExtended fronttusk1;
     private final AdvancedModelRendererExtended tusk2;
+    private final AdvancedModelRendererExtended tusk3_r1;
     private final AdvancedModelRendererExtended fronttusk2;
     private final AdvancedModelRendererExtended jaw1;
     private final AdvancedModelRendererExtended lowerbeak1;
@@ -133,7 +136,13 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         this.beak1.setRotationPoint(0.0F, 0.9F, -6.0F);
         this.head2.addChild(beak1);
         this.setRotateAngle(beak1, -0.0897F, 0.0F, 0.0F);
-        this.beak1.cubeList.add(new ModelBox(beak1, 123, 84, -3.5F, -0.8F, -5.0F, 7, 3, 5, 0.0F, false));
+
+
+        this.beak1_r1 = new AdvancedModelRendererExtended(this);
+        this.beak1_r1.setRotationPoint(0.0F, 2.2F, -5.4F);
+        this.beak1.addChild(beak1_r1);
+        this.setRotateAngle(beak1_r1, -0.1571F, 0.0F, 0.0F);
+        this.beak1_r1.cubeList.add(new ModelBox(beak1_r1, 123, 84, -3.5F, -3.2F, 0.4F, 7, 3, 5, 0.0F, false));
 
         this.beak2 = new AdvancedModelRendererExtended(this);
         this.beak2.setRotationPoint(0.0F, -5.1F, 2.7F);
@@ -154,28 +163,40 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         this.beak4.cubeList.add(new ModelBox(beak4, 15, 67, -3.0F, -1.0F, -4.0F, 6, 4, 4, 0.01F, false));
 
         this.tusk1 = new AdvancedModelRendererExtended(this);
-        this.tusk1.setRotationPoint(3.4F, 0.8F, 1.4F);
+        this.tusk1.setRotationPoint(1.9F, -0.7F, 0.9F);
         this.beak1.addChild(tusk1);
-        this.setRotateAngle(tusk1, 0.2693F, -0.3142F, 0.1796F);
+        this.setRotateAngle(tusk1, -1.0221F, -0.0822F, 2.5756F);
         this.tusk1.cubeList.add(new ModelBox(tusk1, 3, 70, -1.4F, -2.1F, -6.0F, 2, 3, 6, 0.0F, false));
 
+        this.tusk2_r1 = new AdvancedModelRendererExtended(this);
+        this.tusk2_r1.setRotationPoint(-1.2F, 0.7F, -3.2F);
+        this.tusk1.addChild(tusk2_r1);
+        this.setRotateAngle(tusk2_r1, -1.1219F, 0.1321F, -0.1458F);
+        this.tusk2_r1.cubeList.add(new ModelBox(tusk2_r1, 3, 73, 0.2F, -0.7F, -1.0F, 2, 3, 3, -0.01F, false));
+
         this.fronttusk1 = new AdvancedModelRendererExtended(this);
-        this.fronttusk1.setRotationPoint(0.0F, -0.6F, -5.4F);
+        this.fronttusk1.setRotationPoint(-0.7F, -0.4F, -5.1F);
         this.tusk1.addChild(fronttusk1);
-        this.setRotateAngle(fronttusk1, -0.1796F, 0.2244F, 0.0F);
-        this.fronttusk1.cubeList.add(new ModelBox(fronttusk1, 23, 76, -0.5F, -1.0F, -5.0F, 1, 2, 5, 0.0F, false));
+        this.setRotateAngle(fronttusk1, 0.3336F, 0.253F, 0.0157F);
+        this.fronttusk1.cubeList.add(new ModelBox(fronttusk1, 23, 76, -0.3F, -0.9F, -3.1F, 1, 2, 5, 0.0F, false));
 
         this.tusk2 = new AdvancedModelRendererExtended(this);
-        this.tusk2.setRotationPoint(-3.4F, 0.8F, 1.4F);
+        this.tusk2.setRotationPoint(-1.9F, -0.7F, 0.9F);
         this.beak1.addChild(tusk2);
-        this.setRotateAngle(tusk2, 0.2693F, 0.3142F, -0.1796F);
-        this.tusk2.cubeList.add(new ModelBox(tusk2, 3, 70, -0.6F, -2.1F, -6.0F, 2, 3, 6, 0.0F, false));
+        this.setRotateAngle(tusk2, -1.0221F, 0.0822F, -2.5756F);
+        this.tusk2.cubeList.add(new ModelBox(tusk2, 3, 70, -0.6F, -2.1F, -6.0F, 2, 3, 6, 0.0F, true));
+
+        this.tusk3_r1 = new AdvancedModelRendererExtended(this);
+        this.tusk3_r1.setRotationPoint(1.2F, 0.7F, -3.2F);
+        this.tusk2.addChild(tusk3_r1);
+        this.setRotateAngle(tusk3_r1, -1.1219F, -0.1321F, 0.1458F);
+        this.tusk3_r1.cubeList.add(new ModelBox(tusk3_r1, 3, 73, -2.2F, -0.7F, -1.0F, 2, 3, 3, -0.01F, true));
 
         this.fronttusk2 = new AdvancedModelRendererExtended(this);
-        this.fronttusk2.setRotationPoint(0.0F, -0.85F, -5.4F);
+        this.fronttusk2.setRotationPoint(0.7F, -0.4F, -5.1F);
         this.tusk2.addChild(fronttusk2);
-        this.setRotateAngle(fronttusk2, -0.1796F, -0.2244F, 0.0F);
-        this.fronttusk2.cubeList.add(new ModelBox(fronttusk2, 23, 76, -0.5F, -0.75F, -5.0F, 1, 2, 5, 0.0F, false));
+        this.setRotateAngle(fronttusk2, 0.3336F, -0.253F, -0.0157F);
+        this.fronttusk2.cubeList.add(new ModelBox(fronttusk2, 23, 76, -0.7F, -0.9F, -3.1F, 1, 2, 5, 0.0F, true));
 
         this.jaw1 = new AdvancedModelRendererExtended(this);
         this.jaw1.setRotationPoint(0.0F, 2.1F, 1.0F);
@@ -185,7 +206,7 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         this.lowerbeak1 = new AdvancedModelRendererExtended(this);
         this.lowerbeak1.setRotationPoint(0.0F, 2.5F, -5.8F);
         this.jaw1.addChild(lowerbeak1);
-        this.setRotateAngle(lowerbeak1, -0.0897F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerbeak1, -0.0461F, 0.0F, 0.0F);
         this.lowerbeak1.cubeList.add(new ModelBox(lowerbeak1, 130, 75, -3.0F, -1.5F, -5.0F, 6, 3, 5, 0.0F, false));
 
         this.lowerbeak2 = new AdvancedModelRendererExtended(this);
@@ -256,7 +277,6 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         this.tail1.addChild(tail2);
         this.setRotateAngle(tail2, -0.3643F, 0.0F, 0.0F);
         this.tail2.cubeList.add(new ModelBox(tail2, 55, 44, -2.5F, -3.0F, 0.0F, 5, 6, 6, 0.0F, false));
-
 
         updateDefaultPose();
         animator = ModelAnimator.create();

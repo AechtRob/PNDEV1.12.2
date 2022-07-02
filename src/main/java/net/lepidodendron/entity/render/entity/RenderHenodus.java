@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraHenodus;
 import net.lepidodendron.entity.model.entity.ModelHenodus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +12,7 @@ public class RenderHenodus extends RenderLiving<EntityPrehistoricFloraHenodus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
 
     public RenderHenodus(RenderManager mgr) {
-        super(mgr, new ModelHenodus(), 0.0f);
+        super(mgr, new ModelHenodus(), 0.5f);
     }
 
     @Override
@@ -24,70 +25,11 @@ public class RenderHenodus extends RenderLiving<EntityPrehistoricFloraHenodus> {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraHenodus entity, float f) {
+        float scale = entity.getAgeScale();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.41F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

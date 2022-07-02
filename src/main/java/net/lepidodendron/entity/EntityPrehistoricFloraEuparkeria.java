@@ -200,11 +200,6 @@ public class EntityPrehistoricFloraEuparkeria extends EntityPrehistoricFloraLand
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-		if (!world.isRemote) {
-			System.err.println("isFast " + this.getIsFast());
-			System.err.println("revenge target " + this.getRevengeTarget());
-		}
-
 	}
 
 	@Override

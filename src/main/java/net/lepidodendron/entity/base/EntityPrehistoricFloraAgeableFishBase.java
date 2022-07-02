@@ -158,8 +158,8 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         if (this.width <= 0.5) {
             return 10F;
         }
-        float i = Math.min(this.width - 0.5F, 2.5F) - 0.5F; //returns a number from 0 to 2
-        return 10F - (i * 4.5F); //returns a number from 10 to 1
+        float i = Math.min(this.width - 0.5F, 1.5F) - 0.5F; //returns a number from 0 to 1
+        return 10F - (i * 9F); //returns a number from 10 to 1
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

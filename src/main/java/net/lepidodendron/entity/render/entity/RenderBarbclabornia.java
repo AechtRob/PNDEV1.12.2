@@ -10,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarbclabornia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia.png");
-    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/barbclabornia_baby.png");
 
     public RenderBarbclabornia(RenderManager mgr) {
         super(mgr, new ModelBarbclabornia(), 1.0f);
@@ -20,9 +19,6 @@ public class RenderBarbclabornia extends RenderLiving<EntityPrehistoricFloraBarb
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBarbclabornia entity) {
         float scale = entity.getAgeScale();
         //System.err.println("AgeScale: " + scale);
-        if (entity.isSmall()) {
-            return RenderBarbclabornia.TEXTURE_BABY;
-        }
         return RenderBarbclabornia.TEXTURE;
     }
 
