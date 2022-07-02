@@ -1002,6 +1002,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation ERETOMORPHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eretomorphis"));
 	public static final int ENTITY_HENODUS = 409;
 	public static final ResourceLocation HENODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/henodus"));
+	public static final ResourceLocation HENODUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/henodus_young"));
 	public static final int ENTITY_LIMULID = 410;
 	public static final ResourceLocation LIMULID_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/limulid"));
 	public static final int ENTITY_KEICHOUSAURUS = 411;

@@ -464,19 +464,19 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
 
             if (!atBottom) {
 
-                this.setRotateAngle(RArm, 0, (float) Math.toRadians(-50), (float) Math.toRadians(10));
-                this.setRotateAngle(LArm, 0, (float) Math.toRadians(50), (float) Math.toRadians(-10));
-                this.setRotateAngle(RArm2, 0, (float) Math.toRadians(-20), 0);
-                this.setRotateAngle(LArm2, 0, (float) Math.toRadians(20), 0);
-                this.setRotateAngle(RHand, 0.1414F, (float) Math.toRadians(3), -0.0542F);
-                this.setRotateAngle(LHand, 0.1414F, (float) Math.toRadians(-3), 0.0542F);
+                this.setRotateAngle(RArm, 0, (float) Math.toRadians(50), (float) Math.toRadians(10));
+                this.setRotateAngle(LArm, 0, (float) Math.toRadians(-50), (float) Math.toRadians(-10));
+                this.setRotateAngle(RArm2, 0, (float) Math.toRadians(20), 0);
+                this.setRotateAngle(LArm2, 0, (float) Math.toRadians(-20), 0);
+                this.setRotateAngle(RHand, 0.1414F, (float) Math.toRadians(-3), -0.0542F);
+                this.setRotateAngle(LHand, 0.1414F, (float) Math.toRadians(3), 0.0542F);
 
-                this.setRotateAngle(RLeg, (float) Math.toRadians(-2.2535), (float) Math.toRadians(-30.3117), (float) Math.toRadians(18.8722));
-                this.setRotateAngle(LLeg, (float) Math.toRadians(-2.2535), (float) Math.toRadians(30.3117), (float) Math.toRadians(-18.8722));
+                this.setRotateAngle(RLeg, (float) Math.toRadians(2.2535), (float) Math.toRadians(-30.3117), (float) Math.toRadians(18.8722));
+                this.setRotateAngle(LLeg, (float) Math.toRadians(2.2535), (float) Math.toRadians(30.3117), (float) Math.toRadians(-18.8722));
                 this.setRotateAngle(RLeg2, (float) Math.toRadians(0), (float) Math.toRadians(-72.5), (float) Math.toRadians(0));
                 this.setRotateAngle(LLeg2, (float) Math.toRadians(0), (float) Math.toRadians(72.5), (float) Math.toRadians(0));
-                this.setRotateAngle(RFoot, (float) Math.toRadians(9.5576), (float) Math.toRadians(20.0197), (float) Math.toRadians(-22.5273));
-                this.setRotateAngle(LFoot, (float) Math.toRadians(9.5576), (float) Math.toRadians(-20.0197), (float) Math.toRadians(22.5273));
+                this.setRotateAngle(RFoot, (float) Math.toRadians(-9.5576), (float) Math.toRadians(20.0197), (float) Math.toRadians(-22.5273));
+                this.setRotateAngle(LFoot, (float) Math.toRadians(-9.5576), (float) Math.toRadians(-20.0197), (float) Math.toRadians(22.5273));
 
                 AdvancedModelRenderer[] BackL = {this.RLeg2, this.RFoot};
                 AdvancedModelRenderer[] BackR = {this.LLeg2, this.LFoot};

@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 		minWidth = 0.12F;
 		maxWidth = 1.10F;
 		maxHeight = 1.05F;
-		maxHealthAgeable = 84.0D;
+		maxHealthAgeable = 44.0D;
 	}
 
 	@Override

@@ -65,6 +65,11 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 	}
 
 	@Override
+	public boolean hasLargeBurrow() {
+		return true;
+	}
+
+	@Override
 	public int getAttackLength() {
 		return 20;
 	}

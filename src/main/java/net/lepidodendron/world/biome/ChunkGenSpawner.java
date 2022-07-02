@@ -1172,10 +1172,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 if (entity instanceof EntityPrehistoricFloraDiictodon) {
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                     if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest()) ) {
-                                                                        //Spawn a nest and burrow for the:
+                                                                        //Spawn a nest and burrow for it:
                                                                         //Buildburrow:
-                                                                        pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos);
-                                                                        world.setBlockState(pos.down(), BlockNest.block.getDefaultState());
+                                                                        pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
+                                                                        world.setBlockState(pos, BlockNest.block.getDefaultState());
                                                                         TileEntity te = world.getTileEntity(pos);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityCustom) {

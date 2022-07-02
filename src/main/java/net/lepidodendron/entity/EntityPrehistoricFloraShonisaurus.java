@@ -210,7 +210,7 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	protected float getSoundVolume() {
-		return 1.0F + (this.getAgeScale() * 5F);
+		return 1.0F + (this.getAgeScale() * 3F);
 	}
 
 	@Override
