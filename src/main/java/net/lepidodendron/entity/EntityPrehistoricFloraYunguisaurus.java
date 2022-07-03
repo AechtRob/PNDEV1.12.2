@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 		//minSize = 0.1F;
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 1.59F;
-		maxHeight = 2.1F;
-		maxHealthAgeable = 56.0D;
+		maxWidth = 1.29F;
+		maxHeight = 0.6F;
+		maxHealthAgeable = 46.0D;
 	}
 
 	@Override
@@ -233,7 +233,7 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 	}
 
 	public int maxCycleTick() {
-		return 20;
+		return 40;
 	}
 
 	@Override

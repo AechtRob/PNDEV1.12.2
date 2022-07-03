@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraHybodus;
 import net.lepidodendron.entity.EntityPrehistoricFloraParhybodus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
@@ -78,8 +77,8 @@ public class BlockEggsParhybodusPlaceable extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: " + EntityPrehistoricFloraHybodus.getHabitat() + " Carnivorous cartilaginous fish");
-				tooltip.add("Periods: " + EntityPrehistoricFloraHybodus.getPeriod());
+				tooltip.add("Type: " + EntityPrehistoricFloraParhybodus.getHabitat() + " Carnivorous cartilaginous fish");
+				tooltip.add("Periods: " + EntityPrehistoricFloraParhybodus.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}
