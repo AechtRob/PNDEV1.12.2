@@ -370,9 +370,9 @@ public class ModelYunguisaurus extends AdvancedModelBase {
         System.err.println("angleA " + angleA);
 
         //for regular animation
-        if (e.isInWater()) {
-            this.chainWave(tailArr, speed * still, 0.03F * still, -0.2, f2, 0.8F * still);
-            this.chainSwing(tailArr, speed * still, 0.48F * still, -3, f2, 0.5F * still);
+        if (ee.isInWater()) {
+            this.chainWave(tailArr, 0.1F, 0.03F, 0, f2, 0.5F);
+            this.chainSwing(tailArr, 0.1F, 0.4F, 0, f2, 0.5F);
 
             this.swing(Yunguisaurus, speed, 0.1F * still, true, 2, 0, f2, 0.5F);
 

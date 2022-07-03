@@ -3107,5 +3107,14 @@ public class LepidodendronSorter {
     public static final int eggs_parhybodus = 3102;
     public static final int eggs_cobelodus_worldgen = 3103;
     public static final int eggs_cobelodus = 3104;
+    public static final int nipponomaria_item = 3105;
+    public static final int eggs_lonchidion = 3106;
+    public static final int eggs_lonchidion_worldgen = 3107;
+    public static final int lonchidion_raw = 3108;
+    public static final int lonchidion_cooked = 3109;
+    public static final int lochmanolenellus_raw = 3110;
+    public static final int lochmanolenellus_cooked = 3111;
+    public static final int spiniplatyceras_item = 3112;
+    public static final int land_snail_item = 3113;
 
 }

@@ -264,9 +264,9 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.SAIVODUS_LOOT_YOUNG;
+			return LepidodendronMod.YUNGUISAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.SAIVODUS_LOOT;
+		return LepidodendronMod.YUNGUISAURUS_LOOT;
 	}
 
 }
