@@ -3,7 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraLandSnail;
-import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
+import net.lepidodendron.entity.EntityPrehistoricFloraSpiniplatyceras;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -69,7 +69,7 @@ public class ModelLandSnail extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //this.body.render(f5 * 0.2F);
-        Snail.render(f5 * 0.7F);
+        Snail.render(f5 * 0.5F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -81,9 +81,15 @@ public class ModelLandSnail extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Snail.offsetY = 0.4F;
+        this.Snail.offsetY = 0.75F;
 
         EntityPrehistoricFloraLandSnail ee = (EntityPrehistoricFloraLandSnail) e;
+
+        this.foot.scaleChildren = true;
+        float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
+        this.foot.setScaleZ(scaler);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        this.foot.setScaleX(scaler2 * 0.7F);
 
 
 

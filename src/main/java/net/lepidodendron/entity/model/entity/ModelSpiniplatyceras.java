@@ -414,15 +414,15 @@ public class ModelSpiniplatyceras extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.snail.offsetY = 1F;
+        this.snail.offsetY = 1.15F;
 
         EntityPrehistoricFloraSpiniplatyceras ee = (EntityPrehistoricFloraSpiniplatyceras) e;
 
         this.foot.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
         this.foot.setScaleZ(scaler);
-        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
-        this.foot.setScaleX(scaler2 * 0.85F);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.2F);
+        this.foot.setScaleX(scaler2 * 0.9F);
 
         this.swing(lefteyestalk, 0.22F, 0.15F, false, 0, 0.15F, f2, 0.8F);
         this.swing(righteyestalk, 0.22F, 0.15F, true, 0, 0.15F, f2, 0.8F);

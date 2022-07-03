@@ -1169,8 +1169,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_LONCHIDION = 481;
 	public static final ResourceLocation LONCHIDION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchidion"));
 	public static final int ENTITY_NIPPONOMARIA = 482;
-	public static final int ENTITY_SPINIPLATYCERAS = 482;
-	public static final int ENTITY_LAND_SNAIL = 482;
+	public static final int ENTITY_SPINIPLATYCERAS = 483;
+	public static final int ENTITY_snail_land_ = 484;
 
 
 	@Mod.EventHandler

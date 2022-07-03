@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
+import net.lepidodendron.entity.EntityPrehistoricFloraSpiniplatyceras;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -64,7 +64,7 @@ public class ItemSpiniplatyceras extends ElementsLepidodendronMod.ModElement {
 			if (!worldIn.isRemote)
 			{
 				//Place it here:
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraNipponomaria.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
+				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraSpiniplatyceras.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
 				return true;
 			}
 			return false;
@@ -117,7 +117,7 @@ public class ItemSpiniplatyceras extends ElementsLepidodendronMod.ModElement {
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Aquatic gastropod");
-				tooltip.add("Periods: Permian");
+				tooltip.add("Periods: Devonian");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

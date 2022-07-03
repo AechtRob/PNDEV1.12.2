@@ -3115,6 +3115,6 @@ public class LepidodendronSorter {
     public static final int lochmanolenellus_raw = 3110;
     public static final int lochmanolenellus_cooked = 3111;
     public static final int spiniplatyceras_item = 3112;
-    public static final int land_snail_item = 3113;
+    public static final int snail_land_item = 3113;
 
 }

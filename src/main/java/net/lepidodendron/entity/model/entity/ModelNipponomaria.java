@@ -103,14 +103,14 @@ public class ModelNipponomaria extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.main.offsetY = 0.75F;
+        this.main.offsetY = 0.83F;
 
         EntityPrehistoricFloraNipponomaria ee = (EntityPrehistoricFloraNipponomaria) e;
 
         this.foot.scaleChildren = true;
         float scaler = ((float)(((double)ee.getSlitherStage())/10D) * 0.1F) + 1F;
         this.foot.setScaleZ(scaler);
-        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.1F);
+        float scaler2 = 2F - (float)((((double)ee.getSlitherStage())/10D) * 0.3F);
         this.foot.setScaleX(scaler2 * 0.85F);
 
         this.swing(lefteyestalk, 0.22F, 0.15F, false, 0, 0.15F, f2, 0.8F);

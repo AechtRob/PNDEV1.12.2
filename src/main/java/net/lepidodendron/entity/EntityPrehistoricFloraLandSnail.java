@@ -8,6 +8,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.lepidodendron.item.entities.ItemLandSnail;
 import net.lepidodendron.item.entities.ItemSpiniplatyceras;
 import net.minecraft.block.Block;
@@ -34,7 +35,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandSlitheringBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)

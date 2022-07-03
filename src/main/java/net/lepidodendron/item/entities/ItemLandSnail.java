@@ -5,8 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
+import net.lepidodendron.entity.EntityPrehistoricFloraLandSnail;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandSlitheringBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityList;
@@ -30,11 +31,11 @@ import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:land_snail_item")
+	@GameRegistry.ObjectHolder("lepidodendron:snail_land_item")
 	public static final Item block = null;
 
 	public ItemLandSnail(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.land_snail_item);
+		super(instance, LepidodendronSorter.snail_land_item);
 	}
 
 	@Override
@@ -45,13 +46,13 @@ public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/land_snail_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/snail_land_item", "inventory"));
 	}
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setTranslationKey("pf_land_snail_item");
-			setRegistryName("land_snail_item");
+			setTranslationKey("pf_snail_land_item");
+			setRegistryName("snail_land_item");
 			maxStackSize = 1;
 			setCreativeTab(TabLepidodendronMobile.tab);
 		}
@@ -64,7 +65,7 @@ public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
 			if (!worldIn.isRemote)
 			{
 				//Place it here:
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraNipponomaria.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
+				EntityPrehistoricFloraLandSlitheringBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraLandSnail.class).toString(), "", (double) target.getX() + 0.5D, (double) target.getY(), (double) target.getZ() + 0.5D);
 				return true;
 			}
 			return false;
@@ -116,8 +117,8 @@ public class ItemLandSnail extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Aquatic gastropod");
-				tooltip.add("Periods: Permian");
+				tooltip.add("Type: Terrestrial Gastropod");
+				tooltip.add("Periods: Carboniferous");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

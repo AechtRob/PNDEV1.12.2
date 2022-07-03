@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
-import net.lepidodendron.item.entities.ItemNipponomaria;
 import net.lepidodendron.item.entities.ItemSpiniplatyceras;
 import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;
