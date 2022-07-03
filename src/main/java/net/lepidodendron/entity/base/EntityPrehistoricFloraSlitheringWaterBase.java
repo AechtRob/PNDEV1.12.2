@@ -87,7 +87,19 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		return false;
 	}
 
-	public EntityPrehistoricFloraSlitheringWaterBase(World world) {super(world);}
+	public EntityPrehistoricFloraSlitheringWaterBase(World world) {
+		super(world);
+		experienceValue = 0;
+		this.isImmuneToFire = false;
+		this.slitherTickCycle = 20;
+		setNoAI(!true);
+		enablePersistence();
+		this.moveHelper = new EntityPrehistoricFloraSlitheringWaterBase.WanderMoveHelper();
+		this.navigator = new PathNavigateWaterBottomNoJump(this, world);
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			this.chainBuffer = new ChainBuffer();
+		}
+	}
 
 	public EntityPrehistoricFloraSlitheringWaterBase(World world, int slitherTickCycle) {
 		super(world);

@@ -16,6 +16,21 @@ public abstract class EntityPrehistoricFloraLandSlitheringBase extends EntityPre
 
     public EntityPrehistoricFloraLandSlitheringBase(World world) {
         super(world);
+        if (this.isSwimmingInWater() && this.canSwim()) {
+            this.moveHelper = new EntityPrehistoricFloraLandSlitheringBase.SwimmingMoveHelper();
+            this.navigator = new PathNavigateSwimmerTopLayer(this, world);
+        }
+        else if ((!this.isSwimmingInWater()) || (!this.canSwim())) {
+            this.moveHelper = new EntityPrehistoricFloraLandSlitheringBase.WanderMoveHelper();
+            this.navigator = new PathNavigateGroundNoWater(this, world);
+        }
+        if (FMLCommonHandler.instance().getSide().isClient()) {
+            this.chainBuffer = new ChainBuffer();
+        }
+        EAT_ANIMATION = Animation.create(this.getEatLength());
+        DRINK_ANIMATION = Animation.create(this.getDrinkLength());
+
+        this.slitherTickCycle = 20;
     }
 
     public EntityPrehistoricFloraLandSlitheringBase(World world, int slitherTickCycle) {
