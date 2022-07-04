@@ -20,10 +20,11 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
 
     public static final PropertyDirection FACING = BlockDirectional.FACING;
     private final ModelRottenLogEggs rotten_wood_eggs;
+    private static final ResourceLocation TEXTURE_CASINERIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
+    private static final ResourceLocation TEXTURE_DREPANOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_HYLONOMUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
     private static final ResourceLocation TEXTURE_SCLEROMOCHLUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scleromochlus_eggs.png");
     private static final ResourceLocation TEXTURE_LABIDOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
-    private static final ResourceLocation TEXTURE_CASINERIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
     private final ModelInsectEggs insect_eggs;
     private static final ResourceLocation TEXTURE_EOARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_eoarthropleura.png");
@@ -82,7 +83,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_casineria")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_casineria")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_CASINERIA_EGGS);
@@ -90,7 +91,15 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_scleromochlus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_drepanosaurus")) {
+                    GlStateManager.pushMatrix();
+                    GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                    Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DREPANOSAURUS_EGGS);
+                    this.rotten_wood_eggs.renderAll(0.075F);
+                    GlStateManager.popMatrix();
+                }
+
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_scleromochlus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_SCLEROMOCHLUS_EGGS);
@@ -98,7 +107,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_labidosaurus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_labidosaurus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_LABIDOSAURUS_EGGS);
@@ -106,7 +115,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_weigeltisaurus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_weigeltisaurus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_WEIGELTISAURUS_EGGS);
@@ -114,7 +123,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TRIGONOTARBID_EGGS_ORDOVICIAN_SILURIAN);
@@ -122,7 +131,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TRIGONOTARBID_EGGS_CARBONIFEROUS);
@@ -130,7 +139,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_dev")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TRIGONOTARBID_EGGS_DEVONIAN);
@@ -138,7 +147,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TRIGONOTARBID_EGGS_PERMIAN);
@@ -146,7 +155,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_eoarthropleura")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_eoarthropleura")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EOARTHROPLEURA_EGGS);
@@ -154,7 +163,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_pneumodesmus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_pneumodesmus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_PNEUMODESMUS_EGGS);
@@ -162,7 +171,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_attercopus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_attercopus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_ATTERCOPUS_EGGS);
@@ -170,7 +179,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_archoblattina")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_archoblattina")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_ARCHOBLATTINA_EGGS);
@@ -178,7 +187,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_arid")
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_arid")
                         || eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_forest")
                         || eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp")) {
                     GlStateManager.pushMatrix();
@@ -188,7 +197,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_gerarus")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_gerarus")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_GERARUS_EGGS);
@@ -196,7 +205,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_harvestman")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_harvestman")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_HARVESTMAN_EGGS);
@@ -204,7 +213,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_palaeontinid")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_palaeontinid")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_PALAEONTINID_EGGS);
@@ -212,7 +221,7 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.popMatrix();
                 }
 
-                if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_titanoptera")) {
+                else if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_titanoptera")) {
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TITANOPTERA_EGGS);

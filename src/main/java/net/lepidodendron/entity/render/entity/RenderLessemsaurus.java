@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraLessemsaurus;
 import net.lepidodendron.entity.model.entity.ModelLessemsaurus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +12,7 @@ public class RenderLessemsaurus extends RenderLiving<EntityPrehistoricFloraLesse
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lessemsaurus.png");
 
     public RenderLessemsaurus(RenderManager mgr) {
-        super(mgr, new ModelLessemsaurus(), 0.0f);
+        super(mgr, new ModelLessemsaurus(), 0.5f);
     }
 
     @Override
@@ -24,44 +25,11 @@ public class RenderLessemsaurus extends RenderLiving<EntityPrehistoricFloraLesse
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraLessemsaurus entity, float f) {
+        float scale = entity.getAgeScale();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 1.0F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
