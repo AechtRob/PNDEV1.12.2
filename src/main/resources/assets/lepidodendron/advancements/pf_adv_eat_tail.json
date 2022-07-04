@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:captorhinus_tail"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_eat_tail.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_eat_tail.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_eat_tail"
+		}
+	}
+}
