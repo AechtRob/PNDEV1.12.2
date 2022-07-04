@@ -1021,6 +1021,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation TRIADOBATRACHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triadobatrachus"));
 	public static final int ENTITY_YUNGUISAURUS = 418;
 	public static final ResourceLocation YUNGUISAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yunguisaurus"));
+	public static final ResourceLocation YUNGUISAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yunguisaurus_young"));
 	public static final int ENTITY_ARIZONASAURUS = 419;
 	public static final ResourceLocation ARIZONASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/arizonasaurus"));
 	public static final ResourceLocation ARIZONASAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/arizonasaurus_young"));
@@ -1167,6 +1168,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation PALAEONISCUM_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/palaeoniscum"));
 	public static final int ENTITY_LONCHIDION = 481;
 	public static final ResourceLocation LONCHIDION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchidion"));
+	public static final int ENTITY_NIPPONOMARIA = 482;
+	public static final int ENTITY_SPINIPLATYCERAS = 483;
+	public static final int ENTITY_snail_land_ = 484;
 
 
 	@Mod.EventHandler

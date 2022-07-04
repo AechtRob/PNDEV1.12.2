@@ -481,6 +481,11 @@ public class ModTriggers
     public static final CustomTrigger CLICK_BRACHYDECTES = new CustomTrigger("pf_book_brachydectes");
     public static final CustomTrigger CLICK_LYSOROPHUS = new CustomTrigger("pf_book_lysorophus");
     public static final CustomTrigger CLICK_PARHYBODUS = new CustomTrigger("pf_book_parhybodus");
+    public static final CustomTrigger CLICK_SNAIL_LAND = new CustomTrigger("pf_book_snail_land");
+    public static final CustomTrigger CLICK_LONCHIDION = new CustomTrigger("pf_book_lonchidion");
+    public static final CustomTrigger CLICK_PALAEONISCUM = new CustomTrigger("pf_book_palaeoniscum");
+    public static final CustomTrigger CLICK_SPINIPLATYCERAS = new CustomTrigger("pf_book_spiniplatyceras");
+    public static final CustomTrigger CLICK_NIPPONOMARIA = new CustomTrigger("pf_book_nipponomaria");
 
 
 
@@ -959,7 +964,12 @@ public class ModTriggers
             CLICK_NAGINI,
             CLICK_BRACHYDECTES,
             CLICK_LYSOROPHUS,
-            CLICK_PARHYBODUS
+            CLICK_PARHYBODUS,
+            CLICK_LONCHIDION,
+            CLICK_SNAIL_LAND,
+            CLICK_PALAEONISCUM,
+            CLICK_SPINIPLATYCERAS,
+            CLICK_NIPPONOMARIA
 
     };
 

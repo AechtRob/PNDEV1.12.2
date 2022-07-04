@@ -497,6 +497,10 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_titanoptera_clatrotitan", EntityPrehistoricFloraTitanopteraClatrotitan.class, LepidodendronMod.ENTITY_TITANOPTERA_CLATROTITAN, 82,0,0);
         registerEntity("prehistoric_flora_titanoptera_nymph", EntityPrehistoricFloraTitanopteraNymph.class, LepidodendronMod.ENTITY_TITANOPTERA_NYMPH, 82,0, 0);
         registerEntity("prehistoric_flora_fadenia_permotriassic", EntityPrehistoricFloraFadeniaPermotriassic.class, LepidodendronMod.ENTITY_FADENIA_PERMOTRIASSIC, 82,0,0);
+        registerEntity("prehistoric_flora_lonchidion", EntityPrehistoricFloraLonchidion.class, LepidodendronMod.ENTITY_LONCHIDION, 82,0,0);
+        registerEntity("prehistoric_flora_nipponomaria", EntityPrehistoricFloraNipponomaria.class, LepidodendronMod.ENTITY_NIPPONOMARIA, 82,0,0);
+        registerEntity("prehistoric_flora_snail_land_", EntityPrehistoricFloraLandSnail.class, LepidodendronMod.ENTITY_snail_land_, 82,0,0);
+        registerEntity("prehistoric_flora_spiniplatyceras", EntityPrehistoricFloraSpiniplatyceras.class, LepidodendronMod.ENTITY_SPINIPLATYCERAS, 82,0,0);
 
     }
 

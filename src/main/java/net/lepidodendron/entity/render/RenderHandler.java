@@ -2925,6 +2925,30 @@ public class RenderHandler {
                 return new RenderTitanopteraNymph(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLonchidion.class, new IRenderFactory<EntityPrehistoricFloraLonchidion>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLonchidion> createRenderFor(RenderManager manager) {
+                return new RenderLonchidion(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSpiniplatyceras.class, new IRenderFactory<EntityPrehistoricFloraSpiniplatyceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSpiniplatyceras> createRenderFor(RenderManager manager) {
+                return new RenderSpiniplatyceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLandSnail.class, new IRenderFactory<EntityPrehistoricFloraLandSnail>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLandSnail> createRenderFor(RenderManager manager) {
+                return new RenderLandSnail(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNipponomaria.class, new IRenderFactory<EntityPrehistoricFloraNipponomaria>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNipponomaria> createRenderFor(RenderManager manager) {
+                return new RenderNipponomaria(manager);
+            }
+        });
 
 
 
