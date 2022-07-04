@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Nagini",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "paleopedia:carboniferous/carboniferous_icon/nagini_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_nagini",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_nagini",
+			"title": "Nagini",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Lysorophia$(br)>Molgophidae"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
-			"title": "",
+			"images": ["paleopedia:carboniferous/nagini.png"],
+			"title": "N. mazonense",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_nagini",
 			"type": "text",
-			"text": ""
+			"text": "Nagini is a genus of lysorophian amphibian from the Carboniferous period. This elongated amphibian is notable due to its complete lack of front limbs, and no traces of its arms remains."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_nagini",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }
