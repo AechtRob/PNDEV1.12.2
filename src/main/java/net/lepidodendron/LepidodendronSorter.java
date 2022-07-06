@@ -3124,5 +3124,6 @@ public class LepidodendronSorter {
     public static final int montecaris_cooked = 3119;
     public static final int willwerathia_raw = 3120;
     public static final int willwerathia_cooked = 3121;
+    public static final int captorhinus_tail = 3122;
 
 }
