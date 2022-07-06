@@ -4100,6 +4100,109 @@
         "stream": false
       }
     ]
+  },
+  
+  
+  "hypsognathus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsognathus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsognathus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:hypsognathus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "hypsognathus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:hypsognathus_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "lessemsaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lessemsaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_living08",
+        "stream": false
+      }
+    ]
+  },
+  "lessemsaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lessemsaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "lessemsaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lessemsaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "lessemsaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:lessemsaurus_threat01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_threat02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:lessemsaurus_threat03",
+        "stream": false
+      }
+    ]
   }
   
   

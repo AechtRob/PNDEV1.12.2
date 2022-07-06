@@ -399,8 +399,8 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
 
                 this.bobExtended(bodyback, speed * 2F, 1.0F, false, 2.5F, f2, 1F);
 
-                this.flap(bodyback, speed, 0.8F, false, 5.0F, 0.06F, f2, 1.0F);
-                this.flap(body, speed, -0.8F, false, 5.0F, -0.06F, f2, 1.0F);
+                this.flap(bodyback, speed, 0.08F, false, 5.0F, 0.06F, f2, 1.0F);
+                this.flap(body, speed, -0.08F, false, 5.0F, -0.06F, f2, 1.0F);
                 this.flap(bodyfront, speed, -0.045F, false, 5.0F, -0.04F, f2, 1.0F);
                 this.flap(neck, speed, 0.09F, false, 5.0F, 0.04F, f2, 1.0F);
 
