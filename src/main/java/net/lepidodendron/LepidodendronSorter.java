@@ -3118,5 +3118,13 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 3114;
     public static final int zosterophyllum = 3115;
     public static final int zosterophyllum_spore = 3116;
+    public static final int tyrannophontes_raw = 3117;
+    public static final int tyrannophontes_cooked = 3118;
+    public static final int montecaris_raw = 3119;
+    public static final int montecaris_cooked = 3120;
+    public static final int willwerathia_raw = 3121;
+    public static final int willwerathia_cooked = 3122;
+    public static final int syllipsimopodi_raw = 3123;
+    public static final int syllipsimopodi_cooked = 3124;
 
 }
