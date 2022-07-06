@@ -96,7 +96,6 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:phial_eggs_pholiderpeton", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_acanthostomatops", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_kaibabvenator", "inventory"),
-				new ModelResourceLocation("lepidodendron:phial_eggs_kaibabvenator", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_saivodus", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_parhybodus", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_hybodus", "inventory"),
@@ -122,7 +121,8 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:phial_eggs_lebachacanthus", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_orodus", "inventory"),
 				new ModelResourceLocation("lepidodendron:phial_eggs_protozygoptera", "inventory"),
-				new ModelResourceLocation("lepidodendron:phial_eggs_palaeontinid", "inventory")
+				new ModelResourceLocation("lepidodendron:phial_eggs_palaeontinid", "inventory"),
+				new ModelResourceLocation("lepidodendron:phial_eggs_lonchidion", "inventory")
 
 			);
 

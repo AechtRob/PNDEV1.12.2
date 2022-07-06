@@ -3116,5 +3116,13 @@ public class LepidodendronSorter {
     public static final int lochmanolenellus_cooked = 3111;
     public static final int spiniplatyceras_item = 3112;
     public static final int snail_land_item = 3113;
+    public static final int syllipsimopodi_raw = 3114;
+    public static final int syllipsimopodi_cooked = 3115;
+    public static final int tyrannophontes_raw = 3116;
+    public static final int tyrannophontes_cooked = 3117;
+    public static final int montecaris_raw = 3118;
+    public static final int montecaris_cooked = 3119;
+    public static final int willwerathia_raw = 3120;
+    public static final int willwerathia_cooked = 3121;
 
 }
