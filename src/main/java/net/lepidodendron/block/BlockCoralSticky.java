@@ -168,17 +168,5 @@ public class BlockCoralSticky extends ElementsLepidodendronMod.ModElement {
 			return BlockFaceShape.SOLID;
 		}
 
-		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-			if (Math.abs(entityIn.motionY) < 0.1D && entityIn.posY <= (double)entityIn.getPosition().getY()+0.1) {
-				if (entityIn instanceof EntityPlayer &&  !entityIn.isSneaking()) {
-					if (!((EntityPlayer) entityIn).capabilities.isCreativeMode) {
-						entityIn.setInWeb();
-					}
-				} else if (entityIn instanceof EntityLivingBase) {
-					entityIn.setInWeb();
-				}
-			}
-		}
-
 	}
 }

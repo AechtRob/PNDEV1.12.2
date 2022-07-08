@@ -187,7 +187,7 @@ public class LepidodendronConfig {
     public static int spreadPlants = 70;
     public static boolean showTooltips = true;
     public static boolean doPropagation = true;
-    public static boolean doPropagationVanilla = true;
+    public static boolean doPropagationVanilla = false;
     public static boolean genAllPlants = false;
     public static String[] genTransformBiomes = new String[0];
     public static boolean genTransformBiomesTrees = false;
@@ -1950,12 +1950,12 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doPropagation", doPropagation);
-        prop.setComment("Use modded propagation methods instead of vanilla shearing and sapling-drops, etc., for Prehistoric Nature plants [default: true]");
+        prop.setComment("Use modded harvesting and propagation methods instead of vanilla shearing and sapling-drops, etc., for Prehistoric Nature plants [default: true]");
         doPropagation = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "doPropagationVanilla", doPropagationVanilla);
-        prop.setComment("Use modded propagation methods instead of vanilla shearing and sapling-drops, etc., for vanilla plants [default: true]");
+        prop.setComment("Use modded harvesting and propagation methods instead of vanilla shearing and sapling-drops, etc., for vanilla plants [default: false]");
         doPropagationVanilla = prop.getBoolean();
         propOrder.add(prop.getName());
 

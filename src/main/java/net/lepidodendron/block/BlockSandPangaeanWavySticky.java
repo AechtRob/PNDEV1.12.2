@@ -111,17 +111,6 @@ public class BlockSandPangaeanWavySticky extends ElementsLepidodendronMod.ModEle
 			return new ItemStack(BlockSandPangaeanWavy.block, (int) (1), 0);
 		}
 
-		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-			if (Math.abs(entityIn.motionY) < 0.1D && entityIn.posY <= (double)entityIn.getPosition().getY()+0.1) {
-				if (entityIn instanceof EntityPlayer &&  !entityIn.isSneaking()) {
-					if (!((EntityPlayer) entityIn).capabilities.isCreativeMode) {
-						entityIn.setInWeb();
-					}
-				} else if (entityIn instanceof EntityLivingBase) {
-					entityIn.setInWeb();
-				}
-			}
-		}
 	    
 	}
 }

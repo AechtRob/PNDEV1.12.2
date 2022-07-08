@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemMedullosalesSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -23,7 +22,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +33,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 
@@ -200,34 +197,6 @@ public class BlockMedullosalesShootPlaceable extends ElementsLepidodendronMod.Mo
 	    public boolean canBeReplacedByLeaves(IBlockState state, IBlockAccess world, BlockPos pos)
 	    {
 	        return true;
-	    }
-
-	    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
-        if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-	        {
-	            return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-	        }
-	        else {
-	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					if (Math.random() > 0.5) {
-						ItemStack stackSeed = new ItemStack(ItemMedullosalesSeeds.block, (int) (1));
-						stackSeed.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-						}
-						return true;
-					}
-					else {
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-		    				return true;
-						}
-					}		
-				}
-	        	return true;
-	        }
 	    }
 
 	}

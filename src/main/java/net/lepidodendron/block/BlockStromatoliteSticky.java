@@ -75,18 +75,6 @@ public class BlockStromatoliteSticky extends ElementsLepidodendronMod.ModElement
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(TOPSHOOT, false));
 		}
 
-		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-			if (Math.abs(entityIn.motionY) < 0.1D && entityIn.posY <= (double)entityIn.getPosition().getY()+0.1) {
-				if (entityIn instanceof EntityPlayer &&  !entityIn.isSneaking()) {
-					if (!((EntityPlayer) entityIn).capabilities.isCreativeMode) {
-						entityIn.setInWeb();
-					}
-				} else if (entityIn instanceof EntityLivingBase) {
-					entityIn.setInWeb();
-				}
-			}
-		}
-		
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			drops.add(new ItemStack(Blocks.GRAVEL, (int) (1)));

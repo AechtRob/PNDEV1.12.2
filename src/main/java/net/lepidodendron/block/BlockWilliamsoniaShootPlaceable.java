@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -58,7 +59,7 @@ public class BlockWilliamsoniaShootPlaceable extends ElementsLepidodendronMod.Mo
 				new ModelResourceLocation("lepidodendron:williamsonia_shoot", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_williamsonia_shoot");
@@ -227,5 +228,14 @@ public class BlockWilliamsoniaShootPlaceable extends ElementsLepidodendronMod.Mo
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockWilliamsoniaSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

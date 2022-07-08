@@ -4,8 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemDicroidiumSeeds;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
@@ -16,7 +16,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -31,7 +30,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockDicroidiumLeavesPlaceable extends ElementsLepidodendronMod.ModElement {
@@ -54,7 +52,7 @@ public class BlockDicroidiumLeavesPlaceable extends ElementsLepidodendronMod.Mod
 				new ModelResourceLocation("lepidodendron:dicroidium_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			//super(Material.PLANTS);
@@ -570,33 +568,14 @@ public class BlockDicroidiumLeavesPlaceable extends ElementsLepidodendronMod.Mod
 	        return true;
 	    }
 
-	    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
-        if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-	        {
-	            return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-	        }
-	        else {
-	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					if (Math.random() > 0.5) {
-						ItemStack stackSeed = new ItemStack(ItemDicroidiumSeeds.block, (int) (1));
-						stackSeed.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-						}
-						return true;
-					}
-					else {
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-		    				return true;
-						}
-					}	
-				}
-	        	return true;
-	        }
-	    }
+		@Override
+		public Block planted() {
+			return BlockDicroidiumSapling.block;
+		}
 
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

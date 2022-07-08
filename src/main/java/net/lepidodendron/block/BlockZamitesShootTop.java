@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -55,7 +56,7 @@ public class BlockZamitesShootTop extends ElementsLepidodendronMod.ModElement {
 		//		new ModelResourceLocation("lepidodendron:zamites_shoot_top", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_zamites_shoot_top");
@@ -214,5 +215,14 @@ public class BlockZamitesShootTop extends ElementsLepidodendronMod.ModElement {
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockZamitesSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.item.ItemRufloriaFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -246,6 +247,5 @@ public class BlockRufloriaShoot extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return true;
 	    }
-
 	}
 }

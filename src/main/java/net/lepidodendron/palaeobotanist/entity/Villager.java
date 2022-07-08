@@ -50,7 +50,7 @@ public class Villager {
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemCollectionEnvelope.block, new EntityVillager.PriceInfo(1, 1)));
 
-        palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.TIME_REVERSAL, new EntityVillager.PriceInfo(24, 24)));
+        palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.TIME_REVERSAL, new EntityVillager.PriceInfo(16, 16)));
 
         MapGenStructureIO.registerStructureComponent(VillageComponentPalaeobotanistHouse.class, "palaeobotanisthouse");
         VillagerRegistry.instance().registerVillageCreationHandler(new PalaeobotanistHouse());

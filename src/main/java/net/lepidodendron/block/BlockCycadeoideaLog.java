@@ -4,8 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemCycadeoideaSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -17,14 +17,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -34,7 +32,6 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -59,7 +56,7 @@ public class BlockCycadeoideaLog extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:cycadeoidea_log", "inventory"));
 
 	}
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends SeedSporeBlockBase {
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
     public static final PropertyBool EAST = PropertyBool.create("east");
@@ -234,35 +231,15 @@ public class BlockCycadeoideaLog extends ElementsLepidodendronMod.ModElement {
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
 			return BlockFaceShape.UNDEFINED;
 		}
+		@Override
+		public Block planted() {
+			return BlockCycadeoideaSapling.block;
+		}
 
-		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
-        if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-	        {
-	            return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-	        }
-	        else {
-	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					if (Math.random() > 0.5) {
-						ItemStack stackSeed = new ItemStack(ItemCycadeoideaSeeds.block, (int) (1));
-						stackSeed.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-						}
-						return true;
-					}
-					else {
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-		    				return true;
-						}
-					}
-				}
-	        	return true;
-	        }
-	    }
-
-    }
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+	}
 
 }

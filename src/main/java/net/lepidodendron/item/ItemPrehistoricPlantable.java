@@ -4,8 +4,10 @@ package net.lepidodendron.item;
 import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -48,12 +50,12 @@ public class ItemPrehistoricPlantable extends Item {
 		//Get the block clicked on:
 		if (this.plantBlock != null) {
 			if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(this.offsetY))
-				&& isPrehistoricGround(worldIn.getBlockState(pos).getBlock())
+				&& (isPrehistoricGround(worldIn.getBlockState(pos).getBlock()) || isPlantableGround(worldIn, pos))
 				&& this.plantBlock.canPlaceBlockAt(worldIn, pos.up(this.offsetY))
 			) {
 				//We can plant this here!
 				ItemStack itemstack = player.getHeldItem(hand);
-				SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+				SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 				player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				itemstack.shrink(1);
 				worldIn.setBlockState(pos.up(this.offsetY), this.plantBlock.getDefaultState());
@@ -62,6 +64,12 @@ public class ItemPrehistoricPlantable extends Item {
 			}
 		}
 		return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+	}
+
+	public boolean isPlantableGround(World world, BlockPos pos) {
+		return (Blocks.SAPLING.canPlaceBlockOnSide(world, pos.up(), EnumFacing.UP)
+			|| (world.getBlockState(pos).getMaterial() == Material.SAND
+				&& world.getBlockState(pos).getBlock().isFullCube(world.getBlockState(pos))));
 	}
 
 	public boolean isPrehistoricGround(Block blockGround) {

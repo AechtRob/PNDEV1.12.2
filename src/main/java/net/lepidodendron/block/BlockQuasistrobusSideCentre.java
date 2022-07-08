@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
@@ -57,7 +58,7 @@ public class BlockQuasistrobusSideCentre extends ElementsLepidodendronMod.ModEle
 	
 	public static final PropertyInteger SIDE = PropertyInteger.create("side", 0, 7);
 	
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_quasistrobus_side_centre");
@@ -249,5 +250,14 @@ public class BlockQuasistrobusSideCentre extends ElementsLepidodendronMod.ModEle
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockQuasistrobus.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

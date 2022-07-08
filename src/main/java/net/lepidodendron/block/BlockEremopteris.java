@@ -5,13 +5,12 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemEremopterisSeeds;
 import net.lepidodendron.item.ItemTrowel;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -28,7 +27,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -46,7 +44,6 @@ import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -183,7 +180,7 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			}).generate(world, random, new BlockPos(l6, i11, l14));
 		}
 	}
-	public static class BlockCustomFlower extends BlockReed {
+	public static class BlockCustomFlower extends SeedSporeReedBase {
 
 		public static final PropertyBool BASE = PropertyBool.create("base");
 		public static final PropertyBool LOWER = PropertyBool.create("lower");
@@ -349,34 +346,20 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			super.onBlockAdded(world, pos, state);
 	    }
 
-		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-		{
-			if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-			{
-				return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-			}
-			else {
-				if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					if (Math.random() > 0.5) {
-						ItemStack stackSeed = new ItemStack(ItemEremopterisSeeds.block, (int) (1));
-						stackSeed.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-						}
-						return true;
-					}
-					else {
-						if (Math.random() > 0.75) {
-							world.destroyBlock(pos, false);
-							return true;
-						}
-					}
-				}
-				return true;
-			}
+		@Override
+		public Block planted() {
+			return BlockEremopteris.block;
 		}
 
+		@Override
+		public int offsetY() {
+			return 1;
+		}
+
+		@Override
+		public Item blockItem() {
+			return null;
+		}
 	}
 	
 	public boolean shouldGenerateInDimension(int id, int[] dims) {
