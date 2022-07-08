@@ -2950,6 +2950,12 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPalaeoniscum.class, new IRenderFactory<EntityPrehistoricFloraPalaeoniscum>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPalaeoniscum> createRenderFor(RenderManager manager) {
+                return new RenderPalaeoniscum(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):
