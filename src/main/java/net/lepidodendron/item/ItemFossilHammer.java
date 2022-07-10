@@ -1,6 +1,7 @@
 package net.lepidodendron.item;
 
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockPlantFossil;
@@ -50,9 +51,11 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
 
     private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
-            super(ToolMaterial.IRON, null);
+            super(ToolMaterial.IRON, Sets.newHashSet(
+                    BlockPlantFossil.block));
             setMaxDamage(500);
             setMaxStackSize(1);
+            this.efficiency = 4.0F;
             this.setCreativeTab(TabLepidodendronMisc.tab);
         }
 
@@ -118,7 +121,7 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
         public float getDestroySpeed(ItemStack stack, IBlockState state)
         {
             Material material = state.getMaterial();
-            return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state) : this.efficiency;
+            return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? 1.0F : this.efficiency;
         }
 
     }

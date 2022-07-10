@@ -4203,6 +4203,120 @@
         "stream": false
       }
     ]
+  },
+  
+  "tiny_mammaliaform_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tiny_mammaliaform_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_living05",
+        "stream": false
+      }
+    ]
+  },
+  "tiny_mammaliaform_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tiny_mammaliaform_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tiny_mammaliaform_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "tiny_mammaliaform_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tiny_mammaliaform_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "tiny_mammaliaform_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cartorhynchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living06",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living07",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_living08",
+        "stream": false
+      }
+    ]
+  },
+  "cartorhynchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cartorhynchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:cartorhynchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "cartorhynchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:cartorhynchus_death",
+        "stream": false
+      }
+    ]
   }
   
   

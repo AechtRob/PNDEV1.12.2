@@ -27,7 +27,7 @@ public class RenderLotosaurus extends RenderLiving<EntityPrehistoricFloraLotosau
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLotosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 1.8F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.40F;
     }
