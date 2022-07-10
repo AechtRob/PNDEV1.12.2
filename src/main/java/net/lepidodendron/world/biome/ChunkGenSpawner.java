@@ -232,7 +232,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshReborn);
                 }
-            } else if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome) {
+            } else if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceLakes.biome || biome == BiomeCarboniferousIceLakes.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIcePF);
                 }

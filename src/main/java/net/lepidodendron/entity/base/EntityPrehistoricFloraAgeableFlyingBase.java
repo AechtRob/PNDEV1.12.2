@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialResin;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -254,7 +255,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     }
 
     protected boolean isTargetInAir() {
-        return this.getFlyTarget() != null && ((world.getBlockState(this.getFlyTarget()).getMaterial() == Material.AIR) || world.getBlockState(this.getFlyTarget()).getMaterial() == Material.AIR);
+        return this.getFlyTarget() != null && ((world.getBlockState(this.getFlyTarget()).getMaterial() == Material.AIR) || world.getBlockState(this.getFlyTarget()).getBlock().isPassable(world, this.getFlyTarget()));
     }
 
     public float getDistanceSquared(Vec3d vec) {
@@ -286,9 +287,12 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
             if (rayTraceResult != null && rayTraceResult.hitVec != null) {
                 BlockPos side = rayTraceResult.getBlockPos();
                 BlockPos pos = new BlockPos(rayTraceResult.hitVec);
+                Block blockSide = entity.world.getBlockState(side).getBlock();
+                Block blockPos = entity.world.getBlockState(pos).getBlock();
                 //System.err.println("Is this block blocked? " + entity.world.getBlockState(pos).getBlock() + " " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
                 //System.err.println("blocked " + (!entity.world.isAirBlock(pos) || !entity.world.isAirBlock(sidePos)));
-                return !entity.world.isAirBlock(side) || !entity.world.isAirBlock(pos);
+                return (((!entity.world.isAirBlock(side)) && (!blockSide.isPassable(entity.world, side)))
+                        || ((!entity.world.isAirBlock(pos)) && (!blockPos.isPassable(entity.world, pos))));
             }
         }
         return false;

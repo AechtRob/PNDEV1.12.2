@@ -569,7 +569,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
 
         this.flap(flipper2, (float) (speed * 0.65), 0.4F, true, 0.8F, 0, f2, 0.5F);
         this.swing(flipper2, (float) (speed * 0.65), 0.2F, false, 0, 0, f2, 0.5F);
-        this.walk(flipper1, (float) (speed * 0.65), 0.2F, true, 0, 0, f2, 0.5F);
+        this.walk(flipper2, (float) (speed * 0.65), 0.2F, true, 0, 0, f2, 0.5F);
 
         this.flap(rearflipper1, (float) (speed * 0.65), 0.4F, false, 1.8F, 0, f2, 0.5F);
         this.swing(rearflipper1, (float) (speed * 0.65), 0.2F, true, 1, 0, f2, 0.5F);
@@ -577,7 +577,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
 
         this.flap(rearflipper2, (float) (speed * 0.65), 0.4F, true, 1.8F, 0, f2, 0.5F);
         this.swing(rearflipper2, (float) (speed * 0.65), 0.2F, false, 1, 0, f2, 0.5F);
-        this.walk(rearflipper1, (float) (speed * 0.65), 0.2F, true, 1, 0, f2, 0.5F);
+        this.walk(rearflipper2, (float) (speed * 0.65), 0.2F, true, 1, 0, f2, 0.5F);
 
         if (!e.isInWater()) {
             //this.root.rotateAngleZ = (float) Math.toRadians(90);
