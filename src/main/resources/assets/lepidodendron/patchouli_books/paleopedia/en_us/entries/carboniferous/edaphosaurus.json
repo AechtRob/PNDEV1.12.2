@@ -2,7 +2,7 @@
 	"name": "Edaphosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:carboniferous/carboniferous_icon/edaphosaurus_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_edaphosaurus",
 	"pages": [
 		{
