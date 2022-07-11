@@ -243,7 +243,7 @@ public class ModelHolonema extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.headshield.render(f5 * 0.65F);
+        this.headshield.render(f5 * 0.58F);
     }
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();

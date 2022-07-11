@@ -3128,5 +3128,8 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 3124;
     public static final int zosterophyllum = 3125;
     public static final int zosterophyllum_spore = 3126;
+    public static final int parapeytoia_raw = 3127;
+    public static final int parapeytoia_cooked = 3128;
+
 
 }

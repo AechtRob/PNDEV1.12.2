@@ -2956,6 +2956,12 @@ public class RenderHandler {
                 return new RenderPalaeoniscum(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraParapeytoia.class, new IRenderFactory<EntityPrehistoricFloraParapeytoia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraParapeytoia> createRenderFor(RenderManager manager) {
+                return new RenderParapeytoia(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):

@@ -1180,6 +1180,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_NIPPONOMARIA = 482;
 	public static final int ENTITY_SPINIPLATYCERAS = 483;
 	public static final int ENTITY_SNAIL_LAND = 484;
+	public static final int ENTITY_PARAPEYTOIA = 485;
+	public static final ResourceLocation PARAPEYTOIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parapeytoia"));
+
 
 
 	@Mod.EventHandler
