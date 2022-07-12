@@ -5,9 +5,9 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -29,12 +29,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDiictodon {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -48,14 +51,28 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.12F;
-		maxWidth = 0.37F;
-		maxHeight = 0.45F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 16.0D;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	@Override
+	public boolean canJar() {
+		return true;
+	}
 
-	public static String getHabitat() {return "Terrestrial mammaliaform";}
+	public static String getPeriod() {
+		return "Triassic";
+	}
+
+	public static String getHabitat() {
+		return "Terrestrial mammaliaform";
+	}
+
+	@Override
+	public boolean hasAlarm() {
+		return false;
+	}
 
 	@Override
 	public boolean hasNest() {
@@ -109,8 +126,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public float getEyeHeight()
-	{
+	public float getEyeHeight() {
 		return Math.max(super.getEyeHeight(), this.height * 0.9F);
 	}
 
@@ -118,13 +134,14 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		tasks.addTask(3, new NightFindNestAI(this, true));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new PanicAI(this, 1.0));
+		tasks.addTask(6, new LandWanderNestAI(this));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.0));
 		this.targetTasks.addTask(2, new EntityHurtByTargetSmallerThanMeAI(this, false));
@@ -136,8 +153,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 	}
 
 	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
+	public boolean isBreedingItem(ItemStack stack) {
 		return stack.getItem() == ItemBugRaw.block;
 	}
 
@@ -155,27 +171,27 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+		//this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_idle"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_hurt"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_death"));
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_death"));
 	}
 
 	@Override
@@ -187,7 +203,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
+
 
 	@Override
 	public void onLivingUpdate() {
@@ -261,4 +277,19 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraLa
 		return LepidodendronMod.MORGANUCODON_LOOT;
 	}
 
+	@Override
+	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source) {
+		if (source == BlockGlassJar.BlockCustom.FREEZE) {
+			//System.err.println("Jar loot!");
+			ResourceLocation resourcelocation = LepidodendronMod.MORGANUCODON_JAR_LOOT;
+			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
+			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer) this.world)).withLootedEntity(this).withDamageSource(source);
+			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build())) {
+				this.entityDropItem(itemstack, 0.0F);
+			}
+		} else {
+			super.dropLoot(wasRecentlyHit, lootingModifier, source);
+		}
+
+	}
 }

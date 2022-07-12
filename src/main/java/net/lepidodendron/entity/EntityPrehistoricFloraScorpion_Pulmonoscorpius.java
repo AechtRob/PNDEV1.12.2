@@ -40,8 +40,8 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.10F;
-		maxWidth = 0.35F;
-		maxHeight = 0.35F;
+		maxWidth = 0.325F;
+		maxHeight = 0.325F;
 		if (getIsBaby()) {
 			maxHealthAgeable = 4.0D;
 		}

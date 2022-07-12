@@ -420,9 +420,9 @@ public class LepidodendronEventSubscribers {
 				event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS,1, 1));
 			}
 		}
-		if (event.getState().getBlock() == Blocks.VINE) {
-			event.getDrops().add(i, new ItemStack(ItemGrapes.block,1));
-		}
+		//if (event.getState().getBlock() == Blocks.VINE) {
+		//	event.getDrops().add(i, new ItemStack(ItemGrapes.block,1));
+		//}
 	}
 
 	@SubscribeEvent //Steam in the Hot Springs:

@@ -70,8 +70,8 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		minWidth = 0.10F;
-		maxWidth = 0.49F;
-		maxHeight = 0.4F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 5.0D;
 		setNoAI(!true);
 		enablePersistence();

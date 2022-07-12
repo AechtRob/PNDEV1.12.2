@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraCartorhynchus extends EntityPrehistoricFloraS
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
-		maxHeight = 0.65F;
+		maxHeight = 0.385F;
 		maxHealthAgeable = 26.0D;
 	}
 

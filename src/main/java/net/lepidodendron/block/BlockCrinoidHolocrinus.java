@@ -50,11 +50,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crinoid_vostocovacrinus")
+public class BlockCrinoidHolocrinus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:crinoid_holocrinus")
 	public static final Block block = null;
-	public BlockCrinoidVostocovacrinus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.crinoid_vostocovacrinus);
+	public BlockCrinoidHolocrinus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.crinoid_holocrinus);
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:crinoid_vostocovacrinus", "inventory"));
+				new ModelResourceLocation("lepidodendron:crinoid_holocrinus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMacrocystisKelp.LEVEL).build());
 	}
 
@@ -161,11 +161,11 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			crinoidheight = 8;
+			crinoidheight = 4;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);
-			setTranslationKey("pf_crinoid_vostocovacrinus");
-			setRegistryName("crinoid_vostocovacrinus");
+			setTranslationKey("pf_crinoid_holocrinus");
+			setRegistryName("crinoid_holocrinus");
 		}
 
 		@Override

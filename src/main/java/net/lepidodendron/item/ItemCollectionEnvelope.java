@@ -136,7 +136,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
 								) {
 									//We can plant this here!
-									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
 											.withProperty(BlockVine.NORTH, facing.getOpposite() == EnumFacing.NORTH)
@@ -159,7 +159,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
 								) {
 									//We can plant this here!
-									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
 											.withProperty(SeedSporeFacingBlockBase.FACING, facing));
@@ -179,7 +179,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
 								) {
 									//We can plant this here!
-									SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+									SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
 											.withProperty(SeedSporeFacingBlockBase.FACING, facing));
@@ -247,7 +247,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								}
 
 								//We can plant this here!
-								SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+								SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 								player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 								worldIn.setBlockState(pos.up(offsetY), plantBlock.getDefaultState());
 								plantBlock.onBlockAdded(worldIn, pos.up(offsetY), plantBlock.getDefaultState());
@@ -264,7 +264,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								&& Blocks.DOUBLE_PLANT.getStateFromMeta(3).getBlock().canPlaceBlockAt(worldIn, pos.up(offsetY))
 								&& itemstack.getTagCompound().getString("plant").equalsIgnoreCase("large_fern")) {
 							//We can plant this here!
-							SoundEvent soundevent = SoundEvents.BLOCK_WATERLILY_PLACE;
+							SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 							player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							worldIn.setBlockState(pos.up(offsetY), Blocks.DOUBLE_PLANT.getStateFromMeta(3));
 							Blocks.DOUBLE_PLANT.getStateFromMeta(3).getBlock().onBlockPlacedBy(worldIn, pos.up(offsetY), Blocks.DOUBLE_PLANT.getStateFromMeta(3), player, itemstack);
@@ -383,6 +383,12 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 				else if (blockTarget == Blocks.TALLGRASS.getStateFromMeta(2).getBlock() && LepidodendronConfig.doPropagationVanilla) {
 					nbtBlock = "small_fern";
 					nbtOffsetY = 1;
+					collected = true;
+				}
+				//Vanilla vines:
+				else if (blockTarget == Blocks.VINE && LepidodendronConfig.doPropagationVanilla) {
+					nbtBlock = "minecraft:vine";
+					nbtOffsetY = 0;
 					collected = true;
 				}
 

@@ -6,8 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.item.ItemHoldfast;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -50,11 +50,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crinoid_vostocovacrinus")
+public class BlockCrinoidMacrocrinus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:crinoid_macrocrinus")
 	public static final Block block = null;
-	public BlockCrinoidVostocovacrinus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.crinoid_vostocovacrinus);
+	public BlockCrinoidMacrocrinus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.crinoid_macrocrinus);
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:crinoid_vostocovacrinus", "inventory"));
+				new ModelResourceLocation("lepidodendron:crinoid_macrocrinus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMacrocystisKelp.LEVEL).build());
 	}
 
@@ -88,7 +88,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimCrinoid)) {
 			dimensionCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimTriassic
+		if (dimID == LepidodendronConfig.dimCarboniferous
 		) {
 			dimensionCriteria = true;
 		}
@@ -107,15 +107,11 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 		}
 		if (matchBiome(biome, LepidodendronConfig.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-
-		int multiplier = 1;
-
-		if (biome instanceof BiomeTriassic)
+		if (biome instanceof BiomeCarboniferous)
 		{
-			BiomeTriassic biomeT = (BiomeTriassic) biome;
-			if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
+			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
 				biomeCriteria = true;
-				multiplier = 6;
 			}
 			else {
 				biomeCriteria = false;
@@ -124,7 +120,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 		if (!biomeCriteria)
 			return;
 
-		for (int i = 0; i < 12 * multiplier; i++) {
+		for (int i = 0; i < 12; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
@@ -161,11 +157,11 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			crinoidheight = 8;
+			crinoidheight = 3;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);
-			setTranslationKey("pf_crinoid_vostocovacrinus");
-			setRegistryName("crinoid_vostocovacrinus");
+			setTranslationKey("pf_crinoid_macrocrinus");
+			setRegistryName("crinoid_macrocrinus");
 		}
 
 		@Override
@@ -362,7 +358,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Crinoid");
-				tooltip.add("Periods: Triassic");
+				tooltip.add("Periods: Carboniferous");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

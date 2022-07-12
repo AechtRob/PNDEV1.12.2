@@ -57,9 +57,9 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.1F;
-		maxWidth = 0.438F;
-		maxHeight = 0.22F;
-		maxHealthAgeable = 6.0D;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override
