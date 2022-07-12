@@ -150,8 +150,8 @@ public class ModelBoothiaspis extends AdvancedModelBase {
             this.swing(head, speed*0.5F, 0.16F, true, 0, 0, f2, 1);
 
             if (!e.isInWater()) {
-                this.head.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.2F;
+                this.head.offsetY = 1.15F;
+                this.head.rotateAngleY = (float)Math.toRadians(90);
                 this.bob(head, -speed*0.5F, 5F, false, f2, 1);
             }
         }

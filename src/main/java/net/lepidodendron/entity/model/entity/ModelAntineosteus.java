@@ -315,7 +315,7 @@ public class ModelAntineosteus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Antineosteus.offsetY = -0.1F;
+                this.Antineosteus.offsetY = 0.2F;
                 this.bob(Antineosteus, -speed, 1F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);

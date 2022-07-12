@@ -3732,12 +3732,30 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPhragmoceras) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PHRAGMOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraLituites) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_LITUITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 
 
 
-		
 
-		//Put this at the end so as to trigger its children above in preference first:
+
+
+
+			//Put this at the end so as to trigger its children above in preference first:
 			else if (event.getTarget() instanceof EntityPrehistoricFloraDiictodon) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_DIICTODON.trigger((EntityPlayerMP) event.getEntityPlayer());

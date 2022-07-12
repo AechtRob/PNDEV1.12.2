@@ -392,7 +392,7 @@ public class ModelOrodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Orodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Orodus.offsetY = 0.85F;
+            this.Orodus.offsetY = 1.1F;
             this.bob(Orodus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

@@ -417,6 +417,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_BASILOCERAS = 168;
 	public static final ResourceLocation BASILOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/basiloceras"));
 	public static final ResourceLocation BASILOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/basiloceras_young"));
+	
 	public static final int ENTITY_WEBSTEROPRION_HOLE = 169;
 	public static final int ENTITY_WEBSTEROPRION = 170;
 	public static final ResourceLocation WEBSTEROPRION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/websteroprion"));
@@ -1188,6 +1189,12 @@ public class LepidodendronMod {
 	public static final int ENTITY_SNAIL_LAND = 484;
 	public static final int ENTITY_PARAPEYTOIA = 485;
 	public static final ResourceLocation PARAPEYTOIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/parapeytoia"));
+	public static final int ENTITY_PHRAGMOCERAS = 486;
+	public static final ResourceLocation PHRAGMOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phragmoceras"));
+	public static final ResourceLocation PHRAGMOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phragmoceras_young"));
+	public static final int ENTITY_LITUITES = 487;
+	public static final ResourceLocation LITUITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lituites"));
+	public static final ResourceLocation LITUITES_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lituites_young"));
 
 
 
