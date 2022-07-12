@@ -2,6 +2,8 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraTullimonstrum;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -358,7 +360,7 @@ public class ModelTyrannophontes extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone.offsetY = 1.1F;
+        this.bone.offsetY = 1.3F;
 
         AdvancedModelRenderer[] Tail = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.talson, this.talson2};
 
@@ -366,6 +368,8 @@ public class ModelTyrannophontes extends AdvancedModelBase {
         if (!e.isInWater()) {
             speed = 0.7F;
         }
+        EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) e;
+
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.flap(antennaL1, 0.3F, -0.2F, true, 0f, 0.2f, f2, 1F);
             this.flap(antennaR1, 0.3F, 0.2F, true, 0f, -0.2f, f2, 1F);
@@ -377,16 +381,20 @@ public class ModelTyrannophontes extends AdvancedModelBase {
 
             this.walk(antennaR2, 0.6F, 0.15F, false, 0f, 0f, f2, 1F);
 
-            float tailVdegree = 0.13F;
+            float tailVdegree = 0.01F;
             float tailHdegree = 0.3F;
 
-
-
-            float speedLeg = 0.5F;
+            float bob = 1F;
+            float speedLeg = 1.5F;
             float speedArm = 0.35F;
-            float degreeLeg = 0.2F;
+            float degreeLeg = 0.4F;
             float degreeArm = 0.3F;
-            if(e.isInWater()) {
+            if (ee.isAtBottom()) {
+                speedLeg = 0.8F;
+                speedArm = 0.3F;
+                bob = 0.1F;
+            }
+            if(ee.isInWater()) {
                 this.chainWave(Tail, speed, tailVdegree, -3, f2, 1);
 
                 this.flap(armL, speedLeg, -degreeArm, false, 0, -0.5F, f2, 0.7F);
@@ -414,10 +422,36 @@ public class ModelTyrannophontes extends AdvancedModelBase {
                 this.flap(pleopodR4, speedLeg, degreeLeg, false, 3.0F, 0.5F, f2, 0.7F);
                 this.flap(pleopodL5, speedLeg, -degreeLeg, false, 3.5F, -0.5F, f2, 0.7F);
                 this.flap(pleopodR5, speedLeg, degreeLeg, false, 3.5F, 0.5F, f2, 0.7F);
-                this.walk(talson2, speedLeg, degreeLeg, false, 0, -0.5F, f2, 0.7F);
-                this.walk(talson3, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
-                this.walk(talson4, speedLeg, degreeLeg, false, 0, -0.5F, f2, 0.7F);
-                this.walk(talson5, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
+
+                this.walk(armL, speedLeg, -degreeArm, false, 0, -0.5F, f2, 0.7F);
+                this.walk(armR, speedArm, degreeArm, false, 0, 0.5F, f2, 0.7F);
+                this.walk(armL2, speedArm, -degreeArm, false, 0, -0.5F, f2, 0.7F);
+                this.walk(armR2, speedArm, degreeArm, false, 0, 0.5F, f2, 0.7F);
+                this.walk(armL3, speedArm, -degreeArm, false, 0, -0.5F, f2, 0.7F);
+                this.walk(armR3, speedArm, degreeArm, false, 0, 0.5F, f2, 0.7F);
+                this.walk(armL4, speedArm, -degreeArm, false, 0, -0.5F, f2, 0.7F);
+                this.walk(armR4, speedArm, degreeArm, false, 0, 0.5F, f2, 0.7F);
+
+                this.walk(legL, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
+                this.walk(legR, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
+                this.walk(legL2, speedLeg, -degreeLeg, false, 0.5F, -0.5F, f2, 0.7F);
+                this.walk(legR2, speedLeg, degreeLeg, false, 0.5F, 0.5F, f2, 0.7F);
+                this.walk(legL3, speedLeg, -degreeLeg, false, 1.0F, -0.5F, f2, 0.7F);
+                this.walk(legR3, speedLeg, degreeLeg, false, 1.0F, 0.5F, f2, 0.7F);
+                this.walk(pleopodL, speedLeg, -degreeLeg, false, 1.5F, -0.5F, f2, 0.7F);
+                this.walk(pleopodR, speedLeg, degreeLeg, false, 1.5F, 0.5F, f2, 0.7F);
+                this.walk(pleopodL2, speedLeg, -degreeLeg, false, 2.0F, -0.5F, f2, 0.7F);
+                this.walk(pleopodR2, speedLeg, degreeLeg, false, 2.0F, 0.5F, f2, 0.7F);
+                this.walk(pleopodL3, speedLeg, -degreeLeg, false, 2.5F, -0.5F, f2, 0.7F);
+                this.walk(pleopodR3, speedLeg, degreeLeg, false, 2.5F, 0.5F, f2, 0.7F);
+                this.walk(pleopodL4, speedLeg, -degreeLeg, false, 3.0F, -0.5F, f2, 0.7F);
+                this.walk(pleopodR4, speedLeg, degreeLeg, false, 3.0F, 0.5F, f2, 0.7F);
+                this.walk(pleopodL5, speedLeg, -degreeLeg, false, 3.5F, -0.5F, f2, 0.7F);
+                this.walk(pleopodR5, speedLeg, degreeLeg, false, 3.5F, 0.5F, f2, 0.7F);
+                this.walk(talson2, speedLeg*0.4F, degreeLeg, false, 0, -0.5F, f2, 0.7F);
+                this.walk(talson3, speedLeg*0.4F, degreeLeg*0.4F, false, 0, 0.5F, f2, 0.7F);
+                this.walk(talson4, speedLeg*0.4F, degreeLeg*0.4F, false, 0, -0.5F, f2, 0.7F);
+                this.walk(talson5, speedLeg*0.4F, degreeLeg*0.4F, false, 0, 0.5F, f2, 0.7F);
             }
 
             if (!e.isInWater()) {
@@ -430,7 +464,7 @@ public class ModelTyrannophontes extends AdvancedModelBase {
                 }
                 else
                 {
-                    this.bob(bone, -speed, 1F, false, f2, 2);
+                    this.bob(bone, -speed, bob, false, f2, 2);
                 }
             }
         }

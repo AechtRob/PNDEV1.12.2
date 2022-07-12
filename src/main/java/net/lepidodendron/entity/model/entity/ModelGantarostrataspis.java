@@ -191,7 +191,7 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
             this.chainSwing(fishTail, speed, 0.4F, -3, f2, 0.8F);
             this.swing(Gantarostrataspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
-                this.Gantarostrataspis.offsetY = 1.3F;
+                this.Gantarostrataspis.offsetY = 1.2F;
                 this.bob(Gantarostrataspis, -speed, 5F, false, f2, 1);
             }
         }

@@ -426,13 +426,13 @@ public class ModelMontecaris extends AdvancedModelBase {
 
             this.walk(antennaR2, 0.6F, 0.15F, false, 0f, 0f, f2, 1F);
 
-            float tailVdegree = 0.3F;
+            float tailVdegree = 0.2F;
             float tailHdegree = 0.3F;
-            this.chainWave(Tail, speed, tailVdegree, -3, f2, 1);
+            this.chainWave(Tail, speed*0.65F, tailVdegree, -2, f2, 1);
 
 
-            float speedLeg = 0.5F;
-            float degreeLeg = 0.2F;
+            float speedLeg = 1.2F;
+            float degreeLeg = 0.35F;
             this.flap(legL, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
             this.flap(legR, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
             this.flap(legL2, speedLeg, -degreeLeg, false, 0.5F, -0.5F, f2, 0.7F);

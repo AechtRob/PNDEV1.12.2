@@ -267,7 +267,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.25F);
+        this.body.render(f5 * 0.17F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -333,7 +333,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
             this.bob(body, speed, 3.0F, false, f2, 2);
             this.flap(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.body.offsetY = this.moveBoxExtended(speed, 0.2F, false, 3, f2, 1);
+            this.body.offsetY = this.moveBoxExtended(speed, 0.2F, false, 0, f2, 1) + 1.3F;
 
         }
         else {
