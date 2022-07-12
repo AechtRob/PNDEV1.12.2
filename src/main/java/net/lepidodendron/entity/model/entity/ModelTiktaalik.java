@@ -283,7 +283,7 @@ public class ModelTiktaalik extends AdvancedModelBaseExtended {
 
         this.faceTarget(f3, f4, 12, head);
 
-        float speed = 0.2F;
+        float speed = 0.15F;
 
         AdvancedModelRenderer[] Tail = {this.body4, this.body5, this.body6};
         AdvancedModelRenderer[] Torso = {this.body, this.body2, this.body3};
@@ -311,7 +311,7 @@ public class ModelTiktaalik extends AdvancedModelBaseExtended {
             this.chainWaveExtended(RightLeg, speed * 0.4F, -0.2F,0F,3.0F, f2, 0.7F);
 
             this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(Tail, speed * 0.8F, 0.12F, -3, f2, 0.8F);
+            this.chainSwing(Tail, speed * 0.45F, 0.12F, -3, f2, 0.8F);
             this.chainSwing(Torso, speed, 0.1F, -3, f2, 1);
         }
         else {

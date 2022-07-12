@@ -28,6 +28,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -54,6 +55,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
     }
 
     public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList) {
+        executeProcedure(onlyWater, world, pos, rand, mobList, false);
+    }
+
+    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean doLightening) {
 
         String[] MobString = new String[0];
         if (mobList == null) {
@@ -1248,6 +1253,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             }
 
                                                                         }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " " + nbtStr);
+                                                                    }
+                                                                    if (doLightening) {
+                                                                        world.addWeatherEffect(new EntityLightningBolt(world, (int) pos.getX(), (int) pos.getY(), (int) pos.getZ(), true));
                                                                     }
                                                                     //System.err.println("Spawned at " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
 

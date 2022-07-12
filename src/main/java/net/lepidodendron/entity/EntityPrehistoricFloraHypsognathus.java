@@ -57,8 +57,8 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.1F;
-		maxWidth = 0.538F;
-		maxHeight = 0.42F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
 	}
 

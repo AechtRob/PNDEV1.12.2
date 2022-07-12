@@ -244,7 +244,7 @@ public class ModelBasiloceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.body.offsetY = 1.2F;
+        //this.body.offsetY = 1.2F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.top, this.low};
         AdvancedModelRendererExtended[] tentacle2 = {this.top2, this.low2};
@@ -285,7 +285,7 @@ public class ModelBasiloceras extends AdvancedModelBaseExtended {
             this.bob(body, speed, 3.0F, false, f2, 2);
             this.flap(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.body.offsetY = this.moveBoxExtended(speed, 0.2F, false, 3, f2, 1);
+            this.body.offsetY = this.moveBoxExtended(speed, 0.2F, false, 3, f2, 1) + 1.1F;
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);

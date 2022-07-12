@@ -27,7 +27,7 @@ public class RenderMorganucodon extends RenderLiving<EntityPrehistoricFloraMorga
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMorganucodon entity, float f) {
-        float scale = entity.getAgeScale() * 1.5F;
+        float scale = entity.getAgeScale() * 1.2F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.125F;
     }

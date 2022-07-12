@@ -108,11 +108,14 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 		if (matchBiome(biome, LepidodendronConfig.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
+		int multiplier = 1;
+
 		if (biome instanceof BiomeTriassic)
 		{
 			BiomeTriassic biomeT = (BiomeTriassic) biome;
 			if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
 				biomeCriteria = true;
+				multiplier = 6;
 			}
 			else {
 				biomeCriteria = false;
@@ -121,7 +124,7 @@ public class BlockCrinoidVostocovacrinus extends ElementsLepidodendronMod.ModEle
 		if (!biomeCriteria)
 			return;
 
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 12 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;

@@ -72,6 +72,7 @@ public class NautiloidWander extends AnimationAINoAnimation<EntityPrehistoricFlo
 
                     this.PrehistoricFloraNautiloidBase.getNavigator().tryMoveToXYZ(vec3.getX() + 0.5D + Xoffset, vec3.getY() + 0.5D, vec3.getZ() + 0.5D + Zoffset, 1.0);
 
+                    this.ticksAI = 600;
                     return true;
                 }
             }
@@ -87,6 +88,12 @@ public class NautiloidWander extends AnimationAINoAnimation<EntityPrehistoricFlo
 
     @Override
     public boolean shouldContinueExecuting() {
+
+        this.ticksAI --;
+        if (!(this.ticksAI > 0)) {
+            this.PrehistoricFloraNautiloidBase.getNavigator().clearPath();
+        }
+
         return false;
     }
 

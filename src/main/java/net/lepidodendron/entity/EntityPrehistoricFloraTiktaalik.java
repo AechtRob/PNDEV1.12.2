@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraTiktaalik extends EntityPrehistoricFloraSwimm
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.14F;
+		float calcSpeed = 0.12F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.26f;
 			if (this.getIsFast()) {

@@ -561,7 +561,8 @@ public class ModelShonisaurus extends AdvancedModelBase {
             this.swing(root, speed * 0.5F, 0.002F, true, 0, 0, f2, 0.8F);
         }
         else {
-            this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.5F);
+            //Dont swing if on land - it loooks dumb
+            //this.swing(root, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
         this.flap(flipper1, (float) (speed * 0.65), 0.4F, false, 0.8F, 0, f2, 0.5F);
         this.swing(flipper1, (float) (speed * 0.65), 0.2F, true, 0, 0, f2, 0.5F);
@@ -583,6 +584,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
             //this.root.rotateAngleZ = (float) Math.toRadians(90);
             this.root.offsetY = 0F;
             this.bob(root, -speed * 1.8F, 0.02F, false, f2, 1);
+            this.walk(jaw1, (float) (speed * 1.8F), 0.15F, true, 1, 0, f2, 0.5F);
             this.chainWave(fishTail, speed * 1.5F, 0.0025F, -0.1, f2, 0.4F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.01F, -0.25, f2, 0.2F * still);
         }

@@ -1,7 +1,8 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:umaltolepis"}
+      {"model": "lepidodendron:umaltolepis"},
+      {"model": "lepidodendron:umaltolepis_var"}
     ],
     
     "inventory": {
