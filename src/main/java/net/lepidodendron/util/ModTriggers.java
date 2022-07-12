@@ -488,6 +488,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_SPINIPLATYCERAS = new CustomTrigger("pf_book_spiniplatyceras");
     public static final CustomTrigger CLICK_NIPPONOMARIA = new CustomTrigger("pf_book_nipponomaria");
     public static final CustomTrigger CLICK_PARAPEYTOIA = new CustomTrigger("pf_book_parapeytoia");
+    public static final CustomTrigger CLICK_PHRAGMOCERAS = new CustomTrigger("pf_book_phragmoceras");
+    public static final CustomTrigger CLICK_LITUITES = new CustomTrigger("pf_book_lituites");
 
 
 
@@ -973,7 +975,9 @@ public class ModTriggers
             CLICK_PALAEONISCUM,
             CLICK_SPINIPLATYCERAS,
             CLICK_NIPPONOMARIA,
-            CLICK_PARAPEYTOIA
+            CLICK_PARAPEYTOIA,
+            CLICK_PHRAGMOCERAS,
+            CLICK_LITUITES
 
     };
 

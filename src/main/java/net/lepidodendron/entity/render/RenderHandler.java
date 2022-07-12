@@ -2962,6 +2962,18 @@ public class RenderHandler {
                 return new RenderParapeytoia(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhragmoceras.class, new IRenderFactory<EntityPrehistoricFloraPhragmoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPhragmoceras> createRenderFor(RenderManager manager) {
+                return new RenderPhragmoceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLituites.class, new IRenderFactory<EntityPrehistoricFloraLituites>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLituites> createRenderFor(RenderManager manager) {
+                return new RenderLituites(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):

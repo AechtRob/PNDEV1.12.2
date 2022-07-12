@@ -243,7 +243,7 @@ public class ModelHolonema extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.headshield.render(f5 * 0.58F);
+        this.headshield.render(f5 * 0.4F);
     }
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
@@ -265,7 +265,7 @@ public class ModelHolonema extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
-        this.headshield.offsetY = 0.45F;
+        this.headshield.offsetY = 0.7F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.body, this.tail, this.tail2, this.tail3, this.tail4};
@@ -329,7 +329,7 @@ public class ModelHolonema extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.headshield.offsetY = -0.1F;
+                this.headshield.offsetY = 0.9F;
                 this.bob(headshield, -speed, 1F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);

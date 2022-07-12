@@ -1233,7 +1233,7 @@ public class ModelParapeytoia extends AdvancedModelBase {
                 this.walk(body6, 0.8F, -0.015f, false, 2, 0.2F, f2, 1F);
                 this.chainWave(bodyF, 0.8F, 0.03f, 0.5, f2, 0.4F);
             }
-            this.chainSwing(bodyF, 0.1F, 0.2F, -3, f2, 1.0F);
+            this.chainSwing(bodyF, 0.1F, 0.03F, -3, f2, 1.0F);
         }
         else if (e.isInWater()) {
             this.chainWave(legsL, 0.4F, 0.2F, -3, f2, 1);
@@ -1281,7 +1281,7 @@ public class ModelParapeytoia extends AdvancedModelBase {
             this.flap(legL21, 0.4F, -0.5F, false, 20.0F, -0.5F, f2, 0.3F);
             this.flap(legR21, 0.4F, 0.5F, false, 20.0F, 0.5F, f2, 0.3F);
             this.chainSwing(bodyF, 0.2F, 0.2F, -3, f2, 0.5F);
-            this.chainWave(bodyF, 0.35F, 0.1f, -3, f2, 0.6F);
+            this.chainWave(bodyF, 0.35F, 0.3f, -3, f2, 0.6F);
             //this.bob(head, 0.2F, 0.2F, false, f2, 1);
         }
 
