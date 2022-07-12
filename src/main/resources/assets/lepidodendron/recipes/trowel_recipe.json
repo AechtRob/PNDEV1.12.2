@@ -9,19 +9,19 @@
   "key": {
     "1": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "nuggetIron"
     },
     "2": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "nuggetIron"
     },
     "4": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "nuggetIron"
     },
     "5": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "nuggetIron"
     },
     "6": {
       "type": "forge:ore_dict",

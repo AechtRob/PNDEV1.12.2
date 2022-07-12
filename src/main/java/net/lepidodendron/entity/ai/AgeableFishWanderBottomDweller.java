@@ -16,13 +16,24 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
 
     protected Animation animation;
     protected EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase;
+    protected int bottomdistance;
 
-    public AgeableFishWanderBottomDweller(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation)
+    public AgeableFishWanderBottomDweller(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation, int bottomDistance)
     {
         super(PrehistoricFloraAgeableFishBase);
         setMutexBits(4);
         this.PrehistoricFloraAgeableFishBase = PrehistoricFloraAgeableFishBase;
         this.animation = animation;
+        this.bottomdistance = bottomDistance;
+    }
+
+
+    public AgeableFishWanderBottomDweller(EntityPrehistoricFloraAgeableFishBase PrehistoricFloraAgeableFishBase, Animation animation) {
+        super(PrehistoricFloraAgeableFishBase);
+        setMutexBits(4);
+        this.PrehistoricFloraAgeableFishBase = PrehistoricFloraAgeableFishBase;
+        this.animation = animation;
+        this.bottomdistance = 0;
     }
 
     @Override
@@ -110,9 +121,9 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
                 BlockPos randPos = this.PrehistoricFloraAgeableFishBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                 //Prefer targets which are at the bottom:
                 BlockPos randPosVar = randPos;
-                if (this.PrehistoricFloraAgeableFishBase.world.getBlockState(randPos).getMaterial() == Material.WATER && !isAtBottom(randPos) && Math.random() < 0.85) {
+                if (this.PrehistoricFloraAgeableFishBase.world.getBlockState(randPos.down(this.bottomdistance)).getMaterial() == Material.WATER && !isAtBottom(randPos.down(this.bottomdistance)) && Math.random() < 0.85) {
                     int ii = 0;
-                    while ((randPos.down(ii).getY() > 1) && this.PrehistoricFloraAgeableFishBase.world.getBlockState(randPos.down(ii)).getMaterial() == Material.WATER) {
+                    while ((randPos.down(ii + this.bottomdistance).getY() > 1) && this.PrehistoricFloraAgeableFishBase.world.getBlockState(randPos.down(ii + this.bottomdistance)).getMaterial() == Material.WATER) {
                         randPosVar = randPos.down(ii);
                         ii = ii + 1;
                     }

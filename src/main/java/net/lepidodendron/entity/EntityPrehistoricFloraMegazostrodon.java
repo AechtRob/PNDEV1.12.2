@@ -1,53 +1,77 @@
 
 package net.lepidodendron.entity;
 
+import net.lepidodendron.LepidodendronMod;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class EntityPrehistoricFloraMegazostrodon extends EntityPlaceholderEntity {
+import javax.annotation.Nullable;
+
+public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraMorganucodon {
 
 	public EntityPrehistoricFloraMegazostrodon(World world) {
 		super(world);
+		//setSize(0.6F, 0.35F);
+		experienceValue = 0;
+		this.isImmuneToFire = false;
+		setNoAI(!true);
+		enablePersistence();
+		minWidth = 0.12F;
+		maxWidth = 0.27F;
+		maxHeight = 0.35F;
+		maxHealthAgeable = 10.0D;
 	}
+
+	public static String getPeriod() {return "Triassic";}
+
+	public static String getHabitat() {return "Terrestrial mammaliaform";}
+
+
+	protected float getAISpeedLand() {
+		float speedBase = 0.591F;
+		if (this.getTicks() < 0) {
+			return 0.0F; //Is laying eggs
+		}
+		if (this.getIsFast()) {
+			speedBase = speedBase * 1.25F;
+		}
+		return speedBase;
+	}
+
+
+	public AxisAlignedBB getAttackBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+	    return (SoundEvent) SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_idle"));
+	}
+
+	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+	    return (SoundEvent) SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_hurt"));
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+	    return (SoundEvent) SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_death"));
+	}
+
+
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.MEGAZOSTRODON_LOOT_YOUNG;
+		}
+		return LepidodendronMod.MEGAZOSTRODON_LOOT;
+	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

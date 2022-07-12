@@ -50,8 +50,8 @@ public class ItemTrowel extends ElementsLepidodendronMod.ModElement {
     }
     private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
-            super(ToolMaterial.IRON, Sets.newHashSet(
-                    BlockPlantFossil.block));
+            super(ToolMaterial.IRON, null);
+            this.efficiency = 2.0F;
             setMaxDamage(500);
             setMaxStackSize(1);
             this.setCreativeTab(TabLepidodendronMisc.tab);
@@ -114,7 +114,7 @@ public class ItemTrowel extends ElementsLepidodendronMod.ModElement {
         public float getDestroySpeed(ItemStack stack, IBlockState state)
         {
             Material material = state.getMaterial();
-            return material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state) : this.efficiency;
+            return material != Material.PLANTS ? 1.0F : this.efficiency;
         }
 
     }

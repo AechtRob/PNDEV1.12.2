@@ -1906,6 +1906,7 @@ public class LepidodendronConfig {
     public static int waterPholiderpeton = 7;
     public static int waterMesosaurus = 5; //not editable - does not affect mob health, only AI
     public static int waterClaudiosaurus = 5; //not editable - does not affect mob health, only AI
+    public static int waterCartorhynchus = 8; //not editable - does not affect mob health, only AI
     public static int waterHenodus = 5; //not editable - does not affect mob health, only AI
     public static int waterKalbarria = 2;
     public static int waterEricixerxes = 2;

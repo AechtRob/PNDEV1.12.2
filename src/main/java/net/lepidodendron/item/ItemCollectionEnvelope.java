@@ -112,7 +112,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 
 			if (itemstack.hasTagCompound()) {
 				NBTTagCompound compound = itemstack.getTagCompound();
-				System.err.println("NBT: " + compound.toString());
+				//System.err.println("NBT: " + compound.toString());
 			}
 
 

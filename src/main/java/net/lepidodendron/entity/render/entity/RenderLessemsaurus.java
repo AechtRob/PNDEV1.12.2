@@ -27,7 +27,7 @@ public class RenderLessemsaurus extends RenderLiving<EntityPrehistoricFloraLesse
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLessemsaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.9F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }
