@@ -131,6 +131,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelPikaia modelPikaia;
     private static final ResourceLocation TEXTURE_POMATRUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pomatrum.png");
     private final ModelPomatrum modelPomatrum;
+    private static final ResourceLocation TEXTURE_RETIFACIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/retifacies.png");
+    private final ModelRetifacies modelRetifacies;
     private static final ResourceLocation TEXTURE_SCHINDERHANNES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schinderhannes.png");
     private final ModelSchinderhannes modelSchinderhannes;
     private static final ResourceLocation TEXTURE_SELENOPELTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/selenopeltis.png");
@@ -157,6 +159,10 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelXenusion modelXenusion;
     private static final ResourceLocation TEXTURE_YAWUNIK = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yawunik.png");
     private final ModelYawunik modelYawunik;
+    private static final ResourceLocation TEXTURE_YOHOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yohoia.png");
+    private final ModelYohoia modelYohoia;
+    private static final ResourceLocation TEXTURE_YUNNANOZOON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunnanozoon.png");
+    private final ModelYunnanozoon modelYunnanozoon;
 
     public RenderDisplayCase() {
         this.modelGerarus = new ModelGerarus();
@@ -208,6 +214,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelPhantaspis = new ModelPhantaspis();
         this.modelPikaia = new ModelPikaia();
         this.modelPomatrum = new ModelPomatrum();
+        this.modelRetifacies = new ModelRetifacies();
         this.modelSchinderhannes = new ModelSchinderhannes();
         this.modelSelenopeltis = new ModelSelenopeltis();
         this.modelSiberion = new ModelSiberion();
@@ -220,6 +227,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelWiwaxia = new ModelWiwaxia();
         this.modelXenusion = new ModelXenusion();
         this.modelYawunik = new ModelYawunik();
+        this.modelYohoia = new ModelYohoia();
+        this.modelYunnanozoon = new ModelYunnanozoon();
     }
 
     @Override
@@ -1926,6 +1935,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_POMATRUM);
                         modelPomatrum.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemRetifaciesRaw.block) {
+                        double offset = 0.63;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_RETIFACIES);
+                        modelRetifacies.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemSchinderhannesRaw.block) {
                         double offset = 0.37;
                         if (facing == EnumFacing.UP) {
@@ -2340,6 +2383,74 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(1.5,1.5,1.5);
                         this.bindTexture(TEXTURE_YAWUNIK);
                         modelYawunik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemYohoiaRaw.block) {
+                        double offset = 0.24;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1,1,1);
+                        this.bindTexture(TEXTURE_YOHOIA);
+                        modelYohoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemYunnanozoonRaw.block) {
+                        double offset = 0.18;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.7,0.7,0.7);
+                        this.bindTexture(TEXTURE_YUNNANOZOON);
+                        modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
 
                     // ********************************************************************
