@@ -277,6 +277,18 @@ public class ModelSpathicephalus extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
+        this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(23);
+        this.Head.rotateAngleX = (float) Math.toRadians(-20);
+        this.Head.rotateAngleY = (float) Math.toRadians(-25);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-21);
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(-11);
+        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(-11);
+        this.Hips.rotateAngleY = (float) Math.toRadians(-15);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(15);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail5.rotateAngleY = (float) Math.toRadians(5);
         this.Hips.offsetZ = -0.3F;
         this.Hips.render(0.1F);
         GlStateManager.enableCull();
