@@ -620,7 +620,7 @@ public class ModelHelianthaster extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.root.render(f5 * 0.08F);
+        this.root.render(f5 * 0.13F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -634,7 +634,7 @@ public class ModelHelianthaster extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.root.offsetY = 1.35F;
+        this.root.offsetY = 1.29F;
         AdvancedModelRenderer[] Arm1 = {this.armbase, this.arma, this.armb, this.armc, this.armd};
         AdvancedModelRenderer[] Arm2 = {this.armbase2, this.arma2, this.armb2, this.armc2, this.armd2};
         AdvancedModelRenderer[] Arm3 = {this.armbase3, this.arma3, this.armb3, this.armc3, this.armd3};

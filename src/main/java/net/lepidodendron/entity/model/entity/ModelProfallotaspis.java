@@ -495,7 +495,7 @@ public class ModelProfallotaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Profallotaspis.render(f5 * 0.212F);
+        this.Profallotaspis.render(f5 * 0.18F);
     }
 
     public void renderStatic(float f) {
@@ -518,7 +518,7 @@ public class ModelProfallotaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Profallotaspis.offsetY = 1.17F;
+        this.Profallotaspis.offsetY = 1.23F;
 
         AdvancedModelRenderer[] legsL = {this.LeftLeg1, this.LeftLeg2, this.LeftLeg3, this.LeftLeg4, this.LeftLeg5, this.LeftLeg6, this.LeftLeg7, this.LeftLeg8};
         AdvancedModelRenderer[] legsR = {this.RightLeg1, this.RightLeg2, this.RightLeg3, this.RightLeg4, this.RightLeg5, this.RightLeg6, this.RightLeg7, this.RightLeg8};
