@@ -258,7 +258,13 @@ public class ModelOnychodus extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.Body1.rotateAngleY = (float) Math.toRadians(90);
+        this.Body1.rotateAngleY = (float) Math.toRadians(86);
+        this.Head.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.Lowerjawback.rotateAngleX = (float) Math.toRadians(16.5);
+        this.Body2.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(7.5);
         this.Body1.offsetX = -0.09F;
         this.Body1.offsetY = -0.02F;
         this.Body1.render(0.01F);

@@ -503,7 +503,10 @@ public class ModelProfallotaspis extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //this.body.offsetZ = 0.1F;
+        GlStateManager.disableCull();
+        this.Profallotaspis.offsetZ = -0.08F;
         this.Profallotaspis.render(0.022f);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
