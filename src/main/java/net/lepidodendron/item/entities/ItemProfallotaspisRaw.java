@@ -14,10 +14,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemProfallotaspisaRaw extends ElementsLepidodendronMod.ModElement {
+public class ItemProfallotaspisRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:profallotaspis_raw")
 	public static final Item block = null;
-	public ItemProfallotaspisaRaw(ElementsLepidodendronMod instance) {
+	public ItemProfallotaspisRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.profallotaspis_raw);
 	}
 

@@ -106,27 +106,25 @@ public class BlockPlantFossil extends ElementsLepidodendronMod.ModElement {
 					spawnAsEntity(worldIn, pos, getFossilDrop(getPetrifiedDrops()));
 				}
 			}
-
-			super.harvestBlock(worldIn, player, pos, state, te, stack);
+			else {
+				super.harvestBlock(worldIn, player, pos, state, te, stack);
+			}
 		}
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return new ItemStack(Blocks.STONE, (int) (1)).getItem();
+			return new ItemStack(this, (int) (1)).getItem();
 		}
 
 		@Override
 		public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player)
 		{
-			if (player.getHeldItemMainhand().getItem() == new ItemStack(ItemFossilHammer.block, (int) (1)).getItem()) {
-				return false;
-			}
-			return true;
+			return false;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 5;
+			return 0;
 		}
 
 		@Override

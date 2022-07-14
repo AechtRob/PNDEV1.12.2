@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.ItemDominicanAmberChunk;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -81,7 +82,7 @@ public class BlockDominicanAmberOre extends ElementsLepidodendronMod.ModElement 
 			super(Material.ROCK);
 			setTranslationKey("pf_dominican_amber_ore");
 			setSoundType(SoundType.GROUND);
-			setHarvestLevel("pickaxe", 1);
+			setHarvestLevel("pickaxe", 0);
 			setHardness(1.5F);
 			setResistance(6F);
 			setLightLevel(0F);
@@ -91,7 +92,7 @@ public class BlockDominicanAmberOre extends ElementsLepidodendronMod.ModElement 
 
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-			drops.add(new ItemStack(Blocks.STONE, (int) (1), 0));
+			drops.add(new ItemStack(ItemDominicanAmberChunk.block, (int) (1), 0));
 		}
 
 		@Override

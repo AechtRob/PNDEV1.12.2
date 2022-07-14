@@ -4258,7 +4258,7 @@
     ]
   },
   
-  "tiny_mammaliaform_idle": {
+  "cartorhynchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cartorhynchus_living01",
@@ -4314,6 +4314,55 @@
     "sounds": [
       {
         "name": "lepidodendron:cartorhynchus_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "smilosuchus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smilosuchus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "smilosuchus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smilosuchus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:smilosuchus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "smilosuchus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:smilosuchus_death",
         "stream": false
       }
     ]

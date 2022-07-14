@@ -2974,6 +2974,12 @@ public class RenderHandler {
                 return new RenderLituites(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPiatnitzkysaurus.class, new IRenderFactory<EntityPrehistoricFloraPiatnitzkysaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPiatnitzkysaurus> createRenderFor(RenderManager manager) {
+                return new RenderPiatnitzkysaurus(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):

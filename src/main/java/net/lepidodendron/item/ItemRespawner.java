@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronBespokeSpawner;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -13,7 +14,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -46,26 +46,40 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:respawner", "inventory"));
 	}
-	public static class ItemCustom extends ItemTool {
+	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(ToolMaterial.WOOD, null);
-			setMaxDamage(500);
-			maxStackSize = 64;
+			setMaxDamage(250);
+			maxStackSize = 1;
 			setTranslationKey("pf_respawner");
 			setRegistryName("respawner");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
 		@Override
-		public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
-		{
-			return false;
+		public int getItemEnchantability() {
+			return 1;
+		}
+
+		@Override
+		public int getMaxItemUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
+		public float getDestroySpeed(ItemStack par1ItemStack, IBlockState par2Block) {
+			return 1F;
 		}
 
 		@Override
 		public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
 			playerIn.swingArm(handIn);
+
+			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(Enchantments.TIME_REVERSAL, itemstack);
+			if (!(levelEnchantment > 0)) {
+				return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
+			}
+
 			itemstack.damageItem(1, playerIn);
 
 			//Get this chunk and the adjacent one:
@@ -163,32 +177,25 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 				WorldEntitySpawner.performWorldGenSpawning(worldIn, biome, i + 8, j + 8, 32, 32, new Random());
 			}
 
+
 			SoundEvent soundevent =(SoundEvent) SoundEvent.REGISTRY
 					.getObject(new ResourceLocation("lepidodendron:respawner"));
-			playerIn.getEntityWorld().playSound(playerIn, playerIn.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			//playerIn.getEntityWorld().playSound(playerIn, playerIn.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			playerIn.playSound(soundevent, 1.0F, 1.0F);
 
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 		}
 
-		@Override
-		public int getItemEnchantability() {
-			return 0;
-		}
 
 		@Override
-		public int getMaxItemUseDuration(ItemStack itemstack) {
-			return 0;
-		}
-
-		@Override
-		public float getDestroySpeed(ItemStack par1ItemStack, IBlockState par2Block) {
-			return 1F;
+		public boolean isRepairable() {
+			return true;
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        tooltip.add("Encourages native mobs to respawn in the area");
+	        tooltip.add("Encourages native mobs to respawn in the area. Requires the Enchantment of Time Reversal.");
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.ItemBalticAmberChunk;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
@@ -90,7 +91,7 @@ public class BlockBalticAmberOre extends ElementsLepidodendronMod.ModElement {
 			super(Material.SAND);
 			setTranslationKey("pf_baltic_amber_ore");
 			setSoundType(SoundType.SAND);
-			setHarvestLevel("shovel", 1);
+			setHarvestLevel("shovel", 0);
 			setHardness(0.5F);
 			setResistance(0.5F);
 			setLightLevel(0F);
@@ -100,7 +101,7 @@ public class BlockBalticAmberOre extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-			drops.add(new ItemStack(Blocks.SAND, (int) (1), 0));
+			drops.add(new ItemStack(ItemBalticAmberChunk.block, (int) (1), 0));
 		}
 
 		@Override
