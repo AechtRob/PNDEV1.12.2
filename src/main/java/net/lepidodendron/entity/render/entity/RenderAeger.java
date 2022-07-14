@@ -8,7 +8,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAeger extends RenderLiving<EntityPrehistoricFloraAeger> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aeger.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aeger_red.png");
+    private static final ResourceLocation TEXTURE_B = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aeger_brown.png");
 
     public RenderAeger(RenderManager mgr) {
         super(mgr, new ModelAeger(), 0.0f);
@@ -16,6 +17,10 @@ public class RenderAeger extends RenderLiving<EntityPrehistoricFloraAeger> {
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAeger entity) {
+
+        if (entity.getVariant() > 5) {
+            return RenderAeger.TEXTURE_B;
+        }
         return RenderAeger.TEXTURE;
     }
 

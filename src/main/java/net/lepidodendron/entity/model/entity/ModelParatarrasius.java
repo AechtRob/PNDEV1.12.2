@@ -121,7 +121,7 @@ public class ModelParatarrasius extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone3.render(f5 * 0.0875F);
+        this.bone3.render(f5 * 0.1F);
     }
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
@@ -144,7 +144,7 @@ public class ModelParatarrasius extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone3.offsetY = 1.4F;
+        this.bone3.offsetY = 1.35F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.bone4, this.bone5, this.bone6, this.bone7};
@@ -163,7 +163,7 @@ public class ModelParatarrasius extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.bone3.rotateAngleZ = (float) Math.toRadians(90);
-                this.bone3.offsetY = 1.4F;
+                this.bone3.offsetY = 1.35F;
                 this.bob(bone3, -speed, 2F, false, f2, 1);
             }
         }
