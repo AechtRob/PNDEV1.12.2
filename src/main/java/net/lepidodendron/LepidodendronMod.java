@@ -1195,6 +1195,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_LITUITES = 487;
 	public static final ResourceLocation LITUITES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lituites"));
 	public static final ResourceLocation LITUITES_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lituites_young"));
+	public static final int ENTITY_PIATNITZKYSAURUS = 488;
+	public static final ResourceLocation PIATNITZKYSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/piatnitzkysaurus"));
+	public static final ResourceLocation PIATNITZKYSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/piatnitzkysaurus_young"));
 
 
 

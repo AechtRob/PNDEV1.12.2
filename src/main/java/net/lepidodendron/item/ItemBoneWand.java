@@ -213,16 +213,22 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean isRepairable() {
-			return false;
+			return true;
 		}
 
 		@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Enchant with the Enchantment of Time Reversal");
+				tooltip.add("Opens portals. Requires the Enchantment of Time Reversal");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
+
+		@Override
+		public boolean isFull3D() {
+			return true;
+		}
+
 	}
 }

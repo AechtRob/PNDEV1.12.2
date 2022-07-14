@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:bone"
+    },
+    "1": {
+      "item": "minecraft:diamond"
+    },
+    "2": {
+      "item": "minecraft:bone"
+    },
+    "4": {
+      "item": "lepidodendron:bottle_of_resin"
+    },
+    "6": {
+      "item": "minecraft:bone"
+    },
+    "8": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:respawner",
+    "count": 1
+  }
+}

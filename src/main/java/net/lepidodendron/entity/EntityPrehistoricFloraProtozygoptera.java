@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraProtozygoptera extends EntityPrehistoricFlora
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:protozygoptera_flight");
+		return null;
 	}
 
 	public static String getPeriod() {return "mid Carboniferous - Permian";}

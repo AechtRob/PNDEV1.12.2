@@ -54,6 +54,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
+    private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
+
     //public float minSize;
     public float minWidth;
     public float maxWidth;
@@ -314,6 +316,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(ISMOVING, false);
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
+        this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
         this.setScaleForAge(false);
     }
 
@@ -395,6 +398,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
     }
 
+
+    public int getTickOffset() {
+        return this.dataManager.get(TICKOFFSET);
+    }
+
+    public void setTickOffset(int ticks) {
+        this.dataManager.set(TICKOFFSET, ticks);
+    }
+
     public int getTicks() {
        return this.dataManager.get(TICKS);
     }
@@ -449,6 +461,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setAgeTicks(this.getAdultAge() - 1);
         this.setMateable(0);
         this.setTicks(0);
+        this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
         this.setWillHunt(false);
         this.heal(this.getMaxHealth());
@@ -529,6 +542,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.writeEntityToNBT(compound);
         compound.setInteger("AgeTicks", this.getAgeTicks());
         compound.setInteger("Ticks", this.getTicks());
+        compound.setInteger("TickOffset", this.getTickOffset());
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
         compound.setInteger("InPFLove", this.inPFLove);
@@ -546,6 +560,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.readEntityFromNBT(compound);
         this.setAgeTicks(compound.getInteger("AgeTicks"));
         this.setTicks(compound.getInteger("Ticks"));
+        this.setTickOffset(compound.getInteger("TickOffset"));
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
         this.inPFLove = compound.getInteger("InPFLove");
@@ -591,9 +606,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
-        //if (ds == DamageSource.IN_WALL) {
-       //     return false;
-        //}
+        if (ds == DamageSource.IN_WALL && this.ticksExisted < 600) {
+            this.setJumping(true);
+            return false;
+        }
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
             //if (this.getAnimation() != null) {
                 if (this.getAnimation() == NO_ANIMATION) {
@@ -741,7 +757,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
         //General ticker (for babies etc.)
         int ii = this.getTicks();
-        if (this.isEntityAlive())
+        if (this.isEntityAlive() && !this.world.isRemote)
         {
             ++ii;
             //if (!LepidodendronConfig.doMultiplyMobs) {
@@ -765,7 +781,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
         int i = this.getAgeTicks();
         //Do not grow entities which are in cages:
-        if (this.isEntityAlive() && world.getBlockState(this.getPosition()).getBlock() != BlockCageSmall.block)
+        if (this.isEntityAlive() && world.getBlockState(this.getPosition()).getBlock() != BlockCageSmall.block && !this.world.isRemote)
         {
             ++i;
             //throttle at limit:

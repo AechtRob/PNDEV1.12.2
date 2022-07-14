@@ -12,8 +12,6 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -32,39 +30,39 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFloraLandBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public int ambientSoundTime;
 
-	public EntityPrehistoricFloraLotosaurus(World world) {
+	public EntityPrehistoricFloraPiatnitzkysaurus(World world) {
 		super(world);
 		//setSize(0.6F, 0.35F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.12F;
-		maxWidth = 1.2F;
-		maxHeight = 1.25F;
-		maxHealthAgeable = 58.0D;
+		minWidth = 0.05F;
+		maxWidth = 0.975F;
+		maxHeight = 1.85F;
+		maxHealthAgeable = 76;
 	}
 
 	@Override
 	public int getDrinkLength() {
-		return 0;
+		return 80;
 	}
 
 	@Override
-	public boolean drinksWater() {
-		return true;
+	public int getEatLength() {
+		return 20;
 	}
 
-	public static String getPeriod() {return "Triassic";}
+	public static String getPeriod() {return "Jurassic";}
 
-	public static String getHabitat() {return "Terrestrial Pseudosuchian";}
+	public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
 	@Override
 	public boolean hasNest() {
@@ -92,27 +90,27 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.449F;
+		float speedBase = 0.6915F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			return 0.0F; //Is Grazing/drinking
+			return 0.0F; //Is drinking
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.67F;
+			speedBase = speedBase * 1.55F;
 		}
 		return speedBase;
 	}
 
 	@Override
 	public int getTalkInterval() {
-		return 400;
+		return 180;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 64000;
+		return 128000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
@@ -123,36 +121,27 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public float getEyeHeight()
 	{
-		return Math.max(super.getEyeHeight(), this.height * 1.05F);
+		return Math.max(super.getEyeHeight(), this.height * 0.95F);
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 6));
+		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
-		//this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraLandClimbingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		//this.targetTasks.addTask(2, new HuntAI(this, EntityPrehistoricInsectFlyingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-	}
-
-	@Override
-	public boolean panics() {
-		return true;
+		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 40));
+		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(8, new EntityLookIdleAI(this));
+		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-				//		|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
+				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
 	
@@ -170,27 +159,28 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
 	public SoundEvent getAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:lotosaurus_idle"));
+	    return (SoundEvent) SoundEvent.REGISTRY
+	            .getObject(new ResourceLocation("lepidodendron:piatnitzkysaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:lotosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:piatnitzkysaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:lotosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:piatnitzkysaurus_death"));
 	}
+
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
@@ -205,8 +195,6 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		//this.renderYawOffset = this.rotationYaw;
-
 		if (this.getAnimation() != DRINK_ANIMATION) {
 			this.renderYawOffset = this.rotationYaw;
 		}
@@ -214,8 +202,7 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
 			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
 		}
-
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
 			launchAttack();
 			if (this.getOneHit()) {
 				this.setAttackTarget(null);
@@ -226,6 +213,7 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
+
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
@@ -268,9 +256,9 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.LOTOSAURUS_LOOT_YOUNG;
+			return LepidodendronMod.PIATNITZKYSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.LOTOSAURUS_LOOT;
+		return LepidodendronMod.PIATNITZKYSAURUS_LOOT;
 	}
 
 }
