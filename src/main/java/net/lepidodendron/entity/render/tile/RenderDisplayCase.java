@@ -117,6 +117,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_OPABINIA_NERF =  new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia_nerf.png");
     private static final ResourceLocation TEXTURE_OPABINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia.png");
     private final ModelOpabinia modelOpabinia;
+    private static final ResourceLocation TEXTURE_ORTHROZANCLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
+    private final ModelOrthrozanclus modelOrthrozanclus;
     private static final ResourceLocation TEXTURE_OTTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
     private final ModelOttoia modelOttoia;
     private static final ResourceLocation TEXTURE_PALAEOISOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoisopus.png");
@@ -211,6 +213,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelOdaraia = new ModelOdaraia();
         this.modelOdontogriphus = new ModelOdontogriphus();
         this.modelOpabinia = new ModelOpabinia();
+        this.modelOrthrozanclus = new ModelOrthrozanclus();
         this.modelOttoia = new ModelOttoia();
         this.modelPalaeoisopus = new ModelPalaeoisopus();
         this.modelParadoxides = new ModelParadoxides();
@@ -1705,6 +1708,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         }
                         modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemOrthrozanclusRaw.block) {
+                        double offset = 0.27;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.75F,0.75F,0.75F);
+                        this.bindTexture(TEXTURE_ORTHROZANCLUS);
+                        modelOrthrozanclus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemOttoiaRaw.block) {
                         double offset = 0.05;
                         if (facing == EnumFacing.UP) {
@@ -1975,7 +2012,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_POMATRUM);
                         modelPomatrum.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
-                    else if (itemstack.getItem() == ItemProfallotaspisaRaw.block) {
+                    else if (itemstack.getItem() == ItemProfallotaspisRaw.block) {
                         double offset = 0.33;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
