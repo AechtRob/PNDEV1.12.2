@@ -1,7 +1,7 @@
 {
 	"name": "Aulacephalodon",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/aulacephalodon_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/aulacephalodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_aulacephalodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/aulacephalodon.png"],
+			"images": ["paleopedia:textures/permian/aulacephalodon.png"],
 			"title": "A. bainii",
 			"text": ""
 		},

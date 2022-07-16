@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Encrinus.png"],
+			"images": ["paleopedia:textures/statics/Encrinus.png"],
 			"title": "Encrinus sp.",
 			"text": ""
 		},

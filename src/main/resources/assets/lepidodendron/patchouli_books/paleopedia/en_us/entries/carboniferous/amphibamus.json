@@ -1,7 +1,7 @@
 {
 	"name": "Amphibamus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/amphibamus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/amphibamus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_amphibamus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/amphibamus.png"],
+			"images": ["paleopedia:textures/carboniferous/amphibamus.png"],
 			"title": "A. grandiceps",
 			"text": ""
 		},

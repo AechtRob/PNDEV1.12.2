@@ -1,7 +1,7 @@
 {
     "name": "Cryptomartus",
     "read_by_default": true,
-    "icon": "paleopedia:carboniferous/carboniferous_icon/cryptomartus_icon.png",
+    "icon": "paleopedia:textures/carboniferous/carboniferous_icon/cryptomartus_icon.png",
     "category": "patchouli:carboniferous_animal",
     "turnin": "lepidodendron:pf_adv_book_acrolepis",
     "pages": [
@@ -13,7 +13,7 @@
         },
 	{
             "type": "image",
-            "images": ["paleopedia:carboniferous/Cryptomartus.png"],
+            "images": ["paleopedia:textures/carboniferous/Cryptomartus.png"],
             "title": "Cryptomartus hindi"
         },
 	{

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/websteroprion.png"],
+			"images": ["paleopedia:textures/devonian/websteroprion.png"],
 			"title": "W. armstrongi",
 			"text": ""
 		},

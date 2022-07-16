@@ -1,7 +1,7 @@
 {
 	"name": "Permotarbus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/permotarbus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/permotarbus_icon.png",
 	"category": "patchouli:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_permotarbus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/permotarbus.png"],
+			"images": ["paleopedia:textures/permian/permotarbus.png"],
 			"title": "P. schuberti",
 			"text": ""
 		},

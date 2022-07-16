@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/hemicyclaspis.png"],
+			"images": ["paleopedia:textures/devonian/hemicyclaspis.png"],
 			"title": "H. murchisoni",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/oesia.png"],
+			"images": ["paleopedia:textures/cambrian/oesia.png"],
 			"title": "O. disjuncta, M. dorus",
 			"text": ""
 		},

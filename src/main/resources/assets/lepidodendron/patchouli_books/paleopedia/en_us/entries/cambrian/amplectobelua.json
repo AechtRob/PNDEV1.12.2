@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/amplectobelua.png"],
+			"images": ["paleopedia:textures/cambrian/amplectobelua.png"],
 			"title": "A. symbrachiata",
 			"text": ""
 		},

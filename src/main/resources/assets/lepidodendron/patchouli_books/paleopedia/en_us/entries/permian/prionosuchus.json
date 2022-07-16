@@ -1,7 +1,7 @@
 {
 	"name": "Prionosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/prionosuchus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/prionosuchus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_prionosuchus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/prionosuchus.png"],
+			"images": ["paleopedia:textures/permian/prionosuchus.png"],
 			"title": "P. plummeri",
 			"text": ""
 		},

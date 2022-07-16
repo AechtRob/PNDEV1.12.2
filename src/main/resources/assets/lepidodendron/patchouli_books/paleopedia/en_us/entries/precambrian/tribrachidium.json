@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/tribrachidium.png"],
+			"images": ["paleopedia:textures/precambrian/tribrachidium.png"],
 			"title": "T. heraldicum",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/gemuendina.png"],
+			"images": ["paleopedia:textures/devonian/gemuendina.png"],
 			"title": "Gemuendina stuertzi",
 			"text": ""
 		},

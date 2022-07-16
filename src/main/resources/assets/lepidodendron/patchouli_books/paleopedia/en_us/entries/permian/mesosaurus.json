@@ -1,7 +1,7 @@
 {
 	"name": "Mesosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/mesosaurus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/mesosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_mesosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/mesosaurus.png"],
+			"images": ["paleopedia:textures/permian/mesosaurus.png"],
 			"title": "M. tenuidens",
 			"text": ""
 		},

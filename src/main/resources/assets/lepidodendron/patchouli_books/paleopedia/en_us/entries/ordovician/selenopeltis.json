@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/selenopeltis.png"],
+			"images": ["paleopedia:textures/ordosil/selenopeltis.png"],
 			"title": "Selenopeltis buchi",
 			"text": ""
 		},

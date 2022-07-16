@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/cyclolobus.png"],
+			"images": ["paleopedia:textures/permian/cyclolobus.png"],
 			"title": "Cyclolobus sp.",
 			"text": ""
 		},

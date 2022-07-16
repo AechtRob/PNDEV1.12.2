@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Gogia.png"],
+			"images": ["paleopedia:textures/statics/Gogia.png"],
 			"title": "Gogia prolifica",
 			"text": ""
 		},

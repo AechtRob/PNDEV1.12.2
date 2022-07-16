@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/gnathorhiza.png"],
+			"images": ["paleopedia:textures/carboniferous/gnathorhiza.png"],
 			"title": "Gnathorhiza sp.",
 			"text": ""
 		},

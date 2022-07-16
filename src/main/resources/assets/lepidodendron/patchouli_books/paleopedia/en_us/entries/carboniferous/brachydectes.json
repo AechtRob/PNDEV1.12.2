@@ -1,7 +1,7 @@
 {
 	"name": "Brachydectes",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/brachydectes_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/brachydectes_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_brachydectes",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/Brachydectes.png"],
+			"images": ["paleopedia:textures/carboniferous/Brachydectes.png"],
 			"title": "B. elongatus",
 			"text": ""
 		},

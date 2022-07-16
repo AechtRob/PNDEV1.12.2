@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/platycaraspis.png"],
+			"images": ["paleopedia:textures/ordosil/platycaraspis.png"],
 			"title": "P. tianshanensis",
 			"text": ""
 		},

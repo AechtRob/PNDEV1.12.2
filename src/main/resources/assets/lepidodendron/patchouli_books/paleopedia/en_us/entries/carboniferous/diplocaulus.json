@@ -1,7 +1,7 @@
 {
 	"name": "Diplocaulus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/diplocaulus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/diplocaulus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_diplocaulus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/Diplocaulus.png"],
+			"images": ["paleopedia:textures/carboniferous/Diplocaulus.png"],
 			"title": "D. magicornis",
 			"text": ""
 		},

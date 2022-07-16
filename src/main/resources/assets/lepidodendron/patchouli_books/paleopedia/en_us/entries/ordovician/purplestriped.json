@@ -1,7 +1,7 @@
 {
 	"name": "Purple Striped Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:ambient/ambients_icon/purplestriped_icon.png",
+	"icon": "paleopedia:textures/ambient/ambients_icon/purplestriped_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish5",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ambients/jelly_purpleStriped.png"],
+			"images": ["paleopedia:textures/ambients/jelly_purpleStriped.png"],
 			"title": "Pelagia noctiluca",
 			"text": ""
 		},

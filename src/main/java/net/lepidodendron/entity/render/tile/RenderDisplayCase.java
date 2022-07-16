@@ -1975,7 +1975,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_POMATRUM);
                         modelPomatrum.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
-                    else if (itemstack.getItem() == ItemProfallotaspisaRaw.block) {
+                    else if (itemstack.getItem() == ItemProfallotaspisRaw.block) {
                         double offset = 0.33;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);

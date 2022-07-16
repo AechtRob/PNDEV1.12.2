@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/canadaspis.png"],
+			"images": ["paleopedia:textures/cambrian/canadaspis.png"],
 			"title": "Canadaspis perfecta",
 			"text": ""
 		},

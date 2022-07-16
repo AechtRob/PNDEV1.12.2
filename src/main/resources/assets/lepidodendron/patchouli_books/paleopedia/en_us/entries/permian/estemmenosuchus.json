@@ -1,7 +1,7 @@
 {
 	"name": "Estemmenosuchus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/estemmenosuchus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/estemmenosuchus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_estemmenosuchus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/estemmenosuchus.png"],
+			"images": ["paleopedia:textures/permian/estemmenosuchus.png"],
 			"title": "E. uralensis",
 			"text": ""
 		},

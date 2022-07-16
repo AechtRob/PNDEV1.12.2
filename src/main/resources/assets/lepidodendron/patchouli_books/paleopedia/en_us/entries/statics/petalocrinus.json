@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Petalocrinus.png"],
+			"images": ["paleopedia:textures/statics/Petalocrinus.png"],
 			"title": "Petalocrinus sp.",
 			"text": ""
 		},

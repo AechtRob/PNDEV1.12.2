@@ -1,7 +1,7 @@
 {
 	"name": "Haikouichthys",
 	"read_by_default": true,
-	"icon": "paleopedia:cambrian/cambrian_icon/haikouichthys_icon.png",
+	"icon": "paleopedia:textures/cambrian/cambrian_icon/haikouichthys_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_haikouichthys",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/haikouichthys.png"],
+			"images": ["paleopedia:textures/cambrian/haikouichthys.png"],
 			"title": "H. ercaicunensis",
 			"text": ""
 		},

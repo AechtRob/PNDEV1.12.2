@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Thaumaptilon.png"],
+			"images": ["paleopedia:textures/statics/Thaumaptilon.png"],
 			"title": "Thaumaptilon walcotti",
 			"text": ""
 		},

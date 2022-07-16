@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/rayonnoceras.png"],
+			"images": ["paleopedia:textures/carboniferous/rayonnoceras.png"],
 			"title": "R. solidiforme",
 			"text": ""
 		},

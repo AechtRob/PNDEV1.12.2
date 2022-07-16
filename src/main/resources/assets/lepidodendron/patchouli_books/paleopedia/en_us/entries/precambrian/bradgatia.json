@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/bradgatia.png"],
+			"images": ["paleopedia:textures/precambrian/bradgatia.png"],
 			"title": "B. linfordensis",
 			"text": ""
 		},

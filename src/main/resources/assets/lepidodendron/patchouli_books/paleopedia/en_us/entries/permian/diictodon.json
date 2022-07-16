@@ -1,7 +1,7 @@
 {
 	"name": "Diictodon",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/diictodon_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/diictodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diictodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/diictodon.png"],
+			"images": ["paleopedia:textures/permian/diictodon.png"],
 			"title": "Diictodon sp.",
 			"text": ""
 		},

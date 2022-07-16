@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/cyclonema.png"],
+			"images": ["paleopedia:textures/ordosil/cyclonema.png"],
 			"title": "Cyclonema sp.",
 			"text": ""
 		},

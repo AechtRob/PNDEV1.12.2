@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/odaraia.png"],
+			"images": ["paleopedia:textures/cambrian/odaraia.png"],
 			"title": "Odaraia alata",
 			"text": ""
 		},

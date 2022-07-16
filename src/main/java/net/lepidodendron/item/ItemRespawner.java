@@ -38,7 +38,9 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void initElements() {
-		elements.items.add(() -> new ItemCustom());
+		if (LepidodendronConfig.doReSpawner) {
+			elements.items.add(() -> new ItemCustom());
+		}
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -46,6 +48,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:respawner", "inventory"));
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(250);
@@ -195,7 +198,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        tooltip.add("Encourages native mobs to respawn in the area. Requires the Enchantment of Time Reversal.");
+	        tooltip.add("Encourages native mobs to respawn in the area. Requires the Enchantment of Time Reversal. Ignores mob-caps: Please consider the lag you introduce when you have lots o fo mobs present.");
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

@@ -1,6 +1,6 @@
 {
     "name": "Carboniferous",
     "description": "$(l)Large Trees and Giant Bugs$()$(br)The period known for gigantic arthropods and large forests! $(br)The oxygen levels during this period were quite high.",
-    "icon": "paleopedia:category_icon/icon_carboniferous.png",
+    "icon": "paleopedia:textures/category_icon/icon_carboniferous.png",
     "sortnum": 5
 }

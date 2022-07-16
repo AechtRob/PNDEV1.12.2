@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/walliserops.png"],
+			"images": ["paleopedia:textures/devonian/walliserops.png"],
 			"title": "Walliserops trifurcatus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/acanthodes.png"],
+			"images": ["paleopedia:textures/devonian/acanthodes.png"],
 			"title": "Acanthodes sp.",
 			"text": ""
 		},

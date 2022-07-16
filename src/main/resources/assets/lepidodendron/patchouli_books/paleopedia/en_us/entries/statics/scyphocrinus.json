@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Scyphocrinus.png"],
+			"images": ["paleopedia:textures/statics/Scyphocrinus.png"],
 			"title": "Scyphocrinus elegans",
 			"text": ""
 		},

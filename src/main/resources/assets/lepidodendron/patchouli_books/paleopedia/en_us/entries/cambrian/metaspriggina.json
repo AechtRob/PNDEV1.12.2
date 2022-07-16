@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/metaspriggina.png"],
+			"images": ["paleopedia:textures/cambrian/metaspriggina.png"],
 			"title": "M. walcotti",
 			"text": ""
 		},

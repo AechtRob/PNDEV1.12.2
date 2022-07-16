@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/bushizheia.png"],
+			"images": ["paleopedia:textures/cambrian/bushizheia.png"],
 			"title": "Bushizheia yangi",
 			"text": ""
 		},

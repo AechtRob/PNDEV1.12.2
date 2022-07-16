@@ -1,7 +1,7 @@
 {
 	"name": "Orthoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/shell_orthoceras.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_orthoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_orthoceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/orthoceras.png"],
+			"images": ["paleopedia:textures/ordosil/orthoceras.png"],
 			"title": "Orthoceras regulare",
 			"text": ""
 		},

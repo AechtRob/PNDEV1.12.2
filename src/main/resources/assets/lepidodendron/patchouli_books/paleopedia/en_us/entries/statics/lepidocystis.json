@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Lepidocystis.png"],
+			"images": ["paleopedia:textures/statics/Lepidocystis.png"],
 			"title": "Lepidocystis sp.",
 			"text": ""
 		},

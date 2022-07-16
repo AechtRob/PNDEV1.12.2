@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/Turrisaspis.png"],
+			"images": ["paleopedia:textures/devonian/Turrisaspis.png"],
 			"title": "T. elektor",
 			"text": ""
 		},

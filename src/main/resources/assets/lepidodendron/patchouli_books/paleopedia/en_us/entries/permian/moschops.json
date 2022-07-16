@@ -1,7 +1,7 @@
 {
 	"name": "Moschops",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/moschops_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/moschops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_moschops",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/moschops.png"],
+			"images": ["paleopedia:textures/permian/moschops.png"],
 			"title": "Moschops capensis",
 			"text": ""
 		},

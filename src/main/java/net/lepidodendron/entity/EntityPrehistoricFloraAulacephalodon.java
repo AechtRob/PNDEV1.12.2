@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraAulacephalodon extends EntityPrehistoricFlora
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 2;
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Dicynodont";}

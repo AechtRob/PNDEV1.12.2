@@ -20,10 +20,11 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
 
     public static RenderEggsLand instance;
 
-    private final ModelEggMedium medium_egg;
     private final ModelEggSmall small_egg;
+    private final ModelEggMedium medium_egg;
     private final ModelEggLarge large_egg;
     private final ModelEggHuge huge_egg;
+    private final ModelEggVast vast_egg;
     private final ModelRottenLogEggs rotten_wood_eggs;
 
     public static final ResourceLocation TEXTURE_HYLONOMUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
@@ -36,6 +37,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
         this.medium_egg = new ModelEggMedium();
         this.large_egg = new ModelEggLarge();
         this.huge_egg = new ModelEggHuge();
+        this.vast_egg = new ModelEggVast();
         this.rotten_wood_eggs = new ModelRottenLogEggs();
     }
 
@@ -64,19 +66,19 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
             if (!creatureType.equals("")) {
                 if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
                     TEXTURE_EGG = TEXTURE_HYLONOMUS_EGG;
-                    eggType = 4; //rotten wood
+                    eggType = 10; //rotten wood
                 }
                 else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
                     TEXTURE_EGG = TEXTURE_LABIDOSAURUS_EGG;
-                    eggType = 4; //rotten wood
+                    eggType = 10; //rotten wood
                 }
                 else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ophiacodon")) {
                     TEXTURE_EGG = TEXTURE_OPHIACODON_EGG;
-                    eggType = 4; //rotten wood
+                    eggType = 10; //rotten wood
                 }
                 else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {
                     TEXTURE_EGG = TEXTURE_WEIGELTISAURUS_EGG;
-                    eggType = 4; //rotten wood
+                    eggType = 10; //rotten wood
                 }
                 else {
                     EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(creatureType));
@@ -92,7 +94,9 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
             }
             //Render any eggs:
             GlStateManager.pushMatrix();
-            if (eggType == 4) {
+            GlStateManager.disableCull();
+            GlStateManager.enableRescaleNormal();
+            if (eggType == 10) {
                 GlStateManager.translate(x + 0.5F, y + 1.0F, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.50F, 0.50F, 0.50F);
@@ -103,6 +107,8 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
             }
             Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+
+            GlStateManager.enableAlpha();
             switch (eggType) {
                 case 0: default:
                     this.small_egg.renderAll(1.2f);
@@ -121,9 +127,17 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                     break;
 
                 case 4:
+                    this.vast_egg.renderAll(0.9f);
+                    break;
+
+                case 10:
                     this.rotten_wood_eggs.renderAll(0.075F);
                     break;
             }
+
+            GlStateManager.disableAlpha();
+            GlStateManager.disableRescaleNormal();
+            GlStateManager.enableCull();
             GlStateManager.popMatrix();
         }
     }

@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraBunostegos extends EntityPrehistoricFloraLand
 		maxHealthAgeable = 18.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 3;
+	}
+
 	@Nullable
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {

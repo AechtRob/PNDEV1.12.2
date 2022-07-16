@@ -206,6 +206,7 @@ public class ModelAdelophthalmus extends AdvancedModelBase {
         if (f3 == 0.0F) {
             this.chainSwing(Leg1L, speed * 0.7F, 0.3F, 0, f2, 0.3F);
             this.chainSwing(Leg1R, speed * 0.7F, -0.3F, 0, f2, 0.3F);
+            this.chainSwing(Tail, speed * 0.7F, -0.05F, 0, f2, 0.4F);
         } else {
             this.chainSwing(Leg1L, speed, 0.3F, 0, f2, 1);
             this.chainSwing(Leg2L, speed, 0.3F, 0, f2, 1);

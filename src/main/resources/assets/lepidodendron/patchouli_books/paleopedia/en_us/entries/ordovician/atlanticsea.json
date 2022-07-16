@@ -1,7 +1,7 @@
 {
 	"name": "Atlantic Sea Nettle",
 	"read_by_default": true,
-	"icon": "paleopedia:ambients/ambients_icon/atlanticsea_icon.png",
+	"icon": "paleopedia:textures/ambients/ambients_icon/atlanticsea_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish7",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ambients/jelly_atlantic.png"],
+			"images": ["paleopedia:textures/ambients/jelly_atlantic.png"],
 			"title": "C. quinquecirrha",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/cooperoceras.png"],
+			"images": ["paleopedia:textures/permian/cooperoceras.png"],
 			"title": "C. texanum",
 			"text": ""
 		},

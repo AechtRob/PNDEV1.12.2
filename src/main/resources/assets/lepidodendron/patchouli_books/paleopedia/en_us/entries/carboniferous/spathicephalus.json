@@ -1,7 +1,7 @@
 {
 	"name": "Spathicephalus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/spathicephalus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/spathicephalus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_spathicephalus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/spathicephalus.png"],
+			"images": ["paleopedia:textures/carboniferous/spathicephalus.png"],
 			"title": "Spathicephalus mirus",
 			"text": ""
 		},

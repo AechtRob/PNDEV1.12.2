@@ -1,7 +1,7 @@
 {
 	"name": "Pantylus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/pantylus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/pantylus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pantylus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/pantylus.png"],
+			"images": ["paleopedia:textures/permian/pantylus.png"],
 			"title": "Pantylus cordatus",
 			"text": ""
 		},

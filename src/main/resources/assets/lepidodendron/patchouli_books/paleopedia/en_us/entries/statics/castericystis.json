@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Castericystis.png"],
+			"images": ["paleopedia:textures/statics/Castericystis.png"],
 			"title": "Castericystis vali",
 			"text": ""
 		},

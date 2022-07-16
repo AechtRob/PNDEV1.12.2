@@ -1,7 +1,7 @@
 {
 	"name": "Heterosteus",
 	"read_by_default": true,
-	"icon": "paleopedia:devonian/devonian_icon/heterosteus_icon.png",
+	"icon": "paleopedia:textures/devonian/devonian_icon/heterosteus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_heterosteus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/heterosteus.png"],
+			"images": ["paleopedia:textures/devonian/heterosteus.png"],
 			"title": "Heterosteus ingens",
 			"text": ""
 		},

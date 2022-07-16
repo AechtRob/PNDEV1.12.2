@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/isotelus.png"],
+			"images": ["paleopedia:textures/ordosil/isotelus.png"],
 			"title": "Isotelus rex",
 			"text": ""
 		},

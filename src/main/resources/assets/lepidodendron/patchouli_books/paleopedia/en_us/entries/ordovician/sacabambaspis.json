@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/sacabambaspis.png"],
+			"images": ["paleopedia:textures/ordosil/sacabambaspis.png"],
 			"title": "S. janvieri",
 			"text": ""
 		},

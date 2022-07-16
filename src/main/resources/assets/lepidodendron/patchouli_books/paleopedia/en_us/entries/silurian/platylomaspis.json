@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/platylomaspis.png"],
+			"images": ["paleopedia:textures/ordosil/platylomaspis.png"],
 			"title": "Platylomaspis serratus",
 			"text": ""
 		},

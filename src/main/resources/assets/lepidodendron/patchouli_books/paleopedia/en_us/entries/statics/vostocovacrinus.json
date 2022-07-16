@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Vostocovacrinus.png"],
+			"images": ["paleopedia:textures/statics/Vostocovacrinus.png"],
 			"title": "",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Archosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/archosaurus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/archosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_archosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/archosaurus.png"],
+			"images": ["paleopedia:textures/permian/archosaurus.png"],
 			"title": "A. rossicus",
 			"text": ""
 		},

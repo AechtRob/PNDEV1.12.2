@@ -1,7 +1,7 @@
 {
 	"name": "Eryops",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/eryops_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/eryops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eryops",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/eryops.png"],
+			"images": ["paleopedia:textures/carboniferous/eryops.png"],
 			"title": "Eryops sp.",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/hibernaspis.png"],
+			"images": ["paleopedia:textures/devonian/hibernaspis.png"],
 			"title": "Hibernaspis macrolepis",
 			"text": ""
 		},

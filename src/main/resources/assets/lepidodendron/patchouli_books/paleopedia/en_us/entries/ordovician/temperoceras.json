@@ -1,7 +1,7 @@
 {
 	"name": "Temperoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/shell_temperoceras.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_temperoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_temperoceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/temperoceras.png"],
+			"images": ["paleopedia:textures/ordosil/temperoceras.png"],
 			"title": "Temperoceras ludense",
 			"text": ""
 		},

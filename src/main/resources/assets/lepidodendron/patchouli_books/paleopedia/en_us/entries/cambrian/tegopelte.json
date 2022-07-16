@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/tegopelte.png"],
+			"images": ["paleopedia:textures/cambrian/tegopelte.png"],
 			"title": "T. gigas",
 			"text": ""
 		},

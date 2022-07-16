@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/ventogyrus.png"],
+			"images": ["paleopedia:textures/precambrian/ventogyrus.png"],
 			"title": "V. chistyakovi",
 			"text": ""
 		},

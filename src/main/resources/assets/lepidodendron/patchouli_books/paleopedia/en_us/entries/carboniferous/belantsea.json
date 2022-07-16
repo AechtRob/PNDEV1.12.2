@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/belantsea.png"],
+			"images": ["paleopedia:textures/carboniferous/belantsea.png"],
 			"title": "Belantsea montana",
 			"text": ""
 		},

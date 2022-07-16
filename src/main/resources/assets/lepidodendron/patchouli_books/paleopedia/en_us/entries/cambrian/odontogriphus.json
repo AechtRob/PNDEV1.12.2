@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/odontogriphus.png"],
+			"images": ["paleopedia:textures/cambrian/odontogriphus.png"],
 			"title": "O. omalus",
 			"text": ""
 		},

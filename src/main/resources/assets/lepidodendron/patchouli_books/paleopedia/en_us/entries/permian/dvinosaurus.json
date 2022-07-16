@@ -1,7 +1,7 @@
 {
 	"name": "Dvinosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/dvinosaurus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/dvinosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dvinosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/dvinosaurus.png"],
+			"images": ["paleopedia:textures/permian/dvinosaurus.png"],
 			"title": "Dvinosaurus primus",
 			"text": ""
 		},

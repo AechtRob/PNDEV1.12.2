@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/kerygmachela.png"],
+			"images": ["paleopedia:textures/cambrian/kerygmachela.png"],
 			"title": "K. kierkegaardi",
 			"text": ""
 		},

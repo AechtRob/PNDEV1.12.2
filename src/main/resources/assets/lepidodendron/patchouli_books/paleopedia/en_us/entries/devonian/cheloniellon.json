@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/cheloniellon.png"],
+			"images": ["paleopedia:textures/devonian/cheloniellon.png"],
 			"title": "",
 			"text": ""
 		},

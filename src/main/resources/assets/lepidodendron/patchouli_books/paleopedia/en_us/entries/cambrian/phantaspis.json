@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/phantaspis.png"],
+			"images": ["paleopedia:textures/cambrian/phantaspis.png"],
 			"title": "P. auritus",
 			"text": ""
 		},

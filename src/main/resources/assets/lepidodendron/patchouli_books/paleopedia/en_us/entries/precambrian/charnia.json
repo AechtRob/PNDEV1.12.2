@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/charnia.png"],
+			"images": ["paleopedia:textures/precambrian/charnia.png"],
 			"title": "Charnia masoni",
 			"text": ""
 		},

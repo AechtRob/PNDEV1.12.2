@@ -1,6 +1,6 @@
 {
     "name": "Cretaceous",
     "description": "$(l)+20 km$()",
-    "icon": "paleopedia:category_icon/icon_cretaceous.png",
+    "icon": "paleopedia:textures/category_icon/icon_cretaceous.png",
     "sortnum": 9
 }

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/siberion.png"],
+			"images": ["paleopedia:textures/cambrian/siberion.png"],
 			"title": "S. lenaicus",
 			"text": ""
 		},

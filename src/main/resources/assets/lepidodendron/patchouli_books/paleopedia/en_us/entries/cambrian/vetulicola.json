@@ -1,7 +1,7 @@
 {
 	"name": "Vetulicola",
 	"read_by_default": true,
-	"icon": "paleopedia:cambrian/cambrian_icon/vetulicola_icon.png",
+	"icon": "paleopedia:textures/cambrian/cambrian_icon/vetulicola_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vetulicola",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/vetulicola.png"],
+			"images": ["paleopedia:textures/cambrian/vetulicola.png"],
 			"title": "V. cuneata",
 			"text": ""
 		},

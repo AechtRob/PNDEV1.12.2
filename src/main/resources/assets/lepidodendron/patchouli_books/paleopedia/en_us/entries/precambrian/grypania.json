@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/grypania.png"],
+			"images": ["paleopedia:textures/precambrian/grypania.png"],
 			"title": "Grypania spiralis",
 			"text": ""
 		},

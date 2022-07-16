@@ -1,7 +1,7 @@
 {
 	"name": "Harvestman",
 	"read_by_default": true,
-	"icon": "paleopedia:ambients/ambient_icon/harvestman_icon.png",
+	"icon": "paleopedia:textures/ambients/ambient_icon/harvestman_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_harvestman",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ambients/harvestman.png"],
+			"images": ["paleopedia:textures/ambients/harvestman.png"],
 			"title": "Opiliones",
 			"text": ""
 		},

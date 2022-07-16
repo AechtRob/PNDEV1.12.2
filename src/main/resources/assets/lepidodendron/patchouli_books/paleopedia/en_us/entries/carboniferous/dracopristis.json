@@ -1,7 +1,7 @@
 {
 	"name": "Dracopristis",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/dracopristis_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/dracopristis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_dracopristis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/dracopristis.png"],
+			"images": ["paleopedia:textures/carboniferous/dracopristis.png"],
 			"title": "D. hoffmanorum",
 			"text": ""
 		},

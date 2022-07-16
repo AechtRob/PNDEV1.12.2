@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/ainiktozoon.png"],
+			"images": ["paleopedia:textures/ordosil/ainiktozoon.png"],
 			"title": "Ainiktozoon loganense",
 			"text": ""
 		},

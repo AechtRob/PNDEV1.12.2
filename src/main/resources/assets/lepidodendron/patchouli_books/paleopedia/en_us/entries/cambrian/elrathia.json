@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/elrathia.png"],
+			"images": ["paleopedia:textures/cambrian/elrathia.png"],
 			"title": "Elrathia kingii",
 			"text": ""
 		},

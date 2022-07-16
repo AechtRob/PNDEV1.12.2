@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Chaunograptus.png"],
+			"images": ["paleopedia:textures/statics/Chaunograptus.png"],
 			"title": "Chaunograptus sp.",
 			"text": ""
 		},

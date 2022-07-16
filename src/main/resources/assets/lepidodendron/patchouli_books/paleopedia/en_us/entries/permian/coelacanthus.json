@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/coelacanthus.png"],
+			"images": ["paleopedia:textures/permian/coelacanthus.png"],
 			"title": "Coelacanthus sp.",
 			"text": ""
 		},

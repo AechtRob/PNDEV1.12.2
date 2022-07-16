@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/Tartuosteus.png"],
+			"images": ["paleopedia:textures/devonian/Tartuosteus.png"],
 			"title": "T. giganteus",
 			"text": ""
 		},

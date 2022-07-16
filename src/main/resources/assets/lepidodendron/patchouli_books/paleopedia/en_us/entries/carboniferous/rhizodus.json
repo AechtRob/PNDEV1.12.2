@@ -1,7 +1,7 @@
 {
 	"name": "Rhizodus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/rhizodus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/rhizodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_rhizodus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/rhizodus.png"],
+			"images": ["paleopedia:textures/carboniferous/rhizodus.png"],
 			"title": "Rhizodus hibberti",
 			"text": ""
 		},

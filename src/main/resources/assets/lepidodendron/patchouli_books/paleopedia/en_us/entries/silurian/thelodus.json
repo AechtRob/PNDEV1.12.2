@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/thelodus.png"],
+			"images": ["paleopedia:textures/ordosil/thelodus.png"],
 			"title": "Thelodus parvidens",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Sphenacodon",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/sphenacodon_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/sphenacodon_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_sphenacodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/sphenacodon.png"],
+			"images": ["paleopedia:textures/carboniferous/sphenacodon.png"],
 			"title": "Sphenacodon ferox",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Retifacies",
 	"read_by_default": true,
-	"icon": "paleopedia:cambrian/cambrian_icon/retifacies_icon.png",
+	"icon": "paleopedia:textures/cambrian/cambrian_icon/retifacies_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_retifacies",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/retifacies.png"],
+			"images": ["paleopedia:textures/cambrian/retifacies.png"],
 			"title": "R. abnormalis",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Hibbertopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:devonian/devonian_icon/hibbertopterus_icon.png",
+	"icon": "paleopedia:textures/devonian/devonian_icon/hibbertopterus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_hibbertopterus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/hibbertopterus.png"],
+			"images": ["paleopedia:textures/devonian/hibbertopterus.png"],
 			"title": "Hibbertopterus scouleri",
 			"text": ""
 		},

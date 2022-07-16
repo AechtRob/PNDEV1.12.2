@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Dendrograptus.png"],
+			"images": ["paleopedia:textures/statics/Dendrograptus.png"],
 			"title": "Dendrograptus rigidus",
 			"text": ""
 		},

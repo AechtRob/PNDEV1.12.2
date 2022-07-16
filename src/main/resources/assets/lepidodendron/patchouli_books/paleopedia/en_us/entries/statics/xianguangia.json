@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Xianguangia.png"],
+			"images": ["paleopedia:textures/statics/Xianguangia.png"],
 			"title": "X. sinica",
 			"text": ""
 		},

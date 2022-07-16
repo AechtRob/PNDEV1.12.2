@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/lunataspis.png"],
+			"images": ["paleopedia:textures/ordosil/lunataspis.png"],
 			"title": "Lunataspis aurora",
 			"text": ""
 		},

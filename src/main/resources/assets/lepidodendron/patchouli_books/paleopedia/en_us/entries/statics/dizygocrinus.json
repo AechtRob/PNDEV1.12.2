@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Dizygocrinus.png"],
+			"images": ["paleopedia:textures/statics/Dizygocrinus.png"],
 			"title": "Dizygocrinus sp.",
 			"text": ""
 		},

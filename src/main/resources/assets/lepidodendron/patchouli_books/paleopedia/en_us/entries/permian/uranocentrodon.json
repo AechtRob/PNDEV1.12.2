@@ -1,7 +1,7 @@
 {
 	"name": "Uranocentrodon",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/uranocentrodon_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/uranocentrodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_uranocentrodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/uranocentrodon.png"],
+			"images": ["paleopedia:textures/permian/uranocentrodon.png"],
 			"title": "U. senekalensis",
 			"text": ""
 		},

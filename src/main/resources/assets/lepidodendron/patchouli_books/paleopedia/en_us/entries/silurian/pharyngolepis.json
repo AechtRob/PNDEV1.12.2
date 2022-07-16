@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/pharyngolepis.png"],
+			"images": ["paleopedia:textures/ordosil/pharyngolepis.png"],
 			"title": "Pharyngolepis oblonga",
 			"text": ""
 		},

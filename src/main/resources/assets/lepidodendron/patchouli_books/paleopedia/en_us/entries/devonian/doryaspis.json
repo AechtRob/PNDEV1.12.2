@@ -1,7 +1,7 @@
 {
 	"name": "Doryaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:devonian/devonian_icon/doryaspis_icon.png",
+	"icon": "paleopedia:textures/devonian/devonian_icon/doryaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_doryaspis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/doryaspis.png"],
+			"images": ["paleopedia:textures/devonian/doryaspis.png"],
 			"title": "Doryaspis nathorsti",
 			"text": ""
 		},

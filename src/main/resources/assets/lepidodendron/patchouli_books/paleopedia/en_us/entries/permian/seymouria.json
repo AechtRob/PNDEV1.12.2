@@ -1,7 +1,7 @@
 {
 	"name": "Seymouria",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/seymouria_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/seymouria_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_seymouria",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/seymouria.png"],
+			"images": ["paleopedia:textures/permian/seymouria.png"],
 			"title": "S. baylorensis",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Pisocrinus.png"],
+			"images": ["paleopedia:textures/statics/Pisocrinus.png"],
 			"title": "Pisocrinus sphericus",
 			"text": ""
 		},

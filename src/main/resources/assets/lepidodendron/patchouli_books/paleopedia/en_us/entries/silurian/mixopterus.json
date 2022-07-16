@@ -1,7 +1,7 @@
 {
 	"name": "Mixopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/mixopterus_icon.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/mixopterus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_mixopterus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/mixopterus.png"],
+			"images": ["paleopedia:textures/ordosil/mixopterus.png"],
 			"title": "Mixopterus multispinosus",
 			"text": ""
 		},

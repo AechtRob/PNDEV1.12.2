@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/goniatites.png"],
+			"images": ["paleopedia:textures/devonian/goniatites.png"],
 			"title": "Goniatites sp.",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Platyhystrix",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/platyhystrix_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/platyhystrix_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_platyhystrix",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/platyhystrix.png"],
+			"images": ["paleopedia:textures/permian/platyhystrix.png"],
 			"title": "P. rugosus",
 			"text": ""
 		},

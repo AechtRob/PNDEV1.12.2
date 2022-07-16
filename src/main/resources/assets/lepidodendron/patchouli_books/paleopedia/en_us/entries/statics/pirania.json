@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Pirania.png"],
+			"images": ["paleopedia:textures/statics/Pirania.png"],
 			"title": "Pirania sp.",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/anomalocaris.png"],
+			"images": ["paleopedia:textures/cambrian/anomalocaris.png"],
 			"title": "A. canadensis",
 			"text": ""
 		},

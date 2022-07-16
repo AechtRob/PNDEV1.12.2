@@ -1,7 +1,7 @@
 {
 	"name": "Dunkleosteus",
 	"read_by_default": true,
-	"icon": "paleopedia:devonian/devonian_icon/dunkleosteus_icon.png",
+	"icon": "paleopedia:textures/devonian/devonian_icon/dunkleosteus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dunkleosteus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/dunkleosteus.png"],
+			"images": ["paleopedia:textures/devonian/dunkleosteus.png"],
 			"title": "Dunkleosteus terrelli",
 			"text": ""
 		},

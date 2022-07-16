@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/arkarua.png"],
+			"images": ["paleopedia:textures/precambrian/arkarua.png"],
 			"title": "Arkarua adami",
 			"text": ""
 		},

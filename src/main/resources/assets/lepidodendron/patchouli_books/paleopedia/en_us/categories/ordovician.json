@@ -1,6 +1,6 @@
 {
     "name": "Ordovician",
     "description": "$(l)Cephalopod and Arthropod World$() $(br)This period had a distinct group of animals from the Cambrian and Silurian, which can be seen as some sort of transition from Arthropod domination in the seas to Fish domination.",
-    "icon": "paleopedia:category_icon/icon_ordovician.png",
+    "icon": "paleopedia:textures/category_icon/icon_ordovician.png",
     "sortnum": 2
 }

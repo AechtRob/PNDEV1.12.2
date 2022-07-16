@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/mooreoceras.png"],
+			"images": ["paleopedia:textures/carboniferous/mooreoceras.png"],
 			"title": "M. sibumasuense",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/tullimonstrum.png"],
+			"images": ["paleopedia:textures/carboniferous/tullimonstrum.png"],
 			"title": "T. gregarium",
 			"text": ""
 		},

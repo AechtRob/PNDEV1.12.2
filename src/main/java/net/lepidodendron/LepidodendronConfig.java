@@ -31,6 +31,7 @@ public class LepidodendronConfig {
     public static boolean doMeteorites = true;
     public static boolean doMeteoritesGriefing = true;
     public static boolean fixApples = true;
+    public static boolean doReSpawner = true;
     
     public static boolean doShrinkBiomes = false;
 
@@ -8469,6 +8470,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doMeteoritesGriefing", doMeteoritesGriefing);
         prop.setComment("Make meteorites cause craters and fire, and leave iron ore (note that meteorite griefing is also tied to the more general mobGriefing gamerule) [default: true]");
         doMeteoritesGriefing = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doReSpawner", doReSpawner);
+        prop.setComment("Allow the mob ReSpawner item in the mod [default: true]");
+        doReSpawner = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "fixApples", fixApples);

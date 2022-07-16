@@ -1,7 +1,7 @@
 {
 	"name": "Lycocercus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/lycocercus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/lycocercus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/lycocercus.png"],
+			"images": ["paleopedia:textures/carboniferous/lycocercus.png"],
 			"title": "Lycocercus pictus",
 			"text": ""
 		},

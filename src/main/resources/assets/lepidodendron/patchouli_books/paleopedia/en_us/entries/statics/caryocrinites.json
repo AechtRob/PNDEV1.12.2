@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Caryocrinites.png"],
+			"images": ["paleopedia:textures/statics/Caryocrinites.png"],
 			"title": "C. ornatus",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Datheosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/datheosaurus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/datheosaurus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_datheosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/datheosaurus.png"],
+			"images": ["paleopedia:textures/carboniferous/datheosaurus.png"],
 			"title": "D. macrourus",
 			"text": ""
 		},

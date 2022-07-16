@@ -20,9 +20,11 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCustom> {
 
-    private final ModelEggMedium medium_egg;
     private final ModelEggSmall small_egg;
+    private final ModelEggMedium medium_egg;
     private final ModelEggLarge large_egg;
+    private final ModelEggHuge huge_egg;
+    private final ModelEggVast vast_egg;
     private final ModelNest nest;
     private final ModelNestMound nest_mound;
 
@@ -30,6 +32,8 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
         this.small_egg = new ModelEggSmall();
         this.medium_egg = new ModelEggMedium();
         this.large_egg = new ModelEggLarge();
+        this.huge_egg = new ModelEggHuge();
+        this.vast_egg = new ModelEggVast();
 
         this.nest = new ModelNest();
         this.nest_mound = new ModelNestMound();
@@ -72,17 +76,20 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                 }
                 texture = texture.replace(":", ":textures/");
                 GlStateManager.pushMatrix();
+                GlStateManager.disableCull();
+                GlStateManager.enableRescaleNormal();
                 GlStateManager.translate(x + 0.5F, y + 1.50F, z + 0.5F);
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation(texture + ".png"));
-                GlStateManager.enableLighting();
+                GlStateManager.enableAlpha();
                 if (BlockNest.BlockCustom.isMound(world, pos)) {
                     this.nest_mound.renderAll(1.25f);
                 } else {
                     this.nest.renderAll(1.25f);
                 }
-                GlStateManager.disableLighting();
+                GlStateManager.disableAlpha();
+                GlStateManager.enableCull();
                 GlStateManager.popMatrix();
             }
 
@@ -114,10 +121,13 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
 
                 if (eggType != -1) {
                     GlStateManager.pushMatrix();
+                    GlStateManager.disableCull();
+                    GlStateManager.enableRescaleNormal();
                     GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
                     GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+                    GlStateManager.enableAlpha();
                     switch (eggType) {
                         case 0:
                         default:
@@ -131,7 +141,19 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                         case 2:
                             this.large_egg.renderAll(1.2f);
                             break;
+
+                        case 3:
+                            this.huge_egg.renderAll(1.2f);
+                            break;
+
+                        case 4:
+                            this.vast_egg.renderAll(0.9f);
+                            break;
                     }
+
+                    GlStateManager.disableAlpha();
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.enableCull();
                     GlStateManager.popMatrix();
                 }
             }

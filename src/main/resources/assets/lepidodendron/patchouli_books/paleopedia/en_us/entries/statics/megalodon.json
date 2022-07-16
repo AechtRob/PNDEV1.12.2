@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Megalodon.png"],
+			"images": ["paleopedia:textures/statics/Megalodon.png"],
 			"title": "Megalodon sp.",
 			"text": ""
 		},

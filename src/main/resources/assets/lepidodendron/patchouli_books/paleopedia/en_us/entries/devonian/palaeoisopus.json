@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/palaeoisopus.png"],
+			"images": ["paleopedia:textures/devonian/palaeoisopus.png"],
 			"title": "P. problematicus",
 			"text": ""
 		},

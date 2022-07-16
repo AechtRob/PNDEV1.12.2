@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Jimbacrinus.png"],
+			"images": ["paleopedia:textures/statics/Jimbacrinus.png"],
 			"title": "Jimbacrinus bostocki",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/hallucigenia.png"],
+			"images": ["paleopedia:textures/cambrian/hallucigenia.png"],
 			"title": "Hallucigenia sparsa",
 			"text": ""
 		},

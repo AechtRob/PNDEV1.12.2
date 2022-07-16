@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Echmatocrinus.png"],
+			"images": ["paleopedia:textures/statics/Echmatocrinus.png"],
 			"title": "E. brachiatus",
 			"text": ""
 		},

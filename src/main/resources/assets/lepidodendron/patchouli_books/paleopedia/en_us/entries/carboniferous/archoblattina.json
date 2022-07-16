@@ -1,7 +1,7 @@
 {
 	"name": "Archoblattina",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/archoblattina_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/archoblattina_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_archoblattina",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/archoblattina.png"],
+			"images": ["paleopedia:textures/carboniferous/archoblattina.png"],
 			"title": "Archoblattina beecheri",
 			"text": ""
 		},

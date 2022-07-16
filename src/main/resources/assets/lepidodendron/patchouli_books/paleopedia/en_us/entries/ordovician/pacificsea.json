@@ -1,7 +1,7 @@
 {
 	"name": "Pacific Sea Nettle",
 	"read_by_default": true,
-	"icon": "paleopedia:ambients/ambients_icon/pacificsea_icon.png",
+	"icon": "paleopedia:textures/ambients/ambients_icon/pacificsea_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish3",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ambients/jelly_pacific.png"],
+			"images": ["paleopedia:textures/ambients/jelly_pacific.png"],
 			"title": "C. fuscescens",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Eurypterus",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/eurypterus_icon.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/eurypterus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eurypterus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/eurypterus.png"],
+			"images": ["paleopedia:textures/ordosil/eurypterus.png"],
 			"title": "Eurypterus remipes",
 			"text": ""
 		},

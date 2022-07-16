@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Allonnia.png"],
+			"images": ["paleopedia:textures/statics/Allonnia.png"],
 			"title": "Allonnia sp.",
 			"text": ""
 		},

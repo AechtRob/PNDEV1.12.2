@@ -1,7 +1,7 @@
 {
 	"name": "Eusthenopteron",
 	"read_by_default": true,
-	"icon": "paleopedia:devonian/devonian_icon/eusthenopteron_icon.png",
+	"icon": "paleopedia:textures/devonian/devonian_icon/eusthenopteron_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eusthenopteron",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/eusthenopteron.png"],
+			"images": ["paleopedia:textures/devonian/eusthenopteron.png"],
 			"title": "Eusthenopteron foordi",
 			"text": ""
 		},

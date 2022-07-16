@@ -1,6 +1,6 @@
 {
     "name": "Jurassic",
     "description": "$(l)Welcome... to Jurassic Park (Coming Soon)$()",
-    "icon": "paleopedia:category_icon/icon_jurassic.png",
+    "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
     "sortnum": 8
 }

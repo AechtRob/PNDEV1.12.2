@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/banffia.png"],
+			"images": ["paleopedia:textures/cambrian/banffia.png"],
 			"title": "Banffia constricta",
 			"text": ""
 		},

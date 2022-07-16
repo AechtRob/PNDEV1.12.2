@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/brochoadmones.png"],
+			"images": ["paleopedia:textures/devonian/brochoadmones.png"],
 			"title": "Brochoadmones milesi",
 			"text": ""
 		},

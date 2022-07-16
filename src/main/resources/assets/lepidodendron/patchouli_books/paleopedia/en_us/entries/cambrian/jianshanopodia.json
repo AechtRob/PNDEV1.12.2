@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/jianshanopodia.png"],
+			"images": ["paleopedia:textures/cambrian/jianshanopodia.png"],
 			"title": "J. decora",
 			"text": ""
 		},

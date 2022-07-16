@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Aristocystites.png"],
+			"images": ["paleopedia:textures/statics/Aristocystites.png"],
 			"title": "Aristocystites sp.",
 			"text": ""
 		},

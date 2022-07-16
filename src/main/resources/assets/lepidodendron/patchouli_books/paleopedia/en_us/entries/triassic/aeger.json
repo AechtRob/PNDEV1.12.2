@@ -1,7 +1,7 @@
 {
 	"name": "Aeger",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
+	"icon": "paleopedia:textures/triassic/triassic_icon/aeger_icon.png",
 	"category": "lepidodendron:triassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_aeger",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:triassic/aegerred.png", "paleopedia:triassic/aegerbrown.png"],
+			"images": ["paleopedia:textures/triassic/aegerred.png", "paleopedia:textures/triassic/aegerbrown.png"],
 			"title": "Aeger elegans",
 			"text": ""
 		},

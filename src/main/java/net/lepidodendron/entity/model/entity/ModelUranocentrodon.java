@@ -363,7 +363,7 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bone.render(f5 * 0.50F);
+        this.body4.render(f5 * 0.50F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -376,7 +376,7 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.725F; //72
+        this.body4.offsetY = 0.725F; //72
 
         EntityPrehistoricFloraUranocentrodon Uranocentrodon = (EntityPrehistoricFloraUranocentrodon) e;
 
@@ -418,9 +418,9 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
             //this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
             this.chainSwing(TailLand, speed, 0.07F, -0.2, f2, 0.5F);
             this.chainSwing(Torso, speed, 0.04F, -0.1, f2, 0.7F);
-            this.bob(body, speed*2, 0.1F, false, f2, 1F);
+            this.bob(body4, speed*2, 0.1F, false, f2, 1F);
 
-            this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(2.5), false, 2.5F, f2, 1);
+            this.body4.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(2.5), false, 2.5F, f2, 1);
 
         }
         else { //Is in water
@@ -447,7 +447,7 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
             this.chainWave(TailSwim, speed, 0.012F, -0.2, f2, 0.5F);
             this.chainSwing(TailSwim, speed, 0.25F, -2.8, f2, 0.5F);
             this.chainSwing(Torso, speed, 0.2F, -0.12, f2, 0.7F);
-            this.swing(body, speed, 0.2F, true, 0, 0, f2, 1);
+            this.swing(body4, speed, 0.2F, true, 0, 0, f2, 1);
         }
     }
 

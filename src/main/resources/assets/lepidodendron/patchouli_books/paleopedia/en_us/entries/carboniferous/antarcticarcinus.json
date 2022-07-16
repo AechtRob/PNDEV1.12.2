@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/antarcticarcinus.png"],
+			"images": ["paleopedia:textures/carboniferous/antarcticarcinus.png"],
 			"title": "A. pagoda",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/Balanerpeton.png"],
+			"images": ["paleopedia:textures/carboniferous/Balanerpeton.png"],
 			"title": "B. woodi",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Lystrosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/lystrosaurus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/lystrosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lystrosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/lystrosaurus.png"],
+			"images": ["paleopedia:textures/permian/lystrosaurus.png"],
 			"title": "Lystrosaurus sp.",
 			"text": ""
 		},

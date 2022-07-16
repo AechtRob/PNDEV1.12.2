@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/bandringa.png"],
+			"images": ["paleopedia:textures/carboniferous/bandringa.png"],
 			"title": "Bandringa rayi",
 			"text": ""
 		},

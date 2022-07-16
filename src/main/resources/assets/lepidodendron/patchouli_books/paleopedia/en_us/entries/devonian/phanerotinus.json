@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/phanerotinus.png"],
+			"images": ["paleopedia:textures/devonian/phanerotinus.png"],
 			"title": "Phanerotinus cristatus",
 			"text": ""
 		},

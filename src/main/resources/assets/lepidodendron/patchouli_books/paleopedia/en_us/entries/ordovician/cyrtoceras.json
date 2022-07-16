@@ -1,7 +1,7 @@
 {
 	"name": "Cyrtoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/shell_cyrtoceras.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_cyrtoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cyrtoceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/cyrtoceras.png"],
+			"images": ["paleopedia:textures/ordosil/cyrtoceras.png"],
 			"title": "Cyrtoceras minneapolis",
 			"text": ""
 		},

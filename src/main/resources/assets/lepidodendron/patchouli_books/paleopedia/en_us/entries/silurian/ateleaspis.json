@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/ateleaspis.png"],
+			"images": ["paleopedia:textures/ordosil/ateleaspis.png"],
 			"title": "Ateleaspis tessellata",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Helicocystis.png"],
+			"images": ["paleopedia:textures/statics/Helicocystis.png"],
 			"title": "H. moroccoensis",
 			"text": ""
 		},

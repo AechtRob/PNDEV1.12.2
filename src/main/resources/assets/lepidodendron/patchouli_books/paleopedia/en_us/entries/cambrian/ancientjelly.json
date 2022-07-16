@@ -1,7 +1,7 @@
 {
 	"name": "Ancient Jellyfish",
 	"read_by_default": true,
-	"icon": "paleopedia:ambients/ambients_icon/ancientjelly_icon.png",
+	"icon": "paleopedia:textures/ambients/ambients_icon/ancientjelly_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ancientjelly",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ambients/ancientjelly_lightpink.png", "paleopedia:ambients/ancientjelly_blue.png", "paleopedia:ambients/ancientjelly_green.png", "paleopedia:ambients/ancientjelly_pink.png"],
+			"images": ["paleopedia:textures/ambients/ancientjelly_lightpink.png", "paleopedia:textures/ambients/ancientjelly_blue.png", "paleopedia:textures/ambients/ancientjelly_green.png", "paleopedia:textures/ambients/ancientjelly_pink.png"],
 			"title": "Ancient Jellyfish",
 			"text": ""
 		},

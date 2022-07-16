@@ -1,7 +1,7 @@
 {
 	"name": "Remigiomontanus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/remigiomontanus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/remigiomontanus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_remigiomontanus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/remigiomontanus.png"],
+			"images": ["paleopedia:textures/carboniferous/remigiomontanus.png"],
 			"title": "R. robustus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/menaspis.png"],
+			"images": ["paleopedia:textures/permian/menaspis.png"],
 			"title": "Menaspis armata",
 			"text": ""
 		},

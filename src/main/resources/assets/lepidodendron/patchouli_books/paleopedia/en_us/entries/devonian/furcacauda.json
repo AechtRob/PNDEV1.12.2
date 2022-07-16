@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:devonian/furcacauda.png"],
+			"images": ["paleopedia:textures/devonian/furcacauda.png"],
 			"title": "Furcacauda heintzae",
 			"text": ""
 		},

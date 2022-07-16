@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/lyrarapax.png"],
+			"images": ["paleopedia:textures/cambrian/lyrarapax.png"],
 			"title": "L. unguispinus",
 			"text": ""
 		},

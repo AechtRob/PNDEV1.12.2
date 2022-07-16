@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Lyracystis.png"],
+			"images": ["paleopedia:textures/statics/Lyracystis.png"],
 			"title": "Lyracystis radiata",
 			"text": ""
 		},

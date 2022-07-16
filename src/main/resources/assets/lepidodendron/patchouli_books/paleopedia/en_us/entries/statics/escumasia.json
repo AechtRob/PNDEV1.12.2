@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Escumasia.png"],
+			"images": ["paleopedia:textures/statics/Escumasia.png"],
 			"title": "Escumasia roryi",
 			"text": ""
 		},

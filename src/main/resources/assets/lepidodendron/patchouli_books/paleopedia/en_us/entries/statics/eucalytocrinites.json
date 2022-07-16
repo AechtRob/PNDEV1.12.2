@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Eucalyptocrinites.png"],
+			"images": ["paleopedia:textures/statics/Eucalyptocrinites.png"],
 			"title": "E. inchoatus",
 			"text": ""
 		},

@@ -31,6 +31,7 @@ public class ItemEggsArizonasaurus extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_arizonasaurus", "inventory"));
 	}
+
 	public static class ItemCustom extends ItemEggsPF {
 		public ItemCustom() {
 			super();

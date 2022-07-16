@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:precambrian/pambikalbae.png"],
+			"images": ["paleopedia:textures/precambrian/pambikalbae.png"],
 			"title": "P. hasenohrae",
 			"text": ""
 		},

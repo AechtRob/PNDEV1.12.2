@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/bobasatrania.png"],
+			"images": ["paleopedia:textures/permian/bobasatrania.png"],
 			"title": "B. canadensis",
 			"text": ""
 		},

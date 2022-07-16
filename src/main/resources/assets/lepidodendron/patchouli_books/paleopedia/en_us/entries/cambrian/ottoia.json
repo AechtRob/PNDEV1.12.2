@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/ottoia.png"],
+			"images": ["paleopedia:textures/cambrian/ottoia.png"],
 			"title": "Ottoia prolifica",
 			"text": ""
 		},

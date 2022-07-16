@@ -1,7 +1,7 @@
 {
 	"name": "Claudiosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:permian/permian_icon/claudiosaurus_icon.png",
+	"icon": "paleopedia:textures/permian/permian_icon/claudiosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_claudiosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:permian/claudiosaurus.png"],
+			"images": ["paleopedia:textures/permian/claudiosaurus.png"],
 			"title": "C. germaini",
 			"text": ""
 		},

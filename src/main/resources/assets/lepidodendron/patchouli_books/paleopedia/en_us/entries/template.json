@@ -1,7 +1,7 @@
 {
 	"name": "",
 	"read_by_default": true,
-	"icon": "paleopedia:triassic/triassic_icon/aeger_icon.png",
+	"icon": "paleopedia:textures/triassic/triassic_icon/aeger_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/.png"],
+			"images": ["paleopedia:textures/carboniferous/.png"],
 			"title": "",
 			"text": ""
 		},

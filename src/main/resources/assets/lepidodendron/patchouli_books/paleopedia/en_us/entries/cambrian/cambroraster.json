@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:cambrian/cambroraster.png"],
+			"images": ["paleopedia:textures/cambrian/cambroraster.png"],
 			"title": "Cambroraster falcatus",
 			"text": ""
 		},

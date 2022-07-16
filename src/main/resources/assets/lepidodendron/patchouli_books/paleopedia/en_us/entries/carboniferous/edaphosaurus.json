@@ -1,7 +1,7 @@
 {
 	"name": "Edaphosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:carboniferous/carboniferous_icon/edaphosaurus_icon.png",
+	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/edaphosaurus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_edaphosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:carboniferous/Edaphosaurus.png"],
+			"images": ["paleopedia:textures/carboniferous/Edaphosaurus.png"],
 			"title": "E. cruciger",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Lithiotis.png"],
+			"images": ["paleopedia:textures/statics/Lithiotis.png"],
 			"title": "Lithiotis sp.",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:statics/Vadarocrinus.png"],
+			"images": ["paleopedia:textures/statics/Vadarocrinus.png"],
 			"title": "Vadarocrinus vassa",
 			"text": ""
 		},

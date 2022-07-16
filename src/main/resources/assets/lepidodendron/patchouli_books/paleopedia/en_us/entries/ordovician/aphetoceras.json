@@ -1,7 +1,7 @@
 {
 	"name": "Aphetoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/shell_aphetoceras.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_aphetoceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_aphetoceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/aphetoceras.png"],
+			"images": ["paleopedia:textures/ordosil/aphetoceras.png"],
 			"title": "A. americanum",
 			"text": ""
 		},

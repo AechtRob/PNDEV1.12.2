@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/asaphus.png"],
+			"images": ["paleopedia:textures/ordosil/asaphus.png"],
 			"title": "Asaphus sp.",
 			"text": ""
 		},

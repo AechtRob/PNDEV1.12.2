@@ -1,7 +1,7 @@
 {
 	"name": "Monograptus",
 	"read_by_default": true,
-	"icon": "paleopedia:ordosil/ordosil_icon/monograptus_icon.png",
+	"icon": "paleopedia:textures/ordosil/ordosil_icon/monograptus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_monograptus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:ordosil/monograptus.png"],
+			"images": ["paleopedia:textures/ordosil/monograptus.png"],
 			"title": "Monograptus spiralis",
 			"text": ""
 		},
