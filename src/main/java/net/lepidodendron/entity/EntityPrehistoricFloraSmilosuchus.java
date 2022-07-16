@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public int getEggType() {
+		return 2; //large
+	}
+
+	@Override
 	public void setScaleForAge(boolean child) {
 		if (this.isInWater()) {
 			this.setSizer(this.getAgeScale() * this.maxWidth, this.getAgeScale() * this.maxHeight);

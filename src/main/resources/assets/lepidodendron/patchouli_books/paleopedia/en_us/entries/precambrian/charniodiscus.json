@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/charniodiscus.png"],
+			"images": ["paleopedia:textures/charniodiscus.png"],
 			"title": "Charniodiscus sp.",
 			"text": ""
 		},

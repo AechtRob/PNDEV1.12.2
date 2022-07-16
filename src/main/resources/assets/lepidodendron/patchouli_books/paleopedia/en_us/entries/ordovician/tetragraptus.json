@@ -1,7 +1,7 @@
 {
 	"name": "Tetragraptus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/tetragraptus_icon.png",
+	"icon": "paleopedia:textures/tetragraptus_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_tetragraptus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/tetragraptus.png"],
+			"images": ["paleopedia:textures/tetragraptus.png"],
 			"title": "Tetragraptus sp.",
 			"text": ""
 		},

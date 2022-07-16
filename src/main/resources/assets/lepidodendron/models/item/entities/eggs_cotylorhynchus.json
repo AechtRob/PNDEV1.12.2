@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_large",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_cotylorhynchus"
+    "texture": "lepidodendron:entities/eggs_cotylorhynchus"
   }
 }
+

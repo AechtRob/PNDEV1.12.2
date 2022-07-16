@@ -1,7 +1,7 @@
 {
 	"name": "Helicoprion",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/helicoprion_icon.png",
+	"icon": "paleopedia:textures/helicoprion_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_helicoprion",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/helicoprion.png"],
+			"images": ["paleopedia:textures/helicoprion.png"],
 			"title": "H. bessonowi",
 			"text": ""
 		},

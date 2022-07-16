@@ -1,7 +1,7 @@
 {
 	"name": "Cameroceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_cameroceras.png",
+	"icon": "paleopedia:textures/shell_cameroceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cameroceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/cameroceras.png"],
+			"images": ["paleopedia:textures/cameroceras.png"],
 			"title": "C. trentonense",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/bomakellia.png"],
+			"images": ["paleopedia:textures/bomakellia.png"],
 			"title": "Bomakellia kelleri",
 			"text": ""
 		},

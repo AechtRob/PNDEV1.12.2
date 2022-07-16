@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/poleumita.png"],
+			"images": ["paleopedia:textures/poleumita.png"],
 			"title": "Poleumita sp.",
 			"text": ""
 		},

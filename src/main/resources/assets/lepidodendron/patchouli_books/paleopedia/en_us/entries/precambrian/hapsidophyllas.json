@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/hapsidophyllas.png"],
+			"images": ["paleopedia:textures/hapsidophyllas.png"],
 			"title": "H. flexibilis",
 			"text": ""
 		},

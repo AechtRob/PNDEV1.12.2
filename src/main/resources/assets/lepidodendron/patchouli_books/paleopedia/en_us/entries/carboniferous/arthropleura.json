@@ -1,7 +1,7 @@
 {
 	"name": "Arthropleura",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/arthropleura_icon.png",
+	"icon": "paleopedia:textures/arthropleura_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/Arthropleura.png"],
+			"images": ["paleopedia:textures/Arthropleura.png"],
 			"title": "A. armata",
 			"text": ""
 		},

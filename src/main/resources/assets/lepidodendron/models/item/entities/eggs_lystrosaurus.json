@@ -1,6 +1,27 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_medium",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_lystrosaurus"
+    "texture": "lepidodendron:entities/eggs_lystrosaurus"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

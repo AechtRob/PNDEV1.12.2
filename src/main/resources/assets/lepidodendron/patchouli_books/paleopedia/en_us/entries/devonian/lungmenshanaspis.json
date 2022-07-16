@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/lungmenshanaspis.png"],
+			"images": ["paleopedia:textures/lungmenshanaspis.png"],
 			"title": "L. kiangyouensis",
 			"text": ""
 		},

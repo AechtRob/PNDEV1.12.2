@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/paranaichthys.png"],
+			"images": ["paleopedia:textures/paranaichthys.png"],
 			"title": "P. longianalis",
 			"text": ""
 		},

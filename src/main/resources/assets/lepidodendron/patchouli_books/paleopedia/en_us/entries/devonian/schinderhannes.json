@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/schinderhannes.png"],
+			"images": ["paleopedia:textures/schinderhannes.png"],
 			"title": "S. bartelsi",
 			"text": ""
 		},

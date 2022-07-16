@@ -1,7 +1,7 @@
 {
 	"name": "Gorgonops",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/gorgonops_icon.png",
+	"icon": "paleopedia:textures/gorgonops_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gorgonops",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/gorgonops.png"],
+			"images": ["paleopedia:textures/gorgonops.png"],
 			"title": "Gorgonops torvus",
 			"text": ""
 		},

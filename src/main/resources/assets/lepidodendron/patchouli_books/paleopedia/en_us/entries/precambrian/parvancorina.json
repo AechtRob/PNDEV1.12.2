@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/parvancorina.png"],
+			"images": ["paleopedia:textures/parvancorina.png"],
 			"title": "P. minchami",
 			"text": ""
 		},

@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraAulacephalodon extends EntityPrehistoricFlora
 
 	@Override
 	public int getEggType() {
-		return 2;
+		return 1; //medium
 	}
 
 	public static String getPeriod() {return "Permian";}

@@ -1,7 +1,7 @@
 {
 	"name": "Orthrozanclus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cambrian/cambrian_icon/orthrozanclus_icon.png",
+	"icon": "paleopedia:textures/orthrozanclus_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_orthrozanclus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/orthrozanclus.png"],
+			"images": ["paleopedia:textures/orthrozanclus.png"],
 			"title": "O. reburrus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/kodymirus.png"],
+			"images": ["paleopedia:textures/kodymirus.png"],
 			"title": "Kodymirus vagans",
 			"text": ""
 		},

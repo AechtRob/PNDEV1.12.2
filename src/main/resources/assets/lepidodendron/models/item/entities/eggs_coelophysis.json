@@ -1,6 +1,41 @@
 {
-  "parent": "lepidodendron:block/eggs_vast",
+  "parent": "lepidodendron:block/eggs_medium",
   "textures": {
-    "texture": "lepidodendron:entities/eggs_arizonasaurus"
+    "texture": "lepidodendron:entities/eggs_coelophysis"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

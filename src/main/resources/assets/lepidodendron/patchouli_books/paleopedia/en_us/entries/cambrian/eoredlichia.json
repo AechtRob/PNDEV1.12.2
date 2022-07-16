@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/eoredlichia.png"],
+			"images": ["paleopedia:textures/eoredlichia.png"],
 			"title": "Eoredlichia intermedia",
 			"text": ""
 		},

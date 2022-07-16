@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraBunostegos extends EntityPrehistoricFloraLand
 
 	@Override
 	public int getEggType() {
-		return 3;
+		return 0; //small
 	}
 
 	@Nullable

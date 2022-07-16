@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/namacalathus.png"],
+			"images": ["paleopedia:textures/namacalathus.png"],
 			"title": "N. hermanastes",
 			"text": ""
 		},

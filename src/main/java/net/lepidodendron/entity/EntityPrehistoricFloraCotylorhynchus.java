@@ -48,6 +48,11 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 		maxHealthAgeable = 38.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 2; //large
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Synapsid";}

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/eglonaspis.png"],
+			"images": ["paleopedia:textures/eglonaspis.png"],
 			"title": "Eglonaspis rostrata",
 			"text": ""
 		},

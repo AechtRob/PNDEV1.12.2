@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/qilinyu.png"],
+			"images": ["paleopedia:textures/qilinyu.png"],
 			"title": "Qilinyu rostrata",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/primocandelabrum_blue.png", "paleopedia:textures/precambrian/primocandelabrum_yellow.png"],
+			"images": ["paleopedia:textures/primocandelabrum_blue.png", "paleopedia:textures/primocandelabrum_yellow.png"],
 			"title": "P. hiemaloranum",
 			"text": ""
 		},

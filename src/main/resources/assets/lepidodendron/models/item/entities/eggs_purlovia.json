@@ -1,6 +1,24 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eggs_purlovia"
+    "texture": "lepidodendron:entities/eggs_purlovia"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

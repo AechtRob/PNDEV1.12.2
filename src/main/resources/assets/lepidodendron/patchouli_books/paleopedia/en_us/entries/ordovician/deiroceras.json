@@ -1,7 +1,7 @@
 {
 	"name": "Deiroceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_deiroceras.png:",
+	"icon": "paleopedia:textures/shell_deiroceras.png:",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_deiroceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/deiroceras.png"],
+			"images": ["paleopedia:textures/deiroceras.png"],
 			"title": "Deiroceras hollardi",
 			"text": ""
 		},

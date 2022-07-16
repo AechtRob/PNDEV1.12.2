@@ -1,7 +1,7 @@
 {
 	"name": "Orodus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/orodus_icon.png",
+	"icon": "paleopedia:textures/orodus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_orodus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/orodus.png"],
+			"images": ["paleopedia:textures/orodus.png"],
 			"title": "O. micropterygius",
 			"text": ""
 		},

@@ -1,6 +1,60 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_ctenospondylus"
+    "texture": "lepidodendron:entities/eggs_ctenospondylus"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

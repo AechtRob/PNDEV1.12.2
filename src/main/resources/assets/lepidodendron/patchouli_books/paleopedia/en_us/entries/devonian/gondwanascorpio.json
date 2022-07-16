@@ -1,7 +1,7 @@
 {
 	"name": "Gondwanascorpio",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/gondwanascorpio_icon.png",
+	"icon": "paleopedia:textures/gondwanascorpio_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gondwanascorpio",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/gondwanascorpio.png"],
+			"images": ["paleopedia:textures/gondwanascorpio.png"],
 			"title": "G. emzantsiensis",
 			"text": ""
 		},

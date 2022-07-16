@@ -1,7 +1,7 @@
 {
 	"name": "Edestus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/edestus_icon.png",
+	"icon": "paleopedia:textures/edestus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_edestus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/edestus.png"],
+			"images": ["paleopedia:textures/edestus.png"],
 			"title": "Edestus heinrichi",
 			"text": ""
 		},

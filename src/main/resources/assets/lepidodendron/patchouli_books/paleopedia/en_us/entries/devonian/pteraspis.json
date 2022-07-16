@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/pteraspis.png"],
+			"images": ["paleopedia:textures/pteraspis.png"],
 			"title": "Pteraspis rostrata",
 			"text": ""
 		},

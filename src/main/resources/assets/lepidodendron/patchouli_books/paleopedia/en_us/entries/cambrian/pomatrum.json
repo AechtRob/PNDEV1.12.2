@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/pomatrum.png"],
+			"images": ["paleopedia:textures/pomatrum.png"],
 			"title": "P. ventralis",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/Stensioella.png"],
+			"images": ["paleopedia:textures/Stensioella.png"],
 			"title": "S. heintzi",
 			"text": ""
 		},

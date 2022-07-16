@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/cloudina.png"],
+			"images": ["paleopedia:textures/cloudina.png"],
 			"title": "Cloudina sp.",
 			"text": ""
 		},

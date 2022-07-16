@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/pikaia.png"],
+			"images": ["paleopedia:textures/pikaia.png"],
 			"title": "P. gracilens",
 			"text": ""
 		},

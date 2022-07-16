@@ -1,7 +1,7 @@
 {
 	"name": "Urocordylus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/urocordylus_icon.png",
+	"icon": "paleopedia:textures/urocordylus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_urocordylus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/urocordylus.png"],
+			"images": ["paleopedia:textures/urocordylus.png"],
 			"title": "U. wandesfordii",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/ebenaqua.png"],
+			"images": ["paleopedia:textures/ebenaqua.png"],
 			"title": "Ebenaqua ritchei",
 			"text": ""
 		},

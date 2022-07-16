@@ -1,7 +1,7 @@
 {
 	"name": "Pristerognathus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/pristerognathus_icon.png",
+	"icon": "paleopedia:textures/pristerognathus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pristerognathus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/pristerognathus.png"],
+			"images": ["paleopedia:textures/pristerognathus.png"],
 			"title": "P. vanderbyli",
 			"text": ""
 		},

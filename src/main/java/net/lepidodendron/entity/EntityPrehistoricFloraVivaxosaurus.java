@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraVivaxosaurus extends EntityPrehistoricFloraLa
 		maxHealthAgeable = 12.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Dicynodont";}

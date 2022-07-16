@@ -1,7 +1,7 @@
 {
 	"name": "Dunbaria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/dunaria_icon.png",
+	"icon": "paleopedia:textures/dunaria_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/dunbaria.png"],
+			"images": ["paleopedia:textures/dunbaria.png"],
 			"title": "D. quinquefasciata",
 			"text": ""
 		},

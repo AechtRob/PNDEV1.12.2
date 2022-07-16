@@ -1,7 +1,7 @@
 {
 	"name": "Weigeltisaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/weigeltisaurus_icon.png",
+	"icon": "paleopedia:textures/weigeltisaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_weigeltisaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/weigeltisaurus.png"],
+			"images": ["paleopedia:textures/weigeltisaurus.png"],
 			"title": "W. jaekeli",
 			"text": ""
 		},

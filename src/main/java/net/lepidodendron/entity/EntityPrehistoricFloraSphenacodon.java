@@ -52,6 +52,11 @@ public class EntityPrehistoricFloraSphenacodon extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public boolean placesNest() {
 		return true;
 	}

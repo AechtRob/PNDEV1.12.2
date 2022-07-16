@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/tawuia.png"],
+			"images": ["paleopedia:textures/tawuia.png"],
 			"title": "Tawuia sp.",
 			"text": ""
 		},

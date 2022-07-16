@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraScutosaurus extends EntityPrehistoricFloraLan
 		maxHealthAgeable = 30.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Pareiasaur";}

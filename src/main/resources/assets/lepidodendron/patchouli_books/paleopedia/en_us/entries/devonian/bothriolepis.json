@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/bothriolepis.png"],
+			"images": ["paleopedia:textures/bothriolepis.png"],
 			"title": "Bothriolepis rex",
 			"text": ""
 		},

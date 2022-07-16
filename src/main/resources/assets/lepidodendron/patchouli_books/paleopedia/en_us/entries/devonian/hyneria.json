@@ -1,7 +1,7 @@
 {
 	"name": "Hyneria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/hyneria_icon.png",
+	"icon": "paleopedia:textures/hyneria_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_hyneria",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/hyneria.png"],
+			"images": ["paleopedia:textures/hyneria.png"],
 			"title": "Hyneria lindae",
 			"text": ""
 		},

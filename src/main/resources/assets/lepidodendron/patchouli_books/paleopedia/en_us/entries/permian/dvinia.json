@@ -1,7 +1,7 @@
 {
 	"name": "Dvinia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/dvinia_icon.png",
+	"icon": "paleopedia:textures/dvinia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dvinia",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/dvinia.png"],
+			"images": ["paleopedia:textures/dvinia.png"],
 			"title": "Dvinia prima",
 			"text": ""
 		},

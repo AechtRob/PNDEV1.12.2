@@ -1,7 +1,7 @@
 {
 	"name": "Limnoscelis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/limnoscelis_icon.png",
+	"icon": "paleopedia:textures/limnoscelis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_limnoscelis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/limnoscelis.png"],
+			"images": ["paleopedia:textures/limnoscelis.png"],
 			"title": "L. paludis",
 			"text": ""
 		},

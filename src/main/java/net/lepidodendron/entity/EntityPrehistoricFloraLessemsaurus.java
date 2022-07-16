@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getEggType() {
+		return 3; //huge
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
 	}

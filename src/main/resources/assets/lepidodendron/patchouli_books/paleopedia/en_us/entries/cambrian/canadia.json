@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/Canadia.png"],
+			"images": ["paleopedia:textures/Canadia.png"],
 			"title": "C. spinosa",
 			"text": ""
 		},

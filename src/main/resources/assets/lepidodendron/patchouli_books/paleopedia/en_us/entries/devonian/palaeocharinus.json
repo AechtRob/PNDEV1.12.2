@@ -1,7 +1,7 @@
 {
 	"name": "Palaeocharinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/palaeocharinus_icon.png",
+	"icon": "paleopedia:textures/palaeocharinus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeocharinus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/palaeocharinus.png"],
+			"images": ["paleopedia:textures/palaeocharinus.png"],
 			"title": "P. rhyniensis",
 			"text": ""
 		},

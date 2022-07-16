@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/thectardis.png"],
+			"images": ["paleopedia:textures/thectardis.png"],
 			"title": "T. avalonensis",
 			"text": ""
 		},

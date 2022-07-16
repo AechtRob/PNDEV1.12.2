@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/acadoparadoxides.png"],
+			"images": ["paleopedia:textures/acadoparadoxides.png"],
 			"title": "A. nobilis",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/manticoceras.png"],
+			"images": ["paleopedia:textures/manticoceras.png"],
 			"title": "Manticoceras sp.",
 			"text": ""
 		},

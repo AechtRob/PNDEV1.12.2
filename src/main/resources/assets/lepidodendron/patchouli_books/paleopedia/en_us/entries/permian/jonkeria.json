@@ -1,7 +1,7 @@
 {
 	"name": "Jonkeria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/jonkeria_icon.png",
+	"icon": "paleopedia:textures/jonkeria_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_jonkeria",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/jonkeria.png"],
+			"images": ["paleopedia:textures/jonkeria.png"],
 			"title": "Jonkeria truculenta",
 			"text": ""
 		},

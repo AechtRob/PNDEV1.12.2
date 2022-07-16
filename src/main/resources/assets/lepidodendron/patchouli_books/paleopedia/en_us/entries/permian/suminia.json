@@ -1,7 +1,7 @@
 {
 	"name": "Suminia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/suminia_icon.png",
+	"icon": "paleopedia:textures/suminia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_suminia",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/suminia.png"],
+			"images": ["paleopedia:textures/suminia.png"],
 			"title": "S. getmanovi",
 			"text": ""
 		},

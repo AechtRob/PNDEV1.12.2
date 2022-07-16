@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/arborea.png"],
+			"images": ["paleopedia:textures/arborea.png"],
 			"title": "Arborea sp.",
 			"text": ""
 		},

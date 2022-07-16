@@ -1,7 +1,7 @@
 {
 	"name": "Megarachne",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/megarachne_icon.png",
+	"icon": "paleopedia:textures/megarachne_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_megarachne",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/megarachne.png"],
+			"images": ["paleopedia:textures/megarachne.png"],
 			"title": "M. servinei",
 			"text": ""
 		},

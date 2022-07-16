@@ -1,7 +1,7 @@
 {
 	"name": "Profallotaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cambrian/cambrian_icon/profallotaspis_icon.png",
+	"icon": "paleopedia:textures/profallotaspis_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_profallotaspis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/profallotaspis.png"],
+			"images": ["paleopedia:textures/profallotaspis.png"],
 			"title": "P. jakutensis",
 			"text": ""
 		},

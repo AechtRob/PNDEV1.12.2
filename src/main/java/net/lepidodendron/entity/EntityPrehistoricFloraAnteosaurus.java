@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		GRAPPLE_ANIMATION = Animation.create(this.getGrappleLength());
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public int getGrappleLength() {
 		return 200;
 	}
@@ -63,10 +68,6 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		return new Animation[]{GRAPPLE_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}
 
-	@Override
-	public int getEggType() {
-		return 1;
-	}
 
 	public static String getPeriod() {return "Permian";}
 

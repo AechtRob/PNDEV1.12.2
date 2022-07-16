@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/wiwaxia.png"],
+			"images": ["paleopedia:textures/wiwaxia.png"],
 			"title": "W. corrugata",
 			"text": ""
 		},

@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 		maxHealthAgeable = 21.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Therapsid";}

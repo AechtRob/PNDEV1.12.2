@@ -1,7 +1,7 @@
 {
 	"name": "Batofasciculus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/cambrian/cambrian_icon/batofasciculus_icon.png",
+	"icon": "paleopedia:textures/batofasciculus_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_batofasciculus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/batofasciculus.png"],
+			"images": ["paleopedia:textures/batofasciculus.png"],
 			"title": "B. ramificans",
 			"text": ""
 		},

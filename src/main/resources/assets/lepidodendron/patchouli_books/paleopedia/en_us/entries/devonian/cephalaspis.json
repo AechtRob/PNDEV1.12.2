@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/cephalaspis.png"],
+			"images": ["paleopedia:textures/cephalaspis.png"],
 			"title": "Cephalaspis lyelli",
 			"text": ""
 		},

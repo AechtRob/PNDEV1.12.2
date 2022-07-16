@@ -1,4 +1,7 @@
 {
+	"textures": {
+		"particle": "lepidodendron:blocks/particle_egg_break"
+	},
 	"ambientocclusion": false,
 	"elements": []
 }

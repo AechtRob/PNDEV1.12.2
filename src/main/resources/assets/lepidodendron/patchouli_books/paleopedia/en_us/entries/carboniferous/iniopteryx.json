@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/iniopteryx.png"],
+			"images": ["paleopedia:textures/iniopteryx.png"],
 			"title": "Iniopteryx rushlaui",
 			"text": ""
 		},

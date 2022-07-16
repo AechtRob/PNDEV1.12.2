@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraSaurosuchus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getEggType() {
+		return 2; //large
+	}
+
+	@Override
 	public boolean placesNest() {
 		return true;
 	}

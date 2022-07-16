@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/ellipsocephalus.png"],
+			"images": ["paleopedia:textures/ellipsocephalus.png"],
 			"title": "Ellipsocephalus hoffi",
 			"text": ""
 		},

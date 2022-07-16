@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraSillosuchus extends EntityPrehistoricFloraLan
 	}
 
 	@Override
+	public int getEggType() {
+		return 2; //large
+	}
+
+	@Override
 	public int getDrinkLength() {
 		return 80;
 	}

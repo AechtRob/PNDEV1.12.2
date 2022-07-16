@@ -1,7 +1,7 @@
 {
     "name": "Triassic Animals",
     "description": "Animals of the Triassic",
-    "icon": "paleopedia:textures/triassic/triassic_icon/postosuchus_icon.png",
+    "icon": "paleopedia:textures/postosuchus_icon.png",
     "parent": "lepidodendron:triassic",
     "sortnum": 1
 }

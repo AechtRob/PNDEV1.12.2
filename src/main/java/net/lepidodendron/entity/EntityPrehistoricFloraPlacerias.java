@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraPlacerias extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
 	}

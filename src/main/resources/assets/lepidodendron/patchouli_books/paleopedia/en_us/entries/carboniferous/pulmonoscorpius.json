@@ -1,7 +1,7 @@
 {
 	"name": "Pulmonoscorpius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/pulmonoscorpius_icon.png",
+	"icon": "paleopedia:textures/pulmonoscorpius_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_pulmonoscorpius",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/pulmonoscorpius.png"],
+			"images": ["paleopedia:textures/pulmonoscorpius.png"],
 			"title": "P. kirktonensis",
 			"text": ""
 		},

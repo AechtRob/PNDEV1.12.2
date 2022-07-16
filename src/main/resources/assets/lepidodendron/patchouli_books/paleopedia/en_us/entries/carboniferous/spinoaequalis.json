@@ -1,7 +1,7 @@
 {
 	"name": "Spinoaequalis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/spinoaequalis_icon.png",
+	"icon": "paleopedia:textures/spinoaequalis_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_spinoaequalis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/spinoaequalis.png"],
+			"images": ["paleopedia:textures/spinoaequalis.png"],
 			"title": "S. schultzei",
 			"text": ""
 		},

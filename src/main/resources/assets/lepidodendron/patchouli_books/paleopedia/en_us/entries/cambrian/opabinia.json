@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/opabinia.png"],
+			"images": ["paleopedia:textures/opabinia.png"],
 			"title": "O. regalis",
 			"text": ""
 		},

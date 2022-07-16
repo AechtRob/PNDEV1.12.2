@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/facivermis.png"],
+			"images": ["paleopedia:textures/facivermis.png"],
 			"title": "Facivermis yunnanicus",
 			"text": ""
 		},

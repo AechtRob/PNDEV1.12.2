@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/lunaspis.png"],
+			"images": ["paleopedia:textures/lunaspis.png"],
 			"title": "Lunaspis broili",
 			"text": ""
 		},

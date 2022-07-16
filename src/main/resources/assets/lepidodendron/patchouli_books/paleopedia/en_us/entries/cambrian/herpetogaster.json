@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/herpetogaster.png"],
+			"images": ["paleopedia:textures/herpetogaster.png"],
 			"title": "Herpetogaster collinsi",
 			"text": ""
 		},

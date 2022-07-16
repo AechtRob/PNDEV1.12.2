@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/inaria.png"],
+			"images": ["paleopedia:textures/inaria.png"],
 			"title": "Inaria karli",
 			"text": ""
 		},

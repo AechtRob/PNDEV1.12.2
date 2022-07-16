@@ -1,7 +1,7 @@
 {
 	"name": "Sauroctonus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/sauroctonus_icon.png",
+	"icon": "paleopedia:textures/sauroctonus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_sauroctonus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/sauroctonus.png"],
+			"images": ["paleopedia:textures/sauroctonus.png"],
 			"title": "S. progressus",
 			"text": ""
 		},

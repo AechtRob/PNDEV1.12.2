@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/microdictyon.png"],
+			"images": ["paleopedia:textures/microdictyon.png"],
 			"title": "M. effusum",
 			"text": ""
 		},

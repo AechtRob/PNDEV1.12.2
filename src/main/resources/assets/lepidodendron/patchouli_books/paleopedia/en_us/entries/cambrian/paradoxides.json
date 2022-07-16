@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/paradoxides.png"],
+			"images": ["paleopedia:textures/paradoxides.png"],
 			"title": "Paradoxides sp.",
 			"text": ""
 		},

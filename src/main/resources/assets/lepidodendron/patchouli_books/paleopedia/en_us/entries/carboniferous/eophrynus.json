@@ -1,7 +1,7 @@
 {
 	"name": "Eophrynus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/eophrynus_icon.png",
+	"icon": "paleopedia:textures/eophrynus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/eophrynus.png"],
+			"images": ["paleopedia:textures/eophrynus.png"],
 			"title": "Eophrynus prestvicii",
 			"text": ""
 		},

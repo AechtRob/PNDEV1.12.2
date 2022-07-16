@@ -1,7 +1,7 @@
 {
 	"name": "Lebachacanthus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian/lebachacanthus_icon.png",
+	"icon": "paleopedia:textures/permian/lebachacanthus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_lebachacanthus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/lebachacanthus.png"],
+			"images": ["paleopedia:textures/lebachacanthus.png"],
 			"title": "L. senckenbergianus",
 			"text": ""
 		},

@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 		maxHealthAgeable = 32.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "late Permian";}
 
 	public static String getHabitat() {return "Terrestrial Archosauriform";}

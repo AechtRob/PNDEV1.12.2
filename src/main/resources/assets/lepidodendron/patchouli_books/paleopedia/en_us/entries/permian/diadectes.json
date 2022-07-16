@@ -1,7 +1,7 @@
 {
 	"name": "Diadectes",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/diadectes_icon.png",
+	"icon": "paleopedia:textures/diadectes_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diadectes",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/diadectes.png"],
+			"images": ["paleopedia:textures/diadectes.png"],
 			"title": "D. sideropelicus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/namapoikia.png"],
+			"images": ["paleopedia:textures/namapoikia.png"],
 			"title": "N. rietoogensis",
 			"text": ""
 		},

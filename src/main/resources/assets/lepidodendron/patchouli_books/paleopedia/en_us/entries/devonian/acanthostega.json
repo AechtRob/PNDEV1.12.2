@@ -1,7 +1,7 @@
 {
 	"name": "Acanthostega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/acanthostega_icon.png",
+	"icon": "paleopedia:textures/acanthostega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_acanthostega",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/acanthostega.png"],
+			"images": ["paleopedia:textures/acanthostega.png"],
 			"title": "Acanthostega gunnari.",
 			"text": ""
 		},

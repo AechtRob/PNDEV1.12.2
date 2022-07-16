@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/falcatus.png"],
+			"images": ["paleopedia:textures/falcatus.png"],
 			"title": "Falcatus falcatus",
 			"text": ""
 		},

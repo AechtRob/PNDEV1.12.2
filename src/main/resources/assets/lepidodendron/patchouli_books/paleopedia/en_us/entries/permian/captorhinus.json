@@ -1,7 +1,7 @@
 {
 	"name": "Captorhinus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/captorhinus_icon.png",
+	"icon": "paleopedia:textures/captorhinus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_captorhinus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/captorhinus.png"],
+			"images": ["paleopedia:textures/captorhinus.png"],
 			"title": "Captorhinus aguti",
 			"text": ""
 		},

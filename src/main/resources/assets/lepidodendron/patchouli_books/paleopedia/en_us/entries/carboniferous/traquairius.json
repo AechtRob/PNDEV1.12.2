@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/traquairius.png"],
+			"images": ["paleopedia:textures/traquairius.png"],
 			"title": "T. agkistrocephalus",
 			"text": ""
 		},

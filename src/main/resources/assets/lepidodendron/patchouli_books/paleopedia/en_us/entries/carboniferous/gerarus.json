@@ -1,7 +1,7 @@
 {
 	"name": "Gerarus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/gerarus_icon.png",
+	"icon": "paleopedia:textures/gerarus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_gerarus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/gerarus.png"],
+			"images": ["paleopedia:textures/gerarus.png"],
 			"title": "G. collaris",
 			"text": ""
 		},

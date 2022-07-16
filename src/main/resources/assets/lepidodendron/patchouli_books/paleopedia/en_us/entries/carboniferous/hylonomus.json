@@ -1,7 +1,7 @@
 {
 	"name": "Hylonomus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/hylonomus_icon.png",
+	"icon": "paleopedia:textures/hylonomus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_hylonomus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/hylonomus.png"],
+			"images": ["paleopedia:textures/hylonomus.png"],
 			"title": "Hylonomus lyelli",
 			"text": ""
 		},

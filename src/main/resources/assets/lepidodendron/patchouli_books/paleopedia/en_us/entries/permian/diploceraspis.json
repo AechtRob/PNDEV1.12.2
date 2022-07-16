@@ -1,7 +1,7 @@
 {
 	"name": "Diploceraspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/diploceraspis_icon.png",
+	"icon": "paleopedia:textures/diploceraspis_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_diploceraspis",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/diploceraspis.png"],
+			"images": ["paleopedia:textures/diploceraspis.png"],
 			"title": "Diploceraspis burkei",
 			"text": ""
 		},

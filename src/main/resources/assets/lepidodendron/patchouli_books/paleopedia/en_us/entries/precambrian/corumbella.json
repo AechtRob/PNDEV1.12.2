@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/corumbella.png"],
+			"images": ["paleopedia:textures/corumbella.png"],
 			"title": "C. werneri",
 			"text": ""
 		},

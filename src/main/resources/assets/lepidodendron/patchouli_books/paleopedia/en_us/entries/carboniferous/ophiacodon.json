@@ -1,7 +1,7 @@
 {
 	"name": "Ophiacodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/ophiacodon_icon.png",
+	"icon": "paleopedia:textures/ophiacodon_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_ophiacodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/ophiacodon.png"],
+			"images": ["paleopedia:textures/ophiacodon.png"],
 			"title": "Ophiacodon sp.",
 			"text": ""
 		},

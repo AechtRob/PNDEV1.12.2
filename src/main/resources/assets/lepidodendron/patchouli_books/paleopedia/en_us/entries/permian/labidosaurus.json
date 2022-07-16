@@ -1,7 +1,7 @@
 {
 	"name": "Labidosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/labidosaurus_icon.png",
+	"icon": "paleopedia:textures/labidosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_labidosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/labidosaurus.png"],
+			"images": ["paleopedia:textures/labidosaurus.png"],
 			"title": "L. hamatus",
 			"text": ""
 		},

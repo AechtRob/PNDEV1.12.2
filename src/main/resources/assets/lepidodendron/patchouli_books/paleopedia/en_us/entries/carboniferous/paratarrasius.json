@@ -1,7 +1,7 @@
 {
 	"name": "Paratarrasius",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/paratarrasius_icon.png",
+	"icon": "paleopedia:textures/paratarrasius_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_paratarrasius",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/paratarrasius.png"],
+			"images": ["paleopedia:textures/paratarrasius.png"],
 			"title": "P. hibbardi",
 			"text": ""
 		},

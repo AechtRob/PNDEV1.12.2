@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/funisia.png"],
+			"images": ["paleopedia:textures/funisia.png"],
 			"title": "Funisia dorothea",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/campbellodus.png"],
+			"images": ["paleopedia:textures/campbellodus.png"],
 			"title": "Campbellodus decipiens",
 			"text": ""
 		},

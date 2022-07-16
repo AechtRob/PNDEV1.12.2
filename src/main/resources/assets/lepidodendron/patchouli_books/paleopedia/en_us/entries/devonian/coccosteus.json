@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/coccosteus.png"],
+			"images": ["paleopedia:textures/coccosteus.png"],
 			"title": "Coccosteus cuspidatus",
 			"text": ""
 		},

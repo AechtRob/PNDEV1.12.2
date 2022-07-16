@@ -63,6 +63,11 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public Animation[] getAnimations() {
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
 	}

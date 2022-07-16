@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/parviscopa.png"],
+			"images": ["paleopedia:textures/parviscopa.png"],
 			"title": "P. bonavistensis",
 			"text": ""
 		},

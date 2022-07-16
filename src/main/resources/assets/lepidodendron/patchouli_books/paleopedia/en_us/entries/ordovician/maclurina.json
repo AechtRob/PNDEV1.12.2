@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/maclurina.png"],
+			"images": ["paleopedia:textures/maclurina.png"],
 			"title": "Maclurina manitobensis",
 			"text": ""
 		},

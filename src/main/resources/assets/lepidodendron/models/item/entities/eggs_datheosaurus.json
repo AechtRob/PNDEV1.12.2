@@ -1,6 +1,58 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_datheosaurus"
+    "texture": "lepidodendron:entities/eggs_datheosaurus"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

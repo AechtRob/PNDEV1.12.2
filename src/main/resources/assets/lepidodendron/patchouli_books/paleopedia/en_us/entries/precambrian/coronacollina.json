@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/coronacollina.png"],
+			"images": ["paleopedia:textures/coronacollina.png"],
 			"title": "Coronacollina acula",
 			"text": ""
 		},

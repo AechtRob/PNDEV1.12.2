@@ -1,6 +1,17 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_large",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eggs_jonkeria"
+    "texture": "lepidodendron:entities/eggs_jonkeria"
   }
 }
+
+
+
+
+
+
+
+
+
+
+

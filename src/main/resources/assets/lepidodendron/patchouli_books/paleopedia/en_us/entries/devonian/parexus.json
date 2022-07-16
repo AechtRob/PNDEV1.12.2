@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/parexus.png"],
+			"images": ["paleopedia:textures/parexus.png"],
 			"title": "Parexus recurvus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/mimetaster.png", "paleopedia:textures/devonian/MimetasterOrange.png", "paleopedia:textures/devonian/MimetasterPurple.png", "paleopedia:textures/devonian/MimetasterRed.png", "paleopedia:textures/devonian/MimetasterRedOrange.png", "paleopedia:textures/devonian/MimetasterWhite.png"],
+			"images": ["paleopedia:textures/mimetaster.png", "paleopedia:textures/MimetasterOrange.png", "paleopedia:textures/MimetasterPurple.png", "paleopedia:textures/MimetasterRed.png", "paleopedia:textures/MimetasterRedOrange.png", "paleopedia:textures/MimetasterWhite.png"],
 			"title": "Mimetaster hexagonalis",
 			"text": ""
 		},

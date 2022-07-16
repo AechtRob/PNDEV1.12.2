@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/palaeontinid.png"],
+			"images": ["paleopedia:textures/palaeontinid.png"],
 			"title": "Superfamily: Palaeontinidea",
 			"text": ""
 		},

@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraEdaphosaurus extends EntityPrehistoricFloraLa
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public boolean placesNest() {
 		return true;
 	}

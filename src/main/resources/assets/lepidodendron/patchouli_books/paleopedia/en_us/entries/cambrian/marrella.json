@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/marrella.png"],
+			"images": ["paleopedia:textures/marrella.png"],
 			"title": "M. splendens",
 			"text": ""
 		},

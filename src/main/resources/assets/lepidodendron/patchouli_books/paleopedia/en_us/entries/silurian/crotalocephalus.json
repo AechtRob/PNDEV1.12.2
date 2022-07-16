@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/crotalocephalus.png"],
+			"images": ["paleopedia:textures/crotalocephalus.png"],
 			"title": "Crotalocephalus struszi",
 			"text": ""
 		},

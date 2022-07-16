@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/laminacaris.png"],
+			"images": ["paleopedia:textures/laminacaris.png"],
 			"title": "L. chimera",
 			"text": ""
 		},

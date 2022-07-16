@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/groenlandaspis.png"],
+			"images": ["paleopedia:textures/groenlandaspis.png"],
 			"title": "Groenlandaspis mirabilis",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Homoioptera",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/homoioptera_icon.png",
+	"icon": "paleopedia:textures/homoioptera_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/homoioptera.png"],
+			"images": ["paleopedia:textures/homoioptera.png"],
 			"title": "H. gigantea",
 			"text": ""
 		},

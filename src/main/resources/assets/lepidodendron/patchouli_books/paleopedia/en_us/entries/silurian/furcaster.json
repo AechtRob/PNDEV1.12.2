@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/furcaster.png"],
+			"images": ["paleopedia:textures/furcaster.png"],
 			"title": "Furcaster palaeozoicus",
 			"text": ""
 		},

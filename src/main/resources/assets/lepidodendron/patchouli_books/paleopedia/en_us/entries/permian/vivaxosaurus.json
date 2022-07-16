@@ -1,7 +1,7 @@
 {
 	"name": "Vivaxosaurus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/vivaxosaurus_icon.png",
+	"icon": "paleopedia:textures/vivaxosaurus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_vivaxosaurus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/vivaxosaurus.png"],
+			"images": ["paleopedia:textures/vivaxosaurus.png"],
 			"title": "Vivaxosaurus sp.",
 			"text": ""
 		},

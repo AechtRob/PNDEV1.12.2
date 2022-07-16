@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/xenusion.png"],
+			"images": ["paleopedia:textures/xenusion.png"],
 			"title": "X. auerswaldae",
 			"text": ""
 		},

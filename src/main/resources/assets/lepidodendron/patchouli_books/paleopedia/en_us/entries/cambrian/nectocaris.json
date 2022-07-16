@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/nectocaris.png"],
+			"images": ["paleopedia:textures/nectocaris.png"],
 			"title": "Nectocaris pteryx",
 			"text": ""
 		},

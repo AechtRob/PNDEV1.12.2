@@ -1,7 +1,7 @@
 {
 	"name": "Carcinosoma",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/carcinosoma_icon.png",
+	"icon": "paleopedia:textures/carcinosoma_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_carcinosoma",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/carcinosoma.png"],
+			"images": ["paleopedia:textures/carcinosoma.png"],
 			"title": "Carsinosoma newlini",
 			"text": ""
 		},

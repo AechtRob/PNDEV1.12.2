@@ -1,7 +1,7 @@
 {
 	"name": "Ichthyostega",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/ichthyostega_icon.png",
+	"icon": "paleopedia:textures/ichthyostega_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_ichthyostega",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/ichthyostega.png"],
+			"images": ["paleopedia:textures/ichthyostega.png"],
 			"title": "Ichthyostega stensioei",
 			"text": ""
 		},

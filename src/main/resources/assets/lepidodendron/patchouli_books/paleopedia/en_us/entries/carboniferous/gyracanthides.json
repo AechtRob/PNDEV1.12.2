@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/gyracanthides.png"],
+			"images": ["paleopedia:textures/gyracanthides.png"],
 			"title": "Gyracanthides murrayi",
 			"text": ""
 		},

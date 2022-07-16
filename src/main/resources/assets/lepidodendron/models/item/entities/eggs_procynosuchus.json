@@ -1,6 +1,29 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_small",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_procynosuchus"
+    "texture": "lepidodendron:entities/eggs_procynosuchus"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

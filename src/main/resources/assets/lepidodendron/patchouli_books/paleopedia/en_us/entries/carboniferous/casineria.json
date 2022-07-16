@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/Casineria.png"],
+			"images": ["paleopedia:textures/Casineria.png"],
 			"title": "C. kiddi",
 			"text": ""
 		},

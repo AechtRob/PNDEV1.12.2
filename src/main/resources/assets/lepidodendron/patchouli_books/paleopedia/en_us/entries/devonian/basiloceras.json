@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/basiloceras.png"],
+			"images": ["paleopedia:textures/basiloceras.png"],
 			"title": "",
 			"text": ""
 		},

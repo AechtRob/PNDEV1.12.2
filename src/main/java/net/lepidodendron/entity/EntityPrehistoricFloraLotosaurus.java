@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public int getDrinkLength() {
 		return 0;
 	}

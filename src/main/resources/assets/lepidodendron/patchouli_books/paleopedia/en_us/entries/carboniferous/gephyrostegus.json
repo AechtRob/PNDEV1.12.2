@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/Gephyrostegus.png"],
+			"images": ["paleopedia:textures/Gephyrostegus.png"],
 			"title": "G. bohemicus",
 			"text": ""
 		},

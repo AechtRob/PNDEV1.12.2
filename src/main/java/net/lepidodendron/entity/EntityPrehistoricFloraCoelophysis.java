@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getEggType() {
-		return 4;
+		return 1; //medium
 	}
 
 	@Override

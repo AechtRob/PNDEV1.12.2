@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/pteridinium.png"],
+			"images": ["paleopedia:textures/pteridinium.png"],
 			"title": "Pteridinium sp.",
 			"text": ""
 		},

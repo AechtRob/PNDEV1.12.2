@@ -1,7 +1,7 @@
 {
 	"name": "Glaurung",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/glaurung_icon.png",
+	"icon": "paleopedia:textures/glaurung_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_glaurung",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/glaurung.png"],
+			"images": ["paleopedia:textures/glaurung.png"],
 			"title": "G. schneideri",
 			"text": ""
 		},

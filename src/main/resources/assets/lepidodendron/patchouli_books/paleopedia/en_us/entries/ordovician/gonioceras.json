@@ -1,7 +1,7 @@
 {
 	"name": "Gonioceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/shell_gonioceras.png",
+	"icon": "paleopedia:textures/shell_gonioceras.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_gonioceras",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/gonioceras.png"],
+			"images": ["paleopedia:textures/gonioceras.png"],
 			"title": "Gonioceras sp.",
 			"text": ""
 		},

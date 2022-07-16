@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/swartpuntia.png"],
+			"images": ["paleopedia:textures/swartpuntia.png"],
 			"title": "S. germsi",
 			"text": ""
 		},

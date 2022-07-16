@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/cheirurus.png"],
+			"images": ["paleopedia:textures/cheirurus.png"],
 			"title": "Cheirurus ingricus",
 			"text": ""
 		},

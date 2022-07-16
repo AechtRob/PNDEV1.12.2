@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/sidneyia.png"],
+			"images": ["paleopedia:textures/sidneyia.png"],
 			"title": "S. inexpectans",
 			"text": ""
 		},

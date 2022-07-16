@@ -53,6 +53,11 @@ public class EntityPrehistoricFloraDesmatosuchus extends EntityPrehistoricFloraL
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public int getDrinkLength() {
 		return 70;
 	}

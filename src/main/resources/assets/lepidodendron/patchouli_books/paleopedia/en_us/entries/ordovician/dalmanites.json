@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/dalmanites.png"],
+			"images": ["paleopedia:textures/dalmanites.png"],
 			"title": "Dalmanites sp.",
 			"text": ""
 		},

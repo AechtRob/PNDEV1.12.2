@@ -1,7 +1,7 @@
 {
 	"name": "Dimetrodon",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/dimetrodon_icon.png",
+	"icon": "paleopedia:textures/dimetrodon_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_dimetrodon",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/dimetrodon.png"],
+			"images": ["paleopedia:textures/dimetrodon.png"],
 			"title": "D. giganhomogenes",
 			"text": ""
 		},

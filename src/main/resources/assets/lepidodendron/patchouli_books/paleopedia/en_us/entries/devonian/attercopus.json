@@ -1,7 +1,7 @@
 {
 	"name": "Attercopus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/attercopus_icon.png",
+	"icon": "paleopedia:textures/attercopus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_attercopus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/attercopus.png"],
+			"images": ["paleopedia:textures/attercopus.png"],
 			"title": "A. fimbriunguis",
 			"text": ""
 		},

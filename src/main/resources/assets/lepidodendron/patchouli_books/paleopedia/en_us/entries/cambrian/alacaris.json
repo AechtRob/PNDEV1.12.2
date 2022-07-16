@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/alacaris.png"],
+			"images": ["paleopedia:textures/alacaris.png"],
 			"title": "Alacaris mirabilis",
 			"text": ""
 		},

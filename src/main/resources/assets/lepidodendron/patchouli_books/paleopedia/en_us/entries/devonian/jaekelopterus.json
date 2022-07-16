@@ -1,7 +1,7 @@
 {
 	"name": "Jaekelopterus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/jaekelopterus_icon.png",
+	"icon": "paleopedia:textures/jaekelopterus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_jaekelopterus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/jaekelopterus.png"],
+			"images": ["paleopedia:textures/jaekelopterus.png"],
 			"title": "J. rhenaniae",
 			"text": ""
 		},

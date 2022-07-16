@@ -1,7 +1,7 @@
 {
 	"name": "Euchambersia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/euchambersia_icon.png",
+	"icon": "paleopedia:textures/euchambersia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_euchambersia",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/euchambersia.png"],
+			"images": ["paleopedia:textures/euchambersia.png"],
 			"title": "E. mirabilis",
 			"text": ""
 		},

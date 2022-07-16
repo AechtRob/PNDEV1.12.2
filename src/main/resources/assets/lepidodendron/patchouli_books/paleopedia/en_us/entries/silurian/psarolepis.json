@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/psarolepis.png"],
+			"images": ["paleopedia:textures/psarolepis.png"],
 			"title": "Psarolepis romeri",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/promissum.png"],
+			"images": ["paleopedia:textures/promissum.png"],
 			"title": "Promissum pulchrum",
 			"text": ""
 		},

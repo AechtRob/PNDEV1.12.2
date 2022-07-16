@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/Allenypterus.png"],
+			"images": ["paleopedia:textures/Allenypterus.png"],
 			"title": "A. montanus",
 			"text": ""
 		},

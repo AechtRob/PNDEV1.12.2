@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/ausia.png"],
+			"images": ["paleopedia:textures/ausia.png"],
 			"title": "Ausia fenestrata",
 			"text": ""
 		},

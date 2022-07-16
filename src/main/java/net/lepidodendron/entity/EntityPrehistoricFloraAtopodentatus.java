@@ -52,6 +52,11 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() <= 0.33;
 	}

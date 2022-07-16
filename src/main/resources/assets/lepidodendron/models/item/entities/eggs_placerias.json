@@ -1,6 +1,24 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_medium",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_placerias"
+    "texture": "lepidodendron:entities/eggs_placerias"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

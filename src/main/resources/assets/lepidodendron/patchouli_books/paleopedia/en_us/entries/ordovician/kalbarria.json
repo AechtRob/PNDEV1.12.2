@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/kalbarria.png"],
+			"images": ["paleopedia:textures/kalbarria.png"],
 			"title": "Kalbarria brimmellae",
 			"text": ""
 		},

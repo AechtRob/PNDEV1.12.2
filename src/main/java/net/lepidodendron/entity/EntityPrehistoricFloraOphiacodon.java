@@ -54,6 +54,11 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
+	@Override
 	public boolean placesNest() {
 		return true;
 	}

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/platysomus.png"],
+			"images": ["paleopedia:textures/platysomus.png"],
 			"title": "Platysomus sp.",
 			"text": ""
 		},

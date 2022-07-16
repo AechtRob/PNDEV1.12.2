@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/terataspis.png"],
+			"images": ["paleopedia:textures/terataspis.png"],
 			"title": "Terataspis grandis",
 			"text": ""
 		},

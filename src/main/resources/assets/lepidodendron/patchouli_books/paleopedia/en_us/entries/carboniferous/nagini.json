@@ -1,7 +1,7 @@
 {
 	"name": "Nagini",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/carboniferous/carboniferous_icon/nagini_icon.png",
+	"icon": "paleopedia:textures/nagini_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_nagini",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/nagini.png"],
+			"images": ["paleopedia:textures/nagini.png"],
 			"title": "N. mazonense",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Pterygotus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ordosil/ordosil_icon/pterygotus_icon.png",
+	"icon": "paleopedia:textures/pterygotus_icon.png",
 	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pterygotus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/pterygotus.png"],
+			"images": ["paleopedia:textures/pterygotus.png"],
 			"title": "Pterygotus anglicus",
 			"text": ""
 		},

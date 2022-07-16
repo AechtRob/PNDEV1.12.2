@@ -1,6 +1,13 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_large",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_plateosaurus"
+    "texture": "lepidodendron:entities/eggs_plateosaurus"
   }
 }
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 {
 	"name": "Robertia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/robertia_icon.png",
+	"icon": "paleopedia:textures/robertia_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_robertia",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/robertia.png"],
+			"images": ["paleopedia:textures/robertia.png"],
 			"title": "R. broomiana",
 			"text": ""
 		},

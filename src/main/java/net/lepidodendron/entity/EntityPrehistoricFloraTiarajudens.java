@@ -51,6 +51,11 @@ public class EntityPrehistoricFloraTiarajudens extends EntityPrehistoricFloraLan
 		maxHealthAgeable = 16.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "mid Permian";}
 
 	public static String getHabitat() {return "Terrestrial Therapsid";}

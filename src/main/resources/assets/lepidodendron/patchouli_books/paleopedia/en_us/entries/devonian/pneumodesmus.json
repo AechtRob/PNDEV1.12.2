@@ -1,7 +1,7 @@
 {
 	"name": "Pneumodesmus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/pneumodesmus_icon.png",
+	"icon": "paleopedia:textures/pneumodesmus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pneumodesmus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/pneumodesmus.png"],
+			"images": ["paleopedia:textures/pneumodesmus.png"],
 			"title": "P. newmani",
 			"text": ""
 		},

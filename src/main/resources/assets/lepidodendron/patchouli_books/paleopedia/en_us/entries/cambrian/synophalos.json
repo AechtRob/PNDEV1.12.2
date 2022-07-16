@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/synophalos.png"],
+			"images": ["paleopedia:textures/synophalos.png"],
 			"title": "S. xynos",
 			"text": ""
 		},

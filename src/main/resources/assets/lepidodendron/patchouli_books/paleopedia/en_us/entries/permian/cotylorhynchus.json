@@ -1,7 +1,7 @@
 {
 	"name": "Cotylorhynchus",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/permian/permian_icon/cotylorhynchus_icon.png",
+	"icon": "paleopedia:textures/cotylorhynchus_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_cotylorhynchus",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/cotylorhynchus.png"],
+			"images": ["paleopedia:textures/cotylorhynchus.png"],
 			"title": "C. romeri",
 			"text": ""
 		},

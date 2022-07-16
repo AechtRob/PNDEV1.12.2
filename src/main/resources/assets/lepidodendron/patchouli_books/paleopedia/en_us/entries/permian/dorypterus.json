@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/permian/dorypterus.png"],
+			"images": ["paleopedia:textures/dorypterus.png"],
 			"title": "D. hoffmanni",
 			"text": ""
 		},

@@ -1,6 +1,11 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_medium",
   "textures": {
-    "layer0": "lepidodendron:items/eggs_vivaxosaurus"
+    "texture": "lepidodendron:entities/eggs_vivaxosaurus"
   }
 }
+
+
+
+
+

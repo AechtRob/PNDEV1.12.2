@@ -1,7 +1,7 @@
 {
     "name": "Precambrian Animals",
     "description": "Animals of the Precambrian",
-    "icon": "paleopedia:textures/precambrian/precambrian_icon/dickinsonia_icon.png",
+    "icon": "paleopedia:textures/dickinsonia_icon.png",
     "parent": "lepidodendron:precambrian",
     "sortnum": 1
 }

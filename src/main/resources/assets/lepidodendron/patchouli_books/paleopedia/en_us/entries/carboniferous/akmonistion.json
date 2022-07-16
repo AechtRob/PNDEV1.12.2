@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/akmonistion.png"],
+			"images": ["paleopedia:textures/akmonistion.png"],
 			"title": "A. zangerli",
 			"text": ""
 		},

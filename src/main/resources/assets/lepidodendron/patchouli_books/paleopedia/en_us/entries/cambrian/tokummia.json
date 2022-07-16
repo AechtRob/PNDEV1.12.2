@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/tokummia.png"],
+			"images": ["paleopedia:textures/tokummia.png"],
 			"title": "T. katalepsis",
 			"text": ""
 		},

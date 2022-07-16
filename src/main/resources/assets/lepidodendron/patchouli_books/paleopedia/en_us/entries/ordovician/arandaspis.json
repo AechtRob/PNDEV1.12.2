@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/arandaspis.png"],
+			"images": ["paleopedia:textures/arandaspis.png"],
 			"title": "A. prionotolepis",
 			"text": ""
 		},

@@ -52,6 +52,11 @@ public class EntityPrehistoricFloraSauroctonus extends EntityPrehistoricFloraLan
 		maxHealthAgeable = 36.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Gorgonopsian";}

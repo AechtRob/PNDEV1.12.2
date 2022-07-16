@@ -1,7 +1,7 @@
 {
 	"name": "Pagea",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/devonian/devonian_icon/pagea_icon.png",
+	"icon": "paleopedia:textures/pagea_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_pagea",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/devonian/pagea.png"],
+			"images": ["paleopedia:textures/pagea.png"],
 			"title": "Pagea sturrocki",
 			"text": ""
 		},

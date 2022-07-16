@@ -1,6 +1,25 @@
 {
-  "parent": "item/generated",
+  "parent": "lepidodendron:block/eggs_medium",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eggs_ophiacodon"
+    "texture": "lepidodendron:entities/eggs_ophiacodon"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

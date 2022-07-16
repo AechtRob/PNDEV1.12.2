@@ -55,6 +55,11 @@ public class EntityPrehistoricFloraJonkeria extends EntityPrehistoricFloraLandBa
 		NOISE_ANIMATION = Animation.create(20);
 	}
 
+	@Override
+	public int getEggType() {
+		return 2; //large
+	}
+
 	public static String getPeriod() {return "Permian";}
 
 	public static String getHabitat() {return "Terrestrial Therapsid";}

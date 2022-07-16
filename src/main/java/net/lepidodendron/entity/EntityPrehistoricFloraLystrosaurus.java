@@ -50,6 +50,11 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 		maxHealthAgeable = 18.0D;
 	}
 
+	@Override
+	public int getEggType() {
+		return 1; //medium
+	}
+
 	public static String getPeriod() {return "late Permian - early Triassic";}
 
 	public static String getHabitat() {return "Terrestrial Dicynodont";}

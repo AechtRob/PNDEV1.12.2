@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cambrian/paucipodia.png"],
+			"images": ["paleopedia:textures/paucipodia.png"],
 			"title": "P. inermis",
 			"text": ""
 		},

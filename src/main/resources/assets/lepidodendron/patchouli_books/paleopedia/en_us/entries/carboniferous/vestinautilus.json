@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/carboniferous/vestinautilus.png"],
+			"images": ["paleopedia:textures/vestinautilus.png"],
 			"title": "V. cariniferous",
 			"text": ""
 		},

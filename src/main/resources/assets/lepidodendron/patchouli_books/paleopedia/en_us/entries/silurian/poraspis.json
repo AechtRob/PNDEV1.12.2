@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ordosil/poraspis.png"],
+			"images": ["paleopedia:textures/poraspis.png"],
 			"title": "Poraspis sp.",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/precambrian/haootia.png"],
+			"images": ["paleopedia:textures/haootia.png"],
 			"title": "H. quadriformis",
 			"text": ""
 		},

@@ -557,6 +557,10 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 flier.setFlyTarget(null);
             }
 
+            if (flier.getEatTarget() != null) {
+                flier.setFlyTarget(flier.getEatTarget().getPosition());
+            }
+
             if (flier.getFlyTarget() == null) {
                 BlockPos randPos = null;
                 if (flier.getFlyTick() > 0) {
