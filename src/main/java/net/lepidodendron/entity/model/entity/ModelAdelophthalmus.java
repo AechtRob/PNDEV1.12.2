@@ -156,7 +156,7 @@ public class ModelAdelophthalmus extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.carapace.offsetZ = -0.16F;
+        this.carapace.offsetZ = -0.13F;
         this.carapace.render(0.02F);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
