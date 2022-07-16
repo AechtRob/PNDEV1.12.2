@@ -34,6 +34,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAiniktozoon modelAiniktozoon;
     private static final ResourceLocation TEXTURE_ACADOARADOXIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acadoaradoxides.png");
     private final ModelAcadoaradoxides modelAcadoaradoxides;
+    private static final ResourceLocation TEXTURE_ADELOPHTHALMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/adelophthalmus.png");
+    private final ModelAdelophthalmus modelAdelophthalmus;
     private static final ResourceLocation TEXTURE_ALACARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/alacaris.png");
     private final ModelAlacaris modelAlacaris;
     private static final ResourceLocation TEXTURE_AMPLECTOBELUA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amplectobelua.png");
@@ -178,6 +180,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelGerarus = new ModelGerarus();
         this.modelAiniktozoon = new ModelAiniktozoon();
         this.modelAcadoaradoxides = new ModelAcadoaradoxides();
+        this.modelAdelophthalmus = new ModelAdelophthalmus();
         this.modelAlacaris = new ModelAlacaris();
         this.modelAmplectobelua = new ModelAmplectobelua();
         this.modelAnomalocaris = new ModelAnomalocaris();
@@ -337,6 +340,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_ACADOARADOXIDES);
                         modelAcadoaradoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAdelophthalmusRaw.block) {
+                        double offset = 0.43;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.9F,0.9F,0.9F);
+                        this.bindTexture(TEXTURE_ADELOPHTHALMUS);
+                        modelAdelophthalmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
                         double offset = 0.44;
