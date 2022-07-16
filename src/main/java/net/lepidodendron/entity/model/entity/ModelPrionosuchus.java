@@ -428,7 +428,7 @@ public class ModelPrionosuchus extends AdvancedModelBaseExtended {
         GlStateManager.disableCull();
         this.Neck.offsetY = -0.001F;
         this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(35);
-        this.Upperjaw1.rotateAngleX = (float) Math.toRadians(0);
+        this.Upperjaw1.rotateAngleX = (float) Math.toRadians(-6.08);
         this.Head.rotateAngleX = (float) Math.toRadians(-15);
         this.Neck.render(0.01F);
         GlStateManager.enableCull();
