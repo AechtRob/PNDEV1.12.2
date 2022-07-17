@@ -86,6 +86,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelHallucigenia modelHallucigenia;
     private static final ResourceLocation TEXTURE_HELMETIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helmetia.png");
     private final ModelHelmetia modelHelmetia;
+    private static final ResourceLocation TEXTURE_HUNGIOIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hungioides.png");
+    private final ModelHungioides modelHungioides;
     private static final ResourceLocation TEXTURE_ISOTELUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
     private final ModelIsotelus modelIsotelus;
     private static final ResourceLocation TEXTURE_JIANSHANOPODIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jianshanopodia.png");
@@ -204,6 +206,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelHaikouichthys= new ModelHaikouichthys();
         this.modelHallucigenia= new ModelHallucigenia();
         this.modelHelmetia= new ModelHelmetia();
+        this.modelHungioides= new ModelHungioides();
         this.modelIsotelus= new ModelIsotelus();
         this.modelJianshanopodia= new ModelJianshanopodia();
         this.modelKalbarria= new ModelKalbarria();
@@ -1208,6 +1211,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.85F,0.85F,0.85F);
                         this.bindTexture(TEXTURE_HELMETIA);
                         modelHelmetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemHungioidesRaw.block) {
+                        double offset = 0.75;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.85F,0.85F,0.85F);
+                        this.bindTexture(TEXTURE_HUNGIOIDES);
+                        modelHungioides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemIsotelusRaw.block) {
                         double offset = 0.93;

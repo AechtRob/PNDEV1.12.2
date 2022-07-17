@@ -6,6 +6,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraJonkeria;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelJonkeria extends AdvancedModelBaseExtended {
@@ -253,7 +254,17 @@ public class ModelJonkeria extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body1.render(f5 * 0.9f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(33);
+        this.neck2.rotateAngleX = (float) Math.toRadians(-13);
+        this.neck3.rotateAngleX = (float) Math.toRadians(-2);
+        this.neck1.render(0.01F);
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
