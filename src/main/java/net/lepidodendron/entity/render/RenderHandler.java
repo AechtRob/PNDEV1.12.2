@@ -2980,6 +2980,18 @@ public class RenderHandler {
                 return new RenderPiatnitzkysaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCidaroida.class, new IRenderFactory<EntityPrehistoricFloraCidaroida>() {
+        @Override
+        public Render<? super EntityPrehistoricFloraCidaroida> createRenderFor(RenderManager manager) {
+                return new RenderCidaroida(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArchaeocidaris.class, new IRenderFactory<EntityPrehistoricFloraArchaeocidaris>() {
+        @Override
+        public Render<? super EntityPrehistoricFloraArchaeocidaris> createRenderFor(RenderManager manager) {
+                return new RenderArchaeocidaris(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):

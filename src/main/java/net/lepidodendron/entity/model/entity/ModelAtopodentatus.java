@@ -9,6 +9,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 
 public class ModelAtopodentatus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended body;
@@ -221,10 +222,63 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
         AdvancedAdvancedModelRenderer.rotateAngleZ = z;
     }
 
+
+    @Override
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
+        super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+        this.resetToDefaultPose();
+        EntityPrehistoricFloraAtopodentatus ee = (EntityPrehistoricFloraAtopodentatus) entitylivingbaseIn;
+        if (!ee.isInWater()) {
+            this.leg1.rotateAngleZ = (float)Math.toRadians(-15);
+            this.leg2.rotateAngleZ = (float)Math.toRadians(15);
+            this.legfinger1.rotateAngleZ = (float)Math.toRadians(-5);
+            this.legfinger2.rotateAngleZ = (float)Math.toRadians(5);
+            this.tail.rotateAngleX = (float)Math.toRadians(-7.5);
+            this.tail2.rotateAngleX = (float)Math.toRadians(2.5);
+            this.tail3.rotateAngleX = (float)Math.toRadians(2.5);
+
+            if (!ee.getIsMoving()) {
+                this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5);
+                this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5);
+                return;
+            }
+
+            this.arm1.rotateAngleY = (float) Math.toRadians((-50F * getMoveAngle2(ee, partialTickTime)) + 20F);
+            this.arm2.rotateAngleY = -(float) Math.toRadians((-50F * getMoveAngle2(ee, partialTickTime)) + 20F);
+
+            if (ee.getMoveAngle() >= 0) {
+                this.body.rotateAngleX = (float) Math.toRadians(-5.0 * getMoveAngle(ee, partialTickTime));
+                this.body2.rotateAngleX = (float) Math.toRadians(5.0 * getMoveAngle(ee, partialTickTime));
+                this.body.offsetY = 0.05F;
+
+                this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5 + (20 * getMoveAngle(ee, partialTickTime)));
+                this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5 - (20 * getMoveAngle(ee, partialTickTime)));
+            }
+            else {
+                this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5);
+                this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5);
+            }
+        }
+    }
+
+    public double getMoveAngle(EntityPrehistoricFloraAtopodentatus ee, float partialTicks) {
+        return Math.sin(Math.PI * 2	* getMoveFraction(ee, partialTicks));
+    }
+
+    public double getMoveAngle2(EntityPrehistoricFloraAtopodentatus ee, float partialTicks) {
+        return Math.sin(Math.PI * 4	* getMoveFraction(ee, partialTicks));
+    }
+
+    public double getMoveFraction(EntityPrehistoricFloraAtopodentatus ee, float partialTicks) {
+        double ii = Math.floor(((double)ee.ticksExisted + ee.getTickOffset() + partialTicks) / (double)ee.flapLength());
+        double i = (ee.ticksExisted + ee.getTickOffset() + partialTicks) - (ii * ee.flapLength());
+        return (i / (double)ee.flapLength());
+    }
+
     @Override
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
-        this.resetToDefaultPose();
+        //this.resetToDefaultPose();
 
         this.body.offsetY = 0.00F;
         //this.body.offsetZ = 1.0F;
@@ -260,15 +314,15 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
             if (!ee.getIsFast()) {
-                this.chainWave(fishTail, speed * still, 0.225F * still, -1.25, f2, 0.6F * still);
-                this.chainWave(neckHead, speed * still, 0.125F * still, -1.25, f2, 0.6F * still);
+                this.chainWave(fishTail, speed * still, 0.075F * still, -1.25, f2, 0.6F * still);
+                this.chainWave(neckHead, speed * still, 0.100F * still, -1.25, f2, 0.6F * still);
             } else {
-                this.chainWave(fishTail, speed * still, 0.215F * still, -1.15, f2, 0.6F * still);
-                this.chainWave(neckHead, speed * still, 0.115F * still, -1.15, f2, 0.6F * still);
+                this.chainWave(fishTail, speed * still, 0.085F * still, -1.15, f2, 0.6F * still);
+                this.chainWave(neckHead, speed * still, 0.100F * still, -1.15, f2, 0.6F * still);
             }
 
-            this.chainSwing(fishTail, speed * still * 2, 0.2F * still, -1.0, f2, 0.8F * still);
-            this.chainSwing(neckHead, speed * still * 2, 0.10F * still, -1.0, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * still * 2, 0.125F * still, -1.0, f2, 0.8F * still);
+            this.chainSwing(neckHead, speed * still * 2, 0.065F * still, -1.0, f2, 0.8F * still);
 
             this.swing(body, speed * 0.5F, 0.002F, true, 0, 0, f2, 0.8F);
             this.bob(body, speed * 0.5F, 0.05F, true, f2, 0.8F);
@@ -291,43 +345,43 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
         }
         else {
             //On land:
-            this.leg1.rotateAngleZ = (float)Math.toRadians(-15);
-            this.leg2.rotateAngleZ = (float)Math.toRadians(15);
-            this.legfinger1.rotateAngleZ = (float)Math.toRadians(-5);
-            this.legfinger2.rotateAngleZ = (float)Math.toRadians(5);
-            this.tail.rotateAngleX = (float)Math.toRadians(-7.5);
-            this.tail2.rotateAngleX = (float)Math.toRadians(2.5);
-            this.tail3.rotateAngleX = (float)Math.toRadians(2.5);
+            //this.leg1.rotateAngleZ = (float)Math.toRadians(-15);
+            //this.leg2.rotateAngleZ = (float)Math.toRadians(15);
+            //this.legfinger1.rotateAngleZ = (float)Math.toRadians(-5);
+            //this.legfinger2.rotateAngleZ = (float)Math.toRadians(5);
+            //this.tail.rotateAngleX = (float)Math.toRadians(-7.5);
+            //this.tail2.rotateAngleX = (float)Math.toRadians(2.5);
+            //this.tail3.rotateAngleX = (float)Math.toRadians(2.5);
 
             this.chainSwing(fishTail, speed * still * 0.7F, 0.385F * still * 0.7F, -1.85, f2, 0.6F * still * 0.7F);
             this.chainSwing(neckHead, speed * still * 0.7F, 0.285F * still * 0.7F, -1.15, f2, 0.6F * still * 0.7F);
 
-            if (f3 == 0 || !ee.getIsMoving()) {
-                this.arm1.rotateAngleZ = (float)Math.toRadians(-17.5);
-                this.arm2.rotateAngleZ = (float)Math.toRadians(17.5);
-                return;
-            }
+            //if (f3 == 0 || !ee.getIsMoving()) {
+            //    this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5);
+            //    this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5);
+            //    return;
+            //}
 
             this.chainSwing(backLeft, (float) (speed * 0.65), 0.05F,  1, f2, 0.5F);
             this.chainSwing(backRight, (float) (speed * 0.65), 0.05F,  1, f2, 0.5F);
 
-            this.arm1.rotateAngleY = (float) Math.toRadians((-50F * ee.getMoveAngle2()) + 20F);
-            this.arm2.rotateAngleY = -(float) Math.toRadians((-50F * ee.getMoveAngle2()) + 20F);
+            //this.arm1.rotateAngleY = (float) Math.toRadians((-50F * ee.getMoveAngle2()) + 20F);
+            //this.arm2.rotateAngleY = -(float) Math.toRadians((-50F * ee.getMoveAngle2()) + 20F);
 
             this.swing(body, speed * 0.5F * 0.7F, 0.002F, true, 0, 0, f2, 0.8F * 0.7F);
 
-            if (ee.getMoveAngle() >= 0) {
-                this.body.rotateAngleX = (float) Math.toRadians(-5.0 * ee.getMoveAngle());
-                this.body2.rotateAngleX = (float) Math.toRadians(5.0 * ee.getMoveAngle());
-                this.body.offsetY = 0.05F;
+            //if (ee.getMoveAngle() >= 0) {
+            //    this.body.rotateAngleX = (float) Math.toRadians(-5.0 * ee.getMoveAngle());
+            //    this.body2.rotateAngleX = (float) Math.toRadians(5.0 * ee.getMoveAngle());
+            //    this.body.offsetY = 0.05F;
 
-                this.arm1.rotateAngleZ = (float)Math.toRadians(-17.5 + (20 * ee.getMoveAngle()));
-                this.arm2.rotateAngleZ = (float)Math.toRadians(17.5 - (20 * ee.getMoveAngle()));
-            }
-            else {
-                this.arm1.rotateAngleZ = (float)Math.toRadians(-17.5);
-                this.arm2.rotateAngleZ = (float)Math.toRadians(17.5);
-            }
+            //    this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5 + (20 * ee.getMoveAngle()));
+           //     this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5 - (20 * ee.getMoveAngle()));
+           //}
+           // else {
+           //     this.arm1.rotateAngleZ = -(float)Math.toRadians(-17.5);
+           //     this.arm2.rotateAngleZ = -(float)Math.toRadians(17.5);
+            //}
 
         }
 
@@ -336,8 +390,8 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
         animator.update(entity);
-        this.resetToDefaultPose();
-        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+        //this.resetToDefaultPose();
+        //setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
 
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);

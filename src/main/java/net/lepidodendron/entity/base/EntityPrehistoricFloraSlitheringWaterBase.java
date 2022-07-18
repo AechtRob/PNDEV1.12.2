@@ -56,6 +56,8 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	private int slitherTickCycle;
 	private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
 	private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> TICKOFFSET = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraSlitheringWaterBase.class, DataSerializers.BOOLEAN);
 
 	private int inPFLove;
 
@@ -127,6 +129,14 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 
 	public abstract boolean dropsEggs();
 
+	public boolean getIsMoving() {
+		return this.dataManager.get(ISMOVING);
+	}
+
+	public void setIsMoving(boolean isMoving) {
+		this.dataManager.set(ISMOVING, isMoving);
+	}
+
 	@Override
 	public int getAnimationTick() {
 		return getAnimationTick();
@@ -188,6 +198,16 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		super.entityInit();
 		this.dataManager.register(TICKS, 0);
 		this.dataManager.register(MATEABLE, 0);
+		this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
+		this.dataManager.register(ISMOVING, false);
+	}
+
+	public int getTickOffset() {
+		return this.dataManager.get(TICKOFFSET);
+	}
+
+	public void setTickOffset(int ticks) {
+		this.dataManager.set(TICKOFFSET, ticks);
 	}
 
 	public int getTicks() {
@@ -211,6 +231,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setTicks(0);
 		this.setMateable(0);
+		this.setTickOffset(rand.nextInt(1000));
 		return livingdata;
 	}
 
@@ -222,6 +243,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	{
 		super.writeEntityToNBT(compound);
 		compound.setInteger("Ticks", this.getTicks());
+		compound.setInteger("TickOffset", this.getTickOffset());
 		compound.setInteger("InPFLove", this.inPFLove);
 		compound.setInteger("mateable", this.getMateable());
 	}
@@ -229,6 +251,7 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.setTicks(compound.getInteger("Ticks"));
+		this.setTickOffset(compound.getInteger("TickOffset"));
 		this.inPFLove = compound.getInteger("InPFLove");
 		this.setMateable(compound.getInteger("mateable"));
 	}
@@ -519,6 +542,13 @@ public abstract class EntityPrehistoricFloraSlitheringWaterBase extends EntityTa
 					f4 += (0.54600006F - f4) * speedModifier / 3.0F;
 				}
 				this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
+				if (this.motionX != 0 || this.motionZ != 0) {
+					this.setIsMoving(true);
+				}
+				else {
+					this.setIsMoving(false);
+				}
 
 				if (this.isPotionActive(MobEffects.LEVITATION))
 				{

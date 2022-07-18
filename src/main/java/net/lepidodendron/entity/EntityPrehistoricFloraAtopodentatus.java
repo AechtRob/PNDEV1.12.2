@@ -91,9 +91,9 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 
 	@Override
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.14F;
+		float calcSpeed = 0.16F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.615f;
+			calcSpeed = 0.515f;
 			if (this.getIsFast()) {
 				calcSpeed = calcSpeed * 1.6F;
 			}
@@ -111,12 +111,12 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 
 	public boolean isMovingOnLand() {
 		//System.err.println("getMoveAngle " + getMoveAngle());
-		return getMoveAngle() >= 0D;
+		return getMoveFraction() >= 0.5D;
 	}
 
 	public double getMoveFraction() {
-		double ii = Math.floor((double)this.getTicks() / (double)this.flapLength());
-		double i = this.getTicks() - (ii * this.flapLength());
+		double ii = Math.floor(((double)this.ticksExisted + this.getTickOffset()) / (double)this.flapLength());
+		double i = (this.ticksExisted + this.getTickOffset()) - (ii * this.flapLength());
 		return (i / (double)this.flapLength());
 	}
 
@@ -124,12 +124,9 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		return Math.sin(Math.PI * 2	* getMoveFraction());
 	}
 
-	public double getMoveAngle2() {
-		return Math.sin(Math.PI * 4	* getMoveFraction());
-	}
 
 	public int flapLength() {
-		return 40;
+		return 80;
 	}
 
 	@Override
