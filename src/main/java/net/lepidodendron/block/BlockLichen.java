@@ -182,18 +182,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			IBlockState blockState5 = worldIn.getBlockState(pos.west());
 			
             if (blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-					&& blockState.getMaterial() == Material.ROCK)
+					&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.DOWN)
 	            {
 					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock = true;
 					}
@@ -205,18 +205,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-					&& blockState1.getMaterial() == Material.ROCK)
+					&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.UP)
 	            {
 					if ((blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock1 = true;
 					}
@@ -228,18 +228,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-					&& blockState2.getMaterial() == Material.ROCK)
+					&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.NORTH)
 	            {
 					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock2 = true;
 					}
@@ -251,18 +251,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-					&& blockState3.getMaterial() == Material.ROCK)
+					&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.EAST)
 	            {
 					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock3 = true;
 					}
@@ -274,18 +274,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-					&& blockState4.getMaterial() == Material.ROCK)
+					&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.SOUTH)
 	            {
 					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock4 = true;
 					}
@@ -297,18 +297,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState5.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-					&& blockState5.getMaterial() == Material.ROCK)
+					&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
            	{
             	if (state.getValue(FACING) == EnumFacing.WEST)
 	            {
 					if ((blockState.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState2.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock5 = true;
 					}
@@ -376,18 +376,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			IBlockState blockState5 = source.getBlockState(pos.west());
 			
             if (blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-					&& blockState.getMaterial() == Material.ROCK)
+					&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.DOWN)
 	            {
 					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock = true;
 					}
@@ -399,18 +399,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-					&& blockState1.getMaterial() == Material.ROCK)
+					&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.UP)
 	            {
 					if ((blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock1 = true;
 					}
@@ -422,18 +422,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-					&& blockState2.getMaterial() == Material.ROCK)
+					&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.NORTH)
 	            {
 					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock2 = true;
 					}
@@ -445,18 +445,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-					&& blockState3.getMaterial() == Material.ROCK)
+					&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.EAST)
 	            {
 					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock3 = true;
 					}
@@ -468,18 +468,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-					&& blockState4.getMaterial() == Material.ROCK)
+					&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
             {
             	if (state.getValue(FACING) == EnumFacing.SOUTH)
 	            {
 					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState3.getBlockFaceShape(source, pos.east(), EnumFacing.WEST) == BlockFaceShape.SOLID
-							&& blockState3.getMaterial() == Material.ROCK)
+							&& (blockState3.getMaterial() == Material.ROCK || blockState3.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-							&& blockState5.getMaterial() == Material.ROCK)
+							&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock4 = true;
 					}
@@ -491,18 +491,18 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
             }
 
             if (blockState5.getBlockFaceShape(source, pos.west(), EnumFacing.EAST) == BlockFaceShape.SOLID
-					&& blockState5.getMaterial() == Material.ROCK)
+					&& (blockState5.getMaterial() == Material.ROCK || blockState5.getMaterial() == Material.WOOD))
            	{
             	if (state.getValue(FACING) == EnumFacing.WEST)
 	            {
 					if ((blockState.getBlockFaceShape(source, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID
-							&& blockState.getMaterial() == Material.ROCK)
+							&& (blockState.getMaterial() == Material.ROCK || blockState.getMaterial() == Material.WOOD))
 						|| (blockState2.getBlockFaceShape(source, pos.north(), EnumFacing.SOUTH) == BlockFaceShape.SOLID
-							&& blockState2.getMaterial() == Material.ROCK)
+							&& (blockState2.getMaterial() == Material.ROCK || blockState2.getMaterial() == Material.WOOD))
 						|| (blockState1.getBlockFaceShape(source, pos.up(), EnumFacing.DOWN) == BlockFaceShape.SOLID
-							&& blockState1.getMaterial() == Material.ROCK)
+							&& (blockState1.getMaterial() == Material.ROCK || blockState1.getMaterial() == Material.WOOD))
 						|| (blockState4.getBlockFaceShape(source, pos.south(), EnumFacing.NORTH) == BlockFaceShape.SOLID
-							&& blockState4.getMaterial() == Material.ROCK)
+							&& (blockState4.getMaterial() == Material.ROCK || blockState4.getMaterial() == Material.WOOD))
 						) {
 						attachmentblock5 = true;
 					}
@@ -633,7 +633,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.south()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID
-							|| iblockstate.getMaterial() != Material.ROCK)
+							|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -648,7 +648,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.north()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -663,7 +663,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.west()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -678,7 +678,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.east()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -693,7 +693,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.down()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -708,7 +708,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (world.isAirBlock(pos.up()) || 
 					(
 						(iblockstate.getBlockFaceShape(world, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -729,7 +729,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.south()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.south(), EnumFacing.NORTH) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -744,7 +744,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.north()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.north(), EnumFacing.SOUTH) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -759,7 +759,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.west()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.west(), EnumFacing.EAST) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -774,7 +774,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.east()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.east(), EnumFacing.WEST) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -789,7 +789,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.down()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -804,7 +804,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 				if (worldIn.isAirBlock(pos.up()) || 
 					(
 						(iblockstate.getBlockFaceShape(worldIn, pos.up(), EnumFacing.DOWN) != BlockFaceShape.SOLID
-								|| iblockstate.getMaterial() != Material.ROCK)
+								|| (iblockstate.getMaterial() != Material.ROCK && iblockstate.getMaterial() != Material.WOOD))
 					)	
 				)
 					{
@@ -1351,32 +1351,32 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			boolean blockface  = true;
 			if (facing == EnumFacing.NORTH) {
 				if ((worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.south()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.south()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.south()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 			if (facing == EnumFacing.SOUTH) {
 				if ((worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.north()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.north()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.north()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 			if (facing == EnumFacing.EAST) {
 				if ((worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.west()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.west()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.west()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 			if (facing == EnumFacing.WEST) {
 				if ((worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.east()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.east()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.east()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 			if (facing == EnumFacing.UP) {
 				if ((worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 			if (facing == EnumFacing.DOWN) {
 				if ((worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), facing) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.up()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.up()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.up()).getMaterial() != Material.WOOD))
 					blockface = false;
 			}
 
@@ -1390,32 +1390,32 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 	    	boolean blockface  = true;
 			if (side == EnumFacing.NORTH) {
 	        	if ((worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID)
-	        		|| (worldIn.getBlockState(pos.south()).getMaterial() != Material.ROCK))
+	        		|| (worldIn.getBlockState(pos.south()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.south()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			if (side == EnumFacing.SOUTH) {
 	        	if ((worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID)
-	        		|| (worldIn.getBlockState(pos.north()).getMaterial() != Material.ROCK))
+	        		|| (worldIn.getBlockState(pos.north()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.north()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			if (side == EnumFacing.EAST) {
 	        	if ((worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID)
-	        		|| (worldIn.getBlockState(pos.west()).getMaterial() != Material.ROCK))
+	        		|| (worldIn.getBlockState(pos.west()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.west()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			if (side == EnumFacing.WEST) {
 	        	if ((worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID)
-						|| (worldIn.getBlockState(pos.east()).getMaterial() != Material.ROCK))
+						|| (worldIn.getBlockState(pos.east()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.east()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			if (side == EnumFacing.UP) {
 	        	if ((worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID)
-	        		|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK))
+	        		|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
 	        	if ((worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)
-					|| (worldIn.getBlockState(pos.up()).getMaterial() != Material.ROCK))
+					|| (worldIn.getBlockState(pos.up()).getMaterial() != Material.ROCK && worldIn.getBlockState(pos.up()).getMaterial() != Material.WOOD))
 	        		blockface = false;
 			}
 			

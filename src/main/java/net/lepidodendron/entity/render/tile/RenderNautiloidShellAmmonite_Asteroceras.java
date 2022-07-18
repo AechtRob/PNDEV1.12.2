@@ -29,12 +29,16 @@ public class RenderNautiloidShellAmmonite_Asteroceras extends TileEntitySpecialR
             currentRotation = entity.getTileData().getInteger("rotation");
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
         }
+        GlStateManager.pushMatrix();
+        GlStateManager.disableCull();
+        GlStateManager.enableRescaleNormal();
         this.bindTexture(TEXTURE);
+        GlStateManager.enableAlpha();
         ModelAmmonite50cmShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.18D;
         GlStateManager.pushMatrix();
-        GlStateManager.disableLighting();
         GlStateManager.disableCull();
+        GlStateManager.enableRescaleNormal();
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);
@@ -50,8 +54,9 @@ public class RenderNautiloidShellAmmonite_Asteroceras extends TileEntitySpecialR
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         }
         modelNautiloidShell.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.enableCull();
-        GlStateManager.enableLighting();
         GlStateManager.popMatrix();
     }
 }

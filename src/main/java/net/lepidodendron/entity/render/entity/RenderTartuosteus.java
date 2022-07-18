@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraArizonasaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraTartuosteus;
 import net.lepidodendron.entity.model.entity.ModelTartuosteus;
 import net.minecraft.client.renderer.GlStateManager;

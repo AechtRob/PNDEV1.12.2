@@ -1,9 +1,7 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraKodymirus;
 import net.lepidodendron.entity.EntityPrehistoricFloraParapeytoia;
-import net.lepidodendron.entity.model.entity.ModelKodymirus;
 import net.lepidodendron.entity.model.entity.ModelParapeytoia;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;

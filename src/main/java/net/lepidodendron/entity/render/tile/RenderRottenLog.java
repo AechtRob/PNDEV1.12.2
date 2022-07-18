@@ -23,7 +23,6 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
     private static final ResourceLocation TEXTURE_CASINERIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
     private static final ResourceLocation TEXTURE_DREPANOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drepanosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_HYLONOMUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
-    private static final ResourceLocation TEXTURE_SCLEROMOCHLUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scleromochlus_eggs.png");
     private static final ResourceLocation TEXTURE_LABIDOSAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
     private final ModelInsectEggs insect_eggs;
@@ -95,14 +94,6 @@ public class RenderRottenLog extends TileEntitySpecialRenderer<BlockRottenLog.Ti
                     GlStateManager.pushMatrix();
                     GlStateManager.scale(0.5F, 0.5F, 0.5F);
                     Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_DREPANOSAURUS_EGGS);
-                    this.rotten_wood_eggs.renderAll(0.075F);
-                    GlStateManager.popMatrix();
-                }
-
-                else if (eggRenderType.equals(LepidodendronMod.MODID + ":eggs_scleromochlus")) {
-                    GlStateManager.pushMatrix();
-                    GlStateManager.scale(0.5F, 0.5F, 0.5F);
-                    Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_SCLEROMOCHLUS_EGGS);
                     this.rotten_wood_eggs.renderAll(0.075F);
                     GlStateManager.popMatrix();
                 }

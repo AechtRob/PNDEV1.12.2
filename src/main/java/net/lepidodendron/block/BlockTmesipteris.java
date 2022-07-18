@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemTrowel;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
@@ -28,6 +27,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -192,7 +192,7 @@ public class BlockTmesipteris extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
 			) {
 				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
 				entityToSpawn.setPickupDelay(10);

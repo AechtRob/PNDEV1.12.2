@@ -28,7 +28,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -54,7 +53,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         super(instance, 42);
     }
 
-    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList) {
+    public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen) {
 
         String[] MobString = new String[0];
         if (mobList == null) {
@@ -1172,7 +1171,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 //EntityLiving entity = (EntityLiving) ee.newInstance(world);
                                                                 if (entity instanceof EntityPrehistoricFloraDiictodon) {
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
-                                                                    if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest()) ) {
+                                                                    if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) ) {
                                                                         //Spawn a nest and burrow for it:
                                                                         //Buildburrow:
                                                                         pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
@@ -1185,16 +1184,36 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                 }
-                                                                else if (entity instanceof EntityPrehistoricFloraLandBase) {
-                                                                    if (Math.random() > 0.8) { // 1:5 chance of  nest coming too
+                                                                else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
+                                                                    if (Math.random() > 0.8) { // 1:5 chance of nest coming too
                                                                         EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                         if (EntityLandBase.hasNest()) {
-                                                                            //Spawn a nest under the mob:
-                                                                           world.setBlockState(pos, BlockNest.block.getDefaultState());
-                                                                            TileEntity te = world.getTileEntity(pos);
-                                                                            if (te != null) {
-                                                                                if (te instanceof BlockNest.TileEntityCustom) {
-                                                                                    te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                            if (!EntityLandBase.isNestMound()) {
+                                                                                //Spawn a nest under the mob:
+                                                                                world.setBlockState(pos, BlockNest.block.getDefaultState());
+                                                                                TileEntity te = world.getTileEntity(pos);
+                                                                                if (te != null) {
+                                                                                    if (te instanceof BlockNest.TileEntityCustom) {
+                                                                                        te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                                        te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
+                                                                                        if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
+                                                                                            te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            else { //Mound nests:
+                                                                                if (EntityLandBase.nestBlockMatch(world, pos)) {
+                                                                                    world.setBlockState(pos, BlockNest.block.getDefaultState());
+                                                                                    TileEntity te = world.getTileEntity(pos);
+                                                                                    if (te != null) {
+                                                                                        if (te instanceof BlockNest.TileEntityCustom) {
+                                                                                            te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
+                                                                                            te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
+                                                                                            // Mounds always contain eggs:
+                                                                                            te.getTileData().setString("egg", EntityLandBase.getEggNBT());
+                                                                                        }
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }

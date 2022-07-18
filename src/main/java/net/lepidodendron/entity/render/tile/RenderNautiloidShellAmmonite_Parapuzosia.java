@@ -29,12 +29,14 @@ public class RenderNautiloidShellAmmonite_Parapuzosia extends TileEntitySpecialR
             currentRotation = entity.getTileData().getInteger("rotation");
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
         }
+        GlStateManager.pushMatrix();
+        GlStateManager.disableCull();
+        GlStateManager.enableRescaleNormal();
         this.bindTexture(TEXTURE);
+
+        GlStateManager.enableAlpha();
         ModelAmmonite200cmShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 1.3D;
-        GlStateManager.pushMatrix();
-        GlStateManager.disableLighting();
-        GlStateManager.disableCull();
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.25, z + 0.5);
@@ -50,8 +52,9 @@ public class RenderNautiloidShellAmmonite_Parapuzosia extends TileEntitySpecialR
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         }
         modelNautiloidShell.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.disableAlpha();
+        GlStateManager.disableRescaleNormal();
         GlStateManager.enableCull();
-        GlStateManager.enableLighting();
         GlStateManager.popMatrix();
     }
 }

@@ -335,8 +335,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_vetulicola", EntityPrehistoricFloraVetulicola.class, LepidodendronMod.ENTITY_VETULICOLA, 82,-10861534,-4682937);
         registerEntity("prehistoric_flora_varialepis", EntityPrehistoricFloraVarialepis.class, LepidodendronMod.ENTITY_VARIALEPIS, 82,-2966240,-9481432);
         registerEntity("prehistoric_flora_allenypterus", EntityPrehistoricFloraAllenypterus.class, LepidodendronMod.ENTITY_ALLENYPTERUS, 82,-12108753,-5266804);
-        registerEntity("prehistoric_flora_balanerpeton", EntityPrehistoricFloraBalanerpeton .class, LepidodendronMod.ENTITY_BALANERPETON, 82,-13933805,-10978232);
-        registerEntity("prehistoric_flora_bobasatrania ", EntityPrehistoricFloraBobasatrania .class, LepidodendronMod.ENTITY_BOBASATRANIA , 82,-13338922,-4937142);
+        registerEntity("prehistoric_flora_balanerpeton", EntityPrehistoricFloraBalanerpeton.class, LepidodendronMod.ENTITY_BALANERPETON, 82,-13933805,-10978232);
+        registerEntity("prehistoric_flora_bobasatrania", EntityPrehistoricFloraBobasatrania.class, LepidodendronMod.ENTITY_BOBASATRANIA, 82,-13338922,-4937142);
         registerEntity("prehistoric_flora_barbclabornia", EntityPrehistoricFloraBarbclabornia.class, LepidodendronMod.ENTITY_BARBCLABORNIA, 82,-10789021,-7629667);
         registerEntity("prehistoric_flora_lebachacanthus", EntityPrehistoricFloraLebachacanthus.class, LepidodendronMod.ENTITY_LEBACHACANTHUS, 82,0,0);
         registerEntity("prehistoric_flora_paranaichthys", EntityPrehistoricFloraParanaichthys.class, LepidodendronMod.ENTITY_PARANAICHTHYS, 82,-7176374,-13158860);

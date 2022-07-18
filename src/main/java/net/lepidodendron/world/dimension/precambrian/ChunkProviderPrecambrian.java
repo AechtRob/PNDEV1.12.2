@@ -151,7 +151,7 @@ public class ChunkProviderPrecambrian implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-            ChunkGenSpawner.executeProcedure(true, this.world, new BlockPos(i, 0, j), this.random, null);
+            ChunkGenSpawner.executeProcedure(true, this.world, new BlockPos(i, 0, j), this.random, null, true);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

@@ -51,7 +51,7 @@ public class LepidodendronBespokeSpawner {
                         }
                     }
                     if (spawn) {
-                        ChunkGenSpawner.executeProcedure((world.provider.getDimension() == LepidodendronConfig.dimPrecambrian), world, blockpos, event.getRand(), bStr);
+                        ChunkGenSpawner.executeProcedure((world.provider.getDimension() == LepidodendronConfig.dimPrecambrian), world, blockpos, event.getRand(), bStr, true);
                     }
                 }
             }
@@ -93,7 +93,7 @@ public class LepidodendronBespokeSpawner {
                         }
                     }
                     if (spawn) {
-                        ChunkGenSpawner.executeProcedure((world.provider.getDimension() == LepidodendronConfig.dimPrecambrian), world, blockpos, new Random(), bStr);
+                        ChunkGenSpawner.executeProcedure((world.provider.getDimension() == LepidodendronConfig.dimPrecambrian), world, blockpos, new Random(), bStr, false);
                     }
                 }
             }

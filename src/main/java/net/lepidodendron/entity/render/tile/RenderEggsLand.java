@@ -28,7 +28,7 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
     private final ModelRottenLogEggs rotten_wood_eggs;
 
     public static final ResourceLocation TEXTURE_HYLONOMUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus_eggs.png");
-    public static final ResourceLocation TEXTURE_OPHIACODON_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ophiacodon_eggs.png");
+    public static final ResourceLocation TEXTURE_CASINERIA_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria_eggs.png");
     public static final ResourceLocation TEXTURE_LABIDOSAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus_eggs.png");
     public static final ResourceLocation TEXTURE_WEIGELTISAURUS_EGG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus_eggs.png");
 
@@ -72,8 +72,8 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                     TEXTURE_EGG = TEXTURE_LABIDOSAURUS_EGG;
                     eggType = 10; //rotten wood
                 }
-                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ophiacodon")) {
-                    TEXTURE_EGG = TEXTURE_OPHIACODON_EGG;
+                else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_casineria")) {
+                    TEXTURE_EGG = TEXTURE_CASINERIA_EGG;
                     eggType = 10; //rotten wood
                 }
                 else if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_weigeltisaurus")) {

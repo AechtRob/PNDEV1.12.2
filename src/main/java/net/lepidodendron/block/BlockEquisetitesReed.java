@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemEquisetitesReedItem;
-import net.lepidodendron.item.ItemTrowel;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -27,6 +26,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -227,7 +227,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
 					&&
 					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
 						|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND

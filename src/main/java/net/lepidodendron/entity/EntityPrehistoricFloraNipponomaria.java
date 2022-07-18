@@ -3,11 +3,9 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
-import net.lepidodendron.item.entities.ItemMaclurina;
 import net.lepidodendron.item.entities.ItemNipponomaria;
 import net.minecraft.block.Block;
 import net.minecraft.entity.SharedMonsterAttributes;

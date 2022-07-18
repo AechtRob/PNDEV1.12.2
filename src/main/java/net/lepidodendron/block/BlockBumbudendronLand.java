@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemBumbudendronItem;
-import net.lepidodendron.item.ItemTrowel;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -17,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -77,7 +77,7 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			if (stack.getItem() == ItemTrowel.block && LepidodendronConfig.doPropagation
+			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
 					&&
 					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
 							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND

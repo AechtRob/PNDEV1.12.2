@@ -3,12 +3,9 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraLandSnail;
-import net.lepidodendron.entity.EntityPrehistoricFloraSpiniplatyceras;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 
 public class ModelLandSnail extends AdvancedModelBase {
     private final AdvancedModelRenderer Snail;

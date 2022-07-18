@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFalcatus;
-import net.lepidodendron.entity.EntityPrehistoricFloraShringasaurus;
 import net.lepidodendron.entity.model.entity.ModelFalcatus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

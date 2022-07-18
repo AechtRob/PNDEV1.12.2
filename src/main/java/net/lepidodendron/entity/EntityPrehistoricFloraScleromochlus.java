@@ -9,14 +9,13 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -103,6 +102,16 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	@Override
 	public boolean laysEggs() {
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
 		return true;
 	}
 
@@ -203,7 +212,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new PanicAI(this, 1.0));
-		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(4, new LandWanderNestInBlockAI(this));
 		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 40));
 		tasks.addTask(6, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
@@ -300,28 +309,21 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 	}
 
 
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
 	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
 
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		boolean match = false;
+		if (!match) {
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
+					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
+					&& world.isAirBlock(pos));
 		}
-		return false;
+		return match;
 	}
 
 	@Override
