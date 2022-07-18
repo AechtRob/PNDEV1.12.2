@@ -291,7 +291,8 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.root.render(0.01F);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(23);
+        this.neck1.render(0.01F);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

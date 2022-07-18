@@ -36,13 +36,20 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelAulacephalodon modelAulacephalodon;
     private static final ResourceLocation TEXTURE_BRANCHIOSAUR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/branchiosaur.png");
     private final ModelBranchiosaur modelBranchiosaur;
+    private static final ResourceLocation TEXTURE_CACOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cacops.png");
+    private final ModelCacops modelCacops;
     private static final ResourceLocation TEXTURE_CLAUDIOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
     private final ModelClaudiosaurus modelClaudiosaurus;
-
+    private static final ResourceLocation TEXTURE_DASYCEPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dasyceps.png");
+    private final ModelDasyceps modelDasyceps;
     private static final ResourceLocation TEXTURE_DIICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diictodon.png");
     private final ModelDiictodon modelDiictodon;
+    private static final ResourceLocation TEXTURE_DIPLOCERASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diploceraspis.png");
+    private final ModelDiploceraspis modelDiploceraspis;
     private static final ResourceLocation TEXTURE_DVINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinia.png");
     private final ModelDvinia modelDvinia;
+    private static final ResourceLocation TEXTURE_DVINOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dvinosaurus.png");
+    private final ModelDvinosaurus modelDvinosaurus;
     private static final ResourceLocation TEXTURE_ELGINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
     private final ModelElginia modelElginia;
     private static final ResourceLocation TEXTURE_EOSIMOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosimops.png");
@@ -69,6 +76,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_PROTEROGYRINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
     private final ModelProterogyrinus modelProterogyrinus;
     private static final ResourceLocation TEXTURE_PROSICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
+    private static final ResourceLocation TEXTURE_PURLOVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/purlovia.png");
+    private final ModelPurlovia modelPurlovia;
     private static final ResourceLocation TEXTURE_REMIGIOMONTANUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/remigiomontanus.png");
     private final ModelRemigiomontanus modelRemigiomontanus;
     private static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
@@ -78,6 +87,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelSuminia modelSuminia;
     private static final ResourceLocation TEXTURE_TETRACERATOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tetraceratops.png");
     private final ModelTetraceratops modelTetraceratops;
+    private static final ResourceLocation TEXTURE_THRINAXODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/thrinaxodon.png");
+    private final ModelThrinaxodon modelThrinaxodon;
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
 
@@ -88,9 +99,13 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelAcutiramusPlinth = new ModelAcutiramusPlinth();
         this.modelAulacephalodon = new ModelAulacephalodon();
         this.modelBranchiosaur = new ModelBranchiosaur();
+        this.modelCacops = new ModelCacops();
         this.modelClaudiosaurus = new ModelClaudiosaurus();
+        this.modelDasyceps = new ModelDasyceps();
         this.modelDiictodon = new ModelDiictodon();
+        this.modelDiploceraspis = new ModelDiploceraspis();
         this.modelDvinia = new ModelDvinia();
+        this.modelDvinosaurus = new ModelDvinosaurus();
         this.modelElginia = new ModelElginia();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
@@ -103,10 +118,12 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelPlatyhystrix = new ModelPlatyhystrix();
         this.modelProcynosuchus = new ModelProcynosuchus();
         this.modelProterogyrinus = new ModelProterogyrinus();
+        this.modelPurlovia = new ModelPurlovia();
         this.modelRemigiomontanus = new ModelRemigiomontanus();
         this.modelSpathicephalus = new ModelSpathicephalus();
         this.modelSuminia = new ModelSuminia();
         this.modelTetraceratops = new ModelTetraceratops();
+        this.modelThrinaxodon = new ModelThrinaxodon();
         this.modelGerarus = new ModelGerarus();
 
     }
@@ -191,6 +208,15 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.12F,0.12F,0.12F);
                         modelBranchiosaur.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemCacopsRaw.block) {
+                        double offset = 0.28;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_CACOPS);
+                        GlStateManager.scale(0.12F,0.12F,0.12F);
+                        modelCacops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemClaudiosaurusRaw.block) {
                         double offset = 0.23;
                         //double voffset = -0.15;
@@ -201,6 +227,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_CLAUDIOSAURUS);
                         GlStateManager.scale(0.09F,0.09F,0.09F);
                         modelClaudiosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemDasycepsRaw.block) {
+                        double offset = 0.42;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_DASYCEPS);
+                        GlStateManager.scale(0.18F,0.18F,0.18F);
+                        modelDasyceps.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemEosimopsRaw.block) {
                         double offset = 0.16;
@@ -220,6 +257,15 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.2F,0.2F,0.2F);
                         modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemDiploceraspisRaw.block) {
+                        double offset = 0.33;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_DIPLOCERASPIS);
+                        GlStateManager.scale(0.13F,0.13F,0.13F);
+                        modelDiploceraspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemDviniaRaw.block) {
                         double offset = 0.41;
                         //double voffset = -0.15;
@@ -230,6 +276,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_DVINIA);
                         GlStateManager.scale(0.16F,0.16F,0.16F);
                         modelDvinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemDvinosaurusRaw.block) {
+                        double offset = 0.73;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_DVINOSAURUS);
+                        GlStateManager.scale(0.3F,0.3F,0.3F);
+                        modelDvinosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemElginiaRaw.block) {
                         double offset = 0.55;
@@ -364,6 +421,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.4F,0.4F,0.4F);
                         modelProterogyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPurloviaRaw.block) {
+                        double offset = 0.57;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PURLOVIA);
+                        GlStateManager.scale(0.24F,0.24F,0.24F);
+                        modelPurlovia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemRemigiomontanusRaw.block) {
                         double offset = 0.52;
                         //double voffset = -0.15;
@@ -407,6 +475,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_TETRACERATOPS);
                         GlStateManager.scale(0.18F,0.18F,0.18F);
                         modelTetraceratops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemThrinaxodonRaw.block) {
+                        double offset = 0.34;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_THRINAXODON);
+                        GlStateManager.scale(0.14F,0.14F,0.14F);
+                        modelThrinaxodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemProsictodonRaw.block) {
                         double offset = 0.16;
