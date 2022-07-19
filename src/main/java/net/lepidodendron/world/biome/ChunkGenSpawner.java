@@ -372,7 +372,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsRiverReborn);
                 }
-            } else if (biome == BiomePermianWetlands.biome || biome == BiomePermianWetlandsUnwooded.biome) {
+            } else if (biome == BiomePermianWetlands.biome || biome == BiomePermianWetlandsUnwooded.biome
+                    || biome == BiomePermianWetlandsFernCopse.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsPF);
                 }

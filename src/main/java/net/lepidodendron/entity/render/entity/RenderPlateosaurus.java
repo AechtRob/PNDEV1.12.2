@@ -28,7 +28,7 @@ public class RenderPlateosaurus extends RenderLiving<EntityPrehistoricFloraPlate
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPlateosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.875F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.40F;
     }

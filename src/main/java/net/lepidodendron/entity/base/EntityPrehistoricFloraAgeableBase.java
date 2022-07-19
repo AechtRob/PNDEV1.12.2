@@ -610,6 +610,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.setJumping(true);
             return false;
         }
+
+        if (ds == DamageSource.FLY_INTO_WALL || ds == DamageSource.IN_WALL) {
+            if (this.world.getBlockState(new BlockPos(ds.getDamageLocation())).getMaterial() == Material.ICE
+                || this.world.getBlockState(new BlockPos(ds.getDamageLocation())).getMaterial() == Material.PACKED_ICE) {
+                return false;
+            }
+        }
+
+
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
             //if (this.getAnimation() != null) {
                 if (this.getAnimation() == NO_ANIMATION) {

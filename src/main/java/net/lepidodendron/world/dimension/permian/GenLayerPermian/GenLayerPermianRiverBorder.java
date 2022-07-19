@@ -58,6 +58,8 @@ public class GenLayerPermianRiverBorder extends GenLayer
     public  int PERMIAN_WETLANDS_ID =  Biome.getIdForBiome(PERMIAN_WETLANDS);
     public  Biome PERMIAN_WETLANDS_UNWOODED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:permian_wetlands_unwooded"));
     public  int PERMIAN_WETLANDS_UNWOODED_ID =  Biome.getIdForBiome(PERMIAN_WETLANDS_UNWOODED);
+    public  Biome PERMIAN_COPSE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:permian_wetlands_fern_copse"));
+    public  int PERMIAN_COPSE_ID =  Biome.getIdForBiome(PERMIAN_COPSE);
 
     public GenLayerPermianRiverBorder(long seed, GenLayer genLayer)
     {
@@ -193,7 +195,8 @@ public class GenLayerPermianRiverBorder extends GenLayer
 
     private boolean isWetlands(int biomeID) {
     if (biomeID == PERMIAN_WETLANDS_ID
-        || biomeID == PERMIAN_WETLANDS_UNWOODED_ID) {
+        || biomeID == PERMIAN_WETLANDS_UNWOODED_ID
+        || biomeID == PERMIAN_COPSE_ID) {
         return true;
     }
     return false;

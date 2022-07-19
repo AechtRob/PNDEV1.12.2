@@ -22,6 +22,7 @@ public class GenLayerPermian {
         biomes = new GenLayerDiversifyPermian(1002L, biomes);
         biomes = new GenLayerPermianDeepOcean(1100L, biomes);
         biomes = new GenLayerPermianShallowOcean(1300L, biomes);
+        biomes = new GenLayerPermianTreefernCopse(209L, biomes);
         biomes = new GenLayerZoom(1003L, biomes);
         biomes = new GenLayerPermianMountainEdge(2L, biomes);
         biomes = new GenLayerSmooth(700L, biomes);

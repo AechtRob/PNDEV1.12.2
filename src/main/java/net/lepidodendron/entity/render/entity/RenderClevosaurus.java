@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraClevosaurus;
 import net.lepidodendron.entity.model.entity.ModelClevosaurus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -24,57 +25,11 @@ public class RenderClevosaurus extends RenderLiving<EntityPrehistoricFloraClevos
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraClevosaurus entity, float f) {
+        float scale = entity.getAgeScale() * 1.00F;
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.05F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
