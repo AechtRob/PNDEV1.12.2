@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/anemone.png"],
+			"images": ["paleopedia:textures/anemone.png"],
 			"title": "Actiniaria",
 			"text": ""
 		},

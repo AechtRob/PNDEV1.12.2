@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Echinosphaerites.png"],
+			"images": ["paleopedia:textures/Echinosphaerites.png"],
 			"title": "E. aurantium",
 			"text": ""
 		},

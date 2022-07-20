@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Callicrinus.png"],
+			"images": ["paleopedia:textures/Callicrinus.png"],
 			"title": "Callicrinus sp.",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/jelly_barrel.png"],
+			"images": ["paleopedia:textures/jelly_barrel.png"],
 			"title": "Rhizostoma pulmo",
 			"text": ""
 		},

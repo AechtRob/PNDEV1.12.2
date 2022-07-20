@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Dinomischus.png"],
+			"images": ["paleopedia:textures/Dinomischus.png"],
 			"title": "D. isolatus",
 			"text": ""
 		},

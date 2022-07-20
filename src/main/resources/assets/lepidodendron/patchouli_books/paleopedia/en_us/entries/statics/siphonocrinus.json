@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Siphonocrinus.png"],
+			"images": ["paleopedia:textures/Siphonocrinus.png"],
 			"title": "Siphonocrinus nobilis",
 			"text": ""
 		},

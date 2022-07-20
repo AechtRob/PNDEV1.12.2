@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Bolboporites.png"],
+			"images": ["paleopedia:textures/Bolboporites.png"],
 			"title": "Bolboporites sp.",
 			"text": ""
 		},

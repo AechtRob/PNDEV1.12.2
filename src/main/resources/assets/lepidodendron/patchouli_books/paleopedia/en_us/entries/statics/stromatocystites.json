@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Stromatocystites.png"],
+			"images": ["paleopedia:textures/Stromatocystites.png"],
 			"title": "S. walcotti",
 			"text": ""
 		},

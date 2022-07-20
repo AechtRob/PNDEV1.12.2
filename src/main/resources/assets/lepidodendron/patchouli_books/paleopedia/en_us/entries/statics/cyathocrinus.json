@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Cyathocrinus.png"],
+			"images": ["paleopedia:textures/Cyathocrinus.png"],
 			"title": "C. multibrachiatus",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Stromatoveris.png"],
+			"images": ["paleopedia:textures/Stromatoveris.png"],
 			"title": "S. psygmoglena",
 			"text": ""
 		},

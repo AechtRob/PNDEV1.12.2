@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/tabulate.png"],
+			"images": ["paleopedia:textures/tabulate.png"],
 			"title": "Tabulata",
 			"text": ""
 		},

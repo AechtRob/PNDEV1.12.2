@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/sponge.png"],
+			"images": ["paleopedia:textures/sponge.png"],
 			"title": "Porifera",
 			"text": ""
 		},

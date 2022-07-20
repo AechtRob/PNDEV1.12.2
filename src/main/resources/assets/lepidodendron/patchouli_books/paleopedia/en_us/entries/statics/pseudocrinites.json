@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Pseudocrinites.png"],
+			"images": ["paleopedia:textures/Pseudocrinites.png"],
 			"title": "P. magnificus",
 			"text": ""
 		},

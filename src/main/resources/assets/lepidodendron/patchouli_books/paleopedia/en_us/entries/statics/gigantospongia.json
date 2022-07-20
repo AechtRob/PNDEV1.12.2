@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Gigantospongia.png"],
+			"images": ["paleopedia:textures/Gigantospongia.png"],
 			"title": "G. discoforma",
 			"text": ""
 		},

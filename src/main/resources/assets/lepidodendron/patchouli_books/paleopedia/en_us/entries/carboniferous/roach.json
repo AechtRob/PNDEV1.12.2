@@ -1,7 +1,7 @@
 {
 	"name": "Roach",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ambients/ambient_icon/roach_icon.png",
+	"icon": "paleopedia:textures/ambient_icon/roach_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_roachoid",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/roach1.png", "paleopedia:textures/ambients/roach2.png", "paleopedia:textures/ambients/roach3.png"],
+			"images": ["paleopedia:textures/roach1.png", "paleopedia:textures/roach2.png", "paleopedia:textures/roach3.png"],
 			"title": "Blattodea",
 			"text": ""
 		},

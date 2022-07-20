@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Traumatocrinus.png"],
+			"images": ["paleopedia:textures/Traumatocrinus.png"],
 			"title": "Traumatocrinus sp.",
 			"text": ""
 		},

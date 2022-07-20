@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Siphusauctum.png"],
+			"images": ["paleopedia:textures/Siphusauctum.png"],
 			"title": "S. gregarium",
 			"text": ""
 		},

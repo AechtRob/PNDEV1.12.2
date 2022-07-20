@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Cupressocrinites.png"],
+			"images": ["paleopedia:textures/Cupressocrinites.png"],
 			"title": "C. elongatus",
 			"text": ""
 		},

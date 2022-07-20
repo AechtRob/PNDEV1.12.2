@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Ancyrocrinus.png"],
+			"images": ["paleopedia:textures/Ancyrocrinus.png"],
 			"title": "A. crozonensis",
 			"text": ""
 		},

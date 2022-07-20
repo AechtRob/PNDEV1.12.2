@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Dicerocardium.png"],
+			"images": ["paleopedia:textures/Dicerocardium.png"],
 			"title": "Dicerocardium jani",
 			"text": ""
 		},

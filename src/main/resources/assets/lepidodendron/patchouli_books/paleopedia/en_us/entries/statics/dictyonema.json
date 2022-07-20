@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Dictyonema.png"],
+			"images": ["paleopedia:textures/Dictyonema.png"],
 			"title": "D. retiforme",
 			"text": ""
 		},

@@ -1,7 +1,7 @@
 {
 	"name": "Compass Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ambients/ambients_icon/compass_icon.png",
+	"icon": "paleopedia:textures/ambients_icon/compass_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish2",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/jelly_compass.png"],
+			"images": ["paleopedia:textures/jelly_compass.png"],
 			"title": "C. hysoscella",
 			"text": ""
 		},

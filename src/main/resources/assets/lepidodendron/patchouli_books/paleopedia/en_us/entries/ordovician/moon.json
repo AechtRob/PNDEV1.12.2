@@ -1,7 +1,7 @@
 {
 	"name": "Moon Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ambients/ambients_icon/moon_icon.png",
+	"icon": "paleopedia:textures/ambients_icon/moon_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish1",
 	"pages": [
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/jelly_moon.png"],
+			"images": ["paleopedia:textures/jelly_moon.png"],
 			"title": "Aurelia aurita",
 			"text": ""
 		},

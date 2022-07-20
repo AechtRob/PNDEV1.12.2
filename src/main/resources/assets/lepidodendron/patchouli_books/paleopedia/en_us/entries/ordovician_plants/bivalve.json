@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ambients/bivalve.png"],
+			"images": ["paleopedia:textures/bivalve.png"],
 			"title": "Bivalvia",
 			"text": ""
 		},

@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/statics/Blastoids.png"],
+			"images": ["paleopedia:textures/Blastoids.png"],
 			"title": "Class: Blastoidea",
 			"text": ""
 		},
