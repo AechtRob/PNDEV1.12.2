@@ -1,0 +1,65 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_ordovician.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_ordovician.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"ordovician_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_land"
+			}
+		},
+		"ordovician_sponge_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sponge_forest"
+			}
+		},
+		"ordovician_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea"
+			}
+		},
+		"ordovician_sea_ice": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea_ice"
+			}
+		},
+		"ordovician_sea_icebergs": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea_icebergs"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"ordovician_sea_ice",
+			"ordovician_sea_icebergs"
+		],
+		[
+			"ordovician_sea"
+		],
+		[
+			"ordovician_sponge_forest"
+		],
+		[
+			"ordovician_land"
+		]
+	]
+}

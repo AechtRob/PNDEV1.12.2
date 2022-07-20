@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraSphenotitan;
 import net.lepidodendron.entity.model.entity.ModelSphenotitan;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -24,24 +25,11 @@ public class RenderSphenotitan extends RenderLiving<EntityPrehistoricFloraSpheno
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraSphenotitan entity, float f) {
+        float scale = entity.getAgeScale() * 2.0F;
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.05F;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

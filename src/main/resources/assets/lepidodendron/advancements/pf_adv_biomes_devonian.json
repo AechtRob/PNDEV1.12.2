@@ -1,0 +1,142 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_devonian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_devonian.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"devonian_ocean": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_ocean"
+			}
+		},
+		"devonian_ocean_deep": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_ocean_deep"
+			}
+		},
+		"devonian_floodplain": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_floodplain"
+			}
+		},
+		"devonian_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_forest"
+			}
+		},
+		"devonian_gilboa": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_gilboa"
+			}
+		},
+		"devonian_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_hills"
+			}
+		},
+		"devonian_hypersaline_sinkhole": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_hypersaline_sinkhole"
+			}
+		},
+		"devonian_hypersaline_sinkhole_transition": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_hypersaline_sinkhole_transition"
+			}
+		},
+		"devonian_mountains": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_mountains"
+			}
+		},
+		"devonian_ocean_dead_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_ocean_dead_reef"
+			}
+		},
+		"devonian_beach": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_beach"
+			}
+		},
+		"devonian_spikes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_spikes"
+			}
+		},
+		"devonian_springs": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_springs"
+			}
+		},
+		"devonian_swamp": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:devonian_swamp"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"devonian_ocean",
+			"devonian_ocean_deep"
+		],
+		[
+			"devonian_floodplain"
+		],
+		[
+			"devonian_forest",
+			"devonian_beach"
+		],
+		[
+			"devonian_gilboa"
+		],
+		[
+			"devonian_hills"
+		],
+		[
+			"devonian_hypersaline_sinkhole",
+			"devonian_hypersaline_sinkhole_transition"
+		],
+		[
+			"devonian_mountains"
+		],
+		[
+			"devonian_ocean_dead_reef"
+		],
+		[
+			"devonian_spikes"
+		],
+		[
+			"devonian_springs"
+		],
+		[
+			"devonian_swamp"
+		]
+	]
+}

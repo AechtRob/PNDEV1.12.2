@@ -1,0 +1,149 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_carboniferous.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_carboniferous.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"carboniferous_beach": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_beach"
+			}
+		},
+		"carboniferous_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_hills"
+			}
+		},
+		"carboniferous_hills_high": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_hills_high"
+			}
+		},
+		"carboniferous_hills_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_hills_edge"
+			}
+		},
+		"carboniferous_polar_desert": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_polar_desert"
+			}
+		},
+		"carboniferous_polar_desert_edge": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_polar_desert_edge"
+			}
+		},
+		"carboniferous_polar_lakes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_polar_lakes"
+			}
+		},
+		"carboniferous_polar_desert_spikes": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_polar_desert_spikes"
+			}
+		},
+		"carboniferous_marsh": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_marsh"
+			}
+		},
+		"carboniferous_ocean": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_ocean"
+			}
+		},
+		"carboniferous_ocean_cliff": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_ocean_cliff"
+			}
+		},
+		"carboniferous_ocean_shore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_ocean_shore"
+			}
+		},
+		"carboniferous_swamp": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_swamp"
+			}
+		},
+		"carboniferous_swamp_burnt": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_swamp_burnt"
+			}
+		},
+		"carboniferous_swamp_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_swamp_hills"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"carboniferous_beach"
+		],
+		[
+			"carboniferous_hills",
+			"carboniferous_hills_edge"
+		],
+		[
+			"carboniferous_hills_high"
+		],
+		[
+			"carboniferous_polar_desert",
+			"carboniferous_polar_desert_edge"
+		],
+		[
+			"carboniferous_polar_lakes"
+		],
+		[
+			"carboniferous_polar_desert_spikes"
+		],
+		[
+			"carboniferous_marsh"
+		],
+		[
+			"carboniferous_ocean",
+			"carboniferous_ocean_cliff"
+		],
+		[
+			"carboniferous_ocean_shore"
+		],
+		[
+			"carboniferous_swamp",
+			"carboniferous_swamp_hills"
+		],
+		[
+			"carboniferous_swamp_burnt"
+		]
+	]
+}

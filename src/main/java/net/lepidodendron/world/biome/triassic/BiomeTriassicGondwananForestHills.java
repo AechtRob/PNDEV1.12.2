@@ -43,7 +43,7 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Triassic Cool Temperate Forest Hills").setTemperature(0.25F).setRainfall(0.8F).setBaseHeight(0.582F).setHeightVariation(0.34F).setWaterColor(-5317633));
+			super(new BiomeProperties("Triassic Cool Temperate Forest").setTemperature(0.25F).setRainfall(0.8F).setBaseHeight(0.582F).setHeightVariation(0.34F).setWaterColor(-5317633));
 			setRegistryName("triassic_gondwanan_forest_hills");
 			topBlock = BlockLeafLitter.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirtRed.block.getDefaultState();

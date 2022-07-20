@@ -1132,6 +1132,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation SMOK_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/smok_young"));
 	public static final int ENTITY_SPHENOTITAN = 456;
 	public static final ResourceLocation SPHENOTITAN_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sphenotitan"));
+	public static final ResourceLocation SPHENOTITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sphenotitan_young"));
 	public static final int ENTITY_STAGONOLEPIS = 457;
 	public static final ResourceLocation STAGONOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stagonolepis"));
 	public static final int ENTITY_STANOCEPHALOSAURUS = 458;

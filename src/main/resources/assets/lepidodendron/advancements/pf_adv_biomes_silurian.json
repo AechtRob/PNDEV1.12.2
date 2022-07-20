@@ -1,0 +1,58 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:diamond_boots"
+		},
+		"title": {
+			"translate": "advancements.pf_adv_biomes_silurian.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_biomes_silurian.description"
+		},
+		"frame": "challenge"
+	},
+	"parent": "lepidodendron:pf_base_adv",
+	"rewards": {
+		"experience": 500
+	},
+	"criteria": {
+		"silurian_land": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_land"
+			}
+		},
+		"silurian_lush_patch": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_lush_patch"
+			}
+		},
+		"silurian_sea": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_sea"
+			}
+		},
+		"silurian_sea_ice": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:silurian_sea_garden"
+			}
+		}
+	},
+	"requirements": [
+		[
+			"silurian_sea_garden"
+		],
+		[
+			"silurian_sea"
+		],
+		[
+			"silurian_lush_patch"
+		],
+		[
+			"silurian_land"
+		]
+	]
+}

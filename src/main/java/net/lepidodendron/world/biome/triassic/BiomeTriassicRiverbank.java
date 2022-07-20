@@ -41,7 +41,7 @@ public class BiomeTriassicRiverbank extends ElementsLepidodendronMod.ModElement 
 
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Triassic Riverbanks").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F).setWaterColor(13038245));
+			super(new BiomeProperties("Triassic Canyons and Creeks").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F).setWaterColor(13038245));
 			setRegistryName("triassic_riverbank");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = BlockSandyDirtRed.block.getDefaultState();

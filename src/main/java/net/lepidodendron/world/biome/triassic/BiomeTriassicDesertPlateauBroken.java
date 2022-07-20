@@ -40,7 +40,7 @@ public class BiomeTriassicDesertPlateauBroken extends ElementsLepidodendronMod.M
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
 			//super(new BiomeProperties("Permian Desert").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled().setWaterColor(10990706));
-			super(new BiomeProperties("Triassic Canyon Delta").setRainfall(0.0F).setBaseHeight(2.589F).setHeightVariation(0.015F).setTemperature(2.0F).setRainDisabled().setWaterColor(16767282));
+			super(new BiomeProperties("Triassic Desert Plateau").setRainfall(0.0F).setBaseHeight(2.589F).setHeightVariation(0.015F).setTemperature(2.0F).setRainDisabled().setWaterColor(16767282));
 			setRegistryName("triassic_desert_plateau_broken");
 			topBlock = Blocks.SAND.getStateFromMeta(1);
 			fillerBlock = Blocks.SAND.getStateFromMeta(1);

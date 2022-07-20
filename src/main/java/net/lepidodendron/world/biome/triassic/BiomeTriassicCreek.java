@@ -42,7 +42,7 @@ public class BiomeTriassicCreek extends ElementsLepidodendronMod.ModElement {
 
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Triassic Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setWaterColor(13038245));
+			super(new BiomeProperties("Triassic Canyons and Creeks").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setWaterColor(13038245));
 			setRegistryName("triassic_creek");
 
 			topBlock = BlockSandRedWavy.block.getDefaultState();
