@@ -4366,6 +4366,153 @@
         "stream": false
       }
     ]
+  },
+  
+  "vancleavea_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:vancleavea_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_living05",
+        "stream": false
+      }
+    ]
+  },
+  "vancleavea_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:vancleavea_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:vancleavea_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "vancleavea_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:vancleavea_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "atopodentatus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:atopodentatus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "atopodentatus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:atopodentatus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:atopodentatus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "atopodentatus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:atopodentatus_death",
+        "stream": false
+      }
+    ]
+  },
+  
+  "euparkeria_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:euparkeria_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_living05",
+        "stream": false
+      }
+    ]
+  },
+  "euparkeria_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:euparkeria_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:euparkeria_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "euparkeria_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:euparkeria_death",
+        "stream": false
+      }
+    ]
   }
   
   

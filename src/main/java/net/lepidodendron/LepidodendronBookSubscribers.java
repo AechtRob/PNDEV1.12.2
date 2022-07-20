@@ -3587,7 +3587,7 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraVancleava) {
+		else if (event.getTarget() instanceof EntityPrehistoricFloraVancleavea) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_VANCLEAVA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}

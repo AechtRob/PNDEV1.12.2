@@ -2829,10 +2829,10 @@ public class RenderHandler {
         return new RenderThecodontosaurus(manager);
         }
             });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVancleava.class, new IRenderFactory<EntityPrehistoricFloraVancleava>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVancleavea.class, new IRenderFactory<EntityPrehistoricFloraVancleavea>() {
         @Override
-        public Render<? super EntityPrehistoricFloraVancleava> createRenderFor(RenderManager manager) {
-        return new RenderVancleava(manager);
+        public Render<? super EntityPrehistoricFloraVancleavea> createRenderFor(RenderManager manager) {
+        return new RenderVancleavea(manager);
         }
             });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraXinpusaurus.class, new IRenderFactory<EntityPrehistoricFloraXinpusaurus>() {
