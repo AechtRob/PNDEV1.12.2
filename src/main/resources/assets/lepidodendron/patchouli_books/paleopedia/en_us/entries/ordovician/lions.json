@@ -1,7 +1,7 @@
 {
 	"name": "Lion's Mane Jelly",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/ambients_icon/lions_icon.png",
+	"icon": "paleopedia:textures/lions_icon.png",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_jellyfish6",
 	"pages": [
