@@ -493,6 +493,7 @@ public class ModTriggers
 
     public static final CustomTrigger CLICK_CIDAROIDA = new CustomTrigger("pf_book_cidaroida");
     public static final CustomTrigger CLICK_ARCHAEOCIDARIS = new CustomTrigger("pf_book_archaeocidaris");
+    public static final CustomTrigger CLICK_CERATODUS = new CustomTrigger("pf_book_ceratodus");
 
 
 
@@ -981,7 +982,8 @@ public class ModTriggers
             CLICK_PHRAGMOCERAS,
             CLICK_LITUITES,
             CLICK_CIDAROIDA,
-            CLICK_ARCHAEOCIDARIS
+            CLICK_ARCHAEOCIDARIS,
+            CLICK_CERATODUS
 
     };
 

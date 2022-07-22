@@ -274,33 +274,33 @@ public class ModelLituites extends AdvancedModelBaseExtended {
         }
 
         //Left:
-        this.chainSwing(tentacle5, speed, -0.3F, -2, f2, 1F);
+        this.chainSwing(tentacle5, speed, -0.18F, -2, f2, 1F);
         //Left lower middle:
-        this.chainWave(tentacle3, speed, 0.3F, -1.5, f2, 1F);
-        this.chainSwing(tentacle3, speed, -0.3F, -1.5, f2, 1F);
+        this.chainWave(tentacle3, speed, 0.18F, -1.5, f2, 1F);
+        this.chainSwing(tentacle3, speed, -0.18F, -1.5, f2, 1F);
         //Left lower bottom:
-        this.chainWave(tentacle4, speed, 0.25F, -2, f2, 1F);
+        this.chainWave(tentacle4, speed, 0.2F, -2, f2, 1F);
         this.chainSwing(tentacle4, speed, -0.1F, -1.5, f2, 1F);
         //Left upper middle:
-        this.chainWave(tentacle2, speed, -0.3F, -1.5, f2, 1F);
-        this.chainSwing(tentacle2, speed, -0.3F, -1.5, f2, 1F);
+        this.chainWave(tentacle2, speed, -0.18F, -1.5, f2, 1F);
+        this.chainSwing(tentacle2, speed, -0.18F, -1.5, f2, 1F);
         //Left upper top:
-        this.chainWave(tentacle1, speed, -0.25F, -2, f2, 1F);
+        this.chainWave(tentacle1, speed, -0.2F, -2, f2, 1F);
         this.chainSwing(tentacle1, speed, -0.1F, -1.5, f2, 1F);
 
         //Right:
-        this.chainSwing(tentacle10, speed, 0.3F, -2, f2, 1F);
+        this.chainSwing(tentacle10, speed, 0.18F, -2, f2, 1F);
         //Right lower middle:
-        this.chainWave(tentacle8, speed, 0.3F, -1.5, f2, 1F);
-        this.chainSwing(tentacle8, speed, 0.3F, -1.5, f2, 1F);
+        this.chainWave(tentacle8, speed, 0.18F, -1.5, f2, 1F);
+        this.chainSwing(tentacle8, speed, 0.18F, -1.5, f2, 1F);
         //Right lower bottom:
-        this.chainWave(tentacle9, speed, 0.25F, -2, f2, 1F);
+        this.chainWave(tentacle9, speed, 0.2F, -2, f2, 1F);
         this.chainSwing(tentacle9, speed, 0.1F, -1.5, f2, 1F);
         //Right upper middle:
-        this.chainWave(tentacle7, speed, -0.3F, -1.5, f2, 1F);
-        this.chainSwing(tentacle7, speed, 0.3F, -1.5, f2, 1F);
+        this.chainWave(tentacle7, speed, -0.18F, -1.5, f2, 1F);
+        this.chainSwing(tentacle7, speed, 0.18F, -1.5, f2, 1F);
         //Right upper top:
-        this.chainWave(tentacle6, speed, -0.25F, -2, f2, 1F);
+        this.chainWave(tentacle6, speed, -0.2F, -2, f2, 1F);
         this.chainSwing(tentacle6, speed, 0.1F, -1.5, f2, 1F);
 
         if (e.isInWater()) {

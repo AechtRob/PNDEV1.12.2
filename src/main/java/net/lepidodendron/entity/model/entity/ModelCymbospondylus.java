@@ -384,8 +384,8 @@ public class ModelCymbospondylus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.Chest.offsetY = 0.05F;
-        this.Chest.offsetZ = 1.0F;
+        this.Chest.offsetY = 0.15F;
+        this.Chest.offsetZ = -1F;
 
        AdvancedModelRenderer[] fishTail = {this.Body, this.Body2, this.Hips, this.Tail, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
         AdvancedModelRenderer[] upperBody = {this.Neck, this.Neck2, this.Head};
@@ -414,7 +414,6 @@ public class ModelCymbospondylus extends AdvancedModelBase {
             else {
                 this.chainSwing(fishTail, speed * still, 0.45F * still, -3, f2, 0.5F * still);
             }
-            this.chainWave(fishTail, speed * still, 0.03F * still, -0.2, f2, 0.8F * still);
             this.chainSwing(upperBody, speed * still, 0.15F, 0, f2, 0.5F *still);
         }
         else {
@@ -439,7 +438,7 @@ public class ModelCymbospondylus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.root.rotateAngleZ = (float) Math.toRadians(90);
-            this.Chest.offsetY = 0F;
+            this.Chest.offsetY = 0.15F;
             this.bob(Chest, -speed * 1.8F, 0.02F, false, f2, 1);
             this.walk(Jaw, (float) (speed * 1.8F), 0.15F, false, 1, 0, f2, 0);
             this.chainWave(fishTail, speed * 1.5F, 0.0025F, -0.1, f2, 0.4F * still);

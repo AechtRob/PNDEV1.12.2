@@ -3184,5 +3184,24 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3180;
     public static final int zosterophyllum_spore = 3181;
 
+    public static final int aeger_raw = 3182;
+    public static final int aeger_cooked = 3183;
+    public static final int cymbospondylus_raw = 3184;
+    public static final int cymbospondylus_cooked = 3185;
+    public static final int megactenopetalus_raw = 3186;
+    public static final int megactenopetalus_cooked = 3187;
+    public static final int birgeria_raw = 3188;
+    public static final int birgeria_cooked = 3189;
+    public static final int caturus_raw = 3190;
+    public static final int caturus_cooked = 3191;
+    public static final int austrolimulus_raw = 3192;
+    public static final int austrolimulus_cooked = 3193;
+    public static final int limulid_raw = 3194;
+    public static final int limulid_cooked = 3195;
+
+    public static final int ceratodus_raw = 3196;
+    public static final int ceratodus_cooked = 3197;
+
+
 
 }

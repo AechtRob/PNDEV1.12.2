@@ -34,7 +34,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 
-	private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraShringasaurus.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Integer> VARIANT= EntityDataManager.createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.VARINT);
 	public ChainBuffer chainBuffer;
 
 	public EntityPrehistoricFloraFalcatus(World world) {
@@ -68,33 +68,33 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 	@Override
 	protected void entityInit() {
 		super.entityInit();
-		this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
+		this.dataManager.register(VARIANT, (rand.nextInt(10)));
 	}
 
 	@Override
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setIsFemale(rand.nextInt(2) == 0);
+		this.setVariant(rand.nextInt(10));
 		return livingdata;
 	}
 
 	public void writeEntityToNBT(NBTTagCompound compound)
 	{
 		super.writeEntityToNBT(compound);
-		compound.setBoolean("female", this.getIsFemale());
+		compound.setInteger("female", this.getVariant());
 	}
 
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
-		this.setIsFemale(compound.getBoolean("female"));
+		this.setVariant(compound.getInteger("variant"));
 	}
 
-	public boolean getIsFemale() {
-		return this.dataManager.get(ISFEMALE);
+	public int getVariant() {
+		return this.dataManager.get(VARIANT);
 	}
 
-	public void setIsFemale(boolean female) {
-		this.dataManager.set(ISFEMALE, female);
+	public void setVariant(int variant) {
+		this.dataManager.set(VARIANT, variant);
 	}
 
 	@Override
