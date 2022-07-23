@@ -353,11 +353,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				setBurrowBlock(pos1.getY(), world, pos1);
 				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
 				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -1 * zOffset));
 
 				y = -1;
 				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
@@ -433,88 +428,81 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 				//Nest:
 				posNest = pos1.add(-1 * xOffset, y, -1 * zOffset);
-			} else {
-
-				//NEEDS REFLECTING!
+			} else { //reflected:
 				y = 0;
 				setBurrowBlock(pos1.getY(), world, pos1);
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 1 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 2 * xOffset));
 
 				y = -1;
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 1 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 2 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 3 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 3 * zOffset));
 
 
 				y = -2;
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 2 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 3 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 3 * zOffset));
 
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -2));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -2));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -2));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -2));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -3 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -3 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -3 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2, y, 1 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2, y, 2 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2, y, 3 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * zOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 3 * zOffset));
 
 
 				y = -3;
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -3 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(3 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 3 * zOffset));
 
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 1 * zOffset));
 
 				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, 0 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 0));
 
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -3 * zOffset));
-
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, -1 * zOffset));
+
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -2 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, -2 * zOffset));
 
 
 				y = -4;
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 1 * zOffset));
 
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, 0 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 0));
 
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -3 * zOffset));
-
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, -1 * zOffset));
+
+				setBurrowBlock(pos1.getY(), world, pos1.add(-0 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, -2 * zOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, -2 * zOffset));
 
 				//Nest:
@@ -559,35 +547,35 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 			}
 			else {
-				//NEED REFLECTING:
+				//Reflected:
 				y = 0;
 				setBurrowBlock(pos1.getY(), world, pos1);
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * xOffset));
 
 				y = -1;
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -2 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -3 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -3 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -3 * zOffset));
 
 				y = -2;
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-3 * xOffset, y, 2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -3 * zOffset));
 
 
 				y = -3;
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 2 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 1 * zOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-2 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(-1 * xOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(2 * zOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -2 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, -1 * zOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(1 * zOffset, y, 0));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -2 * xOffset));
+				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, -1 * xOffset));
 				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 0));
 
 

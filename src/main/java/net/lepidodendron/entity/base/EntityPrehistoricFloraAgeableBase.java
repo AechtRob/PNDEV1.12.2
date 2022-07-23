@@ -51,6 +51,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private static final DataParameter<Boolean> ONEHIT = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.VARINT);
     protected static final DataParameter<Optional<BlockPos>> NEST_BLOCK_POS = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
+    private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
     private static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableBase.class, DataSerializers.BOOLEAN);
 
@@ -310,6 +311,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.entityInit();
         this.dataManager.register(AGETICKS, getAdultAge() - 1);
         this.dataManager.register(MATEABLE, 0);
+        this.dataManager.register(ISFEMALE, (rand.nextInt(2) == 0));
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(HUNTING, false);
         this.dataManager.register(ISFAST, false);
@@ -460,6 +462,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setAgeTicks(this.getAdultAge() - 1);
         this.setMateable(0);
+        this.setIsFemale(rand.nextInt(2) == 0);
         this.setTicks(0);
         this.setTickOffset(rand.nextInt(1000));
         this.setIsFast(false);
@@ -542,6 +545,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.writeEntityToNBT(compound);
         compound.setInteger("AgeTicks", this.getAgeTicks());
         compound.setInteger("Ticks", this.getTicks());
+        compound.setBoolean("female", this.getIsFemale());
         compound.setInteger("TickOffset", this.getTickOffset());
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
@@ -560,6 +564,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         super.readEntityFromNBT(compound);
         this.setAgeTicks(compound.getInteger("AgeTicks"));
         this.setTicks(compound.getInteger("Ticks"));
+        this.setIsFemale(compound.getBoolean("female"));
         this.setTickOffset(compound.getInteger("TickOffset"));
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
@@ -574,6 +579,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         } else {
             this.dataManager.set(NEST_BLOCK_POS, Optional.absent());
         }
+    }
+
+    public boolean getIsFemale() {
+        return this.dataManager.get(ISFEMALE);
+    }
+
+    public void setIsFemale(boolean female) {
+        this.dataManager.set(ISFEMALE, female);
     }
 
     @Override
