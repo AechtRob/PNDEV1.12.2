@@ -8,20 +8,18 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -34,7 +32,6 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 
-	private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.BOOLEAN);
 	public ChainBuffer chainBuffer;
 
 	public EntityPrehistoricFloraFalcatus(World world) {
@@ -63,38 +60,6 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public void playLivingSound() {
-	}
-
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(VARIANT, (rand.nextInt(10)));
-	}
-
-	@Override
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setVariant(rand.nextInt(10));
-		return livingdata;
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("female", this.getVariant());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setVariant(compound.getInteger("variant"));
-	}
-
-	public int getVariant() {
-		return this.dataManager.get(VARIANT);
-	}
-
-	public void setVariant(int variant) {
-		this.dataManager.set(VARIANT, variant);
 	}
 
 	@Override
@@ -205,6 +170,12 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		super.onEntityUpdate();
+		System.err.println("width " + this.width);
 	}
 
 	@Override
