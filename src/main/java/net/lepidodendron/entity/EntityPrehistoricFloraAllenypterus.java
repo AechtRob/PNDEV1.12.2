@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAllenypterus extends EntityPrehistoricFloraFi
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

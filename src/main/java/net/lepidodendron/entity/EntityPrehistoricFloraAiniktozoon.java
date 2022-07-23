@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAiniktozoon extends EntityPrehistoricFloraFis
 
 	public static String getPeriod() {return "Silurian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

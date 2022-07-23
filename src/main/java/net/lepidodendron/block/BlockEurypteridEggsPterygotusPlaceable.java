@@ -73,7 +73,7 @@ public class BlockEurypteridEggsPterygotusPlaceable extends ElementsLepidodendro
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -81,7 +81,7 @@ public class BlockEurypteridEggsPterygotusPlaceable extends ElementsLepidodendro
 				tooltip.add("Periods: " + EntityPrehistoricFloraPterygotus.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 
 	}
 }

@@ -101,7 +101,7 @@ public class BlockInsectEggsTrigonotarbidPerm extends ElementsLepidodendronMod.M
 
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -109,7 +109,7 @@ public class BlockInsectEggsTrigonotarbidPerm extends ElementsLepidodendronMod.M
 				tooltip.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Permotarbus.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 
 	public static class TileEntityCustom extends TileEntity {

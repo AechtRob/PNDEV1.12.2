@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraAkmonistion extends EntityPrehistoricFloraAge
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "M";}
 
 	@Override
 	public void playLivingSound() {

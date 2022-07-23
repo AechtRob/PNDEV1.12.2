@@ -81,14 +81,14 @@ public class BlockAmphibianSpawnAcanthostomatopsPlaceable extends ElementsLepido
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: " + EntityPrehistoricFloraAcanthostomatops.getHabitat() + " Fish/Stem-Amphibian");
+				tooltip.add("Type: " + EntityPrehistoricFloraAcanthostomatops.getSize() + " Fish/Stem-Amphibian");
 				tooltip.add("Periods: " + EntityPrehistoricFloraAcanthostomatops.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

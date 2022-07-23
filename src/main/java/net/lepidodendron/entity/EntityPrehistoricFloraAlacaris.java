@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraAlacaris extends EntityPrehistoricFloraTrilob
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

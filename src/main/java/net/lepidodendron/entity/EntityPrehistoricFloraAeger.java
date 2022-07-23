@@ -83,9 +83,9 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

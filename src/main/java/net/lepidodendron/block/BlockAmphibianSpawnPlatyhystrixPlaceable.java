@@ -81,7 +81,7 @@ public class BlockAmphibianSpawnPlatyhystrixPlaceable extends ElementsLepidodend
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -89,6 +89,6 @@ public class BlockAmphibianSpawnPlatyhystrixPlaceable extends ElementsLepidodend
 				tooltip.add("Periods: " + EntityPrehistoricFloraPlatyhystrix.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

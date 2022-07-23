@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraAegirocassis extends EntityPrehistoricFloraAg
 
 	public static String getPeriod() {return "Ordovician";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "M";}
 
 
 	@Override

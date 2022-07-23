@@ -66,9 +66,9 @@ public class EntityPrehistoricFloraAcanthostomatops extends EntityPrehistoricFlo
 		return 15;
 	}
 
-	public static String getPeriod() {return "early Permian";}
+	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public int getTalkInterval() {

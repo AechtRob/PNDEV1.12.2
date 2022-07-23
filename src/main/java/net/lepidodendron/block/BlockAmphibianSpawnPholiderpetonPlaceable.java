@@ -81,7 +81,7 @@ public class BlockAmphibianSpawnPholiderpetonPlaceable extends ElementsLepidoden
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -89,6 +89,6 @@ public class BlockAmphibianSpawnPholiderpetonPlaceable extends ElementsLepidoden
 				tooltip.add("Periods: " + EntityPrehistoricFloraPholiderpeton.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }
