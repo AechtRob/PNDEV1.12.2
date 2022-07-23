@@ -17,7 +17,7 @@ public class RenderAeger extends RenderLiving<EntityPrehistoricFloraAeger> {
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAeger entity) {
-        if (entity.getVariant() > 5) {
+        if (entity.getVariant() > 3) {
             return RenderAeger.TEXTURE_B;
         }
         return RenderAeger.TEXTURE;

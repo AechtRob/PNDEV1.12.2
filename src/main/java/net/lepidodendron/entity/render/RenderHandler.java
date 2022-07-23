@@ -2992,6 +2992,12 @@ public class RenderHandler {
                 return new RenderArchaeocidaris(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCeratodus.class, new IRenderFactory<EntityPrehistoricFloraCeratodus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCeratodus> createRenderFor(RenderManager manager) {
+                return new RenderCeratodus(manager);
+            }
+        });
 
 
             //Tile Entities Ediacaran (etc):
