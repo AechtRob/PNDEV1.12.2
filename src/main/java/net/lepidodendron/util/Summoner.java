@@ -103,7 +103,7 @@ public class Summoner extends CommandBase
                 }
                 else
                 {
-                    entity.setLocationAndAngles(d0 + 0.5, d1, d2 + 0.5, entity.rotationYaw, entity.rotationPitch);
+                    entity.setLocationAndAngles(d0 + 0.5 + (Math.random() - 0.5), d1, d2 + 0.5 + (Math.random() - 0.5), entity.rotationYaw, entity.rotationPitch);
 
                     if (!flag && entity instanceof EntityLiving)
                     {
