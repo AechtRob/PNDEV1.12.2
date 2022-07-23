@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraAlbertonia extends EntityPrehistoricFloraFish
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

@@ -99,7 +99,7 @@ public class BlockInsectEggsRoachoidForest extends ElementsLepidodendronMod.ModE
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -107,7 +107,7 @@ public class BlockInsectEggsRoachoidForest extends ElementsLepidodendronMod.ModE
 				tooltip.add("Periods: " + EntityPrehistoricFloraRoachoidForestInsect.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 
 	public static class TileEntityCustom extends TileEntity {

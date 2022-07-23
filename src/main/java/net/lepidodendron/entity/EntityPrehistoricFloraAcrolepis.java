@@ -51,9 +51,9 @@ public class EntityPrehistoricFloraAcrolepis extends EntityPrehistoricFloraAgeab
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - early Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "M";}
 
 	@Override
 	public void playLivingSound() {

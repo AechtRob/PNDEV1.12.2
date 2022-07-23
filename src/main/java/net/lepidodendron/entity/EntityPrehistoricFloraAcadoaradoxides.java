@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraAcadoaradoxides extends EntityPrehistoricFlor
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "M";}
 
 	@Override
 	public boolean dropsEggs() {

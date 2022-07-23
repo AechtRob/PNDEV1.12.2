@@ -73,7 +73,7 @@ public class BlockEurypteridEggsPageaPlaceable extends ElementsLepidodendronMod.
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -81,6 +81,6 @@ public class BlockEurypteridEggsPageaPlaceable extends ElementsLepidodendronMod.
 				tooltip.add("Periods: " + EntityPrehistoricFloraPagea.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraAdelophthalmus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Devonian - Carboniferous - Permian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

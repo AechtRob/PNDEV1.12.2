@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 
 	public static String getPeriod() {return "Triassic - Jurassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

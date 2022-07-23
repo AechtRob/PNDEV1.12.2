@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraAcutiramus extends EntityPrehistoricFloraEury
 
 	public static String getPeriod() {return "late Silurian - early Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	public static String getSize() {return "L";}
 
 	@Override
 	public int getRoarLength() {
