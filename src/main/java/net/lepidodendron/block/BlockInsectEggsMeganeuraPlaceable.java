@@ -74,7 +74,7 @@ public class BlockInsectEggsMeganeuraPlaceable extends ElementsLepidodendronMod.
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -83,6 +83,6 @@ public class BlockInsectEggsMeganeuraPlaceable extends ElementsLepidodendronMod.
 				tooltip.add("Habitat: Eggs and nymphs in water; adults fly");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

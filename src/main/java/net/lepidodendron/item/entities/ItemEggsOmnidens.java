@@ -96,7 +96,7 @@ public class ItemEggsOmnidens extends ElementsLepidodendronMod.ModElement {
 	        }
 	    }
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -105,6 +105,6 @@ public class ItemEggsOmnidens extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Habitat: Water");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

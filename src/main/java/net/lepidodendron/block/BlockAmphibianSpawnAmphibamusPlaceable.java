@@ -83,7 +83,7 @@ public class BlockAmphibianSpawnAmphibamusPlaceable extends ElementsLepidodendro
 
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -91,6 +91,6 @@ public class BlockAmphibianSpawnAmphibamusPlaceable extends ElementsLepidodendro
 				tooltip.add("Periods: " + EntityPrehistoricFloraAmphibamus.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

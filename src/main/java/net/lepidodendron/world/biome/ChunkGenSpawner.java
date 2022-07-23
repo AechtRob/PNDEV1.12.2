@@ -1268,7 +1268,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 return false;
                                                                             }
 
-                                                                        }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + pos.getY() + " " + pos.getZ() + " " + nbtStr);
+                                                                        }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + (pos.getY() + 1) + " " + pos.getZ() + " " + nbtStr);
                                                                     }
 
                                                                     //System.err.println("Spawned at " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());

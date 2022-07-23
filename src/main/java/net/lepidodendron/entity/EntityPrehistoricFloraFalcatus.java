@@ -34,12 +34,12 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 
-	private static final DataParameter<Integer> VARIANT= EntityDataManager.createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> ISFEMALE = EntityDataManager.createKey(EntityPrehistoricFloraFalcatus.class, DataSerializers.BOOLEAN);
 	public ChainBuffer chainBuffer;
 
 	public EntityPrehistoricFloraFalcatus(World world) {
 		super(world);
-		//setSize(0.4F, 0.4F);
+		setSize(0.1F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

@@ -112,7 +112,7 @@ public class ItemEggsOpsieobuthus extends ElementsLepidodendronMod.ModElement {
 			return 1F;
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -120,6 +120,6 @@ public class ItemEggsOpsieobuthus extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Periods: Carboniferous - Permian");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

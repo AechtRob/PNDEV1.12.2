@@ -73,7 +73,7 @@ public class BlockEggsCladoselachePlaceable extends ElementsLepidodendronMod.Mod
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -81,6 +81,6 @@ public class BlockEggsCladoselachePlaceable extends ElementsLepidodendronMod.Mod
 				tooltip.add("Periods: " + EntityPrehistoricFloraCladoselache.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

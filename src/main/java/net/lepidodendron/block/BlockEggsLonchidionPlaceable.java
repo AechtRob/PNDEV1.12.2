@@ -73,7 +73,7 @@ public class BlockEggsLonchidionPlaceable extends ElementsLepidodendronMod.ModEl
 			worldIn.destroyBlock(pos, false);
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -81,6 +81,6 @@ public class BlockEggsLonchidionPlaceable extends ElementsLepidodendronMod.ModEl
 				tooltip.add("Periods: " + EntityPrehistoricFloraLonchidion.getPeriod());
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		}*/
 	}
 }

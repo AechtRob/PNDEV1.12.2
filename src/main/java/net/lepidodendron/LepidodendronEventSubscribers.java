@@ -473,1294 +473,1309 @@ public class LepidodendronEventSubscribers {
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acadoaradoxides")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAcadoaradoxides.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAcadoaradoxides.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAcadoaradoxides.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acanthodes")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAcanthodes.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAcanthodes.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAcanthodes.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acanthostega")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAcanthostega.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAcanthostega.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAcanthostega.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acrolepis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAcrolepis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAcrolepis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAcrolepis.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acutiramus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAcutiramus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAcutiramus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAcutiramus.getSize());
+			}
+			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_adelophthalmus")) {
+				List<String> tt = event.getToolTip();
+				tt.add("Periods: " + EntityPrehistoricFloraAdelophthalmus.getPeriod());
+				//tt.add("Size: " + EntityPrehistoricFloraAdelophthalmus.getSize());
+			}
+			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_aeger")) {
+				List<String> tt = event.getToolTip();
+				tt.add("Periods: " + EntityPrehistoricFloraAeger.getPeriod());
+				//tt.add("Size: " + EntityPrehistoricFloraAeger.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_aegirocassis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAegirocassis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAegirocassis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAegirocassis.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ainiktozoon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAiniktozoon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAiniktozoon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAiniktozoon.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_akmonistion")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAkmonistion.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAkmonistion.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAkmonistion.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_alacaris")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAlacaris.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAlacaris.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAlacaris.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_asteroceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Asteroceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Asteroceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Asteroceras.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_ceratites")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Ceratites.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Ceratites.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Ceratites.getSize());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_coroniceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Coroniceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Coroniceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Coroniceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_cylolobus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Cylolobus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Cylolobus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Cylolobus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_dactylioceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Dactylioceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Dactylioceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Dactylioceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_goniatites")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Goniatites.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Goniatites.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Goniatites.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_manticoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Manticoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Manticoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Manticoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_pachydesmoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Pachydesmoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Pachydesmoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Pachydesmoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_pachydiscus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Pachydiscus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Pachydiscus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Pachydiscus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_parapuzosia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Parapuzosia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Parapuzosia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Parapuzosia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ammonite_titanites")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmmonite_Titanites.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmmonite_Titanites.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmmonite_Titanites.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_amphibamus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmphibamus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmphibamus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmphibamus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_amplectobelua")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAmplectobelua.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAmplectobelua.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAmplectobelua.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_anomalocaris")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAnomalocaris.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAnomalocaris.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAnomalocaris.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_anthracomedusa")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAnthracomedusa.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAnthracomedusa.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAnthracomedusa.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_aphetoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAphetoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAphetoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAphetoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_arandaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraArandaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraArandaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraArandaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_asaphus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAsaphus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAsaphus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAsaphus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ateleaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAteleaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAteleaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAteleaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_attercopus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraAttercopus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraAttercopus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraAttercopus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_banffia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraBanffia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraBanffia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraBanffia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_basiloceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraBasiloceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraBasiloceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraBasiloceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_batofasciculus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraBatofasciculus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraBatofasciculus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraBatofasciculus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_belantsea")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraBelantsea.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraBelantsea.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraBelantsea.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_bothriolepis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraBothriolepis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraBothriolepis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraBothriolepis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cambroraster")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCambroraster.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCambroraster.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCambroraster.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cameroceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCameroceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCameroceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCameroceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_campbellodus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCampbellodus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCampbellodus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCampbellodus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_canadaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCanadaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCanadaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCanadaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_carcinosoma")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCarcinosoma.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCarcinosoma.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCarcinosoma.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cephalaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCephalaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCephalaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCephalaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cheirurus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCheirurus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCheirurus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCheirurus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cheloniellon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCheloniellon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCheloniellon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCheloniellon.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cladoselache")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCladoselache.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCladoselache.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCladoselache.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_coccosteus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCoccosteus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCoccosteus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCoccosteus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_coelacanthus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCoelacanthus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCoelacanthus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCoelacanthus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cotylorhynchus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCotylorhynchus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCotylorhynchus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCotylorhynchus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cyclonema")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCyclonema.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCyclonema.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCyclonema.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_cyrtoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraCyrtoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraCyrtoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraCyrtoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_deiroceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDeiroceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDeiroceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDeiroceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_diania")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDiania.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDiania.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDiania.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dickinsonia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDickinsonia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDickinsonia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDickinsonia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_didymograptus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDidymograptus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDidymograptus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDidymograptus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dimetrodon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDimetrodon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDimetrodon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDimetrodon.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dracopristis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDracopristis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDracopristis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDracopristis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dunkleosteus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraDunkleosteus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraDunkleosteus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraDunkleosteus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eglonaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEglonaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEglonaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEglonaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ellipsocephalus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEllipsocephalus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEllipsocephalus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEllipsocephalus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_elrathia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraElrathia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraElrathia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraElrathia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_endoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEndoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEndoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEndoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eoandromeda")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEoandromeda.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEoandromeda.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEoandromeda.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eoarthropleura")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEoarthropleura.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEoarthropleura.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEoarthropleura.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eoredlichia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEoredlichia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEoredlichia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEoredlichia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eryops")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEryops.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEryops.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEryops.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eurypterus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEurypterus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEurypterus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEurypterus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_furcacauda")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraFurcacauda.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraFurcacauda.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraFurcacauda.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_furcaster")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraFurcaster.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraFurcaster.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraFurcaster.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gemmactena")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraGemmactena.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraGemmactena.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraGemmactena.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gemuendina")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraGemuendina.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraGemuendina.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraGemuendina.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gonioceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraGonioceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraGonioceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraGonioceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gorgonops")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraGorgonops.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraGorgonops.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraGorgonops.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hallucigenia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHallucigenia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHallucigenia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHallucigenia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_helicoprion")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHelicoprion.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHelicoprion.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHelicoprion.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hemicyclaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHemicyclaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHemicyclaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHemicyclaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_heterosteus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHeterosteus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHeterosteus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHeterosteus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hibbertopterus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHibbertopterus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHibbertopterus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHibbertopterus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hibernaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHibernaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHibernaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHibernaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHylonomus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHylonomus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHylonomus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hyneria")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraHyneria.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraHyneria.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraHyneria.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ichthyostega")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraIchthyostega.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraIchthyostega.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraIchthyostega.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_inostrancevia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraInostrancevia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraInostrancevia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraInostrancevia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_isotelus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraIsotelus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraIsotelus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraIsotelus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jaekelopterus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJaekelopterus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJaekelopterus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJaekelopterus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish_precambrian")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish_Precambrian.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish_Precambrian.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish_Precambrian.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish1")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish1.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish1.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish1.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish2")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish2.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish2.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish2.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish3")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish3.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish3.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish3.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish4")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish4.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish4.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish4.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish5")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish5.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish5.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish5.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish6")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish6.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish6.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish6.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jellyfish7")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish7.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish7.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish7.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_jianshanopodia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJianshanopodia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJianshanopodia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJianshanopodia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kalbarria")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraKalbarria.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraKalbarria.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraKalbarria.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kerygmachela")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraKerygmachela.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraKerygmachela.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraKerygmachela.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kimberella")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraKimberella.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraKimberella.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraKimberella.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kodymirus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraKodymirus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraKodymirus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraKodymirus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kokomopterus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraKokomopterus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraKokomopterus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraKokomopterus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_laminacaris")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraLaminacaris.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraLaminacaris.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraLaminacaris.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_limnoscelis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraLimnoscelis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraLimnoscelis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraLimnoscelis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_lunataspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraLunataspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraLunataspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraLunataspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_lyrarapax")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraLyrarapax.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraLyrarapax.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraLyrarapax.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_maclurina")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMaclurina.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMaclurina.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMaclurina.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_marrella")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMarrella.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMarrella.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMarrella.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_megalocephalus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMegalocephalus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMegalocephalus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMegalocephalus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_megarachne")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMegarachne.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMegarachne.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMegarachne.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_metaspriggina")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMetaspriggina.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMetaspriggina.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMetaspriggina.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_microdictyon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMicrodictyon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMicrodictyon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMicrodictyon.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_mimetaster")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMimetaster.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMimetaster.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMimetaster.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_mixopterus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMixopterus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMixopterus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMixopterus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_monograptus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMonograptus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMonograptus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMonograptus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_moschops")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraMoschops.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraMoschops.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraMoschops.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_nectocaris")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraNectocaris.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraNectocaris.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraNectocaris.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_odaraia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOdaraia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOdaraia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOdaraia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_odontogriphus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOdontogriphus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOdontogriphus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOdontogriphus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_omnidens")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOmnidens.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOmnidens.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOmnidens.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_onychodus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOnychodus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOnychodus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOnychodus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_opabinia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOpabinia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOpabinia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOpabinia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ophiacodon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOphiacodon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOphiacodon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOphiacodon.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_orthoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOrthoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOrthoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOrthoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_ottoia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraOttoia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraOttoia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraOttoia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pagea")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPagea.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPagea.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPagea.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_delitzschala")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_dunbaria")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_homaloneura")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_homoioptera")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_lithomantis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_lycocercus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_nymph")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyopteraNymph.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyopteraNymph.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyopteraNymph.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_nymph_perm")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyopteraNymphPerm.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyopteraNymphPerm.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyopteraNymphPerm.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_sinodunbaria")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeodictyoptera_stenodictya")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeoisopus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPalaeoisopus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPalaeoisopus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPalaeoisopus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeojelly1")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish_Palaeo1.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish_Palaeo1.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish_Palaeo1.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeojelly2")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish_Palaeo2.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish_Palaeo2.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish_Palaeo2.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeojelly3")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish_Palaeo3.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish_Palaeo3.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish_Palaeo3.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_palaeojelly4")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraJellyfish_Palaeo4.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraJellyfish_Palaeo4.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraJellyfish_Palaeo4.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_paradoxides")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraParadoxides.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraParadoxides.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraParadoxides.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_parexus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraParexus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraParexus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraParexus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_parvancorina")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraParvancorina.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraParvancorina.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraParvancorina.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_paucipodia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPaucipodia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPaucipodia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPaucipodia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pederpes")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPederpes.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPederpes.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPederpes.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pikaia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPikaia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPikaia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPikaia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_platysomus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPlatysomus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPlatysomus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPlatysomus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pneumodesmus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPneumodesmus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPneumodesmus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPneumodesmus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_poleumita")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPoleumita.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPoleumita.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPoleumita.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pomatrum")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPomatrum.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPomatrum.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPomatrum.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_poraspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPoraspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPoraspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPoraspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_promissum")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPromissum.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPromissum.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPromissum.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_psarolepis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPsarolepis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPsarolepis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPsarolepis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pteraspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPteraspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPteraspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPteraspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pterygotus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPterygotus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPterygotus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPterygotus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_qilinyu")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraQilinyu.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraQilinyu.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraQilinyu.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_rhizodus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraRhizodus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraRhizodus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraRhizodus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_sacabambaspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSacabambaspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSacabambaspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSacabambaspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_schinderhannes")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSchinderhannes.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSchinderhannes.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSchinderhannes.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_scorpion_gigantoscorpio")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraScorpion_Gigantoscorpio.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraScorpion_Gigantoscorpio.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraScorpion_Gigantoscorpio.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_scorpion_gondwanascorpio")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraScorpion_Gondwanascorpio.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraScorpion_Gondwanascorpio.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraScorpion_Gondwanascorpio.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_scorpion_opsieobuthus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraScorpion_Opsieobuthus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraScorpion_Opsieobuthus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraScorpion_Opsieobuthus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_scorpion_pulmonoscorpius")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraScorpion_Pulmonoscorpius.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraScorpion_Pulmonoscorpius.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraScorpion_Pulmonoscorpius.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_selenopeltis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSelenopeltis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSelenopeltis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSelenopeltis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_siberion")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSiberion.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSiberion.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSiberion.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_spathicephalus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSpathicephalus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSpathicephalus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSpathicephalus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_sphenacodon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSphenacodon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSphenacodon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSphenacodon.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_spriggina")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSpriggina.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSpriggina.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSpriggina.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_squatinactis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSquatinactis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSquatinactis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSquatinactis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_synophalos")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraSynophalos.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraSynophalos.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraSynophalos.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_tegopelte")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTegopelte.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTegopelte.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTegopelte.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_temperoceras")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTemperoceras.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTemperoceras.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTemperoceras.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_terataspis")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTerataspis.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTerataspis.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTerataspis.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_tetragraptus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTetragraptus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTetragraptus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTetragraptus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_thelodus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraThelodus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraThelodus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraThelodus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_titanichthys")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTitanichthys.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTitanichthys.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTitanichthys.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_tokummia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTokummia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTokummia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTokummia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_cryptomartus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Cryptomartus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Cryptomartus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Cryptomartus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_eophrynus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Eophrynus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Eophrynus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Eophrynus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_kreischeria")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Kreischeria.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Kreischeria.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Kreischeria.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_palaeocharinus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Palaeocharinus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Palaeocharinus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Palaeocharinus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_palaeotarbus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Palaeotarbus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Palaeotarbus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Palaeotarbus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_trigonotarbid_permotarbus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTrigonotarbid_Permotarbus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTrigonotarbid_Permotarbus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTrigonotarbid_Permotarbus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_tullimonstrum")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTullimonstrum.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTullimonstrum.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTullimonstrum.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_vestinautilus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraVestinautilus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraVestinautilus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraVestinautilus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_walliserops")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraWalliserops.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraWalliserops.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraWalliserops.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_websteroprion")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraWebsteroprion.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraWebsteroprion.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraWebsteroprion.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_wiwaxia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraWiwaxia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraWiwaxia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraWiwaxia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_xenacanthus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraXenacanthus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraXenacanthus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraXenacanthus.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_xenusion")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraXenusion.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraXenusion.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraXenusion.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_yawunik")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraYawunik.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraYawunik.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraYawunik.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_yilingia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraYilingia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraYilingia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraYilingia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_yohoia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraYohoia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraYohoia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraYohoia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_yorgia")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraYorgia.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraYorgia.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraYorgia.getHabitat());
 			}
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_yunnanozoon")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraYunnanozoon.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraYunnanozoon.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraYunnanozoon.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_platyhystrix")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraPlatyhystrix.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraPlatyhystrix.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraPlatyhystrix.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_estemmenosuchus")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraEstemmenosuchus.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraEstemmenosuchus.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraEstemmenosuchus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_traquairius")) {
 			List<String> tt = event.getToolTip();
 			tt.add("Periods: " + EntityPrehistoricFloraTraquairius.getPeriod());
-			tt.add("Type: " + EntityPrehistoricFloraTraquairius.getHabitat());
+			//tt.add("Size: " + EntityPrehistoricFloraTraquairius.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_diictodon")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraDiictodon.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraDiictodon.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraDiictodon.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eosimops")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraEosimops.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraEosimops.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraEosimops.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_prosictodon")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraProsictodon.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraProsictodon.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraProsictodon.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_robertia")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRobertia.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRobertia.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRobertia.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_bushizheia")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraBushizheia.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraBushizheia.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraBushizheia.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_phantaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPhantaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPhantaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPhantaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_sidneyia")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraSidneyia.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraSidneyia.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraSidneyia.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pharyngolepis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPharyngolepis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPharyngolepis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPharyngolepis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_platycaraspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPlatycaraspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPlatycaraspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPlatycaraspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_crotalocephalus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraCrotalocephalus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraCrotalocephalus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraCrotalocephalus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dalmanites")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraDalmanites.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraDalmanites.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraDalmanites.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_drepanaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraDrepanaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraDrepanaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraDrepanaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_eusthenopteron")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraEusthenopteron.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraEusthenopteron.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraEusthenopteron.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_lunaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraLunaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraLunaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraLunaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_lungmenshanaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraLungmenshanaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraLungmenshanaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraLungmenshanaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_panderichthys")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPanderichthys.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPanderichthys.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPanderichthys.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_archoblattina")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraArchoblattinaInsect.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraArchoblattinaInsect.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraArchoblattinaInsect.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_archoblattina_nymph")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraArchoblattinaNymph.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraArchoblattinaNymph.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraArchoblattinaNymph.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_platylomaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPlatylomaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPlatylomaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPlatylomaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_roachoid_arid")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRoachoidAridInsect.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRoachoidAridInsect.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRoachoidAridInsect.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_roachoid_forest")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRoachoidForestInsect.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRoachoidForestInsect.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRoachoidForestInsect.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_roachoid_swamp")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRoachoidSwampInsect.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRoachoidSwampInsect.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRoachoidSwampInsect.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gerarus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraGerarusInsect.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraGerarusInsect.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraGerarusInsect.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_meganeuropsis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraMeganeuropsis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraMeganeuropsis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraMeganeuropsis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_meganeuropsis_nymph")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraMeganeuropsisNymph.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraMeganeuropsisNymph.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraMeganeuropsisNymph.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_bandringa")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraBandringa.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraBandringa.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraBandringa.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gyracanthides")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraGyracanthides.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraGyracanthides.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraGyracanthides.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_janassa")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraJanassa.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraJanassa.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraJanassa.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_phanerotinus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPhanerotinus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPhanerotinus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPhanerotinus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_proterogyrinus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraProterogyrinus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraProterogyrinus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraProterogyrinus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_listracanthus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraListracanthus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraListracanthus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraListracanthus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_prionosuchus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPrionosuchus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPrionosuchus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPrionosuchus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_mooreoceras")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraMooreoceras.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraMooreoceras.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraMooreoceras.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_rayonnoceras")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRayonnoceras.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRayonnoceras.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRayonnoceras.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_remigiomontanus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraRemigiomontanus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraRemigiomontanus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraRemigiomontanus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_edestus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraEdestus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraEdestus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraEdestus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_pholiderpeton")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraPholiderpeton.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraPholiderpeton.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraPholiderpeton.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_mesosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraMesosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraMesosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraMesosaurus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_iniopteryx")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraIniopteryx.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraIniopteryx.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraIniopteryx.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_menaspis")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraMenaspis.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraMenaspis.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraMenaspis.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_gnathorhiza")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraGnathorhiza.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraGnathorhiza.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraGnathorhiza.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_claudiosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraClaudiosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraClaudiosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraClaudiosaurus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_acanthostomatops")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraAcanthostomatops.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraAcanthostomatops.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraAcanthostomatops.getSize());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_diadectes")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraDiadectes.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraDiadectes.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraDiadectes.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_dvinia")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraDvinia.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraDvinia.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraDvinia.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_procynosuchus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraProcynosuchus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraProcynosuchus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraProcynosuchus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_kaibabvenator")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraKaibabvenator.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraKaibabvenator.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraKaibabvenator.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_saivodus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraSaivodus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraSaivodus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraSaivodus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_tapinocephalus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraTapinocephalus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraTapinocephalus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraTapinocephalus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_anteosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraAnteosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraAnteosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraAnteosaurus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_vivaxosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraVivaxosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraVivaxosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraVivaxosaurus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_albertonia")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraAlbertonia.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraAlbertonia.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraAlbertonia.getSize());
+			}
+			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_allenypterus")) {
+				List<String> tt = event.getToolTip();
+				tt.add("Periods: " + EntityPrehistoricFloraAllenypterus.getPeriod());
+				//tt.add("Size: " + EntityPrehistoricFloraAllenypterus.getSize());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_scutosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraScutosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraScutosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraScutosaurus.getHabitat());
 			}
 
 			if (resourceLocation.toString().equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_labidosaurus")) {
 				List<String> tt = event.getToolTip();
 				tt.add("Periods: " + EntityPrehistoricFloraLabidosaurus.getPeriod());
-				tt.add("Type: " + EntityPrehistoricFloraLabidosaurus.getHabitat());
+				//tt.add("Size: " + EntityPrehistoricFloraLabidosaurus.getHabitat());
 			}
 
 		}
