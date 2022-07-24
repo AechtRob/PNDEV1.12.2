@@ -250,6 +250,7 @@ public class ModelParanaichthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Paranaichthys.render(f5 * 0.2F);
     }
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
@@ -263,6 +264,7 @@ public class ModelParanaichthys extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -273,7 +275,7 @@ public class ModelParanaichthys extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Paranaichthys.offsetY = 1.05F;
+        this.Paranaichthys.offsetY = 1.15F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3,this.Body4,this.Body5};

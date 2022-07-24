@@ -70,9 +70,9 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		return "mid Triassic";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious reptile";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious reptile";
+	//}
 
 	@Override
 	public boolean breathesAir() {
@@ -110,8 +110,7 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 	}
 
 	public boolean isMovingOnLand() {
-		//System.err.println("getMoveAngle " + getMoveAngle());
-		return getMoveFraction() >= 0.5D;
+		return getMoveFraction() >= 0.50D;
 	}
 
 	public double getMoveFraction() {
@@ -123,7 +122,6 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 	public double getMoveAngle() {
 		return Math.sin(Math.PI * 2	* getMoveFraction());
 	}
-
 
 	public int flapLength() {
 		return 80;

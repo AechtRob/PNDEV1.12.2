@@ -36,6 +36,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.*;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -71,6 +72,14 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.chainBuffer = new ChainBuffer();
         }
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_terrestrial.name");
+    }
+
+    public static String getPeriod() {
+        return "undefined";
     }
 
     @Override

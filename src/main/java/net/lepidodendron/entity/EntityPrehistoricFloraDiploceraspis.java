@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -64,9 +69,9 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 		return "Permian";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious";
+	//}
 
 	@Override
 	public int getTalkInterval() {

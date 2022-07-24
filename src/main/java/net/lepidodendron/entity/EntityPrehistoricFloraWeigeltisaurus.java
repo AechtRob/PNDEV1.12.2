@@ -122,7 +122,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Gliding Reptile";}
+	//public static String getHabitat() {return "Gliding Reptile";}
 
 	public boolean getIsFlying() {
 		return this.dataManager.get(ISFLYING);

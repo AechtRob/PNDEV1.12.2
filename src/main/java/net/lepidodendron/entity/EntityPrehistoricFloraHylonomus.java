@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraHylonomus extends EntityPrehistoricFloraLandB
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
     @Override
 	public String getTexture() {

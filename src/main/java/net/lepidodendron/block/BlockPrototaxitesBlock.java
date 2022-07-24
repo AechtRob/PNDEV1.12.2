@@ -108,7 +108,7 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("NOTE: Used to build the portal to the Ordovician-Silurian dimension");
+				tooltip.add("NOTE: Used to build the portal to the Silurian dimension");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

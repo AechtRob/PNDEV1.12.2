@@ -25,8 +25,14 @@ public class LepidodendronOreHandler {
 			)
 				event.setResult(Event.Result.DENY);
 		}
-		if (event.getType().equals(EventType.DIRT )){
-			if (LepidodendronConfig.dimOrdovician == (int) event.getWorld().provider.getDimension()
+		if (event.getType().equals(EventType.DIRT )){ //dirt is blocked to avoid grass etc accidentally appearring
+			if (LepidodendronConfig.dimCretaceous == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimJurassic == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimTriassic == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimPermian == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimCarboniferous == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimDevonian == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimSilurian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimSilurian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimCambrian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()

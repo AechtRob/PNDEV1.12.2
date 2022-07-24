@@ -34,6 +34,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -68,6 +69,14 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
             return 0;
         }
         return this.world.rand.nextInt(i);
+    }
+
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_aquatic.name");
+    }
+
+    public static String getPeriod() {
+        return "undefined";
     }
 
     @Nullable

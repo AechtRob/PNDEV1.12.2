@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 
 	public static String getPeriod() {return "Ediacaran";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

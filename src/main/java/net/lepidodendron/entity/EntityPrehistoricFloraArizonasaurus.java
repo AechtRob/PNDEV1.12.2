@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Archosaur";}
+	//public static String getHabitat() {return "Terrestrial Archosaur";}
 
 	@Override
 	public int getEggType() {

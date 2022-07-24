@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraPlacerias extends EntityPrehistoricFloraLandB
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Dicynodont";}
+	//public static String getHabitat() {return "Terrestrial Dicynodont";}
 
 	@Override
 	public boolean hasNest() {

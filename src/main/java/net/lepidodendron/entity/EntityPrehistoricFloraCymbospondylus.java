@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCymbospondylus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Aquatic Ichthyosaur";}
+	//public static String getHabitat() {return "Aquatic Ichthyosaur";}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {

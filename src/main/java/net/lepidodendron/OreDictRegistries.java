@@ -128,6 +128,28 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		//Wood:
 		OreDictionary.registerOre("plankWood", BlockStickBundle.block);
 
+		//Shellfish:
+		OreDictionary.registerOre("itemShellfish", BlockBivalve.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveCream.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveDark.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveGreen.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveGrey.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveInoceramus.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveLithiotis.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveMegalodon.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveTall.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveUpright.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveWhite.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveWhite.block);
+		OreDictionary.registerOre("itemShellfish", ItemLandSnail.block);
+		OreDictionary.registerOre("itemShellfish", ItemMaclurina.block);
+		OreDictionary.registerOre("itemShellfish", ItemCyclonema.block);
+		OreDictionary.registerOre("itemShellfish", ItemPoleumita.block);
+		OreDictionary.registerOre("itemShellfish", ItemPhanerotinus.block);
+		OreDictionary.registerOre("itemShellfish", ItemNipponomaria.block);
+		OreDictionary.registerOre("itemShellfish", ItemSpiniplatyceras.block);
+
 		//Ropes:
 		OreDictionary.registerOre("itemRope", BlockAnkyropterisStem.block);
 		OreDictionary.registerOre("itemRope", BlockAnkyropterisStemNE.block);

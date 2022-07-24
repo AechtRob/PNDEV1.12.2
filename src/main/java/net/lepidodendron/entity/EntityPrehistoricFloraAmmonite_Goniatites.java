@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraAmmonite_Goniatites extends EntityPrehistoric
 
 	public static String getPeriod() {return "Devonian - Carboniferous - Permian - Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

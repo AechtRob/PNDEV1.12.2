@@ -106,7 +106,7 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Cynodont";}
+	//public static String getHabitat() {return "Terrestrial Cynodont";}
 
 	@Override
 	public int getAttackLength() {

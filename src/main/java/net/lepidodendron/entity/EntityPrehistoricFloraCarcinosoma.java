@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraCarcinosoma extends EntityPrehistoricFloraEur
 
 	public static String getPeriod() {return "late Silurian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public int getRoarLength() {

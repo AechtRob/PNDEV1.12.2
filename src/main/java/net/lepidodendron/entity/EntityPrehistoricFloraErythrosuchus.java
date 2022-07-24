@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Reptile";}
+	//public static String getHabitat() {return "Terrestrial Reptile";}
 
 	@Override
 	public boolean hasNest() {

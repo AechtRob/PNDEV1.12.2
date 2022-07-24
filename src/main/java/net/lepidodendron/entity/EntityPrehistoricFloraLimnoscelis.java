@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraLimnoscelis extends EntityPrehistoricFloraSwi
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

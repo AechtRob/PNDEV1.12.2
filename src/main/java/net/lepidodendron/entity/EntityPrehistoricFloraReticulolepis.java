@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraReticulolepis extends EntityPrehistoricFloraA
 
 	public static String getPeriod() {return "Permian - early Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

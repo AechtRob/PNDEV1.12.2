@@ -12,7 +12,7 @@ public class RenderProfallotaspis extends RenderLiving<EntityPrehistoricFloraPro
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/profallotaspis.png");
 
     public RenderProfallotaspis(RenderManager mgr) {
-        super(mgr, new ModelProfallotaspis(), 0.06f);
+        super(mgr, new ModelProfallotaspis(), 0.00f);
     }
 
     @Override

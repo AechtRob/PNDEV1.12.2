@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 		enablePersistence();
 		minWidth = 0.18F;
 		maxWidth = 0.82F;
-		maxHeight = 0.99F;
+		maxHeight = 0.89F;
 		maxHealthAgeable = 18.0D;
 	}
 
@@ -57,7 +57,9 @@ public class EntityPrehistoricFloraLystrosaurus extends EntityPrehistoricFloraDi
 
 	public static String getPeriod() {return "late Permian - early Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Dicynodont";}
+	//public static String getHabitat() {
+	//	return I18n.translateToLocal("helper.pf_terrestrial.name");
+	//}
 
 	@Override
 	public boolean hasNest() {

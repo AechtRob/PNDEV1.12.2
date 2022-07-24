@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 
 	public static String getPeriod() {return "Carboniferous - Present";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

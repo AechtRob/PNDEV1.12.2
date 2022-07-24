@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCotylorhynchus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Synapsid";}
+	//public static String getHabitat() {return "Terrestrial Synapsid";}
 
 	@Override
 	public boolean hasNest() {

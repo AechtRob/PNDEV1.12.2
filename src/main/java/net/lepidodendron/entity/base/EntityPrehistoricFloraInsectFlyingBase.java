@@ -31,6 +31,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -85,6 +86,14 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
             return 0;
         }
         return this.world.rand.nextInt(i);
+    }
+
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_terrestrial.name");
+    }
+
+    public static String getPeriod() {
+        return "undefined";
     }
 
     public int getLayLength() {

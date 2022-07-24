@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {
@@ -170,12 +170,6 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		System.err.println("width " + this.width);
 	}
 
 	@Override

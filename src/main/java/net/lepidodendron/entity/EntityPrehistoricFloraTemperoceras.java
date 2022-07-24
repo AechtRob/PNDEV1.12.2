@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraTemperoceras extends EntityPrehistoricFloraNa
 
 	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

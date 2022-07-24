@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraTullimonstrum extends EntityPrehistoricFloraF
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	public int getFeedLength() {
 		return 120;

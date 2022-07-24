@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraJellyfish_Precambrian extends EntityPrehistor
 
     public static String getPeriod() {return "Ediacaran (speculative)";}
 
-    public static String getHabitat() {return "Aquatic";}
+    //public static String getHabitat() {return "Aquatic";}
 
     @Override
     public boolean dropsEggs() {

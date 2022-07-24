@@ -85,7 +85,7 @@ public class EntityPrehistoricFloraSuminia extends EntityPrehistoricFloraLandCli
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Arboreal Therapsid";}
+	//public static String getHabitat() {return "Arboreal Therapsid";}
 
 	@Override
 	public boolean attackEntityFrom(DamageSource ds, float i) {

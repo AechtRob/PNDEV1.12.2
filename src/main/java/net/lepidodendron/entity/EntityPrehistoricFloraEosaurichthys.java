@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraEosaurichthys extends EntityPrehistoricFloraA
 
 	public static String getPeriod() {return "Permian - Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

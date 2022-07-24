@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraScorpion_Gondwanascorpio extends EntityPrehis
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public int getAdultAge() {

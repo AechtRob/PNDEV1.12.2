@@ -2,13 +2,11 @@
 package net.lepidodendron.item.entities;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.lepidodendron.entity.EntityPrehistoricFloraNipponomaria;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -26,7 +24,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
@@ -112,7 +109,7 @@ public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		@SideOnly(Side.CLIENT)
+		/*@SideOnly(Side.CLIENT)
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
@@ -120,6 +117,6 @@ public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Periods: Permian");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
-		}
+		} */
 	}
 }

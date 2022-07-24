@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraTetraceratops extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Therapsid";}
+	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
 	public boolean hasNest() {

@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "late Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
 
     public static String getPeriod() {return "Ediacaran";}
 
-    public static String getHabitat() {return "Aquatic";}
+    //public static String getHabitat() {return "Aquatic";}
 
     @Override
     public ItemStack getPropagule() {

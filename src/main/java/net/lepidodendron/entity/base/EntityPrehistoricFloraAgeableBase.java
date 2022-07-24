@@ -34,6 +34,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -506,6 +507,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
 
         }, "pf_summon " + mobToSpawn + " " + xpos + " " + ypos + " " + zpos + " " + nbtStr);
+    }
+
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_terrestrial.name");
+    }
+
+    public static String getPeriod() {
+        return "undefined";
     }
 
     @Override

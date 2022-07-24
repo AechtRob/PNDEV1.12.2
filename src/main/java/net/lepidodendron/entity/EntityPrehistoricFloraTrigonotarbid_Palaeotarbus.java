@@ -89,7 +89,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Palaeotarbus extends EntityPreh
 
 	public static String getPeriod() {return "Silurian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

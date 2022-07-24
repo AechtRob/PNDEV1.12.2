@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraKimberella extends EntityPrehistoricFloraSlit
 
 	public static String getPeriod() {return "Ediacaran";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public ItemStack getPropagule() {

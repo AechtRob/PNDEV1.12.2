@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "late Permian";}
 
-	public static String getHabitat() {return "Terrestrial Archosauriform";}
+	//public static String getHabitat() {return "Terrestrial Archosauriform";}
 
 	@Override
 	public boolean hasNest() {

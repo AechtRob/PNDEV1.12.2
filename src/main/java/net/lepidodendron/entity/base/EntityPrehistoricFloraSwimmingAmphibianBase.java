@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -94,6 +95,10 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 }
             }
         }
+    }
+
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_amphibious.name");
     }
 
     public float getTravelSpeed() {
@@ -285,7 +290,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
             this.world.profiler.startSection("jump");
 
             if (this.isJumping) {
-                if (this.isInWater() && this.jumpTicks == 0) {
+                if (this.isInWater() && this.jumpTicks == 0 && this.canJumpOutOfWater()) {
                     this.jump();
                     this.jumpTicks = 10;
                 } else if (this.isInLava()) {
@@ -454,8 +459,18 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                     (this.EntityBase.collidedHorizontally)
                     && (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width))
                 ) {
-                    this.EntityBase.getJumpHelper().setJumping();
-                    this.action = Action.JUMPING;
+                    if (!this.EntityBase.canJumpOutOfWater()) {
+                        if (!(this.EntityBase.isReallyInWater())) {
+                            this.EntityBase.getJumpHelper().setJumping();
+                            this.action = EntityMoveHelper.Action.JUMPING;
+                            //System.err.println("Set jump 1");
+                        }
+                    }
+                    else {
+                        this.EntityBase.getJumpHelper().setJumping();
+                        this.action = Action.JUMPING;
+                        //System.err.println("Set jump 2");
+                    }
                     //System.err.println("action: " +  this.action);
                 }
             } else if (this.action == Action.JUMPING) {

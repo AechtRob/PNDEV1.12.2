@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraCanadia extends EntityPrehistoricFloraEurypte
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	public int getSlitherStage() {
 		int slitherstage = this.slitherStage;

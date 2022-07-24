@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraListracanthus extends EntityPrehistoricFloraA
 
 	public static String getPeriod() {return "late Carboniferous - Permian - early Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

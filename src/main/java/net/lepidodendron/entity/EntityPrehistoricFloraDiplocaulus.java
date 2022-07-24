@@ -56,13 +56,18 @@ public class EntityPrehistoricFloraDiplocaulus extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.8;
 	}
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public int getTalkInterval() {

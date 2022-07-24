@@ -107,7 +107,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 
 	public static String getPeriod() {return "late Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Dinosaur";}
+	//public static String getHabitat() {return "Terrestrial Dinosaur";}
 
 	@Override
 	public boolean hasNest() {

@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera_Delitzschala extends Entity
 
 	public static String getPeriod() {return "mid Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

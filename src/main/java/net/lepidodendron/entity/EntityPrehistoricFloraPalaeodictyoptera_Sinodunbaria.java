@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria extends Entity
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

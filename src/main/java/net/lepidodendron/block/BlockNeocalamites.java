@@ -14,6 +14,7 @@ import net.lepidodendron.world.biome.permian.BiomePermianLowlandFloodplain;
 import net.lepidodendron.world.biome.permian.BiomePermianLowlands;
 import net.lepidodendron.world.biome.permian.BiomePermianRiver;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
+import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -145,6 +146,12 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		}
 		if (biome == BiomePermianLowlandFloodplain.biome) {
 			GenChance = 64;
+		}
+
+		if (biome == BiomeTriassicRiver.biome
+			|| biome == BiomePermianRiver.biome)
+		{
+			GenChance = 48;
 		}
 
 		int maxheight = LepidodendronConfig.maxheightNeocalamites;

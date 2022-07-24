@@ -5,8 +5,11 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassicRiver;
+import net.lepidodendron.world.biome.permian.BiomePermianRiver;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicOceanClamBeds;
+import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -128,6 +131,13 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 		if (biome == BiomeTriassicOceanClamBeds.biome)
 		{
 			multiplier = 10;
+		}
+
+		if (biome == BiomeTriassicRiver.biome
+				|| biome == BiomePermianRiver.biome
+				|| biome == BiomeJurassicRiver.biome)
+		{
+			multiplier = 12;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

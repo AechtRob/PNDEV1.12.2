@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraHibbertopterus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Devonian - Carboniferous";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public void playLivingSound() {

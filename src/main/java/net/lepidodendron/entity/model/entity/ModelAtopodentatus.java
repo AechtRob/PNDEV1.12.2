@@ -353,7 +353,7 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
             //this.tail2.rotateAngleX = (float)Math.toRadians(2.5);
             //this.tail3.rotateAngleX = (float)Math.toRadians(2.5);
 
-            this.chainSwing(fishTail, speed * still * 0.7F, 0.385F * still * 0.7F, -1.85, f2, 0.6F * still * 0.7F);
+            this.chainSwing(fishTail, speed * still * 0.7F, 0.185F * still * 0.7F, -1.85, f2, 0.6F * still * 0.7F);
             this.chainSwing(neckHead, speed * still * 0.7F, 0.285F * still * 0.7F, -1.15, f2, 0.6F * still * 0.7F);
 
             //if (f3 == 0 || !ee.getIsMoving()) {

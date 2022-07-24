@@ -945,6 +945,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PARATARRASIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/paratarrasius"));
 	public static final int ENTITY_SYLLIPSIMOPODI = 380;
 	public static final ResourceLocation SYLLIPSIMOPODI_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/syllipsimopodi"));
+	public static final ResourceLocation SYLLIPSIMOPODI_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/syllipsimopodi_young"));
 	public static final int ENTITY_THRINACODUS = 381;
 	public static final ResourceLocation THRINACODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thrinacodus"));
 	public static final int ENTITY_TYRANNOPHONTES = 382;
@@ -992,6 +993,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation AEGER_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aeger"));
 	public static final int ENTITY_AULACOCERAS = 402;
 	public static final ResourceLocation AULACOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aulacoceras"));
+	public static final ResourceLocation AULACOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aulacoceras_young"));
 	public static final int ENTITY_BESANOSAURUS = 403;
 	public static final ResourceLocation BESANOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/besanosaurus"));
 	public static final int ENTITY_CARTORHYNCHUS = 404;
@@ -1005,6 +1007,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CYMBOSPONDYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cymbospondylus_young"));
 	public static final int ENTITY_EORHYNCHOCHELYS = 407;
 	public static final ResourceLocation EORHYNCHOCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eorhynchochelys"));
+	public static final ResourceLocation EORHYNCHOCHELYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eorhynchochelys_young"));
 	public static final int ENTITY_ERETOMORPHIS = 408;
 	public static final ResourceLocation ERETOMORPHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eretomorphis"));
 	public static final int ENTITY_HENODUS = 409;
@@ -1024,6 +1027,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PLACODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/placodus"));
 	public static final int ENTITY_SCLEROCORMUS = 416;
 	public static final ResourceLocation SCLEROCORMUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocormus"));
+	public static final ResourceLocation SCLEROCORMUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sclerocormus_young"));
 	public static final int ENTITY_TRIADOBATRACHUS = 417;
 	public static final ResourceLocation TRIADOBATRACHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/triadobatrachus"));
 	public static final int ENTITY_YUNGUISAURUS = 418;
@@ -1137,6 +1141,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation SPHENOTITAN_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/sphenotitan_young"));
 	public static final int ENTITY_STAGONOLEPIS = 457;
 	public static final ResourceLocation STAGONOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stagonolepis"));
+	public static final ResourceLocation STAGONOLEPIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stagonolepis_young"));
 	public static final int ENTITY_STANOCEPHALOSAURUS = 458;
 	public static final ResourceLocation STANOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stanocephalosaurus"));
 	public static final int ENTITY_TANYSTROPHEUS = 459;

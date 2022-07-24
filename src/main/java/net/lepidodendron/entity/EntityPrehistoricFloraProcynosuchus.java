@@ -69,9 +69,9 @@ public class EntityPrehistoricFloraProcynosuchus extends EntityPrehistoricFloraS
 		return "late Permian";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious Cynodont";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious Cynodont";
+	//}
 
 	@Override
 	public boolean hasNest() {

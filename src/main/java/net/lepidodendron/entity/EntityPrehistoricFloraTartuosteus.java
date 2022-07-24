@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraTartuosteus extends EntityPrehistoricFloraFis
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	public int getFeedLength() {
 		return 100;

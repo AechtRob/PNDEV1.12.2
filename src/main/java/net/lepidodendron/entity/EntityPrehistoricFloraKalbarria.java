@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraKalbarria extends EntityPrehistoricFloraSwimm
 
 	public static String getPeriod() {return "Ordovician? - Silurian?";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {
@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraKalbarria extends EntityPrehistoricFloraSwimm
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION, 0.95, 20));
+		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION, 0.97, 20));
 		tasks.addTask(2, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 

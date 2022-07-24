@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraDiadectes extends EntityPrehistoricFloraLandB
 
 	public static String getPeriod() {return "early Permian";}
 
-	public static String getHabitat() {return "Terrestrial Diadectomorph";}
+	//public static String getHabitat() {return "Terrestrial Diadectomorph";}
 
 	@Override
 	public boolean hasNest() {

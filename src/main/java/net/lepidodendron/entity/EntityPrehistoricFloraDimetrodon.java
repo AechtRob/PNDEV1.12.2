@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraDimetrodon extends EntityPrehistoricFloraLand
 
 	public static String getPeriod() {return "early Permian";}
 
-	public static String getHabitat() {return "Terrestrial Pelycosaur";}
+	//public static String getHabitat() {return "Terrestrial Pelycosaur";}
 
 	@Override
 	public boolean hasNest() {

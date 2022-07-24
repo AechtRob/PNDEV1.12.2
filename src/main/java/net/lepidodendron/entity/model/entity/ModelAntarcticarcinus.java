@@ -378,7 +378,7 @@ public class ModelAntarcticarcinus extends AdvancedModelBase {
                     && ((e.world.getBlockState(pos)).getMaterial() != Material.WATER)
                     && ((double)e.getPosition().getY() + 0.334D) > e.posY);
         }
-        if (isAtBottom) {
+        if (isAtBottom || !e.isInWater()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
             tailVdegree = 0.06F;
@@ -394,24 +394,24 @@ public class ModelAntarcticarcinus extends AdvancedModelBase {
         if (f3 != 0.0F) {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.flap(legL, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(legR, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(legL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(legL5, 0.5F, -0.5F, false, 4.0F, -0.5F, f2, 0.3F);
-            this.flap(legR5, 0.5F, 0.5F, false, 4.0F, 0.5F, f2, 0.3F);
-            this.flap(legL6, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(legR6, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
-            this.flap(legL7, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(legR7, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(legL8, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(legR8, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(legL9, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(legR9, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
+            this.flap(legL, 0.5F, -0.5F, false, 0, 0.3F, f2, 0.3F);
+            this.flap(legR, 0.5F, 0.5F, false, 0, -0.3F, f2, 0.3F);
+            this.flap(legL2, 0.5F, -0.5F, false, 1.0F, 0.3F, f2, 0.3F);
+            this.flap(legR2, 0.5F, 0.5F, false, 1.0F, -0.3F, f2, 0.3F);
+            this.flap(legL3, 0.5F, -0.5F, false, 2.0F, 0.3F, f2, 0.3F);
+            this.flap(legR3, 0.5F, 0.5F, false, 2.0F, -0.3F, f2, 0.3F);
+            this.flap(legL4, 0.5F, -0.5F, false, 3.0F, 0.3F, f2, 0.3F);
+            this.flap(legR4, 0.5F, 0.5F, false, 3.0F, -0.3F, f2, 0.3F);
+            this.flap(legL5, 0.5F, -0.5F, false, 4.0F, 0.3F, f2, 0.3F);
+            this.flap(legR5, 0.5F, 0.5F, false, 4.0F, -0.3F, f2, 0.3F);
+            this.flap(legL6, 0.5F, -0.5F, false, 3.0F, 0.3F, f2, 0.3F);
+            this.flap(legR6, 0.5F, 0.5F, false, 3.0F, -0.3F, f2, 0.3F);
+            this.flap(legL7, 0.5F, -0.5F, false, 2.0F, 0.3F, f2, 0.3F);
+            this.flap(legR7, 0.5F, 0.5F, false, 2.0F, -0.3F, f2, 0.3F);
+            this.flap(legL8, 0.5F, -0.5F, false, 1.0F, 0.3F, f2, 0.3F);
+            this.flap(legR8, 0.5F, 0.5F, false, 1.0F, -0.3F, f2, 0.3F);
+            this.flap(legL9, 0.5F, -0.5F, false, 0, 0.3F, f2, 0.3F);
+            this.flap(legR9, 0.5F, 0.5F, false, 0, -0.3F, f2, 0.3F);
 
         }
 
@@ -420,16 +420,16 @@ public class ModelAntarcticarcinus extends AdvancedModelBase {
             this.chainSwing(fishTail, speed, tailHdegree, -2.5, f2, tailSwing);
 
             //this.swing(body, speed, 0.3F, true, 0, 0, f2, 1);
-            if (!isAtBottom) {
+            if (!isAtBottom && e.isInWater()) {
                 this.bob(body, -speed, 1.5F, false, f2, 2);
             }
-            if (!e.isInWater()) {
-                //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.0F;
-                this.bob(body, -speed, 2F, false, f2, 1);
-                this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
-                this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);
-            }
+            //if (!e.isInWater()) {
+            //    //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
+            //    this.body.offsetY = 1.0F;
+            //    this.bob(body, -speed, 2F, false, f2, 1);
+            //    this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
+            //    this.chainSwing(fishTail, speed, tailVdegree, -3, f2, 1);
+            //}
         }
     }
 }

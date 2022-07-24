@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraTitanopteraClatrotitan extends EntityPrehisto
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public String tagEgg () {

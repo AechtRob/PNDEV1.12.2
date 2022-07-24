@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraBirgeria extends EntityPrehistoricFloraAgeabl
 
 	public static String getPeriod() {return "Permian - early Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 	public static String getSize() {return "L";}
 
 	@Override

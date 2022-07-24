@@ -89,7 +89,7 @@ public class EntityPrehistoricFloraTrigonotarbid_Cryptomartus extends EntityPreh
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

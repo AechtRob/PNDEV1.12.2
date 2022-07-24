@@ -5,6 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassicRiver;
+import net.lepidodendron.world.biome.permian.BiomePermianRiver;
+import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -117,6 +120,13 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 			return;
 
 		int multiplier = 1;
+
+		if (biome == BiomeTriassicRiver.biome
+				|| biome == BiomePermianRiver.biome
+				|| biome == BiomeJurassicRiver.biome)
+		{
+			multiplier = 8;
+		}
 
 		for (int i = 0; i < 12 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

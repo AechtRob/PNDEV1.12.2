@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraVarialepis extends EntityPrehistoricFloraFish
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Freshwater";}
+	//public static String getHabitat() {return "Freshwater";}
 
 	@Override
 	public boolean dropsEggs() {

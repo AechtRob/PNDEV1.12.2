@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraLiliensternus extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
+	//public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
 	@Override
 	public boolean hasNest() {

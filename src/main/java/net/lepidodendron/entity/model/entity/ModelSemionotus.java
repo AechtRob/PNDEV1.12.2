@@ -212,7 +212,7 @@ public class ModelSemionotus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.0F;
+        this.head.offsetY = 1.2F;
 
         this.swing(gillL, 0.12F, -0.12F, true, -0.12F, 0, f2, 1);
         this.swing(gillR, 0.12F, 0.12F, true, 0.12F, 0, f2, 1);
@@ -237,7 +237,7 @@ public class ModelSemionotus extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.head.rotateAngleZ = (float) Math.toRadians(90);
-                this.head.offsetY = 1.00F;
+                this.head.offsetY = 1.20F;
                 this.bob(head, -speed, 5F, false, f2, 1);
             }
         }

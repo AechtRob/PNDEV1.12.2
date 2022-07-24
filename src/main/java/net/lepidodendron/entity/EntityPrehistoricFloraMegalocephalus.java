@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraMegalocephalus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

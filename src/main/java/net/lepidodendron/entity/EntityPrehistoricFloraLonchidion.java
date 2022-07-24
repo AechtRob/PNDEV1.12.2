@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraLonchidion extends EntityPrehistoricFloraAgea
 
 	public static String getPeriod() {return "Carboniferous - Permian - early Triassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

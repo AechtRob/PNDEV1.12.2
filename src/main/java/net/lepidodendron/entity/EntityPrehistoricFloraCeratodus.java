@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraCeratodus extends EntityPrehistoricFloraFishB
 	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
 
 	public static String getSize() {return "L";}
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

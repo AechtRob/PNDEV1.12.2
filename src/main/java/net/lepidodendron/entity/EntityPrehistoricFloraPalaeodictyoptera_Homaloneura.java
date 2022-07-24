@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraPalaeodictyoptera_Homaloneura extends EntityP
 		return "late Carboniferous";
 	}
 
-	public static String getHabitat() {
-		return "Terrestrial";
-	}
+	//public static String getHabitat() {
+	//	return "Terrestrial";
+	//}
 
 	@Override
 	public boolean dropsEggs() {

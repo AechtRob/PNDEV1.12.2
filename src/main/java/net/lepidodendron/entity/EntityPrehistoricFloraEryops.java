@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 
 	public static String getPeriod() {return "[late Carboniferous -] early Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public int getTalkInterval() {

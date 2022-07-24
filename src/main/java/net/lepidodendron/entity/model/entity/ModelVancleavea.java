@@ -437,11 +437,6 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
             this.flap(hindlegL2, speed, 0.1F, false, 7, -0.05F, f2, 1F);
             this.flap(hindlegR2, speed, -0.1F, false, 4, 0.05F, f2, 1F);
 
-            //this.swing(forelegL2, speed, -0.40F, true, 5, 0.18F, f2, 1F);
-            //this.swing(forelegR2, speed, 0.40F, true, 8, -0.18F, f2, 1F);
-            //this.swing(hindlegL2, speed, -0.30F, true, 8, 0F, f2, 1F);
-            //this.swing(hindlegR2, speed, 0.30F, true, 5, 0F, f2, 1F);
-
             this.walk(forelegL2, speed, -0.40F, true, 0, 0.18F, f2, 1F);
             this.walk(forelegR2, speed, -0.40F, true, 3, 0.18F, f2, 1F);
             this.walk(hindlegL2, speed, -0.30F, true, 3, 0F, f2, 1F);
@@ -487,32 +482,33 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
                 speed = speed * 1.5F;
             }
 
-            this.setRotateAngle(hindlegL5, 0.6829473363053812F, 0.0F, 0.0F);
-            this.setRotateAngle(hindlegR3, 0.9560913642424937F, 0.0F, 0.0F);
-            this.setRotateAngle(hindlegL2, 0.6373942428283291F, 0.0F, 0.0F);
-            this.setRotateAngle(hindlegL3, 0.9560913642424937F, 0.0F, 0.0F);
-            this.setRotateAngle(forelegR5, 0.8196066167365371F, 0.0F, 0.0F);
-            this.setRotateAngle(forelegL3, -0.045553093477052F, 0.0F, 0.0F);
-            this.setRotateAngle(forelegR2, 0.9560913642424937F, 0.0017453292519943296F, 0.0F);
-            this.setRotateAngle(forelegL5, 0.8196066167365371F, 0.0F, 0.0F);
-            this.setRotateAngle(hindlegR5, 0.6829473363053812F, -0.017453292519943295F, 0.0F);
-            this.setRotateAngle(forelegR3, -0.045553093477052F, 0.0F, 0.0F);
-            this.setRotateAngle(hindlegR2, 0.6373942428283291F, 0.0F, 0.0F);
-            this.setRotateAngle(forelegL2, 0.9560913642424937F, 0.0F, 0.0F);
-            // ----------
+            this.setRotateAngle(neck1, (float)Math.toRadians(-5), 0, 0);
+            this.setRotateAngle(head, (float)Math.toRadians(7.5), 0, 0);
+            this.setRotateAngle(forelegL, (float)Math.toRadians(50), 0, 0);
+            this.setRotateAngle(forelegR, (float)Math.toRadians(50), 0, 0);
+            this.setRotateAngle(forelegL5, (float)Math.toRadians(80), 0, 0);
+            this.setRotateAngle(forelegR5, (float)Math.toRadians(80), 0, 0);
+            this.setRotateAngle(hindlegL, (float)Math.toRadians(65), 0, (float)Math.toRadians(42.5));
+            this.setRotateAngle(hindlegR, (float)Math.toRadians(65), 0, (float)Math.toRadians(-42.5));
+            this.setRotateAngle(hindlegL5, (float)Math.toRadians(75), (float)Math.toRadians(12.5), 0);
+            this.setRotateAngle(hindlegR5, (float)Math.toRadians(75), (float)Math.toRadians(-12.5), 0);
 
             speed = speed * 1.5F;
 
-            this.chainWave(Whole, speed, 0.08F, -3.2, f2, 1);
-            this.chainSwing(Whole, speed * 2, 0.02F, -3.2, f2, 1);
+            this.chainWave(Whole, speed * 0.5F, 0.0125F, -3.2, f2, 1);
+            this.chainSwing(Whole, speed * 0.5F, 0.125F, -1.75, f2, 1);
             this.walk(neck1, speed, -0.06F, false, 0F, -0.03F, f2, 1F);
             this.walk(neck2, speed, -0.06F, false, 1F, -0.03F, f2, 1F);
             this.chainWaveExtended(BackLeft, speed, -0.05F, -0.05, 0F, f2, 1);
             this.chainWaveExtended(BackRight, speed, -0.05F, -0.05, 3F, f2, 1);
             this.chainWaveExtended(FrontLeft, speed, -0.05F, -0.05, 3F, f2, 1);
             this.chainWaveExtended(FrontRight, speed, -0.05F, -0.05, 0F, f2, 1);
-            this.bob(body, speed, 0.07F, false, f2, 1);
-            this.walk(body, speed, 0.08F, false, 0F, 0.04F, f2, 1);
+            this.chainSwingExtended(BackLeft, speed, -0.025F, -0.05, 0F, f2, 1);
+            this.chainSwingExtended(BackRight, speed, 0.025F, 0.05, 3F, f2, 1);
+            this.chainSwingExtended(FrontLeft, speed, -0.025F, -0.05, 3F, f2, 1);
+            this.chainSwingExtended(FrontRight, speed, 0.025F, 0.05, 0F, f2, 1);
+            this.bob(body, speed, 0.055F, false, f2, 1);
+            this.walk(body, speed * 0.5F, 0.03F, false, 0F, 0.015F, f2, 1);
 
             if (f3 == 0.0F) {
                 return;
