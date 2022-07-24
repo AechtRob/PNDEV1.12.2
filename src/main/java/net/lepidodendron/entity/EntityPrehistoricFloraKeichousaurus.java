@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 		return true;
 	}
 
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
 	public static String getPeriod() {
 		return "Triassic";
 	}
