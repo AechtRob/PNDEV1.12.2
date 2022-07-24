@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraAscendonanus extends EntityPrehistoricFloraLa
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
     @Override
 	public String getTexture() {

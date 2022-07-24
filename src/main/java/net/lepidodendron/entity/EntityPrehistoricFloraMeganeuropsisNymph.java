@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 
 	public static String getPeriod() {return "early Permian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

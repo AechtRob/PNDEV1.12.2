@@ -4513,6 +4513,55 @@
         "stream": false
       }
     ]
+  },
+  
+  "pseudotherium_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pseudotherium_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_living05",
+        "stream": false
+      }
+    ]
+  },
+  "pseudotherium_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pseudotherium_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:pseudotherium_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "pseudotherium_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:pseudotherium_death",
+        "stream": false
+      }
+    ]
   }
   
   

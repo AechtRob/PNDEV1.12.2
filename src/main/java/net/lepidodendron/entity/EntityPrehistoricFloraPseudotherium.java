@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
+	//public static String getHabitat() {return "Terrestrial mammaliaform cynodont";}
 
 
 	protected float getAISpeedLand() {
@@ -55,19 +55,19 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:tiny_mammaliaform_death"));
+	            .getObject(new ResourceLocation("lepidodendron:pseudotherium_death"));
 	}
 
 

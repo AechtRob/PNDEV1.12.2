@@ -82,7 +82,7 @@ public class EntityPrehistoricFloraCidaroida extends EntityPrehistoricFloraSlith
 
 	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous - Paleogene - Neogene";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

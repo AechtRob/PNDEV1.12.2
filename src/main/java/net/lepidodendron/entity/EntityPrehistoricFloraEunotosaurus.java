@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Reptile";}
+	//public static String getHabitat() {return "Terrestrial Reptile";}
 
 	@Override
 	public boolean hasAlarm() {

@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
 
 	public static String getSize() {return "M";}
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

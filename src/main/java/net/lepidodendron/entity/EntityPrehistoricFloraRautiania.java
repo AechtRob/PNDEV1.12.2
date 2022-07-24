@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraRautiania extends EntityPrehistoricFloraWeige
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Gliding Reptile";}
+	//public static String getHabitat() {return "Gliding Reptile";}
 
 	@Override
 	public boolean placesNest() {

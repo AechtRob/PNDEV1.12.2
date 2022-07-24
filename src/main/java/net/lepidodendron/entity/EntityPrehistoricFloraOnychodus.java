@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraOnychodus extends EntityPrehistoricFloraAgeab
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	protected float getAISpeedLand() {

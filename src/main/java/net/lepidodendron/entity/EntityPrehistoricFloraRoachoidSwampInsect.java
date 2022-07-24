@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraRoachoidSwampInsect extends EntityPrehistoric
 
 	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Paleogene - Neogene - Quaternary";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public String tagEgg () {

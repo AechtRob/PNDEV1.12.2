@@ -68,9 +68,9 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 		return "late Triassic";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious Archosauromorph Reptile";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious Archosauromorph Reptile";
+	//}
 
 	@Override
 	public boolean hasNest() {

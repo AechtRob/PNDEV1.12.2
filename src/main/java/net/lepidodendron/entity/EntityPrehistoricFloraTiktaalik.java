@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraTiktaalik extends EntityPrehistoricFloraSwimm
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

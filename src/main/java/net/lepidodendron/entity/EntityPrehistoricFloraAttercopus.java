@@ -88,7 +88,7 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

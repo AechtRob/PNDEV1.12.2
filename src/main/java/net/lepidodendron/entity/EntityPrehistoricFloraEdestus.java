@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraEdestus extends EntityPrehistoricFloraAgeable
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public int getAttackLength() {

@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraShringasaurus extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Reptile";}
+	//public static String getHabitat() {return "Terrestrial Reptile";}
 
 	@Override
 	public boolean hasNest() {

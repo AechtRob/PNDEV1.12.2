@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 
 	public static String getPeriod() {return "Jurassic";}
 
-	public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
+	//public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
 	@Override
 	public boolean hasNest() {

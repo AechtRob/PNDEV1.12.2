@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraCynognathus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Therapsid";}
+	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
 	public boolean hasNest() {

@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

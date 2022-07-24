@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraCyclonema extends EntityPrehistoricFloraTrilo
 
 	public static String getPeriod() {return "Ordovician - Silurian - Devonian";}
 
-	public static String getHabitat() {return "Aquatic Gastropod";}
+	//public static String getHabitat() {return "Aquatic Gastropod";}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)

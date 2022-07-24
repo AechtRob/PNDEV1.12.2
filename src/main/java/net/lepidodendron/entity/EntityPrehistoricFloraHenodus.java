@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraHenodus extends EntityPrehistoricFloraSwimmin
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public int getTalkInterval() {

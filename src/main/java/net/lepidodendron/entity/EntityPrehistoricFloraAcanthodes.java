@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraFish
 
 	public static String getPeriod() {return "Devonian - Carboniferous - Permian";}
 
-	public static String getSize() {return "S";}
+	//public static String getSize() {return "S";}
 
 	@Override
 	public boolean dropsEggs() {

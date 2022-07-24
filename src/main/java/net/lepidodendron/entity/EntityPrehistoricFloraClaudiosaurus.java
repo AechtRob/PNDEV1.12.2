@@ -66,9 +66,9 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		return "late Permian - early Triassic";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious Reptile";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious Reptile";
+	//}
 
 	@Override
 	public boolean breathesAir() {

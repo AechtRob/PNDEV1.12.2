@@ -387,7 +387,7 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
         if (Uranocentrodon.getIsFast()) {
             speed = speed * 1.52F;
         }
-        AdvancedModelRenderer[] TailSwim = {this.body4, this.tail, this.tail2, this.tail3, this.tail4};
+
         AdvancedModelRenderer[] TailLand = {this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.body2, this.body3, this.body4};
 
@@ -444,10 +444,10 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
             this.swing(forelegR, speed, -0.4F, true, 5, 0.2F, f2, 0.5F);
             this.walk(forelegR2, speed, 0.8F, false, 0, 0.4F, f2, 0.5F);
 
-            this.chainWave(TailSwim, speed, 0.012F, -0.2, f2, 0.5F);
-            this.chainSwing(TailSwim, speed, 0.25F, -2.8, f2, 0.5F);
-            this.chainSwing(Torso, speed, 0.2F, -0.12, f2, 0.7F);
-            this.swing(body4, speed, 0.2F, true, 0, 0, f2, 1);
+            this.chainWave(TailLand, speed * 0.25F, 0.012F, -0.2, f2, 0.5F);
+            this.chainSwing(TailLand, speed * 0.25F, 0.15F, -2.8, f2, 0.5F);
+            this.chainSwing(Torso, speed * 0.25F, 0.1F, -0.12, f2, 0.7F);
+            this.swing(body4, speed * 0.5F, 0.05F, true, 0, 0, f2, 1);
         }
     }
 

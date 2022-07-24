@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraM
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial mammaliaform";}
+	//public static String getHabitat() {return "Terrestrial mammaliaform";}
 
 
 	protected float getAISpeedLand() {

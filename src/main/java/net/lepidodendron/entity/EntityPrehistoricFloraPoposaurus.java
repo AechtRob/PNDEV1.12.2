@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraPoposaurus extends EntityPrehistoricFloraLand
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Pseudosuchian";}
+	//public static String getHabitat() {return "Terrestrial Pseudosuchian";}
 
 	@Override
 	public boolean hasNest() {

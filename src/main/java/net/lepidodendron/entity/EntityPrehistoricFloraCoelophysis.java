@@ -80,7 +80,7 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
+	//public static String getHabitat() {return "Terrestrial Therapod Dinosaur";}
 
 	@Override
 	public boolean hasNest() {

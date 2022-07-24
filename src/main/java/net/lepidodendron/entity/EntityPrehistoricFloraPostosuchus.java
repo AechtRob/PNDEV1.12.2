@@ -111,7 +111,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Saurischian";}
+	//public static String getHabitat() {return "Terrestrial Saurischian";}
 
 	@Override
 	public boolean hasNest() {

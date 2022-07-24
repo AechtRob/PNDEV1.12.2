@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraMelosaurus extends EntityPrehistoricFloraSwim
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public int getTalkInterval() {

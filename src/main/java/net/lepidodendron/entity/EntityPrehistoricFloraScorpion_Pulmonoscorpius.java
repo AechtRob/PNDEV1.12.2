@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 
 	public static String getPeriod() {return "early Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public int getAdultAge() {

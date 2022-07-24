@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Pterosaur";}
+	//public static String getHabitat() {return "Pterosaur";}
 
 	@Override
 	public boolean hasNest() {

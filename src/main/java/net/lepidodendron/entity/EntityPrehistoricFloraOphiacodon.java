@@ -90,7 +90,7 @@ public class EntityPrehistoricFloraOphiacodon extends EntityPrehistoricFloraLand
 
 	public static String getPeriod() {return "late Carboniferous - early Permian";}
 
-	public static String getHabitat() {return "Terrestrial Pelycosaur";}
+	//public static String getHabitat() {return "Terrestrial Pelycosaur";}
 
     @Override
 	public String getTexture() {

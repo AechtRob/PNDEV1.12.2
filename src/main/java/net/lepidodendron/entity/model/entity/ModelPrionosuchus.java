@@ -516,40 +516,22 @@ public class ModelPrionosuchus extends AdvancedModelBaseExtended {
             this.Leftthigh.rotateAngleZ= (float) Math.toRadians(30);
             this.Leftshin.rotateAngleZ= (float) Math.toRadians(-40);
             this.Leftthigh.rotateAngleY= (float) Math.toRadians(-40);
-            //if (!Limnoscelis.isInWater()) {
-            //    this.Leftthigh.rotateAngleX= (float) Math.toRadians(10);}
-           // else {
-                this.Leftthigh.rotateAngleX = (float) Math.toRadians(70);
-           // }
+            this.Leftthigh.rotateAngleX = (float) Math.toRadians(70);
 
             this.Rightthigh.rotateAngleZ= (float) Math.toRadians(-30);
             this.Rightshin.rotateAngleZ= (float) Math.toRadians(40);
             this.Rightthigh.rotateAngleY= (float) Math.toRadians(40);
-            //if (!Limnoscelis.isInWater()) {
-                this.Rightthigh.rotateAngleX = (float) Math.toRadians(10);
-            //}
-            //else {
-            //    this.Rightthigh.rotateAngleX= (float) Math.toRadians(70);
-            //}
+            this.Rightthigh.rotateAngleX = (float) Math.toRadians(10);
+
 
             this.Leftfrontfoot.rotateAngleX = (float) Math.toRadians(45);
             this.Rightfrontfoot.rotateAngleX = (float) Math.toRadians(45);
 
             this.Leftupperarm.rotateAngleZ= (float) Math.toRadians(30);
-            //if (!Limnoscelis.isInWater()) {
-            //    this.Leftupperarm.rotateAngleX = (float) Math.toRadians(10);
-            //}
-            //else {
-                this.Leftupperarm.rotateAngleX = (float) Math.toRadians(70);
-            //}
+            this.Leftupperarm.rotateAngleX = (float) Math.toRadians(70);
 
             this.Rightupperarm.rotateAngleZ= (float) Math.toRadians(-30);
-            //if (!Limnoscelis.isInWater()) {
-            //    this.Rightupperarm.rotateAngleX = (float) Math.toRadians(10);
-            //}
-            //else {
-                this.Rightupperarm.rotateAngleX = (float) Math.toRadians(70);
-            //}
+            this.Rightupperarm.rotateAngleX = (float) Math.toRadians(70);
 
             this.Leftlowerarm.rotateAngleY= (float) Math.toRadians(25);
             this.Leftlowerarm.rotateAngleZ= (float) Math.toRadians(-25);

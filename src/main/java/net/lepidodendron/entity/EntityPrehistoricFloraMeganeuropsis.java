@@ -113,9 +113,9 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		return "early Permian";
 	}
 
-	public static String getHabitat() {
-		return "Terrestrial";
-	}
+	//public static String getHabitat() {
+	//	return "Terrestrial";
+	//}
 
 	@Override
 	public int getAttackLength() {

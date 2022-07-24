@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -50,6 +51,10 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
         }
     }
 
+    public static String getHabitat() {
+        return I18n.translateToLocal("helper.pf_amphibious.name");
+    }
+
     public abstract int WaterDist();
 
     public abstract boolean isSmall();
@@ -59,7 +64,10 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
     }
 
     protected void initEntityAI() {
+    }
 
+    public boolean canJumpOutOfWater() {
+        return true;
     }
 
     public boolean breathesAir() {
@@ -296,8 +304,18 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
                 //this.EntityBase.setAIMoveSpeed(0f);
 
                 if (d2 > (double) this.EntityBase.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.EntityBase.width)) {
-                    this.EntityBase.getJumpHelper().setJumping();
-                    this.action = EntityMoveHelper.Action.JUMPING;
+                    if (!this.EntityBase.canJumpOutOfWater()) {
+                        if (!(this.EntityBase.isInWater())) {
+                            this.EntityBase.getJumpHelper().setJumping();
+                            this.action = EntityMoveHelper.Action.JUMPING;
+                            //System.err.println("Set jump 3");
+                        }
+                    }
+                    else {
+                        this.EntityBase.getJumpHelper().setJumping();
+                        this.action = EntityMoveHelper.Action.JUMPING;
+                        //System.err.println("Set jump 4");
+                    }
                 }
             } else if (this.action == EntityMoveHelper.Action.JUMPING) {
                 this.EntityBase.setAIMoveSpeed((float) (this.speed * this.EntityBase.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).getAttributeValue()));
@@ -313,6 +331,9 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
 
     public boolean isNearWater(Entity e, BlockPos pos) {
         if (!this.world.isBlockLoaded(this.getPosition())) {
+            return true;
+        }
+        if (this.WaterDist() == 0) {
             return true;
         }
         int distH = (int) this.WaterDist();

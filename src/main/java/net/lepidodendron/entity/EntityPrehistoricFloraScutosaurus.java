@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraScutosaurus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Pareiasaur";}
+	//public static String getHabitat() {return "Terrestrial Pareiasaur";}
 
 	@Override
 	public boolean hasNest() {

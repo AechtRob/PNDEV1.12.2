@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraScleromochlus extends EntityPrehistoricFloraL
 
 	public static String getPeriod() {return "late Triassic";}
 
-	public static String getHabitat() {return "Terrestrial Reptile";}
+	//public static String getHabitat() {return "Terrestrial Reptile";}
 
 	@Override
 	public boolean hasNest() {

@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraEuparkeria extends EntityPrehistoricFloraLand
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean hasNest() {

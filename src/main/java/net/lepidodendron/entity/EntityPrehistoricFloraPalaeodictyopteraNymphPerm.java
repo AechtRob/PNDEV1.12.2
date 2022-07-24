@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraPalaeodictyopteraNymphPerm extends EntityPreh
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

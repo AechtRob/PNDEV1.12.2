@@ -59,7 +59,7 @@ public class EntityPrehistoricFloraSauroctonus extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Gorgonopsian";}
+	//public static String getHabitat() {return "Terrestrial Gorgonopsian";}
 
     @Override
     public boolean hasNest() {

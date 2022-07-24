@@ -66,7 +66,7 @@ public class EntityPrehistoricFloraProterogyrinus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "mid Carboniferous";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

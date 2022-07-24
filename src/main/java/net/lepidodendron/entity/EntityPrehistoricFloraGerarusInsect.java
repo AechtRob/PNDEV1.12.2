@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraGerarusInsect extends EntityPrehistoricFloraA
 
 	public static String getPeriod() {return "Carboniferous";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	protected void collideWithEntity(Entity entityIn) {

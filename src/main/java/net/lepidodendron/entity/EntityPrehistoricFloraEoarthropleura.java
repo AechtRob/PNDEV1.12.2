@@ -64,7 +64,7 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Silurian - Devonian";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
 	@Override
 	public boolean dropsEggs() {

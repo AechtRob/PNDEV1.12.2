@@ -102,7 +102,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial archosaur";}
+	//public static String getHabitat() {return "Terrestrial archosaur";}
 
 	@Override
 	public boolean hasNest() {

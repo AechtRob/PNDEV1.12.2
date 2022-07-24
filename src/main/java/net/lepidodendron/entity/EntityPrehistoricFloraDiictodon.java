@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Dicynodont";}
+	//public static String getHabitat() {return "Terrestrial Dicynodont";}
 
 	@Override
 	public boolean hasNest() {
@@ -352,7 +352,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				y = 0;
 				setBurrowBlock(pos1.getY(), world, pos1);
 				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
-				setBurrowBlock(pos1.getY(), world, pos1.add(2 * xOffset, y, 0));
 
 				y = -1;
 				setBurrowBlock(pos1.getY(), world, pos1.add(1 * xOffset, y, 0));
@@ -432,7 +431,6 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 				y = 0;
 				setBurrowBlock(pos1.getY(), world, pos1);
 				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 1 * xOffset));
-				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 2 * xOffset));
 
 				y = -1;
 				setBurrowBlock(pos1.getY(), world, pos1.add(0, y, 1 * xOffset));

@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraCothurnocystis extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Ordovician";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

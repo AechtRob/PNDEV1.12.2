@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraPsarolepis extends EntityPrehistoricFloraAgea
 
 	public static String getPeriod() {return "Silurian - Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

@@ -49,9 +49,9 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		return "Carboniferous";
 	}
 
-	public static String getHabitat() {
-		return "Terrestrial";
-	}
+	//public static String getHabitat() {
+	//	return "Terrestrial";
+	//}
 
 	@Override
 	public IBlockState getEggBlockState() {

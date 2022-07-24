@@ -43,9 +43,10 @@ public class EntityPrehistoricFloraHelmetia extends EntityPrehistoricFloraTrilob
 		return true;
 	}
 
-	public static String getPeriod() {return "Cambrian";}
+	public static String getPeriod() {
+		return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

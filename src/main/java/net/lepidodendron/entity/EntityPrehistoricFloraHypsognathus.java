@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraHypsognathus extends EntityPrehistoricFloraLa
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Terrestrial";}
+	//public static String getHabitat() {return "Terrestrial";}
 
     @Override
 	public String getTexture() {

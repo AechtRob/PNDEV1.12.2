@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Therapsid";}
+	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
 	public boolean hasNest() {

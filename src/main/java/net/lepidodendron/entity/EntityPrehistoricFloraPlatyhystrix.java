@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraPlatyhystrix extends EntityPrehistoricFloraSw
 
 	public static String getPeriod() {return "early- to mid-Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 	
 	@Override
 	public int getTalkInterval() {

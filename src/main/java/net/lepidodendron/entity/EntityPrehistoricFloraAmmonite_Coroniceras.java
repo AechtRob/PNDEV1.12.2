@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraAmmonite_Coroniceras extends EntityPrehistori
 
 	public static String getPeriod() {return "Jurassic";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

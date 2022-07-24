@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 
 	public static String getPeriod() {return "late Carboniferous";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

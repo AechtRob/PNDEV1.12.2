@@ -44,7 +44,7 @@ public class EntityPrehistoricFloraCephalaspis extends EntityPrehistoricFloraFis
 
 	public static String getPeriod() {return "[late Silurian? -] early Devonian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

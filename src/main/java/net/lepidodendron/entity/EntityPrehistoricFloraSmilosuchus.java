@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 
 	public static String getPeriod() {return "late Triassic";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

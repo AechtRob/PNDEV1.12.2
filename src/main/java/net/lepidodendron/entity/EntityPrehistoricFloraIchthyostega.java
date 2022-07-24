@@ -68,7 +68,7 @@ public class EntityPrehistoricFloraIchthyostega extends EntityPrehistoricFloraSw
 
 	public static String getPeriod() {return "Devonian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

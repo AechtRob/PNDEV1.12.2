@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraPurlovia extends EntityPrehistoricFloraDiicto
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Therapsid";}
+	//public static String getHabitat() {return "Terrestrial Therapsid";}
 
 	@Override
 	public boolean hasAlarm() {

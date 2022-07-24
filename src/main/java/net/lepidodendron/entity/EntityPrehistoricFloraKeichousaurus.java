@@ -64,9 +64,9 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 		return "Triassic";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious";
+	//}
 
 	@Override
 	public boolean breathesAir() {

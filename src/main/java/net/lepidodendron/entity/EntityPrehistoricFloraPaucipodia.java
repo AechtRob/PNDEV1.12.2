@@ -55,7 +55,7 @@ public class EntityPrehistoricFloraPaucipodia extends EntityPrehistoricFloraTril
 
 	public static String getPeriod() {return "Cambrian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public void playLivingSound() {

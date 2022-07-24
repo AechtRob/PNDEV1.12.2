@@ -64,9 +64,9 @@ public class EntityPrehistoricFloraMesosaurus extends EntityPrehistoricFloraSwim
 		return "Permian";
 	}
 
-	public static String getHabitat() {
-		return "Amphibious";
-	}
+	//public static String getHabitat() {
+	//	return "Amphibious";
+	//}
 
 	@Override
 	public boolean breathesAir() {

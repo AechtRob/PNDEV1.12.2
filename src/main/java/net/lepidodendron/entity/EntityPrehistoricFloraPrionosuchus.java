@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 
 	public static String getPeriod() {return "early Permian";}
 
-	public static String getHabitat() {return "Amphibious";}
+	//public static String getHabitat() {return "Amphibious";}
 
 	@Override
 	public boolean dropsEggs() {

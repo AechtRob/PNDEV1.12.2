@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
 
-	public static String getHabitat() {return "Aquatic";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {

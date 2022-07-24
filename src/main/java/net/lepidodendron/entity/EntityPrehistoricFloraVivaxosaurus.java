@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraVivaxosaurus extends EntityPrehistoricFloraLa
 
 	public static String getPeriod() {return "Permian";}
 
-	public static String getHabitat() {return "Terrestrial Dicynodont";}
+	//public static String getHabitat() {return "Terrestrial Dicynodont";}
 
 	@Override
 	public boolean hasNest() {
