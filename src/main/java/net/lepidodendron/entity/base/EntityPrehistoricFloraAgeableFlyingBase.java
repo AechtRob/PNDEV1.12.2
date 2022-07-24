@@ -292,7 +292,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 //System.err.println("Is this block blocked? " + entity.world.getBlockState(pos).getBlock() + " " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
                 //System.err.println("blocked " + (!entity.world.isAirBlock(pos) || !entity.world.isAirBlock(sidePos)));
                 return (((!entity.world.isAirBlock(side)) && (!blockSide.isPassable(entity.world, side)))
-                        || ((!entity.world.isAirBlock(pos)) && (!blockPos.isPassable(entity.world, pos))));
+                    || ((!entity.world.isAirBlock(pos)) && (!blockPos.isPassable(entity.world, pos))));
             }
         }
         return false;

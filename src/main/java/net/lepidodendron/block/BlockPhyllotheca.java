@@ -136,6 +136,11 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 		if (minheight > 250) {minheight = 250;}
 		final int maxH = maxheight;
 		final int minH = minheight;
+
+		if (biome == BiomePermianRiver.biome)
+		{
+			GenChance = 48;
+		}
 			
 		for (int i = 0; i < GenChance; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

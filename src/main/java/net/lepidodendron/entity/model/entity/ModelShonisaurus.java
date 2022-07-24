@@ -530,6 +530,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;
@@ -597,7 +598,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
             //this.root.rotateAngleZ = (float) Math.toRadians(90);
             this.root.offsetY = 0F;
             this.bob(root, -speed * 1.8F, 0.02F, false, f2, 1);
-            this.walk(jaw1, (float) (speed * 1.8F), 0.15F, true, 1, 0, f2, 0.5F);
+            this.walk(jaw1, (float) (speed * 1.8F), 0.15F, true, 1, 0.15F, f2, 0.5F);
             this.chainWave(fishTail, speed * 1.5F, 0.0025F, -0.1, f2, 0.4F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.01F, -0.25, f2, 0.2F * still);
         }
