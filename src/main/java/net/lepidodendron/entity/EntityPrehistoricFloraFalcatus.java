@@ -173,12 +173,6 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 	}
 
 	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		System.err.println("width " + this.width);
-	}
-
-	@Override
 	public boolean attackEntityAsMob(Entity entity) {
 		if (this.getAnimation() == NO_ANIMATION) {
 			this.setAnimation(ATTACK_ANIMATION);
