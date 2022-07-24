@@ -123,7 +123,6 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		return Math.sin(Math.PI * 2	* getMoveFraction());
 	}
 
-
 	public int flapLength() {
 		return 80;
 	}
