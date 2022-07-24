@@ -254,9 +254,13 @@ public class ModelParanaichthys extends AdvancedModelBase {
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
+        GlStateManager.disableCull();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Paranaichthys.rotateAngleY = (float) Math.toRadians(90);
+        this.Paranaichthys.offsetX = -0.09F;
+        this.Paranaichthys.offsetY = -0.24F;
         this.Paranaichthys.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

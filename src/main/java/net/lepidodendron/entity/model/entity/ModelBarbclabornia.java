@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraBarbclabornia;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelBarbclabornia extends AdvancedModelBase {
@@ -170,7 +171,25 @@ public class ModelBarbclabornia extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 * 0.85F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.body.rotateAngleY = (float) Math.toRadians(83);
+        this.head.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.body2.rotateAngleY = (float) Math.toRadians(10);
+        this.body3.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body4.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body5.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body.offsetX = -0.26F;
+        this.body.offsetY = -0.14F;
+        this.body.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

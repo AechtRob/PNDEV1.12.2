@@ -7,6 +7,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDatheosaurus extends AdvancedModelBaseExtended {
@@ -222,7 +223,25 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Datheosaurus.render(f5 * 0.558f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.Datheosaurus.offsetX = 0.5F;
+        this.Datheosaurus.offsetZ = -0.2F;
+        this.jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.upperbody.rotateAngleY = (float) Math.toRadians(22.4);
+        this.body.rotateAngleY = (float) Math.toRadians(24.7);
+        this.tail.rotateAngleY = (float) Math.toRadians(-29.9);
+        this.tail2.rotateAngleY = (float) Math.toRadians(-27.4);
+        this.tail3.rotateAngleY = (float) Math.toRadians(-29.9);
+        this.tail4.rotateAngleY = (float) Math.toRadians(-44);
+        this.Datheosaurus.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
