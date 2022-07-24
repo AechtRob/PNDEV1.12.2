@@ -226,8 +226,8 @@ public class ModelOrthocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.shellbase.offsetY = -1.5F;
-        this.shellbase.render(0.1f);
+        this.shellbase.offsetY = -0.2F;
+        this.shellbase.render(0.13f);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

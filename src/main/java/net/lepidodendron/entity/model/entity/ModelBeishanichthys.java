@@ -218,6 +218,8 @@ public class ModelBeishanichthys extends AdvancedModelBase {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.bone2.rotateAngleY = (float) Math.toRadians(90);
+        this.bone2.offsetX = -2F;
+        this.bone2.offsetY = -9F;
         this.bone2.render(0.48F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
