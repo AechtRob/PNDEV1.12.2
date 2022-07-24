@@ -7,6 +7,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLebachacanthus extends AdvancedModelBase {
@@ -198,7 +199,23 @@ public class ModelLebachacanthus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.59F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.rotateAngleX = (float) Math.toRadians(-15);
+        this.body2.rotateAngleX = (float) Math.toRadians(5);
+        this.body3.rotateAngleX = (float) Math.toRadians(7.5);
+        this.body4.rotateAngleX = (float) Math.toRadians(7.5);
+        this.body5.rotateAngleX = (float) Math.toRadians(10);
+        this.jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.body.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

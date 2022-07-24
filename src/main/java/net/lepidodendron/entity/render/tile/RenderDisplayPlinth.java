@@ -32,6 +32,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelAcanthostomatops modelAcanthostomatops;
     private static final ResourceLocation TEXTURE_ACUTIRAMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acutiramus.png");
     private final ModelAcutiramusPlinth modelAcutiramusPlinth;
+    private static final ResourceLocation TEXTURE_AMPHIBAMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
+    private final ModelAmphibamus modelAmphibamus;
     private static final ResourceLocation TEXTURE_AULACEPHALODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacephalodon.png");
     private final ModelAulacephalodon modelAulacephalodon;
     private static final ResourceLocation TEXTURE_BALANERPETON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balanerpeton.png");
@@ -107,6 +109,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelAcanthostega = new ModelAcanthostega();
         this.modelAcanthostomatops = new ModelAcanthostomatops();
         this.modelAcutiramusPlinth = new ModelAcutiramusPlinth();
+        this.modelAmphibamus = new ModelAmphibamus();
         this.modelAulacephalodon = new ModelAulacephalodon();
         this.modelBalanerpeton = new ModelBalanerpeton();
         this.modelBranchiosaur = new ModelBranchiosaur();
@@ -203,6 +206,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_ACUTIRAMUS);
                         GlStateManager.scale(1.1F,1.1F,1.1F);
                         modelAcutiramusPlinth.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAmphibamusRaw.block) {
+                        double offset = 0.3;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_AMPHIBAMUS);
+                        GlStateManager.scale(0.28F,0.28F,0.28F);
+                        modelAmphibamus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAulacephalodonRaw.block) {
                         double offset = 0.63;
