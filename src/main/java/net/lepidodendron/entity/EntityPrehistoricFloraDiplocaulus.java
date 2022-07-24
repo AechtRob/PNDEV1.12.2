@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraDiplocaulus extends EntityPrehistoricFloraSwi
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.8;
 	}

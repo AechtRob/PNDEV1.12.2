@@ -56,6 +56,11 @@ public class EntityPrehistoricFloraDiploceraspis extends EntityPrehistoricFloraS
 	}
 
 	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
