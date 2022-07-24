@@ -36,7 +36,7 @@ public class RenderFalcatus extends RenderLiving<EntityPrehistoricFloraFalcatus>
             scale = scale * 0.8F;
         }
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.50F;
+        this.shadowSize = entity.width * scale * 0.00F;
     }
 
 }
