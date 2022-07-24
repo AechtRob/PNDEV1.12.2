@@ -1,7 +1,7 @@
 {
 	"name": "Allenypterus",
 	"read_by_default": true,
-	"icon": "lepidodendron:allenypterus_raw",
+	"icon": "paleopedia:textures/allenypterus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [

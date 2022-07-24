@@ -219,6 +219,8 @@ public class ModelLunataspis extends AdvancedModelBase {
             this.chainWave(Tail, 0.1F, 0.05f, -2, f2, 0F);
             this.bob(body, 0.0F, 0.0F, false, f2, 1);
         } else {
+            this.body.rotateAngleZ = (float) Math.toRadians(180);
+            this.body.rotateAngleX = (float) Math.toRadians(20);
             this.chainSwing(Tail, 0.2F, 0.08F, -2, f2, 0.5F);
             this.chainWave(Tail, 0.2F, 0.05f, -2, f2, 0.8F);
             this.bob(body, 0.2F, 0.1F, false, f2, 0.5F);

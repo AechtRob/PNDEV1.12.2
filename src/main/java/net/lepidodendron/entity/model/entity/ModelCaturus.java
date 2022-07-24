@@ -367,7 +367,8 @@ public class ModelCaturus extends AdvancedModelBase {
         animator.startKeyframe(5);
         animator.move(this.Cephalon, 0,0,-0.5F);
         animator.rotate(this.Cephalon, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Jaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.maxillae, -(float) Math.toRadians(17.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, (float) Math.toRadians(45), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);

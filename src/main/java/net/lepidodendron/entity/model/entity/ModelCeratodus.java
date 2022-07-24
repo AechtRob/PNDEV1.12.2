@@ -262,34 +262,34 @@ public class ModelCeratodus extends AdvancedModelBase {
             speed = speed * 0.55F;
         }
         if(!e.isInWater()) {
-            outOfWater = 0.15f;
+            outOfWater = 0.05f;
         }
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed * outOfWater, 0.05F, -3, f2, 1);
-            this.chainSwing(fishTail, speed * outOfWater, 0.3F, -2.5, f2, 1);
-            this.swing(Bodymiddlefront, speed * outOfWater, 0.21F, true, 0, 0, f2, 1);
+            this.chainWave(fishTail, speed * outOfWater, 0.05F * outOfWater, -3, f2, 1);
+            this.chainSwing(fishTail, speed * outOfWater, 0.3F * outOfWater, -2.5, f2, 1);
+            this.swing(Bodymiddlefront, speed * outOfWater, 0.21F * outOfWater, true, 0, 0, f2, 1);
             this.walk(Lowerjawbase, (float) (speed * 0.75) * outOfWater, (float)Math.toRadians(17.5), false, 0, 0.3F, f2, 1);
 
-            this.chainWave(finPectoralLeft, speed * outOfWater, 0.25F, 0.5F, f2, 1);
-            this.chainSwing(finPectoralLeft, speed * outOfWater, 0.25F, 0.5F, f2, 1);
-            this.chainFlap(finPectoralLeft, speed * outOfWater, 0.15F, -0.8, f2, 1);
+            this.chainWave(finPectoralLeft, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwing(finPectoralLeft, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainFlap(finPectoralLeft, speed * outOfWater, 0.15F * outOfWater, -0.8, f2, 1);
 
-            this.chainWave(finPectoralRight, speed * outOfWater, 0.25F, 0.5F, f2, 1);
-            this.chainSwing(finPectoralRight, speed * outOfWater, -0.25F, 0.5F, f2, 1);
-            this.chainFlap(finPectoralRight, speed * outOfWater, -0.15F, 0.8, f2, 1);
+            this.chainWave(finPectoralRight, speed * outOfWater, 0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainSwing(finPectoralRight, speed * outOfWater, -0.25F * outOfWater, 0.5F, f2, 1);
+            this.chainFlap(finPectoralRight, speed * outOfWater, -0.15F * outOfWater, 0.8, f2, 1);
 
-            this.chainWave(finPelvicLeft, speed * outOfWater, 0.20F, 0.3F, f2, 1);
-            this.chainSwing(finPelvicLeft, speed * outOfWater, 0.20F, 0.3F, f2, 1);
-            this.chainFlap(finPelvicLeft, speed * outOfWater, 0.10F, -0.5, f2, 1);
+            this.chainWave(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwing(finPelvicLeft, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainFlap(finPelvicLeft, speed * outOfWater, 0.10F * outOfWater, -0.5, f2, 1);
 
-            this.chainWave(finPelvicRight, speed * outOfWater, 0.20F, 0.3F, f2, 1);
-            this.chainSwing(finPelvicRight, speed * outOfWater, -0.20F, 0.3F, f2, 1);
-            this.chainFlap(finPelvicRight, speed * outOfWater, -0.10F, 0.5, f2, 1);
+            this.chainWave(finPelvicRight, speed * outOfWater, 0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainSwing(finPelvicRight, speed * outOfWater, -0.20F * outOfWater, 0.3F, f2, 1);
+            this.chainFlap(finPelvicRight, speed * outOfWater, -0.10F * outOfWater, 0.5, f2, 1);
 
             if (!e.isInWater()) {
-
-                this.Bodymiddlefront.offsetY = 1.2F;
+                this.Bodymiddlefront.rotateAngleZ = (float)Math.toRadians(90);
+                this.Bodymiddlefront.offsetY = 1.35F;
             }
         }
     }

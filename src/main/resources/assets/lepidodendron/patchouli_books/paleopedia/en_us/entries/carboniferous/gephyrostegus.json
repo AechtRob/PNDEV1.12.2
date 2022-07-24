@@ -1,7 +1,7 @@
 {
 	"name": "Gephyrostegus",
 	"read_by_default": true,
-	"icon": "lepidodendron:gephyrostegus_raw",
+	"icon": "paleopedia:textures/gephyrostegus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_gephyrostegus",
 	"pages": [
