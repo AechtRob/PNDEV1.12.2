@@ -24,6 +24,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
@@ -474,13 +475,13 @@ public class LepidodendronEventSubscribers {
 			Class ee = EntityList.getClassFromName(resourceLocation.toString());
 			List<String> tt = event.getToolTip();
 			try {
-				tt.add("Periods: " + ee.getMethod("getPeriod", (Class[]) null).invoke(null).toString());
+				tt.add(I18n.translateToLocal("helper.pf_period.name") + ": " + ee.getMethod("getPeriod", (Class[]) null).invoke(null).toString());
 			}
 			catch (Throwable throwable) {
 				//Do nothing - it's all good
 			}
 			try {
-				tt.add("Habitat: " + ee.getMethod("getHabitat", (Class[]) null).invoke(null).toString());
+				tt.add(I18n.translateToLocal("helper.pf_habitat.name") + ": " + ee.getMethod("getHabitat", (Class[]) null).invoke(null).toString());
 			}
 			catch (Throwable throwable) {
 				//Do nothing - it's all good

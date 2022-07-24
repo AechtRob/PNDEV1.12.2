@@ -3297,4 +3297,5 @@ tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 helper.pf_amphibious.name=Terrestrial or Aquatic
 helper.pf_terrestrial.name=Terrestrial
 helper.pf_aquatic.name=Aquatic
-
+helper.pf_habitat.name=Habitat
+helper.pf_period.name=Period
