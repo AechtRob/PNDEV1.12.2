@@ -301,7 +301,7 @@ public class BlockNathorstiana extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockNathorstiana.block;
+			return this;
 		}
 
 		@Override

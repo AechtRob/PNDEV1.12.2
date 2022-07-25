@@ -110,64 +110,68 @@ public class ItemBottleOfResin extends ElementsLepidodendronMod.ModElement {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandPangaeanSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandBlack.block) {
+			else if (blockTarget == BlockSandBlack.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandBlackSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandWhite.block) {
+			else if (blockTarget == BlockSandWhite.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandWhiteSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (iblockstate == Blocks.SAND.getStateFromMeta(0)) {
+			else if (iblockstate == Blocks.SAND.getStateFromMeta(0)) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (iblockstate == Blocks.SAND.getStateFromMeta(1)) {
+			else if (iblockstate == Blocks.SAND.getStateFromMeta(1)) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandRedSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == Blocks.GRAVEL) {
+			else if (blockTarget == Blocks.GRAVEL) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockGravelSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockStromatolite.block) {
+			else if (blockTarget == BlockStromatolite.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockStromatoliteSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockCoral.block) {
+			else if (blockTarget == BlockCoral.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockCoralSticky.block.getDefaultState().withProperty(BlockCoralSticky.FACING, iblockstate.getValue(BlockCoral.FACING)), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockThrombolite.block) {
+			else if (blockTarget == BlockThrombolite.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockThromboliteSticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockArchaeocyatha.block) {
+			else if (blockTarget == BlockArchaeocyatha.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockArchaeocyathaSticky.block.getDefaultState().withProperty(BlockArchaeocyathaSticky.FACING, iblockstate.getValue(BlockArchaeocyatha.FACING)), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandWavy.block) {
+			else if (blockTarget == BlockSandWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandRedWavy.block) {
+			else if (blockTarget == BlockSandRedWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandRedWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandPangaeanWavy.block) {
+			else if (blockTarget == BlockSandPangaeanWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandPangaeanWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandBlackWavy.block) {
+			else if (blockTarget == BlockSandBlackWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandBlackWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockGravelWavy.block) {
+			else if (blockTarget == BlockGravelWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockGravelWavySticky.block.getDefaultState(), 2);}
 				resined = true;
 			}
-			if (blockTarget == BlockSandWhiteWavy.block) {
+			else if (blockTarget == BlockSandWhiteWavy.block) {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandWhiteWavySticky.block.getDefaultState(), 2);}
+				resined = true;
+			}
+			else if (blockTarget == BlockShelly.block) {
+				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockShellySticky.block.getDefaultState().withProperty(BlockShellySticky.FACING, iblockstate.getValue(BlockShelly.FACING)), 2);}
 				resined = true;
 			}
 

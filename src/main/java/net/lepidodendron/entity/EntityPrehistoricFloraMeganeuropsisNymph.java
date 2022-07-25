@@ -205,7 +205,7 @@ public class EntityPrehistoricFloraMeganeuropsisNymph extends EntityPrehistoricF
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MEGANEUROPSIS_LOOT;
+		return LepidodendronMod.BUG_LOOT;
 	}
 
 }

@@ -114,7 +114,7 @@ public class BlockPhyllothecaTop extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockPhyllotheca.block;
+			return this;
 		}
 
 		@Override

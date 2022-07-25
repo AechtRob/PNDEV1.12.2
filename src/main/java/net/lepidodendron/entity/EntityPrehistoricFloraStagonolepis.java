@@ -69,7 +69,7 @@ public class EntityPrehistoricFloraStagonolepis extends EntityPrehistoricFloraLa
 
 	public static String getPeriod() {return "Triassic";}
 
-	public static String getHabitat() {return "Archosaur";}
+	//public static String getHabitat() {return "Archosaur";}
 
 	@Override
 	public boolean hasNest() {

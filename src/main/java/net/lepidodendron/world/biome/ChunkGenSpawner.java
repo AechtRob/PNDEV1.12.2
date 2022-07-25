@@ -55,6 +55,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
     public static void executeProcedure(boolean onlyWater, World world, BlockPos pos, Random rand, @Nullable String[] mobList, boolean worldGen) {
 
+        boolean TriassicCanyons = false;
         String[] MobString = new String[0];
         if (mobList == null) {
             Biome biome = world.getBiome(pos);
@@ -514,6 +515,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
                 //}
             } else if (biome == BiomeTriassicCreek.biome || biome == BiomeTriassicRiverbank.biome || biome == BiomeTriassicRiverbankForest.biome) {
+                TriassicCanyons = true;
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsPF);
                 }
@@ -1172,7 +1174,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 //EntityLiving entity = (EntityLiving) ee.newInstance(world);
                                                                 if (entity instanceof EntityPrehistoricFloraDiictodon) {
                                                                     EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
-                                                                    if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen) ) {
+                                                                    if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen)) {
                                                                         //Spawn a nest and burrow for it:
                                                                         //Buildburrow:
                                                                         pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
@@ -1184,8 +1186,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             }
                                                                         }
                                                                     }
-                                                                }
-                                                                else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
+                                                                } else if (entity instanceof EntityPrehistoricFloraLandBase && worldGen) {
                                                                     if (Math.random() > 0.8) { // 1:5 chance of nest coming too
                                                                         EntityPrehistoricFloraLandBase EntityLandBase = (EntityPrehistoricFloraLandBase) entity;
                                                                         if (EntityLandBase.hasNest()) {
@@ -1202,8 +1203,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                            }
-                                                                            else { //Mound nests:
+                                                                            } else { //Mound nests:
                                                                                 if (EntityLandBase.nestBlockMatch(world, pos)) {
                                                                                     world.setBlockState(pos, BlockNest.block.getDefaultState());
                                                                                     TileEntity te = world.getTileEntity(pos);
@@ -1228,8 +1228,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             int spawnAge = rand.nextInt(adultAge) + 1;
                                                                             nbtStr = "{AgeTicks:" + spawnAge + "}";
                                                                         }
-                                                                    }
-                                                                    else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
+                                                                    } else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
                                                                         EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
                                                                         int adultAge = ageableBase.getAdultAge();
                                                                         if (adultAge > 0) {
@@ -1238,43 +1237,45 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                 }
-                                                                for (int i = 0; i < spawnQty; ++i) {
-                                                                    //Spawn the mob via a command:
-                                                                    if (!world.isRemote && world.getMinecraftServer() != null) {
-                                                                        //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
-                                                                        world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-                                                                            @Override
-                                                                            public String getName() {
-                                                                                return "";
-                                                                            }
+                                                                if (!(TriassicCanyons && pos.getY() > 70)) {
+                                                                    for (int i = 0; i < spawnQty; ++i) {
+                                                                        //Spawn the mob via a command:
+                                                                        if (!world.isRemote && world.getMinecraftServer() != null) {
+                                                                            //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
+                                                                            world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+                                                                                @Override
+                                                                                public String getName() {
+                                                                                    return "";
+                                                                                }
 
-                                                                            @Override
-                                                                            public boolean canUseCommand(int permission, String command) {
-                                                                                return true;
-                                                                            }
+                                                                                @Override
+                                                                                public boolean canUseCommand(int permission, String command) {
+                                                                                    return true;
+                                                                                }
 
-                                                                            @Override
-                                                                            public World getEntityWorld() {
-                                                                                return world;
-                                                                            }
+                                                                                @Override
+                                                                                public World getEntityWorld() {
+                                                                                    return world;
+                                                                                }
 
-                                                                            @Override
-                                                                            public MinecraftServer getServer() {
-                                                                                return world.getMinecraftServer();
-                                                                            }
+                                                                                @Override
+                                                                                public MinecraftServer getServer() {
+                                                                                    return world.getMinecraftServer();
+                                                                                }
 
-                                                                            @Override
-                                                                            public boolean sendCommandFeedback() {
-                                                                                return false;
-                                                                            }
+                                                                                @Override
+                                                                                public boolean sendCommandFeedback() {
+                                                                                    return false;
+                                                                                }
 
-                                                                        }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + (pos.getY() + 1) + " " + pos.getZ() + " " + nbtStr);
+                                                                            }, "pf_summon " + mobToSpawn + " " + pos.getX() + " " + (pos.getY() + 1) + " " + pos.getZ() + " " + nbtStr);
+                                                                        }
+
+                                                                        //System.err.println("Spawned at " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
+
                                                                     }
-
-                                                                    //System.err.println("Spawned at " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
-
                                                                 }
-                                                                return; //Stop as we have spawned our group in this chunk now
+                                                                return; //Stop as we have spawned (or binned) our group in this chunk now
                                                             }
                                                         }
                                                     }

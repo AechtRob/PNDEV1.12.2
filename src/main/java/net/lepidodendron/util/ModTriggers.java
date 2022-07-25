@@ -294,7 +294,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PSAROLEPIS = new CustomTrigger("pf_book_psarolepis");
     public static final CustomTrigger CLICK_PTERASPIS = new CustomTrigger("pf_book_pteraspis");
     public static final CustomTrigger CLICK_PTERYGOTUS = new CustomTrigger("pf_book_pterygotus");
-    public static final CustomTrigger CLICK_PURLOVIA  = new CustomTrigger("pf_book_purlovia ");
+    public static final CustomTrigger CLICK_PURLOVIA  = new CustomTrigger("pf_book_purlovia");
     public static final CustomTrigger CLICK_QILINYU = new CustomTrigger("pf_book_qilinyu");
     public static final CustomTrigger CLICK_RAUTIANIA = new CustomTrigger("pf_book_rautiania");
     public static final CustomTrigger CLICK_RAYONNOCERAS = new CustomTrigger("pf_book_rayonnoceras");

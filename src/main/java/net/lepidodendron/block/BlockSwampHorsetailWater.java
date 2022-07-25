@@ -331,7 +331,7 @@ public class BlockSwampHorsetailWater extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		public Block planted() {
-			return BlockSwampHorsetailWaterNoSpore.block;
+			return BlockSwampHorsetailWater.block;
 		}
 
 		@Override

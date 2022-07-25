@@ -130,6 +130,24 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 						int offsetY = itemstack.getTagCompound().getInteger("offsetY");
 						boolean willEmpty = itemRand.nextInt(3) == 0;
 						if (plantBlock != null && plantBlock != Blocks.AIR) {
+							boolean doPlacer = false;
+							//System.err.println("Block: " + plantBlock);
+							if (plantBlock instanceof SeedSporeReedBase) {
+								SeedSporeReedBase blockPlant = (SeedSporeReedBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									doPlacer = true;
+									//System.err.println("Item: " + itemPlant);
+								}
+							}
+							else if (plantBlock instanceof SeedSporeBushBase) {
+								SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									doPlacer = true;
+								}
+							}
+
 							//If it's a vine:
 							if (plantBlock instanceof BlockVine) {
 								if (worldIn.isAirBlock(pos.offset(facing))
@@ -153,27 +171,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 									return EnumActionResult.SUCCESS;
 								}
 							}
-							//If it's a moss:
-							else if (plantBlock instanceof SeedSporeFacingBlockBase) {
-								if (worldIn.isAirBlock(pos.offset(facing))
-										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
-								) {
-									//We can plant this here!
-									SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
-									player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-									worldIn.setBlockState(pos.offset(facing), plantBlock.getDefaultState()
-											.withProperty(SeedSporeFacingBlockBase.FACING, facing));
-									plantBlock.onBlockAdded(worldIn, pos.offset(facing), plantBlock.getDefaultState());
-									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-									if (!player.isCreative() && willEmpty) {
-										itemstack.shrink(1);
-										ItemHandlerHelper.giveItemToPlayer(player, envelope);
-									}
-									return EnumActionResult.SUCCESS;
-
-								}
-							}
-							//If it's a directional block:
+							//If it's a moss or other directional block:
 							else if (plantBlock instanceof SeedSporeFacingBlockBase) {
 								if (worldIn.isAirBlock(pos.offset(facing))
 										&& plantBlock.canPlaceBlockOnSide(worldIn, pos.offset(facing), facing)
@@ -194,58 +192,56 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								}
 							}
 							//If it's a floater:
-							else if (plantBlock instanceof SeedSporeLilyPadBase
-								|| plantBlock instanceof SeedSporeBushLilyPadBase) {
+							else if (plantBlock instanceof SeedSporeLilyPadBase) {
 								SeedSporeLilyPadBase blockPlant = (SeedSporeLilyPadBase) plantBlock;
 								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-								ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
-
+								EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
 								//We can plant this here!
 								ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-								if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
+								if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
 									itemstack.shrink(1);
 									ItemHandlerHelper.giveItemToPlayer(player, envelope);
 								}
-								if (result.getType() == EnumActionResult.SUCCESS) {
+								if (result == EnumActionResult.SUCCESS) {
 									return EnumActionResult.SUCCESS;
 								}
 
 							}
-							//If it's not a vine or floater:
+							//If it's not a vine or floater, check if it has a special placing item (some do):
+							else if (doPlacer && plantBlock instanceof SeedSporeReedBase) {
+								SeedSporeReedBase blockPlant = (SeedSporeReedBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									if (result == EnumActionResult.SUCCESS) {
+										return EnumActionResult.SUCCESS;
+									}
+								}
+							}
+							else if (doPlacer && plantBlock instanceof SeedSporeBushBase) {
+								SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
+								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
+								if (itemPlant != null) {
+									EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+									ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
+									if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+										itemstack.shrink(1);
+										ItemHandlerHelper.giveItemToPlayer(player, envelope);
+									}
+									if (result == EnumActionResult.SUCCESS) {
+										return EnumActionResult.SUCCESS;
+									}
+								}
+							}
+							//Or just do the block standards:
 							else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))
 									&& plantBlock.canPlaceBlockAt(worldIn, pos.up(offsetY))
 							) {
-								if (plantBlock instanceof SeedSporeReedBase) {
-									SeedSporeReedBase blockPlant = (SeedSporeReedBase) plantBlock;
-									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-									if (itemPlant != null) {
-										ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
-										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-										if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
-											itemstack.shrink(1);
-											ItemHandlerHelper.giveItemToPlayer(player, envelope);
-										}
-										if (result.getType() == EnumActionResult.SUCCESS) {
-											return EnumActionResult.SUCCESS;
-										}
-									}
-								}
-								else if (plantBlock instanceof SeedSporeBushBase) {
-									SeedSporeBushBase blockPlant = (SeedSporeBushBase) plantBlock;
-									Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-									if (itemPlant != null) {
-										ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
-										ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-										if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
-											itemstack.shrink(1);
-											ItemHandlerHelper.giveItemToPlayer(player, envelope);
-										}
-										if (result.getType() == EnumActionResult.SUCCESS) {
-											return EnumActionResult.SUCCESS;
-										}
-									}
-								}
-
 								//We can plant this here!
 								SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 								player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -357,12 +353,6 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 				}
 				else if (blockTarget instanceof SeedSporeLilyPadBase) {
 					SeedSporeLilyPadBase blockEnvelope = (SeedSporeLilyPadBase) blockTarget;
-					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
-					nbtOffsetY = blockEnvelope.offsetY();
-					collected = true;
-				}
-				else if (blockTarget instanceof SeedSporeBushLilyPadBase) {
-					SeedSporeBushLilyPadBase blockEnvelope = (SeedSporeBushLilyPadBase) blockTarget;
 					nbtBlock = blockEnvelope.planted().getRegistryName().toString();
 					nbtOffsetY = blockEnvelope.offsetY();
 					collected = true;

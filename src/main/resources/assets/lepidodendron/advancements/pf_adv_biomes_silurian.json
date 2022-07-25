@@ -34,7 +34,7 @@
 				"biome": "lepidodendron:silurian_sea"
 			}
 		},
-		"silurian_sea_ice": {
+		"silurian_sea_garden": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:silurian_sea_garden"

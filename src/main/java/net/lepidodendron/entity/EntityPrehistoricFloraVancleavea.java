@@ -293,9 +293,9 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.VANCLEAVA_LOOT_YOUNG;
+			return LepidodendronMod.VANCLEAVEA_LOOT_YOUNG;
 		}
-		return LepidodendronMod.VANCLEAVA_LOOT;
+		return LepidodendronMod.VANCLEAVEA_LOOT;
 	}
 
 }

@@ -47,8 +47,8 @@ public class ModelCharniodiscus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended R33;
 
     public ModelCharniodiscus() {
-        this.textureWidth = 12;
-        this.textureHeight = 12;
+        this.textureWidth = 16;
+        this.textureHeight = 16;
 
         this.bone = new AdvancedModelRendererExtended(this);
         this.bone.setRotationPoint(8.0F, 24.0F, -8.0F);

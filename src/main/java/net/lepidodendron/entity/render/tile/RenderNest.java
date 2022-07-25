@@ -131,7 +131,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                     switch (eggType) {
                         case 0:
                         default:
-                            this.small_egg.renderAll(1.2f);
+                            this.small_egg.renderAllRaised(1.2f);
                             break;
 
                         case 1:
