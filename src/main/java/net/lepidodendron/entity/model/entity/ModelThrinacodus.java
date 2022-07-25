@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelThrinacodus extends AdvancedModelBase {
@@ -148,7 +149,28 @@ public class ModelThrinacodus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Thrinacodus.render(f5 * 0.12F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.Thrinacodus.rotateAngleY = (float) Math.toRadians(90);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.Thrinacodus.rotateAngleY = (float) Math.toRadians(50);
+        this.Body.rotateAngleY = (float) Math.toRadians(15);
+        this.Body2.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail1.rotateAngleY = (float) Math.toRadians(10);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(18);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(20);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(20);
+        this.Thrinacodus.offsetX = -0.3F;
+        this.Thrinacodus.offsetY = -0.2F;
+        this.Thrinacodus.offsetZ = -0.07F;
+        this.Thrinacodus.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
