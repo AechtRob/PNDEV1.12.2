@@ -7,6 +7,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEuchambersia extends AdvancedModelBaseExtended {
@@ -221,7 +222,48 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Euchambersia.render(f5 * 0.33f);
     }
-    
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        //this.Euchambersia.offsetZ = -0.6F;
+        this.Jaw.rotateAngleX = (float) Math.toRadians(32.5);
+        this.Head.rotateAngleX = (float) Math.toRadians(-23.9);
+        this.Head.rotateAngleY = (float) Math.toRadians(-32.6);
+        this.Head.rotateAngleZ = (float) Math.toRadians(13.4);
+        this.Neck.rotateAngleX = (float) Math.toRadians(1.7);
+        this.Neck.rotateAngleY = (float) Math.toRadians(-16.6);
+        this.Neck.rotateAngleZ = (float) Math.toRadians(-5.4);
+        this.Euchambersia.rotateAngleX = (float) Math.toRadians(15);
+        this.Body.rotateAngleX = (float) Math.toRadians(-17.7);
+        this.Body.rotateAngleY = (float) Math.toRadians(12.1);
+        this.Body.rotateAngleZ = (float) Math.toRadians(2.7);
+        this.Body2.rotateAngleX = (float) Math.toRadians(-17.5);
+        this.Body2.rotateAngleZ = (float) Math.toRadians(0);
+        this.Tail.rotateAngleX = (float) Math.toRadians(-13);
+        this.Tail.rotateAngleY = (float) Math.toRadians(11);
+        this.Tail.rotateAngleZ = (float) Math.toRadians(5.8);
+        this.Tail2.rotateAngleX = (float) Math.toRadians(-10);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(7.3);
+        this.Tail2.rotateAngleZ = (float) Math.toRadians(1.3);
+        this.RArm.rotateAngleX = (float) Math.toRadians(62.5);
+        this.RArm2.rotateAngleX = (float) Math.toRadians(-60);
+        this.RHand.rotateAngleX = (float) Math.toRadians(40);
+        this.LArm.rotateAngleX = (float) Math.toRadians(32.5);
+        this.LArm2.rotateAngleX = (float) Math.toRadians(-54.4);
+        this.LHand.rotateAngleX = (float) Math.toRadians(7.5);
+        this.LLeg.rotateAngleX = (float) Math.toRadians(20);
+        this.LLeg2.rotateAngleX = (float) Math.toRadians(47.5);
+        this.LFoot.rotateAngleX = (float) Math.toRadians(-10);
+        this.RLeg.rotateAngleX = (float) Math.toRadians(-10);
+        this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
+        this.RFoot.rotateAngleX = (float) Math.toRadians(5);
+        this.Euchambersia.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

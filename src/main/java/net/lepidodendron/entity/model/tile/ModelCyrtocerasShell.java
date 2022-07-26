@@ -159,8 +159,8 @@ public class ModelCyrtocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.body.offsetY = -1.5F;
-        this.body.render(0.1f);
+        this.body.offsetY = -1.2F;
+        this.body.render(0.08f);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
