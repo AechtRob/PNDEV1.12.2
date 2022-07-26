@@ -44,6 +44,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAnomalocaris modelAnomalocaris;
     private static final ResourceLocation TEXTURE_ANTARCTICARCINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
     private final ModelAntarcticarcinus modelAntarcticarcinus;
+    private static final ResourceLocation TEXTURE_ARCHOBLATTINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina.png");
+    private final ModelArchoblattina modelArchoblattina;
     private static final ResourceLocation TEXTURE_ASAPHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asaphus.png");
     private final ModelAsaphus modelAsaphus;
     private static final ResourceLocation TEXTURE_BANFFIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/banffia.png");
@@ -67,11 +69,14 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelCrotalocephalus modelCrotalocephalus;
     private static final ResourceLocation TEXTURE_DALMANITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dalmanites.png");
     private final ModelDalmanites modelDalmanites;
+    private static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/delitzschala.png");
+    private final ModelPalaeodictyoptera modelPalaeodictyoptera;
     private static final ResourceLocation TEXTURE_DIANIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania.png");
     private static final ResourceLocation TEXTURE_DIANIA_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania_nerf.png");
     private final ModelDiania modelDiania;
     private static final ResourceLocation TEXTURE_DROTOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
     private final ModelDrotops modelDrotops;
+    private static final ResourceLocation TEXTURE_DUNBARIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunbaria.png");
     private static final ResourceLocation TEXTURE_ELLIPSOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ellipsocephalus.png");
     private final ModelEllipsocephalus modelEllipsocephalus;
     private static final ResourceLocation TEXTURE_ELRATHIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elrathia.png");
@@ -94,6 +99,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelHeliopeltis modelHeliopeltis;
     private static final ResourceLocation TEXTURE_HELMETIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helmetia.png");
     private final ModelHelmetia modelHelmetia;
+    private static final ResourceLocation TEXTURE_HOMALONEURA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/homaloneura.png");
     private static final ResourceLocation TEXTURE_HUNGIOIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hungioides.png");
     private final ModelHungioides modelHungioides;
     private static final ResourceLocation TEXTURE_ISOTELUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
@@ -110,8 +116,10 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelKokomopterus modelKokomopterus;
     private static final ResourceLocation TEXTURE_LANCEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lanceaspis.png");
     private final ModelLanceaspis modelLanceaspis;
+    private static final ResourceLocation TEXTURE_LITHOMANTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lithomantis.png");
     private static final ResourceLocation TEXTURE_LUNATASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lunataspis.png");
     private final ModelLunataspis modelLunataspis;
+    private static final ResourceLocation TEXTURE_LYCOCERCUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lycocercus.png");
     private static final ResourceLocation TEXTURE_LYRARAPAX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lyrarapax.png");
     private final ModelLyrarapax modelLyrarapax;
     private static final ResourceLocation TEXTURE_MARRELLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/marrella.png");
@@ -139,12 +147,17 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelOttoia modelOttoia;
     private static final ResourceLocation TEXTURE_PALAEOISOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoisopus.png");
     private final ModelPalaeoisopus modelPalaeoisopus;
+    private static final ResourceLocation TEXTURE_PALAEONTINID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
+    private final ModelPalaeontinid modelPalaeontinid;
+    private static final ResourceLocation TEXTURE_PALAEOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_1.png");
     private static final ResourceLocation TEXTURE_PARADOXIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paradoxides.png");
     private final ModelParadoxides modelParadoxides;
     private static final ResourceLocation TEXTURE_PARVANCORINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parvancorina.png");
     private final ModelParvancorina modelParvancorina;
     private static final ResourceLocation TEXTURE_PAUCIPODIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paucipodia.png");
     private final ModelPaucipodia modelPaucipodia;
+    private static final ResourceLocation TEXTURE_PERMOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_3.png");
+    private final ModelTrigonotarbid modelTrigonotarbid;
     private static final ResourceLocation TEXTURE_PHANTASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phantaspis.png");
     private final ModelPhantaspis modelPhantaspis;
     private static final ResourceLocation TEXTURE_PIKAIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pikaia.png");
@@ -163,6 +176,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelSiberion modelSiberion;
     private static final ResourceLocation TEXTURE_SIDNEYIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sidneyia.png");
     private final ModelSidneyia modelSidneyia;
+    private static final ResourceLocation TEXTURE_SWAMPROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_swamp.png");
+    private final ModelRoachoid modelRoachoid;
     private static final ResourceLocation TEXTURE_SYNOPHALOS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/synophalos_1.png");
     private final ModelSynophalos modelSynophalos;
     private static final ResourceLocation TEXTURE_TEGOPELTE_LAYER = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tegopelte_shell.png");
@@ -197,6 +212,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAmplectobelua = new ModelAmplectobelua();
         this.modelAnomalocaris = new ModelAnomalocaris();
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
+        this.modelArchoblattina = new ModelArchoblattina();
         this.modelAsaphus = new ModelAsaphus();
         this.modelBanffia = new ModelBanffia();
         this.modelBushizheia = new ModelBushizheia();
@@ -241,7 +257,9 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelOpabinia = new ModelOpabinia();
         this.modelOrthrozanclus = new ModelOrthrozanclus();
         this.modelOttoia = new ModelOttoia();
+        this.modelPalaeodictyoptera = new ModelPalaeodictyoptera();
         this.modelPalaeoisopus = new ModelPalaeoisopus();
+        this.modelPalaeontinid = new ModelPalaeontinid();
         this.modelParadoxides = new ModelParadoxides();
         this.modelParvancorina = new ModelParvancorina();
         this.modelPaucipodia = new ModelPaucipodia();
@@ -250,6 +268,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelPomatrum = new ModelPomatrum();
         this.modelProfallotaspis = new ModelProfallotaspis();
         this.modelRetifacies = new ModelRetifacies();
+        this.modelRoachoid = new ModelRoachoid();
         this.modelSchinderhannes = new ModelSchinderhannes();
         this.modelSelenopeltis = new ModelSelenopeltis();
         this.modelSiberion = new ModelSiberion();
@@ -258,6 +277,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelTegopelte = new ModelTegopelte();
         this.modelTerataspis = new ModelTerataspis();
         this.modelTokummia = new ModelTokummia();
+        this.modelTrigonotarbid = new ModelTrigonotarbid();
         this.modelTrimerus = new ModelTrimerus();
         this.modelWalliserops = new ModelWalliserops();
         this.modelWiwaxia = new ModelWiwaxia();
@@ -560,6 +580,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(1.8,1.8,1.8);
                         this.bindTexture(TEXTURE_ANTARCTICARCINUS);
                         modelAntarcticarcinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemArchoblattinaRaw.block) {
+                        double offset = 0.37;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.7F,0.7F,0.7F);
+                        this.bindTexture(TEXTURE_ARCHOBLATTINA);
+                        modelArchoblattina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAsaphusRaw.block) {
                         double offset = 0.57;
@@ -941,6 +995,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_DALMANITES);
                         modelDalmanites.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPalaeodictyopteraDelitzschalaRaw.block) {
+                        double offset = 0.65;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_DELITZSCHALA);
+                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemDianiaRaw.block) {
                         double offset = 0.12;
                         if (facing == EnumFacing.UP) {
@@ -1012,6 +1100,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.8F,0.8F,0.8F);
                         this.bindTexture(TEXTURE_DROTOPS);
                         modelDrotops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPalaeodictyopteraDunbariaRaw.block) {
+                        double offset = 0.65;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_DUNBARIA);
+                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemEllipsocephalusRaw.block) {
                         double offset = 0.3;
@@ -1363,6 +1485,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_HELMETIA);
                         modelHelmetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPalaeodictyopteraHomaloneuraRaw.block) {
+                        double offset = 0.65;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_HOMALONEURA);
+                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemHungioidesRaw.block) {
                         double offset = 0.75;
                         if (facing == EnumFacing.UP) {
@@ -1632,6 +1788,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_LANCEASPIS);
                         modelLanceaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPalaeodictyopteraLithomantisRaw.block) {
+                        double offset = 0.65;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_LITHOMANTIS);
+                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemLunataspisRaw.block) {
                         double offset = 0.55;
                         if (facing == EnumFacing.UP) {
@@ -1664,6 +1854,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_LUNATASPIS);
                         modelLunataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPalaeodictyopteraLycocercusRaw.block) {
+                        double offset = 0.65;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_LYCOCERCUS);
+                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemLyrarapaxRaw.block) {
                         double offset = 0.46;
@@ -2108,6 +2332,74 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_PALAEOISOPUS);
                         modelPalaeoisopus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPalaeontinidRaw.block) {
+                        double offset = 0.33;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.6F,0.6F,0.6F);
+                        this.bindTexture(TEXTURE_PALAEONTINID);
+                        modelPalaeontinid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPalaeotarbusRaw.block) {
+                        double offset = 0.43;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.8F,0.8F,0.8F);
+                        this.bindTexture(TEXTURE_PALAEOTARBUS);
+                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemParadoxidesRaw.block) {
                         double offset = 0.57;
                         if (facing == EnumFacing.UP) {
@@ -2209,6 +2501,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.6F,0.6F,0.6F);
                         this.bindTexture(TEXTURE_PAUCIPODIA);
                         modelPaucipodia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPermotarbusRaw.block) {
+                        double offset = 0.43;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.8F,0.8F,0.8F);
+                        this.bindTexture(TEXTURE_PERMOTARBUS);
+                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemPhantaspisRaw.block) {
                         double offset = 0.32;
@@ -2512,6 +2838,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_SIDNEYIA);
                         modelSidneyia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemRoachoidSwampRaw.block) {
+                        double offset = 0.29;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.5F,0.5F,0.5F);
+                        this.bindTexture(TEXTURE_SWAMPROACHOID);
+                        modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemSynophalosRaw.block) {
                         double offset = 0.15;
