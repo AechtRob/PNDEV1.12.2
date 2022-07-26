@@ -249,8 +249,13 @@ public class ModelHolonema extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.headshield.rotateAngleY = (float) Math.toRadians(90);
+        this.headshield.offsetX = -0.1F;
+        this.headshield.offsetY = -0F;
+        this.headshield.offsetZ = 0.02F;
         this.headshield.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
