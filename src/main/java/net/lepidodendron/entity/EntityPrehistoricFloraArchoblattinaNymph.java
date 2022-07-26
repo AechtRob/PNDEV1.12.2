@@ -13,7 +13,6 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
@@ -201,18 +200,15 @@ public class EntityPrehistoricFloraArchoblattinaNymph extends EntityPrehistoricF
 		return false;
 	}
 
-	@Override
-	protected Item getDropItem() {
-		return null;
-		//return new ItemStack(ItemAcanthodesMeat.block, (int) (1)).getItem();
-	}
+	@Nullable
+	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.ARCHOBLATTINA_NYMPH_LOOT_JAR;
+			ResourceLocation resourcelocation = LepidodendronMod.BUG_LOOT;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))

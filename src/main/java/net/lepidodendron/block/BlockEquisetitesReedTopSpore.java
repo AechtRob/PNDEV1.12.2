@@ -117,7 +117,7 @@ public class BlockEquisetitesReedTopSpore extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		public Block planted() {
-			return BlockEquisetitesReed.block;
+			return this;
 		}
 
 		@Override

@@ -678,7 +678,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation SHRINGASAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shringasaurus"));
 	public static final ResourceLocation SHRINGASAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/shringasaurus_young"));
 	public static final int ENTITY_ANTARCTICARCINUS = 274;
-	public static final ResourceLocation ANTARCTICARCINUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/antarcticarecinus"));
+	public static final ResourceLocation ANTARCTICARCINUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/antarcticarcinus"));
 	public static final int ENTITY_CTENOSPONDYLUS = 275;
 	public static final ResourceLocation CTENOSPONDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ctenospondylus"));
 	public static final ResourceLocation CTENOSPONDYLUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ctenospondylus_young"));
@@ -1152,9 +1152,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation TEYUJAGUA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/teyujagua"));
 	public static final int ENTITY_THECODONTOSAURUS = 462;
 	public static final ResourceLocation THECODONTOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thecodontosaurus"));
-	public static final int ENTITY_VANCLEAVA = 463;
-	public static final ResourceLocation VANCLEAVA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vancleava"));
-	public static final ResourceLocation VANCLEAVA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vancleava_young"));
+	public static final int ENTITY_VANCLEAVEA = 463;
+	public static final ResourceLocation VANCLEAVEA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vancleavea"));
+	public static final ResourceLocation VANCLEAVEA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vancleavea_young"));
 	public static final int ENTITY_XINPUSAURUS = 464;
 	public static final ResourceLocation XINPUSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/xinpusaurus"));
 	public static final int ENTITY_AUSTRIADACTYLUS = 465;

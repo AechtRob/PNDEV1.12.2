@@ -188,8 +188,8 @@ public class ModelVestinautilusShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.whole.offsetY = -0.7F;
-        this.whole.render(0.02f);
+        this.whole.offsetY = -0.06F;
+        this.whole.render(0.034f);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

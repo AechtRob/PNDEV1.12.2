@@ -86,6 +86,7 @@ dependencies {
 
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
+    zip64=true
     manifest {
         attributes([
             "Specification-Title": "examplemod",
@@ -145,6 +146,7 @@ processResources {
 	from(sourceSets.main.resources.srcDirs) {
 		exclude 'META-INF/mods.toml'
 	}
+
 }
 
 sourceSets {

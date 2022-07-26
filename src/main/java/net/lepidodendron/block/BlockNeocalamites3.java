@@ -116,7 +116,7 @@ public class BlockNeocalamites3 extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockNeocalamites.block;
+			return this;
 		}
 
 		@Override

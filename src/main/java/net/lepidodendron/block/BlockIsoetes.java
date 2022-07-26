@@ -302,7 +302,7 @@ public class BlockIsoetes extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockIsoetes.block;
+			return this;
 		}
 
 		@Override

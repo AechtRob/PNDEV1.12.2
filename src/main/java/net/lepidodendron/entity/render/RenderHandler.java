@@ -3049,8 +3049,10 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellDeiroceras.TileEntityCustom.class, new RenderNautiloidShellDeiroceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellEndoceras.TileEntityCustom.class, new RenderNautiloidShellEndoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellGonioceras.TileEntityCustom.class, new RenderNautiloidShellGonioceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellLituites.TileEntityCustom.class, new RenderNautiloidShellLituites());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellMooreoceras.TileEntityCustom.class, new RenderNautiloidShellMooreoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellOrthoceras.TileEntityCustom.class, new RenderNautiloidShellOrthoceras());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellPhragmoceras.TileEntityCustom.class, new RenderNautiloidShellPhragmoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellRayonnoceras.TileEntityCustom.class, new RenderNautiloidShellRayonnoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellTemperoceras.TileEntityCustom.class, new RenderNautiloidShellTemperoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellVestinautilus.TileEntityCustom.class, new RenderNautiloidShellVestinautilus());

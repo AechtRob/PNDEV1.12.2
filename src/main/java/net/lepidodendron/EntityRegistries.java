@@ -480,7 +480,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_teraterpeton", EntityPrehistoricFloraTeraterpeton.class, LepidodendronMod.ENTITY_TERATERPETON, 82,0,0);
         registerEntity("prehistoric_flora_teyujagua", EntityPrehistoricFloraTeyujagua.class, LepidodendronMod.ENTITY_TEYUJAGUA, 82,-14867694,-6445491);
         registerEntity("prehistoric_flora_thecodontosaurus", EntityPrehistoricFloraThecodontosaurus.class, LepidodendronMod.ENTITY_THECODONTOSAURUS, 82,0,0);
-        registerEntity("prehistoric_flora_vancleava", EntityPrehistoricFloraVancleavea.class, LepidodendronMod.ENTITY_VANCLEAVA, 82,0,0);
+        registerEntity("prehistoric_flora_vancleavea", EntityPrehistoricFloraVancleavea.class, LepidodendronMod.ENTITY_VANCLEAVEA, 82,0,0);
         registerEntity("prehistoric_flora_xinpusaurus", EntityPrehistoricFloraXinpusaurus.class, LepidodendronMod.ENTITY_XINPUSAURUS, 82,-9402493,-3880518);
         registerEntity("prehistoric_flora_austriadactylus", EntityPrehistoricFloraAustriadactylus.class, LepidodendronMod.ENTITY_AUSTRIADACTYLUS, 82,0,0);
         registerEntity("prehistoric_flora_caelestiventus", EntityPrehistoricFloraCaelestiventus.class, LepidodendronMod.ENTITY_CAELESTIVENTUS, 82,0,0);
@@ -499,7 +499,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_fadenia_permotriassic", EntityPrehistoricFloraFadeniaPermotriassic.class, LepidodendronMod.ENTITY_FADENIA_PERMOTRIASSIC, 82,0,0);
         registerEntity("prehistoric_flora_lonchidion", EntityPrehistoricFloraLonchidion.class, LepidodendronMod.ENTITY_LONCHIDION, 82,0,0);
         registerEntity("prehistoric_flora_nipponomaria", EntityPrehistoricFloraNipponomaria.class, LepidodendronMod.ENTITY_NIPPONOMARIA, 82,-1713000,-724778);
-        registerEntity("prehistoric_flora_snail_land_", EntityPrehistoricFloraLandSnail.class, LepidodendronMod.ENTITY_SNAIL_LAND, 82,-9741509,-1988485);
+        registerEntity("prehistoric_flora_snail_land", EntityPrehistoricFloraLandSnail.class, LepidodendronMod.ENTITY_SNAIL_LAND, 82,-9741509,-1988485);
         registerEntity("prehistoric_flora_spiniplatyceras", EntityPrehistoricFloraSpiniplatyceras.class, LepidodendronMod.ENTITY_SPINIPLATYCERAS, 82,-15265747,-3845840);
         registerEntity("prehistoric_flora_palaeoniscum", EntityPrehistoricFloraPalaeoniscum.class, LepidodendronMod.ENTITY_PALAEONISCUM, 82,0,0);
         registerEntity("prehistoric_flora_parapeytoia", EntityPrehistoricFloraParapeytoia.class, LepidodendronMod.ENTITY_PARAPEYTOIA, 82,0,0);

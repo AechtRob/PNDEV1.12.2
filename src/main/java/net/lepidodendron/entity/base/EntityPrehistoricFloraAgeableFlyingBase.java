@@ -40,6 +40,8 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     public Animation FLY_ANIMATION;
     public Animation UNFLY_ANIMATION;
     private BlockPos targetBlock;
+    private int inPFLove;
+    private int jumpTicks;
 
     private static final DataParameter<Boolean> FLYING = EntityDataManager.createKey(EntityPrehistoricFloraAgeableFlyingBase.class, DataSerializers.BOOLEAN);
 
@@ -215,6 +217,10 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 this.setAnimation(UNFLY_ANIMATION);
                 this.walkTick = this.walkLength() + this.UNFLY_ANIMATION.getDuration();
             }
+            else if (!this.canFloat() && this.isAboveOrInWater() && this.getIsFlying()) {
+                this.flyTick ++; //Stop them drowning or getting stuck in water
+                this.motionY *= 0.6D;
+            }
 
             if (!this.isAboveOrOnGround() && !this.isAboveOrInWater() && !this.getIsFlying() && !this.isJumping
                     && this.getAnimation() != this.FLY_ANIMATION && this.getAnimation() != this.UNFLY_ANIMATION) {
@@ -252,6 +258,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
         }
 
         super.onLivingUpdate();
+
     }
 
     protected boolean isTargetInAir() {
@@ -313,9 +320,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 float rotation = MathHelper.wrapDegrees(angle - rotationYaw);
                 moveForward = (float) this.getAISpeedFly();
                 prevRotationYaw = rotationYaw;
-                if (Math.abs(motionX) > 0.12 || Math.abs(motionZ) > 0.12){
-                    rotationYaw += rotation;
-                }
+                rotationYaw += rotation;
             }
             else {
                 this.setFlyTarget(null);

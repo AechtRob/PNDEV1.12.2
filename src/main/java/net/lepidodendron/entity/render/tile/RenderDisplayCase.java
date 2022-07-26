@@ -68,6 +68,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_DIANIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania.png");
     private static final ResourceLocation TEXTURE_DIANIA_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diania_nerf.png");
     private final ModelDiania modelDiania;
+    private static final ResourceLocation TEXTURE_DROTOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/drotops.png");
+    private final ModelDrotops modelDrotops;
     private static final ResourceLocation TEXTURE_ELLIPSOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ellipsocephalus.png");
     private final ModelEllipsocephalus modelEllipsocephalus;
     private static final ResourceLocation TEXTURE_ELRATHIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elrathia.png");
@@ -86,6 +88,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_HALLUCIGENIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hallucigenia.png");
     private static final ResourceLocation TEXTURE_HALLUCIGENIA_NERF = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hallucigenia_nerf.png");
     private final ModelHallucigenia modelHallucigenia;
+    private static final ResourceLocation TEXTURE_HELIOPELTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/heliopeltis.png");
+    private final ModelHeliopeltis modelHeliopeltis;
     private static final ResourceLocation TEXTURE_HELMETIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/helmetia.png");
     private final ModelHelmetia modelHelmetia;
     private static final ResourceLocation TEXTURE_HUNGIOIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hungioides.png");
@@ -200,6 +204,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelCrotalocephalus = new ModelCrotalocephalus();
         this.modelDalmanites = new ModelDalmanites();
         this.modelDiania = new ModelDiania();
+        this.modelDrotops = new ModelDrotops();
         this.modelEllipsocephalus= new ModelEllipsocephalus();
         this.modelElrathia= new ModelElrathia();
         this.modelEoarthropleura= new ModelEoarthropleura();
@@ -208,6 +213,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelEurypterus= new ModelEurypterus();
         this.modelHaikouichthys= new ModelHaikouichthys();
         this.modelHallucigenia= new ModelHallucigenia();
+        this.modelHeliopeltis= new ModelHeliopeltis();
         this.modelHelmetia= new ModelHelmetia();
         this.modelHungioides= new ModelHungioides();
         this.modelIsotelus= new ModelIsotelus();
@@ -933,6 +939,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         }
                         modelDiania.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemDrotopsRaw.block) {
+                        double offset = 0.43;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.8F,0.8F,0.8F);
+                        this.bindTexture(TEXTURE_DROTOPS);
+                        modelDrotops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemEllipsocephalusRaw.block) {
                         double offset = 0.3;
                         if (facing == EnumFacing.UP) {
@@ -1214,6 +1254,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             this.bindTexture(TEXTURE_HALLUCIGENIA);
                         }
                         modelHallucigenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemHeliopeltisRaw.block) {
+                        double offset = 0.21;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.38F,0.38F,0.38F);
+                        this.bindTexture(TEXTURE_HELIOPELTIS);
+                        modelHeliopeltis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemHelmetiaRaw.block) {
                         double offset = 0.45;

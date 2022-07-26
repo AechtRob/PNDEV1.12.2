@@ -29,7 +29,7 @@ public class RenderVancleavea extends RenderLiving<EntityPrehistoricFloraVanclea
     protected void preRenderCallback(EntityPrehistoricFloraVancleavea entity, float f) {
         float scale = entity.getAgeScale() * 0.56F;
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.31F;
+        this.shadowSize = entity.width * scale * 0.91F;
     }
 
 }
