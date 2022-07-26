@@ -1,7 +1,7 @@
 {
 	"name": "Canadia",
 	"read_by_default": true,
-	"icon": "cambrian/cambrian_icon/canadia_icon.png",
+	"icon": "paleopedia:textures/canadia_icon.png",
 	"category": "lepidodendron:cambrian_animal",
 	"turnin": "lepidodendron:pf_adv_book_canadia",
 	"pages": [
