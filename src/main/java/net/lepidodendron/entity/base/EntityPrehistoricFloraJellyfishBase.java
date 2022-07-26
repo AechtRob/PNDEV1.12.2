@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemUnknownPlanula;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityAgeable;
@@ -83,7 +83,7 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
     }
 
     public ItemStack getPropagule() {
-        return new ItemStack(ItemUnknownPlanula.block, (int) (1));
+        return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
     @Override
@@ -360,7 +360,7 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         //Drop an egg perhaps:
         if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
             if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownPlanula.block, (int) (1));
+                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }

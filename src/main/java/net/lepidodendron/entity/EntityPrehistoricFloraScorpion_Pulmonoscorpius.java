@@ -72,6 +72,9 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (this.getBabies() && (!this.getIsBaby())) {
+			return LepidodendronMod.PULMONOSCORPIUS_LOOT;
+		}
+		else if (!this.getIsBaby()) {
 			return LepidodendronMod.BUG_LOOT;
 		}
 		return null;
@@ -131,7 +134,7 @@ public class EntityPrehistoricFloraScorpion_Pulmonoscorpius extends EntityPrehis
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.PULMONOSCORPIUS_LOOT;
+			ResourceLocation resourcelocation = LepidodendronMod.PULMONOSCORPIUS_LOOT_JAR;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))

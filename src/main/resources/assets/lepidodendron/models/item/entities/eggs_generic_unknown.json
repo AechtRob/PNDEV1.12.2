@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eggs_unknown"
+    "layer0": "lepidodendron:items/entities/eggs_generic"
   },
   "display": {
     "ground": {

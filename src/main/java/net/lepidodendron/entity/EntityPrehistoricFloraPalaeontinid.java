@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraPalaeontinid extends EntityPrehistoricFloraIn
 
 	@Override
 	public ResourceLocation FlightSound() {
-		return new ResourceLocation("lepidodendron:protozygoptera_flight");
+		return new ResourceLocation("lepidodendron:bug_flight");
 	}
 
 	public static String getPeriod() {return "Permian - Triassic - Jurassic - Cretaceous";}

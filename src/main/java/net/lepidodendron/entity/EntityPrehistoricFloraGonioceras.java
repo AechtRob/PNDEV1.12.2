@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.entities.ItemNautiloidEggsGonioceras;
@@ -71,8 +72,9 @@ public class EntityPrehistoricFloraGonioceras extends EntityPrehistoricFloraNaut
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
-		tasks.addTask(1, new EntityAILookIdle(this));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(2, new EntityAILookIdle(this));
 	}
 
 	@Override

@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraHelianthaster extends EntityPrehistoricFloraS
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	protected float getAISpeedSlithering() {

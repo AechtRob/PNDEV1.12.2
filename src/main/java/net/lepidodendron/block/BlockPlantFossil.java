@@ -334,7 +334,28 @@ public class BlockPlantFossil extends ElementsLepidodendronMod.ModElement {
 			new ItemStack(ItemPetrifiedSycamoreSapling.block,1),
 			new ItemStack(ItemPetrifiedLyginopteris.block,1),
 			new ItemStack(ItemPetrifiedMacroneuropterisSapling.block,1),
-			new ItemStack(ItemPetrifiedStiffCycadSapling.block,1)
+			new ItemStack(ItemPetrifiedStiffCycadSapling.block,1),
+			new ItemStack(ItemPetrifiedBumbudendron.block,1),
+			new ItemStack(ItemPetrifiedLygodium.block,1),
+			new ItemStack(ItemPetrifiedGlossophyllumSapling.block,1),
+			new ItemStack(ItemPetrifiedMonkeyPuzzleAraucariaSapling.block,1),
+			new ItemStack(ItemPetrifiedAraucaritesSapling.block,1),
+			new ItemStack(ItemPetrifiedPentoxylalesSapling.block,1),
+			new ItemStack(ItemPetrifiedFurcifolium.block,1),
+			new ItemStack(ItemPetrifiedCypressSapling.block,1),
+			new ItemStack(ItemPetrifiedPhoenicopsisSapling.block,1),
+			new ItemStack(ItemPetrifiedGinkgoitesSapling.block,1),
+			new ItemStack(ItemPetrifiedArchaeanthusSapling.block,1),
+			new ItemStack(ItemPetrifiedCycadopterisSapling.block,1),
+			new ItemStack(ItemPetrifiedTreefernSilverSapling.block,1),
+			new ItemStack(ItemPetrifiedTreefernBlackSapling.block,1),
+			new ItemStack(ItemPetrifiedFrenelopsis.block,1),
+			new ItemStack(ItemPetrifiedLeptopteris.block,1),
+			new ItemStack(ItemPetrifiedEquisetitesReed.block,1),
+			new ItemStack(ItemPetrifiedHermanophyton.block,1),
+			new ItemStack(ItemPetrifiedPachypterisReal.block,1),
+			new ItemStack(ItemPetrifiedSchmeissneria.block,1),
+			new ItemStack(ItemPetrifiedGrassyHorsetail.block,1)
 		};
 		return stack;
 	}

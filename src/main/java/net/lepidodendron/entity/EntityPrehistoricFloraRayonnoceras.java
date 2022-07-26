@@ -5,8 +5,10 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWanderBottomFeed;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsRayonnoceras;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
@@ -74,8 +76,15 @@ public class EntityPrehistoricFloraRayonnoceras extends EntityPrehistoricFloraNa
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new NautiloidWanderBottomFeed(this, NO_ANIMATION));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new NautiloidWanderBottomFeed(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override

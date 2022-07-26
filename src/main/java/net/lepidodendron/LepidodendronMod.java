@@ -425,12 +425,16 @@ public class LepidodendronMod {
 	public static final ResourceLocation CHELONIELLON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cheloniellon"));
 	public static final int ENTITY_SCORPION_GIGANTOSCORPIO = 172;
 	public static final ResourceLocation GIGANTOSCORPIO_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_gigantoscorpio"));
+	public static final ResourceLocation GIGANTOSCORPIO_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_gigantoscorpio_jar"));
 	public static final int ENTITY_SCORPION_OPSIEOBUTHUS = 173;
 	public static final ResourceLocation OPSIEOBUTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_opsieobuthus"));
+	public static final ResourceLocation OPSIEOBUTHUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_opsieobuthus_jar"));
 	public static final int ENTITY_SCORPION_PULMONOSCORPIUS = 174;
 	public static final ResourceLocation PULMONOSCORPIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_pulmonoscorpius"));
+	public static final ResourceLocation PULMONOSCORPIUS_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_pulmonoscorpius_jar"));
 	public static final int ENTITY_SCORPION_GONDWANASCORPIO = 175;
 	public static final ResourceLocation GONDWANASCORPIO_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_gondwanascorpio"));
+	public static final ResourceLocation GONDWANASCORPIO_LOOT_JAR = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/scorpion_gondwanascorpio_jar"));
 	public static final int ENTITY_OTTOIA = 176;
 	public static final ResourceLocation OTTOIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ottoia"));
 	public static final int ENTITY_HETEROSTEUS = 177;

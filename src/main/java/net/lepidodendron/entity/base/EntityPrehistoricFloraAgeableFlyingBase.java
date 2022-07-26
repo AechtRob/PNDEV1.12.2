@@ -221,6 +221,11 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 this.flyTick ++; //Stop them drowning or getting stuck in water
                 this.motionY *= 0.6D;
             }
+            else if (!this.canFloat() && this.isInWater()) {
+                this.setIsFlying(true);
+                this.flyTick = this.flyLength();
+                this.motionY *= 0.6D;
+            }
 
             if (!this.isAboveOrOnGround() && !this.isAboveOrInWater() && !this.getIsFlying() && !this.isJumping
                     && this.getAnimation() != this.FLY_ANIMATION && this.getAnimation() != this.UNFLY_ANIMATION) {

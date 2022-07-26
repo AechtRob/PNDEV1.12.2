@@ -15,10 +15,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemMonkeyPuzzleAraucariaNuts extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:pararaucaria_nuts")
+	@GameRegistry.ObjectHolder("lepidodendron:monkey_puzzle_araucaria_nuts")
 	public static final Item block = null;
 	public ItemMonkeyPuzzleAraucariaNuts(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.pararaucaria_nuts);
+		super(instance, LepidodendronSorter.monkey_puzzle_araucaria_nuts);
 	}
 
 	@Override
@@ -29,13 +29,13 @@ public class ItemMonkeyPuzzleAraucariaNuts extends ElementsLepidodendronMod.ModE
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:pararaucaria_nuts", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:monkey_puzzle_araucaria_nuts", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
 			super(BlockMonkeyPuzzleAraucariaSapling.block,1);
-			setTranslationKey("pf_pararaucaria_nuts");
-			setRegistryName("pararaucaria_nuts");
+			setTranslationKey("pf_monkey_puzzle_araucaria_nuts");
+			setRegistryName("monkey_puzzle_araucaria_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}

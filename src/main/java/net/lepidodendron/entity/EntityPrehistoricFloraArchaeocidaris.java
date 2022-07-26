@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -51,13 +52,19 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.045f;
+		return 0.035f;
 	}
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAISlitheringWaterBase(this, 1));
 		tasks.addTask(1, new SlitheringWanderBottom(this, NO_ANIMATION));
 		tasks.addTask(2, new EntityAILookIdle(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
 	}
 
 	@Override

@@ -8,7 +8,7 @@ import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
-import net.lepidodendron.item.entities.ItemUnknownEdiacaranBlob;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -47,11 +47,6 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 	@Override
 	public boolean isSmall() {
 		return true;
-	}
-
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
 	}
 
 	public static String getPeriod() {return "Ediacaran";}
@@ -159,7 +154,7 @@ public class EntityPrehistoricFloraSpriggina extends EntityPrehistoricFloraTrilo
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
 				if (!itemstack.hasTagCompound()) {
 					itemstack.setTagCompound(new NBTTagCompound());
 				}

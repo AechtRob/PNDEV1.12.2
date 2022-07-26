@@ -72,6 +72,10 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
 
     protected abstract float getAISpeedFish();
 
+    public float getTravelSpeed() {
+        return this.getAISpeedFish();
+    }
+
     protected abstract boolean isBase();
 
     public boolean isPushedByWater()

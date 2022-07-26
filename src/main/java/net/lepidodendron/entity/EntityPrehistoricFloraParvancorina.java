@@ -8,7 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
-import net.lepidodendron.item.entities.ItemUnknownEdiacaranBlob;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
@@ -45,13 +45,6 @@ public class EntityPrehistoricFloraParvancorina extends EntityPrehistoricFloraSl
 	}
 
 	public static String getPeriod() {return "Ediacaran";}
-
-	//public static String getHabitat() {return "Aquatic";}
-
-	@Override
-	public ItemStack getPropagule() {
-		return new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
-	}
 
 	@Override
 	public boolean dropsEggs() {
@@ -96,7 +89,7 @@ public class EntityPrehistoricFloraParvancorina extends EntityPrehistoricFloraSl
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
 				if (!itemstack.hasTagCompound()) {
 					itemstack.setTagCompound(new NBTTagCompound());
 				}

@@ -40,7 +40,7 @@
         "facing": "up"
       },
       "apply": {
-        "model": "lepidodendron:lamp_ceiling", "x": 180
+        "model": "lepidodendron:lamp_ceiling"
       }
     },
     {
@@ -48,7 +48,7 @@
         "facing": "down"
       },
       "apply": {
-        "model": "lepidodendron:lamp_ceiling"
+        "model": "lepidodendron:lamp_ceiling", "x": 180
       }
     }
   ]

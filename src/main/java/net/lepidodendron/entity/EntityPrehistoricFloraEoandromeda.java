@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.ai.EntityMateAIJellyfishBase;
 import net.lepidodendron.entity.ai.JellyfishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraJellyfishBase;
-import net.lepidodendron.item.entities.ItemUnknownEdiacaranBlob;
+import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
 
     @Override
     public ItemStack getPropagule() {
-        return new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
+        return new ItemStack(ItemUnknownEgg.block, (int) (1));
     }
 
     @Override
@@ -178,7 +178,7 @@ public class EntityPrehistoricFloraEoandromeda extends EntityPrehistoricFloraJel
         //Drop an egg perhaps:
         if (!world.isRemote && this.getCanBreed() && this.dropsEggs() && LepidodendronConfig.doMultiplyMobs) {
             if (Math.random() > 0.5) {
-                ItemStack itemstack = new ItemStack(ItemUnknownEdiacaranBlob.block, (int) (1));
+                ItemStack itemstack = new ItemStack(ItemUnknownEgg.block, (int) (1));
                 if (!itemstack.hasTagCompound()) {
                     itemstack.setTagCompound(new NBTTagCompound());
                 }
