@@ -1,9 +1,12 @@
 {
   "parent": "lepidodendron:item/bench_item",
   "textures": {
-    "wood": "lepidodendron:blocks/liriodendronwood"
+    "wood": "lepidodendron:blocks/liriodendron_planks"
   }
 }
+
+
+
 
 
 

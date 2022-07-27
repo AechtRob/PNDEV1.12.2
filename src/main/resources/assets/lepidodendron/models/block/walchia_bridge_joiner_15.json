@@ -1,0 +1,13 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "lepidodendron:blocks/walchia_planks",
+    "metal": "lepidodendron:blocks/sulphur_block"
+  }
+}
+
+
+
+
+
+

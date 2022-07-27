@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:salt"
+    },
+    "1": {
+      "item": "lepidodendron:salt"
+    },
+    "2": {
+      "item": "lepidodendron:salt"
+    },
+    "3": {
+      "item": "lepidodendron:salt"
+    },
+    "4": {
+      "item": "lepidodendron:salt"
+    },
+    "5": {
+      "item": "lepidodendron:salt"
+    },
+    "6": {
+      "item": "lepidodendron:salt"
+    },
+    "7": {
+      "item": "lepidodendron:salt"
+    },
+    "8": {
+      "item": "lepidodendron:salt"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:salt_block",
+    "count": 1
+  }
+}

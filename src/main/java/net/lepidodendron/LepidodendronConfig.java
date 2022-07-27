@@ -24,6 +24,7 @@ public class LepidodendronConfig {
     public static boolean genFossil = true;
     public static boolean modFire = true;
     public static int genPalaeobotanist = 50;
+    public static int genPalaeontologist = 50;
     public static boolean renderAnimations = true;
     public static boolean renderEdiacaranLighting = true;
     public static boolean renderCustomSkies = true;
@@ -33,7 +34,7 @@ public class LepidodendronConfig {
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     
-    public static boolean doShrinkBiomes = false;
+    public static boolean doShrinkBiomes = true;
 
     public static boolean renderFog = true;
     public static boolean fixZirconGlass = true;
@@ -8604,6 +8605,10 @@ public class LepidodendronConfig {
         prop.setComment("Percentage chance that a Palaeobotanist house will generate in a village. [default: 50]");
         genPalaeobotanist = prop.getInt();
         propOrder.add(prop.getName());
+        prop = cfg.get("Global World-Gen", "genPalaeontologist", genPalaeontologist);
+        prop.setComment("Percentage chance that a genPalaeontologist house will generate in a village. [default: 50]");
+        genPalaeontologist = prop.getInt();
+        propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "doSpawnsPrehistoricFloraDefault", doSpawnsPrehistoricFloraDefault);
         prop.setComment("Set to false to disable the default mob-spawns from this mod. [default: true]");
@@ -8633,10 +8638,10 @@ public class LepidodendronConfig {
         renderCustomSkies = prop.getBoolean();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "doShrinkBiomes", doShrinkBiomes);
-        prop.setComment("Set to true to try to make default biome sizes somewhat smaller (NOT RECOMMENDED: may compromise world-gen features and make worlds look bad or generate wrongly). [default: false]");
-        doShrinkBiomes = prop.getBoolean();
-        propOrder.add(prop.getName());
+        //prop = cfg.get("Global World-Gen", "doShrinkBiomes", doShrinkBiomes);
+        //prop.setComment("Set to true to try to make default biome sizes somewhat smaller (NOT RECOMMENDED: may compromise world-gen features and make worlds look bad or generate wrongly). [default: false]");
+        //doShrinkBiomes = prop.getBoolean();
+        //propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "renderFog", renderFog);
         prop.setComment("Set to true to render custom fog effects in the Prehistoric dimensions. [default: true]");

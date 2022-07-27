@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraMegactenopetalus extends EntityPrehistoricFlo
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.131f;
+		return 0.221f;
 	}
 
 	@Override

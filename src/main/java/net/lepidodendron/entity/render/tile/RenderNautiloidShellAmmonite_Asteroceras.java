@@ -36,9 +36,6 @@ public class RenderNautiloidShellAmmonite_Asteroceras extends TileEntitySpecialR
         GlStateManager.enableAlpha();
         ModelAmmonite50cmShell modelNautiloidShell = this.modelNautiloidShell;
         double scale = 0.18D;
-        GlStateManager.pushMatrix();
-        GlStateManager.disableCull();
-        GlStateManager.enableRescaleNormal();
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
             GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);

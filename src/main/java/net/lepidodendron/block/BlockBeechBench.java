@@ -37,7 +37,6 @@ public class BlockBeechBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_beech_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -56,11 +56,11 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
-		for (int i = 0; i < 5; i++) {
+		if (random.nextInt(2) == 0) {
 			int x = chunkX + random.nextInt(16);
-			int y = random.nextInt(20) + 0;
+			int y = random.nextInt(30) + 1;
 			int z = chunkZ + random.nextInt(16);
-			(new WorldGenMinable(block.getDefaultState(), 16, new com.google.common.base.Predicate<IBlockState>() {
+			(new WorldGenMinable(block.getDefaultState(), 48, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;
 					IBlockState require;

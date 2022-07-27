@@ -37,7 +37,6 @@ public class BlockMagnoliaBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_magnolia_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

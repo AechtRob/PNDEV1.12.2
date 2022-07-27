@@ -1,0 +1,48 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:ginkgoites_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:ginkgoites_planks",
+    "count": 4
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

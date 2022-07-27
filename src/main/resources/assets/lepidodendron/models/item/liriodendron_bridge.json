@@ -1,6 +1,30 @@
 {
   "parent": "lepidodendron:item/bridge_item",
   "textures": {
-    "wood": "lepidodendron:blocks/liriodendronwood"
+    "wood": "lepidodendron:blocks/liriodendron_planks"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

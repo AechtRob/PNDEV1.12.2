@@ -1376,6 +1376,372 @@
             "apply": [
                 { "model": "lepidodendron:czekanowskia_bridge_joiner_12" }
             ]
+        },
+
+
+
+
+
+
+
+        {   "when": { "facing": "north", "variant": 13 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_13", "y": 270, "uvlock": true}
+        },
+        {   "when": { "facing": "east", "variant": 13 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_13" }
+        },
+        {   "when": { "facing": "south", "variant": 13 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_13", "y": 90, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "variant": 13 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_13", "y": 180, "uvlock": true}
+        },
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13" }
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13" }
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+
+        {   "when": { "facing": "north", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_13" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_13" }
+            ]
+        },
+
+
+
+
+
+
+
+        {   "when": { "facing": "north", "variant": 14 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_14", "y": 270, "uvlock": true}
+        },
+        {   "when": { "facing": "east", "variant": 14 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_14" }
+        },
+        {   "when": { "facing": "south", "variant": 14 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_14", "y": 90, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "variant": 14 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_14", "y": 180, "uvlock": true}
+        },
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14" }
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14" }
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+
+        {   "when": { "facing": "north", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_14" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_14" }
+            ]
+        },
+
+
+
+
+
+
+
+        {   "when": { "facing": "north", "variant": 15 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_15", "y": 270, "uvlock": true}
+        },
+        {   "when": { "facing": "east", "variant": 15 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_15" }
+        },
+        {   "when": { "facing": "south", "variant": 15 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_15", "y": 90, "uvlock": true }
+        },
+        {   "when": { "facing": "west", "variant": 15 },
+            "apply": { "model": "lepidodendron:czekanowskia_bridge_15", "y": 180, "uvlock": true}
+        },
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15" }
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15" }
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15" , "y": 180, "uvlock": true}
+            ]
+        },
+
+
+
+        {   "when": { "facing": "north", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_side_15" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:czekanowskia_bridge_joiner_15" }
+            ]
         }
     ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

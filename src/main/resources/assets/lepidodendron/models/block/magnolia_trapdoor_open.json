@@ -2,7 +2,7 @@
   "parent": "lepidodendron:block/trapdoor_open",
   "textures": {
     "texture": "lepidodendron:blocks/magnolialog_trapdoor",
-    "planktexture": "lepidodendron:blocks/magnoliawood",
+    "planktexture": "lepidodendron:blocks/magnolia_planks",
     "particle": "lepidodendron:blocks/magnolialog_trapdoor"
   }
 }

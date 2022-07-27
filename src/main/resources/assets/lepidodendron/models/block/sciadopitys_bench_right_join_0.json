@@ -1,9 +1,10 @@
 {
 	"parent": "lepidodendron:block/bench_right_join",
 	"textures": {
-		"metal": "lepidodendron:blocks/sciadopitys_wood"
+		"metal": "lepidodendron:blocks/sciadopitys_planks"
 	}
 }
+
 
 
 

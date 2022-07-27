@@ -92,6 +92,11 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 		return true;
 	}
 
+	@Override
+	public boolean isNestMound() {
+		return true;
+	}
+
 	protected float getAISpeedLand() {
 		float speedBase = 0.365F;
 		if (this.getTicks() < 0) {

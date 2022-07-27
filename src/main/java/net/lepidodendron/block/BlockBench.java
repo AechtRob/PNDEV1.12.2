@@ -1,9 +1,8 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.item.ItemBalticAmberChunk;
-import net.lepidodendron.item.ItemDominicanAmberChunk;
-import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -44,7 +43,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
-	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 12);
+	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 15);
 
 	public BlockBench() {
 		super(Material.WOOD, MapColor.WOOD);
@@ -54,7 +53,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 		setResistance(3F);
 		setLightOpacity(0);
 		setCreativeTab(null);
-		//setCreativeTab(TabLepidodendronMisc.tab);
+		setCreativeTab(TabLepidodendronBuilding.tab);
 	}
 
 	@Override
@@ -160,6 +159,15 @@ public class BlockBench extends Block implements ITileEntityProvider {
 			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()){
 				enumUsed = 12;
 			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, 1).getItem()) {
+				enumUsed = 13;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, 1).getItem()) {
+				enumUsed = 14;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, 1).getItem()) {
+				enumUsed = 15;
+			}
 
 			if (enumUsed > 0) {
 				ItemStack itemstack = playerIn.getHeldItem(hand);
@@ -204,6 +212,9 @@ public class BlockBench extends Block implements ITileEntityProvider {
 		//10. Coal
 		//11. Petrified Wood
 		//12. Redstone
+		//13. Anthracite
+		//14. Salt
+		//15. Sulphur
 		int variant = new Object() {
 			public int getValue(BlockPos pos1, String tag) {
 				TileEntity tileEntity = worldIn.getTileEntity(pos1);
@@ -369,6 +380,15 @@ public class BlockBench extends Block implements ITileEntityProvider {
 				}
 				else if (variant == 12) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Blocks.REDSTONE_TORCH, (int) (1)));
+				}
+				else if (variant == 13) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemAnthracite.block, (int) (1)));
+				}
+				else if (variant == 14) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSalt.block, (int) (1)));
+				}
+				else if (variant == 15) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSulphur.block, (int) (1)));
 				}
 				if (entityToSpawn != null) {
 					entityToSpawn.setPickupDelay(10);

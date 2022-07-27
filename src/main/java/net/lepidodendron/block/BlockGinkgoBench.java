@@ -37,7 +37,6 @@ public class BlockGinkgoBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_ginkgo_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

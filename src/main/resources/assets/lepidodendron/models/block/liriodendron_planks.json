@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lepidodendron:blocks/liriodendronwood",
-    "particle": "lepidodendron:blocks/liriodendronwood"
+    "all": "lepidodendron:blocks/liriodendron_planks",
+    "particle": "lepidodendron:blocks/liriodendron_planks"
   }
 }

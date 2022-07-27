@@ -37,7 +37,6 @@ public class BlockPlaneBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_plane_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

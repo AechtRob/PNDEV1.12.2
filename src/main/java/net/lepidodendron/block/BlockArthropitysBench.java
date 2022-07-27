@@ -37,7 +37,6 @@ public class BlockArthropitysBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_arthropitys_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

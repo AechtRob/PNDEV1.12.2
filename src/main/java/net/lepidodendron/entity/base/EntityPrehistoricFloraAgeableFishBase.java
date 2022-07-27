@@ -164,6 +164,9 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
     }
 
     public float maxTurnAngle() {
+        if (this.getIsFast()) {
+            return (float)Math.toRadians(180D);
+        }
         if (this.width <= 0.5) {
             return 10F;
         }

@@ -1,8 +1,8 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "bottom": "lepidodendron:blocks/magnoliawood",
-    "top": "lepidodendron:blocks/magnoliawood",
-    "side": "lepidodendron:blocks/magnoliawood"
+    "bottom": "lepidodendron:blocks/magnolia_planks",
+    "top": "lepidodendron:blocks/magnolia_planks",
+    "side": "lepidodendron:blocks/magnolia_planks"
   }
 }

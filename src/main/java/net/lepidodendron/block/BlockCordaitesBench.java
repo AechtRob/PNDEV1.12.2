@@ -37,7 +37,6 @@ public class BlockCordaitesBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_cordaites_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

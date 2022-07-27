@@ -37,7 +37,6 @@ public class BlockDiaphorodendronBench extends ElementsLepidodendronMod.ModEleme
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_diaphorodendron_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

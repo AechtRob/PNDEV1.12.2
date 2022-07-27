@@ -1,0 +1,15 @@
+{
+  "parent": "lepidodendron:block/bridge_side",
+  "textures": {
+    "wood": "blocks/planks_birch",
+    "metal": "lepidodendron:blocks/sulphur_block"
+  }
+}
+
+
+
+
+
+
+
+

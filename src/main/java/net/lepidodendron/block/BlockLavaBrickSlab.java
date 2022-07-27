@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
@@ -62,7 +62,7 @@ public class BlockLavaBrickSlab extends ElementsLepidodendronMod.ModElement {
 			setResistance(4.2F);
 			setLightLevel(0F);
 			setLightOpacity(255);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 			IBlockState state = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
 			if (!this.isDouble())
 				state = state.withProperty(BlockSlab.HALF, EnumBlockHalf.BOTTOM);

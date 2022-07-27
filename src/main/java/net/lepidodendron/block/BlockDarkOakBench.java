@@ -37,7 +37,6 @@ public class BlockDarkOakBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_dark_oak_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

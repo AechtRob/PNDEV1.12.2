@@ -1,6 +1,18 @@
 {
   "parent": "lepidodendron:item/bridge_item",
   "textures": {
-    "wood": "lepidodendron:blocks/sciadopitys_wood"
+    "wood": "lepidodendron:blocks/sciadopitys_planks"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

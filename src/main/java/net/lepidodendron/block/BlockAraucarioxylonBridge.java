@@ -37,7 +37,6 @@ public class BlockAraucarioxylonBridge extends ElementsLepidodendronMod.ModEleme
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_araucarioxylon_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }
