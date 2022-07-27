@@ -323,15 +323,6 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraArchoblattinaInsect
-				|| event.getTarget() instanceof EntityPrehistoricFloraArchoblattinaNymph) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_ARCHOBLATTINA.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				event.setCanceled(true);
-				return;
-			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraArchosaurus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ARCHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -3779,10 +3770,19 @@ public class LepidodendronBookSubscribers {
 
 
 
-			//Put this at the end so as to trigger its children above in preference first:
+			//Put these at the end so as to trigger its children above in preference first:
 			else if (event.getTarget() instanceof EntityPrehistoricFloraDiictodon) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_DIICTODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraArchoblattinaInsect
+					|| event.getTarget() instanceof EntityPrehistoricFloraArchoblattinaNymph) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_ARCHOBLATTINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);

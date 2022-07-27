@@ -1,8 +1,8 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "bottom": "lepidodendron:blocks/liriodendronwood",
-    "top": "lepidodendron:blocks/liriodendronwood",
-    "side": "lepidodendron:blocks/liriodendronwood"
+    "bottom": "lepidodendron:blocks/liriodendron_planks",
+    "top": "lepidodendron:blocks/liriodendron_planks",
+    "side": "lepidodendron:blocks/liriodendron_planks"
   }
 }

@@ -37,7 +37,6 @@ public class BlockPentoxylalesBench extends ElementsLepidodendronMod.ModElement 
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_pentoxylales_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

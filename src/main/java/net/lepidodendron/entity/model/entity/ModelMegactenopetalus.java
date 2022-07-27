@@ -219,7 +219,7 @@ public class ModelMegactenopetalus extends AdvancedModelBase {
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailmiddle, this.Tailend};
 
-        float speed = 0.485F;
+        float speed = 0.445F;
         float taildegree = 0.35F;
 
         if (!e.isInWater()) {

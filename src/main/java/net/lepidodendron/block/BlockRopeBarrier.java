@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.item.ItemBalticAmberChunk;
 import net.lepidodendron.item.ItemDominicanAmberChunk;
 import net.lepidodendron.item.ItemRope;
@@ -92,7 +92,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 			setHardness(2.5F);
 			setResistance(3F);
 			setLightOpacity(0);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		@Override

@@ -1,0 +1,18 @@
+{
+  "parent": "lepidodendron:block/bridge_joiner",
+  "textures": {
+    "wood": "lepidodendron:blocks/sphenobaiera_planks",
+    "metal": "lepidodendron:blocks/anthracite_block"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

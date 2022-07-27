@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.035f;
+		return 0.0175f;
 	}
 
 	protected void initEntityAI() {
@@ -96,7 +96,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (player.getHeldItem(hand) != ItemStack.EMPTY) {
+		if (player.getHeldItem(hand) == ItemStack.EMPTY) {
 			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
 		}
 		return super.processInteract(player, hand);

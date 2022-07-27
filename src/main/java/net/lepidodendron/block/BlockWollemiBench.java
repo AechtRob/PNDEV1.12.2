@@ -37,7 +37,6 @@ public class BlockWollemiBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_wollemi_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

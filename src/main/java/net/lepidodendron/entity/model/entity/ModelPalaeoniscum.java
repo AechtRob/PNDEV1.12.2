@@ -295,6 +295,7 @@ public class ModelPalaeoniscum extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.Palaeoniscum.offsetY = 1.3F;
+        this.Palaeoniscum.offsetZ = 0.5F;
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 

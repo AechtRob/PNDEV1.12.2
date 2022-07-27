@@ -1,0 +1,85 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:apple_planks"
+    },
+    "3": {
+      "item": "lepidodendron:apple_planks"
+    },
+    "4": {
+      "item": "lepidodendron:apple_planks"
+    },
+    "6": {
+      "item": "lepidodendron:apple_planks"
+    },
+    "7": {
+      "item": "lepidodendron:apple_planks"
+    },
+    "8": {
+      "item": "lepidodendron:apple_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:apple_stairs",
+    "count": 4
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

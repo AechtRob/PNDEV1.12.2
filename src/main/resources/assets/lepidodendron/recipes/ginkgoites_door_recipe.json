@@ -1,0 +1,65 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:ginkgoites_planks"
+    },
+    "1": {
+      "item": "lepidodendron:ginkgoites_planks"
+    },
+    "2": {
+      "item": "lepidodendron:ginkgoites_planks"
+    },
+    "3": {
+      "item": "lepidodendron:ginkgoites_planks"
+    },
+    "4": {
+      "item": "lepidodendron:ginkgoites_planks"
+    },
+    "5": {
+      "item": "lepidodendron:ginkgoites_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:ginkgoites_door_item",
+    "count": 3
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

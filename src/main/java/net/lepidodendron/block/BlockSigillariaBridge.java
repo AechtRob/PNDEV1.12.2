@@ -37,7 +37,6 @@ public class BlockSigillariaBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_sigillaria_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -1,9 +1,8 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.item.ItemBalticAmberChunk;
-import net.lepidodendron.item.ItemDominicanAmberChunk;
-import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.item.*;
 import net.minecraft.block.BlockCompressedPowered;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -46,7 +45,7 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
 	public static final PropertyBool FRONT = PropertyBool.create("front");
 	public static final PropertyBool BACK = PropertyBool.create("back");
-	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 12);
+	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 15);
 
 	public BlockBridge() {
 		super(Material.WOOD, MapColor.WOOD);
@@ -56,8 +55,7 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 		setResistance(3F);
 		setLightOpacity(0);
 		setLightLevel(0.5F);
-		setCreativeTab(null);
-		//setCreativeTab(TabLepidodendronMisc.tab);
+		setCreativeTab(TabLepidodendronBuilding.tab);
 	}
 
 	@Nullable
@@ -173,6 +171,15 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			}
 			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()){
 				enumUsed = 12;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()){
+				enumUsed = 13;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()){
+				enumUsed = 14;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()){
+				enumUsed = 15;
 			}
 
 			if (enumUsed > 0) {
@@ -429,6 +436,15 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 				}
 				else if (variant == 12) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Blocks.REDSTONE_TORCH, (int) (1)));
+				}
+				else if (variant == 13) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemAnthracite.block, (int) (1)));
+				}
+				else if (variant == 14) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSalt.block, (int) (1)));
+				}
+				else if (variant == 15) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSulphur.block, (int) (1)));
 				}
 				if (entityToSpawn != null) {
 					entityToSpawn.setPickupDelay(10);

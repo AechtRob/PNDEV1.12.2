@@ -44,7 +44,6 @@ public class BlockCalamitesBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_calamites_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0.5F);
 			setResistance(2.5F);
 			setSoundType(SoundType.PLANT);

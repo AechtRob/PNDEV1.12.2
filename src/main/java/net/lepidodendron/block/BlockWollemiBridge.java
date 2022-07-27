@@ -37,7 +37,6 @@ public class BlockWollemiBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_wollemi_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

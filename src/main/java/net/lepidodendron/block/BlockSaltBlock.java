@@ -4,13 +4,18 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.item.ItemSalt;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -48,5 +53,22 @@ public class BlockSaltBlock extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
+
+		@Override
+		protected boolean canSilkHarvest() {
+			return true;
+		}
+
+		@Override
+		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
+			return new ItemStack(ItemSalt.block, (int) (1)).getItem();
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
+			return MapColor.WHITE_STAINED_HARDENED_CLAY;
+		}
+
 	}
+
 }

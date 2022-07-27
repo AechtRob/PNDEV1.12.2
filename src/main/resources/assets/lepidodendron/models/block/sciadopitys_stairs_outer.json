@@ -1,8 +1,8 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "bottom": "lepidodendron:blocks/sciadopitys_wood",
-    "top": "lepidodendron:blocks/sciadopitys_wood",
-    "side": "lepidodendron:blocks/sciadopitys_wood"
+    "bottom": "lepidodendron:blocks/sciadopitys_planks",
+    "top": "lepidodendron:blocks/sciadopitys_planks",
+    "side": "lepidodendron:blocks/sciadopitys_planks"
   }
 }

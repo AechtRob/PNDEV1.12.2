@@ -4,7 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockAlpiaDoor;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.SoundType;
@@ -47,7 +47,7 @@ public class ItemAlpiaDoorItem extends ElementsLepidodendronMod.ModElement {
 		public ItemCustom() {
 			setTranslationKey("pf_alpia_door_item");
 			setRegistryName("alpia_door_item");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)

@@ -37,7 +37,6 @@ public class BlockPodozamitesBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_podozamites_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

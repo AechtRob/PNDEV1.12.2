@@ -37,7 +37,6 @@ public class BlockFurculaBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_furcula_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -56,7 +56,7 @@ public class BlockCalamitesPlanks extends ElementsLepidodendronMod.ModElement {
 			setResistance(2.5F);
 			setLightLevel(0F);
 			setLightOpacity(255);
-			setCreativeTab(TabLepidodendronPlants.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		//@Override

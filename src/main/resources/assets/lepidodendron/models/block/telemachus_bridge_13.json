@@ -1,0 +1,15 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/telemachus_planks",
+    "metal": "lepidodendron:blocks/anthracite_block"
+  }
+}
+
+
+
+
+
+
+
+

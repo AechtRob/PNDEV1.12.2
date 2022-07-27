@@ -3,6 +3,7 @@ package net.lepidodendron;
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.palaeobotanist.entity.Villager;
+import net.lepidodendron.palaeontologist.entity.VillagerP;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.Summoner;
 import net.lepidodendron.world.lootconditions.EntityInBiomes;
@@ -52,6 +53,7 @@ public class LepidodendronMod {
 	public ElementsLepidodendronMod elements = new ElementsLepidodendronMod();
 
 	public static final ResourceLocation PALAEOBOTANIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeobotanist_chest"));
+	public static final ResourceLocation PALAEONTOLOGIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeontologist_chest"));
 	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
 
 	public static final int ENTITY_WALLISEROPS = 1;
@@ -1275,6 +1277,8 @@ public class LepidodendronMod {
 	public void registerVillagers(RegistryEvent.Register<VillagerRegistry.VillagerProfession> event) {
 		event.getRegistry().registerAll(Villager.PALAEOBOTANIST_PROFESSION);
 		Villager.register();
+		event.getRegistry().registerAll(VillagerP.PALAEONTOLOGIST_PROFESSION);
+		VillagerP.register();
 	}
 
 	@SubscribeEvent

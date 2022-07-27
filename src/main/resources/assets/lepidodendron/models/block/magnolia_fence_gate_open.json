@@ -1,7 +1,7 @@
 {
     "parent": "block/fence_gate_open",
     "textures": {
-        "texture": "lepidodendron:blocks/magnoliawood",
-    "particle": "lepidodendron:blocks/magnoliawood"
+        "texture": "lepidodendron:blocks/magnolia_planks",
+    "particle": "lepidodendron:blocks/magnolia_planks"
     }
 }
