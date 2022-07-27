@@ -1,0 +1,32 @@
+{
+	"name": "Holonema",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/holonema_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_holonema",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_holonema",
+			"title": "Holonema",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/holonema.png"],
+			"title": "H. westolli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_holonema",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_holonema",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

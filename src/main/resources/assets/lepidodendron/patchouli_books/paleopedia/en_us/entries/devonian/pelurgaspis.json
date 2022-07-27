@@ -1,29 +1,29 @@
 {
-	"name": "",
+	"name": "Pelurgaspis",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/aeger_icon.png",
+	"icon": "paleopedia:textures/pelurgaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_pelurgaspis",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_pelurgaspis",
+			"title": "Pelurgaspis",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/pelurgaspis.png"],
 			"title": "",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pelurgaspis",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_pelurgaspis",
 			"type": "text",
 			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
 		}
