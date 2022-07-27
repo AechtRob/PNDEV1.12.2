@@ -1074,6 +1074,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation GERROTHORAX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gerrothorax"));
 	public static final int ENTITY_HYPERODAPEDON = 431;
 	public static final ResourceLocation HYPERODAPEDON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hyperodapedon"));
+	public static final ResourceLocation HYPERODAPEDON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hyperodapedon_young"));
 	public static final int ENTITY_HYPSOGNATHUS = 432;
 	public static final ResourceLocation HYPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus"));
 	public static final ResourceLocation HYPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus_young"));

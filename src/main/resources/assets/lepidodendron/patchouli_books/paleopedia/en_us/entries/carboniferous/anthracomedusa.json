@@ -1,7 +1,7 @@
 {
 	"name": "Anthracomedusa",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/anthracomedus_icon.png",
+	"icon": "paleopedia:textures/anthracomedusa_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_anthracomedusa",
 	"pages": [

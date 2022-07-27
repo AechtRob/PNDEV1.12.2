@@ -42,8 +42,8 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 		//minSize = 0.2F;
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 1.0F;
-		maxHeight = 0.99F;
+		maxWidth = 0.4F;
+		maxHeight = 0.4F;
 		maxHealthAgeable = 15.0D;
 	}
 

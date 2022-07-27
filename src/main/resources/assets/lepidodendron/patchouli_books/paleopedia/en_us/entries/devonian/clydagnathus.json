@@ -1,0 +1,32 @@
+{
+	"name": "Clydagnathus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/clydagnathus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_clydagnathus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_clydagnathus",
+			"title": "Clydagnathus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Conodonta$(br)>Ozarkodinida$(br)>Cavusgnathidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/clydagnathus.png"],
+			"title": "C. windsorensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_clydagnathus",
+			"type": "text",
+			"text": "Clydagnathus is one of the few conodonts which have been preserved with its body shape, which demonstrated a similar body plan to Promissum. Clydagnathus is known from India and Morocco."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_clydagnathus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

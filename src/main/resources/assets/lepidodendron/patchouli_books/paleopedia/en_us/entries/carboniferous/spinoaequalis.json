@@ -2,7 +2,7 @@
 	"name": "Spinoaequalis",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/spinoaequalis_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_spinoaequalis",
 	"pages": [
 		{
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_spinoaequalis",
 			"type": "text",
-			"text": ""
+			"text": "Spinoaequalis is a 30 cm long lizard from Kansas. It had very long legs suggesting that it returned to the water. It would not have been fully aquatic however, and would still spend a lot of time on land. It would have swam using its flattened tail."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_spinoaequalis",
