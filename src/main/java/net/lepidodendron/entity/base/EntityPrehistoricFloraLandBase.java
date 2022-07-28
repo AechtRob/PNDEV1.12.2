@@ -364,20 +364,31 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     @Override
     public void onEntityUpdate() {
         super.onEntityUpdate();
-        if (this.isDrinking()) {
-            //System.err.println("Is drinking");
-            this.setAnimation(DRINK_ANIMATION);
-            //this.setIsDrinking(rand.nextInt(800) + 700);
-        }
-        if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() == DRINK_ANIMATION.getDuration() - 1) {
-            this.setIsDrinking(rand.nextInt(800) + 700);
-            this.getNavigator().clearPath();
-            this.drinkingFrom = null;
-        }
-        if (this.drinkingFrom != null) {
-            this.faceBlock(this.drinkingFrom, 1000, 1000);
+        if (!world.isRemote) {
+            //if (this.getAnimation() == DRINK_ANIMATION) {
+            //    System.err.println("Anim tick " + this.getAnimationTick());
+            //}
+            if (this.isDrinking() && this.getAnimation() != DRINK_ANIMATION) {
+                //System.err.println("Is drinking");
+                this.setAnimation(DRINK_ANIMATION);
+                //this.setIsDrinking(rand.nextInt(800) + 700);
+            }
+            if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() == DRINK_ANIMATION.getDuration() - 1) {
+                int i = Math.max((int)Math.round(getDrinkCooldown()/2), 1);
+                this.setIsDrinking(rand.nextInt(i) + i);
+                this.getNavigator().clearPath();
+                this.drinkingFrom = null;
+                this.setAnimation(NO_ANIMATION);
+            }
+            if (this.drinkingFrom != null) {
+                this.faceBlock(this.drinkingFrom, 1000, 1000);
+            }
         }
 
+    }
+
+    public int getDrinkCooldown() {
+        return 1400;
     }
 
     public void onLivingUpdate()

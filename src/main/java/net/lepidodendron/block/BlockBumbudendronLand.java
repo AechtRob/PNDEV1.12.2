@@ -7,9 +7,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemBumbudendronItem;
+import net.lepidodendron.util.BlockSounds;
+import net.lepidodendron.util.SoundTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -23,6 +24,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -59,7 +61,7 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends SeedSporeBushBase implements IGrowable, net.minecraftforge.common.IShearable {
 		public BlockCustom() {
 			super(Material.PLANTS);
-			setSoundType(SoundType.PLANT);
+			setSoundType(SoundTypes.DRY_CRUNCH_PLANT);
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
@@ -243,7 +245,11 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 						xct = xct + 1;
 					}
 					if (YouAreNotAloneNooneIsAlone && Math.random() > 0.9) {
-						if (Math.random() > 0.7) {world.destroyBlock(pos, false);}
+						if (Math.random() > 0.7) {
+							//world.destroyBlock(pos, false);
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.DRY_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						}
 					}
 				}
 			}

@@ -2,7 +2,6 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.EntityPrehistoricFloraHyperodapedon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
@@ -307,7 +306,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.hip.offsetY = 1.2F;
+        this.hip.offsetY = 1.15F;
 
         EntityPrehistoricFloraHyperodapedon Hyperodapedon = (EntityPrehistoricFloraHyperodapedon) e;
         float masterSpeed = Hyperodapedon.getTravelSpeed();
@@ -331,7 +330,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         if (f3 == 0.0F || !Hyperodapedon.getIsMoving()) { //Not moving
             this.swing(neck, 0.06F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             this.walk(neck, 0.06F * 2F, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
-            this.chainWave(Tail, (0.06F*0.9F), 0.10F, 0.10F, f2, 1F);
+            this.chainWave(Tail, (0.06F*0.9F), -0.10F, 0.10F, f2, 1F);
             this.chainSwing(Tail, (0.06F*0.9F) * 2F, 0.05F, 0.06F, f2, 1F);
             return;
         }
@@ -381,7 +380,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
 
         this.swing(neck, speed, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
         this.walk(neck, speed * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
-        this.chainWave(Tail, (speed*0.6F), 0.05F, 0.2F, f2, 1F);
+        this.chainWave(Tail, (speed*0.6F), -0.05F, 0.2F, f2, 1F);
         this.chainSwing(Tail, (speed*0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
         this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.5), false, 1.5F, f2, 1);
@@ -431,63 +430,76 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
-        //animator.setStaticKeyframe(1);
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
-        animator.startKeyframe(10);
+        animator.setStaticKeyframe(0);
+        animator.startKeyframe(12);
+        animator.rotate(this.neck, (float) Math.toRadians(0.001), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.startKeyframe(10);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
-        //animator.setStaticKeyframe(1);
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.startKeyframe(3);
         animator.rotate(this.neck, (float) Math.toRadians(20), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.head, (float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
+        animator.setStaticKeyframe(0);
         animator.resetKeyframe(10);
     }
 }

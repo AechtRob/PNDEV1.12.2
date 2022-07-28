@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemRhyniaItem;
+import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
@@ -14,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -24,6 +26,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -76,6 +79,25 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 			}
 			setTranslationKey("pf_rhynia_water_spore");
 			setRegistryName("rhynia_water_spore");
+		}
+
+		@Override
+		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+			//super.onEntityCollision(worldIn, pos, state, entityIn);
+
+			if (entityIn instanceof EntityBoat)
+			{
+				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+				if (!LepidodendronConfig.doPropagation) {
+					EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemRhyniaItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					worldIn.spawnEntity(entityToSpawn);
+				}
+				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else {
+				super.onEntityCollision(worldIn, pos, state, entityIn);
+			}
 		}
 
 		@Override

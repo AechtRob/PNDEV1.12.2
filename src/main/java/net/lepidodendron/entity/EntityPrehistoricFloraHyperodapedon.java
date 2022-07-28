@@ -2,7 +2,6 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -48,10 +47,12 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.18F;
-		maxWidth = 0.76F;
-		maxHeight = 0.8F;
+		maxWidth = 0.80F;
+		maxHeight = 0.45F;
 		maxHealthAgeable = 18.0D;
 	}
+
+
 
 	@Override
 	public int getEggType() {
@@ -59,10 +60,6 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 	}
 
 	public static String getPeriod() {return "Triassic";}
-
-	//public static String getHabitat() {
-	//	return I18n.translateToLocal("helper.pf_terrestrial.name");
-	//}
 
 	@Override
 	public boolean hasNest() {
@@ -115,7 +112,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 
 	@Override
 	public int getTalkInterval() {
-		return 100;
+		return 180;
 	}
 
 	@Override
@@ -176,7 +173,12 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 
 	@Override
 	public int getDrinkLength() {
-		return 120;  //grazes, does not drink
+		return 86;  //grazes, does not drink
+	}
+
+	@Override
+	public int getDrinkCooldown() {
+		return 400;
 	}
 
 	public boolean isDrinking()
@@ -283,7 +285,7 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 			this.launchAttack();
 		}
 
-		AnimationHandler.INSTANCE.updateAnimations(this);
+		//AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
 

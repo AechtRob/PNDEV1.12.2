@@ -2499,10 +2499,10 @@ public class RenderHandler {
         return new RenderEorhynchochelys(manager);
         }
             });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEretomorphis.class, new IRenderFactory<EntityPrehistoricFloraEretomorphis>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEretmorhipis.class, new IRenderFactory<EntityPrehistoricFloraEretmorhipis>() {
         @Override
-        public Render<? super EntityPrehistoricFloraEretomorphis> createRenderFor(RenderManager manager) {
-        return new RenderEretomorphis(manager);
+        public Render<? super EntityPrehistoricFloraEretmorhipis> createRenderFor(RenderManager manager) {
+        return new RenderEretmorhipis(manager);
         }
             });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHenodus.class, new IRenderFactory<EntityPrehistoricFloraHenodus>() {

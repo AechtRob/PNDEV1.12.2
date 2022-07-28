@@ -2,7 +2,7 @@
 package net.lepidodendron.creativetab;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockOakBridge;
+import net.lepidodendron.block.BlockArchaeopterisPlanks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -20,7 +20,7 @@ public class TabLepidodendronBuilding extends ElementsLepidodendronMod.ModElemen
 			@SideOnly(Side.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(BlockOakBridge.block, (int) (1));
+				return new ItemStack(BlockArchaeopterisPlanks.block, (int) (1));
 			}
 
 			@SideOnly(Side.CLIENT)

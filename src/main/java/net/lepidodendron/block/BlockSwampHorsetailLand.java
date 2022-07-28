@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
+import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
@@ -23,6 +24,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -246,7 +248,11 @@ public class BlockSwampHorsetailLand extends ElementsLepidodendronMod.ModElement
 						xct = xct + 1;
 					}
 					if (YouAreNotAloneNooneIsAlone && Math.random() > 0.9) {
-						if (Math.random() > 0.7) {world.destroyBlock(pos, false);}
+						if (Math.random() > 0.7) {
+							//world.destroyBlock(pos, false);
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.DRY_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						}
 					}
 				}
 			}

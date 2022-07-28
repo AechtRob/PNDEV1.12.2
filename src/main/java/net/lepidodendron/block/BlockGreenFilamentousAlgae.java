@@ -5,11 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.item.ItemBaragwanathiaItem;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousMarsh;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianSwamp;
@@ -28,12 +26,15 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -206,6 +207,23 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			setRegistryName("green_filamentous_algae");
 		}
 
+		@Override
+		public void onEntityCollision(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
+			//super.onEntityCollision(worldIn, pos, state, entityIn);
+
+			if (entityIn instanceof EntityBoat)
+			{
+				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemBaragwanathiaItem.block, (int) (1)));
+				entityToSpawn.setPickupDelay(10);
+				worldIn.spawnEntity(entityToSpawn);
+				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+			}
+			else {
+				super.onEntityCollision(worldIn, pos, state, entityIn);
+			}
+		}
+
 		@Override public boolean isShearable(ItemStack item, IBlockAccess world, BlockPos pos){ return true; }
 		
 		@Override
@@ -322,7 +340,11 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 						xct = xct + 1;
 					}
 					if (YouAreNotAloneNooneIsAlone && Math.random() > 0.8) {
-						if (Math.random() > 0.7) {world.destroyBlock(pos, false);}
+						if (Math.random() > 0.7) {
+							//world.destroyBlock(pos, false);
+							world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+							world.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						}
 					}
 				}
 			}

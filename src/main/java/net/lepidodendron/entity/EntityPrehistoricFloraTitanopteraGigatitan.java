@@ -8,6 +8,7 @@ import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -34,6 +35,18 @@ public class EntityPrehistoricFloraTitanopteraGigatitan extends EntityPrehistori
 		setNoAI(!true);
 		enablePersistence();
 	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:titanoptera_idle"));
+	}
+
+	@Override
+	public int getTalkInterval() {
+		return 40;
+	}
+
 
 	@Override
 	public boolean canJar() {
