@@ -3537,6 +3537,7 @@ item.podocarp_door_item.name=Primaeval Podocarp Door
 item.sphenobaiera_door_item.name=Sphenobaiera Door
 item.sycamore_door_item.name=Sycamore Door
 item.taxodium_door_item.name=Primaeval Taxodium Door
+item.zircon_lens.name=Zircon Lens
 itemGroup.tablepidodendronbuild=P'storic Nature Building Blocks
 itemGroup.tablepidodendronmisc=P'storic Nature Misc.
 itemGroup.tablepidodendronmobile=P'storic Nature Mobile Creatures

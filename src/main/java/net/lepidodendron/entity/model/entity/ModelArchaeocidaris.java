@@ -284,7 +284,8 @@ public class ModelArchaeocidaris extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.body.render(0.10F);
+        this.body.offsetY = -9F;
+        this.body.render(0.325F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

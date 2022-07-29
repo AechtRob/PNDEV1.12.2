@@ -66,8 +66,8 @@
 		},
 		{
 			"name": "base",
-			"from": [0, 15, 1],
-			"to": [16, 16, 15],
+			"from": [0.05, 15, 1],
+			"to": [15.95, 16, 15],
 			"shade": false,
 			"faces": {
 				"north": {"uv": [0, 0, 15.98, 1], "texture": "#metal"},

@@ -2136,6 +2136,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("gemZircon", ItemZircon.block);
 		OreDictionary.registerOre("blockZircon", BlockZircon.block);
 		OreDictionary.registerOre("blockGlass", BlockZirconGlass.block);
+		OreDictionary.registerOre("blockGlass", Blocks.GLASS);
+		OreDictionary.registerOre("paneGlass", BlockZirconGlassPane.block);
+		OreDictionary.registerOre("paneGlass", Blocks.GLASS_PANE);
 
 		OreDictionary.registerOre("leavesPsaronius", BlockPsaroniusLeavesPlaceable.block);
 		OreDictionary.registerOre("leavesPsaronius", BlockPsaroniusLeavesSmallPlaceable.block);

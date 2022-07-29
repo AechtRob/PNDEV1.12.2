@@ -3373,8 +3373,9 @@ public class LepidodendronSorter {
     public static final int yunnanozoon_raw = 3369;
     public static final int zircon = 3370;
     public static final int zircon_block = 3371;
-    public static final int zircon_ore = 3372;
-    public static final int zosterophyllum = 3373;
-    public static final int zosterophyllum_spore = 3374;
+    public static final int zircon_lens = 3372;
+    public static final int zircon_ore = 3373;
+    public static final int zosterophyllum = 3374;
+    public static final int zosterophyllum_spore = 3375;
 
 }

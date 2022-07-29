@@ -102,6 +102,56 @@
             ]
         },
 
+        
+        {   "when": { "facing": "north", "front": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 0 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_0" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
+
+
+
+
+
 
 
 
@@ -206,6 +256,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_1" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 1 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_1" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -316,6 +410,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 2 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_2" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -418,6 +556,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_3" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 3 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_3" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -528,6 +710,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 4 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_4" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -630,6 +856,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_5" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 5 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_5" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -740,6 +1010,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 6 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_6" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -846,6 +1160,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 7 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_7" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -948,6 +1306,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_8" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 8 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_8" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -1059,6 +1461,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 9 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_9" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
         {   "when": { "facing": "north", "variant": 10 },
@@ -1160,6 +1606,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_10" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 10 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_10" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -1267,6 +1757,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_11" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 11 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_11" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -1379,6 +1913,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 12 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_12" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -1483,6 +2061,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_13" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_13" , "y": 90, "uvlock": true}
             ]
         },
 
@@ -1595,6 +2217,50 @@
         },
 
 
+        {   "when": { "facing": "north", "front": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_14" , "y": 90, "uvlock": true}
+            ]
+        },
+
+
 
 
 
@@ -1699,6 +2365,50 @@
         {   "when": { "facing": "west", "left": false, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:archaeanthus_bridge_joiner_15" }
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "front": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15" }
+            ]
+        },
+        {   "when": { "facing": "east", "front": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15", "y": 90, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "front": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "west", "front": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15" , "y": 270, "uvlock": true}
+            ]
+        },
+
+
+        {   "when": { "facing": "north", "back": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15", "y": 180, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "east", "back": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15", "y": 270, "uvlock": true }
+            ]
+        },
+        {   "when": { "facing": "south", "back": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15" }
+            ]
+        },
+        {   "when": { "facing": "west", "back": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:archaeanthus_bridge_side_15" , "y": 90, "uvlock": true}
             ]
         }
     ]
