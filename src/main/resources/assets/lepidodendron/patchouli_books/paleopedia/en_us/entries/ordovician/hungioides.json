@@ -1,0 +1,32 @@
+{
+	"name": "Hungioides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/hungioides_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_hungioides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hungioides",
+			"title": "Hungioides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Asaphida$(br)>Hungaiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hungioides.png"],
+			"title": "H. bohemicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hungioides",
+			"type": "text",
+			"text": "Hungioides is the current largest Trilobite, surpassing Isotelus in size. It lived during the Ordovician period. H. bohemicus was discovered in Portugal and reached just under a meter long."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hungioides",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

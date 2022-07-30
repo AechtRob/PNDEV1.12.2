@@ -1,7 +1,7 @@
 {
     "name": "Jurassic Statics",
     "description": "Plants/Static Animals of the Jurassic",
-    "icon": "lepidodendron:archaeopteris_sapling",
+    "icon": "lepidodendron:bunya_sapling",
     "parent": "lepidodendron:jurassic",
     "sortnum": 2
 }

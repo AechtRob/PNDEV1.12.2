@@ -1,0 +1,32 @@
+{
+	"name": "Lituites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/lituites_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_lituites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lituites",
+			"title": "Lituites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Tarphycerida$(br)>Lituitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lituites.png"],
+			"title": "L. littuus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lituites",
+			"type": "text",
+			"text": "Lituites is a nautiloid from the Middle Ordovician period that possessed a straight shell with a coil at the end of it. Its shell was coiled in early growth stages but later becomes uncoiled."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lituites",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+		}
+	]
+}
+

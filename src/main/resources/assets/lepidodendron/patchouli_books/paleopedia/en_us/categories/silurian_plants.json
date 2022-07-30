@@ -1,7 +1,7 @@
 {
     "name": "Silurian Statics",
     "description": "Plants/Static Animals of the Silurian",
-    "icon": "lepidodendron:prototaxites_raw",
+    "icon": "lepidodendron:prototaxites_chunk",
     "parent": "lepidodendron:silurian",
     "sortnum": 2
 }

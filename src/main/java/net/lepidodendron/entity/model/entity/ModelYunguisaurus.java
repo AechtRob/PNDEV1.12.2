@@ -549,7 +549,6 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
 
         this.body.offsetY = 1.50F;
 
-        this.faceTarget(f3, f4, 5, neck);
         this.faceTarget(f3, f4, 5, neck2);
         this.faceTarget(f3, f4, 5, neck3);
         this.faceTarget(f3, f4, 5, neck4);
@@ -576,7 +575,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
                 this.chainWave(fishTail, speed * still * 2, 0.025F * still, -1.15, f2, 0.6F * still);
             }
 
-            this.chainSwing(fishTail, speed * still * 2, 0.015F * still, -1.0, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * still * 2, 0.03F * still, -1.0, f2, 0.8F * still);
 
             this.swing(body, speed * 0.5F, 0.02F, true, 0, 0, f2, 0.8F);
             this.bob(body, speed * 0.5F, 0.07F, true, f2, 0.8F);

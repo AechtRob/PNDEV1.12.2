@@ -1,0 +1,32 @@
+{
+	"name": "Cupressocrinites",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_cupressocrinites",
+	"category": "lepidodendron:devonian_plants",
+	"turnin": "lepidodendron:pf_adv_book_cupressocrinites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cupressocrinites",
+			"title": "Cupressocrinites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Cladida$(br)>Cupressocrinitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Cupressocrinites.png"],
+			"title": "C. elongatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cupressocrinites",
+			"type": "text",
+			"text": "Cupressocrinites is a crinoid from the Middle to Late Devonian. Its bulb was slighly more slender than other crinoids and its stalk could grow to really long lengths. It was a suspension feeder like other crinoids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cupressocrinites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

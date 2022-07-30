@@ -20,7 +20,7 @@
 		{
 			"type": "image",
 			"images":["paleopedia:textures/break_fossil.png"],
-			"title": "",
+			"title": "Fossil Blocks",
 			"text": ""
 		}
 	]

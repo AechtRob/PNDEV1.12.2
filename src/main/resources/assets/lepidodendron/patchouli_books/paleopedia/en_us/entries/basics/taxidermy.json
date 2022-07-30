@@ -27,8 +27,16 @@
 		},
 		{
 			"type": "crafting",
-			"recipe": "lepidodendron:wall_mount_recipe",
-			"recipe2": "lepidodendron:display_case_magnifying_recipe"
+			"recipe": "lepidodendron:display_case_magnifying_recipe",
+			"title": "Magnified Case"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:wall_mount_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:zircon_lens_recipe"
 		}
 	]
 }

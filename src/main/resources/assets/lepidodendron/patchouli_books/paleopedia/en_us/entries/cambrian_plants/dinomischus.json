@@ -1,0 +1,32 @@
+{
+	"name": "Dinomischus",
+	"read_by_default": true,
+	"icon": "lepidodendron:dinomischus",
+	"category": "lepidodendron:cambrian_plants",
+	"turnin": "lepidodendron:pf_adv_book_dinomischus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dinomischus",
+			"title": "Dinomischus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Dinomischus.png"],
+			"title": "D. isolatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dinomischus",
+			"type": "text",
+			"text": "Dinomischus is a small cambrian stalked animal with an uncertain placement. Dinomischus consisted of a body and a thin stalk. It was a sessile organism that ate micro organisms while attached to the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dinomischus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+
