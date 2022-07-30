@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_mcnamaraspis",
 			"title": "Mcnamaraspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>Brachythoraci$(br)>Incisoscutoidea"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/mcnamaraspis.png"],
-			"title": "",
+			"title": "M. kaprios",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mcnamaraspis",
 			"type": "text",
-			"text": ""
+			"text": "Mcnamaraspis is a small placoderm from the Gogo Formation of Australia. It was similar in size and shape to Coccosteus another placoderm fish. It had razor sharp teeth plates which shows that it was an active predator."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mcnamaraspis",

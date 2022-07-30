@@ -1,0 +1,18 @@
+{
+	"name": "Statics and Small Plants",
+	"icon": "lepidodendron:aulacera",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "How to Obtain These",
+			"text": "Static animals, such as crinoids, and small plants like algae and shrubs can be easily obtainable through a set of vanilla shears. By simply shearing the plant or animal using Shears they will drop themselves for replanting elsewhere."
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/shearing_statics.png"],
+			"title": ""
+		}
+	]
+}
+

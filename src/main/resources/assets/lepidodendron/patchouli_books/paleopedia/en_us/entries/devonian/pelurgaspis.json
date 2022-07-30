@@ -9,23 +9,23 @@
 			"trigger": "lepidodendron:pf_adv_book_pelurgaspis",
 			"title": "Pelurgaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkhole$(br2)>Cyathaspidiformes$(br)>Amphiaspidida$(br)>Hibernaspidoidei$(br)>Eglonaspididae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/pelurgaspis.png"],
-			"title": "",
+			"title": "P. macrorhyncha",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pelurgaspis",
 			"type": "text",
-			"text": ""
+			"text": "Pelurgaspis is a benthic agnathan from the Devonian of Siberia. In life it would have inhabited hypersaline environments and it had 2 small eyes at the tip of its head. Its body was tube shaped like a torpedo."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pelurgaspis",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

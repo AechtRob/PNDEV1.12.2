@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_helianthaster",
 			"title": "Helianthaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/helianthaster.png"],
-			"title": "",
+			"title": "H. rhenanus",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helianthaster",
 			"type": "text",
-			"text": ""
+			"text": "Helianthaster is a genus of prehistoric starfish from the Devonian period. It is reminiscent of the modern crown of thorns starfish, which had many mre arms than the more common 5 armed starfish."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_helianthaster",

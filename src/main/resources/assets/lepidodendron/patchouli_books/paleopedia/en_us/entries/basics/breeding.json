@@ -1,0 +1,25 @@
+{
+	"name": "Breeding Animals",
+	"icon": "lepidodendron:ephedra",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Breeding Animals",
+			"text": "Breeding animals is one of the three ways a player has to obtain prehistoric life too large to fit in a cage or bucket. Breeding requires a player to feed to two animals their appropriate food, not unlike vanilla Minecraft."
+		},
+		{
+			"type": "text",
+			"text": "After the animals have been fed, they will briefly stand close to one another before one of the two will start looking for a nest to lay the eggs in; in absence of a nest breeding won't be able to successfully produce eggs."
+		},
+		{
+			"type": "text",
+			"text": "Some animals like crocodilians won't need a nest to lay eggs and will instead create a nest mound, breakable by hand to obtain the eggs inside. A small number of smaller animals and insects lay their eggs directly into mosses and/or rotten wood logs."
+		},
+ 		{
+			"type": "text",
+			"text": "Other animals like small fish will drop an egg item for the player to pick up. Other animals might be viviparous, giving live birth instead of laying eggs. Right clicking on a full nest will give the players the eggs inside but will also turn the animals that laid said eggs hostile. Both naturally spawned and bred laid eggs won't hatch unless picked up by the player and placed once again in the world."
+		}
+	]
+}
+

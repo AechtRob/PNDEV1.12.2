@@ -106,7 +106,7 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0, true, 0));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.4, 3, true, 0));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
