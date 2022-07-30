@@ -1,0 +1,32 @@
+{
+	"name": "Stromatoveris",
+	"read_by_default": true,
+	"icon": "lepidodendron:stromatoveris",
+	"category": "lepidodendron:cambrian_plants",
+	"turnin": "lepidodendron:pf_adv_book_stromatoveris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stromatoveris",
+			"title": "Stromatoveris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Stromatoveris.png"],
+			"title": "S. psygmoglena",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stromatoveris",
+			"type": "text",
+			"text": "Stromatoveris is a Cambrian sessile organism originally thought to be aligned with Charnia, though recent studies have challenged that notion and it is now though to be a basal ctenophore. It had a structure similar to that of other Ediacaran frondose like organisms like Charnia and Arborea."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stromatoveris",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

@@ -11,7 +11,7 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/shearing_statics.png"],
-			"title": ""
+			"title": "Shearing"
 		}
 	]
 }

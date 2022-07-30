@@ -1,0 +1,32 @@
+{
+	"name": "Trimerus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/trimerus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_trimerus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_trimerus",
+			"title": "Trimerus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Homalonotidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/trimerus.png"],
+			"title": "T. dekayi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trimerus",
+			"type": "text",
+			"text": "Trimerus is a small trilobite from the Silurian to Devonian periods. Its body had many little segments and it was a benthic feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_trimerus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

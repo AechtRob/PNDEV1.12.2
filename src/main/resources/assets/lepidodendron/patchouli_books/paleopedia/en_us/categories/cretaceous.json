@@ -1,6 +1,6 @@
 {
     "name": "Cretaceous",
-    "description": "$(l)+20 km$()",
+    "description": "$(l)+20 km$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Integration into Fossils and Archeology.",
     "icon": "paleopedia:textures/category_icon/icon_cretaceous.png",
     "sortnum": 9
 }
