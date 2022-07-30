@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_heliopeltis",
 			"title": "Heliopeltis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Corynexochida$(br)>Styginidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/heliopeltis.png"],
-			"title": "",
+			"title": "H. johnsoni",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heliopeltis",
 			"type": "text",
-			"text": ""
+			"text": "Heliopeltis is a genus of trilobite from the Devonian period of Morocco. It had many long spines that protruded from its body and head. These spines were much longer than its actual body, sometimes being more than twice the length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_heliopeltis",

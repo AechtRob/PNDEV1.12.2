@@ -14,13 +14,13 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/osteolepis.png"],
-			"title": "",
+			"title": "O. macrolepidotus",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_osteolepis",
 			"type": "text",
-			"text": ""
+			"text": "Osteolepis is a lobe finned fish from the Devonian period with fossils found in northern Scotland. It was really small and was covered with large square scales."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_osteolepis",

@@ -1,0 +1,28 @@
+{
+	"name": "Geologic Pick",
+	"icon": "lepidodendron:fossil_hammer",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Geologic Pick",
+			"text": "The Geologic Pick is the dedicated instrument needed to gather usable fossil saplings. Used in a similar fashion to a vanilla pickaxe, the geologic pick has a special interaction with plant fossil blocks."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:fossil_hammer_recipe",
+			"text": ""
+		},
+		{
+			"type": "text",
+			"text": "Once used on a plant fossil block it will drop a stone block and, in some cases, a fossil sapling as well. These saplings can then be rejuvenated with the use of an enchanted Bone Wand"
+		},
+		{
+			"type": "image",
+			"images":["paleopedia:textures/break_fossil.png"],
+			"title": "",
+			"text": ""
+		}
+	]
+}
+

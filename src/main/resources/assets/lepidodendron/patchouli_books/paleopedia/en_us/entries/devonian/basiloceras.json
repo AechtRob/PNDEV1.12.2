@@ -14,13 +14,13 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/basiloceras.png"],
-			"title": "",
+			"title": "B. goliath",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_basiloceras",
 			"type": "text",
-			"text": " "
+			"text": "Basiloceras is a orthocone cephalopod from the Devonian period. It had a much shorter shell than other orthocones and it would have moved around in an upright stance, like other orthocones. (The larger orthocones could not be in an upright stance for this mod due to minecraft's limitations, but they could've in real life.)"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_basiloceras",

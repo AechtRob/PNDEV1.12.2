@@ -1,31 +1,31 @@
 {
-	"name": "",
+	"name": "Willwerathia",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/aeger_icon.png",
+	"icon": "paleopedia:textures/willwerathia_icon.png",
 	"category": "lepidodendron:devonian_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_willwerathia",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_willwerathia",
+			"title": "Willwerathia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
-			"title": "",
+			"images": ["paleopedia:textures/willwerathia.png"],
+			"title": "W. laticeps",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_willwerathia",
 			"type": "text",
-			"text": ""
+			"text": "Willwerathia is a genus of blind Xiphosuran from the Devonian that lived a benthic feeding life. It looked like a trilobite but was actually more closely related to Horseshoe Crabs."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_willwerathia",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

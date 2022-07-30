@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_lanceaspis",
 			"title": "Lanceaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Acastidae$(br)>Asteropyginae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/lanceaspis.png"],
-			"title": "",
+			"title": "L. hammondi",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lanceaspis",
 			"type": "text",
-			"text": ""
+			"text": "Lanceaspis is a Moroccan trilobite. True to its name, it had a long protrusion at the end of its head making it look like its nose was a lance."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lanceaspis",

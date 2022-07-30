@@ -2,14 +2,14 @@
 	"name": "",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/aeger_icon.png",
-	"category": "lepidodendron:devonian_animal",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() $(br2)>"
 		},
 		{
 			"type": "image",
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }
