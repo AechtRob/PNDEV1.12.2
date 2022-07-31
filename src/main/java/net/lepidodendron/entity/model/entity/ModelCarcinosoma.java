@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -332,7 +333,25 @@ public class ModelCarcinosoma extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.85F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.body.offsetZ = -0.3F;
+        this.segments.rotateAngleX = (float) Math.toRadians(20);
+        this.metasoma1.rotateAngleX = (float) Math.toRadians(25);
+        this.metasoma2.rotateAngleX = (float) Math.toRadians(25);
+        this.metasoma3.rotateAngleX = (float) Math.toRadians(25);
+        this.metasoma4.rotateAngleX = (float) Math.toRadians(25);
+        this.metasoma5.rotateAngleX = (float) Math.toRadians(25);
+        this.telson.rotateAngleX = (float) Math.toRadians(25);
+        this.tip.rotateAngleX = (float) Math.toRadians(40);
+        this.body.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
