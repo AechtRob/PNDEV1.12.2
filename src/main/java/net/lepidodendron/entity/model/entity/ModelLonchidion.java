@@ -159,8 +159,20 @@ public class ModelLonchidion extends AdvancedModelBase {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.head.rotateAngleX = (float) Math.toRadians(-15);
+        this.body.rotateAngleX = (float) Math.toRadians(0);
+        this.body2.rotateAngleX = (float) Math.toRadians(-10);
+        this.body3.rotateAngleX = (float) Math.toRadians(5);
+        this.body4.rotateAngleX = (float) Math.toRadians(7.5);
+        this.body5.rotateAngleX = (float) Math.toRadians(7.5);
+        this.tail.rotateAngleX = (float) Math.toRadians(10);
+        this.jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.2F;
         this.body.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

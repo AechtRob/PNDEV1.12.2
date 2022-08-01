@@ -71,6 +71,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelHylonomus modelHylonomus;
     private static final ResourceLocation TEXTURE_ICHTHYOSTEGA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ichthyostega.png");
     private final ModelIchthyostega modelIchthyostega;
+    private static final ResourceLocation TEXTURE_JAEKELOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jaekelopterus.png");
+    private final ModelJaekelopterus modelJaekelopterus;
     private static final ResourceLocation TEXTURE_LABIDOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus.png");
     private final ModelLabidosaurus modelLabidosaurus;
     private static final ResourceLocation TEXTURE_MEGALOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalocephalus.png");
@@ -132,6 +134,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
         this.modelIchthyostega = new ModelIchthyostega();
+        this.modelJaekelopterus = new ModelJaekelopterus();
         this.modelLabidosaurus = new ModelLabidosaurus();
         this.modelMegalocephalus = new ModelMegalocephalus();
         this.modelMesosaurus = new ModelMesosaurus();
@@ -417,6 +420,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.rotate(5,-1,0,0);
                         GlStateManager.scale(0.28F,0.28F,0.28F);
                         modelIchthyostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemJaekelopterusRaw.block) {
+                        double offset = 3;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_JAEKELOPTERUS);
+                        GlStateManager.scale(1.1F,1.1F,1.1F);
+                        modelJaekelopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemLabidosaurusRaw.block) {
                         double offset = 0.58;
