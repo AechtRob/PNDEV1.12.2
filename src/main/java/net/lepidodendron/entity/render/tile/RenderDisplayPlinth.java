@@ -46,6 +46,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelCacops modelCacops;
     private static final ResourceLocation TEXTURE_CARCINOSOMA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carcinosoma.png");
     private final ModelCarcinosoma modelCarcinosoma;
+    private static final ResourceLocation TEXTURE_CARTORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cartorhynchus.png");
+    private final ModelCartorhynchus modelCartorhynchus;
     private static final ResourceLocation TEXTURE_CLAUDIOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
     private final ModelClaudiosaurus modelClaudiosaurus;
     private static final ResourceLocation TEXTURE_DASYCEPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dasyceps.png");
@@ -87,10 +89,14 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelPagea modelPagea;
     private static final ResourceLocation TEXTURE_PANTYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pantylus.png");
     private final ModelPantylus modelPantylus;
+    private static final ResourceLocation TEXTURE_PANZHOUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panzhousaurus.png");
+    private final ModelPanzhousaurus modelPanzhousaurus;
     private static final ResourceLocation TEXTURE_PEDERPES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
     private final ModelPederpes modelPederpes;
     private static final ResourceLocation TEXTURE_PLATYHYSTRIX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platyhystrix.png");
     private final ModelPlatyhystrix modelPlatyhystrix;
+    private static final ResourceLocation TEXTURE_PROBURNETIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proburnetia.png");
+    private final ModelProburnetia modelProburnetia;
     private static final ResourceLocation TEXTURE_PROCYNOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/procynosuchus.png");
     private final ModelProcynosuchus modelProcynosuchus;
     private static final ResourceLocation TEXTURE_PROTEROGYRINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
@@ -128,6 +134,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelBranchiosaur = new ModelBranchiosaur();
         this.modelCacops = new ModelCacops();
         this.modelCarcinosoma = new ModelCarcinosoma();
+        this.modelCartorhynchus = new ModelCartorhynchus();
         this.modelClaudiosaurus = new ModelClaudiosaurus();
         this.modelDasyceps = new ModelDasyceps();
         this.modelDatheosaurus = new ModelDatheosaurus();
@@ -148,8 +155,10 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelOmnidens = new ModelOmnidens();
         this.modelPagea = new ModelPagea();
         this.modelPantylus = new ModelPantylus();
+        this.modelPanzhousaurus = new ModelPanzhousaurus();
         this.modelPederpes = new ModelPederpes();
         this.modelPlatyhystrix = new ModelPlatyhystrix();
+        this.modelProburnetia = new ModelProburnetia();
         this.modelProcynosuchus = new ModelProcynosuchus();
         this.modelProterogyrinus = new ModelProterogyrinus();
         this.modelPterygotus = new ModelPterygotus();
@@ -293,6 +302,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_CARCINOSOMA);
                         GlStateManager.scale(0.51F,0.51F,0.51F);
                         modelCarcinosoma.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemCartorhynchusRaw.block) {
+                        double offset = 0.167;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_CARTORHYNCHUS);
+                        GlStateManager.scale(0.076F,0.076F,0.076F);
+                        modelCartorhynchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemClaudiosaurusRaw.block) {
                         double offset = 0.23;
@@ -516,6 +536,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.18F,0.18F,0.18F);
                         modelPantylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemPanzhousaurusRaw.block) {
+                        double offset = 0.013;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PANZHOUSAURUS);
+                        GlStateManager.scale(0.08F,0.08F,0.08F);
+                        modelPanzhousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemPederpesRaw.block) {
                         double offset = 0.018;
                         //double voffset = -0.15;
@@ -537,6 +568,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_PLATYHYSTRIX);
                         GlStateManager.scale(0.25F,0.25F,0.25F);
                         modelPlatyhystrix.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemProburnetiaRaw.block) {
+                        double offset = 0.49;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PROBURNETIA);
+                        GlStateManager.scale(0.21F,0.21F,0.21F);
+                        modelProburnetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemProcynosuchusRaw.block) {
                         double offset = 0.6;
