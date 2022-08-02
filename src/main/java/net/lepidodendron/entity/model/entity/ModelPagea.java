@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -240,7 +241,27 @@ public class ModelPagea extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.carapace.render(f5 * 0.7F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.disableCull();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        this.carapace.offsetZ = -0.2F;
+        this.legL1.rotateAngleX = (float) Math.toRadians(0);
+        this.legL2.rotateAngleX = (float) Math.toRadians(0);
+        this.legL3.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.legL4.rotateAngleX = (float) Math.toRadians(-15);
+        this.legL5.rotateAngleX = (float) Math.toRadians(-24);
+        this.legR1.rotateAngleX = (float) Math.toRadians(0);
+        this.legR2.rotateAngleX = (float) Math.toRadians(0);
+        this.legR3.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.legR4.rotateAngleX = (float) Math.toRadians(-15);
+        this.legR5.rotateAngleX = (float) Math.toRadians(-24);
+        this.carapace.render(0.04F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

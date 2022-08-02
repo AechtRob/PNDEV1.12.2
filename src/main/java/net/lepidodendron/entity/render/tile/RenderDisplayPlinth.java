@@ -81,6 +81,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelMesosaurus modelMesosaurus;
     private static final ResourceLocation TEXTURE_OMNIDENS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens.png");
     private final ModelOmnidens modelOmnidens;
+    private static final ResourceLocation TEXTURE_PAGEA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea.png");
+    private final ModelPagea modelPagea;
     private static final ResourceLocation TEXTURE_PANTYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pantylus.png");
     private final ModelPantylus modelPantylus;
     private static final ResourceLocation TEXTURE_PEDERPES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
@@ -139,6 +141,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelMegalocephalus = new ModelMegalocephalus();
         this.modelMesosaurus = new ModelMesosaurus();
         this.modelOmnidens = new ModelOmnidens();
+        this.modelPagea = new ModelPagea();
         this.modelPantylus = new ModelPantylus();
         this.modelPederpes = new ModelPederpes();
         this.modelPlatyhystrix = new ModelPlatyhystrix();
@@ -474,6 +477,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_OMNIDENS);
                         GlStateManager.scale(0.24F,0.24F,0.24F);
                         modelOmnidens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPageaRaw.block) {
+                        double offset = 0.9;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PAGEA);
+                        GlStateManager.scale(1.1F,1.1F,1.1F);
+                        modelPagea.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemPantylusRaw.block) {
                         double offset = 0.43;

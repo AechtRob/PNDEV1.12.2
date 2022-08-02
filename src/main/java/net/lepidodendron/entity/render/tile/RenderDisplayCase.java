@@ -30,6 +30,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
+    private static final ResourceLocation TEXTURE_AEGER = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aeger_red.png");
+    private final ModelAeger modelAeger;
     private static final ResourceLocation TEXTURE_AINIKTOZOON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ainiktozoon.png");
     private final ModelAiniktozoon modelAiniktozoon;
     private static final ResourceLocation TEXTURE_ACADOARADOXIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acadoaradoxides.png");
@@ -49,6 +51,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelArchoblattina modelArchoblattina;
     private static final ResourceLocation TEXTURE_ASAPHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asaphus.png");
     private final ModelAsaphus modelAsaphus;
+    private static final ResourceLocation TEXTURE_AUSTROLIMULUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/austrolimulus.png");
+    private final ModelAustrolimulus modelAustrolimulus;
     private static final ResourceLocation TEXTURE_BANFFIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/banffia.png");
     private final ModelBanffia modelBanffia;
     private static final ResourceLocation TEXTURE_BUSHIZHEIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bushizheia.png");
@@ -229,6 +233,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
     public RenderDisplayCase() {
         this.modelGerarus = new ModelGerarus();
+        this.modelAeger = new ModelAeger();
         this.modelAiniktozoon = new ModelAiniktozoon();
         this.modelAcadoaradoxides = new ModelAcadoaradoxides();
         this.modelAdelophthalmus = new ModelAdelophthalmus();
@@ -238,6 +243,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
         this.modelArchoblattina = new ModelArchoblattina();
         this.modelAsaphus = new ModelAsaphus();
+        this.modelAustrolimulus = new ModelAustrolimulus();
         this.modelBanffia = new ModelBanffia();
         this.modelBushizheia = new ModelBushizheia();
         this.modelCalvapilosa = new ModelCalvapilosa();
@@ -442,6 +448,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.9F,0.9F,0.9F);
                         this.bindTexture(TEXTURE_ADELOPHTHALMUS);
                         modelAdelophthalmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAegerRaw.block) {
+                        double offset = 0.27;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.3,0.3,0.3);
+                        this.bindTexture(TEXTURE_AEGER);
+                        modelAeger.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
                         double offset = 0.44;
@@ -712,6 +752,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(2.3,2.3,2.3);
                         this.bindTexture(TEXTURE_ASAPHUS);
                         modelAsaphus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAustrolimulusRaw.block) {
+                        double offset = 0.26;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.3F,0.3F,0.3F);
+                        this.bindTexture(TEXTURE_AUSTROLIMULUS);
+                        modelAustrolimulus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemBanffiaRaw.block) {
                         double offset = 0.37;
