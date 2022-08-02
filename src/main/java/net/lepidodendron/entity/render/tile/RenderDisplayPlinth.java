@@ -34,6 +34,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelAcutiramusPlinth modelAcutiramusPlinth;
     private static final ResourceLocation TEXTURE_AMPHIBAMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amphibamus.png");
     private final ModelAmphibamus modelAmphibamus;
+    private static final ResourceLocation TEXTURE_ASCENDONANUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ascendonanus.png");
+    private final ModelAscendonanus modelAscendonanus;
     private static final ResourceLocation TEXTURE_AULACEPHALODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacephalodon.png");
     private final ModelAulacephalodon modelAulacephalodon;
     private static final ResourceLocation TEXTURE_BALANERPETON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balanerpeton.png");
@@ -94,6 +96,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_PROTEROGYRINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/proterogyrinus.png");
     private final ModelProterogyrinus modelProterogyrinus;
     private static final ResourceLocation TEXTURE_PROSICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
+    private static final ResourceLocation TEXTURE_PTERYGOTUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pterygotus.png");
+    private final ModelPterygotus modelPterygotus;
     private static final ResourceLocation TEXTURE_PURLOVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/purlovia.png");
     private final ModelPurlovia modelPurlovia;
     private static final ResourceLocation TEXTURE_REMIGIOMONTANUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/remigiomontanus.png");
@@ -118,6 +122,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelAcanthostomatops = new ModelAcanthostomatops();
         this.modelAcutiramusPlinth = new ModelAcutiramusPlinth();
         this.modelAmphibamus = new ModelAmphibamus();
+        this.modelAscendonanus = new ModelAscendonanus();
         this.modelAulacephalodon = new ModelAulacephalodon();
         this.modelBalanerpeton = new ModelBalanerpeton();
         this.modelBranchiosaur = new ModelBranchiosaur();
@@ -147,6 +152,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelPlatyhystrix = new ModelPlatyhystrix();
         this.modelProcynosuchus = new ModelProcynosuchus();
         this.modelProterogyrinus = new ModelProterogyrinus();
+        this.modelPterygotus = new ModelPterygotus();
         this.modelPurlovia = new ModelPurlovia();
         this.modelRemigiomontanus = new ModelRemigiomontanus();
         this.modelSpathicephalus = new ModelSpathicephalus();
@@ -228,6 +234,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_AMPHIBAMUS);
                         GlStateManager.scale(0.28F,0.28F,0.28F);
                         modelAmphibamus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAscendonanusRaw.block) {
+                        double offset = 0.15;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_ASCENDONANUS);
+                        GlStateManager.scale(0.06F,0.06F,0.06F);
+                        modelAscendonanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAulacephalodonRaw.block) {
                         double offset = 0.63;
@@ -542,6 +559,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_PROTEROGYRINUS);
                         GlStateManager.scale(0.4F,0.4F,0.4F);
                         modelProterogyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemPterygotusRaw.block) {
+                        double offset = 1.8;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PTERYGOTUS);
+                        GlStateManager.scale(0.7F,0.7F,0.7F);
+                        modelPterygotus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemPurloviaRaw.block) {
                         double offset = 0.57;
