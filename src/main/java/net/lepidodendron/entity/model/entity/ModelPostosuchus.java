@@ -289,9 +289,10 @@ public class ModelPostosuchus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-
-        //this.chest.render(0.01F);
-
+        this.head1.rotateAngleX = (float) Math.toRadians(-14.9);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(42.5);
+        this.chest1.offsetY = -0.06F;
+        this.chest1.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
