@@ -252,6 +252,7 @@ public class ModelMorganucodon extends AdvancedModelBaseExtended {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.Hips.offsetZ = -0.3F;
+        this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(20);
         this.Hips.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

@@ -319,7 +319,12 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        //this.body.render(0.01F);
+        this.neck.rotateAngleX = (float) Math.toRadians(-1.6);
+        this.neck2.rotateAngleX = (float) Math.toRadians(-22.5);
+        this.neck3.rotateAngleX = (float) Math.toRadians(-15);
+        this.head.rotateAngleX = (float) Math.toRadians(-2.5);
+        this.lowerjaw.rotateAngleX = (float) Math.toRadians(32.5);
+        this.bodyfront.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

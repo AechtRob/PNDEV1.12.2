@@ -38,6 +38,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelAscendonanus modelAscendonanus;
     private static final ResourceLocation TEXTURE_AULACEPHALODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacephalodon.png");
     private final ModelAulacephalodon modelAulacephalodon;
+    private static final ResourceLocation TEXTURE_AUSTRIADACTYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/austriadactylus.png");
+    private final ModelAustriadactylus modelAustriadactylus;
     private static final ResourceLocation TEXTURE_BALANERPETON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balanerpeton.png");
     private final ModelBalanerpeton modelBalanerpeton;
     private static final ResourceLocation TEXTURE_BRANCHIOSAUR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/branchiosaur.png");
@@ -87,6 +89,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelMegalocephalus modelMegalocephalus;
     private static final ResourceLocation TEXTURE_MESOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mesosaurus.png");
     private final ModelMesosaurus modelMesosaurus;
+    private static final ResourceLocation TEXTURE_MORGANUCODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/morganucodon.png");
+    private final ModelMorganucodon modelMorganucodon;
     private static final ResourceLocation TEXTURE_OMNIDENS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/omnidens.png");
     private final ModelOmnidens modelOmnidens;
     private static final ResourceLocation TEXTURE_PAGEA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pagea.png");
@@ -140,6 +144,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelAmphibamus = new ModelAmphibamus();
         this.modelAscendonanus = new ModelAscendonanus();
         this.modelAulacephalodon = new ModelAulacephalodon();
+        this.modelAustriadactylus = new ModelAustriadactylus();
         this.modelBalanerpeton = new ModelBalanerpeton();
         this.modelBranchiosaur = new ModelBranchiosaur();
         this.modelCacops = new ModelCacops();
@@ -164,6 +169,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelLabidosaurus = new ModelLabidosaurus();
         this.modelMegalocephalus = new ModelMegalocephalus();
         this.modelMesosaurus = new ModelMesosaurus();
+        this.modelMorganucodon = new ModelMorganucodon();
         this.modelOmnidens = new ModelOmnidens();
         this.modelPagea = new ModelPagea();
         this.modelPantylus = new ModelPantylus();
@@ -279,6 +285,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_AULACEPHALODON);
                         GlStateManager.scale(0.26F,0.26F,0.26F);
                         modelAulacephalodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemAustriadactylusRaw.block) {
+                        double offset = 0.3;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_AUSTRIADACTYLUS);
+                        GlStateManager.scale(0.12F,0.12F,0.12F);
+                        modelAustriadactylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemBalanerpetonRaw.block) {
                         double offset = 0.4;
@@ -540,6 +556,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_MESOSAURUS);
                         GlStateManager.scale(0.07F,0.07F,0.07F);
                         modelMesosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemMorganucodonRaw.block) {
+                        double offset = 0.27;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_MORGANUCODON);
+                        GlStateManager.scale(0.11F,0.11F,0.11F);
+                        modelMorganucodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemOmnidensRaw.block) {
                         double offset = 0.58;
