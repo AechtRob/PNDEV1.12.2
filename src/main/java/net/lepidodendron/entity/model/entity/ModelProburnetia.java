@@ -7,6 +7,7 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelProburnetia extends AdvancedModelBaseExtended {
@@ -375,7 +376,28 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.proburnetia.render(f5 * 0.390f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.proburnetia.offsetZ = -0.3F;
+        this.Neck2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.Neck2.rotateAngleY = (float) Math.toRadians(-27.5);
+        this.Tail.rotateAngleY = (float) Math.toRadians(14.63);
+        this.Tail2.rotateAngleY = (float) Math.toRadians(12.3);
+        this.Tail3.rotateAngleY = (float) Math.toRadians(14.7);
+        this.Tail4.rotateAngleY = (float) Math.toRadians(24);
+        this.Tail5.rotateAngleY = (float) Math.toRadians(22.3);
+        this.chest.rotateAngleY = (float) Math.toRadians(-10);
+        this.Head.rotateAngleX = (float) Math.toRadians(-11.25);
+        this.Head.rotateAngleY = (float) Math.toRadians(-27);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(35);
+        this.proburnetia.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

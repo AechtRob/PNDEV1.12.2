@@ -27,7 +27,7 @@ public class RenderPostosuchus extends RenderLiving<EntityPrehistoricFloraPostos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPostosuchus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.74F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.6F;
     }

@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCartorhynchus extends AdvancedModelBaseExtended {
@@ -232,7 +233,30 @@ public class ModelCartorhynchus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5 * 0.125F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.root.offsetZ = -0.6F;
+        this.jaw1.rotateAngleX = (float) Math.toRadians(12.5);
+        this.head1.rotateAngleX = (float) Math.toRadians(2.61);
+        this.FrontFlipperR.rotateAngleZ = (float) Math.toRadians(68.91);
+        this.FrontFlipperL.rotateAngleZ = (float) Math.toRadians(-68.91);
+        this.backflipperL.rotateAngleZ = (float) Math.toRadians(-71.41);
+        this.backflipperR.rotateAngleZ = (float) Math.toRadians(71.41);
+        this.neck1.rotateAngleX = (float) Math.toRadians(-7.61);
+        this.chest1.rotateAngleX = (float) Math.toRadians(-10.15);
+        this.chest1.rotateAngleY = (float) Math.toRadians(9.84);
+        this.body1.rotateAngleX = (float) Math.toRadians(-5);
+        this.tail1.rotateAngleY = (float) Math.toRadians(-32.5);
+        this.tail2.rotateAngleY = (float) Math.toRadians(-27.5);
+        this.tail3.rotateAngleY = (float) Math.toRadians(-37.5);
+        this.root.render(0.1F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
         AdvancedAdvancedModelRenderer.rotateAngleY = y;

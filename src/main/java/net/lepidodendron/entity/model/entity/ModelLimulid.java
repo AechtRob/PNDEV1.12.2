@@ -277,7 +277,7 @@ public class ModelLimulid extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.carapace.offsetZ = -0.09F;
+        this.carapace.offsetZ = -0.14F;
         this.carapace.render(0.037F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

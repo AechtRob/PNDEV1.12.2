@@ -307,8 +307,11 @@ public class ModelLotosaurus extends AdvancedModelBaseExtended {
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
+        GlStateManager.disableCull();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Hips.render(0.01F);
+        this.Lowerjawback.rotateAngleX = (float) Math.toRadians(25);
+        this.Neck.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

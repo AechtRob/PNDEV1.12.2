@@ -334,8 +334,20 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
+        GlStateManager.disableCull();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.root.render(0.01F);
+        this.neck1.rotateAngleY = (float) Math.toRadians(-15);
+        this.neck2.rotateAngleX = (float) Math.toRadians(-5);
+        this.neck2.rotateAngleY = (float) Math.toRadians(-10);
+        this.neck3.rotateAngleY = (float) Math.toRadians(-5);
+        this.neck3.rotateAngleX = (float) Math.toRadians(7.5);
+        this.neck4.rotateAngleY = (float) Math.toRadians(-5);
+        this.neck4.rotateAngleX = (float) Math.toRadians(10);
+        this.head1.rotateAngleX = (float) Math.toRadians(15);
+        this.head1.rotateAngleY = (float) Math.toRadians(-10);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(35);
+        this.neck1.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }

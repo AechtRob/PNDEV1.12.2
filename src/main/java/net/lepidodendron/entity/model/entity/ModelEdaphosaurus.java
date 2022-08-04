@@ -405,8 +405,9 @@ public class ModelEdaphosaurus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        //this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
-        //this.Neckbase.render(0.01F);
+        this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
+        this.neck.offsetY = 0.1F;
+        this.neck.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

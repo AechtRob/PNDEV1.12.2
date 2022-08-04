@@ -7,6 +7,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMussaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMussaurus extends AdvancedModelBaseExtended {
@@ -257,7 +258,26 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5 * 0.82f);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
+        this.chest.offsetY = -0.03F;
+        this.neck1.rotateAngleY = (float) Math.toRadians(-10);
+        this.neck2.rotateAngleY = (float) Math.toRadians(-4.8);
+        this.neck3.rotateAngleX = (float) Math.toRadians(-20);
+        this.head1.rotateAngleX = (float) Math.toRadians(14.3);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(12.5);
+        this.upperarm1.rotateAngleX = (float) Math.toRadians(47.3);
+        this.arms1.rotateAngleX = (float) Math.toRadians(1.6);
+        this.hands1.rotateAngleX = (float) Math.toRadians(45);
+        this.upperarm2.rotateAngleX = (float) Math.toRadians(42.3);
+        this.chest.render(0.01F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

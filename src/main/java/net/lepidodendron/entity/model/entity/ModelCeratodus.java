@@ -221,6 +221,7 @@ public class ModelCeratodus extends AdvancedModelBase {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.Bodymiddlefront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodymiddlefront.offsetY = -0.04F;
         this.Bodymiddlefront.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

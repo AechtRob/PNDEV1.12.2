@@ -8,6 +8,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -364,7 +365,33 @@ public class ModelJaekelopterus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5 * 0.8F);
     }
-
+    public void renderStatic(float f) {
+        GlStateManager.pushMatrix();
+        GlStateManager.enableBlend();
+        GlStateManager.disableCull();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        this.body.offsetZ = -0.5F;
+        this.body.rotateAngleX = (float) Math.toRadians(-17.5);
+        this.cheliceraL.rotateAngleY = (float) Math.toRadians(-17.5);
+        this.cheliceraR.rotateAngleY = (float) Math.toRadians(17.5);
+        this.opisthosoma.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteA3.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.tergiteA4.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.tergiteB.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteC.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteD.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteD2.rotateAngleX = (float) Math.toRadians(-7.5);
+        this.tergiteE.rotateAngleX = (float) Math.toRadians(2.5);
+        this.tergiteE2.rotateAngleX = (float) Math.toRadians(7.5);
+        this.tergiteF.rotateAngleX = (float) Math.toRadians(7.5);
+        this.telson.rotateAngleX = (float) Math.toRadians(20);
+        this.body.render(0.04F);
+        GlStateManager.enableCull();
+        GlStateManager.disableBlend();
+        GlStateManager.popMatrix();
+    }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

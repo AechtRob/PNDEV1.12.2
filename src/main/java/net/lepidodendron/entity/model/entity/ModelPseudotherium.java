@@ -224,6 +224,7 @@ public class ModelPseudotherium extends AdvancedModelBaseExtended {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.body2.offsetZ = -0.3F;
+        this.jaw.rotateAngleX = (float) Math.toRadians(20);
         this.body2.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

@@ -217,14 +217,6 @@ public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-
-        this.neck.rotateAngleY = (float) Math.toRadians(18);
-
-        this.head.rotateAngleY = (float) Math.toRadians(10);
-        this.body.rotateAngleY = (float) Math.toRadians(10);
-
-        this.tail2.rotateAngleY = (float) Math.toRadians(20);
-        this.tail3.rotateAngleY = (float) Math.toRadians(15);
         this.body.offsetZ = -0.1F;
         this.body.render(0.1F);
         GlStateManager.enableCull();

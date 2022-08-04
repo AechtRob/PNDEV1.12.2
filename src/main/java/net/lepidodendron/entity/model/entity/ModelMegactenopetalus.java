@@ -173,6 +173,7 @@ public class ModelMegactenopetalus extends AdvancedModelBase {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetX = -0.03F;
         this.Bodyfront.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
