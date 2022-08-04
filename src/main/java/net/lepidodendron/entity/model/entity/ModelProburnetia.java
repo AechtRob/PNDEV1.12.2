@@ -300,30 +300,30 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         this.cube_r22.cubeList.add(new ModelBox(cube_r22, 0, 0, -0.25F, -0.5F, 0.25F, 1, 2, 1, -0.01F, false));
 
         this.RFrontLeg = new AdvancedModelRendererExtended(this);
-        this.RFrontLeg.setRotationPoint(-3.5F, 2.0F, -6.0F);
-        this.chest.addChild(RFrontLeg);
+        this.RFrontLeg.setRotationPoint(-3.5F, 2.0F, -6.5F);
+        this.proburnetia.addChild(RFrontLeg);
         this.setRotateAngle(RFrontLeg, 0.0F, 0.0F, 0.0F);
 
 
         this.cube_r23 = new AdvancedModelRendererExtended(this);
-        this.cube_r23.setRotationPoint(-2.0591F, -0.8773F, 1.4952F);
+        this.cube_r23.setRotationPoint(-2.0591F, 0.1227F, -0.0048F);
         this.RFrontLeg.addChild(cube_r23);
         this.setRotateAngle(cube_r23, 0.0F, 0.0F, 0.48F);
         this.cube_r23.cubeList.add(new ModelBox(cube_r23, 0, 51, 0.25F, -2.0F, -2.0F, 3, 6, 4, 0.0F, false));
 
         this.LowerRFrontLeg = new AdvancedModelRendererExtended(this);
-        this.LowerRFrontLeg.setRotationPoint(-2.0F, 1.0F, 3.25F);
+        this.LowerRFrontLeg.setRotationPoint(-2.0F, 4.0F, -0.25F);
         this.RFrontLeg.addChild(LowerRFrontLeg);
 
 
         this.cube_r24 = new AdvancedModelRendererExtended(this);
-        this.cube_r24.setRotationPoint(-0.1181F, 4.8662F, -2.2862F);
+        this.cube_r24.setRotationPoint(-0.1181F, 2.8662F, -0.2862F);
         this.LowerRFrontLeg.addChild(cube_r24);
         this.setRotateAngle(cube_r24, -0.2182F, 0.0F, 0.0F);
         this.cube_r24.cubeList.add(new ModelBox(cube_r24, 37, 58, -1.0F, -3.25F, -1.5F, 2, 5, 3, 0.0F, false));
 
         this.RFrontFoot = new AdvancedModelRendererExtended(this);
-        this.RFrontFoot.setRotationPoint(-0.25F, 6.0F, -2.25F);
+        this.RFrontFoot.setRotationPoint(-0.25F, 4.0F, -0.25F);
         this.LowerRFrontLeg.addChild(RFrontFoot);
 
 
@@ -334,30 +334,30 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         this.cube_r25.cubeList.add(new ModelBox(cube_r25, 57, 19, 0.1905F, -1.0F, -1.25F, 3, 2, 4, 0.0F, false));
 
         this.RFrontLeg2 = new AdvancedModelRendererExtended(this);
-        this.RFrontLeg2.setRotationPoint(2.5F, 2.0F, -6.0F);
-        this.chest.addChild(RFrontLeg2);
+        this.RFrontLeg2.setRotationPoint(2.5F, 2.0F, -6.5F);
+        this.proburnetia.addChild(RFrontLeg2);
         this.setRotateAngle(RFrontLeg2, 0.0F, 0.0F, 0.0F);
 
 
         this.cube_r26 = new AdvancedModelRendererExtended(this);
-        this.cube_r26.setRotationPoint(2.0591F, -0.8773F, 1.4952F);
+        this.cube_r26.setRotationPoint(2.0591F, 0.1227F, -0.0048F);
         this.RFrontLeg2.addChild(cube_r26);
         this.setRotateAngle(cube_r26, 0.0F, 0.0F, -0.48F);
         this.cube_r26.cubeList.add(new ModelBox(cube_r26, 0, 51, -3.25F, -2.0F, -2.0F, 3, 6, 4, 0.0F, true));
 
         this.LowerRFrontLeg2 = new AdvancedModelRendererExtended(this);
-        this.LowerRFrontLeg2.setRotationPoint(2.0F, 1.0F, 3.25F);
+        this.LowerRFrontLeg2.setRotationPoint(2.0F, 4.0F, -0.25F);
         this.RFrontLeg2.addChild(LowerRFrontLeg2);
 
 
         this.cube_r27 = new AdvancedModelRendererExtended(this);
-        this.cube_r27.setRotationPoint(0.1181F, 4.8662F, -2.2862F);
+        this.cube_r27.setRotationPoint(0.1181F, 2.8662F, -0.2862F);
         this.LowerRFrontLeg2.addChild(cube_r27);
         this.setRotateAngle(cube_r27, -0.2182F, 0.0F, 0.0F);
         this.cube_r27.cubeList.add(new ModelBox(cube_r27, 37, 58, -1.0F, -3.25F, -1.5F, 2, 5, 3, 0.0F, true));
 
         this.RFrontFoot2 = new AdvancedModelRendererExtended(this);
-        this.RFrontFoot2.setRotationPoint(0.25F, 6.0F, -2.25F);
+        this.RFrontFoot2.setRotationPoint(0.25F, 4.0F, -0.25F);
         this.LowerRFrontLeg2.addChild(RFrontFoot2);
 
 
