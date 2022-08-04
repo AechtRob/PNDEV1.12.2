@@ -37,7 +37,6 @@ public class BlockHymenaeaBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_hymenaea_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

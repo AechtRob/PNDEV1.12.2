@@ -37,7 +37,6 @@ public class BlockMacroneuropterisBridge extends ElementsLepidodendronMod.ModEle
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_macroneuropteris_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

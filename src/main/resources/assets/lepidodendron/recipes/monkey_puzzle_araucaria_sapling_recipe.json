@@ -1,26 +1,17 @@
 {
   "group": "lepidodendron",
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "0",
-    "1",
-    "2"
-  ],
-  "key": {
-    "0": {
-      "item": "minecraft:dye",
-      "data": 15
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:monkey_puzzle_araucaria_nuts"
     },
-    "1": {
-      "item": "lepidodendron:monkey_puzzle_nuts"
-    },
-    "2": {
+    {
       "type": "forge:ore_dict",
       "ore": "dirt"
     }
-  },
+  ],
   "result": {
-    "item": "lepidodendron:monkeypuzzle_sapling",
+    "item": "lepidodendron:monkey_puzzle_araucaria_sapling",
     "count": 1
   }
 }

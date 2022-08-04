@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -70,7 +70,7 @@ public class BlockHayThatch extends ElementsLepidodendronMod.ModElement {
 			setResistance(0.5F);
 			setLightLevel(0F);
 			setLightOpacity(1);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(INNER, false).withProperty(OUTER, false).withProperty(SW, false).withProperty(SE, false).withProperty(NW, false).withProperty(NE, false));
 
 		}

@@ -1,0 +1,36 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:phoenicopsis_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:phoenicopsis_planks",
+    "count": 4
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

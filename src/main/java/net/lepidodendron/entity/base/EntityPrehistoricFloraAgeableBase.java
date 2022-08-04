@@ -628,10 +628,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
-        if (ds == DamageSource.IN_WALL && this.ticksExisted < 600) {
-            this.setJumping(true);
-            return false;
-        }
 
         if (ds == DamageSource.FLY_INTO_WALL || ds == DamageSource.IN_WALL) {
             if (ds.getDamageLocation() != null) {

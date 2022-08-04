@@ -37,7 +37,6 @@ public class BlockCzekanowskiaBridge extends ElementsLepidodendronMod.ModElement
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_czekanowskia_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

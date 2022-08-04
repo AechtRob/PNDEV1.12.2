@@ -1,0 +1,32 @@
+{
+	"name": "Helianthaster",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/helianthaster_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_helianthaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helianthaster",
+			"title": "Helianthaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/helianthaster.png"],
+			"title": "H. rhenanus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helianthaster",
+			"type": "text",
+			"text": "Helianthaster is a genus of prehistoric starfish from the Devonian period. It is reminiscent of the modern crown of thorns starfish, which had many mre arms than the more common 5 armed starfish."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helianthaster",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

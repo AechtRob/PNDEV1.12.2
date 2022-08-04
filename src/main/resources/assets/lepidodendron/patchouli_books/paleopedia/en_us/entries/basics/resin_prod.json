@@ -1,0 +1,25 @@
+{
+	"name": "Resin",
+	"icon": "lepidodendron:bottle_of_resin",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. To obtain resin a player will need two items. A resin extractor will need to be crafted and placed at the base of certain tree species like Spruce."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:resin_extractor_recipe"
+		},
+		{
+			"type": "text",
+			"text": "Once the extractor is in place the player will need to wait for it to extract resin, a process that might take a while. Resin can be collected with an empty bottle by right clicking the extractor with it. If a resin extractor is left on a tree for a sufficiently long amount of time, it might overflow with resin, this resin can be collected with a bucket and placed elsewhere for many more creative, and sticky, uses."
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/resin_collection.png"],
+			"title": "Resin Collection"
+		}
+	]
+}
+

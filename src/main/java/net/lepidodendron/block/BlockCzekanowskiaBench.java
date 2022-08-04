@@ -37,7 +37,6 @@ public class BlockCzekanowskiaBench extends ElementsLepidodendronMod.ModElement 
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_czekanowskia_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -1,0 +1,28 @@
+{
+	"name": "The Bone Wand",
+	"icon": "lepidodendron:bone_wand",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Bone Wand",
+			"text": "The Bone Wand is the quintessential item needed by a player to rejuvenate (revive) fossil plants and travel back in time in the prehistoric dimensions. As such it is quite an important item to gain access to most of the mod's features."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:bone_wand_recipe",
+			"title": "Recipe",
+			"text": ""
+		},
+		{
+			"type": "text",
+			"title": "Portals",
+			"text": "Once crafted the Bone Wand won't be immediately usable, though. It will need, in fact, a Time Reversal enchantment, either found in certain chests as loot (like in desert temples), as a random enchantment in an enchantment table or as a guaranteed max level trade with a Palaeobotanist villager."
+		},
+		{
+			"type": "text",
+			"text": "When enchanted, the Bone Wand can rejuvenate plant fossils simply by dropping the fossil sapling on the ground and right clicking them with the Wand in hand. Similarly, once a portal frame of the appropriate material is constructed (in the same shape as a Nether portal), simply right clicking it with the wand will open the portal"
+		}
+	]
+}
+

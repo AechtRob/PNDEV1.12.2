@@ -1,0 +1,22 @@
+{
+  "parent": "lepidodendron:block/bridge",
+  "textures": {
+    "wood": "lepidodendron:blocks/podocarp_planks",
+    "metal": "lepidodendron:blocks/salt_block"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

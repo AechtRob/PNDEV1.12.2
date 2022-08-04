@@ -37,7 +37,6 @@ public class BlockPodocarpBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_podocarp_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

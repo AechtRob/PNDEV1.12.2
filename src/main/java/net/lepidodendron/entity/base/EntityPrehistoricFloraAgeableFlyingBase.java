@@ -29,6 +29,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import javax.annotation.Nullable;
@@ -218,7 +219,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 this.walkTick = this.walkLength() + this.UNFLY_ANIMATION.getDuration();
             }
             else if (!this.canFloat() && this.isAboveOrInWater() && this.getIsFlying()) {
-                this.flyTick ++; //Stop them drowning or getting stuck in water
+                this.flyTick = this.flyTick + 200; //Stop them drowning or getting stuck in water
                 this.motionY *= 0.6D;
             }
             else if (!this.canFloat() && this.isInWater()) {
@@ -267,7 +268,13 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     }
 
     protected boolean isTargetInAir() {
-        return this.getFlyTarget() != null && ((world.getBlockState(this.getFlyTarget()).getMaterial() == Material.AIR) || world.getBlockState(this.getFlyTarget()).getBlock().isPassable(world, this.getFlyTarget()));
+        return this.getFlyTarget() != null && ((world.getBlockState(this.getFlyTarget()).getMaterial() == Material.AIR) || (world.getBlockState(this.getFlyTarget()).getBlock().isPassable(world, this.getFlyTarget())
+                && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.WATER)
+                && (world.getBlockState(this.getFlyTarget()).getMaterial() != Material.LAVA)
+                && (world.getBlockState(this.getFlyTarget()).getMaterial() != MaterialResin.RESIN)
+                && (!(world.getBlockState(this.getFlyTarget()).getBlock() instanceof BlockFluidBase))
+            )
+        );
     }
 
     public float getDistanceSquared(Vec3d vec) {
@@ -340,7 +347,7 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
     }
 
     public boolean isAboveOrInWater() {
-        return this.isInWater() || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER;
+        return this.isInWater() || this.isReallyInWater() || this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER;
     }
 
     public boolean isAboveOrOnGround() {
@@ -383,6 +390,12 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
             if (this.isReallyFlying()) {
 
+                if ((!this.canFloat()) && this.isAboveOrInWater())
+                {
+                    this.motionY = 0.6D;
+                    this.flyTick = this.flyTick + 200;
+                }
+
                 this.moveRelative(strafe, vertical, forward, 0.02F);
                 float f = 0.91F;
 
@@ -395,14 +408,19 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
                 double yy = this.posY + Math.max((this.getSwimHeight() - 0.2), 0.1);
                 BlockPos posEyes = new BlockPos(this.posX, yy, this.posZ);
 
-                if (this.isReallyInWater() &&
+                if (this.isReallyInWater() && this.canFloat() &&
                         (world.getBlockState(posEyes).getMaterial() == Material.WATER
                                 || world.getBlockState(posEyes).getMaterial() == Material.LAVA
                                 || world.getBlockState(posEyes).getMaterial() == MaterialResin.RESIN)
                 ) {
                     this.motionY = 0.2D;
                 }
-
+                if ((!this.canFloat()) && this.isAboveOrInWater())
+                {
+                    this.motionY = 0.6D;
+                    this.setIsFlying(true);
+                    this.flyTick = 200;
+                }
 
                 if (this.isReallyInWater()) { //Is in water
                     //System.err.println("Is in water");

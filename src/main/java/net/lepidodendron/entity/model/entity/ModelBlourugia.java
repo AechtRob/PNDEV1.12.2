@@ -222,7 +222,7 @@ public class ModelBlourugia extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Blourugia.offsetY = 1.35F;
+        this.Blourugia.offsetY = 1.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.body5};
@@ -245,7 +245,7 @@ public class ModelBlourugia extends AdvancedModelBase {
             this.swing(Blourugia, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.Blourugia.rotateAngleZ = (float) Math.toRadians(90);
-                this.Blourugia.offsetY = 1.4F;
+                this.Blourugia.offsetY = 1.3F;
                 this.bob(Blourugia, -speed, 5F, false, f2, 1);
             }
         }

@@ -1,0 +1,32 @@
+{
+	"name": "Dizygocrinus",
+	"read_by_default": true,
+	"icon": "lepidodendron:crinoid_dizygocrinus",
+	"category": "lepidodendron:carboniferous_plants",
+	"turnin": "lepidodendron:pf_adv_book_dizygocrinus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dizygocrinus",
+			"title": "Dizygocrinus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Batocrinidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Dizygocrinus.png"],
+			"title": "Dizygocrinus sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dizygocrinus",
+			"type": "text",
+			"text": "Dizygocrinus is a crinoid with arms that stick straight up. It is a stationary upper-level epifaunal suspension feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dizygocrinus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

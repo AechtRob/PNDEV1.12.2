@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lepidodendron:blocks/magnoliawood",
-    "particle": "lepidodendron:blocks/magnoliawood"
+    "all": "lepidodendron:blocks/magnolia_planks",
+    "particle": "lepidodendron:blocks/magnolia_planks"
   }
 }

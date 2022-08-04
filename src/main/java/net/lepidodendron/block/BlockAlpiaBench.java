@@ -37,7 +37,6 @@ public class BlockAlpiaBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_alpia_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -1,0 +1,32 @@
+{
+	"name": "Holonema",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/holonema_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_holonema",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_holonema",
+			"title": "Holonema",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>Holonematidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/holonema.png"],
+			"title": "H. westolli",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_holonema",
+			"type": "text",
+			"text": "Holonema is a medium sized placoderm from the Devonian period. H. westolli in particular was found wholly preserved in the Gogo Formation of Australia. They had a massive head shield an wing like pectoral fins and were likely to be benthic feeders with a specialized snout."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_holonema",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

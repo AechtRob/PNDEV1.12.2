@@ -1,0 +1,32 @@
+{
+	"name": "Astraspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/astraspis_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_astraspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_astraspis",
+			"title": "Astraspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Pteraspidiformes"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/astraspis.png"],
+			"title": "A. desiderata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_astraspis",
+			"type": "text",
+			"text": "Astraspis is an Ordovician agnathan with unique scutes all over its head shield. It was more of a flat agnathan and it had a short tail. It got its name from the bony plates that covered its headshield."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_astraspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

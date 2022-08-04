@@ -1,6 +1,28 @@
 {
   "parent": "lepidodendron:item/bridge_item",
   "textures": {
-    "wood": "lepidodendron:blocks/magnoliawood"
+    "wood": "lepidodendron:blocks/magnolia_planks"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

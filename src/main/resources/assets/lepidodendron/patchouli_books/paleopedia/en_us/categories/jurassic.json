@@ -1,6 +1,6 @@
 {
     "name": "Jurassic",
-    "description": "$(l)Welcome... to Jurassic Park (Coming Soon)$()",
+    "description": "$(l)Welcome... to Jurassic Park (Coming Soon)$()$(br)Animals in this category are currently only obtainable in Creative or with the Prehistoric Nature Integration into Fossils and Archeology. ",
     "icon": "paleopedia:textures/category_icon/icon_jurassic.png",
     "sortnum": 8
 }

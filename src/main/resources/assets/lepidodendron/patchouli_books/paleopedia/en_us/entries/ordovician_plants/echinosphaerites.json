@@ -1,0 +1,32 @@
+{
+	"name": "Echinosphaerites",
+	"read_by_default": true,
+	"icon": "lepidodendron:cystoid_echinosphaerites",
+	"category": "lepidodendron:ordovician_plants",
+	"turnin": "lepidodendron:pf_adv_book_echinosphaerites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_echinosphaerites",
+			"title": "Echinosphaerites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Echinosphaerites.png"],
+			"title": "E. aurantium",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_echinosphaerites",
+			"type": "text",
+			"text": "Echinosphaerites is a rhombiferan cystoid echinoderm from the Middle Ordovician period. It had branched brachioles and it looked like a big bud attached to the sea floor."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_echinosphaerites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

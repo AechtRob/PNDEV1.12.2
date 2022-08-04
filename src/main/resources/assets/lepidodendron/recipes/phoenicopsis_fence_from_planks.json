@@ -1,0 +1,54 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:phoenicopsis_planks"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "5": {
+      "item": "lepidodendron:phoenicopsis_planks"
+    },
+    "6": {
+      "item": "lepidodendron:phoenicopsis_planks"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "8": {
+      "item": "lepidodendron:phoenicopsis_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:phoenicopsis_fence",
+    "count": 3
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

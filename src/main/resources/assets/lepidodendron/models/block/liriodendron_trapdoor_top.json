@@ -2,7 +2,7 @@
   "parent": "lepidodendron:block/trapdoor_top",
   "textures": {
     "texture": "lepidodendron:blocks/liriodendrontrapdoor",
-    "planktexture": "lepidodendron:blocks/liriodendronwood",
+    "planktexture": "lepidodendron:blocks/liriodendron_planks",
     "particle": "lepidodendron:blocks/liriodendrontrapdoor"
   }
 }

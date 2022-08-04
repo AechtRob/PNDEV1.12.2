@@ -1,0 +1,32 @@
+{
+	"name": "Spiniplatyceras",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/spiniplatyceras_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_spiniplatyceras",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_spiniplatyceras",
+			"title": "Spiniplatyceras",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Platyceratidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/spiniplatyceras.png"],
+			"title": "S. dumosum",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spiniplatyceras",
+			"type": "text",
+			"text": "Spiniplatyceras is a genus of spined platycerid marine snails from the Devonian. From a distance, it may look like a sea urchin with its many long spikes on its shell."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_spiniplatyceras",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Punch"
+		}
+	]
+}
+

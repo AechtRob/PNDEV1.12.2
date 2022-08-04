@@ -1,0 +1,32 @@
+{
+	"name": "Scaumenacia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/scaumenacia_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_scaumenacia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_scaumenacia",
+			"title": "Scaumenacia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Maarine$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Phaneropleuridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/scaumenacia.png"],
+			"title": "S. curta",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scaumenacia",
+			"type": "text",
+			"text": "Scaumenacia is a Devonian lungfish that had a weirdly shaped body. It was probably less adapted to being out of water than its more recent lungfish relatives like Ceratodus, so it would not have been able to do much out of water."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_scaumenacia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

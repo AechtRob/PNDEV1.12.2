@@ -2,7 +2,8 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.BlockFirePF;
 import net.lepidodendron.enchantments.Enchantments;
-import net.lepidodendron.palaeobotanist.entity.Villager;
+import net.lepidodendron.pfvillagers.entity.VillagerPalaeobotanist;
+import net.lepidodendron.pfvillagers.entity.VillagerPalaeontologist;
 import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.util.Summoner;
 import net.lepidodendron.world.lootconditions.EntityInBiomes;
@@ -52,6 +53,7 @@ public class LepidodendronMod {
 	public ElementsLepidodendronMod elements = new ElementsLepidodendronMod();
 
 	public static final ResourceLocation PALAEOBOTANIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeobotanist_chest"));
+	public static final ResourceLocation PALAEONTOLOGIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeontologist_chest"));
 	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
 
 	public static final int ENTITY_WALLISEROPS = 1;
@@ -1012,7 +1014,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_EORHYNCHOCHELYS = 407;
 	public static final ResourceLocation EORHYNCHOCHELYS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eorhynchochelys"));
 	public static final ResourceLocation EORHYNCHOCHELYS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eorhynchochelys_young"));
-	public static final int ENTITY_ERETOMORPHIS = 408;
+	public static final int ENTITY_ERETMORHIPIS = 408;
 	public static final ResourceLocation ERETOMORPHIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eretomorphis"));
 	public static final int ENTITY_HENODUS = 409;
 	public static final ResourceLocation HENODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/henodus"));
@@ -1072,6 +1074,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation GERROTHORAX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/gerrothorax"));
 	public static final int ENTITY_HYPERODAPEDON = 431;
 	public static final ResourceLocation HYPERODAPEDON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hyperodapedon"));
+	public static final ResourceLocation HYPERODAPEDON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hyperodapedon_young"));
 	public static final int ENTITY_HYPSOGNATHUS = 432;
 	public static final ResourceLocation HYPSOGNATHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus"));
 	public static final ResourceLocation HYPSOGNATHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/hypsognathus_young"));
@@ -1272,8 +1275,10 @@ public class LepidodendronMod {
 
 	@SubscribeEvent
 	public void registerVillagers(RegistryEvent.Register<VillagerRegistry.VillagerProfession> event) {
-		event.getRegistry().registerAll(Villager.PALAEOBOTANIST_PROFESSION);
-		Villager.register();
+		event.getRegistry().registerAll(VillagerPalaeobotanist.PALAEOBOTANIST_PROFESSION);
+		VillagerPalaeobotanist.register();
+		event.getRegistry().registerAll(VillagerPalaeontologist.PALAEONTOLOGIST_PROFESSION);
+		VillagerPalaeontologist.register();
 	}
 
 	@SubscribeEvent

@@ -37,7 +37,6 @@ public class BlockHymenaeaBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_hymenaea_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

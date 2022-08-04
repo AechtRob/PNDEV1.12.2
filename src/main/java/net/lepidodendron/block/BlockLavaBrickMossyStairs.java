@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
@@ -49,7 +49,7 @@ public class BlockLavaBrickMossyStairs extends ElementsLepidodendronMod.ModEleme
 			setHardness(1.25F);
 			setResistance(4.2F);
 			setHarvestLevel("pickaxe", 0);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		//@Override

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:salt_block"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:salt",
+    "count": 9
+  }
+}

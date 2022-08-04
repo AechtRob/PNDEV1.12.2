@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -69,8 +69,8 @@ public class BlockLamp extends ElementsLepidodendronMod.ModElement {
 			setHardness(3.5F);
 			setResistance(3.5F);
 			setLightOpacity(0);
-			setLightLevel(15);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setLightLevel(1);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		@Override

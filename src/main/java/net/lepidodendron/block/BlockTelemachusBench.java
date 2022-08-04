@@ -37,7 +37,6 @@ public class BlockTelemachusBench extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_telemachus_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

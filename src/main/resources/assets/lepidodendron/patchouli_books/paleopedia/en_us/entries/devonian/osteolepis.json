@@ -1,0 +1,32 @@
+{
+	"name": "Osteolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/osteolepis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_osteolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_osteolepis",
+			"title": "Osteolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteolepidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/osteolepis.png"],
+			"title": "O. macrolepidotus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_osteolepis",
+			"type": "text",
+			"text": "Osteolepis is a lobe finned fish from the Devonian period with fossils found in northern Scotland. It was really small and was covered with large square scales."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_osteolepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

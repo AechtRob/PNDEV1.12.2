@@ -1,0 +1,32 @@
+{
+	"name": "Squatinactis",
+	"read_by_default": true,
+	"icon": "lepidodendron:squatinactis_raw",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_squatinactis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_squatinactis",
+			"title": "Squatinactis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Elasmobranchii$(br)>Squatinactiformes$(br)>Squatinactidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/squatinactis.png"],
+			"title": "S. caudispinatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squatinactis",
+			"type": "text",
+			"text": "Squatinactis is a cartilaginous fish from the Bear Gulch formation in the Carboniferous period. It had long wing like fins that resembled angel sharks and a long thin tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_squatinactis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Eggs$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

@@ -1146,12 +1146,278 @@
             "apply": [
                 { "model": "lepidodendron:sycamore_bench_right_join_12", "y": 90, "uvlock": true}
             ]
+        },
+
+
+
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_13" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_13", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_13" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_13", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_13" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_13", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_13", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_13", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_13" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 13 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_13", "y": 90, "uvlock": true}
+            ]
+        },
+
+
+
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_14" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_14", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_14" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_14", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_14" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_14", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_14", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_14", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_14" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 14 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_14", "y": 90, "uvlock": true}
+            ]
+        },
+
+
+
+
+
+        {   "when": { "facing": "north", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_15" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_15", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_15" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": true, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_15", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_15" }
+            ]
+        },
+        {   "when": { "facing": "west", "left": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_left_join_15", "y": 90, "uvlock": true}
+            ]
+        },
+
+        {   "when": { "facing": "north", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_15", "y": 180, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "east", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_15", "y": 270, "uvlock": true}
+            ]
+        },
+        {   "when": { "facing": "south", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_15" }
+            ]
+        },
+        {   "when": { "facing": "west", "right": false, "variant": 15 },
+            "apply": [
+                { "model": "lepidodendron:sycamore_bench_right_join_15", "y": 90, "uvlock": true}
+            ]
         }
 
 
 
     ]
 }
+
+
 
 
 

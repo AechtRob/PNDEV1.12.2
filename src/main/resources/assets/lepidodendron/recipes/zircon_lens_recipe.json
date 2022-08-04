@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:zircon"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:zircon_lens",
+    "count": 2
+  }
+}
+
+
+
+
+
+

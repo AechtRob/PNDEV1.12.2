@@ -1,0 +1,32 @@
+{
+	"name": "Gabreyaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/gabreyaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_gabreyaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gabreyaspis",
+			"title": "Gabreyaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Hypersaline Sinkholes$(br2)>Heterostraci$(br)>Cyathaspidiformes$(br)>Amphiaspidoidea$(br)>Gabreyaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gabreyaspis.png"],
+			"title": "G. tarda",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gabreyaspis",
+			"type": "text",
+			"text": "Gabreyaspis is a flat and round amphiaspid that had many small ridges above its small eyes. It lived in hypersaline environments like several others of its kind."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gabreyaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

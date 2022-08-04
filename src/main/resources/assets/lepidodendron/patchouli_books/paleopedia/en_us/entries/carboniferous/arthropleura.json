@@ -2,7 +2,7 @@
 	"name": "Arthropleura",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/arthropleura_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_",
 	"pages": [
 		{

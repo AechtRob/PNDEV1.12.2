@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    "   "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "4": {
+      "item": "minecraft:item_frame"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:display_case",
+    "count": 1
+  }
+}

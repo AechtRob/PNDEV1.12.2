@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockLiquid;
@@ -66,7 +66,7 @@ public class BlockZirconGlass extends ElementsLepidodendronMod.ModElement {
 			super(Material.GLASS, false);
 			setSoundType(SoundType.GLASS);
 			setTranslationKey("pf_zircon_glass");
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
 		@Override

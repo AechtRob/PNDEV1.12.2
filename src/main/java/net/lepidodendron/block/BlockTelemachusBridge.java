@@ -37,7 +37,6 @@ public class BlockTelemachusBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_telemachus_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

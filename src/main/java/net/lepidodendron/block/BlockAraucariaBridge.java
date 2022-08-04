@@ -37,7 +37,6 @@ public class BlockAraucariaBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_monkey_puzzle_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

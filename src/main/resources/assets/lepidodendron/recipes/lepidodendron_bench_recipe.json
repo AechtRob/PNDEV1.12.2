@@ -1,0 +1,56 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "1": {
+      "item": "lepidodendron:woodenslab",
+      "data": 0
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "3": {
+      "item": "lepidodendron:woodenslab",
+      "data": 0
+    },
+    "4": {
+      "item": "lepidodendron:woodenslab",
+      "data": 0
+    },
+    "5": {
+      "item": "lepidodendron:woodenslab",
+      "data": 0
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lepidodendron_bench",
+    "count": 3
+  }
+}
+
+
+
+
+
+
+
+
+

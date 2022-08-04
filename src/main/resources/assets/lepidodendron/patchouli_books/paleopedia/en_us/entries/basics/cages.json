@@ -1,0 +1,27 @@
+{
+	"name": "Cages",
+	"read_by_default": true,
+	"icon": "lepidodendron:cage_small_item",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Cages are the tool needed for a player to capture and transport living terrestrial creatures. Cages can hold animals up to a block in size both in length and height, anything larger or taller than a block won’t fit inside. Small animals could slip between the bars, however a fast enough player might be able to get such animals if they retrieve the cage fast enough."
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/caged_animal.png"],
+			"title": "A Caged Mob",
+			"text": ""
+		},
+		{
+			"type": "text",
+			"text": "To use it one simply needs to right click an animal with an empty cage in hand. Once the animal is inside the cage right clicking it with an empty hand will pick up the cage and put it in the player’s inventory. To free an animal from its cage left click the placed down cage in creative or break it in survival."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:cage_small_recipe"
+		}
+	]
+}
+

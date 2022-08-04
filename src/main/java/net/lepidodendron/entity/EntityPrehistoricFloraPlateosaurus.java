@@ -268,18 +268,13 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 			this.standCooldown = 0;
 		}
 
-		//Sometimes stand up and look around:
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
-				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
-			this.setAnimation(STAND_ANIMATION);
-			this.standCooldown = 2000;
-		}
-
 		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
+
+
 
 	@Override
 	public void launchAttack() {
@@ -310,6 +305,18 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 				}
 			}
 		}
+
+		//Sometimes stand up and look around:
+		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
+			this.setAnimation(STAND_ANIMATION);
+			this.standCooldown = 2000;
+		}
+		if (this.getAnimation() == STAND_ANIMATION && this.getAnimationTick() == STAND_ANIMATION.getDuration() - 1) {
+			this.standCooldown = 2000;
+			this.setAnimation(NO_ANIMATION);
+		}
+
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;

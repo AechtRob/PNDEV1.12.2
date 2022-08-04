@@ -1,13 +1,9 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.item.ItemBalticAmberChunk;
-import net.lepidodendron.item.ItemDominicanAmberChunk;
-import net.lepidodendron.item.ItemZircon;
-import net.minecraft.block.BlockCompressedPowered;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.SoundType;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.item.*;
+import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -46,7 +42,7 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
 	public static final PropertyBool FRONT = PropertyBool.create("front");
 	public static final PropertyBool BACK = PropertyBool.create("back");
-	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 12);
+	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 15);
 
 	public BlockBridge() {
 		super(Material.WOOD, MapColor.WOOD);
@@ -56,8 +52,7 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 		setResistance(3F);
 		setLightOpacity(0);
 		setLightLevel(0.5F);
-		setCreativeTab(null);
-		//setCreativeTab(TabLepidodendronMisc.tab);
+		setCreativeTab(TabLepidodendronBuilding.tab);
 	}
 
 	@Nullable
@@ -78,36 +73,60 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 
 		if (state.getValue(FACING) == EnumFacing.WEST) {
 			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0,1,2.75,0.1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,00));
 			}
 			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0.9,1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1.0,1,2.75,1.1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1,1,0,1.1,2.75,1));
 			}
 
 		}
 		if (this.getActualState(state, worldIn, pos).getValue(FACING) == EnumFacing.EAST) {
 			if (state.getValue(LEFT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0,1,2.75,0.1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
 			}
 			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0.9,1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1.0,1,2.75,1.1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1,1,0,1.1,2.75,1));
 			}
 		}
 
 		if (state.getValue(FACING) == EnumFacing.NORTH) {
 			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0,0.1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
 			}
 			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.9,1,0,1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1.0,1,0,1.1,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1,1,2.75,1.1));
 			}
 		}
 		if (state.getValue(FACING) == EnumFacing.SOUTH) {
 			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,0,0.1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
 			}
 			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.9,1,0,1,2.75,1));
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1.0,1,0,1.1,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1,1,2.75,1.1));
 			}
 		}
 	}
@@ -173,6 +192,15 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			}
 			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()){
 				enumUsed = 12;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()){
+				enumUsed = 13;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()){
+				enumUsed = 14;
+			}
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()){
+				enumUsed = 15;
 			}
 
 			if (enumUsed > 0) {
@@ -259,9 +287,16 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge) {
 				left = true;
 			}
-			if (!worldIn.getBlockState(pos.north().up()).isFullBlock()) {
-				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), EnumFacing.UP) != BlockFaceShape.SOLID) {
+			if ((!worldIn.getBlockState(pos.north().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockStairs))) {
 					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.south().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockStairs))) {
+					back = true;
 				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.SOUTH) {
@@ -271,9 +306,16 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge) {
 				right = true;
 			}
-			if (!worldIn.getBlockState(pos.south().up()).isFullBlock()) {
-				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), EnumFacing.UP) != BlockFaceShape.SOLID) {
+			if ((!worldIn.getBlockState(pos.south().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockStairs))) {
 					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.north().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockStairs))) {
+					back = true;
 				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.WEST) {
@@ -283,9 +325,16 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge) {
 				left = true;
 			}
-			if (!worldIn.getBlockState(pos.west().up()).isFullBlock()) {
-				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), EnumFacing.UP) != BlockFaceShape.SOLID) {
+			if ((!worldIn.getBlockState(pos.west().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockStairs))) {
 					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.east().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockStairs))) {
+					back = true;
 				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.EAST) {
@@ -295,13 +344,20 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge) {
 				right = true;
 			}
-			if (!worldIn.getBlockState(pos.east().up()).isFullBlock()) {
-				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), EnumFacing.UP) != BlockFaceShape.SOLID) {
+			if ((!worldIn.getBlockState(pos.east().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockStairs))) {
 					front = true;
 				}
 			}
+			if ((!worldIn.getBlockState(pos.west().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockStairs))) {
+					back = true;
+				}
+			}
 		}
-		return state.withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right).withProperty(FRONT, front);
+		return state.withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right).withProperty(FRONT, front).withProperty(BACK, back);
 	}
 
 	@Override
@@ -429,6 +485,15 @@ public class BlockBridge extends BlockCompressedPowered implements ITileEntityPr
 				}
 				else if (variant == 12) {
 					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Blocks.REDSTONE_TORCH, (int) (1)));
+				}
+				else if (variant == 13) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemAnthracite.block, (int) (1)));
+				}
+				else if (variant == 14) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSalt.block, (int) (1)));
+				}
+				else if (variant == 15) {
+					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSulphur.block, (int) (1)));
 				}
 				if (entityToSpawn != null) {
 					entityToSpawn.setPickupDelay(10);

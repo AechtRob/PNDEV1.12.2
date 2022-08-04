@@ -1,0 +1,27 @@
+{
+	"name": "Freezing Bugs",
+	"icon": "paleopedia:textures/gerarus_icon.png",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Bugs and other terrestrial arthropods, in order to be prepared for taxidermy, need a special treatment. Unlike other animals in the mod where killing them with any tool suffices to get the required item for taxidermy, these smaller invertebrates will require the player to trap them into a jar."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:glass_jar_recipe",
+			"title": "Jar"
+		},
+		{
+			"type": "text",
+			"text": "The jar with the animal inside will then need to be placed encased in ice or packed ice both below and around it (ice on the top is not required) for the bug to die and drop the appropriate item required for display in one's home. The process might take a while so be patient, the bug might not drop itself the moment it's surrounded by ice in the Jar."
+		},
+		{
+			"type": "image",
+ 			"images":["paleopedia:textures/frozen_bug.png"],
+			"title": "Placement",
+			"text": ""
+		}
+	]
+}
+

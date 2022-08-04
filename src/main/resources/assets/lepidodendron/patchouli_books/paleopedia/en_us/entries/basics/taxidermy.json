@@ -1,0 +1,43 @@
+{
+	"name": "Taxidermies",
+	"icon": "lepidodendron:display_case",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The taxidermy system allows players to showcase their time in the prehistoric dimensions without the need to build large enclosures. Acting both as decoration blocks and as a way to be able to enjoy the models without them moving constantly, this system allows for the display of the vast majority of non-static animals in the mod."
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/taxidermy_cases.png"],
+			"title": "Different Displays"
+		},
+		{
+			"type": "text",
+			"text": "To access this feature a player will need the animal they wish to display, in the form of its raw meat, and the appropriate base to mount it on. There are several display bases broadly used for certain animal groups. Display cases are for invertebrates up to a block large and small Cambrian early fishes like Haikouichthys. Plinths are useful for small terrestrial animals and large Eurypterids."
+		},
+		{
+			"type": "text",
+			"text": "Wall mounts are appropriate for fishes and medium to large animals, resulting in either a body or shoulder mount; large arthropods like Laminacaris and Megalograptus also go here. Simply right clicking with the appropriate item in hand on the right base will show the model of the animal. If the base is wrong, the item will be shown in a similar fashion to a vanilla item frame."
+		},		
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:display_case_recipe",
+			"recipe2": "lepidodendron:podium_mount_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:display_case_magnifying_recipe",
+			"title": "Magnified Case"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:wall_mount_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:zircon_lens_recipe"
+		}
+	]
+}
+

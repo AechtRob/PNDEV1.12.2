@@ -37,7 +37,6 @@ public class BlockDicroidiumFBridge extends ElementsLepidodendronMod.ModElement 
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_dicroidium_f_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

@@ -1,0 +1,26 @@
+{
+  "parent": "lepidodendron:block/bridge_side",
+  "textures": {
+    "wood": "lepidodendron:blocks/pentoxylales_planks",
+    "metal": "blocks/diamond_block"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

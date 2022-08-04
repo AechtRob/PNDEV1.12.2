@@ -190,13 +190,13 @@ public class EntityPrehistoricFloraCyamodus extends EntityPrehistoricFloraSwimmi
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:cyamodus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:turtle_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:cyamodus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:turtle_death"));
 	}
 
 	@Override

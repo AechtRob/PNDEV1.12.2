@@ -1,0 +1,72 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23",
+    "45"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:cypress_planks"
+    },
+    "1": {
+      "item": "lepidodendron:cypress_planks"
+    },
+    "2": {
+      "item": "lepidodendron:cypress_planks"
+    },
+    "3": {
+      "item": "lepidodendron:cypress_planks"
+    },
+    "4": {
+      "item": "lepidodendron:cypress_planks"
+    },
+    "5": {
+      "item": "lepidodendron:cypress_planks"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:cypress_door_item",
+    "count": 3
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

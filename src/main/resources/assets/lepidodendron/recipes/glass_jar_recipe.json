@@ -1,0 +1,47 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:glass_jar_item",
+    "count": 8
+  }
+}

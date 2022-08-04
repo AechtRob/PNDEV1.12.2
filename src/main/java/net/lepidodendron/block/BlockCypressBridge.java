@@ -37,7 +37,6 @@ public class BlockCypressBridge extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockBridge {
 		public BlockCustom() {
 			setTranslationKey("pf_cypress_bridge");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

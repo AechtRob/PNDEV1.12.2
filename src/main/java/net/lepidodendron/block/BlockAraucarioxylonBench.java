@@ -37,7 +37,6 @@ public class BlockAraucarioxylonBench extends ElementsLepidodendronMod.ModElemen
 	public static class BlockCustom extends BlockBench {
 		public BlockCustom() {
 			setTranslationKey("pf_araucarioxylon_bench");
-			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 	}
 }

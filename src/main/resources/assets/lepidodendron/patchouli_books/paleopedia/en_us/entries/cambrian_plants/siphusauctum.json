@@ -1,0 +1,32 @@
+{
+	"name": "Siphusauctum",
+	"read_by_default": true,
+	"icon": "lepidodendron:siphusauctum",
+	"category": "lepidodendron:cambrian_plants",
+	"turnin": "lepidodendron:pf_adv_book_siphusauctum",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_siphusauctum",
+			"title": "Siphusauctum",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Bilateria$(br)>Siphusauctidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Siphusauctum.png"],
+			"title": "S. gregarium",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siphusauctum",
+			"type": "text",
+			"text": "Siphusauctum is a stalked filter feeding animal from the Middle Cambrian. It had a tulip chaped body, the calyx, which it pumped water and filtered out organic contents to be digested."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_siphusauctum",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

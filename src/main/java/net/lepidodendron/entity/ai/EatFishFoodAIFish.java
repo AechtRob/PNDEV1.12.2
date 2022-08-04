@@ -43,7 +43,8 @@ public class EatFishFoodAIFish extends EntityAIBase {
         double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow(this.entity.posY - this.targetItem.posY, 2.0D) + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
         //this.entity.setEatTarget(this.targetItem);
         this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 2D);
-        if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
+        //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
+        if (distance < this.entity.getEntityBoundingBox().getAverageEdgeLength()) {
             if (this.targetItem != null) {
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);

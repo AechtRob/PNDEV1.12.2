@@ -549,12 +549,11 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
 
         this.body.offsetY = 1.50F;
 
-        this.faceTarget(f3, f4, 3, neck);
-        this.faceTarget(f3, f4, 3, neck2);
-        this.faceTarget(f3, f4, 3, neck3);
-        this.faceTarget(f3, f4, 3, neck4);
-        this.faceTarget(f3, f4, 3, neck5);
-        this.faceTarget(f3, f4, 3, head);
+        this.faceTarget(f3, f4, 5, neck2);
+        this.faceTarget(f3, f4, 5, neck3);
+        this.faceTarget(f3, f4, 5, neck4);
+        this.faceTarget(f3, f4, 5, neck5);
+        this.faceTarget(f3, f4, 5, head);
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6, this.tail7};
         AdvancedModelRenderer[] neckHead = {this.neck, this.neck2, this.neck3, this.neck4, this.neck5, this.head};
@@ -572,14 +571,11 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             if (!ee.getIsFast()) {
                 this.chainWave(fishTail, speed * still * 2, 0.035F * still, -1.25, f2, 0.6F * still);
-                this.chainWave(neckHead, speed * still * 2, 0.005F * still, -1.25, f2, 0.6F * still);
             } else {
                 this.chainWave(fishTail, speed * still * 2, 0.025F * still, -1.15, f2, 0.6F * still);
-                this.chainWave(neckHead, speed * still * 2, 0.005F * still, -1.15, f2, 0.6F * still);
             }
 
-            this.chainSwing(fishTail, speed * still * 2, 0.015F * still, -1.0, f2, 0.8F * still);
-            this.chainSwing(neckHead, speed * still * 2, 0.015F * still, -1.0, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * still * 2, 0.03F * still, -1.0, f2, 0.8F * still);
 
             this.swing(body, speed * 0.5F, 0.02F, true, 0, 0, f2, 0.8F);
             this.bob(body, speed * 0.5F, 0.07F, true, f2, 0.8F);
@@ -598,7 +594,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         animator.update(entity);
 
         animator.setAnimation(e.ATTACK_ANIMATION);
-        animator.startKeyframe(5);
+        animator.startKeyframe(15);
         animator.move(this.head, 0,0,-0.2F);
         animator.rotate(this.head, (float) Math.toRadians(-5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.lowerjaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));

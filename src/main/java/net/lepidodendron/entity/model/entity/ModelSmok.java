@@ -229,13 +229,13 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         this.ArmL1.setRotationPoint(0.0F, 6.5F, 0.7F);
         this.ArmL.addChild(ArmL1);
         this.setRotateAngle(ArmL1, -0.8517F, 0.0F, 0.0F);
-        this.ArmL1.cubeList.add(new ModelBox(ArmL1, 2, 37, -1.0F, 0.7F, -1.5F, 2, 9, 3, 0.0F, false));
+        this.ArmL1.cubeList.add(new ModelBox(ArmL1, 2, 36, -1.0F, 0.2F, -2.0F, 2, 9, 4, 0.0F, false));
 
         this.HandL = new AdvancedModelRendererExtended(this);
         this.HandL.setRotationPoint(0.0F, 7.3F, 0.0F);
         this.ArmL1.addChild(HandL);
         this.setRotateAngle(HandL, 0.0F, 0.0F, 0.182F);
-        this.HandL.cubeList.add(new ModelBox(HandL, 48, 112, -1.0F, 2.0F, -1.5F, 2, 6, 3, -0.01F, false));
+        this.HandL.cubeList.add(new ModelBox(HandL, 48, 111, -1.0F, 1.5F, -2.0F, 2, 6, 4, -0.01F, false));
 
         this.neck1 = new AdvancedModelRendererExtended(this);
         this.neck1.setRotationPoint(0.0F, -3.2F, -13.5F);
@@ -362,13 +362,13 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         this.ArmR1.setRotationPoint(0.0F, 6.5F, 0.7F);
         this.ArmR.addChild(ArmR1);
         this.setRotateAngle(ArmR1, -0.8517F, 0.0F, 0.0F);
-        this.ArmR1.cubeList.add(new ModelBox(ArmR1, 2, 37, -1.0F, 0.7F, -1.5F, 2, 9, 3, 0.0F, true));
+        this.ArmR1.cubeList.add(new ModelBox(ArmR1, 2, 36, -1.0F, 0.2F, -2.0F, 2, 9, 4, 0.0F, true));
 
         this.HandR = new AdvancedModelRendererExtended(this);
         this.HandR.setRotationPoint(0.0F, 7.3F, 0.0F);
         this.ArmR1.addChild(HandR);
         this.setRotateAngle(HandR, 0.0F, 0.0F, -0.182F);
-        this.HandR.cubeList.add(new ModelBox(HandR, 48, 112, -1.0F, 2.0F, -1.5F, 2, 6, 3, -0.01F, true));
+        this.HandR.cubeList.add(new ModelBox(HandR, 48, 111, -1.0F, 1.5F, -2.0F, 2, 6, 4, -0.01F, true));
 
         this.osteoderms = new AdvancedModelRendererExtended(this);
         this.osteoderms.setRotationPoint(1.6F, -9.2F, 0.0F);

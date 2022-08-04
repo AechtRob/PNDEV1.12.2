@@ -1,7 +1,7 @@
 {
 	"name": "Palaeontinid",
 	"read_by_default": true,
-	"icon": "lepidodendron:permian/permian_icon/palaeontinid_icon.png",
+	"icon": "lepidodendron:permian/permian_icon/palaeontinoid_icon.png",
 	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeontinid",
 	"pages": [
@@ -14,7 +14,7 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/palaeontinid.png"],
-			"title": "Superfamily: Palaeontinidea",
+			"title": "Palaeontinidea",
 			"text": ""
 		},
 		{
