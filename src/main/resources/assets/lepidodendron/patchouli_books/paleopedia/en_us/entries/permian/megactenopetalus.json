@@ -1,0 +1,32 @@
+{
+	"name": "Megactenopetalus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/megactenopetalus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_megactenopetalus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megactenopetalus",
+			"title": "Megactenopetalus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/megactenopetalus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

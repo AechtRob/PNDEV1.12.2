@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archosaurus",
 			"title": "Archosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Proterosuchia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Reptilia$(br)>Proterosuchia"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_archosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Archosaurus is a carnivorous archosauriforme from the late Permian period. Its skull is known and it had an oddly shaped nose which hanged over the end of its lower jaw. It was one of the oldest Archosaurs and it gives its name to the group which would contain the dinosaurs but is not actually classified within the group."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_archosaurus",

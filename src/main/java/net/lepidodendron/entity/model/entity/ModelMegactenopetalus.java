@@ -1,7 +1,10 @@
 package net.lepidodendron.entity.model.entity;
 
+import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -35,6 +38,7 @@ public class ModelMegactenopetalus extends AdvancedModelBase {
     public AdvancedModelRenderer Upperteeth;
     public AdvancedModelRenderer Lowerteeth;
     public AdvancedModelRenderer Lowertoothpoint;
+    private ModelAnimator animator;
 
     public ModelMegactenopetalus() {
         this.textureWidth = 100;
@@ -161,10 +165,12 @@ public class ModelMegactenopetalus extends AdvancedModelBase {
         this.Bodyfront.addChild(this.Head);
 
         updateDefaultPose();
+        animator = ModelAnimator.create();
     }
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Bodyfront.render(f5 * 0.825F);
     }
     public void renderStatic(float f) {
@@ -229,5 +235,22 @@ public class ModelMegactenopetalus extends AdvancedModelBase {
                 this.chainWave(fishTail, speed*0.5F, 0.1F, -3, f2, 1);
             }
         }
+
+    }
+    public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        EntityPrehistoricFloraAgeableBase e = (EntityPrehistoricFloraAgeableBase) entity;
+        animator.update(entity);
+        this.resetToDefaultPose();
+        setRotationAngles(f, f1, f2, f3, f4, f5, (Entity) entity);
+
+        animator.setAnimation(e.ATTACK_ANIMATION);
+        animator.startKeyframe(5);
+        animator.move(this.Head, 0,0,-0.5F);
+        animator.rotate(this.Head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Lowerjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.resetKeyframe(2);
+
     }
 }

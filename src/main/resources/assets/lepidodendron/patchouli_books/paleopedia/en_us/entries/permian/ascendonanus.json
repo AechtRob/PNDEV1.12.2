@@ -1,0 +1,32 @@
+{
+	"name": "Ascendonanus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ascendonanus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_ascendonanus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ascendonanus",
+			"title": "Ascendonanus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forests$(br2)>Synapsida$(br)>Varanopidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ascendonanus.png"],
+			"title": "A. nestleri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ascendonanus",
+			"type": "text",
+			"text": "Despite superficially resembling a lizard, Ascendonanus nestleri was actually a type of varanopid (a tetrapod group thought to be close to synapsids) that lived during the Early Permian. Known from the \"Permian Petrified Forest\" of Chemnitz in Germany, this small insectivore had many physical adaptations for climbing, suggesting it may have lived in trees."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ascendonanus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Find Eggs"
+		}
+	]
+}
+
