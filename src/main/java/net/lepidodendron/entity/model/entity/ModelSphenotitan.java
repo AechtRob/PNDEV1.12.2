@@ -256,7 +256,7 @@ public class ModelSphenotitan extends AdvancedModelBaseExtended {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.body.offsetZ = 0.6F;
-        this.lowerjaw.rotateAngleX = (float) Math.toRadians(-12.5);
+        this.jaw.rotateAngleX = (float) Math.toRadians(-12.5);
         this.head.rotateAngleY = (float) Math.toRadians(15.6);
         this.head.rotateAngleZ = (float) Math.toRadians(-1.7);
         this.neck.rotateAngleY = (float) Math.toRadians(11.9);
@@ -264,8 +264,8 @@ public class ModelSphenotitan extends AdvancedModelBaseExtended {
         this.tail.rotateAngleY = (float) Math.toRadians(4.7);
         this.tail2.rotateAngleY = (float) Math.toRadians(14.6);
         this.tail3.rotateAngleY = (float) Math.toRadians(-14.9);
-        this.forelegL3.rotateAngleY = (float) Math.toRadians(22.5);
-        this.hindlegL4.rotateAngleY = (float) Math.toRadians(-45);
+        this.forelegL2.rotateAngleY = (float) Math.toRadians(22.5);
+        this.hindlegR2.rotateAngleY = (float) Math.toRadians(-45);
         this.body.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
