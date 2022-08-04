@@ -1,0 +1,32 @@
+{
+	"name": "Proburnetia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/proburnetia_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_proburnetia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_proburnetia",
+			"title": "Proburnetia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/proburnetia.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proburnetia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_proburnetia",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}
+

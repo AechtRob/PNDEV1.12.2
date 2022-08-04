@@ -1,0 +1,32 @@
+{
+	"name": "Lysorophus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/lysorophus_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_lysorophus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lysorophus",
+			"title": "Lysorophus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Swamps$(br2)>Lysorophia$(br)>Lysorophidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lysorophus.png"],
+			"title": "L. tricarinatus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lysorophus",
+			"type": "text",
+			"text": "Lysorophus is a genus of Permian elongated amphibian. Lysorophus is the type species of the group Lysorophia, which is composed of mainly elongated amphibians with highly reduced heads and limbs, with some species even loosing some of their limbs alltogether!"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lysorophus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Block Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial/Bucket"
+		}
+	]
+}
+

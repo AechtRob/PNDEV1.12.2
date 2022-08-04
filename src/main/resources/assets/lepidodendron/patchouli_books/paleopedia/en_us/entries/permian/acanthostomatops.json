@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthostomatops",
 			"title": "Acanthostomatops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",
 			"type": "text",
-			"text": ""
+			"text": "This zatracheidid temnospondyl amphibian lived during the Early Permian, in what is now the Döhlen Basin of Germany. Over 30 specimens have been discovered, giving palaeontologists a good record of how the animal changed as it aged. Of note is that adults had a complex bony apparatus that may have supported the tongue."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",
