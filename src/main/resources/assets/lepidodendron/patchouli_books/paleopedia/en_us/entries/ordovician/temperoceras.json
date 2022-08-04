@@ -1,7 +1,7 @@
 {
 	"name": "Temperoceras",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/shell_temperoceras.png",
+	"icon": "lepidodendron:shell_temperoceras",
 	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_temperoceras",
 	"pages": [
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_temperoceras",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg/Bucket"
 		}
 	]
 }

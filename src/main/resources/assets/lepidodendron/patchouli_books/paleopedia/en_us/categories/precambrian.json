@@ -1,6 +1,6 @@
 {
     "name": "Precambrian",
-    "description": "$(l)The wacky life before the Paleozoic Era. This section contains all Precambrian lifeforms",
+    "description": "$(l)The wacky life before the Paleozoic Era. This section contains all Precambrian lifeforms.$(br)$(l)Portal Block: Stromatolite",
     "icon": "paleopedia:textures/category_icon/icon_precambrian.png",
     "sortnum": 0
 }
