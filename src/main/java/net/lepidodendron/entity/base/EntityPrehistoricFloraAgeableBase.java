@@ -1180,6 +1180,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
                 return true;
             }
+            if (this.isBreedingItem(itemstack) && (!this.isPFAdult())) {
+                this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
+                return true;
+            }
         }
         return false;
     }
