@@ -441,7 +441,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.rotate(180, 0F, 0F, 1F);
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_CYAMODUS);
-                        GlStateManager.scale(0.26F,0.26F,0.26F);
+                        GlStateManager.scale(0.261F,0.261F,0.261F);
                         modelCyamodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemDasycepsRaw.block) {

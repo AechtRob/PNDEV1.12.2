@@ -198,7 +198,7 @@ public class ModelEuparkeria extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.bodybase1.offsetZ = -0.7F;
+        this.bodybase1.offsetZ = -0.71F;
         this.bodybase1.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

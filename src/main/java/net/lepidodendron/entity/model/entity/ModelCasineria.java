@@ -282,7 +282,7 @@ public class ModelCasineria extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.casineria.offsetZ = -0.7F;
+        this.casineria.offsetZ = -0.71F;
         this.casineria.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();

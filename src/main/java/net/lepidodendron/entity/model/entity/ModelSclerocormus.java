@@ -321,7 +321,7 @@ public class ModelSclerocormus extends AdvancedModelBaseExtended {
         GlStateManager.disableCull();
         this.jaw1.rotateAngleX = (float) Math.toRadians(10);
         this.root.rotateAngleY = (float) Math.toRadians(10);
-        this.root.offsetZ = -0.15F;
+        this.root.offsetZ = -0.151F;
         this.root.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
