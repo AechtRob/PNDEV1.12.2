@@ -54,10 +54,14 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelCarcinosoma modelCarcinosoma;
     private static final ResourceLocation TEXTURE_CARTORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cartorhynchus.png");
     private final ModelCartorhynchus modelCartorhynchus;
+    private static final ResourceLocation TEXTURE_CASINERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria.png");
+    private final ModelCasineria modelCasineria;
     private static final ResourceLocation TEXTURE_CLAUDIOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
     private final ModelClaudiosaurus modelClaudiosaurus;
     private static final ResourceLocation TEXTURE_CLEVOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clevosaurus.png");
     private final ModelClevosaurus modelClevosaurus;
+    private static final ResourceLocation TEXTURE_CYAMODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cyamodus.png");
+    private final ModelCyamodus modelCyamodus;
     private static final ResourceLocation TEXTURE_DASYCEPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dasyceps.png");
     private final ModelDasyceps modelDasyceps;
     private static final ResourceLocation TEXTURE_DATHEOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/datheosaurus.png");
@@ -79,6 +83,10 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelEuchambersia modelEuchambersia;
     private static final ResourceLocation TEXTURE_EUDIMORPHODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eudimorphodon.png");
     private final ModelEudimorphodon modelEudimorphodon;
+    private static final ResourceLocation TEXTURE_EUPARKERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euparkeria.png");
+    private final ModelEuparkeria modelEuparkeria;
+    private static final ResourceLocation TEXTURE_HENODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
+    private final ModelHenodus modelHenodus;
     private static final ResourceLocation TEXTURE_HIBBERTOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibbertopterus.png");
     private final ModelHibbertopterus modelHibbertopterus;
     private static final ResourceLocation TEXTURE_HYLONOMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus.png");
@@ -89,6 +97,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelIchthyostega modelIchthyostega;
     private static final ResourceLocation TEXTURE_JAEKELOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jaekelopterus.png");
     private final ModelJaekelopterus modelJaekelopterus;
+    private static final ResourceLocation TEXTURE_KEICHOUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/keichousaurus.png");
+    private final ModelKeichousaurus modelKeichousaurus;
     private static final ResourceLocation TEXTURE_LABIDOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/labidosaurus.png");
     private final ModelLabidosaurus modelLabidosaurus;
     private static final ResourceLocation TEXTURE_MEGALOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalocephalus.png");
@@ -126,6 +136,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_REMIGIOMONTANUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/remigiomontanus.png");
     private final ModelRemigiomontanus modelRemigiomontanus;
     private static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
+    private static final ResourceLocation TEXTURE_SCLEROCORMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/sclerocormus.png");
+    private final ModelSclerocormus modelSclerocormus;
     private static final ResourceLocation TEXTURE_SCLEROMOCHLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scleromochlus.png");
     private final ModelScleromochlus modelScleromochlus;
     private static final ResourceLocation TEXTURE_SPATHICEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/spathicephalus.png");
@@ -163,8 +175,10 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelCaptorhinus = new ModelCaptorhinus();
         this.modelCarcinosoma = new ModelCarcinosoma();
         this.modelCartorhynchus = new ModelCartorhynchus();
+        this.modelCasineria = new ModelCasineria();
         this.modelClaudiosaurus = new ModelClaudiosaurus();
         this.modelClevosaurus = new ModelClevosaurus();
+        this.modelCyamodus = new ModelCyamodus();
         this.modelDasyceps = new ModelDasyceps();
         this.modelDatheosaurus = new ModelDatheosaurus();
         this.modelDiictodon = new ModelDiictodon();
@@ -175,11 +189,14 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelElginia = new ModelElginia();
         this.modelEuchambersia = new ModelEuchambersia();
         this.modelEudimorphodon = new ModelEudimorphodon();
+        this.modelEuparkeria = new ModelEuparkeria();
+        this.modelHenodus = new ModelHenodus();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
         this.modelHypsognathus = new ModelHypsognathus();
         this.modelIchthyostega = new ModelIchthyostega();
         this.modelJaekelopterus = new ModelJaekelopterus();
+        this.modelKeichousaurus = new ModelKeichousaurus();
         this.modelLabidosaurus = new ModelLabidosaurus();
         this.modelMegalocephalus = new ModelMegalocephalus();
         this.modelMesosaurus = new ModelMesosaurus();
@@ -197,6 +214,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelPterygotus = new ModelPterygotus();
         this.modelPurlovia = new ModelPurlovia();
         this.modelRemigiomontanus = new ModelRemigiomontanus();
+        this.modelSclerocormus = new ModelSclerocormus();
         this.modelScleromochlus = new ModelScleromochlus();
         this.modelSpathicephalus = new ModelSpathicephalus();
         this.modelSphenotitan = new ModelSphenotitan();
@@ -263,7 +281,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                     }
                     else if (itemstack.getItem() == ItemAcutiramusRaw.block) {
                         double offset = 2.3;
-                        double voffset = 0.5;
+                        double voffset = 0;
                         GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
                         GlStateManager.rotate(180, 0F, 0F, 1F);
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
@@ -382,6 +400,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.076F,0.076F,0.076F);
                         modelCartorhynchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemCasineriaRaw.block) {
+                        double offset = 0.35;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_CASINERIA);
+                        GlStateManager.scale(0.14F,0.14F,0.14F);
+                        modelCasineria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemClaudiosaurusRaw.block) {
                         double offset = 0.23;
                         //double voffset = -0.15;
@@ -403,6 +432,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_CLEVOSAURUS);
                         GlStateManager.scale(0.13F,0.13F,0.13F);
                         modelClevosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemCyamodusRaw.block) {
+                        double offset = 0.67;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_CYAMODUS);
+                        GlStateManager.scale(0.261F,0.261F,0.261F);
+                        modelCyamodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemDasycepsRaw.block) {
                         double offset = 0.42;
@@ -516,6 +556,28 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.12F,0.12F,0.12F);
                         modelEudimorphodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemEuparkeriaRaw.block) {
+                        double offset = 0.33;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_EUPARKERIA);
+                        GlStateManager.scale(0.13F,0.13F,0.13F);
+                        modelEuparkeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemHenodusRaw.block) {
+                        double offset = 0.72;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_HENODUS);
+                        GlStateManager.scale(0.3F,0.3F,0.3F);
+                        modelHenodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemHibbertopterusRaw.block) {
                         double offset = 1.4;
                         //double voffset = -0.15;
@@ -570,6 +632,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_JAEKELOPTERUS);
                         GlStateManager.scale(1.1F,1.1F,1.1F);
                         modelJaekelopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemKeichousaurusRaw.block) {
+                        double offset = 0.42;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_KEICHOUSAURUS);
+                        GlStateManager.scale(0.16F,0.16F,0.16F);
+                        modelKeichousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemLabidosaurusRaw.block) {
                         double offset = 0.58;
@@ -766,6 +839,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_REMIGIOMONTANUS);
                         GlStateManager.scale(0.22F,0.22F,0.22F);
                         modelRemigiomontanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemSclerocormusRaw.block) {
+                        double offset = 0.43;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_SCLEROCORMUS);
+                        GlStateManager.scale(0.18F,0.18F,0.18F);
+                        modelSclerocormus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemScleromochlusRaw.block) {
                         double offset = 0.23;
