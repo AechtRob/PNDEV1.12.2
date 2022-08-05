@@ -281,7 +281,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                     }
                     else if (itemstack.getItem() == ItemAcutiramusRaw.block) {
                         double offset = 2.3;
-                        double voffset = 0.5;
+                        double voffset = 0;
                         GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
                         GlStateManager.rotate(180, 0F, 0F, 1F);
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
