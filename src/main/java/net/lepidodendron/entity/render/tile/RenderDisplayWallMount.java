@@ -3239,7 +3239,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             GlStateManager.rotate(90, 0F, 1F, 0F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                        GlStateManager.scale(8.7,8.7,8.7);
+                        GlStateManager.scale(7.6,7.6,7.6);
                         this.bindTexture(TEXTURE_LISOWICIA);
                         modelLisowicia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
