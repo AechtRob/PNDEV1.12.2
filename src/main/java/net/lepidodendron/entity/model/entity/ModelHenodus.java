@@ -250,7 +250,7 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.henodus.offsetZ = -0.1F;
+        this.henodus.offsetZ = -0.11F;
         this.henodus.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
