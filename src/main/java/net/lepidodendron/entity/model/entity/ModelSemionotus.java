@@ -228,8 +228,8 @@ public class ModelSemionotus extends AdvancedModelBase {
             this.swing(head, speed, 0.16F, true, 0, 0, f2, 1);
             this.walk(lowerjaw, (float) (speed * 0.35), 0.5F, true, 0, 0, f2, 1);
 
-            this.flap(pelvicfinR, speed * 0.8F, 0.75F, false, 0F, -0.3F, f2, 1F);
-            this.flap(pelvicfinL, speed * 0.8F, -0.75F, false, 0F, 0.3F, f2, 1F);
+            this.flap(pelvicfinR, speed * 0.8F, 0.75F, true, 0F, -0.3F, f2, 1F);
+            this.flap(pelvicfinL, speed * 0.8F, -0.75F, true, 0F, 0.3F, f2, 1F);
             this.flap(pectoralfinR, speed * 0.8F, 0.25F, false, 0F, -0.1F, f2, 1F);
             this.flap(pectoralfinL, speed * 0.8F, -0.25F, false, 0F, 0.1F, f2, 1F);
             this.swing(pectoralfinR, speed * 0.8F, 0.65F, false, 0F, -0.2F, f2, 1F);

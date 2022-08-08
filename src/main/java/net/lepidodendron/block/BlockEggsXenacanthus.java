@@ -82,7 +82,7 @@ public class BlockEggsXenacanthus extends ElementsLepidodendronMod.ModElement {
 			}
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeD = (BiomeDevonian) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean && biomeD.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
@@ -94,7 +94,7 @@ public class BlockEggsXenacanthus extends ElementsLepidodendronMod.ModElement {
 			}
 			if (biome instanceof BiomeTriassic) {
 				BiomeTriassic biomeT = (BiomeTriassic) biome;
-				if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.River) {
+				if (biomeT.getBiomeType() != EnumBiomeTypeTriassic.Ocean) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
