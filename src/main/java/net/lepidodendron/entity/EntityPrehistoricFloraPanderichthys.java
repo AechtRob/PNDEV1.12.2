@@ -4,11 +4,12 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderSurface;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AmphibianWander;
+import net.lepidodendron.entity.ai.EatFishFoodAIAmphibian;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -26,7 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -50,6 +51,25 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 	}
 
 	@Override
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isBreathing()) {
+			return 0F;
+		}
+		if (this.isReallyInWater()) {
+			return 0.22f;
+		}
+		return 0.05F;
+	}
+
+	@Override
+	public int WaterDist() {
+		int i = (int) LepidodendronConfig.waterPanderichthys;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -58,6 +78,11 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 	protected void entityInit() {
 		super.entityInit();
 		this.dataManager.register(BREATHING, 0);
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 0;
 	}
 
 	public int getBreathing() {
@@ -88,7 +113,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 		Material material = this.world.getBlockState(this.getPosition()).getMaterial();
 		Material materialU = this.world.getBlockState(this.getPosition().up()).getMaterial();
 		Material materialD = this.world.getBlockState(this.getPosition().down()).getMaterial();
-		return (this.getBreathing() > 350 && material == Material.WATER && (materialU == Material.AIR || materialU == Material.PLANTS) && materialD != Material.WATER);
+		return (this.isReallyInWater() && this.getBreathing() > 350 && material == Material.WATER && (materialU == Material.AIR || materialU == Material.PLANTS) && materialD != Material.WATER);
 	}
 
 	@Override
@@ -106,17 +131,25 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 	}
 
 	@Override
-	protected float getAISpeedFish() {
-		if (this.isBreathing()) {
-			return 0F;
-		}
-		return 0.22f;
-	}
-
-	@Override
-	protected boolean isBase() {
+	public boolean laysEggs() {
 		return false;
 	}
+
+	//@Override
+	//protected float getAISpeedFish() {
+	//	if (this.isBreathing()) {
+	//		return 0F;
+	//	}
+	//	if (this.isReallyInWater()) {
+	//		return 0.22f;
+	//	}
+	//	return 0.05F;
+	//}
+
+	//@Override
+	//protected boolean isBase() {
+	//	return false;
+	//}
 
 	@Override
 	public int getAnimationTick() {
@@ -142,9 +175,9 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWanderSurface(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
+		this.targetTasks.addTask(0, new EatFishFoodAIAmphibian(this));
 	}
 
 	@Override
@@ -152,10 +185,10 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraF
 		return false;
 	}
 
-	@Override
-	public String getTexture() {
-		return this.getTexture();
-	}
+	//@Override
+	//public String getTexture() {
+	//	return this.getTexture();
+	//}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {

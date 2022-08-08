@@ -1,0 +1,7 @@
+{
+    "parent": "block/wall_gate_open",
+    "textures": {
+        "texture": "lepidodendron:blocks/ginkgoites_planks",
+    "particle": "lepidodendron:blocks/ginkgoites_planks"
+    }
+}

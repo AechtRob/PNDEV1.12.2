@@ -1,0 +1,17 @@
+{
+  "parent": "block/upper_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/araucarites_planks",
+    "top": "lepidodendron:blocks/araucarites_planks",
+    "side": "lepidodendron:blocks/araucarites_planks"
+  }
+}
+
+
+
+
+
+
+
+
+

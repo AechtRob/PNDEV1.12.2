@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:phoenicopsis_slab_double"
+    }
+  }
+}

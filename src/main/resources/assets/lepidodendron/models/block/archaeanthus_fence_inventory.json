@@ -1,0 +1,14 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "lepidodendron:blocks/archaeanthus_planks",
+    "particle": "lepidodendron:blocks/archaeanthus_planks"
+  }
+}
+
+
+
+
+
+
+

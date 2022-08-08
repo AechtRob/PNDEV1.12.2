@@ -306,7 +306,17 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        //this.body.render(0.01F);
+        this.body.offsetZ = -0.1F;
+        this.head.rotateAngleY = (float)Math.toRadians(-21.6);
+        this.neck3.rotateAngleY = (float)Math.toRadians(-17.5);
+        this.bodyfront.rotateAngleY = (float)Math.toRadians(-15);
+        this.bodymiddle.rotateAngleY = (float)Math.toRadians(-7.5);
+        this.legL.rotateAngleX = (float)Math.toRadians(-42.5);
+        this.legL2.rotateAngleX = (float)Math.toRadians(82.5);
+        this.legL3.rotateAngleX = (float)Math.toRadians(-87.5);
+        this.legL4.rotateAngleX = (float)Math.toRadians(15);
+        this.lowerjaw.rotateAngleX = (float)Math.toRadians(17.5);
+        this.body.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

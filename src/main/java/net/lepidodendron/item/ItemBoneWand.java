@@ -10,7 +10,6 @@ import net.lepidodendron.util.ModTriggers;
 import net.lepidodendron.world.dimension.cambrian.WorldCambrian;
 import net.lepidodendron.world.dimension.carboniferous.WorldCarboniferous;
 import net.lepidodendron.world.dimension.devonian.WorldDevonian;
-import net.lepidodendron.world.dimension.jurassic.WorldJurassic;
 import net.lepidodendron.world.dimension.ordovician.WorldOrdovician;
 import net.lepidodendron.world.dimension.permian.WorldPermian;
 import net.lepidodendron.world.dimension.precambrian.WorldPrecambrian;
@@ -124,7 +123,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 					boolean portalSpawnCarboniferous = WorldCarboniferous.portal.portalSpawn(world, pos1);
 					boolean portalSpawnPermian = WorldPermian.portal.portalSpawn(world, pos1);
 					boolean portalSpawnTriassic = WorldTriassic.portal.portalSpawn(world, pos1);
-					boolean portalSpawnJurassic = WorldJurassic.portal.portalSpawn(world, pos1);
+					//boolean portalSpawnJurassic = WorldJurassic.portal.portalSpawn(world, pos1);
 
 					if (portalSpawnPrecambrian
 						|| portalSpawnCambrian
@@ -134,7 +133,8 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 						|| portalSpawnCarboniferous
 						|| portalSpawnPermian
 						|| portalSpawnTriassic
-						|| portalSpawnJurassic) {
+						//|| portalSpawnJurassic
+					) {
 						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 							itemstack.damageItem(1, entity);
 						}
@@ -220,7 +220,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Opens portals. Requires the Enchantment of Time Reversal");
+				tooltip.add("Opens portals and rejuvenates petrified plants. Requires the Enchantment of Time Reversal");
 			}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
