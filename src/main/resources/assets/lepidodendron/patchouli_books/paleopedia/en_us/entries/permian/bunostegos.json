@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_bunostegos",
 			"title": "Bunostegos",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bunostegos",
 			"type": "text",
-			"text": ""
+			"text": "Bunostegos is a medium sized pareiasaur reptile that lived in the late Permian period. It had distinctive knobs at the top of its head and a sort of frill on its head. They lived in the desert in the center of pangaea and they were plant eaters."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bunostegos",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cacops",
 			"title": "Cacops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dissorophidae$(br)>Eucacopinae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cacops",
 			"type": "text",
-			"text": ""
+			"text": "Cacops is a plump looking temnospondyl from the Middle Permian period. It had a large head and body with a short tail and no neck. Its arms and legs were also very short given the body proportions. It had fewer but larger teeth that covered most of the insides of its mouth."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cacops",

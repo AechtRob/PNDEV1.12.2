@@ -2,14 +2,14 @@
 	"name": "Tiarajudens",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/tiarajudens_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_tiarajudens",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_tiarajudens",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiarajudens",
 			"type": "text",
-			"text": ""
+			"text": "Tiarajudens eccentricus was an anomodont synapsid that lived during the Middle Permian in what is now southern Brazil. Despite its long, fearsome-looking sabre-like canines, Tiarajudens was actually a herbivore with multiple different types of teeth. The sabres were most likely used for either self-defence, or for fighting rivals of their own species."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tiarajudens",
