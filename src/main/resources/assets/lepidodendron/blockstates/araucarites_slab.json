@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:araucarites_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:araucarites_slab_top"
+    }
+  }
+}
+
+
+
+
+

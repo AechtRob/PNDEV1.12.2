@@ -1,0 +1,11 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/cypress_planks",
+    "top": "lepidodendron:blocks/cypress_planks",
+    "side": "lepidodendron:blocks/cypress_planks"
+  }
+}
+
+
+

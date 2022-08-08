@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:ginkgoites_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:ginkgoites_slab_top"
+    }
+  }
+}
+
+
+
+

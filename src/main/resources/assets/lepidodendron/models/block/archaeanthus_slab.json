@@ -1,0 +1,15 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/archaeanthus_planks",
+    "top": "lepidodendron:blocks/archaeanthus_planks",
+    "side": "lepidodendron:blocks/archaeanthus_planks"
+  }
+}
+
+
+
+
+
+
+
