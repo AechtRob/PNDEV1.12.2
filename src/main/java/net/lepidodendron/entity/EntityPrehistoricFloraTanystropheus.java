@@ -51,8 +51,8 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
-		maxHeight = 0.4F;
-		maxHealthAgeable = 33.0D;
+		maxHeight = 0.8F;
+		maxHealthAgeable = 52.0D;
 	}
 
 	@Override
@@ -89,9 +89,9 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.11F;
+		float calcSpeed = 0.19F;
 		if (this.isReallyInWater()) {
-			calcSpeed = 0.28f;
+			calcSpeed = 0.38f;
 		}
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
@@ -125,7 +125,7 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.93, 80));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.90, 80));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));

@@ -125,7 +125,7 @@ public class BlockBivalveGreen extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;
-			if (biomeDev.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+			if (biomeDev.getBiomeType() != EnumBiomeTypeDevonian.Ocean && biomeDev.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline) {
 				biomeCriteria = true;
 			}
 			else {

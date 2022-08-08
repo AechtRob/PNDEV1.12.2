@@ -68,7 +68,7 @@ public class BlockEggsHyneria extends ElementsLepidodendronMod.ModElement {
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeD = (BiomeDevonian) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
+				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean && biomeD.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
