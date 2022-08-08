@@ -56,13 +56,9 @@ public class EntityPrehistoricFloraVancleavea extends EntityPrehistoricFloraSwim
 
 	@Override
 	public boolean isSmall() {
-		return false;
+		return getAgeScale() < 0.2;
 	}
 
-	@Override
-	public String getBucketMessage() {
-		return "will not go into buckets";
-	}
 
 	public static String getPeriod() {
 		return "late Triassic";

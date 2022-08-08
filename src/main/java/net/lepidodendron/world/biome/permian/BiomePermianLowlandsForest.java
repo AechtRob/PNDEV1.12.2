@@ -60,6 +60,7 @@ public class BiomePermianLowlandsForest extends ElementsLepidodendronMod.ModElem
 			this.spawnableCaveCreatureList.clear();
 		}
 
+		protected static final WorldGenAraucarioxylonTree ARAUCARIOXYLON_TREE = new WorldGenAraucarioxylonTree(false);
 		protected static final WorldGenWalchiaTree WALCHIA_TREE = new WorldGenWalchiaTree(false);
 		protected static final WorldGenPodozamitesTree PODOZAMITES_TREE = new WorldGenPodozamitesTree(false);
 		protected static final WorldGenCordaitesTree CORDAITES_TREE = new WorldGenCordaitesTree(false);
@@ -117,7 +118,7 @@ public class BiomePermianLowlandsForest extends ElementsLepidodendronMod.ModElem
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			int selector = rand.nextInt(9);
+			int selector = rand.nextInt(10);
 			switch (selector) {
 				case 0 :
 					return ZYGOPTERIS_TREE;
@@ -137,6 +138,8 @@ public class BiomePermianLowlandsForest extends ElementsLepidodendronMod.ModElem
 					return PODOZAMITES_TREE;
 				case 8 :
 					return GLOSSOPTERIS_TREE;
+				case 10 :
+					return ARAUCARIOXYLON_TREE;
 			}
 			return WALCHIA_TREE;
 		}

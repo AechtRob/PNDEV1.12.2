@@ -1,0 +1,17 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/ginkgoites_planks",
+    "top": "lepidodendron:blocks/ginkgoites_planks",
+    "side": "lepidodendron:blocks/ginkgoites_planks"
+  }
+}
+
+
+
+
+
+
+
+
+

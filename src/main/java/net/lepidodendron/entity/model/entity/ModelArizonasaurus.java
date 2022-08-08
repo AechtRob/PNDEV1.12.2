@@ -261,9 +261,16 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-
-        //this.chest.render(0.01F);
-
+        this.Body2.offsetY = 0.04F;
+        this.Head.rotateAngleX = (float)Math.toRadians(2.5);
+        this.Neck2.rotateAngleX = (float)Math.toRadians(-12.5);
+        this.Neck.rotateAngleX = (float)Math.toRadians(-5);
+        this.Jaw.rotateAngleX = (float)Math.toRadians(30);
+        this.RightArm.rotateAngleX = (float)Math.toRadians(35);
+        this.RightArm2.rotateAngleX = (float)Math.toRadians(-105);
+        this.LeftArm.rotateAngleX = (float)Math.toRadians(35);
+        this.LeftArm2.rotateAngleX = (float)Math.toRadians(-105);
+        this.Body2.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();

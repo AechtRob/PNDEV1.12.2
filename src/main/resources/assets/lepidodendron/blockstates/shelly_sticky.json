@@ -1,0 +1,28 @@
+{
+	"multipart" : [
+		{	"when": { "facing": "north" },
+			"apply": [
+				{"model": "lepidodendron:shelly_reef"}
+			]
+		},
+
+		{	"when": { "facing": "east" },
+			"apply": [
+				{"model": "lepidodendron:shelly_reef", "y": 90 }
+			]
+		},
+
+		{	"when": { "facing": "south" },
+			"apply": [
+				{"model": "lepidodendron:shelly_reef", "y": 180 }
+			]
+		},
+
+		{	"when": { "facing": "west" },
+			"apply": [
+				{"model": "lepidodendron:shelly_reef", "y": 270 }
+			]
+		}
+	]
+
+}

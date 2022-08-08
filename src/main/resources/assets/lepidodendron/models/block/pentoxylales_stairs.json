@@ -1,0 +1,10 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/pentoxylales_planks",
+    "top": "lepidodendron:blocks/pentoxylales_planks",
+    "side": "lepidodendron:blocks/pentoxylales_planks"
+  }
+}
+
+

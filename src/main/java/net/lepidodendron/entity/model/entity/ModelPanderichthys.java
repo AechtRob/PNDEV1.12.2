@@ -234,18 +234,18 @@ public class ModelPanderichthys extends AdvancedModelBase {
         if (f3 == 0.0F) {
             still = 0.6F;
         }
-        if (!e.isInWater()) {
-            speed = 0.225F;
+        if (!((EntityPrehistoricFloraPanderichthys) e).isReallyInWater()) {
+            speed = 0.065F;
         }
 
-        if (e.isInWater()) {
+        //if (e.isInWater()) {
             this.chainWave(fishTail, speed * still, 0.02F * still, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * still, 0.40F * still, -1.05, f2, 0.5F * still);
             this.swing(body, speed, 0.2F, true, 0, 0, f2, 0.8F);
-        }
-        else {
-            this.swing(body, speed, 0.1F, true, 0, 0, f2, 0.5F);
-        }
+        //}
+        //else {
+        //    this.swing(body, speed, 0.1F, true, 0, 0, f2, 0.5F);
+        //}
 
         if (Panderichthys.getAnimation() != Panderichthys.BREATHE_ANIMATION) {
             this.walk(pectoralfinL, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
@@ -261,15 +261,6 @@ public class ModelPanderichthys extends AdvancedModelBase {
         this.walk(pelvicfinR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
         this.swing(pelvicfinR, (float) (speed * 0.75), -0.2F, true, 3, 0, f2, 1);
         this.flap(pelvicfinR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
-
-        if (!e.isInWater()) {
-            //this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.80F;
-            this.bob(body, -speed * 3.3F, 2.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 3.3F, 0.02F, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 3.3F, 0.2F, -0.55, f2, 0.4F * still);
-
-        }
 
     }
 

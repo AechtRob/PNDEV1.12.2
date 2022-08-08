@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialResin;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -297,14 +296,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
             || (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
                 && !this.onGround)
         );
-    }
-
-    @Override
-    protected void playStepSound(BlockPos pos, Block blockIn) {
-        if (this.isInWater()) {
-            return; //Do not play footsteps when in water
-        }
-        super.playStepSound(pos, blockIn);
     }
 
     @Override

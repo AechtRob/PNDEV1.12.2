@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/pentoxylales_planks",
+    "particle": "lepidodendron:blocks/pentoxylales_planks"
+  }
+}
+
+

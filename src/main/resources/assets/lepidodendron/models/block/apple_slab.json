@@ -1,0 +1,12 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/apple_planks",
+    "top": "lepidodendron:blocks/apple_planks",
+    "side": "lepidodendron:blocks/apple_planks"
+  }
+}
+
+
+
+

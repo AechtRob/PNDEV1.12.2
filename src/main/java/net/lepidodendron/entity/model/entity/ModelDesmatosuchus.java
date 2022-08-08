@@ -72,7 +72,8 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.textureHeight = 128;
 
         this.Desmatosuchus = new AdvancedModelRendererExtended(this);
-        this.Desmatosuchus.setRotationPoint(0.0F, 12.025F, -1.0F);
+        this.Desmatosuchus.setRotationPoint(0.0F, 12.025F, 4.0F);
+
 
         this.body3 = new AdvancedModelRendererExtended(this);
         this.body3.setRotationPoint(0.0F, -8.6835F, 7.7253F);
@@ -116,6 +117,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.body3.addChild(leftBackLeg);
         this.setRotateAngle(leftBackLeg, -0.4363F, 0.0F, 0.0F);
 
+
         this.cube_r1 = new AdvancedModelRendererExtended(this);
         this.cube_r1.setRotationPoint(2.0F, 1.75F, 0.0F);
         this.leftBackLeg.addChild(cube_r1);
@@ -129,6 +131,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.leftBackLeg.addChild(leftBjoint);
         this.setRotateAngle(leftBjoint, 0.5236F, 0.0F, 0.0F);
 
+
         this.cube_r2 = new AdvancedModelRendererExtended(this);
         this.cube_r2.setRotationPoint(0.0F, -5.433F, -2.616F);
         this.leftBjoint.addChild(cube_r2);
@@ -141,6 +144,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.leftBjoint.addChild(leftBfoot);
         this.setRotateAngle(leftBfoot, -0.2618F, 0.0F, 0.0F);
 
+
         this.cube_r3 = new AdvancedModelRendererExtended(this);
         this.cube_r3.setRotationPoint(0.0F, 1.25F, -1.25F);
         this.leftBfoot.addChild(cube_r3);
@@ -151,6 +155,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.rightBackLeg.setRotationPoint(-5.25F, 0.9518F, 1.7887F);
         this.body3.addChild(rightBackLeg);
         this.setRotateAngle(rightBackLeg, -0.4363F, 0.0F, 0.0F);
+
 
         this.cube_r4 = new AdvancedModelRendererExtended(this);
         this.cube_r4.setRotationPoint(-2.0F, 1.75F, 0.0F);
@@ -165,6 +170,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.rightBackLeg.addChild(rightBjoint);
         this.setRotateAngle(rightBjoint, 0.5236F, 0.0F, 0.0F);
 
+
         this.cube_r5 = new AdvancedModelRendererExtended(this);
         this.cube_r5.setRotationPoint(0.0F, -5.433F, -2.616F);
         this.rightBjoint.addChild(cube_r5);
@@ -176,6 +182,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.rightBfoot.setRotationPoint(0.25F, 6.9697F, 1.8901F);
         this.rightBjoint.addChild(rightBfoot);
         this.setRotateAngle(rightBfoot, -0.2618F, 0.0F, 0.0F);
+
 
         this.cube_r6 = new AdvancedModelRendererExtended(this);
         this.cube_r6.setRotationPoint(0.0F, 1.25F, -1.25F);
@@ -236,6 +243,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.bodyfront.addChild(neck);
         this.neck.cubeList.add(new ModelBox(neck, 62, 12, -4.0F, 0.0F, -6.0F, 8, 7, 6, 0.0F, false));
         this.neck.cubeList.add(new ModelBox(neck, 0, 97, -4.0F, 0.0F, 0.0F, 8, 7, 1, 0.0F, false));
+        this.neck.cubeList.add(new ModelBox(neck, 0, 97, -4.0F, 0.0F, 1.0F, 8, 7, 1, 0.0F, false));
         this.neck.cubeList.add(new ModelBox(neck, 63, 13, -0.5F, 0.0F, -6.01F, 1, 1, 0, 0.0F, false));
         this.neck.cubeList.add(new ModelBox(neck, 1, 89, -0.5F, -0.001F, -6.0F, 1, 0, 6, 0.0F, false));
 
@@ -243,6 +251,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.cube_r13.setRotationPoint(0.0F, 8.0F, -3.0F);
         this.neck.addChild(cube_r13);
         this.setRotateAngle(cube_r13, -0.2618F, 0.0F, 0.0F);
+        this.cube_r13.cubeList.add(new ModelBox(cube_r13, 84, 47, -3.0F, -2.25F, 3.25F, 6, 2, 2, -0.01F, false));
         this.cube_r13.cubeList.add(new ModelBox(cube_r13, 55, 25, -3.0F, -2.25F, -3.75F, 6, 2, 7, -0.01F, false));
 
         this.cube_r14 = new AdvancedModelRendererExtended(this);
@@ -326,6 +335,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.bodyfront.addChild(leftFrontLeg);
         this.setRotateAngle(leftFrontLeg, 0.3491F, 0.2618F, -0.3491F);
 
+
         this.cube_r24 = new AdvancedModelRendererExtended(this);
         this.cube_r24.setRotationPoint(-0.5F, 0.016F, 0.048F);
         this.leftFrontLeg.addChild(cube_r24);
@@ -337,6 +347,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.LeftFjoint.setRotationPoint(-0.5F, 7.016F, 1.298F);
         this.leftFrontLeg.addChild(LeftFjoint);
         this.setRotateAngle(LeftFjoint, -0.5672F, -0.0436F, 0.3491F);
+
 
         this.cube_r25 = new AdvancedModelRendererExtended(this);
         this.cube_r25.setRotationPoint(0.0F, -3.0F, 0.25F);
@@ -350,6 +361,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.LeftFjoint.addChild(LeftFFoot);
         this.setRotateAngle(LeftFFoot, 0.5672F, 0.0F, 0.0436F);
 
+
         this.cube_r26 = new AdvancedModelRendererExtended(this);
         this.cube_r26.setRotationPoint(0.0F, 0.0658F, -0.2566F);
         this.LeftFFoot.addChild(cube_r26);
@@ -360,6 +372,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.rightFrontLeg.setRotationPoint(-5.5F, 9.251F, -6.0207F);
         this.bodyfront.addChild(rightFrontLeg);
         this.setRotateAngle(rightFrontLeg, 0.3491F, -0.2618F, 0.3491F);
+
 
         this.cube_r27 = new AdvancedModelRendererExtended(this);
         this.cube_r27.setRotationPoint(0.5F, 0.016F, 0.048F);
@@ -373,6 +386,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.rightFrontLeg.addChild(RightFjoint);
         this.setRotateAngle(RightFjoint, -0.5672F, 0.0436F, -0.3491F);
 
+
         this.cube_r28 = new AdvancedModelRendererExtended(this);
         this.cube_r28.setRotationPoint(0.0F, -3.0F, 0.25F);
         this.RightFjoint.addChild(cube_r28);
@@ -384,6 +398,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.RightFFoot.setRotationPoint(1.0F, 4.8042F, -0.7206F);
         this.RightFjoint.addChild(RightFFoot);
         this.setRotateAngle(RightFFoot, 0.5672F, 0.0F, -0.0436F);
+
 
         this.cube_r29 = new AdvancedModelRendererExtended(this);
         this.cube_r29.setRotationPoint(0.0F, 0.0658F, -0.2566F);

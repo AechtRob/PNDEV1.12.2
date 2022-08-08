@@ -1,0 +1,16 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "lepidodendron:blocks/araucarites_planks",
+    "particle": "lepidodendron:blocks/araucarites_planks"
+  }
+}
+
+
+
+
+
+
+
+
+

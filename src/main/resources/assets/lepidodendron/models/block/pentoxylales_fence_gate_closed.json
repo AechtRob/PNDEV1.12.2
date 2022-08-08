@@ -1,0 +1,10 @@
+{
+    "parent": "block/fence_gate_closed",
+    "textures": {
+        "texture": "lepidodendron:blocks/pentoxylales_planks",
+    "particle": "lepidodendron:blocks/pentoxylales_planks"
+    }
+}
+
+
+
