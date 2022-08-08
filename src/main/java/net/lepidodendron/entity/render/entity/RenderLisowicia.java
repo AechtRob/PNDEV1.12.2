@@ -27,7 +27,7 @@ public class RenderLisowicia extends RenderLiving<EntityPrehistoricFloraLisowici
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLisowicia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.8F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }

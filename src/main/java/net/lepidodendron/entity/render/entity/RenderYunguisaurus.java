@@ -27,7 +27,7 @@ public class RenderYunguisaurus extends RenderLiving<EntityPrehistoricFloraYungu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraYunguisaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.8F;
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
