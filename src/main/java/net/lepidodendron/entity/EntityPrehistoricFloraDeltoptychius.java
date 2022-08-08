@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.7;
+		return true;
 	}
 
 	public static String getPeriod() {return "Carboniferous";}
@@ -118,7 +118,7 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.5, -9, true, 0.5));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.5, -9, true, 0.7));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

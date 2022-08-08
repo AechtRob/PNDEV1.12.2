@@ -173,7 +173,7 @@ public class ModelAlbertonia extends AdvancedModelBase {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.055F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.55F, -3, f2, 1);
-            this.walk(Lowerjaw, (float) (speed * 0.75), 0.3F, true, 0, 0, f2, 1);
+            this.walk(Lowerjaw, (float) (speed * 0.55), 0.2F, true, -2, -0.25F, f2, 1);
 
             this.walk(Leftpectoralfin, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);
             this.swing(Leftpectoralfin, (float) (speed * 0.75), 0.15F, true, 0, 0, f2, 1);

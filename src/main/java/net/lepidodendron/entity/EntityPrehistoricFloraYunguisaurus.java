@@ -6,10 +6,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -216,6 +218,10 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 			return LepidodendronMod.YUNGUISAURUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.YUNGUISAURUS_LOOT;
+	}
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraYunguisaurus(this.world);
 	}
 
 }
