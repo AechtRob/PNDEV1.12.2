@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_labidosaurus",
 			"title": "Labidosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br2)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_labidosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Labidosaurus was an omnivorous captorhinid reptile that lived during the Early Permian in what is now Texas and Oklahoma. One fossil of Labidosaurus, described in 2011, shows the earliest known example of an infection in a land vertebrate: A bone infection seemingly caused by a broken tooth in the lower jaw being exposed to bacteria."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_labidosaurus",

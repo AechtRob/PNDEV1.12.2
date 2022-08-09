@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_anteosaurus",
 			"title": "Anteosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Arid Lands$(br2)>Therapsida$(br)>Dinocephalia"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_anteosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Anteosaurus was a large carnivorous synapsid that lived during the Permian period. It had a large head and it was also very fast on land, able to outrun and chase down prey. Its body was well suited to projecting itself forward and it may have engaged in headbutting other Anteosaurus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_anteosaurus",
