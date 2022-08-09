@@ -1,80 +1,15 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:austrolimulus_icon"
+    "layer0": "lepidodendron:items/entities/austrolimulus_raw"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.275,
+        0.275,
+        0.275
+      ]
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

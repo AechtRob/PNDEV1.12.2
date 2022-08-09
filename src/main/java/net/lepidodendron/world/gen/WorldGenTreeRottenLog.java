@@ -168,12 +168,13 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Forest) {
-						i = rand.nextInt(5);
+						i = rand.nextInt(6);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_labidosaurus";}
 						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_weigeltisaurus";}
 						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 						i = rand.nextInt(3);

@@ -355,7 +355,8 @@ public class BlockPlantFossil extends ElementsLepidodendronMod.ModElement {
 			new ItemStack(ItemPetrifiedHermanophyton.block,1),
 			new ItemStack(ItemPetrifiedPachypterisReal.block,1),
 			new ItemStack(ItemPetrifiedSchmeissneria.block,1),
-			new ItemStack(ItemPetrifiedGrassyHorsetail.block,1)
+			new ItemStack(ItemPetrifiedGrassyHorsetail.block,1),
+			new ItemStack(ItemPetrifiedAppleSapling.block,1)
 		};
 		return stack;
 	}

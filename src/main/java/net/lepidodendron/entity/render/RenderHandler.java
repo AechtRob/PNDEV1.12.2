@@ -2289,10 +2289,10 @@ public class RenderHandler {
         return new RenderTiktaalik(manager);
         }
             });
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraReticulolepis.class, new IRenderFactory<EntityPrehistoricFloraReticulolepis>() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPygopterus.class, new IRenderFactory<EntityPrehistoricFloraPygopterus>() {
         @Override
-        public Render<? super EntityPrehistoricFloraReticulolepis> createRenderFor(RenderManager manager) {
-        return new RenderReticulolepis(manager);
+        public Render<? super EntityPrehistoricFloraPygopterus> createRenderFor(RenderManager manager) {
+        return new RenderPygopterus(manager);
         }
             });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDeltoptychius.class, new IRenderFactory<EntityPrehistoricFloraDeltoptychius>() {

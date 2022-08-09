@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lepidodendron:items/entities/cidaroidaitem"
+    "all": "lepidodendron:items/entities/cidaroida_item"
   }
 }

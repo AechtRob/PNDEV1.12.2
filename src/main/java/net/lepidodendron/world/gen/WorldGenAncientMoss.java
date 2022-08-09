@@ -4,8 +4,10 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
@@ -199,10 +201,11 @@ public class WorldGenAncientMoss extends WorldGenerator
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Forest) {
-						i = rand.nextInt(3);
+						i = rand.nextInt(4);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 						i = rand.nextInt(3);
@@ -214,6 +217,49 @@ public class WorldGenAncientMoss extends WorldGenerator
 						i = rand.nextInt(2);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
+					}
+				}
+			}
+
+			if (dimID == LepidodendronConfig.dimTriassic) {
+				Biome biome = worldIn.getBiome(pos);
+				if (biome instanceof BiomeTriassic) {
+					BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+						i = rand.nextInt(2);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
+						i = rand.nextInt(3);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River) {
+						i = rand.nextInt(4);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool) {
+						i = rand.nextInt(3);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Desert) {
+						i = rand.nextInt(2);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Xeric) {
+						i = rand.nextInt(4);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
 					}
 				}
 			}

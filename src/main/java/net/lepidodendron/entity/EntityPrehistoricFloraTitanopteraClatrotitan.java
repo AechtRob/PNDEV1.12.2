@@ -72,14 +72,14 @@ public class EntityPrehistoricFloraTitanopteraClatrotitan extends EntityPrehisto
 	}
 
 	@Nullable
-	protected ResourceLocation getLootTable() { return LepidodendronMod.BUG_LOOT;}
+	protected ResourceLocation getLootTable() { return LepidodendronMod.TITANOPTERA_CLATROTITAN_LOOT;}
 
 	@Override
 	protected void dropLoot(boolean wasRecentlyHit, int lootingModifier, DamageSource source)
 	{
 		if (source == BlockGlassJar.BlockCustom.FREEZE) {
 			//System.err.println("Jar loot!");
-			ResourceLocation resourcelocation = LepidodendronMod.TITANOPTERA_CLATROTITAN_LOOT;
+			ResourceLocation resourcelocation = LepidodendronMod.TITANOPTERA_CLATROTITAN_LOOT_JAR;
 			LootTable loottable = this.world.getLootTableManager().getLootTableFromLocation(resourcelocation);
 			LootContext.Builder lootcontext$builder = (new LootContext.Builder((WorldServer)this.world)).withLootedEntity(this).withDamageSource(source);
 			for (ItemStack itemstack : loottable.generateLootForPools(this.rand, lootcontext$builder.build()))

@@ -1,75 +1,15 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:canadia_icon"
+    "layer0": "lepidodendron:items/entities/canadia_raw"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.165,
+        0.165,
+        0.165
+      ]
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

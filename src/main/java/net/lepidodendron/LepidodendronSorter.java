@@ -2462,8 +2462,8 @@ public class LepidodendronSorter {
     public static final int resin_extractor = 2458;
     public static final int resin_extractor_full = 2459;
     public static final int respawner = 2460;
-    public static final int reticulolepis_cooked = 2461;
-    public static final int reticulolepis_raw = 2462;
+    public static final int pygopterus_cooked = 2461;
+    public static final int pygopterus_raw = 2462;
     public static final int reticulopteris = 2463;
     public static final int retifacies_cooked = 2464;
     public static final int retifacies_raw = 2465;
@@ -3381,6 +3381,9 @@ public class LepidodendronSorter {
 
     // Under this line are unsorted emergency additions for the v.51 update, to be sorted later:
 
+    public static final int wing_clatrotitan = 3376;
+    public static final int wing_gigatitan = 3377;
+    public static final int wing_mesotitan = 3378;
 
 
 }

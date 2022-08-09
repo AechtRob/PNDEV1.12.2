@@ -124,7 +124,8 @@ public class ItemPhial extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_protozygoptera", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_palaeontinid", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_tiktaalik", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lonchidion", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_lonchidion", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_titanoptera", "inventory")
 
 			);
 

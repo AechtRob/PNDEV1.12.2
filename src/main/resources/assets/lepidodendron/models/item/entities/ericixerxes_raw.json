@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "paleopedia:ericixerxes_icon"
+    "layer0": "lepidodendron:items/entities/ericixerxes_raw"
   }
 }
 
