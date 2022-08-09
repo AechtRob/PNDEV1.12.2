@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_heterosteus",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish Food/Raw Fish$(br)$(l)Breeds with:$() Fish Food/Raw Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
+			"text": "$(l)Eats:$() Fish Food/Fish$(br)$(l)Breeds with:$() Fish Food/Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket Young"
 		}
 	]
 }

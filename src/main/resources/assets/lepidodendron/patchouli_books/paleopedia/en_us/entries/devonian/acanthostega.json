@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostega",
 			"type": "text",
-			"text": "$(l)Eats:$() Raw and Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn-like Eggs underwater$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn-like Eggs underwater$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

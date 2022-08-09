@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_acanthostomatops",
 			"type": "text",
-			"text": "$(l)Eats:$() Raw Fish/Meat$(br)$(l)Breeds with:$() Raw Fish/Meat$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "$(l)Eats:$() Fish/Meat$(br)$(l)Breeds with:$() Fish/Meat$(br)$(l)Egg Type:$() Spawn like Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

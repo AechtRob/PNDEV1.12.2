@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cyclolobus",
 			"title": "Cyclolobus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Cyclolobidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Cyclolobidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyclolobus",
 			"type": "text",
-			"text": ""
+			"text": "Cyclolobus is a smooth ammonoid that lived during the late Permian period. It had sharp narrow projections inside of its shell."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyclolobus",

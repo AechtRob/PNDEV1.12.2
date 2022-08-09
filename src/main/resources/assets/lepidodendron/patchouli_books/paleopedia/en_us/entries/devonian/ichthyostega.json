@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ichthyostega",
 			"type": "text",
-			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Spawn like Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Spawn like Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }
