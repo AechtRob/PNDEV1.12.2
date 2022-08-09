@@ -474,7 +474,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             //speed = masterSpeed / 2.5F;
 
             if (f3 == 0 || !Tanystropheus.getIsMoving()) {
-                this.chainWave(Tail, (speed * 0.25F), 0.125F * 0.35F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (speed * 0.25F), 0.125F * 0.15F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.25F) * 4F, 0.05F * 0.45F, 0.12F, f2, 1F);
                 this.body3.offsetZ = offsetZ;
             }
@@ -519,7 +519,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
                 this.walk(neck, speed * 0.5F, -0.10F * 2.25F, false, 2.5F, 0F, f2, 0.9F);
                 this.walk(head, speed * 0.5F, 0.10F * 2.25F, false, 2.5F, 0F, f2, 0.9F);
 
-                this.chainWave(Tail, (speed * 0.5F), 0.125F * 0.55F, 0.2F, f2, 1F);
+                this.chainWave(Tail, (speed * 0.5F), 0.125F * 0.15F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.5F) * 4F, 0.05F * 0.65F, 0.12F, f2, 1F);
 
                 this.body3.offsetZ = this.moveBoxExtended(speed * 4, (float) Math.toRadians(2.5), false, 1.75F, f2, 1) + offsetZ;
