@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_captorhinus",
 			"title": "Captorhinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Captorhinidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Reptilia$(br)>Captorhinidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_captorhinus",
 			"type": "text",
-			"text": ""
+			"text": "Captorhinus is a reptile that lived during the Permian period that possessed a long tail and a hooked snout. It may have been able to detach its tail when threatened, like modern skinks."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_captorhinus",

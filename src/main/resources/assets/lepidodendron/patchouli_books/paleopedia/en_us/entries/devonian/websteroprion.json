@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_websteroprion",
 			"type": "text",
-			"text": "$(l)Eats:$() Raw/Cooked Fish$(br)$(l)Breeds with:$() Raw Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs or Break its burrow"
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs or Break its burrow"
 		}
 	]
 }
