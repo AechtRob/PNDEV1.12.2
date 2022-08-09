@@ -29,15 +29,3 @@ public class RenderTeraterpeton extends RenderLiving<EntityPrehistoricFloraTerat
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

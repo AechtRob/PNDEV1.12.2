@@ -1,16 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/weigeltisaurus_raw"
+    "layer0": "paleopedia:weigeltisaurus_icon"
   }
 }
-
-
-
-
-
-
-
 
 
 

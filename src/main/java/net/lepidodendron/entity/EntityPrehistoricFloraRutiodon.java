@@ -12,32 +12,3 @@ public class EntityPrehistoricFloraRutiodon extends EntityPlaceholderEntity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,17 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/thrinacodus_raw"
+    "layer0": "paleopedia:thrinacodus_icon"
   }
 }
+
+
+
+
+
+
+
+
+
+
+

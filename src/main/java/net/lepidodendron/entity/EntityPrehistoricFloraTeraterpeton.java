@@ -13,20 +13,3 @@ public class EntityPrehistoricFloraTeraterpeton extends EntityPlaceholderEntity 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

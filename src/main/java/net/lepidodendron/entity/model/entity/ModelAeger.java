@@ -444,11 +444,6 @@ public class ModelAeger extends AdvancedModelBase {
 
             if(e.isInWater()) {
                 this.chainWave(Tail, speed * 0.65F, tailVdegree, -2, f2, 1);
-
-
-
-
-
                 this.flap(legL1, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
                 this.flap(legR1, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);
                 /*this.flap(legL2, speedLeg, -degreeLeg, false, 0.5F, -0.5F, f2, 0.7F);

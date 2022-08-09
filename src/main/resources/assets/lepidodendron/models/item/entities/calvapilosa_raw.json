@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/calvapilosa_raw"
+    "layer0": "paleopedia:calvapilosa_icon"
   },
   "display": {
     "ground": {

@@ -35,8 +35,3 @@
     "facing=east,in_wall=true,open=true,powered=false":  { "model": "lepidodendron:ginkgoites_wall_gate_open", "uvlock": true, "y": 270 }
   }
 }
-
-
-
-
-

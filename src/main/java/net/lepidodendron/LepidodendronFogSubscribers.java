@@ -337,11 +337,6 @@ public class LepidodendronFogSubscribers {
 		}
 		return 0F;
 	}
-
-
-
-
-
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogDensity event) {

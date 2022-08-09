@@ -30,8 +30,3 @@ public class RenderEudimorphodon extends RenderLiving<EntityPrehistoricFloraEudi
 
 
 
-
-
-
-
-

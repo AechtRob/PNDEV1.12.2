@@ -36,15 +36,3 @@ public class ModelTeraterpeton extends AdvancedModelBase {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

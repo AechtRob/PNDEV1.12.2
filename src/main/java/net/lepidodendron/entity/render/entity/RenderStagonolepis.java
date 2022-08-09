@@ -27,20 +27,3 @@ public class RenderStagonolepis extends RenderLiving<EntityPrehistoricFloraStago
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

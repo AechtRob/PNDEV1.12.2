@@ -33,27 +33,3 @@ public class ModelSharovipteryx extends AdvancedModelBase {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

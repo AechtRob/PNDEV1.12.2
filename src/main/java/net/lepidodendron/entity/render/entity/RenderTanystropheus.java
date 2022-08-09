@@ -27,26 +27,9 @@ public class RenderTanystropheus extends RenderLiving<EntityPrehistoricFloraTany
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTanystropheus entity, float f) {
-        float scale = entity.getAgeScale() * 2.2F;
+        float scale = entity.getAgeScale() * 1.85F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

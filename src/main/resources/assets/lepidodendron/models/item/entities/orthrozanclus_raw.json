@@ -1,15 +1,42 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/orthrozanclus_raw"
-  },
-  "display": {
-    "ground": {
-      "scale": [
-        0.165,
-        0.165,
-        0.165
-      ]
-    }
+    "layer0": "paleopedia:orthrozanclus_icon"
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

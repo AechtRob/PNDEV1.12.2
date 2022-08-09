@@ -33,20 +33,3 @@ public class ModelStanocephalosaurus extends AdvancedModelBase {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

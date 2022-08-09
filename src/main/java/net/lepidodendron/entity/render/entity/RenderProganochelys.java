@@ -26,32 +26,3 @@ public class RenderProganochelys extends RenderLiving<EntityPrehistoricFloraProg
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

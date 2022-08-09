@@ -30,8 +30,3 @@ public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramu
 
 
 
-
-
-
-
-

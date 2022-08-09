@@ -9,14 +9,3 @@ public class EntityPrehistoricFloraItalophlebia extends EntityPlaceholderEntity 
 		super(world);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

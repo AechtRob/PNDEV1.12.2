@@ -145,18 +145,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_0" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
-
-
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 1 },
             "apply": { "model": "lepidodendron:taxodium_bridge_1", "y": 270, "uvlock": true}
         },
@@ -302,11 +290,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_1" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 2 },
             "apply": { "model": "lepidodendron:taxodium_bridge_2", "y": 270, "uvlock": true}
         },
@@ -452,11 +435,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_2" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 3 },
             "apply": { "model": "lepidodendron:taxodium_bridge_3", "y": 270, "uvlock": true}
         },
@@ -602,11 +580,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_3" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 4 },
             "apply": { "model": "lepidodendron:taxodium_bridge_4", "y": 270, "uvlock": true}
         },
@@ -752,11 +725,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_4" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 5 },
             "apply": { "model": "lepidodendron:taxodium_bridge_5", "y": 270, "uvlock": true}
         },
@@ -902,11 +870,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_5" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 6 },
             "apply": { "model": "lepidodendron:taxodium_bridge_6", "y": 270, "uvlock": true}
         },
@@ -1052,11 +1015,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_6" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 7 },
             "apply": { "model": "lepidodendron:taxodium_bridge_7", "y": 270, "uvlock": true}
         },
@@ -1202,11 +1160,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_7" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 8 },
             "apply": { "model": "lepidodendron:taxodium_bridge_8", "y": 270, "uvlock": true}
         },
@@ -1352,11 +1305,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_8" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
 
         {   "when": { "facing": "north", "variant": 9 },
             "apply": { "model": "lepidodendron:taxodium_bridge_9", "y": 270, "uvlock": true}
@@ -1653,11 +1601,6 @@
             ]
         },
 
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 11 },
             "apply": { "model": "lepidodendron:taxodium_bridge_11", "y": 270, "uvlock": true}
         },
@@ -1803,11 +1746,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_11" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
 
 
         {   "when": { "facing": "north", "variant": 12 },
@@ -1957,11 +1895,6 @@
         },
 
 
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 13 },
             "apply": { "model": "lepidodendron:taxodium_bridge_13", "y": 270, "uvlock": true}
         },
@@ -2107,11 +2040,6 @@
                 { "model": "lepidodendron:taxodium_bridge_side_13" , "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
 
 
         {   "when": { "facing": "north", "variant": 14 },
@@ -2261,11 +2189,6 @@
         },
 
 
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 15 },
             "apply": { "model": "lepidodendron:taxodium_bridge_15", "y": 270, "uvlock": true}
         },
@@ -2413,18 +2336,6 @@
         }
     ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

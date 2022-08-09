@@ -1,20 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/vetulicola_raw"
+    "layer0": "paleopedia:vetulicola_icon"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

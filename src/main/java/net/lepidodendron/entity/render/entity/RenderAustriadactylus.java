@@ -30,8 +30,3 @@ public class RenderAustriadactylus extends RenderLiving<EntityPrehistoricFloraAu
 
 
 
-
-
-
-
-

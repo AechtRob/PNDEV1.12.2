@@ -30,8 +30,3 @@ public class RenderCaelestiventus extends RenderLiving<EntityPrehistoricFloraCae
 
 
 
-
-
-
-
-

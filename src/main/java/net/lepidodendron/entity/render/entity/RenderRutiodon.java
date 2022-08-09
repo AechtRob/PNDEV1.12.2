@@ -28,27 +28,3 @@ public class RenderRutiodon extends RenderLiving<EntityPrehistoricFloraRutiodon>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -36,15 +36,3 @@ public class RenderScleromochlus extends RenderLiving<EntityPrehistoricFloraScle
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

@@ -25,27 +25,3 @@ public class RenderSilesaurus extends RenderLiving<EntityPrehistoricFloraSilesau
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

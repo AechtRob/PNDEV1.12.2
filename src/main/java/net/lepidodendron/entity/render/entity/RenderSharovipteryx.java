@@ -26,27 +26,3 @@ public class RenderSharovipteryx extends RenderLiving<EntityPrehistoricFloraShar
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

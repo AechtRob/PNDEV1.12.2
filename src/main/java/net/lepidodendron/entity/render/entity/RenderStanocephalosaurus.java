@@ -26,20 +26,3 @@ public class RenderStanocephalosaurus extends RenderLiving<EntityPrehistoricFlor
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -949,11 +949,6 @@ public class ProcedureWorldGenLiriodendron3 extends ElementsLepidodendronMod.Mod
 
 
 
-
-
-
-
-
 				block = world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 1))).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 1))), world,
 				new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 1)))) {
