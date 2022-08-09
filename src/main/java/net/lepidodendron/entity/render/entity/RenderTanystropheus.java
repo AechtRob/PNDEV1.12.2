@@ -33,20 +33,3 @@ public class RenderTanystropheus extends RenderLiving<EntityPrehistoricFloraTany
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

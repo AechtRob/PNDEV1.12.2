@@ -11,20 +11,3 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPlaceholderEnt
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

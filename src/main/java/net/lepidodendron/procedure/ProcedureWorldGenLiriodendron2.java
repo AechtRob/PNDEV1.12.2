@@ -599,11 +599,6 @@ public class ProcedureWorldGenLiriodendron2 extends ElementsLepidodendronMod.Mod
 			}
 
 
-
-
-
-
-
 		block = world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 2))).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 2))), world,
 				new BlockPos((int) (x + 1), (int) (TopCount), (int) (z + 2)))) {
@@ -738,18 +733,6 @@ public class ProcedureWorldGenLiriodendron2 extends ElementsLepidodendronMod.Mod
 				new BlockPos((int) (x - 3), (int) (TopCount - 1), (int) (z - 1)))) {
 			world.setBlockState(new BlockPos((int) (x - 3), (int) (TopCount - 1), (int) (z - 1)), BlockLiriodendronLeaves.block.getDefaultState(), 3);
 			}
-
-
-
-
-
-
-
-
-
-
-
-
 		block = world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount + 1), (int) (z + 1))).getBlock();
 		if (block.canBeReplacedByLeaves(world.getBlockState(new BlockPos((int) (x + 1), (int) (TopCount + 1), (int) (z + 1))), world,
 				new BlockPos((int) (x + 1), (int) (TopCount + 1), (int) (z + 1)))) {

@@ -25,15 +25,3 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-

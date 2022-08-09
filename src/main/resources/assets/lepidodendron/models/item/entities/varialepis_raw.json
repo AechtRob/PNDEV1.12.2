@@ -1,21 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/varialepis_raw"
+    "layer0": "paleopedia:varialepis_icon"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

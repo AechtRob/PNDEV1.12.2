@@ -113,11 +113,6 @@
                 "down": { "uv": [ 16, 0, 0, 16 ], "texture": "#t", "rotation": 270 }
             }
         },
-
-
-
-
-
         {   "from": [ 0, 12.5, 8 ],
             "to": [ 16, 12.5, 24 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": 22.5, "rescale": false },

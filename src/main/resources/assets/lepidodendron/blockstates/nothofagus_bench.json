@@ -185,11 +185,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_1", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_2", "y": 180, "uvlock": true}
@@ -273,11 +268,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_2", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_3", "y": 180, "uvlock": true}
@@ -621,11 +611,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_6", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_7", "y": 180, "uvlock": true}
@@ -709,11 +694,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_7", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_8", "y": 180, "uvlock": true}
@@ -884,11 +864,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_9", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_10", "y": 180, "uvlock": true}
@@ -1059,11 +1034,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_11", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_12", "y": 180, "uvlock": true}
@@ -1147,11 +1117,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_12", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_13", "y": 180, "uvlock": true}
@@ -1235,11 +1200,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_13", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_14", "y": 180, "uvlock": true}
@@ -1323,11 +1283,6 @@
                 { "model": "lepidodendron:nothofagus_bench_right_join_14", "y": 90, "uvlock": true}
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "left": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bench_left_15", "y": 180, "uvlock": true}
@@ -1416,29 +1371,5 @@
 
     ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

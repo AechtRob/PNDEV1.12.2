@@ -573,8 +573,3 @@ public class ModelAustriadactylus extends AdvancedModelBaseExtended {
 
     }
 }
-
-
-
-
-

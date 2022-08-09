@@ -35,27 +35,3 @@ public class ModelRutiodon extends AdvancedModelBase {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

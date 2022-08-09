@@ -35,15 +35,3 @@ public class ModelTeyujagua extends AdvancedModelBase {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

@@ -11,8 +11,3 @@ public class EntityPrehistoricFloraLysorophus extends EntityPlaceholderEntity {
 }
 
 
-
-
-
-
-

@@ -557,8 +557,3 @@ public class ModelEudimorphodon extends AdvancedModelBaseExtended {
 
     }
 }
-
-
-
-
-

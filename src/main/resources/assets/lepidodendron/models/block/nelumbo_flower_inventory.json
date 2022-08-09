@@ -36,11 +36,6 @@
             }
         },
 
-
-
-
-
-
 		{   "from": [ 4, 1, 19 ],
             "to": [ 12, 1, 9 ],
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
@@ -121,11 +116,6 @@
                 "west":  { "uv": [ 8, 4, 16, 16 ],  "texture": "#petals" }
             }
         },
-
-
-
-
-
 		{   "from": [ 4, 4, 16 ],
             "to": [ 12, 10, 16 ],
 			"rotation": { "origin": [ 8, 4, 16 ], "axis": "x", "angle": 22.5, "rescale": false },
@@ -161,11 +151,6 @@
                 "west":  { "uv": [ 1, 4, 16, 12 ],  "texture": "#petals" }
             }
         },
-
-
-
-
-
 
         
 		

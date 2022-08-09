@@ -370,11 +370,6 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
 
                 this.walk(Rightfrontfoot, speed, (float)Math.toRadians(5), false, 4.0F, (float)Math.toRadians(3), f2, 1F);
                 this.walk(Leftfrontfoot, speed, (float)Math.toRadians(5), false, 1.0F, (float)Math.toRadians(3), f2, 1F);
-
-
-
-
-
                 this.walk(Leftthigh, speed, (float)Math.toRadians(35), true, 8.0F, -(float)Math.toRadians(20), f2, 1.0F);
                 this.walk(Rightthigh, speed, (float)Math.toRadians(35), true, 5.0F, -(float)Math.toRadians(20), f2, 1.0F);
 
@@ -429,11 +424,6 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
 
                 this.walk(Rightfrontfoot, speed, (float)Math.toRadians(5), false, 4.0F, (float)Math.toRadians(3), f2, 1F);
                 this.walk(Leftfrontfoot, speed, (float)Math.toRadians(5), false, 1.0F, (float)Math.toRadians(3), f2, 1F);
-
-
-
-
-
                 this.walk(Leftthigh, speed, (float)Math.toRadians(25), true, 8.0F, -(float)Math.toRadians(5), f2, 1.0F);
                 this.walk(Rightthigh, speed, (float)Math.toRadians(25), true, 5.0F, -(float)Math.toRadians(5), f2, 1.0F);
 

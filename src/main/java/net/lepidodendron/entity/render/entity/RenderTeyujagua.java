@@ -28,15 +28,3 @@ public class RenderTeyujagua extends RenderLiving<EntityPrehistoricFloraTeyujagu
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

@@ -26,8 +26,3 @@ public class RenderItalophlebia extends RenderLiving<EntityPrehistoricFloraItalo
 
 }
 
-
-
-
-
-

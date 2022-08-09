@@ -102,11 +102,6 @@
             ]
         },
 
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 1 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_1", "y": 270, "uvlock": true}
         },
@@ -208,11 +203,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_1" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 2 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_2", "y": 270, "uvlock": true}
         },
@@ -314,11 +304,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_2" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 3 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_3", "y": 270, "uvlock": true}
         },
@@ -420,11 +405,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_3" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 4 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_4", "y": 270, "uvlock": true}
         },
@@ -526,11 +506,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_4" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 5 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_5", "y": 270, "uvlock": true}
         },
@@ -632,11 +607,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_5" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 6 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_6", "y": 270, "uvlock": true}
         },
@@ -738,11 +708,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_6" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 7 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_7", "y": 270, "uvlock": true}
         },
@@ -844,11 +809,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_7" }
             ]
         },
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 8 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_8", "y": 270, "uvlock": true}
         },
@@ -950,11 +910,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_8" }
             ]
         },
-
-
-
-
-
 
         {   "when": { "facing": "north", "variant": 9 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_9", "y": 270, "uvlock": true}
@@ -1163,11 +1118,6 @@
             ]
         },
 
-
-
-
-
-
         {   "when": { "facing": "north", "variant": 11 },
             "apply": { "model": "lepidodendron:sigillaria_bridge_11", "y": 270, "uvlock": true}
         },
@@ -1269,11 +1219,6 @@
                 { "model": "lepidodendron:sigillaria_bridge_joiner_11" }
             ]
         },
-
-
-
-
-
 
 
         {   "when": { "facing": "north", "variant": 12 },

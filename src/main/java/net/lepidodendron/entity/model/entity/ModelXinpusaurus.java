@@ -32,15 +32,3 @@ public class ModelXinpusaurus extends AdvancedModelBase {
         //stuff here
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

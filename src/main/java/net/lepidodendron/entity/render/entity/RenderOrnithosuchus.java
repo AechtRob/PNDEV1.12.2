@@ -30,32 +30,3 @@ public class RenderOrnithosuchus extends RenderLiving<EntityPrehistoricFloraOrni
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

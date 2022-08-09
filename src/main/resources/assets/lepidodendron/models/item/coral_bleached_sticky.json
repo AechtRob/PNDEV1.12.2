@@ -1,10 +1,10 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"1": "lepidodendron:blocks/reef_block_bleached",
-		"2": "lepidodendron:blocks/reef_block_bleached",
-		"3": "lepidodendron:blocks/reef_block_bleached",
-		"particle": "lepidodendron:blocks/reef_block_bleached"
+		"1": "lepidodendron:blocks/reef_block_bleached_2",
+		"2": "lepidodendron:blocks/reef_block_bleached_1",
+		"3": "lepidodendron:blocks/reef_block_bleached_3",
+		"particle": "lepidodendron:blocks/reef_block_bleached_1"
 	},
 	"elements": [
 		{

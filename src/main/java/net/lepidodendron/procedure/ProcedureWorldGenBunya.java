@@ -544,11 +544,6 @@ public class ProcedureWorldGenBunya extends ElementsLepidodendronMod.ModElement 
 				else {
 					ProcedureTreeLog.executeProcedure(xx, yy, zz, world, BlockBunyaLog.block, EnumFacing.UP);
 				}
-
-
-
-
-
 				xx = x + 1;
 				yy = (int) y + (int) (TrunkHeight - counter);
 				zz = z + 2;

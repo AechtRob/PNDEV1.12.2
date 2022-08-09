@@ -28,39 +28,3 @@ public class RenderLongisquama extends RenderLiving<EntityPrehistoricFloraLongis
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

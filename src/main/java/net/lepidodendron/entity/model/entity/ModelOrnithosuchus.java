@@ -37,32 +37,3 @@ public class ModelOrnithosuchus extends AdvancedModelBase {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

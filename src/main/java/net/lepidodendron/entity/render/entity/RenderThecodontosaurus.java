@@ -27,15 +27,3 @@ public class RenderThecodontosaurus extends RenderLiving<EntityPrehistoricFloraT
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-

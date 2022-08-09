@@ -23,13 +23,14 @@ public class ItemTeyujaguaRaw extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void initElements() {
-		elements.items.add(() -> new ItemFoodCustom());
+
+		//elements.items.add(() -> new ItemFoodCustom());
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/teyujagua_raw", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/teyujagua_raw", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {

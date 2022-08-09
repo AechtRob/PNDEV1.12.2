@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/cube",
 	"ambientocclusion": false,
 	"textures": {
@@ -7,7 +6,7 @@
 		"particle": "lepidodendron:blocks/cage_small_side",
 		"side": "lepidodendron:blocks/cage_small_side",
 		"top": "lepidodendron:blocks/cage_small_top",
-		"base": "lepidodendron:blocks/planks_oak"
+		"base": "blocks/planks_oak"
 	},
 	"elements": [
 		{

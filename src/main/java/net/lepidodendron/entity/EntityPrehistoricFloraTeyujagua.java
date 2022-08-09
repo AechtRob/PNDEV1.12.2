@@ -12,20 +12,3 @@ public class EntityPrehistoricFloraTeyujagua extends EntityPlaceholderEntity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

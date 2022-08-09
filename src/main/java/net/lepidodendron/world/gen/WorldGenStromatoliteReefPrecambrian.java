@@ -115,11 +115,6 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
                 }
                 yct += 1;
             }
-
-
-
-
-
             //Namapoikia:
             yct = 0;
             while (yct <= layer) {
@@ -343,11 +338,6 @@ public class WorldGenStromatoliteReefPrecambrian extends WorldGenerator
 
 
         }
-
-
-
-
-
         return true;
     }
 }
