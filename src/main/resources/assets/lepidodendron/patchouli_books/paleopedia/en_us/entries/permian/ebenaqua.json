@@ -14,13 +14,13 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/ebenaqua.png"],
-			"title": "Ebenaqua ritchei",
+			"title": "E. ritchei",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ebenaqua",
 			"type": "text",
-			"text": ""
+			"text": "Ebenaqua is a bobasatraniiform from the late Permian period. It had a triangular body shape similar to modern angelfish. Its fossils have been found in the Rangal Coal Measures."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ebenaqua",

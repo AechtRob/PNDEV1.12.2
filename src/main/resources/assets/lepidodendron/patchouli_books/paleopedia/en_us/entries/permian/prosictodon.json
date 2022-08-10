@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_prosictodon",
 			"title": "Prosictodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_prosictodon",
 			"type": "text",
-			"text": ""
+			"text": "Prosictodon is a dicynodont burrower from the Middle Permian period. It was really small and it lived in burrows underneath the ground. Its fossils were found in South Africa."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_prosictodon",

@@ -2,14 +2,14 @@
 	"name": "Protorosaurus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/protorosaurus_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_protorosaurus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_protorosaurus",
 			"title": "Protorosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Archosauromorpha"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Reptilia$(br)>Archosauromorpha"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_protorosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Protorosaurus was an early lizard like reptile from the late Permian period. It was an archosauromorph with a long neck and it grew up to 2 meters long. It vaguely resembled a monitor lizard and would have hunted smaller tetrapods."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_protorosaurus",

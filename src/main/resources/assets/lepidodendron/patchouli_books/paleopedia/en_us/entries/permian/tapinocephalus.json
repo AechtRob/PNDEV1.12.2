@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tapinocephalus",
 			"title": "Tapinocephalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Aridlands$(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tapinocephalus",
 			"type": "text",
-			"text": ""
+			"text": "Tapinocephalus was a large herbivorous dinocephalian that lived during the Permian period. it had a massive bony skull roof and a short snout. It would have engaged in headbutting with each other for mates or for territory. It could grow up to over 3 meters in length and they had strong robust bodies and limbs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tapinocephalus",

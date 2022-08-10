@@ -1,0 +1,32 @@
+{
+	"name": "Stagonolepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/stagonolepis_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_stagonolepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_stagonolepis",
+			"title": "Stagonolepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/stagonolepis.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

@@ -6,7 +6,7 @@
 	"turnin": "lepidodendron:pf_adv_book_crassigyrinus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
+			"trigger": "lepidodendron:pf_adv_book_crassigyrinus",
 			"title": "Crassigyrinus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Swamps$(br2)>Stegocephalia$(br)>Crassigyrinidae"

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dvinosaurus",
 			"title": "Dvinosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Amphibia$(br)>Temnospondyli$(br)>Dvinosauria$(br)>Dvinosauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Dvinosaurus is a freshwater amphibious temnospondyl that lived in the Late Permian period. It was found near the northern Dvina River, where it gets its name. It had a short head and a long body and tail and its diet was comprised mostly of fish. It is thought to have fed by ambushing its prey from the riverbeds."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinosaurus",

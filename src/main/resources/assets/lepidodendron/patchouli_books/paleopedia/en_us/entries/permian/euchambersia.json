@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_euchambersia",
 			"title": "Euchambersia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest, Aridlands$(br2)>Therapsida$(br)>Therocephalia$(br)>Akidnognathidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_euchambersia",
 			"type": "text",
-			"text": ""
+			"text": "Euchambersia is a cernivorous therapsid from the Permian period. It has been proposed that Euchambersia may have the means to produce and deliver venom with its bite. It may have used the venom to help it in injuring and immobilizing prey."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_euchambersia",

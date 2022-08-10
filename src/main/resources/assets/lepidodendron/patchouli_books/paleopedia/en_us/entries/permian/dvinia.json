@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dvinia",
 			"title": "Dvinia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Cynodontia$(br)>Dviniidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinia",
 			"type": "text",
-			"text": ""
+			"text": "Dvinia is a cynodont found on the northern Dvina River in Russia which lived during the Late Permian period. It was a small omnivore and had a set of small incisors in its mouth."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dvinia",

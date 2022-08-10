@@ -1,0 +1,32 @@
+{
+	"name": "Lagosuchus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/lagosuchus_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_lagosuchus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lagosuchus",
+			"title": "Lagosuchus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lagosuchus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lagosuchus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lagosuchus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

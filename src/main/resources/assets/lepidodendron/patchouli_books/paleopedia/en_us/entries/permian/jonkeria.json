@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_jonkeria",
 			"title": "Jonkeria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Therapsida$(br)>Dinocephalia$(br)>Titanosuchidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/jonkeria.png"],
-			"title": "Jonkeria truculenta",
+			"title": "J. truculenta",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jonkeria",
 			"type": "text",
-			"text": ""
+			"text": "Jonkeria is a massive hippo like therapsid from the Permian period. It was an herbivore and grew up to 3.5 meters in length. It had an elongated snout as well as sharp incisors in its mouth. Jonkeria looked identical to its relative Titanosuchus except for the length of its limbs with Jonkeria having much shorter limbs."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_jonkeria",

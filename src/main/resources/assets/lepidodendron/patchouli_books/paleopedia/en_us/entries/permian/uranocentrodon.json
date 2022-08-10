@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_uranocentrodon",
 			"title": "Uranocentrodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Sterospondyli$(br)>Rhinesuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Sterospondyli$(br)>Rhinesuchidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_uranocentrodon",
 			"type": "text",
-			"text": ""
+			"text": "Uranocentrodon is a late Permian temnospondyl. It was a large predator that could grow up to 3.75 meters and it was likely to have been an ambush predator. Uranocentrodon had internal gills as an adult but likely had external gills as a larva."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_uranocentrodon",

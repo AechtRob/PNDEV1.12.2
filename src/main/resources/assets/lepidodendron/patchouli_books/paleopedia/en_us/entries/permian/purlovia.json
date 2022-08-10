@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_purlovia",
 			"title": "Purlovia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Therapsida$(br)>Therocephalia$(br)>Nanictidopidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/purlovia.png"],
-			"title": "",
+			"title": "P. maxima",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_purlovia",
 			"type": "text",
-			"text": ""
+			"text": "Purlovia is a therocephalian from the Permian period. It was an herbivorous animal that possessed canine teeth. Its lower jaw is robust and upward curving. Its fossils have been found in Russia."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_purlovia",

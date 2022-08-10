@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_diadectes",
 			"title": "Diadectes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Diadectomorpha$(br)>Diadectidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Diadectomorpha$(br)>Diadectidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_diadectes",
 			"type": "text",
-			"text": ""
+			"text": "Diadectes was a large synapsid that lived during the Permian period. It was one of the first herbivorous tetrapods and was a fully terrestrial animal. It could reach lengths of just over 2 meters and they had eight peg like front teeth that would be used to tear out vegetation."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_diadectes",

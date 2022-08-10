@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_tiarajudens",
 			"title": "",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Therapsida$(br)>Anomodontia$(br)>Anomocephaloidea"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/tiarajudens.png"],
-			"title": "",
+			"title": "T. eccentricus",
 			"text": ""
 		},
 		{

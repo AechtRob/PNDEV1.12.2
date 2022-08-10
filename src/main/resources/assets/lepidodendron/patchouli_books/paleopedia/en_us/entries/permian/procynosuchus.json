@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_procynosuchus",
 			"title": "Procynosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands, Lowlands$(br2)>Therapsida$(br)>Cynodontia$(br)>Procynosuchidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_procynosuchus",
 			"type": "text",
-			"text": ""
+			"text": "Procynosuchus is a cynodont from the late Permian period. it is considered to be one of the most basal cynodonts and measured 60 cm in length. It was also adapted to swimming and it probably lived a semi aquatic lifestyle."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_procynosuchus",

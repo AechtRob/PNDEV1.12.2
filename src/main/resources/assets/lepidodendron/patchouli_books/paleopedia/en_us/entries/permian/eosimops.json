@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eosimops",
 			"title": "Eosimops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eosimops",
 			"type": "text",
-			"text": ""
+			"text": "Eosimops is a dicynodont related to Diictodon from the Middle Permian period. Like Diictodon, it was a burrower and it was also a small mammal like animal with tusks. It would have lived with animals like Eunotosaurus in life."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eosimops",
