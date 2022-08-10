@@ -4,7 +4,8 @@ package net.lepidodendron.item.entities;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
-import net.lepidodendron.entity.EntityPrehistoricFloraAphetoceras;
+import net.lepidodendron.entity.EntityPrehistoricFloraArchaeocidaris;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -77,7 +78,7 @@ public class ItemEchinodermEggsArchaeocidaris extends ElementsLepidodendronMod.M
 
 					if (iblockstate.getMaterial() == Material.WATER) {
 						if (!(worldIn.isRemote)) {
-							EntityPrehistoricFloraAphetoceras.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraAphetoceras.class).toString(), "{AgeTicks:0}", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
+							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraArchaeocidaris.class).toString(), "", blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 						if (!playerIn.capabilities.isCreativeMode) {
 							itemstack.shrink(1);

@@ -5,7 +5,6 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnPhlegethontia;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -33,8 +32,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-
-import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
@@ -290,12 +287,12 @@ public class EntityPrehistoricFloraPhlegethontia extends EntityPrehistoricFloraS
 	}
 
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
-			return LepidodendronMod.PHLEGETHONTIA_LOOT_YOUNG;
-		}
-		return LepidodendronMod.PHLEGETHONTIA_LOOT;
-	}
+	//@Nullable
+	//protected ResourceLocation getLootTable() {
+	//	 		if (!this.isPFAdult()) {
+	//		return LepidodendronMod.PHLEGETHONTIA_LOOT_YOUNG;
+	//	}
+	//	return LepidodendronMod.PHLEGETHONTIA_LOOT;
+	//}
 
 }

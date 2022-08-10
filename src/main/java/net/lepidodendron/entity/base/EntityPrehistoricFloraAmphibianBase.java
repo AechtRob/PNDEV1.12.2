@@ -79,6 +79,10 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
         return false;
     }
 
+    public boolean isBase() {
+        return false;
+    }
+
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
@@ -152,8 +156,12 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
         }
         else
         {
-            this.setAir(1000);
+            this.setAir(this.airTime());
         }
+    }
+
+    public int airTime() {
+        return 1000;
     }
 
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
@@ -225,10 +233,12 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
                 //this.PrehistoricFloraFishBase.setAIMoveSpeed(0.65F);
 
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
-                this.EntityBase.setAIMoveSpeed(0.3F);
-                //System.err.println("Setting speed!");
-                //TEST:
-                //this.EntityBase.setAIMoveSpeed(0.0F);
+                float speed = 0.3F;
+                this.EntityBase.setAIMoveSpeed(speed);
+
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                    this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+                }
 
                 this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
             } else {
@@ -236,6 +246,17 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
                 this.EntityBase.setAIMoveSpeed(0.0F);
             }
         }
+    }
+
+    public boolean isAtBottom() {
+        //System.err.println("Testing position");
+        if (this.getPosition().getY() - 1 > 1) {
+            BlockPos pos = new BlockPos(this.getPosition().getX(),this.getPosition().getY() - 1, this.getPosition().getZ());
+            return ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+                    && ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+                    && ((double)this.getPosition().getY() + 0.334D) > this.posY);
+        }
+        return true;
     }
 
     public class WanderMoveHelper extends EntityMoveHelper {

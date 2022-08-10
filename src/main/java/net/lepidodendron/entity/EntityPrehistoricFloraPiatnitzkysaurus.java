@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
@@ -27,8 +26,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-
-import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFloraLandBase {
 
@@ -253,12 +250,12 @@ public class EntityPrehistoricFloraPiatnitzkysaurus extends EntityPrehistoricFlo
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.PIATNITZKYSAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.PIATNITZKYSAURUS_LOOT;
-	}
+	//@Nullable
+	//protected ResourceLocation getLootTable() {
+	//	if (!this.isPFAdult()) {
+	//		return LepidodendronMod.PIATNITZKYSAURUS_LOOT_YOUNG;
+	//	}
+	//	return LepidodendronMod.PIATNITZKYSAURUS_LOOT;
+	//}
 
 }

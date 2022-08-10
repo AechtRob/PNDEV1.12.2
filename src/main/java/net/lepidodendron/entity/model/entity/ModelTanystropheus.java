@@ -442,6 +442,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         //this.resetToDefaultPose();
         this.body2.offsetY = 1.1F;
         float offsetZ = -0.25F;
+        offsetZ = 0F;
 
         EntityPrehistoricFloraTanystropheus Tanystropheus = (EntityPrehistoricFloraTanystropheus) e;
 

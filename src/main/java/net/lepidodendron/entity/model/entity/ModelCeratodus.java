@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraCeratodus;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -250,6 +251,11 @@ public class ModelCeratodus extends AdvancedModelBase {
         if (!e.isInWater()) {
             speed = 0.5F;
         }
+        if (!((EntityPrehistoricFloraCeratodus) e).isReallyInWater()) {
+            outOfWater = 1.45f;
+            this.Bodymiddlefront.bob(speed, 0.35F, false, f2, 1F);
+            this.Bodymiddlefront.offsetY = 1.30F;
+        }
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {
@@ -262,9 +268,9 @@ public class ModelCeratodus extends AdvancedModelBase {
             //System.err.println("Animation at bottom");
             speed = speed * 0.55F;
         }
-        if(!e.isInWater()) {
-            outOfWater = 0.05f;
-        }
+        //if (!e.isInWater()) {
+        //    outOfWater = 0.05f;
+        //}
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed * outOfWater, 0.05F * outOfWater, -3, f2, 1);
@@ -288,10 +294,10 @@ public class ModelCeratodus extends AdvancedModelBase {
             this.chainSwing(finPelvicRight, speed * outOfWater, -0.20F * outOfWater, 0.3F, f2, 1);
             this.chainFlap(finPelvicRight, speed * outOfWater, -0.10F * outOfWater, 0.5, f2, 1);
 
-            if (!e.isInWater()) {
-                this.Bodymiddlefront.rotateAngleZ = (float)Math.toRadians(90);
-                this.Bodymiddlefront.offsetY = 1.35F;
-            }
+            //if (!e.isInWater()) {
+            //    this.Bodymiddlefront.rotateAngleZ = (float)Math.toRadians(90);
+            //    this.Bodymiddlefront.offsetY = 1.35F;
+            //}
         }
     }
 }

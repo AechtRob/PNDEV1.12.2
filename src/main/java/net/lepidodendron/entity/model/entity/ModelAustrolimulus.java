@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraAustrolimulus;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -332,7 +333,7 @@ public class ModelAustrolimulus extends AdvancedModelBase {
         AdvancedModelRenderer[] legsL = {this.leg1, this.leg2, this.leg3, this.leg4, this.leg5};
         AdvancedModelRenderer[] legsR = {this.leg6, this.leg7, this.leg8, this.leg9, this.leg10};
 
-        if (isAtBottom || !e.isInWater()) {
+        if (isAtBottom || !e.isInWater() || ((EntityPrehistoricFloraAustrolimulus)e).isJumpingPF()) {
             this.chainSwing(legsL, 0.6F, 0.1F, -3, f2, 1);
             this.chainSwing(legsR, 0.6F, 0.1F, -3, f2, 1);
             this.flap(leg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
@@ -350,7 +351,7 @@ public class ModelAustrolimulus extends AdvancedModelBase {
 
 
             this.bob(carapace, 0.0F, 0.0F, false, f2, 1);
-        } else if(f3 > 0){
+        } else if (f3 != 0) {
             this.carapace.rotateAngleZ = (float) Math.toRadians(180);
             this.carapace.rotateAngleX = (float) Math.toRadians(20);
 

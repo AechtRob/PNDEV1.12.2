@@ -27,7 +27,7 @@ public class RenderSmok extends RenderLiving<EntityPrehistoricFloraSmok> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSmok entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.8F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.6F;
     }

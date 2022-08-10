@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.item.entities.ItemEchinodermEggsCidaroida;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -92,6 +93,11 @@ public class EntityPrehistoricFloraCidaroida extends EntityPrehistoricFloraSlith
 
 	protected float getAISpeedSlithering() {
 		return 0.0175f;
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEchinodermEggsCidaroida.block, 1);
 	}
 
 	protected void initEntityAI() {

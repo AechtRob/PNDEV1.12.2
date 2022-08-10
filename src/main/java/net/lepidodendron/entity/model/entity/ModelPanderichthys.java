@@ -235,7 +235,9 @@ public class ModelPanderichthys extends AdvancedModelBase {
             still = 0.6F;
         }
         if (!((EntityPrehistoricFloraPanderichthys) e).isReallyInWater()) {
-            speed = 0.065F;
+            speed = 0.465F;
+            this.body.bob(speed, 0.35F, false, f2, 1F);
+            this.body.offsetY = 0.75F;
         }
 
         //if (e.isInWater()) {

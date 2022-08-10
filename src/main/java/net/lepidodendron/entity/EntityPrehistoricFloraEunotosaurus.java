@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -20,8 +19,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-
-import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDiictodon {
 
@@ -137,12 +134,12 @@ public class EntityPrehistoricFloraEunotosaurus extends EntityPrehistoricFloraDi
 	            .getObject(new ResourceLocation("lepidodendron:eunotosaurus_death"));
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		if (!this.isPFAdult()) {
-			return LepidodendronMod.EUNOTOSAURUS_LOOT_YOUNG;
-		}
-		return LepidodendronMod.EUNOTOSAURUS_LOOT;
-	}
+	//@Nullable
+	//protected ResourceLocation getLootTable() {
+	//	if (!this.isPFAdult()) {
+	//		return LepidodendronMod.EUNOTOSAURUS_LOOT_YOUNG;
+	//	}
+	//	return LepidodendronMod.EUNOTOSAURUS_LOOT;
+	//}
 
 }

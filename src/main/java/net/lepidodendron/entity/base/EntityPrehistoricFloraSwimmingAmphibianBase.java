@@ -218,6 +218,17 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
         return false;
     }
 
+    public boolean isAtBottom() {
+        //System.err.println("Testing position");
+        if (this.getPosition().getY() - 1 > 1) {
+            BlockPos pos = new BlockPos(this.getPosition().getX(),this.getPosition().getY() - 1, this.getPosition().getZ());
+            return ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+                    && ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+                    && ((double)this.getPosition().getY() + 0.334D) > this.posY);
+        }
+        return true;
+    }
+
     @Override
     public void onLivingUpdate() {
 
@@ -510,6 +521,10 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 20.0F);
                 float speed = getAISpeedSwimmingAmphibian();
                 this.EntityBase.setAIMoveSpeed(speed);
+
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                    this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+                }
 
                 this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
             } else {

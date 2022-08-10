@@ -8,8 +8,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.item.entities.ItemEchinodermEggsEnoploura;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -117,6 +119,11 @@ public class EntityPrehistoricFloraEnoploura extends EntityPrehistoricFloraFishB
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEchinodermEggsEnoploura.block, 1);
 	}
 
 	@Override

@@ -58,16 +58,10 @@
 				"biome": "lepidodendron:triassic_desert_rocky"
 			}
 		},
-		"triassic_cold_glossopteris_forest_ocean": {
+		"triassic_desert_sandy": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:triassic_desert_sandy"
-			}
-		},
-		"triassic_desert": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"biome": "lepidodendron:triassic_desert"
 			}
 		},
 		"triassic_flooded_forest": {

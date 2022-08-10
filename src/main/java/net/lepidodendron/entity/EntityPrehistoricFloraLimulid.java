@@ -4,20 +4,16 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockEurypteridEggsHibbertopterus;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.ai.WalkingAmphibianWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraWalkingAmphibianBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -45,6 +41,10 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 15.0D;
+	}
+
+	public boolean isJumpingPF() {
+		return this.isJumping;
 	}
 
 	@Override

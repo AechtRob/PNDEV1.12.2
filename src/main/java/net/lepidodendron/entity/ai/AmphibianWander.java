@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.entity.EntityPrehistoricFloraMastodonsaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -21,6 +20,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
     protected int executionChance;
     protected boolean mustUpdate;
     protected EntityPrehistoricFloraSwimmingAmphibianBase PrehistoricFloraAmphibianBase;
+
 
     public AmphibianWander(EntityPrehistoricFloraSwimmingAmphibianBase PrehistoricFloraAmphibianBase, Animation animation, double waterPreference, int executionchance)
     {
@@ -75,7 +75,7 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                 //Actively seek out water targets if too far from water:
                 BlockPos vec3;
                 if (!(this.PrehistoricFloraAmphibianBase.isNearWater(this.entity, this.entity.getPosition()))) {
-                    vec3 = this.findWaterTarget(32);
+                    vec3 = this.findWaterTargetIgnoreBase(32);
                     if (vec3 == null) {
                         vec3 = this.findLandTarget();
                         if (vec3 == null) {
@@ -101,7 +101,12 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                         vec3 = this.findLandTarget();
                     }
                     else {
-                        vec3 = this.findWaterTarget(16);
+                        if (!this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
+                            vec3 = this.findWaterTargetIgnoreBase(16);
+                        }
+                        else {
+                            vec3 = this.findWaterTarget(16);
+                        }
                     }
                 }
                 if (vec3 != null) {
@@ -127,10 +132,11 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
+
     public BlockPos findWaterTarget(int dist) {
         Random rand = this.PrehistoricFloraAmphibianBase.getRNG();
         if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
-            if (this.PrehistoricFloraAmphibianBase instanceof EntityPrehistoricFloraMastodonsaurus) {
+            if (this.PrehistoricFloraAmphibianBase.isBase()) {
                 for (int i = 0; i < 10; i++) {
                     BlockPos randPos = this.PrehistoricFloraAmphibianBase.getPosition().add(rand.nextInt(17) - 8, rand.nextInt(17) - 8, rand.nextInt(17) - 8);
                     //Prefer targets which are at the bottom:
@@ -168,6 +174,31 @@ public class AmphibianWander extends AnimationAINoAnimation<EntityPrehistoricFlo
                         if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
                             return randPos;
                         }
+                    }
+                }
+            }
+        } else {
+            BlockPos blockpos1;
+            blockpos1 = new BlockPos(this.PrehistoricFloraAmphibianBase.getAttackTarget());
+            if (this.PrehistoricFloraAmphibianBase.world.getBlockState(blockpos1).getMaterial() == Material.WATER) {
+                return blockpos1;
+            }
+        }
+        return null;
+    }
+
+    public BlockPos findWaterTargetIgnoreBase(int dist) {
+        Random rand = this.PrehistoricFloraAmphibianBase.getRNG();
+        if (this.PrehistoricFloraAmphibianBase.getAttackTarget() == null) {
+            for (int i = 0; i < 64; i++) {
+                BlockPos randPos = this.PrehistoricFloraAmphibianBase.getPosition().add(rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2), rand.nextInt(dist + 1) - (int) (dist / 2));
+                boolean visibility = true;
+                if (this.PrehistoricFloraAmphibianBase.isReallyInWater()) {
+                    visibility = this.PrehistoricFloraAmphibianBase.isDirectPathBetweenPoints(this.PrehistoricFloraAmphibianBase.getPositionVector(), new Vec3d(randPos.getX() + 0.5, randPos.getY() + 0.5, randPos.getZ() + 0.5));
+                }
+                if (this.PrehistoricFloraAmphibianBase.world.getBlockState(randPos).getMaterial() == Material.WATER && visibility) {
+                    if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                        return randPos;
                     }
                 }
             }

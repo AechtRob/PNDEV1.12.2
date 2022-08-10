@@ -47,7 +47,16 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		minWidth = 0.1F;
+		maxWidth = 0.55F;
+		maxHeight = 0.40F;
+		maxHealthAgeable = 4.0D;
 		BREATHE_ANIMATION = Animation.create(55);
+	}
+
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
 	}
 
 	@Override
@@ -58,7 +67,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 		if (this.isReallyInWater()) {
 			return 0.22f;
 		}
-		return 0.05F;
+		return 0.15F;
 	}
 
 	@Override
@@ -174,6 +183,11 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 		}
 	}
 
+	@Override
+	public int airTime() {
+		return 10000;
+	}
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
@@ -268,7 +282,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
+			return super.attackEntityFrom(source, (amount * 0.25F));
 		}
 		return super.attackEntityFrom(source, amount);
 	}
@@ -282,5 +296,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 			this.motionY = 0.01D;
 		}
 	}
+
+
 
 }

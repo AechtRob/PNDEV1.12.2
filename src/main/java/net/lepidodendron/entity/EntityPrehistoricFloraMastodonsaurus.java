@@ -60,6 +60,11 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
+	public boolean isBase() {
+		return true;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.25;
 	}

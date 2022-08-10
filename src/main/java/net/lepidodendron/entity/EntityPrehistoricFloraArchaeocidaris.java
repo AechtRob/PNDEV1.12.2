@@ -8,6 +8,7 @@ import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
 import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.item.entities.ItemEchinodermEggsArchaeocidaris;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -91,7 +92,12 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CIDAROIDA_LOOT;
+		return LepidodendronMod.ARCHAEOCIDARIS_LOOT;
+	}
+
+	@Override
+	public ItemStack getPropagule() {
+		return new ItemStack(ItemEchinodermEggsArchaeocidaris.block, 1);
 	}
 
 	@Override

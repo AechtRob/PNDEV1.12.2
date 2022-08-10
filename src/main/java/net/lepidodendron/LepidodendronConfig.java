@@ -1896,6 +1896,7 @@ public class LepidodendronConfig {
     public static int waterEryops = 4;
     public static int waterCrassigyrinus = 1;
     public static int waterPanderichthys = 1;
+    public static int waterCeratodus = 1;
     public static int waterDiplocaulus = 1;
     public static int waterDiploceraspis = 1;
     public static int waterMastodonsaurus = 1;
@@ -8713,6 +8714,10 @@ public class LepidodendronConfig {
         prop = cfg.get("Mobs", "waterPanderichthys", waterPanderichthys);
         prop.setComment("Distance NSEW from water that Panderichthys can go to without taking suffocation damage (1 to 16) [default: 1]");
         waterPanderichthys = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Mobs", "waterCeratodus", waterCeratodus);
+        prop.setComment("Distance NSEW from water that Ceratodus can go to without taking suffocation damage (1 to 16) [default: 1]");
+        waterCeratodus = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Mobs", "waterDiplocaulus", waterDiplocaulus);
         prop.setComment("Distance NSEW from water that Diplocaulus can go to without taking suffocation damage (1 to 16) [default: 1]");

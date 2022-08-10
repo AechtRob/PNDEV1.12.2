@@ -5818,6 +5818,60 @@
         "stream": false
       }
     ]
+  },
+
+
+  "tanystropheus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanystropheus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_living06",
+        "stream": false
+      }
+    ]
+  },
+  "tanystropheus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanystropheus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:tanystropheus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "tanystropheus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:tanystropheus_death",
+        "stream": false
+      }
+    ]
   }
 
 
