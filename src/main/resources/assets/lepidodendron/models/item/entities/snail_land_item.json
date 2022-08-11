@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/snail_land_item"
+    "layer0": "paleopedia:snail_land_icon"
   }
 }

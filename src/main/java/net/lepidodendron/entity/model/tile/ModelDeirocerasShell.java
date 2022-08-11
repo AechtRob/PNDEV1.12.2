@@ -226,7 +226,8 @@ public class ModelDeirocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-        this.shellbase.offsetY = -1.5F;
+        this.shellbase.offsetY = 0.5F;
+        this.shellbase.offsetZ = 4.5F;
         this.shellbase.render(0.1f);
     }
 

@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraGnathorhiza;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -246,9 +247,15 @@ public class ModelGnathorhiza extends AdvancedModelBase {
         AdvancedModelRenderer[] fishTail = {this.Bodymiddleback, this.Bodyback, this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
 
         float speed = 0.15F;
-        if (!e.isInWater()) {
-            speed = 0.5F;
+        //if (!e.isInWater()) {
+        //    speed = 0.5F;
+        //}
+        if (!((EntityPrehistoricFloraGnathorhiza) e).isReallyInWater()) {
+            speed = 0.4f;
+            this.Bodymiddlefront.bob(speed, 0.35F, false, f2, 1F);
+            this.Bodymiddlefront.offsetY = 1.35F;
         }
+
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {
@@ -284,11 +291,11 @@ public class ModelGnathorhiza extends AdvancedModelBase {
             this.chainSwing(finPelvicRight, speed, -0.20F, 0.3F, f2, 1);
             this.chainFlap(finPelvicRight, speed, -0.10F, 0.5, f2, 1);
 
-            if (!e.isInWater()) {
-                this.Bodymiddlefront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Bodymiddlefront.offsetY = 1.25F;
-                this.bob(Bodymiddlefront, -speed, 5F, false, f2, 1);
-            }
+            //if (!e.isInWater()) {
+            //    this.Bodymiddlefront.rotateAngleZ = (float) Math.toRadians(90);
+            //    this.Bodymiddlefront.offsetY = 1.25F;
+            //    this.bob(Bodymiddlefront, -speed, 5F, false, f2, 1);
+            //}
         }
     }
 }

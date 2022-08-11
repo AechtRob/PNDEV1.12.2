@@ -524,14 +524,16 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
                 this.body2.offsetZ = this.moveBoxExtended(speed * 4, (float) Math.toRadians(2.5), false, 1.75F, f2, 1) + offsetZ;
             }
         }
-        else { //im water
+        else { //in water
             speed = masterSpeed * 2F;
             
             this.chainSwing(Torso, speed, 0.07F, -3, f2, 1);
             if (f3 == 0.0F) {
+                this.bob(body2, speed, 0.4F, false, f2, 1F);
+                this.body2.offsetZ = offsetZ;
                 return;
             }
-            //Do the BB animations here
+            //It will also do the BB animations here
             
             this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(Tail, speed, 0.35F, -3, f2, 1F);
@@ -569,6 +571,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             yy = 0D + (((tickAnim - 25D) / 15D) * 0D);
             zz = 0D + (((tickAnim - 25D) / 15D) * 0D);
         }
+        else {
+            xx = 37.5D  -7.5D;
+            yy = 0;
+            zz = 0;
+        }
 
 
         this.setRotateAngle(forelegL, forelegL.rotateAngleX + (float) Math.toRadians(xx), forelegL.rotateAngleY + (float) Math.toRadians(yy), forelegL.rotateAngleZ + (float) Math.toRadians(zz));
@@ -579,7 +586,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             yy = 0D + (((tickAnim - 0D) / 40D) * 0D);
             zz = 0D + (((tickAnim - 0D) / 40D) * 0D);
         }
-
+        else {
+            xx = 57.5D;
+            yy = 0;
+            zz = 0;
+        }
 
         this.setRotateAngle(forelegL2, forelegL2.rotateAngleX + (float) Math.toRadians(xx), forelegL2.rotateAngleY + (float) Math.toRadians(yy), forelegL2.rotateAngleZ + (float) Math.toRadians(zz));
 
@@ -588,6 +599,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             xx = 47.5D + (((tickAnim - 0D) / 40D) * 0D);
             yy = 0D + (((tickAnim - 0D) / 40D) * 0D);
             zz = 0D + (((tickAnim - 0D) / 40D) * 0D);
+        }
+        else {
+            xx = 47.5D;
+            yy = 0;
+            zz = 0;
         }
 
 
@@ -604,6 +620,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             yy = 0D + (((tickAnim - 20D) / 20D) * 0D);
             zz = 0D + (((tickAnim - 20D) / 20D) * 0D);
         }
+        else {
+            xx = 37.5D  -7.5D;
+            yy = 0;
+            zz = 0;
+        }
 
 
         this.setRotateAngle(forelegR, forelegR.rotateAngleX + (float) Math.toRadians(xx), forelegR.rotateAngleY + (float) Math.toRadians(yy), forelegR.rotateAngleZ + (float) Math.toRadians(zz));
@@ -614,6 +635,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             yy = 0D + (((tickAnim - 0D) / 40D) * 0D);
             zz = 0D + (((tickAnim - 0D) / 40D) * 0D);
         }
+        else {
+            xx = 57.5D;
+            yy = 0;
+            zz = 0;
+        }
 
 
         this.setRotateAngle(forelegR2, forelegR2.rotateAngleX + (float) Math.toRadians(xx), forelegR2.rotateAngleY + (float) Math.toRadians(yy), forelegR2.rotateAngleZ + (float) Math.toRadians(zz));
@@ -623,6 +649,11 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             xx = 47.5D + (((tickAnim - 0D) / 40D) * 0D);
             yy = 0D + (((tickAnim - 0D) / 40D) * 0D);
             zz = 0D + (((tickAnim - 0D) / 40D) * 0D);
+        }
+        else {
+            xx = 47.5D;
+            yy = 0;
+            zz = 0;
         }
 
 

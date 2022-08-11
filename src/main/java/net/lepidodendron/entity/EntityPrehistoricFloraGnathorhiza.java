@@ -3,11 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderBottomDweller;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AmphibianWander;
+import net.lepidodendron.entity.ai.EatFishFoodAIAmphibian;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -20,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -33,9 +34,19 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFis
 		setSize(0.5F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
+		minWidth = 0.1F;
+		maxWidth = 0.50F;
+		maxHeight = 0.30F;
+		maxHealthAgeable = 4.0D;
 		setNoAI(!true);
 		enablePersistence();
 	}
+
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
 
 	@Override
 	public boolean isSmall() {
@@ -52,12 +63,38 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFis
 	}
 
 	@Override
-	protected float getAISpeedFish() {
-		return 0.185f;
+	public boolean laysEggs() {
+		return false;
+	}
+
+	//@Override
+	//protected float getAISpeedFish() {
+	//	return 0.185f;
+	//}
+
+	@Override
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isReallyInWater()) {
+			return 0.185f;
+		}
+		return 0.22F;
 	}
 
 	@Override
-	protected boolean isBase() {
+	public int WaterDist() {
+		int i = (int) LepidodendronConfig.waterGnathorhiza;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 0;
+	}
+
+	@Override
+	public boolean isBase() {
 		return true;
 	}
 
@@ -87,19 +124,14 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFis
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new AmphibianWander(this, NO_ANIMATION,1, 20));
+		this.targetTasks.addTask(0, new EatFishFoodAIAmphibian(this));
 	}
 
 	@Override
 	public boolean isAIDisabled() {
 		return false;
-	}
-
-	@Override
-	public String getTexture() {
-		return this.getTexture();
 	}
 
 	@Override
@@ -140,6 +172,11 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFis
 	}
 
 	@Override
+	public int airTime() {
+		return 10000;
+	}
+
+	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
@@ -152,6 +189,14 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraFis
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.GNATHORHIZA_LOOT;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.25F));
+		}
+		return super.attackEntityFrom(source, amount);
 	}
 
 }

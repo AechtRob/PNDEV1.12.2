@@ -4,15 +4,14 @@ package net.lepidodendron.entity;
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -27,7 +26,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSwimmingAmphibianBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -37,8 +36,8 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraLaccognathus(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraLaccognathus.SwimmingMoveHelperBase();
-		this.navigator = new PathNavigateSwimmer(this, world);
+		//this.moveHelper = new EntityPrehistoricFloraLaccognathus.SwimmingMoveHelperBase();
+		//this.navigator = new PathNavigateSwimmer(this, world);
 		setSize(1.45F, 1.85F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
@@ -49,6 +48,12 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		maxHeight = 0.65F;
 		maxHealthAgeable = 20.0D;
 	}
+
+	@Override
+	public boolean canJumpOutOfWater() {
+		return false;
+	}
+
 
 	@Override
 	public boolean isSmall() {
@@ -90,19 +95,30 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 
 	@Override
 	public int getAdultAge() {
-		return 128000;
+		return 64000;
 	}
 
+	//@Override
+	//protected float getAISpeedFish() {
+	//	if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
+	//		return 0;
+	//	}
+	//	return 0.372f;
+	//}
+
 	@Override
-	protected float getAISpeedFish() {
-		if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
-			return 0;
+	protected float getAISpeedSwimmingAmphibian() {
+		if (this.isReallyInWater()) {
+			if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
+				return 0;
+			}
+			return 0.372f;
 		}
-		return 0.372f;
+		return 0.272f;
 	}
 
 	@Override
-	protected boolean isBase() {
+	public boolean isBase() {
 		return true;
 	}
 
@@ -114,11 +130,19 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		return super.attackEntityFrom(source, amount);
 	}
 
+	@Override
+	public int WaterDist() {
+		int i = (int) LepidodendronConfig.waterLaccognathus;
+		if (i > 16) {i = 16;}
+		if (i < 1) {i = 1;}
+		return i;
+	}
+
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 1, 20));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -140,14 +164,15 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		return false;
 	}
 
-	@Override
-	public String getTexture() {
-		return this.getTexture();
-	}
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
+	}
+
+	@Override
+	public int airTime() {
+		return 6000;
 	}
 
 	@Override
@@ -280,36 +305,4 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraAg
 		this.limbSwing += this.limbSwingAmount;
 	}
 
-	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraLaccognathus EntityBase = EntityPrehistoricFloraLaccognathus.this;
-
-		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraLaccognathus.this);
-		}
-
-		@Override
-		public void onUpdateMoveHelper() {
-			if (this.action == Action.MOVE_TO && !this.EntityBase.getNavigator().noPath()) {
-				double distanceX = this.posX - this.EntityBase.posX;
-				double distanceY = this.posY - this.EntityBase.posY;
-				double distanceZ = this.posZ - this.EntityBase.posZ;
-				double distance = Math.abs(distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ);
-				distance = MathHelper.sqrt(distance);
-				distanceY /= distance;
-				float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
-
-				this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
-				float speed = getAISpeedFish();
-				this.EntityBase.setAIMoveSpeed(speed);
-
-				if (this.EntityBase.isAtBottom()) {
-					this.EntityBase.setAIMoveSpeed(speed * 0.25F);
-				}
-
-				this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
-			} else {
-				this.EntityBase.setAIMoveSpeed(0.0F);
-			}
-		}
-	}
 }

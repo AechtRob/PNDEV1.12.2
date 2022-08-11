@@ -277,9 +277,15 @@ public class ModelLaccognathus extends AdvancedModelBase {
         if (f3 == 0.0F) {
             still = 0.6F;
         }
-        if (!e.isInWater()) {
-            speed = 0.210F;
+        //if (!e.isInWater()) {
+        //    speed = 0.210F;
+        //}
+        if (!((EntityPrehistoricFloraLaccognathus) e).isReallyInWater()) {
+            speed = 0.9f;
+            this.head.bob(speed, 0.35F, false, f2, 1F);
+            //this.head.offsetY = 0.1F;
         }
+
 
         //this.head.rotateAngleY += (f3 / (180F / (float) Math.PI));
         //this.head.rotateAngleX += f4 / (180F / (float) Math.PI);
@@ -292,6 +298,8 @@ public class ModelLaccognathus extends AdvancedModelBase {
         }
         else {
             this.swing(head, speed, 0.06F, true, 0, 0, f2, 0.5F);
+            this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
         }
         this.flap(pectoralfinL, (float) (speed * 0.65), 0.2F, false, 0.8F, 0, f2, 0.5F);
         this.swing(pectoralfinL, (float) (speed * 0.65), 0.1F, true, 0, 0, f2, 0.5F);
@@ -303,14 +311,14 @@ public class ModelLaccognathus extends AdvancedModelBase {
         this.flap(pelvicfinR, (float) (speed * 0.65), -0.2F, false, 1.8F, 0, f2, 0.5F);
         this.swing(pelvicfinR, (float) (speed * 0.65), -0.1F, true, 1, 0, f2, 0.5F);
 
-        if (!e.isInWater()) {
-            //this.head.rotateAngleZ = (float) Math.toRadians(90);
-            this.head.offsetY = 0.22F;
-            this.bob(head, -speed * 1.8F, 1.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
+        //if (!e.isInWater()) {
+        //    //this.head.rotateAngleZ = (float) Math.toRadians(90);
+        //    this.head.offsetY = 0.22F;
+        //    this.bob(head, -speed * 1.8F, 1.5F, false, f2, 1);
+        //    this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
+        //    this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
 
-        }
+        //}
 
     }
 

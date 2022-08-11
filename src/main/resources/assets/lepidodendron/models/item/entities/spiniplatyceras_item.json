@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/spiniplatyceras_item"
+    "layer0": "paleopedia:spiniplatyceras_icon"
   }
 }

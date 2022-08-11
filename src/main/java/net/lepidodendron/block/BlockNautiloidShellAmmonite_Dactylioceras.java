@@ -24,6 +24,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -90,6 +91,11 @@ public class BlockNautiloidShellAmmonite_Dactylioceras extends ElementsLepidoden
 				}
 			}.getValue(pos, "rotation");
 			return currentRotation;
+		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(0.475D, 0.0D, 0.475D, 0.525D, 0.1D, 0.525D);
 		}
 
 		@Override

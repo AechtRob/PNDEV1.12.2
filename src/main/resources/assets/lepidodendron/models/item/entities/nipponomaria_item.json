@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/nipponomaria_item"
+    "layer0": "paleopedia:nipponomaria_icon"
   }
 }
