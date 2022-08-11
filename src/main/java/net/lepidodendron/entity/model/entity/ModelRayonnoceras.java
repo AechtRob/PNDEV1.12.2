@@ -573,7 +573,7 @@ public class ModelRayonnoceras extends AdvancedModelBaseExtended {
         }
         else {
             this.root.rotateAngleZ = (float) Math.toRadians(90);
-            this.root.offsetY = 1.15F;
+            this.root.offsetY = 0.70F;
         }
 
     }

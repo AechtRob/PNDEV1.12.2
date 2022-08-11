@@ -36,17 +36,17 @@ public class RenderNautiloidShellRayonnoceras extends TileEntitySpecialRenderer<
 
         GlStateManager.enableAlpha();
         ModelRayonnocerasShell modelNautiloidShell = this.modelNautiloidShell;
-        double scale = 0.18D;
+        double scale = 0.45D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
-            GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);
+            GlStateManager.translate(x + 0.5 , y + 0.30, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(90, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
         }
         else {
             //standing up
-            GlStateManager.translate(x + 0.5, y + 0.15, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.45, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);

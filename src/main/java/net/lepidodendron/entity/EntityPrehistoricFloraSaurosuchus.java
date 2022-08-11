@@ -154,31 +154,9 @@ public class EntityPrehistoricFloraSaurosuchus extends EntityPrehistoricFloraLan
 
 	@Override
 	public int getTalkInterval() {
-		return 500;
+		return 260;
 	}
 
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			//if (rand.nextInt(6) != 0) {
-				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null) {
-					if (this.getAnimation() == NO_ANIMATION) {
-						this.setAnimation(NOISE_ANIMATION);
-						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-						this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-					}
-				}
-			//}
-		}
-	}
 
 	@Override
 	public int getAdultAge() {
@@ -241,24 +219,19 @@ public class EntityPrehistoricFloraSaurosuchus extends EntityPrehistoricFloraLan
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saurosuchus_roar"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:saurosuchus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:smok_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saurosuchus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:smok_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:saurosuchus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:smok_death"));
 	}
 
 	@Override

@@ -227,6 +227,7 @@ public class ModelOrthocerasShell extends AdvancedModelBase {
     public void renderAll(float f) {
         this.resetToDefaultPose();
         this.shellbase.offsetY = -0.2F;
+        this.shellbase.offsetZ = 2.0F;
         this.shellbase.render(0.13f);
     }
 

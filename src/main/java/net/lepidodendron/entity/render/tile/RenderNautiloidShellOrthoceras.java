@@ -39,14 +39,14 @@ public class RenderNautiloidShellOrthoceras extends TileEntitySpecialRenderer<Bl
         double scale = 0.18D;
         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             //lying down
-            GlStateManager.translate(x + 0.5 , y + 0.05, z + 0.5);
+            GlStateManager.translate(x + 0.5 , y + 0.10, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(90, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
         }
         else {
             //standing up
-            GlStateManager.translate(x + 0.5, y + 0.15, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + 0.10, z + 0.5);
             GlStateManager.scale(scale,scale,scale);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);

@@ -23,6 +23,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -89,6 +90,12 @@ public class BlockNautiloidShellMooreoceras extends ElementsLepidodendronMod.Mod
 			}.getValue(pos, "rotation");
 			return currentRotation;
 		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.25D, 0.6D);
+		}
+
 
 		@Override
 		public boolean hasTileEntity(IBlockState state) {
