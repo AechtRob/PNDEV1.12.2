@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 
 	public EntityPrehistoricFloraMeganeuropsis(World world) {
 		super(world);
-		setSize(0.65F, 0.42F);
+		setSize(0.55F, 0.42F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

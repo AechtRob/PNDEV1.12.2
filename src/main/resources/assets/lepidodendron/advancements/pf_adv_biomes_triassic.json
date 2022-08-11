@@ -159,6 +159,12 @@
 			"conditions": {
 				"biome": "lepidodendron:triassic_xeric_scrubland"
 			}
+		},
+		"triassic_mountains": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_mountains"
+			}
 		}
 	},
 	"requirements": [

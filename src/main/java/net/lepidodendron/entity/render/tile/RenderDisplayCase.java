@@ -648,7 +648,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_ANOMALOCARIS);
                         modelAnomalocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
-                    else if (itemstack.getItem() == ItemAntarcicarcinusRaw.block) {
+                    else if (itemstack.getItem() == ItemAntarcticarcinusRaw.block) {
                         double offset = 0.46;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);

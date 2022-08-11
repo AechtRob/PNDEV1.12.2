@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:stalky_brown_algae"
+      "item": "lepidodendron:coralline_algae_item"
     },
     {
       "item": "minecraft:water_bucket"
     }
   ],
   "result": {
-    "item": "lepidodendron:stalky_brown_algae",
+    "item": "lepidodendron:coralline_algae_item",
     "count": 2
   }
 }

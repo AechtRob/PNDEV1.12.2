@@ -8,44 +8,44 @@
   ],
   "key": {
   	"0": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "1": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "2": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "3": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "4": {
       "type": "forge:ore_dict",
-      "ore": "plantPrehistoric"
+      "ore": "itemMoss"
     },
     "5": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "6": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "7": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     },
     "8": {
-      "item": "minecraft:dirt",
-      "data": 3
+      "type": "forge:ore_dict",
+      "ore": "dirt"
     }
   },
   "result": {
     "item": "lepidodendron:mossy_prehistoric_ground_cover",
-    "count": 1
+    "count": 8
   }
 }
