@@ -1,7 +1,7 @@
 {
 	"name": "Tartuosteus",
 	"read_by_default": true,
-	"icon": "lepidodendron:tartuosteus_raw",
+	"icon": "paleopedia:textures/tartuosteus_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_tartuosteus",
 	"pages": [

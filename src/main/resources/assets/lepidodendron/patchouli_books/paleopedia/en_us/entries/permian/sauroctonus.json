@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sauroctonus",
 			"title": "Sauroctonus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Aridlands$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sauroctonus",
 			"type": "text",
-			"text": ""
+			"text": "Sauroctonus is a genus of gorgonopsid from the Late Permian period. They had a pair of canines on both the upper and lower jaws and the lower jaw formed a kind of chin. Sauroctonus was not as specialized as other gorgonopsids like Rubidgea and Inostrancevia and they also had very mammalian features despite not being an ancestor to mammals."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sauroctonus",

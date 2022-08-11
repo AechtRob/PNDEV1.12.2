@@ -1,0 +1,32 @@
+{
+	"name": "Hypuronector",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/hypuronector_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_hypuronector",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hypuronector",
+			"title": "Hypuronector",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hypuronector.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypuronector",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hypuronector",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

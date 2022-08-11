@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_paranaichthys",
 			"title": "Paranaichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Playsomidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Rivers$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Playsomidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_paranaichthys",
 			"type": "text",
-			"text": ""
+			"text": "Paranaichthys was a genus of ray finned fish from the Permian period. It lived in freshwater environments like rivers and are characterized by a disproportionately long anal fin."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_paranaichthys",

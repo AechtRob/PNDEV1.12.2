@@ -1,0 +1,32 @@
+{
+	"name": "Ceratites",
+	"read_by_default": true,
+	"icon": "lepidodendron:shell_ceratites",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ceratites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ceratites",
+			"title": "Ceratites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ceratites.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratites",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratites",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

@@ -1,0 +1,32 @@
+{
+	"name": "Feroxichthys",
+	"read_by_default": true,
+	"icon": "lepidodendron:feroxichthys_raw",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_feroxichthys",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_feroxichthys",
+			"title": "Feroxichthys",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/feroxichthys.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

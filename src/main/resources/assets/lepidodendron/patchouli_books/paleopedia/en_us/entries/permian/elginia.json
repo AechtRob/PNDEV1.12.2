@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elginia",
 			"title": "Elginia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria$(br)>Pareiasauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_elginia",
 			"type": "text",
-			"text": ""
+			"text": "Elginia is a small pareiasaurid from the late Permian period. it had many horns on its head and two longer horns at the top of its head. Elginia could grow up to a meter in length and it used its horns likely as a sort of defense against predators."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_elginia",

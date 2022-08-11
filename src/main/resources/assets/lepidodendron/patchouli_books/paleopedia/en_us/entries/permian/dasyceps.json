@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dasyceps",
 			"title": "Dasyceps",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest, Wetlands$(br2)>Amphibia$(br)>Temnospondyli$(br)>Zatrachydidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dasyceps",
 			"type": "text",
-			"text": ""
+			"text": "Dasyceps is a zatracheidid temnospondyl from the Early Permian period. It was the largest of the zatracheidids and they had a crested and flat head with large flat bodies and a short tail. It was a carnivore and would likely have hunted fish and invertebrates."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dasyceps",

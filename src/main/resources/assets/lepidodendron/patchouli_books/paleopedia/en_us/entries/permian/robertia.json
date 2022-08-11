@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_robertia",
 			"title": "Robertia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Highlands$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Pylaecephalidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_robertia",
 			"type": "text",
-			"text": ""
+			"text": "Robertia is a genus of diictodont from the Permian period. It was a small burrowing animal with canine like tusks and small teeth. This jaw structure would have allowed for more efficient cutting of vegetation. Robertia could grow up to 15 cm in length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_robertia",

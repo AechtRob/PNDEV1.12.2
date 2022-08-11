@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megactenopetalus",
 			"title": "Megactenopetalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Ocean Cliffs$(br2)>"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",
 			"type": "text",
-			"text": ""
+			"text": "Megactenopetalus is a large petalodont shark from the Permian period. It is known only from its peculiar teeth but its body shape has been inferred from the related petalodont, Belantsea. It could grow up to 1.6 meters in length and was one of the last petalodonts to have lived."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_megactenopetalus",

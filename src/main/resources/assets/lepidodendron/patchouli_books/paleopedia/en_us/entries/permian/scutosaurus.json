@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scutosaurus",
 			"title": "Scutosaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Desert$(br2)>Parareptilia$(br)>Procolophonomorpha$(br)>Pareiasauria"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_scutosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Scutosaurus is a large pareiasaur from the Permian period. It had a tank like build with hardened scutes along its back and head and they had powerful muscles, especially around the neck. Its head was covered in ridges and scutes and also had horns that protected its face. Scutosaurus was an herbivore and they would have been preyed upon by large gorgonopsids like Inostrancevia."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_scutosaurus",

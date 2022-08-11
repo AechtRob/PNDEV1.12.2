@@ -1,0 +1,32 @@
+{
+	"name": "Limulid",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/limulid_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_limulid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_limulid",
+			"title": "Limulid",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/limulid.png"],
+			"title": "Limulus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_limulid",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_limulid",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

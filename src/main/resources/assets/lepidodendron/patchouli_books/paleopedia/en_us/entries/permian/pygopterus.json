@@ -1,0 +1,32 @@
+{
+	"name": "Pygopterus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/pygopterus_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_pygopterus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pygopterus",
+			"title": "Pygopterus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Pygopteridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pygopterus.png"],
+			"title": "P. humboldti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pygopterus",
+			"type": "text",
+			"text": "Pygopterus is a medium sized predatory fish from the Permian period that lived until the Early Triassic. It had eyes near the very front of its head and an arched back."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pygopterus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

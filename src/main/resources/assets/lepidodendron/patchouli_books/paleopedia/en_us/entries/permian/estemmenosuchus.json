@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_estemmenosuchus",
 			"title": "Estemmenosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Therapsida$(br)>Dinocephalia$(br)>Estemmenosuchidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_estemmenosuchus",
 			"type": "text",
-			"text": ""
+			"text": "Estemmenosuchus, whose name meant 'crowned crocodile' was a Permian dinocephalian. It had many horn like structures on its head which it may have used as a display to other Estemmenosuchus. They could grow to 3m in length and they were herbivorous, similar to modern hippos."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_estemmenosuchus",

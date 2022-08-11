@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eryops",
 			"title": "Eryops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Freshwater-Terrestrial$(br)>Temnospondyli$(br)>Eryopidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Wetlands$(br)>Temnospondyli$(br)>Eryopidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eryops",
 			"type": "text",
-			"text": ""
+			"text": "Eryops is a large temnospondyl from the Permian period. It grew to a little over 2 meters long and it had a large broad skull and a large body with a relatively short tail. It was an apex predator capable of competing with the synapsid predators of its time. It was a semi aquatic animal that would have inhabited the rivers and streams and preyed on fish and aquatic tetrapods."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eryops",

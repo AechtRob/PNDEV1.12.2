@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_gorgonops",
 			"title": "Gorgonops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/gorgonops.png"],
-			"title": "Gorgonops torvus",
+			"title": "G. torvus",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gorgonops",
 			"type": "text",
-			"text": ""
+			"text": "Gorgonops is a Permian gorgonopsid. Its fossils were found in South Africa and it was a medium sized animal. It had saber like front teeth and it had legs which supported the body from below, giving it more effective locomotion and increasing its speed, helping it chase down prey."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_gorgonops",

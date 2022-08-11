@@ -1,0 +1,32 @@
+{
+	"name": "Italophlebia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/italophlebia_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_italophlebia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_italophlebia",
+			"title": "Italophlebia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/italophlebia.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_italophlebia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_italophlebia",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

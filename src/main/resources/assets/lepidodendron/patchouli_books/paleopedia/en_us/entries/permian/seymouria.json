@@ -2,14 +2,14 @@
 	"name": "Seymouria",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/seymouria_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_seymouria",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_seymouria",
 			"title": "Seymouria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Seymouriamorpha$(br)>Seymouriidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Wetlands$(br2)>Seymouriamorpha$(br)>Seymouriidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_seymouria",
 			"type": "text",
-			"text": ""
+			"text": "Seymouria is a semi aquatic Permian amphibian that was also well adapted for terrestrial life. They had a short head and a short tail and represent a transitional period between amphibian and reptile. They lived in environments that would have fluctuated between wet and dry seasons and so they may have went through metamorphosis very early in life."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_seymouria",

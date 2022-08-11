@@ -1,0 +1,32 @@
+{
+	"name": "Cymbospondylus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cymbospondylus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_cymbospondylus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cymbospondylus",
+			"title": "Cymbospondylus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cymbospondylus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cymbospondylus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cymbospondylus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

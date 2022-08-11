@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_pristerognathus",
 			"title": "Pristerognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands$(br2)>Therapsida$(br)>Therocephalia$(br)>Scylacosauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/pristerognathus.png"],
-			"title": "P. vanderbyli",
+			"title": "P. polyodon",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pristerognathus",
 			"type": "text",
-			"text": ""
+			"text": "Pristerognathus is a therocephalian from the Middle Permian period. It was a predator with large canines and it was about the size of a dog, reaching 1.5 meters in length. Its fossils have been discovered in South Africa and they likely lived in wooded areas and preyed on smaller therapsids of the time."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pristerognathus",

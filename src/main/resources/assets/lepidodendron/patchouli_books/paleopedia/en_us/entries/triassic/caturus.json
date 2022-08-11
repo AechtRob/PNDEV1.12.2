@@ -1,0 +1,32 @@
+{
+	"name": "Caturus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/caturus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_caturus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_caturus",
+			"title": "Caturus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Cretaceous$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/caturus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+

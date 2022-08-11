@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_moschops",
 			"title": "Moschops",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowlands, Arid, Glossopteris$(br2)>Therapsida$(br)>Dinocephalia$(br)>Tapinocephalidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_moschops",
 			"type": "text",
-			"text": ""
+			"text": "Moschops is a therapsid from the Permian period. They had tough heads which they could have used to head butt each other. Its legs were sprawled out to its sides and they had heavily build jaw muscles which they could use to break down tough vegetation."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_moschops",

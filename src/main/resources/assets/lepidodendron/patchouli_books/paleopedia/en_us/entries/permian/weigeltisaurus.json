@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_weigeltisaurus",
 			"title": "Weigeltisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Weigeltisauridae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Lowland Forest$(br2)>Reptilia$(br)>Weigeltisauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_weigeltisaurus",
 			"type": "text",
-			"text": ""
+			"text": "Weigeltisaurus is a genus of gliding reptile from the Permian period. Like its relatives, it had bones protruding from the sides of its body which it used to glide from tree to tree."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_weigeltisaurus",

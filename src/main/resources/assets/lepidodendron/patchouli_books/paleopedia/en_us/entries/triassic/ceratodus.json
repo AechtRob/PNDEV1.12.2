@@ -1,0 +1,32 @@
+{
+	"name": "Ceratodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ceratodus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_ceratodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ceratodus",
+			"title": "Ceratodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic-Palaeogene$(br2)$(l)Habitat:$() $(br2)>"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ceratodus.png"],
+			"title": "",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ceratodus",
+			"type": "text",
+			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+		}
+	]
+}
+
