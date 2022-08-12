@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_mesotitan",
 			"title": "Mesotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Orthoptera$(br)>Mesotitanidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/mesotitan.png"],
-			"title": "",
+			"title": "M. giganteus",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mesotitan",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }

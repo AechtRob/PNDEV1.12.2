@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_limulid",
 			"title": "Limulid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic-Present$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Chelicerata$(br)>Xiphosura$(br)>Limulidae"
 		},
 		{
 			"type": "image",
@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_limulid",
 			"type": "text",
-			"text": ""
+			"text": "Horseshoe crabs, or limulids, are a group of armored arthropods that have been around since the Triassic. Nowadays, there are few left and many species are endangered. However, millions of years ago, they were much more diverse and more widespread. They also swim upside down, with the shell facing the ocean floor."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_limulid",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_mussaurus",
 			"title": "Mussaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Mussauridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/mussaurus.png"],
-			"title": "",
+			"title": "M. patagonicus",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mussaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }
