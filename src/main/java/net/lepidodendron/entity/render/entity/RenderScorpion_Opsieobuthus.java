@@ -37,19 +37,19 @@ public class RenderScorpion_Opsieobuthus extends RenderLiving<EntityPrehistoricF
             default:
                 break;
             case EAST:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case WEST:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case NORTH:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case SOUTH:
-                GlStateManager.translate(0.0F, 0.5F, 0.0F);
+                GlStateManager.translate(0.0F, 0.05F, 0.0F);
                 GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
                 break;
             case UP:

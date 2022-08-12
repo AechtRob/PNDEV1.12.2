@@ -154,30 +154,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 
 	@Override
 	public int getTalkInterval() {
-		return 500;
-	}
-
-	public int getAmbientTalkInterval() {
-		return 160;
-	}
-
-	@Override
-	public void onEntityUpdate() {
-		super.onEntityUpdate();
-		if (this.isEntityAlive() && this.rand.nextInt(1000) < this.ambientSoundTime++ && !this.world.isRemote)
-		{
-			this.ambientSoundTime = -this.getAmbientTalkInterval();
-			//if (rand.nextInt(6) != 0) {
-				SoundEvent soundevent = this.getAmbientAmbientSound();
-				if (soundevent != null) {
-					if (this.getAnimation() == NO_ANIMATION) {
-						this.setAnimation(NOISE_ANIMATION);
-						//System.err.println("Playing noise sound on remote: " + (world.isRemote));
-						this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-					}
-				}
-			//}
-		}
+		return 260;
 	}
 
 	@Override
@@ -241,12 +218,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:smok_roar"));
-	}
-
-	public SoundEvent getAmbientAmbientSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:smok_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:smok_idle"));
 	}
 
 	@Override

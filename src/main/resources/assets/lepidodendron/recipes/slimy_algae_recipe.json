@@ -1,0 +1,16 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:slimy_algae_item"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:slimy_algae_item",
+    "count": 2
+  }
+}

@@ -239,13 +239,13 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 			return false;
 		}
 
-		protected static final AxisAlignedBB AABBN1 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.0625D);
+		protected static final AxisAlignedBB AABBN1 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.1875D);
 
-		protected static final AxisAlignedBB AABBS1 = new AxisAlignedBB(0.0D, 0.0D, 0.9375D, 1.0D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBS1 = new AxisAlignedBB(0.0D, 0.0D, 0.8125D, 1.0D, 1.0D, 1.0D);
 
-		protected static final AxisAlignedBB AABBE1 = new AxisAlignedBB(0.9375D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBE1 = new AxisAlignedBB(0.8125D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 
-		protected static final AxisAlignedBB AABBW1 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.0625D, 1.0D, 1.0D);
+		protected static final AxisAlignedBB AABBW1 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 0.1875D, 1.0D, 1.0D);
 
 		protected static final AxisAlignedBB AABBU = new AxisAlignedBB(0.0D, 0.9370D, 0.0D, 1.0D, 1.0D, 1.0D);
 		protected static final AxisAlignedBB AABBD = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);

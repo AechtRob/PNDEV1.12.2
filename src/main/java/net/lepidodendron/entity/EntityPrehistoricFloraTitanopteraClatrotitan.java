@@ -43,6 +43,17 @@ public class EntityPrehistoricFloraTitanopteraClatrotitan extends EntityPrehisto
 	}
 
 	@Override
+	public void playLivingSound()
+	{
+		SoundEvent soundevent = this.getAmbientSound();
+
+		if (soundevent != null && !this.getIsFlying())
+		{
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+		}
+	}
+
+	@Override
 	public int getTalkInterval() {
 		return 40;
 	}

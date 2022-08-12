@@ -14,10 +14,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemAntarcicarcinusRaw extends ElementsLepidodendronMod.ModElement {
+public class ItemAntarcticarcinusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:antarcticarcinus_raw")
 	public static final Item block = null;
-	public ItemAntarcicarcinusRaw(ElementsLepidodendronMod instance) {
+	public ItemAntarcticarcinusRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.antarcticarcinus_raw);
 	}
 

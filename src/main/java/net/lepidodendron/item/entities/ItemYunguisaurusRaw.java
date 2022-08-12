@@ -14,10 +14,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemYuguisaurusRaw extends ElementsLepidodendronMod.ModElement {
+public class ItemYunguisaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:yunguisaurus_raw")
 	public static final Item block = null;
-	public ItemYuguisaurusRaw(ElementsLepidodendronMod instance) {
+	public ItemYunguisaurusRaw(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.yunguisaurus_raw);
 	}
 

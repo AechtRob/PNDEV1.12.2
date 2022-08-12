@@ -23,6 +23,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -76,6 +77,11 @@ public class BlockNautiloidShellBasiloceras extends ElementsLepidodendronMod.Mod
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMobile.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
+		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.15D, 0.75D);
 		}
 
 		public int getRotation(World world, BlockPos pos) {
