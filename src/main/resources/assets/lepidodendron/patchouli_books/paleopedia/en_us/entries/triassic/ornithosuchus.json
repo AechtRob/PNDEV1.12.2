@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_ornithosuchus",
 			"title": "Ornithosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Pseudosuchia$(br)>Ornithosuchidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/ornithosuchus.png"],
-			"title": "",
+			"title": "O. woodwardi",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ornithosuchus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }

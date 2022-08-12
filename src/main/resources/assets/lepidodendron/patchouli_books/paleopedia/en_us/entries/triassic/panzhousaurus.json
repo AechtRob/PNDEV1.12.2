@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_panzhousaurus",
 			"title": "Panzhousaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sauropterygia$(br)>Nothosauroidea$(br)>Pachypleurosauria"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/panzhousaurus.png"],
-			"title": "",
+			"title": "P. rotundirostris",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_panzhousaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

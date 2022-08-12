@@ -2,7 +2,7 @@
 	"name": "Fadenia (Permo-Triassic)",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/fadenia_icon.png",
-	"category": "lepidodendron:permian_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_fadenia_permotriassic",
 	"pages": [
 		{

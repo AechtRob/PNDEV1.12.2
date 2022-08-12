@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.item.entities.ItemNautiloidEggsLituites;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMooreoceras;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
@@ -112,7 +113,7 @@ public class EntityPrehistoricFloraLituites extends EntityPrehistoricFloraNautil
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsMooreoceras.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemNautiloidEggsLituites.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
