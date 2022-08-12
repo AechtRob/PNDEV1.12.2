@@ -287,12 +287,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanCliffPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsGlossopterisFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsGlossopterisReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanCliffFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanCliffReborn);
+                }
             } else if (biome == BiomePermianColdGlossopterisForest.biome || biome == BiomePermianColdGlossopterisForestLight.biome || biome == BiomePermianColdGlossopterisForestOcean.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsGlossopterisPF);
@@ -388,163 +388,163 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanReborn);
+                }
             } else if (biome == BiomeTriassicOceanClamBeds.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanClamBedsPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanClamBedsFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanClamBedsReborn);
+                }
             } else if (biome == BiomeTriassicRiver.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsRiverPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsRiverFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsRiverReborn);
+                }
             } else if (biome == BiomeTriassicXericForest.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericForestPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericForestFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericForestReborn);
+                }
             } else if (biome == BiomeTriassicXericScrubland.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandReborn);
+                }
             } else if (biome == BiomeTriassicWarmLakeland.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsLakelandPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsLakelandFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsLakelandReborn);
+                }
             } else if (biome == BiomeTriassicWarmVolcanicHills.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsReborn);
+                }
             } else if (biome == BiomeTriassicFloodedForest.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestReborn);
+                }
             } else if (biome == BiomeTriassicGondwananForest.biome || biome == BiomeTriassicGondwananForestCrags.biome || biome == BiomeTriassicGondwananForestHills.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestReborn);
+                }
             } else if (biome == BiomeTriassicGondwananPlain.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMossMeadowPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMossMeadowFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMossMeadowReborn);
+                }
             } else if (biome == BiomeTriassicDesertRocky.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDesertPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDesertFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDesertReborn);
+                }
             } else if (biome == BiomeTriassicDesertSandy.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDunesPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDunesFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDunesReborn);
+                }
             } else if (biome == BiomeTriassicDesertPlateau.biome || biome == BiomeTriassicDesertPlateauBroken.biome || biome == BiomeTriassicDesertPlateauCanyons.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsPlateauPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsPlateauFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsPlateauReborn);
+                }
             } else if (biome == BiomeTriassicCreek.biome || biome == BiomeTriassicRiverbank.biome || biome == BiomeTriassicRiverbankForest.biome) {
                 TriassicCanyons = true;
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsReborn);
+                }
             } else if (biome == BiomeTriassicVolcanicIslands.biome || biome == BiomeTriassicBlackBeach.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsIslandsPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsIslandsFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsIslandsReborn);
+                }
             } else if (biome == BiomeTriassicMountains.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMountainsPF);
                 }
-                //if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsFA);
-                //}
-                //if (LepidodendronConfig.doSpawnsReborn) {
-                //    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
-                //}
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMountainsFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMountainsReborn);
+                }
             }
         }
         else {
