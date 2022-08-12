@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/gondwanascorpio_icon.png",
 	"category": "lepidodendron:devonian_animal",
-	"turnin": "lepidodendron:pf_adv_book_gondwanascorpio",
+	"turnin": "lepidodendron:pf_adv_book_scorpion_gondwanascorpio",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_gondwanascorpio",
+			"trigger": "lepidodendron:pf_adv_book_scorpion_gondwanascorpio",
 			"title": "Gondwanascorpio",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Scorpiones$(br)>$(o)incertae sedis"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gondwanascorpio",
+			"advancement": "lepidodendron:pf_adv_book_scorpion_gondwanascorpio",
 			"type": "text",
 			"text": "Gondwanascorpio is an early scorpion from the late Devonian. The area it lived in was likely wooded and there would have been ample insects for it to feed on. Early terrestrial life was previously unknown in Gondwana so Gondwanascorpio was an extremely important discovery."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gondwanascorpio",
+			"advancement": "lepidodendron:pf_adv_book_scorpion_gondwanascorpio",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Carried on Back$(br)$(l)Method of Obtaining:$() Kill a scorpion to retrieve its babies"
 		}

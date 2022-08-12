@@ -1,0 +1,23 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:lanceaspis_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_lanceaspis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_lanceaspis.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_lanceaspis"
+		}
+	}
+}
+
+
+

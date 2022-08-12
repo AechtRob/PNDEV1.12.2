@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/palaeodictyoptera_stenodictya_raw"
+    "layer0": "paleopedia:stenodictya_icon"
   }
 }
 

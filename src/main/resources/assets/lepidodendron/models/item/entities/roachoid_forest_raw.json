@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/roachoid_forest_raw"
+    "layer0": "paleopedia:roach_icon"
   }
 }
 

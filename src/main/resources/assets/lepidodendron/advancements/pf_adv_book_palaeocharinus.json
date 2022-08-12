@@ -1,0 +1,24 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:palaeocharinus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_trigonotarbid_palaeocharinus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_trigonotarbid_palaeocharinus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_trigonotarbid_palaeocharinus"
+		}
+	}
+}
+
+
+
+

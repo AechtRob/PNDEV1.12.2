@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "lepidodendron:items/entities/archaeocidaris_item"
+    "all": "paleopedia:archaeocidaris_icon"
   }
 }

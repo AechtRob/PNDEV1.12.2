@@ -1,0 +1,23 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:holonema_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_holonema.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_holonema.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_holonema"
+		}
+	}
+}
+
+
+

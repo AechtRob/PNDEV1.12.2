@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:montecaris_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_montecaris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_montecaris.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_montecaris"
+		}
+	}
+}
+
+

@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:jellyfish_6_bucket"
+			"item": "lepidodendron:advancement_placeholder"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_jellyfish6.title"

@@ -345,6 +345,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_TOKUMMIA = new CustomTrigger("pf_book_tokummia");
     public static final CustomTrigger CLICK_TRAQUAIRIUS = new CustomTrigger("pf_book_traquairius");
     public static final CustomTrigger CLICK_TRIGONOTARBID = new CustomTrigger("pf_book_trigonotarbid");
+    public static final CustomTrigger CLICK_TRIGONOTARBID_PALAEOCHARINUS = new CustomTrigger("pf_book_trigonotarbid_palaeocharinus");
     public static final CustomTrigger CLICK_TRIMERUS = new CustomTrigger("pf_book_trimerus");
     public static final CustomTrigger CLICK_TULLIMONSTRUM = new CustomTrigger("pf_book_tullimonstrum");
     public static final CustomTrigger CLICK_TURRISASPIS = new CustomTrigger("pf_book_turrisaspis");
@@ -836,6 +837,7 @@ public class ModTriggers
             CLICK_TOKUMMIA,
             CLICK_TRAQUAIRIUS,
             CLICK_TRIGONOTARBID,
+            CLICK_TRIGONOTARBID_PALAEOCHARINUS,
             CLICK_TRIMERUS,
             CLICK_TULLIMONSTRUM,
             CLICK_TURRISASPIS,

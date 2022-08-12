@@ -3384,6 +3384,6 @@ public class LepidodendronSorter {
     public static final int wing_clatrotitan = 3376;
     public static final int wing_gigatitan = 3377;
     public static final int wing_mesotitan = 3378;
-
+    public static final int advancement_placeholder = 3379;
 
 }

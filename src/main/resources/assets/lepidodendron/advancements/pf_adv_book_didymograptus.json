@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:didymograptus_bucket"
+			"item": "lepidodendron:advancement_placeholder"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_didymograptus.title"

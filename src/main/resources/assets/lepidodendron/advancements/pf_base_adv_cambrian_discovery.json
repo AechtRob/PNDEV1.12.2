@@ -1,7 +1,7 @@
 {
     "display": {
         "icon": {
-            "item": "lepidodendron:portal_block_cambrian"
+            "item": "lepidodendron:advancement_placeholder"
         },
         "title": {
             "translate": "advancements.pf_base_cambrian_discovery.title"

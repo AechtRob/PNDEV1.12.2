@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/palaeodictyoptera_sinodunbaria_raw"
+    "layer0": "paleopedia:sinodunbaria_icon"
   }
 }
