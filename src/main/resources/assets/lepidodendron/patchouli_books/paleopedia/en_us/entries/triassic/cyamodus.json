@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_cyamodus",
 			"title": "Cyamodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Clam Beds$(br2)>Sauropterygia$(br)>Placodontia$(br)>Cyamodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/cyamodus.png"],
-			"title": "",
+			"title": "C. rostratus",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cyamodus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Bivalves$(br)$(l)Breeds with:$() Bivalves$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

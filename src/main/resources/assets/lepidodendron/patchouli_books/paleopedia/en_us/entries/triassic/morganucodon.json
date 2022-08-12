@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_morganucodon",
 			"title": "Morganucodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Morganucodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/morganucodon.png"],
-			"title": "",
+			"title": "M. watsoni",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_morganucodon",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }

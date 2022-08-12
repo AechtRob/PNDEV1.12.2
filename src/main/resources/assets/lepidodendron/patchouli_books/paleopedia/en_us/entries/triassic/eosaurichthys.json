@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_eosaurichthys",
 			"title": "Eosaurichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/eosaurichthys.png"],
-			"title": "",
+			"title": "E. chaoi",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eosaurichthys",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

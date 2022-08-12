@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_chinlea",
 			"title": "Chinlea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Rivers$(br2)>Actinistia$(br)>Mawsoniidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/chinlea.png"],
-			"title": "",
+			"title": "C. campii",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_chinlea",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

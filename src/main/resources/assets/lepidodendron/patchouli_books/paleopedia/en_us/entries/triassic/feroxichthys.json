@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_feroxichthys",
 			"title": "Feroxichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/feroxichthys.png"],
-			"title": "",
+			"title": "F. panzhouensis",
 			"text": ""
 		},
 		{
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

@@ -9,23 +9,23 @@
 			"trigger": "lepidodendron:pf_adv_book_atopodentatus",
 			"title": "Atopodentatus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Sauropterygia"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/atopodentatus.png"],
-			"title": "",
+			"title": "A. unicus",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_atopodentatus",
 			"type": "text",
-			"text": ""
+			"text": "Atopodentatus unicus is a genus of herbivorous aquatic reptile from the middle Triassic of China. The genus name, meaning \"Unusual teeth\" was originally given to the animal in 2014 when it was described upon a crushed skull, which made it appear as if the animal's mouth shape resembled a zipper made out of its teeth. It took another two years for two new specimens to be described, showing the true shape of the animal's mouth into the shape we see today."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_atopodentatus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "$(l)Eats:$() Algae$(br)$(l)Breeds with:$() Algae$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
 		}
 	]
 }
