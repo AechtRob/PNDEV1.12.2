@@ -9,18 +9,18 @@
 			"trigger": "lepidodendron:pf_adv_book_nipponomaria",
 			"title": "Nipponomaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Murchisoniina$(br)>Gosseletinidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/nipponomaria.png"],
-			"title": "",
+			"title": "N. yokoyamai",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nipponomaria",
 			"type": "text",
-			"text": ""
+			"text": "Nipponomaria was an ancient Permian marine snail that was first discovered in Japan. They had a spiralled shell and were quite large. They would have preyed on micro organisms on the ocean floor."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_nipponomaria",

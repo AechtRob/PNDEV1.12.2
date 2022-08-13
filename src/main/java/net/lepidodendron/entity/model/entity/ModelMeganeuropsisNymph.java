@@ -203,7 +203,7 @@ public class ModelMeganeuropsisNymph extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 
-        this.body.render(f5 * 0.775F);
+        this.body.render(f5 * 0.03F);
 
     }
 
@@ -217,7 +217,7 @@ public class ModelMeganeuropsisNymph extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.3F;
+        this.body.offsetY = 1.45F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] body2 = {this.body2, this.body3};
@@ -265,7 +265,7 @@ public class ModelMeganeuropsisNymph extends AdvancedModelBase {
                  }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 0.45F;
+                this.body.offsetY = 1.45F;
                 this.bob(body, -speed, 0.5F, false, f2, 1);
                 //this.chainWave(body2, speed, tailHdegree, -3, f2, 1);
                 //this.chainSwing(body2, speed, tailVdegree, -3, f2, 1);

@@ -1,7 +1,7 @@
 {
 	"name": "Groenlandaspis",
 	"read_by_default": true,
-	"icon": "lepidodendron:groenlandaspis_raw",
+	"icon": "paleopedia:textures/groenlandaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_groenlandaspis",
 	"pages": [

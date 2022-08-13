@@ -444,18 +444,18 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
             AdvancedModelRenderer[] BackL = {this.hindlegL, this.hindlegL2};
             AdvancedModelRenderer[] BackR = {this.hindlegR, this.hindlegR2};
 
-            this.flap(hindlegL, speed, 0.1F, false, 0F, 0.05F, f2, 1F);
-            this.flap(hindlegR, speed, 0.1F, false, 3F, 0.05F, f2, 1F);
-            this.chainWaveExtended(BackL, speed, -0.3F, -1, 0F, f2, 1);
-            this.chainWaveExtended(BackR, speed, -0.3F, -1, 3F, f2, 1);
+            this.flap(hindlegL, speed * 0.6F, 0.1F, false, 0F, 0.05F, f2, 1F);
+            this.flap(hindlegR, speed * 0.6F, 0.1F, false, 3F, 0.05F, f2, 1F);
+            this.chainSwingExtended(BackL, speed * 0.6F, -0.3F, -1, -3F, f2, 1);
+            this.chainSwingExtended(BackR, speed*0.6F, -0.3F, -1, 3F, f2, 1);
 
-            this.flap(forelegL, speed, 0.45F, false, 3, -0.35F, f2, 0.5F);
-            this.swing(forelegL, speed, -0.4F, true, 8, 0.2F, f2, 0.5F);
-            this.walk(forelegL2, speed, 0.8F, false, 3, 0.4F, f2, 0.5F);
+            this.flap(forelegL, speed * 0.6F, 0.45F, false, 3, -0.35F, f2, 0.5F);
+            this.swing(forelegL, speed * 0.6F, -0.4F, true, 8, 0.2F, f2, 0.5F);
+            this.walk(forelegL2, speed * 0.6F, 0.8F, false, 3, 0.4F, f2, 0.5F);
 
-            this.flap(forelegR, speed, -0.45F, false, 0, 0.35F, f2, 0.5F);
-            this.swing(forelegR, speed, -0.4F, true, 5, 0.2F, f2, 0.5F);
-            this.walk(forelegR2, speed, 0.8F, false, 0, 0.4F, f2, 0.5F);
+            this.flap(forelegR, speed * 0.6F, -0.45F, false, 0, 0.35F, f2, 0.5F);
+            this.swing(forelegR, speed * 0.6F, -0.4F, true, 5, 0.2F, f2, 0.5F);
+            this.walk(forelegR2, speed * 0.6F, 0.8F, false, 0, 0.4F, f2, 0.5F);
 
             this.chainWave(TailLand, speed * 0.25F, 0.012F, -0.2, f2, 0.5F);
             this.chainSwing(TailLand, speed * 0.25F, 0.15F, -2.8, f2, 0.5F);

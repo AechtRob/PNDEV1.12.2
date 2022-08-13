@@ -48,8 +48,8 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		//minSize = 0.1F;
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 0.7F;
-		maxHeight = 1F;
+		maxWidth = 0.6F;
+		maxHeight = 0.6F;
 		maxHealthAgeable = 56.0D;
 	}
 

@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_megactenopetalus",
 			"title": "Megactenopetalus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Ocean Cliffs$(br2)>"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Ocean Cliffs$(br2)>Chondrichthyes$(br)>Petalodontiformes$(br)>Pristodontidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/megactenopetalus.png"],
-			"title": "",
+			"title": "M. kaibabanus",
 			"text": ""
 		},
 		{
