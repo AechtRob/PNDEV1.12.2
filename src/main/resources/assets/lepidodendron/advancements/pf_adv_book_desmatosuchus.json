@@ -1,0 +1,165 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:desmatosuchus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_desmatosuchus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_desmatosuchus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_desmatosuchus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

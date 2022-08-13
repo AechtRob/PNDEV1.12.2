@@ -1,0 +1,152 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:eorhynchochelys_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_eorhynchochelys.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_eorhynchochelys.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_eorhynchochelys"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

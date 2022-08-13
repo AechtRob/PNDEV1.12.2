@@ -1,0 +1,127 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:hypsognathus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_hypsognathus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_hypsognathus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_hypsognathus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

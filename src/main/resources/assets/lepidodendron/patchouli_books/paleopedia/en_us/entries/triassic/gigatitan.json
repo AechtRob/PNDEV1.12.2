@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/gigatitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_gigatitan",
+	"turnin": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_gigatitan",
+			"trigger": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"title": "Gigatitan",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Titanoptera$(br)>Gigatitanidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigatitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigatitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

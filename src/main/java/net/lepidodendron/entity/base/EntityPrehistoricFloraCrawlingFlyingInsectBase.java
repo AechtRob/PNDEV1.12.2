@@ -793,7 +793,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         }
     }
 
-    class AIWanderInsect extends EntityAIBase {
+    public class AIWanderInsect extends EntityAIBase {
         BlockPos target;
 
         public AIWanderInsect() {

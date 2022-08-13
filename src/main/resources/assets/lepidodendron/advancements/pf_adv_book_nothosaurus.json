@@ -1,0 +1,99 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:nothosaurus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_nothosaurus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_nothosaurus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_nothosaurus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

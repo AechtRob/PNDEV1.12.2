@@ -1,0 +1,146 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:euparkeria_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_euparkeria.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_euparkeria.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_euparkeria"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

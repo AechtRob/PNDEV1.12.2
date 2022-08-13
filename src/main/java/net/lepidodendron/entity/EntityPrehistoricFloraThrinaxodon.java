@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "early Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Cynodont";}
 

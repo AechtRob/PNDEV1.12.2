@@ -1923,7 +1923,7 @@ public class LepidodendronBookSubscribers {
 			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeontinid) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_PALaeontinid.trigger((EntityPlayerMP) event.getEntityPlayer());
+					ModTriggers.CLICK_PALAEONTINID.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
@@ -2348,17 +2348,10 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraSaurichthysFreshwater) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraSaurichthysFreshwater
+			|| event.getTarget() instanceof EntityPrehistoricFloraSaurichthysMarine) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_SAURICHTHYS_FRESHWATER.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				event.setCanceled(true);
-				return;
-			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraSaurichthysMarine) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_SAURICHTHYS_MARINE.trigger((EntityPlayerMP) event.getEntityPlayer());
+					ModTriggers.CLICK_SAURICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
@@ -2660,13 +2653,41 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Cryptomartus
-				|| event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Eophrynus
-					|| event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Kreischeria
-					|| event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Palaeotarbus
-					|| event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Permotarbus) {
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Cryptomartus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_TRIGONOTARBID.trigger((EntityPlayerMP) event.getEntityPlayer());
+					ModTriggers.CLICK_TRIGONOTARBID_CRYPTOMARTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Eophrynus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRIGONOTARBID_EOPHRYNUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Kreischeria) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRIGONOTARBID_KREISCHERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Palaeotarbus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRIGONOTARBID_PALAEOTARBUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTrigonotarbid_Permotarbus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TRIGONOTARBID_PERMOTARBUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
@@ -3675,7 +3696,7 @@ public class LepidodendronBookSubscribers {
 		}
 		else if (event.getTarget() instanceof EntityPrehistoricFloraVancleavea) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_VANCLEAVA.trigger((EntityPlayerMP) event.getEntityPlayer());
+		ModTriggers.CLICK_VANCLEAVEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
 		event.setCanceled(true);
@@ -3724,16 +3745,6 @@ public class LepidodendronBookSubscribers {
 		else if (event.getTarget() instanceof EntityPrehistoricFloraItalophlebia) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_ITALOPHLEBIA.trigger((EntityPlayerMP) event.getEntityPlayer());
-		}
-		event.getEntityPlayer().swingArm(event.getHand());
-		event.setCanceled(true);
-		return;
-		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraGigatitan
-			|| event.getTarget() instanceof EntityPrehistoricFloraTitanopteraMesotitan
-			|| event.getTarget() instanceof EntityPrehistoricFloraTitanopteraClatrotitan) {
-		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_TITANOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
 		event.setCanceled(true);
@@ -3867,7 +3878,33 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 
-
+			
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraClatrotitan) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TITANOPTERA_CLATROTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraGigatitan) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TITANOPTERA_GIGATITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			
+			else if (event.getTarget() instanceof EntityPrehistoricFloraTitanopteraMesotitan) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_TITANOPTERA_MESOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 
 
 			//Put these at the end so as to trigger its children above in preference first:

@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_cylolobus",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_cyclolobus",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_cyclolobus",
+			"trigger": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 			"title": "Cyclolobus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Goniatitida$(br)>Cyclolobidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cyclolobus",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 			"type": "text",
 			"text": "Cyclolobus is a smooth ammonoid that lived during the late Permian period. It had sharp narrow projections inside of its shell."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_cyclolobus",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_cylolobus",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Egg"
 		}

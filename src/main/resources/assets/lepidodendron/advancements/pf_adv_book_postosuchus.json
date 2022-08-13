@@ -1,0 +1,80 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:postosuchus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_postosuchus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_postosuchus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_postosuchus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,17 +4,17 @@
 			"item": "lepidodendron:saurichthys_freshwater_raw"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_book_saurichthys_freshwater.title"
+			"translate": "advancements.pf_adv_book_saurichthys.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_saurichthys_freshwater.description"
+			"translate": "advancements.pf_adv_book_saurichthys.description"
 		}
 	},
     "parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_saurichthys_freshwater"
+			"trigger": "pf_book_saurichthys"
 		}
 	}
 }

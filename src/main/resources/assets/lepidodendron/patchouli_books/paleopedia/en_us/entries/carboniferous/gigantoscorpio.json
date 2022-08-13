@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/gigantoscorpio_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_gigantoscorpio",
+	"turnin": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_gigantoscorpio",
+			"trigger": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 			"title": "Gigantoscorpio",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Scorpiones$(br)>Gigantoscorpionidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigantoscorpio",
+			"advancement": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 			"type": "text",
 			"text": "Gigantoscorpio is a scorpion from the Carboniferous period. It is thought to have grown up to 24 cm long and it possesses many of the same features as modern day scorpions such as the claws and the tail stinger."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_gigantoscorpio",
+			"advancement": "lepidodendron:pf_adv_book_scorpion_gigantoscorpio",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Carried on Back$(br)$(l)Method of Obtaining:$() Kill female to retrieve its babies"
 		}

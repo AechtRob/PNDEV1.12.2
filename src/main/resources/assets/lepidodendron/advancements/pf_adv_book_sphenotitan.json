@@ -1,0 +1,54 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sphenotitan_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_sphenotitan.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_sphenotitan.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_sphenotitan"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

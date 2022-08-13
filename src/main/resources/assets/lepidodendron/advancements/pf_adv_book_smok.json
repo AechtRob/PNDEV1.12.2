@@ -1,0 +1,56 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:smok_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_smok.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_smok.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_smok"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

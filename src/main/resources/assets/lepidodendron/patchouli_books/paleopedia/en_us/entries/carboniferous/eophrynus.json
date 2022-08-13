@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/eophrynus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_trigonotarbid",
+	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_trigonotarbid",
+			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 			"title": "Eophrynus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarida$(br)>Eophrynidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 			"type": "text",
 			"text": "Eophrynus is a Carboniferous trigonotarbid whose name means 'dawn whip spider.' Eophrynus were similar to modern spiders but could not produce silk and their abdomen was made up of small plates and spikes."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_trigonotarbid",
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_eophrynus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -5,6 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
+import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
+import net.lepidodendron.item.entities.ItemBugRaw;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -51,6 +56,20 @@ public class EntityPrehistoricFloraTitanopteraGigatitan extends EntityPrehistori
 		{
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
 		}
+	}
+
+	@Override
+	protected void initEntityAI() {
+		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
+		this.tasks.addTask(1, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
+		this.tasks.addTask(2, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
+		this.tasks.addTask(3, new EntityAILookIdle(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return stack.getItem() == ItemBugRaw.block;
 	}
 
 	@Override

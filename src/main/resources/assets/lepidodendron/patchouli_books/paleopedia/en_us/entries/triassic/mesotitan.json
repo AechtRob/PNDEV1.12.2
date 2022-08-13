@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/mesotitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_mesotitan",
+	"turnin": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_mesotitan",
+			"trigger": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 			"title": "Mesotitan",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Orthoptera$(br)>Mesotitanidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mesotitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_mesotitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_mesotitan",
 			"type": "text",
 			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/clatrotitan_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_clatrotitan",
+	"turnin": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_clatrotitan",
+			"trigger": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 			"title": "Clatrotitan",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Titanoptera$(br)>Mesotitanidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_clatrotitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 			"type": "text",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_clatrotitan",
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
 			"type": "text",
 			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

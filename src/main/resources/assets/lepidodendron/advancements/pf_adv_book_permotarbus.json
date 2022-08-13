@@ -1,0 +1,24 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:permotarbus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_trigonotarbid_permotarbus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_trigonotarbid_permotarbus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_trigonotarbid_permotarbus"
+		}
+	}
+}
+
+
+
+
