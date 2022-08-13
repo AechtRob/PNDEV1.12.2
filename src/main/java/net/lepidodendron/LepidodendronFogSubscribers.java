@@ -274,7 +274,7 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && player.posY > player.world.getSeaLevel()) {
+									&& biome == BiomeDevonianSpikes.biome && player.posY >= player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
@@ -315,7 +315,7 @@ public class LepidodendronFogSubscribers {
 								}
 							}
 
-							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY > player.world.getSeaLevel()) {
+							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY >= player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
 								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
 									float d = player.world.rainingStrength;
@@ -371,7 +371,7 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || event.getState().getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && player.posY > player.world.getSeaLevel()) {
+									&& biome == BiomeDevonianSpikes.biome && player.posY >= player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
@@ -412,7 +412,7 @@ public class LepidodendronFogSubscribers {
 								}
 							}
 
-							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY > player.world.getSeaLevel()) {
+							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY >= player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
 								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
 									float d = player.world.rainingStrength;
