@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraLonchidion extends EntityPrehistoricFloraAgea
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
+		maxWidth = 0.3F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 11.0D;
 	}

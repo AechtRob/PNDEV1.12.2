@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_tanystropheus",
 			"title": "Tanystropheus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>"
 		},
 		{
 			"type": "image",

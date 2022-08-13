@@ -87,7 +87,7 @@ public class EntityPrehistoricFloraCacops extends EntityPrehistoricFloraSwimming
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
+		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed * 1.4F;
 	}
 
 	@Override
