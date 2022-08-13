@@ -20,8 +20,7 @@
       {"model": "lepidodendron:bivalve_lithiotis_1", "x": 90, "y": 270},
       {"model": "lepidodendron:bivalve_lithiotis_2", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:bivalve_lithiotis_1"},
       {"model": "lepidodendron:bivalve_lithiotis_2"},
       {"model": "lepidodendron:bivalve_lithiotis_1", "y": 90},

@@ -20,8 +20,7 @@
 			      {"model": "lepidodendron:ankyropteris_stem_corner_1", "y": 90 }
 			    ]
         },
-
-        {   "when": { "facing": "north", "joined": true },
+      {   "when": { "facing": "north", "joined": true },
             "apply": [
 			      {"model": "lepidodendron:ankyropteris_corner_1_join", "y": 180 }
 			    ]

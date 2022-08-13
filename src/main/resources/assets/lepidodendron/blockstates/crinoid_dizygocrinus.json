@@ -48,8 +48,7 @@
     "age=15,topshoot=false": {
       "model": "lepidodendron:crinoid_dizygocrinus"
     },
-
-    "age=0,topshoot=true":  [
+  "age=0,topshoot=true":  [
       {"model": "lepidodendron:crinoid_dizygocrinus_top"},
       {"model": "lepidodendron:crinoid_dizygocrinus_top_var"}
     ],

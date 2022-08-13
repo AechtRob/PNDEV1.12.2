@@ -5,8 +5,7 @@
       {"model": "lepidodendron:spiny_cycad_shoot_flower", "weight":  2},
       {"model": "lepidodendron:spiny_cycad_shoot_var"}
     ],
-
-    "inventory": {
+  "inventory": {
       "model": "lepidodendron:spiny_cycad_shoot_inventory"
     }
   }

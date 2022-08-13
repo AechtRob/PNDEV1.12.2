@@ -16,6 +16,10 @@ public class EntityRegistries {
     }
 
     public static void registerEntities() {
+        //HUGE = Render dist 82
+        //STANDARD = Render dist 64
+        //SMALL (under 1m) = Render dist 48
+        //TINY (under 0.5m)  = Render dist 32
         registerEntity("prehistoric_flora_walliserops", EntityPrehistoricFloraWalliserops.class, LepidodendronMod.ENTITY_WALLISEROPS, 82,-8896764,-10867366);
         registerEntity("prehistoric_flora_pneumodesmus", EntityPrehistoricFloraPneumodesmus.class, LepidodendronMod.ENTITY_PNEUMODESMUS, 82,-3497691,-10867366);
         registerEntity("prehistoric_flora_cheirurus", EntityPrehistoricFloraCheirurus.class, LepidodendronMod.ENTITY_CHEIRURUS, 82,-11715316,-11583424);

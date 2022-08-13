@@ -41,8 +41,7 @@
       {"model": "lepidodendron:liknopetalon_5", "y": 180 },
       {"model": "lepidodendron:liknopetalon_6", "y": 180 }
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:liknopetalon_1"},
       {"model": "lepidodendron:liknopetalon_2"},
       {"model": "lepidodendron:liknopetalon_3"},

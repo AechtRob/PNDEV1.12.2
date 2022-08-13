@@ -7,9 +7,7 @@
     "bw": "lepidodendron:blocks/odontopteris_leaves_b_w",
     "nub": "lepidodendron:blocks/odontopteris_stem",
     "particle": "lepidodendron:blocks/odontopteris_leaves_t_e"
-  },
-
-	"elements":[
+  },	"elements":[
 		{"name":"nub",
 		"from": [7, 14, 14], "to":[9, 16, 16], "shade":false,
 		"faces": {
@@ -49,8 +47,5 @@
 			"north": {"texture": "#bw","uv": [16, 0, 0, 16]}
 			}
 		}
-
-
 	]
 }
-

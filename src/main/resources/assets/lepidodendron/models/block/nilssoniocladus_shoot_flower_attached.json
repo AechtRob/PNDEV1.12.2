@@ -4,9 +4,7 @@
     "w": "lepidodendron:blocks/nilssoniocladus_leaf_cone",
     "e": "lepidodendron:blocks/nilssoniocladus_leaf_cone",
     "particle": "lepidodendron:blocks/nilssoniocladus_leaf_cone"
-  },
-
-"elements":[
+  },"elements":[
 {"name":"n",
 "from":[8.0,-14,-8.0],"to":[8.0,2.0,8.0],"shade":false,
 "faces":{

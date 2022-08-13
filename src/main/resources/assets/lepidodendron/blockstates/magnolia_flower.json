@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:magnolia_flower", "x": 90, "y": 270},
       	{"model": "lepidodendron:magnolia_flower_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:magnolia_flower"},
       	{"model": "lepidodendron:magnolia_flower_rot"}
     ],

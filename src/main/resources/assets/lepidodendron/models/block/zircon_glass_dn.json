@@ -8,9 +8,7 @@
 		"emptyface": "lepidodendron:blocks/zircon_glass_26",
 		"westface": "lepidodendron:blocks/zircon_glass_15"
     },
-    "elements": [
-
-        {   "_comment": "east",
+    "elements": [        {   "_comment": "east",
             "from": [ 15, 0, 0 ],
             "to": [ 16, 16, 16 ],
             "faces": {

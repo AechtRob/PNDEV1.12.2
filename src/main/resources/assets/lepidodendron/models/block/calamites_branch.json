@@ -7,12 +7,8 @@
         "north": "lepidodendron:blocks/calamites_branch",
         "south": "lepidodendron:blocks/calamites_branch",
         "west": "lepidodendron:blocks/calamites_branch",
-        "east": "lepidodendron:blocks/calamites_branch",
-
-        "w": "lepidodendron:blocks/calamites_leaves_w",
-        "e": "lepidodendron:blocks/calamites_leaves_e"
-
-    },
+        "east": "lepidodendron:blocks/calamites_branch",        "w": "lepidodendron:blocks/calamites_leaves_w",
+        "e": "lepidodendron:blocks/calamites_leaves_e"    },
     
     "elements": [
         {   "from": [ 5, 0, 5 ],
@@ -25,9 +21,7 @@
                 "west":  { "uv": [ 5, 0, 11, 16 ], "texture": "#west" },
                 "east":  { "uv": [ 5, 0, 11, 16 ],  "texture": "#east" }
             }
-        },
-
-	    {"name":"n",
+        },	    {"name":"n",
 			"from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
 			"faces":{
 			"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},

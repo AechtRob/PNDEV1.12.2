@@ -12,12 +12,10 @@
     "facing=south": [
       { "model": "lepidodendron:fungus_1", "x": 90, "y": 180 }
     ],
-
-    "facing=west": [
+  "facing=west": [
       { "model": "lepidodendron:fungus_1", "x": 90, "y": 270 }
     ],
-
-    "facing=up": [
+  "facing=up": [
       { "model": "lepidodendron:fungus_1" }
     ],
     "facing=down": [

@@ -4,8 +4,7 @@
 		{   "when": { "roots": true },
             "apply": { "model": "lepidodendron:gigantopterid_roots" }
         },
-
-        {   "when": { "north": true },
+      {   "when": { "north": true },
             "apply": { "model": "lepidodendron:gigantopterid_log_side" }
         },
         {   "when": { "east": true },

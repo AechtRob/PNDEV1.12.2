@@ -3,9 +3,7 @@
   "textures": {
     "texture": "lepidodendron:blocks/nilssoniocladus_stem",
     "particle": "lepidodendron:blocks/nilssoniocladus_stem"
-  },
-
- "elements": [
+  }, "elements": [
         {   "from": [ 7, 0, 0 ],
             "to": [ 9, 2, 2 ],
             "faces": {
@@ -160,6 +158,4 @@
                 "east":  { "uv": [ 7, 14, 9, 16 ],  "texture": "#texture" }
             }
         }
-    ]
-
-}
+    ]}

@@ -30,8 +30,7 @@
       {"model": "lepidodendron:bivalve_green_3", "x": 90, "y": 270},
       {"model": "lepidodendron:bivalve_green_4", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:bivalve_green_1"},
       {"model": "lepidodendron:bivalve_green_2"},
       {"model": "lepidodendron:bivalve_green_3"},

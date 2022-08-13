@@ -9,8 +9,7 @@
                 "name": "lepidodendron:amplectobelua_raw",
                 "weight": 4.76190476190476
                 },
-
-                {
+              {
                 "type": "item",
                 "name": "lepidodendron:bushizheia_raw",
                 "weight": 4.76190476190476
@@ -35,8 +34,7 @@
                 "name": "lepidodendron:fortiforceps_raw",
                 "weight": 4.76190476190476
                 },
-
-                {
+              {
                 "type": "item",
                 "name": "lepidodendron:haikouichthys_raw",
                 "weight": 4.76190476190476
@@ -66,9 +64,7 @@
                 "name": "lepidodendron:nectocaris_raw",
                 "weight": 4.76190476190476
                 },
-
-
-                {
+            {
                 "type": "item",
                 "name": "lepidodendron:parapeytoia_raw",
                 "weight": 4.76190476190476
@@ -113,9 +109,7 @@
                 "name": "lepidodendron:yunnanozoon_raw",
                 "weight": 4.76190476190476
                 }
-
-
-            ]
+        ]
         }
     ]
 }

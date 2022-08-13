@@ -3,8 +3,7 @@
     "normal": [
       {"model": "lepidodendron:phasmatocycas_shoot"}
     ],
-
-    "inventory": {
+  "inventory": {
       "model": "lepidodendron:phasmatocycas_shoot_inventory"
     }
   }

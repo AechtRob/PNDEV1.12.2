@@ -9,18 +9,14 @@
         
         "c2": "lepidodendron:blocks/archaeopteris_leaf_large_4_c",
         "r2": "lepidodendron:blocks/archaeopteris_leaf_large_4_r",
-        "l2": "lepidodendron:blocks/archaeopteris_leaf_large_4_l",
-
-        "tc": "lepidodendron:blocks/archaeopteris_leaf_small_2_c",
+        "l2": "lepidodendron:blocks/archaeopteris_leaf_large_4_l",        "tc": "lepidodendron:blocks/archaeopteris_leaf_small_2_c",
         "tl": "lepidodendron:blocks/archaeopteris_leaf_small_2_l",
         "tr": "lepidodendron:blocks/archaeopteris_leaf_small_2_r",
         
         "stem": "lepidodendron:blocks/archaeopteris_log"
     },
     
-    "elements": [
-
-        {"name":"centrens",
+    "elements": [        {"name":"centrens",
         	"from": [ 0, 0, 8 ],
             "to": [ 16, 16, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
@@ -60,9 +56,7 @@
                 "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#tl" },
                 "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#tl" }
             }
-        },
-
-        {"name":"centrene",
+        },        {"name":"centrene",
         	"from": [ 16, 0, -8 ],
             "to": [ 32, 16, -8 ],
             "rotation": { "origin": [ 24, 8, -8 ], "axis": "y", "angle": 45, "rescale": true },
@@ -82,9 +76,7 @@
                 "south": { "uv": [ 16, 0, 0, 16 ], "texture": "#tr" }
             }
         },
-		
-
-		{"name":"midsouth",
+				{"name":"midsouth",
 			"from": [ 7, 0, 8 ],
             "to": [ 9, 2, 20 ],
             "shade":false,
@@ -116,9 +108,7 @@
                 "down":  { "uv": [ 0, 2, 16, 16 ], "texture": "#c2" },
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c2", "rotation": 180 }
             }
-        },
-
-        {"name":"c2southeast",
+        },        {"name":"c2southeast",
 			"from": [ 16, 1.5, 16 ],
             "to": [ 32, 1.5, 32 ],
             "shade":false,
@@ -138,11 +128,7 @@
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c1", "rotation": 180 }
             }
         },
-
-
-        
-
-        {"name":"c2southwest",
+                {"name":"c2southwest",
 			"from": [ -16, 0.5, 16 ],
             "to": [ 0, 0.5, 32 ],
             "shade":false,
@@ -162,14 +148,8 @@
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c1", "rotation": 180 }
             }
         },
-
-
-
-
         
-        
-
-		{"name":"midnorth",
+        		{"name":"midnorth",
 			"from": [ 7, 0, -4 ],
             "to": [ 9, 2, 8 ],
             "shade":false,
@@ -201,9 +181,7 @@
                 "down":  { "uv": [ 0, 2, 16, 16 ], "texture": "#c2" },
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c2", "rotation": 180  }
             }
-        },
-
-        {"name":"c2northeast",
+        },        {"name":"c2northeast",
 			"from": [ 16, 0.5, -16 ],
             "to": [ 32, 0.5, 0 ],
             "shade":false,
@@ -223,8 +201,6 @@
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c1", "rotation": 90 }
             }
         },
-
-        
         {"name":"c2northwest",
 			"from": [ -16, 1.5, -16 ],
             "to": [ 0, 1.5, 0 ],
@@ -244,11 +220,7 @@
                 "down":  { "uv": [ 0, 2, 16, 16 ], "texture": "#c1", "rotation": 270 },
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c1", "rotation": 270 }
             }
-        },
-
-
-
-		{"name":"midwest",
+        },		{"name":"midwest",
 			"from": [ -4, 0, 7 ],
             "to": [ 8, 2, 9 ],"shade":false,
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "z", "angle": -22.5, "rescale": false },
@@ -280,8 +252,6 @@
                 "up":    { "uv": [ 0, 2, 16, 16 ], "texture": "#c2", "rotation": 90  }
             }
         },
-
-
 		{"name":"mideast",
 			"from": [ 8, 0, 7 ],
             "to": [ 20, 2, 9 ],"shade":false,

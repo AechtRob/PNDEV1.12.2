@@ -23,9 +23,7 @@
                 "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant_b" },
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant_b" }
             }
-        },
-
-        {   "from": [ 0.8, 16, 8 ],
+        },        {   "from": [ 0.8, 16, 8 ],
             "to": [ 15.2, 32, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,

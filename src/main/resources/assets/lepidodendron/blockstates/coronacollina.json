@@ -12,12 +12,10 @@
     "facing=south": [
       {"model": "lepidodendron:coronacollina", "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:coronacollina", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:coronacollina"}
     ],
     "facing=down": [

@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:fenestella_giant_green", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:fenestella_giant_green"}
     ],
     "facing=down": [

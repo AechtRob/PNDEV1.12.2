@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:gangamopteris_strobilus", "x": 90, "y": 270},
       	{"model": "lepidodendron:gangamopteris_strobilus_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:gangamopteris_strobilus"},
       	{"model": "lepidodendron:gangamopteris_strobilus_rot"}
     ],

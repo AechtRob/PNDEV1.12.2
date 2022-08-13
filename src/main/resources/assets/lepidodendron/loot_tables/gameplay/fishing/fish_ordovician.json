@@ -44,8 +44,7 @@
                 "name": "lepidodendron:cyclonema_raw",
                 "weight": 5.47945205479452
                 },
-
-                {
+              {
                 "type": "item",
                 "name": "lepidodendron:dalmanites_raw",
                 "weight": 5.47945205479452
@@ -60,17 +59,13 @@
                 "name": "lepidodendron:furca_raw",
                 "weight": 4.93150684931507
                 },
-
-
-                {
+            {
                 "type": "item",
                 "name": "lepidodendron:isotelus_raw",
                 "weight": 10.958904109589
                 },
 
-
-
-                {
+            {
                 "type": "item",
                 "name": "lepidodendron:lunataspis_raw",
                 "weight": 8.76712328767123
@@ -91,8 +86,7 @@
                 "weight": 9.86301369863014
                 }
                 
-
-            ]
+          ]
         }
     ]
 }

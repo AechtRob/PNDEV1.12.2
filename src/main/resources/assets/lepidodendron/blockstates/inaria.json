@@ -15,13 +15,11 @@
       {"model": "lepidodendron:inaria", "x": 90, "y": 180},
       {"model": "lepidodendron:inaria_var", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:inaria", "x": 90, "y": 270},
       {"model": "lepidodendron:inaria_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:inaria"},
       {"model": "lepidodendron:inaria_var"}
     ],

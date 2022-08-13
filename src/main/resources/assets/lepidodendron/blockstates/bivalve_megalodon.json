@@ -35,8 +35,7 @@
       {"model": "lepidodendron:bivalve_megalodon_4", "x": 90, "y": 270},
       {"model": "lepidodendron:bivalve_megalodon_5", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:bivalve_megalodon_1"},
       {"model": "lepidodendron:bivalve_megalodon_2"},
       {"model": "lepidodendron:bivalve_megalodon_3"},

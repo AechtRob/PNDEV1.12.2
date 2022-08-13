@@ -38,8 +38,6 @@
                 "west": { "uv": [ 7, 0, 10, 16 ], "texture": "#top" }
             }
         },
-
-
         {   "from": [ 8, 0, 0 ],
             "to": [ 8, 16, 2 ],
             "shade": false,

@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:red_tufted_algae_1_side", "y": 270},
       	{"model": "lepidodendron:red_tufted_algae_2_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:red_tufted_algae_1"},
       	{"model": "lepidodendron:red_tufted_algae_2"}
     ],

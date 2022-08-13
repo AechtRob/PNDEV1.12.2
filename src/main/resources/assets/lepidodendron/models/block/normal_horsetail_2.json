@@ -6,8 +6,6 @@
         "bottom": "lepidodendron:blocks/horsetail"
     },
     "elements": [
-
-
     	{   "from": [ -5, 0, 8 ],
             "to": [ 6, 16, 8 ],
             "shade": false,
@@ -24,8 +22,6 @@
                 "west": { "uv": [ 2, 0, 13, 16 ], "texture": "#top" }
             }
         },
-
-
         {   "from": [ 8, 0, -5 ],
             "to": [ 8, 8, 6 ],
             "shade": false,

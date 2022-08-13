@@ -22,8 +22,7 @@
       "model": "lepidodendron:equisites_shoot_side",
       "y": 270
     },
-
-    "facing=up": {
+  "facing=up": {
       "model": "lepidodendron:equisites_shoot"
     },
     "facing=down": {

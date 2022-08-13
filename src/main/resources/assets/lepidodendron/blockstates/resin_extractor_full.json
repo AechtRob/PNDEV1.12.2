@@ -12,12 +12,10 @@
     "facing=south": [
       {"model": "lepidodendron:resin_extractor_full", "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:resin_extractor_full", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:resin_extractor_full"}
     ],
     "facing=down": [

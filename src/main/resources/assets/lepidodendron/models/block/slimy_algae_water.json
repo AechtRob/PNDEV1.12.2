@@ -32,8 +32,6 @@
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plantup" }
             }
         },
-
-
         {   "from": [ 0.8, -16, 8 ],
             "to": [ 15.2, 0, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },

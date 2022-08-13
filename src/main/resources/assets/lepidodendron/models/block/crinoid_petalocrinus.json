@@ -14,9 +14,7 @@
 				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
 				"down": {"uv": [0, 0, 16, 16], "rotation": 180, "texture": "#texture"}
 			}
-		},
-
-		{   "from": [ 0.8, 0, 8 ],
+		},		{   "from": [ 0.8, 0, 8 ],
 			"to": [ 15.2, 16, 8 ],
 			"shade": false,
 			"faces": {

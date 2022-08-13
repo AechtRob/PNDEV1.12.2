@@ -3,15 +3,11 @@
     "normal": [
       {"model": "lepidodendron:pterophyllum_shoot", "weight": 2 },
       {"model": "lepidodendron:pterophyllum_shoot_flower"},
-
-      {"model": "lepidodendron:pterophyllum_shoot", "weight": 2, "y": 90 },
+    {"model": "lepidodendron:pterophyllum_shoot", "weight": 2, "y": 90 },
       {"model": "lepidodendron:pterophyllum_shoot_flower", "y": 90 },
-
-      
-      {"model": "lepidodendron:pterophyllum_shoot_flipped", "weight": 2 },
+    {"model": "lepidodendron:pterophyllum_shoot_flipped", "weight": 2 },
       {"model": "lepidodendron:pterophyllum_shoot_flower_flipped"},
-
-      {"model": "lepidodendron:pterophyllum_shoot_flipped", "weight": 2, "y": 90 },
+    {"model": "lepidodendron:pterophyllum_shoot_flipped", "weight": 2, "y": 90 },
       {"model": "lepidodendron:pterophyllum_shoot_flower_flipped", "y": 90 }
       
     ],

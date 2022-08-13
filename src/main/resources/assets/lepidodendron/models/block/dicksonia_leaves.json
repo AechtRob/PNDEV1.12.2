@@ -1,6 +1,4 @@
-{
-
-    "ambientocclusion": false,
+{    "ambientocclusion": false,
     "textures": {
         "particle": "lepidodendron:blocks/dicksonia_c",
         "c": "lepidodendron:blocks/dicksonia_c",
@@ -31,9 +29,7 @@
 			"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
 			"faces":{
 			"north":{"texture":"#c","uv":[0.0,0.0,16.0,16.0]},
-			"south":{"texture":"#c","uv":[16.0,0.0,0.0,16.0]}}},
-
-		{"name":"mid",
+			"south":{"texture":"#c","uv":[16.0,0.0,0.0,16.0]}}},		{"name":"mid",
 			"from": [ 7, 0, 7 ],
             "to": [ 9, 16, 9 ],"shade":false,
             "faces": {

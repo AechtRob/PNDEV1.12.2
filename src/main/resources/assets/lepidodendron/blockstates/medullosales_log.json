@@ -4,8 +4,7 @@
 		{   "when": { "roots": true },
             "apply": { "model": "lepidodendron:medullosales_roots" }
         },
-
-        {   "when": { "north": true },
+      {   "when": { "north": true },
             "apply": { "model": "lepidodendron:medullosales_log_side" }
         },
         {   "when": { "east": true },

@@ -24,9 +24,7 @@
     "facing=down,vine=false": [
 		{ "model": "lepidodendron:nilssoniocladus_shoot_cone", "x": 180 }
     ],
-
-
-    "facing=north,vine=true": [
+"facing=north,vine=true": [
 		{ "model": "lepidodendron:nilssoniocladus_shoot_attached_cone", "x": 90 }
     ],
     "facing=east,vine=true": [

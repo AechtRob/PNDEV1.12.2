@@ -6,9 +6,7 @@
         "wd": "lepidodendron:blocks/coralline_algae_b_w",
         "eu": "lepidodendron:blocks/coralline_algae_t_e",
         "wu": "lepidodendron:blocks/coralline_algae_t_w"
-    },
-
-    "elements":[
+    },    "elements":[
         {"name":"n",
             "from":[8.0,-16.0,-8.0],"to":[8.0,0.0,8.0],"shade":false,
             "faces":{
@@ -52,11 +50,7 @@
             "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":-45.0},
             "faces":{
                 "east":{"texture":"#wd","uv":[0.0,0.0,16.0,16.0]},
-                "west":{"texture":"#ed","uv":[0.0,0.0,16.0,16.0]}}},
-
-
-
-        {"name":"n",
+                "west":{"texture":"#ed","uv":[0.0,0.0,16.0,16.0]}}},        {"name":"n",
             "from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
             "faces":{
                 "east":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]},
@@ -100,8 +94,6 @@
             "faces":{
                 "east":{"texture":"#wu","uv":[0.0,0.0,16.0,16.0]},
                 "west":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}
-
-
         }
     ]
 }

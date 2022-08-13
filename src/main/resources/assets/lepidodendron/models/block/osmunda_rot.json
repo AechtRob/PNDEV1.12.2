@@ -7,9 +7,7 @@
 	"e1": "lepidodendron:blocks/osmunda_t_e",
 	"w1": "lepidodendron:blocks/osmunda_t_w"
 	},
-"elements":[
-
-{"name":"nw",
+"elements":[{"name":"nw",
 "from":[8.0,0.0,-7.0],"to":[8.0,16.0,8.0],"shade":false,
 "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":45.0},
 "faces":{
@@ -33,8 +31,6 @@
 "faces":{
 "east":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
 "west":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
-
-
 {"name":"nw1",
 "from":[8.0,16.0,-7.0],"to":[8.0,32.0,8.0],"shade":false,
 "rotation":{"origin":[8.0,8.0,8.0],"axis":"y","angle":45.0},

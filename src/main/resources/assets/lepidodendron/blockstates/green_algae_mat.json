@@ -21,15 +21,13 @@
     	]},
       "apply": { "model": "lepidodendron:green_algae_mat", "x": 90, "y": 180 }
     },
-
-    { "when": { "OR": [
+  { "when": { "OR": [
     	{ "facing": "west" },
 		{ "east": true }
     	]},
       "apply": { "model": "lepidodendron:green_algae_mat", "x": 90, "y": 270 }
     },
-
-    { "when": { "OR": [
+  { "when": { "OR": [
     	{ "facing": "up" },
 		{ "down": true }
     	]},

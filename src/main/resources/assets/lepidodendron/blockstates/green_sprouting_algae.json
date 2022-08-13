@@ -22,8 +22,7 @@
       	{"model": "lepidodendron:green_sprouting_algae_side_1", "x": 90, "y": 270},
         {"model": "lepidodendron:green_sprouting_algae_side_2", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:green_sprouting_algae_1"},
       {"model": "lepidodendron:green_sprouting_algae_2"},
       {"model": "lepidodendron:green_sprouting_algae_3"}

@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:blastoid_2_side", "y": 270},
       {"model": "lepidodendron:blastoid_2_side_var", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:blastoid_2"},
       {"model": "lepidodendron:blastoid_2_var"}
     ],

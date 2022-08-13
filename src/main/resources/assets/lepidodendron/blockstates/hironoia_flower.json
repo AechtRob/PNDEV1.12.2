@@ -26,8 +26,7 @@
       	{"model": "lepidodendron:hironoia_flower_angle", "x": 90, "y": 270},
       	{"model": "lepidodendron:hironoia_flower_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:hironoia_flower"},
       	{"model": "lepidodendron:hironoia_flower_angle"},
       	{"model": "lepidodendron:hironoia_flower_rot"}

@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:glossopteris_strobilus", "x": 90, "y": 270},
       	{"model": "lepidodendron:glossopteris_strobilus_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:glossopteris_strobilus"},
       	{"model": "lepidodendron:glossopteris_strobilus_rot"}
     ],

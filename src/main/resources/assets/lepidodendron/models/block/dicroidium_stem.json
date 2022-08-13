@@ -7,9 +7,7 @@
         "north": "lepidodendron:blocks/dicroidium_stem",
         "south": "lepidodendron:blocks/dicroidium_stem",
         "west": "lepidodendron:blocks/dicroidium_stem",
-        "east": "lepidodendron:blocks/dicroidium_stem"
-
-    },
+        "east": "lepidodendron:blocks/dicroidium_stem"    },
     
     "elements": [
         {   "from": [ 6, 0, 6 ],

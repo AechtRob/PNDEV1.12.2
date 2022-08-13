@@ -15,13 +15,11 @@
       {"model": "lepidodendron:thectardis", "x": 90, "y": 180},
       {"model": "lepidodendron:thectardis_var", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:thectardis", "x": 90, "y": 270},
       {"model": "lepidodendron:thectardis_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:thectardis"},
       {"model": "lepidodendron:thectardis_var"}
     ],

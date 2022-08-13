@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:pink_sponge", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:pink_sponge"}
     ],
     "facing=down": [

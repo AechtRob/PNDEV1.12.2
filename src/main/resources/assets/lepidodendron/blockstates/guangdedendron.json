@@ -48,8 +48,7 @@
     "age=15,bottom=false,stem=false": {
       "model": "lepidodendron:guangdedendron_2"
     },
-
-    "age=0,bottom=true,stem=false": {
+  "age=0,bottom=true,stem=false": {
       "model": "lepidodendron:guangdedendron_1"
     },
     "age=1,bottom=true,stem=false": {
@@ -97,8 +96,7 @@
     "age=15,bottom=true,stem=false": {
       "model": "lepidodendron:guangdedendron_1"
     },
-
-    "age=0,bottom=true,stem=true": {
+  "age=0,bottom=true,stem=true": {
       "model": "lepidodendron:guangdedendron_stem"
     },
     "age=1,bottom=true,stem=true": {
@@ -146,8 +144,7 @@
     "age=15,bottom=true,stem=true": {
       "model": "lepidodendron:guangdedendron_stem"
     },
-
-    "age=0,bottom=false,stem=true": {
+  "age=0,bottom=false,stem=true": {
       "model": "lepidodendron:guangdedendron_stem"
     },
     "age=1,bottom=false,stem=true": {

@@ -14,9 +14,7 @@
                 "up": { "uv": [ 0, 0, 16, 16 ],  "texture": "#texture" },
                 "down": { "uv": [ 16, 0, 0, 16 ],  "texture": "#texture" }
             }
-        },
-
-        {"name":"wood",
+        },        {"name":"wood",
 			"from": [ 0, 15, 15 ],
             "to": [ 16, 16, 16 ],
             "shade":false,

@@ -96,9 +96,7 @@
     "age=15,base=true,lower=false": {
       "model": "lepidodendron:eremopteris_base"
     },
-
-
-    "age=0,base=true,lower=true": {
+"age=0,base=true,lower=true": {
       "model": "lepidodendron:eremopteris_base"
     },
     "age=1,base=true,lower=true": {
@@ -146,9 +144,7 @@
     "age=15,base=true,lower=true": {
       "model": "lepidodendron:eremopteris_base"
     },
-
-
-    "age=0,base=false,lower=true": {
+"age=0,base=false,lower=true": {
       "model": "lepidodendron:eremopteris_lower"
     },
     "age=1,base=false,lower=true": {

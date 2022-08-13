@@ -4,8 +4,7 @@
       {"model": "lepidodendron:bjuvia_shoot"},
       {"model": "lepidodendron:bjuvia_shoot_flower"}
     ],
-
-    "inventory": {
+  "inventory": {
       "model": "lepidodendron:bjuvia_shoot_inventory"
     }
   }

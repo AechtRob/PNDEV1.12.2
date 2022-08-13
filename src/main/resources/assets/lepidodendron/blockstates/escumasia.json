@@ -27,8 +27,7 @@
       	{"model": "lepidodendron:escumasia_side_1", "y": 270},
       {"model": "lepidodendron:escumasia_side_2", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:escumasia_1"},
       {"model": "lepidodendron:escumasia_2"},
       {"model": "lepidodendron:escumasia_3"},

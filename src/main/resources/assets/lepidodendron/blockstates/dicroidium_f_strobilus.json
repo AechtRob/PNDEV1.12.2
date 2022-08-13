@@ -16,8 +16,7 @@
     "facing=west": [
       {"model": "lepidodendron:dicroidium_f_strobilus", "y": 180 }
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:dicroidium_f_strobilus"}
     ],
     "facing=down": [

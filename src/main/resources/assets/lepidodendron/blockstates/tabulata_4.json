@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:tabulata_4_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:tabulata_4"}
     ],
     "facing=down": [

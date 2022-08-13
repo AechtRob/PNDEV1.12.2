@@ -28,9 +28,7 @@
     "facing=down,vine=false": [
       { "model": "lepidodendron:lyginopteris_shoot_up", "x": 180 }
     ],
-
-
-    "facing=north,vine=true": [
+"facing=north,vine=true": [
       { "model": "lepidodendron:lyginopteris_shoot_attached", "y": 180, "weight": 2 },
       { "model": "lepidodendron:lyginopteris_shoot_var_attached", "y": 180 }
     ],

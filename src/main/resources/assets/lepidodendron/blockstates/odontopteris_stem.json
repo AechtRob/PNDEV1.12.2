@@ -25,8 +25,7 @@
     "facing=down,topshoot=true": [
       {"model": "lepidodendron:odontopteris_top" }
     ],
-
-    "facing=north,topshoot=false": [
+  "facing=north,topshoot=false": [
       {"model": "lepidodendron:odontopteris_stem_1", "y": 180, "weight": 3},
      	{"model": "lepidodendron:odontopteris_stem_2", "y": 180 },
      	{"model": "lepidodendron:odontopteris_stem_3", "y": 180 },

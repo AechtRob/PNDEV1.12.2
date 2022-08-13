@@ -18,8 +18,7 @@
     "facing=west": [
       	{"model": "lepidodendron:red_leafy_algae_1_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:red_leafy_algae_1"},
       	{"model": "lepidodendron:red_leafy_algae_1_var"},
       	{"model": "lepidodendron:red_leafy_algae_2"}

@@ -14,8 +14,6 @@
                 "down": { "uv": [ 0, 0, 16, 16 ], "texture": "#top" }
             }
         },
-
-
         {   "from": [ 8, 0, 0 ],
             "to": [ 8, 8, 16 ],
             "shade": false,
@@ -35,9 +33,7 @@
                 "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" },
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom" }
             }
-        },
-
-        {   "from": [ 0, 0, 8 ],
+        },        {   "from": [ 0, 0, 8 ],
             "to": [ 16, 8, 8 ],
             "shade": false,
             "faces": {

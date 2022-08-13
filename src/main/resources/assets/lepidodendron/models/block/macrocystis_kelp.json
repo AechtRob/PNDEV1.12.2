@@ -5,9 +5,7 @@
         "texture1": "lepidodendron:blocks/brown_algae_1_anim",
         "texture2": "lepidodendron:blocks/brown_algae_2_anim" 
     },
-    "elements": [
-
-        {   "from": [ 0.8, 0, 8 ],
+    "elements": [        {   "from": [ 0.8, 0, 8 ],
             "to": [ 15.2, 16, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
             "shade": false,

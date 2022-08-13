@@ -20,8 +20,7 @@
       	{"model": "lepidodendron:gigantospongia", "x": 90, "y": 270},
       {"model": "lepidodendron:gigantospongia_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:gigantospongia"}
     ],
     "facing=down": [

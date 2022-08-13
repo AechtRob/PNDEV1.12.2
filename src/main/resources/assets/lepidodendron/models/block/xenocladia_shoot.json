@@ -6,9 +6,7 @@
     "tw": "lepidodendron:blocks/xenocladia_shoot_t_w",
     "te": "lepidodendron:blocks/xenocladia_shoot_t_e",
     "particle": "lepidodendron:items/xenocladia_shoot_inventory"
-  },
-
-"elements":[
+  },"elements":[
   {"name":"n",
     "from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
     "faces":{
@@ -53,8 +51,6 @@
     "faces":{
       "east":{"texture":"#bw","uv":[0.0,0.0,16.0,16.0]},
       "west":{"texture":"#be","uv":[0.0,0.0,16.0,16.0]}}},
-
-
   {"name":"n",
     "from":[8.0,16.0,-8.0],"to":[8.0,32.0,8.0],"shade":false,
     "faces":{

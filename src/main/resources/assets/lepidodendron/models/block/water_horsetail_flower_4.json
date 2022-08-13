@@ -38,9 +38,7 @@
                 "east": { "uv": [ 7, 0, 10, 8 ], "texture": "#top" },
                 "west": { "uv": [ 7, 0, 10, 8 ], "texture": "#top" }
             }
-        },
-
-        {   "from": [ 0, 0, 8 ],
+        },        {   "from": [ 0, 0, 8 ],
             "to": [ 2, 16, 8 ],
             "shade": false,
             "faces": {
@@ -72,8 +70,6 @@
                 "west": { "uv": [ 7, 0, 10, 16 ], "texture": "#top" }
             }
         },
-
-
         {   "from": [ 8, 16, 0 ],
             "to": [ 8, 24, 2 ],
             "shade": false,

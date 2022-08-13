@@ -28,9 +28,7 @@
     "facing=down,vine=false": [
 		{ "model": "lepidodendron:odontopteris_shoot_up", "x": 180 }
     ],
-
-
-    "facing=north,vine=true": [
+"facing=north,vine=true": [
 		{ "model": "lepidodendron:odontopteris_shoot_attached", "weight": 2 },
 		{ "model": "lepidodendron:odontopteris_shoot_var_attached" }
     ],

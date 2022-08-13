@@ -64,8 +64,7 @@
       {"model": "lepidodendron:crinoid_traumatocrinus_stem"},
       {"model": "lepidodendron:crinoid_traumatocrinus_stem_var"}
     ],
-
-    "age=0,base=true,topshoot=true": {
+  "age=0,base=true,topshoot=true": {
       "model": "lepidodendron:crinoid_traumatocrinus"
     },
     "age=1,base=true,topshoot=true": {
@@ -113,8 +112,7 @@
     "age=15,base=true,topshoot=true": {
       "model": "lepidodendron:crinoid_traumatocrinus"
     },
-
-    "age=0,base=false,topshoot=true":  [
+  "age=0,base=false,topshoot=true":  [
       {"model": "lepidodendron:crinoid_traumatocrinus"}
     ],
     "age=1,base=false,topshoot=true":  [
@@ -162,9 +160,7 @@
     "age=15,base=false,topshoot=true":  [
       {"model": "lepidodendron:crinoid_traumatocrinus"}
     ],
-
-
-    "age=0,base=true,topshoot=false":  [
+"age=0,base=true,topshoot=false":  [
       {"model": "lepidodendron:crinoid_traumatocrinus_base"}
     ],
     "age=1,base=true,topshoot=false":  [

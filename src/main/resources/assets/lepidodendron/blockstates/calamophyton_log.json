@@ -36,12 +36,10 @@
         {   "when": { "down": false },
             "apply": { "model": "lepidodendron:calamophyton_log_noside", "x": 90, "uvlock": true }
         },
-
-        {   "when": { "leaves": true },
+      {   "when": { "leaves": true },
             "apply": { "model": "lepidodendron:calamophyton_log_shoot", "uvlock": true }
         },
-
-        {   "when": { "ground": true },
+      {   "when": { "ground": true },
             "apply": { "model": "lepidodendron:calamophyton_log_base", "uvlock": true }
         }
     ]

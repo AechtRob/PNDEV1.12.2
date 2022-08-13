@@ -20,14 +20,12 @@
       {"model": "lepidodendron:namapoikia_2", "x": 90, "y": 180},
       {"model": "lepidodendron:namapoikia_3", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:namapoikia_1", "x": 90, "y": 270},
       {"model": "lepidodendron:namapoikia_2", "x": 90, "y": 270},
       {"model": "lepidodendron:namapoikia_3", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:namapoikia_1"},
       {"model": "lepidodendron:namapoikia_2"},
       {"model": "lepidodendron:namapoikia_3"},

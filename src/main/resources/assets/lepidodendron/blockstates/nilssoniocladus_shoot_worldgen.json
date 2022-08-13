@@ -27,9 +27,7 @@
 		{ "model": "lepidodendron:nilssoniocladus_shoot", "weight": 2, "x": 180 },
 		{ "model": "lepidodendron:nilssoniocladus_shoot_flower", "x": 180 }
     ],
-
-
-    "facing=north,vine=true": [
+"facing=north,vine=true": [
 		{ "model": "lepidodendron:nilssoniocladus_shoot_attached", "weight": 2,"x": 90 },
 		{ "model": "lepidodendron:nilssoniocladus_shoot_flower_attached","x": 90 }
     ],

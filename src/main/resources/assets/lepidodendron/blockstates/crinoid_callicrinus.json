@@ -48,8 +48,7 @@
     "age=15,topshoot=false": {
       "model": "lepidodendron:crinoid_callicrinus"
     },
-
-    "age=0,topshoot=true":  [
+  "age=0,topshoot=true":  [
       {"model": "lepidodendron:crinoid_callicrinus_top"},
       {"model": "lepidodendron:crinoid_callicrinus_top_var"},
       {"model": "lepidodendron:crinoid_callicrinus_top_short"},

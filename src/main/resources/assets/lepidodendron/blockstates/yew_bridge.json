@@ -12,9 +12,7 @@
         {   "when": { "facing": "west", "variant": 0 },
             "apply": { "model": "lepidodendron:yew_bridge_0", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 0 },
+    {   "when": { "facing": "north", "left": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_0", "y": 270, "uvlock": true }
             ]
@@ -34,9 +32,7 @@
                 { "model": "lepidodendron:yew_bridge_side_0" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 0 },
+    {   "when": { "facing": "north", "right": false, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_0", "y": 270, "uvlock": true }
             ]
@@ -57,9 +53,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 0 },
+    {   "when": { "facing": "north", "right": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_0", "y": 90, "uvlock": true }
             ]
@@ -79,9 +73,7 @@
                 { "model": "lepidodendron:yew_bridge_side_0" }
             ]
         },
-
-        
-        {   "when": { "facing": "north", "left": false, "variant": 0 },
+      {   "when": { "facing": "north", "left": false, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_0", "y": 90, "uvlock": true }
             ]
@@ -101,9 +93,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_0" }
             ]
         },
-
-        
-        {   "when": { "facing": "north", "front": true, "variant": 0 },
+      {   "when": { "facing": "north", "front": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_0" }
             ]
@@ -123,9 +113,7 @@
                 { "model": "lepidodendron:yew_bridge_side_0" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 0 },
+    {   "when": { "facing": "north", "back": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_0", "y": 180, "uvlock": true }
             ]
@@ -157,9 +145,7 @@
         {   "when": { "facing": "west", "variant": 1 },
             "apply": { "model": "lepidodendron:yew_bridge_1", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 1 },
+    {   "when": { "facing": "north", "left": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_1", "y": 270, "uvlock": true }
             ]
@@ -179,9 +165,7 @@
                 { "model": "lepidodendron:yew_bridge_side_1" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 1 },
+    {   "when": { "facing": "north", "right": false, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_1", "y": 270, "uvlock": true }
             ]
@@ -202,9 +186,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 1 },
+    {   "when": { "facing": "north", "right": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_1", "y": 90, "uvlock": true }
             ]
@@ -224,9 +206,7 @@
                 { "model": "lepidodendron:yew_bridge_side_1" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 1 },
+    {   "when": { "facing": "north", "left": false, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_1", "y": 90, "uvlock": true }
             ]
@@ -246,9 +226,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_1" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 1 },
+    {   "when": { "facing": "north", "front": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_1" }
             ]
@@ -268,9 +246,7 @@
                 { "model": "lepidodendron:yew_bridge_side_1" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 1 },
+    {   "when": { "facing": "north", "back": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_1", "y": 180, "uvlock": true }
             ]
@@ -302,9 +278,7 @@
         {   "when": { "facing": "west", "variant": 2 },
             "apply": { "model": "lepidodendron:yew_bridge_2", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 2 },
+    {   "when": { "facing": "north", "left": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_2", "y": 270, "uvlock": true }
             ]
@@ -324,9 +298,7 @@
                 { "model": "lepidodendron:yew_bridge_side_2" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 2 },
+    {   "when": { "facing": "north", "right": false, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_2", "y": 270, "uvlock": true }
             ]
@@ -347,9 +319,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 2 },
+    {   "when": { "facing": "north", "right": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_2", "y": 90, "uvlock": true }
             ]
@@ -369,9 +339,7 @@
                 { "model": "lepidodendron:yew_bridge_side_2" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 2 },
+    {   "when": { "facing": "north", "left": false, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_2", "y": 90, "uvlock": true }
             ]
@@ -391,9 +359,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_2" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 2 },
+    {   "when": { "facing": "north", "front": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_2" }
             ]
@@ -413,9 +379,7 @@
                 { "model": "lepidodendron:yew_bridge_side_2" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 2 },
+    {   "when": { "facing": "north", "back": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_2", "y": 180, "uvlock": true }
             ]
@@ -447,9 +411,7 @@
         {   "when": { "facing": "west", "variant": 3 },
             "apply": { "model": "lepidodendron:yew_bridge_3", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 3 },
+    {   "when": { "facing": "north", "left": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_3", "y": 270, "uvlock": true }
             ]
@@ -469,9 +431,7 @@
                 { "model": "lepidodendron:yew_bridge_side_3" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 3 },
+    {   "when": { "facing": "north", "right": false, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_3", "y": 270, "uvlock": true }
             ]
@@ -492,9 +452,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 3 },
+    {   "when": { "facing": "north", "right": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_3", "y": 90, "uvlock": true }
             ]
@@ -514,9 +472,7 @@
                 { "model": "lepidodendron:yew_bridge_side_3" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 3 },
+    {   "when": { "facing": "north", "left": false, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_3", "y": 90, "uvlock": true }
             ]
@@ -536,9 +492,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_3" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 3 },
+    {   "when": { "facing": "north", "front": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_3" }
             ]
@@ -558,9 +512,7 @@
                 { "model": "lepidodendron:yew_bridge_side_3" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 3 },
+    {   "when": { "facing": "north", "back": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_3", "y": 180, "uvlock": true }
             ]
@@ -592,9 +544,7 @@
         {   "when": { "facing": "west", "variant": 4 },
             "apply": { "model": "lepidodendron:yew_bridge_4", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 4 },
+    {   "when": { "facing": "north", "left": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_4", "y": 270, "uvlock": true }
             ]
@@ -614,9 +564,7 @@
                 { "model": "lepidodendron:yew_bridge_side_4" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 4 },
+    {   "when": { "facing": "north", "right": false, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_4", "y": 270, "uvlock": true }
             ]
@@ -637,9 +585,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 4 },
+    {   "when": { "facing": "north", "right": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_4", "y": 90, "uvlock": true }
             ]
@@ -659,9 +605,7 @@
                 { "model": "lepidodendron:yew_bridge_side_4" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 4 },
+    {   "when": { "facing": "north", "left": false, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_4", "y": 90, "uvlock": true }
             ]
@@ -681,9 +625,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_4" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 4 },
+    {   "when": { "facing": "north", "front": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_4" }
             ]
@@ -703,9 +645,7 @@
                 { "model": "lepidodendron:yew_bridge_side_4" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 4 },
+    {   "when": { "facing": "north", "back": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_4", "y": 180, "uvlock": true }
             ]
@@ -737,9 +677,7 @@
         {   "when": { "facing": "west", "variant": 5 },
             "apply": { "model": "lepidodendron:yew_bridge_5", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 5 },
+    {   "when": { "facing": "north", "left": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_5", "y": 270, "uvlock": true }
             ]
@@ -759,9 +697,7 @@
                 { "model": "lepidodendron:yew_bridge_side_5" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 5 },
+    {   "when": { "facing": "north", "right": false, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_5", "y": 270, "uvlock": true }
             ]
@@ -782,9 +718,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 5 },
+    {   "when": { "facing": "north", "right": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_5", "y": 90, "uvlock": true }
             ]
@@ -804,9 +738,7 @@
                 { "model": "lepidodendron:yew_bridge_side_5" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 5 },
+    {   "when": { "facing": "north", "left": false, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_5", "y": 90, "uvlock": true }
             ]
@@ -826,9 +758,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_5" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 5 },
+    {   "when": { "facing": "north", "front": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_5" }
             ]
@@ -848,9 +778,7 @@
                 { "model": "lepidodendron:yew_bridge_side_5" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 5 },
+    {   "when": { "facing": "north", "back": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_5", "y": 180, "uvlock": true }
             ]
@@ -882,9 +810,7 @@
         {   "when": { "facing": "west", "variant": 6 },
             "apply": { "model": "lepidodendron:yew_bridge_6", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 6 },
+    {   "when": { "facing": "north", "left": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_6", "y": 270, "uvlock": true }
             ]
@@ -904,9 +830,7 @@
                 { "model": "lepidodendron:yew_bridge_side_6" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 6 },
+    {   "when": { "facing": "north", "right": false, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_6", "y": 270, "uvlock": true }
             ]
@@ -927,9 +851,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 6 },
+    {   "when": { "facing": "north", "right": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_6", "y": 90, "uvlock": true }
             ]
@@ -949,9 +871,7 @@
                 { "model": "lepidodendron:yew_bridge_side_6" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 6 },
+    {   "when": { "facing": "north", "left": false, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_6", "y": 90, "uvlock": true }
             ]
@@ -971,9 +891,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_6" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 6 },
+    {   "when": { "facing": "north", "front": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_6" }
             ]
@@ -993,9 +911,7 @@
                 { "model": "lepidodendron:yew_bridge_side_6" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 6 },
+    {   "when": { "facing": "north", "back": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_6", "y": 180, "uvlock": true }
             ]
@@ -1027,9 +943,7 @@
         {   "when": { "facing": "west", "variant": 7 },
             "apply": { "model": "lepidodendron:yew_bridge_7", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 7 },
+    {   "when": { "facing": "north", "left": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_7", "y": 270, "uvlock": true }
             ]
@@ -1049,9 +963,7 @@
                 { "model": "lepidodendron:yew_bridge_side_7" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 7 },
+    {   "when": { "facing": "north", "right": false, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_7", "y": 270, "uvlock": true }
             ]
@@ -1072,9 +984,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 7 },
+    {   "when": { "facing": "north", "right": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_7", "y": 90, "uvlock": true }
             ]
@@ -1094,9 +1004,7 @@
                 { "model": "lepidodendron:yew_bridge_side_7" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 7 },
+    {   "when": { "facing": "north", "left": false, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_7", "y": 90, "uvlock": true }
             ]
@@ -1116,9 +1024,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_7" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 7 },
+    {   "when": { "facing": "north", "front": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_7" }
             ]
@@ -1138,9 +1044,7 @@
                 { "model": "lepidodendron:yew_bridge_side_7" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 7 },
+    {   "when": { "facing": "north", "back": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_7", "y": 180, "uvlock": true }
             ]
@@ -1172,9 +1076,7 @@
         {   "when": { "facing": "west", "variant": 8 },
             "apply": { "model": "lepidodendron:yew_bridge_8", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 8 },
+    {   "when": { "facing": "north", "left": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_8", "y": 270, "uvlock": true }
             ]
@@ -1194,9 +1096,7 @@
                 { "model": "lepidodendron:yew_bridge_side_8" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 8 },
+    {   "when": { "facing": "north", "right": false, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_8", "y": 270, "uvlock": true }
             ]
@@ -1217,9 +1117,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 8 },
+    {   "when": { "facing": "north", "right": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_8", "y": 90, "uvlock": true }
             ]
@@ -1239,9 +1137,7 @@
                 { "model": "lepidodendron:yew_bridge_side_8" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 8 },
+    {   "when": { "facing": "north", "left": false, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_8", "y": 90, "uvlock": true }
             ]
@@ -1261,9 +1157,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_8" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 8 },
+    {   "when": { "facing": "north", "front": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_8" }
             ]
@@ -1283,9 +1177,7 @@
                 { "model": "lepidodendron:yew_bridge_side_8" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 8 },
+    {   "when": { "facing": "north", "back": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_8", "y": 180, "uvlock": true }
             ]
@@ -1305,8 +1197,7 @@
                 { "model": "lepidodendron:yew_bridge_side_8" , "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "variant": 9 },
+      {   "when": { "facing": "north", "variant": 9 },
             "apply": { "model": "lepidodendron:yew_bridge_9", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 9 },
@@ -1318,9 +1209,7 @@
         {   "when": { "facing": "west", "variant": 9 },
             "apply": { "model": "lepidodendron:yew_bridge_9", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 9 },
+    {   "when": { "facing": "north", "left": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_9", "y": 270, "uvlock": true }
             ]
@@ -1340,9 +1229,7 @@
                 { "model": "lepidodendron:yew_bridge_side_9" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 9 },
+    {   "when": { "facing": "north", "right": false, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_9", "y": 270, "uvlock": true }
             ]
@@ -1363,9 +1250,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 9 },
+    {   "when": { "facing": "north", "right": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_9", "y": 90, "uvlock": true }
             ]
@@ -1385,9 +1270,7 @@
                 { "model": "lepidodendron:yew_bridge_side_9" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 9 },
+    {   "when": { "facing": "north", "left": false, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_9", "y": 90, "uvlock": true }
             ]
@@ -1407,9 +1290,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_9" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 9 },
+    {   "when": { "facing": "north", "front": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_9" }
             ]
@@ -1429,9 +1310,7 @@
                 { "model": "lepidodendron:yew_bridge_side_9" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 9 },
+    {   "when": { "facing": "north", "back": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_9", "y": 180, "uvlock": true }
             ]
@@ -1453,9 +1332,7 @@
         },
 
 
-
-
-        {   "when": { "facing": "north", "variant": 10 },
+    {   "when": { "facing": "north", "variant": 10 },
             "apply": { "model": "lepidodendron:yew_bridge_10", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 10 },
@@ -1467,9 +1344,7 @@
         {   "when": { "facing": "west", "variant": 10 },
             "apply": { "model": "lepidodendron:yew_bridge_10", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 10 },
+    {   "when": { "facing": "north", "left": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_10", "y": 270, "uvlock": true }
             ]
@@ -1489,9 +1364,7 @@
                 { "model": "lepidodendron:yew_bridge_side_10" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 10 },
+    {   "when": { "facing": "north", "right": false, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_10", "y": 270, "uvlock": true }
             ]
@@ -1512,9 +1385,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 10 },
+    {   "when": { "facing": "north", "right": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_10", "y": 90, "uvlock": true }
             ]
@@ -1534,9 +1405,7 @@
                 { "model": "lepidodendron:yew_bridge_side_10" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 10 },
+    {   "when": { "facing": "north", "left": false, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_10", "y": 90, "uvlock": true }
             ]
@@ -1556,9 +1425,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_10" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 10 },
+    {   "when": { "facing": "north", "front": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_10" }
             ]
@@ -1578,9 +1445,7 @@
                 { "model": "lepidodendron:yew_bridge_side_10" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 10 },
+    {   "when": { "facing": "north", "back": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_10", "y": 180, "uvlock": true }
             ]
@@ -1600,8 +1465,7 @@
                 { "model": "lepidodendron:yew_bridge_side_10" , "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "variant": 11 },
+      {   "when": { "facing": "north", "variant": 11 },
             "apply": { "model": "lepidodendron:yew_bridge_11", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 11 },
@@ -1613,9 +1477,7 @@
         {   "when": { "facing": "west", "variant": 11 },
             "apply": { "model": "lepidodendron:yew_bridge_11", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 11 },
+    {   "when": { "facing": "north", "left": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_11", "y": 270, "uvlock": true }
             ]
@@ -1635,9 +1497,7 @@
                 { "model": "lepidodendron:yew_bridge_side_11" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 11 },
+    {   "when": { "facing": "north", "right": false, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_11", "y": 270, "uvlock": true }
             ]
@@ -1658,9 +1518,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 11 },
+    {   "when": { "facing": "north", "right": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_11", "y": 90, "uvlock": true }
             ]
@@ -1680,9 +1538,7 @@
                 { "model": "lepidodendron:yew_bridge_side_11" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 11 },
+    {   "when": { "facing": "north", "left": false, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_11", "y": 90, "uvlock": true }
             ]
@@ -1702,9 +1558,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_11" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 11 },
+    {   "when": { "facing": "north", "front": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_11" }
             ]
@@ -1724,9 +1578,7 @@
                 { "model": "lepidodendron:yew_bridge_side_11" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 11 },
+    {   "when": { "facing": "north", "back": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_11", "y": 180, "uvlock": true }
             ]
@@ -1746,9 +1598,7 @@
                 { "model": "lepidodendron:yew_bridge_side_11" , "y": 90, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "variant": 12 },
+    {   "when": { "facing": "north", "variant": 12 },
             "apply": { "model": "lepidodendron:yew_bridge_12", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 12 },
@@ -1760,9 +1610,7 @@
         {   "when": { "facing": "west", "variant": 12 },
             "apply": { "model": "lepidodendron:yew_bridge_12", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 12 },
+    {   "when": { "facing": "north", "left": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_12", "y": 270, "uvlock": true }
             ]
@@ -1782,9 +1630,7 @@
                 { "model": "lepidodendron:yew_bridge_side_12" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 12 },
+    {   "when": { "facing": "north", "right": false, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_12", "y": 270, "uvlock": true }
             ]
@@ -1805,9 +1651,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 12 },
+    {   "when": { "facing": "north", "right": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_12", "y": 90, "uvlock": true }
             ]
@@ -1827,9 +1671,7 @@
                 { "model": "lepidodendron:yew_bridge_side_12" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 12 },
+    {   "when": { "facing": "north", "left": false, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_12", "y": 90, "uvlock": true }
             ]
@@ -1849,9 +1691,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_12" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 12 },
+    {   "when": { "facing": "north", "front": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_12" }
             ]
@@ -1871,9 +1711,7 @@
                 { "model": "lepidodendron:yew_bridge_side_12" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 12 },
+    {   "when": { "facing": "north", "back": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_12", "y": 180, "uvlock": true }
             ]
@@ -1893,9 +1731,7 @@
                 { "model": "lepidodendron:yew_bridge_side_12" , "y": 90, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "variant": 13 },
+    {   "when": { "facing": "north", "variant": 13 },
             "apply": { "model": "lepidodendron:yew_bridge_13", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 13 },
@@ -1907,9 +1743,7 @@
         {   "when": { "facing": "west", "variant": 13 },
             "apply": { "model": "lepidodendron:yew_bridge_13", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 13 },
+    {   "when": { "facing": "north", "left": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_13", "y": 270, "uvlock": true }
             ]
@@ -1929,9 +1763,7 @@
                 { "model": "lepidodendron:yew_bridge_side_13" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 13 },
+    {   "when": { "facing": "north", "right": false, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_13", "y": 270, "uvlock": true }
             ]
@@ -1952,9 +1784,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 13 },
+    {   "when": { "facing": "north", "right": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_13", "y": 90, "uvlock": true }
             ]
@@ -1974,9 +1804,7 @@
                 { "model": "lepidodendron:yew_bridge_side_13" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 13 },
+    {   "when": { "facing": "north", "left": false, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_13", "y": 90, "uvlock": true }
             ]
@@ -1996,9 +1824,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_13" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 13 },
+    {   "when": { "facing": "north", "front": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_13" }
             ]
@@ -2018,9 +1844,7 @@
                 { "model": "lepidodendron:yew_bridge_side_13" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 13 },
+    {   "when": { "facing": "north", "back": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_13", "y": 180, "uvlock": true }
             ]
@@ -2040,9 +1864,7 @@
                 { "model": "lepidodendron:yew_bridge_side_13" , "y": 90, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "variant": 14 },
+    {   "when": { "facing": "north", "variant": 14 },
             "apply": { "model": "lepidodendron:yew_bridge_14", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 14 },
@@ -2054,9 +1876,7 @@
         {   "when": { "facing": "west", "variant": 14 },
             "apply": { "model": "lepidodendron:yew_bridge_14", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 14 },
+    {   "when": { "facing": "north", "left": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_14", "y": 270, "uvlock": true }
             ]
@@ -2076,9 +1896,7 @@
                 { "model": "lepidodendron:yew_bridge_side_14" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 14 },
+    {   "when": { "facing": "north", "right": false, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_14", "y": 270, "uvlock": true }
             ]
@@ -2099,9 +1917,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 14 },
+    {   "when": { "facing": "north", "right": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_14", "y": 90, "uvlock": true }
             ]
@@ -2121,9 +1937,7 @@
                 { "model": "lepidodendron:yew_bridge_side_14" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 14 },
+    {   "when": { "facing": "north", "left": false, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_14", "y": 90, "uvlock": true }
             ]
@@ -2143,9 +1957,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_14" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 14 },
+    {   "when": { "facing": "north", "front": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_14" }
             ]
@@ -2165,9 +1977,7 @@
                 { "model": "lepidodendron:yew_bridge_side_14" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 14 },
+    {   "when": { "facing": "north", "back": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_14", "y": 180, "uvlock": true }
             ]
@@ -2187,9 +1997,7 @@
                 { "model": "lepidodendron:yew_bridge_side_14" , "y": 90, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "variant": 15 },
+    {   "when": { "facing": "north", "variant": 15 },
             "apply": { "model": "lepidodendron:yew_bridge_15", "y": 270, "uvlock": true}
         },
         {   "when": { "facing": "east", "variant": 15 },
@@ -2201,9 +2009,7 @@
         {   "when": { "facing": "west", "variant": 15 },
             "apply": { "model": "lepidodendron:yew_bridge_15", "y": 180, "uvlock": true}
         },
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 15 },
+    {   "when": { "facing": "north", "left": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_15", "y": 270, "uvlock": true }
             ]
@@ -2223,9 +2029,7 @@
                 { "model": "lepidodendron:yew_bridge_side_15" , "y": 180, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "right": false, "variant": 15 },
+    {   "when": { "facing": "north", "right": false, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_15", "y": 270, "uvlock": true }
             ]
@@ -2246,9 +2050,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "right": true, "variant": 15 },
+    {   "when": { "facing": "north", "right": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_15", "y": 90, "uvlock": true }
             ]
@@ -2268,9 +2070,7 @@
                 { "model": "lepidodendron:yew_bridge_side_15" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "left": false, "variant": 15 },
+    {   "when": { "facing": "north", "left": false, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_joiner_15", "y": 90, "uvlock": true }
             ]
@@ -2290,9 +2090,7 @@
                 { "model": "lepidodendron:yew_bridge_joiner_15" }
             ]
         },
-
-
-        {   "when": { "facing": "north", "front": true, "variant": 15 },
+    {   "when": { "facing": "north", "front": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_15" }
             ]
@@ -2312,9 +2110,7 @@
                 { "model": "lepidodendron:yew_bridge_side_15" , "y": 270, "uvlock": true}
             ]
         },
-
-
-        {   "when": { "facing": "north", "back": true, "variant": 15 },
+    {   "when": { "facing": "north", "back": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bridge_side_15", "y": 180, "uvlock": true }
             ]

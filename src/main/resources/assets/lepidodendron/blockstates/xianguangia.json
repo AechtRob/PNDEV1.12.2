@@ -24,15 +24,13 @@
       {"model": "lepidodendron:xianguangia_3", "x": 90, "y": 180},
       {"model": "lepidodendron:xianguangia_4", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:xianguangia_1", "x": 90, "y": 270},
       {"model": "lepidodendron:xianguangia_2", "x": 90, "y": 270},
       {"model": "lepidodendron:xianguangia_3", "x": 90, "y": 270},
       {"model": "lepidodendron:xianguangia_4", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:xianguangia_1"},
       {"model": "lepidodendron:xianguangia_2"},
       {"model": "lepidodendron:xianguangia_3"},

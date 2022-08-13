@@ -21,7 +21,5 @@
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant_t" },
                 "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#plant_t" }
             }
-        }
-
-    ]
+        }    ]
 }

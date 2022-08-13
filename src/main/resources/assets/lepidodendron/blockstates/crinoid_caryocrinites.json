@@ -48,8 +48,7 @@
     "age=15,topshoot=false": {
       "model": "lepidodendron:crinoid_caryocrinites"
     },
-
-    "age=0,topshoot=true":  [
+  "age=0,topshoot=true":  [
       {"model": "lepidodendron:crinoid_caryocrinites_top"},
       {"model": "lepidodendron:crinoid_caryocrinites_top_var"}
     ],

@@ -12,7 +12,5 @@
 "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
 "faces":{
 "east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
-"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}}
-
-]
+"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}}]
 }

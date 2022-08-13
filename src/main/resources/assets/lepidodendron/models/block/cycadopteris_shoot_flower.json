@@ -182,8 +182,6 @@
 				"down": {"uv": [0, 0, 16, 8], "rotation": 270, "texture": "#top"}
 			}
 		},
-
-
 		{
 			"name": "cubeb",
 			"from": [0, 0.02, -1],

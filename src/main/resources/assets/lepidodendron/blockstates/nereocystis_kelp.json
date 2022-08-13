@@ -48,8 +48,7 @@
     "age=15,topshoot=false": {
       "model": "lepidodendron:nereocystis_kelp"
     },
-
-    "age=0,topshoot=true": {
+  "age=0,topshoot=true": {
       "model": "lepidodendron:nereocystis_kelp_top"
     },
     "age=1,topshoot=true": {

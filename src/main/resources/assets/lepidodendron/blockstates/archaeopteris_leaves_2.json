@@ -23,8 +23,7 @@
       "x": 90,
       "y": 270
     },
-
-   "facing=up": {
+ "facing=up": {
       "model": "lepidodendron:archaeopteris_leaves_2"
     },
     "facing=down": {

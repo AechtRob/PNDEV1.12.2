@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:banksia_1_flower", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:banksia_1_flower"}
     ],
     "facing=down": [

@@ -51,7 +51,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setMaxDamage(250);
+			setMaxDamage(25);
 			maxStackSize = 1;
 			setTranslationKey("pf_respawner");
 			setRegistryName("respawner");
@@ -198,7 +198,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        tooltip.add("Encourages native mobs to respawn in the area. Requires the Enchantment of Time Reversal. Ignores mob-caps: Please consider the lag you introduce when you have lots o fo mobs present.");
+	        tooltip.add("Encourages native mobs to respawn in the area. Requires the Enchantment of Time Reversal. Ignores mob-caps: Please consider the lag you introduce when you have lots of mobs present.");
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 

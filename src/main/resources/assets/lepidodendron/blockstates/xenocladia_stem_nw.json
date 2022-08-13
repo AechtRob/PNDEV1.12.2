@@ -21,8 +21,7 @@
     "facing=down,joined=false": [
      	{"model": "lepidodendron:xenocladia_stem_corner_1" }
     ],
-
-    "facing=north,joined=true": [
+  "facing=north,joined=true": [
      	{"model": "lepidodendron:xenocladia_corner_1_join", "y": 180 }
     ],
     "facing=south,joined=true": [

@@ -7,9 +7,7 @@
         "north": "lepidodendron:blocks/tietea_branch",
         "south": "lepidodendron:blocks/tietea_branch",
         "west": "lepidodendron:blocks/tietea_branch",
-        "east": "lepidodendron:blocks/tietea_branch"
-
-    },
+        "east": "lepidodendron:blocks/tietea_branch"    },
     
     "elements": [
         {   "from": [ 6, 0, 6 ],

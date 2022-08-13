@@ -15,9 +15,7 @@
                 "west": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" },
                 "east": { "uv": [ 16, 0, 0, 16 ], "texture": "#bottom" }
             }
-        },
-
-        {   "from": [ 0, 0, 8 ],
+        },        {   "from": [ 0, 0, 8 ],
             "to": [ 16, 16, 8 ],
             "shade": false,
             "faces": {

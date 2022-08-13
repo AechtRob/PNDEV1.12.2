@@ -59,9 +59,7 @@
                 "name": "lepidodendron:heliopeltis_raw",
                 "weight": 6.28366247755835
                 },
-
-
-                {
+            {
                 "type": "item",
                 "name": "lepidodendron:lanceaspis_raw",
                 "weight": 6.28366247755835
@@ -106,9 +104,7 @@
                 "name": "lepidodendron:walliserops_raw",
                 "weight": 6.28366247755835
                 }
-
-
-            ]
+        ]
         }
     ]
 }

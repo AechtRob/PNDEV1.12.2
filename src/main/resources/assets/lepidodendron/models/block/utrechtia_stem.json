@@ -7,9 +7,7 @@
         "north": "lepidodendron:blocks/utrechtia_stem",
         "south": "lepidodendron:blocks/utrechtia_stem",
         "west": "lepidodendron:blocks/utrechtia_stem",
-        "east": "lepidodendron:blocks/utrechtia_stem"
-
-    },
+        "east": "lepidodendron:blocks/utrechtia_stem"    },
     
     "elements": [
         {   "from": [ 6, 0, 6 ],

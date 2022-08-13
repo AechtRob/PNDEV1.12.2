@@ -7,9 +7,7 @@
 	"wdown": "lepidodendron:blocks/pachypteris_bb_w",
 	"edown": "lepidodendron:blocks/pachypteris_bb_e"
 	},
-"elements":[
-
-{"name":"n",
+"elements":[{"name":"n",
 "from":[8.0,0.0,-8.0],"to":[8.0,16.0,8.0],"shade":false,
 "faces":{
 "east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
@@ -28,9 +26,7 @@
 "from":[-8.0,0.0,8.0],"to":[8.0,16.0,8.0],"shade":false,
 "faces":{
 "north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
-"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
-
-{"name":"n",
+"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},{"name":"n",
 "from":[8.0,-16.0,-8.0],"to":[8.0,0.0,8.0],"shade":false,
 "faces":{
 "east":{"texture":"#edown","uv":[0.0,0.0,16.0,16.0]},
@@ -49,7 +45,5 @@
 "from":[-8.0,-16.0,8.0],"to":[8.0,0.0,8.0],"shade":false,
 "faces":{
 "north":{"texture":"#edown","uv":[0.0,0.0,16.0,16.0]},
-"south":{"texture":"#wdown","uv":[0.0,0.0,16.0,16.0]}}}
-
-]
+"south":{"texture":"#wdown","uv":[0.0,0.0,16.0,16.0]}}}]
 }

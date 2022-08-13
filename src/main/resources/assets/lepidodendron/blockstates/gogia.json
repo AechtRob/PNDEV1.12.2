@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:gogia_side", "y": 270},
       {"model": "lepidodendron:gogia_side_var", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:gogia"},
       {"model": "lepidodendron:gogia_var"}
     ],

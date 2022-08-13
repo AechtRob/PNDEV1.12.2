@@ -20,14 +20,12 @@
       {"model": "lepidodendron:arkarua_2", "x": 90, "y": 180},
       {"model": "lepidodendron:arkarua_3", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:arkarua_1", "x": 90, "y": 270},
       {"model": "lepidodendron:arkarua_2", "x": 90, "y": 270},
       {"model": "lepidodendron:arkarua_3", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:arkarua_1"},
       {"model": "lepidodendron:arkarua_2"},
       {"model": "lepidodendron:arkarua_3"}

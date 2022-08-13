@@ -30,8 +30,7 @@
       {"model": "lepidodendron:bivalve_dicerocardium_3", "x": 90, "y": 270},
       {"model": "lepidodendron:bivalve_dicerocardium_4", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:bivalve_dicerocardium_1"},
       {"model": "lepidodendron:bivalve_dicerocardium_2"},
       {"model": "lepidodendron:bivalve_dicerocardium_3"},

@@ -6,9 +6,7 @@
 		"tt": "lepidodendron:blocks/noeggerathiales_shoot_flower_t",
 		"c": "lepidodendron:blocks/noeggerathiales_leaf_centre",
 		"b": "lepidodendron:blocks/noeggerathiales_leaf_bottom"
-	},
-
-	"elements": [
+	},	"elements": [
 		{"name":"s1",
 			"from":[0, 0.01, 8],"to":[16, 0.01, 24],"shade":false,
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
@@ -32,11 +30,7 @@
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
 			"faces":{
 				"up":{"texture":"#c","uv":[0, 0, 16, 16],"rotation": 90},
-				"down":{"texture":"#c","uv":[16, 0, 0, 16],"rotation": 90}}},
-
-
-
-		{"name":"s1",
+				"down":{"texture":"#c","uv":[16, 0, 0, 16],"rotation": 90}}},		{"name":"s1",
 			"from":[0, 0.01, 8],"to":[16, 0.01, 24],"shade":false,
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": 22.5, "rescale": false },
 			"faces":{
@@ -60,8 +54,6 @@
 			"faces":{
 				"up":{"texture":"#b","uv":[0, 0, 16, 16],"rotation": 90},
 				"down":{"texture":"#b","uv":[16, 0, 0, 16],"rotation": 90}}},
-
-
 		{"name":"s1",
 			"from":[0, 0.01, 8],"to":[16, 0.01, 24],"shade":false,
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": -22.5, "rescale": false },
@@ -86,8 +78,6 @@
 			"faces":{
 				"up":{"texture":"#b","uv":[0, 0, 16, 16],"rotation": 90},
 				"down":{"texture":"#b","uv":[16, 0, 0, 16],"rotation": 90}}},
-
-
 		{"from": [ 0, 0, 8 ],
 			"to": [ 16, 16, 8 ],
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
@@ -124,8 +114,4 @@
 				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#tt" }
 			}
 		}
-
-
-	]
-
-}
+	]}

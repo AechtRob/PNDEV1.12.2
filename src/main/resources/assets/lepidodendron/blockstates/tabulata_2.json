@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:tabulata_2_side", "y": 270},
       {"model": "lepidodendron:tabulata_2_side_var", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:tabulata_2"},
       {"model": "lepidodendron:tabulata_2_var"}
     ],

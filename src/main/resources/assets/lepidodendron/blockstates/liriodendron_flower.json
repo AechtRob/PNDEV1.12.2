@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:liriodendron_flower", "x": 90, "y": 270},
       	{"model": "lepidodendron:liriodendron_flower_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:liriodendron_flower"},
       	{"model": "lepidodendron:liriodendron_flower_rot"}
     ],

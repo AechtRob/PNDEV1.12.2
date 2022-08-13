@@ -21,8 +21,7 @@
       {"model": "lepidodendron:tmesipteris", "y": 270},
       {"model": "lepidodendron:tmesipteris_dbl", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:tmesipteris"},
       {"model": "lepidodendron:tmesipteris_dbl"}
     ],

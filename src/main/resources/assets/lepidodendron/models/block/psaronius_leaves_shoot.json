@@ -36,9 +36,7 @@
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
 			"faces":{
 			"west":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]},
-			"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"mid",
+			"east":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"mid",
 			"from": [ 7, 0, 7 ],
             "to": [ 9, 16, 9 ],
             "faces": {

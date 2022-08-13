@@ -16,13 +16,11 @@
       	{"model": "lepidodendron:dark_orange_sponge_1_side", "y": 180},
       	{"model": "lepidodendron:dark_orange_sponge_2_side", "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       	{"model": "lepidodendron:dark_orange_sponge_1_side", "y": 270},
       	{"model": "lepidodendron:dark_orange_sponge_2_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:dark_orange_sponge_1"},
       	{"model": "lepidodendron:dark_orange_sponge_2"}
     ],

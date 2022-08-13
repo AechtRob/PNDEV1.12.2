@@ -115,9 +115,7 @@
                 "weight": 2.77777777777778
                 },
 
-
-
-                {
+            {
                 "type": "item",
                 "name": "lepidodendron:paradoxides_raw",
                 "weight": 2.77777777777778
@@ -187,9 +185,7 @@
                 "name": "lepidodendron:yohoia_raw",
                 "weight": 2.77777777777778
                 }
-
-
-            ]
+        ]
         }
     ]
 }

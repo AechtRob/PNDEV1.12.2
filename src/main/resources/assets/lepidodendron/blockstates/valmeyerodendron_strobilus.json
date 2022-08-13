@@ -24,8 +24,7 @@
       	{"model": "lepidodendron:valmeyerodendron_strobilus", "x": 90, "y": 270, "weight": 2},
       	{"model": "lepidodendron:valmeyerodendron_strobilus_nospore", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:valmeyerodendron_strobilus", "weight": 2},
       	{"model": "lepidodendron:valmeyerodendron_strobilus_nospore"}
     ],

@@ -19,8 +19,7 @@
     "facing=west": [
       	{"model": "lepidodendron:siphusauctum_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:siphusauctum_1"},
       {"model": "lepidodendron:siphusauctum_1_var"},
       {"model": "lepidodendron:siphusauctum_2"},

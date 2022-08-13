@@ -33,8 +33,7 @@
                 { "model": "lepidodendron:yew_bench_left_0", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 0 },
+      {   "when": { "facing": "north", "right": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_0", "y": 180, "uvlock": true}
             ]
@@ -54,8 +53,7 @@
                 { "model": "lepidodendron:yew_bench_right_0", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 0 },
+      {   "when": { "facing": "north", "left": false, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_0", "y": 180, "uvlock": true}
             ]
@@ -75,8 +73,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_0", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 0 },
+      {   "when": { "facing": "north", "right": false, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_0", "y": 180, "uvlock": true}
             ]
@@ -99,10 +96,7 @@
 
 
 
-        
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 1 },
+    {   "when": { "facing": "north", "left": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_1", "y": 180, "uvlock": true}
             ]
@@ -122,8 +116,7 @@
                 { "model": "lepidodendron:yew_bench_left_1", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 1 },
+      {   "when": { "facing": "north", "right": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_1", "y": 180, "uvlock": true}
             ]
@@ -143,8 +136,7 @@
                 { "model": "lepidodendron:yew_bench_right_1", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 1 },
+      {   "when": { "facing": "north", "left": false, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_1", "y": 180, "uvlock": true}
             ]
@@ -164,8 +156,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_1", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 1 },
+      {   "when": { "facing": "north", "right": false, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_1", "y": 180, "uvlock": true}
             ]
@@ -205,8 +196,7 @@
                 { "model": "lepidodendron:yew_bench_left_2", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 2 },
+      {   "when": { "facing": "north", "right": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_2", "y": 180, "uvlock": true}
             ]
@@ -226,8 +216,7 @@
                 { "model": "lepidodendron:yew_bench_right_2", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 2 },
+      {   "when": { "facing": "north", "left": false, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_2", "y": 180, "uvlock": true}
             ]
@@ -247,8 +236,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_2", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 2 },
+      {   "when": { "facing": "north", "right": false, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_2", "y": 180, "uvlock": true}
             ]
@@ -288,8 +276,7 @@
                 { "model": "lepidodendron:yew_bench_left_3", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 3 },
+      {   "when": { "facing": "north", "right": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_3", "y": 180, "uvlock": true}
             ]
@@ -309,8 +296,7 @@
                 { "model": "lepidodendron:yew_bench_right_3", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 3 },
+      {   "when": { "facing": "north", "left": false, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_3", "y": 180, "uvlock": true}
             ]
@@ -330,8 +316,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_3", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 3 },
+      {   "when": { "facing": "north", "right": false, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_3", "y": 180, "uvlock": true}
             ]
@@ -353,9 +338,7 @@
         },
 
 
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 4 },
+    {   "when": { "facing": "north", "left": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_4", "y": 180, "uvlock": true}
             ]
@@ -375,8 +358,7 @@
                 { "model": "lepidodendron:yew_bench_left_4", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 4 },
+      {   "when": { "facing": "north", "right": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_4", "y": 180, "uvlock": true}
             ]
@@ -396,8 +378,7 @@
                 { "model": "lepidodendron:yew_bench_right_4", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 4 },
+      {   "when": { "facing": "north", "left": false, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_4", "y": 180, "uvlock": true}
             ]
@@ -417,8 +398,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_4", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 4 },
+      {   "when": { "facing": "north", "right": false, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_4", "y": 180, "uvlock": true}
             ]
@@ -440,9 +420,7 @@
         },
 
 
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 5 },
+    {   "when": { "facing": "north", "left": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_5", "y": 180, "uvlock": true}
             ]
@@ -462,8 +440,7 @@
                 { "model": "lepidodendron:yew_bench_left_5", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 5 },
+      {   "when": { "facing": "north", "right": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_5", "y": 180, "uvlock": true}
             ]
@@ -483,8 +460,7 @@
                 { "model": "lepidodendron:yew_bench_right_5", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 5 },
+      {   "when": { "facing": "north", "left": false, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_5", "y": 180, "uvlock": true}
             ]
@@ -504,8 +480,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_5", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 5 },
+      {   "when": { "facing": "north", "right": false, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_5", "y": 180, "uvlock": true}
             ]
@@ -526,9 +501,7 @@
             ]
         },
 
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 6 },
+    {   "when": { "facing": "north", "left": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_6", "y": 180, "uvlock": true}
             ]
@@ -548,8 +521,7 @@
                 { "model": "lepidodendron:yew_bench_left_6", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 6 },
+      {   "when": { "facing": "north", "right": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_6", "y": 180, "uvlock": true}
             ]
@@ -569,8 +541,7 @@
                 { "model": "lepidodendron:yew_bench_right_6", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 6 },
+      {   "when": { "facing": "north", "left": false, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_6", "y": 180, "uvlock": true}
             ]
@@ -590,8 +561,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_6", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 6 },
+      {   "when": { "facing": "north", "right": false, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_6", "y": 180, "uvlock": true}
             ]
@@ -631,8 +601,7 @@
                 { "model": "lepidodendron:yew_bench_left_7", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 7 },
+      {   "when": { "facing": "north", "right": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_7", "y": 180, "uvlock": true}
             ]
@@ -652,8 +621,7 @@
                 { "model": "lepidodendron:yew_bench_right_7", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 7 },
+      {   "when": { "facing": "north", "left": false, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_7", "y": 180, "uvlock": true}
             ]
@@ -673,8 +641,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_7", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 7 },
+      {   "when": { "facing": "north", "right": false, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_7", "y": 180, "uvlock": true}
             ]
@@ -714,8 +681,7 @@
                 { "model": "lepidodendron:yew_bench_left_8", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 8 },
+      {   "when": { "facing": "north", "right": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_8", "y": 180, "uvlock": true}
             ]
@@ -735,8 +701,7 @@
                 { "model": "lepidodendron:yew_bench_right_8", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 8 },
+      {   "when": { "facing": "north", "left": false, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_8", "y": 180, "uvlock": true}
             ]
@@ -756,8 +721,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_8", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 8 },
+      {   "when": { "facing": "north", "right": false, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_8", "y": 180, "uvlock": true}
             ]
@@ -779,9 +743,7 @@
         },
 
 
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 9 },
+    {   "when": { "facing": "north", "left": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_9", "y": 180, "uvlock": true}
             ]
@@ -801,8 +763,7 @@
                 { "model": "lepidodendron:yew_bench_left_9", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 9 },
+      {   "when": { "facing": "north", "right": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_9", "y": 180, "uvlock": true}
             ]
@@ -822,8 +783,7 @@
                 { "model": "lepidodendron:yew_bench_right_9", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 9 },
+      {   "when": { "facing": "north", "left": false, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_9", "y": 180, "uvlock": true}
             ]
@@ -843,8 +803,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_9", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 9 },
+      {   "when": { "facing": "north", "right": false, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_9", "y": 180, "uvlock": true}
             ]
@@ -884,8 +843,7 @@
                 { "model": "lepidodendron:yew_bench_left_10", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 10 },
+      {   "when": { "facing": "north", "right": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_10", "y": 180, "uvlock": true}
             ]
@@ -905,8 +863,7 @@
                 { "model": "lepidodendron:yew_bench_right_10", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 10 },
+      {   "when": { "facing": "north", "left": false, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_10", "y": 180, "uvlock": true}
             ]
@@ -926,8 +883,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_10", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 10 },
+      {   "when": { "facing": "north", "right": false, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_10", "y": 180, "uvlock": true}
             ]
@@ -949,9 +905,7 @@
         },
 
 
-
-
-        {   "when": { "facing": "north", "left": true, "variant": 11 },
+    {   "when": { "facing": "north", "left": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_11", "y": 180, "uvlock": true}
             ]
@@ -971,8 +925,7 @@
                 { "model": "lepidodendron:yew_bench_left_11", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 11 },
+      {   "when": { "facing": "north", "right": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_11", "y": 180, "uvlock": true}
             ]
@@ -992,8 +945,7 @@
                 { "model": "lepidodendron:yew_bench_right_11", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 11 },
+      {   "when": { "facing": "north", "left": false, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_11", "y": 180, "uvlock": true}
             ]
@@ -1013,8 +965,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_11", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 11 },
+      {   "when": { "facing": "north", "right": false, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_11", "y": 180, "uvlock": true}
             ]
@@ -1054,8 +1005,7 @@
                 { "model": "lepidodendron:yew_bench_left_12", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 12 },
+      {   "when": { "facing": "north", "right": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_12", "y": 180, "uvlock": true}
             ]
@@ -1075,8 +1025,7 @@
                 { "model": "lepidodendron:yew_bench_right_12", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 12 },
+      {   "when": { "facing": "north", "left": false, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_12", "y": 180, "uvlock": true}
             ]
@@ -1096,8 +1045,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_12", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 12 },
+      {   "when": { "facing": "north", "right": false, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_12", "y": 180, "uvlock": true}
             ]
@@ -1137,8 +1085,7 @@
                 { "model": "lepidodendron:yew_bench_left_13", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 13 },
+      {   "when": { "facing": "north", "right": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_13", "y": 180, "uvlock": true}
             ]
@@ -1158,8 +1105,7 @@
                 { "model": "lepidodendron:yew_bench_right_13", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 13 },
+      {   "when": { "facing": "north", "left": false, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_13", "y": 180, "uvlock": true}
             ]
@@ -1179,8 +1125,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_13", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 13 },
+      {   "when": { "facing": "north", "right": false, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_13", "y": 180, "uvlock": true}
             ]
@@ -1220,8 +1165,7 @@
                 { "model": "lepidodendron:yew_bench_left_14", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 14 },
+      {   "when": { "facing": "north", "right": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_14", "y": 180, "uvlock": true}
             ]
@@ -1241,8 +1185,7 @@
                 { "model": "lepidodendron:yew_bench_right_14", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 14 },
+      {   "when": { "facing": "north", "left": false, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_14", "y": 180, "uvlock": true}
             ]
@@ -1262,8 +1205,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_14", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 14 },
+      {   "when": { "facing": "north", "right": false, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_14", "y": 180, "uvlock": true}
             ]
@@ -1303,8 +1245,7 @@
                 { "model": "lepidodendron:yew_bench_left_15", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": true, "variant": 15 },
+      {   "when": { "facing": "north", "right": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_15", "y": 180, "uvlock": true}
             ]
@@ -1324,8 +1265,7 @@
                 { "model": "lepidodendron:yew_bench_right_15", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "left": false, "variant": 15 },
+      {   "when": { "facing": "north", "left": false, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_left_join_15", "y": 180, "uvlock": true}
             ]
@@ -1345,8 +1285,7 @@
                 { "model": "lepidodendron:yew_bench_left_join_15", "y": 90, "uvlock": true}
             ]
         },
-
-        {   "when": { "facing": "north", "right": false, "variant": 15 },
+      {   "when": { "facing": "north", "right": false, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:yew_bench_right_join_15", "y": 180, "uvlock": true}
             ]
@@ -1367,9 +1306,7 @@
             ]
         }
 
-
-
-    ]
+]
 }
 
 

@@ -30,8 +30,7 @@
       {"model": "lepidodendron:bivalve_cream_3", "x": 90, "y": 270},
       {"model": "lepidodendron:bivalve_cream_4", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:bivalve_cream_1"},
       {"model": "lepidodendron:bivalve_cream_2"},
       {"model": "lepidodendron:bivalve_cream_3"},

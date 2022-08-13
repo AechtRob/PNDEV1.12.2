@@ -3,9 +3,7 @@
   "textures": {
     "texture": "lepidodendron:blocks/odontopteris_stem",
     "particle": "lepidodendron:blocks/odontopteris_stem"
-  },
-
- "elements": [
+  }, "elements": [
         {   "from": [ 7, 0, 0 ],
             "to": [ 9, 6, 2 ],
             "faces": {
@@ -94,6 +92,4 @@
                 "east":  { "uv": [ 7, 13, 9, 16 ],  "texture": "#texture" }
             }
         }
-    ]
-
-}
+    ]}

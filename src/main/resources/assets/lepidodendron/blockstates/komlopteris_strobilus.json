@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:komlopteris_strobilus", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:komlopteris_strobilus"}
     ],
     "facing=down": [

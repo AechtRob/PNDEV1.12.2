@@ -44,8 +44,6 @@
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
             }
         },
-
-
 		{   "from": [ 1, 0, 8 ],
             "to": [ 17, 16, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
@@ -64,7 +62,5 @@
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#foot", "cullface": "up", "tintindex": 1  }
             }
         }
-
-        
     ]
 }

@@ -25,8 +25,7 @@
     "facing=down,topshoot=true": [
       {"model": "lepidodendron:lyginopteris_top" }
     ],
-
-    "facing=north,topshoot=false": [
+  "facing=north,topshoot=false": [
       {"model": "lepidodendron:lyginopteris_stem_1", "y": 180, "weight": 3},
      	{"model": "lepidodendron:lyginopteris_stem_2", "y": 180 },
      	{"model": "lepidodendron:lyginopteris_stem_3", "y": 180 },

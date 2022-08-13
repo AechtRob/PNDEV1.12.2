@@ -16,13 +16,11 @@
       {"model": "lepidodendron:burykhia_1", "x": 90, "y": 180},
       {"model": "lepidodendron:burykhia_2", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:burykhia_1", "x": 90, "y": 270},
       {"model": "lepidodendron:burykhia_2", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:burykhia_1"},
       {"model": "lepidodendron:burykhia_2"}
     ],

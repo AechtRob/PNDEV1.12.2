@@ -3,17 +3,13 @@
     "textures": {
         "particle": "lepidodendron:blocks/archaeopteris_leaf_large_3_c",
         
-        "c1": "lepidodendron:blocks/archaeopteris_leaf_small_1_c",
-
-        "tc": "lepidodendron:blocks/archaeopteris_leaf_small_2_c",
+        "c1": "lepidodendron:blocks/archaeopteris_leaf_small_1_c",        "tc": "lepidodendron:blocks/archaeopteris_leaf_small_2_c",
         "tl": "lepidodendron:blocks/archaeopteris_leaf_small_2_l",
         "tr": "lepidodendron:blocks/archaeopteris_leaf_small_2_r"
         
     },
     
-    "elements": [
-
-        {"name":"centrens",
+    "elements": [        {"name":"centrens",
         	"from": [ 0, 0, 8 ],
             "to": [ 16, 8, 8 ],
             "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },

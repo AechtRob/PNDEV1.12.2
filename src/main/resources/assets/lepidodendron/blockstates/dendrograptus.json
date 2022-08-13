@@ -18,13 +18,11 @@
       {"model": "lepidodendron:dendrograptus_1_side", "y": 180},
       {"model": "lepidodendron:dendrograptus_2_side", "y": 180}
       ],
-
-      "facing=west": [
+    "facing=west": [
       {"model": "lepidodendron:dendrograptus_1_side","y": 270},
       {"model": "lepidodendron:dendrograptus_2_side","y": 270}
       ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:dendrograptus_1"},
       {"model": "lepidodendron:dendrograptus_2" },
       {"model": "lepidodendron:dendrograptus_1_rot"},

@@ -28,8 +28,7 @@
       {"model": "lepidodendron:tawuia_3", "x": 90, "y": 270},
       {"model": "lepidodendron:tawuia_4", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:tawuia_1"},
       {"model": "lepidodendron:tawuia_2"},
       {"model": "lepidodendron:tawuia_3"},

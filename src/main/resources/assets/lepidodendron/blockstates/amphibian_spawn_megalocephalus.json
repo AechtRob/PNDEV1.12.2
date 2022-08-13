@@ -12,12 +12,10 @@
     "facing=south": [
       {"model": "lepidodendron:amphibian_spawn_megalocephalus", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:amphibian_spawn_megalocephalus", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:amphibian_spawn_megalocephalus"}
     ],
     "facing=down": [

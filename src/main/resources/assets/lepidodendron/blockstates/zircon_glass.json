@@ -912,9 +912,7 @@
         "model": "lepidodendron:zircon_glass_udnsew"
       }
     },
-
-
-    {
+{
       "when": {
         "waternorth": true
       },
@@ -967,6 +965,5 @@
         "x": 270
       }
     }
-
-  ]
+]
 }

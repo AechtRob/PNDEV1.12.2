@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:protea_flower_1", "x": 90, "y": 270},
       	{"model": "lepidodendron:protea_flower_1_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:protea_flower_1"},
       	{"model": "lepidodendron:protea_flower_1_rot"}
     ],

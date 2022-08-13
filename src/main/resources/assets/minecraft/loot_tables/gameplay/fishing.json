@@ -54,8 +54,7 @@
                       }
                   ]
               },
-
-              {
+            {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_cambrian",
                 "weight": 85,
@@ -81,8 +80,7 @@
                   }
                 ]
               },
-
-              {
+            {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_ordovician",
                 "weight": 85,
@@ -108,8 +106,7 @@
                   }
                 ]
               },
-
-              {
+            {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_silurian",
                 "weight": 85,
@@ -135,9 +132,7 @@
                   }
                 ]
               },
-
-
-              {
+          {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_devonian_ocean",
                 "weight": 85,
@@ -202,9 +197,7 @@
                   }
                 ]
               },
-
-
-                {
+            {
                     "type": "loot_table",
                     "name": "lepidodendron:gameplay/fishing/fish_cambrian",
                     "weight": 85,

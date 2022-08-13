@@ -7,9 +7,7 @@
         "north": "lepidodendron:blocks/equisites_branch",
         "south": "lepidodendron:blocks/equisites_branch",
         "west": "lepidodendron:blocks/equisites_branch",
-        "east": "lepidodendron:blocks/equisites_branch"
-
-    },
+        "east": "lepidodendron:blocks/equisites_branch"    },
     
     "elements": [
         {   "from": [ 5, 0, 5 ],
@@ -23,7 +21,5 @@
                 "east":  { "uv": [ 5, 0, 11, 16 ],  "texture": "#east" }
             }
         }
-
-	    
     ]
 }

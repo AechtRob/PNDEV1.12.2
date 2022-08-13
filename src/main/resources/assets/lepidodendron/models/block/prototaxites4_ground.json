@@ -30,8 +30,6 @@
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
             }
         },
-
-        
         {   "from": [ 7, 7, 8 ],
             "to": [ 10, 8, 9 ],
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
@@ -56,8 +54,6 @@
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
             }
         },
-
-        
         {   "from": [ 7, 0, 8 ],
             "to": [ 11, 7, 10 ],
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
@@ -81,9 +77,7 @@
                 "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
             }
-        },
-
-		{
+        },		{
 		      "from": [
 		        0,
 		        0,
@@ -116,7 +110,5 @@
 		        }
 		      }
 		    }
-
-        
     ]
 }

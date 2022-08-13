@@ -4,15 +4,13 @@
 		{   "when": { "roots": true },
             "apply": { "model": "lepidodendron:emplectopteris_roots" }
         },
-
-        {   "when": { "water": true },
+      {   "when": { "water": true },
             "apply": { "model": "lepidodendron:emplectopteris_roots_down" }
         },
         {   "when": { "water": true },
             "apply": { "model": "lepidodendron:emplectopteris_log_side", "x": 90, "uvlock": true }
         },
-
-        {   "when": { "north": true },
+      {   "when": { "north": true },
             "apply": { "model": "lepidodendron:emplectopteris_log_side" }
         },
         {   "when": { "east": true },

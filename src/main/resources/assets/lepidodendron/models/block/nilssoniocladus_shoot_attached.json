@@ -4,9 +4,7 @@
     "w": "lepidodendron:blocks/nilssoniocladus_leaf",
     "e": "lepidodendron:blocks/nilssoniocladus_leaf",
     "particle": "lepidodendron:blocks/nilssoniocladus_leaf"
-  },
-
-"elements":[
+  },"elements":[
 {"name":"n",
 "from":[8.0,-14,-8.0],"to":[8.0,2.0,8.0],"shade":false,
 "faces":{

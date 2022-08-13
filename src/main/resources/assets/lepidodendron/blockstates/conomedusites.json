@@ -20,14 +20,12 @@
       {"model": "lepidodendron:conomedusites_2", "x": 90, "y": 180},
       {"model": "lepidodendron:conomedusites_3", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:conomedusites_1", "x": 90, "y": 270},
       {"model": "lepidodendron:conomedusites_2", "x": 90, "y": 270},
       {"model": "lepidodendron:conomedusites_3", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:conomedusites_1"},
       {"model": "lepidodendron:conomedusites_2"},
       {"model": "lepidodendron:conomedusites_3"},

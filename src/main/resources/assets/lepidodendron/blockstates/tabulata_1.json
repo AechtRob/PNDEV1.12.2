@@ -16,13 +16,11 @@
       {"model": "lepidodendron:tabulata_1", "x": 90, "y": 180},
       {"model": "lepidodendron:tabulata_1_var", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:tabulata_1", "x": 90, "y": 270},
       {"model": "lepidodendron:tabulata_1_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:tabulata_1"},
       {"model": "lepidodendron:tabulata_1_var"}
     ],

@@ -1,6 +1,5 @@
 {
-
-    	"multipart": [
+  	"multipart": [
 	    	{"apply": [
 		    		{ "model": "lepidodendron:matonia_stem_base_1", "weight": 2 },
 		    		{ "model": "lepidodendron:matonia_stem_base_2" },

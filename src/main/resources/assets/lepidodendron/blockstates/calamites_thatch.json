@@ -55,8 +55,7 @@
     	]},
       "apply": { "model": "lepidodendron:calamites_thatch_outer", "y": 180 }
     },
-
-    { "when": { "AND": [
+  { "when": { "AND": [
     	{ "inner": true },
 		{ "nw": true }
     	]},
@@ -87,6 +86,5 @@
     { "when": { "facing": "down" },
       "apply": { "model": "lepidodendron:calamites_thatch_flat", "x": 180 }
     }
-
-  ]
+]
 }

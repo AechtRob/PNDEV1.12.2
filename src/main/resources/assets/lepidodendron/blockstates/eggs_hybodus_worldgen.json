@@ -12,12 +12,10 @@
     "facing=south": [
       {"model": "lepidodendron:eggs_hybodus", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:eggs_hybodus", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:eggs_hybodus"}
     ],
     "facing=down": [

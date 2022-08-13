@@ -13,9 +13,7 @@
 		"bw":"lepidodendron:blocks/medullosales_shoot_b_w",
 		"log": "lepidodendron:blocks/medullosales_log"
         },
-	"elements":[
-
-		{   "from": [ 7, 0, 7 ],
+	"elements":[		{   "from": [ 7, 0, 7 ],
             "to": [ 9, 7, 9 ],
             "faces": {
                 "down":  { "texture": "#log", "cullface":"down" },
@@ -25,9 +23,7 @@
                 "west":  { "texture": "#log" },
                 "east":  { "texture": "#log" }
             }
-        },
-
-		{"name":"tn",
+        },		{"name":"tn",
 		"from":[8.0,16.0,0.0],"to":[8.0,32.0,16.0],"shade":false,
 		"faces":{
 		"east":{"texture":"#tc","uv":[16.0,0.0,0.0,16.0]},
@@ -62,8 +58,6 @@
 		"faces":{
 		"north":{"texture":"#bc","uv":[16.0,0.0,0.0,16.0]},
 		"south":{"texture":"#bc","uv":[16.0,0.0,0.0,16.0]}}},
-		
-
 
 		{"name":"tn",
 		"from":[8.0,16.0,-16.0],"to":[8.0,32.0,0.0],"shade":false,

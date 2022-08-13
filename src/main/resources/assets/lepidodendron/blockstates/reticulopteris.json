@@ -48,8 +48,7 @@
     "age=15,base=false": {
       "model": "lepidodendron:reticulopteris"
     },
-
-    "age=0,base=true": {
+  "age=0,base=true": {
       "model": "lepidodendron:reticulopteris_base"
     },
     "age=1,base=true": {

@@ -20,14 +20,12 @@
       {"model": "lepidodendron:stalked_algae_2", "x": 90, "y": 180},
       {"model": "lepidodendron:stalked_algae_3", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:stalked_algae_1", "x": 90, "y": 270},
       {"model": "lepidodendron:stalked_algae_2", "x": 90, "y": 270},
       {"model": "lepidodendron:stalked_algae_3", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:stalked_algae_1" },
       {"model": "lepidodendron:stalked_algae_1", "y": 90 },
       {"model": "lepidodendron:stalked_algae_1", "y": 180 },

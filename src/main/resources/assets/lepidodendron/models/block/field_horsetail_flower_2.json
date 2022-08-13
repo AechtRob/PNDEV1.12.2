@@ -55,14 +55,7 @@
                 "west": { "uv": [ 2, 8, 13, 16 ], "texture": "#flower" }
             }
         },
-
-
-
-
-        
-
-
-        {   "from": [ 8, 0, -5 ],
+      {   "from": [ 8, 0, -5 ],
             "to": [ 8, 8, 6 ],
             "shade": false,
             "faces": {

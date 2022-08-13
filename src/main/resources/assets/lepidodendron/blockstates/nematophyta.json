@@ -24,15 +24,13 @@
       { "model": "lepidodendron:nematophyta_3", "x": 90, "y": 180 },
       { "model": "lepidodendron:nematophyta_4", "x": 90, "y": 180 }
     ],
-
-    "facing=west": [
+  "facing=west": [
       { "model": "lepidodendron:nematophyta_1", "x": 90, "y": 270 },
       { "model": "lepidodendron:nematophyta_2", "x": 90, "y": 270 },
       { "model": "lepidodendron:nematophyta_3", "x": 90, "y": 270 },
       { "model": "lepidodendron:nematophyta_4", "x": 90, "y": 270 }
     ],
-
-    "facing=up": [
+  "facing=up": [
       { "model": "lepidodendron:nematophyta_1" },
       { "model": "lepidodendron:nematophyta_2" },
       { "model": "lepidodendron:nematophyta_3" },

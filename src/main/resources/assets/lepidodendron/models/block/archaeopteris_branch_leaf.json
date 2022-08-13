@@ -12,8 +12,6 @@
     },
     
     "elements": [
-
-
         {"name":"c1north",
 			"from": [ 0, 11.51, 0 ],
             "to": [ 16, 11.51, 8 ],
@@ -40,9 +38,7 @@
                 "down":  { "uv": [ 0, 0, 16, 8 ], "texture": "#l1", "rotation": 180 },
                 "up":    { "uv": [ 0, 0, 16, 8 ], "texture": "#r1" }
             }
-        },
-
-        {"name":"c2north",
+        },        {"name":"c2north",
 			"from": [ 0, 11.51, -16 ],
             "to": [ 16, 11.51, 0 ],
             "shade":false,
@@ -68,9 +64,7 @@
                 "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#l2", "rotation": 180 },
                 "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#r2" }
             }
-        },
-
-         {"name":"c1south",
+        },         {"name":"c1south",
 			"from": [ 0, 11.25, 8 ],
             "to": [ 16, 11.25, 16 ],
             "shade":false,
@@ -96,9 +90,7 @@
                 "down":  { "uv": [ 0, 0, 16, 8 ], "texture": "#r1" },
                 "up":    { "uv": [ 0, 0, 16, 8 ], "texture": "#l1", "rotation": 180 }
             }
-        },
-
-        {"name":"c2south",
+        },        {"name":"c2south",
 			"from": [ 0, 11.25, 16 ],
             "to": [ 16, 11.25, 32 ],
             "shade":false,
@@ -125,8 +117,6 @@
                 "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#l2", "rotation": 180 }
             }
         },
-
-
          {"name":"c1east",
 			"from": [ 8, 10.51, 0 ],
             "to": [ 16, 10.51, 16 ],
@@ -135,9 +125,7 @@
                 "down":  { "uv": [ 0, 0, 16, 8 ], "texture": "#c1", "rotation": 90 },
                 "up":    { "uv": [ 0, 0, 16, 8 ], "texture": "#c1", "rotation": 90 }
             }
-        },
-
-        {"name":"c2east",
+        },        {"name":"c2east",
 			"from": [ 16, 10.52, 0 ],
             "to": [ 32, 10.52, 16 ],
             "shade":false,
@@ -164,10 +152,6 @@
                 "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#r2", "rotation": 90 }
             }
         },
-
-
-
-
         {"name":"c1west",
 			"from": [ 0, 10.75, 0 ],
             "to": [ 8, 10.75, 16 ],
@@ -176,9 +160,7 @@
                 "down":  { "uv": [ 0, 0, 16, 8 ], "texture": "#c1", "rotation": 270  },
                 "up":    { "uv": [ 0, 0, 16, 8 ], "texture": "#c1", "rotation": 270  }
             }
-        },
-
-        {"name":"c2west",
+        },        {"name":"c2west",
 			"from": [ -16, 10.76, 0 ],
             "to": [ 0, 10.76, 16 ],
             "shade":false,
@@ -205,8 +187,6 @@
                 "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#l2", "rotation": 270 }
             }
         }
-
-
         
 	
     ]

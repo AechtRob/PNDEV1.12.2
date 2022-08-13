@@ -12,12 +12,10 @@
       "facing=south": [
       {"model": "lepidodendron:dictyonema_side", "y": 270}
       ],
-
-      "facing=west": [
+    "facing=west": [
       {"model": "lepidodendron:dictyonema_side"}
       ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:dictyonema"}
     ],
     "facing=down": [

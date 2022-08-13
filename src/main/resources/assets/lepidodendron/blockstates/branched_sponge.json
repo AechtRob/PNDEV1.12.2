@@ -12,12 +12,10 @@
     "facing=south": [
       	{"model": "lepidodendron:branched_sponge_side", "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       	{"model": "lepidodendron:branched_sponge_side", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:branched_sponge"}
     ],
     "facing=down": [

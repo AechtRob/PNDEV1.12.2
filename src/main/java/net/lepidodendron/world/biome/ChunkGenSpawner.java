@@ -1220,25 +1220,28 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     }
                                                                 }
+                                                                boolean doAgeVar = false;
                                                                 if (nbtStr == "") {
-                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0) {
-                                                                        EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
-                                                                        int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
-                                                                        }
-                                                                    } else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0) {
-                                                                        EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
-                                                                        int adultAge = ageableBase.getAdultAge();
-                                                                        if (adultAge > 0) {
-                                                                            int spawnAge = rand.nextInt(adultAge) + 1;
-                                                                            nbtStr = "{AgeTicks:" + spawnAge + "}";
-                                                                        }
-                                                                    }
+                                                                    doAgeVar = true;
                                                                 }
+
                                                                 if (!(TriassicCanyons && pos.getY() > 70)) {
                                                                     for (int i = 0; i < spawnQty; ++i) {
+                                                                        if (entity instanceof EntityPrehistoricFloraAgeableBase && rand.nextInt(20) == 0 && doAgeVar) {
+                                                                            EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) entity;
+                                                                            int adultAge = ageableBase.getAdultAge();
+                                                                            if (adultAge > 0) {
+                                                                                int spawnAge = rand.nextInt(adultAge) + 1;
+                                                                                nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                            }
+                                                                        } else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0 && doAgeVar) {
+                                                                            EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
+                                                                            int adultAge = ageableBase.getAdultAge();
+                                                                            if (adultAge > 0) {
+                                                                                int spawnAge = rand.nextInt(adultAge) + 1;
+                                                                                nbtStr = "{AgeTicks:" + spawnAge + "}";
+                                                                            }
+                                                                        }
                                                                         //Spawn the mob via a command:
                                                                         if (!world.isRemote && world.getMinecraftServer() != null) {
                                                                             //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);

@@ -22,8 +22,7 @@
       	{"model": "lepidodendron:blue_sponge_side","y": 270},
       	{"model": "lepidodendron:blue_sponge_side_var","y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:blue_sponge"},
 		{"model": "lepidodendron:blue_sponge_var"},
       	{"model": "lepidodendron:blue_sponge_small"}

@@ -21,8 +21,7 @@
     "facing=down,joined=false": [
      	{"model": "lepidodendron:nilssoniocladus_stem_corner" }
     ],
-
-    "facing=north,joined=true": [
+  "facing=north,joined=true": [
      	{"model": "lepidodendron:nilssoniocladus_corner_join", "y": 180 }
     ],
     "facing=south,joined=true": [

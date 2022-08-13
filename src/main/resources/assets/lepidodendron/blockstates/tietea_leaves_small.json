@@ -26,8 +26,7 @@
       "x": 90,
       "y": 270
     },
-
-    "facing=up": {
+  "facing=up": {
       "model": "lepidodendron:tietea_leaves_small_shoot"
     },
     "facing=down": {

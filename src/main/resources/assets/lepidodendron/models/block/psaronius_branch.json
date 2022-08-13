@@ -7,9 +7,7 @@
         "north": "lepidodendron:blocks/psaronius_branch",
         "south": "lepidodendron:blocks/psaronius_branch",
         "west": "lepidodendron:blocks/psaronius_branch",
-        "east": "lepidodendron:blocks/psaronius_branch"
-
-    },
+        "east": "lepidodendron:blocks/psaronius_branch"    },
     
     "elements": [
         {   "from": [ 6, 0, 6 ],

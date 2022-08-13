@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:cystoid_pseudocrinites_side", "y": 270},
       {"model": "lepidodendron:cystoid_pseudocrinites_side_var", "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:cystoid_pseudocrinites"},
       {"model": "lepidodendron:cystoid_pseudocrinites_var"}
     ],

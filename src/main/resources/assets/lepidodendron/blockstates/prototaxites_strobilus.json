@@ -30,8 +30,7 @@
       "x": 180
     },
     
-
-    "attached=true,facing=north": {
+  "attached=true,facing=north": {
       "model": "lepidodendron:prototaxites_strobilus_attached_north",
       "x": 90
     },

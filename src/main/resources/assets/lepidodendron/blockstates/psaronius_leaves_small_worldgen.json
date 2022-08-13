@@ -23,8 +23,7 @@
       "x": 90,
       "y": 270
     },
-
-    "facing=up": {
+  "facing=up": {
       "model": "lepidodendron:psaronius_leaves_small_shoot"
     },
     "facing=down": {

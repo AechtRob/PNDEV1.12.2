@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:alethopteris_strobilus", "x": 90, "y": 270},
       	{"model": "lepidodendron:alethopteris_strobilus_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:alethopteris_strobilus"},
       	{"model": "lepidodendron:alethopteris_strobilus_rot"}
     ],

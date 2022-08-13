@@ -29,11 +29,7 @@
                 "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
             }
         },
-        
-
-
-        
-        {   "from": [ 6, 0, 8 ],
+      {   "from": [ 6, 0, 8 ],
             "to": [ 12, 2, 10 ],
 			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
             "faces": {

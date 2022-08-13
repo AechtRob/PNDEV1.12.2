@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:macroneuropteris_strobilus", "x": 90, "y": 270},
       	{"model": "lepidodendron:macroneuropteris_strobilus_rot", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:macroneuropteris_strobilus"},
       	{"model": "lepidodendron:macroneuropteris_strobilus_rot"}
     ],

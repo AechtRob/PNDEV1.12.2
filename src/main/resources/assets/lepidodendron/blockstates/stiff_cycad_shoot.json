@@ -3,8 +3,7 @@
     "normal": [
       {"model": "lepidodendron:stiff_cycad_shoot"}
     ],
-
-    "inventory": {
+  "inventory": {
       "model": "lepidodendron:stiff_cycad_shoot_inventory"
     }
   }

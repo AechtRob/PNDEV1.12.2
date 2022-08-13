@@ -42,8 +42,7 @@
         {   "when": { "up": false },
             "apply": { "model": "lepidodendron:banksia_2_log_noside", "x": 270, "uvlock": true }
         },
-
-        {   "when": {"shoot": true },
+      {   "when": {"shoot": true },
             "apply": { "model": "lepidodendron:banksia_2_leaves", "uvlock": true }
         }
     ]

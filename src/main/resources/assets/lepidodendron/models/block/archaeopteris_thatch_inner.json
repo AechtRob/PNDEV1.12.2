@@ -141,10 +141,6 @@
                 "down": { "uv": [ 15, 14, 0, 15 ],  "texture": "#texture" }
             }
         },
-
-
-
-
 		{   "from": [0, 8, 0 ],
             "to": [ 1, 8, 1 ],
             "shade": false,
@@ -280,11 +276,7 @@
                 "up": { "uv": [ 15, 14, 0, 15 ],  "texture": "#texture", "rotation": 90 }
             }
         },
-
-
-        
-
-        {"name":"wood",
+                {"name":"wood",
 			"from": [ 0, 15, 15 ],
             "to": [ 16, 16, 16 ],
             "shade":false,
@@ -310,8 +302,6 @@
                 "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90}
             }
         }
-
-
         
     ]
 }

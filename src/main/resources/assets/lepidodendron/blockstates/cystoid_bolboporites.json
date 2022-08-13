@@ -16,8 +16,7 @@
     "facing=west": [
       	{"model": "lepidodendron:cystoid_bolboporites", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:cystoid_bolboporites"}
     ],
     "facing=down": [

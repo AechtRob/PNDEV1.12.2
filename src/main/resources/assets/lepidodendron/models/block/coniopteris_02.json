@@ -9,15 +9,11 @@
 		"particle": "lepidodendron:items/coniopteris_inventory"
 	},
 	"ambientocclusion":false,
-	"elements":[		
-
-		{"name":"n",
+	"elements":[				{"name":"n",
 		"from":[8.0,0.0,0.0],"to":[8.0,16.0,16.0],"shade":false,
 		"faces":{
 		"east":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
-		"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"e",
+		"west":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"e",
 		"from":[0.0,0.0,8.0],"to":[16.0,16.0,8.0],"shade":false,
 		"faces":{
 		"north":{"texture":"#centre","uv":[0.0,0.0,16.0,16.0]},
@@ -47,47 +43,31 @@
 		"faces":{
 		"north":{"texture":"#e","uv":[0.0,0.0,16.0,16.0]},
 		"south":{"texture":"#w","uv":[0.0,0.0,16.0,16.0]}}},
-
-
-
-
 		{"name":"nu",
 			"from":[8.0,16.0,0.0],"to":[8.0,32.0,16.0],"shade":false,
 			"faces":{
 				"east":{"texture":"#centreu","uv":[0.0,0.0,16.0,16.0]},
-				"west":{"texture":"#centreu","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"e",
+				"west":{"texture":"#centreu","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"e",
 			"from":[0.0,16.0,8.0],"to":[16.0,32.0,8.0],"shade":false,
 			"faces":{
 				"north":{"texture":"#centreu","uv":[0.0,0.0,16.0,16.0]},
 				"south":{"texture":"#centreu","uv":[0.0,0.0,16.0,16.0]}}},
-
-
 		{"name":"nnu",
 			"from":[8.0,16.0,0.0],"to":[8.0,32.0,-16.0],"shade":false,
 			"faces":{
 				"east":{"texture":"#wu","uv":[0.0,0.0,16.0,16.0]},
-				"west":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"ssu",
+				"west":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"ssu",
 			"from":[8.0,16.0,16.0],"to":[8.0,32.0,32.0],"shade":false,
 			"faces":{
 				"east":{"texture":"#wu","uv":[0.0,0.0,16.0,16.0]},
-				"west":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"eeu",
+				"west":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"eeu",
 			"from":[16.0,16.0,8.0],"to":[32.0,32.0,8.0],"shade":false,
 			"faces":{
 				"north":{"texture":"#wu","uv":[0.0,0.0,16.0,16.0]},
-				"south":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},
-
-		{"name":"wwu",
+				"south":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]}}},		{"name":"wwu",
 			"from":[-16.0,16.0,8.0],"to":[0.0,32.0,8.0],"shade":false,
 			"faces":{
 				"north":{"texture":"#eu","uv":[0.0,0.0,16.0,16.0]},
 				"south":{"texture":"#wu","uv":[0.0,0.0,16.0,16.0]}}}
-
-
 ]
 }

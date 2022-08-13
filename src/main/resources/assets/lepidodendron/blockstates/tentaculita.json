@@ -20,14 +20,12 @@
       {"model": "lepidodendron:tentaculita_2", "x": 90, "y": 180},
       {"model": "lepidodendron:tentaculita_3", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:tentaculita_1", "x": 90, "y": 270},
       {"model": "lepidodendron:tentaculita_2", "x": 90, "y": 270},
       {"model": "lepidodendron:tentaculita_3", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:tentaculita_1"},
       {"model": "lepidodendron:tentaculita_2"},
       {"model": "lepidodendron:tentaculita_3"},

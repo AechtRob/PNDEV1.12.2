@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:cystoid_echinosphaerites", "x": 90, "y": 270},
       {"model": "lepidodendron:cystoid_echinosphaerites_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:cystoid_echinosphaerites"},
       {"model": "lepidodendron:cystoid_echinosphaerites_var"}
     ],

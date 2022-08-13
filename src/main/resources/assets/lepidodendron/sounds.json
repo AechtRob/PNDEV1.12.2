@@ -33,9 +33,7 @@
         "stream": false
       }
     ]
-  },
-
-  "dry_crunch_plants": {
+  },  "dry_crunch_plants": {
     "sounds": [
       {
         "name": "lepidodendron:landplant_drycrunch01",
@@ -144,8 +142,7 @@
       }
     ]
   },
-
-  "palaeodictyoptera_idle": {
+"palaeodictyoptera_idle": {
     "sounds": [
       {
         "name": "lepidodendron:palaeodictyoptera_idle01",
@@ -173,8 +170,7 @@
       }
     ]
   },
-
-  "protozygoptera_idle": {
+"protozygoptera_idle": {
     "sounds": [
       {
         "name": "lepidodendron:protozygoptera_idle01",
@@ -356,12 +352,7 @@
         "stream": false
       }
     ]
-  },
-
-
-
-
-  "trigonotarbid_idle": {
+  },"trigonotarbid_idle": {
     "sounds": [
       {
         "name": "lepidodendron:trigonotarbid_living01",
@@ -454,8 +445,7 @@
       }
     ]
   },
-
-  "hylonomus_idle": {
+"hylonomus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:hylonomus_living01",
@@ -503,8 +493,7 @@
       }
     ]
   },
-
-  "moschops_idle": {
+"moschops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:moschops_idle01",
@@ -563,10 +552,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "eryops_idle": {
+  },"eryops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:eryops_idle01",
@@ -613,10 +599,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "cotylorhynchus_idle": {
+  },"cotylorhynchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cotylorhynchus_living01",
@@ -679,10 +662,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "ophiacodon_idle": {
+  },"ophiacodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:ophiacodon_living01",
@@ -847,10 +827,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "gorgonops_idle": {
+  },"gorgonops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:gorgonops_living01",
@@ -901,10 +878,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "sphenacodon_idle": {
+  },"sphenacodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:sphenacodon_living01",
@@ -963,10 +937,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "pederpes_idle": {
+  },"pederpes_idle": {
     "sounds": [
       {
         "name": "lepidodendron:pederpes_living01",
@@ -1013,10 +984,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "scutosaurus_idle": {
+  },"scutosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:scutosaurus_living01",
@@ -1079,10 +1047,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "vivaxosaurus_idle": {
+  },"vivaxosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:vivaxosaurus_living01",
@@ -1129,10 +1094,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "estemmenosuchus_idle": {
+  },"estemmenosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:estemmenosuchus_living01",
@@ -1220,9 +1182,7 @@
       }
     ]
   },
-
-      
-  "diictodon_idle": {
+"diictodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:diictodon_living01",
@@ -1290,8 +1250,7 @@
       }
     ]
   },
-
-  "meganeuropsis_flight": {
+"meganeuropsis_flight": {
     "sounds": [
       {
         "name": "lepidodendron:meganeuropsis_flight01",
@@ -1339,8 +1298,7 @@
       }
     ]
   },
-
-  "mesosaurus_idle": {
+"mesosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:mesosaurus_living01",
@@ -1391,10 +1349,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "claudiosaurus_idle": {
+  },"claudiosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:claudiosaurus_living01",
@@ -1446,8 +1401,7 @@
       }
     ]
   },
-
-  "diadectes_idle": {
+"diadectes_idle": {
     "sounds": [
       {
         "name": "lepidodendron:diadectes_living01",
@@ -1515,10 +1469,7 @@
       }
     ]
   },
-
-
-
-  "dvinia_idle": {
+"dvinia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:dvinia_living01",
@@ -1621,10 +1572,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "acanthostomatops_idle": {
+  },"acanthostomatops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:acanthostomatops_living01",
@@ -1671,10 +1619,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "platyhystrix_idle": {
+  },"platyhystrix_idle": {
     "sounds": [
       {
         "name": "lepidodendron:platyhystrix_living01",
@@ -1721,10 +1666,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "prionosuchus_idle": {
+  },"prionosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:prionosuchus_living01",
@@ -1772,10 +1714,7 @@
       }
     ]
   },
-
-
-
-  "pholiderpeton_idle": {
+"pholiderpeton_idle": {
     "sounds": [
       {
         "name": "lepidodendron:pholiderpeton_living01",
@@ -1823,8 +1762,7 @@
       }
     ]
   },
-
-  "labidosaurus_idle": {
+"labidosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:labidosaurus_living01",
@@ -1888,8 +1826,7 @@
       }
     ]
   },
-
-  "panderichthys_breathe": {
+"panderichthys_breathe": {
     "sounds": [
       {
         "name": "lepidodendron:panderichthys_breath01",
@@ -1913,8 +1850,7 @@
       }
     ]
   },
-
-  "acanthostega_idle": {
+"acanthostega_idle": {
     "sounds": [
       {
         "name": "lepidodendron:acanthostega_living01",
@@ -1966,8 +1902,7 @@
       }
     ]
   },
-
-  "tapinocephalus_idle": {
+"tapinocephalus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:tapinocephalus_living01",
@@ -2047,8 +1982,7 @@
       }
     ]
   },
-
-  "bug_flight": {
+"bug_flight": {
     "sounds": [
       {
         "name": "lepidodendron:ancient_cockroach_flight01",
@@ -2092,8 +2026,7 @@
       }
     ]
   },
-
-  "proterogyrinus_idle": {
+"proterogyrinus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:proterogyrinus_living01",
@@ -2141,8 +2074,7 @@
       }
     ]
   },
-
-  "remigiomontanus_idle": {
+"remigiomontanus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:remigiomontanus_living01",
@@ -2193,10 +2125,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "procynosuchus_idle": {
+  },"procynosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:procynosuchus_living01",
@@ -2256,8 +2185,7 @@
       }
     ]
   },
-
-  "anteosaurus_idle": {
+"anteosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:anteosaurus_living01",
@@ -2337,8 +2265,7 @@
       }
     ]
   },
-
-  "coelophysis_idle": {
+"coelophysis_idle": {
     "sounds": [
       {
         "name": "lepidodendron:coelophysis_living01",
@@ -2438,8 +2365,7 @@
       }
     ]
   },
-
-  "lystrosaurus_idle": {
+"lystrosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:lystrosaurus_living01",
@@ -2498,10 +2424,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "suminia_idle": {
+  },"suminia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:suminia_living01",
@@ -2580,10 +2503,7 @@
         "stream": false
       }
     ]
-  },
-
-
-  "lisowicia_idle": {
+  },"lisowicia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:lisowicia_living01",
@@ -2643,8 +2563,7 @@
       }
     ]
   },
-
-  "liliensternus_idle": {
+"liliensternus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:liliensternus_living01",
@@ -2720,8 +2639,7 @@
       }
     ]
   },
-
-  "weigeltisaurid_idle": {
+"weigeltisaurid_idle": {
     "sounds": [
       {
         "name": "lepidodendron:weigeltisaurid_living01",
@@ -2773,8 +2691,7 @@
       }
     ]
   },
-
-  "eoraptor_idle": {
+"eoraptor_idle": {
     "sounds": [
       {
         "name": "lepidodendron:eoraptor_living01",
@@ -2810,8 +2727,7 @@
       }
     ]
   },
-
-  "shringasaurus_idle": {
+"shringasaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:shringasaurus_living01",
@@ -2871,8 +2787,7 @@
       }
     ]
   },
-
-  "archosaurus_idle": {
+"archosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:archosaurus_living01",
@@ -2920,8 +2835,7 @@
       }
     ]
   },
-
-  "plateosaurus_idle": {
+"plateosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:plateosaurus_living01",
@@ -2997,8 +2911,7 @@
       }
     ]
   },
-
-  "herrerasaurus_idle": {
+"herrerasaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:herrerasaurus_living04",
@@ -3058,8 +2971,7 @@
       }
     ]
   },
-
-  "cynognathus_idle": {
+"cynognathus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cynognathus_living01",
@@ -3151,8 +3063,7 @@
       }
     ]
   },
-
-  "placerias_idle": {
+"placerias_idle": {
     "sounds": [
       {
         "name": "lepidodendron:placerias_living01",
@@ -3224,8 +3135,7 @@
       }
     ]
   },
-
-  "bunostegos_idle": {
+"bunostegos_idle": {
     "sounds": [
       {
         "name": "lepidodendron:bunostegos_living01",
@@ -3289,8 +3199,7 @@
       }
     ]
   },
-
-  "elginia_idle": {
+"elginia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:elginia_living01",
@@ -3359,8 +3268,7 @@
     ]
   },
 
-
-  "pristerognathus_idle": {
+"pristerognathus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:pristerognathus_living01",
@@ -3489,8 +3397,7 @@
       }
     ]
   },
-
-  "thrinaxodon_idle": {
+"thrinaxodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:thrinaxodon_living01",
@@ -3546,8 +3453,7 @@
       }
     ]
   },
-
-  "postosuchus_idle": {
+"postosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:postosuchus_living01",
@@ -3607,8 +3513,7 @@
       }
     ]
   },
-
-  "sillosuchus_idle": {
+"sillosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:sillosuchus_living01",
@@ -3656,8 +3561,7 @@
       }
     ]
   },
-
-  "effigia_idle": {
+"effigia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:effigia_living01",
@@ -3759,8 +3663,7 @@
       }
     ]
   },
-
-  "austriadactylus_idle": {
+"austriadactylus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:austriadactylus_living01",
@@ -3922,8 +3825,7 @@
       }
     ]
   },
-
-  "eudimorphodon_idle": {
+"eudimorphodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:eudimorphodon_living01",
@@ -3979,8 +3881,7 @@
       }
     ]
   },
-
-  "shonisaurus_idle": {
+"shonisaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:shonisaurus_living01",
@@ -4127,8 +4028,7 @@
       }
     ]
   },
-
-  "lessemsaurus_idle": {
+"lessemsaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:lessemsaurus_living01",
@@ -4564,8 +4464,7 @@
     ]
   },
 
-
-  "keichousaurus_hurt": {
+"keichousaurus_hurt": {
     "sounds": [
       {
         "name": "lepidodendron:keichousaurus_hurt01",
@@ -4590,8 +4489,7 @@
     ]
   },
 
-
-  "turtle_hurt": {
+"turtle_hurt": {
     "sounds": [
       {
         "name": "lepidodendron:turtle_hurt01",
@@ -4646,8 +4544,7 @@
     ]
   },
 
-
-  "mussaurus_idle": {
+"mussaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:mussaurus_living01",
@@ -4704,8 +4601,7 @@
     ]
   },
 
-
-  "mastodonsaurus_idle": {
+"mastodonsaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:mastodonsaurus_living01",
@@ -4754,8 +4650,7 @@
     ]
   },
 
-
-  "henodus_idle": {
+"henodus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:henodus_living01",
@@ -4804,8 +4699,7 @@
     ]
   },
 
-
-  "titanoptera_idle": {
+"titanoptera_idle": {
     "sounds": [
       {
         "name": "lepidodendron:titanoptera_living01",
@@ -4822,8 +4716,7 @@
     ]
   },
 
-
-  "dasyceps_idle": {
+"dasyceps_idle": {
     "sounds": [
       {
         "name": "lepidodendron:dasyceps_living01",
@@ -4872,8 +4765,7 @@
     ]
   },
 
-
-  "melosaurus_idle": {
+"melosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:melosaurus_living01",
@@ -4922,8 +4814,7 @@
     ]
   },
 
-
-  "ascendonanus_idle": {
+"ascendonanus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:ascendonanus_living01",
@@ -4980,8 +4871,7 @@
     ]
   },
 
-
-  "aulacephalodon_idle": {
+"aulacephalodon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:aulacephalodon_living01",
@@ -5030,8 +4920,7 @@
     ]
   },
 
-
-  "cacops_idle": {
+"cacops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cacops_living01",
@@ -5080,8 +4969,7 @@
     ]
   },
 
-
-  "casineria_idle": {
+"casineria_idle": {
     "sounds": [
       {
         "name": "lepidodendron:casineria_living01",
@@ -5130,8 +5018,7 @@
     ]
   },
 
-
-  "clevosaurus_hurt": {
+"clevosaurus_hurt": {
     "sounds": [
       {
         "name": "lepidodendron:clevosaurus_hurt01",
@@ -5156,8 +5043,7 @@
     ]
   },
 
-
-  "cymbospondylus_idle": {
+"cymbospondylus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:cymbospondylus_living01",
@@ -5206,8 +5092,7 @@
     ]
   },
 
-
-  "hyperodapedon_idle": {
+"hyperodapedon_idle": {
     "sounds": [
       {
         "name": "lepidodendron:hyperodapedon_living01",
@@ -5256,8 +5141,7 @@
     ]
   },
 
-
-  "jonkeria_idle": {
+"jonkeria_idle": {
     "sounds": [
       {
         "name": "lepidodendron:jonkeria_living01",
@@ -5306,8 +5190,7 @@
     ]
   },
 
-
-  "lotosaurus_idle": {
+"lotosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:lotosaurus_living01",
@@ -5356,8 +5239,7 @@
     ]
   },
 
-
-  "panzhousaurus_idle": {
+"panzhousaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:panzhousaurus_living01",
@@ -5406,8 +5288,7 @@
     ]
   },
 
-
-  "purlovia_idle": {
+"purlovia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:purlovia_living01",
@@ -5456,8 +5337,7 @@
     ]
   },
 
-
-  "scleromochlus_hurt": {
+"scleromochlus_hurt": {
     "sounds": [
       {
         "name": "lepidodendron:scleromochlus_hurt01",
@@ -5486,8 +5366,7 @@
     ]
   },
 
-
-  "tiarajudens_idle": {
+"tiarajudens_idle": {
     "sounds": [
       {
         "name": "lepidodendron:tiarajudens_living01",
@@ -5536,8 +5415,7 @@
     ]
   },
 
-
-  "pantylus_hurt": {
+"pantylus_hurt": {
     "sounds": [
       {
         "name": "lepidodendron:pantylus_hurt01",
@@ -5562,8 +5440,7 @@
     ]
   },
 
-
-  "erythrosuchus_idle": {
+"erythrosuchus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:erythrosuchus_living01",
@@ -5616,8 +5493,7 @@
     ]
   },
 
-
-  "tetraceratops_idle": {
+"tetraceratops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:tetraceratops_living01",
@@ -5674,8 +5550,7 @@
     ]
   },
 
-
-  "eorhynchochelys_idle": {
+"eorhynchochelys_idle": {
     "sounds": [
       {
         "name": "lepidodendron:eorhynchochelys_living01",
@@ -5724,8 +5599,7 @@
     ]
   },
 
-
-  "datheosaurus_idle": {
+"datheosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:datheosaurus_living01",
@@ -5770,8 +5644,7 @@
     ]
   },
 
-
-  "teleocrater_idle": {
+"teleocrater_idle": {
     "sounds": [
       {
         "name": "lepidodendron:teleocrater_living01",
@@ -5820,8 +5693,7 @@
     ]
   },
 
-
-  "tanystropheus_idle": {
+"tanystropheus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:tanystropheus_living01",
@@ -5874,8 +5746,7 @@
     ]
   },
 
-
-  "proburnetia_idle": {
+"proburnetia_idle": {
     "sounds": [
       {
         "name": "lepidodendron:proburnetia_living01",
@@ -5932,8 +5803,7 @@
     ]
   },
 
-
-  "sauroctonus_idle": {
+"sauroctonus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:sauroctonus_living01",
@@ -6006,8 +5876,7 @@
     ]
   },
 
-
-  "arizonasaurus_idle": {
+"arizonasaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:arizonasaurus_living01",
@@ -6052,8 +5921,7 @@
     ]
   },
 
-
-  "smok_idle": {
+"smok_idle": {
     "sounds": [
       {
         "name": "lepidodendron:smok_living01",
@@ -6098,8 +5966,7 @@
     ]
   },
 
-
-  "poposaurus_idle": {
+"poposaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:poposaurus_living01",

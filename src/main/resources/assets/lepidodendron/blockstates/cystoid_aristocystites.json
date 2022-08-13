@@ -21,8 +21,7 @@
       	{"model": "lepidodendron:cystoid_aristocystites", "x": 90, "y": 270},
       {"model": "lepidodendron:cystoid_aristocystites_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       	{"model": "lepidodendron:cystoid_aristocystites"},
       {"model": "lepidodendron:cystoid_aristocystites_var"}
     ],

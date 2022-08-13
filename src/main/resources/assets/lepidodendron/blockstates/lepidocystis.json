@@ -16,13 +16,11 @@
       {"model": "lepidodendron:lepidocystis", "x": 90, "y": 180},
       {"model": "lepidodendron:lepidocystis_var", "x": 90, "y": 180}
     ],
-
-    "facing=west": [
+  "facing=west": [
       {"model": "lepidodendron:lepidocystis", "x": 90, "y": 270},
       {"model": "lepidodendron:lepidocystis_var", "x": 90, "y": 270}
     ],
-
-    "facing=up": [
+  "facing=up": [
       {"model": "lepidodendron:lepidocystis"},
       {"model": "lepidodendron:lepidocystis_var"}
     ],
