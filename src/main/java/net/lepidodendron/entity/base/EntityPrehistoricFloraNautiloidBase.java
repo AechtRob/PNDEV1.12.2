@@ -180,6 +180,17 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
+    public float maxTurnAngle() {
+        if (this.getIsFast() || this.isInLove() || (this.getEatTarget() != null)) {
+            return 1000F;
+        }
+        if (this.width <= 0.5) {
+            return 10F;
+        }
+        float i = Math.min(this.width - 0.5F, 1.5F) - 0.5F; //returns a number from 0 to 1
+        return 10F - (i * 9F); //returns a number from 10 to 1
+    }
+
     @Override
     public void travel(float strafe, float vertical, float forward) {
         float f4;
@@ -248,7 +259,7 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
                 //this.PrehistoricFloraFishBase.rotationYaw = this.limitAngle(this.PrehistoricFloraFishBase.rotationYaw, angle, 30.0F);
                 //this.PrehistoricFloraFishBase.setAIMoveSpeed(0.65F);
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 2.0F);
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 this.EntityBase.setAIMoveSpeed(getAISpeedNautiloid());
                 //System.err.println("Setting speed!");
 

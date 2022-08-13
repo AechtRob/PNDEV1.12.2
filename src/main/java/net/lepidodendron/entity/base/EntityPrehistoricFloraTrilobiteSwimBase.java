@@ -359,6 +359,13 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
+    public float maxTurnAngle() {
+        if (this.isInLove()) {
+            return 1000F;
+        }
+        return 10F;
+    }
+
     @Override
     public void travel(float strafe, float vertical, float forward) {
         float f4;
@@ -425,7 +432,7 @@ public abstract class EntityPrehistoricFloraTrilobiteSwimBase extends EntityTame
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 10.0F);
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 this.EntityBase.setAIMoveSpeed(EntityBase.getAISpeedTrilobite());
 
                 if (this.EntityBase.isAtBottom()) {

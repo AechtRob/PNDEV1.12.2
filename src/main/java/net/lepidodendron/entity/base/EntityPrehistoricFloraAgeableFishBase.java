@@ -164,8 +164,9 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
     }
 
     public float maxTurnAngle() {
-        if (this.getIsFast()) {
-            return (float)Math.toRadians(180D);
+        if (this.getIsFast() || this.isInLove() || (this.getEatTarget() != null)) {
+           //System.err.println("MaxAngle " + (float)Math.toRadians(180D));
+            return 1000F;
         }
         if (this.width <= 0.5) {
             return 10F;
@@ -277,7 +278,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 1000);
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 

@@ -157,7 +157,7 @@ public class ChunkProviderTriassic implements IChunkGenerator {
                 (new WorldGenPangaeanDryLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
             }
 
-        if (this.random.nextInt(156) == 0 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeTriassicWarmVolcanicHills.biome)
+        if (this.random.nextInt(224) == 0 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeTriassicWarmVolcanicHills.biome)
             if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                     net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
                 int i1 = this.random.nextInt(16) + 8;

@@ -14,6 +14,7 @@ import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.entity.Entity;
@@ -246,9 +247,19 @@ public class LepidodendronFogSubscribers {
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			//Block b = event.getState().getBlock();
 			//Entity player = event.getEntity();
+
 			World world = player.getEntityWorld();
+			//Biome biome = player.world.getBiome(player.getPosition());
+			//IBlockState state = world.getBlockState(player.getPosition());
+			//Block b = state.getBlock();
+
+			//Entity player = event.getEntity();
+			//Block b = event.getState().getBlock();
+			//Entity player = event.getEntity();
 			Biome biome = player.world.getBiome(player.getPosition());
-			IBlockState state = world.getBlockState(player.getPosition());
+			IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
+			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
+			double playerEyes = vec3d.y;
 			Block b = state.getBlock();
 
 			int fogBottom = 78;
@@ -274,48 +285,48 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && player.posY >= player.world.getSeaLevel()) {
+									&& biome == BiomeDevonianSpikes.biome && playerEyes >= (double) player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && player.posY >= player.world.getSeaLevel() - 4
+									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && player.posY >= player.world.getSeaLevel() - 4
+									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& biome instanceof BiomePermian && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 										|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
-									&& biome instanceof BiomeCarboniferous && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeCarboniferous && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 								if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
 										|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
 									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
-									&& biome instanceof BiomeDevonian && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeDevonian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
 								if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp) {
 									fog = backgroundFog2 * 10F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& biome instanceof BiomeJurassic && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeJurassic && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
 									fog = backgroundFog2 * 5F;
 								}
 							}
 
-							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY >= player.world.getSeaLevel()) {
+							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
 								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
 									float d = player.world.rainingStrength;
@@ -348,6 +359,10 @@ public class LepidodendronFogSubscribers {
 			Block b = event.getState().getBlock();
 			Entity player = event.getEntity();
 			Biome biome = player.world.getBiome(player.getPosition());
+			IBlockState stateView = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
+			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
+			double playerEyes = vec3d.y;
+			b = stateView.getBlock();
 
 			int fogBottom = 78;
 			int fogTop = 98;
@@ -371,48 +386,48 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || event.getState().getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && player.posY >= player.world.getSeaLevel()) {
+									&& biome == BiomeDevonianSpikes.biome && playerEyes >= (double) player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && player.posY >= player.world.getSeaLevel() - 4
+									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && player.posY >= player.world.getSeaLevel() - 4
+									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& biome instanceof BiomePermian && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomePermian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomePermian biomePermian = (BiomePermian) biome;
 								if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 										|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 									fog = backgroundFog * 7F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && event.getState().getMaterial() != Material.WATER)
-									&& biome instanceof BiomeCarboniferous && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeCarboniferous && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
 								if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
 									|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
 									fog = backgroundFog * 7F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && event.getState().getMaterial() != Material.WATER)
-									&& biome instanceof BiomeDevonian && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeDevonian && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
 								if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp) {
 									fog = backgroundFog * 7F;
 								}
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& biome instanceof BiomeJurassic && player.posY >= player.world.getSeaLevel() - 4) {
+									&& biome instanceof BiomeJurassic && playerEyes >= (double) player.world.getSeaLevel() - 4) {
 								BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
 									fog = backgroundFog * 4F;
 								}
 							}
 
-							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && player.posY >= player.world.getSeaLevel()) {
+							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
 								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
 									float d = player.world.rainingStrength;

@@ -692,7 +692,7 @@ public class LepidodendronConfig {
     public static String[] genHorsetailBlacklistBiomes = new String[0];
     public static String[] genHorsetailOverrideBiomes = new String[0];
     public static int[] dimHorsetail = new int[]{0};
-    public static int minheightHorsetail = 1;
+    public static int minheightHorsetail = 55;
     public static int maxheightHorsetail = 100;
     public static double multiplierHorsetail = 1;
     public static boolean genReticulopteris = false;
@@ -1103,21 +1103,21 @@ public class LepidodendronConfig {
     public static String[] genAethophyllumBlacklistBiomes = new String[0];
     public static String[] genAethophyllumOverrideBiomes = new String[0];
     public static int[] dimAethophyllum = new int[]{0};
-    public static int minheightAethophyllum = 1;
+    public static int minheightAethophyllum = 55;
     public static int maxheightAethophyllum = 90;
     public static double multiplierAethophyllum = 1;
     public static boolean genDicranophyllum = false;
     public static String[] genDicranophyllumBlacklistBiomes = new String[0];
     public static String[] genDicranophyllumOverrideBiomes = new String[0];
     public static int[] dimDicranophyllum = new int[]{0};
-    public static int minheightDicranophyllum = 1;
+    public static int minheightDicranophyllum = 55;
     public static int maxheightDicranophyllum = 90;
     public static double multiplierDicranophyllum = 1;
     public static boolean genProtolepidodendropsis = false;
     public static String[] genProtolepidodendropsisBlacklistBiomes = new String[0];
     public static String[] genProtolepidodendropsisOverrideBiomes = new String[0];
     public static int[] dimProtolepidodendropsis = new int[]{0};
-    public static int minheightProtolepidodendropsis = 1;
+    public static int minheightProtolepidodendropsis = 55;
     public static int maxheightProtolepidodendropsis = 90;
     public static double multiplierProtolepidodendropsis = 1;
     public static boolean genHymenaea = false;
@@ -1188,7 +1188,7 @@ public class LepidodendronConfig {
     public static String[] genEmplectopterisBlacklistBiomes = new String[0];
     public static String[] genEmplectopterisOverrideBiomes = new String[0];
     public static int[] dimEmplectopteris = new int[]{0};
-    public static int minheightEmplectopteris = 1;
+    public static int minheightEmplectopteris = 55;
     public static int maxheightEmplectopteris = 90;
     public static double multiplierEmplectopteris = 1;
     public static boolean genBristlecone = false;
@@ -1455,7 +1455,7 @@ public class LepidodendronConfig {
     public static String[] genGuangdedendronBlacklistBiomes = new String[0];
     public static String[] genGuangdedendronOverrideBiomes = new String[0];
     public static int[] dimGuangdedendron = new int[]{0};
-    public static int minheightGuangdedendron = 1;
+    public static int minheightGuangdedendron = 55;
     public static int maxheightGuangdedendron = 80;
     public static double multiplierGuangdedendron = 1;
     public static boolean genMarattia = false;
@@ -1752,7 +1752,7 @@ public class LepidodendronConfig {
     public static String[] genNeocalamitesBlacklistBiomes = new String[0];
     public static String[] genNeocalamitesOverrideBiomes = new String[0];
     public static int[] dimNeocalamites = new int[]{0};
-    public static int minheightNeocalamites = 1;
+    public static int minheightNeocalamites = 55;
     public static int maxheightNeocalamites = 90;
     public static double multiplierNeocalamites = 1;
 
@@ -1760,7 +1760,7 @@ public class LepidodendronConfig {
     public static String[] genPhyllothecaBlacklistBiomes = new String[0];
     public static String[] genPhyllothecaOverrideBiomes = new String[0];
     public static int[] dimPhyllotheca = new int[]{0};
-    public static int minheightPhyllotheca = 1;
+    public static int minheightPhyllotheca = 55;
     public static int maxheightPhyllotheca = 90;
     public static double multiplierPhyllotheca = 1;
 
@@ -1768,7 +1768,7 @@ public class LepidodendronConfig {
     public static String[] genEquisetitesReedBlacklistBiomes = new String[0];
     public static String[] genEquisetitesReedOverrideBiomes = new String[0];
     public static int[] dimEquisetitesReed = new int[]{0};
-    public static int minheightEquisetitesReed = 1;
+    public static int minheightEquisetitesReed = 55;
     public static int maxheightEquisetitesReed = 120;
     public static double multiplierEquisetitesReed = 1;
 
@@ -4005,7 +4005,7 @@ public class LepidodendronConfig {
         dimHorsetail = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Giant Horsetails", "minheightHorsetail", minheightHorsetail);
-        prop.setComment("Minimum height that Giant Horsetails can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Giant Horsetails can generate (1 to 250) [default: 55]");
         minheightHorsetail = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Giant Horsetails", "maxheightHorsetail", maxheightHorsetail);
@@ -5426,7 +5426,7 @@ public class LepidodendronConfig {
         dimAethophyllum = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Aethophyllum", "minheightAethophyllum", minheightAethophyllum);
-        prop.setComment("Minimum height that Aethophyllum can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Aethophyllum can generate (1 to 250) [default: 55]");
         minheightAethophyllum = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Aethophyllum", "maxheightAethophyllum", maxheightAethophyllum);
@@ -5454,7 +5454,7 @@ public class LepidodendronConfig {
         dimDicranophyllum = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Dicranophyllum", "minheightDicranophyllum", minheightDicranophyllum);
-        prop.setComment("Minimum height that Dicranophyllum can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Dicranophyllum can generate (1 to 250) [default: 55]");
         minheightDicranophyllum = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Dicranophyllum", "maxheightDicranophyllum", maxheightDicranophyllum);
@@ -5482,7 +5482,7 @@ public class LepidodendronConfig {
         dimProtolepidodendropsis = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Protolepidodendropsis", "minheightProtolepidodendropsis", minheightProtolepidodendropsis);
-        prop.setComment("Minimum height that Protolepidodendropsis can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Protolepidodendropsis can generate (1 to 250) [default: 55]");
         minheightProtolepidodendropsis = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Protolepidodendropsis", "maxheightProtolepidodendropsis", maxheightProtolepidodendropsis);
@@ -5774,7 +5774,7 @@ public class LepidodendronConfig {
         dimEmplectopteris = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Emplectopteris", "minheightEmplectopteris", minheightEmplectopteris);
-        prop.setComment("Minimum height that Emplectopteris can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Emplectopteris can generate (1 to 250) [default: 55]");
         minheightEmplectopteris = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Emplectopteris", "maxheightEmplectopteris", maxheightEmplectopteris);
@@ -6482,7 +6482,7 @@ public class LepidodendronConfig {
         dimGuangdedendron = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Guangdedendron", "minheightGuangdedendron", minheightGuangdedendron);
-        prop.setComment("Minimum height that Guangdedendron can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Guangdedendron can generate (1 to 250) [default: 55]");
         minheightGuangdedendron = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Guangdedendron", "maxheightGuangdedendron", maxheightGuangdedendron);
@@ -7073,7 +7073,7 @@ public class LepidodendronConfig {
         dimNeocalamites = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Neocalamites", "minheightNeocalamites", minheightNeocalamites);
-        prop.setComment("Minimum height that Neocalamites can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Neocalamites can generate (1 to 250) [default: 55]");
         minheightNeocalamites = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Neocalamites", "maxheightNeocalamites", maxheightNeocalamites);
@@ -7101,7 +7101,7 @@ public class LepidodendronConfig {
         dimPhyllotheca = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Phyllotheca", "minheightPhyllotheca", minheightPhyllotheca);
-        prop.setComment("Minimum height that Phyllotheca can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that Phyllotheca can generate (1 to 250) [default: 55]");
         minheightPhyllotheca = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Phyllotheca", "maxheightPhyllotheca", maxheightPhyllotheca);
@@ -7129,7 +7129,7 @@ public class LepidodendronConfig {
         dimEquisetitesReed = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen EquisetitesReed", "minheightEquisetitesReed", minheightEquisetitesReed);
-        prop.setComment("Minimum height that EquisetitesReed can generate (1 to 250) [default: 1]");
+        prop.setComment("Minimum height that EquisetitesReed can generate (1 to 250) [default: 55]");
         minheightEquisetitesReed = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Reedy Equisetites", "maxheightEquisetitesReed", maxheightEquisetitesReed);

@@ -12,20 +12,27 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 public class EntityPrehistoricFloraSynophalos extends EntityPrehistoricFloraFishBase {
 
@@ -293,6 +300,40 @@ public class EntityPrehistoricFloraSynophalos extends EntityPrehistoricFloraFish
 					newChain = 16;
 				}
 				if (newChain > 0) {
+					//Check to see if it was trying to breed!
+					if (this.isInLove()) {
+						ItemStack itemstack = this.getPropagule();
+						if (!itemstack.hasTagCompound()) {
+							itemstack.setTagCompound(new NBTTagCompound());
+						}
+						Random random = this.getRNG();
+						String stringEgg = EntityRegistry.getEntry(this.getClass()).getRegistryName().toString();
+						itemstack.getTagCompound().setString("creature", stringEgg);
+						EntityItem entityToSpawn = new EntityItem(this.world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
+						entityToSpawn.setPickupDelay(10);
+						this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (random.nextFloat() - random.nextFloat()) * 0.2F + 1.0F);
+						this.world.spawnEntity(entityToSpawn);
+						this.resetInLove();
+						this.setTicks(0);
+						this.setNotMateable();
+						this.setNotMateable();
+
+						for (int i = 0; i < 7; ++i)
+						{
+							double d0 = random.nextGaussian() * 0.02D;
+							double d1 = random.nextGaussian() * 0.02D;
+							double d2 = random.nextGaussian() * 0.02D;
+							double d3 = random.nextDouble() * (double)this.width * 2.0D - (double)this.width;
+							double d4 = 0.5D + random.nextDouble() * (double)this.height;
+							double d5 = random.nextDouble() * (double)this.width * 2.0D - (double)this.width;
+							this.world.spawnParticle(EnumParticleTypes.HEART, this.posX + d3, this.posY + d4, this.posZ + d5, d0, d1, d2);
+						}
+
+						if (this.world.getGameRules().getBoolean("doMobLoot"))
+						{
+							this.world.spawnEntity(new EntityXPOrb(this.world, this.posX, this.posY, this.posZ, random.nextInt(7) + 1));
+						}
+					}
 					//Join the chains:
 					entityIn.setDead();
 					this.setChain(newChain);

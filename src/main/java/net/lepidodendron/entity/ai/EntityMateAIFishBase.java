@@ -91,7 +91,7 @@ public class EntityMateAIFishBase extends EntityAIBase
         return EntityPrehistoricFloraFishBase;
     }
 
-    private void spawnBaby()
+    public void spawnBaby()
     {
         ItemStack itemstack = this.animal.getPropagule();
         if (!itemstack.hasTagCompound()) {

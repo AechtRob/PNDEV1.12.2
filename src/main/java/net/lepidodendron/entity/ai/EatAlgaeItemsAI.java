@@ -68,11 +68,11 @@ public class EatAlgaeItemsAI extends EntityAIBase {
 
     @Override
     public void updateTask() {
-        double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow(this.entity.posY - this.targetItem.posY, 2.0D)  + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
+        double distance = Math.sqrt(Math.pow(this.entity.posX - this.targetItem.posX, 2.0D) + Math.pow((this.entity.posY - this.targetItem.posY)/2D, 2.0D)  + Math.pow(this.entity.posZ - this.targetItem.posZ, 2.0D));
         this.entity.setEatTarget(this.targetItem);
         this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, this.speed);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
-        if (distance < this.entity.getEntityBoundingBox().getAverageEdgeLength()) {
+        if (distance <= this.entity.getEntityBoundingBox().getAverageEdgeLength()) {
             if (this.targetItem != null) {
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
