@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_megazostrodon",
 			"title": "Megazostrodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() $(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Megazostrodontidae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Desert, Mountains$(br2)>Cynodontia$(br)>Mammaliaformes$(br)>Morganucodonta$(br)>Megazostrodontidae"
 		},
 		{
 			"type": "image",

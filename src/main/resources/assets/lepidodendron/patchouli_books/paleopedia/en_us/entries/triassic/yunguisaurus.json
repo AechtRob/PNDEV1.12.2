@@ -9,23 +9,33 @@
 			"trigger": "lepidodendron:pf_adv_book_yunguisaurus",
 			"title": "Yunguisaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Reptilia$(br)>Sauropterygia$(br)>Pistosauria"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/yunguisaurus.png"],
-			"title": "",
+			"title": "Y. liae",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
 			"type": "text",
-			"text": ""
+			"text": "Yunguisaurus liae is a species of late Triassic sauropterygian reptile from today’s China. This animal is known from an almost complete skeleton from the Falang formation, described for the first time in 2006."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "Like other pistorasurids, Yunguisaurus sported a series of characteristics between the more basal Nothosaurids and the more derived plesiosaurids both in the skull and arms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
+			"type": "text",
+			"text": "Unlike Nothosaurus, which had still quite developed arms, Yunguisaurus had flattened paddle like flipper more closely associated with the Jurassic long necked marine reptiles."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_yunguisaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

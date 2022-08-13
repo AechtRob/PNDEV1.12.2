@@ -9,23 +9,33 @@
 			"trigger": "lepidodendron:pf_adv_book_vancleavea",
 			"title": "Vancleavea",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Deltas$(br2)>Reptilia$(br)>Proterochampsia$(br)>Doswelliidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/vancleavea.png"],
-			"title": "",
+			"title": "V. campi",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vancleavea",
 			"type": "text",
-			"text": ""
+			"text": "Vancleavea campi is a species of Archosauriform reptile from the Late Triassic of North America. First described in 1995 on several fragmentary remains, it is now perhaps most known from more complete and articulated specimens, some of which preserving the thick osteoderm plating they had in life, as is the case with the famous specimen GR 138, a 1.2 m long almost complete animal."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_vancleavea",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "This reptile, however, could potentially become larger, with some estimates making it as large as 3.8 m in length, based on remains from other larger specimens like MCCDM 1745. Vancleavea was also particular in the absence of several fenestrae in the skull, holes used by animals to make their heads lighter, and usually seen in other Archosauriforms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vancleavea",
+			"type": "text",
+			"text": "The osteoderms of the tail were unusual as they grew vertically forming a single tail-like fluke, trait rarely seen in reptiles and archosaurs as usually such structures are created by the lengthening of the neural spines instead of the osteoderms themselves. The nostrils pointed upwards, a feature useful for an animal living a submerged lifestyle, while the hip bone was strangely similar in shape to that of Drepanosaurs, a group of animals unrelated to it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_vancleavea",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }

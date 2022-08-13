@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/lycocercus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
 			"title": "Lycocercus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Lycocercidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
 			"type": "text",
 			"text": "Lycocercus is a palaeodictyopteran from the Carboniferous period. Its fossils had preserved some patterns."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_lycocercus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

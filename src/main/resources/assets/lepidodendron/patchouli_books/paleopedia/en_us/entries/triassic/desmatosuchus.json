@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_desmatosuchus",
 			"title": "Desmatosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Pseudosuchia$(br)>Aetosauria$(br)>Stagonolepididae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xerics$(br2)>Pseudosuchia$(br)>Aetosauria$(br)>Stagonolepididae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_desmatosuchus",
 			"type": "text",
-			"text": ""
+			"text": "Desmatosuchus was a genus of aetosaurian archosaur that lived during the Late Triassic. Fossils of this widespread and abundant animal have been found across the USA, in the Dockum Formation, Chinle Formation, and Post quarry. This heavily armoured herbivore had a shovel-like nose not unlike a pig's, that it may have used to dig up soft vegetation."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_desmatosuchus",

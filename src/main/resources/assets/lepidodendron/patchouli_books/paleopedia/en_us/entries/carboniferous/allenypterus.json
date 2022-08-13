@@ -3,7 +3,7 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/allenypterus_icon.png",
 	"category": "lepidodendron:carboniferous_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"turnin": "lepidodendron:pf_adv_book_allenypterus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_allenypterus",

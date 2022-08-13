@@ -20,12 +20,12 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
 			"type": "text",
-			"text": ""
+			"text": "Sclerocormus is a basal ichthyosaur from the Early Triassic of China. The tail, longer than the body and head combined, served as a strong propulsion organ, while the tiny head, only around 6% of the total length of the body, was toothless and probably functioned in suction feeding. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sclerocormus",
 			"type": "text",
-			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+			"text": "The really early appearance of this animal in the fossil record (248 million years ago), only around 4 million years after the end Permian mass extinction event, is testament to the quick recovery of life in the earliest Triassic and the incredible evolutionary radiation of the times. $(br)>$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
 		}
 	]
 }

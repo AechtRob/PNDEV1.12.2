@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_titanoptera_gigatitan",
 			"title": "Gigatitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Titanoptera$(br)>Gigatitanidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Warm Lakeland$(br2)>Insecta$(br)>Titanoptera$(br)>Gigatitanidae"
 		},
 		{
 			"type": "image",

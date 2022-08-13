@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_brembodus",
 			"type": "text",
-			"text": ""
+			"text": "Brembodus ridens is a species of Pycnodont bony fish from the late Triassic of Italy. This fish had a round and flattened body, not dissimilar to modern day reef fishes, and possessed a characteristic elongated spike on the top of its body originating right behind the head."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brembodus",
+			"type": "text",
+			"text": "The small jaws were remarkably strong with a specialised dentition made to chew hard foods. The frontal teeth looked remarkably similar to incisors in mammals while the many back rows were oval and flattened."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brembodus",
+			"type": "text",
+			"text": "Brembodus was one of the first pycnodonts, a group of durophagous animals characteristic of most of the Mesozoic and the beginning of the Cenozoic. Brembodus lived around cliff sides and rocks, slowly swimming while foraging for food."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_brembodus",

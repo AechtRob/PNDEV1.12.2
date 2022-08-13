@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_feroxichthys",
 			"title": "Feroxichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Neopterygii$(br)>Colobodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
 			"type": "text",
-			"text": ""
+			"text": "Feroxichthys is a genus of Colobodontid Actinopterygian from the Middle Triassic of China. 30-40 cm in length, Feroxichthys had a blunt head and a fusiform body ending in a short heterocercal tail that began developing right after the end of the pelvic fins."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
+			"type": "text",
+			"text": "Most characteristic of all in the fish are the peg shaped teeth, much longer and robust than in other members of its family. Of the recognized species, F. panzhouensis is particularly recognizable from the longer teeth and the peculiar hunchback-like shape of the first half of the body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_feroxichthys",
+			"type": "text",
+			"text": "The animal lived in a shallow sea in coastal waters, its teeth suggesting a durophagous diet based on hard-to-chew foods, kept in place by the peg-like teeth as the deeper dentition made easy work of its prey. A second species lived along rockier shores but had a comparable diet. The species is of recent description, being first published in 2020."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_feroxichthys",

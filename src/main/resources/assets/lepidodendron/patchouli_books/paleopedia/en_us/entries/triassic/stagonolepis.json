@@ -9,23 +9,33 @@
 			"trigger": "lepidodendron:pf_adv_book_stagonolepis",
 			"title": "Stagonolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert Dunes, Canyons$(br2)>Pseudosuchia$(br)>Aetosauria$(br)>Stagonolepididae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/stagonolepis.png"],
-			"title": "",
+			"title": "S. robertsoni",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
 			"type": "text",
-			"text": ""
+			"text": "Stagonolepis is a genus of Aetosaurian Pseudosuchian from Europe and North America. This weirdly shaped and heavily armored herbivore possessed a beak-like tip of the mouth used to uproot vegetation, while its strong dentition allowed it to chew hard plants like the then novel Cycads."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "Recent Studies suggested that at least one species inside the genus was able to use the front limbs to dig in the soil, potentially to find roots and other vegetation for it to more easily pick."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
+			"type": "text",
+			"text": "The long body of Stagonolepis is characteristic of herbivorous Aetosaurians, developed to house the large intestines needed for it to digest plant fibers. Of the two currently recognized species, only one is of moderately recent description (2010), while the other was described in 1844 by Louis Agassiz, one of the biggest names in the field at the time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_stagonolepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
 		}
 	]
 }

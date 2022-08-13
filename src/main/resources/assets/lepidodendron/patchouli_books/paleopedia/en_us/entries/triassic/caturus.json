@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_caturus",
 			"type": "text",
-			"text": ""
+			"text": "Caturus is a genus of Amiiform bony fish that appeared in the Middle Triassic and disappeared in the Early Cretaceous. Quite widespread, the genus has been found in Europe, Asia, Africa, North and South America."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "Variable in size, the largest species could grow up to 2 meters in length with a deeply lunate tail characteristic of fast swimming predators. Due to its huge stratigraphic range, spanning 120 million years, and differences in size and shape, it's unlikely Caturus was monophyletic, meaning some of the animals we call Caturus today might've been something different."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caturus",
+			"type": "text",
+			"text": "While usually Marine, the animal has also been occasionally found in freshwater sediments in Congo, Argentina and the UK. The genus was first described by Louis Agassiz in 1834. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caturus",

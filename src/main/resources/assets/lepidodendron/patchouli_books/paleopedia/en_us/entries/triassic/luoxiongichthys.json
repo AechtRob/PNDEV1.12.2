@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_luoxiongichthys",
 			"title": "Luoxiongichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Halecomorphi"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Halecomorphi"
 		},
 		{
 			"type": "image",

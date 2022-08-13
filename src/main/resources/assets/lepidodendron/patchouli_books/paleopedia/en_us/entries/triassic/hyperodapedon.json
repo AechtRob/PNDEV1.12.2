@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyperodapedon",
 			"title": "Hyperodapedon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() All$(br2)>Reptilia$(br)>Rhynchosauria$(br)>Hyperodapedontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hyperodapedon",
 			"type": "text",
-			"text": ""
+			"text": "Hyperodapedon was a genus of rhynchosaurian reptile that lived during the Middle to Late Triassic. It was seemingly quite widespread, with fossils occurring in Africa, Asia, Europe, North America, and South America. This animal used its hind legs and beak-like snout to dig for buried plant matter, that it then processed with jaws built for precision-shearing."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hyperodapedon",
