@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eudimorphodon",
 			"title": "Eudimorphodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Pterosauria$(br)>Eudimorphodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakes, Beaches, Mountains, Flooded$(br2)>Pterosauria$(br)>Eudimorphodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eudimorphodon",
 			"type": "text",
-			"text": ""
+			"text": "One of the oldest known pterosaurs, Eudimorphodon ranzii lived during the Late Triassic in what is now Italy. Several skeletons of this animal have been found, including those of juveniles. Its name, meaning \"true two shapes of teeth\", refers to the different types of teeth in its mouth. Some of its teeth were perfectly suited to catch fish (and fish remains found in their stomach lend support to this), while other teeth are better for chewing hard-shelled insects."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eudimorphodon",

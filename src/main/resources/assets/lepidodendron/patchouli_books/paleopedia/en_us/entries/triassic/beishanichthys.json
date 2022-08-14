@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_beishanichthys",
 			"title": "Beishanichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Cladistia$(br)>Scanilepiformes"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakeland, Flooded Forest$(br2)>Actinopterygii$(br)>Cladistia$(br)>Scanilepiformes"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_beishanichthys",
 			"type": "text",
-			"text": ""
+			"text": "Beishanichthys brevicaudalis is a species of early Triassic Actinopterygian from China. Able to grow up to 70 cm in length, this fish possessed a long and fusiform body with a characteristically long dorsal fin ending almost at the beginning of the fan shaped tail."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beishanichthys",
+			"type": "text",
+			"text": "The large orbits and body, alongside the other characteristics of its anatomy, suggest it was a large predator in his waters, feeding on smaller bony fishes, one that probably was quite rare in its native environment."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_beishanichthys",
+			"type": "text",
+			"text": "The species was first described in 2011 from fossil remains found on Beishan hill in the Gansu province of China, in early Triassic lacustrine sediments."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_beishanichthys",

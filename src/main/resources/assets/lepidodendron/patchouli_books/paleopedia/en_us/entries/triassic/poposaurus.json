@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_poposaurus",
 			"title": "Poposaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Pseudosuchia$(br)>Poposauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakelands, Volcanic Hills$(br2)>Pseudosuchia$(br)>Poposauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_poposaurus",
 			"type": "text",
-			"text": ""
+			"text": "Poposaurus is a genus of non dinosaurian Archosaur from the Late Triassic of North America. Quite unlike many other animals of its time, the nature of this organism has been contested several times since its initial description in 1915. Eventually classified as the namesake to its own group of animals, the Poposauroidea, this animal now sits close to another few animals, several of which also present in this mod, like Effigia, Sillosuchus and Arizonasaurus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poposaurus",
+			"type": "text",
+			"text": "Particularly interesting in Poposaurus is its way of walking, similar in many aspects to Theropod dinosaurs but independently evolved. Both these groups, in fact, were obligate bipeds with their legs sitting below the body."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_poposaurus",
+			"type": "text",
+			"text": "In 2011 an in-depth study was conducted on the leg bones of Poposaurus, allowing us to reconstruct their muscle structure and proving, once again, how this animal, more closely related with a crocodile than a bird, was uncannily close in muscle anatomy to that of the latter, although having some muscles unique to its crocodilian ancestry. The same study also proposed Poposaurus to have practiced cuirassal breathing, meaning he used a series of muscles in the abdomen to breathe."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_poposaurus",

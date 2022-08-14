@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eretmorhipis",
 			"title": "Eretmorhipis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Beaches$(br2)>Reptilia$(br)>Hupehsuchia$(br)>Hupehsuchidae"
 		},
 		{
 			"type": "image",

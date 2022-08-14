@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_semionotus",
 			"title": "Semionotus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
+			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Marine, Freshwater$(br2)>Actinopterygii$(br)>Semionotiformes$(br)>Semionotidae"
 		},
 		{
 			"type": "image",

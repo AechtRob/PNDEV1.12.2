@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_scleromochlus",
 			"title": "Scleromochlus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Archosauriformes$(br)>Eucrocopoda$(br)>Scleromochlidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert Dunes$(br2)>Archosauriformes$(br)>Eucrocopoda$(br)>Scleromochlidae"
 		},
 		{
 			"type": "image",

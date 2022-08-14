@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_caelestiventus",
 			"title": "Caelestiventus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Pterosauria$(br)>Dimorphodontidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Desert$(br2)>Pterosauria$(br)>Dimorphodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
 			"type": "text",
-			"text": ""
+			"text": "Caelestiventus  hanseni is a species of Dimorphodontid pterosaur from the late Triassic of the United States. Described officially in 2018, the remains of this animal were known and shown in scientific literature as far back as 2015, having its unnamed remains presented in Portsmouth that year in occasion of a symposium on pterosaurs."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
+			"type": "text",
+			"text": "Of importance for many reasons, Caelestiventus has extended the range of Dimorphodontids back into the Triassic and demonstrated the presence of early pterosaurs in desert environments."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_caelestiventus",
+			"type": "text",
+			"text": "Largest among the known Triassic pterosaurs, Caelestiventus had a wingspan of 1.5 m and potentially larger, as indicated from the immature stage of the only known fossil. The animal is known from only one partial specimen composed by several skull bones and one carpal of the wing."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_caelestiventus",

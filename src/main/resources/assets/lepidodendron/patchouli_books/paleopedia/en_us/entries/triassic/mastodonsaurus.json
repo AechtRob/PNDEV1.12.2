@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"title": "Mastodonsaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Amphibia$(br)>Temnospondyli$(br)>Capitosauria$(br)>Mastodonsauridae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Amphibia$(br)>Temnospondyli$(br)>Capitosauria$(br)>Mastodonsauridae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",
 			"type": "text",
-			"text": ""
+			"text": "Mastodonsaurus was a genus of temnospondyl found across Europe. This amphibian, being one of the largest ever, was a bottom-dwelling ambush predator, using its large head to swallow up anything it could, including fish, other temnospondyls, and rarely even archosaurs that strayed too close to the water’s edge. Mass grave sites of this animal have been found, created when the ponds or swamps this animal lived in dried up, making the heavy, aquatic amphibians dehydrate and crush themselves under their own weight."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_mastodonsaurus",

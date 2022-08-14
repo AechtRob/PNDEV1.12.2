@@ -1885,23 +1885,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Delitzschala
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Dunbaria
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Homaloneura
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Homoioptera
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Lithomantis
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Lycocercus
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Stenodictya
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyopteraNymph
-					|| event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyopteraNymphPerm) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_PALAEODICTYOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				event.setCanceled(true);
-				return;
-			}
+			
 			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeoisopus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_PALAEOISOPUS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -3928,6 +3912,70 @@ public class LepidodendronBookSubscribers {
 			else if (event.getTarget() instanceof EntityPrehistoricFloraWeigeltisaurus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_WEIGELTISAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Delitzschala) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_DELITZSCHALA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Dunbaria) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_DUNBARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Homaloneura) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_HOMALONEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Homoioptera) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_HOMOIOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Lithomantis) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_LITHOMANTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Lycocercus) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_LYCOCERCUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_SINODUNBARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (event.getTarget() instanceof EntityPrehistoricFloraPalaeodictyoptera_Stenodictya) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_PALAEODICTYOPTERA_STENODICTYA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);

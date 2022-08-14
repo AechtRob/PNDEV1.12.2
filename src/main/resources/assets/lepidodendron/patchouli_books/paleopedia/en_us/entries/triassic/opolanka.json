@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_opolanka",
 			"title": "Opolanka",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Arthropoda$(br)>Crustacea$(br)>Cyclida"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Arthropoda$(br)>Crustacea$(br)>Cyclida"
 		},
 		{
 			"type": "image",

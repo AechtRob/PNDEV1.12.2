@@ -252,7 +252,14 @@ public class ModTriggers
     public static final CustomTrigger CLICK_OSTEOLEPIS = new CustomTrigger("pf_book_osteolepis");
     public static final CustomTrigger CLICK_OTTOIA = new CustomTrigger("pf_book_ottoia");
     public static final CustomTrigger CLICK_PAGEA = new CustomTrigger("pf_book_pagea");
-    public static final CustomTrigger CLICK_PALAEODICTYOPTERA = new CustomTrigger("pf_book_palaeodictyoptera");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_DELITZSCHALA = new CustomTrigger("pf_book_palaeodictyoptera_delitzschala");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_DUNBARIA = new CustomTrigger("pf_book_palaeodictyoptera_dunbaria");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_HOMALONEURA = new CustomTrigger("pf_book_palaeodictyoptera_homaloneura");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_HOMOIOPTERA = new CustomTrigger("pf_book_palaeodictyoptera_homoioptera");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_LITHOMANTIS = new CustomTrigger("pf_book_palaeodictyoptera_lithomantis");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_LYCOCERCUS = new CustomTrigger("pf_book_palaeodictyoptera_lycocercus");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_STENODICTYA = new CustomTrigger("pf_book_palaeodictyoptera_stenodictya");
+    public static final CustomTrigger CLICK_PALAEODICTYOPTERA_SINODUNBARIA = new CustomTrigger("pf_book_palaeodictyoptera_sinodunbaria");
     public static final CustomTrigger CLICK_PALAEOISOPUS = new CustomTrigger("pf_book_palaeoisopus");
     public static final CustomTrigger CLICK_ANCIENT_JELLY = new CustomTrigger("pf_book_ancientjelly");
     public static final CustomTrigger CLICK_PALAEONTINID = new CustomTrigger("pf_book_palaeontinid");
@@ -749,7 +756,6 @@ public class ModTriggers
             CLICK_OSTEOLEPIS,
             CLICK_OTTOIA,
             CLICK_PAGEA,
-            CLICK_PALAEODICTYOPTERA,
             CLICK_PALAEOISOPUS,
             CLICK_ANCIENT_JELLY,
             CLICK_PALAEONTINID,
@@ -995,7 +1001,15 @@ public class ModTriggers
             CLICK_LITUITES,
             CLICK_CIDAROIDA,
             CLICK_ARCHAEOCIDARIS,
-            CLICK_CERATODUS
+            CLICK_CERATODUS,
+            CLICK_PALAEODICTYOPTERA_DELITZSCHALA,
+            CLICK_PALAEODICTYOPTERA_DUNBARIA,
+            CLICK_PALAEODICTYOPTERA_HOMALONEURA,
+            CLICK_PALAEODICTYOPTERA_HOMOIOPTERA,
+            CLICK_PALAEODICTYOPTERA_STENODICTYA,
+            CLICK_PALAEODICTYOPTERA_SINODUNBARIA,
+            CLICK_PALAEODICTYOPTERA_LYCOCERCUS,
+            CLICK_PALAEODICTYOPTERA_LITHOMANTIS
 
     };
 

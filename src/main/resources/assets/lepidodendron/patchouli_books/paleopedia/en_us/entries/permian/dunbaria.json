@@ -1,12 +1,12 @@
 {
 	"name": "Dunbaria",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/dunaria_icon.png",
+	"icon": "paleopedia:textures/dunbaria_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera",
+	"turnin": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 			"title": "Dunbaria",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Dunbaria$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 			"type": "text",
 			"text": "One of the later palaeodictyopteran insects, Dunbaria lived during the Early Permian in what are now parts of Russia and Kansas. Fossils of one species, D. fasciipennis, have been found with the wing patterns still preserved. In life, these insects seemingly preferred to live close to water."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera",
+			"advancement": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}

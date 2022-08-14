@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arizonasaurus",
 			"title": "Arizonasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Deltas, Canyons$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arizonasaurus",
 			"type": "text",
-			"text": ""
+			"text": "Arizonasaurus babbitti is a species of Poposauroid reptile from the middle Triassic of the United States. Originally described on a few teeth and a piece of the upper jaw in 1947, it took until 2002 for researchers to describe a more complete specimen of the animal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arizonasaurus",
+			"type": "text",
+			"text": "Perhaps most curious for the rounded sail on top of its back, supported by the long neural spines, this animal is most closely related with Ctenosauriscus, forming a family with it and other closely related animals."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arizonasaurus",
+			"type": "text",
+			"text": "Other relatives of this animal, although further removed, are Poposaurus, Sillosuchus and Lotosaurus."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arizonasaurus",

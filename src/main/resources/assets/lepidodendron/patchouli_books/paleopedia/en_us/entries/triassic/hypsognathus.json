@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hypsognathus",
 			"title": "Hypsognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xerics$(br2)>Reptilia$(br)>Parareptilia$(br)>Procolophonomorpha$(br)>Procolophonidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hypsognathus",
 			"type": "text",
-			"text": ""
+			"text": "Hypsognathus is a species of Procolophonid from the Triassic of North America. Late surviving member of its group, its small and short body would sit close to the ground where it could reach the tough vegetation it fed on. The strong and blunt teeth in his mouth would work perfectly to break down the fibers of the plants it preyed upon. The bony spikes at the sides of the head potentially acted as a defence mechanism against predators."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hypsognathus",
