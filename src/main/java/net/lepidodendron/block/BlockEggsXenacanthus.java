@@ -5,11 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
@@ -77,12 +75,6 @@ public class BlockEggsXenacanthus extends ElementsLepidodendronMod.ModElement {
 			if (biome instanceof BiomeCarboniferous) {
 				BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
 				if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh || biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp) {
-					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
-				}
-			}
-			if (biome instanceof BiomeDevonian) {
-				BiomeDevonian biomeD = (BiomeDevonian) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean && biomeD.getBiomeType() != EnumBiomeTypeDevonian.Hypersaline) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

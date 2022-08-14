@@ -61,9 +61,9 @@ public class EntityPrehistoricFloraTitanopteraGigatitan extends EntityPrehistori
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
-		this.tasks.addTask(1, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
-		this.tasks.addTask(2, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
-		this.tasks.addTask(3, new EntityAILookIdle(this));
+		this.tasks.addTask(2, new EntityPrehistoricFloraCrawlingFlyingInsectBase.AIWanderInsect());
+		this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
+		this.tasks.addTask(4, new EntityAILookIdle(this));
 	}
 
 	@Override

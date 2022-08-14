@@ -45,8 +45,8 @@ public class EntityPrehistoricFloraPoposaurus extends EntityPrehistoricFloraLand
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.05F;
-		maxWidth = 0.375F;
-		maxHeight = 0.65F;
+		maxWidth = 0.400F;
+		maxHeight = 0.775F;
 		maxHealthAgeable = 38.0D;
 	}
 
