@@ -283,7 +283,7 @@ public class ModelClevosaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body.rotateAngleY = (float)Math.toRadians(180);
-        this.body.offsetY = 1.21F;
+        this.body.offsetY = 1.18F;
         this.body.offsetZ = -0.10F;
 
         EntityPrehistoricFloraClevosaurus entityClevosaurus = (EntityPrehistoricFloraClevosaurus) e;

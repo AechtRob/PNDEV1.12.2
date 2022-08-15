@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_daedalichthys",
 			"type": "text",
-			"text": ""
+			"text": "Daedalichthys higginsi is a species Palaeonisciform bony fish from the Early Triassic of South Africa. Originally described in 1931, this rather obscure African bony fish had a bullet shaped head with small hook-like teeth adorning the sides of his mouth and tubercles ornamenting the skull, feature usually seen in modern day fish in males as display structures."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daedalichthys",
+			"type": "text",
+			"text": "It was of particular remark in how similar it appeared to be with later Redfieldiid fishes from the Late Triassic of North America, illustrating how little the group varied in the million years to come after it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_daedalichthys",
+			"type": "text",
+			"text": "This discovery, seemingly unremarkable to us, allowed for a series of easily identifiable characters to be discovered, ones we now use to more easily pinpoint this animal group without much doubt in its classification."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_daedalichthys",
