@@ -765,9 +765,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    } 
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -829,9 +839,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 12)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -840,7 +860,21 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     && (pos1.up(2).getY() >= world.getSeaLevel())
                                                                                     && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
                                                                             ) {
-                                                                                posCheck = true;
+                                                                                float entityHeight = entity.height;
+                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                }
+                                                                                if (entityHeight < 0.9) {
+                                                                                    posCheck = true;
+                                                                                }
+                                                                                else if (entityHeight < 1.9) {
+                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                        posCheck = true;
+                                                                                    }
+                                                                                }
+                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
+                                                                                    posCheck = true;
+                                                                                }
                                                                             }
                                                                         }
                                                                         else if (biome instanceof BiomeOrdovician) {
@@ -850,9 +884,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 25)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -862,7 +906,21 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     && (pos1.up(2).getY() >= world.getSeaLevel())
                                                                                     && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
                                                                             ) {
-                                                                                posCheck = true;
+                                                                                float entityHeight = entity.height;
+                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                }
+                                                                                if (entityHeight < 0.9) {
+                                                                                    posCheck = true;
+                                                                                }
+                                                                                else if (entityHeight < 1.9) {
+                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                        posCheck = true;
+                                                                                    }
+                                                                                }
+                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
+                                                                                    posCheck = true;
+                                                                                }
                                                                             }
                                                                         }
                                                                         else if (biome instanceof BiomeSilurian) {
@@ -872,9 +930,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 5)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -883,9 +951,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 25)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -894,7 +972,21 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     && (pos1.up(2).getY() >= world.getSeaLevel())
                                                                                     && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
                                                                             ) {
-                                                                                posCheck = true;
+                                                                                float entityHeight = entity.height;
+                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                }
+                                                                                if (entityHeight < 0.9) {
+                                                                                    posCheck = true;
+                                                                                }
+                                                                                else if (entityHeight < 1.9) {
+                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                        posCheck = true;
+                                                                                    }
+                                                                                }
+                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
+                                                                                    posCheck = true;
+                                                                                }
                                                                             }
                                                                         }
                                                                         else if (biome == BiomeCambrianSea.biome || biome == BiomeCambrianBiome.biome) {
@@ -902,9 +994,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                     && (pos1.getY() > world.getSeaLevel() - 50)) {
                                                                                 //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                 //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                if (entity.height < 0.9) {
+                                                                                float entityHeight = entity.height;
+                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                }
+                                                                                if (entityHeight < 0.9) {
                                                                                     posCheck = true;
-                                                                                } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                }
+                                                                                else if (entityHeight < 1.9) {
+                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                        posCheck = true;
+                                                                                    }
+                                                                                }
+                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                     posCheck = true;
                                                                                 }
                                                                             }
@@ -1033,9 +1135,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }
@@ -1104,9 +1216,19 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                                                     //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    if (entity.height < 0.9) {
+                                                                                    float entityHeight = entity.height;
+                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                                    }
+                                                                                    if (entityHeight < 0.9) {
                                                                                         posCheck = true;
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    }
+                                                                                    else if (entityHeight < 1.9) {
+                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                            posCheck = true;
+                                                                                        }
+                                                                                    }
+                                                                                    else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
                                                                                         posCheck = true;
                                                                                     }
                                                                                 }

@@ -1156,6 +1156,7 @@ public class LepidodendronMod {
 	//public static final ResourceLocation STANOCEPHALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/stanocephalosaurus"));
 	public static final int ENTITY_TANYSTROPHEUS = 459;
 	public static final ResourceLocation TANYSTROPHEUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanystropheus"));
+	public static final ResourceLocation TANYSTROPHEUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tanystropheus_young"));
 	public static final int ENTITY_TERATERPETON = 460;
 	//public static final ResourceLocation TERATERPETON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/teraterpeton"));
 	public static final int ENTITY_TEYUJAGUA = 461;

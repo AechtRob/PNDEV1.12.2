@@ -515,8 +515,8 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
 
                 this.walk(neckbase, speed * 4, 0.01F, false, 2.5F, 0.01F, f2, 0.8F);
 
-                this.walk(neck, speed * 0.5F, 0.10F * 2.25F, false, 2.5F, 0.10F * 2.25F, f2, 0.9F);
-                this.walk(head, speed * 0.5F, 0.10F * 2.25F, false, 2.5F, 0F, f2, 0.9F);
+                this.walk(neck, speed * 0.5F, 0.01F * 2.25F, false, 2.5F, 0.10F * 2.25F, f2, 0.9F);
+                this.walk(head, speed * 0.5F, 0.02F * 2.25F, false, 2.5F, 0F, f2, 0.9F);
 
                 this.chainWave(Tail, (speed * 0.5F), 0.125F * 0.15F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.5F) * 4F, 0.05F * 0.65F, 0.12F, f2, 1F);
@@ -539,7 +539,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
             this.chainSwing(Tail, speed, 0.35F, -3, f2, 1F);
 
             //this.chainWave(Torso, speed, 0.025F, -3, f2, 1);
-            this.chainSwing(Torso, speed, 0.125F, -3, f2, 1F);
+            this.chainSwing(Torso, speed, 0.115F, -3, f2, 1F);
 
             this.bob(body2, speed, 0.4F, false, f2, 1F);
             this.body2.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(3.0F), false, 1.75F, f2, 1) + offsetZ;

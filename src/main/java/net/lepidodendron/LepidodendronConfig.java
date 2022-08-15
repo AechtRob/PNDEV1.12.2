@@ -165,8 +165,8 @@ public class LepidodendronConfig {
     public static String[] dimPermianMobsDesertFA = new String[0];
     public static String[] dimPermianMobsMountainsFA = new String[0];
 
-    public static String[] dimTriassicMobsOceanFA = new String[]{"fossil:fossil.coelacanth:2:30:3", "fossil:fossil_ichthyosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
-    public static String[] dimTriassicMobsOceanClamBedsFA = new String[]{"fossil:fossil.coelacanth:2:30:3", "fossil:fossil_ichthyosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
+    public static String[] dimTriassicMobsOceanFA = new String[]{"fossil:fossil.nautilus:2:20:2","fossil:fossil.nautilus:2:20:3","fossil:fossil.coelacanth:2:30:7", "fossil:fossil_ichthyosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
+    public static String[] dimTriassicMobsOceanClamBedsFA = new String[]{"fossil:fossil.nautilus:2:20:2","fossil:fossil.nautilus:2:20:3","fossil:fossil.coelacanth:2:30:7", "fossil:fossil_ichthyosaurus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
     public static String[] dimTriassicMobsRiverFA = new String[0];
     public static String[] dimTriassicMobsXericForestFA = new String[0];
     public static String[] dimTriassicMobsXericShrublandFA = new String[0];
@@ -1968,6 +1968,7 @@ public class LepidodendronConfig {
     public static int waterCartorhynchus = 8; //not editable - does not affect mob health, only AI
     public static int waterAtopodentatus = 10; //not editable - does not affect mob health, only AI
     public static int waterHenodus = 5; //not editable - does not affect mob health, only AI
+    public static int waterTanystropheus = 10; //not editable - does not affect mob health, only AI
     public static int waterKalbarria = 2;
     public static int waterEricixerxes = 2;
     public static int waterAcanthostega = 2;
