@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/limulid.png"],
+			"images": ["paleopedia:textures/limulus.png"],
 			"title": "Limulus",
 			"text": ""
 		},
