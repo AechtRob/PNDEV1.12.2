@@ -56,6 +56,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelCartorhynchus modelCartorhynchus;
     private static final ResourceLocation TEXTURE_CASINERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/casineria.png");
     private final ModelCasineria modelCasineria;
+    private static final ResourceLocation TEXTURE_CAVIRAMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caviramus.png");
+    private final ModelCaviramus modelCaviramus;
     private static final ResourceLocation TEXTURE_CLAUDIOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/claudiosaurus.png");
     private final ModelClaudiosaurus modelClaudiosaurus;
     private static final ResourceLocation TEXTURE_CLEVOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/clevosaurus.png");
@@ -180,6 +182,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelCarcinosoma = new ModelCarcinosoma();
         this.modelCartorhynchus = new ModelCartorhynchus();
         this.modelCasineria = new ModelCasineria();
+        this.modelCaviramus = new ModelCaviramus();
         this.modelClaudiosaurus = new ModelClaudiosaurus();
         this.modelClevosaurus = new ModelClevosaurus();
         this.modelCyamodus = new ModelCyamodus();
@@ -416,6 +419,16 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_CASINERIA);
                         GlStateManager.scale(0.14F,0.14F,0.14F);
                         modelCasineria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemCaviramusRaw.block) {
+                        double offset = 0.34;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_CAVIRAMUS);
+                        GlStateManager.scale(0.14F,0.14F,0.14F);
+                        modelCaviramus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemClaudiosaurusRaw.block) {
                         double offset = 0.23;

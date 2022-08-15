@@ -104,6 +104,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelEricixerxes modelEricixerxes;
     private static final ResourceLocation TEXTURE_EURYPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
     private final ModelEurypterus modelEurypterus;
+    private static final ResourceLocation TEXTURE_GONDWANASCORPIO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_gondwanascorpio.png");
+    private final ModelScorpion modelScorpion;
     private static final ResourceLocation TEXTURE_FORESTROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_forest.png");
     private static final ResourceLocation TEXTURE_GIGATITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_gigatitan.png");
     private static final ResourceLocation TEXTURE_GIGATITAN_WING = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_gigatitan_wing.png");
@@ -188,6 +190,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_PALAEOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_1.png");
     private static final ResourceLocation TEXTURE_PARADOXIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paradoxides.png");
     private final ModelParadoxides modelParadoxides;
+    private static final ResourceLocation TEXTURE_PARAPEYTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parapeytoia.png");
+    private final ModelParapeytoia modelParapeytoia;
     private static final ResourceLocation TEXTURE_PARVANCORINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parvancorina.png");
     private final ModelParvancorina modelParvancorina;
     private static final ResourceLocation TEXTURE_PAUCIPODIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paucipodia.png");
@@ -321,6 +325,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelPalaeoisopus = new ModelPalaeoisopus();
         this.modelPalaeontinid = new ModelPalaeontinid();
         this.modelParadoxides = new ModelParadoxides();
+        this.modelParapeytoia = new ModelParapeytoia();
         this.modelParvancorina = new ModelParvancorina();
         this.modelPaucipodia = new ModelPaucipodia();
         this.modelPhantaspis = new ModelPhantaspis();
@@ -332,6 +337,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelRetifacies = new ModelRetifacies();
         this.modelRoachoid = new ModelRoachoid();
         this.modelSchinderhannes = new ModelSchinderhannes();
+        this.modelScorpion= new ModelScorpion();
         this.modelSelenopeltis = new ModelSelenopeltis();
         this.modelSiberion = new ModelSiberion();
         this.modelSidneyia = new ModelSidneyia();
@@ -1717,6 +1723,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_EURYPTERUS);
                         modelEurypterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemScorpionGondwanascorpioRaw.block) {
+                        double offset = 0.15;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.61F,0.61F,0.61);
+                        this.bindTexture(TEXTURE_GONDWANASCORPIO);
+                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemRoachoidForestRaw.block) {
                         double offset = 0.29;
@@ -3264,6 +3304,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(2.3F,2.3F,2.3F);
                         this.bindTexture(TEXTURE_PARADOXIDES);
                         modelParadoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemParapeytoiaRaw.block) {
+                        double offset = 0.3;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.2F,1.2F,1.2F);
+                        this.bindTexture(TEXTURE_PARAPEYTOIA);
+                        modelParapeytoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemParvancorinaRaw.block) {
                         double offset = 0.6;

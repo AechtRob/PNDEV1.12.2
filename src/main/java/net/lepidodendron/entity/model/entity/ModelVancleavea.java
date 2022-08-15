@@ -370,8 +370,12 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.body.offsetZ = -0.3F;
-        this.body.render(0.1F);
+        this.neck1.offsetZ = -0.3F;
+        this.head.rotateAngleX = (float)Math.toRadians(2.5);
+        this.neck1.rotateAngleX = (float)Math.toRadians(0);
+        this.neck2.rotateAngleX = (float)Math.toRadians(20);
+        this.lowerjaw.rotateAngleX = (float)Math.toRadians(25);
+        this.neck1.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
