@@ -20,7 +20,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_eoraptor",
 			"type": "text",
-			"text": ""
+			"text": "Eoraptor lunensis is a species of small basal dinosaur from the late Triassic of Argentina. Despite its name and appearance, which might mislead, this animal wasn't a \"raptor\" or even a theropod dinosaur like the more well known Coelophysis; instead Eoraptor was a basal member of the Sauropodomorpha, the same group that would eventually give rise to the giant Plateosaurus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoraptor",
+			"type": "text",
+			"text": "Thanks to the preservation of the known specimens, one of which an almost complete skeleton, we have ample documentation on the teeth of Eoraptor, the shapes of which hint at it having been an omnivorous animal."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoraptor",
+			"type": "text",
+			"text": "Around 1.3 m in length and weighting less than 10 kg, this small dinosaur is still today considered to be among the first of the lineage. Being an able sprinter it could catch up to small prey and using its arms and claws it could probably hold onto it."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoraptor",
+			"type": "text",
+			"text": "Originally discovered by Paul Sereno in 1993 in what is now the Ichigualasto Formation of Argentina, today a desert valley, at the time of Eoraptor the area was a volcanic river valley."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eoraptor",
+			"type": "text",
+			"text": "Alongside its remains, other dinosaurian and non dinosaurian bones were found, although at the time dinosaurs were a minority in comparison to other tetrapods, only composing around 6% of the total fauna found in the digsite. "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eoraptor",

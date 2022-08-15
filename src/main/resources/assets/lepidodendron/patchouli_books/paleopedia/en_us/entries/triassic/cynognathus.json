@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",
 			"type": "text",
-			"text": ""
+			"text": "Cynognathus crateronotus is a species of non mammalian Therapsid from the middle Triassic of Africa, South America and Antarctica. Around 1.2 m long on average, with only rare specimens reaching 2 m, the numerous fossil remains of the species allowed us to reconstruct it quite in detail. The up to 37 cm long skull was heavily built and elongated, taking a shape reminiscent of a modern day dog's, from which the genus name \"Dog jaw\" came from."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cynognathus",
+			"type": "text",
+			"text": "The skull, if seen from above, looked vaguely triangular in shape, with the area towards the back (called the temporal region) being short and perfectly suited for the attachment of strong muscles the animal would've used to chew. As with the top of the skull, the jaw too was adapted to host strong muscles, giving this animal an exceptionally powerful bite. Although unclear if Cynognathus had any kind of fur or just a thick layer of skin, small holes at the top of the snout hint at the presence of a network of vascular canals and nervous ends, in mammals seen in coincidence with the presence of whiskers."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cynognathus",
+			"type": "text",
+			"text": "The animal was first described in 1894 by British palaeontologist Harry Govier Seeley upon remains from the African continent and originally assigned to three different species. Subsequent finds in South America led to the description of further species and a landslide of junior synonims. This classification wasn't meant to last, however, as in 1972 the remains were found to all be from one single species exhibiting a large range of intraspecific variation and ontogenetic stages."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cynognathus",

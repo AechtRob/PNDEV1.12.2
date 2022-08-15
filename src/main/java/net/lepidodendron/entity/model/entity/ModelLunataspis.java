@@ -2,6 +2,8 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraLimulid;
+import net.lepidodendron.entity.EntityPrehistoricFloraLunataspis;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -198,7 +200,7 @@ public class ModelLunataspis extends AdvancedModelBase {
 
         AdvancedModelRenderer[] Tail = {this.tail};
 
-        if (f3 != 0) {
+        if (isAtBottom || !e.isInWater()) {
             //Left
             this.swing(leg1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
             this.swing(leg2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
@@ -212,9 +214,9 @@ public class ModelLunataspis extends AdvancedModelBase {
             this.swing(leg8, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
             this.swing(leg9, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
             this.swing(leg10, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
-        }
-
-        if (isAtBottom) {
+        } else if (f3 > 0) {
+            this.body.rotateAngleZ = (float) Math.toRadians(180);
+            this.body.rotateAngleX = (float) Math.toRadians(20);
             this.chainSwing(Tail, 0.1F, 0.2F, -2, f2, 1.0F);
             this.chainWave(Tail, 0.1F, 0.05f, -2, f2, 0F);
             this.bob(body, 0.0F, 0.0F, false, f2, 1);

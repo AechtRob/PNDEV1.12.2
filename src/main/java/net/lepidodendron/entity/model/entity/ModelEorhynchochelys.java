@@ -303,7 +303,7 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
         else {
 
             if (f3 == 0.0F) {
-                this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
+               // this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
                 this.chainSwing(Tail, speed * 0.8F, 0.06F, -3, f2, 0.8F);
                 return;
             }

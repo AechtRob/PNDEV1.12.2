@@ -337,7 +337,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.23F;
+            this.body.offsetY = 1.22F;
         }
 
     }

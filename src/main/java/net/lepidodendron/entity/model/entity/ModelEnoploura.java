@@ -134,7 +134,7 @@ public class ModelEnoploura extends AdvancedModelBase {
             this.swing(body, speed, 0.06F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 //this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.25F;
+                this.body.offsetY = 1.2F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }

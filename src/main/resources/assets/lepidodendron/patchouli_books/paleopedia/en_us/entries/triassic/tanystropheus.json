@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
 			"type": "text",
-			"text": ""
+			"text": "Tanystropheus hydroides was a genus of tanystropheid archosauromorph reptile from the middle triassic period. This animal is extremely recognizable, bearing a 3 meter long neck which was longer than the body and tail combined! "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
+			"type": "text",
+			"text": "This neck only had 13 vertebrae structured in such a way in that the animal was unable to look upward, but could bend the neck sideways at incredible angles. These adaptations, including the animal’s head filled with long, outward-facing "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_tanystropheus",
+			"type": "text",
+			"text": "teeth, were perfectly adapted for snatching schooling fish. Recent studies on the animal have revealed that it would have swam by alternatively kicking the back legs, not too different from some types of turtles"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_tanystropheus",

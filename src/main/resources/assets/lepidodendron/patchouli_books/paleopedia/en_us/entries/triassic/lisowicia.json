@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lisowicia",
 			"type": "text",
-			"text": ""
+			"text": "Lisowicia boyani was a dicynodont synapsid that lived during the Late Triassic in what is now Lipie Śląskie in Poland. Standing at an estimated 2 metres (6.6 feet) tall at the hip and 4.5 metres (15 feet) long, and around 5-7 tons in weight, this elephant-sized animal was not only the largest known dicynodont, its size would not be surpassed by any other synapsid "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lisowicia",
+			"type": "text",
+			"text": "(mammalian or otherwise) until the Eocene! Lisowicia lived in wet, Everglades-like swamps, where it grazed on the abundant vegetation. The age of the digsite the animal was recovered from has been contested over the years, some dating it back to the latest stage of the Triassic, which would extend the range of dicynodonts further than previously known."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lisowicia",
+			"type": "text",
+			"text": "Later studies based also on the fauna of the locale instead seem to point out at an older stage of the Late Triassic, one that would have Lisowicia be contemporary to other late Dycinodonts."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lisowicia",
