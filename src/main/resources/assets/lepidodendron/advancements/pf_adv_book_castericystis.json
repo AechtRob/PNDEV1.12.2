@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:castericystis"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_castericystis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_castericystis.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_castericystis"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

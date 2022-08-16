@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:crinoid_scyphocrinus_item"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_scyphocrinus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_scyphocrinus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_scyphocrinus"
+		}
+	}
+}
+
+
+
+
+
+
+
+

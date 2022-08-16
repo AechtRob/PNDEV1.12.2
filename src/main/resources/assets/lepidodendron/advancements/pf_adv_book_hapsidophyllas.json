@@ -1,0 +1,39 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:hapsidophyllas"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_hapsidophyllas.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_hapsidophyllas.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_hapsidophyllas"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

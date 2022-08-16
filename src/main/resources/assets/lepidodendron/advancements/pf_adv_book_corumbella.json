@@ -1,0 +1,44 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:corumbella"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_corumbella.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_corumbella.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_corumbella"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

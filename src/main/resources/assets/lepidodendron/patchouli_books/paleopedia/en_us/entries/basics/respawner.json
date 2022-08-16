@@ -5,7 +5,7 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "The respawner is an item similar in appearance to a bone wand. This item, that will also need to be enchanted with Time Reversal similarly to the bone wand, will allow a player to respawn animals in the prehistoric dimensions in a limited range around the player. Simply right clicking with the item in hand will force this respawning to take place."
+			"text": "The respawner is an item similar in appearance to a bone wand. This item, that will also need to be enchanted with Time Reversal similarly to the bone wand, will allow a player to respawn all native animals in any any biome in a limited range around the player. Simply right clicking with the item in hand will force this respawning to take place."
 		},
 		{
 			"type": "crafting",
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "text",
-			"text": "Each time a player right clicks it will have a chance to spawn biome appropriate animals in the area, with a chance that it might fail. WARNING: repetitive right click will force the respawn of creatures in the area each time, which might cause lag."
+			"text": "Each time a player right clicks it will have a chance to spawn biome appropriate animals in the area, with a chance that it might fail. It should also work for most modded and all vanilla mobs. WARNING: repetitive right click will force the respawn of creatures in the area each time, which might cause lag."
 		},
 		{
 			"type": "text",

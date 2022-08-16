@@ -316,6 +316,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	    		//Check the water column:
 	    		if (worldIn.isAirBlock(pos.up(colWater + 1))
 	    			|| worldIn.getBlockState(pos.up(colWater + 1)).getMaterial() == Material.ICE
+					|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock().isReplaceable(worldIn, pos.up(colWater + 1))
 	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboBud.block
 	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboFlower.block
 	    		 	|| worldIn.getBlockState(pos.up(colWater + 1)).getBlock() == BlockNelumboFlowerPlaceable.block)

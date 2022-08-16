@@ -1,0 +1,34 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:escumasia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_escumasia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_escumasia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_escumasia"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:thectardis"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_thectardis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_thectardis.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_thectardis"
+		}
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:charnia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_charnia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_charnia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_charnia"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

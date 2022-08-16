@@ -27,6 +27,112 @@ public class ModTriggers
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
 
     //Knowledge of blocks:
+    //Precambrian:
+    public static final CustomTrigger CLICK_ARBOREA = new CustomTrigger("pf_book_arborea");
+    public static final CustomTrigger CLICK_ARKARUA = new CustomTrigger("pf_book_arkarua");
+    public static final CustomTrigger CLICK_AUSIA = new CustomTrigger("pf_book_ausia");
+    public static final CustomTrigger CLICK_BOMAKELLIA = new CustomTrigger("pf_book_bomakellia");
+    public static final CustomTrigger CLICK_BRADGATIA = new CustomTrigger("pf_book_bradgatia");
+    public static final CustomTrigger CLICK_BURYKHIA = new CustomTrigger("pf_book_burykhia");
+    public static final CustomTrigger CLICK_CHARNIA = new CustomTrigger("pf_book_charnia");
+    public static final CustomTrigger CLICK_CHARNIODISCUS = new CustomTrigger("pf_book_charniodiscus");
+    public static final CustomTrigger CLICK_CLOUDINA = new CustomTrigger("pf_book_cloudina");
+    public static final CustomTrigger CLICK_CONOMEDUSITES = new CustomTrigger("pf_book_conomedusites");
+    public static final CustomTrigger CLICK_CORONACOLLINA = new CustomTrigger("pf_book_coronacollina");
+    public static final CustomTrigger CLICK_CORUMBELLA = new CustomTrigger("pf_book_corumbella");
+    public static final CustomTrigger CLICK_FUNISIA = new CustomTrigger("pf_book_funisia");
+    public static final CustomTrigger CLICK_GRYPANIA = new CustomTrigger("pf_book_grypania");
+    public static final CustomTrigger CLICK_HAOOTIA = new CustomTrigger("pf_book_haootia");
+    public static final CustomTrigger CLICK_HAPSIDOPHYLLAS = new CustomTrigger("pf_book_hapsidophyllas");
+    public static final CustomTrigger CLICK_INARIA = new CustomTrigger("pf_book_inaria");
+    public static final CustomTrigger CLICK_NAMACALATHUS = new CustomTrigger("pf_book_namacalathus");
+    public static final CustomTrigger CLICK_NAMAPOIKIA = new CustomTrigger("pf_book_namapoikia");
+    public static final CustomTrigger CLICK_PAMBIKALBAE = new CustomTrigger("pf_book_pambikalbae");
+    public static final CustomTrigger CLICK_PARVISCOPA = new CustomTrigger("pf_book_parviscopa");
+    public static final CustomTrigger CLICK_PRIMOCANDELABRUM = new CustomTrigger("pf_book_primocandelabrum");
+    public static final CustomTrigger CLICK_PTERIDINIUM = new CustomTrigger("pf_book_pteridinium");
+    public static final CustomTrigger CLICK_SWARTPUNTIA = new CustomTrigger("pf_book_swartpuntia");
+    public static final CustomTrigger CLICK_TAWUIA = new CustomTrigger("pf_book_tawuia");
+    public static final CustomTrigger CLICK_THECTARDIS = new CustomTrigger("pf_book_thectardis");
+    public static final CustomTrigger CLICK_TRIBRACHIDIUM = new CustomTrigger("pf_book_tribrachidium");
+    public static final CustomTrigger CLICK_VENTOGYRUS = new CustomTrigger("pf_book_ventogyrus");
+    public static final CustomTrigger CLICK_SPONGE = new CustomTrigger("pf_book_sponge");
+
+    //Cambrian:
+    public static final CustomTrigger CLICK_ALLONNIA = new CustomTrigger("pf_book_allonnia");
+    public static final CustomTrigger CLICK_CASTERICYSTIS = new CustomTrigger("pf_book_castericystis");
+    public static final CustomTrigger CLICK_DINOMISCHUS = new CustomTrigger("pf_book_dinomischus");
+    public static final CustomTrigger CLICK_ECHMATOCRINUS = new CustomTrigger("pf_book_echmatocrinus");
+    public static final CustomTrigger CLICK_GOGIA = new CustomTrigger("pf_book_gogia");
+    public static final CustomTrigger CLICK_HELICOCYSTIS = new CustomTrigger("pf_book_helicocystis");
+    public static final CustomTrigger CLICK_HERPETOGASTER = new CustomTrigger("pf_book_herpetogaster");
+    public static final CustomTrigger CLICK_LEPIDOCYSTIS = new CustomTrigger("pf_book_lepidocystis");
+    public static final CustomTrigger CLICK_LYRACYSTIS = new CustomTrigger("pf_book_lyracystis");
+    public static final CustomTrigger CLICK_SIPHUSAUCTUM = new CustomTrigger("pf_book_siphusauctum");
+    public static final CustomTrigger CLICK_SEA_ANEMONE = new CustomTrigger("pf_book_seaanemone");
+    public static final CustomTrigger CLICK_XIANGUANGIA = new CustomTrigger("pf_book_xianguangia");
+    public static final CustomTrigger CLICK_PIRANIA = new CustomTrigger("pf_book_pirania");
+    public static final CustomTrigger CLICK_CHAUNOGRAPTUS = new CustomTrigger("pf_book_chaunograptus");
+    public static final CustomTrigger CLICK_DICTYONEMA = new CustomTrigger("pf_book_dictyonema");
+    public static final CustomTrigger CLICK_STROMATOCYSTITES = new CustomTrigger("pf_book_stromatocystites");
+    public static final CustomTrigger CLICK_STROMATOVERIS = new CustomTrigger("pf_book_stromatoveris");
+    public static final CustomTrigger CLICK_THAUMAPTILON = new CustomTrigger("pf_book_thaumaptilon");
+    public static final CustomTrigger CLICK_FACIVERMIS = new CustomTrigger("pf_book_facivermis");
+    public static final CustomTrigger CLICK_OESIAMARGARETIA = new CustomTrigger("pf_book_oesiamargaretia");
+
+
+    //Ordovician:
+    public static final CustomTrigger CLICK_ARISTOCYSTITES = new CustomTrigger("pf_book_aristocystites");
+    public static final CustomTrigger CLICK_AULACERA = new CustomTrigger("pf_book_aulacera");
+    public static final CustomTrigger CLICK_BLASTOIDS = new CustomTrigger("pf_book_blastoids");
+    public static final CustomTrigger CLICK_BIVALVE = new CustomTrigger("pf_book_bivalve");
+    public static final CustomTrigger CLICK_BOLBOPORITES = new CustomTrigger("pf_book_bolboporites");
+    public static final CustomTrigger CLICK_CARYOCRINITES = new CustomTrigger("pf_book_caryocrinites");
+    public static final CustomTrigger CLICK_DENDROGRAPTUS = new CustomTrigger("pf_book_dendrograptus");
+    public static final CustomTrigger CLICK_ECHINOSPHAERITES = new CustomTrigger("pf_book_echinosphaerites");
+    public static final CustomTrigger CLICK_FENESTELLA = new CustomTrigger("pf_book_fenestella");
+    public static final CustomTrigger CLICK_RUGOSA = new CustomTrigger("pf_book_rugosa");
+    public static final CustomTrigger CLICK_TABULATA = new CustomTrigger("pf_book_tabulata");
+    public static final CustomTrigger CLICK_THAMNOBEATRICEA = new CustomTrigger("pf_book_thamnobeatricea");
+    public static final CustomTrigger CLICK_TENTACULITA = new CustomTrigger("pf_book_tentaculita");
+    public static final CustomTrigger CLICK_CORNULITIDA = new CustomTrigger("pf_book_cornulitida");
+
+    //Silurian:
+    public static final CustomTrigger CLICK_ENCRINUS = new CustomTrigger("pf_book_encrinus");
+    public static final CustomTrigger CLICK_EUCALYPTOCRINITES = new CustomTrigger("pf_book_eucalyptocrinites");
+    public static final CustomTrigger CLICK_CYATHOCRINUS = new CustomTrigger("pf_book_cyathocrinus");
+    public static final CustomTrigger CLICK_PETALOCRINUS = new CustomTrigger("pf_book_petalocrinus");
+    public static final CustomTrigger CLICK_PISOCRINUS = new CustomTrigger("pf_book_pisocrinus");
+    public static final CustomTrigger CLICK_PSEUDOCRINITES = new CustomTrigger("pf_book_pseudocrinites");
+    public static final CustomTrigger CLICK_SCYPHOCRINUS = new CustomTrigger("pf_book_scyphocrinus");
+    public static final CustomTrigger CLICK_SIPHONOCRINUS = new CustomTrigger("pf_book_siphonocrinus");
+    public static final CustomTrigger CLICK_CALLICRINUS = new CustomTrigger("pf_book_callicrinus");
+
+    //Devonian:
+    public static final CustomTrigger CLICK_ANCYROCRINUS = new CustomTrigger("pf_book_ancyrocrinus");
+    public static final CustomTrigger CLICK_CUPRESSOCRINITES = new CustomTrigger("pf_book_cupressocrinites");
+    public static final CustomTrigger CLICK_MEGALODON_BIVALVE = new CustomTrigger("pf_book_megalodon_bivalve");
+    public static final CustomTrigger CLICK_VADAROCRINUS = new CustomTrigger("pf_book_vadarocrinus");
+
+    //Carboniferous:
+    public static final CustomTrigger CLICK_DIZYGOCRINUS = new CustomTrigger("pf_book_dizygocrinus");
+    public static final CustomTrigger CLICK_ESCUMASIA = new CustomTrigger("pf_book_escumasia");
+    public static final CustomTrigger CLICK_MACROCRINUS = new CustomTrigger("pf_book_macrocrinus");
+
+    //Permian:
+    public static final CustomTrigger CLICK_GIGANTOSPONGIA = new CustomTrigger("pf_book_gigantospongia");
+    public static final CustomTrigger CLICK_JIMBACRINUS = new CustomTrigger("pf_book_jimbacrinus");
+
+    //Triassic:
+    public static final CustomTrigger CLICK_DICEROCARDIUM = new CustomTrigger("pf_book_dicerocardium");
+    public static final CustomTrigger CLICK_LITHIOTIS = new CustomTrigger("pf_book_lithiotis");
+    public static final CustomTrigger CLICK_TRAUMATOCRINUS = new CustomTrigger("pf_book_traumatocrinus");
+    public static final CustomTrigger CLICK_VOSTOCOVACRINUS = new CustomTrigger("pf_book_vostocovacrinus");
+    public static final CustomTrigger CLICK_HOLOCRINUS = new CustomTrigger("pf_book_holocrinus");
+
+    //Jurassic:
+
+
     public static final CustomTrigger CLICK_LEPIDODENDRON = new CustomTrigger("pf_book_lepidodendron");
 
     //Knowledge of mobs:
@@ -488,9 +594,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CAVIRAMUS = new CustomTrigger("pf_book_caviramus");
     public static final CustomTrigger CLICK_EUDIMORPHODON = new CustomTrigger("pf_book_eudimorphodon");
     public static final CustomTrigger CLICK_ITALOPHLEBIA = new CustomTrigger("pf_book_italophlebia");
-    public static final CustomTrigger CLICK_TITANOPTERA_CLATROTITAN = new CustomTrigger("pf_book_clatrotitan");
-    public static final CustomTrigger CLICK_TITANOPTERA_MESOTITAN = new CustomTrigger("pf_book_mesotitan");
-    public static final CustomTrigger CLICK_TITANOPTERA_GIGATITAN = new CustomTrigger("pf_book_gigatitan");
+    public static final CustomTrigger CLICK_TITANOPTERA_CLATROTITAN = new CustomTrigger("pf_book_titanoptera_clatrotitan");
+    public static final CustomTrigger CLICK_TITANOPTERA_MESOTITAN = new CustomTrigger("pf_book_titanoptera_mesotitan");
+    public static final CustomTrigger CLICK_TITANOPTERA_GIGATITAN = new CustomTrigger("pf_book_titanoptera_gigatitan");
     public static final CustomTrigger CLICK_NAGINI = new CustomTrigger("pf_book_nagini");
     public static final CustomTrigger CLICK_BRACHYDECTES = new CustomTrigger("pf_book_brachydectes");
     public static final CustomTrigger CLICK_LYSOROPHUS = new CustomTrigger("pf_book_lysorophus");
@@ -530,10 +636,117 @@ public class ModTriggers
             EPHEDRA,
             TAIL,
 
-            //Blocks:
+            //BLOCKS:
+            //----------
+            //Precambrian:
+            CLICK_ARBOREA,
+            CLICK_ARKARUA,
+            CLICK_AUSIA,
+            CLICK_BOMAKELLIA,
+            CLICK_BRADGATIA,
+            CLICK_BURYKHIA,
+            CLICK_CHARNIA,
+            CLICK_CHARNIODISCUS,
+            CLICK_CLOUDINA,
+            CLICK_CONOMEDUSITES,
+            CLICK_CORONACOLLINA,
+            CLICK_CORUMBELLA,
+            CLICK_FUNISIA,
+            CLICK_GRYPANIA,
+            CLICK_HAOOTIA,
+            CLICK_HAPSIDOPHYLLAS,
+            CLICK_INARIA,
+            CLICK_NAMACALATHUS,
+            CLICK_NAMAPOIKIA,
+            CLICK_PAMBIKALBAE,
+            CLICK_PARVANCORINA,
+            CLICK_PARVISCOPA,
+            CLICK_PRIMOCANDELABRUM,
+            CLICK_PTERIDINIUM,
+            CLICK_SWARTPUNTIA,
+            CLICK_TAWUIA,
+            CLICK_THECTARDIS,
+            CLICK_TRIBRACHIDIUM,
+            CLICK_VENTOGYRUS,
+            CLICK_SPONGE,
+
+            //Cambrian:
+            CLICK_ALLONNIA,
+            CLICK_CASTERICYSTIS,
+            CLICK_DINOMISCHUS,
+            CLICK_ECHMATOCRINUS,
+            CLICK_GOGIA,
+            CLICK_HELICOCYSTIS,
+            CLICK_HERPETOGASTER,
+            CLICK_LEPIDOCYSTIS,
+            CLICK_LYRACYSTIS,
+            CLICK_SIPHUSAUCTUM,
+            CLICK_SEA_ANEMONE,
+            CLICK_XIANGUANGIA,
+            CLICK_PIRANIA,
+            CLICK_CHAUNOGRAPTUS,
+            CLICK_DICTYONEMA,
+            CLICK_STROMATOCYSTITES,
+            CLICK_STROMATOVERIS,
+            CLICK_THAUMAPTILON,
+            CLICK_FACIVERMIS,
+            CLICK_OESIAMARGARETIA,
+
+            //Ordovician:
+            CLICK_ARISTOCYSTITES,
+            CLICK_AULACERA,
+            CLICK_BLASTOIDS,
+            CLICK_BIVALVE,
+            CLICK_BOLBOPORITES,
+            CLICK_CARYOCRINITES,
+            CLICK_DENDROGRAPTUS,
+            CLICK_ECHINOSPHAERITES,
+            CLICK_FENESTELLA,
+            CLICK_RUGOSA,
+            CLICK_TABULATA,
+            CLICK_THAMNOBEATRICEA,
+            CLICK_TENTACULITA,
+            CLICK_CORNULITIDA,
+
+            //Silurian:
+            CLICK_ENCRINUS,
+            CLICK_EUCALYPTOCRINITES,
+            CLICK_CYATHOCRINUS,
+            CLICK_PETALOCRINUS,
+            CLICK_PISOCRINUS,
+            CLICK_PSEUDOCRINITES,
+            CLICK_SCYPHOCRINUS,
+            CLICK_SIPHONOCRINUS,
+            CLICK_CALLICRINUS,
+
+            //Devonian:
+            CLICK_ANCYROCRINUS,
+            CLICK_CUPRESSOCRINITES,
+            CLICK_MEGALODON_BIVALVE,
+            CLICK_VADAROCRINUS,
+
+            //Carboniferous:
+            CLICK_DIZYGOCRINUS,
+            CLICK_ESCUMASIA,
+            CLICK_MACROCRINUS,
+
+            //Permian:
+            CLICK_GIGANTOSPONGIA,
+            CLICK_JIMBACRINUS,
+
+            //Triassic:
+            CLICK_DICEROCARDIUM,
+            CLICK_LITHIOTIS,
+            CLICK_TRAUMATOCRINUS,
+            CLICK_VOSTOCOVACRINUS,
+            CLICK_HOLOCRINUS,
+
+
+
             CLICK_LEPIDODENDRON,
 
-            //Mobs:
+            //ENTITIES:
+            //----------
             CLICK_ACADOARADOXIDES,
             CLICK_ACANTHODES,
             CLICK_ACANTHOSTEGA,
@@ -1033,11 +1246,11 @@ public class ModTriggers
         {
             try
             {
-                method.invoke(null, TRIGGER_ARRAY[i]);
+               method.invoke(null, TRIGGER_ARRAY[i]);
             }
             catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
             {
-                e.printStackTrace();
+               e.printStackTrace();
             }
         }
     }

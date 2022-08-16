@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:blastoid_1"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_blastoids.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_blastoids.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_blastoids"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

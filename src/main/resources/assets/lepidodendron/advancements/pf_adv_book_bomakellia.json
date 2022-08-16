@@ -1,0 +1,52 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:bomakellia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_bomakellia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_bomakellia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_bomakellia"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

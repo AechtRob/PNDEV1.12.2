@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:tabulata_1",
 	"category": "lepidodendron:ordovician_plants",
-	"turnin": "lepidodendron:pf_adv_book_tabulate",
+	"turnin": "lepidodendron:pf_adv_book_tabulata",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_tabulate",
+			"trigger": "lepidodendron:pf_adv_book_tabulata",
 			"title": "Tabulate Coral",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Anthozoa$(br)>Tabulata"
@@ -18,15 +18,14 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tabulate",
+			"advancement": "lepidodendron:pf_adv_book_tabulata",
 			"type": "text",
-			"text": "Tabulate corals are extinct corals which are almost always colonial and form hexagonal cells. They are usually smaller than rugose corals but their shape varies from flat to conical to spherical. They lived within the Palaeozoic and became extinct with the P-T Extinction."
+			"text": "Tabulate corals are extinct reef-building corals which are almost always colonial and form colonies with the individual organisms creating hexagonal cells. They are usually smaller than rugose corals but their shape varies from flat to conical to spherical. They lived within the Palaeozoic and vanished during the end-Permian extinction."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_tabulate",
+			"advancement": "lepidodendron:pf_adv_book_tabulata",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}
 	]
 }
-

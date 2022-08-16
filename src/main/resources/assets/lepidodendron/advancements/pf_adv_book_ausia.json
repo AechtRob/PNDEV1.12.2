@@ -1,0 +1,53 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:ausia"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_ausia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_ausia.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ausia"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

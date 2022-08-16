@@ -1,0 +1,36 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:dinomischus"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_dinomischus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_dinomischus.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_dinomischus"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

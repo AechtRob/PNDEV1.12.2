@@ -42,7 +42,6 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
@@ -150,47 +149,6 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			return BlockRenderLayer.CUTOUT;
 		}
 
-		@Override
-		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
-			super.updateTick(world, pos, state, random);
-
-			if (isBlockActive(world, pos, state.getValue(FACING))) {
-
-				int mb = 0;
-
-				try {
-					mb = (int) (new Object() {
-						public int getValue(BlockPos pos, String tag) {
-							TileEntity tileEntity = world.getTileEntity(pos);
-							if (tileEntity != null)
-								return tileEntity.getTileData().getInteger(tag);
-							return -1;
-						}
-					}.getValue(pos, "mb"));
-				} catch (Exception e) {
-				}
-
-				//New fill level:
-				if (mb < 0) {
-					mb = 0;
-				}
-				mb = Math.min(mb + 55, 2000);
-				if (mb >= 2000) {
-					IBlockState _bs = world.getBlockState(pos);
-					world.setBlockState(pos, BlockResinExtractorFull.block.getDefaultState().withProperty(FACING, _bs.getValue(FACING)));
-				}
-				else if (!world.isRemote) {
-					TileEntity _tileEntity = world.getTileEntity(pos);
-					IBlockState _bs = world.getBlockState(pos);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().setInteger("mb", mb);
-					world.notifyBlockUpdate(pos, _bs, _bs, 3);
-				}
-
-			}
-			world.updateComparatorOutputLevel(pos,this);
-
-		}
 
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction,
@@ -363,6 +321,80 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
+		@Override
+		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+			super.onBlockAdded(worldIn, pos, state);
+			//Set the ticker to 1200:
+			TileEntity _tileEntity = worldIn.getTileEntity(pos);
+			if (_tileEntity != null)
+				_tileEntity.getTileData().setInteger("tickEachMinute", 1200);
+		}
+
+		@Override
+		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+			onBlockAdded(worldIn, pos, state);
+			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
+		}
+	}
+
+	public static class TileEntityCustom extends TileEntity implements ITickable {
+
+		private int tickEachMinute;
+		private int mb;
+
+		@Override
+		public void update() {
+			//System.err.println("tickEachMinute: " + tickEachMinute);
+			--this.tickEachMinute;
+
+			if (this.tickEachMinute <= 0) {
+				//A minute has counted down:
+				if (this.world.getBlockState(this.getPos()).getBlock() == BlockResinExtractor.block) {
+					IBlockState state = this.world.getBlockState(this.getPos());
+					if (isBlockActive(world, pos, state.getValue(BlockResinExtractor.BlockCustom.FACING))) {
+
+						int mb = 0;
+
+						try {
+							mb = (int) (new Object() {
+								public int getValue(BlockPos pos, String tag) {
+									TileEntity tileEntity = world.getTileEntity(pos);
+									if (tileEntity != null)
+										return tileEntity.getTileData().getInteger(tag);
+									return -1;
+								}
+							}.getValue(pos, "mb"));
+						} catch (Exception e) {
+						}
+
+						//New fill level:
+						if (mb < 0) {
+							mb = 0;
+						}
+						mb = Math.min(mb + 55, 2000);
+						if (mb >= 2000) {
+							IBlockState _bs = world.getBlockState(pos);
+							world.setBlockState(pos, BlockResinExtractorFull.block.getDefaultState().withProperty(BlockResinExtractorFull.BlockCustom.FACING, _bs.getValue(BlockResinExtractor.BlockCustom.FACING)));
+						}
+						else if (!world.isRemote) {
+							TileEntity _tileEntity = world.getTileEntity(pos);
+							IBlockState _bs = world.getBlockState(pos);
+							if (_tileEntity != null)
+								_tileEntity.getTileData().setInteger("mb", mb);
+							world.notifyBlockUpdate(pos, _bs, _bs, 3);
+						}
+
+					}
+					world.updateComparatorOutputLevel(pos,this.world.getBlockState(this.getPos()).getBlock());
+
+				}
+
+				//We have ticked the extractor now, so we can now reset the timer again:
+				this.tickEachMinute = 1200;
+			}
+
+		}
+
 		public boolean isBlockActive(World world, BlockPos pos, EnumFacing facing) {
 			//On a valid log which is "planted" and of sufficient height:
 			BlockPos position = pos;
@@ -383,10 +415,10 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			Block block = blockstate.getBlock();
 			//Is the block "growing"?
 			if (
-				(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
-				&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
+					(world.getBlockState(position.down()).getMaterial() != Material.GROUND)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.GRASS)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.SAND)
+							&& (world.getBlockState(position.down()).getMaterial() != Material.ROCK)
 			) {
 				return false;
 			}
@@ -401,7 +433,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			//Is this a resinable block?
 			try {
 				if (
-					block.getPickBlock(blockstate, null, world, position, null) != null
+						block.getPickBlock(blockstate, null, world, position, null) != null
 				) {
 					if (OreDictionary.containsMatch(false, OreDictionary.getOres("logResin"),
 							block.getPickBlock(blockstate, null, world, position, null))) {
@@ -412,9 +444,25 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			}
 			return false;
 		}
-	}
 
-	public static class TileEntityCustom extends TileEntity {
+		@Override
+		public void readFromNBT(NBTTagCompound compound) {
+			super.readFromNBT(compound);
+			if (compound.hasKey("tickEachMinute")) {
+				this.tickEachMinute = compound.getInteger("tickEachMinute");
+			}
+			if (compound.hasKey("mb")) {
+				this.mb = compound.getInteger("mb");
+			}
+		}
+
+		@Override
+		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+			super.writeToNBT(compound);
+			compound.setInteger("tickEachMinute", this.tickEachMinute);
+			compound.setInteger("mb", this.mb);
+			return compound;
+		}
 
 		@Override
 		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)

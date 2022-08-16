@@ -1,0 +1,32 @@
+{
+	"name": "Herpetogaster",
+	"read_by_default": true,
+	"icon": "lepidodendron:herpetogaster",
+	"category": "lepidodendron:cambrian_plants",
+	"turnin": "lepidodendron:pf_adv_book_herpetogaster",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_herpetogaster",
+			"title": "Herpetogaster",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ambulacraria$(br)>Cambroernida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Herpetogaster.png"],
+			"title": "H. collinsi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "Herpetogaster is a strange and poorly-understood small creature. It appears to have attached itself to the sea-floor or to certain sponges using a stalk-like appendage, and was formed as a bag-like body with tentacles at the mouth end."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herpetogaster",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

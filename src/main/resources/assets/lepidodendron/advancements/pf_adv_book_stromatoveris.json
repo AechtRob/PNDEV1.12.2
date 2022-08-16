@@ -1,0 +1,32 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:stromatoveris"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_stromatoveris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_stromatoveris.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_stromatoveris"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

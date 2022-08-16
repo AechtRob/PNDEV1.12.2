@@ -1,0 +1,29 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sea_anemone_1"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_seaanemone.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_seaanemone.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_seaanemone"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

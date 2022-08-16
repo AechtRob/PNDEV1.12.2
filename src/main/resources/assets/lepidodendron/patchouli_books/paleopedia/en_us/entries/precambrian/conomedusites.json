@@ -1,0 +1,32 @@
+{
+	"name": "Conomedusites",
+	"read_by_default": true,
+	"icon": "lepidodendron:conomedusites",
+	"category": "lepidodendron:precambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_conomedusites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_conomedusites",
+			"title": "Conomedusites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ediacaran$(br2)$(l)Habitat:$() Marine$(br2)>Petalonamae$(br)>Arboreomorpha"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/conomedusites.png"],
+			"title": "Conomedusites sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conomedusites",
+			"type": "text",
+			"text": "Conomedusites was an Ediacaran organism with 4-lateral symmetry thought to be a stem cnidarian, the group which now contain jellyfish. Its main body took a somewhat squat cone shaped. Its fossils are found in colonies, and was thought to be attached to surfaces with the main body possessing some buoyancy to keep it upright. It was likely a filter feeder."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_conomedusites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

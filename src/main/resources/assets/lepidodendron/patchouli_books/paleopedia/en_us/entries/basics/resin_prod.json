@@ -5,7 +5,7 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. To obtain resin a player will need two items. A resin extractor will need to be crafted and placed at the base of certain tree species like Spruce."
+			"text": "Resin is a sticky fluid used in our mod to build items like the Bone Wand and keep gravity effected blocks in place, avoiding them falling, like sand, corals and stromatolites. To obtain resin, you extract it from trees using a resin extractor. This machine should be placed up against a tree of suitable size and type (various conifers). After a while the extractor will slowly start to fill with resin."
 		},
 		{
 			"type": "crafting",
@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "text",
-			"text": "Once the extractor is in place the player will need to wait for it to extract resin, a process that might take a while. Resin can be collected with an empty bottle by right clicking the extractor with it. If a resin extractor is left on a tree for a sufficiently long amount of time, it might overflow with resin, this resin can be collected with a bucket and placed elsewhere for many more creative, and sticky, uses."
+			"text": "A redstone comparator output can be used to test how much resin has been extracted: a full signal represents a full extractor. An extractor can hold up to 2000 millibuckets of resin (one bucket = 1000 millibuckets; one glass bottle = 333 millibuckets). To get the resin out of the extractor, right click it with an empty bucket or empty glass bottle. An untended extractor may overflow."
 		},
 		{
 			"type": "image",

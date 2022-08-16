@@ -1,0 +1,37 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:herpetogaster"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_herpetogaster.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_herpetogaster.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_herpetogaster"
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
