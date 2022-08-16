@@ -66,6 +66,9 @@ public class EntityPrehistoricFloraTrigonotarbid_Eophrynus extends EntityPrehist
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
+		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
+			return false;
+		}
 		IBlockState state = world.getBlockState(pos);
 		if (
 				(state.getMaterial() != Material.GLASS && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)

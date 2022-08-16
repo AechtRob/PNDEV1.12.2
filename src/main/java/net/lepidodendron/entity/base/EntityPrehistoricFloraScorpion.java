@@ -2,6 +2,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
@@ -49,6 +50,9 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
+		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
+			return false;
+		}
 		IBlockState state = world.getBlockState(pos);
 		if (
 				(state.getMaterial() != Material.GLASS && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)

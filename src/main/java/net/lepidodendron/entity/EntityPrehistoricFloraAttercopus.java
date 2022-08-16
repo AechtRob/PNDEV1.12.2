@@ -65,6 +65,9 @@ public class EntityPrehistoricFloraAttercopus extends EntityPrehistoricFloraLand
 
 	@Override
 	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
+		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
+			return false;
+		}
 		IBlockState state = world.getBlockState(pos);
 		if (
 				(state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)

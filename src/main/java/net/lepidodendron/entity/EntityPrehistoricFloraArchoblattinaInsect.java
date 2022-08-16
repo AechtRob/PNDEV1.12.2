@@ -5,15 +5,12 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
-import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
@@ -76,13 +73,6 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 		return "insect_eggs_archoblattina";
 	}
 
-	protected void initEntityAI() {
-		this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
-		this.tasks.addTask(2, new AIWanderInsect());
-		this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
-		this.tasks.addTask(4, new EntityAILookIdle(this));
-	}
-
 	@Override
 	public IBlockState getEggBlockState() {
 		return BlockInsectEggsPalaeodictyoptera.block.getDefaultState();
@@ -90,6 +80,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 
+	@Override
 	public boolean testLay(World world, BlockPos pos) {
 		if (
 				world.getBlockState(pos).getBlock() == BlockRottenLog.block

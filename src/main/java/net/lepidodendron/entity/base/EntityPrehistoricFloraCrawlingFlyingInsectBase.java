@@ -6,6 +6,8 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
+import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
+import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.util.PathNavigateFlyingNoWater;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
@@ -14,6 +16,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
@@ -260,11 +263,18 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
         );
     }
 
-    @Override
-    protected void updateAITasks()
-    {
-        this.inPFLove = 0;
-        super.updateAITasks();
+    //@Override
+    //protected void updateAITasks()
+    //{
+        //this.inPFLove = 0; //why is this even here????
+    //   super.updateAITasks();
+    //}
+
+    protected void initEntityAI() {
+        this.tasks.addTask(1, new EntityMateAIInsectCrawlingFlyingBase(this, 1));
+        this.tasks.addTask(2, new AIWanderInsect());
+        this.tasks.addTask(3, new FlyingLandWanderAvoidWaterAI(this, 1, 10));
+        this.tasks.addTask(4, new EntityAILookIdle(this));
     }
 
     @Override
@@ -359,6 +369,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     public void onEntityUpdate()
     {
+        System.err.println("updateEntity");
         super.onEntityUpdate();
         if (!this.world.isRemote) {
             if (this.onGround && this.getIsFlying() && this.getWanderCooldown() <= 0) {
@@ -410,17 +421,28 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             this.setTicks(0);
         }
 
+        //if (!world.isRemote) {
+        //    System.err.println("getTicks " + this.getTicks());
+        //    System.err.println("testLay " + this.testLay(world, this.getPosition()));
+        //}
+
         //Lay eggs perhaps:
-        if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
+        if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
         ) {
+            //System.err.println("Passed first stage of laying");
             if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > 0
             ) {
-                if (Math.random() > 0.5) {
+                //System.err.println("Passed second stage of laying");
                     this.setTicks(-50); //Flag this as stationary for egg-laying
                     this.setAnimation(LAY_ANIMATION);
-                }
+                //}
             }
-            if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > -30 && this.getTicks() < 0) {
+
+            //System.err.println("testLaythis " + this.testLay(world, this.getPosition()));
+            //System.err.println("testLaydown " + this.testLay(world, this.getPosition().down()));
+            //System.err.println("getTicks " + this.getTicks());
+
+            if ((this.testLay(world, this.getPosition()) || this.testLay(world, this.getPosition().down())) && this.getTicks() > -50 && this.getTicks() < 0) {
                 //Is stationary for egg-laying:
                 //System.err.println("Laying an egg in it");
 
@@ -449,8 +471,6 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
             }
         }
     }
-
-
 
     public boolean testLay(World world, BlockPos pos) {
         return false;

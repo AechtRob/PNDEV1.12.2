@@ -239,12 +239,12 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         compound.setInteger("mateable", this.getMateable());
     }
 
-    @Override
-    protected void updateAITasks()
-    {
-        this.inPFLove = 0;
-        super.updateAITasks();
-    }
+    //@Override
+    //protected void updateAITasks()
+    //{
+    //    this.inPFLove = 0;
+    //    super.updateAITasks();
+    //}
 
     public EnumFacing getAttachmentFacing() {
         return this.dataManager.get(SIT_FACE);
@@ -430,7 +430,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
 
         //Lay eggs perhaps:
         if (!this.laysInBlock()) { //lays into water of something like that:
-            if (!world.isRemote && this.laysEggs() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())
+            if (!world.isRemote && this.laysEggs() && ((this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) || this.getLaying())
             ) {
                 if (spaceCheckEggs() && canPlaceSpawn(world, this.getPosition())) {
                     //Is stationary for egg-laying:

@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -63,6 +64,9 @@ public abstract class EntityPrehistoricFloraLandClimbingBase extends EntityPrehi
     }
 
     public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
+        if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
+            return false;
+        }
         IBlockState state = world.getBlockState(pos);
         if (
             (state.getMaterial() == Material.WOOD || state.getMaterial() == Material.LEAVES)
