@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gnathorhiza",
 			"title": "Gnathorhiza",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
+			"text": "$(l)Temporal Range:$() Carboniferous-Triassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Sarcopterygii$(br)>Dipnoi$(br)>Gnathorhizidae"
 		},
 		{
 			"type": "image",

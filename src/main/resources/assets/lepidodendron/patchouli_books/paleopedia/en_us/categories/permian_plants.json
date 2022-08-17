@@ -1,7 +1,7 @@
 {
     "name": "Permian Statics",
     "description": "Plants/Static Animals of the Permian",
-    "icon": "lepidodendron:glossopterissapling",
+    "icon": "lepidodendron:jimbacrinus",
     "parent": "lepidodendron:permian",
     "sortnum": 2
 }

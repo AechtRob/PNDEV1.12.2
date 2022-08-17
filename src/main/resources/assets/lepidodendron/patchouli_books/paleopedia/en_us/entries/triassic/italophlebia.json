@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_italophlebia",
 			"title": "Italophlebia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Insecta$(br)>Odonata$(br)>Triassolestidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakeland, Flooded Forest$(br2)>Insecta$(br)>Odonata$(br)>Triassolestidae"
 		},
 		{
 			"type": "image",
@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_italophlebia",
 			"type": "text",
-			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Egg in Water$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
 	]
 }
