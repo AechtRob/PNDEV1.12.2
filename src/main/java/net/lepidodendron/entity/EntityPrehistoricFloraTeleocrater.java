@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraTeleocrater extends EntityPrehistoricFloraLan
 		minWidth = 0.12F;
 		maxWidth = 0.55F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 16.0D;
 		NOISE_ANIMATION = Animation.create(25);
 	}
 

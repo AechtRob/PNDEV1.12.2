@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 	@Override
@@ -254,11 +254,6 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.KEICHOUSAURUS_LOOT;
-	}
-
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
@@ -268,9 +263,12 @@ public class EntityPrehistoricFloraKeichousaurus extends EntityPrehistoricFloraS
 		);
 	}
 
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraKeichousaurus(this.world);
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.KEICHOUSAURUS_LOOT_YOUNG;
+		}
+		return LepidodendronMod.KEICHOUSAURUS_LOOT;
 	}
 
 }

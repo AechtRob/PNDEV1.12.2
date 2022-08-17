@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 		minWidth = 0.2F;
 		maxWidth = 0.4F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 20.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

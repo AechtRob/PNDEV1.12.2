@@ -1,0 +1,34 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:lava_rock_polished"
+    },
+    "1": {
+      "item": "lepidodendron:lava_rock_polished"
+    },
+    "2": {
+      "item": "lepidodendron:lava_rock_polished"
+    },
+    "3": {
+      "item": "lepidodendron:lava_rock_polished"
+    },
+    "4": {
+      "item": "lepidodendron:lava_rock_polished"
+    },
+    "5": {
+      "item": "lepidodendron:lava_rock_polished"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lava_rock_polished_wall",
+    "count": 6
+  }
+}
+
+

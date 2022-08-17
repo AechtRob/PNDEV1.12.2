@@ -22,10 +22,10 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import java.util.Random;
 
 public class VillagerPalaeontologist {
-    public static final VillagerRegistry.VillagerProfession PALAEONTOLOGIST_PROFESSION = new VillagerRegistry.VillagerProfession("lepidodendron:palaeontologist", "lepidodendron:textures/entities/villager_palaeontologist.png", "lepidodendron:textures/entities/villager_palaeontologist_zombie.png");
+    public static final VillagerRegistry.VillagerProfession PALAEONTOLOGIST_PROFESSION = new VillagerRegistry.VillagerProfession("lepidodendron:pn_palaeontologist", "lepidodendron:textures/entities/villager_palaeontologist.png", "lepidodendron:textures/entities/villager_palaeontologist_zombie.png");
 
     public static void register() {
-        VillagerRegistry.VillagerCareer palaeoCareer = new VillagerRegistry.VillagerCareer(PALAEONTOLOGIST_PROFESSION, "palaeontologist");
+        VillagerRegistry.VillagerCareer palaeoCareer = new VillagerRegistry.VillagerCareer(PALAEONTOLOGIST_PROFESSION, "pn_palaeontologist");
 
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.IRON_BARS), new EntityVillager.PriceInfo(2, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.REDSTONE, new EntityVillager.PriceInfo(1, 1)));

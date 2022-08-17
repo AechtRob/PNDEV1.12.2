@@ -92,6 +92,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.STONE);
 			setTranslationKey("pf_sulphur_ore");
 			setCreativeTab(TabLepidodendronMisc.tab);
+			setHarvestLevel("pickaxe",1);
 		}
 
 		@Override

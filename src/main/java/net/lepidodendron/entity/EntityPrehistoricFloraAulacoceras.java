@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 5.0D;
 	}
 
 	@Override

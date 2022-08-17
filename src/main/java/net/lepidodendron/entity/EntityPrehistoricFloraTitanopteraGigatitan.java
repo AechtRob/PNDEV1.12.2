@@ -9,6 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIInsectCrawlingFlyingBase;
 import net.lepidodendron.entity.ai.FlyingLandWanderAvoidWaterAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -45,6 +46,12 @@ public class EntityPrehistoricFloraTitanopteraGigatitan extends EntityPrehistori
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:titanoptera_idle"));
+	}
+
+	@Override
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 	}
 
 	@Override

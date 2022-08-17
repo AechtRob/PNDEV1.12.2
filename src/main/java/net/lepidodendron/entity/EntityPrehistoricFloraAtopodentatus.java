@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.85F;
 		maxHeight = 0.45F;
-		maxHealthAgeable = 38.0F;
+		maxHealthAgeable = 26.0F;
 	}
 
 	@Override

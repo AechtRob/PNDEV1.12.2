@@ -2998,7 +2998,12 @@ public class RenderHandler {
                 return new RenderCeratodus(manager);
             }
         });
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraItalophlebiaNymph.class, new IRenderFactory<EntityPrehistoricFloraItalophlebiaNymph>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraItalophlebiaNymph> createRenderFor(RenderManager manager) {
+                return new RenderItalophlebiaNymph(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {

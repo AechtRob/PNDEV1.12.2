@@ -296,6 +296,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_INIOPTERYX = new CustomTrigger("pf_book_iniopteryx");
     public static final CustomTrigger CLICK_INOSTRANCEVIA = new CustomTrigger("pf_book_inostrancevia");
     public static final CustomTrigger CLICK_ISOTELUS = new CustomTrigger("pf_book_isotelus");
+    public static final CustomTrigger CLICK_ITALOPHLEBIA = new CustomTrigger("pf_book_italophlebia");
     public static final CustomTrigger CLICK_JAEKELOPTERUS = new CustomTrigger("pf_book_jaekelopterus");
     public static final CustomTrigger CLICK_JANASSA = new CustomTrigger("pf_book_janassa");
     public static final CustomTrigger CLICK_JELLYFISH_PRECAMBRIAN = new CustomTrigger("pf_book_jellyfish_precambrian");
@@ -593,7 +594,6 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CAELESTIVENTUS = new CustomTrigger("pf_book_caelestiventus");
     public static final CustomTrigger CLICK_CAVIRAMUS = new CustomTrigger("pf_book_caviramus");
     public static final CustomTrigger CLICK_EUDIMORPHODON = new CustomTrigger("pf_book_eudimorphodon");
-    public static final CustomTrigger CLICK_ITALOPHLEBIA = new CustomTrigger("pf_book_italophlebia");
     public static final CustomTrigger CLICK_TITANOPTERA_CLATROTITAN = new CustomTrigger("pf_book_titanoptera_clatrotitan");
     public static final CustomTrigger CLICK_TITANOPTERA_MESOTITAN = new CustomTrigger("pf_book_titanoptera_mesotitan");
     public static final CustomTrigger CLICK_TITANOPTERA_GIGATITAN = new CustomTrigger("pf_book_titanoptera_gigatitan");
@@ -907,6 +907,7 @@ public class ModTriggers
             CLICK_INIOPTERYX,
             CLICK_INOSTRANCEVIA,
             CLICK_ISOTELUS,
+            CLICK_ITALOPHLEBIA,
             CLICK_JAEKELOPTERUS,
             CLICK_JANASSA,
             CLICK_JELLYFISH_PRECAMBRIAN,
@@ -1196,7 +1197,6 @@ public class ModTriggers
             CLICK_CAELESTIVENTUS,
             CLICK_CAVIRAMUS,
             CLICK_EUDIMORPHODON,
-            CLICK_ITALOPHLEBIA,
             CLICK_TITANOPTERA_MESOTITAN,
             CLICK_TITANOPTERA_CLATROTITAN,
             CLICK_TITANOPTERA_GIGATITAN,

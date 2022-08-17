@@ -27,7 +27,7 @@ public class EntityPrehistoricFloraPseudotherium extends EntityPrehistoricFloraM
 		minWidth = 0.12F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 14.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	public static String getPeriod() {return "Triassic";}

@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraAustrolimulus extends EntityPrehistoricFloraW
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.1F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 3.0D;
 	}
 
 	public boolean isJumpingPF() {

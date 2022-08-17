@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraPristerognathus extends EntityPrehistoricFlor
 		minWidth = 0.18F;
 		maxWidth = 0.72F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 34.0D;
+		maxHealthAgeable = 30.0D;
 	}
 
 	@Override

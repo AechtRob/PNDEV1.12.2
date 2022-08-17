@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraCymbospondylus extends EntityPrehistoricFlora
 		minWidth = 0.15F;
 		maxWidth = 2.4F;
 		maxHeight = 1.5F;
-		maxHealthAgeable = 100.0D;
+		maxHealthAgeable = 90.0D;
 	}
 
 	@Override

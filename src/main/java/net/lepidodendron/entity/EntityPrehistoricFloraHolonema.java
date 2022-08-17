@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.2F;
 		maxWidth = 0.8F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 26.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

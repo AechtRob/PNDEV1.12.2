@@ -364,7 +364,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
             //this.chainWave(fishTail, speed, 0.02F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.115F, -0.5, f2, 1);
             this.swing(Brochoadmones, speed, 0.11F, true, 0, 0, f2, 1);
-            this.walk(Jaw, (float) (speed * 0.35), 0.4F, true, 0, 0.4F, f2, 1);
+            this.walk(Jaw, (float) (speed * 0.35), -0.35F, true, 0, -0.35F, f2, 1);
 
             this.flap(Ventral7L2, speed * 0.7F, 0.75F, false, 0F, -0.3F, f2, 1F);
             this.flap(Ventral7L, speed * 0.7F, -0.75F, false, 0F, 0.3F, f2, 1F);
@@ -406,7 +406,7 @@ public class ModelBrochoadmones extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 this.Brochoadmones.rotateAngleZ = (float) Math.toRadians(90);
-                this.Brochoadmones.offsetY = 1.00F;
+                this.Brochoadmones.offsetY = 1.35F;
                 this.bob(Brochoadmones, -speed, 5F, false, f2, 1);
             }
         }

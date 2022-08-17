@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraSaurosuchus extends EntityPrehistoricFloraLan
 		minWidth = 0.12F;
 		maxWidth = 0.85F;
 		maxHeight = 1.82F;
-		maxHealthAgeable = 60.0D;
+		maxHealthAgeable = 68.0D;
 		NOISE_ANIMATION = Animation.create(25);
 	}
 

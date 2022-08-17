@@ -77,7 +77,7 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 			super(Material.ROCK);
 			setTranslationKey("pf_zircon_ore");
 			setSoundType(SoundType.GROUND);
-			setHarvestLevel("pickaxe", 0);
+			setHarvestLevel("pickaxe", 2);
 			setHardness(2F);
 			setResistance(4F);
 			setLightLevel(0F);

@@ -72,20 +72,20 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         this.textureHeight = 128;
 
         this.body2 = new AdvancedModelRendererExtended(this);
-        this.body2.setRotationPoint(0.0F, 12.1F, 1.0F);
-        this.body2.cubeList.add(new ModelBox(body2, 54, 48, -6.5F, -3.5F, -6.0F, 13, 8, 11, 0.0F, false));
-        this.body2.cubeList.add(new ModelBox(body2, 29, 29, -5.5F, -4.25F, -5.99F, 11, 1, 18, 0.0F, false));
-        this.body2.cubeList.add(new ModelBox(body2, 81, 10, -6.0F, 2.0F, 9.0F, 12, 2, 3, 0.01F, false));
-        this.body2.cubeList.add(new ModelBox(body2, 0, 77, -6.5F, -3.5F, 5.0F, 13, 6, 7, 0.0F, false));
+        this.body2.setRotationPoint(0.0F, 12.1F, 4.0F);
+        this.body2.cubeList.add(new ModelBox(body2, 54, 48, -6.5F, -3.5F, -8.0F, 13, 8, 11, 0.0F, false));
+        this.body2.cubeList.add(new ModelBox(body2, 29, 29, -5.5F, -4.25F, -7.99F, 11, 1, 18, 0.0F, false));
+        this.body2.cubeList.add(new ModelBox(body2, 81, 10, -6.0F, 2.0F, 7.0F, 12, 2, 3, 0.01F, false));
+        this.body2.cubeList.add(new ModelBox(body2, 0, 77, -6.5F, -3.5F, 3.0F, 13, 6, 7, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRendererExtended(this);
-        this.cube_r1.setRotationPoint(1.0F, 4.75F, 5.0F);
+        this.cube_r1.setRotationPoint(1.0F, 4.75F, 3.0F);
         this.body2.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.1047F, 0.0F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 69, 40, -7.0F, -2.25F, 0.0F, 12, 2, 5, 0.0F, false));
 
         this.body = new AdvancedModelRendererExtended(this);
-        this.body.setRotationPoint(0.0F, 1.0F, -5.5F);
+        this.body.setRotationPoint(0.0F, 1.0F, -7.5F);
         this.body2.addChild(body);
         this.body.cubeList.add(new ModelBox(body, 69, 24, -5.5F, -4.0F, -8.5F, 11, 7, 9, 0.0F, false));
 
@@ -121,25 +121,25 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         this.neck = new AdvancedModelRendererExtended(this);
         this.neck.setRotationPoint(0.0F, 0.25F, -5.0F);
         this.neckbase.addChild(neck);
-        this.setRotateAngle(neck, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.0873F, 0.0F, 0.0F);
         this.neck.cubeList.add(new ModelBox(neck, 0, 55, -2.0F, -2.0F, -18.0F, 4, 4, 18, 0.0F, false));
 
         this.neck2 = new AdvancedModelRendererExtended(this);
         this.neck2.setRotationPoint(0.0F, 0.0F, -17.5F);
         this.neck.addChild(neck2);
-        this.setRotateAngle(neck2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.0436F, 0.0F, 0.0F);
         this.neck2.cubeList.add(new ModelBox(neck2, 0, 29, -1.5F, -1.5F, -23.0F, 3, 3, 23, 0.01F, false));
 
         this.neck3 = new AdvancedModelRendererExtended(this);
         this.neck3.setRotationPoint(0.0F, 0.0F, -23.0F);
         this.neck2.addChild(neck3);
-        this.setRotateAngle(neck3, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck3, 0.0873F, 0.0F, 0.0F);
         this.neck3.cubeList.add(new ModelBox(neck3, 0, 0, -1.5F, -1.5F, -26.0F, 3, 3, 26, 0.0F, false));
 
         this.neck4 = new AdvancedModelRendererExtended(this);
         this.neck4.setRotationPoint(0.0F, 0.0F, -26.0F);
         this.neck3.addChild(neck4);
-        this.setRotateAngle(neck4, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(neck4, 0.1309F, 0.0F, 0.0F);
         this.neck4.cubeList.add(new ModelBox(neck4, 59, 67, -1.5F, -1.5F, -17.0F, 3, 3, 17, -0.01F, false));
 
         this.head = new AdvancedModelRendererExtended(this);
@@ -308,7 +308,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         this.forelegR3.cubeList.add(new ModelBox(forelegR3, 10, 21, -1.5F, 0.0F, -3.5F, 3, 1, 4, 0.0F, false));
 
         this.body3 = new AdvancedModelRendererExtended(this);
-        this.body3.setRotationPoint(0.0F, -1.3F, 12.0F);
+        this.body3.setRotationPoint(0.0F, -1.3F, 10.0F);
         this.body2.addChild(body3);
         this.body3.cubeList.add(new ModelBox(body3, 82, 67, -5.5F, -1.0F, 0.0F, 11, 6, 6, 0.0F, false));
         this.body3.cubeList.add(new ModelBox(body3, 100, 85, -5.5F, -1.0F, -1.0F, 11, 6, 1, 0.0F, false));

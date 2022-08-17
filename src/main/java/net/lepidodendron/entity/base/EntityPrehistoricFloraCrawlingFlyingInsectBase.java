@@ -369,7 +369,7 @@ public abstract class EntityPrehistoricFloraCrawlingFlyingInsectBase extends Ent
 
     public void onEntityUpdate()
     {
-        System.err.println("updateEntity");
+        //System.err.println("updateEntity");
         super.onEntityUpdate();
         if (!this.world.isRemote) {
             if (this.onGround && this.getIsFlying() && this.getWanderCooldown() <= 0) {

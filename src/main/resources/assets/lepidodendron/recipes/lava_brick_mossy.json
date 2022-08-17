@@ -1,0 +1,17 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:lava_brick"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemMossForStone"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:lava_brick_mossy",
+    "count": 1
+  }
+}

@@ -43,7 +43,7 @@ public class BlockMeteorite extends ElementsLepidodendronMod.ModElement {
 			setHardness(1.25F);
 			setResistance(4.2F);
 			this.setSoundType(SoundType.STONE);
-			setHarvestLevel("pickaxe", 1); //Iron weapons needed
+			setHarvestLevel("pickaxe", 1); //Stone weapons needed
 			setTranslationKey("pf_meteorite");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}

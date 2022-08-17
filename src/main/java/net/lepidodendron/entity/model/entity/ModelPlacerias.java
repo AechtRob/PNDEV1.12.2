@@ -306,7 +306,7 @@ public class ModelPlacerias extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 0.70F;
+        this.root.offsetY = 0.75F;
 
         EntityPrehistoricFloraPlacerias Placerias = (EntityPrehistoricFloraPlacerias) e;
         float masterSpeed = Placerias.getTravelSpeed();

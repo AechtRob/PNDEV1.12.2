@@ -83,6 +83,7 @@ public class BlockLavaRockDiamondOre extends ElementsLepidodendronMod.ModElement
 			setSoundType(SoundType.STONE);
 			setTranslationKey("pf_lava_rock_diamond_ore");
 			setCreativeTab(TabLepidodendronMisc.tab);
+			setHarvestLevel("pickaxe",2);
 		}
 
 		@Override

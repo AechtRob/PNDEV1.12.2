@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "1": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "2": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "3": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "4": {
+      "item": "minecraft:magma_cream"
+    },
+    "5": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "6": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "7": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "8": {
+      "item": "lepidodendron:lava_cobble"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lava_cobble_molten",
+    "count": 8
+  }
+}

@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraCaviramus extends EntityPrehistoricFloraAgeab
 		minWidth = 0.12F;
 		maxWidth = 0.62F;
 		maxHeight = 0.72F;
-		maxHealthAgeable = 17.0D;
+		maxHealthAgeable = 16.0D;
 	}
 
 	public static int flightHeight() {

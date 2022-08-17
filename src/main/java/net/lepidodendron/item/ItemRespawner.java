@@ -92,7 +92,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 			int jj = (chunkz * 16) - 16;
 			int i = ii;
 			int j = jj;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -102,7 +102,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii + 16;
 			j = jj;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -112,7 +112,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii + 16;
 			j = jj + 16;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -122,7 +122,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii + 16;
 			j = jj - 16;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -132,7 +132,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii - 16;
 			j = jj;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -142,7 +142,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii - 16;
 			j = jj + 16;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -152,7 +152,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii - 16;
 			j = jj - 16;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -162,7 +162,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii + 16;
 			j = jj;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));
@@ -172,7 +172,7 @@ public class ItemRespawner extends ElementsLepidodendronMod.ModElement {
 
 			i = ii - 16;
 			j = jj;
-			if (worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
+			if (!worldIn.isRemote && worldIn.isBlockLoaded(new BlockPos(i, 0, j))) {
 				boolean onlyWater = (worldIn.provider.getDimension() == LepidodendronConfig.dimPrecambrian);
 				ChunkGenSpawner.executeProcedure(onlyWater, worldIn, new BlockPos(i, 0, j), worldIn.rand, null, false);
 				LepidodendronBespokeSpawner.onMobRespawn(worldIn, new BlockPos(i, 0, j));

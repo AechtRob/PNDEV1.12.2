@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.8F;
-		maxHealthAgeable = 52.0D;
+		maxHealthAgeable = 32.0D;
 	}
 
 	@Override

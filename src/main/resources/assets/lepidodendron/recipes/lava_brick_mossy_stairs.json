@@ -1,0 +1,37 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:lava_brick_mossy"
+    },
+    "3": {
+      "item": "lepidodendron:lava_brick_mossy"
+    },
+    "4": {
+      "item": "lepidodendron:lava_brick_mossy"
+    },
+    "6": {
+      "item": "lepidodendron:lava_brick_mossy"
+    },
+    "7": {
+      "item": "lepidodendron:lava_brick_mossy"
+    },
+    "8": {
+      "item": "lepidodendron:lava_brick_mossy"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lava_brick_mossy_stairs",
+    "count": 4
+  }
+}
+
+
+
+

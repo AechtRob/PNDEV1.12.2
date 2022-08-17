@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraSauroctonus extends EntityPrehistoricFloraLan
 		minWidth = 0.18F;
 		maxWidth = 0.57F;
 		maxHeight = 0.85F;
-		maxHealthAgeable = 36.0D;
+		maxHealthAgeable = 30.0D;
 	}
 
 	@Override

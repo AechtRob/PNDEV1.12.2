@@ -1,0 +1,36 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:lava_brick"
+    },
+    "3": {
+      "item": "lepidodendron:lava_brick"
+    },
+    "4": {
+      "item": "lepidodendron:lava_brick"
+    },
+    "6": {
+      "item": "lepidodendron:lava_brick"
+    },
+    "7": {
+      "item": "lepidodendron:lava_brick"
+    },
+    "8": {
+      "item": "lepidodendron:lava_brick"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lava_brick_stairs",
+    "count": 4
+  }
+}
+
+
+

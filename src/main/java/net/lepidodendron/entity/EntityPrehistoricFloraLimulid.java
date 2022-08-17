@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	public boolean isJumpingPF() {

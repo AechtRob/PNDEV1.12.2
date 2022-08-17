@@ -1,7 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "lepidodendron:blocks/hermanophyton_shoot",
-    "particle": "lepidodendron:blocks/hermanophyton_shoot"
-  }
-}

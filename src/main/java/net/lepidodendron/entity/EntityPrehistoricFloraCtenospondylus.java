@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraCtenospondylus extends EntityPrehistoricFlora
 		minWidth = 0.18F;
 		maxWidth = 0.76F;
 		maxHeight = 1.2F;
-		maxHealthAgeable = 32.0D;
+		maxHealthAgeable = 26.0;
 	}
 
 	@Override

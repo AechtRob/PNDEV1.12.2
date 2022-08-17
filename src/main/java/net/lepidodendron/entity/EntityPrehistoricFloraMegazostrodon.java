@@ -27,7 +27,7 @@ public class EntityPrehistoricFloraMegazostrodon extends EntityPrehistoricFloraM
 		minWidth = 0.12F;
 		maxWidth = 0.27F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	public static String getPeriod() {return "Triassic";}

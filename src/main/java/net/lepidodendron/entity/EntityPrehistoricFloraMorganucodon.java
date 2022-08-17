@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 		minWidth = 0.12F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 16.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

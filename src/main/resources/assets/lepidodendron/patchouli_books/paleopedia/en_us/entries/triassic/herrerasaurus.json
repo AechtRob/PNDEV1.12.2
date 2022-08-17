@@ -1,0 +1,52 @@
+{
+	"name": "Herrerasaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/herrerasaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_herrerasaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_herrerasaurus",
+			"title": "Herrerasaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Moss Meadow, Temperate Forest$(br2)>Dinosauria$(br)>Saurischia$(br)>Herrerasauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/herrerasaurus.png"],
+			"title": "H. ischigualastensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "Herrerasaurus ischigualastensis description"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "description 2"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "description 3"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "description 4"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "description 5"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_herrerasaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}
+

@@ -70,9 +70,7 @@ public class BlockAmphibianSpawnDvinosaurus extends ElementsLepidodendronMod.Mod
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomePermian) {
 				BiomePermian biomeP = (BiomePermian) biome;
-				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Wetlands
-					|| biomeP.getBiomeType() == EnumBiomeTypePermian.Lowlands
-					|| biomeP.getBiomeType() == EnumBiomeTypePermian.River) {
+				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Desert) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

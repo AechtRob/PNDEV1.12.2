@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraEudimorphodon extends EntityPrehistoricFloraA
 		minWidth = 0.12F;
 		maxWidth = 0.52F;
 		maxHeight = 0.65F;
-		maxHealthAgeable = 15.0D;
+		maxHealthAgeable = 12.0D;
 	}
 
 	public static int flightHeight() {

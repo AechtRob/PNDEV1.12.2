@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraPanzhousaurus extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.4F;
 		maxHeight = 0.35F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 7.0D;
 	}
 
 	@Override

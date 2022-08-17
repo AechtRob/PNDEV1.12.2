@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 		minWidth = 0.1F;
 		maxWidth = 0.55F;
 		maxHeight = 0.40F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 10.0D;
 		BREATHE_ANIMATION = Animation.create(55);
 	}
 

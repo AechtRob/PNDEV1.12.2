@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraPantylus extends EntityPrehistoricFloraSwimmi
 		minWidth = 0.1F;
 		maxWidth = 0.35F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

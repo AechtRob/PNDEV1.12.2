@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraPurlovia extends EntityPrehistoricFloraDiicto
 		minWidth = 0.18F;
 		maxWidth = 0.35F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 18.0D;
+		maxHealthAgeable = 8.0D;
 	}
 
 	@Override

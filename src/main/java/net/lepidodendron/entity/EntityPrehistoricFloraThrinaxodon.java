@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraThrinaxodon extends EntityPrehistoricFloraDii
 		minWidth = 0.18F;
 		maxWidth = 0.33F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 8.0D;
 		NOISE_ANIMATION = Animation.create(20);
 	}
 

@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		minWidth = 0.18F;
 		maxWidth = 1.62F;
 		maxHeight = 2.31F;
-		maxHealthAgeable = 42.0D;
+		maxHealthAgeable = 74.0D;
 		STAND_ANIMATION = Animation.create(this.getStandLength());
 		NOISE_ANIMATION = Animation.create(20);
 	}

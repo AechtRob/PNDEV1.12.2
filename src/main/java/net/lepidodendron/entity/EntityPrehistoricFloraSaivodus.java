@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 1.59F;
 		maxHeight = 2.1F;
-		maxHealthAgeable = 56.0D;
+		maxHealthAgeable = 66.0D;
 	}
 
 	@Override

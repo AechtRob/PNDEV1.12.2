@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraLotosaurus extends EntityPrehistoricFloraLand
 		minWidth = 0.12F;
 		maxWidth = 0.99F;
 		maxHeight = 1.25F;
-		maxHealthAgeable = 58.0D;
+		maxHealthAgeable = 40.0D;
 	}
 
 	@Override

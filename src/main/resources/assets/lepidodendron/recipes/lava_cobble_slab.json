@@ -1,0 +1,30 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "1": {
+      "item": "lepidodendron:lava_cobble"
+    },
+    "2": {
+      "item": "lepidodendron:lava_cobble"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lava_cobble_slab",
+    "data": 0,
+    "count": 6
+  }
+}
+
+
+
+
+
+
+

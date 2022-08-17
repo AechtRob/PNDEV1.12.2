@@ -489,7 +489,8 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_caelestiventus", EntityPrehistoricFloraCaelestiventus.class, LepidodendronMod.ENTITY_CAELESTIVENTUS, 82,-7709891,-14540512);
         registerEntity("prehistoric_flora_caviramus", EntityPrehistoricFloraCaviramus.class, LepidodendronMod.ENTITY_CAVIRAMUS, 82,-13950946,-5478);
         registerEntity("prehistoric_flora_eudimorphodon", EntityPrehistoricFloraEudimorphodon.class, LepidodendronMod.ENTITY_EUDIMORPHODON, 82,-1510926,-2087639);
-        //registerEntity("prehistoric_flora_italophlebia", EntityPrehistoricFloraItalophlebia.class, LepidodendronMod.ENTITY_ITALOPHLEBIA, 64,0,0);
+        registerEntity("prehistoric_flora_italophlebia", EntityPrehistoricFloraItalophlebia.class, LepidodendronMod.ENTITY_ITALOPHLEBIA, 64,-8534878,-1381847);
+        registerEntity("prehistoric_flora_italophlebia_nymph", EntityPrehistoricFloraItalophlebiaNymph.class, LepidodendronMod.ENTITY_ITALOPHLEBIA_NYMPH, 64,-6780300,-10397881);
         registerEntity("prehistoric_flora_titanoptera_gigatitan", EntityPrehistoricFloraTitanopteraGigatitan.class, LepidodendronMod.ENTITY_TITANOPTERA_GIGATITAN, 64,-13026281,-14605811);
         //registerEntity("prehistoric_flora_nagini", EntityPrehistoricFloraNagini.class, LepidodendronMod.ENTITY_NAGINI, 64,-14408664,-2904003);
         //registerEntity("prehistoric_flora_brachydectes", EntityPrehistoricFloraBrachydectes.class, LepidodendronMod.ENTITY_BRACHYDECTES, 64,-11321555,-9286870);

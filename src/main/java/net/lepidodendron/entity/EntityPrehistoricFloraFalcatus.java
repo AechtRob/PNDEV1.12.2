@@ -46,7 +46,7 @@ public class EntityPrehistoricFloraFalcatus extends EntityPrehistoricFloraAgeabl
 		minWidth = 0.1F;
 		maxWidth = 0.2F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 9.0D;
+		maxHealthAgeable = 7.0D;
 	}
 
 	@Override

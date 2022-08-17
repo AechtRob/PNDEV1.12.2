@@ -191,14 +191,16 @@ public class WorldGenAncientMoss extends WorldGenerator
 				if (biome instanceof BiomePermian) {
 					BiomePermian biomePermian = (BiomePermian) biome;
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands) {
-						i = rand.nextInt(2);
+						i = rand.nextInt(3);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Lowlands) {
-						i = rand.nextInt(2);
+						i = rand.nextInt(3);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Forest) {
 						i = rand.nextInt(4);
@@ -208,15 +210,17 @@ public class WorldGenAncientMoss extends WorldGenerator
 						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
-						i = rand.nextInt(3);
+						i = rand.nextInt(4);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 					}
 					if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Arid) {
-						i = rand.nextInt(2);
+						i = rand.nextInt(3);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
 					}
 				}
 			}
@@ -225,41 +229,49 @@ public class WorldGenAncientMoss extends WorldGenerator
 				Biome biome = worldIn.getBiome(pos);
 				if (biome instanceof BiomeTriassic) {
 					BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Desert) {
+						stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Island) {
+						stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";
+					}
+					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Mountain) {
 						i = rand.nextInt(2);
 						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
-						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
 					}
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm) {
-						i = rand.nextInt(3);
-						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+					else if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Xeric) {
+						i = rand.nextInt(4);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+					}
+					else if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
+						i = rand.nextInt(5);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
 						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_italophlebia";}
 					}
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River) {
-						i = rand.nextInt(4);
-						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+					else if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool) {
+						i = rand.nextInt(5);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
 						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
-						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
 						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
 					}
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Cool) {
-						i = rand.nextInt(3);
-						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
-						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
-						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
-					}
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Desert) {
-						i = rand.nextInt(2);
-						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";}
-						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
-					}
-					if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Xeric) {
-						i = rand.nextInt(4);
-						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
-						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_arid";}
-						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
-						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+					else if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Warm
+							||	biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River ) {
+						i = rand.nextInt(6);
+						if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_palaeontinid";}
+						if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
+						if (i == 2) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_titanoptera";}
+						if (i == 3) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+						if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_italophlebia";}
+						if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_forest";}
 					}
 				}
 			}

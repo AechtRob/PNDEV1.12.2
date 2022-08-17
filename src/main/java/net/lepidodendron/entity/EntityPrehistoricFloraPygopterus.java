@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraPygopterus extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.3F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 11.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override

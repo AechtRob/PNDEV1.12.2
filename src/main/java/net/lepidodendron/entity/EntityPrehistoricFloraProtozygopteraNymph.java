@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraProtozygopteraNymph extends EntityPrehistoric
 		minWidth = 0.05F;
 		maxWidth = 0.2F;
 		maxHeight = 0.2F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override

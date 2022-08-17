@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraMeganeuraNymph extends EntityPrehistoricFlora
 		minWidth = 0.085F;
 		maxWidth = 0.6F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 2.0D;
 	}
 
 	@Override
