@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/gerarus_raw"
+    "layer0": "paleopedia:gerarus_icon"
   }
 }
