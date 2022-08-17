@@ -2,14 +2,14 @@
 	"name": "Palaeoniscum",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/palaeoniscum_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_palaeoniscum",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_palaeoniscum",
 			"title": "Palaeoniscum",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Marine$br2)>Actinopterygii$(br)>Palaeonisciformes$(br)>Palaeoniscidae"
 		},
 		{
 			"type": "image",
