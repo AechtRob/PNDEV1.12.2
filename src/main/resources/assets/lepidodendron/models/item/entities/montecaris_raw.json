@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/montecaris_raw"
+    "layer0": "paleopedia:montecaris_icon"
   },
   "display": {
     "ground": {

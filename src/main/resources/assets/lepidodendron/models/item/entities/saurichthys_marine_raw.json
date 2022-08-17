@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/saurichthys_marine_raw"
+    "layer0": "paleopedia:saurichthys_icon"
   }
 }
