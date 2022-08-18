@@ -77,7 +77,7 @@ public class EntityPrehistoricFloraRebellatrix extends EntityPrehistoricFloraAge
 
 	@Override
 	public boolean divesToLay() {
-		return true;
+		return false;
 	}
 
 	@Override

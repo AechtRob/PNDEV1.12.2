@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EatFishItemsAI;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -80,16 +77,11 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean laysEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean divesToLay() {
 		return false;
 	}
 
@@ -122,7 +114,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));

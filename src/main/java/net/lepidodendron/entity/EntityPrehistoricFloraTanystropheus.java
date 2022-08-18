@@ -131,7 +131,7 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
@@ -295,11 +295,6 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
 					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
-	}
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraTanystropheus(this.world);
 	}
 
 }

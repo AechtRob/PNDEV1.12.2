@@ -27,7 +27,6 @@ public class RenderEdwardsiphyton extends TileEntitySpecialRenderer<BlockEdwards
     private static final ResourceLocation TEXTURE_HARVESTMAN_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_harvestman.png");
     private static final ResourceLocation TEXTURE_PALAEONTINID_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_palaeontinid.png");
     private static final ResourceLocation TEXTURE_TITANOPTERA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_titanoptera.png");
-    private static final ResourceLocation TEXTURE_ITALOPHLEBIA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_italophlebia.png");
     private final ModelTrigonotarbidEggs trigonotarbid_eggs;
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_ORDOVICIAN_SILURIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_os_eggs.png");
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_carb_eggs.png");
@@ -164,14 +163,6 @@ public class RenderEdwardsiphyton extends TileEntitySpecialRenderer<BlockEdwards
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_TITANOPTERA_EGGS);
-                this.insect_eggs.renderAll(0.075F);
-                GlStateManager.popMatrix();
-            }
-
-            if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_italophlebia")) {
-                GlStateManager.pushMatrix();
-                GlStateManager.scale(0.5F, 0.5F, 0.5F);
-                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_ITALOPHLEBIA_EGGS);
                 this.insect_eggs.renderAll(0.075F);
                 GlStateManager.popMatrix();
             }
