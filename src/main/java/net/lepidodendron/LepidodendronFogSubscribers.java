@@ -41,8 +41,14 @@ public class LepidodendronFogSubscribers {
 	public void fogEvent(EntityViewRenderEvent.RenderFogEvent event) {
 
 		Entity player = event.getEntity();
-		double y = player.posY;
-		Block b = event.getState().getBlock();
+		//double y = player.posY;
+		//Block b = event.getState().getBlock();
+
+		//Biome biome = player.world.getBiome(player.getPosition());
+		IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
+		Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
+		//double y = vec3d.y;
+		Block b = state.getBlock();
 
 		if (!LepidodendronConfig.renderFog) {
 			return;
@@ -61,7 +67,7 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
-		if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER && event.getState().getBlock() != Blocks.LAVA) {
+		if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER && state.getBlock() != Blocks.LAVA) {
 
 			GlStateManager.setFog(GlStateManager.FogMode.LINEAR);
 			//GlStateManager.setFogDensity(0);
@@ -81,7 +87,7 @@ public class LepidodendronFogSubscribers {
 			float fog = 0;
 			for (int x = -distance; x <= distance; ++x) {
 				for (int z = -distance; z <= distance; ++z) {
-					BlockPos pos = player.getPosition().add(x, 0, z);
+					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
 					Biome biome = player.world.getBiome(pos);
 					float density = this.getFogDensity(player);
 					float biomeFog = getBiomeFactor(biome); //==0?
@@ -113,7 +119,12 @@ public class LepidodendronFogSubscribers {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
 			//Biome biome = player.world.getBiome(player.getPosition());
-			IBlockState state = world.getBlockState(player.getPosition());
+			//IBlockState state = world.getBlockState(player.getPosition());
+			//Block b = state.getBlock();
+
+			IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
+			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
+			//double y = vec3d.y;
 			Block b = state.getBlock();
 			//Vec3d worldFog = world.getFogColor(0);
 
@@ -147,7 +158,7 @@ public class LepidodendronFogSubscribers {
 							{
 								for (int z = -distance; z <= distance; ++z)
 								{
-									BlockPos pos = player.getPosition().add(x, 0, z);
+									BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
 									Biome biome = player.world.getBiome(pos);
 									Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
 									red += fogColor.x;
@@ -332,7 +343,7 @@ public class LepidodendronFogSubscribers {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
-							} else if (player.posY < player.world.getSeaLevel() - 4) {
+							} else if (playerEyes < player.world.getSeaLevel() - 4) {
 								fog1 = backgroundFog2 * 2F; //needs gradient with height
 								fog = backgroundFog2 * 2F; //needs gradient with height
 							} else {

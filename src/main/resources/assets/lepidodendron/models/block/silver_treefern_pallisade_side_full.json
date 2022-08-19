@@ -1,0 +1,10 @@
+{
+    "parent": "lepidodendron:block/pallisade_side_full",
+    "textures": {
+        "pallisade": "lepidodendron:blocks/silver_treefern_log"
+    }
+}
+
+
+
+

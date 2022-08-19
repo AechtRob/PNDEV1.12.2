@@ -3399,5 +3399,7 @@ public class LepidodendronSorter {
     public static final int italophlebia_raw = 3391;
     public static final int insect_eggs_italophlebia = 3392;
     public static final int insect_eggs_italophlebia_worldgen = 3393;
+    public static final int eggs_syllipsimopodi = 3394;
+    public static final int amphibian_spawn_branchiosaur = 3395;
 
 }

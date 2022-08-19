@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderCymbospondylus extends RenderLiving<EntityPrehistoricFloraCymbospondylus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cymbospondylus.png");
+    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cymbospondylus_baby.png");
 
     public RenderCymbospondylus(RenderManager mgr) {
         super(mgr, new ModelCymbospondylus(), 0.0f);
@@ -17,6 +18,9 @@ public class RenderCymbospondylus extends RenderLiving<EntityPrehistoricFloraCym
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCymbospondylus entity) {
+        if (entity.isSmall()) {
+            return RenderCymbospondylus.TEXTURE_BABY;
+        }
         return RenderCymbospondylus.TEXTURE;
     }
 

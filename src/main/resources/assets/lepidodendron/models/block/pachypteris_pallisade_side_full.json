@@ -1,0 +1,13 @@
+{
+    "parent": "lepidodendron:block/pallisade_side_full",
+    "textures": {
+        "pallisade": "lepidodendron:blocks/pachypteris_log"
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+{
+    "parent": "lepidodendron:block/pallisade_side",
+    "textures": {
+        "pallisade": "lepidodendron:blocks/cycadopteris_log"
+    }
+}
+
+
+
+
+
+

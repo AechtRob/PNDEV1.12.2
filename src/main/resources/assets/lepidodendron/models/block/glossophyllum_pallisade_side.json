@@ -1,0 +1,11 @@
+{
+    "parent": "lepidodendron:block/pallisade_side",
+    "textures": {
+        "pallisade": "lepidodendron:blocks/glossophyllum_log"
+    }
+}
+
+
+
+
+

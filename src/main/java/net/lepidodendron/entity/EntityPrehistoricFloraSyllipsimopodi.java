@@ -5,10 +5,9 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.ai.NautiloidWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.item.entities.ItemNautiloidEggsMooreoceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsSyllipsimopodi;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -104,7 +103,7 @@ public class EntityPrehistoricFloraSyllipsimopodi extends EntityPrehistoricFlora
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsMooreoceras.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemNautiloidEggsSyllipsimopodi.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
