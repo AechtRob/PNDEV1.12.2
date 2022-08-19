@@ -1,0 +1,38 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:cycadopteris_log"
+    },
+    "4": {
+      "item": "lepidodendron:cycadopteris_log"
+    },
+    "5": {
+      "item": "lepidodendron:cycadopteris_log"
+    },
+    "6": {
+      "item": "lepidodendron:cycadopteris_log"
+    },
+    "7": {
+      "item": "lepidodendron:cycadopteris_log"
+    },
+    "8": {
+      "item": "lepidodendron:cycadopteris_log"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:cycadopteris_pallisade",
+    "count": 4
+  }
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+{
+    "parent": "block/wall_inventory",
+    "textures": {
+        "wall": "lepidodendron:blocks/cycadopteris_log"
+    }
+}
+
+
+
+
+
+

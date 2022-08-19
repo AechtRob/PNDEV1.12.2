@@ -1,0 +1,10 @@
+{
+    "parent": "block/wall_post",
+    "textures": {
+        "wall": "lepidodendron:blocks/silver_treefern_log"
+    }
+}
+
+
+
+

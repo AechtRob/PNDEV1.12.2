@@ -1318,12 +1318,13 @@ public class BlockFungus1 extends ElementsLepidodendronMod.ModElement {
 			}
 			if (side == EnumFacing.UP) {
 	        	if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID
-	        		&& worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD
+	        		|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.SAND
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.CLAY
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK)
+				)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {

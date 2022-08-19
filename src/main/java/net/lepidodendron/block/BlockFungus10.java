@@ -1311,14 +1311,15 @@ public class BlockFungus10 extends ElementsLepidodendronMod.ModElement {
 	        		blockface = false;
 			}
 			if (side == EnumFacing.UP) {
-	        	if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID
-	        		&& worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD
+				if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID
+						|| (worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.SAND
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.CLAY
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.GROUND
 						&& worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK)
-	        		blockface = false;
+				)
+					blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
 	        	//if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID)

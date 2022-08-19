@@ -18,7 +18,7 @@ public class ItemOakDarkAcorn extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:acorn_dark")
 	public static final Item block = null;
 	public ItemOakDarkAcorn(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.acorn);
+		super(instance, LepidodendronSorter.acorn_dark);
 	}
 
 	@Override

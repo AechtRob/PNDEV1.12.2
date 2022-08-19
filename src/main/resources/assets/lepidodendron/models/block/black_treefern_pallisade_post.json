@@ -1,0 +1,9 @@
+{
+    "parent": "block/wall_post",
+    "textures": {
+        "wall": "lepidodendron:blocks/black_treefern_log"
+    }
+}
+
+
+

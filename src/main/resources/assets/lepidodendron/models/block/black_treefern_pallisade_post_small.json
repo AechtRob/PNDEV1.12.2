@@ -1,0 +1,9 @@
+{
+    "parent": "lepidodendron:block/pallisade_post_small",
+    "textures": {
+        "texture": "lepidodendron:blocks/black_treefern_log"
+    }
+}
+
+
+

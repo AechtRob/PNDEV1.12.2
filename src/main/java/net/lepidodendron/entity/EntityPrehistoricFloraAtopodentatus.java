@@ -9,12 +9,14 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -61,10 +63,6 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		return this.getAgeScale() <= 0.33;
 	}
 
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraAtopodentatus(this.world);
-	}
 
 	public static String getPeriod() {
 		return "mid Triassic";
@@ -86,7 +84,17 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 
 	@Override
 	public boolean laysEggs() {
-		return false;
+		return true;
+	}
+
+	@Override
+	public boolean placesNest() {
+		return true;
+	}
+
+	@Override
+	public boolean isNestMound() {
+		return true;
 	}
 
 	@Override
@@ -150,14 +158,15 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1.0D));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AmphibianWander(this, NO_ANIMATION, 0.84, 80));
-		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(7, new EntityAILookIdle(this));
+		tasks.addTask(3, new AmphibianWanderNestInBlockAI(this));
+		tasks.addTask(4, new AmphibianWander(this, NO_ANIMATION, 0.84, 80));
+		tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
+		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(8, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatAlgaeItemsAI(this, 1F));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 
@@ -275,6 +284,22 @@ public class EntityPrehistoricFloraAtopodentatus extends EntityPrehistoricFloraS
 		super.onEntityUpdate();
 	}
 
+	public boolean testLay(World world, BlockPos pos) {
+		return (
+				nestBlockMatch(world, pos)
+		);
+	}
+
+	@Override
+	public boolean nestBlockMatch(World world, BlockPos pos) {
+		boolean match = false;
+		if (!match) {
+			match = ((world.getBlockState(pos.down()).getMaterial() == Material.SAND
+					&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL)
+					&& world.isAirBlock(pos));
+		}
+		return match;
+	}
 
 	@Override
 	public boolean attackEntityAsMob(Entity entity) {

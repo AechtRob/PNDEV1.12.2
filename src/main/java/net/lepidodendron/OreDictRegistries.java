@@ -133,7 +133,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		//Shellfish:
 		OreDictionary.registerOre("itemShellfish", ItemOpolankaRaw.block);
-		OreDictionary.registerOre("itemShellfish", ItemOpolankaCooked.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveCream.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDark.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
