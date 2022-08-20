@@ -1,7 +1,7 @@
 {
 	"name": "Stensioella",
 	"read_by_default": true,
-	"icon": "lepidodendron:stensioella_raw",
+	"icon": "paleopedia:textures/stensioella_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_stensioella",
 	"pages": [

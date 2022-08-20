@@ -1,7 +1,7 @@
 {
 	"name": "Turrisaspis",
 	"read_by_default": true,
-	"icon": "lepidodendron:turrisaspis_raw",
+	"icon": "paleopedia:textures/turrisaspis_icon.png",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_turrisaspis",
 	"pages": [
