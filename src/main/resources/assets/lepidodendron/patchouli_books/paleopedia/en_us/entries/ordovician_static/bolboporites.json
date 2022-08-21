@@ -1,0 +1,32 @@
+{
+	"name": "Bolboporites",
+	"read_by_default": true,
+	"icon": "lepidodendron:cystoid_bolboporites",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_bolboporites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bolboporites",
+			"title": "Bolboporites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Eocrinoidea$(br)>Bolboporitidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Bolboporites.png"],
+			"title": "Bolboporites sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bolboporites",
+			"type": "text",
+			"text": "Bolboporites is a cone shaped echinoderm from the Ordovician and are thought to have lived with the tip of the cone extending from the sea floor. A arm extended from the hole on the top of the cone like the arms of crinoids."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bolboporites",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

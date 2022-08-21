@@ -1,0 +1,32 @@
+{
+	"name": "Cornulitida",
+	"read_by_default": true,
+	"icon": "lepidodendron:cornulitida",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_cornulitida",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cornulitida",
+			"title": "Cornulitida",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cornulitida.png"],
+			"title": "Cornulitida",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cornulitida",
+			"type": "text",
+			"text": "Cornulitids (part of the wider Tentaculita group) were encrusting organisms of uncertain relationships found from the Ordovician until the Carboniferous. The Cornulitid class formed horn-shaped exoskeletons."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cornulitida",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

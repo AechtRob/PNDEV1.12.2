@@ -1,0 +1,7 @@
+{
+    "name": "Silurian Statics",
+    "description": "Static Animals of the Silurian",
+    "icon": "lepidodendron:crinoid_petalocrinus",
+    "parent": "lepidodendron:silurian",
+    "sortnum": 2
+}

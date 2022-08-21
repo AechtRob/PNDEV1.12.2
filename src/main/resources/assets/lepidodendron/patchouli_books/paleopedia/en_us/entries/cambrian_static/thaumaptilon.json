@@ -1,0 +1,32 @@
+{
+	"name": "Thaumaptilon",
+	"read_by_default": true,
+	"icon": "lepidodendron:thaumaptilon",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_thaumaptilon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thaumaptilon",
+			"title": "Thaumaptilon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria?"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Thaumaptilon.png"],
+			"title": "Thaumaptilon walcotti",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thaumaptilon",
+			"type": "text",
+			"text": "Thaumaptilon is a sessile Cambrian animal from the Burgess Shale which looks similar to the Ediacaran frondose like organisms. It was leaf shaped and it had a central stalk with many ribs extending from it. Thaumaptilon comes from the Greek thauma 'wonder' and ptilon 'feather.'"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thaumaptilon",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

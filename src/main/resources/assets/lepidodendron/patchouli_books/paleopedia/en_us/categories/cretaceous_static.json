@@ -1,0 +1,7 @@
+{
+    "name": "Cretaceous Statics",
+    "description": "Static Animals of the Cretaceous",
+    "icon": "lepidodendron:ginkgo_sapling",
+    "parent": "lepidodendron:cretaceous",
+    "sortnum": 2
+}

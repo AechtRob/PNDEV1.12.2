@@ -1,0 +1,32 @@
+{
+	"name": "Sea Anemone",
+	"read_by_default": true,
+	"icon": "lepidodendron:sea_anemone_1",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_seaanemone",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_seaanemone",
+			"title": "Sea Anemone",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian+$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hexacorallia$(br)>Actiniaria"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/anemone.png"],
+			"title": "Actiniaria",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_seaanemone",
+			"type": "text",
+			"text": "Sea Anemones are cnidarians which have existed since the Cambrian period. They are generally stationary animals which feed by catching prey in their tentacles and brining the prey to its mouth. Sea Anemones can actually move, though they usually do so in order to escape their predators, which are also slow moving."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_seaanemone",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

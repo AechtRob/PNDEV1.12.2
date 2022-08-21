@@ -1,0 +1,32 @@
+{
+	"name": "Oesia/Margaretia",
+	"read_by_default": true,
+	"icon": "lepidodendron:oesia",
+	"category": "lepidodendron:cambrian_static",
+	"turnin": "lepidodendron:pf_adv_book_oesiamargaretia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_oesiamargaretia",
+			"title": "Oesia/Margaretia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() $(br2)Oesia:$(br)>$(o)incertae sedis$()$(br2)Margaretia:$(br)>$(o)incertae sedis"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/oesia.png"],
+			"title": "O. disjuncta, M. dorus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_oesiamargaretia",
+			"type": "text",
+			"text": "Oesia is a worm like organism that is usually found in association with Margaretia, a tube like frondose organism. Margaretia has been described as an organic tube, a nest for Oesia."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_oesiamargaretia",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

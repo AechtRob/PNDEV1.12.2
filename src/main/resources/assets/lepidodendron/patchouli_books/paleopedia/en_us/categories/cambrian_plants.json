@@ -1,7 +1,0 @@
-{
-    "name": "Cambrian Statics",
-    "description": "Plants/Static Animals of the Cambrian",
-    "icon": "lepidodendron:stromatoveris",
-    "parent": "lepidodendron:cambrian",
-    "sortnum": 2
-}

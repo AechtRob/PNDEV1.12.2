@@ -1,7 +1,0 @@
-{
-    "name": "Devonian Statics",
-    "description": "Plants/Static Animals of the Devonian",
-    "icon": "lepidodendron:crinoid_ancyrocrinus",
-    "parent": "lepidodendron:devonian",
-    "sortnum": 2
-}
