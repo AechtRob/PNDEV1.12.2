@@ -1,0 +1,32 @@
+{
+	"name": "Rugose Coral",
+	"read_by_default": true,
+	"icon": "lepidodendron:rugosa_1",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_rugosa",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rugosa",
+			"title": "Rugose Coral",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Cnidaria$(br)>Hexacorallia/Tetracoralla$(br)>Rugosa"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rugose.png"],
+			"title": "Rugosa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rugosa",
+			"type": "text",
+			"text": "Rugose corals are more closely related to modern corals than Tabulate corals were. They were important reef organisms from the mid Ordovician until their extinction at the end of the Permian period, with a peak in abundance and diversity during the Devonian. While some species were small and colonial, others were larger and more solitary, each contained within its cone-shaped outer calcite skeleton. These corals had tentacles to help them catch prey and they generally ate micro-organisms."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rugosa",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}
+

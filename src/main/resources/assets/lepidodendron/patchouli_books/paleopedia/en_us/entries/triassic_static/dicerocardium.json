@@ -1,0 +1,32 @@
+{
+	"name": "Dicerocardium",
+	"read_by_default": true,
+	"icon": "lepidodendron:bivalve_dicerocardium",
+	"category": "lepidodendron:triassic_static",
+	"turnin": "lepidodendron:pf_adv_book_dicerocardium",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dicerocardium",
+			"title": "Dicerocardium",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Bivalvia$(br)>Megalodontida$(br)>Dicerocardiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Dicerocardium.png"],
+			"title": "Dicerocardium jani",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dicerocardium",
+			"type": "text",
+			"text": "Dicerocardium is a saltwater clam from the Triassic. It was a relatively large heterodont bivalve that were stationary semi-infaunal suspension feeders."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dicerocardium",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Punch/Shears"
+		}
+	]
+}
+

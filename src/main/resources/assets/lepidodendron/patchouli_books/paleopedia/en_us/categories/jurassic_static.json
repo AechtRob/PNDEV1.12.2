@@ -1,0 +1,7 @@
+{
+    "name": "Jurassic Statics",
+    "description": "Static Animals of the Jurassic",
+    "icon": "lepidodendron:bunya_sapling",
+    "parent": "lepidodendron:jurassic",
+    "sortnum": 2
+}
