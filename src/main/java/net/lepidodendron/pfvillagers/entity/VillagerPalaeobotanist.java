@@ -48,8 +48,32 @@ public class VillagerPalaeobotanist {
 
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemFossilHammer.block, new EntityVillager.PriceInfo(2, 3)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemBottleOfResin.block, new EntityVillager.PriceInfo(1, 1)));
-        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockPlantFossil.block), new EntityVillager.PriceInfo(4, 4)));
-        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockPlantFossil.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPrecambrian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilPrecambrian.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilCambrian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilCambrian.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilOrdovician.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilOrdovician.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilSilurian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilSilurian.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilDevonian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilDevonian.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilCarboniferous.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilCarboniferous.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPermian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilPermian.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilTriassic.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilTriassic.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilJurassic.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilJurassic.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilCretaceous.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilCretaceous.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPaleogene.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilPaleogene.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilNeogene.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilNeogene.block), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPleistocene.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilPleistocene.block), new EntityVillager.PriceInfo(1, 1)));
 
         palaeoCareer.addTrade(4, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(16, 16)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(1, 1)));

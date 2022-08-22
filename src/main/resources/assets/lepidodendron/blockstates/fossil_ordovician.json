@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:fossil_ordovician_1"},
+      {"model": "lepidodendron:fossil_ordovician_2"},
+      {"model": "lepidodendron:fossil_ordovician_3"},
+      {"model": "lepidodendron:fossil_ordovician_4"},
+      {"model": "lepidodendron:fossil_ordovician_1_var"},
+      {"model": "lepidodendron:fossil_ordovician_2_var"},
+      {"model": "lepidodendron:fossil_ordovician_3_var"},
+      {"model": "lepidodendron:fossil_ordovician_4_var"}
+    ]
+  }
+}

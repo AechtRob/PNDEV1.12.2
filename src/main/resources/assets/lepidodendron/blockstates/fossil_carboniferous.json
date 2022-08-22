@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:fossil_carboniferous_1"},
+      {"model": "lepidodendron:fossil_carboniferous_2"},
+      {"model": "lepidodendron:fossil_carboniferous_3"},
+      {"model": "lepidodendron:fossil_carboniferous_4"},
+      {"model": "lepidodendron:fossil_carboniferous_1_var"},
+      {"model": "lepidodendron:fossil_carboniferous_2_var"},
+      {"model": "lepidodendron:fossil_carboniferous_3_var"},
+      {"model": "lepidodendron:fossil_carboniferous_4_var"},
+      {"model": "lepidodendron:plant_fossil_1"},
+      {"model": "lepidodendron:plant_fossil_2"},
+      {"model": "lepidodendron:plant_fossil_3"},
+      {"model": "lepidodendron:plant_fossil_4"},
+      {"model": "lepidodendron:plant_fossil_1_var"},
+      {"model": "lepidodendron:plant_fossil_2_var"},
+      {"model": "lepidodendron:plant_fossil_3_var"},
+      {"model": "lepidodendron:plant_fossil_4_var"}
+    ]
+  }
+}

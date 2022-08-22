@@ -47,7 +47,7 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 			setRegistryName("triassic_gondwanan_forest_hills");
 			topBlock = BlockLeafLitter.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirtRed.block.getDefaultState();
-			decorator.treesPerChunk = 25;
+			decorator.treesPerChunk = 32;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -64,6 +64,7 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 
 		protected static final WorldGenDicroidiumFTree DICROIDIUM_F_TREE = new WorldGenDicroidiumFTree(false);
 		protected static final WorldGenDicroidiumFTreeDead DICROIDIUM_F_TREE_DEAD = new WorldGenDicroidiumFTreeDead(false);
+		protected static final WorldGenDicroidiumOTree DICROIDIUM_O_TREE = new WorldGenDicroidiumOTree(false);
 		protected static final WorldGenDicroidium DICROIDIUM = new WorldGenDicroidium(false);
 		protected static final WorldGenGinkgoitesTree GINKGO_TREE = new WorldGenGinkgoitesTree(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA = new WorldGenSphenobaieraTree(false);
@@ -82,8 +83,9 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 		protected static final WorldGenNilssoniopteris NILSSONIOPTERIS_GENERATOR = new WorldGenNilssoniopteris();
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
-		protected static final WorldGenClathropteris CLATHROPTERIS_GENERATOR = new WorldGenClathropteris();
+		protected static final WorldGenCladophlebis CLADOPHLEBIS_GENERATOR = new WorldGenCladophlebis();
 		protected static final WorldGenPetriellales PETRIELLALES_GENERATOR = new WorldGenPetriellales();
+		protected static final WorldGenSpaciinodum SPACIINODUM_GENERATOR = new WorldGenSpaciinodum();
 
 		protected static final WorldGenPrehistoricGroundCoverPangaean GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverPangaean();
 		protected static final WorldGenWaterSideRedPrehistoricGround WATERSIDE_DIRT_GENERATOR = new WorldGenWaterSideRedPrehistoricGround();
@@ -93,6 +95,7 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenPodzol PODZOL_GENERATOR = new WorldGenPodzol();
 		protected static final WorldGenPangeanDirt DIRT_GENERATOR = new WorldGenPangeanDirt();
+		protected static final WorldGenDicroidiumE DICROIDIUM_E_GENERATOR = new WorldGenDicroidiumE();
 
 
 		@Override
@@ -137,6 +140,9 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 						}
 					}
 					else {
+						if (Math.random() > 0.75) {
+							return DICROIDIUM_O_TREE;
+						}
 						return DICROIDIUM_F_TREE;
 					}
 				}
@@ -217,6 +223,15 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 			}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 56; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DICROIDIUM_E_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), 60, 255);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 18; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -254,12 +269,21 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 	        }
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 128; ++i)
+				for (int i = 0; i < 24; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PETRIELLALES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 64; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SPACIINODUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 	        if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -285,7 +309,7 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					CLATHROPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					CLADOPHLEBIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

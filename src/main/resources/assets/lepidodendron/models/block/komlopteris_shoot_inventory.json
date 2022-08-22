@@ -1,0 +1,9 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "lepidodendron:items/komlopteris_shoot_inventory",
+    "particle": "lepidodendron:items/komlopteris_shoot_inventory"
+  }
+}
+
+

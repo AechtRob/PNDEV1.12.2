@@ -454,7 +454,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsReborn);
                 }
-            } else if (biome == BiomeTriassicFloodedForest.biome) {
+            } else if (biome == BiomeTriassicFloodedForest.biome || biome == BiomeTriassicFloodedForestDense.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestPF);
                 }
@@ -464,7 +464,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestReborn);
                 }
-            } else if (biome == BiomeTriassicGondwananForest.biome || biome == BiomeTriassicGondwananForestCrags.biome || biome == BiomeTriassicGondwananForestHills.biome) {
+            } else if (biome == BiomeTriassicGondwananForest.biome || biome == BiomeTriassicGondwananForestCrags.biome || biome == BiomeTriassicGondwananForestHills.biome || biome == BiomeTriassicGondwananForestClearing.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestPF);
                 }

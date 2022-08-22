@@ -1,7 +1,0 @@
-{
-    "parent": "block/cross",
-    "textures": {
-        "cross": "lepidodendron:blocks/komlopteris_strobilus",
-        "particle": "lepidodendron:blocks/komlopteris_strobilus"
-    }
-}

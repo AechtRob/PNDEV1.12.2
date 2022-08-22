@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/cambrian_fossil_var_1_flipped",
+    "particle": "lepidodendron:blocks/cambrian_fossil_var_1_flipped"
+  }
+}
+
+
+

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:dicroidium_o_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:dicroidium_o_slab_top"
+    }
+  }
+}

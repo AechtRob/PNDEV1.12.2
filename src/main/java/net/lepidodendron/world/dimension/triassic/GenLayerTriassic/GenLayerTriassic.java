@@ -32,9 +32,11 @@ public class GenLayerTriassic {
         biomes = new GenLayerTriassicShallowOcean(1300L, biomes);
         biomes = new GenLayerZoom(1003L, biomes);
         biomes = new GenLayerSmooth(700L, biomes);
+        biomes = new GenLayerDiversifyTriassic4(1975L, biomes);
         biomes = new GenLayerSmooth(701L, biomes);
         biomes = new GenLayerTriassicIslandsTrim(1115L, biomes);
         biomes = new GenLayerDiversifyTriassicShallowOcean(1000L, biomes);
+        biomes = new GenLayerDiversifyTriassic3(1975L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
         biomes = new GenLayerTriassicIslandsTrim(1116L, biomes);
         biomes = new GenLayerTriassicIslandSeparate(1002L, biomes);

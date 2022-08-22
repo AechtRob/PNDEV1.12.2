@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:spaciinodum_1"},
+      {"model": "lepidodendron:spaciinodum_2"},
+      {"model": "lepidodendron:spaciinodum_3"}
+    ]
+  }
+}

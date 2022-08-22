@@ -49,7 +49,7 @@ public class RecipeCharcoalFromLogsAndSponges extends ElementsLepidodendronMod.M
 		GameRegistry.addSmelting(new ItemStack(BlockArchaeopterisLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
 		GameRegistry.addSmelting(new ItemStack(BlockTallAraucariaLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
 		GameRegistry.addSmelting(new ItemStack(BlockBristleconeLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
-		GameRegistry.addSmelting(new ItemStack(BlockKomlopterisLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
+		GameRegistry.addSmelting(new ItemStack(BlockDicroidiumOLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
 		GameRegistry.addSmelting(new ItemStack(BlockAgathisLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
 		GameRegistry.addSmelting(new ItemStack(BlockHironoiaLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);
 		GameRegistry.addSmelting(new ItemStack(BlockAlpiaLog.block, (int) (1)), new ItemStack(Items.COAL, (int) (1), 1), 0.15F);

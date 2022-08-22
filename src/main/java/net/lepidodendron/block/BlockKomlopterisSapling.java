@@ -17,13 +17,10 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -37,7 +34,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -73,26 +69,6 @@ public class BlockKomlopterisSapling extends ElementsLepidodendronMod.ModElement
         	setResistance(1F);
 			setTranslationKey("pf_komlopteris_sapling");
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
-		}
-
-		@Override
-		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
-			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
-					&&
-					(worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.SAND
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ROCK
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.CLAY
-							|| worldIn.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					)
-			) {
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(this, (int) (1)));
-				entityToSpawn.setPickupDelay(10);
-				worldIn.spawnEntity(entityToSpawn);
-			}
-			else {
-				super.harvestBlock(worldIn, player, pos, state, te, stack);
-			}
 		}
 
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -178,15 +154,15 @@ public class BlockKomlopterisSapling extends ElementsLepidodendronMod.ModElement
 		protected BlockStateContainer createBlockState()
 	    {
 	        return new BlockStateContainer(this, new IProperty[] {STAGE});
-	    }     
+	    }   
 
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Seed-Plant tree");
-	        	tooltip.add("Periods: [Jurassic -] Cretaceous - Paleogene (Eocene)");
-	        	tooltip.add("Propagation: seeds");}
+				tooltip.add("Type: Seed-Plant");
+				tooltip.add("Periods: [late Triassic -] Jurassic - early Cretaceous");
+				tooltip.add("Propagation: seeds");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
 	}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:dicroidium_e_inventory"
+    },
+    "var=0": {"model": "lepidodendron:dicroidium_e_top_1"},
+    "var=1": {"model": "lepidodendron:dicroidium_e_top_2"},
+    "var=2": {"model": "lepidodendron:dicroidium_e_top_3"}
+  }
+}

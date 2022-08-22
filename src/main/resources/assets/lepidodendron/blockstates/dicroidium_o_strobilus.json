@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus", "x": 90, "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus", "x": 90, "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:dicroidium_o_strobilus", "x": 180}
+    ]
+  }
+}

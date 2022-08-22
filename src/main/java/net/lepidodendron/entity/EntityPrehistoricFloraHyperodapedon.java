@@ -47,12 +47,10 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.18F;
-		maxWidth = 0.80F;
+		maxWidth = 0.64F;
 		maxHeight = 0.45F;
 		maxHealthAgeable = 18.0D;
 	}
-
-
 
 	@Override
 	public int getEggType() {

@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:fossil_cambrian_1"},
+      {"model": "lepidodendron:fossil_cambrian_2"},
+      {"model": "lepidodendron:fossil_cambrian_3"},
+      {"model": "lepidodendron:fossil_cambrian_4"},
+      {"model": "lepidodendron:fossil_cambrian_1_var"},
+      {"model": "lepidodendron:fossil_cambrian_2_var"},
+      {"model": "lepidodendron:fossil_cambrian_3_var"},
+      {"model": "lepidodendron:fossil_cambrian_4_var"}
+    ]
+  }
+}

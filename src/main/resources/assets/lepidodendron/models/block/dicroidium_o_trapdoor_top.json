@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/trapdoor_top",
+  "textures": {
+    "texture": "lepidodendron:blocks/dicroidium_o_trapdoor",
+    "planktexture": "lepidodendron:blocks/dicroidium_o_planks",
+    "particle": "lepidodendron:blocks/dicroidium_o_trapdoor"
+  }
+}

@@ -98,7 +98,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                     }
 
                     if (position.getY() > (worldIn.getSeaLevel() + 15)) {
-                        if (Math.random() > 0.8) {
+                        if (Math.random() > 0.65) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }
                         else {

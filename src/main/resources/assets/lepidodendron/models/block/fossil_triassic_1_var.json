@@ -1,0 +1,14 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/triassic_fossil_flipped",
+    "particle": "lepidodendron:blocks/triassic_fossil_flipped"
+  }
+}
+
+
+
+
+
+
+

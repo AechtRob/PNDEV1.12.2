@@ -70,10 +70,22 @@
 				"biome": "lepidodendron:triassic_flooded_forest"
 			}
 		},
+		"triassic_flooded_forest_dense": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_flooded_forest_dense"
+			}
+		},
 		"triassic_gondwanan_forest": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:triassic_gondwanan_forest"
+			}
+		},
+		"triassic_gondwanan_forest_clearing": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_gondwanan_forest_clearing"
 			}
 		},
 		"triassic_gondwanan_forest_crags": {
@@ -195,11 +207,17 @@
 			"triassic_flooded_forest"
 		],
 		[
+			"triassic_flooded_forest_dense"
+		],
+		[
 			"triassic_gondwanan_forest",
 			"triassic_gondwanan_forest_hills"
 		],
 		[
 			"triassic_gondwanan_forest_crags"
+		],
+		[
+			"triassic_gondwanan_forest_clearing"
 		],
 		[
 			"triassic_gondwanan_plain"

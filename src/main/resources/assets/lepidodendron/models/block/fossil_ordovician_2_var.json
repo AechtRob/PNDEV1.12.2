@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/ordovician_fossil_var_1_flipped",
+    "particle": "lepidodendron:blocks/ordovician_fossil_var_1_flipped"
+  }
+}
+
+
+
+

@@ -4,7 +4,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockPlantFossil;
+import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.material.Material;
@@ -52,7 +52,20 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
     private static class ItemToolCustom extends ItemTool {
         protected ItemToolCustom() {
             super(ToolMaterial.IRON, Sets.newHashSet(
-                    BlockPlantFossil.block));
+                    BlockFossilPrecambrian.block,
+                    BlockFossilCambrian.block,
+                    BlockFossilOrdovician.block,
+                    BlockFossilSilurian.block,
+                    BlockFossilDevonian.block,
+                    BlockFossilCarboniferous.block,
+                    BlockFossilPermian.block,
+                    BlockFossilTriassic.block,
+                    BlockFossilJurassic.block,
+                    BlockFossilCretaceous.block,
+                    BlockFossilPaleogene.block,
+                    BlockFossilNeogene.block,
+                    BlockFossilPleistocene.block
+            ));
             setMaxDamage(500);
             setMaxStackSize(1);
             this.efficiency = 4.0F;
@@ -90,12 +103,12 @@ public class ItemFossilHammer extends ElementsLepidodendronMod.ModElement {
                     stack.damageItem(5, entityLiving);
                 }
             }
-            return (state.getBlock() == BlockPlantFossil.block);
+            return (state.getBlock() instanceof BlockFossil);
         }
 
         public boolean canHarvestBlock(IBlockState blockIn)
         {
-            return blockIn.getBlock() == BlockPlantFossil.block;
+            return blockIn.getBlock() instanceof BlockFossil;
         }
 
         @Override

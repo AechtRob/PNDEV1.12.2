@@ -2,8 +2,8 @@
 package net.lepidodendron.world.biome.triassic;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockAraucarioxylonLog;
 import net.lepidodendron.block.BlockPrehistoricGroundLush;
+import net.lepidodendron.block.BlockTelemachusLog;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockDoublePlant;
@@ -37,7 +37,6 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.JUNGLE);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.DENSE);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.LUSH);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HOT);
 	}
@@ -48,7 +47,7 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 			setRegistryName("triassic_flooded_forest");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
-			decorator.treesPerChunk = 5;
+			decorator.treesPerChunk = 7;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 20;
@@ -91,6 +90,7 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 		}
 
 		protected static final WorldGenPodozamitesTreeWaterDeep PODOZAMITES_TREE = new WorldGenPodozamitesTreeWaterDeep(false);
+		protected static final WorldGenTelemachusTreeWaterDeep TELEMACHUS_TREE = new WorldGenTelemachusTreeWaterDeep(false);
 		protected static final WorldGenAraucarioxylonTreeWaterDeep ARAUCARIOXYLON_TREE = new WorldGenAraucarioxylonTreeWaterDeep(false);
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenPachypterisProper PACHYPTERIS_TREE = new WorldGenPachypterisProper(false);
@@ -100,8 +100,8 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenPrehistoricGroundCoverLush GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverLush();
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
-		protected static final WorldGenTreeLog ARAUCARIOXYLON_LOG_GENERATOR = new WorldGenTreeLog(BlockAraucarioxylonLog.block);
-		protected static final WorldGenTreeLogWater ARAUCARIOXYLON_LOG_WATER_GENERATOR = new WorldGenTreeLogWater(BlockAraucarioxylonLog.block);
+		protected static final WorldGenTreeLog TELEMACHUS_LOG_GENERATOR = new WorldGenTreeLog(BlockTelemachusLog.block);
+		protected static final WorldGenTreeLogWater TELEMACHUS_LOG_WATER_GENERATOR = new WorldGenTreeLogWater(BlockTelemachusLog.block);
 		protected static final WorldGenFern FERN_GENERATOR = new WorldGenFern();
 		public static final PropertyEnum<BlockDoublePlant.EnumPlantType> VARIANT = PropertyEnum.<BlockDoublePlant.EnumPlantType>create("variant", BlockDoublePlant.EnumPlantType.class);
 		protected static final WorldGenTongchuanophyllum TONGCHUANOPHYLLUM_GENERATOR = new WorldGenTongchuanophyllum();
@@ -120,16 +120,19 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
-	    	if (rand.nextInt(58) == 0) {
+	    	if (rand.nextInt(15) == 0) {
+				return PODOZAMITES_TREE;
+			}
+	    	if (rand.nextInt(45) == 0)  {
 				return ARAUCARIOXYLON_TREE;
 			}
-	    	if (rand.nextInt(4) != 0)  {
-				return NULL_TREE;
-			}
-			if (rand.nextInt(7) == 0)  {
+			if (rand.nextInt(15) == 0)  {
 				return PACHYPTERIS_TREE;
 			}
-	    	return PODOZAMITES_TREE;
+			if (rand.nextInt(3) != 0)  {
+				return NULL_TREE;
+			}
+	    	return TELEMACHUS_TREE;
 	    }
 
 		@Override
@@ -173,7 +176,7 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 					int l = rand.nextInt(16) + 8;
 					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
 					if (Math.random() > 0.5) {
-						ARAUCARIOXYLON_LOG_GENERATOR.generate(worldIn, rand, blockpos);
+						TELEMACHUS_LOG_GENERATOR.generate(worldIn, rand, blockpos);
 					}
 				}
 
@@ -188,7 +191,7 @@ public class BiomeTriassicFloodedForest extends ElementsLepidodendronMod.ModElem
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;
 					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-					ARAUCARIOXYLON_LOG_WATER_GENERATOR.generate(worldIn, rand, blockpos);
+					TELEMACHUS_LOG_WATER_GENERATOR.generate(worldIn, rand, blockpos);
 				}
 	        }
 

@@ -224,7 +224,7 @@ public class LepidodendronSorter {
     public static final int hironoia_bench = 220;
     public static final int hymenaea_bench = 221;
     public static final int jungle_bench = 222;
-    public static final int komlopteris_bench = 223;
+    public static final int dicroidium_o_bench = 223;
     public static final int lepidodendron_bench = 224;
     public static final int liriodendron_bench = 225;
     public static final int macroneuropteris_bench = 226;
@@ -329,7 +329,7 @@ public class LepidodendronSorter {
     public static final int hironoia_bridge = 325;
     public static final int hymenaea_bridge = 326;
     public static final int jungle_bridge = 327;
-    public static final int komlopteris_bridge = 328;
+    public static final int dicroidium_o_bridge = 328;
     public static final int lepidodendron_bridge = 329;
     public static final int liriodendron_bridge = 330;
     public static final int macroneuropteris_bridge = 331;
@@ -629,8 +629,8 @@ public class LepidodendronSorter {
     public static final int hironoia_door_item = 625;
     public static final int hymenaea_door = 626;
     public static final int hymenaea_door_item = 627;
-    public static final int komlopteris_door = 628;
-    public static final int komlopteris_door_item = 629;
+    public static final int dicroidium_o_door = 628;
+    public static final int dicroidium_o_door_item = 629;
     public static final int lepidodendron_door = 630;
     public static final int lepidodendron_door_item = 631;
     public static final int liriodendron_door = 632;
@@ -987,7 +987,7 @@ public class LepidodendronSorter {
     public static final int glossopteris_fence = 983;
     public static final int hironoia_fence = 984;
     public static final int hymenaea_fence = 985;
-    public static final int komlopteris_fence = 986;
+    public static final int dicroidium_o_fence = 986;
     public static final int wooden_fence = 987;
     public static final int leptocycas_fence_thin = 988;
     public static final int liriodendron_fence = 989;
@@ -1177,7 +1177,7 @@ public class LepidodendronSorter {
     public static final int glossopteris_fence_gate = 1173;
     public static final int hironoia_fence_gate = 1174;
     public static final int hymenaea_fence_gate = 1175;
-    public static final int komlopteris_fence_gate = 1176;
+    public static final int dicroidium_o_fence_gate = 1176;
     public static final int wooden_fence_gate = 1177;
     public static final int leptocycas_fence_gate_thin = 1178;
     public static final int liriodendron_fence_gate = 1179;
@@ -1475,7 +1475,7 @@ public class LepidodendronSorter {
     public static final int guangdedendron_shoot_nospore = 1471;
     public static final int hironoia_leaves = 1472;
     public static final int hymenaea_leaves = 1473;
-    public static final int komlopteris_leaves = 1474;
+    public static final int dicroidium_o_leaves = 1474;
     public static final int ladinia_shoot_female = 1475;
     public static final int ladinia_shoot_female_cone = 1476;
     public static final int ladinia_shoot_female_worldgen = 1477;
@@ -1686,7 +1686,7 @@ public class LepidodendronSorter {
     public static final int glossopterislog = 1682;
     public static final int hironoia_log = 1683;
     public static final int hymenaea_log = 1684;
-    public static final int komlopteris_log = 1685;
+    public static final int dicroidium_o_log = 1685;
     public static final int ladinia_log = 1686;
     public static final int woodenlog = 1687;
     public static final int leptocycas_log = 1688;
@@ -2136,7 +2136,7 @@ public class LepidodendronSorter {
     public static final int petrified_ibyka = 2132;
     public static final int petrified_ischnophyton = 2133;
     public static final int petrified_isoetes = 2134;
-    public static final int petrified_komlopteris_sapling = 2135;
+    public static final int petrified_dicroidium_o_sapling = 2135;
     public static final int petrified_ladinia_sapling = 2136;
     public static final int petrified_large_matonia = 2137;
     public static final int petrified_leclercqia = 2138;
@@ -2306,7 +2306,7 @@ public class LepidodendronSorter {
     public static final int glossopterisplanks = 2302;
     public static final int hironoia_planks = 2303;
     public static final int hymenaea_planks = 2304;
-    public static final int komlopteris_planks = 2305;
+    public static final int dicroidium_o_planks = 2305;
     public static final int woodenplanks = 2306;
     public static final int liriodendron_planks = 2307;
     public static final int macroneuropteris_planks = 2308;
@@ -2596,7 +2596,7 @@ public class LepidodendronSorter {
     public static final int glossopterissapling = 2592;
     public static final int hironoia_sapling = 2593;
     public static final int hymenaea_sapling = 2594;
-    public static final int komlopteris_sapling = 2595;
+    public static final int dicroidium_o_sapling = 2595;
     public static final int ladinia_sapling = 2596;
     public static final int sapling = 2597;
     public static final int leptocycas_sapling = 2598;
@@ -2750,7 +2750,7 @@ public class LepidodendronSorter {
     public static final int hironoia_seeds = 2746;
     public static final int hymenaea_seeds = 2747;
     public static final int ischnophyton_seeds = 2748;
-    public static final int komlopteris_seeds = 2749;
+    public static final int dicroidium_o_seeds = 2749;
     public static final int ladinia_seed = 2750;
     public static final int lepidopteris_seeds = 2751;
     public static final int leptocycas_seed = 2752;
@@ -2908,7 +2908,7 @@ public class LepidodendronSorter {
     public static final int glossopterisslab = 2904;
     public static final int hironoia_slab = 2905;
     public static final int hymenaea_slab = 2906;
-    public static final int komlopteris_slab = 2907;
+    public static final int dicroidium_o_slab = 2907;
     public static final int lava_brick_slab = 2908;
     public static final int lava_brick_mossy_slab = 2909;
     public static final int lava_cobble_slab = 2910;
@@ -3041,7 +3041,7 @@ public class LepidodendronSorter {
     public static final int glossopterisstairs = 3037;
     public static final int hironoia_stairs = 3038;
     public static final int hymenaea_stairs = 3039;
-    public static final int komlopteris_stairs = 3040;
+    public static final int dicroidium_o_stairs = 3040;
     public static final int lava_brick_stairs = 3041;
     public static final int lava_brick_mossy_stairs = 3042;
     public static final int lava_cobble_stairs = 3043;
@@ -3091,7 +3091,7 @@ public class LepidodendronSorter {
     public static final int equisetites_strobilus = 3087;
     public static final int gangamopteris_strobilus = 3088;
     public static final int glossopteris_strobilus = 3089;
-    public static final int komlopteris_strobilus = 3090;
+    public static final int dicroidium_o_strobilus = 3090;
     public static final int lepidodendron_strobilus = 3091;
     public static final int macroneuropteris_strobilus = 3092;
     public static final int pitys_strobilus = 3093;
@@ -3220,7 +3220,7 @@ public class LepidodendronSorter {
     public static final int hironoia_trapdoor = 3216;
     public static final int hymenaea_trapdoor = 3217;
     public static final int jungle_trapdoor = 3218;
-    public static final int komlopteris_trapdoor = 3219;
+    public static final int dicroidium_o_trapdoor = 3219;
     public static final int woodentrapdoor = 3220;
     public static final int liriodendron_trapdoor = 3221;
     public static final int macroneuropteris_trapdoor = 3222;
@@ -3402,5 +3402,35 @@ public class LepidodendronSorter {
     public static final int eggs_syllipsimopodi = 3394;
     public static final int amphibian_spawn_branchiosaur = 3395;
     public static final int eggs_sphenotitan = 3396;
+
+
+    public static final int komlopteris_shoot = 3397;
+    public static final int komlopteris_shoot_worldgen = 3398;
+    public static final int komlopteris_sapling = 3399;
+    public static final int petrified_komlopteris_sapling = 3400;
+    public static final int komlopteris_pallisade = 3401;
+    public static final int komlopteris_log = 3402;
+
+
+    public static final int dicroidium_e = 3403;
+    public static final int dicroidium_e_centre = 3404;
+    public static final int dicroidium_e_top = 3405;
+    public static final int petrified_dicroidium_e = 3406;
+    public static final int spaciinodum = 3407;
+    public static final int petrified_spaciinodum = 3408;
+
+    public static final int fossil_precambrian = 3409;
+    public static final int fossil_cambrian = 3410;
+    public static final int fossil_ordovician = 3411;
+    public static final int fossil_silurian = 3412;
+    public static final int fossil_devonian = 3413;
+    public static final int fossil_carboniferous = 3414;
+    public static final int fossil_permian = 3415;
+    public static final int fossil_triassic= 3416;
+    public static final int fossil_jurassic = 3417;
+    public static final int fossil_cretaceous = 3418;
+    public static final int fossil_paleogene = 3419;
+    public static final int fossil_neogene = 3420;
+    public static final int fossil_pleistocene = 3421;
 
 }

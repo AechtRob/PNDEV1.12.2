@@ -53,6 +53,8 @@ public class GenLayerTriassicRiverBorder extends GenLayer
     public  int TRIASSIC_MOSS_ID =  Biome.getIdForBiome(TRIASSIC_MOSS);
     public  Biome TRIASSIC_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_gondwanan_forest"));
     public  int TRIASSIC_FOREST_ID =  Biome.getIdForBiome(TRIASSIC_FOREST);
+    public  Biome TRIASSIC_FOREST_CLEARING = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_gondwanan_forest_clearing"));
+    public  int TRIASSIC_FOREST_CLEARING_ID =  Biome.getIdForBiome(TRIASSIC_FOREST_CLEARING);
     public  Biome TRIASSIC_FOREST_HILLS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_gondwanan_forest_crags"));
     public  int TRIASSIC_FOREST_HILLS_ID =  Biome.getIdForBiome(TRIASSIC_FOREST_HILLS);
     public  Biome TRIASSIC_FOREST_CRAGS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_gondwanan_forest_hills"));
@@ -60,6 +62,9 @@ public class GenLayerTriassicRiverBorder extends GenLayer
 
     public Biome TRIASSIC_FLOODED_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_flooded_forest"));
     public int TRIASSIC_FLOODED_FOREST_ID =  Biome.getIdForBiome(TRIASSIC_FLOODED_FOREST);
+
+    public Biome TRIASSIC_FLOODED_FOREST_DENSE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_flooded_forest_dense"));
+    public int TRIASSIC_FLOODED_FOREST_DENSE_ID =  Biome.getIdForBiome(TRIASSIC_FLOODED_FOREST_DENSE);
 
     public Biome TRIASSIC_MOUNTAINS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:triassic_mountains"));
     public int TRIASSIC_MOUNTAINS_ID =  Biome.getIdForBiome(TRIASSIC_MOUNTAINS);
@@ -201,7 +206,7 @@ public class GenLayerTriassicRiverBorder extends GenLayer
     }
 
     private boolean isFlooded(int biomeID) {
-        if (biomeID == TRIASSIC_FLOODED_FOREST_ID) {
+        if (biomeID == TRIASSIC_FLOODED_FOREST_ID || biomeID == TRIASSIC_FLOODED_FOREST_DENSE_ID) {
             return true;
         }
         return false;
@@ -217,11 +222,13 @@ public class GenLayerTriassicRiverBorder extends GenLayer
     private boolean isExemptforMoss(int biomeID) {
         if (biomeID == TRIASSIC_MOSS_ID
             || biomeID == TRIASSIC_FOREST_ID
+            || biomeID == TRIASSIC_FOREST_CLEARING_ID
             || biomeID == TRIASSIC_FOREST_CRAGS_ID
             || biomeID == TRIASSIC_FOREST_HILLS_ID
             || biomeID == TRIASSIC_WARM_LAKELAND_ID
             || biomeID == TRIASSIC_WARM_VOLCANIC_HILLS_ID
             || biomeID == TRIASSIC_FLOODED_FOREST_ID
+            || biomeID == TRIASSIC_FLOODED_FOREST_DENSE_ID
             || biomeID == TRIASSIC_MOUNTAINS_ID) {
             return true;
         }
@@ -233,7 +240,8 @@ public class GenLayerTriassicRiverBorder extends GenLayer
             || biomeID == TRIASSIC_WARM_VOLCANIC_HILLS_ID
             || biomeID == TRIASSIC_MOSS_ID
             || biomeID == TRIASSIC_MOUNTAINS_ID
-            || biomeID == TRIASSIC_FLOODED_FOREST_ID) {
+            || biomeID == TRIASSIC_FLOODED_FOREST_ID
+            || biomeID == TRIASSIC_FLOODED_FOREST_DENSE_ID) {
             return true;
         }
         return false;
@@ -257,6 +265,7 @@ public class GenLayerTriassicRiverBorder extends GenLayer
 
     private boolean isExemptforFlooded(int biomeID) {
         if (biomeID == TRIASSIC_FLOODED_FOREST_ID
+            || biomeID == TRIASSIC_FLOODED_FOREST_DENSE_ID
             || biomeID == TRIASSIC_MOSS_ID
             || biomeID == TRIASSIC_MOUNTAINS_ID
             || biomeID == TRIASSIC_XERIC_FOREST_ID) {

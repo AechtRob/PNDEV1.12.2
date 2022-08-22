@@ -1,0 +1,7 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "lepidodendron:blocks/dicroidium_o_strobilus",
+        "particle": "lepidodendron:blocks/dicroidium_o_strobilus"
+    }
+}

@@ -4,7 +4,7 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenKomlopteris;
+import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -165,7 +165,7 @@ public class StructureSpawnKomlopteris extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenKomlopteris.executeProcedure($_dependencies);
+					ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
 				}
 
 			}

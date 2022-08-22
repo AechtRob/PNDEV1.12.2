@@ -65,6 +65,7 @@ public class BiomeTriassicGondwananPlain extends ElementsLepidodendronMod.ModEle
 
 		protected static final WorldGenDicroidiumFTree DICROIDIUM_F_TREE = new WorldGenDicroidiumFTree(false);
 		protected static final WorldGenDicroidium DICROIDIUM = new WorldGenDicroidium(false);
+		protected static final WorldGenDicroidiumOTree DICROIDIUM_O_TREE = new WorldGenDicroidiumOTree(false);
 		protected static final WorldGenGinkgoitesTree GINKGO_TREE = new WorldGenGinkgoitesTree(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA = new WorldGenSphenobaieraTree(false);
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
@@ -104,6 +105,7 @@ public class BiomeTriassicGondwananPlain extends ElementsLepidodendronMod.ModEle
 		protected static final WorldGenPangeanDirt DIRT_GENERATOR = new WorldGenPangeanDirt();
 		protected static final WorldGenMossStone MOSSY_STONE_GENERATOR = new WorldGenMossStone();
 		protected static final WorldGenMud MUD_GENERATOR = new WorldGenMud();
+		protected static final WorldGenDicroidiumE DICROIDIUM_E_GENERATOR = new WorldGenDicroidiumE();
 
 		@Override
 		public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal)
@@ -151,6 +153,9 @@ public class BiomeTriassicGondwananPlain extends ElementsLepidodendronMod.ModEle
 			if (rand.nextInt(8) != 0) {return NULL_TREE;}
 
 			if (Math.random() > 0.5) {
+				if (Math.random() > 0.6) {
+					return DICROIDIUM_O_TREE;
+				}
 				return DICROIDIUM_F_TREE;
 			}
 			else {
@@ -283,6 +288,15 @@ public class BiomeTriassicGondwananPlain extends ElementsLepidodendronMod.ModEle
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					MOSSY_STONE_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 6; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DICROIDIUM_E_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), 60, 255);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

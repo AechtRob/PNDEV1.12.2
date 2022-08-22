@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:fossil_precambrian_1"},
+      {"model": "lepidodendron:fossil_precambrian_2"},
+      {"model": "lepidodendron:fossil_precambrian_3"},
+      {"model": "lepidodendron:fossil_precambrian_4"},
+      {"model": "lepidodendron:fossil_precambrian_1_var"},
+      {"model": "lepidodendron:fossil_precambrian_2_var"},
+      {"model": "lepidodendron:fossil_precambrian_3_var"},
+      {"model": "lepidodendron:fossil_precambrian_4_var"}
+    ]
+  }
+}
