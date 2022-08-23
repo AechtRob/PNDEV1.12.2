@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
 			"type": "text",
-			"text": "Bothriolepis is a chocolate brown and red placoderm which lives in the shallower parts of the Devonian waterways, their body is armored with thick plates of bones, characteristic of this grouping. There were spines on either side of its head armor, and it like other similar placoderms, are thought to have been bottom feeders."
+			"text": "Bothriolepis was a genus of widespread antiarch placoderm from the Devonian. The animal was found all across the globe and inhabited both freshwater and saltwater. The genus was comprised of 60 species, averaging around 30 centimeters in length. However, Bothriolepis rex was much larger, reaching estimated lengths of 170 centimeters! "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
+			"type": "text",
+			"text": "Bothriolepis was a bottom feeder, using its heavy body and ventrally located mouth to sift through sediment and eat anything edible it could find. The nostrils of this fish were located up around the eyes, allowing it to breathe and not inhale sediment as it ate."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
+			"type": "text",
+			"text": "The pectoral fins of the were modified into large spike-like protrusions, but the use of these spikes aren’t known, and its hypothesized that they could have been used to disturb sediment or lift the animal off the ground. Specimens of this animal have been found preserving soft tissue, showing the gills, digestive system, and even rudimentary lungs, suggesting that Bothriolepis could breathe air!"
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_bothriolepis",
