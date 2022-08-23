@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/cidaroida.png"],
+			"images": ["paleopedia:textures/cidaroida1.png","paleopedia:textures/cidaroida2.png","paleopedia:textures/cidaroida3.png"],
 			"title": "Cidaroida sp.",
 			"text": ""
 		},
