@@ -227,7 +227,7 @@ public class ModelLuoxiongichthys extends AdvancedModelBase {
             this.swing(body, speed, 0.15F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.25F;
+                this.body.offsetY = 1.33F;
                 this.bob(body, -speed, 5F, false, f2, 1);
             }
         }
