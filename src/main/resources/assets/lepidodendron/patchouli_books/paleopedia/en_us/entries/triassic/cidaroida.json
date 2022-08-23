@@ -1,0 +1,32 @@
+{
+	"name": "Cidaroida",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cidaroida_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"title": "Cidaroida",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Cidaroida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cidaroida.png"],
+			"title": "Cidaroida sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+
