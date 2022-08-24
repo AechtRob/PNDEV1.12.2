@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/megazostrodon_raw"
+    "layer0": "paleopedia:megazostrodon_icon"
   }
 }

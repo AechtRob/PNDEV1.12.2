@@ -183,7 +183,9 @@ public class ChunkProviderTriassic implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-            ChunkGenSpawner.executeProcedure(false, this.world, new BlockPos(i, 0, j), this.random, null, true);
+            //int i1 = this.random.nextInt(16) + 8; //This is in the spawner instead:
+            //int k1 = this.random.nextInt(16) + 8; //This is in the spawner instead:
+            ChunkGenSpawner.executeProcedure(false, this.world, blockpos, this.random, null, true);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);
@@ -493,6 +495,14 @@ public class ChunkProviderTriassic implements IChunkGenerator {
                                 && biome == BiomeTriassicGondwananForest.biome && rand.nextInt(20) == 0) {
                             iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
                         }
+                        if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState()
+                                && biome == BiomeTriassicGondwananForestClearing.biome && rand.nextInt(20) == 0) {
+                            iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                        }
+                        if (iblockstate == BlockPrehistoricGroundBasic.block.getDefaultState()
+                                && biome == BiomeTriassicGondwananForestClearing.biome && rand.nextInt(30) == 0) {
+                            iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                        }
                         if (iblockstate == BlockLeafLitter.block.getDefaultState()
                                 && biome == BiomeTriassicGondwananForestHills.biome && rand.nextInt(40) == 0) {
                             iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
@@ -509,11 +519,11 @@ public class ChunkProviderTriassic implements IChunkGenerator {
 
                         //Do the blocks for the Flooded Forest:
                         if (iblockstate == BlockPrehistoricGroundLush.block.getDefaultState()
-                                && biome == BiomeTriassicFloodedForest.biome && rand.nextInt(2) == 0) {
+                                && (biome == BiomeTriassicFloodedForest.biome || biome == BiomeTriassicFloodedForestDense.biome) && rand.nextInt(2) == 0) {
                             iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
                         }
                         if (iblockstate == BlockPrehistoricGroundLush.block.getDefaultState()
-                                && biome == BiomeTriassicFloodedForest.biome && rand.nextInt(5) == 0) {
+                                && (biome == BiomeTriassicFloodedForest.biome || biome == BiomeTriassicFloodedForestDense.biome) && rand.nextInt(5) == 0) {
                             iblockstate = BlockLeafLitter.block.getDefaultState();
                         }
 

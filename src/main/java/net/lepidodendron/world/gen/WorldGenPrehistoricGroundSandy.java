@@ -17,7 +17,7 @@ public class WorldGenPrehistoricGroundSandy extends WorldGenerator
 
         for (int i = 0; i < 64; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(4) - rand.nextInt(4));
 
             if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() >= worldIn.getSeaLevel() - 1) && worldIn.isAirBlock(blockpos)
             	&& (

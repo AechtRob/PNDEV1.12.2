@@ -128,7 +128,8 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 
 			if (!playerIn.capabilities.allowEdit) {
 				return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-			} else if (hand == EnumHand.MAIN_HAND) {
+			}
+			else if (hand == EnumHand.MAIN_HAND) {
 				TileEntity te = worldIn.getTileEntity(pos);
 				if (te != null) {
 					if (te instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
@@ -149,12 +150,14 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 							return true;
 						}
 						if (!stack.isEmpty()) {
-							tee.setInventorySlotContents(0, stack);
+							//tee.setInventorySlotContents(0, stack);
+							tee.getItems().set(0, new ItemStack(stack.getItem(), 1));
+							//tee.markDirty();
 							if (!worldIn.isRemote) {
 								SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_ADD_ITEM;
 								((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							}
-							if (!playerIn.capabilities.isCreativeMode) {
+							if (!playerIn.isCreative()) {
 								stack.shrink(1);
 							}
 						}
@@ -287,6 +290,10 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void onDataPacket(NetworkManager netManager, SPacketUpdateTileEntity packet) {
 			readFromNBT(packet.getNbtCompound());
+		}
+
+		public void setDisplay(ItemStack stack) {
+			this.getItems().set(0,new ItemStack(stack.getItem(), 1));
 		}
 
 		@Override

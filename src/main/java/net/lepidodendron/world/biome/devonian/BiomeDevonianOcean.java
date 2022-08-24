@@ -177,7 +177,7 @@ public class BiomeDevonianOcean extends ElementsLepidodendronMod.ModElement {
 									&& (worldIn.getBlockState(pos1.up()).getMaterial() == Material.WATER)
 									&& (worldIn.getBlockState(pos1.up(2)).getMaterial() == Material.WATER)
 					) {
-						REEF_GENERATOR.generate(worldIn, rand, pos1, 14, BlockCoral.block.getDefaultState());
+						REEF_GENERATOR.generate(worldIn, rand, pos1, 10, BlockCoral.block.getDefaultState());
 					}
 				}
 			}

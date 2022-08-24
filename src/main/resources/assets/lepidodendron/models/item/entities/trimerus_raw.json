@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/trimerus_raw"
+    "layer0": "paleopedia:trimerus_icon"
   }
 }

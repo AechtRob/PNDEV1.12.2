@@ -3,13 +3,17 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderBottomDweller;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -20,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraAgeableFishBase {
 
 
 	public BlockPos currentTarget;
@@ -36,7 +40,22 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraFis
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		minWidth = 0.2F;
+		maxWidth = 0.5F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 4.0D;
 	}
+
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraStensioella(this.world);
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 32000;
+	}
+
 
 	@Override
 	public boolean isSmall() {
@@ -49,7 +68,12 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraFis
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
 	}
 
 	@Override
@@ -88,14 +112,15 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraFis
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 
 	@Override
-	public boolean isAIDisabled() {
-		return false;
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override
@@ -144,6 +169,7 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraFis
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	public void onEntityUpdate() {

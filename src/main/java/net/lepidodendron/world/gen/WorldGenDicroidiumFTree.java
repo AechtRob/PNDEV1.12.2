@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumF;
+import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.lepidodendron.procedure.ProcedureWorldGenTelemachus;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicGondwananForestCrags;
 import net.minecraft.block.state.IBlockState;
@@ -97,20 +98,49 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                         }
                     }
 
-                    if (position.getY() > (worldIn.getSeaLevel() + 15)) {
-                        if (Math.random() > 0.65) {
+                    if (position.getY() > (worldIn.getSeaLevel() + 30)) {
+                        if (Math.random() > 0.93) {
                             ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
                         }
                         else {
-                            ProcedureWorldGenTelemachus.executeProcedure($_dependencies);
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
                         }
                     }
-                    else {
-                        if (Math.random() > 0.93) {
+                    else if (position.getY() > (worldIn.getSeaLevel() + 20)) {
+                        if (Math.random() > 0.80) {
+                            ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                        }
+                    }
+                    else if (position.getY() > (worldIn.getSeaLevel() + 12)) {
+                        if (Math.random() > 0.60) {
+                            ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                        }
+                    }
+                    else if (position.getY() > (worldIn.getSeaLevel() + 5)) {
+                        if (Math.random() > 0.30) {
+                            ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                        }
+                    }
+                    else { //is within 4 blocks of sea level, so add Telemachus
+                        if (Math.random() > 0.70) {
                             ProcedureWorldGenTelemachus.executeProcedure($_dependencies);
                         }
                         else {
-                            ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
+                            if (Math.random() > 0.30) {
+                                ProcedureWorldGenDicroidiumF.executeProcedure($_dependencies);
+                            }
+                            else {
+                                ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                            }
                         }
                     }
                     return true;

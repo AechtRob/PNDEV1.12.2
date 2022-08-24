@@ -119,12 +119,13 @@ public class LepidodendronEventSubscribers {
 						if (!(event.getWorld().isRemote)) {
 							ItemStack itemstack = tee.getStackInSlot(0);
 							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-							tee.setInventorySlotContents(0, ItemStack.EMPTY);
+							//tee.setInventorySlotContents(0, ItemStack.EMPTY);
 
 							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
 							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
+						tee.setDisplay(ItemStack.EMPTY);
 						event.setCanceled(true);
 					}
 				}
@@ -140,12 +141,12 @@ public class LepidodendronEventSubscribers {
 						if (!(event.getWorld().isRemote)) {
 							ItemStack itemstack = tee.getStackInSlot(0);
 							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-							tee.setInventorySlotContents(0, ItemStack.EMPTY);
 
 							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
 							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
+						tee.setDisplay(ItemStack.EMPTY);
 						event.setCanceled(true);
 					}
 				}
@@ -161,12 +162,12 @@ public class LepidodendronEventSubscribers {
 						if (!(event.getWorld().isRemote)) {
 							ItemStack itemstack = tee.getStackInSlot(0);
 							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-							tee.setInventorySlotContents(0, ItemStack.EMPTY);
 
 							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
 							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
+						tee.setDisplay(ItemStack.EMPTY);
 						event.setCanceled(true);
 					}
 				}
@@ -182,12 +183,13 @@ public class LepidodendronEventSubscribers {
 						if (!(event.getWorld().isRemote)) {
 							ItemStack itemstack = tee.getStackInSlot(0);
 							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-							tee.setInventorySlotContents(0, ItemStack.EMPTY);
+							//tee.setInventorySlotContents(0, ItemStack.EMPTY);
 
 							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
 							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
+						tee.setDisplay(ItemStack.EMPTY);
 						event.setCanceled(true);
 					}
 				}

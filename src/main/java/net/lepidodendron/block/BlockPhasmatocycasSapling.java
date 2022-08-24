@@ -185,7 +185,7 @@ public class BlockPhasmatocycasSapling extends ElementsLepidodendronMod.ModEleme
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: [Proto-]Cycad");
-				tooltip.add("Periods: late Carboniferous - Permian");
+				tooltip.add("Periods: [late Carboniferous -] Permian");
 				tooltip.add("Propagation: fruit/cone");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

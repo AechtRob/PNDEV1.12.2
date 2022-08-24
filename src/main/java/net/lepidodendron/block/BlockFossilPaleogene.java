@@ -65,12 +65,12 @@ public class BlockFossilPaleogene extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimPleistocene) {
 			dimDepth = dimDepth - 4;
 		}
-		int y = Math.max(world.getSeaLevel() - dimDepth, 1);
+		int yy = Math.max(world.getSeaLevel() - dimDepth, 1);
 
-		for (int i = 0; i < 48; i++) {
-			int x = chunkX + random.nextInt(16);
-			y = y + random.nextInt(4); //Anywhere in the layer which is 4 thick (0-3)
-			int z = chunkZ + random.nextInt(16);
+		for (int i = 0; i < 24; i++) {
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+			int y = yy + random.nextInt(4); //Anywhere in the layer which is 4 thick (0-3)
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			if (random.nextInt(dimDepth) == 0) {
 				(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
@@ -86,9 +86,9 @@ public class BlockFossilPaleogene extends ElementsLepidodendronMod.ModElement {
 
 		//Small chance of mixed up fossils in hills etc:
 		for (int i = 0; i < 4; i++) {
-			int x = chunkX + random.nextInt(16);
-			y = (world.getSeaLevel() + 6) + random.nextInt(254 - (world.getSeaLevel() + 6));
-			int z = chunkZ + random.nextInt(16);
+			int x = chunkX + random.nextInt(16) + 8;
+			int y = (world.getSeaLevel() + 6) + random.nextInt(254 - (world.getSeaLevel() + 6));
+			int z = chunkZ + random.nextInt(16) + 8;
 			(new WorldGenMinable(block.getDefaultState(), 3, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;
@@ -109,7 +109,7 @@ public class BlockFossilPaleogene extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		ItemStack[] getDropStack() {
-			return FossilDrops.getAllPetrifiedDrops();
+			return FossilDrops.getPaleogenePetrifiedDrops();
 		}
 	}
 }

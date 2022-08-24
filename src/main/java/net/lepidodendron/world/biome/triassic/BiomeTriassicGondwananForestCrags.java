@@ -64,7 +64,6 @@ public class BiomeTriassicGondwananForestCrags extends ElementsLepidodendronMod.
 
 		protected static final WorldGenDicroidiumFTree DICROIDIUM_F_TREE = new WorldGenDicroidiumFTree(false);
 		protected static final WorldGenDicroidiumFTreeDead DICROIDIUM_F_TREE_DEAD = new WorldGenDicroidiumFTreeDead(false);
-		protected static final WorldGenDicroidiumOTree DICROIDIUM_O_TREE = new WorldGenDicroidiumOTree(false);
 		protected static final WorldGenDicroidium DICROIDIUM = new WorldGenDicroidium(false);
 
 		protected static final WorldGenTreeLog DICROIDIUM_LOG_GENERATOR = new WorldGenTreeLog(BlockDicroidiumFLog.block);
@@ -128,9 +127,6 @@ public class BiomeTriassicGondwananForestCrags extends ElementsLepidodendronMod.
 					return DICROIDIUM_F_TREE_DEAD;
 				}
 				else {
-					if (Math.random() > 0.8) {
-						return DICROIDIUM_O_TREE;
-					}
 					return DICROIDIUM_F_TREE;
 				}
 			}

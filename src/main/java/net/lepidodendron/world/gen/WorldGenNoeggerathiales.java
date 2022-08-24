@@ -20,7 +20,7 @@ public class WorldGenNoeggerathiales extends WorldGenerator
 
         for (int i = 0; i < 8; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(7) - rand.nextInt(7), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(7) - rand.nextInt(7));
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockNoeggerathialesSapling.block.canPlaceBlockAt(worldIn, blockpos)
             	&& (worldIn.getBlockState(blockpos.east()).getBlock() != BlockNoeggerathialesLog.block)

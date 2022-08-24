@@ -53,6 +53,7 @@ public class BiomePermianRiver extends ElementsLepidodendronMod.ModElement {
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 10;
 			decorator.gravelPatchesPerChunk = 10;
+			decorator.clayPerChunk = 1;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();

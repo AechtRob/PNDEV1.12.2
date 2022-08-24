@@ -30,9 +30,12 @@ public class WorldGenCycadeoidea extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, boolean needsWater, int minHeight, int maxHeight)
     {
         boolean flag = false;
-
+        int offset = 7;
+        if (needsWater) {
+            offset = 6;
+        }
         for (int i = 0; i < 18; ++i) {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (!needsWater) {
 

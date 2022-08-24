@@ -54,6 +54,7 @@ public class BiomeJurassicRiver extends ElementsLepidodendronMod.ModElement {
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
+			decorator.clayPerChunk = 1;
 			decorator.sandPatchesPerChunk = 10;
 			decorator.gravelPatchesPerChunk = 10;
 			this.spawnableMonsterList.clear();

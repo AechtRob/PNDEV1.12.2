@@ -60,6 +60,9 @@ public class ProcedureWorldGenTelemachus extends ElementsLepidodendronMod.ModEle
 			
 			//Trunk:
 			TrunkHeight = 10 + (int) Math.round(Math.random() * 6);
+			if (Math.random() > 0.9) {
+				TrunkHeight = TrunkHeight + 5;
+			}
 			counter = 0;
 			while (counter <= TrunkHeight) {
 				yy = y + counter;

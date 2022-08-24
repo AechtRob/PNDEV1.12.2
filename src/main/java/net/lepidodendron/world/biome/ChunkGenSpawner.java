@@ -58,7 +58,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         boolean TriassicCanyons = false;
         String[] MobString = new String[0];
         if (mobList == null) {
-            Biome biome = world.getBiome(pos);
+            Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
             if (biome == BiomePrecambrianSea.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsPF);

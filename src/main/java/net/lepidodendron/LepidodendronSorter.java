@@ -3433,4 +3433,12 @@ public class LepidodendronSorter {
     public static final int fossil_neogene = 3420;
     public static final int fossil_pleistocene = 3421;
 
+    public static final int petrified_oak_sapling = 3422;
+    public static final int petrified_dark_oak_sapling = 3423;
+    public static final int petrified_birch_sapling = 3424;
+    public static final int petrified_jungle_sapling = 3425;
+    public static final int petrified_spruce_sapling = 3426;
+    public static final int petrified_acacia_sapling = 3427;
+
+
 }

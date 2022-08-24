@@ -23,7 +23,11 @@ public class WorldGenClaytosmunda extends WorldGenerator
         if (needsWater) k = 192;
         for (int i = 0; i < k; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(8) - rand.nextInt(8));
+            int offset = 8;
+            if (needsWater) {
+                offset = 3;
+            }
+            BlockPos blockpos = position.add(rand.nextInt(offset) - rand.nextInt(offset), rand.nextInt(8) - rand.nextInt(8), rand.nextInt(offset) - rand.nextInt(offset));
 
             if (blockpos.getY() >= worldIn.getSeaLevel()-4 && worldIn.isAirBlock(blockpos) && (!worldIn.provider.isNether() || blockpos.getY() < 254) && BlockClaytosmunda.block.canPlaceBlockAt(worldIn, blockpos)
             )

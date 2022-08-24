@@ -41,7 +41,7 @@ public class BiomeTriassicWarmVolcanicHills extends ElementsLepidodendronMod.Mod
 
 	static class BiomeGenCustom extends BiomeTriassic {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Triassic Warm Volcanic Hills").setTemperature(0.25F).setRainfall(0.8F).setBaseHeight(1.1F).setHeightVariation(0.52F).setWaterColor(-5317633));
+			super(new BiomeProperties("Triassic Warm Volcanic Hills").setTemperature(3.00F).setRainfall(0.8F).setBaseHeight(1.1F).setHeightVariation(0.52F).setWaterColor(-5317633));
 			setRegistryName("triassic_warm_volcanic_hills");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

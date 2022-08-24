@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.EntityPrehistoricFloraGemuendina;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -60,6 +61,13 @@ public class AgeableFishWanderBottomDweller extends AnimationAINoAnimation<Entit
 
     @Override
     public boolean shouldExecute() {
+
+        if (this.PrehistoricFloraAgeableFishBase instanceof EntityPrehistoricFloraGemuendina) {
+            EntityPrehistoricFloraGemuendina entity = (EntityPrehistoricFloraGemuendina) this.PrehistoricFloraAgeableFishBase;
+            if (entity.getBuriedTick() > 0 || entity.getBuried()) {
+                return false;
+            }
+        }
 
         if (!this.PrehistoricFloraAgeableFishBase.isInWater()) {
             //System.err.println("Not in water");

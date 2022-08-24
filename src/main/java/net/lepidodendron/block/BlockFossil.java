@@ -43,13 +43,16 @@ import java.util.Random;
 			//System.err.println(ii);
 			for (int i = 0; i < ii; ++i) {
 				player.addStat(StatList.getBlockStats(this));
-				spawnAsEntity(worldIn, pos, getFossilDrop(getDropStack()));
+				if (this.getDropStack() != null) {
+					spawnAsEntity(worldIn, pos, getFossilDrop(getDropStack()));
+				}
 			}
 		} else {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
 		}
 	}
 
+	@Nullable
 	abstract ItemStack[] getDropStack();
 
 	@Override
@@ -73,6 +76,9 @@ import java.util.Random;
 	}
 
 	public static ItemStack getFossilDrop(ItemStack[] stack) {
+		if (stack == null) {
+			return null;
+		}
 		int ii = (new Random()).nextInt(stack.length);
 		ItemStack i = stack[ii];
 		return i;

@@ -135,7 +135,7 @@ public class BiomeOrdovicianSea extends ElementsLepidodendronMod.ModElement {
 									&& (worldIn.getBlockState(pos1.up()).getMaterial() == Material.WATER)
 									&& (worldIn.getBlockState(pos1.up(2)).getMaterial() == Material.WATER)
 					) {
-						REEF_GENERATOR.generate(worldIn, rand, pos1, 20, BlockCoral.block.getDefaultState());
+						REEF_GENERATOR.generate(worldIn, rand, pos1, 14, BlockCoral.block.getDefaultState());
 					}
 				}
 	        super.decorate(worldIn, rand, pos);

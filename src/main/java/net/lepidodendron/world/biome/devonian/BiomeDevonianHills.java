@@ -66,7 +66,7 @@ public class BiomeDevonianHills extends ElementsLepidodendronMod.ModElement {
 		protected static final WorldGenStauropteris STAUROPTERIS_GENERATOR = new WorldGenStauropteris();
 		protected static final WorldGenSphenopteris SPHENOPTERIS_GENERATOR = new WorldGenSphenopteris();
 		protected static final WorldGenElkinsia ELKINSIA_GENERATOR = new WorldGenElkinsia();
-		//protected static final WorldGenAdoketophyton ADOKETOPHYTON_GENERATOR = new WorldGenAdoketophyton();
+
 		protected static final WorldGenRellimia RELLIMIA_GENERATOR = new WorldGenRellimia();
 		protected static final WorldGenLeclercqia LECLERCQIA_GENERATOR = new WorldGenLeclercqia();
 		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();

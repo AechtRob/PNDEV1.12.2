@@ -62,7 +62,6 @@ public class BiomeTriassicGondwananForest extends ElementsLepidodendronMod.ModEl
 		}
 
 		protected static final WorldGenDicroidiumFTree DICROIDIUM_F_TREE = new WorldGenDicroidiumFTree(false);
-		protected static final WorldGenDicroidiumOTree DICROIDIUM_O_TREE = new WorldGenDicroidiumOTree(false);
 		protected static final WorldGenDicroidium DICROIDIUM = new WorldGenDicroidium(false);
 		protected static final WorldGenGinkgoitesTree GINKGO_TREE = new WorldGenGinkgoitesTree(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA = new WorldGenSphenobaieraTree(false);
@@ -131,25 +130,18 @@ public class BiomeTriassicGondwananForest extends ElementsLepidodendronMod.ModEl
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
 			if (Math.random() > 0.5) {
-				if (Math.random() > 0.8) {
-					return DICROIDIUM_O_TREE;
-				}
 				return DICROIDIUM_F_TREE;
-			}
-			else {
+			} else {
 				if (Math.random() > 0.3) {
 					return DICROIDIUM;
 				}
 				if (Math.random() > 0.5) {
 					return GINKGO_TREE;
-				}
-				else {
-					if (Math.random() > 0.5) {
-						return DICROIDIUM_O_TREE;
-					}
+				} else {
 					return SPHENOBAIERA;
 				}
 			}
+
 		}
 
 		@Override

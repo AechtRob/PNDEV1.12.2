@@ -160,7 +160,8 @@ public class BlockDisplayCase extends ElementsLepidodendronMod.ModElement {
 							return true;
 						}
 						if (!stack.isEmpty()) {
-							tee.setInventorySlotContents(0, stack);
+							//tee.setInventorySlotContents(0, stack);
+							tee.getItems().set(0, new ItemStack(stack.getItem(), 1));
 							if (!worldIn.isRemote) {
 								SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_ADD_ITEM;
 								((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -347,6 +348,10 @@ public class BlockDisplayCase extends ElementsLepidodendronMod.ModElement {
 			if (!this.checkLootAndWrite(compound))
 				ItemStackHelper.saveAllItems(compound, this.stacks);
 			return compound;
+		}
+
+		public void setDisplay(ItemStack stack) {
+			this.getItems().set(0,new ItemStack(stack.getItem(), 1));
 		}
 
 		public boolean hasItem() {

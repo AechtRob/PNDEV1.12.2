@@ -145,7 +145,9 @@ public class ChunkProviderDevonian implements IChunkGenerator {
 
         if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
                 net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS)) {
-            ChunkGenSpawner.executeProcedure(false, this.world, new BlockPos(i, 0, j), this.random, null, true);
+            //int i1 = this.random.nextInt(16) + 8; //This is in the spawner instead:
+            //int k1 = this.random.nextInt(16) + 8; //This is in the spawner instead:
+            ChunkGenSpawner.executeProcedure(false, this.world, blockpos, this.random, null, true);
         }
 
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(false, this, this.world, this.random, x, z, false);

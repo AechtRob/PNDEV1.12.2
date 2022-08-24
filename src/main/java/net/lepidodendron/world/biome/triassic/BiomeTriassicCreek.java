@@ -56,7 +56,7 @@ public class BiomeTriassicCreek extends ElementsLepidodendronMod.ModElement {
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 0;
 			decorator.gravelPatchesPerChunk = 0;
-			decorator.clayPerChunk = 0;
+			decorator.clayPerChunk = 1;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();

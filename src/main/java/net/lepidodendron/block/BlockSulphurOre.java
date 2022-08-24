@@ -71,9 +71,9 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 		if (random.nextInt(6) != 0)
 			return;
 
-		int x = chunkX + random.nextInt(16);
+		int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 		int y = random.nextInt(40) + 1;
-		int z = chunkZ + random.nextInt(16);
+		int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 		(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
 			public boolean apply(IBlockState blockAt) {
 				boolean blockCriteria = false;

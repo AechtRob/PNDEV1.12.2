@@ -4,15 +4,18 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderBottomDweller;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -31,7 +34,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -52,6 +55,20 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraFish
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		minWidth = 0.2F;
+		maxWidth = 0.47F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 4.0D;
+	}
+
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraGemuendina(this.world);
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 32000;
 	}
 
 	@Override
@@ -65,7 +82,12 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraFish
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
 	}
 
 	@Override
@@ -166,9 +188,15 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraFish
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override

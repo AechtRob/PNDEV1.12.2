@@ -7,12 +7,14 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -52,6 +54,11 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 	}
 
 	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraHolonema(this.world);
+	}
+
+	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.6;
 	}
@@ -64,12 +71,6 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 	public void playLivingSound() {
 	}
 
-
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraHolonema(this.world);
-	}
-
 	@Override
 	public int getAttackLength() {
 		return 8;
@@ -77,7 +78,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -87,7 +88,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	public int getAdultAge() {
-		return 128000;
+		return 92000;
 	}
 
 	@Override
@@ -114,23 +115,17 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 	}
 
-	//uses fish food as breeding item
-	/*@Override
+	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
-		return (
-			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-				|| stack.getItem() == ItemFishFood.block
-		);
+		return (stack.getItem() == ItemFishFood.block);
 	}
-	*/
-
 
 	@Override
 	public boolean isAIDisabled() {

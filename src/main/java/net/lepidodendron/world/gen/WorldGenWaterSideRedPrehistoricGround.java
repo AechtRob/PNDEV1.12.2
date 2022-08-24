@@ -17,7 +17,7 @@ public class WorldGenWaterSideRedPrehistoricGround extends WorldGenerator
 
         for (int i = 0; i < 64; ++i)
         {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
+            BlockPos blockpos = position.add(rand.nextInt(6) - rand.nextInt(6), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(6) - rand.nextInt(6));
 
             if ((!worldIn.provider.isNether() || blockpos.getY() < 254)
 				&& worldIn.isAirBlock(blockpos.up())

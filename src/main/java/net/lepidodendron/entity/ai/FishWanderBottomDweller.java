@@ -2,7 +2,6 @@ package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.entity.EntityPrehistoricFloraEglonaspis;
-import net.lepidodendron.entity.EntityPrehistoricFloraGemuendina;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -52,12 +51,6 @@ public class FishWanderBottomDweller extends AnimationAINoAnimation<EntityPrehis
     @Override
     public boolean shouldExecute() {
 
-        if (this.PrehistoricFloraFishBase instanceof EntityPrehistoricFloraGemuendina) {
-            EntityPrehistoricFloraGemuendina entity = (EntityPrehistoricFloraGemuendina) this.PrehistoricFloraFishBase;
-            if (entity.getBuriedTick() > 0 || entity.getBuried()) {
-                return false;
-            }
-        }
         if (this.PrehistoricFloraFishBase instanceof EntityPrehistoricFloraEglonaspis) {
             EntityPrehistoricFloraEglonaspis entity = (EntityPrehistoricFloraEglonaspis) this.PrehistoricFloraFishBase;
             if (entity.getBuriedTick() > 0 || entity.getBuried()) {

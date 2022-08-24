@@ -64,7 +64,6 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 
 		protected static final WorldGenDicroidiumFTree DICROIDIUM_F_TREE = new WorldGenDicroidiumFTree(false);
 		protected static final WorldGenDicroidiumFTreeDead DICROIDIUM_F_TREE_DEAD = new WorldGenDicroidiumFTreeDead(false);
-		protected static final WorldGenDicroidiumOTree DICROIDIUM_O_TREE = new WorldGenDicroidiumOTree(false);
 		protected static final WorldGenDicroidium DICROIDIUM = new WorldGenDicroidium(false);
 		protected static final WorldGenGinkgoitesTree GINKGO_TREE = new WorldGenGinkgoitesTree(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA = new WorldGenSphenobaieraTree(false);
@@ -140,9 +139,6 @@ public class BiomeTriassicGondwananForestHills extends ElementsLepidodendronMod.
 						}
 					}
 					else {
-						if (Math.random() > 0.75) {
-							return DICROIDIUM_O_TREE;
-						}
 						return DICROIDIUM_F_TREE;
 					}
 				}

@@ -61,9 +61,9 @@ public class BlockLavaRockDiamondOre extends ElementsLepidodendronMod.ModElement
 		if (random.nextInt(2) != 0)
 			return;
 
-		int x = chunkX + random.nextInt(16);
+		int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 		int y = random.nextInt(15) + 1;
-		int z = chunkZ + random.nextInt(16);
+		int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 		(new WorldGenMinable(block.getDefaultState(), 4, new com.google.common.base.Predicate<IBlockState>() {
 			public boolean apply(IBlockState blockAt) {
 				boolean blockCriteria = false;

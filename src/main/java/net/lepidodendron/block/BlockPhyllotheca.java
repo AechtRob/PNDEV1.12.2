@@ -8,9 +8,11 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemPhyllothecaItem;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.permian.BiomePermianLowlandFloodplain;
 import net.lepidodendron.world.biome.permian.BiomePermianRiver;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -101,6 +103,14 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 				|| biome == BiomePermianLowlandFloodplain.biome
 				|| biome == BiomePermianRiver.biome
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
+				biomeCriteria = true;
+			}
+		}
+
+		if (biome instanceof BiomeTriassic) {
+			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.River
+				|| biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
 				biomeCriteria = true;
 			}
 		}

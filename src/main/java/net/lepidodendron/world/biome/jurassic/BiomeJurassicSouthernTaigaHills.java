@@ -123,7 +123,7 @@ public class BiomeJurassicSouthernTaigaHills extends ElementsLepidodendronMod.Mo
 			if (rand.nextInt(36) == 0) {
 				return DEAD_TREE;
 			}
-			int selector = rand.nextInt(16);
+			int selector = rand.nextInt(16) + 8;
 			switch (selector) {
 				case 0:
 					return PODOCARP_TREE;

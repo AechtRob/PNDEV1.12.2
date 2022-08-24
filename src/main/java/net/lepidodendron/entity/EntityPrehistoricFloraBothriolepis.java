@@ -3,23 +3,29 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWanderBottomDweller;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -34,6 +40,20 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFi
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		minWidth = 0.2F;
+		maxWidth = 0.6F;
+		maxHeight = 0.5F;
+		maxHealthAgeable = 8.0D;
+	}
+
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraBothriolepis(this.world);
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 32000;
 	}
 
 	@Override
@@ -47,7 +67,12 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFi
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
 	}
 
 	@Override
@@ -86,9 +111,15 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFi
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override
@@ -128,6 +159,11 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFi
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
+	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
+	}
+
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
@@ -142,6 +178,7 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraFi
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	public void onEntityUpdate() {

@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.12.2-51.0-BETA-pre-08'
+version = '1.12.2-51.0-BETA-pre-10'
 group = 'com.github.aechtrob.prehistoricflora' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'lepidodendron'
 

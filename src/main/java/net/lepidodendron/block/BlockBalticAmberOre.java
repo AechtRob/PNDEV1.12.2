@@ -70,9 +70,9 @@ public class BlockBalticAmberOre extends ElementsLepidodendronMod.ModElement {
 		if (SeaLevel < 1) SeaLevel = 1;
 		if (SeaLevel > 200) SeaLevel = 200;
 		for (int i = 0; i < 8; i++) {
-			int x = chunkX + random.nextInt(16);
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(18) + (SeaLevel - 10);
-			int z = chunkZ + random.nextInt(16);
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			(new WorldGenMinable(block.getDefaultState(), 4, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;

@@ -70,9 +70,9 @@ public class BlockAraucarioxylonLogPetrified extends ElementsLepidodendronMod.Mo
 			return;
 			
 		for (int i = 0; i < 9; i++) {
-			int x = chunkX + random.nextInt(16);
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(60) + 40;
-			int z = chunkZ + random.nextInt(16);
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			(new WorldGenMinable(block.getDefaultState(), 3, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;
