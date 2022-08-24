@@ -419,7 +419,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 1.45F;
-                this.body.offsetY = 0.95F;
+                this.body.offsetY = 1.05F;
                 this.legL.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.legR.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 

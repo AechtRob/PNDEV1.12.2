@@ -229,10 +229,10 @@ public class ModelThrinacodus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Thrinacodus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Thrinacodus.offsetY = 1.2F;
-            this.bob(Thrinacodus, -speed * 1.8F, 2.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 1.5F, 0.2F, 0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
+            this.Thrinacodus.offsetY = 1.33F;
+            this.bob(Thrinacodus, -speed * 1.8F, 0.5F, false, f2, 1);
+            this.chainWave(fishTail, speed * 1.5F, 0.05F, 0.2, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * 1.5F, 0.05F, -0.55, f2, 0.4F * still);
 
         }
 
