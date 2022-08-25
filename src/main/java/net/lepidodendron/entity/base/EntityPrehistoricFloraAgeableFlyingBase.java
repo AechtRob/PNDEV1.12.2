@@ -222,6 +222,10 @@ public abstract class EntityPrehistoricFloraAgeableFlyingBase extends EntityPreh
 
             }
 
+            if (this.inPFLove > 0) {
+                this.flyTick = 0;
+            }
+
             if (!this.canFloat() && this.isAboveOrOnGround() && !this.isAboveOrInWater() && (!(this.flyTick > 0)) && this.getIsFlying()) {
                 this.setIsFlying(false);
                 this.setAnimation(UNFLY_ANIMATION);

@@ -2,10 +2,9 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemAlethopterisSeeds;
 import net.lepidodendron.procedure.ProcedureAlethopterisStrobilusNeighbourBlockChanges;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -18,7 +17,6 @@ import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -38,7 +36,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import java.util.Random;
 
@@ -67,7 +64,7 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:alethopteris_strobilus", "inventory"));
 	}
-	public static class BlockCustom extends Block implements ITileEntityProvider, net.minecraftforge.common.IShearable {
+	public static class BlockCustom extends SeedSporeBlockBase implements ITileEntityProvider, net.minecraftforge.common.IShearable {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
@@ -252,35 +249,15 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 		    }
 	    }
 
-	    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-	    {
-        if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || !LepidodendronConfig.doPropagation)
-	        {
-	            return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
-	        }
-	        else {
-	        	if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-					if (Math.random() > 0.5) {
-						ItemStack stackSeed = new ItemStack(ItemAlethopterisSeeds.block, (int) (1));
-						stackSeed.setCount(1);
-						ItemHandlerHelper.giveItemToPlayer(player, stackSeed);
-						if (Math.random() > 0.5) {
-							world.destroyBlock(pos, false);
-						}
-						return true;
-					}
-					else {
-						if (Math.random() > 0.5) {
-							world.destroyBlock(pos, false);
-		    				return true;
-						}
-					}	
-				}
-	        	return true;
-	        }
-	    }
+		@Override
+		public Block planted() {
+			return BlockAlethopterisSapling.block;
+		}
 
-	    
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 
 	    
 	}

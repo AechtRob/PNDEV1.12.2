@@ -3,6 +3,7 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -230,6 +231,15 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                         && world.getBlockState(this.getPosition().down()).getMaterial() == Material.WATER
                     ) {
                         this.motionY = -0.075;
+                    }
+                }
+                if (this.getEatTarget() != null) { //help to eat items on the bottom:
+                    Entity target = this.getEatTarget();
+                    if (world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
+                            && target.posY < this.posY
+                            && (target.getPosition() == this.getPosition().down() || target.getPosition() == this.getPosition())
+                    ) {
+                        this.motionY = -0.125;
                     }
                 }
                 else { //descend if there is no target

@@ -1299,9 +1299,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     if (EntityLandBase.hasNest() && (EntityLandBase.homesToNest() && worldGen)) {
                                                                         //Spawn a nest and burrow for it:
                                                                         //Buildburrow:
-                                                                        pos = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
-                                                                        world.setBlockState(pos, BlockNest.block.getDefaultState());
-                                                                        TileEntity te = world.getTileEntity(pos);
+                                                                        BlockPos pos1 = EntityPrehistoricFloraDiictodon.buildBurrow(world, pos, ((EntityPrehistoricFloraDiictodon) entity).hasLargeBurrow());
+                                                                        if (rand.nextInt(3) == 0) {
+                                                                            pos = pos1; //Spawn some at the next mouth instead
+                                                                        }
+                                                                        world.setBlockState(pos1, BlockNest.block.getDefaultState());
+                                                                        TileEntity te = world.getTileEntity(pos1);
                                                                         if (te != null) {
                                                                             if (te instanceof BlockNest.TileEntityCustom) {
                                                                                 te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());

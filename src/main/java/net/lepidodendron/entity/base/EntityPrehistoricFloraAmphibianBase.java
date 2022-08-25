@@ -193,6 +193,16 @@ public abstract class EntityPrehistoricFloraAmphibianBase extends EntityPrehisto
                 this.motionY *= f4;
                 this.motionZ *= 0.9;
                 this.motionZ *= f4;
+
+                if (this.getEatTarget() != null) { //help to eat items on the bottom:
+                    Entity target = this.getEatTarget();
+                    if (world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
+                            && target.posY < this.posY
+                            && (target.getPosition() == this.getPosition().down() || target.getPosition() == this.getPosition())
+                    ) {
+                        this.motionY = -0.125;
+                    }
+                }
             } else {
                 super.travel(strafe, vertical, forward);
             }

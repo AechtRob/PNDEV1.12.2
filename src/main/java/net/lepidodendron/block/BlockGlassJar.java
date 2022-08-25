@@ -17,8 +17,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MultiPartEntityPart;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagDouble;
@@ -26,7 +24,6 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -104,16 +101,6 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 			super.randomTick(worldIn, pos, state, random);
-		}
-
-		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(ItemGlassJarItem.block, 1);
-		}
-
-		@Override
-		protected boolean canSilkHarvest() {
-			return true;
 		}
 
 		@SideOnly(Side.CLIENT)
@@ -227,11 +214,6 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return false;
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 
 		@Override

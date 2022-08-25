@@ -422,6 +422,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
                 this.motionY *= f4;
                 this.motionZ *= 0.9;
                 this.motionZ *= f4;
+
             } else {
                 super.travel(strafe, vertical, forward);
             }

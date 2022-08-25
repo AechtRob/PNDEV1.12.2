@@ -5,6 +5,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
@@ -221,6 +222,16 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
                 this.motionY *= f4;
                 this.motionZ *= 0.9;
                 this.motionZ *= f4;
+
+                if (this.getEatTarget() != null) { //help to eat items on the bottom:
+                    Entity target = this.getEatTarget();
+                    if (world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
+                            && target.posY < this.posY
+                            && (target.getPosition() == this.getPosition().down() || target.getPosition() == this.getPosition())
+                    ) {
+                        this.motionY = -0.125;
+                    }
+                }
             } else {
                 super.travel(strafe, vertical, forward);
             }
