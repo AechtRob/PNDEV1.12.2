@@ -199,7 +199,7 @@ public class EntityPrehistoricFloraArchoblattinaInsect extends EntityPrehistoric
 
 	@Override
 	protected float getSoundVolume() {
-		return 0.75F;
+		return 0.65F;
 	}
 
 	@Nullable

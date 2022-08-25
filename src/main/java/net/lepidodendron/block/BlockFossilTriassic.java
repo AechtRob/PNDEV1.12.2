@@ -61,15 +61,20 @@ public class BlockFossilTriassic extends ElementsLepidodendronMod.ModElement {
 		if (!dimensionCriteria)
 			return;
 
+		int blockCount = 8;
+
 		int dimDepth = 28;
 		if (dimID == LepidodendronConfig.dimJurassic) {
 			dimDepth = dimDepth - 20;
+			blockCount = 6;
 		}
 		if (dimID == LepidodendronConfig.dimCretaceous) {
 			dimDepth = dimDepth - 16;
+			blockCount = 7;
 		}
 		if (dimID == LepidodendronConfig.dimPaleogene) {
 			dimDepth = dimDepth - 12;
+			blockCount = 7;
 		}
 		if (dimID == LepidodendronConfig.dimNeogene) {
 			dimDepth = dimDepth - 8;
@@ -79,12 +84,12 @@ public class BlockFossilTriassic extends ElementsLepidodendronMod.ModElement {
 		}
 		int yy = Math.max(world.getSeaLevel() - dimDepth, 1);
 
-		for (int i = 0; i < 24; i++) {
+		for (int i = 0; i < 38; i++) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-			int y = yy + random.nextInt(4); //Anywhere in the layer which is 4 thick (0-3)
+			int y = yy; //Anywhere in the layer which is 4 thick (0-3) //NO th evanilal generator already does this!
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			if (random.nextInt(dimDepth) == 0) {
-				(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
+				(new WorldGenMinable(block.getDefaultState(), blockCount, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;
 						IBlockState require;
