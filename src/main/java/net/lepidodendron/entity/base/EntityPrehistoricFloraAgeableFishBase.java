@@ -3,7 +3,6 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -233,15 +232,6 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                         this.motionY = -0.075;
                     }
                 }
-                if (this.getEatTarget() != null) { //help to eat items on the bottom:
-                    Entity target = this.getEatTarget();
-                    if (world.getBlockState(target.getPosition()).getMaterial() == Material.WATER
-                            && target.posY < this.posY
-                            && (target.getPosition() == this.getPosition().down() || target.getPosition() == this.getPosition())
-                    ) {
-                        this.motionY = -0.125;
-                    }
-                }
                 else { //descend if there is no target
                     int eyes = (int) Math.floor(this.posY + this.getEyeHeight());
                     if (world.getBlockState(new BlockPos(this.getPosition().getX(), eyes, this.getPosition().getZ())).getMaterial() != Material.WATER
@@ -296,7 +286,27 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                     this.EntityBase.setAIMoveSpeed(speed * 0.25F);
                 }
 
-                this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                if (this.EntityBase.getEatTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {
+                        //System.err.println("Above food");
+                        this.EntityBase.motionY = -0.075;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else if (this.EntityBase.getAttackTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getAttackTarget().posY && distance <= 1) {
+                        //System.err.println("Above prey");
+                        this.EntityBase.motionY += -(double) this.EntityBase.getAIMoveSpeed() * 0.1D;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else {
+                    this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                }
             } else {
                 this.EntityBase.setAIMoveSpeed(0.0F);
             }
@@ -327,7 +337,27 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 
-                this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                if (this.EntityBase.getEatTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {
+                        //System.err.println("Above food");
+                        this.EntityBase.motionY = -0.075;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else if (this.EntityBase.getAttackTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getAttackTarget().posY && distance <= 1) {
+                        //System.err.println("Above prey");
+                        this.EntityBase.motionY += -(double) this.EntityBase.getAIMoveSpeed() * 0.1D;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else {
+                    this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                }
             } else {
                 this.EntityBase.setAIMoveSpeed(0.0F);
             }

@@ -277,7 +277,27 @@ public abstract class EntityPrehistoricFloraNautiloidBase extends EntityPrehisto
                 //Testing animations:
                 //this.EntityBase.setAIMoveSpeed(0.0F);
 
-                this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                if (this.EntityBase.getEatTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {
+                        //System.err.println("Above food");
+                        this.EntityBase.motionY = -0.075;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else if (this.EntityBase.getAttackTarget() != null) {
+                    if (this.EntityBase.posY > this.EntityBase.getAttackTarget().posY && distance <= 1) {
+                        //System.err.println("Above prey");
+                        this.EntityBase.motionY += -(double) this.EntityBase.getAIMoveSpeed() * 0.1D;
+                    }
+                    else {
+                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                    }
+                }
+                else {
+                    this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
+                }
             } else {
                 //System.err.println("Exception");
                 this.EntityBase.setAIMoveSpeed(0.0F);

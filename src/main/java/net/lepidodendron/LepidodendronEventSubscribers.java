@@ -28,10 +28,12 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
@@ -42,7 +44,6 @@ import java.util.List;
 import java.util.Random;
 
 public class LepidodendronEventSubscribers {
-
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {
 		boolean spawnShower = false;
@@ -85,11 +86,9 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	
-	@SubscribeEvent //BlockTrap Horses
-	public void onSpawn(EntityJoinWorldEvent event) {
-		if (LepidodendronConfig.blockSkeletonHorse) {
-			if (event.getWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
+	@SubscribeEvent //Block other mods' normal spawns
+	public void onSpawn(LivingSpawnEvent event) {
+		if ((event.getWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimSilurian
@@ -98,11 +97,108 @@ public class LepidodendronEventSubscribers {
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous) {
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)
+				|| event.getEntity() == null) {
+			return;
+		}
+		if (EntityList.getKey(event.getEntity()) == null) {
+			return;
+		}
+		String resLocation = EntityList.getKey(event.getEntity()).toString();
+		int strPos1 = resLocation.indexOf(":");
+		if ((strPos1 > 0)) {
+			String modid = resLocation.substring(0, strPos1);
+			if (modid.equalsIgnoreCase("fossil") || modid.equalsIgnoreCase("rebornmod")
+				|| modid.equalsIgnoreCase("lepidodendron")) {
 				return;
 			}
+			else {
+				if (LepidodendronConfig.blockMobs) {
+					event.setResult(Event.Result.DENY);
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent //BlockTrap Horses and other mobs
+	public void onJoinSpawn(EntityJoinWorldEvent event) {
+		if ((event.getWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimSilurian
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimDevonian
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCarboniferous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPermian
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+				&& event.getWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene)
+				|| event.getEntity() == null) {
+			return;
+		}
+		if (LepidodendronConfig.blockSkeletonHorse) {
 			if (event.getEntity() instanceof EntitySkeletonHorse) {
 				event.setCanceled(true);
+				return;
+			}
+		}
+		if (EntityList.getKey(event.getEntity()) == null) {
+			return;
+		}
+		String resLocation = EntityList.getKey(event.getEntity()).toString();
+		int strPos1 = resLocation.indexOf(":");
+		if (strPos1 > 0) {
+			String modid = resLocation.substring(0, strPos1);
+			int nautilus = resLocation.indexOf("fossil.nautilus");
+			int coelacanth = resLocation.indexOf("fossil.coelacanth");
+			int alligator_gar = resLocation.indexOf("fossil.alligator_gar");
+			int sturgeon = resLocation.indexOf("fossil.sturgeon");
+
+			if (modid.equalsIgnoreCase("fossil")
+					&& (nautilus > 0 || coelacanth > 0
+					|| alligator_gar > 0 || sturgeon > 0)
+			) {
+				if (LepidodendronConfig.blockMobsFAExceptions) {
+					event.setCanceled(true);
+				}
+				else if ((nautilus > 0 || coelacanth > 0)
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimSilurian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPermian)) {
+					event.setCanceled(true);
+				}
+				else if ((sturgeon > 0)
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimSilurian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPermian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimTriassic)) {
+					event.setCanceled(true);
+				}
+				else if ((alligator_gar > 0)
+						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimSilurian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimDevonian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCarboniferous
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPermian
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimTriassic
+						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimJurassic)) {
+					event.setCanceled(true);
+				}
 			}
 		}
 	}

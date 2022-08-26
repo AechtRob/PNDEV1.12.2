@@ -29,6 +29,8 @@ public class LepidodendronConfig {
     public static boolean renderEdiacaranLighting = true;
     public static boolean renderCustomSkies = true;
     public static boolean blockSkeletonHorse = true;
+    public static boolean blockMobs = true;
+    public static boolean blockMobsFAExceptions = true;
     public static boolean doMeteorites = true;
     public static boolean doMeteoritesGriefing = true;
     public static boolean fixApples = true;
@@ -8548,6 +8550,16 @@ public class LepidodendronConfig {
         prop = cfg.get("Global Mobs", "blockSkeletonHorse", blockSkeletonHorse);
         prop.setComment("Prevent Skeleton Horses from being able to exist in the mod's Prehistoric dimensions (useful to prevent trap horses spawning) [default: true]");
         blockSkeletonHorse = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global Mobs", "blockMobs", blockMobs);
+        prop.setComment("Try to stop other modded creatures wrongly spawning in the mod's Prehistoric dimensions [default: true]");
+        blockMobs = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global Mobs", "blockMobsFAExceptions", blockMobsFAExceptions);
+        prop.setComment("Switch to false to allow Fossils and Archeology ambient spawns (Alligator Gar, Sturgeon, Nautilus and Coelacanth) to spawn in the correct dimensions [default: true]");
+        blockMobsFAExceptions = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "jarMobs", jarMobs);

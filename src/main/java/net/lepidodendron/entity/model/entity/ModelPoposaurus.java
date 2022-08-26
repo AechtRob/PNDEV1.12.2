@@ -435,8 +435,8 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
                 this.flap(Chest, speed, -0.06F, false, 6.0F, -0.03F, f2, 1.0F);
                 this.flap(Neck, speed, 0.06F, false, 6.0F, 0.03F, f2, 1.0F);
 
-                this.flap(LLeg, speed, -0.1F, false, 6.0F, -0.5F, f2, 1.0F);
-                this.flap(RLeg, speed, -0.1F, false, 6.0F, -0.5F, f2, 1.0F);
+                this.flap(LLeg, speed, -0.08F, false, 6.0F, -0.04F, f2, 1.0F);
+                this.flap(RLeg, speed, -0.08F, false, 6.0F, -0.04F, f2, 1.0F);
 
                 this.walk(Body, speed * 2, -0.2F, false, 2.5F, -0.1F, f2, 0.8F);
                 this.walk(Chest, speed * 2, 0.025F, false, 2.5F, -0.01F, f2, 0.8F);
