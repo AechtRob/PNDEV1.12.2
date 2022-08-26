@@ -2029,7 +2029,7 @@ public class LepidodendronConfig {
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "genAllPlants", genAllPlants);
-        prop.setComment("If set to true then all plants from this mod will generate, no matter how you set them below. You can still block them from biomes and dimensions in their individual settings. This setting does not affect algae. [default: false]");
+        prop.setComment("If set to true then all plants from this mod will generate in the overworld, no matter how you set them below. You can still block them from biomes and dimensions in their individual settings. This setting does not affect algae. [default: false]");
         genAllPlants = prop.getBoolean();
         propOrder.add(prop.getName());
 
@@ -5141,7 +5141,7 @@ public class LepidodendronConfig {
         prop.setComment("Set to true to generate Stiff Cycads naturally [default: false]");
         genStiffCycad = prop.getBoolean();
         propOrder.add(prop.getName());
-        prop = cfg.get("WorldGenStiff Cycad", "genStiffCycadBlacklistBiomes", genStiffCycadBlacklistBiomes);
+        prop = cfg.get("WorldGen Stiff Cycad", "genStiffCycadBlacklistBiomes", genStiffCycadBlacklistBiomes);
         prop.setComment("List of biomes Stiff Cycads are blacklisted from, in the format: modid:biomeid [default: empty]");
         genStiffCycadBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
@@ -5253,7 +5253,7 @@ public class LepidodendronConfig {
         prop.setComment("Set to true to generate Plane trees naturally [default: false]");
         genPlane = prop.getBoolean();
         propOrder.add(prop.getName());
-        prop = cfg.get("WorldGenPlane", "genPlaneBlacklistBiomes", genPlaneBlacklistBiomes);
+        prop = cfg.get("WorldGen Plane", "genPlaneBlacklistBiomes", genPlaneBlacklistBiomes);
         prop.setComment("List of biomes Plane trees are blacklisted from, in the format: modid:biomeid [default: empty]");
         genPlaneBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
@@ -8696,7 +8696,7 @@ public class LepidodendronConfig {
         genPalaeobotanist = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Global World-Gen", "genPalaeontologist", genPalaeontologist);
-        prop.setComment("Percentage chance that a genPalaeontologist house will generate in a village. [default: 50]");
+        prop.setComment("Percentage chance that a Palaeontologist house will generate in a village. [default: 50]");
         genPalaeontologist = prop.getInt();
         propOrder.add(prop.getName());
 

@@ -10,8 +10,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class RecipeCookedMeats extends ElementsLepidodendronMod.ModElement {
-	public RecipeCookedMeats(ElementsLepidodendronMod instance) {
+public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModElement {
+	public RecipeCookedMeatsandSeeds(ElementsLepidodendronMod instance) {
 		super(instance, 1092);
 	}
 
