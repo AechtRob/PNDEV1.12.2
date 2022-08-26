@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
 			"type": "text",
-			"text": ""
+			"text": "Luoxiongichthys hyperdorsalis is a species of prehistoric Actinopterygian from the Triassic of China.The 15 cm long animal is perhaps most recognisable by the hunched shape of its back right before the dorsal fin, which gave the animal its distinctive triangular shape."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
+			"type": "text",
+			"text": "The body was covered in heavy scales and compressed laterally, making the animal’s hunched back function in a way similar to a fin thanks to its thin structure.The fish was first described in 2011 based on remains found in the Guanling formation in Yunnan."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
+			"type": "text",
+			"text": "While the shape of the back wouldn’t have been problematic for the fish during locomotion, it would’ve required the animal constant adjustment while idling in the water to maintain vertical positioning.Luoxiongichthys inhabited Triassic reefs and cliff sides."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_luoxiongichthys",
