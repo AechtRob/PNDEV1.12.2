@@ -19,6 +19,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
@@ -150,6 +151,9 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 							return true;
 						}
 						if (!stack.isEmpty()) {
+							if (stack.getItem() == Items.SPAWN_EGG) {
+								return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+							}
 							//tee.setInventorySlotContents(0, stack);
 							tee.getItems().set(0, new ItemStack(stack.getItem(), 1));
 							//tee.markDirty();
@@ -293,7 +297,9 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public void setDisplay(ItemStack stack) {
-			this.getItems().set(0,new ItemStack(stack.getItem(), 1));
+			ItemStack newStack = stack.copy();
+			newStack.setCount(1);
+			this.getItems().set(0, newStack);
 		}
 
 		@Override

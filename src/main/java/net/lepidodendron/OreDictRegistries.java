@@ -4630,9 +4630,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("treeLeaves", BlockTreefernBlackShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockPachypterisShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockKomlopterisShootPlaceable.block);
-		OreDictionary.registerOre("treeLeaves", BlockDicroidiumLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockDicroidiumLeavesPlaceable.block);
-		OreDictionary.registerOre("treeLeaves", BlockDicroidiumLeavesSmall.block);
 		OreDictionary.registerOre("treeLeaves", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockTallAraucariaLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockMonkeyPuzzleAraucariaLeaves.block);
@@ -5057,9 +5055,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plantPrehistoric", BlockTreefernBlackShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPachypterisShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockKomlopterisShootPlaceable.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumLeavesPlaceable.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumLeavesSmall.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTallAraucariaLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockMonkeyPuzzleAraucariaLeaves.block);
@@ -5516,12 +5512,9 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockTreefernBlackShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockPachypterisShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockKomlopterisShootPlaceable.block);
-		OreDictionary.registerOre("plant", BlockDicroidiumLeaves.block);
 		OreDictionary.registerOre("plant", BlockDicroidiumLeavesPlaceable.block);
-		OreDictionary.registerOre("plant", BlockDicroidiumLeavesSmall.block);
 		OreDictionary.registerOre("plant", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plant", BlockTallAraucariaLeaves.block);
-		OreDictionary.registerOre("plant", BlockMonkeyPuzzleAraucariaLeaves.block);
 		OreDictionary.registerOre("plant", BlockMonkeyPuzzleAraucariaLeaves.block);
 		OreDictionary.registerOre("plant", BlockPentoxylalesLeavesSeeds.block);
 		OreDictionary.registerOre("plant", BlockPodocarpLeavesBerries.block);
