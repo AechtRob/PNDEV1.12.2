@@ -20,7 +20,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_liliensternus",
 			"type": "text",
-			"text": ""
+			"text": "Liliensternus liliensterni is a species of Coelophysoid Theropod from Late Triassic Germany.  At an estimated 5 m of length and between 120-200 kg in weight, Liliensternus represents one of the largest carnivorous dinosaurs known on the European landmass of the Triassic."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liliensternus",
+			"type": "text",
+			"text": "Described from two partial specimens, the animal shared traits between the more primitive coelophysoids and more derived theropods such as the later Dilophosaurus, leading to the hypothesis that it may have represented a transitional stage between the two conditions."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liliensternus",
+			"type": "text",
+			"text": "Although the skull is not completely known, it has become a trend in popular representations of the animal to give it small crests reminiscent of the famous two crested Jurassic theropod it may have been ancestral to."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liliensternus",
+			"type": "text",
+			"text": "Liliensternus was first described in 1934 by Huene under the genus Halticosaurus, name that would’ve eventually fell into disuse when the type species representing it was declared a nomen dubium in 1984. Given that most material of Halticosaurus in literature was referring to what we call today Liliensternus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_liliensternus",
+			"type": "text",
+			"text": "the new name for it was coined and the remains reassigned to it by Samuel Paul Welles.  In 1993 a new species was assigned to Liliensternus based on remains from France but in 2007 those were reassigned to a new genus named Lophostropheus.  Today Liliensternus appears in the Bedheim’s Coat of Arms, where the first remains were found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_liliensternus",
