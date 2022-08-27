@@ -1,7 +1,7 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:eggs_archaeocidaris"
+			"item": "lepidodendron:archaeocidaris_item"
 		  },
 		"title": {
 			"translate": "advancements.pf_adv_book_archaeocidaris.title"

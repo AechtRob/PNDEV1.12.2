@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/cidaroida_icon.png",
 	"category": "lepidodendron:triassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_titanoptera_clatrotitan",
+	"turnin": "lepidodendron:pf_adv_book_cidaroida",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"trigger": "lepidodendron:pf_adv_book_cidaroida",
 			"title": "Cidaroida",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Cidaroida"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"advancement": "lepidodendron:pf_adv_book_cidaroida",
 			"type": "text",
 			"text": "Cidaroids are the scientific grouping for Sea Urchins which have had a fossils record from the Triassic. They were actually echinoderms, related to starfish and crinoids, but were like a ball of spikes. They had little tentacles on the bottom to help them walk along the seafloor, albeit very slowly. Some species of sea urchins are also venomous."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_titanoptera_cidaroida",
+			"advancement": "lepidodendron:pf_adv_book_cidaroida",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}
