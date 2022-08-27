@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_opolanka",
 			"type": "text",
-			"text": ""
+			"text": "Opolanka decorosa is a species of Halicynid Cyclid Crustacean from the Upper Triassic of Poland.First described in 2008 by Dzik, the animal is part of a fairly obscure and mysterious lineage of invertebrates of unclear origin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opolanka",
+			"type": "text",
+			"text": "Characterised by their circular shape and distinctive anatomy of their gills, Cycloids like Opolanka probably acted in a similar fashion to modern day crabs, potentially declining towards the end Cretaceous due to the emergence of the latter.The history of classification of these animals is long and complicated, seeing its origins in the 1830s with the description of one such animal as a Trilobite."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_opolanka",
+			"type": "text",
+			"text": "Subsequently they were classified as limulids, xiphosurans, branchiurans and even true crabs.Today their classification is still unclear, some interpreting them as crustaceans, some as something completely different.Opolanka is known from lacustrine sediments, making it a freshwater animal."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_opolanka",
