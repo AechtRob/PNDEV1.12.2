@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
 			"type": "text",
-			"text": ""
+			"text": "Saurichthys is a genus of actinopterygian fish once widespread in most of the world during the Triassic.  The genus includes around 40 species from both saltwater and freshwater sediments.  Its long and powerful body and the long slender head, made up of light bones and full of conical teeth, made Saurichthys a particularly hydrodynamic predator, characteristics that allowed it to become one of the most successful marine predators of its time."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saurichthys",
+			"type": "text",
+			"text": "  The anal and dorsal fins were moved towards the end of the body to make full use of the propulsion created by the tail while the skin was left bare of scales if not for a few spots along the back.  The shape of the body, reminiscent of that of modern day pikes, lead to the hypothesis that this animal must’ve been an ambush predator able of quick bursts of speed, a particularly "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saurichthys",
+			"type": "text",
+			"text": "puzzling issue as animals like those usually require specific environments to survive, making their range more specific rather than general, in full opposition to the almost cosmopolitan range of Saurichthys.  Saurichthys is among the earliest known cases of viviparity in actinopterygian fishes, with specimens from Monte San Giorgio (famous Triassic fossil locality from Switzerland and Italy) preserving pregnant females and their unborn embryos."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_saurichthys",
