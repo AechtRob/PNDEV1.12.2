@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
 			"type": "text",
-			"text": ""
+			"text": "Lessemsaurus sauropoides is a species of Sauropod dinosaur from the Late Triassic of South America. Known from a series of robust vertebrae discovered in the Los Colorados formation, Lessemsaurus was probably among the first trues Sauropods, part of a radiation event that saw the sudden rise of these larger animals towards the Late Triassic period."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
+			"type": "text",
+			"text": "The animal probably possessed a large muscular body, as evidenced by the shape of the vertebrae and the muscle attachment points on them, with a long neck and robust legs to sustain its weight. Like with other larger Sauropods, Lessemsaurus rotated the wrist in the forelimbs to gain a better standing with their obligate quadrupedal posture, a trait shared with other larger sauropods both contemporary to it and coming after."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
+			"type": "text",
+			"text": "Lessemsaurids were particularly large among their peers and probably paved the way for the later titanic sauropods of the Jurassic and Cretaceous. Although the relation between lessemsaurids and sauropods is unclear, its still quite clear they were close if not directly related. Lessemsaurus was described in 1999 by Argentinean Palaeontologist José Fernando Bonaparte, first attributed to a family of sauropods called Melanorosauridae, now demonstrated to not be Monophyletic."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_lessemsaurus",
