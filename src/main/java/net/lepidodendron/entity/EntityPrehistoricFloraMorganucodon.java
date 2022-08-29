@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraMorganucodon extends EntityPrehistoricFloraDi
 	}
 
 	public static String getPeriod() {
-		return "Triassic";
+		return "Triassic - Jurassic";
 	}
 
 	//public static String getHabitat() {

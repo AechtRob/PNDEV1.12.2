@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraClydagnathus extends EntityPrehistoricFloraFi
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Devonian - Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

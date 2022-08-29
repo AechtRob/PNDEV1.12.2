@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraOpolanka extends EntityPrehistoricFloraTrilob
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
