@@ -1,33 +1,26 @@
 {
   "variants": {
     "normal": [
-      	{"model": "lepidodendron:magnolia_flower"},
-      	{"model": "lepidodendron:magnolia_flower_rot"}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
     "facing=north": [
-      	{"model": "lepidodendron:magnolia_flower", "x": 90},
-       	{"model": "lepidodendron:magnolia_flower_rot", "x": 90}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
     "facing=east": [
-      	{"model": "lepidodendron:magnolia_flower", "x": 90, "y": 90},
-      	{"model": "lepidodendron:magnolia_flower_rot", "x": 90, "y": 90}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
     "facing=south": [
-      	{"model": "lepidodendron:magnolia_flower", "x": 90, "y": 180},
-      	{"model": "lepidodendron:magnolia_flower_rot", "x": 90, "y": 180}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
     
     "facing=west": [
-      	{"model": "lepidodendron:magnolia_flower", "x": 90, "y": 270},
-      	{"model": "lepidodendron:magnolia_flower_rot", "x": 90, "y": 270}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
   "facing=up": [
-      	{"model": "lepidodendron:magnolia_flower"},
-      	{"model": "lepidodendron:magnolia_flower_rot"}
+      	{"model": "lepidodendron:magnolia_flower"}
     ],
     "facing=down": [
-      	{"model": "lepidodendron:magnolia_flower", "x": 180},
-      	{"model": "lepidodendron:magnolia_flower_rot", "x": 180}
+      	{"model": "lepidodendron:magnolia_flower"}
     ]
   }
 }

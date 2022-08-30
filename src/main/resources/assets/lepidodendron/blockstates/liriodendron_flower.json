@@ -1,33 +1,26 @@
 {
   "variants": {
     "normal": [
-      	{"model": "lepidodendron:liriodendron_flower"},
-      	{"model": "lepidodendron:liriodendron_flower_rot"}
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
     "facing=north": [
-      	{"model": "lepidodendron:liriodendron_flower", "x": 90},
-       	{"model": "lepidodendron:liriodendron_flower_rot", "x": 90}
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
     "facing=east": [
-      	{"model": "lepidodendron:liriodendron_flower", "x": 90, "y": 90},
-      	{"model": "lepidodendron:liriodendron_flower_rot", "x": 90, "y": 90}
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
     "facing=south": [
-      	{"model": "lepidodendron:liriodendron_flower", "x": 90, "y": 180},
-      	{"model": "lepidodendron:liriodendron_flower_rot", "x": 90, "y": 180}
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
-    
+
     "facing=west": [
-      	{"model": "lepidodendron:liriodendron_flower", "x": 90, "y": 270},
-      	{"model": "lepidodendron:liriodendron_flower_rot", "x": 90, "y": 270}
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
-  "facing=up": [
-      	{"model": "lepidodendron:liriodendron_flower"},
-      	{"model": "lepidodendron:liriodendron_flower_rot"}
+    "facing=up": [
+      {"model": "lepidodendron:liriodendron_flower"}
     ],
     "facing=down": [
-      	{"model": "lepidodendron:liriodendron_flower", "x": 180},
-      	{"model": "lepidodendron:liriodendron_flower_rot", "x": 180}
+      {"model": "lepidodendron:liriodendron_flower"}
     ]
   }
 }

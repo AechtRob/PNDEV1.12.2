@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:archaeanthus_flower"}
+    ]
+  }
+}
