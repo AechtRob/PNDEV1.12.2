@@ -2,13 +2,14 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.item.*;
+import net.lepidodendron.item.ItemFossilHammer;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
@@ -40,12 +41,16 @@ import java.util.Random;
 		if (!worldIn.isRemote && stack.getItem() == ItemFossilHammer.block) {
 			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.FORTUNE, stack);
 			int ii = rand.nextInt(levelEnchantment + 2);
-			//System.err.println(ii);
+			boolean dropped = false;
 			for (int i = 0; i < ii; ++i) {
 				player.addStat(StatList.getBlockStats(this));
 				if (this.getDropStack() != null) {
 					spawnAsEntity(worldIn, pos, getFossilDrop(getDropStack()));
+					dropped = true;
 				}
+			}
+			if (!dropped) { //Drop gravel if nothing else was chosen
+				spawnAsEntity(worldIn, pos, new ItemStack(Blocks.GRAVEL, 1));
 			}
 		} else {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
