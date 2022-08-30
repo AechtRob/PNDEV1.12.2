@@ -2,16 +2,21 @@
 package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPetrifiedCobbania extends ElementsLepidodendronMod.ModElement {
@@ -37,6 +42,17 @@ public class ItemPetrifiedCobbania extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_petrified_cobbania");
 			setRegistryName("petrified_cobbania");
 			setCreativeTab(TabLepidodendronPlants.tab);
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("Type: Flowering water plant");
+				tooltip.add("Periods: mid-Cretaceous - Paleogene");
+				tooltip.add("Note: placed at water surface of water up to 5 blocks deep; spreads if there is light.");
+				tooltip.add("Propagation: flowers");}
+			super.addInformation(stack, player, tooltip, advanced);
 		}
 
 		@Override

@@ -14,11 +14,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemTyrannophontesCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:tyrannophontes_cooked")
+public class ItemPalaeoScampi extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:palaeo_scampi")
 	public static final Item block = null;
-	public ItemTyrannophontesCooked(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.tyrannophontes_cooked);
+	public ItemPalaeoScampi(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.palaeo_scampi);
 	}
 
 	@Override
@@ -29,13 +29,13 @@ public class ItemTyrannophontesCooked extends ElementsLepidodendronMod.ModElemen
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/tyrannophontes_cooked", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/palaeo_scampi", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
-			setTranslationKey("pf_tyrannophontes_cooked");
-			setRegistryName("tyrannophontes_cooked");
+			setTranslationKey("pf_palaeo_scampi");
+			setRegistryName("palaeo_scampi");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemBaragwanathiaItem;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -214,7 +213,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			if (entityIn instanceof EntityBoat)
 			{
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
-				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemBaragwanathiaItem.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemGreenFilamentousAlgaeItem.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				worldIn.spawnEntity(entityToSpawn);
 				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);

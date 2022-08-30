@@ -1818,7 +1818,6 @@ public class LepidodendronSorter {
     public static final int monkey_puzzle_araucaria_log = 1814;
     public static final int monkey_puzzle_araucaria_nuts = 1815;
     public static final int monkey_puzzle_araucaria_sapling = 1816;
-    public static final int montecaris_cooked = 1817;
     public static final int montecaris_raw = 1818;
     public static final int mooreoceras_raw = 1819;
     public static final int morganucodon_cooked = 1820;
@@ -3268,7 +3267,6 @@ public class LepidodendronSorter {
     public static final int tullimonstrum_raw = 3264;
     public static final int turrisaspis_cooked = 3265;
     public static final int turrisaspis_raw = 3266;
-    public static final int tyrannophontes_cooked = 3267;
     public static final int tyrannophontes_raw = 3268;
     public static final int tyrmia = 3269;
     public static final int tyrmia_centre = 3270;
@@ -3439,6 +3437,7 @@ public class LepidodendronSorter {
     public static final int petrified_jungle_sapling = 3425;
     public static final int petrified_spruce_sapling = 3426;
     public static final int petrified_acacia_sapling = 3427;
+    public static final int palaeo_scampi = 3428;
 
 
 }

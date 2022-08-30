@@ -1,18 +1,17 @@
 {
 	"parent": "lepidodendron:block/block_noao",
 	"textures": {
-        "particle": "lepidodendron:blocks/magnoliaflowersidew",
-        "down": "lepidodendron:blocks/magnoliaflowersideb",
-        "up": "lepidodendron:blocks/magnoliaflowersidet",
-        "north": "lepidodendron:blocks/magnoliaflowersiden",
-        "south": "lepidodendron:blocks/magnoliaflowersides",
-        "west": "lepidodendron:blocks/magnoliaflowersidew",
-        "east": "lepidodendron:blocks/magnoliaflowersidee"
+        "particle": "lepidodendron:blocks/archaeanthusflowersidew",
+        "down": "lepidodendron:blocks/archaeanthusflowersideb",
+        "up": "lepidodendron:blocks/archaeanthusflowersidet",
+        "north": "lepidodendron:blocks/archaeanthusflowersiden",
+        "south": "lepidodendron:blocks/archaeanthusflowersides",
+        "west": "lepidodendron:blocks/archaeanthusflowersidew",
+        "east": "lepidodendron:blocks/archaeanthusflowersidee"
     },
     "elements": [
         {   "from": [ 5, 0, 5 ],
             "to": [ 12, 6, 12 ],
-			"rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": false },
             "faces": {
                 "down":  { "uv": [ 5, 9, 12, 16 ],  "texture": "#down", "cullface": "down" },
                 "up":    { "uv": [ 5, 9, 12, 16 ], "texture": "#up" },

@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.procedure.ProcedureWorldGenArchaeanthus;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -132,7 +133,7 @@ public class BlockArchaeanthusSapling extends ElementsLepidodendronMod.ModElemen
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
 					$_dependencies.put("SaplingSpawn", true);
-					//ProcedureWorldGenArchaeanthus.executeProcedure($_dependencies);
+					ProcedureWorldGenArchaeanthus.executeProcedure($_dependencies);
 				}
 	        }
 	    }
