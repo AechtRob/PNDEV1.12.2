@@ -280,15 +280,6 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 	}
 
 	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.25F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
-
-	@Override
 	public void travel(float strafe, float vertical, float forward)
 	{
 		super.travel(strafe, vertical, forward);
@@ -296,7 +287,5 @@ public class EntityPrehistoricFloraPanderichthys extends EntityPrehistoricFloraS
 			this.motionY = 0.01D;
 		}
 	}
-
-
 
 }

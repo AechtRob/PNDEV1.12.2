@@ -191,12 +191,4 @@ public class EntityPrehistoricFloraGnathorhiza extends EntityPrehistoricFloraSwi
 		return LepidodendronMod.GNATHORHIZA_LOOT;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.25F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 }

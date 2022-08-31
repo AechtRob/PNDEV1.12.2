@@ -204,7 +204,7 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgea
 		setBuried(false);
 		setBuryCount(0);
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.25F));
+			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
 	}

@@ -153,7 +153,7 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 	public boolean attackEntityFrom(DamageSource source, float amount) {
 
 		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.25F));
+			return super.attackEntityFrom(source, (amount * 0.5F));
 		}
 		return super.attackEntityFrom(source, amount);
 

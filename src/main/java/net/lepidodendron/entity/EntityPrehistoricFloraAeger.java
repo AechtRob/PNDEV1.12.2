@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.ai.FishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -198,14 +197,5 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.AEGER_LOOT;
 	}
-
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 
 }
