@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
 		maxHeight = 1.1F;
-		maxHealthAgeable = 56.0D;
+		maxHealthAgeable = 30.0D;
 	}
 
 	@Override

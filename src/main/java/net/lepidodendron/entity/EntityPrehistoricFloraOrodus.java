@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraOrodus extends EntityPrehistoricFloraAgeableF
 		minWidth = 0.1F;
 		maxWidth = 0.99F;
 		maxHeight = 0.89F;
-		maxHealthAgeable = 48.0D;
+		maxHealthAgeable = 20.0D;
 	}
 
 	@Override

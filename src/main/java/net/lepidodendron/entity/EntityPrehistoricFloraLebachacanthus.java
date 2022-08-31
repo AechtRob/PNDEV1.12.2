@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 48.0D;
+		maxHealthAgeable = 36.0D;
 	}
 
 	@Override

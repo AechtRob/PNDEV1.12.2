@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 		minWidth = 0.1F;
 		maxWidth = 0.6F;
 		maxHeight = 0.6F;
-		maxHealthAgeable = 56.0D;
+		maxHealthAgeable = 18.0D;
 	}
 
 	@Override
@@ -70,7 +70,7 @@ public class EntityPrehistoricFloraParhybodus extends EntityPrehistoricFloraAgea
 	public boolean dropsEggs() {
 		return false;
 	}
-	
+
 	@Override
 	public boolean laysEggs() {
 		return false;

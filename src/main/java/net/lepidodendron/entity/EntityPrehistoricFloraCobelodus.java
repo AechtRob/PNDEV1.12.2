@@ -50,7 +50,7 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 		minWidth = 0.1F;
 		maxWidth = 0.7F;
 		maxHeight = 0.7F;
-		maxHealthAgeable = 56.0D;
+		maxHealthAgeable = 20.0D;
 	}
 
 	@Override
