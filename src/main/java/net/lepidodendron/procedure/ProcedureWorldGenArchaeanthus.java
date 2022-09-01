@@ -142,7 +142,7 @@ public class ProcedureWorldGenArchaeanthus extends ElementsLepidodendronMod.ModE
 
 	public static void addFlower(World world, BlockPos pos) {
 
-		if ((world.getBlockState(pos).getBlock() == BlockArchaeanthusLeaves.block) && (Math.random() > 0.6) && world.isAirBlock(pos.down())) {
+		if ((world.getBlockState(pos).getBlock() == BlockArchaeanthusLeaves.block) && (Math.random() > 0.4) && world.isAirBlock(pos.down())) {
 			world.setBlockState(pos.down(), BlockArchaeanthusFlower.block.getDefaultState().withProperty(FACING, EnumFacing.DOWN), 3);
 			if (!world.isRemote) {
 				BlockPos _bp = pos.down();
