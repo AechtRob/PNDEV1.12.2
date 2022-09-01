@@ -60,7 +60,10 @@ public class ProcedureWorldGenArchaeanthus extends ElementsLepidodendronMod.ModE
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			//Trunk:
-			TrunkHeight = 3 + (int) Math.round(Math.random() * 4);
+			TrunkHeight = 2 + (int) Math.round(Math.random() * 4);
+			if (Math.random() > 0.85) {
+				TrunkHeight = TrunkHeight + 1;
+			}
 			counter = 0;
 			while (counter <= TrunkHeight) {
 				yy = y + counter;
