@@ -3438,6 +3438,7 @@ public class LepidodendronSorter {
     public static final int petrified_spruce_sapling = 3426;
     public static final int petrified_acacia_sapling = 3427;
     public static final int palaeo_scampi = 3428;
+    public static final int holdfast_dry = 3429;
 
 
 }

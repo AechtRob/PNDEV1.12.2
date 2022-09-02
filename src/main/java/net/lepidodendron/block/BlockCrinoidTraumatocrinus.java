@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.item.ItemHoldfast;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -93,7 +92,7 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
 			if (Math.random() > 0.9 && (!world.isRemote)) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemHoldfast.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
 			}

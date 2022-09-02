@@ -82,7 +82,7 @@ public class BlockResinExtractor extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
-			setTickRandomly(true);
+			//setTickRandomly(true);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN));
 		}
 

@@ -584,7 +584,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
         //System.err.println("spawnerlen " + var3);
         int trySpawn = 0;
-        for(int var4 = 0; var4 < var3; ++var4) { //run over every mob to spawn with max of five tries per chunk
+        for (int var4 = 0; var4 < var3; ++var4) { //run over every mob to spawn with max of five tries per chunk
             if (trySpawn >= Math.min(Math.max(1, Math.round((double)var3/5D)), 5)) {
                 return;
             }
@@ -648,7 +648,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                             }
                             else {
                                 int weight = (int) Integer.parseInt(tmpStr);
-                                if (weight < 0 || weight > 100) {
+                                if (weight < -100 || weight > 100) {
                                     errFound = true;
                                 }
                                 else {
@@ -1277,15 +1277,31 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                         if (posCheck && !errFound) {
                                                             //System.err.println("Spawning " + mobToSpawn + " with locationID " + locationID + " at: " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ());
                                                             //System.err.println("maxSpawn: " + maxSpawn);
+
+                                                            boolean rare = (weight < 0);
+                                                            weight = Math.abs(weight);
+
                                                             //System.err.println("weight: " + weight);
+                                                            //System.err.println("rare: " + rare);
+
                                                             double weighter = 500D;
-                                                            if (locationID == 2 || locationID == 6 || locationID == 7) {
+                                                            if (locationID == 2 || locationID == 6 || locationID == 7) { //Sea
                                                                 weighter = 800D;
                                                             }
-                                                            if (locationID == 1) {
+                                                            if (locationID == 1) { //Land is more common
                                                                 weighter = 100D;
                                                             }
+
                                                             trySpawn += 1;
+
+                                                            //Deal with rare spawns:
+                                                            if (rare) {
+                                                                weighter = weighter * 2;
+                                                                if (rand.nextInt(2) == 0){
+                                                                    break;
+                                                                }
+                                                            }
+
                                                             if ((Math.random() * weighter) <= (double)weight) {
                                                                 //System.err.println("Trying......");
                                                                 int spawnQty = rand.nextInt(maxSpawn) + 1;

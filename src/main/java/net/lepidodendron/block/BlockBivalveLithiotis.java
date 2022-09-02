@@ -100,7 +100,7 @@ public class BlockBivalveLithiotis extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfig.genBivalvePrehistoricBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;

@@ -152,7 +152,9 @@ public class BlockInsectEggs extends Block {
 			world.destroyBlock(pos, true);
 		}
 		else {
-			//Test the orientation of this block and then check if it is still connected:
+			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = world.getBlockState(pos.south());
 				if (world.isAirBlock(pos.south()) ||
@@ -240,7 +242,9 @@ public class BlockInsectEggs extends Block {
 			//worldIn.setBlockToAir(pos);
 			worldIn.destroyBlock(pos, true);
 		} else {
-			//Test the orientation of this block and then check if it is still connected:
+			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
 				if (worldIn.isAirBlock(pos.south()) ||

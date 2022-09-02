@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.item.ItemHoldfast;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
@@ -113,7 +112,7 @@ public class BlockBlastoid3 extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfig.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -330,7 +329,7 @@ public class BlockBlastoid3 extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
 			if (Math.random() > 0.9 && (!world.isRemote)) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemHoldfast.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
 			}
@@ -467,6 +466,8 @@ public class BlockBlastoid3 extends ElementsLepidodendronMod.ModElement {
 				worldIn.setBlockToAir(pos);
 			}
 			else {
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
 				//Test the orientation of this block and then check if it is still connected:
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.south());

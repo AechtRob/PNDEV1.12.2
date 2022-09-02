@@ -215,7 +215,9 @@ public class BlockUtrechtiaLeaves extends ElementsLepidodendronMod.ModElement {
 			
 			//super.neighborChanged(state, world, pos, neighborBlock, fromPos);
 			EntityItem entityToSpawn;
-			//Test the orientation of this block and then check if it is still connected:
+			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				Block block = world.getBlockState(pos.north()).getBlock();
 				if (block == BlockUtrechtiaLeavesTop.block)
@@ -505,6 +507,8 @@ public class BlockUtrechtiaLeaves extends ElementsLepidodendronMod.ModElement {
 			EntityItem entityToSpawn;
 			if (((Boolean)state.getValue(CHECK_DECAY)).booleanValue() && ((Boolean)state.getValue(DECAYABLE)).booleanValue())
 				{
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
 				//Test the orientation of this block and then check if it is still connected:
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 					Block block = worldIn.getBlockState(pos.south()).getBlock();

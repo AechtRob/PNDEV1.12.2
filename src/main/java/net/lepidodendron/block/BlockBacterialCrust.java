@@ -504,7 +504,9 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
 			
-			//Test the orientation of this block and then check if it is still connected:
+			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = world.getBlockState(pos.south());
 				if (world.isAirBlock(pos.south()) || 
@@ -599,7 +601,9 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
 		{
-			//Test the orientation of this block and then check if it is still connected:
+			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
 				if (worldIn.isAirBlock(pos.south()) || 
@@ -692,6 +696,8 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 					int spreadradius = (int) LepidodendronConfig.radiusBacterialCrust;
 					if (spreadradius < 0) {spreadradius = 0;}
 					if (spreadradius > 8) {spreadradius = 8;}
+
+					if (!worldIn.isAreaLoaded(pos, spreadradius)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
 
 					//Pick a random block and a random face within the radius (including the block we are on):
 					//Is there air at the face?

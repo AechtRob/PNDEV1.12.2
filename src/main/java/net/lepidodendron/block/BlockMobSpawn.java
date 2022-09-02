@@ -171,7 +171,9 @@ public class BlockMobSpawn extends Block {
 			worldIn.setBlockToAir(pos);
 		}
 		else {
-			//Test the orientation of this block and then check if it is still connected:
+			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
 				if (worldIn.isAirBlock(pos.south()) || worldIn.getBlockState(pos.south()).getMaterial() == Material.GLASS ||

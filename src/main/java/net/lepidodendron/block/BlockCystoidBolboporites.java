@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.item.ItemHoldfast;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -82,7 +81,7 @@ public class BlockCystoidBolboporites extends ElementsLepidodendronMod.ModElemen
 		}
 		
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfig.genCrinoidBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -159,7 +158,7 @@ public class BlockCystoidBolboporites extends ElementsLepidodendronMod.ModElemen
 		@Override
 		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
 			if (Math.random() > 0.9 && (!world.isRemote)) {
-				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemHoldfast.block, (int) (1)));
+				EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockHoldfast.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);
 			}
@@ -277,6 +276,8 @@ public class BlockCystoidBolboporites extends ElementsLepidodendronMod.ModElemen
 				worldIn.setBlockToAir(pos);
 			}
 			else {
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
 				//Test the orientation of this block and then check if it is still connected:
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.south());

@@ -501,7 +501,9 @@ public class BlockFungus6 extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
 			
-			//Test the orientation of this block and then check if it is still connected:
+			if (!world.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = world.getBlockState(pos.south());
 				if (world.isAirBlock(pos.south()) || 
@@ -634,7 +636,9 @@ public class BlockFungus6 extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) 
 		{
-			//Test the orientation of this block and then check if it is still connected:
+			if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
+				//Test the orientation of this block and then check if it is still connected:
 			if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 				IBlockState iblockstate = worldIn.getBlockState(pos.south());
 				if (worldIn.isAirBlock(pos.south()) || 

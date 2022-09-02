@@ -2,7 +2,7 @@
 package net.lepidodendron.item.crafting;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.item.ItemHoldfast;
+import net.lepidodendron.block.BlockHoldfast;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -16,6 +16,6 @@ public class RecipeStickFromHoldfast extends ElementsLepidodendronMod.ModElement
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.addSmelting(new ItemStack(ItemHoldfast.block, (int) (1)), new ItemStack(Items.STICK, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockHoldfast.block, (int) (1)), new ItemStack(Items.STICK, (int) (1)), 0.1F);
 	}
 }

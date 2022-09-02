@@ -195,7 +195,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 	    	
 	        if (!world.isRemote)
 	        {
-	            if (!world.isAreaLoaded(pos, 3)) return;
+	            if (!world.isAreaLoaded(pos, 4)) return;
 	            
 				if (!this.canSurviveAt(world, pos))
 		        {

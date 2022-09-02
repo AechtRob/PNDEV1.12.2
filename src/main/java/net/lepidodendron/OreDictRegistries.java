@@ -176,7 +176,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemRope", BlockOdontopterisStemNE.block);
 		OreDictionary.registerOre("itemRope", BlockXenocladiaStem.block);
 		OreDictionary.registerOre("itemRope", BlockXenocladiaStemNE.block);
-		OreDictionary.registerOre("itemRope", ItemHoldfast.block);
+		OreDictionary.registerOre("itemRope", BlockHoldfast.block);
 
 		//Fungi:
 		OreDictionary.registerOre("itemFungus", new ItemStack(Blocks.BROWN_MUSHROOM, 1));

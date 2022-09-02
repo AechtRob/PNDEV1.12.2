@@ -30,6 +30,36 @@ public class VillagerPalaeontologist {
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.IRON_BARS), new EntityVillager.PriceInfo(2, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.REDSTONE, new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.IRON_INGOT, new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Asteroceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Ceratites.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Coroniceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Cylolobus.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Dactylioceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Goniatites.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Manticoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Pachydesmoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Pachydiscus.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Parapuzosia.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Titanites.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAphetoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellBasiloceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellCameroceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellCooperoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellCyrtoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellDeiroceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellEndoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellGonioceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellLituites.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellMooreoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellOrthoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellPhragmoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellRayonnoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellTemperoceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellVestinautilus.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockArchaeocidaris.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockCidaroida.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockFurcaster.block, 1), new EntityVillager.PriceInfo(1, 2)));
+        palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockHelianthaster.block, 1), new EntityVillager.PriceInfo(1, 2)));
 
         //Temporary trades:
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedPrototaxites.block, 1), new EntityVillager.PriceInfo(2, 2)));

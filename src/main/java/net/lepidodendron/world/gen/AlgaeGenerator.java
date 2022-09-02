@@ -65,7 +65,7 @@ public class AlgaeGenerator extends WorldGenerator
 		if (!dimensionCriteria)
 			return true;
 
-		int bound = 8;
+		/* int bound = 8;
 		if ((this.algae == BlockDarkPinkSponge.block)
 			|| (this.algae == BlockPinkSponge.block)
 			|| (this.algae == BlockYellowSponge.block)
@@ -83,12 +83,14 @@ public class AlgaeGenerator extends WorldGenerator
 			|| (this.algae == BlockFenestellaGiantYellow.block)) {
 		bound = 4;
 	}
+	*/
+
 
 		for (int i = 0; i < 64; ++i)
 		{
-			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
-			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
-			int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
+			int j = position.getX();// + rand.nextInt(bound) - rand.nextInt(bound);
+			int k = position.getY();// + rand.nextInt(4) - rand.nextInt(4);
+			int l = position.getZ();// + rand.nextInt(bound) - rand.nextInt(bound);
 
 			if (worldIn.isBlockLoaded(new BlockPos(j, k, l))) {
 

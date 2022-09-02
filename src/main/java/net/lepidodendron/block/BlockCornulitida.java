@@ -102,7 +102,7 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean biomeCriteria = false;
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (!matchBiome(biome, LepidodendronConfig.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
@@ -416,6 +416,8 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 				worldIn.setBlockToAir(pos);
 			}
 			else {
+				if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+
 				//Test the orientation of this block and then check if it is still connected:
 				if ((EnumFacing) state.getValue(BlockDirectional.FACING) == EnumFacing.NORTH) {
 					IBlockState iblockstate = worldIn.getBlockState(pos.south());
