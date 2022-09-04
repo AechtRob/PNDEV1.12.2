@@ -20,8 +20,29 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
 			"type": "text",
-			"text": ""
+			"text": "Megazostrodon is a genus of early mammaliform that lived between the Late Triassic and the Early Jurassic of Africa and France. This animal was quite small, not growing over 10 cm in length, and specialized on a diet consisting of insects and small reptiles, as indicated by the teeth morphology, from which the name \"large girdle tooth\" comes from."
 		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
+			"type": "text",
+			"text": "The enlarged brain and overdeveloped sense of smell and hearing were probably adaptation to a nocturnal lifestyle, probably a countermeasure to avoid competition with other diurnal small predators and a way to avoid predation from larger reptiles and potentially even dinosaurs. Close to mammals, this animal had a few features of the bones not seen in mammalians today, further evidence of its not quite close relation with us."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
+			"type": "text",
+			"text": "The heterodont dentition (having more than one shape of their teeth, a bit like us and other mammals) hints at this animal being adapted to a more active lifestyle, the legs more mobile than their ancestors also allowed for better and more flexible movement and their enlarged lungs for a more efficient respiration. The jaw in Megazostrodon was made from a single bone, the dentary"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
+			"type": "text",
+			"text": "like in modern mammals but the remaining unused bones of the jaw, now quite small, were still to be incorporated in the ear like you see in mammals today. Perhaps most important however, was the development of Endothermy (warm bloodedness), which meant the animal was now using the food they ate to sustain their body temperature "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
+			"type": "text",
+			"text": "thanks to a more accelerated metabolism compared to their reptilian contemporaries, which would use their surrounding environment instead. Discovered in 1966 for the first time in South Africa and described in 1968 by A.W. Crompton and F.A. Jenkins Jr, the animal was first thought to be a true mammal, hypothesis now discredited by more in depth studies of the animal and its relationships with true mammals."
+		},
+
 		{
 			"advancement": "lepidodendron:pf_adv_book_megazostrodon",
 			"type": "text",
