@@ -30,6 +30,7 @@ public class EnchantmentTimeReverse extends Enchantment {
         return false;
     }
 
+    /*
     @Override
     public int getMinEnchantability(int enchantmentLevel)
     {
@@ -45,7 +46,15 @@ public class EnchantmentTimeReverse extends Enchantment {
     @Override
     public int getMaxLevel()
     {
-        return 0;
+        return 1;
     }
+
+    @Override
+    public int getMinLevel()
+    {
+        return 1;
+    }
+
+     */
 
 }

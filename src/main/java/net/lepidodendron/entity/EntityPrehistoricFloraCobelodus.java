@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraCobelodus extends EntityPrehistoricFloraAgeab
 		return this.getAgeScale() < 0.25;
 	}
 
-	public static String getPeriod() {return "[Carboniferous -] Permian";}
+	public static String getPeriod() {return "late Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

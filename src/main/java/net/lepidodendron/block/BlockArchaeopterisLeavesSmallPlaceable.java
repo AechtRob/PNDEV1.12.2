@@ -72,7 +72,7 @@ public class BlockArchaeopterisLeavesSmallPlaceable extends ElementsLepidodendro
 		
 		@Override
 		public NonNullList<ItemStack> onSheared(ItemStack item, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
-			return NonNullList.withSize(1, new ItemStack(BlockArchaeopterisLeavesPlaceable.block, (int) (1)));
+			return NonNullList.withSize(1, new ItemStack(BlockArchaeopterisLeavesSmallPlaceable.block, (int) (1)));
 		}
 
 
