@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "34 ",
+    "67 "
+  ],
+  "key": {
+    "3": {
+      "item": "lepidodendron:silty_dirt"
+    },
+    "4": {
+      "item": "minecraft:gravel"
+    },
+    "6": {
+      "item": "minecraft:gravel"
+    },
+    "7": {
+      "item": "minecraft:silty_dirt"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:coarse_silty_dirt",
+    "count": 4
+  }
+}
