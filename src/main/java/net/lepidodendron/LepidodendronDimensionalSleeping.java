@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.lang.reflect.Field;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +20,9 @@ public class LepidodendronDimensionalSleeping {
 
 	@SubscribeEvent
 	public void onWorldTick(TickEvent.ServerTickEvent event) throws IllegalAccessException {
+
+		//System.err.println("Testing");
+
 		if (event.phase == TickEvent.Phase.START) {
 			boolean sleepPrecambrian = false;
 			boolean worldPrecambrian = false;
@@ -161,11 +165,14 @@ public class LepidodendronDimensionalSleeping {
 			if (Overworld != null) {
 				if (Overworld.getChunkProvider().getLoadedChunkCount() != 0) {
 					worldOverworld = true;
+					//System.err.println("overworld is loaded");
 					List<EntityPlayer> playersInWorld = Overworld.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
 					if (playersInWorld.isEmpty()) {
+						//System.err.println("overworld has no players");
 						worldOverworld = false;
 					}
 					else if (areAllPlayersAsleep(Overworld)) {
+						//System.err.println("all are asleep in overworld");
 						sleepOverworld = true;
 						worldOverworld = true;
 					}
@@ -214,19 +221,43 @@ public class LepidodendronDimensionalSleeping {
 				testOverworld = false;
 			}
 
-			//if (worldPrecambrian || worldCambrian || worldOrdovicianSilurian
-			//	|| worldDevonian || worldCarboniferous || worldPermian
-			//	|| worldTriassic || worldJurassic || worldOverworld) {
-			//	System.err.println("testPrecambrian: " + testPrecambrian);
-			//	System.err.println("testCambrian: " + testCambrian);
-			//	System.err.println("testOrdovicianSilurian: " + testOrdovicianSilurian);
-			//	System.err.println("testDevonian: " + testDevonian);
-			//	System.err.println("testCarboniferous: " + testCarboniferous);
-			//	System.err.println("testPermian: " + testPermian);
-			//	System.err.println("testTriassic: " + testTriassic);
-			//	System.err.println("testJurassic: " + testJurassic);
-			//	System.err.println("testOverworld: " + testOverworld);
-			//}
+
+			/*
+				System.err.println("testPrecambrian: " + testPrecambrian);
+				System.err.println("testCambrian: " + testCambrian);
+				System.err.println("testOrdovician: " + testOrdovician);
+				System.err.println("testSilurian: " + testSilurian);
+				System.err.println("testDevonian: " + testDevonian);
+				System.err.println("testCarboniferous: " + testCarboniferous);
+				System.err.println("testPermian: " + testPermian);
+				System.err.println("testTriassic: " + testTriassic);
+				System.err.println("testJurassic: " + testJurassic);
+				System.err.println("testOverworld: " + testOverworld);
+
+
+				System.err.println("sleepPrecambrian: " + sleepPrecambrian);
+				System.err.println("sleepCambrian: " + sleepCambrian);
+				System.err.println("sleepOrdovician: " + sleepOrdovician);
+				System.err.println("sleepSilurian: " + sleepSilurian);
+				System.err.println("sleepDevonian: " + sleepDevonian);
+				System.err.println("sleepCarboniferous: " + sleepCarboniferous);
+				System.err.println("sleepPermian: " + sleepPermian);
+				System.err.println("sleepTriassic: " + sleepTriassic);
+				System.err.println("sleepJurassic: " + sleepJurassic);
+				System.err.println("sleepOverworld: " + sleepOverworld);
+
+				System.err.println("worldPrecambrian: " + worldPrecambrian);
+				System.err.println("worldCambrian: " + worldCambrian);
+				System.err.println("worldOrdovician: " + worldOrdovician);
+				System.err.println("worldSilurian: " + worldSilurian);
+				System.err.println("worldDevonian: " + worldDevonian);
+				System.err.println("worldCarboniferous: " + worldCarboniferous);
+				System.err.println("worldPermian: " + worldPermian);
+				System.err.println("worldTriassic: " + worldTriassic);
+				System.err.println("worldJurassic: " + worldJurassic);
+				System.err.println("worldOverworld: " + worldOverworld);
+				
+			*/
 
 			if (testPrecambrian
 				&& testCambrian
@@ -239,10 +270,33 @@ public class LepidodendronDimensionalSleeping {
 				&& testJurassic
 				&& testOverworld
 			) {
+				//Quickly test the otehr dimensions and check in case we starting up still:
+				int[] dims = DimensionManager.getRegisteredDimensions().values().stream().flatMap(Collection::stream).mapToInt(Integer::intValue).toArray();
+				boolean isAnyoneLoggedIn = false;
+				for (int i: dims) {
+					WorldServer WorldTest = DimensionManager.getWorld(i);
+					if (WorldTest != null) {
+						if (Overworld.getChunkProvider().getLoadedChunkCount() != 0) {
+							List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+							if (!playersInWorld.isEmpty()) {
+								isAnyoneLoggedIn = true;
+							}
+						}
+					}
+					if (isAnyoneLoggedIn) {
+						break;
+					}
+				}
+				if (!isAnyoneLoggedIn) {
+					//System.err.println("No-one logged in ");
+					return;
+				}
+
 				if (Overworld.getGameRules().getBoolean("doDaylightCycle"))
 				{
 					long i = Overworld.getWorldTime() + 24000L;
 					Overworld.setWorldTime(i - i % 24000L);
+					//System.err.println("Setting morning");
 				}
 				if (Overworld.getGameRules().getBoolean("doWeatherCycle"))
 				{

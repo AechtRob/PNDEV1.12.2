@@ -82,7 +82,8 @@ public class ItemHerbicide extends ElementsLepidodendronMod.ModElement {
 							//System.err.println("Testing kill: " + blockpos.getX() + " " + blockpos.getY() + " " + blockpos.getZ() + " " + worldIn.getBlockState(blockpos).getBlock());
 							if (isDirectPathBetweenPointsToKill(worldIn, fromBlockPos(usepos), fromBlockPos(blockpos))) {
 								Block targetBlock = worldIn.getBlockState(blockpos.down()).getBlock();
-								if (targetBlock == BlockPrehistoricGroundBasic.block || targetBlock == BlockPrehistoricGroundLush.block) {
+								if (targetBlock == BlockPrehistoricGroundBasic.block || targetBlock == BlockPrehistoricGroundLush.block
+									|| targetBlock == BlockPrehistoricGroundFern.block || targetBlock == BlockPrehistoricGroundMossy.block) {
 									worldIn.destroyBlock(blockpos.down(), false);
 									worldIn.setBlockState(blockpos.down(), Blocks.DIRT.getStateFromMeta(0));
 								}
@@ -98,9 +99,13 @@ public class ItemHerbicide extends ElementsLepidodendronMod.ModElement {
 									worldIn.destroyBlock(blockpos.down(), false);
 									worldIn.setBlockState(blockpos.down(), BlockSandPangaean.block.getDefaultState());
 								}
-								if (targetBlock == BlockPrehistoricGroundMossy.block) {
+								if (targetBlock == BlockPrehistoricGroundSandBlack.block) {
 									worldIn.destroyBlock(blockpos.down(), false);
-									worldIn.setBlockState(blockpos.down(), Blocks.STONE.getStateFromMeta(0));
+									worldIn.setBlockState(blockpos.down(), BlockSandBlack.block.getDefaultState());
+								}
+								if (targetBlock == BlockPrehistoricGroundSandWhite.block) {
+									worldIn.destroyBlock(blockpos.down(), false);
+									worldIn.setBlockState(blockpos.down(), BlockSandWhite.block.getDefaultState());
 								}
 								if (targetBlock instanceof BlockGrass) {
 									worldIn.destroyBlock(blockpos.down(), false);

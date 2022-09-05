@@ -5,7 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousOceanShore;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
@@ -54,12 +55,13 @@ public class BlockEggsCobelodus extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		if (
-			(dimID != LepidodendronConfig.dimJurassic)
+			(dimID != LepidodendronConfig.dimPermian
+			&& dimID != LepidodendronConfig.dimCarboniferous)
 		)
 		{
 			return;
 		}
-		int minWaterDepth = 5;
+		int minWaterDepth = 3;
 		int waterDepthCheckMax = 25;
 		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
 		for (int i = 0; i < (int) 3; i++) {
@@ -67,9 +69,15 @@ public class BlockEggsCobelodus extends ElementsLepidodendronMod.ModElement {
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomeJurassic) {
-				BiomePermian biomeJ = (BiomePermian) biome;
-				if (biomeJ.getBiomeType() == EnumBiomeTypePermian.River) {
+			if (biome instanceof BiomePermian) {
+				BiomePermian biomeP = (BiomePermian) biome;
+				if (biomeP.getBiomeType() == EnumBiomeTypePermian.River) {
+					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				}
+			}
+			if (biome instanceof BiomeCarboniferous) {
+				//BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
+				if (biome == BiomeCarboniferousOceanShore.biome) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
