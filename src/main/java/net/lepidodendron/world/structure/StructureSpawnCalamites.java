@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenCalamites;
 import net.minecraft.block.material.Material;
@@ -25,16 +26,16 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimCalamites))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCalamites))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genCalamites && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genCalamites && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genCalamitesBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genCalamitesBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -44,17 +45,17 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genCalamitesOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genCalamitesOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 35000;
-		double GenMultiplier = LepidodendronConfig.multiplierCalamites;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierCalamites;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -94,7 +95,7 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 				{
 					j = j - 1;
 				}
-				int waterDist = LepidodendronConfig.spreadWaterCalamites;
+				int waterDist = LepidodendronConfigPlants.spreadWaterCalamites;
 				if (waterDist < 0) waterDist = 0;
 				if (((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS)
 					|| ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND))
@@ -134,8 +135,8 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightCalamites;
-				int minheight = LepidodendronConfig.minheightCalamites;
+				int maxheight = LepidodendronConfigPlants.maxheightCalamites;
+				int minheight = LepidodendronConfigPlants.minheightCalamites;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -147,7 +148,7 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genCalamitesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genCalamitesBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -157,7 +158,7 @@ public class StructureSpawnCalamites extends ElementsLepidodendronMod.ModElement
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genCalamitesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genCalamitesOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

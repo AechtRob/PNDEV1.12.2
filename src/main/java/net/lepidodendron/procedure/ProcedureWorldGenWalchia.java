@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockWalchiaLeaves;
 import net.lepidodendron.block.BlockWalchiaLog;
 import net.minecraft.block.material.Material;
@@ -162,7 +162,7 @@ public class ProcedureWorldGenWalchia extends ElementsLepidodendronMod.ModElemen
 				ProcedureTreeLeaf.executeProcedure(x, y + TrunkHeight + 2, z, world, BlockWalchiaLeaves.block);
 				ProcedureTreeLeaf.executeProcedure(x, y + TrunkHeight + 3, z, world, BlockWalchiaLeaves.block);
 
-				ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfig.genAnkyropterisWalchia, SaplingSpawn);
+				ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAnkyropterisWalchia, SaplingSpawn);
 			
 			}
 	}

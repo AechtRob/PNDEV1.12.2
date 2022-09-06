@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -43,11 +44,11 @@ public class AlgaeGenerator extends WorldGenerator
 		boolean anemones = (this.algae == BlockAnemone1.block || this.algae == BlockAnemone2.block || this.algae == BlockAnemone3.block || this.algae == BlockAnemone4.block || this.algae == BlockAnemone5.block || this.algae == BlockAnemone6.block || this.algae == BlockAnemone7.block || this.algae == BlockAnemone8.block || this.algae == BlockAnemone9.block);
 		boolean cystoids = (this.algae == BlockCystoidAristocystites.block || this.algae == BlockCystoidBolboporites.block || this.algae == BlockCystoidEchinosphaerites.block || this.algae == BlockCystoidPseudocrinites.block);
 		boolean ediacaran = (this.algae == BlockTawuia.block);
-		int[] dimCheck = LepidodendronConfig.dimAlgae;
-		if (rugosas) {dimCheck = LepidodendronConfig.dimRugosa;}
-		if (anemones) {dimCheck = LepidodendronConfig.dimAnemone;}
-		if (cystoids) {dimCheck = LepidodendronConfig.dimCrinoid;}
-		if (ediacaran) {dimCheck = LepidodendronConfig.dimEdiacaran;}
+		int[] dimCheck = LepidodendronConfigPlants.dimAlgae;
+		if (rugosas) {dimCheck = LepidodendronConfigPlants.dimRugosa;}
+		if (anemones) {dimCheck = LepidodendronConfigPlants.dimAnemone;}
+		if (cystoids) {dimCheck = LepidodendronConfigPlants.dimCrinoid;}
+		if (ediacaran) {dimCheck = LepidodendronConfigPlants.dimEdiacaran;}
 		if (shouldGenerateInDimension(dimID, dimCheck))
 		dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian && (!cystoids) && (!ediacaran))

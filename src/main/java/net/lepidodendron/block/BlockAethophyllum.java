@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicWarmLakeland;
 import net.lepidodendron.world.biome.triassic.BiomeTriassicXericScrubland;
@@ -71,9 +68,9 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAethophyllum))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAethophyllum))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genAethophyllum && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAethophyllum && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
@@ -84,7 +81,7 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAethophyllumBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAethophyllumBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
@@ -100,7 +97,7 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genAethophyllumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genAethophyllumOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome == BiomeTriassicXericScrubland.biome
@@ -111,17 +108,17 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierAethophyllum;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierAethophyllum;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightAethophyllum;
-		int minheight = LepidodendronConfig.minheightAethophyllum;
+		int maxheight = LepidodendronConfigPlants.maxheightAethophyllum;
+		int minheight = LepidodendronConfigPlants.minheightAethophyllum;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

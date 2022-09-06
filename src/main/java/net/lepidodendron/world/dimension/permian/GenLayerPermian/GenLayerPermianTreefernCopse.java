@@ -1,7 +1,7 @@
 package net.lepidodendron.world.dimension.permian.GenLayerPermian;
 
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.permian.*;
+import net.lepidodendron.world.biome.permian.BiomePermianWetlandsUnwooded;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;

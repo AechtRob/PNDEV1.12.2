@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPsilophyton;
 import net.lepidodendron.block.BlockPsilophytonSpore;
@@ -27,33 +28,33 @@ public class StructureSpawnPsilophyton extends ElementsLepidodendronMod.ModEleme
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPsilophyton))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPsilophyton))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPsilophyton && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPsilophyton && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPsilophytonBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPsilophytonBlacklistBiomes))) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPsilophytonOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPsilophytonOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 20000;
-		double GenMultiplier = LepidodendronConfig.multiplierPsilophyton;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPsilophyton;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -90,8 +91,8 @@ public class StructureSpawnPsilophyton extends ElementsLepidodendronMod.ModEleme
 				if (!canSurviveAt(world, new BlockPos(i, j + 1, k)))
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightPsilophyton;
-				int minheight = LepidodendronConfig.minheightPsilophyton;
+				int maxheight = LepidodendronConfigPlants.maxheightPsilophyton;
+				int minheight = LepidodendronConfigPlants.minheightPsilophyton;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -104,14 +105,14 @@ public class StructureSpawnPsilophyton extends ElementsLepidodendronMod.ModEleme
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPsilophytonBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPsilophytonBlacklistBiomes))) {
 					biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPsilophytonOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPsilophytonOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -191,10 +192,10 @@ public class StructureSpawnPsilophyton extends ElementsLepidodendronMod.ModEleme
 		if (worldIn.getBlockState(pos.down()).getBlock() == BlockPsilophytonStem.block)
 			return true;
 		
-		int distH = (int) LepidodendronConfig.waterPsilophytonHorizontal;
+		int distH = (int) LepidodendronConfigPlants.waterPsilophytonHorizontal;
 		if (distH < 1) distH = 1;
 		if (distH > 16) distH = 16;
-		int distV = (int) LepidodendronConfig.waterPsilophytonVertical;
+		int distV = (int) LepidodendronConfigPlants.waterPsilophytonVertical;
 		if (distV < 1) distV = 1;
 		if (distV > 6) distV = 6;
 		boolean waterCriteria = false;

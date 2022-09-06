@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraBothriolepis;
 import net.lepidodendron.entity.EntityPrehistoricFloraCampbellodus;
 import net.lepidodendron.entity.model.entity.ModelCampbellodus;
 import net.minecraft.client.renderer.GlStateManager;

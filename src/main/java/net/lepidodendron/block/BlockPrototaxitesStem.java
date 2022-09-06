@@ -2,7 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemPrototaxitesChunk;
 import net.lepidodendron.procedure.ProcedureTreeLog;
@@ -352,10 +352,10 @@ public class BlockPrototaxitesStem extends ElementsLepidodendronMod.ModElement {
 
     public static boolean canSurviveAt(World worldIn, BlockPos pos) {
 			
-		int distH = (int) LepidodendronConfig.waterPrototaxitesHorizontal;
+		int distH = (int) LepidodendronConfigPlants.waterPrototaxitesHorizontal;
 		if (distH < 1) distH = 1;
 		if (distH > 20) distH = 20;
-		int distV = (int) LepidodendronConfig.waterPrototaxitesVertical;
+		int distV = (int) LepidodendronConfigPlants.waterPrototaxitesVertical;
 		if (distV < 1) distV = 1;
 		if (distV > 6) distV = 6;
 		boolean waterCriteria = false;

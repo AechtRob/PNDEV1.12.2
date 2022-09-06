@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
@@ -23,7 +24,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -69,7 +73,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfig.spreadAdoketophyton) {
+			if (LepidodendronConfigPlants.spreadAdoketophyton) {
 				setTickRandomly(true);
 			}
 			else {
@@ -262,14 +266,14 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadAdoketophyton) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadAdoketophyton) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadAdoketophyton) {return true;}
+	        if (!LepidodendronConfigPlants.spreadAdoketophyton) {return true;}
 	        return false;
 	    }
 
@@ -294,10 +298,10 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 	    	
-			int distH = (int) LepidodendronConfig.waterAdoketophytonHorizontal;
+			int distH = (int) LepidodendronConfigPlants.waterAdoketophytonHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterAdoketophytonVertical;
+			int distV = (int) LepidodendronConfigPlants.waterAdoketophytonVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

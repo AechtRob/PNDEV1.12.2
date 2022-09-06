@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockPitysLeaves;
 import net.lepidodendron.block.BlockPitysLog;
 import net.lepidodendron.block.BlockPitysStrobilus;
@@ -167,8 +167,8 @@ public class ProcedureWorldGenPitys extends ElementsLepidodendronMod.ModElement 
 			}
 		}
 
-		ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfig.genAnkyropterisPitys, SaplingSpawn);
-		ProcedureSpawnLyginopteris.executeProcedure(x, y, z, world, LepidodendronConfig.genLyginopterisPitys, SaplingSpawn);
+		ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAnkyropterisPitys, SaplingSpawn);
+		ProcedureSpawnLyginopteris.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genLyginopterisPitys, SaplingSpawn);
 
 	}
 

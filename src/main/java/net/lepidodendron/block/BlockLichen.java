@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -95,14 +92,14 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int GenChance = 20;
-		//double GenMultiplier = LepidodendronConfig.multiplierTmesipteris;
+		//double GenMultiplier = LepidodendronConfigPlants.multiplierTmesipteris;
 		if (dimID == LepidodendronConfig.dimCarboniferous) {
 			GenChance = 38;
 		}
 		//if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
@@ -823,7 +820,7 @@ public class BlockLichen extends ElementsLepidodendronMod.ModElement {
 			if ((worldIn.getBlockState(pos).getBlock() == this) & (Math.random() > 0.99)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
-					int spreadradius = (int) LepidodendronConfig.radiusLichen;
+					int spreadradius = (int) LepidodendronConfigPlants.radiusLichen;
 					if (spreadradius < 0) {spreadradius = 0;}
 					if (spreadradius > 8) {spreadradius = 8;}
 

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
@@ -82,7 +83,7 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 			
-		int weight = LepidodendronConfig.weightRedTuftedAlgae;
+		int weight = LepidodendronConfigPlants.weightRedTuftedAlgae;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -91,7 +92,7 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 		
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genRedTuftedAlgaeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genRedTuftedAlgaeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -99,7 +100,7 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genRedTuftedAlgaeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genRedTuftedAlgaeOverrideBiomes))
 			biomeCriteria = true;
 
 		if ((dimID == LepidodendronConfig.dimCambrian)

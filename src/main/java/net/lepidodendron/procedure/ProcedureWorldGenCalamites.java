@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -60,7 +60,7 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 		World world = (World) dependencies.get("world");
 		boolean worldgen = (boolean) dependencies.get("worldgen");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
-		if (!LepidodendronConfig.spreadUnlimitedCalamites) {
+		if (!LepidodendronConfigPlants.spreadUnlimitedCalamites) {
 			int parentx = (int) dependencies.get("parentx");
 			int parenty = (int) dependencies.get("parenty");
 			int parentz = (int) dependencies.get("parentz");
@@ -839,7 +839,7 @@ public class ProcedureWorldGenCalamites extends ElementsLepidodendronMod.ModElem
 			}
 
 			
-		ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfig.genAnkyropterisCalamites, SaplingSpawn);
+		ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAnkyropterisCalamites, SaplingSpawn);
 			
 				
 		}

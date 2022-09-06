@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
@@ -71,7 +72,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		int weight = LepidodendronConfig.weightCrinoid;
+		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimOrdovician
@@ -83,7 +84,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 		}
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimCrinoid))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician)
 			dimensionCriteria = true;
@@ -92,7 +93,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genCrinoidBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genCrinoidBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -100,7 +101,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genCrinoidOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician
 		)

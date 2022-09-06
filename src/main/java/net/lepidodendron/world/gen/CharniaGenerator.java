@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockStromatolite;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -50,7 +51,7 @@ public class CharniaGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimEdiacaran))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			dimensionCriteria = true;

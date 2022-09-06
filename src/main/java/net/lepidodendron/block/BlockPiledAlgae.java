@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
@@ -73,7 +74,7 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		
-		int weight = LepidodendronConfig.weightPiledAlgae;
+		int weight = LepidodendronConfigPlants.weightPiledAlgae;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -82,12 +83,12 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 		
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genPiledAlgaeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPiledAlgaeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPiledAlgaeOverrideBiomes))
 			biomeCriteria = true;
 
 		if ((dimID == LepidodendronConfig.dimCambrian)

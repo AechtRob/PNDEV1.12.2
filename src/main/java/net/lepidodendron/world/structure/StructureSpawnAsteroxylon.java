@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockAsteroxylon;
 import net.minecraft.block.material.Material;
@@ -25,33 +26,33 @@ public class StructureSpawnAsteroxylon extends ElementsLepidodendronMod.ModEleme
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAsteroxylon))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAsteroxylon))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genAsteroxylon && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAsteroxylon && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAsteroxylonBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAsteroxylonBlacklistBiomes))) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genAsteroxylonOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genAsteroxylonOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 24000;
-		double GenMultiplier = LepidodendronConfig.multiplierAsteroxylon;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierAsteroxylon;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -88,8 +89,8 @@ public class StructureSpawnAsteroxylon extends ElementsLepidodendronMod.ModEleme
 				if (!canSurviveAt(world, new BlockPos(i, j + 1, k)))
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightAsteroxylon;
-				int minheight = LepidodendronConfig.minheightAsteroxylon;
+				int maxheight = LepidodendronConfigPlants.maxheightAsteroxylon;
+				int minheight = LepidodendronConfigPlants.minheightAsteroxylon;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -102,14 +103,14 @@ public class StructureSpawnAsteroxylon extends ElementsLepidodendronMod.ModEleme
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAsteroxylonBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAsteroxylonBlacklistBiomes))) {
 					biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genAsteroxylonOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genAsteroxylonOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -180,10 +181,10 @@ public class StructureSpawnAsteroxylon extends ElementsLepidodendronMod.ModEleme
 
     public boolean canSurviveAt(World worldIn, BlockPos pos) {
 			
-		int distH = (int) LepidodendronConfig.waterAsteroxylonHorizontal;
+		int distH = (int) LepidodendronConfigPlants.waterAsteroxylonHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterAsteroxylonVertical;
+			int distV = (int) LepidodendronConfigPlants.waterAsteroxylonVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

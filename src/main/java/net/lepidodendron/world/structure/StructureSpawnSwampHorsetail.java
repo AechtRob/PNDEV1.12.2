@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockSwampHorsetailLand;
 import net.lepidodendron.block.BlockSwampHorsetailWater;
@@ -26,16 +27,16 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimSwampHorsetail))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSwampHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genSwampHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSwampHorsetail && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genSwampHorsetailBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSwampHorsetailBlacklistBiomes))) {
 			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
@@ -44,17 +45,17 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genSwampHorsetailOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genSwampHorsetailOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 50000;
-		double GenMultiplier = LepidodendronConfig.multiplierSwampHorsetail;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierSwampHorsetail;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -88,8 +89,8 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 				}
 				int j = height;
 		
-				int maxheight = LepidodendronConfig.maxheightSwampHorsetail;
-				int minheight = LepidodendronConfig.minheightSwampHorsetail;
+				int maxheight = LepidodendronConfigPlants.maxheightSwampHorsetail;
+				int minheight = LepidodendronConfigPlants.minheightSwampHorsetail;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -107,7 +108,7 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 				//System.err.println("Cheking biomes...");
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genSwampHorsetailBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSwampHorsetailBlacklistBiomes))) {
 					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
@@ -116,7 +117,7 @@ public class StructureSpawnSwampHorsetail extends ElementsLepidodendronMod.ModEl
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genSwampHorsetailOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genSwampHorsetailOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

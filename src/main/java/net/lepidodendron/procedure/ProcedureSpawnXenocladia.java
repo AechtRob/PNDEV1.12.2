@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -22,7 +23,7 @@ public class ProcedureSpawnXenocladia extends ElementsLepidodendronMod.ModElemen
 			boolean biomeCriteria = false;
 			boolean dimensionCriteria = false;
 			int dimID = world.provider.getDimension();
-			if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimXenocladia))
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimXenocladia))
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
@@ -30,7 +31,7 @@ public class ProcedureSpawnXenocladia extends ElementsLepidodendronMod.ModElemen
 				dimensionCriteria = true;
 			if (dimensionCriteria && !SaplingSpawn) {
 				Biome biome = world.getBiome(new BlockPos(x, y, z));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genXenocladiaBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genXenocladiaBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS))
@@ -42,7 +43,7 @@ public class ProcedureSpawnXenocladia extends ElementsLepidodendronMod.ModElemen
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genXenocladiaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genXenocladiaOverrideBiomes))
 					biomeCriteria = true;
 				}
 				if (dimID == LepidodendronConfig.dimDevonian)

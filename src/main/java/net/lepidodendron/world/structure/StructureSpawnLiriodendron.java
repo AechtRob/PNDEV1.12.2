@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenLiriodendron;
 import net.minecraft.block.material.Material;
@@ -25,16 +26,16 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimLiriodendron))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLiriodendron))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genLiriodendron && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genLiriodendron && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genLiriodendronBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genLiriodendronBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
@@ -46,17 +47,17 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genLiriodendronOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genLiriodendronOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 17000;
-		double GenMultiplier = LepidodendronConfig.multiplierLiriodendron;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierLiriodendron;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -105,8 +106,8 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightLiriodendron;
-				int minheight = LepidodendronConfig.minheightLiriodendron;
+				int maxheight = LepidodendronConfigPlants.maxheightLiriodendron;
+				int minheight = LepidodendronConfigPlants.minheightLiriodendron;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -118,7 +119,7 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genLiriodendronBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genLiriodendronBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
@@ -130,7 +131,7 @@ public class StructureSpawnLiriodendron extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genLiriodendronOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genLiriodendronOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

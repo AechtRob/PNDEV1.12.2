@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
@@ -81,7 +82,7 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimTabulata))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimTabulata))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
@@ -93,7 +94,7 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 		if (!dimensionCriteria)
 			return;
 
-		int weight = LepidodendronConfig.weightTabulata;
+		int weight = LepidodendronConfigPlants.weightTabulata;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimDevonian
@@ -109,7 +110,7 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genTabulataBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genTabulataBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -117,7 +118,7 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genTabulataOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTabulataOverrideBiomes))
 			biomeCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 		)

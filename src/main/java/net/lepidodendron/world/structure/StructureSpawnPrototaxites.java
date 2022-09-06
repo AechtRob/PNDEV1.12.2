@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPrototaxites;
 import net.minecraft.block.material.Material;
@@ -26,16 +27,16 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPrototaxites))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPrototaxites))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPrototaxites && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPrototaxites && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPrototaxitesBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesBlacklistBiomes))) {
 			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
 				biomeCriteria = true;
@@ -50,7 +51,7 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 			//if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 			//	biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPrototaxitesOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
@@ -62,11 +63,11 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 			count = 10;
 		}
 			
-		double GenMultiplier = LepidodendronConfig.multiplierPrototaxites;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPrototaxites;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -103,8 +104,8 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 				if (!canSurviveAt(world, new BlockPos(i, j + 1, k)))
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightPrototaxites;
-				int minheight = LepidodendronConfig.minheightPrototaxites;
+				int maxheight = LepidodendronConfigPlants.maxheightPrototaxites;
+				int minheight = LepidodendronConfigPlants.minheightPrototaxites;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -117,7 +118,7 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPrototaxitesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesBlacklistBiomes))) {
 					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY))
 						biomeCriteria = true;
@@ -130,7 +131,7 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPrototaxitesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -202,10 +203,10 @@ public class StructureSpawnPrototaxites extends ElementsLepidodendronMod.ModElem
 
     public boolean canSurviveAt(World worldIn, BlockPos pos) {
 			
-		int distH = (int) LepidodendronConfig.waterPrototaxitesHorizontal;
+		int distH = (int) LepidodendronConfigPlants.waterPrototaxitesHorizontal;
 		if (distH < 1) distH = 1;
 		if (distH > 16) distH = 16;
-		int distV = (int) LepidodendronConfig.waterPrototaxitesVertical;
+		int distV = (int) LepidodendronConfigPlants.waterPrototaxitesVertical;
 		if (distV < 1) distV = 1;
 		if (distV > 6) distV = 6;
 		boolean waterCriteria = false;

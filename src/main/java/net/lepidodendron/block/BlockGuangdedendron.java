@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -72,16 +69,16 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimGuangdedendron))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimGuangdedendron))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genGuangdedendron && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genGuangdedendron && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genGuangdedendronBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genGuangdedendronBlacklistBiomes))) {
 			if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.SANDY)) 
 				&& (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY)))
 				biomeCriteria = true;
@@ -94,24 +91,24 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genGuangdedendronOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genGuangdedendronOverrideBiomes))
 			biomeCriteria = true;
 			
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 6;
-		double GenMultiplier = LepidodendronConfig.multiplierGuangdedendron;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierGuangdedendron;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = 15;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightGuangdedendron;
-		int minheight = LepidodendronConfig.minheightGuangdedendron;
+		int maxheight = LepidodendronConfigPlants.maxheightGuangdedendron;
+		int minheight = LepidodendronConfigPlants.minheightGuangdedendron;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

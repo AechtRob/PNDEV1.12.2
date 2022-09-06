@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -30,7 +31,7 @@ public class FilamentousAlgaeGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
     	boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAlgae))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAlgae))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 			|| (dimID == LepidodendronConfig.dimDevonian)

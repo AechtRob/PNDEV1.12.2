@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockStromatoveris;
 import net.lepidodendron.block.BlockThaumaptilon;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrianEstuary;
@@ -52,7 +53,7 @@ public class CambrianSeaPenGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimCrinoid))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = true;

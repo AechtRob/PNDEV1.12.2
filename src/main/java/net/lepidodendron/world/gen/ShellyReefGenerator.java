@@ -1,6 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockShelly;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanksRaised;
@@ -38,7 +38,7 @@ public class ShellyReefGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		int[] dimCheck = LepidodendronConfig.dimShellyReef;
+		int[] dimCheck = LepidodendronConfigPlants.dimShellyReef;
 
 		if (shouldGenerateInDimension(dimID, dimCheck))
 			dimensionCriteria = true;

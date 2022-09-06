@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockDiaphorodendronLeaves;
 import net.lepidodendron.block.BlockDiaphorodendronLog;
 import net.lepidodendron.block.BlockDiaphorodendronStrobilus;
@@ -1135,7 +1135,7 @@ public class ProcedureWorldGenDiaphorodendron extends ElementsLepidodendronMod.M
 		}
 
 			
-			ProcedureSpawnOdontopteris.executeProcedure(x, y + 3, z, world, LepidodendronConfig.genOdontopterisDiaphorodendron, SaplingSpawn);
+			ProcedureSpawnOdontopteris.executeProcedure(x, y + 3, z, world, LepidodendronConfigPlants.genOdontopterisDiaphorodendron, SaplingSpawn);
 			
 			}			
 	}

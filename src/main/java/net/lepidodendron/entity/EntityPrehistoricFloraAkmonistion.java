@@ -35,7 +35,7 @@ public class EntityPrehistoricFloraAkmonistion extends EntityPrehistoricFloraAge
 
 	public EntityPrehistoricFloraAkmonistion(World world) {
 		super(world);
-		//setSize(0.4F, 0.4F);
+		setSize(0.4F, 0.4F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);

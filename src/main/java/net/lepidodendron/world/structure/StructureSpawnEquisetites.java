@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenEquisites;
 import net.minecraft.block.material.Material;
@@ -25,15 +26,15 @@ public class StructureSpawnEquisetites extends ElementsLepidodendronMod.ModEleme
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimEquisetites))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEquisetites))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genEquisetites && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genEquisetites && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genEquisetitesBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genEquisetitesBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS))
@@ -55,17 +56,17 @@ public class StructureSpawnEquisetites extends ElementsLepidodendronMod.ModEleme
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genEquisetitesOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genEquisetitesOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 35000;
-		double GenMultiplier = LepidodendronConfig.multiplierEquisetites;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierEquisetites;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -114,8 +115,8 @@ public class StructureSpawnEquisetites extends ElementsLepidodendronMod.ModEleme
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightEquisetites;
-				int minheight = LepidodendronConfig.minheightEquisetites;
+				int maxheight = LepidodendronConfigPlants.maxheightEquisetites;
+				int minheight = LepidodendronConfigPlants.minheightEquisetites;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -149,7 +150,7 @@ public class StructureSpawnEquisetites extends ElementsLepidodendronMod.ModEleme
 
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genEquisetitesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genEquisetitesBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS))
@@ -171,7 +172,7 @@ public class StructureSpawnEquisetites extends ElementsLepidodendronMod.ModEleme
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genEquisetitesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genEquisetitesOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

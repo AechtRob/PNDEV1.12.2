@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -70,7 +71,7 @@ public class BlockFenestellaGiantRed extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		
-		int weight = LepidodendronConfig.weightFenestella;
+		int weight = LepidodendronConfigPlants.weightFenestella;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -90,7 +91,7 @@ public class BlockFenestellaGiantRed extends ElementsLepidodendronMod.ModElement
 		
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genFenestellaBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genFenestellaBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -101,7 +102,7 @@ public class BlockFenestellaGiantRed extends ElementsLepidodendronMod.ModElement
 		if (dimID == 0) {
 			biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genFenestellaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genFenestellaOverrideBiomes))
 			biomeCriteria = true;
 		if (biome instanceof BiomeCarboniferous)
 		{

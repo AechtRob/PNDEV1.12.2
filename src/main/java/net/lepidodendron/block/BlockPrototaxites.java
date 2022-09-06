@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.gen.WorldGenPrototaxites;
 import net.minecraft.block.Block;
@@ -68,24 +65,24 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 		boolean biomeCriteria = false;
 		//Just an *additional* spawner for mushroom biomes:
 		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
-		if (!matchBiome(biome, LepidodendronConfig.genPrototaxitesBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genPrototaxitesBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if ((!LepidodendronConfig.genPrototaxites && !LepidodendronConfig.genAllPlants)
+		if ((!LepidodendronConfigPlants.genPrototaxites && !LepidodendronConfig.genAllPlants)
 			|| dimID == LepidodendronConfig.dimSilurian) //Exclude this dim as it has its own generator already
 			biomeCriteria = false;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 7;
-		double GenMultiplier = LepidodendronConfig.multiplierPrototaxites;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPrototaxites;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
@@ -295,10 +292,10 @@ public class BlockPrototaxites extends ElementsLepidodendronMod.ModElement {
 		//@Override
 		public boolean canSurviveAt(World worldIn, BlockPos pos) {
 			
-			int distH = (int) LepidodendronConfig.waterPrototaxitesHorizontal;
+			int distH = (int) LepidodendronConfigPlants.waterPrototaxitesHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterPrototaxitesVertical;
+			int distV = (int) LepidodendronConfigPlants.waterPrototaxitesVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

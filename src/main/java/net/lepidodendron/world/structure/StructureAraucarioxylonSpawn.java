@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenAraucarioxylon;
 import net.minecraft.block.material.Material;
@@ -28,15 +29,15 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAraucarioxylon))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAraucarioxylon))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genAraucarioxylon && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAraucarioxylon && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAraucarioxylonBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAraucarioxylonBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
 				biomeCriteria = true;
 			if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)))
@@ -52,17 +53,17 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genAraucarioxylonOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genAraucarioxylonOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 40000;
-		double GenMultiplier = LepidodendronConfig.multiplierAraucarioxylon;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierAraucarioxylon;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -111,8 +112,8 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightAraucarioxylon;
-				int minheight = LepidodendronConfig.minheightAraucarioxylon;
+				int maxheight = LepidodendronConfigPlants.maxheightAraucarioxylon;
+				int minheight = LepidodendronConfigPlants.minheightAraucarioxylon;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -146,7 +147,7 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 				
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAraucarioxylonBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAraucarioxylonBlacklistBiomes))) {
 					if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA)) && (waterCriteria))
 						biomeCriteria = true;
 					if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)))
@@ -162,7 +163,7 @@ public class StructureAraucarioxylonSpawn extends ElementsLepidodendronMod.ModEl
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genAraucarioxylonOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genAraucarioxylonOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

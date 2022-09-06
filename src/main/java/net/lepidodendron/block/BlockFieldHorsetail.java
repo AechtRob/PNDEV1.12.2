@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
@@ -71,7 +72,7 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfig.spreadFieldHorsetail) {
+			if (LepidodendronConfigPlants.spreadFieldHorsetail) {
 				setTickRandomly(true);
 			}
 			else {
@@ -258,14 +259,14 @@ public class BlockFieldHorsetail extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadFieldHorsetail) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadFieldHorsetail) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadFieldHorsetail) {return true;}
+	        if (!LepidodendronConfigPlants.spreadFieldHorsetail) {return true;}
 	        return false;
 	    }
 

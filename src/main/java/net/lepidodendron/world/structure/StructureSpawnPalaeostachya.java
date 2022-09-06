@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPalaeostachyaBottom;
 import net.lepidodendron.block.BlockPalaeostachyaStem;
@@ -27,16 +28,16 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPalaeostachya))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPalaeostachya))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPalaeostachya && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPalaeostachya && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPalaeostachyaBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPalaeostachyaBlacklistBiomes))) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
 				biomeCriteria = false;
@@ -55,17 +56,17 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPalaeostachyaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPalaeostachyaOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 26000;
-		double GenMultiplier = LepidodendronConfig.multiplierPalaeostachya;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPalaeostachya;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -114,8 +115,8 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 				if (!blockCriteria)
 					continue;
 
-				int maxheight = LepidodendronConfig.maxheightPalaeostachya;
-				int minheight = LepidodendronConfig.minheightPalaeostachya;
+				int maxheight = LepidodendronConfigPlants.maxheightPalaeostachya;
+				int minheight = LepidodendronConfigPlants.minheightPalaeostachya;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -148,7 +149,7 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 					continue;
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPalaeostachyaBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPalaeostachyaBlacklistBiomes))) {
 					biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
 						biomeCriteria = false;
@@ -167,7 +168,7 @@ public class StructureSpawnPalaeostachya extends ElementsLepidodendronMod.ModEle
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPalaeostachyaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPalaeostachyaOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

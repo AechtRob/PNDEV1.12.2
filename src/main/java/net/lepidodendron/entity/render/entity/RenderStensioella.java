@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraMcnamaraspis;
 import net.lepidodendron.entity.EntityPrehistoricFloraStensioella;
 import net.lepidodendron.entity.model.entity.ModelStensioella;
 import net.minecraft.client.renderer.GlStateManager;

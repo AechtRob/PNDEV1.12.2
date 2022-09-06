@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPolyspermophyllum;
 import net.lepidodendron.block.BlockPolyspermophyllumCentre;
@@ -27,15 +28,15 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPolyspermophyllum))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPolyspermophyllum))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPolyspermophyllum && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPolyspermophyllum && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPolyspermophyllumBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPolyspermophyllumBlacklistBiomes))) {
 			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
@@ -46,17 +47,17 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPolyspermophyllumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPolyspermophyllumOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 20000;
-		double GenMultiplier = LepidodendronConfig.multiplierPolyspermophyllum;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPolyspermophyllum;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 3, 300000);
 		}
@@ -104,8 +105,8 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 				if (!blockCriteria)
 					continue;
 
-				int maxheight = LepidodendronConfig.maxheightPolyspermophyllum;
-				int minheight = LepidodendronConfig.minheightPolyspermophyllum;
+				int maxheight = LepidodendronConfigPlants.maxheightPolyspermophyllum;
+				int minheight = LepidodendronConfigPlants.minheightPolyspermophyllum;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -118,7 +119,7 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPolyspermophyllumBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPolyspermophyllumBlacklistBiomes))) {
 					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 						biomeCriteria = true;
@@ -129,7 +130,7 @@ public class StructureSpawnPolyspermophyllum extends ElementsLepidodendronMod.Mo
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPolyspermophyllumOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPolyspermophyllumOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

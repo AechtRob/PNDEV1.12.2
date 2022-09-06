@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -72,7 +73,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimBivalvePrehistoric))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBivalvePrehistoric))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimJurassic
 		) {
@@ -81,7 +82,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 		if (!dimensionCriteria)
 			return;
 
-		int weight = LepidodendronConfig.weightBivalvePrehistoric;
+		int weight = LepidodendronConfigPlants.weightBivalvePrehistoric;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimCarboniferous
@@ -102,7 +103,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genBivalvePrehistoricBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -110,7 +111,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genBivalvePrehistoricOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genBivalvePrehistoricOverrideBiomes))
 			biomeCriteria = true;
 
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian

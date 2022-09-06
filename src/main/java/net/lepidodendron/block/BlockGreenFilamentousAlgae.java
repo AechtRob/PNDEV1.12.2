@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -71,7 +68,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genFilamentousAlgaeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genFilamentousAlgaeBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -79,7 +76,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genFilamentousAlgaeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genFilamentousAlgaeOverrideBiomes))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 			|| (dimID == LepidodendronConfig.dimDevonian)
@@ -132,11 +129,11 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			return;
 
 		int GenChance = 30;
-		double GenMultiplier = LepidodendronConfig.weightFilamentousAlgae;
+		double GenMultiplier = LepidodendronConfigPlants.weightFilamentousAlgae;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
@@ -196,7 +193,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadFilamentousAlgae) {
+			if (LepidodendronConfigPlants.spreadFilamentousAlgae) {
 				setTickRandomly(true);
 			}
 			else {
@@ -363,14 +360,14 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadFilamentousAlgae) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadFilamentousAlgae) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadFilamentousAlgae) {return true;}
+	        if (!LepidodendronConfigPlants.spreadFilamentousAlgae) {return true;}
 	        return false;
 	    }
 	    

@@ -1,6 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -34,7 +34,7 @@ public class ReefGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		int[] dimCheck = LepidodendronConfig.dimReef;
+		int[] dimCheck = LepidodendronConfigPlants.dimReef;
 		if (shouldGenerateInDimension(dimID, dimCheck))
 		dimensionCriteria = true;
 		if (!dimensionCriteria)

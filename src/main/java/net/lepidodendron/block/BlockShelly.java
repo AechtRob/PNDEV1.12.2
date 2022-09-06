@@ -2,7 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
@@ -71,7 +71,7 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimShellyReef))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimShellyReef))
 			dimensionCriteria = true;
 		if (biome == BiomeJurassicSandbanks.biome
 				|| biome == BiomeJurassicSandbanksRaised.biome) {
@@ -82,7 +82,7 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 
-		if (!matchBiome(biome, LepidodendronConfig.genShellyReefBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genShellyReefBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -90,7 +90,7 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genShellyReefOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genShellyReefOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome == BiomeJurassicSandbanks.biome

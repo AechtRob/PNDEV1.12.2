@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
@@ -74,9 +71,9 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimReticulopteris))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimReticulopteris))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genReticulopteris && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genReticulopteris && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (LepidodendronConfig.dimCarboniferous == dimID)
 			dimensionCriteria = true;
@@ -85,7 +82,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genReticulopterisBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genReticulopterisBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
@@ -99,7 +96,7 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genReticulopterisOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genReticulopterisOverrideBiomes))
 			biomeCriteria = true;
 		if (LepidodendronConfig.dimCarboniferous == dimID)
 			biomeCriteria = true;
@@ -116,11 +113,11 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierReticulopteris;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierReticulopteris;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
@@ -129,8 +126,8 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			GenChance = 25;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightReticulopteris;
-		int minheight = LepidodendronConfig.minheightReticulopteris;
+		int maxheight = LepidodendronConfigPlants.maxheightReticulopteris;
+		int minheight = LepidodendronConfigPlants.minheightReticulopteris;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

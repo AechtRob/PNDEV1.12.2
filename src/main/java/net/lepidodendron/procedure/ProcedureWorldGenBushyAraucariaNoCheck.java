@@ -3,6 +3,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockBushyAraucariaLeaves;
 import net.lepidodendron.block.BlockBushyAraucariaLog;
 import net.lepidodendron.block.BlockLygodium;
@@ -64,7 +65,7 @@ public class ProcedureWorldGenBushyAraucariaNoCheck extends ElementsLepidodendro
 		double counter = 0;
 		double counter2 = 0;
 		boolean smalltree = false;
-		double largeAraucariaAraucana = Math.round(LepidodendronConfig.largeBushyAraucaria);
+		double largeAraucariaAraucana = Math.round(LepidodendronConfigPlants.largeBushyAraucaria);
 		
 		if (largeAraucariaAraucana > 100) {largeAraucariaAraucana = 100;}
 		if (largeAraucariaAraucana < 0) {largeAraucariaAraucana = 0;}
@@ -277,23 +278,23 @@ public class ProcedureWorldGenBushyAraucariaNoCheck extends ElementsLepidodendro
 			boolean SpawnLygodium = true;
 
 			boolean dimensionCriteria = false;
-			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfig.dimLygodium))
+			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfigPlants.dimLygodium))
 				dimensionCriteria = true;
-			if (!LepidodendronConfig.genLygodiumBushyAraucaria && !LepidodendronConfig.genAllPlants)
+			if (!LepidodendronConfigPlants.genLygodiumBushyAraucaria && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (!dimensionCriteria)
 				SpawnLygodium = false;
 
 			boolean biomeCriteria = false;
 			Biome biome = world.getBiome(new BlockPos(x, y, z));
-			if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genLygodiumBlacklistBiomes))) {
+			if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genLygodiumBlacklistBiomes))) {
 				biomeCriteria = true;
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 					biomeCriteria = false;
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 					biomeCriteria = false;
 			}
-			if (matchBiome(biome, LepidodendronConfig.genLygodiumOverrideBiomes))
+			if (matchBiome(biome, LepidodendronConfigPlants.genLygodiumOverrideBiomes))
 				biomeCriteria = true;
 			if (!biomeCriteria)
 				SpawnLygodium = false;
@@ -383,7 +384,7 @@ public class ProcedureWorldGenBushyAraucariaNoCheck extends ElementsLepidodendro
 			}
 
 
-			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfig.genNilssoniocladusBushyAraucaria, SaplingSpawn);
+			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusBushyAraucaria, SaplingSpawn);
 
 		}
 	}

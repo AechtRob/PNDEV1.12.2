@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockSciadopitysLeaves;
 import net.lepidodendron.block.BlockSciadopitysLog;
 import net.minecraft.block.material.Material;
@@ -205,7 +205,7 @@ public class ProcedureWorldGenSciadopitys extends ElementsLepidodendronMod.ModEl
 			}
 
 			//Podzol replacement in a configurable  circle:
-			int podzolRadius = LepidodendronConfig.podzolSciadopitys;
+			int podzolRadius = LepidodendronConfigPlants.podzolSciadopitys;
 			if (podzolRadius < 0) podzolRadius = 0;
 			if (podzolRadius > 16) podzolRadius = 16;
 			

@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockTmesipteris;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -35,7 +36,7 @@ public class TmesipterisGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
     	boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimTmesipteris))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimTmesipteris))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimCarboniferous
 			|| dimID == LepidodendronConfig.dimPermian

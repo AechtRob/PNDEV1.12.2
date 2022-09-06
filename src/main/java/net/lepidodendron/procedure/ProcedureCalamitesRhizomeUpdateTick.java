@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockCalamitesRhizome;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,7 +23,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 
 		//Do nothing is sprweading is turned off:
-		if (!LepidodendronConfig.spreadCalamites)
+		if (!LepidodendronConfigPlants.spreadCalamites)
 			return;
 
 		if (dependencies.get("x") == null) {
@@ -60,12 +60,12 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 			}
 		}.getValue(new BlockPos((int) xx, (int) yy, (int) zz), "worldgen")) {
 			//Do nothing if spreading is turned off:
-			if (!LepidodendronConfig.spreadWorldGenCalamites)
+			if (!LepidodendronConfigPlants.spreadWorldGenCalamites)
 				return;
 		}
 
 		//System.err.println("Ticked");
-		double spreadSpeed = LepidodendronConfig.spreadSpeedCalamites;
+		double spreadSpeed = LepidodendronConfigPlants.spreadSpeedCalamites;
 		if (spreadSpeed < 0) spreadSpeed = 0;
 		if (spreadSpeed > 100) spreadSpeed = 100;
 		
@@ -95,7 +95,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 			//Is this the parent or the child? Can it spread?
 			if ((i2 != xx) || (k2 != zz)) {
 				//This is a child, can we spawn with it?
-				if (!LepidodendronConfig.spreadUnlimitedCalamites)
+				if (!LepidodendronConfigPlants.spreadUnlimitedCalamites)
 					return;
 			}
 
@@ -112,7 +112,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 				//System.err.println("Passed random checker");
 
 			int count = random.nextInt(1) + 1;
-			int spreadLimit = LepidodendronConfig.spreadLimitCalamites;
+			int spreadLimit = LepidodendronConfigPlants.spreadLimitCalamites;
 			if (spreadLimit < 0) spreadLimit = 0;
 			for (int a = 0; a < count; a++) {
 				int i = i2 + random.nextInt((spreadLimit * 2) + 1) - spreadLimit;
@@ -171,7 +171,7 @@ public class ProcedureCalamitesRhizomeUpdateTick extends ElementsLepidodendronMo
 					continue;
 				
 				boolean blockCriteria = false;
-				int waterDist = LepidodendronConfig.spreadWaterCalamites;
+				int waterDist = LepidodendronConfigPlants.spreadWaterCalamites;
 				if (waterDist < 0) waterDist = 0;
 				if (((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS)
 					|| ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND))

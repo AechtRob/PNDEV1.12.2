@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAncientMoss;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -35,7 +36,7 @@ public class MossWoodGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
     	boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimMossWood))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMossWood))
 			dimensionCriteria = true;
 		if (
 			(dimID == LepidodendronConfig.dimCarboniferous)

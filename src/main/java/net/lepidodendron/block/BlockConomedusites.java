@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.minecraft.block.Block;
@@ -71,7 +72,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimEdiacaran))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
@@ -80,7 +81,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 		if (!dimensionCriteria)
 			return;
 
-		int weight = LepidodendronConfig.weightEdiacaran;
+		int weight = LepidodendronConfigPlants.weightEdiacaran;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimPrecambrian

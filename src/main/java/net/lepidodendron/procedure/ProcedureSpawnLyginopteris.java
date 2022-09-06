@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -22,7 +23,7 @@ public class ProcedureSpawnLyginopteris extends ElementsLepidodendronMod.ModElem
 			boolean biomeCriteria = false;
 			boolean dimensionCriteria = false;
 			int dimID = world.provider.getDimension();
-			if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimLyginopteris))
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimLyginopteris))
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
@@ -30,7 +31,7 @@ public class ProcedureSpawnLyginopteris extends ElementsLepidodendronMod.ModElem
 				dimensionCriteria = true;
 			if (dimensionCriteria && !SaplingSpawn) {
 				Biome biome = world.getBiome(new BlockPos(x, y, z));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genLyginopterisBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genLyginopterisBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -40,7 +41,7 @@ public class ProcedureSpawnLyginopteris extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genLyginopterisOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genLyginopterisOverrideBiomes))
 					biomeCriteria = true;
 				}
 				if (dimID == LepidodendronConfig.dimCarboniferous)

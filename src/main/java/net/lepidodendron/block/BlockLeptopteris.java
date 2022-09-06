@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
@@ -77,7 +74,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genLeptopterisEpiphyteBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genLeptopterisEpiphyteBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -85,9 +82,9 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genLeptopterisEpiphyteOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genLeptopterisEpiphyteOverrideBiomes))
 			biomeCriteria = true;
-		if (!LepidodendronConfig.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genLeptopterisEpiphyte && !LepidodendronConfig.genAllPlants)
 			biomeCriteria = false;
 
 		if (biome instanceof BiomeJurassic)
@@ -111,11 +108,11 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 
 		int GenChance = 28;
 
-		double GenMultiplier = LepidodendronConfig.multiplierLeptopterisEpiphyte;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierLeptopterisEpiphyte;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(100, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}

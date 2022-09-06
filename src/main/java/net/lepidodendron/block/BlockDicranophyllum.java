@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemDicranophyllumFruit;
 import net.lepidodendron.world.biome.permian.BiomePermianLowlands;
@@ -65,9 +62,9 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimDicranophyllum))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimDicranophyllum))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genDicranophyllum && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genDicranophyllum && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if ((LepidodendronConfig.dimCarboniferous == dimID)
 				|| (LepidodendronConfig.dimPermian == dimID)
@@ -78,7 +75,7 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genDicranophyllumBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genDicranophyllumBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
@@ -96,7 +93,7 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genDicranophyllumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genDicranophyllumOverrideBiomes))
 			biomeCriteria = true;
 		if ((LepidodendronConfig.dimCarboniferous == dimID)
 		)
@@ -109,17 +106,17 @@ public class BlockDicranophyllum extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierDicranophyllum;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierDicranophyllum;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightDicranophyllum;
-		int minheight = LepidodendronConfig.minheightDicranophyllum;
+		int maxheight = LepidodendronConfigPlants.maxheightDicranophyllum;
+		int minheight = LepidodendronConfigPlants.minheightDicranophyllum;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPhasmatocycasLog;
 import net.lepidodendron.procedure.ProcedureWorldGenPhasmatocycas;
@@ -26,16 +27,16 @@ public class StructureSpawnPhasmatocycas extends ElementsLepidodendronMod.ModEle
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPhasmatocycas))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPhasmatocycas))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPhasmatocycas && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPhasmatocycas && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPhasmatocycasBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPhasmatocycasBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
@@ -49,17 +50,17 @@ public class StructureSpawnPhasmatocycas extends ElementsLepidodendronMod.ModEle
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPhasmatocycasOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPhasmatocycasOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 20000;
-		double GenMultiplier = LepidodendronConfig.multiplierPhasmatocycas;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPhasmatocycas;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -127,8 +128,8 @@ public class StructureSpawnPhasmatocycas extends ElementsLepidodendronMod.ModEle
 					continue;
 
 		
-				int maxheight = LepidodendronConfig.maxheightPhasmatocycas;
-				int minheight = LepidodendronConfig.minheightPhasmatocycas;
+				int maxheight = LepidodendronConfigPlants.maxheightPhasmatocycas;
+				int minheight = LepidodendronConfigPlants.minheightPhasmatocycas;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -141,7 +142,7 @@ public class StructureSpawnPhasmatocycas extends ElementsLepidodendronMod.ModEle
 				
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPhasmatocycasBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPhasmatocycasBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SAVANNA))
@@ -155,7 +156,7 @@ public class StructureSpawnPhasmatocycas extends ElementsLepidodendronMod.ModEle
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPhasmatocycasOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPhasmatocycasOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

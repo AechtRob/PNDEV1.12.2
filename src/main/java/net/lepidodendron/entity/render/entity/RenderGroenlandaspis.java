@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraGemuendina;
 import net.lepidodendron.entity.EntityPrehistoricFloraGroenlandaspis;
 import net.lepidodendron.entity.model.entity.ModelGroenlandaspis;
 import net.minecraft.client.renderer.GlStateManager;

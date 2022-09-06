@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -50,7 +51,7 @@ public class OesiaGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimCrinoid))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid))
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = true;

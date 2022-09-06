@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockCordaitesLeaves;
 import net.lepidodendron.block.BlockCordaitesLog;
 import net.minecraft.block.material.Material;
@@ -788,7 +788,7 @@ public class ProcedureWorldGenCordaites extends ElementsLepidodendronMod.ModElem
 				}
 			}
 
-			ProcedureSpawnOdontopteris.executeProcedure(x, y + 3, z, world, LepidodendronConfig.genOdontopterisCordaites, SaplingSpawn);
+			ProcedureSpawnOdontopteris.executeProcedure(x, y + 3, z, world, LepidodendronConfigPlants.genOdontopterisCordaites, SaplingSpawn);
 			
 		}
 	}

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
@@ -833,7 +834,7 @@ public class BlockEdwardsiphyton extends ElementsLepidodendronMod.ModElement {
 			if ((worldIn.getBlockState(pos).getBlock() == this && Math.random() > 0.8)) {
 				if ((Boolean) state.getValue(SPREADABLE)) {
 					//System.err.println("Ticked a spreadable block");
-					int spreadradius = (int) LepidodendronConfig.radiusEdwardsiphyton;
+					int spreadradius = (int) LepidodendronConfigPlants.radiusEdwardsiphyton;
 					if (spreadradius < 0) {spreadradius = 0;}
 					if (spreadradius > 8) {spreadradius = 8;}
 

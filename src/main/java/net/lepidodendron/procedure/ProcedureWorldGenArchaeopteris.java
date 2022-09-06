@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -455,7 +455,7 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 				world.setBlockState(new BlockPos((int) x, (int) y + TrunkHeight + 1, (int) z), BlockArchaeopterisLeaves.block.getDefaultState().withProperty(FACING, EnumFacing.UP), 3);
 			}
 
-			ProcedureSpawnXenocladia.executeProcedure(x, (int) dependencies.get("y"), z, world, LepidodendronConfig.genXenocladiaArchaeopteris, SaplingSpawn);
+			ProcedureSpawnXenocladia.executeProcedure(x, (int) dependencies.get("y"), z, world, LepidodendronConfigPlants.genXenocladiaArchaeopteris, SaplingSpawn);
 
 		}
 

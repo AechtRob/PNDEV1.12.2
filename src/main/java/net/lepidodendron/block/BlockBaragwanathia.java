@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemBaragwanathiaItem;
@@ -70,7 +71,7 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadBaragwanathia) {
+			if (LepidodendronConfigPlants.spreadBaragwanathia) {
 				setTickRandomly(true);
 			}
 			else {
@@ -258,14 +259,14 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadBaragwanathia) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadBaragwanathia) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadBaragwanathia) {return true;}
+	        if (!LepidodendronConfigPlants.spreadBaragwanathia) {return true;}
 	        return false;
 	    }
 	    

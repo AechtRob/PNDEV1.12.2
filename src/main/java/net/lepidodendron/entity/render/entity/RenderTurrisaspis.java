@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraStensioella;
 import net.lepidodendron.entity.EntityPrehistoricFloraTurrisaspis;
 import net.lepidodendron.entity.model.entity.ModelTurrisaspis;
 import net.minecraft.client.renderer.GlStateManager;

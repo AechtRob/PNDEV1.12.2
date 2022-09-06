@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenBunya;
 import net.minecraft.block.material.Material;
@@ -25,16 +26,16 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAraucariaBidwilli))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAraucariaBidwilli))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genAraucariaBidwilli && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAraucariaBidwilli && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAraucariaBidwilliBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAraucariaBidwilliBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HOT))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.WET)) {
@@ -60,17 +61,17 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genAraucariaBidwilliOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genAraucariaBidwilliOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 22000;
-		double GenMultiplier = LepidodendronConfig.multiplierAraucariaBidwilli;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierAraucariaBidwilli;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -119,8 +120,8 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightAraucariaBidwilli;
-				int minheight = LepidodendronConfig.minheightAraucariaBidwilli;
+				int maxheight = LepidodendronConfigPlants.maxheightAraucariaBidwilli;
+				int minheight = LepidodendronConfigPlants.minheightAraucariaBidwilli;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -132,7 +133,7 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAraucariaBidwilliBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAraucariaBidwilliBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HOT))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.WET)) {
@@ -158,7 +159,7 @@ public class StructureSpawnBunya extends ElementsLepidodendronMod.ModElement {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genAraucariaBidwilliOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genAraucariaBidwilliOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemBumbudendronItem;
@@ -69,7 +70,7 @@ public class BlockBumbudendronWater extends ElementsLepidodendronMod.ModElement 
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadBumbudendron) {
+			if (LepidodendronConfigPlants.spreadBumbudendron) {
 				setTickRandomly(true);
 			}
 			else {
@@ -290,14 +291,14 @@ public class BlockBumbudendronWater extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadBumbudendron) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadBumbudendron) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadBumbudendron) {return true;}
+	        if (!LepidodendronConfigPlants.spreadBumbudendron) {return true;}
 	        return false;
 	    }
 	    

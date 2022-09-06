@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
@@ -75,7 +76,7 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		
 		
-		int weight = LepidodendronConfig.weightGreenCrustedAlgae;
+		int weight = LepidodendronConfigPlants.weightGreenCrustedAlgae;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
@@ -84,12 +85,12 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 		
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genGreenCrustedAlgaeBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genGreenCrustedAlgaeBlacklistBiomes)) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genGreenCrustedAlgaeOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genGreenCrustedAlgaeOverrideBiomes))
 			biomeCriteria = true;
 
 		if ((dimID == LepidodendronConfig.dimCambrian)

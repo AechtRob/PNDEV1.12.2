@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockSurangephyllum;
 import net.lepidodendron.block.BlockSurangephyllumTop;
@@ -26,16 +27,16 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimSurangephyllum))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSurangephyllum))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genSurangephyllum && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genSurangephyllum && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genSurangephyllumBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSurangephyllumBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
@@ -49,17 +50,17 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genSurangephyllumOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genSurangephyllumOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 33000;
-		double GenMultiplier = LepidodendronConfig.multiplierSurangephyllum;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierSurangephyllum;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -108,8 +109,8 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightSurangephyllum;
-				int minheight = LepidodendronConfig.minheightSurangephyllum;
+				int maxheight = LepidodendronConfigPlants.maxheightSurangephyllum;
+				int minheight = LepidodendronConfigPlants.minheightSurangephyllum;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -121,7 +122,7 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genSurangephyllumBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSurangephyllumBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
@@ -135,7 +136,7 @@ public class StructureSpawnSurangephyllum extends ElementsLepidodendronMod.ModEl
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genSurangephyllumOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genSurangephyllumOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

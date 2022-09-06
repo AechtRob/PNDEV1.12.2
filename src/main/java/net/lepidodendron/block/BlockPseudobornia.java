@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
@@ -76,9 +73,9 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPseudobornia))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPseudobornia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPseudobornia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPseudobornia && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (LepidodendronConfig.dimDevonian == dimID)
 			dimensionCriteria = true;
@@ -87,7 +84,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPseudoborniaBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPseudoborniaBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
@@ -99,7 +96,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPseudoborniaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPseudoborniaOverrideBiomes))
 			biomeCriteria = true;
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
@@ -116,11 +113,11 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierPseudobornia;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPseudobornia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
@@ -133,8 +130,8 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 			GenChance = 56;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightPseudobornia;
-		int minheight = LepidodendronConfig.minheightPseudobornia;
+		int maxheight = LepidodendronConfigPlants.maxheightPseudobornia;
+		int minheight = LepidodendronConfigPlants.minheightPseudobornia;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.world.gen.OesiaGenerator;
@@ -80,7 +81,7 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		int weight = LepidodendronConfig.weightCrinoid;
+		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {
 			weight = 100;
 		}

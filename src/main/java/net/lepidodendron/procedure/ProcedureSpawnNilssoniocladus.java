@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -22,13 +23,13 @@ public class ProcedureSpawnNilssoniocladus extends ElementsLepidodendronMod.ModE
 			boolean biomeCriteria = false;
 			boolean dimensionCriteria = false;
 			int dimID = world.provider.getDimension();
-			if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimNilssoniocladus))
+			if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimNilssoniocladus))
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (dimensionCriteria && !SaplingSpawn) {
 				Biome biome = world.getBiome(new BlockPos(x, y, z));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genNilssoniocladusBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
@@ -36,7 +37,7 @@ public class ProcedureSpawnNilssoniocladus extends ElementsLepidodendronMod.ModE
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genNilssoniocladusOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusOverrideBiomes))
 					biomeCriteria = true;
 				}
 				if (biomeCriteria && !SaplingSpawn) {

@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockRedwoodLeaves;
 import net.lepidodendron.block.BlockRedwoodLog;
 import net.minecraft.block.material.Material;
@@ -399,7 +399,7 @@ public class ProcedureWorldGenRedwoodLargeNoCheck extends ElementsLepidodendronM
 				counter = counter - Math.round(Math.random() * 2);
 			}
 
-			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfig.genNilssoniocladusRedwood, SaplingSpawn);
+			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusRedwood, SaplingSpawn);
 			
 		}
 	}

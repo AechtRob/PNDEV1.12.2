@@ -397,6 +397,7 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -408,7 +409,7 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.15F;
+        this.body.offsetY = 0.23F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraSmilosuchus Smilosuchus = (EntityPrehistoricFloraSmilosuchus) e;

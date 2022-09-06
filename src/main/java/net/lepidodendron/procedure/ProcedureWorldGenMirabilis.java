@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockTallAraucariaLeaves;
 import net.lepidodendron.block.BlockTallAraucariaLog;
 import net.minecraft.block.Block;
@@ -654,7 +654,7 @@ public class ProcedureWorldGenMirabilis extends ElementsLepidodendronMod.ModElem
 					}
 				}
 			}
-			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfig.genNilssoniocladusTallAraucaria, SaplingSpawn);
+			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusTallAraucaria, SaplingSpawn);
 
 		}
 	}

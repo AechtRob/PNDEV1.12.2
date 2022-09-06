@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonianGilboa;
@@ -75,9 +72,9 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimProtolepidodendropsis))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimProtolepidodendropsis))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genProtolepidodendropsis && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genProtolepidodendropsis && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (LepidodendronConfig.dimDevonian == dimID)
 			dimensionCriteria = true;
@@ -86,7 +83,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genProtolepidodendropsisBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genProtolepidodendropsisBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
@@ -104,7 +101,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genProtolepidodendropsisOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genProtolepidodendropsisOverrideBiomes))
 			biomeCriteria = true;
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
@@ -121,11 +118,11 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			return;
 
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierProtolepidodendropsis;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierProtolepidodendropsis;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = 15;
 		}
@@ -142,8 +139,8 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			GenChance = 256;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightProtolepidodendropsis;
-		int minheight = LepidodendronConfig.minheightProtolepidodendropsis;
+		int maxheight = LepidodendronConfigPlants.maxheightProtolepidodendropsis;
+		int minheight = LepidodendronConfigPlants.minheightProtolepidodendropsis;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

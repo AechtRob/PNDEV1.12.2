@@ -273,6 +273,7 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.415f);
     }
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
@@ -295,7 +296,7 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.92F;
+        this.Hips.offsetY = 0.91F;
 
         EntityPrehistoricFloraPristerognathus Pristerognathus = (EntityPrehistoricFloraPristerognathus) e;
         float masterSpeed = Pristerognathus.getTravelSpeed();

@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
 import net.lepidodendron.util.BlockSounds;
@@ -68,7 +69,7 @@ public class BlockSwampHorsetailWaterNoSpore extends ElementsLepidodendronMod.Mo
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadSwampHorsetail) {
+			if (LepidodendronConfigPlants.spreadSwampHorsetail) {
 				setTickRandomly(true);
 			}
 			else {
@@ -266,14 +267,14 @@ public class BlockSwampHorsetailWaterNoSpore extends ElementsLepidodendronMod.Mo
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadSwampHorsetail) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadSwampHorsetail) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadSwampHorsetail) {return true;}
+	        if (!LepidodendronConfigPlants.spreadSwampHorsetail) {return true;}
 	        return false;
 	    }
 	    

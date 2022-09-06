@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraCampbellodus;
 import net.lepidodendron.entity.EntityPrehistoricFloraCarolowilhelmina;
 import net.lepidodendron.entity.model.entity.ModelCarolowilhelmina;
 import net.minecraft.client.renderer.GlStateManager;

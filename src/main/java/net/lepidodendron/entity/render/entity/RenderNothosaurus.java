@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraNothosaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraTitanichthys;
 import net.lepidodendron.entity.model.entity.ModelNothosaurus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;

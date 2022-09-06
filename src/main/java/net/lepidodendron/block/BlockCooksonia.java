@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
@@ -71,7 +72,7 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfig.spreadCooksonia) {
+			if (LepidodendronConfigPlants.spreadCooksonia) {
 				setTickRandomly(true);
 			}
 			else {
@@ -266,14 +267,14 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadCooksonia) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadCooksonia) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadCooksonia) {return true;}
+	        if (!LepidodendronConfigPlants.spreadCooksonia) {return true;}
 	        return false;
 	    }
 
@@ -298,10 +299,10 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 	    	
-			int distH = (int) LepidodendronConfig.waterCooksoniaHorizontal;
+			int distH = (int) LepidodendronConfigPlants.waterCooksoniaHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterCooksoniaVertical;
+			int distV = (int) LepidodendronConfigPlants.waterCooksoniaVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

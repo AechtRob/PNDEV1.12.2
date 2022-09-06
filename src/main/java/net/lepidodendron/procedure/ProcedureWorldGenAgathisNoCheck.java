@@ -2,7 +2,7 @@ package net.lepidodendron.procedure;
 
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockAgathisLeaves;
 import net.lepidodendron.block.BlockAgathisLog;
 import net.minecraft.block.material.Material;
@@ -659,7 +659,7 @@ public class ProcedureWorldGenAgathisNoCheck extends ElementsLepidodendronMod.Mo
 			}			
 			
 			//Podzol replacement in a configurable  circle:
-			int podzolRadius = LepidodendronConfig.podzolAgathis;
+			int podzolRadius = LepidodendronConfigPlants.podzolAgathis;
 			if (podzolRadius < 0) podzolRadius = 0;
 			if (podzolRadius > 16) podzolRadius = 16;
 			
@@ -700,7 +700,7 @@ public class ProcedureWorldGenAgathisNoCheck extends ElementsLepidodendronMod.Mo
 			}
 
 			
-			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfig.genNilssoniocladusAgathis, SaplingSpawn);
+			ProcedureSpawnNilssoniocladus.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genNilssoniocladusAgathis, SaplingSpawn);
 			
 		}
 	}

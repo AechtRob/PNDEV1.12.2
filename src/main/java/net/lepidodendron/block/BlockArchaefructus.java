@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemArchaefructusItem;
 import net.lepidodendron.item.ItemArchaefructusSeeds;
@@ -65,7 +66,7 @@ public class BlockArchaefructus extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadArchaefructus) {
+			if (LepidodendronConfigPlants.spreadArchaefructus) {
 				setTickRandomly(true);
 			}
 			else {
@@ -244,14 +245,14 @@ public class BlockArchaefructus extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadArchaefructus) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadArchaefructus) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadArchaefructus) {return true;}
+	        if (!LepidodendronConfigPlants.spreadArchaefructus) {return true;}
 	        return false;
 	    }
 	    

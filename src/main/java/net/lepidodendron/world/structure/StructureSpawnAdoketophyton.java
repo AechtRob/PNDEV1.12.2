@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockAdoketophyton;
 import net.lepidodendron.block.BlockAdoketophytonSpore;
@@ -26,33 +27,33 @@ public class StructureSpawnAdoketophyton extends ElementsLepidodendronMod.ModEle
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimAdoketophyton))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAdoketophyton))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genAdoketophyton && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genAdoketophyton && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAdoketophytonBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAdoketophytonBlacklistBiomes))) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genAdoketophytonOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genAdoketophytonOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 20000;
-		double GenMultiplier = LepidodendronConfig.multiplierAdoketophyton;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierAdoketophyton;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -89,8 +90,8 @@ public class StructureSpawnAdoketophyton extends ElementsLepidodendronMod.ModEle
 				if (!canSurviveAt(world, new BlockPos(i, j + 1, k)))
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightAdoketophyton;
-				int minheight = LepidodendronConfig.minheightAdoketophyton;
+				int maxheight = LepidodendronConfigPlants.maxheightAdoketophyton;
+				int minheight = LepidodendronConfigPlants.minheightAdoketophyton;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -103,14 +104,14 @@ public class StructureSpawnAdoketophyton extends ElementsLepidodendronMod.ModEle
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genAdoketophytonBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAdoketophytonBlacklistBiomes))) {
 					biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genAdoketophytonOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genAdoketophytonOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -186,10 +187,10 @@ public class StructureSpawnAdoketophyton extends ElementsLepidodendronMod.ModEle
 
     public boolean canSurviveAt(World worldIn, BlockPos pos) {
 			
-		int distH = (int) LepidodendronConfig.waterAdoketophytonHorizontal;
+		int distH = (int) LepidodendronConfigPlants.waterAdoketophytonHorizontal;
 		if (distH < 1) distH = 1;
 		if (distH > 16) distH = 16;
-		int distV = (int) LepidodendronConfig.waterAdoketophytonVertical;
+		int distV = (int) LepidodendronConfigPlants.waterAdoketophytonVertical;
 		if (distV < 1) distV = 1;
 		if (distV > 6) distV = 6;
 		boolean waterCriteria = false;

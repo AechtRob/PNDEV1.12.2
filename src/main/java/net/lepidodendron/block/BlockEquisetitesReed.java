@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.item.ItemEquisetitesReedItem;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
@@ -71,9 +68,9 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimEquisetitesReed))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEquisetitesReed))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genEquisetitesReed && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genEquisetitesReed && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimTriassic
 		 	|| dimID == LepidodendronConfig.dimJurassic)
@@ -84,7 +81,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genEquisetitesReedBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genEquisetitesReedBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -94,7 +91,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genEquisetitesReedOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genEquisetitesReedOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeTriassic) {
@@ -124,11 +121,11 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 3;
-		double GenMultiplier = LepidodendronConfig.multiplierEquisetitesReed;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierEquisetitesReed;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
@@ -142,8 +139,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightEquisetitesReed;
-		int minheight = LepidodendronConfig.minheightEquisetitesReed;
+		int maxheight = LepidodendronConfigPlants.maxheightEquisetitesReed;
+		int minheight = LepidodendronConfigPlants.minheightEquisetitesReed;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

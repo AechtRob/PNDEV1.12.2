@@ -2,7 +2,7 @@ package net.lepidodendron.procedure;
 
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -855,9 +855,9 @@ public class ProcedureWorldGenSigillaria extends ElementsLepidodendronMod.ModEle
 
 			}
 
-			ProcedureSpawnAnkyropteris.executeProcedure(x, y + 1, z, world, LepidodendronConfig.genAnkyropterisSigillaria, SaplingSpawn);
+			ProcedureSpawnAnkyropteris.executeProcedure(x, y + 1, z, world, LepidodendronConfigPlants.genAnkyropterisSigillaria, SaplingSpawn);
 			
-			ProcedureSpawnOdontopteris.executeProcedure(x, y + 1, z, world, LepidodendronConfig.genOdontopterisSigillaria, SaplingSpawn);
+			ProcedureSpawnOdontopteris.executeProcedure(x, y + 1, z, world, LepidodendronConfigPlants.genOdontopterisSigillaria, SaplingSpawn);
 			
 		}
 	}

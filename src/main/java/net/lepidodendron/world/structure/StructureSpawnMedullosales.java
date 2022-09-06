@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockMedullosalesLog;
 import net.lepidodendron.procedure.ProcedureWorldGenMedullosales;
@@ -26,16 +27,16 @@ public class StructureSpawnMedullosales extends ElementsLepidodendronMod.ModElem
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimMedullosales))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMedullosales))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genMedullosales && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMedullosales && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 			
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genMedullosalesBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMedullosalesBlacklistBiomes))) {
 			biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 				biomeCriteria = true;
@@ -50,17 +51,17 @@ public class StructureSpawnMedullosales extends ElementsLepidodendronMod.ModElem
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genMedullosalesOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genMedullosalesOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 19000;
-		double GenMultiplier = LepidodendronConfig.multiplierMedullosales;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierMedullosales;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 5, 300000);
 		}
@@ -128,8 +129,8 @@ public class StructureSpawnMedullosales extends ElementsLepidodendronMod.ModElem
 				if (!blockCriteria || proximityCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightMedullosales;
-				int minheight = LepidodendronConfig.minheightMedullosales;
+				int maxheight = LepidodendronConfigPlants.maxheightMedullosales;
+				int minheight = LepidodendronConfigPlants.minheightMedullosales;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -142,7 +143,7 @@ public class StructureSpawnMedullosales extends ElementsLepidodendronMod.ModElem
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genMedullosalesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMedullosalesBlacklistBiomes))) {
 					biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 						biomeCriteria = true;
@@ -157,7 +158,7 @@ public class StructureSpawnMedullosales extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genMedullosalesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genMedullosalesOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;

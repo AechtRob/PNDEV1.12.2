@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemPrimaevalGrassSeeds;
 import net.lepidodendron.item.ItemPrimevalGrassItem;
@@ -67,7 +68,7 @@ public class BlockPrimevalGrassWater extends ElementsLepidodendronMod.ModElement
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
-			if (LepidodendronConfig.spreadPrimaevalGrass) {
+			if (LepidodendronConfigPlants.spreadPrimaevalGrass) {
 				setTickRandomly(true);
 			}
 			else {
@@ -280,14 +281,14 @@ public class BlockPrimevalGrassWater extends ElementsLepidodendronMod.ModElement
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadPrimaevalGrass) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadPrimaevalGrass) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadPrimaevalGrass) {return true;}
+	        if (!LepidodendronConfigPlants.spreadPrimaevalGrass) {return true;}
 	        return false;
 	    }
 	    

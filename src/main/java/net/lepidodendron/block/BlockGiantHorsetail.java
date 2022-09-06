@@ -1,10 +1,7 @@
 
 package net.lepidodendron.block;
 
-import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
@@ -77,9 +74,9 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimHorsetail))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHorsetail))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genHorsetail && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHorsetail && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if ((LepidodendronConfig.dimCarboniferous == dimID
 			|| dimID == LepidodendronConfig.dimPermian
@@ -93,7 +90,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX, 128, chunkZ));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genHorsetailBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genHorsetailBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.RIVER))
@@ -107,7 +104,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genHorsetailOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genHorsetailOverrideBiomes))
 			biomeCriteria = true;
 		if (LepidodendronConfig.dimCarboniferous == dimID)
 			biomeCriteria = true;
@@ -168,11 +165,11 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			return;
 			
 		int GenChance = 5;
-		double GenMultiplier = LepidodendronConfig.multiplierHorsetail;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierHorsetail;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(15, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = 15;
 		}
@@ -199,8 +196,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 256;
 		}
 
-		int maxheight = LepidodendronConfig.maxheightHorsetail;
-		int minheight = LepidodendronConfig.minheightHorsetail;
+		int maxheight = LepidodendronConfigPlants.maxheightHorsetail;
+		int minheight = LepidodendronConfigPlants.minheightHorsetail;
 		if (maxheight < 0) {maxheight = 0;}
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}

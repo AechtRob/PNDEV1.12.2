@@ -1,7 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockArthropitysLeaves;
 import net.lepidodendron.block.BlockArthropitysLog;
 import net.lepidodendron.block.BlockArthropitysStrobilus;
@@ -402,7 +402,7 @@ public class ProcedureWorldGenArthropitys extends ElementsLepidodendronMod.ModEl
 			ProcedureTreeLog.executeProcedure(x, yy, z, world, BlockArthropitysLog.block, EnumFacing.NORTH);
 			leavesAroundLog(x, yy, z, world, BlockArthropitysLeaves.block, 1, 0);
 
-			ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfig.genAnkyropterisArthropitys, SaplingSpawn);
+			ProcedureSpawnAnkyropteris.executeProcedure(x, y, z, world, LepidodendronConfigPlants.genAnkyropterisArthropitys, SaplingSpawn);
 		}
 	}
 

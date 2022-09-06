@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.BlockSounds;
@@ -71,7 +72,7 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfig.spreadZosterophyllum) {
+			if (LepidodendronConfigPlants.spreadZosterophyllum) {
 				setTickRandomly(true);
 			}
 			else {
@@ -265,14 +266,14 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadZosterophyllum) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadZosterophyllum) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadZosterophyllum) {return true;}
+	        if (!LepidodendronConfigPlants.spreadZosterophyllum) {return true;}
 	        return false;
 	    }
 
@@ -297,10 +298,10 @@ public class BlockZosterophyllum extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 	    	
-			int distH = (int) LepidodendronConfig.waterZosterophyllumHorizontal;
+			int distH = (int) LepidodendronConfigPlants.waterZosterophyllumHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterZosterophyllumVertical;
+			int distV = (int) LepidodendronConfigPlants.waterZosterophyllumVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

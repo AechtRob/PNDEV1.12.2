@@ -10,41 +10,41 @@ public class LepidodendronDecorationHandler {
 @SubscribeEvent(receiveCanceled=true)
     public void onEvent(Decorate event){
     	
-        if ((event.getType() == Decorate.EventType.TREE) && !LepidodendronConfig.genTransformBiomesTrees)
+        if ((event.getType() == Decorate.EventType.TREE) && !LepidodendronConfigPlants.genTransformBiomesTrees)
        	{
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
         } 
 
-        if ((event.getType() == Decorate.EventType.CACTUS) && !LepidodendronConfig.genTransformBiomesCactus)
+        if ((event.getType() == Decorate.EventType.CACTUS) && !LepidodendronConfigPlants.genTransformBiomesCactus)
         	{
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
@@ -68,22 +68,22 @@ public class LepidodendronDecorationHandler {
 				event.setResult(Event.Result.DENY);
         }
 
-        if (((event.getType() == Decorate.EventType.BIG_SHROOM)) && !LepidodendronConfig.genTransformBiomesMushrooms)
+        if (((event.getType() == Decorate.EventType.BIG_SHROOM)) && !LepidodendronConfigPlants.genTransformBiomesMushrooms)
         {
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
@@ -108,22 +108,22 @@ public class LepidodendronDecorationHandler {
 
         }
 
-	if (((event.getType() == Decorate.EventType.SHROOM)) && !LepidodendronConfig.genTransformBiomesMushrooms)
+	if (((event.getType() == Decorate.EventType.SHROOM)) && !LepidodendronConfigPlants.genTransformBiomesMushrooms)
 	{
 		Biome biome = event.getWorld().getBiome(event.getPos());
-		if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
 			event.setResult(Event.Result.DENY);
 		biome = event.getWorld().getBiome(event.getPos().north(16));
-		if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
 			event.setResult(Event.Result.DENY);
 		biome = event.getWorld().getBiome(event.getPos().south(16));
-		if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
 			event.setResult(Event.Result.DENY);
 		biome = event.getWorld().getBiome(event.getPos().east(16));
-		if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
 			event.setResult(Event.Result.DENY);
 		biome = event.getWorld().getBiome(event.getPos().west(16));
-		if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
 			event.setResult(Event.Result.DENY);
 		if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 			event.setResult(Event.Result.DENY);
@@ -141,22 +141,22 @@ public class LepidodendronDecorationHandler {
 			event.setResult(Event.Result.DENY);
 	}
 
-        if (((event.getType() == Decorate.EventType.FLOWERS) || (event.getType() == Decorate.EventType.LILYPAD)) && !LepidodendronConfig.genTransformBiomesFlowers)
+        if (((event.getType() == Decorate.EventType.FLOWERS) || (event.getType() == Decorate.EventType.LILYPAD)) && !LepidodendronConfigPlants.genTransformBiomesFlowers)
         {
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
@@ -181,22 +181,22 @@ public class LepidodendronDecorationHandler {
 
         }
 
-        if ((event.getType() == Decorate.EventType.PUMPKIN) && !LepidodendronConfig.genTransformBiomesPumpkins)
+        if ((event.getType() == Decorate.EventType.PUMPKIN) && !LepidodendronConfigPlants.genTransformBiomesPumpkins)
         {
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);
@@ -221,22 +221,22 @@ public class LepidodendronDecorationHandler {
 
         }
 
-        if ((event.getType() == Decorate.EventType.REED) && !LepidodendronConfig.genTransformBiomesReeds)
+        if ((event.getType() == Decorate.EventType.REED) && !LepidodendronConfigPlants.genTransformBiomesReeds)
        	{
         	Biome biome = event.getWorld().getBiome(event.getPos());
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().north(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().south(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().east(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
             biome = event.getWorld().getBiome(event.getPos().west(16));
-        	if (matchBiome(biome, LepidodendronConfig.genTransformBiomes))
+        	if (matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes))
             	event.setResult(Event.Result.DENY);
 			if (LepidodendronConfig.dimPrecambrian == event.getWorld().provider.getDimension() )
 				event.setResult(Event.Result.DENY);

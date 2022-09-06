@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockGangamopterisLeaves;
 import net.lepidodendron.block.BlockGangamopterisLog;
 import net.lepidodendron.block.BlockGangamopterisStrobilus;
@@ -2561,23 +2562,23 @@ public class ProcedureWorldGenGangamopteris extends ElementsLepidodendronMod.Mod
 			boolean SpawnPalaeognetaleana = true;
 
 			boolean dimensionCriteria = false;
-			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfig.dimPalaeognetaleana))
+			if (shouldGenerateInDimension(world.provider.getDimension(), LepidodendronConfigPlants.dimPalaeognetaleana))
 				dimensionCriteria = true;
-			if (!LepidodendronConfig.genPalaeognetaleanaGangamopteris && !LepidodendronConfig.genAllPlants)
+			if (!LepidodendronConfigPlants.genPalaeognetaleanaGangamopteris && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
 			if (!dimensionCriteria)
 				SpawnPalaeognetaleana = false;
 
 			boolean biomeCriteria = false;
 			Biome biome = world.getBiome(new BlockPos(x, y, z));
-			if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPalaeognetaleanaBlacklistBiomes))) {
+			if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPalaeognetaleanaBlacklistBiomes))) {
 				biomeCriteria = true;
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 					biomeCriteria = false;
 				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 					biomeCriteria = false;
 			}
-			if (matchBiome(biome, LepidodendronConfig.genPalaeognetaleanaOverrideBiomes))
+			if (matchBiome(biome, LepidodendronConfigPlants.genPalaeognetaleanaOverrideBiomes))
 				biomeCriteria = true;
 			if (!biomeCriteria)
 				SpawnPalaeognetaleana = false;

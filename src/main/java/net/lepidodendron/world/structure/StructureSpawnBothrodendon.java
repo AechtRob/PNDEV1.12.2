@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.procedure.ProcedureWorldGenBothrodendron;
 import net.minecraft.block.material.Material;
@@ -28,16 +29,16 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimBothrodendron))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimBothrodendron))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genBothrodendron && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genBothrodendron && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genBothrodendronBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genBothrodendronBlacklistBiomes))) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -47,17 +48,17 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genBothrodendronOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genBothrodendronOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
 		int GenChance = 40000;
-		double GenMultiplier = LepidodendronConfig.multiplierBothrodendron;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierBothrodendron;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 10, 300000);
 		}
@@ -111,8 +112,8 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfig.maxheightBothrodendron;
-				int minheight = LepidodendronConfig.minheightBothrodendron;
+				int maxheight = LepidodendronConfigPlants.maxheightBothrodendron;
+				int minheight = LepidodendronConfigPlants.minheightBothrodendron;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -124,7 +125,7 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genBothrodendronBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genBothrodendronBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -134,7 +135,7 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genBothrodendronOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genBothrodendronOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -142,7 +143,7 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 				
 				boolean vines = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genSphenophyllalesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genSphenophyllalesBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						vines = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -152,16 +153,16 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						vines = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genSphenophyllalesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genSphenophyllalesOverrideBiomes))
 					vines = true;
-				if (!shouldGenerateInDimension(dimID, LepidodendronConfig.dimSphenophyllales))
+				if (!shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimSphenophyllales))
 					vines = false;
-				if (!LepidodendronConfig.genSphenophyllalesBothrodendron && !LepidodendronConfig.genAllPlants)
+				if (!LepidodendronConfigPlants.genSphenophyllalesBothrodendron && !LepidodendronConfig.genAllPlants)
 					vines = false;
 
 				boolean vines2 = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genCallistophytalesBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genCallistophytalesBlacklistBiomes))) {
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP))
 						vines2 = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
@@ -171,11 +172,11 @@ public class StructureSpawnBothrodendon extends ElementsLepidodendronMod.ModElem
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						vines2 = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genCallistophytalesOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genCallistophytalesOverrideBiomes))
 					vines2 = true;
-				if (!shouldGenerateInDimension(dimID, LepidodendronConfig.dimCallistophytales))
+				if (!shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCallistophytales))
 					vines2 = false;
-				if (!LepidodendronConfig.genCallistophytalesBothrodendron && !LepidodendronConfig.genAllPlants)
+				if (!LepidodendronConfigPlants.genCallistophytalesBothrodendron && !LepidodendronConfig.genAllPlants)
 					vines2 = false;
 
 					

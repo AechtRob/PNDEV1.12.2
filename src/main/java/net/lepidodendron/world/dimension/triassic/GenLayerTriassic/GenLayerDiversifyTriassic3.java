@@ -1,7 +1,7 @@
 package net.lepidodendron.world.dimension.triassic.GenLayerTriassic;
 
 import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.triassic.*;
+import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;

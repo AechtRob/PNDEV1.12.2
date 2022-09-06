@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprionHole;
@@ -89,7 +90,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 		if (Math.random() <= 0.975) {return;}
 
 		boolean dimensionCriteria = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimWebsteroprion))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimWebsteroprion))
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
@@ -109,7 +110,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 		if (!dimensionCriteria)
 			return;
 
-		int weight = LepidodendronConfig.weightWebsteroprion;
+		int weight = LepidodendronConfigPlants.weightWebsteroprion;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
 		if (dimID == LepidodendronConfig.dimDevonian
@@ -122,7 +123,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (!matchBiome(biome, LepidodendronConfig.genWebsteroprionBlacklistBiomes)) {
+		if (!matchBiome(biome, LepidodendronConfigPlants.genWebsteroprionBlacklistBiomes)) {
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
@@ -130,7 +131,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genWebsteroprionOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genWebsteroprionOverrideBiomes))
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeDevonian)

@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraLunaspis;
 import net.lepidodendron.entity.EntityPrehistoricFloraMcnamaraspis;
 import net.lepidodendron.entity.model.entity.ModelMcnamaraspis;
 import net.minecraft.client.renderer.GlStateManager;

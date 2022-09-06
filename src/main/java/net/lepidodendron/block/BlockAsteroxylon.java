@@ -3,6 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
@@ -71,7 +72,7 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			if (LepidodendronConfig.spreadAsteroxylon) {
+			if (LepidodendronConfigPlants.spreadAsteroxylon) {
 				setTickRandomly(true);
 			}
 			else {
@@ -258,14 +259,14 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
-	    	if (!LepidodendronConfig.spreadAsteroxylon) {return true;}
+	    	if (!LepidodendronConfigPlants.spreadAsteroxylon) {return true;}
 	        return false;
 	    }
 
 		@Override
 	    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 	    {
-	        if (!LepidodendronConfig.spreadAsteroxylon) {return true;}
+	        if (!LepidodendronConfigPlants.spreadAsteroxylon) {return true;}
 	        return false;
 	    }
 
@@ -289,10 +290,10 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 	    		return false;
 	    	}
 			
-			int distH = (int) LepidodendronConfig.waterAsteroxylonHorizontal;
+			int distH = (int) LepidodendronConfigPlants.waterAsteroxylonHorizontal;
 			if (distH < 1) distH = 1;
 			if (distH > 16) distH = 16;
-			int distV = (int) LepidodendronConfig.waterAsteroxylonVertical;
+			int distV = (int) LepidodendronConfigPlants.waterAsteroxylonVertical;
 			if (distV < 1) distV = 1;
 			if (distV > 6) distV = 6;
 			boolean waterCriteria = false;

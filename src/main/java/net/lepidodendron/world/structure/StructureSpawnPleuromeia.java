@@ -3,6 +3,7 @@ package net.lepidodendron.world.structure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
 import net.lepidodendron.block.BlockPleuromeiaStem;
 import net.lepidodendron.procedure.ProcedureWorldGenPleuromeia;
@@ -26,15 +27,15 @@ public class StructureSpawnPleuromeia extends ElementsLepidodendronMod.ModElemen
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfig.dimPleuromeia))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimPleuromeia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfig.genPleuromeia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genPleuromeia && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPleuromeiaBlacklistBiomes))) {
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPleuromeiaBlacklistBiomes))) {
 			biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
 				biomeCriteria = false;
@@ -51,17 +52,17 @@ public class StructureSpawnPleuromeia extends ElementsLepidodendronMod.ModElemen
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfig.genPleuromeiaOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genPleuromeiaOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
 		int GenChance = 25000;
-		double GenMultiplier = LepidodendronConfig.multiplierPleuromeia;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierPleuromeia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
-		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfig.genTransformBiomes)) {
+		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 				GenChance = Math.min(GenChance * 3, 300000);
 		}
@@ -134,8 +135,8 @@ public class StructureSpawnPleuromeia extends ElementsLepidodendronMod.ModElemen
 					continue;
 					
 		
-				int maxheight = LepidodendronConfig.maxheightPleuromeia;
-				int minheight = LepidodendronConfig.minheightPleuromeia;
+				int maxheight = LepidodendronConfigPlants.maxheightPleuromeia;
+				int minheight = LepidodendronConfigPlants.minheightPleuromeia;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -147,7 +148,7 @@ public class StructureSpawnPleuromeia extends ElementsLepidodendronMod.ModElemen
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfig.genPleuromeiaBlacklistBiomes))) {
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPleuromeiaBlacklistBiomes))) {
 					biomeCriteria = true;
 					boolean waterCriteria = false;
 					//Is there water nearby?
@@ -181,7 +182,7 @@ public class StructureSpawnPleuromeia extends ElementsLepidodendronMod.ModElemen
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfig.genPleuromeiaOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genPleuromeiaOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
