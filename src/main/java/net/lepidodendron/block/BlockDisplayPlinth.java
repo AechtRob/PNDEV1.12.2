@@ -169,11 +169,13 @@ public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
 							return true;
 						}
 						if (!stack.isEmpty()) {
-							if (stack.getItem() == Items.SPAWN_EGG) {
-								return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
-							}
+							//if (stack.getItem() == Items.SPAWN_EGG) {
+							//	return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+							//}
 							//tee.setInventorySlotContents(0, stack);
-							tee.getItems().set(0, new ItemStack(stack.getItem(), 1));
+							ItemStack setStack = stack.copy();
+							setStack.setCount(1);
+							tee.getItems().set(0, setStack);
 							if (!worldIn.isRemote) {
 								SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_ADD_ITEM;
 								((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
