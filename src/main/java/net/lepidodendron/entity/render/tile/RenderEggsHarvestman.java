@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEggsHarvestman extends TileEntitySpecialRenderer<BlockInsectEggsHarvestman.TileEntityCustom> {
 
     private final ModelInsectEggs insect_eggs;
-    private static final ResourceLocation TEXTURE_HARVESTMAN_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harvestman_eggs.png");
+    private static final ResourceLocation TEXTURE_HARVESTMAN_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_harvestman.png");
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderEggsHarvestman() {

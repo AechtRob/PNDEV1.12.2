@@ -24,9 +24,9 @@ public class RenderAncientMoss extends TileEntitySpecialRenderer<BlockAncientMos
     private static final ResourceLocation TEXTURE_ARCHOBLATTINA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina_eggs.png");
     private static final ResourceLocation TEXTURE_ROACHOID_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_eggs.png");
     private static final ResourceLocation TEXTURE_GERARUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus_eggs.png");
-    private static final ResourceLocation TEXTURE_HARVESTMAN_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/harvestman_eggs.png");
-    private static final ResourceLocation TEXTURE_PALAEONTINID_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid_eggs.png");
-    private static final ResourceLocation TEXTURE_TITANOPTERA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_eggs.png");
+    private static final ResourceLocation TEXTURE_HARVESTMAN_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_harvestman.png");
+    private static final ResourceLocation TEXTURE_PALAEONTINID_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_palaeontinid.png");
+    private static final ResourceLocation TEXTURE_TITANOPTERA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_titanoptera.png");
     private final ModelTrigonotarbidEggs trigonotarbid_eggs;
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_ORDOVICIAN_SILURIAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_os_eggs.png");
     private static final ResourceLocation TEXTURE_TRIGONOTARBID_EGGS_CARBONIFEROUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_carb_eggs.png");
