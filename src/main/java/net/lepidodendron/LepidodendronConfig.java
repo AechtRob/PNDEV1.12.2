@@ -22,6 +22,7 @@ public class LepidodendronConfig {
     public static int waterPangaeanHorizontal = 3;
     public static int waterPangaeanVertical = 0;
     public static int spreadPlants = 70;
+    public static boolean biomeApple = true;
 
     public static boolean genFossil = true;
     public static boolean modFire = true;
@@ -48,7 +49,7 @@ public class LepidodendronConfig {
     public static boolean attackPlayerAlways = false;
     public static boolean doLowRes = false;
 
-    public static double dimDimensionScaler = 10D;
+    public static double worldDimensionScaler = 10D;
 
     public static int dimPrecambrian = -78;
     public static int dimCambrian = -79;
@@ -478,9 +479,9 @@ public class LepidodendronConfig {
         mobSpawnBespoke = prop.getStringList();
         propOrder.add(prop.getName());
 
-        prop = cfg.get("Global World-Gen", "dimDimensionScaler", dimDimensionScaler);
+        prop = cfg.get("Global World-Gen", "worldDimensionScaler", worldDimensionScaler);
         prop.setComment("This value controls how many blocks you move in a Prehistoric dimension when you move 1 block in the overworld (0.01 to 100) [default: 10]");
-        dimDimensionScaler = prop.getDouble();
+        worldDimensionScaler = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "dimTriassic", dimTriassic);
@@ -501,6 +502,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "genFossil", genFossil);
         prop.setComment("Set to false to disable the world-gen of this mod's fossil blocks. [default: true]");
         genFossil = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "biomeApple", biomeApple);
+        prop.setComment("Set to false to disable the world-gen of this mod's overworld apple orchards. [default: true]");
+        biomeApple = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "modFire", modFire);

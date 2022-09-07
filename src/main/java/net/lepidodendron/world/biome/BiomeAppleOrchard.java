@@ -2,6 +2,7 @@
 package net.lepidodendron.world.biome;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.world.gen.WorldGenAppleTree;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
@@ -32,7 +33,11 @@ public class BiomeAppleOrchard extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		BiomeManager.addSpawnBiome(biome);
-		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(biome, 2));
+		int i = 0;
+		if (LepidodendronConfig.biomeApple) {
+			i = 2;
+		}
+		BiomeManager.addBiome(BiomeManager.BiomeType.WARM, new BiomeManager.BiomeEntry(biome, i));
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
 	}
 

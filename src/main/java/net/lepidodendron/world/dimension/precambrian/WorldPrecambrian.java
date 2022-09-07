@@ -133,7 +133,7 @@ public class WorldPrecambrian extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public double getMovementFactor()
 		{
-			double scaler = LepidodendronConfig.dimDimensionScaler;
+			double scaler = LepidodendronConfig.worldDimensionScaler;
 			if (scaler < 0.01) {scaler = 0.01;}
 			if (scaler > 100) {scaler = 100;}
 			return (double)1/scaler;

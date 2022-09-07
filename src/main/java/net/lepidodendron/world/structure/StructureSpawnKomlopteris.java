@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
+import net.lepidodendron.procedure.ProcedureWorldGenKomlopteris;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,7 +28,7 @@ public class StructureSpawnKomlopteris extends ElementsLepidodendronMod.ModEleme
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimKomlopteris))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAlpia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genKomlopteris && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
@@ -51,7 +51,7 @@ public class StructureSpawnKomlopteris extends ElementsLepidodendronMod.ModEleme
 		if (!biomeCriteria)
 			return;
 
-		int GenChance = 8000;
+		int GenChance = 8100;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierKomlopteris;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
@@ -166,7 +166,7 @@ public class StructureSpawnKomlopteris extends ElementsLepidodendronMod.ModEleme
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+					ProcedureWorldGenKomlopteris.executeProcedure($_dependencies);
 				}
 
 			}

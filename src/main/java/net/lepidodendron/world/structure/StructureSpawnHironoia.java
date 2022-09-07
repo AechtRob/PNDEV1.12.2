@@ -28,7 +28,7 @@ public class StructureSpawnHironoia extends ElementsLepidodendronMod.ModElement 
 		boolean isNetherType = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimHironoia))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAlpia && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genHironoia && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;

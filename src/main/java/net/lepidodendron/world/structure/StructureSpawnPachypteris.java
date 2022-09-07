@@ -5,13 +5,8 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.block.BlockPachypteris;
-import net.lepidodendron.block.BlockPachypterisStem;
-import net.lepidodendron.block.BlockPachypterisTop;
-import net.minecraft.block.BlockLiquid;
+import net.lepidodendron.procedure.ProcedureWorldGenPachypteris;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -24,10 +19,8 @@ import java.util.Random;
 @ElementsLepidodendronMod.ModElement.Tag
 public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModElement {
 	public StructureSpawnPachypteris(ElementsLepidodendronMod instance) {
-		super(instance, 49);
+		super(instance, 48);
 	}
-
-	public static final PropertyBool DEEP = PropertyBool.create("deep");
 
 	@Override
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
@@ -44,14 +37,6 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPachypterisBlacklistBiomes))) {
 			biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
-				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -62,7 +47,7 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 22000;
+		int GenChance = 15500;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierPachypteris;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
@@ -73,7 +58,7 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 		}
 		
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
-			int count = random.nextInt(8) + 3;
+			int count = random.nextInt(3) + 1;
 			for (int a = 0; a < count; a++) {
 				int i = i2 + random.nextInt(16) + 8;
 				int k = k2 + random.nextInt(16) + 8;
@@ -102,40 +87,26 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 				int j = height;
 				//IBlockState blockAt = world.getBlockState(new BlockPos(i, j + 1, k));
 				boolean blockCriteria = false;
-				
-				//Allow to spawn in 2-3 block water only. Spawns can be one block above ground due to prop-roots:
-				if (
-					(isWaterBlock(world, new BlockPos(i, j, k)) 
-					&& isWaterBlock(world, new BlockPos(i, j - 1, k)))
-					&& (((world.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.SAND) 
-					|| ((world.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.CLAY) 
-					|| ((world.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.GROUND))) {
-					j = j - 2;
-					blockCriteria = true;
+				//Check if this is snow OVER a valid block:
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.SNOW)
+				{
+					j = j - 1;
 				}
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GRASS)
+					blockCriteria = true;
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
+					blockCriteria = true;
+				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.SAND)
+					blockCriteria = true;
 
-				if (
-					(isWaterBlock(world, new BlockPos(i, j, k)) 
-					&& isWaterBlock(world, new BlockPos(i, j - 1, k))
-					&& isWaterBlock(world, new BlockPos(i, j - 2, k)))
-					&& (((world.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.SAND) 
-					|| ((world.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.CLAY) 
-					|| ((world.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.GROUND))) {
-					j = j - 3;
+				/*//Allow to spawn IN shallow water:
+				if (((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.WATER)
+						&& (((world.getBlockState(new BlockPos(i, j - 1, k))).getMaterial() == Material.SAND)
+						|| ((world.getBlockState(new BlockPos(i, j - 1, k))).getMaterial() == Material.GROUND))) {
 					blockCriteria = true;
+					j = j - 1;
 				}
-
-				if (
-					(isWaterBlock(world, new BlockPos(i, j, k)) 
-					&& isWaterBlock(world, new BlockPos(i, j - 1, k))
-					&& isWaterBlock(world, new BlockPos(i, j - 2, k))
-					&& isWaterBlock(world, new BlockPos(i, j - 3, k)))
-					&& (((world.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.SAND) 
-					|| ((world.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.CLAY) 
-					|| ((world.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.GROUND))) {
-					j = j - 3; // NB!!
-					blockCriteria = true;
-				}
+				*/
 				
 				if (!blockCriteria)
 					continue;
@@ -151,19 +122,31 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 				if (j > maxheight && maxheight != 0)
 					continue;
 					
-
+				boolean waterCriteria = false;
+				//Is there water nearby?
+				int xct = -3;
+				int yct;
+				int zct;
+				while ((xct < 4) && (!waterCriteria)) {
+					yct = -2;
+					while ((yct <= 1) && (!waterCriteria)) {
+						zct = -3;
+						while ((zct < 4) && (!waterCriteria)) {
+							if ((world.getBlockState(new BlockPos(i + xct, j + yct, k + zct))).getMaterial() == Material.WATER) {
+								waterCriteria = true;
+							}
+							zct = zct + 1;
+						}
+						yct = yct + 1;
+					}
+					xct = xct + 1;
+				}
+				if (!waterCriteria)
+					continue;
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genPachypterisBlacklistBiomes))) {
-					biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
-						biomeCriteria = false;
+						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
@@ -173,11 +156,19 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
-
 				if (world.isRemote)
 					return;
-				
+				//Template template = ((WorldServer) world).getStructureTemplateManager().getTemplate(world.getMinecraftServer(),
+				//		new ResourceLocation("lepidodendron", "spawnvoid"));
+				//if (template == null)
+				//	return;
+				//Rotation rotation = Rotation.NONE;
+				//Mirror mirror = Mirror.NONE;
 				BlockPos spawnTo = new BlockPos(i, j + 1, k);
+				//IBlockState iblockstate = world.getBlockState(spawnTo);
+				//world.notifyBlockUpdate(spawnTo, iblockstate, iblockstate, 3);
+				//template.addBlocksToWorldChunk(world, spawnTo, new PlacementSettings().setRotation(rotation).setMirror(mirror)
+				//		.setChunk((ChunkPos) null).setReplacedBlock((Block) null).setIgnoreStructureBlock(false).setIgnoreEntities(false));
 				int x = spawnTo.getX();
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
@@ -187,71 +178,20 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
 					$_dependencies.put("y", j + 1);
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
-
-					if (isWaterBlock(world, spawnTo.up()) && isWaterBlock(world, spawnTo) && isWaterBlock(world, spawnTo.up(2))
-			        	&& (world.isAirBlock(spawnTo.up(3)))
-						) {
-			        		world.setBlockState(spawnTo, BlockPachypteris.block.getDefaultState().withProperty(DEEP, true));
-			        	}
-					else {
-						world.setBlockState(spawnTo, BlockPachypteris.block.getDefaultState().withProperty(DEEP, false));
+					if ((world.canSeeSky(spawnTo)) ||
+						(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
+						&& world.canSeeSky(spawnTo.up()))) {
+						world.setBlockToAir(spawnTo);
+						world.setBlockToAir(spawnTo.up());
 					}
-
-
-					if (isWaterBlock(world, spawnTo.up()) && isWaterBlock(world, spawnTo) && isWaterBlock(world, spawnTo.up(2))
-		        	&& (world.isAirBlock(spawnTo.up(3)))
-					) { //Vary the heights:
-						//System.err.println("Large");
-						if (Math.random() > 0.66) {
-		        			world.setBlockState(spawnTo.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
-						}
-						else {
-							if ((Math.random() > 0.5) && (world.isAirBlock(spawnTo.up(4)))) {
-								world.setBlockState(spawnTo.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
-							}
-							else {
-								if ((world.isAirBlock(spawnTo.up(5))) && (world.isAirBlock(spawnTo.up(4)))) {
-									world.setBlockState(spawnTo.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-									world.setBlockState(spawnTo.up(4), BlockPachypterisStem.block.getDefaultState(), 3);
-									world.setBlockState(spawnTo.up(5), BlockPachypterisTop.block.getDefaultState(), 3);
-								}
-								else {
-									world.setBlockState(spawnTo.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
-								}
-							}
-						}
-		        	}
-		        	
-			    if (isWaterBlock(world, spawnTo.up()) && isWaterBlock(world, spawnTo)
-		        	&& (world.isAirBlock(spawnTo.up(2)))
-					) { //Vary the heights:
-						if (Math.random() > 0.66) {
-		        			world.setBlockState(spawnTo.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
-						}
-						else {
-							if ((Math.random() > 0.5) && (world.isAirBlock(spawnTo.up(3)))) {
-								world.setBlockState(spawnTo.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
-								world.setBlockState(spawnTo.up(3), BlockPachypterisTop.block.getDefaultState(), 3);
-							}
-							else {
-								if ((world.isAirBlock(spawnTo.up(4))) && (world.isAirBlock(spawnTo.up(3)))) {
-									world.setBlockState(spawnTo.up(2), BlockPachypterisStem.block.getDefaultState(), 3);
-									world.setBlockState(spawnTo.up(3), BlockPachypterisStem.block.getDefaultState(), 3);
-									world.setBlockState(spawnTo.up(4), BlockPachypterisTop.block.getDefaultState(), 3);
-								}
-								else {
-									world.setBlockState(spawnTo.up(2), BlockPachypterisTop.block.getDefaultState(), 3);
-								}
-							}
-						}
-		        	}
-					
+					ProcedureWorldGenPachypteris.executeProcedure($_dependencies);
 				}
+
 			}
 		}
 	}
 
+	
 		public boolean shouldGenerateInDimension(int id, int[] dims) {
 		int[] var2 = dims;
 		int var3 = dims.length;
@@ -287,16 +227,6 @@ public class StructureSpawnPachypteris extends ElementsLepidodendronMod.ModEleme
         }
 
         return false;
-    }
-
-    public boolean isWaterBlock(World world, BlockPos pos) {
-		if (world.getBlockState(pos).getMaterial() == Material.WATER) {
-			IBlockState iblockstate = world.getBlockState(pos);
-			if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
-				return true;
-			}
-		}
-    	return false;
     }
 	
 }

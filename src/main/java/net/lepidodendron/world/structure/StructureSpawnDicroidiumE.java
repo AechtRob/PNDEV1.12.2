@@ -5,7 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenArchaeopteris;
+import net.lepidodendron.block.BlockDicroidiumE;
+import net.lepidodendron.block.BlockDicroidiumECentre;
+import net.lepidodendron.block.BlockDicroidiumETop;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,8 +19,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnArchaeopteris extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnArchaeopteris(ElementsLepidodendronMod instance) {
+public class StructureSpawnDicroidiumE extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnDicroidiumE(ElementsLepidodendronMod instance) {
 		super(instance, 48);
 	}
 
@@ -26,49 +28,38 @@ public class StructureSpawnArchaeopteris extends ElementsLepidodendronMod.ModEle
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimArchaeopteris))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimDicroidiumElongatum))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genArchaeopteris && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genDicroidiumElongatum && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genArchaeopterisBlacklistBiomes))) {
-			if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP)))
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genDicroidiumElongatumBlacklistBiomes))) {
+			biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 				biomeCriteria = true;
-			if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST)))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS))
-				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
-				biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
-				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genArchaeopterisOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genDicroidiumElongatumOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 
-		int GenChance = 18000;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierArchaeopteris;
+		int GenChance = 12000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierDicroidiumElongatum;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
 		if (LepidodendronDecorationHandler.matchBiome(biome, LepidodendronConfigPlants.genTransformBiomes)) {
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
-				GenChance = Math.min(GenChance * 10, 300000);
+				GenChance = Math.min(GenChance * 3, 300000);
 		}
 		
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
@@ -110,11 +101,12 @@ public class StructureSpawnArchaeopteris extends ElementsLepidodendronMod.ModEle
 					blockCriteria = true;
 				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
 					blockCriteria = true;
+
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightArchaeopteris;
-				int minheight = LepidodendronConfigPlants.minheightArchaeopteris;
+				int maxheight = LepidodendronConfigPlants.maxheightDicroidiumElongatum;
+				int minheight = LepidodendronConfigPlants.minheightDicroidiumElongatum;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -124,69 +116,42 @@ public class StructureSpawnArchaeopteris extends ElementsLepidodendronMod.ModEle
 				if (j > maxheight && maxheight != 0)
 					continue;
 					
-				
+					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genArchaeopterisBlacklistBiomes))) {
-					if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SWAMP)))
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genDicroidiumElongatumBlacklistBiomes))) {
+					biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS))
 						biomeCriteria = true;
-					if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)) && (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST)))
-						biomeCriteria = true;
-					if ((BiomeDictionary.hasType(biome, BiomeDictionary.Type.HILLS)) && Math.random() > 0.7)
-						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.COLD))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
-						biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
-						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genArchaeopterisOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genDicroidiumElongatumOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
 				if (world.isRemote)
 					return;
-				//Template template = ((WorldServer) world).getStructureTemplateManager().getTemplate(world.getMinecraftServer(),
-				//		new ResourceLocation("lepidodendron", "spawnvoid"));
-				//if (template == null)
-				//	return;
-				//Rotation rotation = Rotation.NONE;
-				//Mirror mirror = Mirror.NONE;
 				BlockPos spawnTo = new BlockPos(i, j + 1, k);
-				//IBlockState iblockstate = world.getBlockState(spawnTo);
-				//world.notifyBlockUpdate(spawnTo, iblockstate, iblockstate, 3);
-				//template.addBlocksToWorldChunk(world, spawnTo, new PlacementSettings().setRotation(rotation).setMirror(mirror)
-				//		.setChunk((ChunkPos) null).setReplacedBlock((Block) null).setIgnoreStructureBlock(false).setIgnoreEntities(false));
-				int x = spawnTo.getX();
-				int y = spawnTo.getY();
-				int z = spawnTo.getZ();
-
-				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-					$_dependencies.put("x", i);
-					$_dependencies.put("y", j + 1);
-					$_dependencies.put("z", k);
-					$_dependencies.put("world", world);
-					$_dependencies.put("SaplingSpawn", false);
-					if ((world.canSeeSky(spawnTo)) || 
-					(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
-					&& world.canSeeSky(spawnTo.up()))) {
-						world.setBlockToAir(spawnTo);
-						world.setBlockToAir(spawnTo.up());
-					}
-					ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
+				if (!world.isBlockLoaded(spawnTo)) {
+					continue;
 				}
+				if (!world.isAreaLoaded(spawnTo, 3)) {
+					continue;
+				}
+				if ((world.canSeeSky(spawnTo)) || 
+				(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
+				&& world.canSeeSky(spawnTo.up()))) {
+					world.setBlockToAir(spawnTo);
+					world.setBlockToAir(spawnTo.up());
+				}
+				world.setBlockState(spawnTo, BlockDicroidiumE.block.getDefaultState(), 3);
+				world.setBlockState(spawnTo.up(), BlockDicroidiumECentre.block.getDefaultState(), 3);
+				world.setBlockState((spawnTo.up()).up(), BlockDicroidiumETop.block.getDefaultState(), 3);
 
 			}
 		}

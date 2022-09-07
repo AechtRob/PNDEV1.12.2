@@ -50,7 +50,7 @@ public class StructureSpawnBumbudendron extends ElementsLepidodendronMod.ModElem
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 37000;
+		int GenChance = 30000;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierBumbudendron;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
