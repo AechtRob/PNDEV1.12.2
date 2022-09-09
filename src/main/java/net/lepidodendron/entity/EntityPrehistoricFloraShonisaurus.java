@@ -58,6 +58,11 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 	//public static String getHabitat() {return "Aquatic Ichthyosaur";}
 
 	@Override
+	public int airTime() {
+		return 10000;
+	}
+
+	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraShonisaurus(this.world);
 	}

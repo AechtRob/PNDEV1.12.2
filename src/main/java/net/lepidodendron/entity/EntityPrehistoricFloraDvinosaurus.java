@@ -176,19 +176,19 @@ public class EntityPrehistoricFloraDvinosaurus extends EntityPrehistoricFloraSwi
 	@Override
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dvinosaurus_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:megalocephalus_idle"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dvinosaurus_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:megalocephalus_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 	    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:dvinosaurus_death"));
+	            .getObject(new ResourceLocation("lepidodendron:megalocephalus_death"));
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class RenderStagonolepis extends RenderLiving<EntityPrehistoricFloraStago
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraStagonolepis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.82F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

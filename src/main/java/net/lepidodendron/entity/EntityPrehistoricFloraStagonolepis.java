@@ -47,9 +47,9 @@ public class EntityPrehistoricFloraStagonolepis extends EntityPrehistoricFloraLa
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.12F;
-		maxWidth = 1.10F;
-		maxHeight = 1.05F;
-		maxHealthAgeable = 35.0D;
+		maxWidth = 1.05F;
+		maxHeight = 1.01F;
+		maxHealthAgeable = 34.0D;
 	}
 
 	@Override

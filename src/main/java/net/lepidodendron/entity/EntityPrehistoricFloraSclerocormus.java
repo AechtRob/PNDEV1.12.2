@@ -63,6 +63,11 @@ public class EntityPrehistoricFloraSclerocormus extends EntityPrehistoricFloraAg
 	}
 
 	@Override
+	public int airTime() {
+		return 10000;
+	}
+
+	@Override
 	public boolean dropsEggs() {
 		return false;
 	}

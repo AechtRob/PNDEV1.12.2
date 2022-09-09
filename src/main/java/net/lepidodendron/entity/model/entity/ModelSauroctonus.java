@@ -423,7 +423,7 @@ public class ModelSauroctonus extends AdvancedModelBaseExtended {
         this.chainSwing(Tail, (speed*0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
         this.root.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.9), false, 1.5F, f2, 1);
-
+        this.root.offsetY = 0.90F;
     }
 
     public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {

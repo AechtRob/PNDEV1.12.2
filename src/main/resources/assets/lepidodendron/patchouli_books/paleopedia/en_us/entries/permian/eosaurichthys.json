@@ -2,14 +2,14 @@
 	"name": "Eosaurichthys",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/eosaurichthys_icon.png",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_eosaurichthys",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_eosaurichthys",
 			"title": "Eosaurichthys",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
+			"text": "$(l)Temporal Range:$() Permian-Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Saurichthyiformes$(br)>Saurichthyidae"
 		},
 		{
 			"type": "image",

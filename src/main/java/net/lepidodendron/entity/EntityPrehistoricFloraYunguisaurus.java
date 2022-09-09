@@ -63,7 +63,10 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 
 	public static String getPeriod() {return "Triassic";}
 
-	//public static String getHabitat() {return "Aquatic";}
+	@Override
+	public int airTime() {
+		return 10000;
+	}
 
 	@Override
 	public void playLivingSound() {

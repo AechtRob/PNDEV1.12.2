@@ -249,9 +249,10 @@ public class GenLayerPermianRiverBorder extends GenLayer
             || biomeID == PERMIAN_ARIDLANDS_HILLS_ID
             || biomeID == PERMIAN_ARIDLANDS_LUSH_ID
             || biomeID == PERMIAN_HIGHLANDS_ID
-            || biomeID == PERMIAN_LOWLANDS_ID
-            || biomeID == PERMIAN_LOWLANDS_FLOODPLAIN_ID
-            || biomeID == PERMIAN_LOWLANDS_FOREST_ID) {
+            //|| biomeID == PERMIAN_LOWLANDS_ID
+            //|| biomeID == PERMIAN_LOWLANDS_FLOODPLAIN_ID
+            //|| biomeID == PERMIAN_LOWLANDS_FOREST_ID
+        ) {
             return true;
         }
         return false;

@@ -355,11 +355,11 @@ public class ModelDvinosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.7F; //72
+        //this.body.offsetY = 0.7F; //moved lower
 
         EntityPrehistoricFloraDvinosaurus Dvinosaurus = (EntityPrehistoricFloraDvinosaurus) e;
 
-        this.faceTarget(f3, f4, 4, body);
+        //this.faceTarget(f3, f4, 4, body); //moved lower
 
         float speed = 0.225F / 2F;
         if (Dvinosaurus.getIsFast()) {
@@ -369,6 +369,8 @@ public class ModelDvinosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] Torso = {this.head, this.body, this.body2, this.body3};
 
         if (!Dvinosaurus.isReallyInWater()) {
+            this.body.offsetY = 0.75F;
+            this.faceTarget(f3, 0, 4, body);
 
             if (f3 == 0.0F || !Dvinosaurus.getIsMoving()) { //Not moving
                 return;
@@ -401,6 +403,8 @@ public class ModelDvinosaurus extends AdvancedModelBaseExtended {
 
         }
         else {
+            this.body.offsetY = 0.725F;
+            this.faceTarget(f3, f4, 4, body);
             speed = speed * 4F;
 
             //Feet:

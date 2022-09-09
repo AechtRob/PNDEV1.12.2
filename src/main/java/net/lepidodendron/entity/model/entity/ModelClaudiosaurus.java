@@ -303,11 +303,15 @@ public class ModelClaudiosaurus extends AdvancedModelBaseExtended {
                 return;
             }
 
-            //this.swing(this.rightarm2, speed * 0.6F, 0.8F,false, -0.8F,0.8F, f2, 1F);
-            //this.swing(this.leftarm2, speed * 0.6F, 0.8F,true, 0.8F,0.8F, f2, 1F);
+            this.swing(this.forelegRx, speed * 0.4F, 0.6F,false, -0.8F,0.4F, f2, 1F);
+            this.swing(this.forelegLx, speed * 0.4F, 0.6F,true, 0.8F,0.4F, f2, 1F);
+            this.flap(this.forelegRx, speed * 0.4F, 0.2F,false, -0.8F,0.2F, f2, 1F);
+            this.flap(this.forelegLx, speed * 0.4F, 0.2F,true, 0.8F,0.2F, f2, 1F);
 
-           //this.walk(this.rightleg1, speed * 0.6F, -0.4F,false, -0.8F,0.8F, f2, 1F);
-            //this.walk(this.leftleg1, speed * 0.6F, -0.4F,true, 0.8F,0.8F, f2, 1F);
+            this.swing(this.hindlegL, speed * 0.4F, 0.6F,false, -0.8F,0.4F, f2, 1F);
+            this.swing(this.hindlegR, speed * 0.4F, 0.6F,true, 0.8F,0.4F, f2, 1F);
+            this.flap(this.hindlegL, speed * 0.4F, 0.2F,false, -0.8F,0.2F, f2, 1F);
+            this.flap(this.hindlegR, speed * 0.4F, 0.2F,true, 0.8F,0.2F, f2, 1F);
 
             this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
             this.chainSwing(Tail, speed * 0.8F, 0.12F, -3, f2, 0.8F);
