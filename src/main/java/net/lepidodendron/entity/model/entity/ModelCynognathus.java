@@ -292,6 +292,7 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5 * 0.595f);
     }
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
@@ -303,6 +304,7 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -313,7 +315,7 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.6F;
+        this.Hips.offsetY = 0.61F;
 
         EntityPrehistoricFloraCynognathus Cynognathus = (EntityPrehistoricFloraCynognathus) e;
         float masterSpeed = Cynognathus.getTravelSpeed();

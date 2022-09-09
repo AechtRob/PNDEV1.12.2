@@ -362,7 +362,7 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        //this.root.offsetY = 1.65F;
+        this.root.offsetY = 0.11F;
 
         EntityPrehistoricFloraLessemsaurus Lessemsaurus = (EntityPrehistoricFloraLessemsaurus) e;
         float masterSpeed = Lessemsaurus.getTravelSpeed();
@@ -375,10 +375,12 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRendererExtended[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
 
+        float frontOffset = -0.07F;
         if (Lessemsaurus.getAnimation() == Lessemsaurus.LAY_ANIMATION) {
             this.swing(neck1, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             this.walk(neck1, 0.5F * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
-
+            this.leftarm1.offsetY = frontOffset;
+            this.rightarm5.offsetY = frontOffset;
             return;
          }
 
@@ -387,6 +389,8 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
             this.walk(neck1, 0.06F * 2F, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
             this.chainFlap(Tail, (0.06F*0.9F), 0.10F, 0.10F, f2, 1F);
             this.chainSwing(Tail, (0.06F*0.9F) * 2F, 0.05F, 0.06F, f2, 1F);
+            this.leftarm1.offsetY = frontOffset;
+            this.rightarm5.offsetY = frontOffset;
             return;
         }
 
@@ -395,10 +399,10 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
             speed = speed * 2;
         }
 
-        this.leftarm1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 1, f2, 1.5F);;
-        this.rightarm5.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 4, f2, 1.5F);;
-        this.leftleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.5), false, 4, f2, 1.5F);;
-        this.rightleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.5), false, 1, f2, 1.5F);;
+        this.leftarm1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 1, f2, 1.5F) + frontOffset;
+        this.rightarm5.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.0), false, 4, f2, 1.5F) + frontOffset;
+        this.leftleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.5), false, 4, f2, 1.5F);
+        this.rightleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.5), false, 1, f2, 1.5F);
 
         //this.flap(leftarm1, speed, -0.2F, true, 4, 0.15F, f2, 1F);
         //this.flap(rightarm5, speed, 0.2F, true, 7, -0.15F, f2, 1F);

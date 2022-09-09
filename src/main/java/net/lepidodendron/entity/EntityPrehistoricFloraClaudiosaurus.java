@@ -66,10 +66,6 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 		return "late Permian - early Triassic";
 	}
 
-	//public static String getHabitat() {
-	//	return "Amphibious Reptile";
-	//}
-
 	@Override
 	public boolean breathesAir() {
 		return true;
@@ -96,7 +92,7 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.14F;
+		float calcSpeed = 0.112F;
 		if (this.isReallyInWater()) {
 			calcSpeed = 0.215f;
 		}

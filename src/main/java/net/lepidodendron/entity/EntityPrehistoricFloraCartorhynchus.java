@@ -68,10 +68,6 @@ public class EntityPrehistoricFloraCartorhynchus extends EntityPrehistoricFloraS
 		return "early Triassic";
 	}
 
-	//public static String getHabitat() {
-	//	return "Amphibious Ichthyosauriform";
-	//}
-
 	@Override
 	public boolean breathesAir() {
 		return true;

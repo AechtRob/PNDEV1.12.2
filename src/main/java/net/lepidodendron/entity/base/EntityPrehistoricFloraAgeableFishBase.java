@@ -159,8 +159,12 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         }
         else
         {
-            this.setAir(300);
+            this.setAir(this.airTime());
         }
+    }
+
+    public int airTime() {
+        return 300;
     }
 
     public float maxTurnAngle() {
