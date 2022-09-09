@@ -408,7 +408,7 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.proburnetia.offsetY = 0.9F;
+        this.proburnetia.offsetY = 0.94F;
 
         EntityPrehistoricFloraProburnetia Proburnetia = (EntityPrehistoricFloraProburnetia) e;
         float masterSpeed = Proburnetia.getTravelSpeed();
