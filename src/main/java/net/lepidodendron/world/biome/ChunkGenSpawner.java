@@ -426,7 +426,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 }
             } else if (biome == BiomeTriassicXericScrubland.biome) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandPF);
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericScrublandPF);
                 }
                 if (LepidodendronConfig.doSpawnsFossilsArcheology) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandFA);

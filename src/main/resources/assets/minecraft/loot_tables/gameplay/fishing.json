@@ -54,33 +54,37 @@
                       }
                   ]
               },
-            {
-                "type": "loot_table",
-                "name": "lepidodendron:gameplay/fishing/fish_cambrian",
-                "weight": 85,
-                "quality": -1,
-                "conditions": [
-                  {
-                    "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:cambrian_sea"],
-                    "entity": "this"
-                  }
-                ]
-              },
+
+
               {
-                "type": "loot_table",
-                "name": "lepidodendron:gameplay/fishing/fish_cambrian_estuary",
-                "weight": 85,
-                "quality": -1,
-                "conditions": [
-                  {
-                    "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:cambrian_estuary", "lepidodendron:cambrian_estuary_helper", "lepidodendron:cambrian_biome"],
-                    "entity": "this"
-                  }
-                ]
-              },
-            {
+                  "type": "loot_table",
+                  "name": "lepidodendron:gameplay/fishing/fish_cambrian",
+                  "weight": 85,
+                  "quality": -1,
+                  "conditions": [
+                    {
+                      "condition": "lepidodendron:in_biomes",
+                      "biomes": ["lepidodendron:cambrian_sea"],
+                      "entity": "this"
+                    }
+                  ]
+                },
+                {
+                  "type": "loot_table",
+                  "name": "lepidodendron:gameplay/fishing/fish_cambrian_estuary",
+                  "weight": 85,
+                  "quality": -1,
+                  "conditions": [
+                    {
+                      "condition": "lepidodendron:in_biomes",
+                      "biomes": ["lepidodendron:cambrian_estuary", "lepidodendron:cambrian_estuary_helper", "lepidodendron:cambrian_biome"],
+                      "entity": "this"
+                    }
+                  ]
+                },
+
+
+              {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_ordovician",
                 "weight": 85,
@@ -88,7 +92,20 @@
                 "conditions": [
                   {
                     "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:ordovician_land","lepidodendron:ordovician_sea", "lepidodendron:ordovician_sponge_forest"],
+                    "biomes": ["lepidodendron:ordovician_land","lepidodendron:ordovician_sea"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_ordovician_sponge",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:ordovician_sponge_forest"],
                     "entity": "this"
                   }
                 ]
@@ -106,7 +123,9 @@
                   }
                 ]
               },
-            {
+
+
+              {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_silurian",
                 "weight": 85,
@@ -114,7 +133,7 @@
                 "conditions": [
                   {
                     "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:silurian_sea"],
+                    "biomes": ["lepidodendron:silurian_sea", "lepidodendron:silurian_sea_garden"],
                     "entity": "this"
                   }
                 ]
@@ -132,7 +151,9 @@
                   }
                 ]
               },
-          {
+
+
+              {
                 "type": "loot_table",
                 "name": "lepidodendron:gameplay/fishing/fish_devonian_ocean",
                 "weight": 85,
@@ -197,19 +218,430 @@
                   }
                 ]
               },
-            {
-                    "type": "loot_table",
-                    "name": "lepidodendron:gameplay/fishing/fish_cambrian",
-                    "weight": 85,
-                    "quality": -1,
-					"conditions": [
-                    	{
-							"condition": "lepidodendron:in_dimension_name",
-							"dimname": "cambrian",
-							"entity": "this"
-                    	}
-                    ]
-                }
+
+
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_ocean",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_ocean","lepidodendron:carboniferous_ocean_shore","lepidodendron:carboniferous_beach"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_ocean_cliff",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_ocean_cliff"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_swamp",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_swamp"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_swamp_burnt",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_swamp_burnt"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_marsh",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_marsh"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_hills",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_hills", "lepidodendron:carboniferous_hills_edge"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_carboniferous_ice",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:carboniferous_polar_desert", "lepidodendron:carboniferous_polar_desert_edge", "lepidodendron:carboniferous_polar_lakes", "lepidodendron:carboniferous_polar_desert_spikes"],
+                    "entity": "this"
+                  }
+                ]
+              },
+
+
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_ocean",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_ocean","lepidodendron:permian_ocean_shore","lepidodendron:permian_cold_glossopteris_beach","lepidodendron:permian_beach"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_ocean_cliff",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_ocean_cliff"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_river",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_river"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_arid",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_arid_hills", "lepidodendron:permian_arid_lands", "lepidodendron:permian_arid_lands_lush"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_desert",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_desert"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_glossopteris",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_cold_glossopteris_forest", "lepidodendron:permian_cold_glossopteris_forest_light", "lepidodendron:permian_cold_glossopteris_forest_ocean"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_lowlands",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_lowlands_floodplain", "lepidodendron:permian_lowlands"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_lowland_forest",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_lowlands_forest"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_highlands",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_highlands"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_permian_wetlands",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:permian_wetlands", "lepidodendron:permian_wetlands_fern_copse", "lepidodendron:permian_wetlands_unwooded"],
+                    "entity": "this"
+                  }
+                ]
+              },
+
+
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_ocean",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_ocean","lepidodendron:triassic_ocean_shore","lepidodendron:triassic_beach"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_river",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_river"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_clam_beds",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_ocean_clam_beds"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_xeric_forest",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_xeric_forest"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_xeric_scrubland",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_xeric_scrubland"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_lakes",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_warm_lakeland"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_volcanic_hills",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_warm_volcanic_hills"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_flooded_forest",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_flooded_forest", "lepidodendron:triassic_flooded_forest_dense"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_dicroidium",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_gondwanan_forest", "lepidodendron:triassic_gondwanan_forest_clearing", "lepidodendron:triassic_gondwanan_forest_crags", "lepidodendron:triassic_gondwanan_forest_hills"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_moss_meadow",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_gondwanan_plain"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_desert",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_desert_rocky"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_desert_dunes",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_desert_sandy"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_desert_plateau",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_desert_plateau_broken", "lepidodendron:triassic_desert_plateau_canyons", "lepidodendron:triassic_desert_plateau"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_canyons",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_creek", "lepidodendron:triassic_riverbank", "lepidodendron:triassic_riverbank_forest"],
+                    "entity": "this"
+                  }
+                ]
+              },
+              {
+                "type": "loot_table",
+                "name": "lepidodendron:gameplay/fishing/fish_triassic_volcanic_islands",
+                "weight": 85,
+                "quality": -1,
+                "conditions": [
+                  {
+                    "condition": "lepidodendron:in_biomes",
+                    "biomes": ["lepidodendron:triassic_volcanic_islands", "lepidodendron:triassic_beach_black"],
+                    "entity": "this"
+                  }
+                ]
+              }
+
+
             ]
         }
     ]

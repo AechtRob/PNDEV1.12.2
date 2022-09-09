@@ -32,7 +32,7 @@ public class BlockDicroidiumOLog extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_o_log")
 	public static final Block block = null;
 	public BlockDicroidiumOLog(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_o_log);
+		super(instance, LepidodendronSorter.dicroidium_odonopteroides_log);
 	}
 
 	@Override

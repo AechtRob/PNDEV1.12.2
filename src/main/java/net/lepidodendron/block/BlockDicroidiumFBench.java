@@ -18,7 +18,7 @@ public class BlockDicroidiumFBench extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_bench")
 	public static final Block block = null;
 	public BlockDicroidiumFBench(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_bench);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_bench);
 	}
 
 	@Override

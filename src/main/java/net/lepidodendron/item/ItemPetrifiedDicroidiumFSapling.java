@@ -18,7 +18,7 @@ public class ItemPetrifiedDicroidiumFSapling extends ElementsLepidodendronMod.Mo
 	@GameRegistry.ObjectHolder("lepidodendron:petrified_dicroidium_f_sapling")
 	public static final Item block = null;
 	public ItemPetrifiedDicroidiumFSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.petrified_dicroidium_f_sapling);
+		super(instance, LepidodendronSorter.petrified_dicroidium_fremouwensis_sapling);
 	}
 
 	@Override

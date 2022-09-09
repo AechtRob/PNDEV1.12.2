@@ -1,0 +1,208 @@
+{
+    "pools": [
+        {
+			"name": "triassic_clam_beds",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:aeger_raw",
+                    "weight": 3.89294403892944
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:aeger_raw",
+                    "weight": 3.89294403892944
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ammonite_asteroceras_raw",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ammonite_asteroceras_raw",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ammonite_ceratites_raw",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ammonite_goniatites_raw",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ammonite_goniatites_raw",
+                    "weight": 4.37956204379562
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:aulacoceras_raw",
+                    "weight": 3.64963503649635
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:aulacoceras_raw",
+                    "weight": 3.64963503649635
+                },
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:birgeria_raw",
+                    "weight": 1.45985401459854
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:birgeria_raw",
+                    "weight": 0.632603406326034
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:bobasatrania_raw",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:brembodus_raw",
+                    "weight": 2.4330900243309
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cartorhynchus_raw",
+                    "weight": 0.97323600973236
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:caturus_raw",
+                    "weight": 2.18978102189781
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:caturus_raw",
+                    "weight": 2.18978102189781
+                },
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:dapedium_raw",
+                    "weight": 3.16301703163017
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:eosaurichthys_raw",
+                    "weight": 4.13625304136253
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:eosaurichthys_raw",
+                    "weight": 4.13625304136253
+                },
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:feroxichthys_raw",
+                    "weight": 0.97323600973236
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:foreyia_raw",
+                    "weight": 2.18978102189781
+                },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:limulid_raw",
+                    "weight": 1.0705596107056
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:limulid_raw",
+                    "weight": 1.45985401459854
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:luoxiongichthys_raw",
+                    "weight": 0.97323600973236
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:nautilus_raw",
+                    "weight": 1.94647201946472
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:nautilus_raw",
+                    "weight": 1.94647201946472
+                },
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:potanichthys _raw",
+                    "weight": 2.4330900243309
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:potanichthys _raw",
+                    "weight": 2.4330900243309
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:rebellatrix_raw",
+                    "weight": 2.4330900243309
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:saurichthys_marine_raw",
+                    "weight": 2.4330900243309
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:saurichthys_marine_raw",
+                    "weight": 2.4330900243309
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:semionotus_raw",
+                    "weight": 3.89294403892944
+                }
+            ]
+        }
+    ]
+}

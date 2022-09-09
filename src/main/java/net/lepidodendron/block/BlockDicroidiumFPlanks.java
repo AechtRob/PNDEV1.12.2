@@ -32,7 +32,7 @@ public class BlockDicroidiumFPlanks extends ElementsLepidodendronMod.ModElement 
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_planks")
 	public static final Block block = null;
 	public BlockDicroidiumFPlanks(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_planks);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_planks);
 	}
 
 	@Override

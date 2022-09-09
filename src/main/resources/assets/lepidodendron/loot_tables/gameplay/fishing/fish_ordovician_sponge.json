@@ -1,0 +1,178 @@
+{
+    "pools": [
+        {
+			"name": "fish_ordovician_sponge",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:asaphus_raw",
+                    "weight": 4.23620025673941
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:asaphus_raw",
+                    "weight": 4.23620025673941
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:brongniartella_raw",
+                    "weight": 3.0808729139923
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:brongniartella_raw",
+                    "weight": 3.0808729139923
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:calvapilosa_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:calvapilosa_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cheirurus_raw",
+                    "weight": 4.23620025673941
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cheirurus_raw",
+                    "weight": 4.23620025673941
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cothurnocystis_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cothurnocystis_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cyclonema_raw",
+                    "weight": 1.92554557124519
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cyclonema_raw",
+                    "weight": 1.92554557124519
+                },
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:dalmanites_raw",
+                    "weight": 1.92554557124519
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:dalmanites_raw",
+                    "weight": 1.92554557124519
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:didymograptus_raw",
+                    "weight": 4.49293966623877
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:didymograptus_raw",
+                    "weight": 4.49293966623877
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:duslia_raw",
+                    "weight": 5.13478818998716
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:duslia_raw",
+                    "weight": 5.13478818998716
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:enoploura_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:enoploura_raw",
+                    "weight": 3.20924261874198
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:furca_raw",
+                    "weight": 1.73299101412067
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:furca_raw",
+                    "weight": 1.73299101412067
+                },
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:hoplitaspis_raw",
+                    "weight": 5.13478818998716
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:hoplitaspis_raw",
+                    "weight": 5.13478818998716
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:isotelus_raw",
+                    "weight": 3.85109114249037
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:isotelus_raw",
+                    "weight": 3.85109114249037
+                },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:maclurina_raw",
+                    "weight": 1.15532734274711
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:maclurina_raw",
+                    "weight": 1.15532734274711
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:selenopeltis_raw",
+                    "weight": 3.46598202824133
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:selenopeltis_raw",
+                    "weight": 3.46598202824133
+                }
+            ]
+        }
+    ]
+}

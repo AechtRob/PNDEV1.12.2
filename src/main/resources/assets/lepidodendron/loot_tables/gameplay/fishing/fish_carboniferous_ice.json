@@ -1,0 +1,15 @@
+{
+    "pools": [
+        {
+			"name": "carboniferous_ice",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:antarcticarcinus_raw",
+                    "weight": 100
+                }
+            ]
+        }
+    ]
+}

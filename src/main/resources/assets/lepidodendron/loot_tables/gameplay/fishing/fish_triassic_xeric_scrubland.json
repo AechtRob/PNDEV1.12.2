@@ -1,0 +1,52 @@
+{
+    "pools": [
+        {
+			"name": "triassic_xeric_scrubland",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:ceratodus _raw",
+                    "weight": 8.57142857142857
+                },
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:daedalichthys_raw",
+                    "weight": 17.1428571428571
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:daedalichthys_raw",
+                    "weight": 17.1428571428571
+                },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:semionotus_raw",
+                    "weight": 28.5714285714286
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:semionotus_raw",
+                    "weight": 28.5714285714286
+                }
+            ]
+        }
+    ]
+}

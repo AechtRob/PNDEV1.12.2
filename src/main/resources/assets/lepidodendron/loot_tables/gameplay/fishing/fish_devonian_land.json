@@ -4,74 +4,80 @@
 			"name": "devonian_land",
             "rolls": 1,
             "entries": [
-                {
+              {
                 "type": "item",
                 "name": "lepidodendron:acanthostega_raw",
-                "weight": 8.60215053763441
-                },
-                {
+                "weight": 9.02255639097744
+              },
+              {
                 "type": "item",
-                "name": "lepidodendron:adelopthalmus_raw",
-                "weight": 5.37634408602151
-                },
+                "name": "lepidodendron:adelophthalmus_raw",
+                "weight": 5.6390977443609
+              },
+
               {
                 "type": "item",
                 "name": "lepidodendron:bothriolepis_raw",
-                "weight": 5.37634408602151
-                },
-                {
+                "weight": 5.6390977443609
+              },
+              {
                 "type": "item",
                 "name": "lepidodendron:cephalaspis_raw",
-                "weight": 8.60215053763441
-                },
-                {
+                "weight": 9.02255639097744
+              },
+              {
                 "type": "item",
                 "name": "lepidodendron:coccosteus_raw",
-                "weight": 8.60215053763441
-                },
+                "weight": 9.02255639097744
+              },
+
               {
                 "type": "item",
                 "name": "lepidodendron:ericixerxes_raw",
-                "weight": 4.83870967741935
-                },
+                "weight": 5.26315789473684
+              },
+
               {
                 "type": "item",
                 "name": "lepidodendron:groenlandaspis_raw",
-                "weight": 16.1290322580645
-                },
+                "weight": 16.9172932330827
+              },
 
 
-            {
-                "type": "item",
-                "name": "lepidodendron:laccognathus_raw",
-                "weight": 3.2258064516129
-                },
-                {
-                "type": "item",
-                "name": "lepidodendron:osteolepis_raw",
-                "weight": 16.1290322580645
-                },
-            {
-                "type": "item",
-                "name": "lepidodendron:pteraspis_raw",
-                "weight": 6.45161290322581
-                },
-                {
-                "type": "item",
-                "name": "lepidodendron:scaumenacia_raw",
-                "weight": 5.91397849462366
-                },
+
+
+
               {
                 "type": "item",
-                "name": "lepidodendron:tartuosteus_raw",
-                "weight": 5.37634408602151
-                },
+                "name": "lepidodendron:laccognathus_raw",
+                "weight": 3.38345864661654
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:osteolepis_raw",
+                "weight": 16.9172932330827
+              },
+
+
+              {
+                "type": "item",
+                "name": "lepidodendron:pteraspis_raw",
+                "weight": 6.76691729323308
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:scaumenacia_raw",
+                "weight": 6.76691729323308
+              },
+
+
+
               {
                 "type": "item",
                 "name": "lepidodendron:turrisaspis_raw",
-                "weight": 5.37634408602151
-                }
-        ]
+                "weight": 5.6390977443609
+              }
+            ]
         }
     ]
 }

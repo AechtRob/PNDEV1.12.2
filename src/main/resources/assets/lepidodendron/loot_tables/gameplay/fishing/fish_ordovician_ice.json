@@ -7,35 +7,90 @@
               {
                 "type": "item",
                 "name": "lepidodendron:cheirurus_raw",
-                "weight": 28.9473684210526
-                },
-                {
+                "weight": 14.410480349345
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:cheirurus_raw",
+                "weight": 14.410480349345
+              },
+
+
+
+
+
+
+
+
+
+
+              {
                 "type": "item",
                 "name": "lepidodendron:hungioides_raw",
-                "weight": 21.7105263157895
-                },
+                "weight": 10.9170305676856
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:hungioides_raw",
+                "weight": 10.9170305676856
+              },
 
-            {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              {
                 "type": "item",
                 "name": "lepidodendron:panderodus_raw",
-                "weight": 5.92105263157895
-                },
-                {
+                "weight": 3.05676855895197
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:panderodus_raw",
+                "weight": 3.05676855895197
+              },
+              {
                 "type": "item",
                 "name": "lepidodendron:promissum_raw",
-                "weight": 6.57894736842105
-                },
-                {
+                "weight": 3.27510917030568
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:promissum_raw",
+                "weight": 3.27510917030568
+              },
+              {
                 "type": "item",
                 "name": "lepidodendron:sacabambaspis_raw",
-                "weight": 13.1578947368421
-                },
-                {
+                "weight": 6.55021834061135
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:sacabambaspis_raw",
+                "weight": 6.55021834061135
+              },
+              {
                 "type": "item",
                 "name": "lepidodendron:selenopeltis_raw",
-                "weight": 23.6842105263158
-                }
-        ]
+                "weight": 11.7903930131004
+              },
+              {
+                "type": "item",
+                "name": "lepidodendron:selenopeltis_raw",
+                "weight": 11.7903930131004
+              }
+            ]
         }
     ]
 }

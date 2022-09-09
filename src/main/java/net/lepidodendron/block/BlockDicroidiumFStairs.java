@@ -27,7 +27,7 @@ public class BlockDicroidiumFStairs extends ElementsLepidodendronMod.ModElement 
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_stairs")
 	public static final Block block = null;
 	public BlockDicroidiumFStairs(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_stairs);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_stairs);
 	}
 
 	@Override

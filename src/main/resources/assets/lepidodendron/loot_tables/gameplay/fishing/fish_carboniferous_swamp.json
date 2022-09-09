@@ -1,0 +1,110 @@
+{
+    "pools": [
+        {
+			"name": "carboniferous_swamp",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:acanthodes_raw",
+                    "weight": 13.4003350083752
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:acrolepis_raw",
+                    "weight": 4.52261306532663
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:adelopthalmus_raw",
+                    "weight": 3.51758793969849
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:allenypterus_raw",
+                    "weight": 13.4003350083752
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:amphibamus_raw",
+                    "weight": 9.04522613065327
+                },
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:barameda_raw",
+                    "weight": 3.68509212730318
+                },
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:gephyrostegus_raw",
+                    "weight": 13.4003350083752
+                },
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:megarachne_raw",
+                    "weight": 3.51758793969849
+                },
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:paratarrasius_raw",
+                    "weight": 10.0502512562814
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:phlegethontia_raw",
+                    "weight": 8.5427135678392
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:platysomus_raw",
+                    "weight": 13.4003350083752
+                },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:tullimonstrum_raw",
+                    "weight": 3.51758793969849
+                }
+            ]
+        }
+    ]
+}

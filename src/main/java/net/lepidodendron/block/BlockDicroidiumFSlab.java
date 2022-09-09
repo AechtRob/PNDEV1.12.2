@@ -36,7 +36,7 @@ public class BlockDicroidiumFSlab extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_slab_double")
 	public static final Block block_slab_double = null;
 	public BlockDicroidiumFSlab(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_slab);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_slab);
 	}
 
 	@Override

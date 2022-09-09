@@ -18,7 +18,7 @@ public class BlockDicroidiumFBridge extends ElementsLepidodendronMod.ModElement 
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_bridge")
 	public static final Block block = null;
 	public BlockDicroidiumFBridge(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_bridge);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_bridge);
 	}
 
 	@Override

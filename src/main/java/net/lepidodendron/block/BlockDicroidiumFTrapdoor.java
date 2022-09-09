@@ -26,7 +26,7 @@ public class BlockDicroidiumFTrapdoor extends ElementsLepidodendronMod.ModElemen
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_trapdoor")
 	public static final Block block = null;
 	public BlockDicroidiumFTrapdoor(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_trapdoor);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_trapdoor);
 	}
 
 	@Override

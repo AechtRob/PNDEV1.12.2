@@ -46,7 +46,7 @@ public class BlockDicroidiumFStrobilus extends ElementsLepidodendronMod.ModEleme
 	public static final Block block = null;
 
 	public BlockDicroidiumFStrobilus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_strobilus);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_strobilus);
 	}
 
 	@Override

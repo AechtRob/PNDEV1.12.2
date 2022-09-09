@@ -30,7 +30,7 @@ public class ItemDicroidiumODoorItem extends ElementsLepidodendronMod.ModElement
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_o_door_item")
 	public static final Item block = null;
 	public ItemDicroidiumODoorItem(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_o_door_item);
+		super(instance, LepidodendronSorter.dicroidium_odonopteroides_door_item);
 	}
 
 	@Override

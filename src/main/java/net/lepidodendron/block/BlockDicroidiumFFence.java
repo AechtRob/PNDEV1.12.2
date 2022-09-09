@@ -26,7 +26,7 @@ public class BlockDicroidiumFFence extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_f_fence")
 	public static final Block block = null;
 	public BlockDicroidiumFFence(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_f_fence);
+		super(instance, LepidodendronSorter.dicroidium_fremouwensis_fence);
 	}
 
 	@Override

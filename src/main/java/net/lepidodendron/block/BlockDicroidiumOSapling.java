@@ -46,7 +46,7 @@ public class BlockDicroidiumOSapling extends ElementsLepidodendronMod.ModElement
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_o_sapling")
 	public static final Block block = null;
 	public BlockDicroidiumOSapling(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_o_sapling);
+		super(instance, LepidodendronSorter.dicroidium_odonopteroides_sapling);
 	}
 
 	@Override

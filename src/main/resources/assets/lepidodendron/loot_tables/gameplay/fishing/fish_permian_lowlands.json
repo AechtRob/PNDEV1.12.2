@@ -1,0 +1,101 @@
+{
+    "pools": [
+        {
+			"name": "permian_lowlands",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "lepidodendron:acanthodes_raw",
+                    "weight": 12.4645892351275
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:acrolepis_raw",
+                    "weight": 10.4815864022663
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:brachydectes_raw",
+                    "weight": 7.64872521246459
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:cacops_raw",
+                    "weight": 2.8328611898017
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:coelacanthus_raw",
+                    "weight": 5.24079320113314
+                },
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:diplocaulus_raw",
+                    "weight": 6.94050991501416
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:diploceraspis_raw",
+                    "weight": 6.94050991501416
+                },
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:gnathorhiza_raw",
+                    "weight": 9.20679886685552
+                },
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:lysorophus_raw",
+                    "weight": 7.64872521246459
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:nagini_raw",
+                    "weight": 1.98300283286119
+                },
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:pantylus_raw",
+                    "weight": 2.8328611898017
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:paranaichthys_raw",
+                    "weight": 8.78186968838527
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:platysomus_raw",
+                    "weight": 6.79886685552408
+                },
+
+
+
+
+
+
+
+
+
+                {
+                    "type": "item",
+                    "name": "lepidodendron:urosthenes_raw",
+                    "weight": 10.1983002832861
+                }
+            ]
+        }
+    ]
+}

@@ -45,7 +45,7 @@ public class BlockDicroidiumOStrobilus extends ElementsLepidodendronMod.ModEleme
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_o_strobilus")
 	public static final Block block = null;
 	public BlockDicroidiumOStrobilus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_o_strobilus);
+		super(instance, LepidodendronSorter.dicroidium_odonopteroides_strobilus);
 	}
 
 	@Override

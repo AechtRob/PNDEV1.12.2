@@ -36,7 +36,7 @@ public class BlockDicroidiumOLeaves extends ElementsLepidodendronMod.ModElement 
 	@GameRegistry.ObjectHolder("lepidodendron:dicroidium_o_leaves")
 	public static final Block block = null;
 	public BlockDicroidiumOLeaves(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dicroidium_o_leaves);
+		super(instance, LepidodendronSorter.dicroidium_odonopteroides_leaves);
 	}
 
 	@Override
