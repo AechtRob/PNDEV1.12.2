@@ -1,12 +1,10 @@
 
-package net.lepidodendron.block;
+package net.lepidodendron.block.base;
 
+import net.lepidodendron.block.BlockAraucarioxylonLogPetrified;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.item.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.ITileEntityProvider;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -38,22 +36,30 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BlockBench extends Block implements ITileEntityProvider {
+public class BlockBridge extends BlockCompressedPowered implements ITileEntityProvider {
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
+	public static final PropertyBool FRONT = PropertyBool.create("front");
+	public static final PropertyBool BACK = PropertyBool.create("back");
 	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 15);
 
-	public BlockBench() {
+	public BlockBridge() {
 		super(Material.WOOD, MapColor.WOOD);
 		setHarvestLevel("axe", 1);
 		setSoundType(SoundType.WOOD);
 		setHardness(2F);
 		setResistance(3F);
 		setLightOpacity(0);
-		setCreativeTab(null);
+		setLightLevel(0.5F);
 		setCreativeTab(TabLepidodendronBuilding.tab);
+	}
+
+	@Nullable
+	@Override
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
+		return super.getCollisionBoundingBox(blockState, worldIn, pos);
 	}
 
 	@Override
@@ -64,42 +70,71 @@ public class BlockBench extends Block implements ITileEntityProvider {
 			state = state.getActualState(worldIn, pos);
 		}
 
+		addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0, 0.9, 0, 1, 1, 1));
+
 		if (state.getValue(FACING) == EnumFacing.WEST) {
-			//Seat:
-			//From 5-6 px tall
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.4, 0.3125,  0 , 0.875, 0.375, 1));
-			//Back-rest:
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.875, 0.375, 0, 0.9375, 1, 1));
+			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,00));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1.0,1,2.75,1.1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1,1,0,1.1,2.75,1));
+			}
+
 		}
 		if (this.getActualState(state, worldIn, pos).getValue(FACING) == EnumFacing.EAST) {
-			//Seat:
-			//From 5-6 px tall
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0625, 0.3125, 0, 0.625, 0.375, 1));
-			//Back-rest:
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0625, 0.375, 0, 0.125, 1, 1));
+			if (state.getValue(LEFT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1.0,1,2.75,1.1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1,1,0,1.1,2.75,1));
+			}
 		}
 
 		if (state.getValue(FACING) == EnumFacing.NORTH) {
-			//Seat:
-			//From 5-6 px tall
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0, 0.3125, 0.4, 1, 0.375, 0.875));
-			//Back-rest:
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0, 0.375, 0.875, 1, 1, 0.9375));
-
+			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1.0,1,0,1.1,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1,1,2.75,1.1));
+			}
 		}
 		if (state.getValue(FACING) == EnumFacing.SOUTH) {
-			//Seat:
-			//From 5-6 px tall
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0, 0.3125, 0.0625, 1, 0.375, 0.625));
-			//Back-rest:
-			addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0, 0.375, 0.0625, 1, 1, 0.125));
-
+			if (this.getActualState(state, worldIn, pos).getValue(RIGHT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(-0.1,1,0,0,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(LEFT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(1.0,1,0,1.1,2.75,1));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(BACK)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,-0.1,1,2.75,0));
+			}
+			if (this.getActualState(state, worldIn, pos).getValue(FRONT)) {
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0,1,1,1,2.75,1.1));
+			}
 		}
 	}
 
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0, 0.0, 0, 1, 1, 1);
+		return new AxisAlignedBB(0, 0.0, 0, 1, 1.0, 1);
 	}
 
 	@Override
@@ -112,9 +147,9 @@ public class BlockBench extends Block implements ITileEntityProvider {
 		return 5;
 	}
 
+
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-
 		if (!playerIn.capabilities.allowEdit)
 		{
 			return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
@@ -145,7 +180,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 			else if (playerIn.getHeldItemMainhand().getItem() == Items.QUARTZ) {
 				enumUsed = 8;
 			}
-			else if (playerIn.getHeldItemMainhand().getItem() == (new ItemStack(Items.DYE, 1, 4)).getItem()) {
+			else if (playerIn.getHeldItemMainhand().getItem() == (new ItemStack(Items.DYE, 1)).getItem()) {
 				if (playerIn.getHeldItem(hand).getMetadata() == 4) {
 					enumUsed = 9;
 				}
@@ -159,13 +194,13 @@ public class BlockBench extends Block implements ITileEntityProvider {
 			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()){
 				enumUsed = 12;
 			}
-			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, 1).getItem()) {
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()){
 				enumUsed = 13;
 			}
-			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, 1).getItem()) {
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()){
 				enumUsed = 14;
 			}
-			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, 1).getItem()) {
+			else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()){
 				enumUsed = 15;
 			}
 
@@ -181,7 +216,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 				worldIn.setBlockState(pos, this.getDefaultState().withProperty(FACING, bsFacing).withProperty(LEFT, left).withProperty(RIGHT, right).withProperty(VARIANT, enumUsed));
 				TileEntity te = worldIn.getTileEntity(pos);
 				if (te !=  null) {
-					if (te instanceof BlockBench.TileEntityBench) {
+					if (te instanceof BlockBridge.TileEntityBridge) {
 						te.getTileData().setInteger("variant", enumUsed);
 						worldIn.notifyBlockUpdate(pos, state, this.getActualState(state, worldIn, pos), 3);
 					}
@@ -190,6 +225,26 @@ public class BlockBench extends Block implements ITileEntityProvider {
 			}
 		}
 		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+	}
+
+	@Override
+	public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+	{
+		if (blockAccess instanceof World) {
+			World worldIn = (World) blockAccess;
+			int variant = new Object() {
+				public int getValue(BlockPos pos1, String tag) {
+					TileEntity tileEntity = worldIn.getTileEntity(pos1);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getInteger(tag);
+					return 0;
+				}
+			}.getValue(pos, "variant");
+			if (side == EnumFacing.DOWN && variant == 12) {
+				return 15;
+			}
+		}
+		return 0;
 	}
 
 	@Override
@@ -212,9 +267,6 @@ public class BlockBench extends Block implements ITileEntityProvider {
 		//10. Coal
 		//11. Petrified Wood
 		//12. Redstone
-		//13. Anthracite
-		//14. Salt
-		//15. Sulphur
 		int variant = new Object() {
 			public int getValue(BlockPos pos1, String tag) {
 				TileEntity tileEntity = worldIn.getTileEntity(pos1);
@@ -226,36 +278,87 @@ public class BlockBench extends Block implements ITileEntityProvider {
 
 		boolean left = false;
 		boolean right = false;
+		boolean front = false;
+		boolean back = false;
+
 		if (state.getValue(FACING) == EnumFacing.NORTH) {
-			if (worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBench) {
-				right = worldIn.getBlockState(pos.east()).getValue(FACING) == EnumFacing.NORTH;
+			if (worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge) {
+				right = true;
 			}
-			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBench) {
-				left = worldIn.getBlockState(pos.west()).getValue(FACING) == EnumFacing.NORTH;
+			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge) {
+				left = true;
+			}
+			if ((!worldIn.getBlockState(pos.north().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockStairs))) {
+					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.south().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockStairs))) {
+					back = true;
+				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.SOUTH) {
-			if (worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBench) {
-				left = worldIn.getBlockState(pos.east()).getValue(FACING) == EnumFacing.SOUTH;
+			if (worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge) {
+				left = true;
 			}
-			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBench) {
-				right = worldIn.getBlockState(pos.west()).getValue(FACING) == EnumFacing.SOUTH;
+			if (worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge) {
+				right = true;
+			}
+			if ((!worldIn.getBlockState(pos.south().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.south()).getBlock() instanceof BlockStairs))) {
+					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.north().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.north()).getBlock() instanceof BlockStairs))) {
+					back = true;
+				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.WEST) {
-			if (worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBench) {
-				right = worldIn.getBlockState(pos.north()).getValue(FACING) == EnumFacing.WEST;
+			if (worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge) {
+				right = true;
 			}
-			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBench) {
-				left = worldIn.getBlockState(pos.south()).getValue(FACING) == EnumFacing.WEST;
+			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge) {
+				left = true;
+			}
+			if ((!worldIn.getBlockState(pos.west().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockStairs))) {
+					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.east().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockStairs))) {
+					back = true;
+				}
 			}
 		} else if (state.getValue(FACING) == EnumFacing.EAST) {
-			if (worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBench) {
-				left = worldIn.getBlockState(pos.north()).getValue(FACING) == EnumFacing.EAST;
+			if (worldIn.getBlockState(pos.north()).getBlock() instanceof BlockBridge) {
+				left = true;
 			}
-			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBench) {
-				right = worldIn.getBlockState(pos.south()).getValue(FACING) == EnumFacing.EAST;
+			if (worldIn.getBlockState(pos.south()).getBlock() instanceof BlockBridge) {
+				right = true;
+			}
+			if ((!worldIn.getBlockState(pos.east().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.east()).getBlock() instanceof BlockStairs))) {
+					front = true;
+				}
+			}
+			if ((!worldIn.getBlockState(pos.west().up()).isFullBlock()) && (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockBridge))) {
+				if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), EnumFacing.UP) != BlockFaceShape.SOLID
+						&& (!(worldIn.getBlockState(pos.west()).getBlock() instanceof BlockStairs))) {
+					back = true;
+				}
 			}
 		}
-		return state.withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right);
+		return state.withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right).withProperty(FRONT, front).withProperty(BACK, back);
 	}
 
 	@Override
@@ -293,7 +396,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[]{FACING, LEFT, RIGHT, VARIANT});
+		return new BlockStateContainer(this, new IProperty[]{FACING, LEFT, RIGHT, FRONT, BACK, VARIANT});
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -330,6 +433,9 @@ public class BlockBench extends Block implements ITileEntityProvider {
 
 	@Override
 	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+		if (face == EnumFacing.UP) {
+			return BlockFaceShape.SOLID;
+		}
 		return BlockFaceShape.UNDEFINED;
 	}
 
@@ -407,7 +513,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new BlockBench.TileEntityBench();
+		return new BlockBridge.TileEntityBridge();
 	}
 
 	@Override
@@ -418,7 +524,7 @@ public class BlockBench extends Block implements ITileEntityProvider {
 	}
 
 
-	public static class TileEntityBench extends TileEntity {
+	public static class TileEntityBridge extends TileEntity {
 
 		@Override
 		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {

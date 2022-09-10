@@ -61,6 +61,17 @@ public class BlockAnkyropterisStemSE extends ElementsLepidodendronMod.ModElement
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+
 		@SideOnly(Side.CLIENT)
 		@Override
     public BlockRenderLayer getRenderLayer()

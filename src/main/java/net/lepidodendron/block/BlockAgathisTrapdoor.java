@@ -54,12 +54,6 @@ public class BlockAgathisTrapdoor extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
-		//@Override
-		//public int tickRate(World world) {
-		//	return 0;
-		//}
-
-
 		@Override
 		public boolean isOpaqueCube(IBlockState state) {
 			return false;

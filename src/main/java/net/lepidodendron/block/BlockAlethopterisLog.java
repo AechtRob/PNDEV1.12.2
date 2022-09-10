@@ -70,9 +70,20 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
-			
+
         	this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)));
 		}
+
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
 
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
@@ -83,7 +94,7 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 	        Block block3 = worldIn.getBlockState(pos.east()).getBlock();
 	        Block block4 = worldIn.getBlockState(pos.south()).getBlock();
 	        Block block5 = worldIn.getBlockState(pos.west()).getBlock();
-	        
+
 	        return state.withProperty(DOWN, Boolean.valueOf(block == this || block != Blocks.AIR)).withProperty(UP, Boolean.valueOf(block1 == this || block1 == BlockAlethopterisLeaves.block)).withProperty(NORTH, Boolean.valueOf(block2 == this)).withProperty(EAST, Boolean.valueOf(block3 == this)).withProperty(SOUTH, Boolean.valueOf(block4 == this)).withProperty(WEST, Boolean.valueOf(block5 == this));
 	    }
 
@@ -99,49 +110,49 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 	        float f6 = ((Boolean)state.getValue(SOUTH)).booleanValue() ? 1.0F : 0.8125F;
 	        return new AxisAlignedBB((double)f1, (double)f2, (double)f3, (double)f4, (double)f5, (double)f6);
 	    }
-	
+
 	    public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState)
 	    {
 	        if (!isActualState)
 	        {
 	            state = state.getActualState(worldIn, pos);
 	        }
-	
+
 	        float f = 0.1875F;
 	        float f1 = 0.8125F;
 	        addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D));
-	
+
 	        if (((Boolean)state.getValue(WEST)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0D, 0.1875D, 0.1875D, 0.1875D, 0.8125D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(EAST)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.8125D, 0.1875D, 0.1875D, 1.0D, 0.8125D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(UP)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.8125D, 0.1875D, 0.8125D, 1.0D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(DOWN)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.0D, 0.1875D, 0.8125D, 0.1875D, 0.8125D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(NORTH)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.0D, 0.8125D, 0.8125D, 0.1875D));
 	        }
-	
+
 	        if (((Boolean)state.getValue(SOUTH)).booleanValue())
 	        {
 	            addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875D, 0.1875D, 0.8125D, 0.8125D, 0.8125D, 1.0D));
 	        }
 	    }
-	
+
 	    /**
 	     * Convert the BlockState into the correct metadata value
 	     */
@@ -149,15 +160,15 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return 0;
 	    }
-	   
-	
+
+
 	    @SideOnly(Side.CLIENT)
 		@Override
     public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
-		
+
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
@@ -172,7 +183,7 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return false;
 	    }
-	
+
 	    protected BlockStateContainer createBlockState()
 	    {
 	        return new BlockStateContainer(this, new IProperty[] {NORTH, EAST, SOUTH, WEST, UP, DOWN});
@@ -183,7 +194,7 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 			return true;
 		}
 
-		@Override public boolean isWood(net.minecraft.world.IBlockAccess world, BlockPos pos){ 
+		@Override public boolean isWood(net.minecraft.world.IBlockAccess world, BlockPos pos){
 				return true;
 			}
 
@@ -192,20 +203,20 @@ public class BlockAlethopterisLog extends ElementsLepidodendronMod.ModElement {
 	    {
 	        int i = 4;
 	        int j = 5;
-	
+
 	        if (worldIn.isAreaLoaded(pos.add(-5, -5, -5), pos.add(5, 5, 5)))
 	        {
 	            for (BlockPos blockpos : BlockPos.getAllInBox(pos.add(-4, -4, -4), pos.add(4, 4, 4)))
 	            {
 	                IBlockState iblockstate = worldIn.getBlockState(blockpos);
-	
+
 	                if (iblockstate.getBlock().isLeaves(iblockstate, worldIn, blockpos))
 	                {
 	                    iblockstate.getBlock().beginLeavesDecay(iblockstate, worldIn, blockpos);
 	                }
 	            }
 	        }
-				
+
 	    }
 
 	    @Override

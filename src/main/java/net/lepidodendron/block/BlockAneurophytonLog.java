@@ -79,6 +79,17 @@ public class BlockAneurophytonLog extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+
+		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos){
 			
 	    	Block block = worldIn.getBlockState(pos.down()).getBlock();
@@ -173,7 +184,7 @@ public class BlockAneurophytonLog extends ElementsLepidodendronMod.ModElement {
 	
 	    @SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

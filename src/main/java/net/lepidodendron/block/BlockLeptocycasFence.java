@@ -60,6 +60,11 @@ public class BlockLeptocycasFence extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 20;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 5;
 		}
 	}
