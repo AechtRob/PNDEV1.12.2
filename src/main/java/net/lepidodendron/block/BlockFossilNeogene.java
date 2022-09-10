@@ -64,9 +64,9 @@ public class BlockFossilNeogene extends ElementsLepidodendronMod.ModElement {
 		int yy = Math.max(world.getSeaLevel() - dimDepth, 1);
 
 		for (int i = 0; i < 48; i++) {
-			int x = chunkX + random.nextInt(16) + 8;
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = yy; //Anywhere in the layer which is 4 thick (0-3) //NO th evanilal generator already does this!
-			int z = chunkZ + random.nextInt(16) + 8;
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			if (random.nextInt(dimDepth) == 0) {
 				(new WorldGenMinable(block.getDefaultState(), blockCount, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
