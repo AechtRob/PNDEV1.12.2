@@ -16,7 +16,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:adelopthalmus_raw",
+                    "name": "lepidodendron:adelophthalmus_raw",
                     "weight": 3.51758793969849
                 },
                 {
@@ -32,20 +32,6 @@
 
 
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:barameda_raw",
-                    "weight": 3.68509212730318
-                },
-
-
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:gephyrostegus_raw",
-                    "weight": 13.4003350083752
-                },
 
 
 
@@ -72,12 +58,6 @@
                     "type": "item",
                     "name": "lepidodendron:paratarrasius_raw",
                     "weight": 10.0502512562814
-                },
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:phlegethontia_raw",
-                    "weight": 8.5427135678392
                 },
 
                 {

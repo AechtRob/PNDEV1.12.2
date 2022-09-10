@@ -63,6 +63,7 @@ public class BlockCalamitesLog extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH));
 		}
 
+
 		//@Override
 		//public int tickRate(World world) {
 		//	return 0;

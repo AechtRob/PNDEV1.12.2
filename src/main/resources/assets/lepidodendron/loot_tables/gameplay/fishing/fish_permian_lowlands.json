@@ -14,12 +14,6 @@
                     "name": "lepidodendron:acrolepis_raw",
                     "weight": 10.4815864022663
                 },
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:brachydectes_raw",
-                    "weight": 7.64872521246459
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:cacops_raw",
@@ -53,18 +47,6 @@
 
 
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:lysorophus_raw",
-                    "weight": 7.64872521246459
-                },
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:nagini_raw",
-                    "weight": 1.98300283286119
-                },
 
                 {
                     "type": "item",

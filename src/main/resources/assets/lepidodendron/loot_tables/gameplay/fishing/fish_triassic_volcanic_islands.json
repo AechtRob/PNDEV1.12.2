@@ -11,12 +11,12 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_asteroceras_raw",
+                    "name": "lepidodendron:shell_asteroceras",
                     "weight": 2.94117647058824
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
+                    "name": "lepidodendron:shell_goniatites",
                     "weight": 2.94117647058824
                 },
 
@@ -60,11 +60,6 @@
                     "type": "item",
                     "name": "lepidodendron:parhybodus_raw",
                     "weight": 2.94117647058824
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:potanichthys _raw",
-                    "weight": 14.7058823529412
                 },
                 {
                     "type": "item",

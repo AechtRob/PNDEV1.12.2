@@ -11,11 +11,6 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:acanthodes_raw",
-                    "weight": 7.91855203619909
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:acrolepis_raw",
                     "weight": 5.65610859728507
                 },
@@ -28,16 +23,6 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:blourugia_raw",
-                    "weight": 7.91855203619909
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:brachydectes_raw",
-                    "weight": 2.03619909502262
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:cobelodus_raw",
                     "weight": 5.65610859728507
                 },
@@ -46,32 +31,11 @@
                     "name": "lepidodendron:gnathorhiza_raw",
                     "weight": 5.65610859728507
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:gnathorhiza_raw",
-                    "weight": 5.65610859728507
-                },
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:lysorophus_raw",
-                    "weight": 2.03619909502262
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:melosaurus_raw",
                     "weight": 2.26244343891403
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:melosaurus_raw",
-                    "weight": 2.26244343891403
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:nagini_raw",
-                    "weight": 2.03619909502262
                 },
                 {
                     "type": "item",
@@ -81,11 +45,6 @@
                 {
                     "type": "item",
                     "name": "lepidodendron:urosthenes_raw",
-                    "weight": 5.65610859728507
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:varialepis_raw",
                     "weight": 5.65610859728507
                 },
                 {

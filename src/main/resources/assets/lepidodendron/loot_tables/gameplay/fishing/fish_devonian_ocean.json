@@ -9,38 +9,18 @@
                     "name": "lepidodendron:acanthodes_raw",
                     "weight": 3.38142470694319
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:acanthodes_raw",
-                    "weight": 3.38142470694319
-                },
-
 
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
+                    "name": "lepidodendron:shell_goniatites",
                     "weight": 4.28313796212804
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
+                    "name": "lepidodendron:shell_manticoceras",
                     "weight": 4.28313796212804
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_manticoceras_raw",
-                    "weight": 4.28313796212804
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_manticoceras_raw",
-                    "weight": 4.28313796212804
-                },
-                {
-                    "type": "item",
-                    "name": "minecraft:air",
-                    "weight": 3.83228133453562
-                },
+
 
 
                 {
@@ -73,11 +53,6 @@
                     "name": "lepidodendron:cheirurus_raw",
                     "weight": 2.29936880072137
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:cheirurus_raw",
-                    "weight": 2.29936880072137
-                },
 
                 {
                     "type": "item",
@@ -94,18 +69,7 @@
                     "name": "lepidodendron:crotalocephalus_raw",
                     "weight": 2.4346257889991
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:crotalocephalus_raw",
-                    "weight": 2.4346257889991
-                },
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:dalmanites_raw",
-                    "weight": 2.4346257889991
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:dalmanites_raw",
@@ -131,11 +95,6 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:furcacauda_raw",
-                    "weight": 0.946798917944094
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:gantarostrataspis_raw",
                     "weight": 1.57799819657349
                 },
@@ -143,11 +102,6 @@
                     "type": "item",
                     "name": "lepidodendron:groenlandaspis_raw",
                     "weight": 1.35256988277728
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:gyracanthides_raw",
-                    "weight": 0.36068530207394
                 },
                 {
                     "type": "item",
@@ -215,33 +169,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:palaeoisopus_raw",
-                    "weight": 0.946798917944094
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:parexus_raw",
                     "weight": 3.38142470694319
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:parexus_raw",
-                    "weight": 3.38142470694319
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:phanerotinus_raw",
-                    "weight": 0.811541929666366
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:phanerotinus_raw",
-                    "weight": 0.811541929666366
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:poraspis_raw",
-                    "weight": 1.08205590622182
                 },
                 {
                     "type": "item",
@@ -255,31 +184,10 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:psarolepis_raw",
-                    "weight": 2.70513976555455
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:pteraspis_raw",
-                    "weight": 1.62308385933273
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:pteraspis_raw",
                     "weight": 1.62308385933273
                 },
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:rhenocystis_raw",
-                    "weight": 0.541027953110911
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:spiniplatyceras_raw",
-                    "weight": 0.901713255184851
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:tartuosteus_raw",
@@ -291,18 +199,9 @@
                     "name": "lepidodendron:terataspis_raw",
                     "weight": 2.02885482416592
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:terataspis_raw",
-                    "weight": 2.02885482416592
-                },
 
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:walliserops_raw",
-                    "weight": 2.4346257889991
-                },
+
                 {
                     "type": "item",
                     "name": "lepidodendron:walliserops_raw",

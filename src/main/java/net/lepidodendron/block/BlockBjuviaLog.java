@@ -76,6 +76,8 @@ public class BlockBjuviaLog extends ElementsLepidodendronMod.ModElement {
         	this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)).withProperty(UP, Boolean.valueOf(false)).withProperty(DOWN, Boolean.valueOf(false)).withProperty(LEAVES, Boolean.valueOf(false)));
 		}
 
+
+
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 5;

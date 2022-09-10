@@ -9,11 +9,6 @@
                     "name": "lepidodendron:gnathorhiza_raw",
                     "weight": 22.3684210526316
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:gnathorhiza_raw",
-                    "weight": 25
-                },
 
 
 
@@ -21,11 +16,6 @@
 
 
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:varialepis_raw",
-                    "weight": 26.3157894736842
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:varialepis_raw",

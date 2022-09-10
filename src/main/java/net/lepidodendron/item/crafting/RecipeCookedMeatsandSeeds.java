@@ -50,15 +50,7 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemRoachoidAridRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemRoachoidForestRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemRoachoidSwampRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemTitanopteraClatrotitanRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemTitanopteraGigatitanRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemTitanopteraMesotitanRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemItalophlebiaRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemProtozygopteraRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemPalaeontinidRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemHarvestmanRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemGerarusRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
-		GameRegistry.addSmelting(new ItemStack(ItemMeganeuraRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemMeganeuropsisRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemEoarthropleuraRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemPneumodesmusRaw.block, (int) (1)), new ItemStack(ItemBugCooked.block, (int) (1)), 0.35F);

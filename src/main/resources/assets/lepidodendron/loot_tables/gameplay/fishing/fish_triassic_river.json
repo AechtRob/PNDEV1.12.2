@@ -6,12 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "lepidodendron:ceratodus _raw",
-                    "weight": 4.0650406504065
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ceratodus _raw",
+                    "name": "lepidodendron:ceratodus_raw",
                     "weight": 4.0650406504065
                 },
                 {
@@ -19,13 +14,6 @@
                     "name": "lepidodendron:chinlea_raw",
                     "weight": 4.8780487804878
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:chinlea_raw",
-                    "weight": 3.2520325203252
-                },
-
-
 
 
                 {
@@ -33,27 +21,12 @@
                     "name": "lepidodendron:opolanka_raw",
                     "weight": 10.5691056910569
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:opolanka_raw",
-                    "weight": 13.8211382113821
-                },
 
 
                 {
                     "type": "item",
                     "name": "lepidodendron:saurichthys_freshwater_raw",
                     "weight": 10.5691056910569
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:saurichthys_freshwater_raw",
-                    "weight": 10.5691056910569
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:semionotus_raw",
-                    "weight": 15.4471544715447
                 },
                 {
                     "type": "item",
@@ -65,11 +38,6 @@
                     "type": "item",
                     "name": "lepidodendron:xenacanthus_raw",
                     "weight": 4.0650406504065
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:xenacanthus_raw",
-                    "weight": 3.2520325203252
                 }
             ]
         }

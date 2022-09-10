@@ -24,11 +24,6 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:saurichthys_freshwater_raw",
-                    "weight": 21.7391304347826
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:semionotus_raw",
                     "weight": 43.4782608695652
                 }

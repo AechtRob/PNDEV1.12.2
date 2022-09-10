@@ -79,6 +79,16 @@ public class BlockBurntStem extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			drops.add(new ItemStack(Items.COAL, (int) (2), 1));
 		}

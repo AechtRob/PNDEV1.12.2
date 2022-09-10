@@ -17,13 +17,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:adelopthalmus_raw",
+                    "name": "lepidodendron:adelophthalmus_raw",
                     "weight": 11.8829981718464
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:brachydectes_raw",
-                    "weight": 13.5283363802559
                 },
 
                 {
@@ -56,18 +51,6 @@
                     "weight": 6.39853747714808
                 },
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:lysorophus_raw",
-                    "weight": 2.55941499085923
-                },
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:nagini_raw",
-                    "weight": 2.55941499085923
-                },
 
 
 

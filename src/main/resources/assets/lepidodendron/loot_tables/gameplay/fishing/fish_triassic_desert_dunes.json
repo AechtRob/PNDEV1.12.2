@@ -6,16 +6,11 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "lepidodendron:ceratodus _raw",
+                    "name": "lepidodendron:ceratodus_raw",
                     "weight": 13.0434782608696
                 },
 
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:daedalichthys_raw",
-                    "weight": 43.4782608695652
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:daedalichthys_raw",

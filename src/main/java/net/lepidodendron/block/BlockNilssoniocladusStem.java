@@ -69,6 +69,16 @@ public class BlockNilssoniocladusStem extends ElementsLepidodendronMod.ModElemen
 		}
 
 		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos){
 
 			if (worldIn.getBlockState(pos).getBlock() != this) {

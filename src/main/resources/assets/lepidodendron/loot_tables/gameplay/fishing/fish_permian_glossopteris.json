@@ -11,28 +11,13 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:acanthodes_raw",
-                    "weight": 8.5
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:acrolepis_raw",
                     "weight": 11
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:adelopthalmus_raw",
+                    "name": "lepidodendron:adelophthalmus_raw",
                     "weight": 7.5
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:adelopthalmus_raw",
-                    "weight": 7.5
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:antarcticarcinus_raw",
-                    "weight": 6.75
                 },
                 {
                     "type": "item",
@@ -40,11 +25,6 @@
                     "weight": 6.75
                 },
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:coelacanthus_raw",
-                    "weight": 4.125
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:coelacanthus_raw",
@@ -63,11 +43,6 @@
                 },
 
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:paranaichthys_raw",
-                    "weight": 9.75
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:paranaichthys_raw",

@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "lepidodendron:ceratodus _raw",
+                    "name": "lepidodendron:ceratodus_raw",
                     "weight": 8.57142857142857
                 },
 
@@ -17,11 +17,6 @@
                     "name": "lepidodendron:daedalichthys_raw",
                     "weight": 17.1428571428571
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:daedalichthys_raw",
-                    "weight": 17.1428571428571
-                },
 
 
 
@@ -36,11 +31,6 @@
 
 
 
-                {
-                    "type": "item",
-                    "name": "lepidodendron:semionotus_raw",
-                    "weight": 28.5714285714286
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:semionotus_raw",

@@ -9,42 +9,23 @@
                     "name": "lepidodendron:aeger_raw",
                     "weight": 3.89294403892944
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:aeger_raw",
-                    "weight": 3.89294403892944
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_asteroceras_raw",
-                    "weight": 4.37956204379562
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_asteroceras_raw",
-                    "weight": 4.37956204379562
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_ceratites_raw",
-                    "weight": 4.37956204379562
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
-                    "weight": 4.37956204379562
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
-                    "weight": 4.37956204379562
-                },
 
                 {
                     "type": "item",
-                    "name": "lepidodendron:aulacoceras_raw",
-                    "weight": 3.64963503649635
+                    "name": "lepidodendron:shell_asteroceras",
+                    "weight": 4.37956204379562
                 },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:shell_ceratites",
+                    "weight": 4.37956204379562
+                },
+                {
+                    "type": "item",
+                    "name": "lepidodendron:shell_goniatites",
+                    "weight": 4.37956204379562
+                },
+
                 {
                     "type": "item",
                     "name": "lepidodendron:aulacoceras_raw",
@@ -57,11 +38,6 @@
                     "type": "item",
                     "name": "lepidodendron:birgeria_raw",
                     "weight": 1.45985401459854
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:birgeria_raw",
-                    "weight": 0.632603406326034
                 },
                 {
                     "type": "item",
@@ -84,11 +60,6 @@
                     "name": "lepidodendron:caturus_raw",
                     "weight": 2.18978102189781
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:caturus_raw",
-                    "weight": 2.18978102189781
-                },
 
 
 
@@ -106,12 +77,6 @@
                     "name": "lepidodendron:eosaurichthys_raw",
                     "weight": 4.13625304136253
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:eosaurichthys_raw",
-                    "weight": 4.13625304136253
-                },
-
 
 
 
@@ -146,11 +111,6 @@
                     "name": "lepidodendron:limulid_raw",
                     "weight": 1.0705596107056
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:limulid_raw",
-                    "weight": 1.45985401459854
-                },
 
                 {
                     "type": "item",
@@ -160,35 +120,7 @@
 
                 {
                     "type": "item",
-                    "name": "lepidodendron:nautilus_raw",
-                    "weight": 1.94647201946472
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:nautilus_raw",
-                    "weight": 1.94647201946472
-                },
-
-
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:potanichthys _raw",
-                    "weight": 2.4330900243309
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:potanichthys _raw",
-                    "weight": 2.4330900243309
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:rebellatrix_raw",
-                    "weight": 2.4330900243309
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:saurichthys_marine_raw",
                     "weight": 2.4330900243309
                 },
                 {

@@ -118,9 +118,9 @@ public class BlockFossilDevonian extends ElementsLepidodendronMod.ModElement {
 
 		//Small chance of mixed up fossils in hills etc:
 		for (int i = 0; i < 4; i++) {
-			int x = chunkX + random.nextInt(16) + 8;
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = (world.getSeaLevel() + 6) + random.nextInt(254 - (world.getSeaLevel() + 6));
-			int z = chunkZ + random.nextInt(16) + 8;
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			(new WorldGenMinable(block.getDefaultState(), 3, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;

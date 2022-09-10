@@ -6,14 +6,10 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:air",
+                    "name": "lepidodendron:basiloceras_raw",
                     "weight": 8.99621212121212
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:basiloceras_raw",
-                    "weight": 1.70454545454545
-                },
+
                 {
                     "type": "item",
                     "name": "lepidodendron:cheirurus_raw",
@@ -23,11 +19,6 @@
                     "type": "item",
                     "name": "lepidodendron:cheloniellon_raw",
                     "weight": 5.11363636363636
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:cheloniellon_raw",
-                    "weight": 5.68181818181818
                 },
                 {
                     "type": "item",
@@ -48,11 +39,6 @@
                     "type": "item",
                     "name": "lepidodendron:drotops_raw",
                     "weight": 4.92424242424242
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:furcaster_raw",
-                    "weight": 8.33333333333333
                 },
                 {
                     "type": "item",
@@ -97,11 +83,6 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:mimetaster_raw",
-                    "weight": 2.55681818181818
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:palaeoisopus_raw",
                     "weight": 3.78787878787879
                 },
@@ -112,23 +93,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:panderodus_raw",
-                    "weight": 0.852272727272727
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:psychopyge_raw",
-                    "weight": 4.92424242424242
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:schinderhannes_raw",
                     "weight": 3.40909090909091
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:spiniplatyceras_raw",
-                    "weight": 3.78787878787879
                 },
                 {
                     "type": "item",

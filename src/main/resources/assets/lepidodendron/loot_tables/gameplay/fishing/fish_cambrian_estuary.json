@@ -30,11 +30,7 @@
                 "name": "lepidodendron:eoredlichia_raw",
                 "weight": 4.76190476190476
               },
-              {
-                "type": "item",
-                "name": "lepidodendron:fortiforceps_raw",
-                "weight": 4.76190476190476
-              },
+
 
               {
                 "type": "item",
@@ -100,7 +96,7 @@
               },
               {
                 "type": "item",
-                "name": "lepidodendron:vetulicola _raw",
+                "name": "lepidodendron:vetulicola_raw",
                 "weight": 4.76190476190476
               },
               {

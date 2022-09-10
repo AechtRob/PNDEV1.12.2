@@ -11,49 +11,20 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:acanthodes_raw",
-                    "weight": 3.10880829015544
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:acrolepis_raw",
                     "weight": 1.69571361281206
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_cylolobus_raw",
+                    "name": "lepidodendron:shell_cylolobus",
                     "weight": 4.23928403203015
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:ammonite_cylolobus_raw",
+                    "name": "lepidodendron:shell_goniatites",
                     "weight": 4.23928403203015
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_elephantoceras_raw",
-                    "weight": 3.29722091380123
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_elephantoceras_raw",
-                    "weight": 3.29722091380123
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
-                    "weight": 4.23928403203015
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ammonite_goniatites_raw",
-                    "weight": 4.23928403203015
-                },
-                {
-                    "type": "item",
-                    "name": "minecraft:air",
-                    "weight": 4.23928403203015
-                },
+
                 {
                     "type": "item",
                     "name": "lepidodendron:bobasatrania_raw",
@@ -68,23 +39,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "lepidodendron:coelacanthus_raw",
-                    "weight": 2.54357041921809
-                },
-                {
-                    "type": "item",
                     "name": "lepidodendron:cooperoceras_raw",
                     "weight": 3.95666509656147
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:cooperoceras_raw",
-                    "weight": 3.95666509656147
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:dorypterus_raw",
-                    "weight": 3.06170513424399
                 },
                 {
                     "type": "item",
@@ -95,21 +51,6 @@
                     "type": "item",
                     "name": "lepidodendron:ebenaqua_raw",
                     "weight": 2.40226095148375
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:ebenaqua_raw",
-                    "weight": 2.87329251059821
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:elonichthys_raw",
-                    "weight": 3.10880829015544
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:elonichthys_raw",
-                    "weight": 3.10880829015544
                 },
 
 
@@ -143,43 +84,12 @@
                     "name": "lepidodendron:menaspis_raw",
                     "weight": 3.10880829015544
                 },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:menaspis_raw",
-                    "weight": 3.10880829015544
-                },
 
 
-
-                {
-                    "type": "item",
-                    "name": "lepidodendron:nipponomaria_raw",
-                    "weight": 2.82618935468676
-                },
                 {
                     "type": "item",
                     "name": "lepidodendron:palaeoniscum_raw",
                     "weight": 3.76825247291569
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:palaeoniscum_raw",
-                    "weight": 3.76825247291569
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:palaeoniscum_raw",
-                    "weight": 2.3551577955723
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:palaeoniscum_raw",
-                    "weight": 2.3551577955723
-                },
-                {
-                    "type": "item",
-                    "name": "lepidodendron:platysomus_raw",
-                    "weight": 3.10880829015544
                 },
                 {
                     "type": "item",
