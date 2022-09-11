@@ -118,7 +118,7 @@ public class BiomePermianLowlandsForest extends ElementsLepidodendronMod.ModElem
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			int selector = rand.nextInt(10);
+			int selector = rand.nextInt(11);
 			switch (selector) {
 				case 0 :
 					return ZYGOPTERIS_TREE;
@@ -139,7 +139,10 @@ public class BiomePermianLowlandsForest extends ElementsLepidodendronMod.ModElem
 				case 8 :
 					return GLOSSOPTERIS_TREE;
 				case 10 :
-					return ARAUCARIOXYLON_TREE;
+					if (rand.nextInt(3) == 0) {
+						return ARAUCARIOXYLON_TREE;
+					}
+					return WALCHIA_TREE;
 			}
 			return WALCHIA_TREE;
 		}

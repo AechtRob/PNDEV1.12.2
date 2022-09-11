@@ -115,6 +115,7 @@ public class BiomePermianWetlandsFernCopse extends ElementsLepidodendronMod.ModE
 		protected static final WorldGenMossStone MOSSY_STONE_GENERATOR = new WorldGenMossStone();
 		protected static final WorldGenMarattia MARATTIA_GENERATOR = new WorldGenMarattia();
 		protected static final WorldGenCladophlebis CLADOPHLEBIS_GENERATOR = new WorldGenCladophlebis();
+		protected static final WorldGenPrehistoricGround DRIER_GROUND_GENERATOR= new WorldGenPrehistoricGround();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -196,6 +197,15 @@ public class BiomePermianWetlandsFernCopse extends ElementsLepidodendronMod.ModE
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PODZOL_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 16; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DRIER_GROUND_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

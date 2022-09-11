@@ -200,7 +200,7 @@
                 "conditions": [
                   {
                     "condition": "lepidodendron:in_biomes",
-                    "biomes": ["lepidodendron:devonian_gilboa", "lepidodendron:devonian_floodplain", "lepidodendron:devonian_forest"],
+                    "biomes": ["lepidodendron:devonian_gilboa", "lepidodendron:devonian_floodplain", "lepidodendron:devonian_hills"],
                     "entity": "this"
                   }
                 ]

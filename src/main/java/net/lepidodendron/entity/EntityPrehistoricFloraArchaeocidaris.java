@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.0175f;
+		return 0.0275f;
 	}
 
 	protected void initEntityAI() {

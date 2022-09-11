@@ -179,11 +179,11 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome == BiomeOrdovicianSeaIce.biome
 				|| biome == BiomeOrdovicianSeaIcebergs.biome
 		)
-			multiplier = 24;
+			multiplier = 48;
 
 		if (biome == BiomeTriassicOceanClamBeds.biome
 		)
-			multiplier = 12;
+			multiplier = 24;
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

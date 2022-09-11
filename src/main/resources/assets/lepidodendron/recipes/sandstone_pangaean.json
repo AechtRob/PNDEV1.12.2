@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sand_pangaean"
+    },
+    "1": {
+      "item": "lepidodendron:sand_pangaean"
+    },
+    "3": {
+      "item": "lepidodendron:sand_pangaean"
+    },
+    "4": {
+      "item": "lepidodendron:sand_pangaean"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_pangaean",
+    "count": 1
+  }
+}

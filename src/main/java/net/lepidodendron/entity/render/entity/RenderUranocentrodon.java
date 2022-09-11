@@ -29,7 +29,7 @@ public class RenderUranocentrodon extends RenderLiving<EntityPrehistoricFloraUra
     protected void preRenderCallback(EntityPrehistoricFloraUranocentrodon entity, float f) {
         float scale = entity.getAgeScale();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.65F;
+        this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

@@ -135,7 +135,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		if (biome == BiomeOrdovicianSeaIce.biome
 				|| biome == BiomeOrdovicianSeaIcebergs.biome
 		)
-			multiplier = 24;
+			multiplier = 48;
 
 		if (biome == BiomeOrdovicianSpongeForest.biome
 		)
@@ -143,7 +143,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 
 		if (biome == BiomeTriassicOceanClamBeds.biome
 		)
-			multiplier = 12;
+			multiplier = 24;
 
 		if (biome == BiomeTriassicFloodedForest.biome)
 		{

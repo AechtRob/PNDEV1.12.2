@@ -92,7 +92,7 @@ public class EntityPrehistoricFloraCidaroida extends EntityPrehistoricFloraSlith
 	}
 
 	protected float getAISpeedSlithering() {
-		return 0.0175f;
+		return 0.0275f;
 	}
 
 	@Override

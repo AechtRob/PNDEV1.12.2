@@ -29,7 +29,7 @@ public class RenderDiploceraspis extends RenderLiving<EntityPrehistoricFloraDipl
     protected void preRenderCallback(EntityPrehistoricFloraDiploceraspis entity, float f) {
         float scale = entity.getAgeScale();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.35F;
+        this.shadowSize = entity.width * scale * 0.15F;
     }
 
 }

@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraPholiderpeton extends EntityPrehistoricFloraS
 		minWidth = 0.125F;
 		maxWidth = 0.799F;
 		maxHeight = 0.71F;
-		maxHealthAgeable = 42.0D;
+		maxHealthAgeable = 32.0D;
 	}
 
 	@Override

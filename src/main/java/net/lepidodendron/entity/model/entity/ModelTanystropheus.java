@@ -478,7 +478,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
                 this.chainWave(Tail, (speed * 0.25F), 0.125F * 0.15F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.25F) * 4F, 0.05F * 0.45F, 0.12F, f2, 1F);
                 this.body2.offsetZ = offsetZ;
-                this.walk(neckbase, speed, -0.01F, false, 2.5F, -0.05F, f2, 0.8F);
+                this.walk(neckbase, speed, -0.01F, false, 2.5F, -0.005F, f2, 0.8F);
 
             }
             else {
@@ -515,7 +515,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
                 this.flap(hindlegL, speed * 2F, -0.08F, false, 6.0F, -0.04F, f2, 1.0F);
                 this.flap(hindlegR, speed * 2F, -0.08F, false, 6.0F, -0.04F, f2, 1.0F);
 
-                this.walk(neckbase, speed * 4, 0.01F, false, 2.5F, 0.01F, f2, 0.8F);
+                this.walk(neckbase, speed * 4, -0.01F, false, 2.5F, -0.005F, f2, 0.8F);
 
                 this.walk(neck, speed * 0.5F, -0.01F * 2.25F, false, 2.5F, -0.10F * 2.25F, f2, 0.9F);
                 this.walk(head, speed * 0.5F, -0.02F * 2.25F, false, 2.5F, -0F, f2, 0.9F);
