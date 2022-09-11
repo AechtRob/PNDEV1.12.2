@@ -1,7 +1,7 @@
 package net.lepidodendron.pfvillagers.village;
 
 import net.lepidodendron.block.BlockAcaciaBridge;
-import net.lepidodendron.block.base.BlockBridge;
+import net.lepidodendron.block.base.BlockBridgePF;
 import net.lepidodendron.block.BlockOakBridge;
 import net.lepidodendron.block.BlockSpruceBridge;
 import net.minecraft.block.*;
@@ -126,7 +126,7 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
             }
 
             if (blockstateIn.getBlock() == BlockOakBridge.block) {
-                return BlockSpruceBridge.block.getDefaultState().withProperty(BlockBridge.FACING, blockstateIn.getValue(BlockBridge.FACING));
+                return BlockSpruceBridge.block.getDefaultState().withProperty(BlockBridgePF.FACING, blockstateIn.getValue(BlockBridgePF.FACING));
             }
         } else if (structureType == 2) {
             if (blockstateIn.getBlock() == Blocks.LOG || blockstateIn.getBlock() == Blocks.LOG2) {
@@ -154,7 +154,7 @@ public class PalaeontologisthouseBlocks implements ITemplateProcessor {
             }
 
             if (blockstateIn.getBlock() == BlockOakBridge.block) {
-                return BlockAcaciaBridge.block.getDefaultState().withProperty(BlockBridge.FACING, blockstateIn.getValue(BlockBridge.FACING));
+                return BlockAcaciaBridge.block.getDefaultState().withProperty(BlockBridgePF.FACING, blockstateIn.getValue(BlockBridgePF.FACING));
             }
         }
 

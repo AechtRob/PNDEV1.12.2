@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockBridge;
+import net.lepidodendron.block.base.BlockBridgePF;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -34,7 +34,7 @@ public class BlockPitysBridge extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:pitys_bridge", "inventory"));
 	}
-	public static class BlockCustom extends BlockBridge {
+	public static class BlockCustom extends BlockBridgePF {
 		public BlockCustom() {
 			setTranslationKey("pf_pitys_bridge");
 		}

@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockBench;
+import net.lepidodendron.block.base.BlockBenchPF;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -31,7 +31,7 @@ public class BlockAcaciaBench extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockBench.TileEntityBench.class, "lepidodendron:tileentityacacia_bench");
+		GameRegistry.registerTileEntity(BlockBenchPF.TileEntityBench.class, "lepidodendron:tileentityacacia_bench");
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -40,7 +40,7 @@ public class BlockAcaciaBench extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:acacia_bench", "inventory"));
 	}
-	public static class BlockCustom extends BlockBench {
+	public static class BlockCustom extends BlockBenchPF {
 		public BlockCustom() {
 			setTranslationKey("pf_acacia_bench");
 		}

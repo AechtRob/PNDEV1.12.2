@@ -16,7 +16,7 @@
 		},
 		{
 			"type": "text",
-			"text": "To use it one simply needs to right click an animal with an empty cage in hand. Once the animal is inside the cage right clicking it with an empty hand will pick up the cage and put it in the player’s inventory. To free an animal from its cage left click the placed down cage in creative or break it in survival."
+			"text": "To use it one simply needs to right click an animal with an empty cage in hand. Once the animal is inside the cage right clicking it with an empty hand will pick up the cage and put it in the player’s inventory. To free an animal from its cage left click the placed down cage in creative or break it in survival. Can't be used in mid-air or in water."
 		},
 		{
 			"type": "crafting",

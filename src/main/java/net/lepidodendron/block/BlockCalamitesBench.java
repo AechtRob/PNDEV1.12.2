@@ -3,7 +3,7 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockBench;
+import net.lepidodendron.block.base.BlockBenchPF;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -41,7 +41,7 @@ public class BlockCalamitesBench extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:calamites_bench", "inventory"));
 	}
-	public static class BlockCustom extends BlockBench {
+	public static class BlockCustom extends BlockBenchPF {
 		public BlockCustom() {
 			setTranslationKey("pf_calamites_bench");
 			setHardness(0.5F);
