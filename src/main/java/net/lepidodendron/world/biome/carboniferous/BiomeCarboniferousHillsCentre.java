@@ -43,7 +43,7 @@ public class BiomeCarboniferousHillsCentre extends ElementsLepidodendronMod.ModE
 	static class BiomeGenCustom extends BiomeCarboniferous {
 		public BiomeGenCustom() {
 			//super(new Biome.BiomeProperties("Carboniferous Hills").setRainfall(0.5F).setBaseBiome("lepidodendron:carboniferous_swamp_hills").setBaseHeight(1.05F).setHeightVariation(0.5F).setTemperature(0.75F).setRainfall(0.9F).setWaterColor(8186044));
-			super(new BiomeProperties("Carboniferous Gravelley Highlands").setBaseHeight(4.475F).setHeightVariation(0.325F).setTemperature(0.21F).setRainfall(0.2F).setWaterColor(3906905));
+			super(new BiomeProperties("Carboniferous Gravelly Highlands").setBaseHeight(4.475F).setHeightVariation(0.325F).setTemperature(0.21F).setRainfall(0.2F).setWaterColor(3906905));
 			setRegistryName("carboniferous_hills_high");
 			topBlock = Blocks.GRAVEL.getStateFromMeta(0);
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);
