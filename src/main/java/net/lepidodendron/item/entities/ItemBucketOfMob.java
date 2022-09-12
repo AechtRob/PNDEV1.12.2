@@ -432,7 +432,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-				return "item.pf_" + mobname + "_bucket.name";
+				return "item.pf_" + mobname + "_bucket";
 			}
 			return super.getTranslationKey(stack);
 		}
