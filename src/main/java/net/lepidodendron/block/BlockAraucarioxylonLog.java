@@ -37,7 +37,7 @@ public class BlockAraucarioxylonLog extends ElementsLepidodendronMod.ModElement 
 				new ModelResourceLocation("lepidodendron:araucarioxylon_log", "inventory"));
 	}
 	public static class BlockCustom extends BlockLogPF {
-		public static final PropertyDirection FACING = BlockDirectional.FACING;
+
 		public BlockCustom() {
 			setTranslationKey("pf_araucarioxylon_log");
 		}

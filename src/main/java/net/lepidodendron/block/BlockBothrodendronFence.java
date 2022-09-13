@@ -3,18 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.block.base.BlockFencePF;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFence;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -41,31 +34,10 @@ public class BlockBothrodendronFence extends ElementsLepidodendronMod.ModElement
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:bothrodendron_fence", "inventory"));
 	}
-	public static class BlockCustom extends BlockFence {
+	public static class BlockCustom extends BlockFencePF {
 		public BlockCustom() {
-			super(Material.WOOD, Material.WOOD.getMaterialMapColor());
 			setTranslationKey("pf_bothrodendron_fence");
-			setSoundType(SoundType.WOOD);
-			setHardness(2F);
-			setResistance(3F);
-			setLightLevel(0F);
-			setLightOpacity(0);
-			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
-		}
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 20;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 5;
-		}
 	}
 }

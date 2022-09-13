@@ -109,7 +109,6 @@ public class BlockBelemnopteris extends ElementsLepidodendronMod.ModElement {
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 60;
 		}
-
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			if (!LepidodendronConfig.doPropagation) {
