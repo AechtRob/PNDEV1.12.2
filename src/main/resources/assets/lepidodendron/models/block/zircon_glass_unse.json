@@ -1,19 +1,20 @@
-{   "parent": "block/block",
-    "textures": {
-        "particle": "lepidodendron:blocks/zircon_glass",
-        "glass": "lepidodendron:blocks/zircon_glass",
-		"eastwestface": "lepidodendron:blocks/zircon_glass_38",
-		"clearglass": "lepidodendron:blocks/zircon_glass_26"
-    },
-    "elements": [
-        {   "_comment": "west",
-            "from": [ 0, 0, 0 ],
-            "to": [ 1, 16, 16 ],
-            "faces": {
-                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#clearglass" },
-                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface", "cullface": "west" },
-                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface" }
-            }
-        }
-    ]
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "lepidodendron:blocks/zircon_glass",
+		"glass": "lepidodendron:blocks/zircon_glass"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [1, 1, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"west": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 1], "texture": "#glass"}
+			}
+		}
+	]
 }

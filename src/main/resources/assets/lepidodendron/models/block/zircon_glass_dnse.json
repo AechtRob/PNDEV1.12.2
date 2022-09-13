@@ -1,18 +1,40 @@
-{   "parent": "block/block",
-    "textures": {
-        "particle": "lepidodendron:blocks/zircon_glass",
-        "glass": "lepidodendron:blocks/zircon_glass",
-		"eastwestface": "lepidodendron:blocks/zircon_glass_14"
-    },
-    "elements": [
-        {   "_comment": "west",
-            "from": [ 0, 0, 0 ],
-            "to": [ 1, 16, 16 ],
-            "faces": {
-                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#glass" },
-                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface", "cullface": "west" },
-                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastwestface" }
-            }
-        }
-    ]
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "lepidodendron:blocks/zircon_glass",
+		"glass": "lepidodendron:blocks/zircon_glass"
+	},
+	"elements": [
+		{
+			"from": [0, 15, 1],
+			"to": [1, 16, 15],
+			"faces": {
+				"east": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"west": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#glass"},
+				"down": {"uv": [0, 0, 16, 1], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [0, 15, 0],
+			"to": [1, 16, 1],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"east": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [0, 15, 15],
+			"to": [1, 16, 16],
+			"faces": {
+				"east": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"south": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#glass"}
+			}
+		}
+	]
 }

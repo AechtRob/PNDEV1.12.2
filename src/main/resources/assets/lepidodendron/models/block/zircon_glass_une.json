@@ -1,29 +1,49 @@
-{   "parent": "block/block",
-    "textures": {
-        "particle": "lepidodendron:blocks/zircon_glass",
-        "glass": "lepidodendron:blocks/zircon_glass",
-		"westface": "lepidodendron:blocks/zircon_glass_39",
-		"eastface": "lepidodendron:blocks/zircon_glass_37",
-		"clearglass": "lepidodendron:blocks/zircon_glass_26"
-    },
-    "elements": [
-        {   "_comment": "west",
-            "from": [ 0, 0, 0 ],
-            "to": [ 1, 16, 16 ],
-            "faces": {
-                "up":    { "uv": [ 0, 0,  1, 16 ], "texture": "#clearglass" },
-                "west":  { "uv": [ 0, 0,  16, 16 ], "texture": "#westface", "cullface": "west" },
-                "east":  { "uv": [ 0, 0,  16, 16 ], "texture": "#eastface" }
-            }
-        },
-        {   "_comment": "south",
-            "from": [ 0, 0, 15 ],
-            "to": [ 16, 16, 16 ],
-            "faces": {
-                "up":    { "uv": [ 0, 0,  16, 1 ], "texture": "#clearglass" },
-                "north": { "uv": [ 0, 0,  16, 16 ], "texture": "#westface" },
-                "south": { "uv": [ 0, 0,  16, 16 ], "texture": "#eastface", "cullface": "south" }
-            }
-        }
-    ]
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "lepidodendron:blocks/zircon_glass",
+		"glass": "lepidodendron:blocks/zircon_glass"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [1, 1, 15],
+			"faces": {
+				"east": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"west": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"up": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"down": {"uv": [0, 0, 1, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [1, 0, 15],
+			"to": [16, 1, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 15, 1], "texture": "#glass"},
+				"south": {"uv": [0, 0, 15, 1], "texture": "#glass"},
+				"up": {"uv": [0, 0, 15, 1], "texture": "#glass"},
+				"down": {"uv": [0, 0, 15, 1], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [0, 1, 15],
+			"to": [1, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"east": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"south": {"uv": [0, 0, 1, 15], "texture": "#glass"},
+				"west": {"uv": [0, 0, 1, 15], "texture": "#glass"}
+			}
+		},
+		{
+			"from": [0, 0, 15],
+			"to": [1, 1, 16],
+			"faces": {
+				"south": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"west": {"uv": [0, 0, 1, 1], "texture": "#glass"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#glass"}
+			}
+		}
+	]
 }
