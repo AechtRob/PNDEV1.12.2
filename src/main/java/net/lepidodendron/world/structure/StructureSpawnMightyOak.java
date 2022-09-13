@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronDecorationHandler;
-import net.lepidodendron.procedure.ProcedureWorldGenAgathisNoCheck;
+import net.lepidodendron.procedure.ProcedureWorldGenMightyOak;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,8 +17,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
-	public StructureSpawnAgathis(ElementsLepidodendronMod instance) {
+public class StructureSpawnMightyOak extends ElementsLepidodendronMod.ModElement {
+	public StructureSpawnMightyOak(ElementsLepidodendronMod instance) {
 		super(instance, 48);
 	}
 
@@ -26,32 +26,36 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 	public void generateWorld(Random random, int i2, int k2, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
 		boolean isNetherType = false;
-		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimAgathis))
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimMightyOak))
 			dimensionCriteria = true;
-		if (!LepidodendronConfigPlants.genAgathis && !LepidodendronConfig.genAllPlants)
+		if (!LepidodendronConfigPlants.genMightyOak && !LepidodendronConfig.genAllPlants)
 			dimensionCriteria = false;
 		if (!dimensionCriteria)
 			return;
-			
+
 		boolean biomeCriteria = false;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAgathisBlacklistBiomes))) {
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMightyOakBlacklistBiomes))) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 				biomeCriteria = true;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HOT))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
+				biomeCriteria = false;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 				biomeCriteria = false;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 				biomeCriteria = false;
 		}
-		if (matchBiome(biome, LepidodendronConfigPlants.genAgathisOverrideBiomes))
+		if (matchBiome(biome, LepidodendronConfigPlants.genMightyOakOverrideBiomes))
 			biomeCriteria = true;
 		if (!biomeCriteria)
 			return;
 			
-		int GenChance = 10000;
-		double GenMultiplier = LepidodendronConfigPlants.multiplierAgathis;
+		int GenChance = 8000;
+		double GenMultiplier = LepidodendronConfigPlants.multiplierMightyOak;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
 		//Is this a transformed biome?
@@ -61,7 +65,7 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 		}
 		
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
-			int count = random.nextInt(1) + 1;
+			int count = random.nextInt(5) + 2;
 			for (int a = 0; a < count; a++) {
 				int i = i2 + random.nextInt(16) + 8;
 				int k = k2 + random.nextInt(16) + 8;
@@ -83,6 +87,7 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 							&& ((world.getBlockState(new BlockPos(i, height, k))).getMaterial() != Material.WEB)
 							&& ((world.getBlockState(new BlockPos(i, height, k))).getMaterial() != Material.PLANTS)
 						)
+
 							break;
 						height--;
 					}
@@ -99,11 +104,12 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 					blockCriteria = true;
 				if ((world.getBlockState(new BlockPos(i, j, k))).getMaterial() == Material.GROUND)
 					blockCriteria = true;
+				
 				if (!blockCriteria)
 					continue;
 		
-				int maxheight = LepidodendronConfigPlants.maxheightAgathis;
-				int minheight = LepidodendronConfigPlants.minheightAgathis;
+				int maxheight = LepidodendronConfigPlants.maxheightMightyOak;
+				int minheight = LepidodendronConfigPlants.minheightMightyOak;
 				if (maxheight < 0) {maxheight = 0;}
 				if (maxheight > 250) {maxheight = 250;}
 				if (minheight < 1) {minheight = 1;}
@@ -115,17 +121,21 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 					
 				biomeCriteria = false;
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
-				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAgathisBlacklistBiomes))) {
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genMightyOakBlacklistBiomes))) {
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.FOREST))
 						biomeCriteria = true;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.SNOWY))
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.HOT))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.CONIFEROUS))
+						biomeCriteria = false;
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
 						biomeCriteria = false;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.MUSHROOM))
 						biomeCriteria = false;
 				}
-				if (matchBiome(biome, LepidodendronConfigPlants.genAgathisOverrideBiomes))
+				if (matchBiome(biome, LepidodendronConfigPlants.genMightyOakOverrideBiomes))
 					biomeCriteria = true;
 				if (!biomeCriteria)
 					continue;
@@ -145,21 +155,28 @@ public class StructureSpawnAgathis extends ElementsLepidodendronMod.ModElement {
 				int x = spawnTo.getX();
 				int y = spawnTo.getY();
 				int z = spawnTo.getZ();
-				boolean SaplingSpawn = false;
 				{
-					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-					$_dependencies.put("x", i);
-					$_dependencies.put("y", j + 1);
-					$_dependencies.put("z", k);
-					$_dependencies.put("world", world);
-					$_dependencies.put("SaplingSpawn", SaplingSpawn);
+					//java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					//$_dependencies.put("x", i);
+					//$_dependencies.put("y", j + 1);
+					//$_dependencies.put("z", k);
+					//$_dependencies.put("world", world);
 					if ((world.canSeeSky(spawnTo)) || 
 					(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
 					&& world.canSeeSky(spawnTo.up()))) {
 						world.setBlockToAir(spawnTo);
 						world.setBlockToAir(spawnTo.up());
 					}
-					ProcedureWorldGenAgathisNoCheck.executeProcedure($_dependencies);
+					int TreeHeight = 15 + random.nextInt(20);
+					if (TreeHeight < 22 && Math.random() > 0.5) {
+						TreeHeight = 17 + random.nextInt(22);
+					}
+					if (TreeHeight > 25) {
+						ProcedureWorldGenMightyOak.executeProcedure(world, spawnTo, TreeHeight,2);
+					}
+					else {
+						ProcedureWorldGenMightyOak.executeProcedure(world, spawnTo, TreeHeight,1);
+					}
 				}
 
 			}

@@ -48,6 +48,13 @@ public class LepidodendronConfigPlants {
     public static int minheightLiriodendron = 1;
     public static int maxheightLiriodendron = 90;
     public static double multiplierLiriodendron = 1;
+    public static boolean genMightyOak = false;
+    public static String[] genMightyOakBlacklistBiomes = new String[0];
+    public static String[] genMightyOakOverrideBiomes = new String[0];
+    public static int[] dimMightyOak = new int[]{0};
+    public static int minheightMightyOak = 1;
+    public static int maxheightMightyOak = 90;
+    public static double multiplierMightyOak = 1;
     public static boolean genMagnolia = false;
     public static String[] genMagnoliaBlacklistBiomes = new String[0];
     public static String[] genMagnoliaOverrideBiomes = new String[0];
@@ -2585,6 +2592,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Liriodendron", "multiplierLiriodendron", multiplierLiriodendron);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierLiriodendron = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Mighty Oak", "genMightyOak", genMightyOak);
+        prop.setComment("Set to true to generate Mighty Oaks naturally [default: false]");
+        genMightyOak = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mighty Oak", "genMightyOakBlacklistBiomes", genMightyOakBlacklistBiomes);
+        prop.setComment("List of biomes Mighty Oaks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genMightyOakBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mighty Oak", "genMightyOakOverrideBiomes", genMightyOakOverrideBiomes);
+        prop.setComment("List of biomes Mighty Oaks are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genMightyOakOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Mighty Oak", "dimMightyOak", dimMightyOak);
+        prop.setComment("List of dimension IDs Mighty Oaks can generate in [default: 0]");
+        dimMightyOak = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mighty Oak", "minheightMightyOak", minheightMightyOak);
+        prop.setComment("Minimum height that Mighty Oaks can generate (1 to 250) [default: 1]");
+        minheightMightyOak = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mighty Oak", "maxheightMightyOak", maxheightMightyOak);
+        prop.setComment("Maximum height that Mighty Oaks can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightMightyOak = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Mighty Oak", "multiplierMightyOak", multiplierMightyOak);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierMightyOak = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Magnolia", "genMagnolia", genMagnolia);
