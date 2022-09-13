@@ -40,6 +40,7 @@ public class AlgaeGenerator extends WorldGenerator
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
 		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
+		boolean gunk = (this.algae == BlockWaterBottomGunk.block);
 		boolean rugosas = (this.algae == BlockRugosa1.block || this.algae == BlockRugosa2.block || this.algae == BlockRugosa3.block || this.algae == BlockRugosa4.block || this.algae == BlockRugosa5.block);
 		boolean anemones = (this.algae == BlockAnemone1.block || this.algae == BlockAnemone2.block || this.algae == BlockAnemone3.block || this.algae == BlockAnemone4.block || this.algae == BlockAnemone5.block || this.algae == BlockAnemone6.block || this.algae == BlockAnemone7.block || this.algae == BlockAnemone8.block || this.algae == BlockAnemone9.block);
 		boolean cystoids = (this.algae == BlockCystoidAristocystites.block || this.algae == BlockCystoidBolboporites.block || this.algae == BlockCystoidEchinosphaerites.block || this.algae == BlockCystoidPseudocrinites.block);
@@ -85,8 +86,15 @@ public class AlgaeGenerator extends WorldGenerator
 		bound = 4;
 	}
 
+		int multiplier = 1;
+		if (algae) {
+			multiplier = 4;
+		}
+		if (gunk) {
+			multiplier = 10;
+		}
 
-		for (int i = 0; i < 64; ++i)
+		for (int i = 0; i < (64 * multiplier); ++i)
 		{
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
 			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
@@ -129,11 +137,14 @@ public class AlgaeGenerator extends WorldGenerator
 						}
 					}
 
-					//And check that algae do not generate too deep:
-					if (algae && k < worldIn.getSeaLevel() - 10) {
+					//And check that algae do not generate too deep and some other tests:
+					if (algae && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 10)) {
 						waterDepthCheckMin = false;
 					}
-					if (rugosas && this.algae != BlockRugosa5.block && k < worldIn.getSeaLevel() - 18) {
+					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 18)) {
+						waterDepthCheckMin = false;
+					}
+					if (gunk && (k + (rand.nextInt(3) - 1)) > (worldIn.getSeaLevel() - 22)) {
 						waterDepthCheckMin = false;
 					}
 
@@ -185,6 +196,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockCystoidAristocystites.block)
 											&& (this.algae != BlockCrinoidPetalocrinus.block)
 											&& (this.algae != BlockCrinoidVadarocrinus.block)
+											&& (this.algae != BlockWaterBottomGunk.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);
@@ -204,13 +216,13 @@ public class AlgaeGenerator extends WorldGenerator
 
 									if (enumfacing1 != EnumFacing.UP && enumfacing1 != EnumFacing.DOWN &&
 											((worldIn.getBlockState(pos).getMaterial() == Material.SAND)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
-													|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.ROCK)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.GROUND)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.CLAY)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.CORAL)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.GLASS)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.IRON)
+												|| (worldIn.getBlockState(pos).getMaterial() == Material.WOOD))
 											&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, enumfacing1) == BlockFaceShape.SOLID)) {
 										worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(FACING, enumfacing1), 2);
 										return true;

@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:underwater_gunk"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:underwater_gunk", "x": 90}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:underwater_gunk", "x": 90, "y": 90 }
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:underwater_gunk", "x": 90, "y": 180 }
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:underwater_gunk", "x": 90, "y": 270 }
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:underwater_gunk"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:underwater_gunk", "x": 180}
+    ]
+  }
+}

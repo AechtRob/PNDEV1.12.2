@@ -1550,6 +1550,9 @@ public class LepidodendronConfigPlants {
     public static String[] genBrownLeafyAlgaeBlacklistBiomes = new String[0];
     public static String[] genBrownLeafyAlgaeOverrideBiomes = new String[0];
     public static int weightBrownLeafyAlgae = 100;
+    public static String[] genUnderwaterGunkBlacklistBiomes = new String[0];
+    public static String[] genUnderwaterGunkOverrideBiomes = new String[0];
+    public static int weightUnderwaterGunk = 100;
     public static String[] genBrownStalkyAlgaeBlacklistBiomes = new String[0];
     public static String[] genBrownStalkyAlgaeOverrideBiomes = new String[0];
     public static int weightBrownStalkyAlgae = 100;
@@ -2086,9 +2089,12 @@ public class LepidodendronConfigPlants {
         prop.setComment("List of biomes Brown Leafy Algae are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genBrownLeafyAlgaeOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
-        prop = cfg.get("WorldGen Algae-Sponges", "weightBrownLeafyAlgae", weightBrownLeafyAlgae);
-        prop.setComment("Percentage chance thatBrown Leafy Algae generates in a suitable chunk (0 to 100) [default: 100]");
-        weightBrownLeafyAlgae = prop.getInt();
+        prop = cfg.get("WorldGen Algae-Sponges", "weightUnderwaterGunk", weightUnderwaterGunk);
+        prop.setComment("Percentage chance that Underwater Gunk generates in a suitable chunk (0 to 100) [default: 100]");
+        weightUnderwaterGunk = prop.getInt();
+        prop = cfg.get("WorldGen Algae-Sponges", "weightUnderwaterGunk", weightUnderwaterGunk);
+        prop.setComment("Percentage chance that Underwater Gunk generates in a suitable chunk (0 to 100) [default: 100]");
+        weightUnderwaterGunk = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Algae-Sponges", "genBrownStalkyAlgaeBlacklistBiomes", genBrownStalkyAlgaeBlacklistBiomes);
         prop.setComment("List of biomes Brown Stalky Algae are blacklisted from, in the format: modid:biomeid [default: empty]");
