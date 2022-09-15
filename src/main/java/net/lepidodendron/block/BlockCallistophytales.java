@@ -74,6 +74,16 @@ public class BlockCallistophytales extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 		}
 
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 15;
+		}
+
 		protected BlockStateContainer createBlockState()
 	    {
 	        return new BlockStateContainer(this, new IProperty[] {UP, NORTH, EAST, SOUTH, WEST});

@@ -71,6 +71,16 @@ public class BlockCycadopterisSapling extends ElementsLepidodendronMod.ModElemen
 			setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		}
 
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
+		}
+
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	    {
 	        return SAPLING_AABB;

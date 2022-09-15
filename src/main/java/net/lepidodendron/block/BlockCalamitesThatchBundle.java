@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -46,6 +47,16 @@ public class BlockCalamitesThatchBundle extends ElementsLepidodendronMod.ModElem
 			setTranslationKey("pf_calamites_thatch_bundle");
 			setCreativeTab(TabLepidodendronBuilding.tab);
         	this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Y));
+		}
+
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 20;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
 		}
 
 	public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance)

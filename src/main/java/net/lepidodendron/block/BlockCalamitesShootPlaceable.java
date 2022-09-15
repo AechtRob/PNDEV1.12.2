@@ -109,7 +109,7 @@ public class BlockCalamitesShootPlaceable extends ElementsLepidodendronMod.ModEl
 
 		@SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }

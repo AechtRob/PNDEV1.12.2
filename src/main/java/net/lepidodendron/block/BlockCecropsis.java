@@ -70,6 +70,16 @@ public class BlockCecropsis extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
+		}
+
+		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
 					&&
@@ -98,16 +108,6 @@ public class BlockCecropsis extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
 			return true;
-		}
-
-		@Override
-		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 100;
-		}
-
-		@Override
-		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
 		}
 
 		@Override

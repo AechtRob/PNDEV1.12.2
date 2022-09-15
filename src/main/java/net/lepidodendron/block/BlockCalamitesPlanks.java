@@ -59,12 +59,6 @@ public class BlockCalamitesPlanks extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 
-		//@Override
-		//public int tickRate(World world) {
-		//	return 0;
-		//}
-
-
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 30;
@@ -74,6 +68,7 @@ public class BlockCalamitesPlanks extends ElementsLepidodendronMod.ModElement {
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 5;
 		}
+
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
