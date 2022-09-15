@@ -73,6 +73,16 @@ public class BlockEquisetitesReedStem extends ElementsLepidodendronMod.ModElemen
 		}
 
 		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 100;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 60;
+		}
+
+		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	    {
 	        return state.withProperty(LEVEL, 0);

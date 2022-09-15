@@ -201,6 +201,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			setTickRandomly(true);
 		}
 
+
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation

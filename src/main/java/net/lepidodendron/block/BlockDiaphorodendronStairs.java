@@ -3,13 +3,8 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronBuilding;
+import net.lepidodendron.block.base.BlockWoodenStairsPF;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStairs;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -42,43 +37,18 @@ public class BlockDiaphorodendronStairs extends ElementsLepidodendronMod.ModElem
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:diaphorodendron_stairs", "inventory"));
 	}
-	public static class BlockCustom extends BlockStairs {
+	public static class BlockCustom extends BlockWoodenStairsPF {
 		public BlockCustom() {
-			super(new Block(Material.WOOD).getDefaultState());
 			setTranslationKey("pf_diaphorodendron_stairs");
-			setSoundType(SoundType.WOOD);
-			setHarvestLevel("axe", 1);
-			setHardness(2F);
-			setResistance(3F);
-			setLightLevel(0F);
-			setLightOpacity(0);
-			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
-
-		//@Override
-		//public int tickRate(World world) {
-		//	return 0;
-		//}
-
-
-		@Override
-		public boolean isOpaqueCube(IBlockState state) {
-			return false;
-		}
-
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 20;
+			return 100;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 5;
-		}
-
-		@Override
-		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.WOOD;
+			return 60;
 		}
 	}
 }

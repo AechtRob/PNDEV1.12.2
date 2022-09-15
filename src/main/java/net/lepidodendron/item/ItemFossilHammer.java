@@ -5,6 +5,7 @@ import com.google.common.collect.Sets;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.*;
+import net.lepidodendron.block.base.BlockFossil;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.material.Material;

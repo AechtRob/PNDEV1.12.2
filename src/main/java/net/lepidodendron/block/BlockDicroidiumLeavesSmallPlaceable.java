@@ -162,12 +162,12 @@ public class BlockDicroidiumLeavesSmallPlaceable extends ElementsLepidodendronMo
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return 100;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
+			return 60;
 		}
 
 		@Override

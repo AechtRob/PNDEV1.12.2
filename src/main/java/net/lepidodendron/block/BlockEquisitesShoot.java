@@ -67,6 +67,7 @@ public class BlockEquisitesShoot extends ElementsLepidodendronMod.ModElement {
 			//setTickRandomly(true);
 		}
 
+
 		@Override
 		@Nullable
 		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
