@@ -190,6 +190,11 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isOpaqueCube(IBlockState state) {
+			return false;
+		}
+
+		@Override
 		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
 			if (!playerIn.capabilities.allowEdit) {
