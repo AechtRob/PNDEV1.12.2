@@ -37,7 +37,7 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
 
     private static final ResourceLocation TEXTURE_END_0 = new ResourceLocation("minecraft:textures/blocks/anvil_base.png");
     private static final ResourceLocation TEXTURE_END_1 = new ResourceLocation("minecraft:textures/blocks/gold_block.png");
-    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge");
+    private static final ResourceLocation TEXTURE_END_2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/iron_bridge.png");
     private static final ResourceLocation TEXTURE_END_3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/zircon_block.png");
     private static final ResourceLocation TEXTURE_END_4 = new ResourceLocation("minecraft:textures/blocks/emerald_block.png");
     private static final ResourceLocation TEXTURE_END_5 = new ResourceLocation("minecraft:textures/blocks/diamond_block.png");
@@ -48,6 +48,10 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
     private static final ResourceLocation TEXTURE_END_10 = new ResourceLocation("minecraft:textures/blocks/coal_block.png");
     private static final ResourceLocation TEXTURE_END_11 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/araucarioxylon_wood_petrified.png");
     private static final ResourceLocation TEXTURE_END_12 = new ResourceLocation("minecraft:textures/blocks/redstone_block.png");
+
+    private static final ResourceLocation TEXTURE_END_13 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/anthracite_block.png");
+    private static final ResourceLocation TEXTURE_END_14 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/salt_block.png");
+    private static final ResourceLocation TEXTURE_END_15 = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/sulphur_block.png");
 
     public RenderRopeBarrier() {
         this.rope = new ModelRopePoleRope();
@@ -120,6 +124,18 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
 
             case 12:
                 TEXTURE_END = TEXTURE_END_12;
+                break;
+
+            case 13:
+                TEXTURE_END = TEXTURE_END_13;
+                break;
+
+            case 14:
+                TEXTURE_END = TEXTURE_END_14;
+                break;
+
+            case 15:
+                TEXTURE_END = TEXTURE_END_15;
                 break;
 
         }

@@ -38,6 +38,15 @@
         },
         {   "when": { "variant": 12 },
             "apply": {"model": "lepidodendron:rope_barrier_12"}
+        },
+        {   "when": { "variant": 13 },
+            "apply": {"model": "lepidodendron:rope_barrier_13"}
+        },
+        {   "when": { "variant": 14 },
+            "apply": {"model": "lepidodendron:rope_barrier_14"}
+        },
+        {   "when": { "variant": 15 },
+            "apply": {"model": "lepidodendron:rope_barrier_15"}
         }
     ]
 }

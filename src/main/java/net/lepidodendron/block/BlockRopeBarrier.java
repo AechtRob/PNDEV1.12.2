@@ -4,10 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
-import net.lepidodendron.item.ItemBalticAmberChunk;
-import net.lepidodendron.item.ItemDominicanAmberChunk;
-import net.lepidodendron.item.ItemRope;
-import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -81,7 +78,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyBool SOUTH = PropertyBool.create("south");
 	public static final PropertyBool EAST = PropertyBool.create("east");
 	public static final PropertyBool WEST = PropertyBool.create("west");
-	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 12);
+	public static final PropertyInteger VARIANT = PropertyInteger.create("variant", 0, 15);
 
 	public class BlockCustom extends Block implements ITileEntityProvider {
 		public BlockCustom() {
@@ -125,7 +122,14 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockAraucarioxylonLogPetrified.block, (int) (1)));
 					} else if (variant == 12) {
 						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Blocks.REDSTONE_TORCH, (int) (1)));
+					} else if (variant == 13) {
+						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemAnthracite.block, (int) (1)));
+					} else if (variant == 14) {
+						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSalt.block, (int) (1)));
+					} else if (variant == 15) {
+						entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemSulphur.block, (int) (1)));
 					}
+
 					if (entityToSpawn != null) {
 						entityToSpawn.setPickupDelay(10);
 						world.spawnEntity(entityToSpawn);
@@ -247,6 +251,15 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 					enumUsed = 11;
 				} else if (playerIn.getHeldItem(hand).getItem() == new ItemStack(Blocks.REDSTONE_TORCH, 1).getItem()) {
 					enumUsed = 12;
+				}
+				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemAnthracite.block, (int) (1)).getItem()){
+					enumUsed = 13;
+				}
+				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSalt.block, (int) (1)).getItem()){
+					enumUsed = 14;
+				}
+				else if (playerIn.getHeldItemMainhand().getItem() == new ItemStack(ItemSulphur.block, (int) (1)).getItem()){
+					enumUsed = 15;
 				}
 
 				int oldNorthDye = new Object() {

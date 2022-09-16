@@ -1,0 +1,61 @@
+{
+	"textures": {
+		"texture": "blocks/anvil_base",
+		"metal": "lepidodendron:blocks/salt_block",
+		"particle": "blocks/anvil_base"
+	},
+	"elements": [
+		{
+			"name": "post",
+			"from": [7.5, 1, 7.5],
+			"to": [8.5, 14, 8.5],
+			"faces": {
+				"north": {"uv": [7, 1, 8, 14], "texture": "#texture"},
+				"east": {"uv": [8, 1, 9, 14], "texture": "#texture"},
+				"south": {"uv": [9, 1, 10, 14], "texture": "#texture"},
+				"west": {"uv": [10, 1, 11, 14], "texture": "#texture"},
+				"up": {"uv": [2, 2, 3, 3], "texture": "#texture"},
+				"down": {"uv": [1, 1, 2, 2], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "base",
+			"from": [6, 0, 6],
+			"to": [10, 1, 10],
+			"faces": {
+				"north": {"uv": [6, 6, 10, 7], "texture": "#texture"},
+				"east": {"uv": [5, 5, 9, 6], "texture": "#texture"},
+				"south": {"uv": [4, 4, 8, 5], "texture": "#texture"},
+				"west": {"uv": [3, 3, 7, 4], "texture": "#texture"},
+				"up": {"uv": [10, 1, 14, 5], "texture": "#texture"},
+				"down": {"uv": [8, 8, 12, 12], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "knob1",
+			"from": [7.65, 14, 7.65],
+			"to": [8.35, 15, 8.35],
+			"faces": {
+				"north": {"uv": [5, 8, 5.7, 9], "texture": "#metal"},
+				"east": {"uv": [6, 8, 6.7, 9], "texture": "#metal"},
+				"south": {"uv": [5, 7, 5.7, 8], "texture": "#metal"},
+				"west": {"uv": [6, 7, 6.7, 8], "texture": "#metal"},
+				"up": {"uv": [7, 7, 7.7, 7.7], "texture": "#metal"},
+				"down": {"uv": [7, 8, 7.7, 8.7], "texture": "#metal"}
+			}
+		},
+		{
+			"name": "knob1",
+			"from": [7, 15, 7],
+			"to": [9, 16, 9],
+			"faces": {
+				"north": {"uv": [3, 6, 5, 7], "texture": "#metal"},
+				"east": {"uv": [3, 6, 5, 7], "texture": "#metal"},
+				"south": {"uv": [3, 6, 5, 7], "texture": "#metal"},
+				"west": {"uv": [3, 6, 5, 7], "texture": "#metal"},
+				"up": {"uv": [10, 7, 12, 9], "texture": "#metal"},
+				"down": {"uv": [6, 6, 8, 8], "texture": "#metal"}
+			}
+		}
+	]
+}
