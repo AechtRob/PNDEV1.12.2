@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.BlockFossil;
 import net.lepidodendron.util.FossilDrops;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;

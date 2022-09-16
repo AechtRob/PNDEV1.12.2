@@ -1,5 +1,5 @@
 
-package net.lepidodendron.block.base;
+package net.lepidodendron.block;
 
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemFossilHammer;

@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "nuggetIron"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:rope_barrier",
+    "count": 4
+  }
+}

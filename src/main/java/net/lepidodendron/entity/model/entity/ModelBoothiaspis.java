@@ -137,22 +137,24 @@ public class ModelBoothiaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.head.offsetY = 1.2F;
+        this.head.offsetY = 1.15F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3};
         float speed = 0.5F;
+        float deg = 1F;
         if (!e.isInWater()) {
-            speed = 0.99F;
+            speed = 1.5F;
+            deg = 1.8F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed*0.5F, 0.08F, -3, f2, 1);
-            this.chainSwing(fishTail, speed*0.5F, 0.235F, -2.6, f2, 1);
+            this.chainWave(fishTail, speed*0.5F, 0.08F * deg, -3, f2, 1);
+            this.chainSwing(fishTail, speed*0.5F, 0.235F * deg, -2.6, f2, 1);
             this.swing(head, speed*0.5F, 0.16F, true, 0, 0, f2, 1);
 
             if (!e.isInWater()) {
-                this.head.offsetY = 1.15F;
+                //this.head.offsetY = 1.15F;
                 this.head.rotateAngleY = (float)Math.toRadians(90);
-                this.bob(head, -speed*0.5F, 5F, false, f2, 1);
+                this.bob(head, -speed*0.75F, 2F, false, f2, 1);
             }
         }
     }
