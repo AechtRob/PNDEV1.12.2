@@ -75,6 +75,7 @@ public class BlockHermanophyton extends ElementsLepidodendronMod.ModElement {
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false));
 		}
 
+
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
@@ -167,12 +168,12 @@ public class BlockHermanophyton extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 60;
+			return 100;
 		}
 
 		@Override
 		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-			return 30;
+			return 60;
 		}
 
 		@Override

@@ -336,6 +336,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 				if (isWaterBlock((World) world, pos.south(2))) {waterCheck = true;}
 				if (isWaterBlock((World) world, pos.east(2))) {waterCheck = true;}
 				if (isWaterBlock((World) world, pos.west(2))) {waterCheck = true;}
+
+				if (isWaterBlock((World) world, pos.up())) {waterCheck = true;}
 			}
 			
 			if ((direction == EnumFacing.UP) && (waterCheck)
