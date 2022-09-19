@@ -2,7 +2,7 @@
     "name": "Cryptomartus",
     "read_by_default": true,
     "icon": "paleopedia:textures/cryptomartus_icon.png",
-    "category": "patchouli:carboniferous_animal",
+    "category": "lepidodendron:carboniferous_animal",
     "turnin": "lepidodendron:pf_adv_book_acrolepis",
     "pages": [
         {

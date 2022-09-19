@@ -2,7 +2,7 @@
 	"name": "Permotarbus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/permotarbus_icon.png",
-	"category": "patchouli:permian_animal",
+	"category": "lepidodendron:permian_animal",
 	"turnin": "lepidodendron:pf_adv_book_permotarbus",
 	"pages": [
 		{

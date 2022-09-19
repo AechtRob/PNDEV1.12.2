@@ -1,0 +1,32 @@
+{
+	"name": "Helmetia",
+	"read_by_default": true,
+	"icon": "lepidodendron:helmetia_raw",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_helmetia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_helmetia",
+			"title": "Helmetia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobitomorpha$(br)>Conciliterga"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/helmetia.png"],
+			"title": "H. expansa",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helmetia",
+			"type": "text",
+			"text": "Helmetia was a Cambrian trilobitomorph that possessed a large flat carapace that covered its entire body and head. Its fossils are incredibly rare and poorly known. Its carapace was separated into many segments each ending with angled spike. Because of this, it was inferred to have been a slow swimmer."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_helmetia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+
