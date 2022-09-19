@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraAulacoceras extends EntityPrehistoricFloraNau
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		//Drop an egg perhaps:
-		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
+		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
 			if (Math.random() > 0.5) {
 				ItemStack itemstack = new ItemStack(ItemNautiloidEggsAulacoceras.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);

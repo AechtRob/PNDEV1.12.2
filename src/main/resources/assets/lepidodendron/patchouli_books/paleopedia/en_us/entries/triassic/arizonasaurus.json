@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arizonasaurus",
 			"title": "Arizonasaurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Deltas, Canyons$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Canyons and Creeks$(br2)>Reptilia$(br)>Pseudosuchia$(br)>Poposauroidea$(br)>Ctenosauriscidae"
 		},
 		{
 			"type": "image",

@@ -171,14 +171,14 @@ public class LepidodendronConfig {
     public static String[] dimPermianMobsDesertFA = new String[0];
     public static String[] dimPermianMobsMountainsFA = new String[0];
 
-    public static String[] dimTriassicMobsOceanFA = new String[]{"fossil:fossil_ichthyosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
-    public static String[] dimTriassicMobsOceanClamBedsFA = new String[]{"fossil:fossil_ichthyosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
+    public static String[] dimTriassicMobsOceanFA = new String[]{"fossil:fossil.ichthyosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
+    public static String[] dimTriassicMobsOceanClamBedsFA = new String[]{"fossil:fossil.ichthyosaur{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:2:15:2"};
     public static String[] dimTriassicMobsRiverFA = new String[0];
     public static String[] dimTriassicMobsXericForestFA = new String[0];
     public static String[] dimTriassicMobsXericShrublandFA = new String[0];
-    public static String[] dimTriassicMobsLakelandFA = new String[]{"fossil:fossil_henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
+    public static String[] dimTriassicMobsLakelandFA = new String[]{"fossil:fossil.henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
     public static String[] dimTriassicMobsVolcanicHillsFA = new String[0];
-    public static String[] dimTriassicMobsFloodedForestFA = new String[]{"fossil:fossil_henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
+    public static String[] dimTriassicMobsFloodedForestFA = new String[]{"fossil:fossil.henodus{Mood:0,Hunger:1000,AgeTick:1000000,Attributes:[{Name:generic.maxHealth,Base:30}],Health:30}:5:15:3"};
     public static String[] dimTriassicMobsCoolForestFA = new String[0];
     public static String[] dimTriassicMobsMossMeadowFA = new String[0];
     public static String[] dimTriassicMobsDesertFA = new String[0];

@@ -17,6 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MultiPartEntityPart;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagDouble;
@@ -214,6 +215,11 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return false;
+		}
+
+		@Override
+		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
+			return Item.getItemFromBlock(this);
 		}
 
 		@Override

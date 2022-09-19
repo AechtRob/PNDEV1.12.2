@@ -278,6 +278,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -297,7 +298,39 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 6, neck2);
         this.faceTarget(f3, f4, 6, head1);
 
-        //float speed = 0.2F;
+        double width = Mussaurus.getEntityBoundingBox().maxX-Mussaurus.getEntityBoundingBox().minX;
+        double depth = Mussaurus.getEntityBoundingBox().maxZ-Mussaurus.getEntityBoundingBox().minZ;
+        double height = Mussaurus.getEntityBoundingBox().maxY-Mussaurus.getEntityBoundingBox().minY;
+        boolean isBaby = false;
+        if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+            isBaby = true;
+        }
+            //Is a baby so is quadrapedal:
+        if (isBaby) {
+
+            this.upperleg1.rotateAngleX = (float) Math.toRadians(-61.2);
+            this.lowerleg1.rotateAngleX = (float) Math.toRadians(74.67);
+            this.feet1.rotateAngleX = (float) Math.toRadians(-23.91);
+            this.feet1.offsetY = (float) Math.toRadians(-3.5);
+
+            this.upperleg2.rotateAngleX = (float) Math.toRadians(-61.2);
+            this.lowerleg2.rotateAngleX = (float) Math.toRadians(74.67);
+            this.feet2.rotateAngleX = (float) Math.toRadians(-23.91);
+            this.feet2.offsetY = (float) Math.toRadians(-3.5);
+
+            this.body.rotateAngleX = (float) Math.toRadians(15.11);
+            this.chest.rotateAngleX = (float) Math.toRadians(-9.89);
+
+            this.upperarm1.rotateAngleX = (float) Math.toRadians(44.89);
+            this.hands1.rotateAngleZ = (float) Math.toRadians(-75);
+            this.hands1.rotateAngleY = (float) Math.toRadians(-85);
+
+            this.upperarm2.rotateAngleX = (float) Math.toRadians(44.89);
+            this.hands2.rotateAngleZ = (float) Math.toRadians(75);
+            this.hands2.rotateAngleY = (float) Math.toRadians(85);
+
+            this.basin.offsetY = 0.4825F;
+        }
 
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
@@ -323,27 +356,34 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.chainWave(Neck, 0.05F * 2, -0.02F, 0.5F, f2, 0.8F);
                 this.chainFlap(Tail, (0.2F * 0.6F), 0.075F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (0.2F * 0.6F) * 2F, 0.0325F, 0.12F, f2, 1F);
-                if (Mussaurus.getAnimation() != Mussaurus.DRINK_ANIMATION) {
+                if (Mussaurus.getAnimation() != Mussaurus.DRINK_ANIMATION && !isBaby) {
                     this.chainWaveExtended(ArmL, 0.25F, 0.02F, 1.5, 8, f2, 1F);
                     this.chainWaveExtended(ArmR, 0.25F, 0.02F, 1.5, 5, f2, 1F);
                 }
-                //if (Mussaurus.getAnimation() == Mussaurus.STAND_ANIMATION) {
+                if (!isBaby) {
                     this.walk(body, 0.25F, 0.007F, false, 2.5F, 0, f2, 0.8F);
                     this.walk(chest, 0.25F, 0.015F, false, 2.5F, 0, f2, 0.8F);
-                //}
+                }
                 return;
            }
 
             if (Mussaurus.getIsFast() && Mussaurus.getAnimation() != Mussaurus.STAND_ANIMATION) { //Running
                 float speed = masterSpeed / 2.5F;
+                if (isBaby) {
+                    speed = speed * 1.5F;
+                }
                 //this.basin.offsetY = 0F;
-                this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
-                this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
+                if (!isBaby) {
+                    this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
+                    this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
+                }
 
                 this.chainWaveExtended(ArmL, speed, 0.10F, 0.5, 8, f2, 1F);
                 this.chainWaveExtended(ArmR, speed, 0.10F, 0.5, 5, f2, 1F);
-                this.walk(hands1, speed, 0.10F, true, 5, 0F, f2, 1F);
-                this.walk(hands2, speed, 0.10F, true, 2, 0F, f2, 1F);
+                if (!isBaby) {
+                    this.walk(hands1, speed, 0.10F, true, 5, 0F, f2, 1F);
+                    this.walk(hands2, speed, 0.10F, true, 2, 0F, f2, 1F);
+                }
 
                 this.walk(upperleg1, speed, 0.60F, true, 8, 0.55F, f2, 1F);
                 this.walk(upperleg2, speed, 0.60F, true, 5, 0.55F, f2, 1F);
@@ -357,7 +397,20 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.walk(toes1, speed, 0.85F, true, 7.5F, -0.2F, f2, 1F);
                 this.walk(toes2, speed, 0.85F, true, 4.5F, -0.2F, f2, 1F);
 
-                this.bobExtended(basin, speed * 2F, 0.5F, false, 2.5F, f2, 1F);
+                if (isBaby) {
+                    this.walk(upperarm1, speed, 0.60F, true, 5, 0.55F, f2, 1F);
+                    this.walk(upperarm2, speed, 0.60F, true, 8, 0.55F, f2, 1F);
+
+                    this.walk(arms1, speed, 0.60F, true, 3.5F, -0.7F, f2, 1F);
+                    this.walk(arms2, speed, 0.60F, true, 6.5F, -0.7F, f2, 1F);
+
+                    this.walk(hands1, speed, 0.25F, true, 1, -0.18F, f2, 1F);
+                    this.walk(hands2, speed, 0.25F, true, 4, -0.18F, f2, 1F);
+                }
+
+                if (!isBaby) {
+                    this.bobExtended(basin, speed * 2F, 0.5F, false, 2.5F, f2, 1F);
+                }
 
                 this.flap(basin, speed, 0.12F, false, 5.0F, 0.06F, f2, 1.0F);
                 this.flap(body, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
@@ -367,8 +420,10 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.flap(upperleg1, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
                 this.flap(upperleg2, speed, -0.12F, false, 5.0F, -0.06F, f2, 1.0F);
 
-                this.walk(body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
-                this.walk(chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                if (!isBaby) {
+                    this.walk(body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
+                    this.walk(chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                }
 
                 this.walk(neck1, speed * 2, -0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
                 this.walk(neck2, speed * 2, -0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
@@ -377,18 +432,25 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.chainFlap(Tail, (speed * 0.6F), 0.20F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.6F) * 2F, 0.10F, 0.12F, f2, 1F);
 
-                this.basin.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.2), false, 1.5F, f2, 1) + 0.2F;
+                if (!isBaby) {
+                    this.basin.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.2), false, 1.5F, f2, 1) + 0.2F;
+                }
             }
             else if (Mussaurus.getAnimation() != Mussaurus.STAND_ANIMATION) { //Walking
                 float speed = masterSpeed / 2.00F;
+                if (isBaby) {
+                    speed = speed * 1.5F;
+                }
                 //this.basin.offsetY = 0F;
                 this.upperleg1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.upperleg2.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 
-                this.chainWaveExtended(ArmL, speed, 0.10F, 0.5, 8, f2, 1F);
-                this.chainWaveExtended(ArmR, speed, 0.10F, 0.5, 5, f2, 1F);
-                this.walk(hands1, speed, 0.10F, true, 5, 0F, f2, 1F);
-                this.walk(hands2, speed, 0.10F, true, 2, 0F, f2, 1F);
+                if (!isBaby) {
+                    this.chainWaveExtended(ArmL, speed, 0.10F, 0.5, 8, f2, 1F);
+                    this.chainWaveExtended(ArmR, speed, 0.10F, 0.5, 5, f2, 1F);
+                    this.walk(hands1, speed, 0.10F, true, 5, 0F, f2, 1F);
+                    this.walk(hands2, speed, 0.10F, true, 2, 0F, f2, 1F);
+                }
 
                 this.walk(upperleg1, speed, 0.40F, true, 8, 0.35F, f2, 1F);
                 this.walk(upperleg2, speed, 0.40F, true, 5, 0.35F, f2, 1F);
@@ -396,8 +458,10 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.walk(lowerleg1, speed, 0.30F, true, 6.5F, 0F, f2, 1F);
                 this.walk(lowerleg2, speed, 0.30F, true, 3.5F, 0F, f2, 1F);
 
-                this.bobExtended(lowerleg1, speed, 1.5F, false, 7.0F, f2, 1F);
-                this.bobExtended(lowerleg2, speed, 1.5F, false, 4.0F, f2, 1F);
+                if (!isBaby) {
+                    this.bobExtended(lowerleg1, speed, 1.5F, false, 7.0F, f2, 1F);
+                    this.bobExtended(lowerleg2, speed, 1.5F, false, 4.0F, f2, 1F);
+                }
 
                 this.walk(feet1, speed, 0.25F, true, 4, -0.18F, f2, 1F);
                 this.walk(feet2, speed, 0.25F, true, 1, -0.18F, f2, 1F);
@@ -405,7 +469,20 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.walk(toes1, speed, 0.5F, true, 5.0F, -0.25F, f2, 1F);
                 this.walk(toes2, speed, 0.5F, true, 2.0F, -0.25F, f2, 1F);
 
-                this.bobExtended(basin, speed * 2F, 0.25F, false, 3.5F, f2, 1F);
+                if (isBaby) {
+                    this.walk(upperarm1, speed, 0.40F, true, 5, 0.35F, f2, 1F);
+                    this.walk(upperarm2, speed, 0.40F, true, 8, 0.35F, f2, 1F);
+
+                    this.walk(arms1, speed, 0.30F, true, 3.5F, 0F, f2, 1F);
+                    this.walk(arms2, speed, 0.30F, true, 6.5F, 0F, f2, 1F);
+
+                    this.walk(hands1, speed, 0.25F, true, 1, -0.18F, f2, 1F);
+                    this.walk(hands2, speed, 0.25F, true, 4, -0.18F, f2, 1F);
+                }
+
+                if (!isBaby) {
+                    this.bobExtended(basin, speed * 2F, 0.25F, false, 3.5F, f2, 1F);
+                }
 
                 this.flap(basin, speed, 0.22F, false, 6.0F, 0.06F, f2, 1.0F);
                 this.flap(body, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
@@ -415,8 +492,10 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.flap(upperleg1, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
                 this.flap(upperleg2, speed, -0.22F, false, 6.0F, -0.06F, f2, 1.0F);
 
-                this.walk(body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
-                this.walk(chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                if (!isBaby) {
+                    this.walk(body, speed * 2, 0.015F, false, 2.5F, -0.01F, f2, 0.8F);
+                    this.walk(chest, speed * 2, 0.04F, false, 2.5F, -0.01F, f2, 0.8F);
+                }
 
                 this.walk(neck1, speed * 2, -0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
                 this.walk(neck2, speed * 2, -0.2F * 0.75F, false, 2.5F, 0F, f2, 0.8F);
@@ -425,8 +504,9 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
                 this.chainFlap(Tail, (speed * 0.6F), 0.20F * 0.75F, 0.2F, f2, 1F);
                 this.chainSwing(Tail, (speed * 0.6F) * 2F, 0.10F * 0.75F, 0.12F, f2, 1F);
 
-                this.basin.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.8), false, 1.75F, f2, 1) + 0.2F;
-
+                if (!isBaby) {
+                    this.basin.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(0.8), false, 1.75F, f2, 1) + 0.2F;
+                }
             }
         }
         else {

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_smilosuchus",
 			"title": "Smilosuchus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakes, Deltas, Flooded$(br2)>Pseudosuchia$(br)>Phytosauria$(br)>Parasuchidae"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Lakes, Canyons and Creeks, Flooded$(br2)>Pseudosuchia$(br)>Phytosauria$(br)>Parasuchidae"
 		},
 		{
 			"type": "image",

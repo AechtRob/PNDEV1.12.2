@@ -78,7 +78,18 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public int getDrinkLength() {
-		return 160;  //grazes, does not drink
+		return 160;  //Grazes, does not drink
+	}
+
+	@Override
+	public boolean isDrinking() {
+		double width = this.getEntityBoundingBox().maxX-this.getEntityBoundingBox().minX;
+		double depth = this.getEntityBoundingBox().maxZ-this.getEntityBoundingBox().minZ;
+		double height = this.getEntityBoundingBox().maxY-this.getEntityBoundingBox().minY;
+		if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+			return false;
+		}
+		return super.isDrinking();
 	}
 
 	public int getStandLength() {
@@ -269,7 +280,10 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		}
 
 		//Sometimes stand up and look around:
-		if (this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		double width = this.getEntityBoundingBox().maxX-this.getEntityBoundingBox().minX;
+		double depth = this.getEntityBoundingBox().maxZ-this.getEntityBoundingBox().minZ;
+		double height = this.getEntityBoundingBox().maxY-this.getEntityBoundingBox().minY;
+		if ((!(height <= 0.9375 && width <= 1.0 && depth <= 1.0)) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 2000;
