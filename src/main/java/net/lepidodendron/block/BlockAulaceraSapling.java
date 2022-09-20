@@ -7,12 +7,11 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureWorldGenAulacera;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -31,10 +30,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -63,8 +65,9 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
+	protected static final AxisAlignedBB BUSH_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.6000000238418579D, 0.699999988079071D);
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends Block implements IPlantable {
 		public BlockCustom() {
 			super(Material.WATER);
 			setSoundType(SoundType.PLANT);
@@ -72,13 +75,26 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
         	setResistance(0F);
 			setTranslationKey("pf_aulacera_sapling");
+			this.setTickRandomly(true);
 			setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(STAGE, Integer.valueOf(0)));
 		}
 
+		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	    {
 	        return SAPLING_AABB;
 	    }
+
+		@Override
+		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return false;
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+			updateTick(worldIn, pos, state, new Random());
+		}
 
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
@@ -86,9 +102,14 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 	        if (!worldIn.isRemote)
 	        {
 	            super.updateTick(worldIn, pos, state, rand);
+
+				if (!canPlaceBlockAt(worldIn, pos)) {
+					worldIn.destroyBlock(pos, true);
+					return;
+				}
 	
-	            if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-	            if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0)
+	            //if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+	            if (rand.nextInt(7) == 0)
 	            {
 	                this.grow(worldIn, rand, pos, state);
 	            }
@@ -103,7 +124,8 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 		{
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
+				&& worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) {
 				return true;
 			}
 			return false;
@@ -186,5 +208,31 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
+
+		@Nullable
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+		{
+			return NULL_AABB;
+		}
+
+		public boolean isOpaqueCube(IBlockState state)
+		{
+			return false;
+		}
+
+		public boolean isFullCube(IBlockState state)
+		{
+			return false;
+		}
+
+		@Override
+		public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+			return null;
+		}
+
+		@Override
+		public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
+			return null;
+		}
 	}
 }

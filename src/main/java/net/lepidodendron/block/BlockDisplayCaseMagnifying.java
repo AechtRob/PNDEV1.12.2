@@ -50,7 +50,6 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElement {
@@ -64,7 +63,7 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockDisplayCaseMagnifying.BlockCustom().setRegistryName("display_case_magnifying"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -87,8 +86,8 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 			super(Material.GLASS, MapColor.WOOD);
 			setTranslationKey("pf_display_case_magnifying");
 			setSoundType(SoundType.GLASS);
-			setHardness(0F);
-			setResistance(0F);
+			setHardness(0.3F);
+			setResistance(0.3F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
@@ -122,11 +121,6 @@ public class BlockDisplayCaseMagnifying extends ElementsLepidodendronMod.ModElem
 			else { //WEST
 				return new AxisAlignedBB(0.8125, 0, 0, 1, 1, 1);
 			}
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return null;
 		}
 
 		@Override

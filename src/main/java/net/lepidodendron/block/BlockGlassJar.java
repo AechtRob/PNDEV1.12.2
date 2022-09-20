@@ -5,12 +5,10 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemGlassJarItem;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -60,14 +58,14 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 	}
 
 	public static class BlockCustom extends Block {
-		public static final PropertyDirection FACING = BlockDirectional.FACING;
+
 		public BlockCustom() {
 			super(Material.GLASS);
 			setTranslationKey("pf_glass_jar");
 			setSoundType(SoundType.GLASS);
 			setTickRandomly(true);
-			setHardness(0F);
-			setResistance(0F);
+			setHardness(0.3F);
+			setResistance(0.3F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(null);
@@ -219,7 +217,7 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
-			return Item.getItemFromBlock(this);
+			return (new ItemStack(ItemGlassJarItem.block, 1).getItem());
 		}
 
 		@Override

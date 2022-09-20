@@ -9,7 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemNautiloidEggsBasiloceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsPhragmoceras;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraPhragmoceras extends EntityPrehistoricFloraNa
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
@@ -116,7 +116,7 @@ public class EntityPrehistoricFloraPhragmoceras extends EntityPrehistoricFloraNa
 		//Drop an egg perhaps:
 		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
 			if (Math.random() > 0.5) {
-				ItemStack itemstack = new ItemStack(ItemNautiloidEggsBasiloceras.block, (int) (1));
+				ItemStack itemstack = new ItemStack(ItemNautiloidEggsPhragmoceras.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
 				entityToSpawn.setPickupDelay(10);
 				world.spawnEntity(entityToSpawn);

@@ -204,7 +204,7 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //We want to drop the real items or flowers
+	@SubscribeEvent //We want to drop the items
 	public void clickDisplays(PlayerInteractEvent.LeftClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayCase.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
@@ -216,14 +216,13 @@ public class LepidodendronEventSubscribers {
 						if (!(event.getWorld().isRemote)) {
 							ItemStack itemstack = tee.getStackInSlot(0);
 							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
-							//tee.setInventorySlotContents(0, ItemStack.EMPTY);
-
 							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
 							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						event.setCanceled(true);
+						return;
+						//event.setCanceled(true);
 					}
 				}
 			}
@@ -244,7 +243,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						event.setCanceled(true);
+						return;
+						//event.setCanceled(true);
 					}
 				}
 			}
@@ -265,7 +265,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						event.setCanceled(true);
+						return;
+						//event.setCanceled(true);
 					}
 				}
 			}
@@ -287,7 +288,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						event.setCanceled(true);
+						return;
+						//event.setCanceled(true);
 					}
 				}
 			}

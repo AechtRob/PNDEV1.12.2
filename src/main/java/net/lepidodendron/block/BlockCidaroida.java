@@ -45,7 +45,7 @@ public class BlockCidaroida extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("cidaroida_item"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -67,8 +67,8 @@ public class BlockCidaroida extends ElementsLepidodendronMod.ModElement {
 			super(Material.ROCK);
 			setTranslationKey("pf_cidaroida_item");
 			setSoundType(SoundType.STONE);
-			setHardness(0F);
-			setResistance(0F);
+			setHardness(1.25F);
+			setResistance(1.00F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMobile.tab);

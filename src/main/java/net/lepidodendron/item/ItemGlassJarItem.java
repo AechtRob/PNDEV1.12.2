@@ -80,7 +80,7 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_glass_jar_item");
 			setRegistryName("glass_jar_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
-			setMaxStackSize(1);
+			setMaxStackSize(16);
 		}
 
 		public boolean isTargetInList(EntityLivingBase target) {

@@ -7,12 +7,11 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.procedure.ProcedureWorldGenThamnobeatricea;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBush;
-import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -31,10 +30,13 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
@@ -57,42 +59,62 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:thamnobeatricea_sapling", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockThamnobeatriceaSapling.LEVEL).build());
+
 	}
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
-    protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
+	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
+	protected static final AxisAlignedBB BUSH_AABB = new AxisAlignedBB(0.30000001192092896D, 0.0D, 0.30000001192092896D, 0.699999988079071D, 0.6000000238418579D, 0.699999988079071D);
 
-	public static class BlockCustom extends BlockBush implements IGrowable {
+	public static class BlockCustom extends Block implements IPlantable {
 		public BlockCustom() {
 			super(Material.WATER);
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
-        	setResistance(0F);
+			setResistance(0F);
 			setTranslationKey("pf_thamnobeatricea_sapling");
+			this.setTickRandomly(true);
 			setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(STAGE, Integer.valueOf(0)));
 		}
 
+		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-	    {
-	        return SAPLING_AABB;
-	    }
+		{
+			return SAPLING_AABB;
+		}
+
+		@Override
+		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return false;
+		}
+
+		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+			updateTick(worldIn, pos, state, new Random());
+		}
 
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-	    {
-	        if (!worldIn.isRemote)
-	        {
-	            super.updateTick(worldIn, pos, state, rand);
-	
-	            if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-	            if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0)
-	            {
-	                this.grow(worldIn, rand, pos, state);
-	            }
-	        }
-	    }
+		{
+			if (!worldIn.isRemote)
+			{
+				super.updateTick(worldIn, pos, state, rand);
+
+				if (!canPlaceBlockAt(worldIn, pos)) {
+					worldIn.destroyBlock(pos, true);
+					return;
+				}
+
+				//if (!worldIn.isAreaLoaded(pos, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
+				if (rand.nextInt(7) == 0)
+				{
+					this.grow(worldIn, rand, pos, state);
+				}
+			}
+		}
 
 		protected BlockStateContainer createBlockState()
 		{
@@ -102,7 +124,8 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
 		{
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
+					&& worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID) {
 				return true;
 			}
 			return false;
@@ -122,14 +145,14 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 		}
 
 		public void grow(World world, Random rand, BlockPos pos, IBlockState state)
-	    {
-	        if (((Integer)state.getValue(STAGE)).intValue() == 0)
-	        {
-	            world.setBlockState(pos, state.cycleProperty(STAGE), 4);
-	        }
-	        else
-	        {
-	            int x = pos.getX();
+		{
+			if (((Integer)state.getValue(STAGE)).intValue() == 0)
+			{
+				world.setBlockState(pos, state.cycleProperty(STAGE), 4);
+			}
+			else
+			{
+				int x = pos.getX();
 				int y = pos.getY();
 				int z = pos.getZ();
 				{
@@ -140,9 +163,9 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 					$_dependencies.put("world", world);
 					ProcedureWorldGenThamnobeatricea.executeProcedure($_dependencies);
 				}
-	        }
-	    }
-	    
+			}
+		}
+
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			drops.add(new ItemStack(this));
@@ -155,35 +178,61 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 
 		public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient)
 		{
-		    return true;
+			return true;
 		}
-			
+
 		public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 		{
-		    return false;
+			return false;
 		}
 
 		public IBlockState getStateFromMeta(int meta)
-	    {
-	        return this.getDefaultState().withProperty(STAGE, Integer.valueOf(meta));
-	    }
-		
-		public int getMetaFromState(IBlockState state)
-	    {
-	        int i = 0;
-	        i = i | ((Integer)state.getValue(STAGE)).intValue();
-	        return i;
-	    }
+		{
+			return this.getDefaultState().withProperty(STAGE, Integer.valueOf(meta));
+		}
 
-	    @SideOnly(Side.CLIENT)
+		public int getMetaFromState(IBlockState state)
+		{
+			int i = 0;
+			i = i | ((Integer)state.getValue(STAGE)).intValue();
+			return i;
+		}
+
+		@SideOnly(Side.CLIENT)
 		@Override
-	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-	        if (LepidodendronConfig.showTooltips) {
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Sponge");
 				tooltip.add("Periods: Ordovician");
 				tooltip.add("Propagation: n/a");
 			}
-	        super.addInformation(stack, player, tooltip, advanced);
-	    }
+			super.addInformation(stack, player, tooltip, advanced);
+		}
+
+		@Nullable
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+		{
+			return NULL_AABB;
+		}
+
+		public boolean isOpaqueCube(IBlockState state)
+		{
+			return false;
+		}
+
+		public boolean isFullCube(IBlockState state)
+		{
+			return false;
+		}
+
+		@Override
+		public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+			return null;
+		}
+
+		@Override
+		public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
+			return null;
+		}
 	}
 }

@@ -48,7 +48,7 @@ public class BlockNautiloidShellVestinautilus extends ElementsLepidodendronMod.M
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_vestinautilus"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -71,8 +71,8 @@ public class BlockNautiloidShellVestinautilus extends ElementsLepidodendronMod.M
 			super(Material.ROCK);
 			setTranslationKey("pf_shell_vestinautilus");
 			setSoundType(SoundType.STONE);
-			setHardness(0F);
-			setResistance(0F);
+			setHardness(1.25F);
+			setResistance(1.00F);
 			setLightLevel(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMobile.tab);

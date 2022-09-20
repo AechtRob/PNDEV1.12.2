@@ -109,12 +109,10 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 		{
 			ItemStack itemstack = player.getHeldItem(hand);
 
-
 			if (itemstack.hasTagCompound()) {
 				NBTTagCompound compound = itemstack.getTagCompound();
 				//System.err.println("NBT: " + compound.toString());
 			}
-
 
 			if (!player.canPlayerEdit(pos.offset(facing), facing, itemstack))
 			{
@@ -195,14 +193,14 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 							else if (plantBlock instanceof SeedSporeLilyPadBase) {
 								SeedSporeLilyPadBase blockPlant = (SeedSporeLilyPadBase) plantBlock;
 								Item itemPlant = blockPlant.blockItem(); //The item used to place this block
-								EnumActionResult result = itemPlant.onItemUse(player, worldIn, pos, hand, facing, 0.5F, 0F, 0.5F);
+								ActionResult<ItemStack> result = itemPlant.onItemRightClick(worldIn, player, hand);
 								//We can plant this here!
 								ItemStack envelope = new ItemStack(ItemCollectionEnvelope.block, (int) (1));
-								if (!player.isCreative() && willEmpty && result == EnumActionResult.SUCCESS) {
+								if (!player.isCreative() && willEmpty && result.getType() == EnumActionResult.SUCCESS) {
 									itemstack.shrink(1);
 									ItemHandlerHelper.giveItemToPlayer(player, envelope);
 								}
-								if (result == EnumActionResult.SUCCESS) {
+								if (result.getType() == EnumActionResult.SUCCESS) {
 									return EnumActionResult.SUCCESS;
 								}
 

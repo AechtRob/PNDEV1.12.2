@@ -50,7 +50,6 @@ import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nonnull;
 import java.util.List;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
@@ -64,7 +63,7 @@ public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockDisplayPlinth.BlockCustom().setRegistryName("display_plinth"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -130,11 +129,6 @@ public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
 				return state.withProperty(FACING, EnumFacing.UP);
 			}
 			return super.getActualState(state, worldIn, pos);
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return null;
 		}
 
 		@Override

@@ -63,7 +63,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockDisplayWallMount.BlockCustom().setRegistryName("display_wall_mount"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 			super(Material.CARPET, MapColor.WOOD);
 			setTranslationKey("pf_display_wall_mount");
 			setSoundType(SoundType.CLOTH);
-			setHardness(0F);
+			setHardness(0.1F);
 			setResistance(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);

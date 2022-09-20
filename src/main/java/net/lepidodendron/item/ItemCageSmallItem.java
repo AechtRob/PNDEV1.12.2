@@ -78,7 +78,7 @@ public class ItemCageSmallItem extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_cage_small_item");
 			setRegistryName("cage_small_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
-			setMaxStackSize(1);
+			setMaxStackSize(16);
 		}
 
 		@Override

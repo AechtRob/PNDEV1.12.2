@@ -49,7 +49,7 @@ public class BlockNautiloidShellAmmonite_Ceratites extends ElementsLepidodendron
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_ceratites"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(1));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
@@ -74,8 +74,8 @@ public class BlockNautiloidShellAmmonite_Ceratites extends ElementsLepidodendron
 			setTranslationKey("pf_shell_ceratites");
 			setSoundType(SoundType.STONE);
 			setHardness(0F);
-			setResistance(0F);
-			setLightLevel(0F);
+			setHardness(1.25F);
+			setResistance(1.00F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMobile.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));

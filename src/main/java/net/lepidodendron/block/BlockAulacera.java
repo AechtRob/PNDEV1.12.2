@@ -238,7 +238,7 @@ public class BlockAulacera extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			if (rand.nextInt(20) == 0) {
+			if (rand.nextInt(10) == 0) {
 				return new ItemStack(BlockAulaceraSapling.block, (int) (1)).getItem();
 			}
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
