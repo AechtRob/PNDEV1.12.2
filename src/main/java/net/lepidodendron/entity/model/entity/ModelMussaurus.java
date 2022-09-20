@@ -258,6 +258,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.root.render(f5 * 0.82f);
     }
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
@@ -307,6 +308,13 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         }
             //Is a baby so is quadrapedal:
         if (isBaby) {
+
+            this.head1.scaleChildren = true;
+            this.head1.setScale(1.66F, 1.66F, 1.66F);
+            this.neck3.setScale(1.66F, 1.66F, 1.66F);
+            this.neck2.setScale(1.33F, 1.33F, 1.33F);
+            this.neck1.setScale(1.175F, 1.175F, 1.175F);
+            this.head1.offsetY = -0.05F;
 
             this.upperleg1.rotateAngleX = (float) Math.toRadians(-61.2);
             this.lowerleg1.rotateAngleX = (float) Math.toRadians(74.67);
