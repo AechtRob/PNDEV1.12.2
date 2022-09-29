@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -124,7 +123,7 @@ public class BlockStalkedAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 
-		if (biome == BiomeTriassicFloodedForest.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest"))
 		{
 			multiplier = 5;
 		}

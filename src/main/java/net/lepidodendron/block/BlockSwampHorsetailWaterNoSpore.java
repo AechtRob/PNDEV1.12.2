@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.item.ItemSwampHorsetailItem;
-import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLilyPad;
 import net.minecraft.block.IGrowable;
@@ -91,7 +90,7 @@ public class BlockSwampHorsetailWaterNoSpore extends ElementsLepidodendronMod.Mo
 					entityToSpawn.setPickupDelay(10);
 					worldIn.spawnEntity(entityToSpawn);
 				}
-				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundType.PLANT.getBreakSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else {
 				super.onEntityCollision(worldIn, pos, state, entityIn);

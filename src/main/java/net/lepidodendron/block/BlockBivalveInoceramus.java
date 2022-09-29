@@ -10,9 +10,7 @@ import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicOceanClamBeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -117,7 +115,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 		)
 			biomeCriteria = true;
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 
@@ -187,7 +185,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 			multiplier = 3;
 		}
 
-		if ((biome == BiomeTriassicOceanClamBeds.biome)
+		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))
 		) {
 			multiplier = 10;
 		}

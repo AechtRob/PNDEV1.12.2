@@ -53,7 +53,7 @@ public class BlockEquisetitesReedStem extends ElementsLepidodendronMod.ModElemen
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 		//		new ModelResourceLocation("lepidodendron:equisetites_reed_stem", "inventory"));
-			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockPachypteris.LEVEL).build());
+			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockEquisetitesReedStem.LEVEL).build());
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

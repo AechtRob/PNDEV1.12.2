@@ -100,19 +100,19 @@ public class BlockInsectEggsTrigonotarbidCarb extends ElementsLepidodendronMod.M
 				int i = rand.nextInt(3);
 				if (i == 0) {
 					if (!(worldIn.isRemote)) {
-						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Eophrynus.class).toString(), "", (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D);
+						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Eophrynus.class).toString(), "", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 					}
 					worldIn.destroyBlock(pos, false);
 				}
 				if (i == 1) {
 					if (!(worldIn.isRemote)) {
-						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Kreischeria.class).toString(), "", (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D);
+						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Kreischeria.class).toString(), "", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 					}
 					worldIn.destroyBlock(pos, false);
 				}
 				if (i == 2) {
 					if (!(worldIn.isRemote)) {
-						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Cryptomartus.class).toString(), "", (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D);
+						EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraTrigonotarbid_Cryptomartus.class).toString(), "", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 					}
 					worldIn.destroyBlock(pos, false);
 				}

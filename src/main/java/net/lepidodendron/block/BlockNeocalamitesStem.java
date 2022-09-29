@@ -57,7 +57,7 @@ public class BlockNeocalamitesStem extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 		//		new ModelResourceLocation("lepidodendron:neocalamites_stem", "inventory"));
-			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockPachypteris.LEVEL).build());
+			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNeocalamitesStem.LEVEL).build());
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

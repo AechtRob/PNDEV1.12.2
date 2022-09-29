@@ -3,8 +3,6 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicWarmLakeland;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicXericScrubland;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -100,8 +98,8 @@ public class BlockAethophyllum extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genAethophyllumOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome == BiomeTriassicXericScrubland.biome
-			|| biome == BiomeTriassicWarmLakeland.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_scrubland")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland"))
 			biomeCriteria = true;
 			
 		if (!biomeCriteria)

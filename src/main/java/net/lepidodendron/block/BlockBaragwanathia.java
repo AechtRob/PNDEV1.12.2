@@ -93,7 +93,7 @@ public class BlockBaragwanathia extends ElementsLepidodendronMod.ModElement {
 					entityToSpawn.setPickupDelay(10);
 					worldIn.spawnEntity(entityToSpawn);
 				}
-				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundType.PLANT.getBreakSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else {
 				super.onEntityCollision(worldIn, pos, state, entityIn);

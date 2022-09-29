@@ -1,7 +1,6 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenBrachyphyllum;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -83,7 +82,7 @@ public class WorldGenBrachyphyllumTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					if (!(worldIn.getBiome(position) == BiomeJurassicSandbanks.biome && position.getY() <= worldIn.getSeaLevel())) {
+					if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks") && position.getY() <= worldIn.getSeaLevel())) {
                         ProcedureWorldGenBrachyphyllum.executeProcedure($_dependencies);
                     }
                     return true;

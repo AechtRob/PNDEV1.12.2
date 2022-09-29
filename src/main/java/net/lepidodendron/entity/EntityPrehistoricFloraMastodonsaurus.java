@@ -89,7 +89,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 	}
 
 	protected float getAISpeedSwimmingAmphibian() {
-		float calcSpeed = 0.1F;
+		float calcSpeed = 0.15F;
 		if (this.isReallyInWater()) {
 			calcSpeed= 0.232f;
 		}

@@ -1512,9 +1512,17 @@ public class LepidodendronConfigPlants {
     public static String[] genReefOverrideBiomes = new String[0];
     public static int[] dimReef = new int[]{0};
 
+    public static String[] genSpongeReefBlacklistBiomes = new String[0];
+    public static String[] genSpongeReefOverrideBiomes = new String[0];
+    public static int[] dimSpongeReef = new int[]{};
+
     public static String[] genShellyReefBlacklistBiomes = new String[0];
     public static String[] genShellyReefOverrideBiomes = new String[0];
     public static int[] dimShellyReef = new int[]{};
+
+    public static String[] genAlgalReefBlacklistBiomes = new String[0];
+    public static String[] genAlgalReefOverrideBiomes = new String[0];
+    public static int[] dimAlgalReef = new int[]{};
 
     public static int[] dimEdiacaran = new int[0];
     //public static boolean animateEdiacaran = true;
@@ -1933,16 +1941,29 @@ public class LepidodendronConfigPlants {
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Reef", "dimReef", dimReef);
-        prop.setComment("List of dimension IDs Coral Reef blocks can generate in [default: 0]");
+        prop.setComment("List of dimension IDs Mixed Reef blocks can generate in [default: 0]");
         dimReef = prop.getIntList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Reef", "genReefBlacklistBiomes", genReefBlacklistBiomes);
-        prop.setComment("List of biomes Coral Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Mixed Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
         genReefBlacklistBiomes = prop.getStringList();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Reef", "genReefOverrideBiomes", genReefOverrideBiomes);
-        prop.setComment("List of biomes Coral Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        prop.setComment("List of biomes Mixed Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genReefOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Sponge Reef", "dimSpongeReef", dimSpongeReef);
+        prop.setComment("List of dimension IDs Sponge Reef blocks can generate in [default: empty]");
+        dimSpongeReef = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sponge Reef", "genSpongeReefBlacklistBiomes", genSpongeReefBlacklistBiomes);
+        prop.setComment("List of biomes Sponge Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genSpongeReefBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sponge Reef", "genSpongeReefOverrideBiomes", genSpongeReefOverrideBiomes);
+        prop.setComment("List of biomes Sponge Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genSpongeReefOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Reef", "dimShellyReef", dimShellyReef);
@@ -1956,6 +1977,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Reef", "genShellyReefOverrideBiomes", genShellyReefOverrideBiomes);
         prop.setComment("List of biomes Shelly Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genShellyReefOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Reef", "dimAlgalReef", dimAlgalReef);
+        prop.setComment("List of dimension IDs Algal Reef blocks can generate in [default: empty]");
+        dimAlgalReef = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genAlgalReefBlacklistBiomes", genAlgalReefBlacklistBiomes);
+        prop.setComment("List of biomes Algal Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAlgalReefBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genAlgalReefOverrideBiomes", genAlgalReefOverrideBiomes);
+        prop.setComment("List of biomes Algal Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genAlgalReefOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Ediacaran", "dimEdiacaran", dimEdiacaran);

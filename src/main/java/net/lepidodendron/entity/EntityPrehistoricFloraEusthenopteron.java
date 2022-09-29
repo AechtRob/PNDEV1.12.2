@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.1F;
+		minWidth = 0.2F;
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 8.0D;
@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 48000;
 	} //Only adults!
 
 	@Override
@@ -196,6 +196,9 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.EUSTHENOPTERON_LOOT_YOUNG;
+		}
 		return LepidodendronMod.EUSTHENOPTERON_LOOT;
 	}
 

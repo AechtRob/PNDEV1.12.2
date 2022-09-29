@@ -1,0 +1,355 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath", "y": 270 }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath", "y": 90}
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath" }
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath", "y": 180}
+      ]
+    },
+
+
+    {   "when": { "acid": "15", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_15", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "15", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_15", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "15", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_15"}
+      ]
+    },
+    {   "when": { "acid": "15", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_15", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "14", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_14", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "14", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_14", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "14", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_14"}
+      ]
+    },
+    {   "when": { "acid": "14", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_14", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "13", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_13", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "13", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_13", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "13", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_13"}
+      ]
+    },
+    {   "when": { "acid": "13", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_13", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "12", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_12", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "12", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_12", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "12", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_12"}
+      ]
+    },
+    {   "when": { "acid": "12", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_12", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "11", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_11", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "11", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_11", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "11", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_11"}
+      ]
+    },
+    {   "when": { "acid": "11", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_11", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "10", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_10", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "10", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_10", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "10", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_10"}
+      ]
+    },
+    {   "when": { "acid": "10", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_10", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "9", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_9", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "9", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_9", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "9", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_9"}
+      ]
+    },
+    {   "when": { "acid": "9", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_9", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "8", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_8", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "8", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_8", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "8", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_8"}
+      ]
+    },
+    {   "when": { "acid": "8", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_8", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "7", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_7", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "7", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_7", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "7", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_7"}
+      ]
+    },
+    {   "when": { "acid": "7", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_7", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "6", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_6", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "6", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_6", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "6", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_6"}
+      ]
+    },
+    {   "when": { "acid": "6", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_6", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "5", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_5", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "5", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_5", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "5", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_5"}
+      ]
+    },
+    {   "when": { "acid": "5", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_5", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "4", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_4", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "4", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_4", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "4", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_4"}
+      ]
+    },
+    {   "when": { "acid": "4", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_4", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "3", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_3", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "3", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_3", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "3", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_3"}
+      ]
+    },
+    {   "when": { "acid": "3", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_3", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "2", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_2", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "2", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_2", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "2", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_2"}
+      ]
+    },
+    {   "when": { "acid": "2", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_2", "y": 90, "uvlock": true}
+      ]
+    },
+
+
+    {   "when": { "acid": "1", "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_1", "y": 180, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "1", "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_1", "y": 270, "uvlock": true}
+      ]
+    },
+    {   "when": { "acid": "1", "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_1"}
+      ]
+    },
+    {   "when": { "acid": "1", "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_1", "y": 90, "uvlock": true}
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1", "x": 270, "y": 180 },
+      {"model": "lepidodendron:brachiopod_spiriferid_2", "x": 270, "y": 180 },
+      {"model": "lepidodendron:brachiopod_spiriferid_3", "x": 270, "y": 180 },
+      {"model": "lepidodendron:brachiopod_spiriferid_4", "x": 270, "y": 180 },
+      {"model": "lepidodendron:brachiopod_spiriferid_5", "x": 270, "y": 180 },
+      {"model": "lepidodendron:brachiopod_spiriferid_6", "x": 270, "y": 180 }
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1", "x": 270, "y": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_2", "x": 270, "y": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_3", "x": 270, "y": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_4", "x": 270, "y": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_5", "x": 270, "y": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_6", "x": 270, "y": 270 }
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1", "x": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_2", "x": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_3", "x": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_4", "x": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_5", "x": 270 },
+      {"model": "lepidodendron:brachiopod_spiriferid_6", "x": 270 }
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1", "x": 270, "y": 90 },
+      {"model": "lepidodendron:brachiopod_spiriferid_2", "x": 270, "y": 90 },
+      {"model": "lepidodendron:brachiopod_spiriferid_3", "x": 270, "y": 90 },
+      {"model": "lepidodendron:brachiopod_spiriferid_4", "x": 270, "y": 90 },
+      {"model": "lepidodendron:brachiopod_spiriferid_5", "x": 270, "y": 90 },
+      {"model": "lepidodendron:brachiopod_spiriferid_6", "x": 270, "y": 90 }
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1"},
+      {"model": "lepidodendron:brachiopod_spiriferid_2"},
+      {"model": "lepidodendron:brachiopod_spiriferid_3"},
+      {"model": "lepidodendron:brachiopod_spiriferid_4"},
+      {"model": "lepidodendron:brachiopod_spiriferid_5"},
+      {"model": "lepidodendron:brachiopod_spiriferid_6"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:brachiopod_spiriferid_1", "x": 180},
+      {"model": "lepidodendron:brachiopod_spiriferid_2", "x": 180},
+      {"model": "lepidodendron:brachiopod_spiriferid_3", "x": 180},
+      {"model": "lepidodendron:brachiopod_spiriferid_4", "x": 180},
+      {"model": "lepidodendron:brachiopod_spiriferid_5", "x": 180},
+      {"model": "lepidodendron:brachiopod_spiriferid_6", "x": 180}
+    ]
+  }
+}

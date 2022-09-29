@@ -24,7 +24,8 @@
       "ore": "blockGlass"
     },
     "4": {
-      "item": "lepidodendron:zircon"
+      "type": "forge:ore_dict",
+      "ore": "gemZircon"
     },
     "5": {
       "type": "forge:ore_dict",

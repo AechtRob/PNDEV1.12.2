@@ -297,7 +297,7 @@ public class BlockCooksoniaSpore extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public int offsetY() {
-			return 0;
+			return 1;
 		}
 
 		@Override

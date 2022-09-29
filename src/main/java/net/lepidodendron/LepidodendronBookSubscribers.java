@@ -2,9 +2,11 @@ package net.lepidodendron;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -824,6 +826,19 @@ public class LepidodendronBookSubscribers {
 		}
 	}
 
+	public void deliverStatsEntity(PlayerInteractEvent.EntityInteract event) {
+		String agePercent = "";
+		if (event.getTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+			agePercent = Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F) + "%";
+		}
+		else {
+			agePercent = "100%";
+		}
+		if (event.getWorld().isRemote) {
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged " + agePercent));
+		}
+	}
+
 	@SubscribeEvent
 	public void onUseBook(PlayerInteractEvent.EntityInteract event) {
 		/// click on entities:
@@ -839,6 +854,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACADOARADOXIDES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -847,6 +863,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACANTHODES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -855,6 +872,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACANTHOSTEGA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -863,6 +881,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACANTHOSTOMATOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -871,6 +890,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACROLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -879,6 +899,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ACUTIRAMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -887,6 +908,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ADELOPHTHALMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -895,6 +917,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AEGIROCASSIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -903,6 +926,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AINIKTOZOON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -911,6 +935,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AKMONISTION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -919,6 +944,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ALACARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -927,6 +953,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ALBERTONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -935,6 +962,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ALLENYPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -943,6 +971,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_ASTEROCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -951,6 +980,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_CERATITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -959,6 +989,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_CORONICERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -967,6 +998,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_CYLOLOBUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -975,6 +1007,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_DACTYLIOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -983,6 +1016,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_GONIATITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -991,6 +1025,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_MANTICOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -999,6 +1034,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_PACHYDESMOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1007,6 +1043,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_PACHYDISCUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1015,6 +1052,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_PARAPUZOSIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1023,6 +1061,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMMONITE_TITANITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1031,6 +1070,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMPHIBAMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1039,6 +1079,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AMPLECTOBELUA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1047,6 +1088,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANOMALOCARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1055,6 +1097,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANTARCTICARCINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1063,6 +1106,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANTEOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1071,6 +1115,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANTHRACOMEDUSA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1079,6 +1124,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANTINEOSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1087,6 +1133,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_APHETOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1095,6 +1142,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ARANDASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1103,6 +1151,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ARCHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1111,6 +1160,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ASAPHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1119,6 +1169,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ASCENDONANUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1127,6 +1178,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ASTRASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1135,6 +1187,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ATELEASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1143,6 +1196,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ATTERCOPUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1151,6 +1205,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_AULACEPHALODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1159,6 +1214,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BALANERPETON .trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1167,6 +1223,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BANDRINGA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1175,6 +1232,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BANFFIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1183,6 +1241,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BARBCLABORNIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1191,6 +1250,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BASILOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1199,6 +1259,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BATOFASCICULUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1207,6 +1268,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BELANTSEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1215,6 +1277,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BIRKENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1223,6 +1286,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BLOURUGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1231,6 +1295,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BOBASATRANIA .trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1239,6 +1304,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BOOTHIASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1247,6 +1313,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BOTHRIOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1255,6 +1322,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BRANCHIOSAUR.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1263,6 +1331,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BROCHOADMONES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1271,6 +1340,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BUNOSTEGOS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1279,6 +1349,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_BUSHIZHEIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1287,6 +1358,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CACOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1295,6 +1367,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CALVAPILOSA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1303,6 +1376,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CAMBRORASTER.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1311,6 +1385,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CAMEROCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1319,6 +1394,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CAMPBELLODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1327,6 +1403,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CANADASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1335,6 +1412,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CANADIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1343,6 +1421,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CAPTORHINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1351,6 +1430,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CARCINOSOMA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1359,6 +1439,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CAROLOWILHELMINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1367,6 +1448,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CASINERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1375,6 +1457,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CEPHALASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1383,6 +1466,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CHEIRURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1391,6 +1475,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CHELONIELLON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1399,6 +1484,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CLADOSELACHE.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1407,6 +1493,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CLAUDIOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1415,6 +1502,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CLYDAGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1423,6 +1511,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COCCOSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1431,6 +1520,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COELACANTHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1439,6 +1529,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COELOPHYSIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1447,6 +1538,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COELUROSAURAVUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1455,6 +1547,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COOPEROCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1463,6 +1556,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COTHURNOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1471,6 +1565,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_COTYLORHYNCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1479,6 +1574,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CRASSIGYRINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1487,6 +1583,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CROTALOCEPHALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1495,6 +1592,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CTENOSPONDYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1503,6 +1601,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CYCLONEMA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1511,6 +1610,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CYNOGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1519,6 +1619,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CYRTOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1527,6 +1628,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DAEDALICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1535,6 +1637,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DALMANITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1543,6 +1646,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DASYCEPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1551,6 +1655,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DATHEOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1559,6 +1664,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DEIROCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1567,6 +1673,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIADECTES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1575,6 +1682,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIANIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1583,6 +1691,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DICKINSONIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1591,6 +1700,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIDYMOGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1599,6 +1709,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIMETRODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1607,6 +1718,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIPLOCAULUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1615,6 +1727,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DIPLOCERASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1623,6 +1736,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DORYASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1631,6 +1745,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DORYPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1639,6 +1754,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DRACOPRISTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1647,6 +1763,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DREPANASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1655,6 +1772,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DROTOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1663,6 +1781,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DUNKLEOSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1671,6 +1790,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DVINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1679,6 +1799,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_DVINOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1687,6 +1808,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EBENAQUA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1695,6 +1817,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EDESTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1703,6 +1826,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EGLONASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1711,6 +1835,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ELGINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1719,6 +1844,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ELLIPSOCEPHALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1727,6 +1853,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ELRATHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1735,6 +1862,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ENDOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1743,6 +1871,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ENOPLOURA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1751,6 +1880,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EOANDROMEDA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1759,6 +1889,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EOARTHROPLEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1767,6 +1898,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EORAPTOR.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1775,6 +1907,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EOREDLICHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1783,6 +1916,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EOSAURICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1791,6 +1925,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EOSIMOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1799,6 +1934,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ERICIXERXES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1807,6 +1943,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ERYOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1815,6 +1952,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ESTEMMENOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1823,6 +1961,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EUCHAMBERSIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1831,6 +1970,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EUNOTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1839,6 +1979,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EURYPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1847,6 +1988,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_EUSTHENOPTERON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1855,6 +1997,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_FEROXICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1863,6 +2006,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_FURCACAUDA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1871,6 +2015,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_FURCASTER.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1879,6 +2024,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GABREYASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1887,6 +2033,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GANTAROSTRATASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1895,6 +2042,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GEMMACTENA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1903,6 +2051,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GEMUENDINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1911,6 +2060,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GEPHYROSTEGUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1919,6 +2069,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GERARUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1927,6 +2078,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GLAURUNG.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1935,6 +2087,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GNATHORHIZA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1943,6 +2096,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GONIOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1951,6 +2105,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GORGONOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1959,6 +2114,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GROENLANDASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1967,6 +2123,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_GYRACANTHIDES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1975,6 +2132,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HAIKOUICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1983,6 +2141,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HALLUCIGENIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1991,6 +2150,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HARVESTMAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -1999,6 +2159,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HELENODORA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2007,6 +2168,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HELIANTHASTER.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2015,6 +2177,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HELIOPELTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2023,6 +2186,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HELICOPRION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2031,6 +2195,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HELMETIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2039,6 +2204,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HEMICYCLASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2047,6 +2213,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HERRERASAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2055,6 +2222,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HETEROSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2063,6 +2231,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HIBBERTOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2071,6 +2240,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HIBERNASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2079,6 +2249,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HOLONEMA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2087,6 +2258,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HUNGIOIDES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2095,6 +2267,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HYLONOMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2103,6 +2276,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_HYNERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2111,6 +2285,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ICHTHYOSTEGA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2119,6 +2294,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_INIOPTERYX.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2127,6 +2303,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_INOSTRANCEVIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2135,6 +2312,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ISOTELUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2144,6 +2322,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ITALOPHLEBIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2152,6 +2331,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JAEKELOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2160,6 +2340,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JANASSA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2168,6 +2349,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH_PRECAMBRIAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2176,6 +2358,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH1.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2184,6 +2367,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH2.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2192,6 +2376,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH3.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2200,6 +2385,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH4.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2208,6 +2394,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH5.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2216,6 +2403,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH6.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2224,6 +2412,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JELLYFISH7.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2232,6 +2421,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JIANSHANOPODIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2240,6 +2430,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_JONKERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2248,6 +2439,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KAIBABVENATOR.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2256,6 +2448,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KALBARRIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2264,6 +2457,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KERYGMACHELA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2272,6 +2466,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KIMBERELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2280,6 +2475,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KODYMIRUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2288,6 +2484,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_KOKOMOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2296,6 +2493,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LABIDOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2304,6 +2502,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LACCOGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2312,6 +2511,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LAMINACARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2320,6 +2520,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LANCEASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2328,6 +2529,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LEBACHACANTHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2336,6 +2538,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LILIENSTERNUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2344,6 +2547,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LIMNOSCELIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2352,6 +2556,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LISOWICIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2360,6 +2565,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LISTRACANTHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2368,6 +2574,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LITUITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2376,6 +2583,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LUNASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2384,6 +2592,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LUNATASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2392,6 +2601,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LUNGMENSHANASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2400,6 +2610,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LYRARAPAX.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2408,6 +2619,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LYSTROSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2416,6 +2628,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MACLURINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2424,6 +2637,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MARRELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2432,6 +2646,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MASTODONSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2440,6 +2655,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MCNAMARASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2448,6 +2664,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MEGALOCEPHALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2456,6 +2673,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MEGALOGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2465,6 +2683,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MEGANEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2474,6 +2693,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MEGANEUROPSIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2482,6 +2702,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MEGARACHNE.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2490,6 +2711,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MELOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2498,6 +2720,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MENASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2506,6 +2729,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MESOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2514,6 +2738,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_METASPRIGGINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2522,6 +2747,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MICRODICTYON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2530,6 +2756,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MIMETASTER.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2538,6 +2765,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MIXOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2546,6 +2774,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MONOGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2554,6 +2783,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MONTECARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2562,6 +2792,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MOOREOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2570,6 +2801,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_MOSCHOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2578,6 +2810,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_NECTOCARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2586,6 +2819,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ODARAIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2594,6 +2828,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ODONTOGRIPHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2602,6 +2837,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_OMNIDENS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2610,6 +2846,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ONYCHODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2618,6 +2855,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_OPABINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2626,6 +2864,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_OPHIACODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2634,6 +2873,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ORTHOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2642,6 +2882,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ORTHROZANCLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2650,6 +2891,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_OSTEOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2658,6 +2900,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_OTTOIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2666,6 +2909,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PAGEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2675,6 +2919,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEOISOPUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2686,6 +2931,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ANCIENT_JELLY.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2694,6 +2940,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEONTINID.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2702,6 +2949,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PANDERICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2710,6 +2958,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PANDERODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2718,6 +2967,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PANTYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2726,6 +2976,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PARADOXIDES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2734,6 +2985,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PARANAICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2742,6 +2994,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PAREXUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2750,6 +3003,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PARVANCORINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2758,6 +3012,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PAUCIPODIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2766,6 +3021,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PEDERPES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2774,6 +3030,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PELURGASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2782,6 +3039,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHANEROTINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2790,6 +3048,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHANTASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2798,6 +3057,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHARYNGOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2806,6 +3066,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHLEGETHONTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2814,6 +3075,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHOLIDERPETON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2822,6 +3084,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHRAGMOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2830,6 +3093,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PIKAIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2838,6 +3102,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLACERIAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2846,6 +3111,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLATEOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2854,6 +3120,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLATYCARASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2862,6 +3129,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLATYHYSTRIX.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2870,6 +3138,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLATYLOMASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2878,6 +3147,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PLATYSOMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2886,6 +3156,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PNEUMODESMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2894,6 +3165,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_POLEUMITA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2902,6 +3174,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_POMATRUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2910,6 +3183,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PORASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2918,6 +3192,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PRIONOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2926,6 +3201,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PRISTEROGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2934,6 +3210,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROBURNETIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2942,6 +3219,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROCYNOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2950,6 +3228,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROFALLOTASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2958,6 +3237,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROMISSUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2966,6 +3246,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROSICTODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2974,6 +3255,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROTEROGYRINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2982,6 +3264,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROTOROSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2991,6 +3274,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PROTOZYGOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -2999,6 +3283,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PSAROLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3007,6 +3292,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PTERASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3015,6 +3301,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PTERYGOTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3023,6 +3310,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PURLOVIA .trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3031,6 +3319,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_QILINYU.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3039,6 +3328,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_RAUTIANIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3047,6 +3337,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_RAYONNOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3055,6 +3346,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_REBELLATRIX.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3063,6 +3355,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_REMIGIOMONTANUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3071,6 +3364,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_RETIFACIES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3079,6 +3373,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_RHIZODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3089,6 +3384,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ROACHOID.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3097,6 +3393,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ROBERTIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3105,6 +3402,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SACABAMBASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3113,6 +3411,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SAIVODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3122,6 +3421,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SAURICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3130,6 +3430,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SAUROCTONUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3138,6 +3439,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCAUMENACIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3146,6 +3448,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCHINDERHANNES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3154,6 +3457,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCORPION_GIGANTOSCORPIO.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3162,6 +3466,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCORPION_GONDWANASCORPIO.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3170,6 +3475,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCORPION_OPSIEOBUTHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3178,6 +3484,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCORPION_PULMONOSCORPIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3186,6 +3493,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SCUTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3194,6 +3502,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SELENOPELTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3202,6 +3511,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SEMIONOTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3210,6 +3520,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SEYMOURIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3218,6 +3529,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SHONISAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3226,6 +3538,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SHRINGASAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3234,6 +3547,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SIBERION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3242,6 +3556,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SIDNEYIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3250,6 +3565,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPATHICEPHALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3258,6 +3574,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPHENACODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3266,6 +3583,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPINIPLATYCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3274,6 +3592,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPINOAEQUALIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3282,6 +3601,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPRIGGINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3290,6 +3610,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SQUATINACTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3298,6 +3619,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_STENSIOELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3306,6 +3628,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SUMINIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3314,6 +3637,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SYNOPHALOS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3322,6 +3646,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TAPINOCEPHALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3330,6 +3655,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TARTUOSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3338,6 +3664,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TEGOPELTE.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3346,6 +3673,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TEMPEROCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3354,6 +3682,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TERATASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3362,6 +3691,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TETRACERATOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3370,6 +3700,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TETRAGRAPTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3378,6 +3709,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_THELODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3386,6 +3718,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_THRINAXODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3394,6 +3727,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TITANICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3402,6 +3736,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TIARAJUDENS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3410,6 +3745,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TOKUMMIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3418,6 +3754,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRAQUAIRIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3426,6 +3763,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_CRYPTOMARTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3434,6 +3772,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_EOPHRYNUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3442,6 +3781,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_KREISCHERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3450,6 +3790,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_PALAEOTARBUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3458,6 +3799,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_PERMOTARBUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3466,6 +3808,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIGONOTARBID_PALAEOCHARINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3474,6 +3817,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TRIMERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3482,6 +3826,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TULLIMONSTRUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3490,6 +3835,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TURRISASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3498,6 +3844,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_URANOCENTRODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3506,6 +3853,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_UROSTHENES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3514,6 +3862,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_VARIALEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3522,6 +3871,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_VESTINAUTILUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3530,6 +3880,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_VETULICOLA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3538,6 +3889,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_VIVAXOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3546,6 +3898,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WALLISEROPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3555,6 +3908,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WEBSTEROPRION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3563,6 +3917,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WHATCHEERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3571,6 +3926,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WIWAXIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3579,6 +3935,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_XENACANTHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3587,6 +3944,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_XENUSION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3595,6 +3953,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_YAWUNIK.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3603,6 +3962,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_YILINGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3611,6 +3971,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_YOHOIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3619,6 +3980,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_YORGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3627,6 +3989,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_YUNNANOZOON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -3635,6 +3998,7 @@ public class LepidodendronBookSubscribers {
 				ModTriggers.CLICK_LOCHMANOLENELLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 			}
 			event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 			event.setCanceled(true);
 			return;
 		}
@@ -3643,6 +4007,7 @@ public class LepidodendronBookSubscribers {
 			ModTriggers.CLICK_ASTRASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 	}
@@ -3651,6 +4016,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PANDERODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 	}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 }
@@ -3659,6 +4025,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CALVAPILOSA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3667,6 +4034,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BOOTHIASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3675,6 +4043,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HOLONEMA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3683,6 +4052,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DROTOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3691,6 +4061,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HELIOPELTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3699,6 +4070,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LANCEASPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3707,6 +4079,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_MONTECARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3715,6 +4088,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_RHENOCYSTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3723,6 +4097,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_WILLWERATHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3731,6 +4106,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PARMASTEGA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3739,6 +4115,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TIKTAALIK.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3747,6 +4124,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PYGOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3755,6 +4133,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DELTOPTYCHIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3763,6 +4142,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_FADENIA_CARBONIFEROUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3771,6 +4151,7 @@ public class LepidodendronBookSubscribers {
 				ModTriggers.CLICK_FADENIA_PERMOTRIASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
 			}
 			event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 			event.setCanceled(true);
 			return;
 		}
@@ -3779,6 +4160,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_FALCATUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3787,6 +4169,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ORODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3795,6 +4178,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PARATARRASIUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3803,6 +4187,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SYLLIPSIMOPODI.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3811,6 +4196,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_THRINACODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3819,6 +4205,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TYRANNOPHONTES.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3827,6 +4214,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_UROCORDYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3835,6 +4223,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EDAPHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3843,6 +4232,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ARTHROPLEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3851,6 +4241,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_COBELODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3859,6 +4250,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_MEGACTENOPETALUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3867,6 +4259,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_RUBIDGEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3875,6 +4268,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ENDOTHIODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3883,6 +4277,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_AUSTROLIMULUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3891,6 +4286,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BEISHANICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3899,6 +4295,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BIRGERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3907,6 +4304,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BREMBODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3915,6 +4313,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CATURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3923,6 +4322,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CHINLEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3931,6 +4331,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DAPEDIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3939,6 +4340,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_FOREYIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3947,6 +4349,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HYBODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3955,6 +4358,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LUOXIONGICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3963,6 +4367,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_POTANICHTHYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3971,6 +4376,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_AEGER.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3979,6 +4385,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_AULACOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3987,6 +4394,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BESANOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -3995,6 +4403,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CARTORHYNCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4003,6 +4412,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CYAMODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4011,6 +4421,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CYMBOSPONDYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4019,6 +4430,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EORHYNCHOCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4027,6 +4439,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ERETOMORPHIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4035,6 +4448,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HENODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4043,6 +4457,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LIMULID.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4051,6 +4466,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_KEICHOUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4059,6 +4475,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_NOTHOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4067,6 +4484,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_OPOLANKA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4075,6 +4493,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PANZHOUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4083,6 +4502,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PLACODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4091,6 +4511,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SCLEROCORMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4099,6 +4520,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TRIADOBATRACHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4107,6 +4529,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_YUNGUISAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4115,6 +4538,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ARIZONASAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4123,6 +4547,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ATOPODENTATUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4131,6 +4556,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BATRACHOTOMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4139,6 +4565,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CLEVOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4147,6 +4574,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DESMATOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4155,6 +4583,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DOSWELLIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4163,6 +4592,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_DREPANOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4171,6 +4601,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EFFIGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4179,6 +4610,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ERYTHROSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4187,6 +4619,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EUPARKERIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4195,6 +4628,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EUSAUROSPHARGIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4203,6 +4637,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_GERROTHORAX.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4211,6 +4646,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HYPERODAPEDON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4219,6 +4655,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HYPSOGNATHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4227,6 +4664,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_HYPURONECTOR.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4235,6 +4673,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LAGOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4243,6 +4682,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LESSEMSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4251,6 +4691,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LONGISQUAMA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4259,6 +4700,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LOTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4267,6 +4709,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_MEGAZOSTRODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4275,14 +4718,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_METOPOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
-		event.setCanceled(true);
-		return;
-		}
-		else if (event.getTarget() instanceof EntityPrehistoricFloraMorganucodon) {
-		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_MORGANUCODON.trigger((EntityPlayerMP) event.getEntityPlayer());
-		}
-		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4291,6 +4727,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_MUSSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4299,6 +4736,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ORNITHOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4307,6 +4745,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TELEOCRATER.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4315,6 +4754,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_POPOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4323,6 +4763,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_POSTOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4331,6 +4772,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PROGANOCHELYS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4339,6 +4781,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_PSEUDOTHERIUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4347,6 +4790,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SAUROSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4355,6 +4799,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_RUTIODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4363,6 +4808,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SCLEROMOCHLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4371,6 +4817,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SHAROVIPTERYX.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4379,6 +4826,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SILESAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4387,6 +4835,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SILLOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4395,6 +4844,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SMILOSUCHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4403,6 +4853,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SMOK.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4411,6 +4862,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_SPHENOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4419,6 +4871,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_STAGONOLEPIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4427,6 +4880,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_STANOCEPHALOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4435,6 +4889,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TANYSTROPHEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4443,6 +4898,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TERATERPETON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4451,6 +4907,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_TEYUJAGUA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4459,6 +4916,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_THECODONTOSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4467,6 +4925,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_VANCLEAVEA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4475,6 +4934,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_XINPUSAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4483,6 +4943,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_AUSTRIADACTYLUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4491,6 +4952,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CAELESTIVENTUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4499,6 +4961,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_CAVIRAMUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4507,6 +4970,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_EUDIMORPHODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4515,6 +4979,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_ITALOPHLEBIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4523,6 +4988,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_NAGINI.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4531,6 +4997,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_BRACHYDECTES.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4539,6 +5006,7 @@ public class LepidodendronBookSubscribers {
 		ModTriggers.CLICK_LYSOROPHUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		}
@@ -4547,6 +5015,7 @@ public class LepidodendronBookSubscribers {
 			ModTriggers.CLICK_PARHYBODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 		event.setCanceled(true);
 		return;
 		} else if (event.getTarget() instanceof EntityPrehistoricFloraLonchidion) {
@@ -4554,6 +5023,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LONCHIDION.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4562,6 +5032,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEONISCUM.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4570,6 +5041,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SNAIL_LAND.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4578,6 +5050,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_SPINIPLATYCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4586,6 +5059,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_NIPPONOMARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4594,6 +5068,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PARAPEYTOIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4602,6 +5077,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PHRAGMOCERAS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4610,6 +5086,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_LITUITES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4618,6 +5095,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CIDAROIDA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4626,6 +5104,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ARCHAEOCIDARIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4634,6 +5113,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_CERATODUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4642,6 +5122,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WILLWERATHIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4652,6 +5133,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TITANOPTERA_CLATROTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4661,6 +5143,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TITANOPTERA_GIGATITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4670,17 +5153,28 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_TITANOPTERA_MESOTITAN.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
 
 
 			//Put these at the end so as to trigger its children above in preference first:
+			else if (event.getTarget() instanceof EntityPrehistoricFloraMorganucodon) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_MORGANUCODON.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
+				event.setCanceled(true);
+				return;
+			}
 			else if (event.getTarget() instanceof EntityPrehistoricFloraDiictodon) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_DIICTODON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4690,6 +5184,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_ARCHOBLATTINA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4698,6 +5193,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_WEIGELTISAURUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4706,6 +5202,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_DELITZSCHALA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4714,6 +5211,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_DUNBARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4722,6 +5220,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_HOMALONEURA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4730,6 +5229,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_HOMOIOPTERA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4738,6 +5238,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_LITHOMANTIS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4746,6 +5247,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_LYCOCERCUS.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4754,6 +5256,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_SINODUNBARIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}
@@ -4762,6 +5265,7 @@ public class LepidodendronBookSubscribers {
 					ModTriggers.CLICK_PALAEODICTYOPTERA_STENODICTYA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
 			}

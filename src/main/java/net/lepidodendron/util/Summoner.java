@@ -63,6 +63,9 @@ public class Summoner extends CommandBase
                 blockpos = new BlockPos(d0, d1, d2);
             }
 
+            d0 = blockpos.getX() + 0.5;
+            d2 = blockpos.getZ() + 0.5;
+
             World world = sender.getEntityWorld();
 
             if (!world.isBlockLoaded(blockpos))
@@ -103,7 +106,8 @@ public class Summoner extends CommandBase
                 }
                 else
                 {
-                    entity.setLocationAndAngles(d0 + 0.5 + ((world.rand.nextFloat() - 0.5F)/10F), d1, d2 + 0.5 + ((world.rand.nextFloat() - 0.5F)/10F), entity.rotationYaw, entity.rotationPitch);
+                    System.err.println("Rand: " + ((world.rand.nextFloat() - 0.5F)/10F));
+                    entity.setLocationAndAngles(d0 + ((world.rand.nextFloat() - 0.5F)/10F), d1, d2 + ((world.rand.nextFloat() - 0.5F)/10F), entity.rotationYaw, entity.rotationPitch);
 
                     if (!flag && entity instanceof EntityLiving)
                     {

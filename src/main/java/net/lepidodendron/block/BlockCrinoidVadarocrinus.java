@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -123,7 +122,7 @@ public class BlockCrinoidVadarocrinus extends ElementsLepidodendronMod.ModElemen
 		}
 
 
-		if (biome == BiomeDevonianOceanDeadReef.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
 

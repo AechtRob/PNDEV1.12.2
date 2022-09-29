@@ -44,7 +44,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "51.4";
+	public static final String VERSION = "52.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -79,6 +79,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_JELLYFISH7 = 14;
 	public static final int ENTITY_BOTHRIOLEPIS = 15;
 	public static final ResourceLocation BOTHRIOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bothriolepis"));
+	public static final ResourceLocation BOTHRIOLEPIS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bothriolepis_young"));
 	public static final int ENTITY_EURYPTERUS = 16;
 	public static final ResourceLocation EURYPTERUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eurypterus"));
 	public static final ResourceLocation EURYPTERUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eurypterus_young"));
@@ -527,6 +528,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation DREPANASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/drepanaspis"));
 	public static final int ENTITY_EUSTHENOPTERON = 209;
 	public static final ResourceLocation EUSTHENOPTERON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eusthenopteron"));
+	public static final ResourceLocation EUSTHENOPTERON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eusthenopteron_young"));
 	public static final int ENTITY_LUNASPIS = 210;
 	public static final ResourceLocation LUNASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lunaspis"));
 	public static final int ENTITY_LUNGMENSHANASPIS = 211;
@@ -1234,7 +1236,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_CERATODUS = 491;
 	public static final ResourceLocation CERATODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ceratodus"));
 	public static final int ENTITY_ITALOPHLEBIA_NYMPH = 492;
-
+	public static final int GUI_ACID_ID = 493;
 
 
 	@Mod.EventHandler
@@ -1244,7 +1246,7 @@ public class LepidodendronMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		GameRegistry.registerWorldGenerator(elements, 5);
 		GameRegistry.registerFuelHandler(elements);
-		//NetworkRegistry.INSTANCE.registerGuiHandler(this, new ElementsLepidodendronMod.GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new ElementsLepidodendronMod.GuiHandler());
 		elements.preInit(event);
 		MinecraftForge.EVENT_BUS.register(elements);
 		elements.getElements().forEach(element -> element.preInit(event));

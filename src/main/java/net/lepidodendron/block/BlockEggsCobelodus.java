@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousOceanShore;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
@@ -77,7 +76,7 @@ public class BlockEggsCobelodus extends ElementsLepidodendronMod.ModElement {
 			}
 			if (biome instanceof BiomeCarboniferous) {
 				//BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
-				if (biome == BiomeCarboniferousOceanShore.biome) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

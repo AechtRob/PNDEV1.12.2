@@ -1,0 +1,48 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up", "y": 270}
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up", "y": 180}
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up" }
+      ]
+    },
+
+
+
+    {   "when": { "facing": "north", "rf": true },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up_rf", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "south", "rf": true },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up_rf", "y": 270}
+      ]
+    },
+    {   "when": { "facing": "east", "rf": true },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up_rf", "y": 180}
+      ]
+    },
+    {   "when": { "facing": "west", "rf": true },
+      "apply": [
+        {"model": "lepidodendron:acid_bath_end_up_rf" }
+      ]
+    }
+
+  ]
+}

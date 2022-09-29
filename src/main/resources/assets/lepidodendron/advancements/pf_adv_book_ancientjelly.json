@@ -4,10 +4,10 @@
 			"item": "lepidodendron:advancement_placeholder"
 		},
 		"title": {
-			"translate": "advancements.pf_adv_book_palaeojelly1.title"
+			"translate": "advancements.pf_adv_book_palaeojelly.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_book_palaeojelly1.description"
+			"translate": "advancements.pf_adv_book_palaeojelly.description"
 		}
 	},
 	"parent": "lepidodendron:pf_base_adv_knowledge",

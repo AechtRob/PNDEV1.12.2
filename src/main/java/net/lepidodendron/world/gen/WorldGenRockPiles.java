@@ -1,8 +1,5 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.world.biome.triassic.BiomeTriassicDesertPlateau;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicDesertPlateauBroken;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicDesertPlateauCanyons;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -52,9 +49,9 @@ public class WorldGenRockPiles extends WorldGenerator
                 }
 
                 if (position.getY() <= 109
-                    && (worldIn.getBiome(position) == BiomeTriassicDesertPlateau.biome
-                    || worldIn.getBiome(position) == BiomeTriassicDesertPlateauBroken.biome
-                    || worldIn.getBiome(position) == BiomeTriassicDesertPlateauCanyons.biome
+                    && (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau")
+                    || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_broken")
+                    || worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_canyons")
                     )
                 )
                 {

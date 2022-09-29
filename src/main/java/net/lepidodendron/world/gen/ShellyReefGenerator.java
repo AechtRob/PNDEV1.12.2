@@ -2,8 +2,6 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockShelly;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanksRaised;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -44,8 +42,8 @@ public class ShellyReefGenerator extends WorldGenerator
 			dimensionCriteria = true;
 
 		Biome biome = worldIn.getBiome(position);
-		if (biome == BiomeJurassicSandbanks.biome
-			|| biome == BiomeJurassicSandbanksRaised.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")) {
 			dimensionCriteria = true;
 		}
 

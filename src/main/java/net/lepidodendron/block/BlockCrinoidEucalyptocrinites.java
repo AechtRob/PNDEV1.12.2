@@ -8,9 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -116,7 +113,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 		) {
 			biomeCriteria = true;
 		}
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 		if (biome instanceof BiomeDevonian)
@@ -133,11 +130,11 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 			return;
 
 		int multiplier = 1;
-		if (biome == BiomeDevonianOceanDeadReef.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
 
-		if (biome == BiomeSilurianSeaGarden.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			multiplier = 10;
 		}
 
@@ -167,7 +164,7 @@ public class BlockCrinoidEucalyptocrinites extends ElementsLepidodendronMod.ModE
 	}
 
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
-		if (worldIn.getBiome(pos) ==  BiomeSilurianSeaGarden.biome) {
+		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			if (random.nextInt(8) != 0) {
 				return BlockCrinoidEucalyptocrinites.BlockCustom.crinoidheight;
 			}

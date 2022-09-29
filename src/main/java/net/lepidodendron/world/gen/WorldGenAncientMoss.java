@@ -6,7 +6,6 @@ import net.lepidodendron.block.BlockAncientMoss;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -160,7 +159,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 			String stringEgg = "";
 			int i;
 
-			if (dimID == LepidodendronConfig.dimSilurian && worldIn.getBiome(pos) == BiomeSilurianLushPatch.biome) {
+			if (dimID == LepidodendronConfig.dimSilurian && worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")) {
 				i = rand.nextInt(2); //Trigonotarbid or Eoarthropleura
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";}

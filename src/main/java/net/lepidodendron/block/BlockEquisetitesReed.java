@@ -7,8 +7,6 @@ import net.lepidodendron.item.ItemEquisetitesReedItem;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -95,8 +93,8 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeTriassic) {
-			if (biome == BiomeTriassicRiver.biome
-				|| biome == BiomeTriassicFloodedForest.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -135,7 +133,7 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			GenChance = 35;
 		}
 
-		if (biome == BiomeTriassicFloodedForest.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")) {
 			GenChance = 64;
 		}
 

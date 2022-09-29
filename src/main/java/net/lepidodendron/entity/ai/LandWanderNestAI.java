@@ -1,6 +1,7 @@
 package net.lepidodendron.entity.ai;
 
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.entity.EntityPrehistoricFloraMussaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
@@ -67,6 +68,12 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
             if (this.PrehistoricFloraAgeableBase instanceof EntityPrehistoricFloraPlateosaurus) {
                 EntityPrehistoricFloraPlateosaurus PlateosaurusBase = (EntityPrehistoricFloraPlateosaurus) this.PrehistoricFloraAgeableBase;
                 if (PlateosaurusBase.getAnimation() == PlateosaurusBase.STAND_ANIMATION) {
+                    return false;
+                }
+            }
+            if (this.PrehistoricFloraAgeableBase instanceof EntityPrehistoricFloraMussaurus) {
+                EntityPrehistoricFloraMussaurus MussaurusBase = (EntityPrehistoricFloraMussaurus) this.PrehistoricFloraAgeableBase;
+                if (MussaurusBase.getAnimation() == MussaurusBase.STAND_ANIMATION) {
                     return false;
                 }
             }

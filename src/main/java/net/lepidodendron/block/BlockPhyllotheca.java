@@ -7,8 +7,6 @@ import net.lepidodendron.item.ItemPhyllothecaItem;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianLowlandFloodplain;
-import net.lepidodendron.world.biome.permian.BiomePermianRiver;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -97,8 +95,8 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-				|| biome == BiomePermianLowlandFloodplain.biome
-				|| biome == BiomePermianRiver.biome
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 				biomeCriteria = true;
 			}
@@ -144,7 +142,7 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 		final int maxH = maxheight;
 		final int minH = minheight;
 
-		if (biome == BiomePermianRiver.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river"))
 		{
 			GenChance = 48;
 		}

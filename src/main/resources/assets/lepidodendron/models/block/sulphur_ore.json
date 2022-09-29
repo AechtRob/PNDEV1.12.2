@@ -1,7 +1,8 @@
 {
-  "parent": "block/cube_all",
+  "parent": "lepidodendron:block/ore_layer",
   "textures": {
-    "all": "lepidodendron:blocks/sulphur_ore",
-    "particle": "lepidodendron:blocks/sulphur_ore"
+    "stone": "blocks/stone",
+    "particle": "blocks/stone",
+    "layer": "lepidodendron:blocks/sulphur_ore"
   }
 }

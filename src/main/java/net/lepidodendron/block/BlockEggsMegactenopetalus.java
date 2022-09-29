@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianOceanCliff;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -68,7 +67,7 @@ public class BlockEggsMegactenopetalus extends ElementsLepidodendronMod.ModEleme
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomePermian) {
 				BiomePermian biomeP = (BiomePermian) biome;
-				if (biomeP == BiomePermianOceanCliff.biome) {
+				if (biomeP.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

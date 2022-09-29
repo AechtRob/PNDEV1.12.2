@@ -2,10 +2,6 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandBlack;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSouthernTaiga;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSouthernTaigaBasalt;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSouthernTaigaHills;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -129,12 +125,12 @@ public class WorldGenPrehistoricLakes extends WorldGenerator
 								//	worldIn.setBlockState(blockpos, BlockPrehistoricGroundCoverBasic.block.getDefaultState(), 2);
                                 //}
                                 //else {
-                                if (worldIn.getBiome(blockpos) != BiomeJurassicSandbanks.biome) {
+                                if (!(worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks"))) {
                                     worldIn.setBlockState(blockpos, BlockPrehistoricGroundSand.block.getDefaultState(), 2);
                                 }
-                                if (worldIn.getBiome(blockpos) == BiomeJurassicSouthernTaiga.biome
-                                    || worldIn.getBiome(blockpos) == BiomeJurassicSouthernTaigaHills.biome
-                                    || worldIn.getBiome(blockpos) == BiomeJurassicSouthernTaigaBasalt.biome) {
+                                if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
+                                    || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")
+                                    || worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_basalt")) {
                                     worldIn.setBlockState(blockpos, BlockPrehistoricGroundSandBlack.block.getDefaultState(), 2);
                                 }
                                 //}

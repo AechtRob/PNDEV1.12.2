@@ -10,8 +10,6 @@ import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -119,7 +117,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimCambrian
 		)
 			biomeCriteria = true;
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 		if (biome instanceof BiomeCarboniferous)
@@ -146,7 +144,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if (biome == BiomeOrdovicianSpongeForest.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest")) {
 			multiplier = 8;
 		}
 

@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/plant_fossil_1",
+  "parent": "lepidodendron:block/fossiliferous_neogene",
   "display": {
     "thirdperson": {
       "rotation": [

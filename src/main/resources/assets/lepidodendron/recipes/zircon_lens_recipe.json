@@ -3,7 +3,8 @@
   "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:zircon"
+      "type": "forge:ore_dict",
+      "ore": "gemZircon"
     },
     {
       "type": "forge:ore_dict",

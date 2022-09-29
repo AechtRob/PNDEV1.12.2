@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianOceanCliff;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -107,7 +106,7 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biome == BiomePermianOceanCliff.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")) {
 				biomeCriteria = true;
 			}
 			else {

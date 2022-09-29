@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -106,7 +105,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician
 		)
 			biomeCriteria = true;
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 		if (!biomeCriteria)

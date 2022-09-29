@@ -6,11 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIcebergs;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicOceanClamBeds;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -125,21 +120,21 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 5;
 		}
 
-		if (biome == BiomeTriassicFloodedForest.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest"))
 		{
 			multiplier = 5;
 		}
 
-		if (biome == BiomeOrdovicianSeaIce.biome
-				|| biome == BiomeOrdovicianSeaIcebergs.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 		)
 			multiplier = 48;
 
-		if (biome == BiomeOrdovicianSpongeForest.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest")
 		)
 			multiplier = 12;
 
-		if (biome == BiomeTriassicOceanClamBeds.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds")
 		)
 			multiplier = 24;
 

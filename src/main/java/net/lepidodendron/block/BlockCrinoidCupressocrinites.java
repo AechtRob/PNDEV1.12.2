@@ -8,8 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -124,7 +122,7 @@ public class BlockCrinoidCupressocrinites extends ElementsLepidodendronMod.ModEl
 			return;
 
 		int multiplier = 1;
-		if (biome == BiomeDevonianOceanDeadReef.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
 
@@ -154,7 +152,7 @@ public class BlockCrinoidCupressocrinites extends ElementsLepidodendronMod.ModEl
 	}
 
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
-		if (worldIn.getBiome(pos) ==  BiomeSilurianSeaGarden.biome) {
+		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			if (random.nextInt(8) != 0) {
 				return BlockCrinoidCupressocrinites.BlockCustom.crinoidheight;
 			}

@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -128,7 +127,7 @@ public class BlockCrinoidAncyrocrinus extends ElementsLepidodendronMod.ModElemen
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
 		int multiplier = 1;
-		if (biome == BiomeDevonianOceanDeadReef.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			multiplier = 15;
 		}
 

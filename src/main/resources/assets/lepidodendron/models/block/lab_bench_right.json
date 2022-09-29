@@ -1,0 +1,20 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "lepidodendron:blocks/lab_bench_front",
+		"side": "lepidodendron:blocks/lab_bench_side"
+	},
+	"elements": [
+		{
+			"from": [15, 0, 1],
+			"to": [16, 15, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 15, 15], "texture": "#side"},
+				"east": {"uv": [14, 0, 0, 15], "texture": "#side"},
+				"south": {"uv": [1, 0, 0, 15], "texture": "#side"},
+				"down": {"uv": [16, 0, 15, 14], "texture": "#side"}
+			}
+		}
+	]
+}

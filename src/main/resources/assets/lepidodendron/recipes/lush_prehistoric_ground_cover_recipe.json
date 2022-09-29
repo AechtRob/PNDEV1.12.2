@@ -9,19 +9,19 @@
   "key": {
     "0": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "1": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "2": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "3": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "4": {
       "type": "forge:ore_dict",
@@ -29,19 +29,19 @@
     },
     "5": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "6": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "7": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     },
     "8": {
       "item": "minecraft:dirt",
-      "data": 3
+      "data": 2
     }
   },
   "result": {

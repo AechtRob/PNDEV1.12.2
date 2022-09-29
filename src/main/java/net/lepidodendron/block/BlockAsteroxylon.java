@@ -345,5 +345,11 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 		public Item blockItem() {
 			return null;
 		}
+
+		@Override
+		public EnumOffsetType getOffsetType()
+		{
+			return EnumOffsetType.XZ;
+		}
 	}
 }

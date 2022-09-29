@@ -2,7 +2,6 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockDicroidiumStem;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidium;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicGondwananForestCrags;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -86,7 +85,7 @@ public class WorldGenDicroidium extends WorldGenAbstractTree
                 IBlockState state = worldIn.getBlockState(down);
                 boolean isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
 
-                if (worldIn.getBiome(position) == BiomeTriassicGondwananForestCrags.biome) {
+                if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_crags")) {
                     int minHeight = 80;
                     if (position.getY() >= minHeight) {
                         int j2 = Math.max(0, 120 - position.getY());

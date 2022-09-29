@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/fossil_precambrian_1",
+  "parent": "lepidodendron:block/fossiliferous_precambrian",
   "display": {
     "thirdperson": {
       "rotation": [

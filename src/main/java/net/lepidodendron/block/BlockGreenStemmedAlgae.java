@@ -6,9 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRiver;
-import net.lepidodendron.world.biome.permian.BiomePermianRiver;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -122,9 +119,9 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 
 		int multiplier = 1;
 
-		if (biome == BiomeTriassicRiver.biome
-				|| biome == BiomePermianRiver.biome
-				|| biome == BiomeJurassicRiver.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river"))
 		{
 			multiplier = 8;
 		}

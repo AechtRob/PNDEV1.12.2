@@ -5,8 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanks;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSandbanksRaised;
 import net.lepidodendron.world.gen.ShellyReefGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -69,12 +67,12 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		boolean dimensionCriteria = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimShellyReef))
 			dimensionCriteria = true;
-		if (biome == BiomeJurassicSandbanks.biome
-				|| biome == BiomeJurassicSandbanksRaised.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")) {
 			dimensionCriteria = true;
 		}
 		if (!dimensionCriteria)
@@ -93,8 +91,8 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genShellyReefOverrideBiomes))
 			biomeCriteria = true;
 
-		if (biome == BiomeJurassicSandbanks.biome
-				|| biome == BiomeJurassicSandbanksRaised.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")) {
 			biomeCriteria = true;
 		}
 
@@ -103,8 +101,8 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 
-		if (biome == BiomeJurassicSandbanks.biome
-				|| biome == BiomeJurassicSandbanksRaised.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")) {
 			multiplier = 5;
 		}
 
@@ -161,23 +159,54 @@ public class BlockShelly extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);
-			setLightLevel(0.5F);
+			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
-		@Deprecated
 		@SideOnly(Side.CLIENT)
-		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-		{
+		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
 			int i = source.getCombinedLight(pos, state.getLightValue(source, pos));
 
 			if (i == 0)
 			{
-				pos = pos.down();
-				state = source.getBlockState(pos);
-				return source.getCombinedLight(pos, state.getLightValue(source, pos));
+				BlockPos pos1 = pos.up();
+				state = source.getBlockState(pos1);
+				int ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+				if (ii == 0) {
+					pos1 = pos.down();
+					state = source.getBlockState(pos1);
+					ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+					if (ii == 0) {
+						pos1 = pos.north();
+						state = source.getBlockState(pos1);
+						ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+						if (ii == 0) {
+							pos1 = pos.east();
+							state = source.getBlockState(pos1);
+							ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+							if (ii == 0) {
+								pos1 = pos.south();
+								state = source.getBlockState(pos1);
+								ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+								if (ii == 0) {
+									pos1 = pos.west();
+									state = source.getBlockState(pos1);
+									ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+									return ii;
+								}
+								return ii;
+							}
+							return ii;
+						}
+						return ii;
+					}
+					return ii;
+				}
+				else {
+					return ii;
+				}
 			}
 			else
 			{

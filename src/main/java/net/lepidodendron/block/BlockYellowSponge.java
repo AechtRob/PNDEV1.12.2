@@ -10,9 +10,7 @@ import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSpongeForest;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -101,7 +99,7 @@ public class BlockYellowSponge extends ElementsLepidodendronMod.ModElement {
 		) {
 			biomeCriteria = true;
 		}
-		if (biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 		if (dimID == LepidodendronConfig.dimPrecambrian){
@@ -171,7 +169,7 @@ public class BlockYellowSponge extends ElementsLepidodendronMod.ModElement {
 		{
 			multiplier = 4;
 		}
-		if (biome == BiomeOrdovicianSpongeForest.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest"))
 		{
 			multiplier = 20;
 		}

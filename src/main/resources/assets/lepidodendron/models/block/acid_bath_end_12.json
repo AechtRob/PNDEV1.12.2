@@ -1,0 +1,17 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "particle": "lepidodendron:blocks/acid_sulphuricstill",
+    "acid": "lepidodendron:blocks/acid_sulphuricstill"
+  },
+  "elements": [
+    {
+      "_comment": "acid",
+      "from": [ 1, 10.6, 0 ],
+      "to": [ 15, 10.6, 14 ],
+      "faces": {
+        "up":    {"uv": [1, 0, 15, 14], "texture": "#acid" }
+      }
+    }
+  ]
+}

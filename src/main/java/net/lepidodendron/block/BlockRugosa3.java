@@ -10,11 +10,7 @@ import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousOceanCliff;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIcebergs;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -124,8 +120,8 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 		)
 			biomeCriteria = true;
-		if (biome == BiomeOrdovicianSeaIce.biome
-				|| biome == BiomeOrdovicianSeaIcebergs.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 		)
 			biomeCriteria = false;
 
@@ -158,7 +154,7 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome == BiomeDevonianOceanDeadReef.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 				biomeCriteria = false;
 			}
 		}
@@ -178,7 +174,7 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 		) {
 			dimWeight = 2;
 		}
-		if ((biome == BiomeCarboniferousOceanCliff.biome)
+		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))
 		) {
 			dimWeight = 1;
 			multiplier = 6;

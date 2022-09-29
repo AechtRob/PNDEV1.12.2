@@ -65,23 +65,54 @@ public class BlockShellySticky extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);
-			setLightLevel(0.5F);
+			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
 		}
 
-		@Deprecated
 		@SideOnly(Side.CLIENT)
-		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)
-		{
+		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
 			int i = source.getCombinedLight(pos, state.getLightValue(source, pos));
 
 			if (i == 0)
 			{
-				pos = pos.down();
-				state = source.getBlockState(pos);
-				return source.getCombinedLight(pos, state.getLightValue(source, pos));
+				BlockPos pos1 = pos.up();
+				state = source.getBlockState(pos1);
+				int ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+				if (ii == 0) {
+					pos1 = pos.down();
+					state = source.getBlockState(pos1);
+					ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+					if (ii == 0) {
+						pos1 = pos.north();
+						state = source.getBlockState(pos1);
+						ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+						if (ii == 0) {
+							pos1 = pos.east();
+							state = source.getBlockState(pos1);
+							ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+							if (ii == 0) {
+								pos1 = pos.south();
+								state = source.getBlockState(pos1);
+								ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+								if (ii == 0) {
+									pos1 = pos.west();
+									state = source.getBlockState(pos1);
+									ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+									return ii;
+								}
+								return ii;
+							}
+							return ii;
+						}
+						return ii;
+					}
+					return ii;
+				}
+				else {
+					return ii;
+				}
 			}
 			else
 			{

@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousOceanCliff;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -107,7 +106,7 @@ public class BlockFenestellaGiantYellow extends ElementsLepidodendronMod.ModElem
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
-			if (biome == BiomeCarboniferousOceanCliff.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
 				biomeCriteria = true;
 			}
 			else {

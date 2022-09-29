@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockStromatoveris;
 import net.lepidodendron.block.BlockThaumaptilon;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianEstuary;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -58,10 +57,10 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = true;
 		}
-		if (seaPen == BlockStromatoveris.block && worldIn.getBiome(position) != BiomeCambrianEstuary.biome && dimID == LepidodendronConfig.dimCambrian) {
+		if (seaPen == BlockStromatoveris.block && (!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")) && dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = false;
 		}
-		if (seaPen == BlockThaumaptilon.block && worldIn.getBiome(position) == BiomeCambrianEstuary.biome && dimID == LepidodendronConfig.dimCambrian) {
+		if (seaPen == BlockThaumaptilon.block && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary") && dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = false;
 		}
 		if (!dimensionCriteria)

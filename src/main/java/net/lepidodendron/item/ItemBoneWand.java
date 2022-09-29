@@ -7,14 +7,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.enchantments.Enchantments;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.dimension.cambrian.WorldCambrian;
-import net.lepidodendron.world.dimension.carboniferous.WorldCarboniferous;
-import net.lepidodendron.world.dimension.devonian.WorldDevonian;
-import net.lepidodendron.world.dimension.ordovician.WorldOrdovician;
-import net.lepidodendron.world.dimension.permian.WorldPermian;
-import net.lepidodendron.world.dimension.precambrian.WorldPrecambrian;
-import net.lepidodendron.world.dimension.silurian.WorldSilurian;
-import net.lepidodendron.world.dimension.triassic.WorldTriassic;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -99,11 +91,6 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 			BlockPos pos1 = pos.offset(facing);
 			ItemStack itemstack = entity.getHeldItem(hand);
 
-			//Test:
-			if (itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
-				itemstack.damageItem(1, entity);
-			}
-
 			if (!functioningWand(itemstack)) {
 				return EnumActionResult.FAIL;
 			}
@@ -113,44 +100,7 @@ public class ItemBoneWand extends ElementsLepidodendronMod.ModElement {
 				if (!entity.canPlayerEdit(pos1, facing, itemstack)) {
 					return EnumActionResult.FAIL;
 				}
-				if (world.isAirBlock(pos1)) {
-					//WorldProterozoicWater.portal.portalSpawn(world, pos);
-					boolean portalSpawnPrecambrian = WorldPrecambrian.portal.portalSpawn(world, pos1);
-					boolean portalSpawnCambrian = WorldCambrian.portal.portalSpawn(world, pos1);
-					boolean portalSpawnOrdovician = WorldOrdovician.portal.portalSpawn(world, pos1);
-					boolean portalSpawnSilurian = WorldSilurian.portal.portalSpawn(world, pos1);
-					boolean portalSpawnDevonian = WorldDevonian.portal.portalSpawn(world, pos1);
-					boolean portalSpawnCarboniferous = WorldCarboniferous.portal.portalSpawn(world, pos1);
-					boolean portalSpawnPermian = WorldPermian.portal.portalSpawn(world, pos1);
-					boolean portalSpawnTriassic = WorldTriassic.portal.portalSpawn(world, pos1);
-					//boolean portalSpawnJurassic = WorldJurassic.portal.portalSpawn(world, pos1);
-
-					if (portalSpawnPrecambrian
-						|| portalSpawnCambrian
-						|| portalSpawnOrdovician
-						|| portalSpawnSilurian
-						|| portalSpawnDevonian
-						|| portalSpawnCarboniferous
-						|| portalSpawnPermian
-						|| portalSpawnTriassic
-						//|| portalSpawnJurassic
-					) {
-						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
-							itemstack.damageItem(1, entity);
-						}
-						return EnumActionResult.SUCCESS;
-					}
-					else if (facing != EnumFacing.DOWN) {
-						if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
-							if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
-								itemstack.damageItem(1, entity);
-							}
-							entity.swingArm(EnumHand.MAIN_HAND);
-							return EnumActionResult.SUCCESS;
-						}
-					}
-				}
-				else if (facing != EnumFacing.DOWN) {
+				if (facing != EnumFacing.DOWN) {
 					if (itemStackRejuvenate(world, pos.offset(facing), entity)) {
 						if (!entity.capabilities.isCreativeMode && itemstack.getItemDamage() < (this.getMaxDamage() - 1)) {
 							itemstack.damageItem(1, entity);
