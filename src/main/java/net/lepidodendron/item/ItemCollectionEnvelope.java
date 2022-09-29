@@ -252,6 +252,7 @@ public class ItemCollectionEnvelope extends ElementsLepidodendronMod.ModElement 
 								}
 								return EnumActionResult.SUCCESS;
 							}
+
 						}
 						//Vanilla ferns:
 						else if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(offsetY))

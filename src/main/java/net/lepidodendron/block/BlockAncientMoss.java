@@ -6,7 +6,6 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousSwampBurnt;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -97,7 +96,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		if (
 				(dimID == LepidodendronConfig.dimCarboniferous)
-				&& biome != BiomeCarboniferousSwampBurnt.biome
+				&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_burnt"))
 		)
 		{
 			biomeCriteria = true;

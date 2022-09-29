@@ -1,9 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "lepidodendron:blocks/precambrian_fossil",
-    "particle": "lepidodendron:blocks/precambrian_fossil"
-  }
-}
-
-

@@ -1,14 +1,14 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:fossil_silurian_1"},
-      {"model": "lepidodendron:fossil_silurian_2"},
-      {"model": "lepidodendron:fossil_silurian_3"},
-      {"model": "lepidodendron:fossil_silurian_4"},
-      {"model": "lepidodendron:fossil_silurian_1_var"},
-      {"model": "lepidodendron:fossil_silurian_2_var"},
-      {"model": "lepidodendron:fossil_silurian_3_var"},
-      {"model": "lepidodendron:fossil_silurian_4_var"}
+      { "model": "lepidodendron:fossiliferous_silurian" },
+      { "model": "lepidodendron:fossiliferous_silurian_var" },
+      { "model": "lepidodendron:fossiliferous_silurian", "z": 90 },
+      { "model": "lepidodendron:fossiliferous_silurian_var", "z": 90 },
+      { "model": "lepidodendron:fossiliferous_silurian", "x": 90 },
+      { "model": "lepidodendron:fossiliferous_silurian_var", "x": 90 },
+      { "model": "lepidodendron:fossiliferous_silurian", "x": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_silurian_var", "x": 90, "z": 90 }
     ]
   }
 }

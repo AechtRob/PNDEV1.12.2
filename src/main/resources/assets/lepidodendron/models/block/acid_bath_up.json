@@ -1,0 +1,52 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"trim": "lepidodendron:blocks/acid_bath",
+		"particle": "blocks/iron_block"
+	},
+	"elements": [
+		{
+			"from": [5, -15, 7],
+			"to": [7, -2, 9],
+			"faces": {
+				"north": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"east": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"south": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"west": {"uv": [9, 3, 11, 16], "texture": "#trim"}
+			}
+		},
+		{
+			"from": [5, -2, 7],
+			"to": [7, 14, 9],
+			"faces": {
+				"north": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"east": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"south": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"west": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"up": {"uv": [9, 0, 11, 2], "texture": "#trim"}
+			}
+		},
+		{
+			"from": [0, 4, 5],
+			"to": [4, 12, 11],
+			"faces": {
+				"north": {"uv": [12, 0, 16, 8], "texture": "#trim"},
+				"east": {"uv": [9, 0, 15, 8], "texture": "#trim"},
+				"south": {"uv": [12, 0, 16, 8], "texture": "#trim"},
+				"west": {"uv": [10, 8, 16, 16], "texture": "#trim"},
+				"up": {"uv": [12, 2, 16, 8], "texture": "#trim"},
+				"down": {"uv": [12, 2, 16, 8], "texture": "#trim"}
+			}
+		},
+		{
+			"from": [4, 6, 7],
+			"to": [5, 10, 9],
+			"faces": {
+				"north": {"uv": [15, 1, 16, 5], "texture": "#trim"},
+				"south": {"uv": [15, 1, 16, 5], "texture": "#trim"},
+				"up": {"uv": [15, 1, 16, 3], "texture": "#trim"},
+				"down": {"uv": [15, 1, 16, 3], "texture": "#trim"}
+			}
+		}
+	]
+}

@@ -1,7 +1,6 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenSciadopitys;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRoughHills;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -83,7 +82,7 @@ public class WorldGenSciadopitysTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-					if (!(worldIn.getBiome(position) == BiomeJurassicRoughHills.biome && position.getY() > 100)) {
+					if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() > 100)) {
                         ProcedureWorldGenSciadopitys.executeProcedure($_dependencies);
                     }
                     return true;

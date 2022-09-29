@@ -7,7 +7,6 @@ import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -41,7 +40,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 
 		Material material = worldIn.getBlockState(blockpos.down()).getMaterial();
 
-		if (worldIn.getBiome(blockpos) == BiomeTriassicFloodedForest.biome && blockpos.getY() > 72) {
+		if (worldIn.getBiome(blockpos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest") && blockpos.getY() > 72) {
 			return false;
 		}
 

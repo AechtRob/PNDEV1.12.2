@@ -4692,6 +4692,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("trapdoorWood", BlockDarkOakTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockBirchTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockSpruceTrapdoor.block);
+		OreDictionary.registerOre("trapdoorWood", BlockOakTrapdoor.block);
 
 		OreDictionary.registerOre("plantPrehistoric", BlockSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAlpiaSapling.block);

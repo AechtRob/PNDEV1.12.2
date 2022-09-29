@@ -3,7 +3,6 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumF;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.lepidodendron.procedure.ProcedureWorldGenTelemachus;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicGondwananForestCrags;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -87,7 +86,7 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
 
-                    if (worldIn.getBiome(position) == BiomeTriassicGondwananForestCrags.biome) {
+                    if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_crags")) {
                         int minHeight = 86;
                         if (position.getY() >= minHeight) {
                             int j2 = Math.max(0, 120 - position.getY());

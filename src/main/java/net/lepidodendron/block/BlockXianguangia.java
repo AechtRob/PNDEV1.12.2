@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianEstuary;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -108,7 +107,7 @@ public class BlockXianguangia extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			biomeCriteria = true;
 		}
-		if (biome != BiomeCambrianEstuary.biome
+		if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")
 		)
 			biomeCriteria = false;
 		if (!biomeCriteria)

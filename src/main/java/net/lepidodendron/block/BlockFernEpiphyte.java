@@ -7,13 +7,9 @@ import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousSwampBurnt;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSouthernTaiga;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicSouthernTaigaHills;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
 import net.lepidodendron.world.gen.FernEpiphyteGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -92,7 +88,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		if (
 			(dimID == LepidodendronConfig.dimCarboniferous
-			&& biome != BiomeCarboniferousSwampBurnt.biome)
+			&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_burnt")))
 			)
 			{
 				biomeCriteria = true;
@@ -138,9 +134,9 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 
 		int GenChance = 32;
 
-		if (biome == BiomeTriassicFloodedForest.biome
-			|| biome == BiomeJurassicSouthernTaiga.biome
-			|| biome == BiomeJurassicSouthernTaigaHills.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_southern_taiga_hills")) {
 			GenChance = 64;
 		}
 

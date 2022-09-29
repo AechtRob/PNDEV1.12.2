@@ -5,13 +5,8 @@ import net.lepidodendron.*;
 import net.lepidodendron.item.ItemGreenFilamentousAlgaeItem;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousMarsh;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianSwamp;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicFloodplainForested;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianLowlandFloodplain;
-import net.lepidodendron.world.biome.permian.BiomePermianLowlandsForest;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.FilamentousAlgaeGenerator;
 import net.minecraft.block.Block;
@@ -87,9 +82,9 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biome == BiomePermianLowlandsForest.biome
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest")
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-				|| biome == BiomePermianLowlandFloodplain.biome) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -137,16 +132,16 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			//if (biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":")).equalsIgnoreCase("minecraft"))
 			GenChance = Math.min(GenChance * 10, 100);
 		}
-		if (biome == BiomePermianLowlandFloodplain.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
 			GenChance = 156;
 		}
-		if (biome == BiomeJurassicFloodplainForested.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")) {
 			GenChance = 92;
 		}
-		if (biome == BiomeCarboniferousMarsh.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
 			GenChance = 156;
 		}
-		if (biome == BiomeDevonianSwamp.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
 			GenChance = 192;
 		}
 
@@ -213,7 +208,7 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 				EntityItem entityToSpawn = new EntityItem(worldIn, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(ItemGreenFilamentousAlgaeItem.block, (int) (1)));
 				entityToSpawn.setPickupDelay(10);
 				worldIn.spawnEntity(entityToSpawn);
-				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundType.PLANT.getBreakSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else {
 				super.onEntityCollision(worldIn, pos, state, entityIn);

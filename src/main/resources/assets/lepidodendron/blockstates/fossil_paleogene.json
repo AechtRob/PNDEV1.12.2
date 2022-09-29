@@ -1,14 +1,14 @@
 {
   "variants": {
     "normal": [
-      {"model": "lepidodendron:plant_fossil_1"},
-      {"model": "lepidodendron:plant_fossil_2"},
-      {"model": "lepidodendron:plant_fossil_3"},
-      {"model": "lepidodendron:plant_fossil_4"},
-      {"model": "lepidodendron:plant_fossil_1_var"},
-      {"model": "lepidodendron:plant_fossil_2_var"},
-      {"model": "lepidodendron:plant_fossil_3_var"},
-      {"model": "lepidodendron:plant_fossil_4_var"}
+      { "model": "lepidodendron:fossiliferous_paleogene" },
+      { "model": "lepidodendron:fossiliferous_paleogene_var" },
+      { "model": "lepidodendron:fossiliferous_paleogene", "z": 90 },
+      { "model": "lepidodendron:fossiliferous_paleogene_var", "z": 90 },
+      { "model": "lepidodendron:fossiliferous_paleogene", "x": 90 },
+      { "model": "lepidodendron:fossiliferous_paleogene_var", "x": 90 },
+      { "model": "lepidodendron:fossiliferous_paleogene", "x": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_paleogene_var", "x": 90, "z": 90 }
     ]
   }
 }

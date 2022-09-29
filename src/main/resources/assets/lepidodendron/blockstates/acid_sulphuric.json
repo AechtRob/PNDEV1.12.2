@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:fluid"
+  },
+  "variants": {
+    "acid_sulphuric": [
+      {
+        "custom": {
+          "fluid": "acid_sulphuric"
+        }
+      }
+    ]
+  }
+}

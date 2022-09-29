@@ -197,6 +197,9 @@ public class EntityPrehistoricFloraBothriolepis extends EntityPrehistoricFloraAg
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.BOTHRIOLEPIS_LOOT_YOUNG;
+		}
 		return LepidodendronMod.BOTHRIOLEPIS_LOOT;
 	}
 

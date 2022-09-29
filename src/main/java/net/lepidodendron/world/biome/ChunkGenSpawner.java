@@ -9,19 +9,12 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeSilurian;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianBiome;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianEstuary;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianSea;
-import net.lepidodendron.world.biome.carboniferous.*;
-import net.lepidodendron.world.biome.devonian.*;
-import net.lepidodendron.world.biome.ordovician.*;
-import net.lepidodendron.world.biome.permian.*;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrianSea;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.silurian.BiomeSilurian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSea;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
-import net.lepidodendron.world.biome.triassic.*;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -59,7 +52,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
         String[] MobString = new String[0];
         if (mobList == null) {
             Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
-            if (biome == BiomePrecambrianSea.biome) {
+            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsPF);
                 }
@@ -69,7 +62,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsReborn);
                 }
-            } else if (biome == BiomeCambrianSea.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianMobsPF);
                 }
@@ -79,7 +72,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianMobsReborn);
                 }
-            } else if (biome == BiomeCambrianBiome.biome || biome == BiomeCambrianEstuary.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_biome") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianEstuaryMobsPF);
                 }
@@ -89,7 +82,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianEstuaryMobsReborn);
                 }
-            } else if (biome == BiomeOrdovicianSea.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsOceanPF);
                 }
@@ -99,7 +92,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsReborn);
                 }
-            } else if (biome == BiomeOrdovicianSpongeForest.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsOceanSpongePF);
                 }
@@ -109,7 +102,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsSpongeReborn);
                 }
-            } else if (biome == BiomeOrdovicianSeaIce.biome || biome == BiomeOrdovicianSeaIcebergs.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsOceanIcePF);
                 }
@@ -119,7 +112,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsReborn);
                 }
-            } else if (biome == BiomeSilurianSea.biome || biome == BiomeSilurianSeaGarden.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsOceanPF);
                 }
@@ -129,11 +122,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsReborn);
                 }
-            } else if (biome == BiomeSilurianLushPatch.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsLandPF);
                 }
-            } else if (biome == BiomeDevonianFloodplain.biome || biome == BiomeDevonianSprings.biome || biome == BiomeDevonianHills.biome || biome == BiomeDevonianGilboa.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_floodplain") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_gilboa")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsForestPF);
                 }
@@ -143,7 +136,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsForestReborn);
                 }
-            } else if (biome == BiomeDevonianSwamp.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSwampPF);
                 }
@@ -153,7 +146,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSwampReborn);
                 }
-            } else if (biome == BiomeDevonianSwamp.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSwampPF);
                 }
@@ -163,7 +156,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSwampReborn);
                 }
-            } else if (biome == BiomeDevonianHypersalineSinkhole.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hypersaline_sinkhole")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSinkholePF);
                 }
@@ -173,7 +166,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsSinkholeReborn);
                 }
-            } else if (biome == BiomeDevonianOcean.biome || biome == BiomeDevonianForest.biome || biome == BiomeDevonianOceanDeep.biome || biome == BiomeDevonianSandyBeach.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_forest") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsOceanPF);
                 }
@@ -183,7 +176,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsOceanReborn);
                 }
-            } else if (biome == BiomeDevonianOceanDeadReef.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsDeadReefPF);
                 }
@@ -193,7 +186,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsDeadReefReborn);
                 }
-            } else if (biome == BiomeCarboniferousBeach.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomeCarboniferousOceanShore.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_beach") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_shore")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanPF);
                 }
@@ -203,7 +196,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanReborn);
                 }
-            } else if (biome == BiomeCarboniferousOceanCliff.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanCliffPF);
                 }
@@ -213,7 +206,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsOceanReborn);
                 }
-            } else if (biome == BiomeCarboniferousHills.biome || biome == BiomeCarboniferousHillsEdge.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_hills") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_hills_edge")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsPF);
                 }
@@ -223,7 +216,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsReborn);
                 }
-            } else if (biome == BiomeCarboniferousMarsh.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshPF);
                 }
@@ -233,7 +226,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsMarshReborn);
                 }
-            } else if (biome == BiomeCarboniferousIce.biome || biome == BiomeCarboniferousIceLakes.biome || biome == BiomeCarboniferousIceLakes.biome || biome == BiomeCarboniferousIceEdge.biome || biome == BiomeCarboniferousIceSpikes.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_desert") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_lakes") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_lakes") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_desert_edge") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_polar_desert_spikes")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIcePF);
                 }
@@ -243,7 +236,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsIceReborn);
                 }
-            } else if (biome == BiomeCarboniferousSwamp.biome || biome == BiomeCarboniferousSwampHills.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_hills")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampPF);
                 }
@@ -253,7 +246,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampReborn);
                 }
-            } else if (biome == BiomeCarboniferousSwampBurnt.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_burnt")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampPF);
                 }
@@ -263,7 +256,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsBurntSwampReborn);
                 }
-            } else if (biome == BiomePermianAridHills.biome || biome == BiomePermianAridLands.biome || biome == BiomePermianAridLandsLush.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_hills") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_lands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_arid_lands_lush")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsAridLandsPF);
                 }
@@ -273,7 +266,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsAridLandsReborn);
                 }
-            } else if (biome == BiomePermianBeach.biome || biome == BiomePermianColdGlossopterisBeach.biome || biome == BiomePermianOceanShore.biome || biome == BiomePermianOcean.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_beach") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_beach") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_shore") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanPF);
                 }
@@ -283,7 +276,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanReborn);
                 }
-            } else if (biome == BiomePermianOceanCliff.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanCliffPF);
                 }
@@ -293,7 +286,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsOceanCliffReborn);
                 }
-            } else if (biome == BiomePermianColdGlossopterisForest.biome || biome == BiomePermianColdGlossopterisForestLight.biome || biome == BiomePermianColdGlossopterisForestOcean.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest_light") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_cold_glossopteris_forest_ocean")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsGlossopterisPF);
                 }
@@ -303,7 +296,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsGlossopterisReborn);
                 }
-            } else if (biome == BiomePermianDesert.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_desert")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsDesertPF);
                 }
@@ -313,7 +306,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsDesertReborn);
                 }
-            } else if (biome == BiomePermianFloodbasalt.biome || biome == BiomePermianFloodbasaltEdge.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsFloodbasaltPF);
                 }
@@ -323,7 +316,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsFloodbasaltReborn);
                 }
-            } else if (biome == BiomePermianHighlands.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsHighlandsPF);
                 }
@@ -333,7 +326,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsHighlandsReborn);
                 }
-            } else if (biome == BiomePermianLowlandFloodplain.biome || biome == BiomePermianLowlands.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsLowlandsPF);
                 }
@@ -343,7 +336,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsLowlandsReborn);
                 }
-            } else if (biome == BiomePermianLowlandsForest.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsLowlandForestPF);
                 }
@@ -353,7 +346,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsLowlandForestReborn);
                 }
-            } else if (biome == BiomePermianMountains.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsMountainsPF);
                 }
@@ -363,7 +356,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsMountainsReborn);
                 }
-            } else if (biome == BiomePermianRiver.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsRiverPF);
                 }
@@ -373,8 +366,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsRiverReborn);
                 }
-            } else if (biome == BiomePermianWetlands.biome || biome == BiomePermianWetlandsUnwooded.biome
-                    || biome == BiomePermianWetlandsFernCopse.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_unwooded")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_wetlands_fern_copse")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsPF);
                 }
@@ -384,7 +377,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPermianMobsWetlandsReborn);
                 }
-            } else if (biome == BiomeTriassicOceanShore.biome || biome == BiomeTriassicOcean.biome || biome == BiomeTriassicBeach.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_shore") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanPF);
                 }
@@ -394,7 +387,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanReborn);
                 }
-            } else if (biome == BiomeTriassicOceanClamBeds.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanClamBedsPF);
                 }
@@ -404,7 +397,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsOceanClamBedsReborn);
                 }
-            } else if (biome == BiomeTriassicRiver.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsRiverPF);
                 }
@@ -414,7 +407,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsRiverReborn);
                 }
-            } else if (biome == BiomeTriassicXericForest.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_forest")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericForestPF);
                 }
@@ -424,7 +417,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericForestReborn);
                 }
-            } else if (biome == BiomeTriassicXericScrubland.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_xeric_scrubland")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericScrublandPF);
                 }
@@ -434,7 +427,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsXericShrublandReborn);
                 }
-            } else if (biome == BiomeTriassicWarmLakeland.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_lakeland")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsLakelandPF);
                 }
@@ -444,7 +437,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsLakelandReborn);
                 }
-            } else if (biome == BiomeTriassicWarmVolcanicHills.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_warm_volcanic_hills")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsPF);
                 }
@@ -454,7 +447,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsVolcanicHillsReborn);
                 }
-            } else if (biome == BiomeTriassicFloodedForest.biome || biome == BiomeTriassicFloodedForestDense.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest_dense")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestPF);
                 }
@@ -464,7 +457,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsFloodedForestReborn);
                 }
-            } else if (biome == BiomeTriassicGondwananForest.biome || biome == BiomeTriassicGondwananForestCrags.biome || biome == BiomeTriassicGondwananForestHills.biome || biome == BiomeTriassicGondwananForestClearing.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_crags") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_hills") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_forest_clearing")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestPF);
                 }
@@ -474,7 +467,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCoolForestReborn);
                 }
-            } else if (biome == BiomeTriassicGondwananPlain.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_gondwanan_plain")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMossMeadowPF);
                 }
@@ -484,7 +477,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMossMeadowReborn);
                 }
-            } else if (biome == BiomeTriassicDesertRocky.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_rocky")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDesertPF);
                 }
@@ -494,7 +487,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDesertReborn);
                 }
-            } else if (biome == BiomeTriassicDesertSandy.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_sandy")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDunesPF);
                 }
@@ -504,7 +497,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsDunesReborn);
                 }
-            } else if (biome == BiomeTriassicDesertPlateau.biome || biome == BiomeTriassicDesertPlateauBroken.biome || biome == BiomeTriassicDesertPlateauCanyons.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_broken") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_desert_plateau_canyons")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsPlateauPF);
                 }
@@ -514,7 +507,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsPlateauReborn);
                 }
-            } else if (biome == BiomeTriassicCreek.biome || biome == BiomeTriassicRiverbank.biome || biome == BiomeTriassicRiverbankForest.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_riverbank_forest")) {
                 TriassicCanyons = true;
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsPF);
@@ -525,7 +518,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsCanyonsReborn);
                 }
-            } else if (biome == BiomeTriassicVolcanicIslands.biome || biome == BiomeTriassicBlackBeach.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_volcanic_islands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_beach_black")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsIslandsPF);
                 }
@@ -535,7 +528,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsIslandsReborn);
                 }
-            } else if (biome == BiomeTriassicMountains.biome) {
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_mountains")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimTriassicMobsMountainsPF);
                 }
@@ -760,7 +753,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                         Biome biome = world.getBiome(pos1);
                                                                         if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                            if (biome == BiomeDevonianOceanDeep.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomePermianOcean.biome || biome == BiomeTriassicOcean.biome) {
+                                                                            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean")) {
                                                                                 if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
@@ -834,7 +827,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                         Biome biome = world.getBiome(pos1);
                                                                         if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                            if (biome != BiomeDevonianOceanDeep.biome && biome != BiomeCarboniferousOcean.biome && biome != BiomePermianOcean.biome && biome != BiomeTriassicOcean.biome) {
+                                                                            if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean"))) {
                                                                                 if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                         && (pos1.getY() > world.getSeaLevel() - 12)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
@@ -925,7 +918,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                         else if (biome instanceof BiomeSilurian) {
                                                                             BiomeSilurian biomeOS = (BiomeSilurian) biome;
-                                                                            if (biome == BiomeSilurianLushPatch.biome) {
+                                                                            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")) {
                                                                                 if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                         && (pos1.getY() > world.getSeaLevel() - 5)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
@@ -989,7 +982,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 }
                                                                             }
                                                                         }
-                                                                        else if (biome == BiomeCambrianSea.biome || biome == BiomeCambrianBiome.biome) {
+                                                                        else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_biome")) {
                                                                             if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                     && (pos1.getY() > world.getSeaLevel() - 50)) {
                                                                                 //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
@@ -1130,7 +1123,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                         Biome biome = world.getBiome(pos1);
                                                                         if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                            if (biome == BiomeDevonianOceanDeep.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomePermianOcean.biome || biome == BiomeTriassicOcean.biome) {
+                                                                            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean")) {
                                                                                 if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
@@ -1211,7 +1204,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                         Biome biome = world.getBiome(pos1);
                                                                         if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                            if (biome == BiomeDevonianOceanDeep.biome || biome == BiomeCarboniferousOcean.biome || biome == BiomePermianOcean.biome || biome == BiomeTriassicOcean.biome) {
+                                                                            if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean")) {
                                                                                 if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
                                                                                         && (pos1.getY() > world.getSeaLevel() - 40)) {
                                                                                     //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));

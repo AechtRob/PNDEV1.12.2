@@ -65,7 +65,7 @@ public class BlockEurypteridEggsMegalograptusPlaceable extends ElementsLepidoden
 			super.updateTick(worldIn, pos, state, rand);
 
 			if (!(worldIn.isRemote)) {
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraMegalograptus.class).toString(), "{AgeTicks:0}", (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D);
+				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraMegalograptus.class).toString(), "{AgeTicks:0}", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 			}
 			worldIn.destroyBlock(pos, false);
 		}

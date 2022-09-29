@@ -4,7 +4,6 @@ import net.lepidodendron.block.BlockTreefernSilverLog;
 import net.lepidodendron.block.BlockTreefernSilverShoot;
 import net.lepidodendron.block.BlockTreefernSilverShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernSilver;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRoughHills;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -129,7 +128,7 @@ public class WorldGenSilverTreefernTree extends WorldGenAbstractTree
                                 worldIn.setBlockState(position, BlockTreefernSilverShootPlaceable.block.getDefaultState());
                                 BlockTreefernSilverShootPlaceable.block.onBlockAdded(worldIn, position, BlockTreefernSilverShootPlaceable.block.getDefaultState());
                             }
-                            else if (!(worldIn.getBiome(position) == BiomeJurassicRoughHills.biome && position.getY() + (rand.nextInt(7) - 3) > 95)) {
+                            else if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernSilver.executeProcedure($_dependencies);
                             }
                             else {

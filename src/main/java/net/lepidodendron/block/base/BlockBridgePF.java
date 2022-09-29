@@ -52,8 +52,57 @@ public class BlockBridgePF extends BlockCompressedPowered implements ITileEntity
 		setHardness(2F);
 		setResistance(3F);
 		setLightOpacity(0);
-		setLightLevel(0.5F);
+		//setLightLevel(0.5F);
 		setCreativeTab(TabLepidodendronBuilding.tab);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
+		int i = source.getCombinedLight(pos, state.getLightValue(source, pos));
+
+		if (i == 0)
+		{
+			BlockPos pos1 = pos.up();
+			state = source.getBlockState(pos1);
+			int ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+			if (ii == 0) {
+				pos1 = pos.down();
+				state = source.getBlockState(pos1);
+				ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+				if (ii == 0) {
+					pos1 = pos.north();
+					state = source.getBlockState(pos1);
+					ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+					if (ii == 0) {
+						pos1 = pos.east();
+						state = source.getBlockState(pos1);
+						ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+						if (ii == 0) {
+							pos1 = pos.south();
+							state = source.getBlockState(pos1);
+							ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+							if (ii == 0) {
+								pos1 = pos.west();
+								state = source.getBlockState(pos1);
+								ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+								return ii;
+							}
+							return ii;
+						}
+						return ii;
+					}
+					return ii;
+				}
+				return ii;
+			}
+			else {
+				return ii;
+			}
+		}
+		else
+		{
+			return i;
+		}
 	}
 
 	@Nullable

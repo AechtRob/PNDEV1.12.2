@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/fossil_carboniferous_1",
+  "parent": "lepidodendron:block/fossiliferous_carboniferous",
   "display": {
     "thirdperson": {
       "rotation": [

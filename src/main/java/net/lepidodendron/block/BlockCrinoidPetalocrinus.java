@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -104,7 +103,7 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = true;
 		}
-		if (biome != BiomeSilurianSeaGarden.biome
+		if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden"))
 		)
 			biomeCriteria = false;
 		if (!biomeCriteria)
@@ -116,7 +115,7 @@ public class BlockCrinoidPetalocrinus extends ElementsLepidodendronMod.ModElemen
 			multiplier = 2;
 		}
 
-		if (biome == BiomeSilurianSeaGarden.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			multiplier = 10;
 		}
 

@@ -1,6 +1,8 @@
 package net.lepidodendron;
 
+import net.lepidodendron.gui.GUIAcidBath;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,6 +22,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.registry.EntityEntry;
@@ -857,8 +860,11 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 		}
 		Collections.sort(elements);
 		elements.forEach(ElementsLepidodendronMod.ModElement::initElements);
-		this.addNetworkMessage(LepidodendronModVariables.WorldSavedDataSyncMessageHandler.class,
-				LepidodendronModVariables.WorldSavedDataSyncMessage.class, Side.SERVER, Side.CLIENT);
+		{
+			this.addNetworkMessage(LepidodendronModVariables.WorldSavedDataSyncMessageHandler.class,
+					LepidodendronModVariables.WorldSavedDataSyncMessage.class, Side.SERVER, Side.CLIENT);
+		}
+
 	}
 
 	public void registerSounds(RegistryEvent.Register<net.minecraft.util.SoundEvent> event) {
@@ -914,6 +920,24 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 		messageID++;
 	}
 
+	public static class GuiHandler implements IGuiHandler {
+		@Override
+		public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
+			if (id == GUIAcidBath.GUIID)
+				return new GUIAcidBath.GUILepidodendronAcidBath(world, x, y, z, player);
+			return null;
+		}
+
+		@Override
+		public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
+			if (id == GUIAcidBath.GUIID)
+				return new GUIAcidBath.GuiWindow(world, x, y, z, player);
+			return null;
+		}
+	}
+
+
+
 	public List<ModElement> getElements() {
 		return elements;
 	}
@@ -937,6 +961,7 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 	public List<Supplier<Potion>> getPotions() {
 		return potions;
 	}
+
 	public static class ModElement implements Comparable<ModElement> {
 		@Retention(RetentionPolicy.RUNTIME)
 		public @interface Tag {

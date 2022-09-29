@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/fossil_devonian_1",
+  "parent": "lepidodendron:block/fossiliferous_devonian",
   "display": {
     "thirdperson": {
       "rotation": [

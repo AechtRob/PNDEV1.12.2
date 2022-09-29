@@ -67,7 +67,7 @@ public class BlockCoralBleached extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);
-			setLightLevel(0.5F);
+			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);

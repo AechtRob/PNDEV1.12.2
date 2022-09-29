@@ -3,7 +3,6 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.block.BlockLavaRock;
 import net.lepidodendron.block.BlockPrehistoricGroundSand;
 import net.lepidodendron.block.BlockPrehistoricGroundSandPangaean;
-import net.lepidodendron.world.biome.permian.BiomePermianHighlands;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -120,7 +119,7 @@ public class WorldGenPermianLakes extends WorldGenerator
                             BlockPos blockpos = position.add(i2, j4 - 1, j3);
 
                             if (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0
-                                && worldIn.getBiome(position.add(i2, j4, j3)) != BiomePermianHighlands.biome)
+                                && !(worldIn.getBiome(position.add(i2, j4, j3)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")))
                             {
                                 //Biome biome = worldIn.getBiome(blockpos);
                                 //String checkBiome = "lepidodendron:devonian_floodplain";
@@ -133,7 +132,7 @@ public class WorldGenPermianLakes extends WorldGenerator
                             }
 
                             if (worldIn.getBlockState(blockpos).getMaterial() == Material.GROUND && worldIn.getLightFor(EnumSkyBlock.SKY, position.add(i2, j4, j3)) > 0
-                                    && worldIn.getBiome(position.add(i2, j4, j3)) == BiomePermianHighlands.biome)
+                                    && worldIn.getBiome(position.add(i2, j4, j3)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands"))
                             {
                                 //Biome biome = worldIn.getBiome(blockpos);
                                 //String checkBiome = "lepidodendron:devonian_floodplain";

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.item.ItemRoseFlower;
 import net.lepidodendron.item.entities.*;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -386,7 +385,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                     GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
                     GlStateManager.pushMatrix();
 
-                    if (itemstack.getItem() == ItemRoseFlower.block) {
+                    if (itemstack.getItem() == ItemGerarusRaw.block) {
                         double offset = 0.12;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);

@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockBushyAraucariaLeaves;
 import net.lepidodendron.block.BlockBushyAraucariaLog;
 import net.lepidodendron.block.BlockLygodium;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicFloodplainForested;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.util.EnumFacing;
@@ -300,7 +299,7 @@ public class ProcedureWorldGenBushyAraucariaNoCheck extends ElementsLepidodendro
 				SpawnLygodium = false;
 			if ((world.provider.getDimension() == LepidodendronConfig.dimJurassic)
 			){
-				if (biome == BiomeJurassicFloodplainForested.biome) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")) {
 					SpawnLygodium = true;
 				}
 				else {

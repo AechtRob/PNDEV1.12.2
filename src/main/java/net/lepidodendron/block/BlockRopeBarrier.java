@@ -85,7 +85,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 			super(Material.IRON, MapColor.IRON);
 			setTranslationKey("pf_rope_barrier");
 			setHarvestLevel("pickaxe", 1);
-			setSoundType(SoundType.ANVIL);
+			setSoundType(SoundType.METAL);
 			setHardness(2.5F);
 			setResistance(3F);
 			setLightOpacity(0);

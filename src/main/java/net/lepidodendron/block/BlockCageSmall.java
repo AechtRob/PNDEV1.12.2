@@ -272,6 +272,11 @@ public class BlockCageSmall extends ElementsLepidodendronMod.ModElement {
 
 		public static ItemStack getItemStackFromEntity(Entity entity, ItemStack spawnItem) {
 
+			//Dont allow players to be picked up
+			if (entity instanceof EntityPlayer) {
+				return spawnItem;
+			}
+
 			ItemStack stack = spawnItem;
 
 			NBTTagCompound entityNBT = new NBTTagCompound();

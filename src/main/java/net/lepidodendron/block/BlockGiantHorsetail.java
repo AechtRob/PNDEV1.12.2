@@ -8,9 +8,8 @@ import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
-import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferousMarsh;
-import net.lepidodendron.world.biome.jurassic.*;
-import net.lepidodendron.world.biome.permian.*;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
@@ -115,10 +114,10 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
 				biomeCriteria = true;
 			}
-			else if (biome == BiomePermianLowlandsForest.biome
-				|| biome == BiomePermianLowlands.biome
-					|| biome == BiomePermianLowlandFloodplain.biome
-					|| biome == BiomePermianHighlands.biome) {
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -153,7 +152,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
                 || biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks
-				|| biome == BiomeJurassicRoughHills.biome) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills")) {
 				biomeCriteria = true;
 			}
 			else {
@@ -180,19 +179,19 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimJurassic) {
 			GenChance = 25;
 		}
-		if (biome == BiomePermianLowlands.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")) {
 			GenChance = 92;
 		}
-		if (biome == BiomePermianLowlandFloodplain.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
 			GenChance = 156;
 		}
-		if (biome == BiomePermianHighlands.biome || biome == BiomeJurassicFloodplainForested.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")) {
 			GenChance = 64;
 		}
-		if (biome == BiomeJurassicRiverbank.biome || biome == BiomeJurassicRiver.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_riverbank") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")) {
 			GenChance = 156;
 		}
-		if (biome == BiomeCarboniferousMarsh.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
 			GenChance = 256;
 		}
 
@@ -301,7 +300,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 
 		public boolean hasWater(World world, BlockPos pos) {
 			Biome biome = world.getBiome(pos);
-			if (biome == BiomePermianLowlands.biome || biome == BiomePermianHighlands.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
 				boolean waterCriteria = false;
 				//Is there water nearby?
 				int xct = -3;

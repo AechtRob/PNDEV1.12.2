@@ -4,9 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.*;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianGilboa;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianSwamp;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -61,7 +58,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:encblue_log", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:protolepidodendropsis", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).build());
 
 	}
@@ -131,11 +128,11 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			GenChance = 64;
 		}
 
-		if (biome == BiomeDevonianSwamp.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
 			GenChance = 128;
 		}
 
-		if (biome == BiomeDevonianGilboa.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_gilboa")) {
 			GenChance = 256;
 		}
 
@@ -157,7 +154,7 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 				public boolean generate(World world, Random random, BlockPos pos) {
 					for (int i = 0; i < 10; ++i) {
 						BlockPos blockpos1 = pos.add(random.nextInt(4) - random.nextInt(4), 0, random.nextInt(4) - random.nextInt(4));
-						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0)  && world.getBiome(blockpos1) != BiomeDevonianSprings.biome) {
+						if (world.isAirBlock(blockpos1) && world.isAirBlock(blockpos1.up()) && world.isAirBlock(blockpos1.up(2)) && blockpos1.getY() >= minH && (blockpos1.getY() <= maxH || maxH == 0)  && !(world.getBiome(blockpos1).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs"))) {
 							if (BlockSapling.block.canPlaceBlockAt(world, blockpos1)) {
 								//Place plant(s)
 								world.setBlockState(blockpos1, block.getDefaultState(), 2);

@@ -62,7 +62,12 @@ public class EntityMateAI extends EntityAIBase
         this.animal.getNavigator().tryMoveToEntityLiving(this.targetMate, this.moveSpeed);
         ++this.spawnBabyDelay;
 
-        if (this.spawnBabyDelay >= 60 && this.animal.getDistanceSq(this.targetMate) < 9.0D)
+        double breedDist = 9.0D;
+        if ((this.animal.width > 1) || (this.targetMate.width > 1)) {
+            breedDist = Math.pow((double)(3F + (((this.animal.width + this.targetMate.width)/2F) - 1F)), 2D);
+        }
+
+        if (this.spawnBabyDelay >= 60 && this.animal.getDistanceSq(this.targetMate) < breedDist)
         {
             this.spawnBaby();
         }
@@ -70,7 +75,14 @@ public class EntityMateAI extends EntityAIBase
 
     private EntityPrehistoricFloraAgeableBase getNearbyMate()
     {
-        List<EntityPrehistoricFloraAgeableBase> list = this.world.<EntityPrehistoricFloraAgeableBase>getEntitiesWithinAABB(this.mateClass, this.animal.getEntityBoundingBox().grow(8.0D));
+        double searchRadius = 8.0D;
+        if (this.animal.width > 2) {
+            searchRadius = 12.0D;
+        }
+        if (this.animal.width > 3) {
+            searchRadius = 16.0D;
+        }
+        List<EntityPrehistoricFloraAgeableBase> list = this.world.<EntityPrehistoricFloraAgeableBase>getEntitiesWithinAABB(this.mateClass, this.animal.getEntityBoundingBox().grow(searchRadius));
         double d0 = Double.MAX_VALUE;
         EntityPrehistoricFloraAgeableBase EntityPrehistoricFloraAgeableBase = null;
 

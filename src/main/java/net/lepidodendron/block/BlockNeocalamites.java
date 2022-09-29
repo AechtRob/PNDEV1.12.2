@@ -7,11 +7,7 @@ import net.lepidodendron.item.ItemNeocalamitesItem;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianLowlandFloodplain;
-import net.lepidodendron.world.biome.permian.BiomePermianLowlands;
-import net.lepidodendron.world.biome.permian.BiomePermianRiver;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockReed;
 import net.minecraft.block.SoundType;
@@ -106,9 +102,9 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
-				|| biome == BiomePermianLowlands.biome
-				|| biome == BiomePermianLowlandFloodplain.biome
-				|| biome == BiomePermianRiver.biome) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")) {
 				biomeCriteria = true;
 			}
 		}
@@ -138,15 +134,15 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 		){
 			GenChance = 28;
 		}
-		if (biome == BiomePermianLowlands.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")) {
 			GenChance = 42;
 		}
-		if (biome == BiomePermianLowlandFloodplain.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")) {
 			GenChance = 64;
 		}
 
-		if (biome == BiomeTriassicRiver.biome
-			|| biome == BiomePermianRiver.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river"))
 		{
 			GenChance = 48;
 		}

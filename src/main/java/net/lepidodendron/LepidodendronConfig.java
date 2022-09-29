@@ -23,6 +23,7 @@ public class LepidodendronConfig {
     public static int waterPangaeanVertical = 0;
     public static int spreadPlants = 70;
     public static boolean biomeApple = true;
+    public static boolean machinesRF = false;
 
     public static boolean genFossil = true;
     public static boolean modFire = true;
@@ -507,6 +508,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "biomeApple", biomeApple);
         prop.setComment("Set to false to disable the world-gen of this mod's overworld apple orchards. [default: true]");
         biomeApple = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "machinesRF", machinesRF);
+        prop.setComment("Prehistoric Nature Acid bath needs RF to function. [default: false]");
+        machinesRF = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "modFire", modFire);

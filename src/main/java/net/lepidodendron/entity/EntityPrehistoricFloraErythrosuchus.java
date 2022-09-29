@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraErythrosuchus extends EntityPrehistoricFloraL
 		return 1; //medium
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Terrestrial Reptile";}
 

@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeLilyPadBase;
 import net.lepidodendron.item.ItemRhyniaItem;
-import net.lepidodendron.util.BlockSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.IGrowable;
@@ -94,7 +93,7 @@ public class BlockRhyniaWaterSpore extends ElementsLepidodendronMod.ModElement {
 					entityToSpawn.setPickupDelay(10);
 					worldIn.spawnEntity(entityToSpawn);
 				}
-				worldIn.playSound(null, pos, BlockSounds.WET_CRUNCH_PLANTS, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				worldIn.playSound(null, pos, SoundType.PLANT.getBreakSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			else {
 				super.onEntityCollision(worldIn, pos, state, entityIn);

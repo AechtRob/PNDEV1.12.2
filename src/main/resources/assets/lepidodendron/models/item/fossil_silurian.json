@@ -1,5 +1,5 @@
 {
-  "parent": "lepidodendron:block/fossil_silurian_1",
+  "parent": "lepidodendron:block/fossiliferous_silurian",
   "display": {
     "thirdperson": {
       "rotation": [

@@ -4,7 +4,6 @@ package net.lepidodendron.world.structure;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianSea;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -27,7 +26,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 		if (dimID != LepidodendronConfig.dimCambrian)
 			return;
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
-		if (biome == BiomeCambrianSea.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea"))
 			return;
 
 		//int GenChance = 4000;

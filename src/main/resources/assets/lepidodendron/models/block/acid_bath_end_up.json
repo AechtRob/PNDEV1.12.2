@@ -1,0 +1,31 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"trim": "lepidodendron:blocks/acid_bath",
+		"particle": "blocks/iron_block"
+	},
+	"elements": [
+		{
+			"from": [12, -15, 7],
+			"to": [14, -2, 9],
+			"faces": {
+				"north": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"east": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"south": {"uv": [9, 3, 11, 16], "texture": "#trim"},
+				"west": {"uv": [9, 3, 11, 16], "texture": "#trim"}
+			}
+		},
+		{
+			"from": [12, -2, 7],
+			"to": [14, 14, 9],
+			"faces": {
+				"north": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"east": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"south": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"west": {"uv": [9, 0, 11, 16], "texture": "#trim"},
+				"up": {"uv": [9, 0, 11, 2], "texture": "#trim"},
+				"down": {"uv": [9, 0, 11, 16], "texture": "#trim"}
+			}
+		}
+	]
+}

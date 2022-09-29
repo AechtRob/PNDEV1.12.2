@@ -10,12 +10,8 @@ import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRiver;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.permian.BiomePermianRiver;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicFloodedForest;
-import net.lepidodendron.world.biome.triassic.BiomeTriassicRiver;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -181,14 +177,14 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 			multiplier = 12;
 		}
 
-		if (biome == BiomeTriassicFloodedForest.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_flooded_forest"))
 		{
 			multiplier = 5;
 		}
 
-		if (biome == BiomeTriassicRiver.biome
-			|| biome == BiomePermianRiver.biome
-			|| biome == BiomeJurassicRiver.biome)
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river"))
 		{
 			multiplier = 48;
 		}

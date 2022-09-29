@@ -7,7 +7,6 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrianEstuary;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -129,7 +128,7 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			biomeCriteria = true;
 		}
-		if ((biome != BiomeCambrianEstuary.biome && dimID == LepidodendronConfig.dimCambrian)
+		if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary") && dimID == LepidodendronConfig.dimCambrian)
 		) {
 			biomeCriteria = false;
 		}

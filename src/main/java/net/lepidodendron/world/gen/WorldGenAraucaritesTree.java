@@ -2,7 +2,6 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenAraucarites;
 import net.lepidodendron.procedure.ProcedureWorldGenSciadopitys;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRoughHills;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -84,10 +83,10 @@ public class WorldGenAraucaritesTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-                    if (!(worldIn.getBiome(position) == BiomeJurassicRoughHills.biome && position.getY() > 90)) {
+                    if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() > 90)) {
                         ProcedureWorldGenAraucarites.executeProcedure($_dependencies);
                     }
-                    else if (!(worldIn.getBiome(position) == BiomeJurassicRoughHills.biome && position.getY() > 100)) {
+                    else if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() > 100)) {
                         ProcedureWorldGenSciadopitys.executeProcedure($_dependencies);
                     }
                     return true;

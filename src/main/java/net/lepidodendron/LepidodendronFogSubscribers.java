@@ -6,9 +6,8 @@ import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianSpikes;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
-import net.lepidodendron.world.biome.permian.*;
+import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -193,7 +192,7 @@ public class LepidodendronFogSubscribers {
 		double g = 0;
 		double b = 0;
 
-		if (biome == BiomePermianFloodbasalt.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt")) {
 			r = 96D/255D;
 			g = 96D/255D;
 			b = 96D/255D;
@@ -201,7 +200,7 @@ public class LepidodendronFogSubscribers {
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
-		if (biome == BiomePermianFloodbasaltEdge.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
 			r = 192D/255D;
 			g = 192D/255D;
 			b = 192D/255D;
@@ -218,13 +217,13 @@ public class LepidodendronFogSubscribers {
 	}
 
 	private float getBiomeFactor(Biome biome) {
-		if (biome == BiomeDevonianSpikes.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_spikes")) {
 			return 150;
 		}
-		if (biome == BiomePermianMountains.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains")) {
 			return 150;
 		}
-		if (biome == BiomePermianHighlands.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
 			return 150;
 		}
 		if (biome instanceof BiomePermian) {
@@ -296,16 +295,16 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && playerEyes >= (double) player.world.getSeaLevel()) {
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_spikes") && playerEyes >= (double) player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
@@ -397,16 +396,16 @@ public class LepidodendronFogSubscribers {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || event.getState().getMaterial() == Material.WATER)) {
 
 							if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& biome == BiomeDevonianSpikes.biome && playerEyes >= (double) player.world.getSeaLevel()) {
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_spikes") && playerEyes >= (double) player.world.getSeaLevel()) {
 								fogBottom = 120;
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome == BiomePermianMountains.biome || biome == BiomePermianHighlands.biome) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));

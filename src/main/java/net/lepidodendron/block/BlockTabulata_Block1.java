@@ -11,12 +11,7 @@ import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianOceanDeadReef;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIce;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovicianSeaIcebergs;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianLushPatch;
-import net.lepidodendron.world.biome.silurian.BiomeSilurianSeaGarden;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -121,9 +116,9 @@ public class BlockTabulata_Block1 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimSilurian
 		)
 			biomeCriteria = true;
-		if (biome == BiomeOrdovicianSeaIce.biome
-				|| biome == BiomeOrdovicianSeaIcebergs.biome
-				|| biome == BiomeSilurianLushPatch.biome
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 
@@ -156,7 +151,7 @@ public class BlockTabulata_Block1 extends ElementsLepidodendronMod.ModElement {
 			else {
 				biomeCriteria = false;
 			}
-			if (biome == BiomeDevonianOceanDeadReef.biome) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 				biomeCriteria = false;
 			}
 		}
@@ -182,7 +177,7 @@ public class BlockTabulata_Block1 extends ElementsLepidodendronMod.ModElement {
 		int maxWaterDepth = 15;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
-		if (biome == BiomeSilurianSeaGarden.biome) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			multiplier = 0.5;
 		}
 
@@ -296,11 +291,60 @@ public class BlockTabulata_Block1 extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);
-			setLightLevel(0.5F);
+			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP).withProperty(WATER, false));
+		}
+
+		@SideOnly(Side.CLIENT)
+		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
+			int i = source.getCombinedLight(pos, state.getLightValue(source, pos));
+
+			if (i == 0)
+			{
+				BlockPos pos1 = pos.up();
+				state = source.getBlockState(pos1);
+				int ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+				if (ii == 0) {
+					pos1 = pos.down();
+					state = source.getBlockState(pos1);
+					ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+					if (ii == 0) {
+						pos1 = pos.north();
+						state = source.getBlockState(pos1);
+						ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+						if (ii == 0) {
+							pos1 = pos.east();
+							state = source.getBlockState(pos1);
+							ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+							if (ii == 0) {
+								pos1 = pos.south();
+								state = source.getBlockState(pos1);
+								ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+								if (ii == 0) {
+									pos1 = pos.west();
+									state = source.getBlockState(pos1);
+									ii = source.getCombinedLight(pos1, state.getLightValue(source, pos1));
+									return ii;
+								}
+								return ii;
+							}
+							return ii;
+						}
+						return ii;
+					}
+					return ii;
+				}
+				else {
+					return ii;
+				}
+			}
+			else
+			{
+				return i;
+			}
 		}
 
 		@Override

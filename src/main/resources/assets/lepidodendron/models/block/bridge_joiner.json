@@ -8,7 +8,7 @@
 			"name": "joiner",
 			"from": [0.0, 15, 15.00],
 			"to": [16.0, 16, 16.00],
-			"shade":false,
+			
 			"faces": {
 				"north": {"uv": [0, 0, 15.98, 1], "texture": "#metal"},
 				"east": {"uv": [1, 2, 2, 3], "texture": "#metal"},

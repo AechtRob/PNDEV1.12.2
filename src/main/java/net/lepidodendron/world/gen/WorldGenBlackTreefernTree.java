@@ -4,7 +4,6 @@ import net.lepidodendron.block.BlockTreefernBlackLog;
 import net.lepidodendron.block.BlockTreefernBlackShoot;
 import net.lepidodendron.block.BlockTreefernBlackShootPlaceable;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBlack;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicRoughHills;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -129,7 +128,7 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                                 worldIn.setBlockState(position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                                 BlockTreefernBlackShootPlaceable.block.onBlockAdded(worldIn, position, BlockTreefernBlackShootPlaceable.block.getDefaultState());
                             }
-                            else if (!(worldIn.getBiome(position) == BiomeJurassicRoughHills.biome && position.getY() + (rand.nextInt(7) - 3) > 95)) {
+                            else if (!(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills") && position.getY() + (rand.nextInt(7) - 3) > 95)) {
                                 ProcedureWorldGenTreefernBlack.executeProcedure($_dependencies);
                             }
                             else {

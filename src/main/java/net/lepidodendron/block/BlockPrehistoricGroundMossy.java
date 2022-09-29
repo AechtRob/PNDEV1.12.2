@@ -155,6 +155,8 @@ public class BlockPrehistoricGroundMossy extends ElementsLepidodendronMod.ModEle
 												|| (iblockstate1.getBlock() == BlockSandyDirtPangaean.block)
 												|| (iblockstate1.getBlock() == BlockSandyDirtRed.block)
 												|| (iblockstate1.getBlock() == BlockSiltyDirt.block)
+													|| (iblockstate1.getBlock() == BlockSandyDirtWhite.block)
+													|| (iblockstate1.getBlock() == BlockSandyDirtBlack.block)
 									)
 											&& (worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
 							)

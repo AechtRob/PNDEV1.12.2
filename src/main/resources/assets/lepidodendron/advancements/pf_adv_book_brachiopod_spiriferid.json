@@ -1,0 +1,25 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:brachiopod_spiriferid"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_brachiopod_spiriferid.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_brachiopod_spiriferid.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_brachiopod_spiriferid"
+		}
+	}
+}
+
+
+
+
+

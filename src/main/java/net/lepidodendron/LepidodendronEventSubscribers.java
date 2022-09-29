@@ -6,8 +6,6 @@ import net.lepidodendron.block.BlockDisplayPlinth;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.item.*;
-import net.lepidodendron.world.biome.devonian.BiomeDevonianSprings;
-import net.lepidodendron.world.biome.precambrian.BiomePrecambrianBiome;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -54,7 +52,7 @@ public class LepidodendronEventSubscribers {
 					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
 					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100),300,(p.posZ+ event.world.rand.nextInt(201) - 100));
 					if(p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
-						if(event.world.getBiome(pos) == BiomePrecambrianBiome.biome)
+						if(event.world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome"))
 						spawnShower = (event.world.rand.nextInt(50) == 0);
 						{
 							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());					
@@ -505,7 +503,7 @@ public class LepidodendronEventSubscribers {
 			i++;
 		}
 
-		if (event.getState().getBlock() instanceof BlockDoublePlant && !dropSelf && LepidodendronConfig.doPropagationVanilla) { //Spawn the block drop for these ones
+		if (event.getState().getBlock() instanceof BlockDoublePlant && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) { //Spawn the block drop for these ones
 			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getState().getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN)
 			{
@@ -516,7 +514,7 @@ public class LepidodendronEventSubscribers {
 				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT,1, 2));
 			}
 		}
-		if (event.getState().getBlock() instanceof BlockTallGrass && !dropSelf && LepidodendronConfig.doPropagationVanilla) {
+		if (event.getState().getBlock() instanceof BlockTallGrass && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) {
 			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType)event.getState().getValue(BlockTallGrass.TYPE);
 			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS)
 			{
@@ -544,7 +542,7 @@ public class LepidodendronEventSubscribers {
 						pos = new BlockPos(x, y, z);
 						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up()))
 						{
-							if (world.getBiome(pos) == BiomeDevonianSprings.biome && rand.nextInt(150) == 0 ) {
+							if (world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") && rand.nextInt(150) == 0 ) {
 								world.spawnParticle(EnumParticleTypes.CLOUD, (double)pos.getX() + Math.random(), (double)pos.getY() + 0.95, (double)pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
 							}

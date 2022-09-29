@@ -2,7 +2,6 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenNilssoniocladus;
 import net.lepidodendron.procedure.ProcedureWorldGenPodocarp;
-import net.lepidodendron.world.biome.jurassic.BiomeJurassicCycadThickets;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -87,7 +86,7 @@ public class WorldGenPodocarpTree extends WorldGenAbstractTree
 					$_dependencies.put("world", worldIn);
 					ProcedureWorldGenPodocarp.executeProcedure($_dependencies);
                     Biome biome = worldIn.getBiome(position);
-                    if (biome == BiomeJurassicCycadThickets.biome) {
+                    if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_cycad_thickets")) {
                         ProcedureWorldGenNilssoniocladus.executeProcedure(position.getX() + (rand.nextInt(5) - 2), position.getY(), position.getZ() + (rand.nextInt(5) - 2), worldIn);
                         ProcedureWorldGenNilssoniocladus.executeProcedure(position.getX() + (rand.nextInt(5) - 2), position.getY(), position.getZ() + (rand.nextInt(5) - 2), worldIn);
                     }
