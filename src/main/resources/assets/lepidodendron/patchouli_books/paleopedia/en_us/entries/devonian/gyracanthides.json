@@ -2,14 +2,14 @@
 	"name": "Gyracanthides",
 	"read_by_default": true,
 	"icon": "lepidodendron:gyracanthides_raw",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_gyracanthides",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_gyracanthides",
 			"title": "Gyracanthides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Gyracanthidae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Gyracanthidae"
 		},
 		{
 			"type": "image",
