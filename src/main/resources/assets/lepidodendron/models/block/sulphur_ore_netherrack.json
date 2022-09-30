@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/ore_layer",
+  "textures": {
+    "stone": "blocks/netherrack",
+    "particle": "blocks/netherrack",
+    "layer": "lepidodendron:blocks/sulphur_ore"
+  }
+}

@@ -2,15 +2,13 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
@@ -19,8 +17,8 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -33,16 +31,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sulphur_ore")
+public class BlockSulphurOreNetherrack extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:sulphur_ore_netherrack")
 	public static final Block block = null;
-	public BlockSulphurOre(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sulphur_ore);
+	public BlockSulphurOreNetherrack(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.sulphur_ore_netherrack);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("sulphur_ore"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("sulphur_ore_netherrack"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -50,56 +48,60 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sulphur_ore", "inventory"));
+				new ModelResourceLocation("lepidodendron:sulphur_ore_netherrack", "inventory"));
 	}
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		boolean dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimPermian)
+		if (dimID == -1)
 			dimensionCriteria = true;
 
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
-		if (biome instanceof BiomePermian) {
-			BiomePermian BiomeP = (BiomePermian) biome;
-			if (BiomeP.getBiomeType() != EnumBiomeTypePermian.Floodbasalt) {
-				dimensionCriteria = false;
-			}
-		}
 		if (!dimensionCriteria)
 			return;
 
-		if (random.nextInt(6) != 0)
-			return;
-
-		int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-		int y = random.nextInt(40) + 1;
-		int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-		(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
-			public boolean apply(IBlockState blockAt) {
-				boolean blockCriteria = false;
-				IBlockState require;
-				if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
-					blockCriteria = true;
-				return blockCriteria;
-			}
-		})).generate(world, random, new BlockPos(x, y, z));
+		for (int l1 = 0; l1 < 12; ++l1) {
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+			int y = random.nextInt(108) + 10;
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+			(new WorldGenMinable(block.getDefaultState(), 12, new com.google.common.base.Predicate<IBlockState>() {
+				public boolean apply(IBlockState blockAt) {
+					boolean blockCriteria = false;
+					IBlockState require;
+					if (blockAt.getBlock() == Blocks.NETHERRACK.getDefaultState().getBlock())
+						blockCriteria = true;
+					return blockCriteria;
+				}
+			})).generate(world, random, new BlockPos(x, y, z));
+		}
 	}
 
 	public static class BlockCustom extends BlockOre {
 		public BlockCustom() {
-			setHardness(1.25F);
+			setHardness(3.0F);
 			setResistance(5.0F);
 			setSoundType(SoundType.STONE);
-			setTranslationKey("pf_sulphur_ore");
+			setTranslationKey("pf_sulphur_ore_netherrack");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			setHarvestLevel("pickaxe",1);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			return MapColor.NETHERRACK;
 		}
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune)
 		{
 			return ItemSulphur.block;
+		}
+
+		@Override
+		public int quantityDropped(Random random)
+		{
+			return 1;
 		}
 
 		@SideOnly(Side.CLIENT)
@@ -112,11 +114,6 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
-		}
-		@Override
-		public int quantityDropped(Random random)
-		{
-			return 1;
 		}
 
 		@Override
