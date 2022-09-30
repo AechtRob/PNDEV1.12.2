@@ -8,7 +8,15 @@
       { "model": "lepidodendron:fossiliferous_triassic", "x": 90 },
       { "model": "lepidodendron:fossiliferous_triassic_var", "x": 90 },
       { "model": "lepidodendron:fossiliferous_triassic", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_triassic_var", "x": 90, "z": 90 }
+      { "model": "lepidodendron:fossiliferous_triassic_var", "x": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic", "y": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic_var", "y": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic", "y": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic_var", "y": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic", "x": 90, "y": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic_var", "x": 90, "y": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic", "x": 90, "y": 90, "z": 90 },
+      { "model": "lepidodendron:fossiliferous_triassic_var", "x": 90, "y": 90, "z": 90 }
     ]
   }
 }

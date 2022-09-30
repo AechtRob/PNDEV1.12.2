@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:dna_recombiner_forge", "y": 180
+    }
+  }
+}
