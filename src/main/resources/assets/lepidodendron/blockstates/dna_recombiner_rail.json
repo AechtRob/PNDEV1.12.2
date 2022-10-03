@@ -1,7 +1,47 @@
 {
-  "variants": {
-    "normal": {
-      "model": "lepidodendron:dna_recombiner_rail", "y": 90
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_rail"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_rail",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_rail",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_rail",
+          "y": 270
+        }
+      ]
     }
-  }
+  ]
 }

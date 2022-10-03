@@ -3110,6 +3110,7 @@ public class RenderHandler {
 
         //DNARecombiner:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDNARecombinerRail.TileEntityDNARecombinerRail.class, new RenderDNARecombinerRail());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge.class, new RenderDNACentrifuge());
 
 
     }

@@ -1,7 +1,10 @@
 package net.lepidodendron.gui;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockDNARecombinerCentrifuge;
+import net.lepidodendron.item.ItemDNACentrifuge;
 import net.lepidodendron.item.ItemPhial;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -49,6 +52,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
         private EntityPlayer entity;
         private int x, y, z;
         private Map<Integer, Slot> customSlots = new HashMap<>();
+
         public GUILepidodendronDNACentrifuge(World world, int x, int y, int z, EntityPlayer player) {
             this.world = world;
             this.entity = player;
@@ -59,28 +63,105 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10, 30) {
+
+            if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                if (!te.isLocked()) {
+                    this.internal.openInventory(player);
+                }
+            }
+            //this.internal.openInventory(player);
+
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 82, 19) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        if (te.isLocked()) {
+                            return false;
+                        }
+                    }
                     return (stack.getItem() == ItemPhial.block);
                 }
-            }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154, 30) {
+
                 @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return (stack.getItem() == ItemPhial.block);
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        return !te.isLocked();
+                    }
+                    return true;
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154, 48) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 61, 40) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        if (te.isLocked()) {
+                            return false;
+                        }
+                    }
                     return (stack.getItem() == ItemPhial.block);
                 }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        return !te.isLocked();
+                    }
+                    return true;
+                }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136, 30) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 82, 61) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        if (te.isLocked()) {
+                            return false;
+                        }
+                    }
                     return (stack.getItem() == ItemPhial.block);
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        return !te.isLocked();
+                    }
+                    return true;
+                }
+            }));
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 103, 40) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        if (te.isLocked()) {
+                            return false;
+                        }
+                    }
+                    return (stack.getItem() == ItemPhial.block);
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+                    if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                        BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                        return !te.isLocked();
+                    }
+                    return true;
                 }
             }));
 
@@ -101,6 +182,11 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
         @Override
         public boolean canInteractWith(EntityPlayer player) {
             return internal.isUsableByPlayer(player);
+        }
+
+        public IInventory getLowerChestInventory()
+        {
+            return this.internal;
         }
 
         @Override
@@ -229,6 +315,17 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             if ((internal instanceof InventoryBasic) && (playerIn instanceof EntityPlayerMP)) {
                 this.clearContainer(playerIn, playerIn.world, internal);
             }
+            TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+            if (ent instanceof IInventory)
+                this.internal = (IInventory) ent;
+
+            if (ent instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) ent;
+                if (!te.isLocked()) {
+                    this.internal.closeInventory(playerIn);
+                }
+            }
+            //this.internal.closeInventory(playerIn);
         }
 
         private void slotChanged(int slotid, int ctype, int meta) {
@@ -253,7 +350,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             this.xSize = 176;
             this.ySize = 166;
         }
-        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/acid_bath_gui.png");
+        private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/dna_centrifuge_gui.png");
         @Override
         public void drawScreen(int mouseX, int mouseY, float partialTicks) {
             this.drawDefaultBackground();
@@ -269,18 +366,24 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            /*
-            this.drawTexturedModalRect(k + 46, l + 32, 0,196, this.getProgressBarLength(), 6);
-            this.drawTexturedModalRect(k + 39, l + 45 + (30 - this.getAcidDepth()), 0,166, 84, this.getAcidDepth());
+            this.drawTexturedModalRect(k + 150, l + 18 + (58 - this.getProgressBarHeight()), 18,166, 6, this.getProgressBarHeight());
+            int yOffsetter = 0;
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 9, l + 51, 0,202, 18, 26);
-                this.drawTexturedModalRect(k + 10, l + 52 + this.getRFHeight(), 0, 229, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 20, l + 51, 0,166, 18, 26);
+                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
             }
-
-             */
+            else {
+                yOffsetter = 12;
+            }
+            if (this.getLocked()) {
+                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 42, 166, 18, 28);
+            }
+            else {
+                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 24, 166, 18, 28);
+            }
+            this.itemRender.renderItemIntoGUI(new ItemStack(ItemDNACentrifuge.block, 1), k + 82, l + 40);
         }
 
-        /*
         private int getRFHeight() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
@@ -294,29 +397,28 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             return 0;
         }
 
-        private int getProgressBarLength() {
+        private boolean getLocked() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
                     BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
-                    return (int)Math.round(te.progressFraction() * 70D);
+                    return te.isLocked();
                 }
             }
-            return 0;
+            return false;
         }
 
-        private int getAcidDepth() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y - 1, z));
+        private int getProgressBarHeight() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
                     BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
-                    return (int)Math.round(te.acidFraction() * 30D);
+                    //return (int)Math.round(te.progressFraction() * 58D);
+                    return (int)Math.round(0.5 * 58D);
                 }
             }
             return 0;
         }
-
-         */
 
         @Override
         public void updateScreen() {
@@ -335,7 +437,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("DNA Centrifuge", 25, 7, -16777216);
+            this.fontRenderer.drawString("DNA Centrifuge", 53, 7, -16777216);
         }
 
         @Override

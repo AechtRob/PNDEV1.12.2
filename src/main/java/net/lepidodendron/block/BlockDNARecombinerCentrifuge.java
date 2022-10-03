@@ -6,19 +6,23 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNACentrifuge;
+import net.lepidodendron.item.ItemDNARecombiner;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockChest;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -28,16 +32,17 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModElement {
@@ -50,7 +55,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("dna_recombiner_centrifuge"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
@@ -61,11 +66,13 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:dna_recombiner_centrifuge", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+		//		new ModelResourceLocation("lepidodendron:dna_recombiner_centrifuge", "inventory"));
 	}
 
 	public static class BlockCustom extends Block {
+		public static final PropertyDirection FACING = BlockDirectional.FACING;
+
 		public BlockCustom() {
 			super(Material.ROCK, MapColor.ADOBE);
 			setTranslationKey("pf_dna_recombiner_centrifuge");
@@ -77,6 +84,42 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			setLightOpacity(1);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
+
+		@Override
+		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+			return new ItemStack(ItemDNARecombiner.block, 1);
+		}
+
+		@Override
+		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+			return (new ItemStack(ItemDNARecombiner.block, 1).getItem());
+		}
+
+		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+		}
+
+		@Override
+		public IBlockState withRotation(IBlockState state, Rotation rot) {
+			return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+			return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state) {
+			return ((EnumFacing) state.getValue(FACING)).getIndex();
+		}
+
 
 		@Override
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
@@ -122,6 +165,34 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
+		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+
+			if (state.getValue(FACING) == EnumFacing.DOWN || state.getValue(FACING) == EnumFacing.UP) {
+				super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+				return;
+			}
+
+			IBlockState endState = worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY()));
+			if (endState.getBlock() != BlockDNARecombinerForge.block) {
+				worldIn.destroyBlock(pos, true);
+				return;
+			}
+			else {
+				if (endState.getValue(FACING) != state.getValue(FACING)) {
+					worldIn.destroyBlock(pos, true);
+					return;
+				}
+			}
+
+			if (worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY().rotateY().rotateY()).up()).getBlock() != BlockDNARecombinerRail.block) {
+				worldIn.destroyBlock(pos, true);
+				return;
+			}
+
+			super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
+		}
+
+		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
 			return EnumBlockRenderType.MODEL;
 		}
@@ -162,6 +233,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 		private NonNullList<ItemStack> centrifugeContents = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 
+		protected boolean isLocked;
 		protected boolean isProcessing;
 		protected int processTick;
 
@@ -208,6 +280,10 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 		*/
 
+		public boolean isLocked() {
+			return this.isLocked;
+		}
+
 		public boolean isEmpty()
 		{
 			for (ItemStack itemstack : this.centrifugeContents)
@@ -228,68 +304,58 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			int j = this.pos.getY();
 			int k = this.pos.getZ();
 			++this.ticksSinceSync;
+			if (!this.isLocked) {
+				if (!this.world.isRemote && this.numPlayersUsing != 0 && (this.ticksSinceSync + i + j + k) % 200 == 0) {
+					this.numPlayersUsing = 0;
+					float f = 5.0F;
 
-			if (!this.world.isRemote && this.numPlayersUsing != 0 && (this.ticksSinceSync + i + j + k) % 200 == 0)
-			{
-				this.numPlayersUsing = 0;
-				float f = 5.0F;
+					for (EntityPlayer entityplayer : this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB((double) ((float) i - 5.0F), (double) ((float) j - 5.0F), (double) ((float) k - 5.0F), (double) ((float) (i + 1) + 5.0F), (double) ((float) (j + 1) + 5.0F), (double) ((float) (k + 1) + 5.0F)))) {
+						if (entityplayer.openContainer instanceof GUIDNACentrifuge.GUILepidodendronDNACentrifuge) {
+							IInventory iinventory = ((GUIDNACentrifuge.GUILepidodendronDNACentrifuge) entityplayer.openContainer).getLowerChestInventory();
 
-				for (EntityPlayer entityplayer : this.world.getEntitiesWithinAABB(EntityPlayer.class, new AxisAlignedBB((double)((float)i - 5.0F), (double)((float)j - 5.0F), (double)((float)k - 5.0F), (double)((float)(i + 1) + 5.0F), (double)((float)(j + 1) + 5.0F), (double)((float)(k + 1) + 5.0F))))
-				{
-					if (entityplayer.openContainer instanceof ContainerChest)
-					{
-						IInventory iinventory = ((ContainerChest)entityplayer.openContainer).getLowerChestInventory();
-
-						if (iinventory == this || iinventory instanceof InventoryLargeChest && ((InventoryLargeChest)iinventory).isPartOfLargeChest(this))
-						{
-							++this.numPlayersUsing;
+							if (iinventory == this) {
+								++this.numPlayersUsing;
+							}
 						}
 					}
-				}
-			}
 
-			this.prevLidAngle = this.lidAngle;
-			float f1 = 0.1F;
-
-			if (this.numPlayersUsing > 0 && this.lidAngle == 0.0F)
-			{
-				double d1 = (double)i + 0.5D;
-				double d2 = (double)k + 0.5D;
-
-				this.world.playSound((EntityPlayer)null, d1, (double)j + 0.5D, d2, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
-			}
-
-			if (this.numPlayersUsing == 0 && this.lidAngle > 0.0F || this.numPlayersUsing > 0 && this.lidAngle < 1.0F)
-			{
-				float f2 = this.lidAngle;
-
-				if (this.numPlayersUsing > 0)
-				{
-					this.lidAngle += 0.1F;
-				}
-				else
-				{
-					this.lidAngle -= 0.1F;
 				}
 
-				if (this.lidAngle > 1.0F)
-				{
-					this.lidAngle = 1.0F;
+				this.prevLidAngle = this.lidAngle;
+				float f1 = 0.1F;
+
+				if (this.numPlayersUsing > 0 && this.lidAngle == 0.0F) {
+					double d1 = (double) i + 0.5D;
+					double d2 = (double) k + 0.5D;
+
+					this.world.playSound((EntityPlayer) null, d1, (double) j + 0.5D, d2, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
 				}
 
-				float f3 = 0.5F;
+				if (this.numPlayersUsing == 0 && this.lidAngle > 0.0F || this.numPlayersUsing > 0 && this.lidAngle < 1.0F) {
+					float f2 = this.lidAngle;
 
-				if (this.lidAngle < 0.5F && f2 >= 0.5F)
-				{
-					double d3 = (double)i + 0.5D;
-					double d0 = (double)k + 0.5D;
+					if (this.numPlayersUsing > 0) {
+						this.lidAngle += 0.1F;
+					} else {
+						this.lidAngle -= 0.1F;
+					}
 
-					this.world.playSound((EntityPlayer)null, d3, (double)j + 0.5D, d0, SoundEvents.BLOCK_CHEST_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
-				}
+					if (this.lidAngle > 1.0F) {
+						this.lidAngle = 1.0F;
+					}
 
-				if (this.lidAngle < 0.0F)
-				{
-					this.lidAngle = 0.0F;
+					float f3 = 0.5F;
+
+					if (this.lidAngle < 0.5F && f2 >= 0.5F) {
+						double d3 = (double) i + 0.5D;
+						double d0 = (double) k + 0.5D;
+
+						this.world.playSound((EntityPlayer) null, d3, (double) j + 0.5D, d0, SoundEvents.BLOCK_CHEST_CLOSE, SoundCategory.BLOCKS, 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
+					}
+
+					if (this.lidAngle < 0.0F) {
+						this.lidAngle = 0.0F;
+					}
 				}
 			}
 
@@ -358,6 +424,12 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
+			if (compound.hasKey("isLocked")) {
+				this.isLocked = compound.getBoolean("isLocked");
+			}
+			if (compound.hasKey("isProcessing")) {
+				this.isProcessing = compound.getBoolean("isProcessing");
+			}
 			this.centrifugeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
 				ItemStackHelper.loadAllItems(compound, this.centrifugeContents);
@@ -372,6 +444,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			compound.setInteger("numPlayersUsing", this.numPlayersUsing);
 			compound.setInteger("ticksSinceSync", this.ticksSinceSync);
 			compound.setBoolean("isProcessing", this.isProcessing);
+			compound.setBoolean("isLocked", this.isLocked);
 			compound.setInteger("processTick", this.processTick);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.centrifugeContents);
@@ -435,7 +508,8 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void openInventory(EntityPlayer player)
 		{
-			if (!player.isSpectator())
+			//System.err.println("openInventory");
+			if ((!player.isSpectator()) && (!this.isLocked))
 			{
 				if (this.numPlayersUsing < 0)
 				{
@@ -452,7 +526,8 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void closeInventory(EntityPlayer player)
 		{
-			if (!player.isSpectator() && this.getBlockType() instanceof BlockChest)
+			//System.err.println("closeInventory");
+			if ((!player.isSpectator()) && (!this.isLocked) && this.getBlockType() instanceof BlockDNARecombinerCentrifuge.BlockCustom)
 			{
 				--this.numPlayersUsing;
 				this.world.addBlockEvent(this.pos, this.getBlockType(), 1, this.numPlayersUsing);
