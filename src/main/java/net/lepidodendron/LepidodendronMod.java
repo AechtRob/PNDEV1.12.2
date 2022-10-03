@@ -1237,6 +1237,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation CERATODUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ceratodus"));
 	public static final int ENTITY_ITALOPHLEBIA_NYMPH = 492;
 	public static final int GUI_ACID_ID = 493;
+	public static final int GUI_CENTRIFUGE_ID = 494;
 
 
 	@Mod.EventHandler

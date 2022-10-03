@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.gui.GUIAcidBath;
 import net.lepidodendron.item.ItemAcidBath;
 import net.lepidodendron.item.ItemFossilClean;
@@ -88,7 +87,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			setResistance(5F);
 			setLightLevel(0);
 			setLightOpacity(1);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 

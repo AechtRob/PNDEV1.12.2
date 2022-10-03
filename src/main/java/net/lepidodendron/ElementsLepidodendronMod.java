@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import net.lepidodendron.gui.GUIAcidBath;
+import net.lepidodendron.gui.GUIDNACentrifuge;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -923,17 +924,26 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 	public static class GuiHandler implements IGuiHandler {
 		@Override
 		public Object getServerGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
-			if (id == GUIAcidBath.GUIID)
+			if (id == GUIAcidBath.GUIID) {
 				return new GUIAcidBath.GUILepidodendronAcidBath(world, x, y, z, player);
+			}
+			if (id == GUIDNACentrifuge.GUIID) {
+				return new GUIDNACentrifuge.GUILepidodendronDNACentrifuge(world, x, y, z, player);
+			}
 			return null;
 		}
 
 		@Override
 		public Object getClientGuiElement(int id, EntityPlayer player, World world, int x, int y, int z) {
-			if (id == GUIAcidBath.GUIID)
+			if (id == GUIAcidBath.GUIID) {
 				return new GUIAcidBath.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIDNACentrifuge.GUIID) {
+				return new GUIDNACentrifuge.GuiWindow(world, x, y, z, player);
+			}
 			return null;
 		}
+
 	}
 
 

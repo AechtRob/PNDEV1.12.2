@@ -3108,6 +3108,9 @@ public class RenderHandler {
         //Acid Bath:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockAcidBathUp.TileEntityAcidBathUp.class, new RenderAcidBathUp());
 
+        //DNARecombiner:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockDNARecombinerRail.TileEntityDNARecombinerRail.class, new RenderDNARecombinerRail());
+
 
     }
 }

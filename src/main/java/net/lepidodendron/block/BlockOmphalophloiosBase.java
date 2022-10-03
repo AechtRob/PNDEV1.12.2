@@ -40,7 +40,7 @@ public class BlockOmphalophloiosBase extends ElementsLepidodendronMod.ModElement
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:pleuromeia_stem", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:omphalophloios_base", "inventory"));
 
 	}
 
