@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.block.BlockDNARecombinerRail;
-import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugeLid;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerClaw;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerHatch;
 import net.lepidodendron.item.ItemPhial;
@@ -24,16 +23,13 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
 
     private static final ResourceLocation TEXTURE_CLAW = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
     private static final ResourceLocation TEXTURE_HATCH = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
-    private static final ResourceLocation TEXTURE_CENTRIFUGE_LID = new ResourceLocation("lepidodendron:textures/entities/dna_recombiner_centrifuge_top.png");
-    private final ModelDNARecombinerClaw modelDNARecombinerClaw;
+     private final ModelDNARecombinerClaw modelDNARecombinerClaw;
     private final ModelDNARecombinerHatch modelDNARecombinerHatch;
-    private final ModelDNARecombinerCentrifugeLid modelDNARecombinerCentrifugeLid;
     //public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderDNARecombinerRail() {
         this.modelDNARecombinerClaw = new ModelDNARecombinerClaw();
         this.modelDNARecombinerHatch = new ModelDNARecombinerHatch();
-        this.modelDNARecombinerCentrifugeLid = new ModelDNARecombinerCentrifugeLid();
     }
 
     @Override
@@ -206,39 +202,6 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
         //GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         GlStateManager.enableAlpha();
         modelDNARecombinerHatch.renderAll(1.25f);
-        GlStateManager.disableAlpha();
-        GlStateManager.enableCull();
-        GlStateManager.popMatrix();
-
-        //Centrifuge lid:
-        yy = 0.5D;
-        d = -1.0D;
-
-        this.bindTexture(TEXTURE_CENTRIFUGE_LID);
-        ModelDNARecombinerCentrifugeLid modelDNARecombinerCentrifugeLid = this.modelDNARecombinerCentrifugeLid;
-        GlStateManager.pushMatrix();
-        GlStateManager.disableCull();
-        GlStateManager.enableRescaleNormal();
-        //if (facing == EnumFacing.NORTH) {
-        GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - d);
-        //}
-        /*
-        if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + d);
-        }
-        if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + 0.5 + d, y + yy, z + 0.5);
-        }
-        if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + 0.5 - d, y + yy, z + 0.5);
-        }
-        */
-
-        GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
-        GlStateManager.scale(0.05F, 0.05F, 0.05F);
-        //GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-        GlStateManager.enableAlpha();
-        modelDNARecombinerCentrifugeLid.renderAll(1.25f);
         GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();

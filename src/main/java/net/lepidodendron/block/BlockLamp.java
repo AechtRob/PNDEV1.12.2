@@ -33,8 +33,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Random;
-
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockLamp extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:lamp")
@@ -106,11 +104,6 @@ public class BlockLamp extends ElementsLepidodendronMod.ModElement {
 				return state.withProperty(FACING, EnumFacing.UP);
 			}
 			return super.getActualState(state, worldIn, pos);
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return null;
 		}
 
 		@Override

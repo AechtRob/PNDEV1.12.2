@@ -1,0 +1,21 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 "
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "slabWood"
+    },
+    "4": {
+      "item": "minecraft:sea_lantern"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lamp",
+    "count": 1
+  }
+}

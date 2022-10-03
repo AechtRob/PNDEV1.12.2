@@ -5,7 +5,7 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 
 public class ModelDNARecombinerCentrifugeLid extends AdvancedModelBase {
-    private final AdvancedModelRenderer lid;
+    public final AdvancedModelRenderer lid;
 
     public ModelDNARecombinerCentrifugeLid() {
         textureWidth = 48;

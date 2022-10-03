@@ -3,10 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockAcidBath;
-import net.lepidodendron.block.BlockAcidBathEnd;
-import net.lepidodendron.block.BlockAcidBathEndUp;
-import net.lepidodendron.block.BlockAcidBathUp;
+import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.Block;
@@ -31,11 +28,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemAcidBath extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:acid_bath_item")
+public class ItemDNARecombiner extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:dna_recombiner_item")
 	public static final Item block = null;
-	public ItemAcidBath(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.acid_bath);
+	public ItemDNARecombiner(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.dna_recombiner);
 	}
 
 	@Override
@@ -46,14 +43,14 @@ public class ItemAcidBath extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:acid_bath_item", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:dna_recombiner_item", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
 			maxStackSize = 1;
-			setTranslationKey("pf_acid_bath_item");
-			setRegistryName("acid_bath_item");
+			setTranslationKey("pf_dna_recombiner_item");
+			setRegistryName("dna_recombiner_item");
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
@@ -104,11 +101,10 @@ public class ItemAcidBath extends ElementsLepidodendronMod.ModElement {
 
 					if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
 					{
-						worldIn.setBlockState(pos, BlockAcidBath.block.getDefaultState().withProperty(BlockAcidBath.BlockCustom.FACING, enumfacing), 3);
-						worldIn.setBlockState(pos.offset(enumfacing), BlockAcidBathEnd.block.getDefaultState().withProperty(BlockAcidBathEnd.BlockCustom.FACING, enumfacing.getOpposite()), 3);
+						worldIn.setBlockState(pos, BlockDNARecombinerCentrifuge.block.getDefaultState().withProperty(BlockDNARecombinerCentrifuge.BlockCustom.FACING, enumfacing.rotateY()), 3);
+						worldIn.setBlockState(pos.offset(enumfacing), BlockDNARecombinerForge.block.getDefaultState().withProperty(BlockDNARecombinerForge.BlockCustom.FACING, enumfacing.rotateY()), 3);
 
-						worldIn.setBlockState(pos.up(), BlockAcidBathUp.block.getDefaultState().withProperty(BlockAcidBathUp.BlockCustom.FACING, enumfacing), 3);
-						worldIn.setBlockState(pos.offset(enumfacing).up(), BlockAcidBathEndUp.block.getDefaultState().withProperty(BlockAcidBathEndUp.BlockCustom.FACING, enumfacing.getOpposite()), 3);
+						worldIn.setBlockState(pos.offset(enumfacing).up(), BlockDNARecombinerRail.block.getDefaultState().withProperty(BlockDNARecombinerRail.BlockCustom.FACING, enumfacing.rotateY()), 3);
 
 						worldIn.notifyNeighborsRespectDebug(pos, block, false);
 						worldIn.notifyNeighborsRespectDebug(blockpos, iblockstate1.getBlock(), false);
