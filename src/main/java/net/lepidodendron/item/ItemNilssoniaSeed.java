@@ -33,7 +33,7 @@ public class ItemNilssoniaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockNilssoniaSapling.block,1);
+			super(BlockNilssoniaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_nilssonia_seed");
 			setRegistryName("nilssonia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

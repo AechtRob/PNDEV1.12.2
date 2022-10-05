@@ -33,7 +33,7 @@ public class ItemOrtiseiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockOrtiseia.block, 1);
+			super(BlockOrtiseia.block.getDefaultState(), 1);
 			setTranslationKey("pf_ortiseia_seed");
 			setRegistryName("ortiseia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

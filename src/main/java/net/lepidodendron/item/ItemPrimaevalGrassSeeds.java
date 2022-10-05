@@ -33,7 +33,7 @@ public class ItemPrimaevalGrassSeeds extends ElementsLepidodendronMod.ModElement
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockPrimevalGrassLand.block, 1);
+			super(BlockPrimevalGrassLand.block.getDefaultState(), 1);
 			setTranslationKey("pf_primaeval_grass_seeds");
 			setRegistryName("primaeval_grass_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

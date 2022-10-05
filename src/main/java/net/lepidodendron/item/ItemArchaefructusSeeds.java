@@ -33,7 +33,7 @@ public class ItemArchaefructusSeeds extends ElementsLepidodendronMod.ModElement 
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockArchaefructus.block, 2);
+			super(BlockArchaefructus.block.getDefaultState(), 2);
 			setTranslationKey("pf_archaefructus_seeds");
 			setRegistryName("archaefructus_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

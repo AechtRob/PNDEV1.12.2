@@ -33,7 +33,7 @@ public class ItemMonkeyPuzzleAraucariaNuts extends ElementsLepidodendronMod.ModE
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockMonkeyPuzzleAraucariaSapling.block,1);
+			super(BlockMonkeyPuzzleAraucariaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_monkey_puzzle_araucaria_nuts");
 			setRegistryName("monkey_puzzle_araucaria_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

@@ -33,7 +33,7 @@ public class ItemCordaitesSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockCordaitesSapling.block,1);
+			super(BlockCordaitesSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_cordaites_seeds");
 			setRegistryName("cordaites_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

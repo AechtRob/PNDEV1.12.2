@@ -21,8 +21,6 @@
       ]
     },
 
-
-
     {   "when": { "facing": "north", "rf": true },
       "apply": [
         {"model": "lepidodendron:acid_bath_end_up_rf", "y": 90 }

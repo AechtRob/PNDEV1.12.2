@@ -33,7 +33,7 @@ public class ItemUtrechtiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockUtrechtiaSapling.block, 1);
+			super(BlockUtrechtiaSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_utrechtia_seed");
 			setRegistryName("utrechtia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

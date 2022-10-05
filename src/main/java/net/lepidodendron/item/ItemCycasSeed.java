@@ -33,7 +33,7 @@ public class ItemCycasSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockCycasSapling.block,1);
+			super(BlockCycasSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_cycas_seed");
 			setRegistryName("cycas_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

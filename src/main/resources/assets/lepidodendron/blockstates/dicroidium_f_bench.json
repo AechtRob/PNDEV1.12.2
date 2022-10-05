@@ -94,8 +94,6 @@
             ]
         },
 
-
-
     {   "when": { "facing": "north", "left": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:dicroidium_f_bench_left_1", "y": 180, "uvlock": true}
@@ -336,8 +334,6 @@
                 { "model": "lepidodendron:dicroidium_f_bench_right_join_3", "y": 90, "uvlock": true}
             ]
         },
-
-
     {   "when": { "facing": "north", "left": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:dicroidium_f_bench_left_4", "y": 180, "uvlock": true}
@@ -418,8 +414,6 @@
                 { "model": "lepidodendron:dicroidium_f_bench_right_join_4", "y": 90, "uvlock": true}
             ]
         },
-
-
     {   "when": { "facing": "north", "left": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:dicroidium_f_bench_left_5", "y": 180, "uvlock": true}
@@ -741,8 +735,6 @@
                 { "model": "lepidodendron:dicroidium_f_bench_right_join_8", "y": 90, "uvlock": true}
             ]
         },
-
-
     {   "when": { "facing": "north", "left": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:dicroidium_f_bench_left_9", "y": 180, "uvlock": true}
@@ -903,8 +895,6 @@
                 { "model": "lepidodendron:dicroidium_f_bench_right_join_10", "y": 90, "uvlock": true}
             ]
         },
-
-
     {   "when": { "facing": "north", "left": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:dicroidium_f_bench_left_11", "y": 180, "uvlock": true}
@@ -1308,6 +1298,4 @@
 
 ]
 }
-
-
 

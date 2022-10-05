@@ -33,7 +33,7 @@ public class ItemGinkgoitesSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockGinkgoitesSapling.block,1);
+			super(BlockGinkgoitesSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_ginkgoites_seed");
 			setRegistryName("ginkgoites_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

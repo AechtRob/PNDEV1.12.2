@@ -34,7 +34,7 @@ public class ItemOakDarkAcorn extends ElementsLepidodendronMod.ModElement {
 
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(Blocks.SAPLING.getStateFromMeta(5).getBlock(), 1);
+			super(Blocks.SAPLING.getStateFromMeta(5), 1);
 			setTranslationKey("pf_acorn_dark");
 			setRegistryName("acorn_dark");
 			setCreativeTab(TabLepidodendronPlants.tab);

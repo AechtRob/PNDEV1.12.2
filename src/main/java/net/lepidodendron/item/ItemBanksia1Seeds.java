@@ -33,7 +33,7 @@ public class ItemBanksia1Seeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockBanksia1Sapling.block,1);
+			super(BlockBanksia1Sapling.block.getDefaultState(),1);
 			setTranslationKey("pf_banksia_1_seeds");
 			setRegistryName("banksia_1_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

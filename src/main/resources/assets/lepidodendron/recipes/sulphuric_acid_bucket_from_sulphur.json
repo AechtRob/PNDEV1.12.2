@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemSulphur"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemSulphur"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemSulphur"
+    },
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "type": "minecraft:item_nbt",
+    "item": "forge:bucketFilled",
+    "nbt": {
+      "FluidName": "acid_sulphuric",
+      "Amount": 1000
+    },
+    "count": 1
+  }
+}

@@ -33,7 +33,7 @@ public class ItemTrichopitysSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockTrichopitys.block, 1);
+			super(BlockTrichopitys.block.getDefaultState(), 1);
 			setTranslationKey("pf_trichopitys_seeds");
 			setRegistryName("trichopitys_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

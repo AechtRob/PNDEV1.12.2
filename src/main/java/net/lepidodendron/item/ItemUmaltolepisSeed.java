@@ -33,7 +33,7 @@ public class ItemUmaltolepisSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockUmaltolepis.block, 1);
+			super(BlockUmaltolepis.block.getDefaultState(), 1);
 			setTranslationKey("pf_umaltolepis_seed");
 			setRegistryName("umaltolepis_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

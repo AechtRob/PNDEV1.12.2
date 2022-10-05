@@ -33,7 +33,7 @@ public class ItemBrachyphyllumSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockBrachyphyllumSapling.block,1);
+			super(BlockBrachyphyllumSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_brachyphyllum_seed");
 			setRegistryName("brachyphyllum_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

@@ -390,6 +390,8 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 			return true;
 		}
 
+
+
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 1)

@@ -33,7 +33,7 @@ public class ItemPolyspermophyllumSeeds extends ElementsLepidodendronMod.ModElem
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPolyspermophyllum.block, 1);
+			super(BlockPolyspermophyllum.block.getDefaultState(), 1);
 			setTranslationKey("pf_polyspermophyllum_seeds");
 			setRegistryName("polyspermophyllum_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

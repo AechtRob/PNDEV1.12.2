@@ -20,8 +20,6 @@
         {"model": "lepidodendron:acid_bath", "y": 180}
       ]
     },
-
-
     {   "when": { "acid": "15", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_15", "y": 180, "uvlock": true}
@@ -42,8 +40,6 @@
         {"model": "lepidodendron:acid_bath_15", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "14", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_14", "y": 180, "uvlock": true}
@@ -64,8 +60,6 @@
         {"model": "lepidodendron:acid_bath_14", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "13", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_13", "y": 180, "uvlock": true}
@@ -86,8 +80,6 @@
         {"model": "lepidodendron:acid_bath_13", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "12", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_12", "y": 180, "uvlock": true}
@@ -108,8 +100,6 @@
         {"model": "lepidodendron:acid_bath_12", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "11", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_11", "y": 180, "uvlock": true}
@@ -130,8 +120,6 @@
         {"model": "lepidodendron:acid_bath_11", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "10", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_10", "y": 180, "uvlock": true}
@@ -152,8 +140,6 @@
         {"model": "lepidodendron:acid_bath_10", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "9", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_9", "y": 180, "uvlock": true}
@@ -174,8 +160,6 @@
         {"model": "lepidodendron:acid_bath_9", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "8", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_8", "y": 180, "uvlock": true}
@@ -196,8 +180,6 @@
         {"model": "lepidodendron:acid_bath_8", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "7", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_7", "y": 180, "uvlock": true}
@@ -218,8 +200,6 @@
         {"model": "lepidodendron:acid_bath_7", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "6", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_6", "y": 180, "uvlock": true}
@@ -240,8 +220,6 @@
         {"model": "lepidodendron:acid_bath_6", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "5", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_5", "y": 180, "uvlock": true}
@@ -262,8 +240,6 @@
         {"model": "lepidodendron:acid_bath_5", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "4", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_4", "y": 180, "uvlock": true}
@@ -284,8 +260,6 @@
         {"model": "lepidodendron:acid_bath_4", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "3", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_3", "y": 180, "uvlock": true}
@@ -306,8 +280,6 @@
         {"model": "lepidodendron:acid_bath_3", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "2", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_2", "y": 180, "uvlock": true}
@@ -328,8 +300,6 @@
         {"model": "lepidodendron:acid_bath_2", "y": 90, "uvlock": true}
       ]
     },
-
-
     {   "when": { "acid": "1", "facing": "north" },
       "apply": [
         {"model": "lepidodendron:acid_bath_1", "y": 180, "uvlock": true}

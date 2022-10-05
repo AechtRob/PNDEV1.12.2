@@ -33,7 +33,7 @@ public class ItemPseudovoltziaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPseudovoltzia.block, 1);
+			super(BlockPseudovoltzia.block.getDefaultState(), 1);
 			setTranslationKey("pf_pseudovoltzia_seed");
 			setRegistryName("pseudovoltzia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

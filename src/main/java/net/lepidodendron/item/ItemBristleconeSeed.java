@@ -33,7 +33,7 @@ public class ItemBristleconeSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockBristleconeSapling.block,1);
+			super(BlockBristleconeSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_bristlecone_seed");
 			setRegistryName("bristlecone_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

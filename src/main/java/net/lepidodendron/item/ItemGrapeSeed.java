@@ -33,7 +33,7 @@ public class ItemGrapeSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(Blocks.VINE,1);
+			super(Blocks.VINE.getDefaultState(),1);
 			setTranslationKey("pf_grape_seeds");
 			setRegistryName("grape_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

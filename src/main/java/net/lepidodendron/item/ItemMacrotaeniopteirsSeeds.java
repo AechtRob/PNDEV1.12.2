@@ -33,7 +33,7 @@ public class ItemMacrotaeniopteirsSeeds extends ElementsLepidodendronMod.ModElem
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockLesleya.block, 1);
+			super(BlockLesleya.block.getDefaultState(), 1);
 			setTranslationKey("pf_macrotaeniopteris_seeds");
 			setRegistryName("macrotaeniopteris_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

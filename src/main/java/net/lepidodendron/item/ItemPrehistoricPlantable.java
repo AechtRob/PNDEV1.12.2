@@ -19,10 +19,10 @@ import javax.annotation.Nullable;
 
 public class ItemPrehistoricPlantable extends Item {
 
-	private Block plantBlock;
+	private IBlockState plantBlock;
 	private int offsetY;
 
-	public ItemPrehistoricPlantable(@Nullable Block plantBlock, int offsetY) {
+	public ItemPrehistoricPlantable(@Nullable IBlockState plantBlock, int offsetY) {
 		setMaxDamage(0);
 		maxStackSize = 64;
 		this.plantBlock = plantBlock;
@@ -51,15 +51,15 @@ public class ItemPrehistoricPlantable extends Item {
 		if (this.plantBlock != null) {
 			if (facing == EnumFacing.UP && worldIn.isAirBlock(pos.up(this.offsetY))
 				&& (isPrehistoricGround(worldIn.getBlockState(pos).getBlock()) || isPlantableGround(worldIn, pos))
-				&& this.plantBlock.canPlaceBlockAt(worldIn, pos.up(this.offsetY))
+				&& this.plantBlock.getBlock().canPlaceBlockAt(worldIn, pos.up(this.offsetY))
 			) {
 				//We can plant this here!
 				ItemStack itemstack = player.getHeldItem(hand);
 				SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
 				player.getEntityWorld().playSound(player, player.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 				itemstack.shrink(1);
-				worldIn.setBlockState(pos.up(this.offsetY), this.plantBlock.getDefaultState());
-				this.plantBlock.onBlockAdded(worldIn, pos.up(this.offsetY), this.plantBlock.getDefaultState());
+				worldIn.setBlockState(pos.up(this.offsetY), this.plantBlock);
+				this.plantBlock.getBlock().onBlockAdded(worldIn, pos.up(this.offsetY), this.plantBlock);
 				return EnumActionResult.SUCCESS;
 			}
 		}

@@ -33,7 +33,7 @@ public class ItemSycamoreSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockSycamoreSapling.block,1);
+			super(BlockSycamoreSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_sycamore_seeds");
 			setRegistryName("sycamore_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

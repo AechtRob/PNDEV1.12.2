@@ -33,7 +33,7 @@ public class ItemGlossophyllumSeeds extends ElementsLepidodendronMod.ModElement 
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockGlossophyllumSapling.block,1);
+			super(BlockGlossophyllumSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_glossophyllum_seeds");
 			setRegistryName("glossophyllum_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

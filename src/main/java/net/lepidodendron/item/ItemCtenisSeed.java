@@ -33,7 +33,7 @@ public class ItemCtenisSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockCtenisSapling.block,1);
+			super(BlockCtenisSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_ctenis_seed");
 			setRegistryName("ctenis_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

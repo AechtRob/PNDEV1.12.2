@@ -33,7 +33,7 @@ public class ItemAraucaritesNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAraucaritesSapling.block,1);
+			super(BlockAraucaritesSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_araucarites_nuts");
 			setRegistryName("araucarites_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

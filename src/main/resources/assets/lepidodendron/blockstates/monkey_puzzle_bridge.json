@@ -930,8 +930,6 @@
                 { "model": "lepidodendron:monkey_puzzle_bridge_joiner_9" }
             ]
         },
-
-
     {   "when": { "facing": "north", "variant": 10 },
             "apply": { "model": "lepidodendron:monkey_puzzle_bridge_10", "y": 270, "uvlock": true}
         },

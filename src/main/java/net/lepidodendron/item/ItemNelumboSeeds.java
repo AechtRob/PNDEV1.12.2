@@ -33,7 +33,7 @@ public class ItemNelumboSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockNelumbo.block,1);
+			super(BlockNelumbo.block.getDefaultState(),1);
 			setTranslationKey("pf_nelumbo_seeds");
 			setRegistryName("nelumbo_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

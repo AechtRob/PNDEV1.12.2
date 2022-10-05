@@ -33,7 +33,7 @@ public class ItemArtocarpusSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockArtocarpusSapling.block, 1);
+			super(BlockArtocarpusSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_artocarpus_seeds");
 			setRegistryName("artocarpus_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

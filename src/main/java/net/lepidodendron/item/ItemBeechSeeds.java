@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockPlaneSapling;
+import net.lepidodendron.block.BlockBeechSapling;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -33,7 +33,7 @@ public class ItemBeechSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockPlaneSapling.block,1);
+			super(BlockBeechSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_beech_seeds");
 			setRegistryName("beech_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

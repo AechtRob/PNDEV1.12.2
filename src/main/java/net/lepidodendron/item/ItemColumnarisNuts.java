@@ -33,7 +33,7 @@ public class ItemColumnarisNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockColumnarisSapling.block,1);
+			super(BlockColumnarisSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_columnaris_nuts");
 			setRegistryName("columnaris_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

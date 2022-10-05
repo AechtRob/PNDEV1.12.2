@@ -33,7 +33,7 @@ public class ItemMapleSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockMapleSapling.block,1);
+			super(BlockMapleSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_maple_seeds");
 			setRegistryName("maple_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

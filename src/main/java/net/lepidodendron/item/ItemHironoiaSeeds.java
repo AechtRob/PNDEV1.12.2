@@ -33,7 +33,7 @@ public class ItemHironoiaSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockHironoiaSapling.block,1);
+			super(BlockHironoiaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_hironoia_seeds");
 			setRegistryName("hironoia_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

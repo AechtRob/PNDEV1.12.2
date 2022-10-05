@@ -33,7 +33,7 @@ public class ItemAntarcticycasSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAntarcticycas.block, 1);
+			super(BlockAntarcticycas.block.getDefaultState(), 1);
 			setTranslationKey("pf_antarcticycas_seed");
 			setRegistryName("antarcticycas_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

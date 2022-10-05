@@ -33,7 +33,7 @@ public class ItemPodozamitesSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPodozamitesSapling.block, 1);
+			super(BlockPodozamitesSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_podozamites_seed");
 			setRegistryName("podozamites_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

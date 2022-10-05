@@ -33,7 +33,7 @@ public class ItemPodocarpSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPodocarpSapling.block, 1);
+			super(BlockPodocarpSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_podocarp_seed");
 			setRegistryName("podocarp_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

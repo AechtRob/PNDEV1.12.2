@@ -33,7 +33,7 @@ public class ItemNystroemiaSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockNystroemia.block,1);
+			super(BlockNystroemia.block.getDefaultState(),1);
 			setTranslationKey("pf_nystroemia_seeds");
 			setRegistryName("nystroemia_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

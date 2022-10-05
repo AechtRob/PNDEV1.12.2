@@ -33,7 +33,7 @@ public class ItemAlpiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAlpiaSapling.block, 1);
+			super(BlockAlpiaSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_alpia_seed");
 			setRegistryName("alpia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

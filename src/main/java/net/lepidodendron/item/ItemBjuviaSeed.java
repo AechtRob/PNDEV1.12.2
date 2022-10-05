@@ -33,7 +33,7 @@ public class ItemBjuviaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockBjuviaSapling.block,1);
+			super(BlockBjuviaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_bjuvia_seed");
 			setRegistryName("bjuvia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

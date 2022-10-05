@@ -33,7 +33,7 @@ public class ItemBunyaNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockBunyaSapling.block,1);
+			super(BlockBunyaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_bunya_nuts");
 			setRegistryName("bunya_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

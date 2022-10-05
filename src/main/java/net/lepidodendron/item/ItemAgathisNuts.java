@@ -33,7 +33,7 @@ public class ItemAgathisNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAgathisSapling.block,1);
+			super(BlockAgathisSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_agathis_nuts");
 			setRegistryName("agathis_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

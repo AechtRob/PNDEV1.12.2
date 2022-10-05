@@ -1,0 +1,18 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:potion",
+      "data": 32767
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "itemSulphur"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:bottle_of_acid_sulphuric",
+    "count": 1
+  }
+}

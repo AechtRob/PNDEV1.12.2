@@ -3,9 +3,9 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockPlaneSapling;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -33,7 +33,7 @@ public class ItemBirchSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockPlaneSapling.block,1);
+			super(Blocks.SAPLING.getStateFromMeta(2), 1);
 			setTranslationKey("pf_birch_seeds");
 			setRegistryName("birch_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

@@ -33,7 +33,7 @@ public class ItemDioonSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockDioonSapling.block,1);
+			super(BlockDioonSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_dioon_seed");
 			setRegistryName("dioon_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

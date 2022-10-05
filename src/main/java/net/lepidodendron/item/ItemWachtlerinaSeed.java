@@ -33,7 +33,7 @@ public class ItemWachtlerinaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockWachtlerina.block, 1);
+			super(BlockWachtlerina.block.getDefaultState(), 1);
 			setTranslationKey("pf_wachtlerina_seed");
 			setRegistryName("wachtlerina_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

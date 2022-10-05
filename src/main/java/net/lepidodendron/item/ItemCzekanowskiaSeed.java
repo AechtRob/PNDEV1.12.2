@@ -33,7 +33,7 @@ public class ItemCzekanowskiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockCzekanowskiaSapling.block,1);
+			super(BlockCzekanowskiaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_czekanowskia_seed");
 			setRegistryName("czekanowskia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

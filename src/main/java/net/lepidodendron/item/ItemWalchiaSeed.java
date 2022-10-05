@@ -33,7 +33,7 @@ public class ItemWalchiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockWalchiaSapling.block, 1);
+			super(BlockWalchiaSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_walchia_seed");
 			setRegistryName("walchia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

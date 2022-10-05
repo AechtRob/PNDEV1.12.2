@@ -33,7 +33,7 @@ public class ItemPentoxylalesSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockPentoxylalesSapling.block,1);
+			super(BlockPentoxylalesSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_pentoxylales_seeds");
 			setRegistryName("pentoxylales_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

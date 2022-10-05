@@ -59,7 +59,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimPermian)
 			dimensionCriteria = true;
 
-		Biome biome = world.getBiome(new BlockPos(chunkX, world.getSeaLevel(), chunkZ));
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (biome instanceof BiomePermian) {
 			BiomePermian BiomeP = (BiomePermian) biome;
 			if (BiomeP.getBiomeType() != EnumBiomeTypePermian.Floodbasalt) {

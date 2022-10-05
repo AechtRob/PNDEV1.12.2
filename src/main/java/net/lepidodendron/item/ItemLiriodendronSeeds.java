@@ -33,7 +33,7 @@ public class ItemLiriodendronSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockLiriodendronSapling.block,1);
+			super(BlockLiriodendronSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_liriodendron_seeds");
 			setRegistryName("liriodendron_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

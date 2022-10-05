@@ -1330,8 +1330,6 @@
                 { "model": "lepidodendron:agathis_bridge_side_9" , "y": 90, "uvlock": true}
             ]
         },
-
-
     {   "when": { "facing": "north", "variant": 10 },
             "apply": { "model": "lepidodendron:agathis_bridge_10", "y": 270, "uvlock": true}
         },
@@ -2132,8 +2130,4 @@
         }
     ]
 }
-
-
-
-
 

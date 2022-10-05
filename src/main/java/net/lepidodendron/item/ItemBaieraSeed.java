@@ -33,7 +33,7 @@ public class ItemBaieraSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockBaiera.block,1);
+			super(BlockBaiera.block.getDefaultState(),1);
 			setTranslationKey("pf_baiera_seed");
 			setRegistryName("baiera_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

@@ -33,7 +33,7 @@ public class ItemHymenaeaSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockHymenaeaSapling.block,1);
+			super(BlockHymenaeaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_hymenaea_seeds");
 			setRegistryName("hymenaea_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

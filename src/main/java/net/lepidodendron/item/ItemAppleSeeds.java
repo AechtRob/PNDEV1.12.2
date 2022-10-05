@@ -33,7 +33,7 @@ public class ItemAppleSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAppleSapling.block, 1);
+			super(BlockAppleSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_apple_seeds");
 			setRegistryName("apple_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

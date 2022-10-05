@@ -33,7 +33,7 @@ public class ItemFrenelopsisSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockFrenelopsis.block, 1);
+			super(BlockFrenelopsis.block.getDefaultState(), 1);
 			setTranslationKey("pf_frenelopsis_seed");
 			setRegistryName("frenelopsis_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

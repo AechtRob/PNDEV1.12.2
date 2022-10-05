@@ -33,7 +33,7 @@ public class ItemEphedraSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockEphedra.block,1);
+			super(BlockEphedra.block.getDefaultState(),1);
 			setTranslationKey("pf_ephedra_seed");
 			setRegistryName("ephedra_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

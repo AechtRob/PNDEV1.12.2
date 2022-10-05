@@ -5,6 +5,7 @@
 		"0": "blocks/iron_block",
 		"1": "lepidodendron:blocks/dna_recombiner_centrifuge",
 		"2": "lepidodendron:blocks/lab_bench_side",
+		"0_0": "blocks/iron_block",
 		"particle": "blocks/iron_block"
 	},
 	"elements": [
@@ -24,10 +25,10 @@
 			"from": [3, 5, 3],
 			"to": [13, 6, 13],
 			"faces": {
-				"north": {"uv": [0, 0, 10, 1], "texture": "#missing"},
-				"east": {"uv": [0, 0, 10, 1], "texture": "#missing"},
-				"south": {"uv": [0, 0, 10, 1], "texture": "#missing"},
-				"west": {"uv": [0, 0, 10, 1], "texture": "#missing"},
+				"north": {"uv": [0, 0, 10, 1], "texture": "#0_0"},
+				"east": {"uv": [0, 0, 10, 1], "texture": "#0_0"},
+				"south": {"uv": [0, 0, 10, 1], "texture": "#0_0"},
+				"west": {"uv": [0, 0, 10, 1], "texture": "#0_0"},
 				"up": {"uv": [3, 3, 13, 13], "texture": "#0"},
 				"down": {"uv": [0, 0, 10, 10], "texture": "#missing"}
 			}

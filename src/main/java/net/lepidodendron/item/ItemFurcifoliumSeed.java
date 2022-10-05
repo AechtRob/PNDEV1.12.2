@@ -33,7 +33,7 @@ public class ItemFurcifoliumSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockFurcifolium.block, 1);
+			super(BlockFurcifolium.block.getDefaultState(), 1);
 			setTranslationKey("pf_furcifolium_seed");
 			setRegistryName("furcifolium_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

@@ -89,8 +89,20 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                             TEXTURE_EGG = entityBase.getEggTexture();
                             eggType = entityBase.getEggType();
                         }
+                        else {
+                            //Something has gone wrong!
+                            return;
+                        }
+                    }
+                    else {
+                        //Something has gone wrong!
+                        return;
                     }
                 }
+            }
+            else {
+                //Something has gone wrong!
+                return;
             }
             //Render any eggs:
             GlStateManager.pushMatrix();

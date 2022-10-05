@@ -33,7 +33,7 @@ public class ItemThucydiaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockThucydia.block, 1);
+			super(BlockThucydia.block.getDefaultState(), 1);
 			setTranslationKey("pf_thucydia_seed");
 			setRegistryName("thucydia_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

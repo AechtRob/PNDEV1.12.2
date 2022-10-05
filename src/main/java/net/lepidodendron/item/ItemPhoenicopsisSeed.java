@@ -33,7 +33,7 @@ public class ItemPhoenicopsisSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockPhoenicopsisSapling.block,1);
+			super(BlockPhoenicopsisSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_phoenicopsis_seed");
 			setRegistryName("phoenicopsis_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

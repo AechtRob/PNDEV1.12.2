@@ -29,8 +29,6 @@
     	]},
       "apply": { "model": "lepidodendron:archaeopteris_thatch", "y": 90 }
     },
-
-
 	{ "when": { "AND": [
     	{ "outer": true },
 		{ "nw": true }

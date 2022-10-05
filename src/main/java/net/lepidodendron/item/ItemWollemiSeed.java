@@ -33,7 +33,7 @@ public class ItemWollemiSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockWollemiSapling.block, 1);
+			super(BlockWollemiSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_wollemi_seed");
 			setRegistryName("wollemi_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

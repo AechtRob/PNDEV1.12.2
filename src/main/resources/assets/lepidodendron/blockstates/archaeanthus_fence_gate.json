@@ -35,7 +35,3 @@
     "facing=east,in_wall=true,open=true,powered=false":  { "model": "lepidodendron:archaeanthus_wall_gate_open", "uvlock": true, "y": 270 }
   }
 }
-
-
-
-

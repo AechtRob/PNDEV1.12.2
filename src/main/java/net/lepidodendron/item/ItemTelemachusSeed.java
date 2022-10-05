@@ -33,7 +33,7 @@ public class ItemTelemachusSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockTelemachusSapling.block, 1);
+			super(BlockTelemachusSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_telemachus_seed");
 			setRegistryName("telemachus_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

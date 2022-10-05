@@ -33,7 +33,7 @@ public class ItemDawnRedwoodNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockDawnRedwoodSapling.block,1);
+			super(BlockDawnRedwoodSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_dawn_redwood_nuts");
 			setRegistryName("dawn_redwood_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);

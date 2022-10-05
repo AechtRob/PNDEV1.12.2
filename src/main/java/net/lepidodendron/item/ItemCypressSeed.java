@@ -33,7 +33,7 @@ public class ItemCypressSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockCypressSapling.block,1);
+			super(BlockCypressSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_cypress_seed");
 			setRegistryName("cypress_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

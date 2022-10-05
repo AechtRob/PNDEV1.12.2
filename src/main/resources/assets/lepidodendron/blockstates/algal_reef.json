@@ -55,8 +55,6 @@
 				{"model": "lepidodendron:algal_reef_2", "y": 270 }
 			]
 		},
-
-
 		{	"when": { "facing": "north", "var": true, "up": true },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_3"},

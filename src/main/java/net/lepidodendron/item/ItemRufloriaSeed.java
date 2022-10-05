@@ -33,7 +33,7 @@ public class ItemRufloriaSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockRufloriaSapling.block, 1);
+			super(BlockRufloriaSapling.block.getDefaultState(), 1);
 			setTranslationKey("pf_rufloria_seed");
 			setRegistryName("rufloria_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

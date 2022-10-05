@@ -3154,6 +3154,12 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockSulfur", BlockSulphur.block);
 		OreDictionary.registerOre("oreSulphur", BlockSulphurOre.block);
 		OreDictionary.registerOre("oreSulfur", BlockSulphurOre.block);
+		OreDictionary.registerOre("oreSulphur", BlockSulphurOreNetherrack.block);
+		OreDictionary.registerOre("oreSulfur", BlockSulphurOreNetherrack.block);
+		OreDictionary.registerOre("itemSulphur", ItemSulphur.block);
+		OreDictionary.registerOre("itemSulfur", ItemSulphur.block);
+		OreDictionary.registerOre("dustSulphur", ItemSulphur.block);
+		OreDictionary.registerOre("dustSulfur", ItemSulphur.block);
 
 		OreDictionary.registerOre("stone", BlockLavaRock.block);
 		OreDictionary.registerOre("stone", BlockLavaRockPolished.block);
@@ -3898,6 +3904,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("slabAmber", BlockDominicanAmberBrickSlab.block);
 		OreDictionary.registerOre("wallAmber", BlockBalticAmberBrickWall.block);
 		OreDictionary.registerOre("wallAmber", BlockDominicanAmberBrickWall.block);
+		OreDictionary.registerOre("oreSalt", BlockSaltOre.block);
 		OreDictionary.registerOre("itemSalt", ItemSalt.block);
 		OreDictionary.registerOre("dustSalt", ItemSalt.block);
 		OreDictionary.registerOre("foodSalt", ItemSalt.block);

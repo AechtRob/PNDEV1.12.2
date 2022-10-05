@@ -33,7 +33,7 @@ public class ItemSphenobaieraSeed extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockSphenobaieraSapling.block,1);
+			super(BlockSphenobaieraSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_sphenobaiera_seed");
 			setRegistryName("sphenobaiera_seed");
 			setCreativeTab(TabLepidodendronPlants.tab);

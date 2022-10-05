@@ -20,8 +20,6 @@
         {"model": "lepidodendron:acid_bath_up", "y": 180}
       ]
     },
-
-
     {   "when": { "facing": "north", "pipe": true },
       "apply": [
         {"model": "lepidodendron:acid_bath_up_pipe", "y": 270 }

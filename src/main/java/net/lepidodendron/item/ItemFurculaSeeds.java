@@ -33,7 +33,7 @@ public class ItemFurculaSeeds extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemCustom extends ItemPrehistoricPlantable {
 		public ItemCustom() {
-			super(BlockFurculaSapling.block,1);
+			super(BlockFurculaSapling.block.getDefaultState(),1);
 			setTranslationKey("pf_furcula_seeds");
 			setRegistryName("furcula_seeds");
 			setCreativeTab(TabLepidodendronPlants.tab);

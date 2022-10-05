@@ -235,7 +235,14 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 		protected boolean isLocked;
 		protected boolean isProcessing;
-		protected int processTick;
+		public int processTick;
+		public double centrifugeAngle;
+		public double flareAngle;
+		public long startTick;
+		private int totalRevolutions = 16; //16 full revs for the process
+		private int processCooldown = 200; //10 seconds to startup/slowdown
+		private int processTickTime = 600; //30 seconds to spin (including startup/cooldown)
+		public double cooldownDegrees = 360 * 7; //during warmup and cooldown we rotate this amount
 
 		public float lidAngle;
 		public float prevLidAngle;
@@ -243,45 +250,66 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		private int ticksSinceSync;
 
 
-		/*
 		public boolean canStartProcess() {
 
-			if ((!isProcessing)
-					&& (!isTankPaused())
-					&& getStackInSlot(1).isEmpty()
-					&& getStackInSlot(2).isEmpty()
-					&& getStackInSlot(3).isEmpty()
-					&& getStackInSlot(4).isEmpty()
-					&& getStackInSlot(5).isEmpty()
-					&& getStackInSlot(6).isEmpty()
-					&& getStackInSlot(7).isEmpty()
-					&& getStackInSlot(8).isEmpty()
-					&& !getStackInSlot(0).isEmpty()
-			) {
-				TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
-				if (tileEntity != null) {
-					if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
-						BlockAcidBath.TileEntityAcidBath te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
-						if (te.getFluidAmount() > 0) {
-							return true;
-						}
-					}
-				}
-				return false;
+			if ((!this.isProcessing)
+					&& (!isCentrifugePaused())
+					&& (!this.isLocked)
+					&& this.lidAngle <= 0.0F
+					&& (
+						(!getStackInSlot(0).isEmpty()) && (!getStackInSlot(2).isEmpty())
+						|| (!getStackInSlot(1).isEmpty()) && (!getStackInSlot(3).isEmpty())
+					)
+					&& (!((!getStackInSlot(0).isEmpty()) && getStackInSlot(2).isEmpty()))
+					&& (!((!getStackInSlot(2).isEmpty()) && getStackInSlot(0).isEmpty()))
+					&& (!((!getStackInSlot(1).isEmpty()) && getStackInSlot(3).isEmpty()))
+					&& (!((!getStackInSlot(3).isEmpty()) && getStackInSlot(1).isEmpty()))
+				) {
+				return true;
 			}
 			return false;
 		}
 
-		public boolean canFizz() {
-			return this.isProcessing
-					&& (this.processTick < (this.processTickTime - this.trayLiftTickTime))
-					&& (this.processTick > this.trayLiftTickTime);
+		public double progressFraction() {
+			if (this.isProcessing) {
+				return (double)this.processTick / (double)this.processTickTime;
+			}
+			if (this.isLocked) {
+				return 1;
+			}
+			return 0;
 		}
-
-		*/
 
 		public boolean isLocked() {
 			return this.isLocked;
+		}
+
+		public boolean isProcessing() {
+			return this.isProcessing;
+		}
+
+		public boolean isCentrifugePaused() {
+			IBlockState state = this.getWorld().getBlockState(this.getPos());
+			EnumFacing face = EnumFacing.NORTH;
+			if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
+				face = EnumFacing.SOUTH;
+			}
+			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
+				face = EnumFacing.NORTH;
+			}
+			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
+				face = EnumFacing.WEST;
+			}
+			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
+				face = EnumFacing.EAST;
+			}
+			if (this.getWorld().isSidePowered(this.getPos().offset(face), face.getOpposite())
+					||
+					this.getWorld().isBlockPowered(this.getPos())
+			) {
+				return true;
+			}
+			return false;
 		}
 
 		public boolean isEmpty()
@@ -359,31 +387,89 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				}
 			}
 
-
 			if (this.getWorld().isRemote) {
 				return;
 			}
 
-
-
 			//Do stuff
+			if (canStartProcess()) {
+				this.isProcessing = true;
+				this.isLocked = true;
+				processTick = 0;
+				startTick = world.getTotalWorldTime(); //Used for rendering
+				this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+			}
+
+			if (this.isProcessing && this.processTick < this.processTickTime) {
+				this.processTick++;
+
+				//Calculate the rotation needed:
+				this.centrifugeAngle = floorAngle(this.getRotationAngle(this.processTick));
+			}
+			else {
+				this.flareAngle = 0;
+				this.centrifugeAngle = 0;
+			}
 
 			markDirty();
 
+		}
+
+		public float getRotationAngle(double processticks) {
+			double angle = 0D;
+			if (processticks >= this.processTickTime || !this.isProcessing) {
+				return 0;
+			}
+			if (processticks <= this.processCooldown) {
+				//Is warming up:
+				angle = (1D - Math.cos((processticks / (double)this.processCooldown) * (Math.PI / 2D))) * this.cooldownDegrees;
+			}
+			else if (processticks >= (this.processTickTime - this.processCooldown)) {
+				//Is cooling down:
+				angle = this.cooldownDegrees - (1D - Math.cos((((double)this.processTickTime - processticks - 1D) / (double)this.processCooldown) * (Math.PI / 2D))) * this.cooldownDegrees;
+			}
+			else {
+				//is spinning
+				angle = this.cooldownDegrees + (((processticks - this.processCooldown) / (this.processTickTime - (2 * this.processCooldown) - 1)) * (360 * this.totalRevolutions));
+			}
+
+			return (float) angle;
+		}
+
+		public float getFlareAngle(double processticks) {
+			double angle = 0D;
+			if (processticks >= this.processTickTime || !this.isProcessing) {
+				return 0;
+			}
+			if (processticks <= this.processCooldown) {
+				//Is warming up:
+				angle = getRotationAngle(processticks);
+				angle = (angle / this.cooldownDegrees) * 80;
+			}
+			else if (processticks >= (this.processTickTime - this.processCooldown)) {
+				//Is cooling down:
+				angle = getRotationAngle(processticks);
+				angle = 80 - ((angle / this.cooldownDegrees) * 80);
+			}
+			else {
+				//is spinning
+				angle = 80;
+			}
+
+			return (float) angle;
+		}
+
+		public double floorAngle(double angle) {
+			if (angle >= 360) {
+				return angle - (Math.floor(angle / 360D) * 360D);
+			}
+			return angle;
 		}
 
 		@Override
 		public int getInventoryStackLimit() {
 			return 1;
 		}
-
-		//public int getHeight() {
-		//	return this.trayheight;
-		//}
-
-		//public void setHeight(int height) {
-		//	this.trayheight = height;
-		//}
 
 		@Override
 		public int getSizeInventory() {
@@ -430,6 +516,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
 			}
+			if (compound.hasKey("startTick")) {
+				this.startTick = compound.getLong("startTick");
+			}
 			this.centrifugeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
 				ItemStackHelper.loadAllItems(compound, this.centrifugeContents);
@@ -446,6 +535,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setBoolean("isLocked", this.isLocked);
 			compound.setInteger("processTick", this.processTick);
+			compound.setLong("startTick", this.startTick);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.centrifugeContents);
 			}

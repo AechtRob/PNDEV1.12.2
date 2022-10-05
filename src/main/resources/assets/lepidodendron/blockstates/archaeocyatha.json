@@ -186,8 +186,6 @@
 				{"model": "lepidodendron:archaeocyatha_5_sponge_10"}
 			]
 		},
-
-
 		{	"when": { "facing": "east" },
 			"apply": [
 				{"model": "lepidodendron:archaeocyatha_reef_1", "y": 90},

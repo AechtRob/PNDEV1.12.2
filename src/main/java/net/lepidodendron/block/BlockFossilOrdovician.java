@@ -109,7 +109,7 @@ public class BlockFossilOrdovician extends ElementsLepidodendronMod.ModElement {
 		}
 		int yy = Math.max(world.getSeaLevel() - dimDepth, 1);
 
-		for (int i = 0; i < 38; i++) {
+		for (int i = 0; i < 32; i++) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = yy; //Anywhere in the layer which is 4 thick (0-3) //NO th evanilal generator already does this!
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

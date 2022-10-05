@@ -33,7 +33,7 @@ public class ItemAethophyllumNuts extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class ItemFoodCustom extends ItemPrehistoricPlantable {
 		public ItemFoodCustom() {
-			super(BlockAethophyllum.block,1);
+			super(BlockAethophyllum.block.getDefaultState(),1);
 			setTranslationKey("pf_aethophyllum_nuts");
 			setRegistryName("aethophyllum_nuts");
 			setCreativeTab(TabLepidodendronPlants.tab);
