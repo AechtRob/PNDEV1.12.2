@@ -3,10 +3,10 @@
     "read_by_default": true,
     "icon": "paleopedia:textures/cryptomartus_icon.png",
     "category": "lepidodendron:carboniferous_animal",
-    "turnin": "lepidodendron:pf_adv_book_acrolepis",
+    "turnin": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
     "pages": [
         {
-	    "trigger": "lepidodendron:pf_adv_book_cryptomartus",
+	    "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
 	    "title": "Cryptomartus",
             "type": "text",
             "text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
@@ -17,12 +17,12 @@
             "title": "Cryptomartus hindi"
         },
 	{
-		"advancement": "lepidodendron:pf_adv_book_cryptomartus",
+		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
 		"type": "text",
 		"text": "Cryptomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head. "
 	},
 	{
-		"advancement": "lepidodendron:pf_adv_book_cryptomartus",
+		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
 		"type": "text",
 		"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 	}

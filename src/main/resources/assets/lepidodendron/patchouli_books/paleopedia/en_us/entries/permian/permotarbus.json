@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/permotarbus_icon.png",
 	"category": "lepidodendron:permian_animal",
-	"turnin": "lepidodendron:pf_adv_book_permotarbus",
+	"turnin": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_permotarbus",
+			"trigger": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 			"title": "Permotarbus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Arachnida$(br)>Trigonotarbida"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_permotarbus",
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 			"type": "text",
 			"text": "One of the last known trigonotarbids, Permotarbus schuberti lived during the Early Permian. It is known from the \"Permian Petrified Forest\" of Chemnitz in Germany. This forest, consisting of tree-ferns, Calamites-like plants and early conifers, was preserved by ash layers from volcanic eruptions. "
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_permotarbus",
+			"advancement": "lepidodendron:pf_adv_book_trigonotarbid_permotarbus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Moss Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
 		}
