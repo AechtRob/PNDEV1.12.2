@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aulacera",
 			"title": "Aulacera",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Stromatoporoidea"
+			"text": "$(l)Temporal Range:$() Ordovician - [Silurian]$(br2)$(l)Habitat:$() Marine$(br2)>Porifera$(br)>Demospongiae$(br)>Stromatoporoidea"
 		},
 		{
 			"type": "image",

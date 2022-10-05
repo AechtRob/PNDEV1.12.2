@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "paleopedia:textures/ancientjelly_icon.png",
 	"category": "lepidodendron:cambrian_animal",
-	"turnin": "lepidodendron:pf_adv_book_ancientjelly",
+	"turnin": "lepidodendron:pf_adv_book_palaeojelly",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_ancientjelly",
+			"trigger": "lepidodendron:pf_adv_book_palaeojelly",
 			"title": "Ancient Jellyfish",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ctenophora"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ancientjelly",
+			"advancement": "lepidodendron:pf_adv_book_palaeojelly",
 			"type": "text",
 			"text": "Jellyfish were some of the earliest recognizable animals, having their roots back as early as the Cambrian! From then to now, Jellyfish still have a very similar appearance and similar lifestyles."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ancientjelly",
+			"advancement": "lepidodendron:pf_adv_book_palaeojelly",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Planula$(br)$(l)Method of Obtaining:$() Bucket"
 		}
