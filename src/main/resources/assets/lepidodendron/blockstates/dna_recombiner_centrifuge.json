@@ -2,7 +2,7 @@
   "multipart": [
     {
       "when": {
-        "facing": "north"
+        "facing": "north", "rf": false
       },
       "apply": [
         {
@@ -13,7 +13,7 @@
     },
     {
       "when": {
-        "facing": "south"
+        "facing": "south", "rf": false
       },
       "apply": [
         {
@@ -24,7 +24,7 @@
     },
     {
       "when": {
-        "facing": "east"
+        "facing": "east", "rf": false
       },
       "apply": [
         {
@@ -34,11 +34,55 @@
     },
     {
       "when": {
-        "facing": "west"
+        "facing": "west", "rf": false
       },
       "apply": [
         {
           "model": "lepidodendron:dna_recombiner_centrifuge",
+          "y": 180
+        }
+      ]
+    },
+
+    {
+      "when": {
+        "facing": "north", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_centrifuge_rf",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_centrifuge_rf",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_centrifuge_rf"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:dna_recombiner_centrifuge_rf",
           "y": 180
         }
       ]

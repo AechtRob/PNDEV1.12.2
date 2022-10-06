@@ -3,7 +3,6 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.block.BlockDNARecombinerRail;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerClaw;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerHatch;
-import net.lepidodendron.item.ItemPhial;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -13,6 +12,7 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -34,9 +34,9 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
 
     @Override
     public void render(BlockDNARecombinerRail.TileEntityDNARecombinerRail entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        //EnumFacing facing = EnumFacing.NORTH;
+        EnumFacing facing = EnumFacing.NORTH;
         if (entity != null && entity.hasWorld()) {
-            //facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+            facing = entity.getWorld().getBlockState(entity.getPos()).getValue(BlockDNARecombinerRail.BlockCustom.FACING);
         }
 
         //int clawheight = entity.getHeight();
@@ -56,20 +56,18 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
         GlStateManager.pushMatrix();
         GlStateManager.disableCull();
         GlStateManager.enableRescaleNormal();
-        //if (facing == EnumFacing.NORTH) {
-            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - d);
-        //}
-        /*
-        if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + d);
-        }
         if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + 0.5 + d, y + yy, z + 0.5);
+            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - d);
         }
         if (facing == EnumFacing.WEST) {
+            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + d);
+        }
+        if (facing == EnumFacing.SOUTH) {
+            GlStateManager.translate(x + 0.5 + d, y + yy, z + 0.5);
+        }
+        if (facing == EnumFacing.NORTH) {
             GlStateManager.translate(x + 0.5 - d, y + yy, z + 0.5);
         }
-        */
 
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -95,82 +93,69 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
                     if (((BlockDNARecombinerRail.TileEntityDNARecombinerRail) te).getStackInSlot(0) != ItemStack.EMPTY) {
                         itemstack = tee.getStackInSlot(0);
                     }
-                    itemstack = new ItemStack(ItemPhial.block, 1);
-                    //if (!(itemstack.isEmpty() || tee.isEmpty())) {
-                        GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-                        GlStateManager.enableBlend();
-                        RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-                        GlStateManager.pushMatrix();
 
-                        double dd = -1.0D;
-                        //if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
-                        //}
-                        /*
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
-                        }
-
-                        */
-                        GlStateManager.rotate(45, 0, 1, 0);
-                        GlStateManager.scale(scale, scale, scale);
-
-                        IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
-                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
-                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
-
-                        GlStateManager.popMatrix();
-                        GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableBlend();
-
-
-                        //and again at 90 degrees:
-                        //--------------------------
-                        GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-                        GlStateManager.enableBlend();
-                        RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-                        GlStateManager.pushMatrix();
-                        //if (facing == EnumFacing.NORTH) {
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    GlStateManager.enableBlend();
+                    RenderHelper.enableStandardItemLighting();
+                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    GlStateManager.pushMatrix();
+                    double dd = -1.0D;
+                    if (facing == EnumFacing.EAST) {
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
-                        //}
-                        /*
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
-                        }
+                    }
+                    if (facing == EnumFacing.WEST) {
+                        GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
+                    }
+                    if (facing == EnumFacing.SOUTH) {
+                        GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
+                    }
+                    if (facing == EnumFacing.NORTH) {
+                        GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
+                    }
+                    GlStateManager.rotate(45, 0, 1, 0);
+                    GlStateManager.scale(scale, scale, scale);
+                    IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
+                    model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
+                    Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                    Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+                    GlStateManager.popMatrix();
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.disableBlend();
 
-                        */
-                        GlStateManager.rotate(45, 0, -1, 0);
-                        GlStateManager.scale(scale, scale, scale);
-                        model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
-                        model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
-                        Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-                        Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+                    //and again at 90 degrees:
+                    //--------------------------
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    GlStateManager.enableBlend();
+                    RenderHelper.enableStandardItemLighting();
+                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    GlStateManager.pushMatrix();
+                    if (facing == EnumFacing.EAST) {
+                        GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
+                    }
+                    if (facing == EnumFacing.WEST) {
+                        GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + dd);
+                    }
+                    if (facing == EnumFacing.SOUTH) {
+                        GlStateManager.translate(x + 0.5 + dd, y + yy, z + 0.5);
+                    }
+                    if (facing == EnumFacing.NORTH) {
+                        GlStateManager.translate(x + 0.5 - dd, y + yy, z + 0.5);
+                    }
+                    GlStateManager.rotate(45, 0, -1, 0);
+                    GlStateManager.scale(scale, scale, scale);
+                    model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
+                    model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
+                    Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+                    Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
+                    GlStateManager.popMatrix();
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.disableBlend();
 
-                        GlStateManager.popMatrix();
-                        GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableBlend();
-                    //}
                 }
             }
         }
-
 
 
         //Hatch:

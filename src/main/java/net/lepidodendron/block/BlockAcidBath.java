@@ -18,6 +18,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -342,7 +343,7 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityAcidBath extends TileEntityLockableLoot implements IFluidTank, IFluidHandler {
+	public static class TileEntityAcidBath extends TileEntityLockableLoot implements IFluidTank, IFluidHandler, ISidedInventory {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 
@@ -793,10 +794,23 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 			return super.hasCapability(capability, facing);
 		}
 
+		net.minecraftforge.items.IItemHandler handlerNull = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.UP);
+		net.minecraftforge.items.IItemHandler handlerBottom = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, net.minecraft.util.EnumFacing.DOWN);
+
+
 		@Nullable
 		@Override
 		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
 			EnumFacing blockFacing = this.world.getBlockState(this.getPos()).getValue(BlockAcidBath.BlockCustom.FACING);
+
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+				if (facing == EnumFacing.DOWN) {
+					return (T) handlerBottom;
+				} else {
+					return (T) handlerNull;
+				}
+			}
+
 			boolean faceCheck = false;
 			if (blockFacing == EnumFacing.NORTH) {
 				faceCheck = (facing == EnumFacing.SOUTH);
@@ -840,6 +854,27 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public String getGuiID() {
 			return null;
+		}
+
+		@Override
+		public int[] getSlotsForFace(EnumFacing side) {
+			if (side == EnumFacing.DOWN) {
+				return new int[] {0,1,2,3};
+			}
+			return new int[0];
+		}
+
+		@Override
+		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			return false;
+		}
+
+		@Override
+		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			if (direction == EnumFacing.DOWN) {
+				return true;
+			}
+			return false;
 		}
 	}
 

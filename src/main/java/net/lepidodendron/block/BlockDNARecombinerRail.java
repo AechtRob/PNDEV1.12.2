@@ -16,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
@@ -32,6 +33,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -211,7 +213,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		}
 	}
 
-	public static class TileEntityDNARecombinerRail extends TileEntityLockableLoot implements ITickable {
+	public static class TileEntityDNARecombinerRail extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 		protected int clawVert;
@@ -404,6 +406,55 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void handleUpdateTag(NBTTagCompound tag) {
 			this.readFromNBT(tag);
+		}
+
+		@Override
+		public int[] getSlotsForFace(EnumFacing side) {
+			return new int[0];
+		}
+
+		@Override
+		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			return false;
+		}
+
+		@Override
+		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			return false;
+		}
+
+		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
+		net.minecraftforge.items.IItemHandler handlerDown = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.DOWN);
+		net.minecraftforge.items.IItemHandler handlerNorth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.NORTH);
+		net.minecraftforge.items.IItemHandler handlerSouth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.SOUTH);
+		net.minecraftforge.items.IItemHandler handlerEast = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.EAST);
+		net.minecraftforge.items.IItemHandler handlerWest = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.WEST);
+
+		@Nullable
+		@Override
+		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+				if (facing == EnumFacing.UP) {
+					return (T) handlerUp;
+				}
+				if (facing == EnumFacing.DOWN) {
+					return (T) handlerDown;
+				}
+				if (facing == EnumFacing.NORTH) {
+					return (T) handlerNorth;
+				}
+				if (facing == EnumFacing.SOUTH) {
+					return (T) handlerSouth;
+				}
+				if (facing == EnumFacing.EAST) {
+					return (T) handlerEast;
+				}
+				if (facing == EnumFacing.WEST) {
+					return (T) handlerWest;
+				}
+
+			}
+			return super.getCapability(capability, facing);
 		}
 
 	}

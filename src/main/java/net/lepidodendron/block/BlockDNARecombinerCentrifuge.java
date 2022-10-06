@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
@@ -13,15 +14,13 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.inventory.Container;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.inventory.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -36,6 +35,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -72,6 +72,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
 			super(Material.ROCK, MapColor.ADOBE);
@@ -83,6 +84,12 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			setLightLevel(0);
 			setLightOpacity(1);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(RF, LepidodendronConfig.machinesRF));
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(RF, LepidodendronConfig.machinesRF);
 		}
 
 		@Override
@@ -97,7 +104,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, RF});
 		}
 
 		@Override
@@ -229,7 +236,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		}
 	}
 
-	public static class TileEntityDNARecombinerCentrifuge extends TileEntityLockableLoot implements ITickable {
+	public static class TileEntityDNARecombinerCentrifuge extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
 		private NonNullList<ItemStack> centrifugeContents = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 
@@ -636,6 +643,55 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		protected NonNullList<ItemStack> getItems()
 		{
 			return this.centrifugeContents;
+		}
+
+		@Override
+		public int[] getSlotsForFace(EnumFacing side) {
+			return new int[] {0,1,2,3};
+		}
+
+		@Override
+		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+			return !this.isLocked() && isItemValidForSlot(index, itemStackIn);
+		}
+
+		@Override
+		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+			return false;
+		}
+
+		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
+		net.minecraftforge.items.IItemHandler handlerDown = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.DOWN);
+		net.minecraftforge.items.IItemHandler handlerNorth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.NORTH);
+		net.minecraftforge.items.IItemHandler handlerSouth = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.SOUTH);
+		net.minecraftforge.items.IItemHandler handlerEast = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.EAST);
+		net.minecraftforge.items.IItemHandler handlerWest = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.WEST);
+
+		@Nullable
+		@Override
+		public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
+			if (facing != null && capability == net.minecraftforge.items.CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+				if (facing == EnumFacing.UP) {
+					return (T) handlerUp;
+				}
+				if (facing == EnumFacing.DOWN) {
+					return (T) handlerDown;
+				}
+				if (facing == EnumFacing.NORTH) {
+					return (T) handlerNorth;
+				}
+				if (facing == EnumFacing.SOUTH) {
+					return (T) handlerSouth;
+				}
+				if (facing == EnumFacing.EAST) {
+					return (T) handlerEast;
+				}
+				if (facing == EnumFacing.WEST) {
+					return (T) handlerWest;
+				}
+
+			}
+			return super.getCapability(capability, facing);
 		}
 
 	}
