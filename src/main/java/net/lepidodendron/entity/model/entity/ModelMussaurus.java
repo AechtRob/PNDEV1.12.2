@@ -310,11 +310,15 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         if (isBaby) {
 
             this.head1.scaleChildren = true;
-            this.head1.setScale(1.66F, 1.66F, 1.66F);
-            this.neck3.setScale(1.66F, 1.66F, 1.66F);
-            this.neck2.setScale(1.33F, 1.33F, 1.33F);
+            this.neck3.scaleChildren = true;
+            this.neck2.scaleChildren = true;
+            this.neck1.scaleChildren = true;
+            //this.head1.setScale(1.66F, 1.66F, 1.66F);
             this.neck1.setScale(1.175F, 1.175F, 1.175F);
-            this.head1.offsetY = -0.05F;
+            this.neck2.setScale(1.175F, 1.175F, 1.175F);
+            this.neck3.setScale(1.175F, 1.175F, 1.175F);
+            this.head1.setScale(1.175F, 1.175F, 1.175F);
+            //this.head1.offsetY = -0.05F;
 
             this.upperleg1.rotateAngleX = (float) Math.toRadians(-61.2);
             this.lowerleg1.rotateAngleX = (float) Math.toRadians(74.67);
