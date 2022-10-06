@@ -27,14 +27,12 @@ public class ModelFalcatus extends AdvancedModelBase {
     private final AdvancedModelRenderer rightBackFin;
     private final AdvancedModelRenderer tail1;
     private final AdvancedModelRenderer cube_r7;
-    private final AdvancedModelRenderer cube_r8;
     private final AdvancedModelRenderer tail2;
     private final AdvancedModelRenderer tail3;
-    private final AdvancedModelRenderer cube_r9;
     private final AdvancedModelRenderer leftFrontFin;
-    private final AdvancedModelRenderer cube_r10;
+    private final AdvancedModelRenderer cube_r8;
     private final AdvancedModelRenderer rightFrontFin;
-    private final AdvancedModelRenderer cube_r11;
+    private final AdvancedModelRenderer cube_r9;
 
     private ModelAnimator animator;
 
@@ -119,7 +117,7 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.rightBackFin.cubeList.add(new ModelBox(rightBackFin, 0, 18, 0.0F, 0.0F, -1.5F, 0, 3, 3, 0.0F, true));
 
         this.tail1 = new AdvancedModelRenderer(this);
-        this.tail1.setRotationPoint(0.0F, -1.3768F, 3.9542F);
+        this.tail1.setRotationPoint(0.0F, -1.1768F, 3.9542F);
         this.body2.addChild(tail1);
         this.setRotateAngle(tail1, 0.0F, 0.0F, 0.0F);
         this.tail1.cubeList.add(new ModelBox(tail1, 14, 0, -1.0F, -0.1232F, -0.9542F, 2, 2, 4, 0.0F, false));
@@ -128,30 +126,18 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.cube_r7.setRotationPoint(-1.0F, -0.7232F, 2.0458F);
         this.tail1.addChild(cube_r7);
         this.setRotateAngle(cube_r7, 0.9163F, 0.0F, 0.0F);
-        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 14, 15, 1.0F, -0.75F, -1.0F, 0, 3, 3, -0.01F, false));
-
-        this.cube_r8 = new AdvancedModelRenderer(this);
-        this.cube_r8.setRotationPoint(-1.5F, -0.6232F, 1.5458F);
-        this.tail1.addChild(cube_r8);
-        this.setRotateAngle(cube_r8, -0.6109F, 0.0F, 0.0F);
-        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 14, 0, 1.0F, 0.0F, -0.5F, 1, 1, 1, -0.01F, false));
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 14, 15, 1.0F, -0.75F, -1.375F, 0, 3, 3, 0.0F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
-        this.tail2.setRotationPoint(-0.1F, -0.1232F, 3.0458F);
+        this.tail2.setRotationPoint(-0.1F, 0.0768F, 3.0458F);
         this.tail1.addChild(tail2);
         this.setRotateAngle(tail2, 0.0F, 0.0F, 0.0F);
         this.tail2.cubeList.add(new ModelBox(tail2, 22, 18, -0.4F, 0.0F, -1.0F, 1, 1, 4, -0.01F, false));
 
         this.tail3 = new AdvancedModelRenderer(this);
-        this.tail3.setRotationPoint(0.1F, 0.4577F, 2.8914F);
+        this.tail3.setRotationPoint(0.1F, 0.5577F, 2.8914F);
         this.tail2.addChild(tail3);
-
-
-        this.cube_r9 = new AdvancedModelRenderer(this);
-        this.cube_r9.setRotationPoint(-0.5F, -0.2077F, 1.6086F);
-        this.tail3.addChild(cube_r9);
-        this.setRotateAngle(cube_r9, -2.3126F, 0.0F, 0.0F);
-        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 6, 19, 0.5F, -4.75F, -5.5F, 0, 6, 7, -0.01F, false));
+        this.tail3.cubeList.add(new ModelBox(tail3, 6, 19, 0.0F, -3.4577F, -0.8914F, 0, 6, 7, -0.01F, false));
 
         this.leftFrontFin = new AdvancedModelRenderer(this);
         this.leftFrontFin.setRotationPoint(3.5F, -2.5F, 0.25F);
@@ -159,11 +145,11 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.setRotateAngle(leftFrontFin, 0.0F, 0.0F, -0.2618F);
 
 
-        this.cube_r10 = new AdvancedModelRenderer(this);
-        this.cube_r10.setRotationPoint(-0.3784F, 0.9588F, 0.0F);
-        this.leftFrontFin.addChild(cube_r10);
-        this.setRotateAngle(cube_r10, -0.0899F, 0.0135F, -0.9299F);
-        this.cube_r10.cubeList.add(new ModelBox(cube_r10, 12, 16, 1.0102F, -0.4327F, -1.9969F, 0, 5, 5, 0.0F, false));
+        this.cube_r8 = new AdvancedModelRenderer(this);
+        this.cube_r8.setRotationPoint(-0.3784F, 0.9588F, 0.0F);
+        this.leftFrontFin.addChild(cube_r8);
+        this.setRotateAngle(cube_r8, -0.0899F, 0.0135F, -0.9299F);
+        this.cube_r8.cubeList.add(new ModelBox(cube_r8, 12, 16, 1.0102F, -0.4327F, -1.9969F, 0, 5, 5, 0.0F, false));
 
         this.rightFrontFin = new AdvancedModelRenderer(this);
         this.rightFrontFin.setRotationPoint(0.5F, -2.5F, 0.25F);
@@ -171,11 +157,11 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.setRotateAngle(rightFrontFin, 0.0F, 0.0F, 0.2618F);
 
 
-        this.cube_r11 = new AdvancedModelRenderer(this);
-        this.cube_r11.setRotationPoint(0.3784F, 0.9588F, 0.0F);
-        this.rightFrontFin.addChild(cube_r11);
-        this.setRotateAngle(cube_r11, -0.0899F, -0.0135F, 0.9299F);
-        this.cube_r11.cubeList.add(new ModelBox(cube_r11, 12, 16, -1.0102F, -0.4327F, -1.9969F, 0, 5, 5, 0.0F, true));
+        this.cube_r9 = new AdvancedModelRenderer(this);
+        this.cube_r9.setRotationPoint(0.3784F, 0.9588F, 0.0F);
+        this.rightFrontFin.addChild(cube_r9);
+        this.setRotateAngle(cube_r9, -0.0899F, -0.0135F, 0.9299F);
+        this.cube_r9.cubeList.add(new ModelBox(cube_r9, 12, 16, -1.0102F, -0.4327F, -1.9969F, 0, 5, 5, 0.0F, true));
 
         updateDefaultPose();
         animator = ModelAnimator.create();
