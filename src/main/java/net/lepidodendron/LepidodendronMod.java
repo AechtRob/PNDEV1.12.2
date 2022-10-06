@@ -1238,6 +1238,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_ITALOPHLEBIA_NYMPH = 492;
 	public static final int GUI_ACID_ID = 493;
 	public static final int GUI_CENTRIFUGE_ID = 494;
+	public static final int GUI_FORGE_ID = 495;
 
 
 	@Mod.EventHandler
