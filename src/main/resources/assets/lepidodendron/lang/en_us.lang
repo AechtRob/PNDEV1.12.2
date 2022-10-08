@@ -286,7 +286,7 @@ advancements.pf_adv_book_cothurnocystis.description=Unlock the entry for Cothurn
 advancements.pf_adv_book_cothurnocystis.title=Cothurnocystis
 advancements.pf_adv_book_cotylorhynchus.description=Unlock the entry for Cotylorhynchus in the Palaeopedia
 advancements.pf_adv_book_cotylorhynchus.title=Cotylorhynchus
-advancements.crassigyrinus.description=Unlock the entry for Crassigyrinus in the Palaeopedia
+advancements.pf_adv_book_crassigyrinus.description=Unlock the entry for Crassigyrinus in the Palaeopedia
 advancements.pf_adv_book_crassigyrinus.title=Crassigyrinus
 advancements.pf_adv_book_crotalocephalus.description=Unlock the entry for Crotalocephalus in the Palaeopedia
 advancements.pf_adv_book_crotalocephalus.title=Crotalocephalus
@@ -1142,6 +1142,117 @@ advancements.pf_adv_book_yunguisaurus.description=Unlock the entry for Yunguisau
 advancements.pf_adv_book_yunguisaurus.title=Yunguisaurus
 advancements.pf_adv_book_yunnanozoon.description=Unlock the entry for Yunnanozoon in the Palaeopedia
 advancements.pf_adv_book_yunnanozoon.title=Yunnanozoon
+advancements.pf_adv_book_eretmorhipis.description=Unlock the entry for Eretmorhipis in the Palaeopedia
+advancements.pf_adv_book_trilophosaurus.description=Unlock the entry for Trilophosaurus in the Palaeopedia
+advancements.pf_adv_book_microbrachius.description=Unlock the entry for Microbrachius in the Palaeopedia
+advancements.pf_adv_book_chotecops.description=Unlock the entry for Chotecops in the Palaeopedia
+advancements.pf_adv_book_ivoites.description=Unlock the entry for Ivoites in the Palaeopedia
+advancements.pf_adv_book_paramblypterus.description=Unlock the entry for Paramblypterus in the Palaeopedia
+advancements.pf_adv_book_eramoscorpius.description=Unlock the entry for Eramoscorpius in the Palaeopedia
+advancements.pf_adv_book_miguashaia.description=Unlock the entry for Miguashaia in the Palaeopedia
+advancements.pf_adv_book_duslia.description=Unlock the entry for Duslia in the Palaeopedia
+advancements.pf_adv_book_balhuticaris.description=Unlock the entry for Balhuticaris in the Palaeopedia
+advancements.pf_adv_book_ceratiocaris.description=Unlock the entry for Ceratiocaris in the Palaeopedia
+advancements.pf_adv_book_plectodiscus.description=Unlock the entry for Plectodiscus in the Palaeopedia
+advancements.pf_adv_book_flagellopantopus.description=Unlock the entry for Flagellopantopus in the Palaeopedia
+advancements.pf_adv_book_vachonisia.description=Unlock the entry for Vachonisia in the Palaeopedia
+advancements.pf_adv_book_bundenbachiellus.description=Unlock the entry for Bundenbachiellus in the Palaeopedia
+advancements.pf_adv_book_wingertshellicus.description=Unlock the entry for Wingertshellicus in the Palaeopedia
+advancements.pf_adv_book_weinbergina.description=Unlock the entry for Weinbergina in the Palaeopedia
+advancements.pf_adv_book_nahecaris.description=Unlock the entry for Nahecaris in the Palaeopedia
+advancements.pf_adv_book_cometicercus.description=Unlock the entry for Cometicercus in the Palaeopedia
+advancements.pf_adv_book_harpes.description=Unlock the entry for Harpes in the Palaeopedia
+advancements.pf_adv_book_bohemoharpes.description=Unlock the entry for Bohemoharpes in the Palaeopedia
+advancements.pf_adv_book_ampyx.description=Unlock the entry for Ampyx in the Palaeopedia
+advancements.pf_adv_book_lonchodomas.description=Unlock the entry for Lonchodomas in the Palaeopedia
+advancements.pf_adv_book_neeyambaspis.description=Unlock the entry for Neeyambaspis in the Palaeopedia
+advancements.pf_adv_book_pituriaspis.description=Unlock the entry for Pituriaspis in the Palaeopedia
+advancements.pf_adv_book_tegeolepis.description=Unlock the entry for Tegeolepis in the Palaeopedia
+advancements.pf_adv_book_climatius.description=Unlock the entry for Climatius in the Palaeopedia
+advancements.pf_adv_book_nerepisacanthus.description=Unlock the entry for Nerepisacanthus in the Palaeopedia
+advancements.pf_adv_book_diplacanthus.description=Unlock the entry for Diplacanthus in the Palaeopedia
+advancements.pf_adv_book_hurdia.description=Unlock the entry for Hurdia in the Palaeopedia
+advancements.pf_adv_book_caryosyntrips.description=Unlock the entry for Caryosyntrips in the Palaeopedia
+advancements.pf_adv_book_phlebolepis.description=Unlock the entry for Phlebolepis in the Palaeopedia
+advancements.pf_adv_book_jamoytius.description=Unlock the entry for Jamoytius in the Palaeopedia
+advancements.pf_adv_book_ascoceras.description=Unlock the entry for Ascoceras in the Palaeopedia
+advancements.pf_adv_book_cassinoceras.description=Unlock the entry for Cassinoceras in the Palaeopedia
+advancements.pf_adv_book_sphooceras.description=Unlock the entry for Sphooceras in the Palaeopedia
+advancements.pf_adv_book_praearcturus.description=Unlock the entry for Praearcturus in the Palaeopedia
+advancements.pf_adv_book_rutgersella.description=Unlock the entry for Rutgersella in the Palaeopedia
+advancements.pf_adv_book_skeemella.description=Unlock the entry for Skeemella in the Palaeopedia
+advancements.pf_adv_book_dunyu.description=Unlock the entry for Dunyu in the Palaeopedia
+advancements.pf_adv_book_eugaleaspis.description=Unlock the entry for Eugaleaspis in the Palaeopedia
+advancements.pf_adv_book_ogyginus.description=Unlock the entry for Ogyginus in the Palaeopedia
+advancements.pf_adv_book_arctinurus.description=Unlock the entry for Arctinurus in the Palaeopedia
+advancements.pf_adv_book_uralichas.description=Unlock the entry for Uralichas in the Palaeopedia
+advancements.pf_adv_book_barameda.description=Unlock the entry for Barameda in the Palaeopedia
+advancements.pf_adv_book_ornithoprion.description=Unlock the entry for Ornithoprion in the Palaeopedia
+advancements.pf_adv_book_torpedaspis.description=Unlock the entry for Torpedaspis in the Palaeopedia
+advancements.pf_adv_book_furca.description=Unlock the entry for Furca  in the Palaeopedia
+advancements.pf_adv_book_tomlinsonus.description=Unlock the entry for Tomlinsonus in the Palaeopedia
+advancements.pf_adv_book_mazothairos.description=Unlock the entry for Mazothairos in the Palaeopedia
+advancements.pf_adv_book_trigonotarbid_anthracomartus.description=Unlock the entry for Anthracomartus in the Palaeopedia
+
+
+advancements.pf_adv_book_eretmorhipis.title=Eretmorhipis
+advancements.pf_adv_book_trilophosaurus.title=Trilophosaurus
+advancements.pf_adv_book_microbrachius.title=Microbrachius
+advancements.pf_adv_book_chotecops.title=Chotecops
+advancements.pf_adv_book_ivoites.title=Ivoites
+advancements.pf_adv_book_paramblypterus.title=Paramblypterus
+advancements.pf_adv_book_eramoscorpius.title=Eramoscorpius
+advancements.pf_adv_book_miguashaia.title=Miguashaia
+advancements.pf_adv_book_duslia.title=Duslia
+advancements.pf_adv_book_balhuticaris.title=Balhuticaris
+advancements.pf_adv_book_ceratiocaris.title=Ceratiocaris
+advancements.pf_adv_book_plectodiscus.title=Plectodiscus
+advancements.pf_adv_book_flagellopantopus.title=Flagellopantopus
+advancements.pf_adv_book_vachonisia.title=Vachonisia
+advancements.pf_adv_book_bundenbachiellus.title=Bundenbachiellus
+advancements.pf_adv_book_wingertshellicus.title=Wingertshellicus
+advancements.pf_adv_book_weinbergina.title=Weinbergina
+advancements.pf_adv_book_nahecaris.title=Nahecaris
+advancements.pf_adv_book_cometicercus.title=Cometicercus
+advancements.pf_adv_book_harpes.title=Harpes
+advancements.pf_adv_book_bohemoharpes.title=Bohemoharpes
+advancements.pf_adv_book_ampyx.title=Ampyx
+advancements.pf_adv_book_lonchodomas.title=Lonchodomas
+advancements.pf_adv_book_neeyambaspis.title=Neeyambaspis
+advancements.pf_adv_book_pituriaspis.title=Pituriaspis
+advancements.pf_adv_book_tegeolepis.title=Tegeolepis
+advancements.pf_adv_book_climatius.title=Climatius
+advancements.pf_adv_book_nerepisacanthus.title=Nerepisacanthus
+advancements.pf_adv_book_diplacanthus.title=Diplacanthus
+advancements.pf_adv_book_hurdia.title=Hurdia
+advancements.pf_adv_book_caryosyntrips.title=Caryosyntrips
+advancements.pf_adv_book_phlebolepis.title=Phlebolepis
+advancements.pf_adv_book_jamoytius.title=Jamoytius
+advancements.pf_adv_book_ascoceras.title=Ascoceras
+advancements.pf_adv_book_cassinoceras.title=Cassinoceras
+advancements.pf_adv_book_sphooceras.title=Sphooceras
+advancements.pf_adv_book_praearcturus.title=Praearcturus
+advancements.pf_adv_book_rutgersella.title=Rutgersella
+advancements.pf_adv_book_skeemella.title=Skeemella
+advancements.pf_adv_book_dunyu.title=Dunyu
+advancements.pf_adv_book_eugaleaspis.title=Eugaleaspis
+advancements.pf_adv_book_ogyginus.title=Ogyginus
+advancements.pf_adv_book_arctinurus.title=Arctinurus
+advancements.pf_adv_book_uralichas.title=Uralichas
+advancements.pf_adv_book_barameda.title=Barameda
+advancements.pf_adv_book_ornithoprion.title=Ornithoprion
+advancements.pf_adv_book_torpedaspis.title=Torpedaspis
+advancements.pf_adv_book_furca.title=Furca
+advancements.pf_adv_book_tomlinsonus.title=Tomlinsonus
+advancements.pf_adv_book_mazothairos.title=Mazothairos
+advancements.pf_adv_book_trigonotarbid_anthracomartus.title=Anthracomartus
+
+
+
+
+
+
+
 advancements.pf_adv_cambrian.description=Enter the Cambrian dimension
 advancements.pf_adv_cambrian.title=The Cambrian explosion
 advancements.pf_adv_carboniferous.description=Enter the Carboniferous dimension
@@ -1680,6 +1791,69 @@ entity.prehistoric_flora_yunguisaurus.name=Yunguisaurus
 entity.prehistoric_flora_yunnanozoon.name=Yunnanozoon
 entity.Villager.palaeobotanist=Palaeobotanist
 entity.Villager.pn_palaeontologist=Palaeontologist
+entity.prehistoric_flora_eretmorhipis.name=Eretmorhipis
+entity.prehistoric_flora_trilophosaurus.name=Trilophosaurus
+entity.prehistoric_flora_microbrachius.name=Microbrachius
+entity.prehistoric_flora_chotecops.name=Chotecops
+entity.prehistoric_flora_ivoites.name=Ivoites
+entity.prehistoric_flora_paramblypterus.name=Paramblypterus
+entity.prehistoric_flora_eramoscorpius.name=Eramoscorpius
+entity.prehistoric_flora_miguashaia.name=Miguashaia
+entity.prehistoric_flora_duslia.name=Duslia
+entity.prehistoric_flora_balhuticaris.name=Balhuticaris
+entity.prehistoric_flora_ceratiocaris.name=Ceratiocaris
+entity.prehistoric_flora_plectodiscus.name=Plectodiscus
+entity.prehistoric_flora_flagellopantopus.name=Flagellopantopus
+entity.prehistoric_flora_vachonisia.name=Vachonisia
+entity.prehistoric_flora_bundenbachiellus.name=Bundenbachiellus
+entity.prehistoric_flora_wingertshellicus.name=Wingertshellicus
+entity.prehistoric_flora_weinbergina.name=Weinbergina
+entity.prehistoric_flora_nahecaris.name=Nahecaris
+entity.prehistoric_flora_cometicercus.name=Cometicercus
+entity.prehistoric_flora_harpes.name=Harpes
+entity.prehistoric_flora_bohemoharpes.name=Bohemoharpes
+entity.prehistoric_flora_ampyx.name=Ampyx
+entity.prehistoric_flora_lonchodomas.name=Lonchodomas
+entity.prehistoric_flora_neeyambaspis.name=Neeyambaspis
+entity.prehistoric_flora_pituriaspis.name=Pituriaspis
+entity.prehistoric_flora_tegeolepis.name=Tegeolepis
+entity.prehistoric_flora_climatius.name=Climatius
+entity.prehistoric_flora_nerepisacanthus.name=Nerepisacanthus
+entity.prehistoric_flora_diplacanthus.name=Diplacanthus
+entity.prehistoric_flora_hurdia.name=Hurdia
+entity.prehistoric_flora_caryosyntrips.name=Caryosyntrips
+entity.prehistoric_flora_phlebolepis.name=Phlebolepis
+entity.prehistoric_flora_jamoytius.name=Jamoytius
+entity.prehistoric_flora_ascoceras.name=Ascoceras
+entity.prehistoric_flora_cassinoceras.name=Cassinoceras
+entity.prehistoric_flora_sphooceras.name=Sphooceras
+entity.prehistoric_flora_praearcturus.name=Praearcturus
+entity.prehistoric_flora_rutgersella.name=Rutgersella
+entity.prehistoric_flora_skeemella.name=Skeemella
+entity.prehistoric_flora_dunyu.name=Dunyu
+entity.prehistoric_flora_eugaleaspis.name=Eugaleaspis
+entity.prehistoric_flora_ogyginus.name=Ogyginus
+entity.prehistoric_flora_arctinurus.name=Arctinurus
+entity.prehistoric_flora_uralichas.name=Uralichas
+entity.prehistoric_flora_barameda.name=Barameda
+entity.prehistoric_flora_ornithoprion.name=Ornithoprion
+entity.prehistoric_flora_torpedaspis.name=Torpedaspis
+entity.prehistoric_flora_furca.name=Furca
+entity.prehistoric_flora_tomlinsonus.name=Tomlinsonus
+entity.prehistoric_flora_mazothairos.name=Mazothairos
+entity.prehistoric_flora_trigonotarbid_anthracomartus.name=Anthracomartus
+
+
+
+
+
+
+
+
+
+
+
+
 fluid.resin=Resin
 fluid.acid_sulphuric=Sulphuric Acid
 helper.pf_amphibious.name=Terrestrial or Aquatic
@@ -2496,6 +2670,61 @@ item.pf_eggs_vivaxosaurus.name=Vivaxosaurus Eggs
 item.pf_eggs_websteroprion.name=Websteroprion Eggs
 item.pf_eggs_weigeltisaurus.name=Weigeltisaurus Eggs
 item.pf_eggs_xinpusaurus.name=Xinpusaurus Eggs
+item.pf_eggs_longisquama.name=Longisquama Eggs
+item.pf_eggs_besanosaurus.name=Besanosaurus Eggs
+item.pf_eggs_microbrachius.name=Microbrachius Eggs
+item.pf_eggs_chotecops.name=Chotecops Eggs
+item.pf_eggs_ivoites.name=Ivoites Eggs
+item.pf_eggs_paramblypterus.name=Paramblypterus Eggs
+item.pf_eggs_eramoscorpius.name=Eramoscorpius Nymph
+item.pf_eggs_miguashaia.name=Miguashaia Eggs
+item.pf_eggs_duslia.name=Duslia Eggs
+item.pf_eggs_balhuticaris.name=Balhuticaris Eggs
+item.pf_eggs_ceratiocaris.name=Ceratiocaris Eggs
+item.pf_eggs_plectodiscus.name=Plectodiscus Eggs
+item.pf_eggs_flagellopantopus.name=Flagellopantopus Eggs
+item.pf_eggs_vachonisia.name=Vachonisia Eggs
+item.pf_eggs_bundenbachiellus.name=Bundenbachiellus Eggs
+item.pf_eggs_wingertshellicus.name=Wingertshellicus Eggs
+item.pf_eggs_weinbergina.name=Weinbergina Eggs
+item.pf_eggs_nahecaris.name=Nahecaris Eggs
+item.pf_eggs_cometicercus.name=Cometicercus Eggs
+item.pf_eggs_harpes.name=Harpes Eggs
+item.pf_eggs_bohemoharpes.name=Bohemoharpes Eggs
+item.pf_eggs_ampyx.name=Ampyx Eggs
+item.pf_eggs_lonchodomas.name=Lonchodomas Eggs
+item.pf_eggs_neeyambaspis.name=Neeyambaspis Eggs
+item.pf_eggs_pituriaspis.name=Pituriaspis Eggs
+item.pf_eggs_tegeolepis.name=Tegeolepis Eggs
+item.pf_eggs_climatius.name=Climatius Eggs
+item.pf_eggs_nerepisacanthus.name=Nerepisacanthus Eggs
+item.pf_eggs_diplacanthus.name=Diplacanthus Eggs
+item.pf_eggs_hurdia.name=Hurdia Eggs
+item.pf_eggs_caryosyntrips.name=Caryosyntrips Eggs
+item.pf_eggs_phlebolepis.name=Phlebolepis Eggs
+item.pf_eggs_jamoytius.name=Jamoytius Eggs
+item.pf_eggs_ascoceras.name=Ascoceras Eggs
+item.pf_eggs_cassinoceras.name=Cassinoceras Eggs
+item.pf_eggs_sphooceras.name=Sphooceras Eggs
+item.pf_eggs_praearcturus.name=Praearcturus Nymph
+item.pf_eggs_rutgersella.name=Rutgersella Eggs
+item.pf_eggs_skeemella.name=Skeemella Eggs
+item.pf_eggs_dunyu.name=Dunyu Eggs
+item.pf_eggs_eugaleaspis.name=Eugaleaspis Eggs
+item.pf_eggs_ogyginus.name=Ogyginus Eggs
+item.pf_eggs_arctinurus.name=Arctinurus Eggs
+item.pf_eggs_uralichas.name=Uralichas Eggs
+item.pf_eggs_barameda.name=Barameda Eggs
+item.pf_eggs_ornithoprion.name=Ornithoprion Eggs
+item.pf_eggs_torpedaspis.name=Torpedaspis Eggs
+item.pf_eggs_furca.name=Furca Eggs
+item.pf_eggs_tomlinsonus.name=Tomlinsonus Eggs
+item.pf_eggs_mazothairos.name=Mazothairos Eggs
+
+
+
+
+
 item.pf_eglonaspis_bucket.name=Bucket of Eglonaspis
 item.pf_eglonaspis_cooked.name=Cooked Eglonaspis
 item.pf_eglonaspis_raw.name=Raw Eglonaspis
@@ -3926,7 +4155,7 @@ item.phial_dna_prehistoric_flora_arctinurus.name=Phial of Arctinurus DNA
 item.phial_dna_prehistoric_flora_uralichas.name=Phial of Uralichas DNA
 item.phial_dna_prehistoric_flora_barameda.name=Phial of Barameda DNA
 item.phial_dna_prehistoric_flora_torpedaspis.name=Phial of Torpedaspis DNA
-item.phial_dna_prehistoric_flora_furca .name=Phial of Furca  DNA
+item.phial_dna_prehistoric_flora_furca.name=Phial of Furca  DNA
 item.phial_dna_prehistoric_flora_tomlinsonus.name=Phial of Tomlinsonus DNA
 item.phial_dna_prehistoric_flora_mazothairos.name=Phial of Mazothairos DNA
 item.phial_dna_prehistoric_flora_trigonotarbid_anthracomartus.name=Phial of Anthracomartus DNA
@@ -5050,6 +5279,111 @@ item.pf_yunnanozoon_raw.name=Raw Yunnanozoon
 item.pf_zamites_seeds.name=Zamites Seeds
 item.pf_zircon.name=Zircon
 item.pf_zircon_lens.name=Zircon Lens
+item.pf_eretmorhipis_cooked.name=Cooked Eretmorhipis
+item.pf_trilophosaurus_cooked.name=Cooked Trilophosaurus
+item.pf_microbrachius_cooked.name=Cooked Microbrachius
+item.pf_chotecops_cooked.name=Cooked Chotecops
+item.pf_ivoites_cooked.name=Cooked Ivoites
+item.pf_paramblypterus_cooked.name=Cooked Paramblypterus
+item.pf_miguashaia_cooked.name=Cooked Miguashaia
+item.pf_duslia_cooked.name=Cooked Duslia
+item.pf_balhuticaris_cooked.name=Cooked Balhuticaris
+item.pf_ceratiocaris_cooked.name=Cooked Ceratiocaris
+item.pf_plectodiscus_cooked.name=Cooked Plectodiscus
+item.pf_flagellopantopus_cooked.name=Cooked Flagellopantopus
+item.pf_vachonisia_cooked.name=Cooked Vachonisia
+item.pf_bundenbachiellus_cooked.name=Cooked Bundenbachiellus
+item.pf_wingertshellicus_cooked.name=Cooked Wingertshellicus
+item.pf_weinbergina_cooked.name=Cooked Weinbergina
+item.pf_nahecaris_cooked.name=Cooked Nahecaris
+item.pf_cometicercus_cooked.name=Cooked Cometicercus
+item.pf_harpes_cooked.name=Cooked Harpes
+item.pf_bohemoharpes_cooked.name=Cooked Bohemoharpes
+item.pf_ampyx_cooked.name=Cooked Ampyx
+item.pf_lonchodomas_cooked.name=Cooked Lonchodomas
+item.pf_neeyambaspis_cooked.name=Cooked Neeyambaspis
+item.pf_pituriaspis_cooked.name=Cooked Pituriaspis
+item.pf_tegeolepis_cooked.name=Cooked Tegeolepis
+item.pf_climatius_cooked.name=Cooked Climatius
+item.pf_nerepisacanthus_cooked.name=Cooked Nerepisacanthus
+item.pf_diplacanthus_cooked.name=Cooked Diplacanthus
+item.pf_hurdia_cooked.name=Cooked Hurdia
+item.pf_caryosyntrips_cooked.name=Cooked Caryosyntrips
+item.pf_phlebolepis_cooked.name=Cooked Phlebolepis
+item.pf_jamoytius_cooked.name=Cooked Jamoytius
+item.pf_ascoceras_cooked.name=Cooked Ascoceras
+item.pf_cassinoceras_cooked.name=Cooked Cassinoceras
+item.pf_sphooceras_cooked.name=Cooked Sphooceras
+item.pf_rutgersella_cooked.name=Cooked Rutgersella
+item.pf_skeemella_cooked.name=Cooked Skeemella
+item.pf_dunyu_cooked.name=Cooked Dunyu
+item.pf_eugaleaspis_cooked.name=Cooked Eugaleaspis
+item.pf_ogyginus_cooked.name=Cooked Ogyginus
+item.pf_arctinurus_cooked.name=Cooked Arctinurus
+item.pf_uralichas_cooked.name=Cooked Uralichas
+item.pf_barameda_cooked.name=Cooked Barameda
+item.pf_ornithoprion_cooked.name=Cooked Ornithoprion
+item.pf_torpedaspis_cooked.name=Cooked Torpedaspis
+item.pf_furca_cooked.name=Cooked Furca
+item.pf_tomlinsonus_cooked.name=Cooked Tomlinsonus
+item.pf_eretmorhipis_raw.name=Raw Eretmorhipis
+item.pf_trilophosaurus_raw.name=Raw Trilophosaurus
+item.pf_microbrachius_raw.name=Raw Microbrachius
+item.pf_chotecops_raw.name=Raw Chotecops
+item.pf_ivoites_raw.name=Raw Ivoites
+item.pf_paramblypterus_raw.name=Raw Paramblypterus
+item.pf_miguashaia_raw.name=Raw Miguashaia
+item.pf_duslia_raw.name=Raw Duslia
+item.pf_balhuticaris_raw.name=Raw Balhuticaris
+item.pf_ceratiocaris_raw.name=Raw Ceratiocaris
+item.pf_plectodiscus_raw.name=Raw Plectodiscus
+item.pf_flagellopantopus_raw.name=Raw Flagellopantopus
+item.pf_vachonisia_raw.name=Raw Vachonisia
+item.pf_bundenbachiellus_raw.name=Raw Bundenbachiellus
+item.pf_wingertshellicus_raw.name=Raw Wingertshellicus
+item.pf_weinbergina_raw.name=Raw Weinbergina
+item.pf_nahecaris_raw.name=Raw Nahecaris
+item.pf_cometicercus_raw.name=Raw Cometicercus
+item.pf_harpes_raw.name=Raw Harpes
+item.pf_bohemoharpes_raw.name=Raw Bohemoharpes
+item.pf_ampyx_raw.name=Raw Ampyx
+item.pf_lonchodomas_raw.name=Raw Lonchodomas
+item.pf_neeyambaspis_raw.name=Raw Neeyambaspis
+item.pf_pituriaspis_raw.name=Raw Pituriaspis
+item.pf_tegeolepis_raw.name=Raw Tegeolepis
+item.pf_climatius_raw.name=Raw Climatius
+item.pf_nerepisacanthus_raw.name=Raw Nerepisacanthus
+item.pf_diplacanthus_raw.name=Raw Diplacanthus
+item.pf_hurdia_raw.name=Raw Hurdia
+item.pf_caryosyntrips_raw.name=Raw Caryosyntrips
+item.pf_phlebolepis_raw.name=Raw Phlebolepis
+item.pf_jamoytius_raw.name=Raw Jamoytius
+item.pf_ascoceras_raw.name=Raw Ascoceras
+item.pf_cassinoceras_raw.name=Raw Cassinoceras
+item.pf_sphooceras_raw.name=Raw Sphooceras
+item.pf_rutgersella_raw.name=Raw Rutgersella
+item.pf_skeemella_raw.name=Raw Skeemella
+item.pf_dunyu_raw.name=Raw Dunyu
+item.pf_eugaleaspis_raw.name=Raw Eugaleaspis
+item.pf_ogyginus_raw.name=Raw Ogyginus
+item.pf_arctinurus_raw.name=Raw Arctinurus
+item.pf_uralichas_raw.name=Raw Uralichas
+item.pf_barameda_raw.name=Raw Barameda
+item.pf_ornithoprion_raw.name=Raw Ornithoprion
+item.pf_torpedaspis_raw.name=Raw Torpedaspis
+item.pf_furca_raw.name=Raw Furca
+item.pf_tomlinsonus_raw.name=Raw Tomlinsonus
+
+
+
+
+
+
+
+
+
+
+
 item.phoenicopsis_door_item.name=Phoenicopteris Door
 item.pitys_door_item.name=Pitys Door
 item.plane_door_item.name=Plane Door
@@ -7230,6 +7564,34 @@ item.pf_wuttagoonaspis_bucket.name=Bucket of Wuttagoonaspis
 item.pf_xinpusaurus_bucket.name=Bucket of Xinpusaurus
 item.pf_yunguisaurus_bucket.name=Bucket of Yunguisaurus
 item.pf_skeemella_bucket.name=Bucket of Skeemella
+item.pf_eretmorhipis_bucket.name=Bucket of Eretmorhipis
+item.pf_microbrachius_bucket.name=Bucket of Microbrachius
+item.pf_chotecops_bucket.name=Bucket of Chotecops
+item.pf_ivoites_bucket.name=Bucket of Ivoites
+item.pf_paramblypterus_bucket.name=Bucket of Paramblypterus
+item.pf_miguashaia_bucket.name=Bucket of Miguashaia
+item.pf_balhuticaris_bucket.name=Bucket of Balhuticaris
+item.pf_ceratiocaris_bucket.name=Bucket of Ceratiocaris
+item.pf_plectodiscus_bucket.name=Bucket of Plectodiscus
+item.pf_flagellopantopus_bucket.name=Bucket of Flagellopantopus
+item.pf_vachonisia_bucket.name=Bucket of Vachonisia
+item.pf_bundenbachiellus_bucket.name=Bucket of Bundenbachiellus
+item.pf_wingertshellicus_bucket.name=Bucket of Wingertshellicus
+item.pf_weinbergina_bucket.name=Bucket of Weinbergina
+item.pf_nahecaris_bucket.name=Bucket of Nahecaris
+item.pf_cometicercus_bucket.name=Bucket of Cometicercus
+item.pf_bohemoharpes_bucket.name=Bucket of Bohemoharpes
+item.pf_ampyx_bucket.name=Bucket of Ampyx
+item.pf_lonchodomas_bucket.name=Bucket of Lonchodomas
+item.pf_caryosyntrips_bucket.name=Bucket of Caryosyntrips
+item.pf_phlebolepis_bucket.name=Bucket of Phlebolepis
+item.pf_jamoytius_bucket.name=Bucket of Jamoytius
+item.pf_ogyginus_bucket.name=Bucket of Ogyginus
+item.pf_arctinurus_bucket.name=Bucket of Arctinurus
+item.pf_uralichas_bucket.name=Bucket of Uralichas
+
+
+
 
 
 
@@ -7905,7 +8267,7 @@ item.pf_fossil_arctinurus_clean.name=Cleaned Arctinurus Fossil
 item.pf_fossil_uralichas_clean.name=Cleaned Uralichas Fossil
 item.pf_fossil_barameda_clean.name=Cleaned Barameda Fossil
 item.pf_fossil_torpedaspis_clean.name=Cleaned Torpedaspis Fossil
-item.pf_fossil_furca _clean.name=Cleaned Furca  Fossil
+item.pf_fossil_furca_clean.name=Cleaned Furca  Fossil
 item.pf_fossil_tomlinsonus_clean.name=Cleaned Tomlinsonus Fossil
 item.pf_fossil_mazothairos_clean.name=Cleaned Mazothairos Fossil
 item.pf_fossil_trigonotarbid_anthracomartus_clean.name=Cleaned Anthracomartus Fossil
