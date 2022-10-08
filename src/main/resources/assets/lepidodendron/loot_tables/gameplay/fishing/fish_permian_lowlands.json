@@ -24,8 +24,6 @@
                     "name": "lepidodendron:coelacanthus_raw",
                     "weight": 5.24079320113314
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:diplocaulus_raw",
@@ -36,17 +34,11 @@
                     "name": "lepidodendron:diploceraspis_raw",
                     "weight": 6.94050991501416
                 },
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:gnathorhiza_raw",
                     "weight": 9.20679886685552
                 },
-
-
-
 
                 {
                     "type": "item",
@@ -63,15 +55,6 @@
                     "name": "lepidodendron:platysomus_raw",
                     "weight": 6.79886685552408
                 },
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:urosthenes_raw",

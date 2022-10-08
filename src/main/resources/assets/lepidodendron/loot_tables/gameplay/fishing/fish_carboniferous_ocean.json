@@ -29,7 +29,6 @@
                     "name": "lepidodendron:shell_goniatites",
                     "weight": 4.2654028436019
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:bandringa_raw",
@@ -55,8 +54,6 @@
                     "name": "lepidodendron:deltoptychius_raw",
                     "weight": 2.60663507109005
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:falcatus_raw",
@@ -78,20 +75,6 @@
                     "weight": 2.3696682464455
                 },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:paratarrasius_raw",
@@ -102,9 +85,6 @@
                     "name": "lepidodendron:platysomus_raw",
                     "weight": 1.51658767772512
                 },
-
-
-
 
                 {
                     "type": "item",

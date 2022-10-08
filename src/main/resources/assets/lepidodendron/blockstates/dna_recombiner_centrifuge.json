@@ -43,7 +43,6 @@
         }
       ]
     },
-
     {
       "when": {
         "facing": "north", "rf": true

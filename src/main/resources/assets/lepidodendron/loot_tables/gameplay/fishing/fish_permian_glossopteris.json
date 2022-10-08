@@ -24,31 +24,22 @@
                     "name": "lepidodendron:antarcticarcinus_raw",
                     "weight": 6.75
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:coelacanthus_raw",
                     "weight": 4.125
                 },
 
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:mesosaurus_raw",
                     "weight": 4.75
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:paranaichthys_raw",
                     "weight": 9.75
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:pygopterus_raw",

@@ -14,7 +14,6 @@
                 "name": "lepidodendron:adelophthalmus_raw",
                 "weight": 5.6390977443609
               },
-
               {
                 "type": "item",
                 "name": "lepidodendron:bothriolepis_raw",
@@ -30,22 +29,16 @@
                 "name": "lepidodendron:coccosteus_raw",
                 "weight": 9.02255639097744
               },
-
               {
                 "type": "item",
                 "name": "lepidodendron:ericixerxes_raw",
                 "weight": 5.26315789473684
               },
-
               {
                 "type": "item",
                 "name": "lepidodendron:groenlandaspis_raw",
                 "weight": 16.9172932330827
               },
-
-
-
-
 
               {
                 "type": "item",
@@ -57,8 +50,6 @@
                 "name": "lepidodendron:osteolepis_raw",
                 "weight": 16.9172932330827
               },
-
-
               {
                 "type": "item",
                 "name": "lepidodendron:pteraspis_raw",
@@ -69,9 +60,6 @@
                 "name": "lepidodendron:scaumenacia_raw",
                 "weight": 6.76691729323308
               },
-
-
-
               {
                 "type": "item",
                 "name": "lepidodendron:turrisaspis_raw",
