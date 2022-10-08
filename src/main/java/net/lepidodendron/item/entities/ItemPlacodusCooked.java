@@ -24,7 +24,7 @@ public class ItemPlacodusCooked extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void initElements() {
 
-		//elements.items.add(() -> new ItemFoodCustom());
+		elements.items.add(() -> new ItemFoodCustom());
 	}
 
 	@SideOnly(Side.CLIENT)

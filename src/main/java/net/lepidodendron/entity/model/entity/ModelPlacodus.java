@@ -298,7 +298,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.92F;
+        this.body.offsetY = 0.88F;
 
         EntityPrehistoricFloraPlacodus Placodus = (EntityPrehistoricFloraPlacodus) e;
 
@@ -315,10 +315,10 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
         AdvancedModelRendererExtended[] BR = {this.legR, this.legR2, this.legR3};
 
         if (!Placodus.isReallyInWater()) {
-            this.armL.rotateAngleY = (float) Math.toRadians(14.223);
+            this.armL.rotateAngleY = -(float) Math.toRadians(14.223);
             this.armR.rotateAngleY = (float) Math.toRadians(14.223);
             this.armL.rotateAngleX = (float) Math.toRadians(20.3654);
-            this.armR.rotateAngleX = (float) Math.toRadians(-20.3654);
+            this.armR.rotateAngleX = -(float) Math.toRadians(-20.3654);
             this.armL.rotateAngleZ = (float) Math.toRadians(-60.1585);
             this.armR.rotateAngleZ = (float) Math.toRadians(60.1585);
 
@@ -328,7 +328,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
                 return;
             }
 
-            this.walk(this.armR, speed * 0.6F, 0.5F,false, -0.8F,0.6F, f2, 1F);
+            this.walk(this.armR, speed * 0.6F, 0.5F,true, -0.8F,0.6F, f2, 1F);
             this.walk(this.armL, speed * 0.6F, 0.5F,true, 0.8F,0.6F, f2, 1F);
 
             this.walk(this.legR, speed * 0.6F, 0.15F,true, 0.8F,0.4F, f2, 1F);

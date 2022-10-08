@@ -1245,6 +1245,64 @@ public class LepidodendronMod {
 	public static final int GUI_CENTRIFUGE_ID = 494;
 	public static final int GUI_FORGE_ID = 495;
 
+	public static final int ENTITY_MICROBRACHIUS = 496;
+	public static final ResourceLocation MICROBRACHIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/microbrachius"));
+	public static final int ENTITY_CHOTECOPS = 497;
+	public static final int ENTITY_IVOITES = 498;
+	public static final int ENTITY_PARAMBLYPTERUS = 499;
+	public static final int ENTITY_ERAMOSCORPIUS = 500;
+	public static final int ENTITY_MIGUASHAIA = 501;
+	public static final int ENTITY_DUSLIA = 502;
+	public static final int ENTITY_BALHUTICARIS = 503;
+	public static final int ENTITY_CERATIOCARIS = 504;
+	public static final int ENTITY_PLECTODISCUS= 505;
+	public static final int ENTITY_FLAGELLOPANTOPUS = 506;
+	public static final int ENTITY_VACHONISIA = 507;
+	public static final int ENTITY_BUNDENBACHIELLUS = 508;
+	public static final int ENTITY_WINGERTSHELLICUS = 509;
+	public static final int ENTITY_WEINBERGINA = 510;
+	public static final int ENTITY_NAHECARIS = 511;
+	public static final int ENTITY_COMETICERCUS = 512;
+	public static final int ENTITY_HARPES = 513;
+	public static final int ENTITY_BOHEMOHARPES = 514;
+	public static final int ENTITY_AMPYX = 515;
+	public static final int ENTITY_LONCHODOMAS = 516;
+	public static final int ENTITY_NEEYAMBASPIS= 517;
+	public static final int ENTITY_PITURIASPIS = 518;
+	public static final int ENTITY_TEGEOLEPIS = 519;
+	public static final int ENTITY_CLIMATIUS = 520;
+	public static final int ENTITY_NEREPISACANTHUS = 521;
+	public static final int ENTITY_DIPLACANTHUS = 522;
+	public static final int ENTITY_HURDIA = 523;
+	public static final int ENTITY_CARYOSYNTRIPS = 524;
+	public static final int ENTITY_PHLEBOLEPIS = 525;
+	public static final int ENTITY_JAMOYTIUS = 526;
+	public static final int ENTITY_ASCOCERAS = 527;
+	public static final int ENTITY_CASSINOCERAS = 528;
+	public static final int ENTITY_SPHOOCERAS = 529;
+	public static final int ENTITY_PRAEARCTURUS = 530;
+	public static final int ENTITY_RUTGERSELLA = 531;
+	public static final int ENTITY_SKEEMELLA = 532;
+	public static final ResourceLocation SKEEMELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/skeemella"));
+	public static final int ENTITY_DUNYU = 533;
+	public static final int ENTITY_EUGALEASPIS = 534;
+	public static final int ENTITY_OGYGINUS = 535;
+	public static final int ENTITY_ARCTINURUS = 536;
+	public static final int ENTITY_URALICHAS = 537;
+	public static final int ENTITY_LASANIUS = 538;
+	public static final int ENTITY_BARAMEDA = 539;
+	public static final int ENTITY_ORNITHOPRION = 540;
+	public static final int ENTITY_TORPEDASPIS = 541;
+	public static final int ENTITY_FURCA = 542;
+	public static final int ENTITY_TOMLINSONUS = 543;
+	public static final int ENTITY_COWIELEPIS = 544;
+	public static final int ENTITY_MAZOTHAIROS = 545;
+	public static final int ENTITY_TRIGONOTARBID_ANTHRACOMARTUS = 546;
+
+
+
+
+
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

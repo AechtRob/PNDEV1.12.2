@@ -3004,6 +3004,12 @@ public class RenderHandler {
                 return new RenderItalophlebiaNymph(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSkeemella.class, new IRenderFactory<EntityPrehistoricFloraSkeemella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSkeemella> createRenderFor(RenderManager manager) {
+                return new RenderSkeemella(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
