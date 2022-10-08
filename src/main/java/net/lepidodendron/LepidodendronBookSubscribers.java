@@ -4436,7 +4436,7 @@ public class LepidodendronBookSubscribers {
 		}
 		else if (event.getTarget() instanceof EntityPrehistoricFloraEretmorhipis) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-		ModTriggers.CLICK_ERETOMORPHIS.trigger((EntityPlayerMP) event.getEntityPlayer());
+		ModTriggers.CLICK_eretmorhipis.trigger((EntityPlayerMP) event.getEntityPlayer());
 		}
 		event.getEntityPlayer().swingArm(event.getHand());
 				deliverStatsEntity(event);

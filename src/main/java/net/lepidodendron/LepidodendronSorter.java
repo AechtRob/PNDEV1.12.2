@@ -980,8 +980,8 @@ public class LepidodendronSorter {
     public static final int equisetites_stem = 976;
     public static final int eremopteris = 977;
     public static final int eremopteris_top = 978;
-    public static final int eretomorphis_cooked = 979;
-    public static final int eretomorphis_raw = 980;
+    public static final int eretmorhipis_cooked = 979;
+    public static final int eretmorhipis_raw = 980;
     public static final int ericixerxes_cooked = 981;
     public static final int ericixerxes_raw = 982;
     public static final int eryops_cooked = 983;
