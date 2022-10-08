@@ -54,7 +54,7 @@ public class EntityPrehistoricFloraPlacodus extends EntityPrehistoricFloraSwimmi
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.2;
 	}
 
 	public static String getPeriod() {return "Triassic";}
