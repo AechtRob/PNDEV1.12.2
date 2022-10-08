@@ -291,6 +291,10 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			return this.isLocked;
 		}
 
+		public void setLocked(boolean locked) {
+			this.isLocked = locked;
+		}
+
 		public boolean isProcessing() {
 			return this.isProcessing;
 		}

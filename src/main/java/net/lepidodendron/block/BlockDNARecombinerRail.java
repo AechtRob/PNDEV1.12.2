@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.item.ItemDNARecombiner;
+import net.lepidodendron.item.ItemPhialDNA;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -227,42 +228,63 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 			return INFINITE_EXTENT_AABB;
 		}
 
-		/*
 		public boolean canStartProcess() {
-
-			if ((!isProcessing)
-					&& (!isTankPaused())
-					&& getStackInSlot(1).isEmpty()
-					&& getStackInSlot(2).isEmpty()
-					&& getStackInSlot(3).isEmpty()
-					&& getStackInSlot(4).isEmpty()
-					&& getStackInSlot(5).isEmpty()
-					&& getStackInSlot(6).isEmpty()
-					&& getStackInSlot(7).isEmpty()
-					&& getStackInSlot(8).isEmpty()
-					&& !getStackInSlot(0).isEmpty()
-			) {
+			if (!isProcessing) {
+				IBlockState state = this.getWorld().getBlockState(this.getPos());
+				if (state.getBlock() != BlockDNARecombinerRail.block) {
+					return false;
+				}
+				EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+				if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
+					return false;
+				}
 				TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 				if (tileEntity != null) {
-					if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
-						BlockAcidBath.TileEntityAcidBath te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
-						if (te.getFluidAmount() > 0) {
-							return true;
+					if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
+						BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
+						if (te.getStackInSlot(0) != ItemStack.EMPTY) {
+							//The phial slot in the DNA Forge is full at the moment so we can't proceed!
+							return false;
 						}
 					}
 				}
-				return false;
+				if (getCentrifugeSlot(facing) == -1) {
+					return false;
+				}
+				else {
+					return true;
+				}
 			}
 			return false;
 		}
 
-		public boolean canFizz() {
-			return this.isProcessing
-					&& (this.processTick < (this.processTickTime - this.trayLiftTickTime))
-					&& (this.processTick > this.trayLiftTickTime);
+		public int getCentrifugeSlot(EnumFacing facing) {
+			TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+					BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+					if (te.isLocked() && !te.isProcessing()) {
+						//The centrifuge is locked and ready:
+						//Does it contain the things we want?
+						if (te.getStackInSlot(0).getItem() == ItemPhialDNA.block) {
+							return 0;
+						}
+						if (te.getStackInSlot(1).getItem() == ItemPhialDNA.block) {
+							return 1;
+						}
+						if (te.getStackInSlot(2).getItem() == ItemPhialDNA.block) {
+							return 2;
+						}
+						if (te.getStackInSlot(3).getItem() == ItemPhialDNA.block) {
+							return 3;
+						}
+						te.setLocked(false); //Unlock the centrifuge as it seems there is nothing useable in it
+					}
+				}
+			}
+			return -1;
 		}
 
-		*/
 
 		@Override
 		public void update() {
@@ -271,7 +293,35 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 				return;
 			}
 
-			//Do stuff
+			if (!this.isProcessing) {
+				if (canStartProcess()) {
+					//Do stuff
+					IBlockState state = this.getWorld().getBlockState(this.getPos());
+					if (state.getBlock() == BlockDNARecombinerRail.block) {
+						EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+						if (!(facing == EnumFacing.UP || facing == EnumFacing.DOWN)) {
+							int useSlot = getCentrifugeSlot(facing);
+							TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
+							if (tileEntity != null) {
+								if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+									BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+									if (te.isLocked() && !te.isProcessing()) {
+										ItemStack stack = te.getStackInSlot(useSlot);
+										this.setInventorySlotContents(0, stack);
+										te.setInventorySlotContents(useSlot, ItemStack.EMPTY);
+
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else {
+				//The rail is processing, so check various stuff:
+
+
+			}
 
 			markDirty();
 
