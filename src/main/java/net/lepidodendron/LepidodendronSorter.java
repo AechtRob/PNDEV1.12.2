@@ -3529,6 +3529,26 @@ public class LepidodendronSorter {
     public static final int zircon_ore = 3525;
     public static final int zosterophyllum = 3526;
     public static final int zosterophyllum_spore = 3527;
-    public static final int advancement_placeholder = 3528;
+    public static final int cowielepis_cooked = 3528;
+    public static final int cowielepis_raw = 3529;
+    public static final int lasanius_cooked = 3530;
+    public static final int lasanius_raw = 3531;
+    public static final int ogyginus_cooked = 3532;
+    public static final int ogyginus_raw = 3533;
+    public static final int uralichas_cooked = 3534;
+    public static final int uralichas_raw = 3535;
+    public static final int arctinurus_cooked = 3536;
+    public static final int arctinurus_raw = 3537;
+    public static final int ornithoprion_cooked = 3538;
+    public static final int ornithoprion_raw = 3539;
+    public static final int barameda_cooked = 3540;
+    public static final int barameda_raw = 3541;
+    public static final int tomlinsonus_cooked = 3542;
+    public static final int tomlinsonus_raw = 3543;
+    public static final int furca_cooked = 3544;
+    public static final int furca_raw = 3545;
+    public static final int advancement_placeholder = 3546;
+
+
 
 }
