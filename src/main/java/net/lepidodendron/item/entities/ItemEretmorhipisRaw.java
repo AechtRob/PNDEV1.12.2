@@ -12,11 +12,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemEretomorphisRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eretomorphis_raw")
+public class ItemEretmorhipisRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eretmorhipis_raw")
 	public static final Item block = null;
-	public ItemEretomorphisRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eretomorphis_raw);
+	public ItemEretmorhipisRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eretmorhipis_raw);
 	}
 
 	@Override
@@ -28,13 +28,13 @@ public class ItemEretomorphisRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eretomorphis_raw", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eretmorhipis_raw", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_eretomorphis_raw");
-			setRegistryName("eretomorphis_raw");
+			setTranslationKey("pf_eretmorhipis_raw");
+			setRegistryName("eretmorhipis_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

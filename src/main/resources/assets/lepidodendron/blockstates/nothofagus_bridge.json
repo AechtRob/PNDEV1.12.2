@@ -52,7 +52,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_0" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 0 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_0", "y": 90, "uvlock": true }
@@ -185,7 +184,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_1" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_1", "y": 90, "uvlock": true }
@@ -318,7 +316,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_2" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 2 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_2", "y": 90, "uvlock": true }
@@ -451,7 +448,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_3" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 3 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_3", "y": 90, "uvlock": true }
@@ -584,7 +580,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_4" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 4 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_4", "y": 90, "uvlock": true }
@@ -717,7 +712,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_5" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 5 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_5", "y": 90, "uvlock": true }
@@ -850,7 +844,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_6" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_6", "y": 90, "uvlock": true }
@@ -983,7 +976,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_7" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 7 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_7", "y": 90, "uvlock": true }
@@ -1116,7 +1108,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_8" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 8 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_8", "y": 90, "uvlock": true }
@@ -1249,7 +1240,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_9" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 9 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_9", "y": 90, "uvlock": true }
@@ -1382,7 +1372,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_10" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 10 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_10", "y": 90, "uvlock": true }
@@ -1515,7 +1504,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_11" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 11 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_11", "y": 90, "uvlock": true }
@@ -1648,7 +1636,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_12" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 12 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_12", "y": 90, "uvlock": true }
@@ -1781,7 +1768,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_13" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 13 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_13", "y": 90, "uvlock": true }
@@ -1914,7 +1900,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_14" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 14 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_14", "y": 90, "uvlock": true }
@@ -2047,7 +2032,6 @@
                 { "model": "lepidodendron:nothofagus_bridge_joiner_15" , "y": 180, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "right": true, "variant": 15 },
             "apply": [
                 { "model": "lepidodendron:nothofagus_bridge_side_15", "y": 90, "uvlock": true }
@@ -2130,4 +2114,3 @@
         }
     ]
 }
-

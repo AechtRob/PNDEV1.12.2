@@ -14,15 +14,11 @@
                     "name": "lepidodendron:chinlea_raw",
                     "weight": 4.8780487804878
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:opolanka_raw",
                     "weight": 10.5691056910569
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:saurichthys_freshwater_raw",
@@ -33,7 +29,6 @@
                     "name": "lepidodendron:semionotus_raw",
                     "weight": 15.4471544715447
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:xenacanthus_raw",

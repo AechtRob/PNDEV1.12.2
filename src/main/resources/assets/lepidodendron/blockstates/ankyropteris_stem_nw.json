@@ -40,7 +40,6 @@
 			      {"model": "lepidodendron:ankyropteris_corner_1_join", "y": 90 }
 			    ]
         },
-
 		{   "when": { "facing": "north" },
             "apply": [
 			      {"model": "lepidodendron:ankyropteris_leaves", "y": 180 }

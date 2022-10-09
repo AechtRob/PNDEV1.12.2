@@ -9,7 +9,6 @@
                     "name": "lepidodendron:basiloceras_raw",
                     "weight": 8.99621212121212
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:cheirurus_raw",
@@ -45,26 +44,11 @@
                     "name": "lepidodendron:gemuendina_raw",
                     "weight": 2.84090909090909
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:heliopeltis_raw",
                     "weight": 4.92424242424242
                 },
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 {
                     "type": "item",
@@ -101,8 +85,6 @@
                     "name": "lepidodendron:stensioella_raw",
                     "weight": 0.946969696969697
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:terataspis_raw",

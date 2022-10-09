@@ -60,7 +60,6 @@
 				{"model": "lepidodendron:coral_bleached_5_bracket"}
 			]
 		},
-
 		{	"when": { "facing": "east" },
 			"apply": [
 				{"model": "lepidodendron:coral_bleached_1_main", "y": 90 },
@@ -121,7 +120,6 @@
 				{"model": "lepidodendron:coral_bleached_1_bracket_a", "y": 90 }
 			]
 		},
-
 		{	"when": { "facing": "south" },
 			"apply": [
 				{"model": "lepidodendron:coral_bleached_6_main", "y": 180 },
@@ -182,7 +180,6 @@
 				{"model": "lepidodendron:coral_bleached_3_bracket_b", "y": 180 }
 			]
 		},
-
 		{	"when": { "facing": "west" },
 			"apply": [
 				{"model": "lepidodendron:coral_bleached_5_main", "y": 270 },
@@ -244,5 +241,4 @@
 			]
 		}
 	]
-
 }

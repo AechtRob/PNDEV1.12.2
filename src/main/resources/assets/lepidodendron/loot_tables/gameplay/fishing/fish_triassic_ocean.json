@@ -29,15 +29,11 @@
                     "name": "lepidodendron:shell_goniatites",
                     "weight": 3.90117035110533
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:aulacoceras_raw",
                     "weight": 3.25097529258778
                 },
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:birgeria_raw",
@@ -58,36 +54,21 @@
                     "name": "lepidodendron:cartorhynchus_raw",
                     "weight": 0.866926744690074
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:caturus_raw",
                     "weight": 1.95058517555267
                 },
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:dapedium_raw",
                     "weight": 2.81751192024274
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:eosaurichthys_raw",
                     "weight": 3.68443866493281
                 },
-
-
-
-
 
                 {
                     "type": "item",
@@ -100,36 +81,17 @@
                     "weight": 1.73385348938015
                 },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:limulid_raw",
                     "weight": 3.46770697876029
                 },
 
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:parhybodus_raw",
                     "weight": 1.04031209362809
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:pygopterus_raw",
@@ -145,7 +107,6 @@
                     "name": "lepidodendron:saurichthys_marine_raw",
                     "weight": 2.16731686172518
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:semionotus_raw",

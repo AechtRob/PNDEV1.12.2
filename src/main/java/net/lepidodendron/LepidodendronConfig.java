@@ -277,6 +277,7 @@ public class LepidodendronConfig {
     public static int waterAtopodentatus = 10; //not editable - does not affect mob health, only AI
     public static int waterHenodus = 5; //not editable - does not affect mob health, only AI
     public static int waterTanystropheus = 10; //not editable - does not affect mob health, only AI
+    public static int waterPlacodus = 6;
     public static int waterKalbarria = 2;
     public static int waterEricixerxes = 2;
     public static int waterAcanthostega = 2;
@@ -703,6 +704,10 @@ public class LepidodendronConfig {
         prop = cfg.get("Mobs", "waterEricixerxes", waterEricixerxes);
         prop.setComment("Distance NSEW from water that Ericixerxes can go to without taking suffocation damage (1 to 16) [default: 2]");
         waterEricixerxes = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Mobs", "waterPlacodus", waterPlacodus);
+        prop.setComment("Distance NSEW from water that Placodus can go to without taking suffocation damage (1 to 16) [default: 6]");
+        waterPlacodus = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Mobs", "waterAmphibamus", waterAmphibamus);
         prop.setComment("Distance NSEW from water that Amphibamus can go to without taking suffocation damage (1 to 16) [default: 8]");

@@ -93,7 +93,6 @@
                 { "model": "lepidodendron:alpia_bench_right_join_0", "y": 90, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "left": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:alpia_bench_left_1", "y": 180, "uvlock": true}
@@ -494,7 +493,6 @@
                 { "model": "lepidodendron:alpia_bench_right_join_5", "y": 90, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "left": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:alpia_bench_left_6", "y": 180, "uvlock": true}
@@ -1295,6 +1293,5 @@
                 { "model": "lepidodendron:alpia_bench_right_join_15", "y": 90, "uvlock": true}
             ]
         }
-
 ]
 }

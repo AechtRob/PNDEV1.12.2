@@ -6,49 +6,42 @@
 				{"model": "lepidodendron:algal_reef_2"}
 			]
 		},
-
 		{	"when": { "facing": "east", "var": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 90 },
 				{"model": "lepidodendron:algal_reef_2", "y": 90 }
 			]
 		},
-
 		{	"when": { "facing": "south", "var": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 180 },
 				{"model": "lepidodendron:algal_reef_2", "y": 180 }
 			]
 		},
-
 		{	"when": { "facing": "west", "var": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 270 },
 				{"model": "lepidodendron:algal_reef_2", "y": 270 }
 			]
 		},
-
 		{	"when": { "facing": "north", "var": true, "up": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1"},
 				{"model": "lepidodendron:algal_reef_2"}
 			]
 		},
-
 		{	"when": { "facing": "east", "var": true, "up": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 90 },
 				{"model": "lepidodendron:algal_reef_2", "y": 90 }
 			]
 		},
-
 		{	"when": { "facing": "south", "var": true, "up": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 180 },
 				{"model": "lepidodendron:algal_reef_2", "y": 180 }
 			]
 		},
-
 		{	"when": { "facing": "west", "var": true, "up": false },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_1", "y": 270 },
@@ -61,29 +54,23 @@
 				{"model": "lepidodendron:algal_reef_4"}
 			]
 		},
-
 		{	"when": { "facing": "east", "var": true, "up": true },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_3", "y": 90 },
 				{"model": "lepidodendron:algal_reef_4", "y": 90 }
 			]
 		},
-
 		{	"when": { "facing": "south", "var": true, "up": true },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_3", "y": 180 },
 				{"model": "lepidodendron:algal_reef_4", "y": 180 }
 			]
 		},
-
 		{	"when": { "facing": "west", "var": true, "up": true },
 			"apply": [
 				{"model": "lepidodendron:algal_reef_3", "y": 270 },
 				{"model": "lepidodendron:algal_reef_4", "y": 270 }
 			]
 		}
-
-		
 	]
-
 }

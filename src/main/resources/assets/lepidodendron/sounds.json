@@ -3267,7 +3267,6 @@
       }
     ]
   },
-
 "pristerognathus_idle": {
     "sounds": [
       {
@@ -4463,7 +4462,6 @@
       }
     ]
   },
-
 "keichousaurus_hurt": {
     "sounds": [
       {
@@ -4488,7 +4486,6 @@
       }
     ]
   },
-
 "turtle_hurt": {
     "sounds": [
       {
@@ -4543,7 +4540,6 @@
       }
     ]
   },
-
 "mussaurus_idle": {
     "sounds": [
       {
@@ -4600,7 +4596,6 @@
       }
     ]
   },
-
 "mastodonsaurus_idle": {
     "sounds": [
       {
@@ -4649,7 +4644,6 @@
       }
     ]
   },
-
 "henodus_idle": {
     "sounds": [
       {
@@ -4698,7 +4692,6 @@
       }
     ]
   },
-
 "titanoptera_idle": {
     "sounds": [
       {
@@ -4715,7 +4708,6 @@
       }
     ]
   },
-
 "dasyceps_idle": {
     "sounds": [
       {
@@ -4764,7 +4756,6 @@
       }
     ]
   },
-
 "melosaurus_idle": {
     "sounds": [
       {
@@ -4813,7 +4804,6 @@
       }
     ]
   },
-
 "ascendonanus_idle": {
     "sounds": [
       {
@@ -4870,7 +4860,6 @@
       }
     ]
   },
-
 "aulacephalodon_idle": {
     "sounds": [
       {
@@ -4919,7 +4908,6 @@
       }
     ]
   },
-
 "cacops_idle": {
     "sounds": [
       {
@@ -4968,7 +4956,6 @@
       }
     ]
   },
-
 "casineria_idle": {
     "sounds": [
       {
@@ -5017,7 +5004,6 @@
       }
     ]
   },
-
 "clevosaurus_hurt": {
     "sounds": [
       {
@@ -5042,7 +5028,6 @@
       }
     ]
   },
-
 "cymbospondylus_idle": {
     "sounds": [
       {
@@ -5091,7 +5076,6 @@
       }
     ]
   },
-
 "hyperodapedon_idle": {
     "sounds": [
       {
@@ -5140,7 +5124,6 @@
       }
     ]
   },
-
 "jonkeria_idle": {
     "sounds": [
       {
@@ -5189,7 +5172,6 @@
       }
     ]
   },
-
 "lotosaurus_idle": {
     "sounds": [
       {
@@ -5238,7 +5220,6 @@
       }
     ]
   },
-
 "panzhousaurus_idle": {
     "sounds": [
       {
@@ -5287,7 +5268,6 @@
       }
     ]
   },
-
 "purlovia_idle": {
     "sounds": [
       {
@@ -5336,7 +5316,6 @@
       }
     ]
   },
-
 "scleromochlus_hurt": {
     "sounds": [
       {
@@ -5365,7 +5344,6 @@
       }
     ]
   },
-
 "tiarajudens_idle": {
     "sounds": [
       {
@@ -5414,7 +5392,6 @@
       }
     ]
   },
-
 "pantylus_hurt": {
     "sounds": [
       {
@@ -5439,7 +5416,6 @@
       }
     ]
   },
-
 "erythrosuchus_idle": {
     "sounds": [
       {
@@ -5492,7 +5468,6 @@
       }
     ]
   },
-
 "tetraceratops_idle": {
     "sounds": [
       {
@@ -5549,7 +5524,6 @@
       }
     ]
   },
-
 "eorhynchochelys_idle": {
     "sounds": [
       {
@@ -5598,7 +5572,6 @@
       }
     ]
   },
-
 "datheosaurus_idle": {
     "sounds": [
       {
@@ -5643,7 +5616,6 @@
       }
     ]
   },
-
 "teleocrater_idle": {
     "sounds": [
       {
@@ -5692,7 +5664,6 @@
       }
     ]
   },
-
 "tanystropheus_idle": {
     "sounds": [
       {
@@ -5745,7 +5716,6 @@
       }
     ]
   },
-
 "proburnetia_idle": {
     "sounds": [
       {
@@ -5802,7 +5772,6 @@
       }
     ]
   },
-
 "sauroctonus_idle": {
     "sounds": [
       {
@@ -5875,7 +5844,6 @@
       }
     ]
   },
-
 "arizonasaurus_idle": {
     "sounds": [
       {
@@ -5920,7 +5888,6 @@
       }
     ]
   },
-
 "smok_idle": {
     "sounds": [
       {
@@ -5965,7 +5932,6 @@
       }
     ]
   },
-
 "poposaurus_idle": {
     "sounds": [
       {
@@ -6010,7 +5976,4 @@
       }
     ]
   }
-
-
-
 }

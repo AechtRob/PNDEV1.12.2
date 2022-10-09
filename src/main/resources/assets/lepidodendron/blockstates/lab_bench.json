@@ -20,7 +20,6 @@
         {"model": "lepidodendron:lab_bench", "y": 90}
       ]
     },
-
     {   "when": { "left": true, "facing": "north" },
       "apply": [
         {"model": "lepidodendron:lab_bench_left", "y": 180 }
@@ -31,7 +30,6 @@
         {"model": "lepidodendron:lab_bench_right", "y": 180 }
       ]
     },
-
     {   "when": { "left": true, "facing": "south" },
       "apply": [
         {"model": "lepidodendron:lab_bench_left" }
@@ -42,7 +40,6 @@
         {"model": "lepidodendron:lab_bench_right" }
       ]
     },
-
     {   "when": { "left": true, "facing": "east" },
       "apply": [
         {"model": "lepidodendron:lab_bench_left", "y": 270 }
@@ -53,7 +50,6 @@
         {"model": "lepidodendron:lab_bench_right", "y": 270 }
       ]
     },
-
     {   "when": { "left": true, "facing": "west" },
       "apply": [
         {"model": "lepidodendron:lab_bench_left", "y": 90 }
@@ -64,6 +60,5 @@
         {"model": "lepidodendron:lab_bench_right", "y": 90 }
       ]
     }
-
   ]
 }

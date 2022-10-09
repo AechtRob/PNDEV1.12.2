@@ -93,7 +93,6 @@
                 { "model": "lepidodendron:monkey_puzzle_bench_right_join_0", "y": 90, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "left": true, "variant": 1 },
             "apply": [
                 { "model": "lepidodendron:monkey_puzzle_bench_left_1", "y": 180, "uvlock": true}
@@ -494,7 +493,6 @@
                 { "model": "lepidodendron:monkey_puzzle_bench_right_join_5", "y": 90, "uvlock": true}
             ]
         },
-
     {   "when": { "facing": "north", "left": true, "variant": 6 },
             "apply": [
                 { "model": "lepidodendron:monkey_puzzle_bench_left_6", "y": 180, "uvlock": true}
@@ -1055,6 +1053,5 @@
                 { "model": "lepidodendron:monkey_puzzle_bench_right_join_12", "y": 90, "uvlock": true}
             ]
         }
-
 ]
 }

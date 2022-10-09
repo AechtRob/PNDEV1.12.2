@@ -12,11 +12,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemEretomorphisCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:eretomorphis_cooked")
+public class ItemEretmorhipisCooked extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eretmorhipis_cooked")
 	public static final Item block = null;
-	public ItemEretomorphisCooked(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.eretomorphis_cooked);
+	public ItemEretmorhipisCooked(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eretmorhipis_cooked);
 	}
 
 	@Override
@@ -28,13 +28,13 @@ public class ItemEretomorphisCooked extends ElementsLepidodendronMod.ModElement 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eretomorphis_cooked", "inventory"));
+		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eretmorhipis_cooked", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
-			setTranslationKey("pf_eretomorphis_cooked");
-			setRegistryName("eretomorphis_cooked");
+			setTranslationKey("pf_eretmorhipis_cooked");
+			setRegistryName("eretmorhipis_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

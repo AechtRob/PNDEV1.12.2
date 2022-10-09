@@ -22,7 +22,6 @@
 			"type": "text",
 			"text": "Falcatus is a symmoriid fish from the Carboniferous. Easily recognizable due to its quite clear sexual dimorphism, the males of the species possessed a hook-shaped spine growing from the top of the head, absent in the other gender. Originally described in 1883 based on the spines alone, it was only in 1985, more than a century later, that fossils of the actual complete animal were described, some of which showing the characteristic spine described so long ago."
 		},
-
 		{
 			"advancement": "lepidodendron:pf_adv_book_falcatus",
 			"type": "text",
@@ -30,4 +29,3 @@
 		}
 	]
 }
-

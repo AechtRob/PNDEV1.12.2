@@ -372,7 +372,6 @@
 				{"model": "lepidodendron:archaeocyatha_5_sponge_10", "y": 90}
 			]
 		},
-
 		{	"when": { "facing": "south" },
 			"apply": [
 				{"model": "lepidodendron:archaeocyatha_reef_1", "y": 180},
@@ -559,7 +558,6 @@
 				{"model": "lepidodendron:archaeocyatha_5_sponge_10", "y": 180}
 			]
 		},
-
 		{	"when": { "facing": "west" },
 			"apply": [
 				{"model": "lepidodendron:archaeocyatha_reef_1", "y": 270},
@@ -747,5 +745,4 @@
 			]
 		}
 	]
-
 }

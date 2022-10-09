@@ -9,7 +9,6 @@
                     "name": "lepidodendron:austrolimulus_raw",
                     "weight": 19.3548387096774
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:ceratodus_raw",
@@ -21,18 +20,6 @@
                     "weight": 12.9032258064516
                 },
 
-
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:saurichthys_freshwater_raw",
@@ -43,17 +30,6 @@
                     "name": "lepidodendron:semionotus_raw",
                     "weight": 32.258064516129
                 },
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:xenacanthus_raw",

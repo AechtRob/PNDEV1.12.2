@@ -9,8 +9,6 @@
                     "name": "lepidodendron:aegirocassis_raw",
                     "weight": 0.616438356164384
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:arandaspis_raw",
@@ -36,40 +34,21 @@
                     "name": "lepidodendron:cheirurus_raw",
                     "weight": 4.52054794520548
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:dalmanites_raw",
                     "weight": 2.05479452054794
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:enoploura_raw",
                     "weight": 3.42465753424658
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:isotelus_raw",
                     "weight": 4.10958904109589
                 },
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 {
                     "type": "item",
@@ -86,8 +65,6 @@
                     "name": "lepidodendron:selenopeltis_raw",
                     "weight": 3.6986301369863
                 }
-
-
             ]
         }
     ]

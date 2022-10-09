@@ -5,19 +5,16 @@
 				{"model": "lepidodendron:holdfast_dry", "y": 90}
 			]
 		},
-
 		{	"when": { "facing": "east" },
 			"apply": [
 				{"model": "lepidodendron:holdfast_dry", "y": 180 }
 			]
 		},
-
 		{	"when": { "facing": "south" },
 			"apply": [
 				{"model": "lepidodendron:holdfast_dry", "y": 270 }
 			]
 		},
-
 		{	"when": { "facing": "west" },
 			"apply": [
 				{"model": "lepidodendron:holdfast_dry" }

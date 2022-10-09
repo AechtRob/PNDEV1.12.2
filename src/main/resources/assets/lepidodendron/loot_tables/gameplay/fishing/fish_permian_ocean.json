@@ -24,14 +24,11 @@
                     "name": "lepidodendron:shell_goniatites",
                     "weight": 4.18021365536461
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:bobasatrania_raw",
                     "weight": 2.0901068276823
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:coelacanthus_raw",
@@ -58,36 +55,16 @@
                     "weight": 3.01904319554111
                 },
 
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:janassa_raw",
                     "weight": 2.322340919647
                 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:menaspis_raw",
                     "weight": 3.06549001393405
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:palaeoniscum_raw",

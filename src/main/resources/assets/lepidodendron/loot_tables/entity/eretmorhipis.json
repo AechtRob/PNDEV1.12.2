@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "eretomorphis",
+      "name": "eretmorhipis",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:eretomorphis_raw",
+          "name": "lepidodendron:eretmorhipis_raw",
           "weight": 1,
           "functions": [
             {
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "name": "eretomorphis",
+      "name": "eretmorhipis",
       "rolls": 1,
       "entries": [
         {
@@ -42,6 +42,3 @@
     }
   ]
 }
-
-
-

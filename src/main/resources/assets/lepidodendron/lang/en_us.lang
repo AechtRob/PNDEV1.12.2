@@ -410,8 +410,8 @@ advancements.pf_adv_book_eosaurichthys.description=Unlock the entry for Eosauric
 advancements.pf_adv_book_eosaurichthys.title=Eosaurichthys
 advancements.pf_adv_book_eosimops.description=Unlock the entry for Eosimops in the Palaeopedia
 advancements.pf_adv_book_eosimops.title=Eosimops
-advancements.pf_adv_book_eretomorphis.description=Unlock the entry for Eretomorphis in the Palaeopedia
-advancements.pf_adv_book_eretomorphis.title=Eretomorphis
+advancements.pf_adv_book_eretmorhipis.description=Unlock the entry for Eretmorhipis in the Palaeopedia
+advancements.pf_adv_book_eretmorhipis.title=Eretmorhipis
 advancements.pf_adv_book_ericixerxes.description=Unlock the entry for Ericixerxes in the Palaeopedia
 advancements.pf_adv_book_ericixerxes.title=Ericixerxes
 advancements.pf_adv_book_eryops.description=Unlock the entry for Eryops in the Palaeopedia
@@ -828,8 +828,8 @@ advancements.pf_adv_book_pisocrinus.description=Unlock the entry for Pisocrinus 
 advancements.pf_adv_book_pisocrinus.title=Pisocrinus
 advancements.pf_adv_book_placerias.description=Unlock the entry for Placerias in the Palaeopedia
 advancements.pf_adv_book_placerias.title=Placerias
-advancements.pf_adv_book_placodus.description=Unlock the entry for Placodus in the Palaeopedia
-advancements.pf_adv_book_placodus.title=Placodus
+advancements.pf_adv_book_eretmorhipis.description=Unlock the entry for eretmorhipis in the Palaeopedia
+advancements.pf_adv_book_eretmorhipis.title=eretmorhipis
 advancements.pf_adv_book_plateosaurus.description=Unlock the entry for Plateosaurus in the Palaeopedia
 advancements.pf_adv_book_plateosaurus.title=Plateosaurus
 advancements.pf_adv_book_platycaraspis.description=Unlock the entry for Platycaraspis in the Palaeopedia
@@ -1193,8 +1193,6 @@ advancements.pf_adv_book_furca.description=Unlock the entry for Furca  in the Pa
 advancements.pf_adv_book_tomlinsonus.description=Unlock the entry for Tomlinsonus in the Palaeopedia
 advancements.pf_adv_book_mazothairos.description=Unlock the entry for Mazothairos in the Palaeopedia
 advancements.pf_adv_book_trigonotarbid_anthracomartus.description=Unlock the entry for Anthracomartus in the Palaeopedia
-
-
 advancements.pf_adv_book_eretmorhipis.title=Eretmorhipis
 advancements.pf_adv_book_trilophosaurus.title=Trilophosaurus
 advancements.pf_adv_book_microbrachius.title=Microbrachius
@@ -1246,12 +1244,6 @@ advancements.pf_adv_book_furca.title=Furca
 advancements.pf_adv_book_tomlinsonus.title=Tomlinsonus
 advancements.pf_adv_book_mazothairos.title=Mazothairos
 advancements.pf_adv_book_trigonotarbid_anthracomartus.title=Anthracomartus
-
-
-
-
-
-
 
 advancements.pf_adv_cambrian.description=Enter the Cambrian dimension
 advancements.pf_adv_cambrian.title=The Cambrian explosion
@@ -1454,7 +1446,7 @@ entity.prehistoric_flora_eoredlichia.name=Eoredlichia
 entity.prehistoric_flora_eorhynchochelys.name=Eorhynchochelys
 entity.prehistoric_flora_eosaurichthys.name=Eosaurichthys
 entity.prehistoric_flora_eosimops.name=Eosimops
-entity.prehistoric_flora_eretomorphis.name=Eretomorphis
+entity.prehistoric_flora_eretmorhipis.name=Eretmorhipis
 entity.prehistoric_flora_ericixerxes.name=Ericixerxes
 entity.prehistoric_flora_eryops.name=Eryops
 entity.prehistoric_flora_erythrosuchus.name=Erythrosuchus
@@ -1842,17 +1834,6 @@ entity.prehistoric_flora_furca.name=Furca
 entity.prehistoric_flora_tomlinsonus.name=Tomlinsonus
 entity.prehistoric_flora_mazothairos.name=Mazothairos
 entity.prehistoric_flora_trigonotarbid_anthracomartus.name=Anthracomartus
-
-
-
-
-
-
-
-
-
-
-
 
 fluid.resin=Resin
 fluid.acid_sulphuric=Sulphuric Acid
@@ -2721,10 +2702,6 @@ item.pf_eggs_furca.name=Furca Eggs
 item.pf_eggs_tomlinsonus.name=Tomlinsonus Eggs
 item.pf_eggs_mazothairos.name=Mazothairos Eggs
 
-
-
-
-
 item.pf_eglonaspis_bucket.name=Bucket of Eglonaspis
 item.pf_eglonaspis_cooked.name=Cooked Eglonaspis
 item.pf_eglonaspis_raw.name=Raw Eglonaspis
@@ -2858,8 +2835,8 @@ item.pf_ephedra_fruit.name=Ephedra Fruiting Cone
 item.pf_ephedra_seed.name=Ephedra Seeds
 item.pf_equisetites_reed.name=Reed-like Equisetites
 item.pf_equisetites_reed_item.name=Reed-like Equisetites
-item.pf_eretomorphis_cooked.name=Cooked Eretomorphis
-item.pf_eretomorphis_raw.name=Raw Eretomorphis
+item.pf_eretmorhipis_cooked.name=Cooked Eretmorhipis
+item.pf_eretmorhipis_raw.name=Raw Eretmorhipis
 item.pf_ericixerxes_cooked.name=Cooked Ericixerxes
 item.pf_ericixerxes_raw.name=Raw Ericixerxes
 item.pf_eryops_cooked.name=Cooked Eryops
@@ -3554,8 +3531,6 @@ item.pf_phasmatocycas_cone.name=Phasmatocycas Cone
 item.pf_phasmatocycas_seed.name=Phasmatocycas Seed
 item.pf_phial_empty.name=Phial
 item.pf_phial_dna.name=Phial of DNA
-
-
 item.phial_dna_prehistoric_flora_acadoaradoxides.name=Phial of Acadoparadoxides DNA
 item.phial_dna_prehistoric_flora_acanthodes.name=Phial of Acanthodes DNA
 item.phial_dna_prehistoric_flora_acanthostega.name=Phial of Acanthostega DNA
@@ -4159,8 +4134,6 @@ item.phial_dna_prehistoric_flora_furca.name=Phial of Furca  DNA
 item.phial_dna_prehistoric_flora_tomlinsonus.name=Phial of Tomlinsonus DNA
 item.phial_dna_prehistoric_flora_mazothairos.name=Phial of Mazothairos DNA
 item.phial_dna_prehistoric_flora_trigonotarbid_anthracomartus.name=Phial of Anthracomartus DNA
-
-
 item.phial_dna_acacia_sapling.name=Phial of Acacia DNA
 item.phial_dna_adoketophyton.name=Phial of Adoketophyton DNA
 item.phial_dna_aethophyllum.name=Phial of Aethophyllum DNA
@@ -4790,9 +4763,6 @@ item.phial_dna_yohoia.name=Phial of Yohoia DNA
 item.phial_dna_yorgia.name=Phial of Yorgia DNA
 item.phial_dna_yunguisaurus.name=Phial of Yunguisaurus DNA
 item.phial_dna_yunnanozoon.name=Phial of Yunnanozoon DNA
-
-
-
 item.pf_phial_eggs_acanthostega.name=Phial of Acanthostega Spawn
 item.pf_phial_eggs_acanthostomatops.name=Phial of Acanthostomatops Spawn
 item.pf_phial_eggs_acutiramus.name=Phial of Acutiramus Eggs
@@ -5373,17 +5343,6 @@ item.pf_ornithoprion_raw.name=Raw Ornithoprion
 item.pf_torpedaspis_raw.name=Raw Torpedaspis
 item.pf_furca_raw.name=Raw Furca
 item.pf_tomlinsonus_raw.name=Raw Tomlinsonus
-
-
-
-
-
-
-
-
-
-
-
 item.phoenicopsis_door_item.name=Phoenicopteris Door
 item.pitys_door_item.name=Pitys Door
 item.plane_door_item.name=Plane Door
@@ -7321,11 +7280,6 @@ tile.pf_zygopteris_sapling.name=Zygopteris Sapling
 tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 
-
-
-
-
-
 item.pf_acanthostega_bucket.name=Bucket of Acanthostega
 item.pf_acanthostomatops_bucket.name=Bucket of Acanthostomatops
 item.pf_acutiramus_bucket.name=Bucket of Acutiramus
@@ -7413,7 +7367,7 @@ item.pf_endoceras_bucket.name=Bucket of Endoceras
 item.pf_enoploura_bucket.name=Bucket of Enoploura
 item.pf_eorhynchochelys_bucket.name=Bucket of Eorhynchochelys
 item.pf_eosaurichthys_bucket.name=Bucket of Eosaurichthys
-item.pf_eretomorphis_bucket.name=Bucket of Eretomorphis
+item.pf_eretmorhipis_bucket.name=Bucket of Eretmorhipis
 item.pf_ericixerxes_bucket.name=Bucket of Ericixerxes
 item.pf_eugaleaspis_bucket.name=Bucket of Eugaleaspis
 item.pf_eurypterus_bucket.name=Bucket of Eurypterus
@@ -7590,14 +7544,8 @@ item.pf_ogyginus_bucket.name=Bucket of Ogyginus
 item.pf_arctinurus_bucket.name=Bucket of Arctinurus
 item.pf_uralichas_bucket.name=Bucket of Uralichas
 
-
-
-
-
-
 item.pf_fossil_thrombolite_clean.name=Cleaned Thrombolite Fossil
 item.pf_fossil_stromatolite_clean.name=Cleaned Stromatolite Fossil
-
 item.pf_fossil_acadoaradoxides_clean.name=Cleaned Acadoparadoxides Fossil
 item.pf_fossil_acanthodes_clean.name=Cleaned Acanthodes Fossil
 item.pf_fossil_acanthostega_clean.name=Cleaned Acanthostega Fossil
@@ -8272,9 +8220,6 @@ item.pf_fossil_tomlinsonus_clean.name=Cleaned Tomlinsonus Fossil
 item.pf_fossil_mazothairos_clean.name=Cleaned Mazothairos Fossil
 item.pf_fossil_trigonotarbid_anthracomartus_clean.name=Cleaned Anthracomartus Fossil
 
-
-
-
 item.pf_fossil_acacia_sapling_clean.name=Cleaned Acacia Fossil
 item.pf_fossil_adoketophyton_clean.name=Cleaned Adoketophyton Fossil
 item.pf_fossil_aethophyllum_clean.name=Cleaned Aethophyllum Fossil
@@ -8509,5 +8454,3 @@ item.pf_fossil_zamites_sapling_clean.name=Cleaned Zamites Fossil
 item.pf_fossil_zosterophyllum_clean.name=Cleaned Zosterophyllum Fossil
 item.pf_fossil_zygopteridaceae_sapling_clean.name=Cleaned Symplocopteris Fossil
 item.pf_fossil_zygopteris_sapling_clean.name=Cleaned Zygopteris Fossil
-
-

@@ -533,7 +533,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CYAMODUS = new CustomTrigger("pf_book_cyamodus");
     public static final CustomTrigger CLICK_CYMBOSPONDYLUS = new CustomTrigger("pf_book_cymbospondylus");
     public static final CustomTrigger CLICK_EORHYNCHOCHELYS = new CustomTrigger("pf_book_eorhynchochelys");
-    public static final CustomTrigger CLICK_ERETOMORPHIS = new CustomTrigger("pf_book_eretomorphis");
+    public static final CustomTrigger CLICK_eretmorhipis = new CustomTrigger("pf_book_eretmorhipis");
     public static final CustomTrigger CLICK_HENODUS = new CustomTrigger("pf_book_henodus");
     public static final CustomTrigger CLICK_LIMULID = new CustomTrigger("pf_book_limulid");
     public static final CustomTrigger CLICK_KEICHOUSAURUS = new CustomTrigger("pf_book_keichousaurus");
@@ -961,7 +961,7 @@ public class ModTriggers
             CLICK_EORHYNCHOCHELYS,
             CLICK_EOSAURICHTHYS,
             CLICK_EOSIMOPS,
-            CLICK_ERETOMORPHIS,
+            CLICK_eretmorhipis,
             CLICK_ERICIXERXES,
             CLICK_ERYOPS,
             CLICK_ERYTHROSUCHUS,

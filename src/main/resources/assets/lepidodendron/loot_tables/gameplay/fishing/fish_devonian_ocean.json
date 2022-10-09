@@ -9,7 +9,6 @@
                     "name": "lepidodendron:acanthodes_raw",
                     "weight": 3.38142470694319
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:shell_goniatites",
@@ -20,9 +19,6 @@
                     "name": "lepidodendron:shell_manticoceras",
                     "weight": 4.28313796212804
                 },
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:bothriolepis_raw",
@@ -53,7 +49,6 @@
                     "name": "lepidodendron:cheirurus_raw",
                     "weight": 2.29936880072137
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:clydagnathus_raw",
@@ -69,13 +64,11 @@
                     "name": "lepidodendron:crotalocephalus_raw",
                     "weight": 2.4346257889991
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:dalmanites_raw",
                     "weight": 2.4346257889991
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:doryaspis_raw",
@@ -86,8 +79,6 @@
                     "name": "lepidodendron:drotops_raw",
                     "weight": 1.08205590622182
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:furcacauda_raw",
@@ -123,22 +114,6 @@
                     "name": "lepidodendron:holonema_raw",
                     "weight": 0.631199278629396
                 },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:lanceaspis_raw",
@@ -154,14 +129,11 @@
                     "name": "lepidodendron:mcnamaraspis_raw",
                     "weight": 0.541027953110911
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:montecaris_raw",
                     "weight": 1.21731289449955
                 },
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:palaeoisopus_raw",
@@ -187,21 +159,16 @@
                     "name": "lepidodendron:pteraspis_raw",
                     "weight": 1.62308385933273
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:tartuosteus_raw",
                     "weight": 0.811541929666366
                 },
-
                 {
                     "type": "item",
                     "name": "lepidodendron:terataspis_raw",
                     "weight": 2.02885482416592
                 },
-
-
-
                 {
                     "type": "item",
                     "name": "lepidodendron:walliserops_raw",
