@@ -245,6 +245,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		public int processTick;
 		public double centrifugeAngle;
 		public double flareAngle;
+		public double hatchVal;
 		public long startTick;
 		private int totalRevolutions = 16; //16 full revs for the process
 		private int processCooldown = 200; //10 seconds to startup/slowdown
@@ -422,6 +423,10 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				this.centrifugeAngle = 0;
 			}
 
+			if (this.isProcessing && this.processTick >= this.processTickTime) {
+				this.isProcessing = false; //Not processing but should be left locked if it was locked before
+			}
+
 			markDirty();
 
 		}
@@ -524,6 +529,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			if (compound.hasKey("isLocked")) {
 				this.isLocked = compound.getBoolean("isLocked");
 			}
+			if (compound.hasKey("hatchVal")) {
+				this.hatchVal = compound.getDouble("hatchVal");
+			}
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
 			}
@@ -545,12 +553,21 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			compound.setInteger("ticksSinceSync", this.ticksSinceSync);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setBoolean("isLocked", this.isLocked);
+			compound.setDouble("hatchVal", this.hatchVal);
 			compound.setInteger("processTick", this.processTick);
 			compound.setLong("startTick", this.startTick);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.centrifugeContents);
 			}
 			return compound;
+		}
+
+		public double getHatchVal() {
+			return this.hatchVal;
+		}
+
+		public void setHatchVal(double val) {
+			this.hatchVal = val;
 		}
 
 		private void notifyBlockUpdate() {

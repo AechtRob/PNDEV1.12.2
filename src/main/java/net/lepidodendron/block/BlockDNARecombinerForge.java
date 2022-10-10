@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNAForge;
 import net.lepidodendron.item.ItemDNARecombiner;
+import net.lepidodendron.item.ItemOligoPool;
+import net.lepidodendron.item.ItemPhialDNA;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -161,7 +163,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			}
 
 			IBlockState endState = worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY()));
-			if (endState.getBlock() != BlockDNARecombinerForge.block) {
+			if (endState.getBlock() != BlockDNARecombinerCentrifuge.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}
@@ -224,13 +226,19 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		protected boolean isLocked;
 		protected boolean isProcessing;
 		public int processTick;
+		public boolean hatchShut;
 		public double forgeAngle;
 		public double flareAngle;
 		private int processTickTime = 400; //20 seconds to process
 
 		public boolean canStartProcess() {
-
-			
+			if (!this.isProcessing
+				&& this.getStackInSlot(2).getItem() == ItemOligoPool.block
+				&& this.getStackInSlot(0).getItem() == ItemPhialDNA.block
+				&& this.hatchShut
+			) {
+				return true;
+			}
 			return false;
 		}
 
@@ -251,7 +259,10 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public boolean isProcessing() {
 			return this.isProcessing;
 		}
-		
+
+		public void setHatchShut(boolean shut) {
+			this.hatchShut = shut;
+		}
 
 		public boolean isEmpty()
 		{
@@ -268,7 +279,14 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 		@Override
 		public void update() {
-
+			if (!this.isProcessing
+					&& this.getStackInSlot(2) == ItemStack.EMPTY
+					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
+			) {
+				ItemStack stack = this.getStackInSlot(1);
+				this.setInventorySlotContents(2, new ItemStack(ItemOligoPool.block, 1));
+				stack.shrink(1);
+			}
 			
 			markDirty();
 

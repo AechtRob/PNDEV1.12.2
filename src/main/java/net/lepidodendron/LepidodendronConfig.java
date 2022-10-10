@@ -47,6 +47,7 @@ public class LepidodendronConfig {
 
     public static int attackHealth = 90;
     public static int adultAge = 75;
+    public static double spawnerDensity = 1.0;
     public static boolean attackPlayerAlways = false;
     public static boolean doLowRes = false;
 
@@ -410,6 +411,14 @@ public class LepidodendronConfig {
         prop.setComment("Mobs will try to multiply every 1-2 days even without breeding them [default: false]");
         doMultiplyMobs = prop.getBoolean();
         propOrder.add(prop.getName());
+
+
+
+        prop = cfg.get("Global World-Gen", "spawnerDensity", spawnerDensity);
+        prop.setComment("This number multiplies the default rate of spawning used by the mod's spawner (0-100). Recommended you do not change this. Increasing it will spawn more mobs, but as they do not despawn your PC may struggle. Use at your own risk. [default: 1.0]");
+        spawnerDensity = prop.getDouble();
+        propOrder.add(prop.getName());
+
 
         prop = cfg.get("Global World-Gen", "dimCambrian", dimCambrian);
         prop.setComment("Dimension number of the Cambrian dimension. Do not change this unless you get errors [default: -79]");

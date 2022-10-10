@@ -575,10 +575,18 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
         int var3 = var2.length;
 
+        double spawnDensity = LepidodendronConfig.spawnerDensity;
+        if (spawnDensity < 0.0) {
+            spawnDensity = 0.0;
+        }
+        if (spawnDensity >100.0) {
+            spawnDensity = 100.0;
+        }
+
         //System.err.println("spawnerlen " + var3);
         int trySpawn = 0;
-        for (int var4 = 0; var4 < var3; ++var4) { //run over every mob to spawn with max of five tries per chunk
-            if (trySpawn >= Math.min(Math.max(1, Math.round((double)var3/5D)), 5)) {
+        for (int var4 = 0; var4 < var3; ++var4) { //run over every mob to spawn with max of five (configgable) tries per chunk
+            if (trySpawn >= Math.round((Math.min(Math.max(1D, Math.round((double)var3/5D)), 5D))) * spawnDensity) {
                 return;
             }
             errFound = false;

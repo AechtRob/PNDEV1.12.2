@@ -2,6 +2,7 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.block.BlockDNARecombinerCentrifuge;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugeLid;
+import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugeLidHatch;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugePhial;
 import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugeSpindle;
 import net.lepidodendron.item.ItemPhialDNA;
@@ -20,14 +21,16 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
     private static final ResourceLocation TEXTURE_CENTRIFUGE_LID = new ResourceLocation("lepidodendron:textures/entities/dna_recombiner_centrifuge_top.png");
     private static final ResourceLocation TEXTURE_CENTRIFUGE_PHIAL_DNA = new ResourceLocation("lepidodendron:textures/entities/centrifuge_phial.png");
     private static final ResourceLocation TEXTURE_CENTRIFUGE_PHIAL_EMPTY = new ResourceLocation("lepidodendron:textures/entities/centrifuge_phial_empty.png");
-    private static final ResourceLocation TEXTURE_CENTRIFUGE_SPINDLE = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
+    private static final ResourceLocation TEXTURE_IRON_BLOCK = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
 
     private final ModelDNARecombinerCentrifugeLid modelDNARecombinerCentrifugeLid;
+    private final ModelDNARecombinerCentrifugeLidHatch modelDNARecombinerCentrifugeLidHatch;
     private final ModelDNARecombinerCentrifugePhial modelDNARecombinerCentrifugePhial;
     private final ModelDNARecombinerCentrifugeSpindle modelDNARecombinerCentrifugeSpindle;
 
     public RenderDNACentrifuge() {
         this.modelDNARecombinerCentrifugeLid = new ModelDNARecombinerCentrifugeLid();
+        this.modelDNARecombinerCentrifugeLidHatch = new ModelDNARecombinerCentrifugeLidHatch();
         this.modelDNARecombinerCentrifugePhial = new ModelDNARecombinerCentrifugePhial();
         this.modelDNARecombinerCentrifugeSpindle = new ModelDNARecombinerCentrifugeSpindle();
     }
@@ -66,7 +69,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
             } catch (RuntimeException exception) {
             }
         }
-        else {
+        else if (!entity.isLocked()){
             float f = entity.prevLidAngle + (entity.lidAngle - entity.prevLidAngle) * partialTicks;
             f = 1.0F - f;
             f = 1.0F - f * f * f;
@@ -77,9 +80,39 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
+        //Centrifuge lid hatch:
+        yy = 1.5D;
+        this.bindTexture(TEXTURE_IRON_BLOCK);
+        ModelDNARecombinerCentrifugeLidHatch modelDNARecombinerCentrifugeLidHatch = this.modelDNARecombinerCentrifugeLidHatch;
+        GlStateManager.pushMatrix();
+        //GlStateManager.disableCull();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
+        GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+        GlStateManager.scale(0.05F, 0.05F, 0.05F);
+        if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
+            GlStateManager.rotate(facing.rotateY().rotateY().rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+        }
+        GlStateManager.enableAlpha();
+        if (entity.isProcessing()) {
+            modelDNARecombinerCentrifugeLidHatch.lid.rotateAngleZ = 0;
+        }
+        else if (!entity.isLocked()){
+            float f = entity.prevLidAngle + (entity.lidAngle - entity.prevLidAngle) * partialTicks;
+            f = 1.0F - f;
+            f = 1.0F - f * f * f;
+            modelDNARecombinerCentrifugeLidHatch.lid.rotateAngleZ = (f * ((float)Math.PI / 2F));
+        }
+        modelDNARecombinerCentrifugeLidHatch.left.offsetZ = 1.25F * (float) entity.getHatchVal();
+        modelDNARecombinerCentrifugeLidHatch.right.offsetZ = -1.25F * (float) entity.getHatchVal();
+        modelDNARecombinerCentrifugeLidHatch.renderAll(1.25f);
+        GlStateManager.disableAlpha();
+        //GlStateManager.enableCull();
+        GlStateManager.popMatrix();
+
         //Centrifuge Spindle:
         yy = 1.5D;
-        this.bindTexture(TEXTURE_CENTRIFUGE_SPINDLE);
+        this.bindTexture(TEXTURE_IRON_BLOCK);
         ModelDNARecombinerCentrifugeSpindle modelDNARecombinerCentrifugeSpindle = this.modelDNARecombinerCentrifugeSpindle;
         GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
