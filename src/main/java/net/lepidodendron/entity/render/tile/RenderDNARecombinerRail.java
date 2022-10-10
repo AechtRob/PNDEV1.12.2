@@ -23,9 +23,8 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
 
     private static final ResourceLocation TEXTURE_CLAW = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
     private static final ResourceLocation TEXTURE_HATCH = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
-     private final ModelDNARecombinerClaw modelDNARecombinerClaw;
+    private final ModelDNARecombinerClaw modelDNARecombinerClaw;
     private final ModelDNARecombinerHatch modelDNARecombinerHatch;
-    //public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     public RenderDNARecombinerRail() {
         this.modelDNARecombinerClaw = new ModelDNARecombinerClaw();
@@ -40,16 +39,13 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
         }
 
         //int clawheight = entity.getHeight();
-        int clawheight = 0;
-        //clawheight is an integer between 0 and 120
+        double clawheight = entity.getClawVert();
 
-        double clawheighter = (double)clawheight/120D;
-        clawheighter = 0;
+        //double yy = 1.9D - (1.2 * clawheighter);
 
-        double yy = 1.9D - (1.2 * clawheighter);
-
-        yy = 1.05D;
+        double yy = 1.05D + clawheight;
         double d = -1.0D;
+        d = -1.0D + entity.getClawHoriz();
 
         this.bindTexture(TEXTURE_CLAW);
         ModelDNARecombinerClaw modelDNARecombinerClaw = this.modelDNARecombinerClaw;
@@ -68,20 +64,49 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
         if (facing == EnumFacing.NORTH) {
             GlStateManager.translate(x + 0.5 - d, y + yy, z + 0.5);
         }
-
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-        //GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         GlStateManager.enableAlpha();
+        modelDNARecombinerClaw.finger1.rotateAngleX = -0.3927F - (float)Math.toRadians(entity.getClawAngle());
+        modelDNARecombinerClaw.finger2.rotateAngleX = -0.3927F - (float)Math.toRadians(entity.getClawAngle());
+        modelDNARecombinerClaw.finger3.rotateAngleX = -0.3927F - (float)Math.toRadians(entity.getClawAngle());
+        modelDNARecombinerClaw.finger1_b.rotateAngleX = 0.6981F - ((float)Math.toRadians(entity.getClawAngle()) * 0.5F);
+        modelDNARecombinerClaw.finger1_b2.rotateAngleX = 0.6981F - ((float)Math.toRadians(entity.getClawAngle()) * 0.5F);
+        modelDNARecombinerClaw.finger1_b3.rotateAngleX = 0.6981F - ((float)Math.toRadians(entity.getClawAngle()) * 0.5F);
         modelDNARecombinerClaw.renderAll(0.50f);
         GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
+        //Render the cable:
+        double doubleX = x + 0.5;
+        double doubleY = y + yy;
+        double doubleZ = z + 0.5;
+
+        if (facing == EnumFacing.EAST) {
+            doubleZ = z + 0.5 - d;
+        }
+        if (facing == EnumFacing.WEST) {
+            doubleZ = z + 0.5 + d;
+        }
+        if (facing == EnumFacing.SOUTH) {
+            doubleX = x + 0.5 + d;
+        }
+        if (facing == EnumFacing.NORTH) {
+            doubleX = x + 0.5 - d;
+        }
+        GL11.glPushMatrix();
+        GL11.glColor3ub((byte)255,(byte)255,(byte)255);
+        GL11.glBegin(GL11.GL_LINES);
+        GL11.glVertex3f((float)doubleX, (float)y + 1.05F - 0.17F,(float)doubleZ);
+        GL11.glVertex3f((float)doubleX, (float)doubleY - 0.3F,(float)doubleZ);
+        GL11.glEnd();
+        GL11.glPopMatrix();
 
         //Render phial if present
         float scale = 0.50F;
-        yy = yy - 0.6750F; //1.5 change to 1.55 to lower it
+        yy = 1.05D - 0.6750F + clawheight; //1.5 change to 1.55 to lower it
+        //System.err.println("yy " + yy);
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         if (entity != null && entity.hasWorld()) {
@@ -94,13 +119,23 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
                         itemstack = tee.getStackInSlot(0);
                     }
 
+                    //GlStateManager.enableRescaleNormal();
+                    //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    //GlStateManager.enableBlend();
+                    //RenderHelper.enableStandardItemLighting();
+                    //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    //GlStateManager.pushMatrix();
+
                     GlStateManager.enableRescaleNormal();
-                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    GlStateManager.enableAlpha();
+                    GlStateManager.alphaFunc(516, 0.1F);
                     GlStateManager.enableBlend();
                     RenderHelper.enableStandardItemLighting();
-                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                     GlStateManager.pushMatrix();
+
                     double dd = -1.0D;
+                    dd = -1.0D + entity.getClawHoriz();
                     if (facing == EnumFacing.EAST) {
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
                     }
@@ -121,16 +156,27 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
                     Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
                     GlStateManager.popMatrix();
                     GlStateManager.disableRescaleNormal();
+                    GlStateManager.disableAlpha();
                     GlStateManager.disableBlend();
 
                     //and again at 90 degrees:
                     //--------------------------
+
+                    //GlStateManager.enableRescaleNormal();
+                    //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    //GlStateManager.enableBlend();
+                    //RenderHelper.enableStandardItemLighting();
+                    //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    //GlStateManager.pushMatrix();
+
                     GlStateManager.enableRescaleNormal();
-                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                    GlStateManager.enableAlpha();
+                    GlStateManager.alphaFunc(516, 0.1F);
                     GlStateManager.enableBlend();
                     RenderHelper.enableStandardItemLighting();
-                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                    GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                     GlStateManager.pushMatrix();
+
                     if (facing == EnumFacing.EAST) {
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
                     }
@@ -151,41 +197,27 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
                     Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
                     GlStateManager.popMatrix();
                     GlStateManager.disableRescaleNormal();
+                    GlStateManager.disableAlpha();
                     GlStateManager.disableBlend();
 
                 }
             }
         }
 
-
         //Hatch:
         yy = 0.77D;
-        d = 0;
-
         this.bindTexture(TEXTURE_HATCH);
         ModelDNARecombinerHatch modelDNARecombinerHatch = this.modelDNARecombinerHatch;
         GlStateManager.pushMatrix();
         GlStateManager.disableCull();
         GlStateManager.enableRescaleNormal();
-        //if (facing == EnumFacing.NORTH) {
-        GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - d);
-        //}
-        /*
-        if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + yy, z + 0.5 + d);
-        }
-        if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + 0.5 + d, y + yy, z + 0.5);
-        }
-        if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + 0.5 - d, y + yy, z + 0.5);
-        }
-        */
-
+        GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-        //GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         GlStateManager.enableAlpha();
+
+        modelDNARecombinerHatch.left.offsetZ = -3.5F * (float) entity.getHatchVal();
+        modelDNARecombinerHatch.right.offsetZ = 3.5F * (float) entity.getHatchVal();
         modelDNARecombinerHatch.renderAll(1.25f);
         GlStateManager.disableAlpha();
         GlStateManager.enableCull();

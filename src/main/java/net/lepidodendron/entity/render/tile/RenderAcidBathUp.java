@@ -20,7 +20,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
-import org.lwjgl.opengl.GL11;
 
 public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.TileEntityAcidBathUp> {
 
@@ -120,11 +119,19 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         itemstack = tee.getStackInSlot(5);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        //GlStateManager.enableRescaleNormal();
+                        //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        //GlStateManager.enableBlend();
+                        //RenderHelper.enableStandardItemLighting();
+                        //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        //GlStateManager.pushMatrix();
+
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        GlStateManager.enableAlpha();
+                        GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                         GlStateManager.pushMatrix();
 
                         double dd = 0.125D;
@@ -150,6 +157,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -161,12 +169,21 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         itemstack = tee.getStackInSlot(6);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        //GlStateManager.enableRescaleNormal();
+                        //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        //GlStateManager.enableBlend();
+                        //RenderHelper.enableStandardItemLighting();
+                        //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        //GlStateManager.pushMatrix();
+
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        GlStateManager.enableAlpha();
+                        GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                         GlStateManager.pushMatrix();
+
 
                         double dd = 0.435D;
                         if (facing == EnumFacing.NORTH) {
@@ -191,6 +208,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -202,12 +220,21 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         itemstack = tee.getStackInSlot(7);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        //GlStateManager.enableRescaleNormal();
+                        //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        //GlStateManager.enableBlend();
+                        //RenderHelper.enableStandardItemLighting();
+                        //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        //GlStateManager.pushMatrix();
+
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        GlStateManager.enableAlpha();
+                        GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                         GlStateManager.pushMatrix();
+
 
                         double dd = 0.745D;
                         if (facing == EnumFacing.NORTH) {
@@ -232,6 +259,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -243,12 +271,21 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         itemstack = tee.getStackInSlot(8);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
+                        //GlStateManager.enableRescaleNormal();
+                        //GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        //GlStateManager.enableBlend();
+                        //RenderHelper.enableStandardItemLighting();
+                        //GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        //GlStateManager.pushMatrix();
+
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+                        GlStateManager.enableAlpha();
+                        GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
-                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                         GlStateManager.pushMatrix();
+
 
                         double dd = 1.055D;
                         if (facing == EnumFacing.NORTH) {
@@ -265,7 +302,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         }
                         GlStateManager.rotate(45, 0, 1, 0);
                         GlStateManager.scale(scale, scale, scale);
-
+                        GlStateManager.rotate(90, 1, 0, 0);
                         IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
                         model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
                         Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
@@ -273,6 +310,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
                 }

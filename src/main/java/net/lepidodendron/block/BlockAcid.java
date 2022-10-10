@@ -69,35 +69,115 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 						|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundLush.block
 						|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundFern.block
 						|| world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundMossy.block) {
-					world.setBlockState(pos.north(), Blocks.DIRT.getStateFromMeta(1));
+					world.setBlockState(pos.north(), Blocks.DIRT.getStateFromMeta(0));
 				}
 				if (world.getBlockState(pos.south()).getBlock() == Blocks.GRASS
 						|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundBasic.block
 						|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundLush.block
 						|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundFern.block
 						|| world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundMossy.block) {
-					world.setBlockState(pos.south(), Blocks.DIRT.getStateFromMeta(1));
+					world.setBlockState(pos.south(), Blocks.DIRT.getStateFromMeta(0));
 				}
 				if (world.getBlockState(pos.east()).getBlock() == Blocks.GRASS
 						|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundBasic.block
 						|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundLush.block
 						|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundFern.block
 						|| world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundMossy.block) {
-					world.setBlockState(pos.east(), Blocks.DIRT.getStateFromMeta(1));
+					world.setBlockState(pos.east(), Blocks.DIRT.getStateFromMeta(0));
 				}
 				if (world.getBlockState(pos.west()).getBlock() == Blocks.GRASS
 						|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundBasic.block
 						|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundLush.block
 						|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundFern.block
 						|| world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundMossy.block) {
-					world.setBlockState(pos.west(), Blocks.DIRT.getStateFromMeta(1));
+					world.setBlockState(pos.west(), Blocks.DIRT.getStateFromMeta(0));
 				}
 				if (world.getBlockState(pos.down()).getBlock() == Blocks.GRASS
 						|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundBasic.block
 						|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundLush.block
 						|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundFern.block
 						|| world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundMossy.block) {
-					world.setBlockState(pos.down(), Blocks.DIRT.getStateFromMeta(1));
+					world.setBlockState(pos.down(), Blocks.DIRT.getStateFromMeta(0));
+				}
+
+				if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSand.block) {
+					world.setBlockState(pos.north(), Blocks.SAND.getStateFromMeta(0));
+				}
+				if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSand.block) {
+					world.setBlockState(pos.south(), Blocks.SAND.getStateFromMeta(0));
+				}
+				if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSand.block) {
+					world.setBlockState(pos.east(), Blocks.SAND.getStateFromMeta(0));
+				}
+				if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSand.block) {
+					world.setBlockState(pos.west(), Blocks.SAND.getStateFromMeta(0));
+				}
+				if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSand.block) {
+					world.setBlockState(pos.down(), Blocks.SAND.getStateFromMeta(0));
+				}
+
+				if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandRed.block) {
+					world.setBlockState(pos.north(), Blocks.SAND.getStateFromMeta(1));
+				}
+				if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSandRed.block) {
+					world.setBlockState(pos.south(), Blocks.SAND.getStateFromMeta(1));
+				}
+				if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSandRed.block) {
+					world.setBlockState(pos.east(), Blocks.SAND.getStateFromMeta(1));
+				}
+				if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSandRed.block) {
+					world.setBlockState(pos.west(), Blocks.SAND.getStateFromMeta(1));
+				}
+				if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandRed.block) {
+					world.setBlockState(pos.down(), Blocks.SAND.getStateFromMeta(1));
+				}
+
+				if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
+					world.setBlockState(pos.north(), BlockSandBlack.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
+					world.setBlockState(pos.south(), BlockSandBlack.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
+					world.setBlockState(pos.east(), BlockSandBlack.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
+					world.setBlockState(pos.west(), BlockSandBlack.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandBlack.block) {
+					world.setBlockState(pos.down(), BlockSandBlack.block.getDefaultState());
+				}
+
+				if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
+					world.setBlockState(pos.north(), BlockSandWhite.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
+					world.setBlockState(pos.south(), BlockSandWhite.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
+					world.setBlockState(pos.east(), BlockSandWhite.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
+					world.setBlockState(pos.west(), BlockSandWhite.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandWhite.block) {
+					world.setBlockState(pos.down(), BlockSandWhite.block.getDefaultState());
+				}
+
+				if (world.getBlockState(pos.north()).getBlock() == BlockPrehistoricGroundSandPangaean.block) {
+					world.setBlockState(pos.north(), BlockSandPangaean.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.south()).getBlock() == BlockPrehistoricGroundSandPangaean.block) {
+					world.setBlockState(pos.south(), BlockSandPangaean.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.east()).getBlock() == BlockPrehistoricGroundSandPangaean.block) {
+					world.setBlockState(pos.east(), BlockSandPangaean.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.west()).getBlock() == BlockPrehistoricGroundSandPangaean.block) {
+					world.setBlockState(pos.west(), BlockSandPangaean.block.getDefaultState());
+				}
+				if (world.getBlockState(pos.down()).getBlock() == BlockPrehistoricGroundSandPangaean.block) {
+					world.setBlockState(pos.down(), BlockSandPangaean.block.getDefaultState());
 				}
 
 				//Wood and plants

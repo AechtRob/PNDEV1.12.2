@@ -6,12 +6,13 @@ import net.minecraft.client.model.ModelBox;
 
 public class ModelDNARecombinerClaw extends AdvancedModelBase {
     private final AdvancedModelRenderer claw;
-    private final AdvancedModelRenderer finger1;
-    private final AdvancedModelRenderer finger1_b;
-    private final AdvancedModelRenderer finger2;
-    private final AdvancedModelRenderer finger1_b2;
-    private final AdvancedModelRenderer finger3;
-    private final AdvancedModelRenderer finger1_b3;
+    public final AdvancedModelRenderer finger1;
+    public final AdvancedModelRenderer finger1_b;
+    public final AdvancedModelRenderer finger2;
+    public final AdvancedModelRenderer finger1_b2;
+    public final AdvancedModelRenderer finger3;
+    public final AdvancedModelRenderer finger1_b3;
+    public final AdvancedModelRenderer wire;
 
     public ModelDNARecombinerClaw() {
         this.textureWidth = 16;
@@ -19,7 +20,6 @@ public class ModelDNARecombinerClaw extends AdvancedModelBase {
 
         this.claw = new AdvancedModelRenderer(this);
         this.claw.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.claw.cubeList.add(new ModelBox(claw, 6, 5, -0.5F, -14.0F, -0.5F, 1, 3, 1, -0.2F, false));
         this.claw.cubeList.add(new ModelBox(claw, 4, 7, -1.0F, -12.0F, -1.0F, 2, 2, 2, 0.0F, false));
 
         this.finger1 = new AdvancedModelRenderer(this);
@@ -57,6 +57,11 @@ public class ModelDNARecombinerClaw extends AdvancedModelBase {
         this.finger3.addChild(finger1_b3);
         this.setRotateAngle(finger1_b3, 0.6981F, 0.0F, 0.0F);
         this.finger1_b3.cubeList.add(new ModelBox(finger1_b3, 5, 7, -0.5F, 0.0F, -0.5F, 1, 3, 1, 0.0F, false));
+
+        this.wire = new AdvancedModelRenderer(this);
+        this.wire.setRotationPoint(0.0F, 0.0F, 0.0F);
+        this.claw.addChild(wire);
+        this.wire.cubeList.add(new ModelBox(wire, 6, 5, -0.5F, -14.0F, -0.5F, 1, 3, 1, -0.2F, false));
 
         updateDefaultPose();
     }

@@ -6,8 +6,8 @@ import net.minecraft.client.model.ModelBox;
 
 public class ModelDNARecombinerHatch extends AdvancedModelBase {
     private final AdvancedModelRenderer hatch;
-    private final AdvancedModelRenderer right;
-    private final AdvancedModelRenderer left;
+    public final AdvancedModelRenderer right;
+    public final AdvancedModelRenderer left;
 
     public ModelDNARecombinerHatch() {
         this.textureWidth = 16;
