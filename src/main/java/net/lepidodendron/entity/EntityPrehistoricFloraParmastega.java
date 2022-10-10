@@ -101,7 +101,7 @@ public class EntityPrehistoricFloraParmastega extends EntityPrehistoricFloraSwim
 
 	@Override
 	public int WaterDist() {
-		int i = (int) LepidodendronConfig.waterTiktaalik;
+		int i = (int) LepidodendronConfig.waterParmastega;
 		if (i > 16) {i = 16;}
 		if (i < 1) {i = 1;}
 		return i;
@@ -159,7 +159,7 @@ public class EntityPrehistoricFloraParmastega extends EntityPrehistoricFloraSwim
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

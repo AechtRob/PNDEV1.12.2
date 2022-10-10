@@ -270,6 +270,7 @@ public class LepidodendronConfig {
     public static int waterAmphibamus = 8;
     public static int waterIchthyostega = 6;
     public static int waterTiktaalik = 6;
+    public static int waterParmastega = 6;
     public static int waterPrionosuchus = 6;
     public static int waterPholiderpeton = 7;
     public static int waterMesosaurus = 5; //not editable - does not affect mob health, only AI
@@ -288,6 +289,7 @@ public class LepidodendronConfig {
     public static int waterPederpes = 16;
     public static int waterPlatyhystrix = 16;
     public static int waterBalanerpeton = 8;
+    public static int waterMetoposaurus = 8;
     public static int waterCacops = 10;
     public static int waterDasyceps = 10;
     public static int waterDvinosaurus = 1;
@@ -729,6 +731,14 @@ public class LepidodendronConfig {
         prop = cfg.get("Mobs", "waterTiktaalik", waterTiktaalik);
         prop.setComment("Distance NSEW from water that Tiktaalik can go to without taking suffocation damage (1 to 16) [default: 6]");
         waterTiktaalik = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Mobs", "waterParmastega", waterParmastega);
+        prop.setComment("Distance NSEW from water that Parmastega can go to without taking suffocation damage (1 to 16) [default: 6]");
+        waterParmastega = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("Mobs", "waterMetoposaurus", waterMetoposaurus);
+        prop.setComment("Distance NSEW from water that Metoposaurus can go to without taking suffocation damage (1 to 16) [default: 6]");
+        waterMetoposaurus = prop.getInt();
         propOrder.add(prop.getName());
         prop = cfg.get("Mobs", "waterPrionosuchus", waterPrionosuchus);
         prop.setComment("Distance NSEW from water that Prionosuchus can go to without taking suffocation damage (1 to 16) [default: 6]");
