@@ -12,11 +12,12 @@ import net.minecraft.util.math.BlockPos;
 public class ModelPhantaspis extends AdvancedModelBase {
     private final AdvancedModelRenderer Group;
     private final AdvancedModelRenderer Cephalon;
+    private final AdvancedModelRenderer CranidiumDiagnostic_r1;
+    private final AdvancedModelRenderer CranidiumDiagnostic_r2;
     private final AdvancedModelRenderer CephaicLegL2;
     private final AdvancedModelRenderer CephalicLegR2;
-    private final AdvancedModelRenderer AntennaR;
-    private final AdvancedModelRenderer AntennaR_r1;
     private final AdvancedModelRenderer AntennaL;
+    private final AdvancedModelRenderer AntennaL2;
     private final AdvancedModelRenderer CephalicLegL;
     private final AdvancedModelRenderer CephalicLegR;
     private final AdvancedModelRenderer Thorax;
@@ -41,15 +42,24 @@ public class ModelPhantaspis extends AdvancedModelBase {
         this.Cephalon = new AdvancedModelRenderer(this);
         this.Cephalon.setRotationPoint(0.0F, 0.0F, 0.0F);
         this.Group.addChild(Cephalon);
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 19, 0, -4.0F, -0.2F, -8.0F, 8, 0, 8, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 27, -3.0F, -1.0F, -3.0F, 6, 1, 3, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 6, 15, 3.0F, -1.0F, -2.0F, 1, 1, 2, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 15, -4.0F, -1.0F, -2.0F, 1, 1, 2, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 3, -5.0F, -0.5F, -1.0F, 2, 0, 3, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 0, 3.0F, -0.5F, -1.0F, 2, 0, 3, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 8, -2.0F, -1.5F, -1.0F, 4, 1, 1, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 10, -1.0F, -1.5F, -3.01F, 2, 1, 2, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 15, 27, -3.0F, -1.4F, -2.01F, 6, 1, 2, 0.0F, false));
+
+        this.CranidiumDiagnostic_r1 = new AdvancedModelRenderer(this);
+        this.CranidiumDiagnostic_r1.setRotationPoint(0.0F, 0.1F, 0.0F);
+        this.Cephalon.addChild(CranidiumDiagnostic_r1);
+        this.setRotateAngle(CranidiumDiagnostic_r1, 0.0F, 0.0F, -0.4189F);
+        this.CranidiumDiagnostic_r1.cubeList.add(new ModelBox(CranidiumDiagnostic_r1, 16, 0, -6.3F, -1.6F, -13.0F, 7, 0, 15, 0.0F, true));
+
+        this.CranidiumDiagnostic_r2 = new AdvancedModelRenderer(this);
+        this.CranidiumDiagnostic_r2.setRotationPoint(0.0F, 0.1F, 0.0F);
+        this.Cephalon.addChild(CranidiumDiagnostic_r2);
+        this.setRotateAngle(CranidiumDiagnostic_r2, 0.0F, 0.0F, 0.4189F);
+        this.CranidiumDiagnostic_r2.cubeList.add(new ModelBox(CranidiumDiagnostic_r2, 16, 0, -0.7F, -1.6F, -13.0F, 7, 0, 15, 0.0F, false));
 
         this.CephaicLegL2 = new AdvancedModelRenderer(this);
         this.CephaicLegL2.setRotationPoint(0.0F, 0.0F, -1.0F);
@@ -63,23 +73,17 @@ public class ModelPhantaspis extends AdvancedModelBase {
         this.setRotateAngle(CephalicLegR2, 0.0436F, -0.3054F, -0.1745F);
         this.CephalicLegR2.cubeList.add(new ModelBox(CephalicLegR2, 6, 13, -3.25F, -0.05F, -1.0F, 3, 0, 1, 0.0F, false));
 
-        this.AntennaR = new AdvancedModelRenderer(this);
-        this.AntennaR.setRotationPoint(0.0F, 0.0F, -2.0F);
-        this.Cephalon.addChild(AntennaR);
-        this.setRotateAngle(AntennaR, -0.1309F, 0.1745F, 0.1745F);
-
-
-        this.AntennaR_r1 = new AdvancedModelRenderer(this);
-        this.AntennaR_r1.setRotationPoint(0.0F, 0.0F, 0.0F);
-        this.AntennaR.addChild(AntennaR_r1);
-        this.setRotateAngle(AntennaR_r1, 0.0F, -0.1309F, 0.0F);
-        this.AntennaR_r1.cubeList.add(new ModelBox(AntennaR_r1, 0, 13, -6.0F, 0.1F, -13.0F, 7, 0, 13, 0.0F, false));
-
         this.AntennaL = new AdvancedModelRenderer(this);
         this.AntennaL.setRotationPoint(0.0F, 0.0F, -2.0F);
         this.Cephalon.addChild(AntennaL);
         this.setRotateAngle(AntennaL, -0.1309F, -0.0436F, -0.1745F);
-        this.AntennaL.cubeList.add(new ModelBox(AntennaL, 0, 0, -1.0F, 0.1F, -13.0F, 7, 0, 13, 0.0F, false));
+        this.AntennaL.cubeList.add(new ModelBox(AntennaL, -1, 31, -1.0F, 0.1F, -17.0F, 16, 0, 17, 0.0F, false));
+
+        this.AntennaL2 = new AdvancedModelRenderer(this);
+        this.AntennaL2.setRotationPoint(0.0F, 0.0F, -2.0F);
+        this.Cephalon.addChild(AntennaL2);
+        this.setRotateAngle(AntennaL2, -0.1309F, 0.0436F, 0.1745F);
+        this.AntennaL2.cubeList.add(new ModelBox(AntennaL2, -1, 31, -15.0F, 0.1F, -17.0F, 16, 0, 17, 0.0F, true));
 
         this.CephalicLegL = new AdvancedModelRenderer(this);
         this.CephalicLegL.setRotationPoint(0.0F, 0.0F, -1.0F);
@@ -100,8 +104,8 @@ public class ModelPhantaspis extends AdvancedModelBase {
         this.Thorax.cubeList.add(new ModelBox(Thorax, 0, 6, -2.0F, -1.0F, 6.0F, 4, 1, 1, 0.0F, false));
         this.Thorax.cubeList.add(new ModelBox(Thorax, 0, 18, -1.0F, -1.0F, 7.0F, 2, 1, 1, 0.0F, false));
         this.Thorax.cubeList.add(new ModelBox(Thorax, 0, 20, -1.0F, -1.5F, 0.0F, 2, 1, 6, 0.0F, false));
-        this.Thorax.cubeList.add(new ModelBox(Thorax, 21, 8, -4.0F, -0.1F, 0.0F, 8, 0, 6, 0.0F, false));
-        this.Thorax.cubeList.add(new ModelBox(Thorax, 24, 14, -3.0F, -0.1F, 6.0F, 6, 0, 3, 0.0F, false));
+        this.Thorax.cubeList.add(new ModelBox(Thorax, 20, 16, -4.0F, -0.1F, -2.0F, 8, 0, 6, 0.0F, false));
+        this.Thorax.cubeList.add(new ModelBox(Thorax, 10, 20, -3.0F, -0.1F, 6.0F, 6, 0, 3, 0.0F, false));
 
         this.LegL4 = new AdvancedModelRenderer(this);
         this.LegL4.setRotationPoint(0.0F, 0.0F, 5.0F);
@@ -195,21 +199,25 @@ public class ModelPhantaspis extends AdvancedModelBase {
                     && ((double)e.getPosition().getY() + 0.334D) > e.posY);
         }
 
-        AdvancedModelRenderer[] legsL = {this.LegL1, this.LegL2, this.LegL3, this.LegL4};
-        AdvancedModelRenderer[] legsR = {this.LegR1, this.LegR2, this.LegR3, this.LegR4};
+        AdvancedModelRenderer[] legsL = {this.CephaicLegL2, this.CephalicLegL, this.LegL1, this.LegL2, this.LegL3, this.LegL4};
+        AdvancedModelRenderer[] legsR = {this.CephalicLegR2, this.CephalicLegR, this.LegR1, this.LegR2, this.LegR3, this.LegR4};
         AdvancedModelRenderer[] bodyF = {this.Cephalon,this.Thorax};
 
         if (isAtBottom) {
             this.chainWave(legsL, 0.5F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.5F, 0.2F, -3, f2, 1);
-            this.flap(LegL1, 0.5F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(LegR1, 0.5F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(LegL2, 0.5F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR2, 0.5F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL3, 0.5F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR3, 0.5F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL4, 0.5F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR4, 0.5F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(CephalicLegL, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(CephalicLegR, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(CephaicLegL2, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(CephalicLegR2, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(LegL1, 0.5F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(LegR1, 0.5F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(LegL2, 0.5F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR2, 0.5F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(LegL3, 0.5F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR3, 0.5F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(LegL4, 0.5F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR4, 0.5F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
             this.chainSwing(bodyF, 0.1F, 0.02F, -3, f2, 0.5F);
             this.chainWave(bodyF, 0.1F, 0.02f, -3, f2, 0F);
             this.bob(Group, 0.0F, 0.0F, false, f2, 1);
@@ -217,21 +225,21 @@ public class ModelPhantaspis extends AdvancedModelBase {
         else {
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.2F, 0.2F, -3, f2, 1);
-            this.flap(LegL1, 0.2F, -0.5F, false, 0, -0.5F, f2, 0.3F);
-            this.flap(LegR1, 0.2F, 0.5F, false, 0, 0.5F, f2, 0.3F);
-            this.flap(LegL2, 0.2F, -0.5F, false, 1.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR2, 0.2F, 0.5F, false, 1.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL3, 0.2F, -0.5F, false, 2.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR3, 0.2F, 0.5F, false, 2.0F, 0.5F, f2, 0.3F);
-            this.flap(LegL4, 0.2F, -0.5F, false, 3.0F, -0.5F, f2, 0.3F);
-            this.flap(LegR4, 0.2F, 0.5F, false, 3.0F, 0.5F, f2, 0.3F);
+            this.flap(LegL1, 0.2F, -0.5F, true, 0, -0.5F, f2, 0.3F);
+            this.flap(LegR1, 0.2F, 0.5F, true, 0, 0.5F, f2, 0.3F);
+            this.flap(LegL2, 0.2F, -0.5F, true, 1.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR2, 0.2F, 0.5F, true, 1.0F, 0.5F, f2, 0.3F);
+            this.flap(LegL3, 0.2F, -0.5F, true, 2.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR3, 0.2F, 0.5F, true, 2.0F, 0.5F, f2, 0.3F);
+            this.flap(LegL4, 0.2F, -0.5F, true, 3.0F, -0.5F, f2, 0.3F);
+            this.flap(LegR4, 0.2F, 0.5F, true, 3.0F, 0.5F, f2, 0.3F);
             this.chainSwing(bodyF, 0.2F, 0.01F, -3, f2, 0.2F);
             this.chainWave(bodyF, 0.5F, 0.02f, -3, f2, 0.3F);
-            this.bob(Group, 0.2F, 0.2F, false, f2, 1);
+            this.bob(Group, 0.2F, 0.2F, true, f2, 1);
         }
 
         this.swing(AntennaL, 0.4F, -0.2F, false, 0, -0.1F, f2, 0.8F);
-        this.swing(AntennaR, 0.4F, 0.2F, false, 0, 0.1F, f2, 0.8F);
+        this.swing(AntennaL2, 0.4F, 0.2F, false, 0, 0.1F, f2, 0.8F);
 
     }
 }
