@@ -3533,4 +3533,15 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 3529;
     public static final int advancement_placeholder = 3530;
 
+    public static final int amphibian_spawn_gerrothorax = 3531;
+    public static final int amphibian_spawn_gerrothorax_worldgen = 3532;
+    public static final int amphibian_spawn_whatcheeria_worldgen = 3533;
+    public static final int amphibian_spawn_whatcheeria = 3534;
+    public static final int amphibian_spawn_metoposaurus_worldgen = 3535;
+    public static final int amphibian_spawn_metoposaurus = 3536;
+    public static final int amphibian_spawn_parmastega_worldgen = 3537;
+    public static final int amphibian_spawn_parmastega = 3538;
+    public static final int amphibian_spawn_urocordylus_worldgen = 3539;
+    public static final int amphibian_spawn_urocordylus = 3540;
+
 }
