@@ -73,7 +73,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             }
             //this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 82, 19) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 83 - 3, 19) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
@@ -96,7 +96,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 61, 40) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 62 - 3, 40) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
@@ -119,7 +119,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 82, 61) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 83 - 3, 61) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
@@ -142,7 +142,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 103, 40) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 104 - 3, 40) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
@@ -170,9 +170,9 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 3 + 8 + sj * 18, 0 + 84 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 3 + 8 + si * 18, 0 + 142));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
 
         }
 
@@ -348,7 +348,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 176;
+            this.xSize = 182;
             this.ySize = 166;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/dna_centrifuge_gui.png");
@@ -367,22 +367,22 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            this.drawTexturedModalRect(k + 150, l + 19 + (58 - this.getProgressBarHeight()), 18,166, 6, this.getProgressBarHeight());
+            this.drawTexturedModalRect(k + 151, l + 19 + (58 - this.getProgressBarHeight()), 18,166, 6, this.getProgressBarHeight());
             int yOffsetter = 0;
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 20, l + 51, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 21, l + 51, 0,166, 18, 26);
+                this.drawTexturedModalRect(k + 22, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
             }
             else {
                 yOffsetter = 12;
             }
             if (this.getLocked()) {
-                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 42, 166, 18, 28);
+                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter, 42, 166, 18, 28);
             }
             else {
-                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 24, 166, 18, 28);
+                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter, 24, 166, 18, 28);
             }
-            this.itemRender.renderItemIntoGUI(new ItemStack(ItemDNACentrifuge.block, 1), k + 82, l + 40);
+            this.itemRender.renderItemIntoGUI(new ItemStack(ItemDNACentrifuge.block, 1), k + 83, l + 40);
         }
 
         private int getRFHeight() {

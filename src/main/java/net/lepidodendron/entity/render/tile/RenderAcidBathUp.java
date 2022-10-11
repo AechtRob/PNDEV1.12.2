@@ -286,7 +286,6 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
                         GlStateManager.pushMatrix();
 
-
                         double dd = 1.055D;
                         if (facing == EnumFacing.NORTH) {
                             GlStateManager.translate(x + 0.5, y + yy, z + 0.5 - dd);
@@ -302,7 +301,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         }
                         GlStateManager.rotate(45, 0, 1, 0);
                         GlStateManager.scale(scale, scale, scale);
-                        GlStateManager.rotate(90, 1, 0, 0);
+                        //GlStateManager.rotate(90, 1, 0, 0);
                         IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelWithOverrides(itemstack, world, null);
                         model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
                         Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);

@@ -63,48 +63,37 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10, 30) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return (Block.getBlockFromItem(stack.getItem()) instanceof BlockFossil);
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154, 30) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154 - 3, 30) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154, 48) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154 - 3, 48) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136, 30) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136 - 3, 30) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
             }));
-            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136, 48) {
+            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136 - 3, 48) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
             }));
-            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46, 58) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return false;
-                }
-            }));
-            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 64, 58) {
+            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46 - 3, 58) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -115,7 +104,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 82, 58) {
+            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 64 - 3, 58) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -126,7 +115,18 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 100, 58) {
+            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 82 - 3, 58) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return false;
+                }
+            }));
+            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 100 - 3, 58) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -142,9 +142,9 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 3 + 8 + sj * 18, 0 + 84 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 3 + 8 + si * 18, 0 + 142));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
 
         }
 
@@ -304,7 +304,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 176;
+            this.xSize = 182;
             this.ySize = 166;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/acid_bath_gui.png");

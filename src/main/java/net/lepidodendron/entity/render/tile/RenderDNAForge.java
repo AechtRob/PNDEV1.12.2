@@ -18,14 +18,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
 import org.lwjgl.opengl.GL11;
 
+import java.util.Random;
+
 public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombinerForge.TileEntityDNARecombinerForge> {
 
     private static final ResourceLocation TEXTURE_OLIGO_FULL = new ResourceLocation("lepidodendron:textures/blocks/dna_recombiner_forge_oligopool_full.png");
     private static final ResourceLocation TEXTURE_OLIGO_EMPTY = new ResourceLocation("lepidodendron:textures/blocks/dna_recombiner_forge_oligopool_empty.png");
+    private static final ResourceLocation TEXTURE_FOG = new ResourceLocation("lepidodendron:textures/blocks/dna_recombiner_forge_fog.png");
 
     private final ModelDNARecombinerForgeOligopool modelDNARecombinerForgeOligopool;
+    private final ModelDNARecombinerForgeFog modelDNARecombinerForgeFog;
 
     public RenderDNAForge() {
+        this.modelDNARecombinerForgeFog = new ModelDNARecombinerForgeFog();
         this.modelDNARecombinerForgeOligopool = new ModelDNARecombinerForgeOligopool();
     }
 
@@ -92,8 +97,6 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
 
                     //Render Oligopool clamp:
                     itemstack = ItemStack.EMPTY;
-                    float scalePool = 1.00F;
-                    yy = -0.8650000119209298 + 1.3;
                     if (((BlockDNARecombinerForge.TileEntityDNARecombinerForge) te).getStackInSlot(2) != ItemStack.EMPTY) {
                         itemstack = tee.getStackInSlot(2);
                     }
@@ -103,13 +106,11 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                     else {
                         this.bindTexture(TEXTURE_OLIGO_EMPTY);
                     }
-
                     yy = 1.5D;
                     ModelDNARecombinerForgeOligopool modelDNARecombinerForgeOligopool = this.modelDNARecombinerForgeOligopool;
                     GlStateManager.pushMatrix();
                     //GlStateManager.disableCull();
                     GlStateManager.enableRescaleNormal();
-                    double dd = 0.35;
                     GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
                     GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -117,9 +118,34 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                         GlStateManager.rotate(facing.rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                     }
                     GlStateManager.enableAlpha();
+                    modelDNARecombinerForgeOligopool.oligo.rotateAngleX = (float)Math.toRadians(entity.getOligoAngle());
+                    modelDNARecombinerForgeOligopool.oligo.offsetX = (float)entity.getOligoExtend();
                     modelDNARecombinerForgeOligopool.renderAll(1.25f);
                     GlStateManager.disableAlpha();
                     //GlStateManager.enableCull();
+                    GlStateManager.disableRescaleNormal();
+                    GlStateManager.popMatrix();
+
+                    //Render Fogging:
+                    ModelDNARecombinerForgeFog modelDNARecombinerForgeFog = this.modelDNARecombinerForgeFog;
+                    this.bindTexture(TEXTURE_FOG);
+                    GlStateManager.pushMatrix();
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+                    GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
+                    GlStateManager.scale(0.05F, 0.05F, 0.05F);
+                    if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
+                        GlStateManager.rotate(facing.rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
+                    }
+                    GlStateManager.enableAlpha();
+                    GlStateManager.enableBlend();
+                    GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+                    Random rand = new Random();
+                    GlStateManager.color(1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), (float) entity.getFogDensity());
+                    modelDNARecombinerForgeFog.renderAll(1.25f);
+                    GlStateManager.disableAlpha();
+                    GlStateManager.disableBlend();
+                    GlStateManager.disableRescaleNormal();
                     GlStateManager.popMatrix();
 
                 }
