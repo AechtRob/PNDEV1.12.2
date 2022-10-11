@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraMetoposaurus extends EntityPrehistoricFloraSw
 		minWidth = 0.1F;
 		maxWidth = 1.20F;
 		maxHeight = 1.02F;
-		maxHealthAgeable = 64.0D;
+		maxHealthAgeable = 24.0D;
 	}
 
 	@Override
@@ -174,7 +174,7 @@ public class EntityPrehistoricFloraMetoposaurus extends EntityPrehistoricFloraSw
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
