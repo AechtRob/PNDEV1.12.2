@@ -58,14 +58,14 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 4);
+            this.internal = new InventoryBasic("", true, 7);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 82, 19) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 82 - 3, 56) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -76,7 +76,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 61, 40) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 21 - 3, 21) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return (stack.getItem() == ItemOligoPool.block);
@@ -87,7 +87,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 82, 61) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 82 - 3, 34) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -98,7 +98,40 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 103, 40) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 137 - 3, 30) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
+                }
+            }));
+            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 155 - 3, 30) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
+                }
+            }));
+            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 137 - 3, 48) {
+                @Override
+                public boolean isItemValid(ItemStack stack) {
+                    return false;
+                }
+
+                @Override
+                public boolean canTakeStack(EntityPlayer playerIn) {
+                    return true;
+                }
+            }));
+            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 155 - 3, 48) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -114,9 +147,9 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             int sj;
             for (si = 0; si < 3; ++si)
                 for (sj = 0; sj < 9; ++sj)
-                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 3 + 8 + sj * 18, 0 + 84 + si * 18));
+                    this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
             for (si = 0; si < 9; ++si)
-                this.addSlotToContainer(new Slot(player.inventory, si, 3 + 8 + si * 18, 0 + 142));
+                this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
 
         }
 
@@ -141,18 +174,18 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             if (slot != null && slot.getHasStack()) {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
-                if (index < 4) {
+                if (index < 7) {
                     if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
                     slot.onSlotChange(itemstack1, itemstack);
-                } else if (!this.mergeItemStack(itemstack1, 0, 4, false)) {
-                    if (index < 4 + 27) {
-                        if (!this.mergeItemStack(itemstack1, 4 + 27, this.inventorySlots.size(), true)) {
+                } else if (!this.mergeItemStack(itemstack1, 0, 7, false)) {
+                    if (index < 7 + 27) {
+                        if (!this.mergeItemStack(itemstack1, 7 + 27, this.inventorySlots.size(), true)) {
                             return ItemStack.EMPTY;
                         }
                     } else {
-                        if (!this.mergeItemStack(itemstack1, 4, 4 + 27, false)) {
+                        if (!this.mergeItemStack(itemstack1, 7, 7 + 27, false)) {
                             return ItemStack.EMPTY;
                         }
                     }
@@ -286,7 +319,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 176;
+            this.xSize = 182;
             this.ySize = 166;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/dna_forge_gui.png");
@@ -305,22 +338,11 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            this.drawTexturedModalRect(k + 150, l + 19 + (58 - this.getProgressBarHeight()), 18,166, 6, this.getProgressBarHeight());
-            int yOffsetter = 0;
+            this.drawTexturedModalRect(k + 68, l + 25, 19,166, this.getProgressBarLength(), 6);
             if (LepidodendronConfig.machinesRF) {
                 this.drawTexturedModalRect(k + 20, l + 51, 0,166, 18, 26);
                 this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
             }
-            else {
-                yOffsetter = 12;
-            }
-            if (this.getLocked()) {
-                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 42, 166, 18, 28);
-            }
-            else {
-                this.drawTexturedModalRect(k + 20, l + 18 + yOffsetter, 24, 166, 18, 28);
-            }
-            //this.itemRender.renderItemIntoGUI(new ItemStack(ItemDNAForge.block, 1), k + 82, l + 40);
         }
 
         private int getRFHeight() {
@@ -336,24 +358,12 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             return 0;
         }
 
-        private boolean getLocked() {
+        private int getProgressBarLength() {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
                     BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
-                    return te.isLocked();
-                }
-            }
-            return false;
-        }
-
-        private int getProgressBarHeight() {
-            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
-            if (tileEntity != null) {
-                if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
-                    BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
-                    return (int)Math.round(te.progressFraction() * 58D);
-                    //return (int)Math.round(0.5 * 58D);
+                    return (int)Math.round(te.progressFraction() * 46D);
                 }
             }
             return 0;
@@ -376,7 +386,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("DNA Forge", 53, 7, -16777216);
+            this.fontRenderer.drawString("DNA Oligo-Forge", 53, 7, -16777216);
         }
 
         @Override

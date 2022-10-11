@@ -17,6 +17,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 
 import java.util.Random;
@@ -27,9 +30,11 @@ public class VillagerPalaeontologist {
     public static void register() {
         VillagerRegistry.VillagerCareer palaeoCareer = new VillagerRegistry.VillagerCareer(PALAEONTOLOGIST_PROFESSION, "pn_palaeontologist");
 
-        palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.IRON_BARS), new EntityVillager.PriceInfo(2, 2)));
-        palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.REDSTONE, new EntityVillager.PriceInfo(1, 1)));
-        palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.IRON_INGOT, new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(1, new ItemAndEmeraldForItem(new ItemStack(Items.BUCKET, 1), new EntityVillager.PriceInfo(10, 10), FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.lookupFluidForBlock(BlockAcid.block), 1000))));
+
+        //palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.IRON_BARS), new EntityVillager.PriceInfo(2, 2)));
+        //palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.REDSTONE, new EntityVillager.PriceInfo(1, 1)));
+        //palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.IRON_INGOT, new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Asteroceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Ceratites.block, 1), new EntityVillager.PriceInfo(1, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(BlockNautiloidShellAmmonite_Coroniceras.block, 1), new EntityVillager.PriceInfo(1, 2)));
@@ -68,7 +73,6 @@ public class VillagerPalaeontologist {
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedGlossopterisSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
         palaeoCareer.addTrade(1, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemPetrifiedDicroidiumFSapling.block, 1), new EntityVillager.PriceInfo(2, 2)));
 
-
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockBalticAmberOre.block), new EntityVillager.PriceInfo(6, 6)));
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockDominicanAmberOre.block), new EntityVillager.PriceInfo(6, 6)));
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockAraucarioxylonLogPetrified.block), new EntityVillager.PriceInfo(4, 4)));
@@ -77,7 +81,7 @@ public class VillagerPalaeontologist {
 
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemFossilHammer.block, new EntityVillager.PriceInfo(2, 3)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemBottleOfResin.block, new EntityVillager.PriceInfo(1, 1)));
-         palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPrecambrian.block), new EntityVillager.PriceInfo(4, 4)));
+        palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilPrecambrian.block), new EntityVillager.PriceInfo(4, 4)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilPrecambrian.block), new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(3, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockFossilCambrian.block), new EntityVillager.PriceInfo(4, 4)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(BlockFossilCambrian.block), new EntityVillager.PriceInfo(1, 1)));
@@ -106,12 +110,32 @@ public class VillagerPalaeontologist {
 
         palaeoCareer.addTrade(4, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(16, 16)));
         palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(Item.getItemFromBlock(Blocks.SPONGE), new EntityVillager.PriceInfo(1, 1)));
-        palaeoCareer.addTrade(4, new EntityVillager.ListItemForEmeralds(ItemPhial.block, new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(16, new EntityVillager.ListItemForEmeralds(ItemPhial.block, new EntityVillager.PriceInfo(1, 1)));
 
         palaeoCareer.addTrade(5, new ListEnchantedBookForEmeralds(Enchantments.SILK_TOUCH, new EntityVillager.PriceInfo(16, 16)));
 
         MapGenStructureIO.registerStructureComponent(VillageComponentPalaeontologistHouse.class, "Palaeontologisthouse");
         VillagerRegistry.instance().registerVillageCreationHandler(new PalaeontologistHouse());
+    }
+
+    public static class ItemAndEmeraldForItem implements EntityVillager.ITradeList
+    {
+        public ItemStack buyItemStack;
+        public EntityVillager.PriceInfo priceInfo;
+        public ItemStack sellItemStack;
+
+        public ItemAndEmeraldForItem(ItemStack buyItemStack, EntityVillager.PriceInfo priceInfo, ItemStack sellItemStack)
+        {
+            this.priceInfo = priceInfo;
+            this.buyItemStack = buyItemStack;
+            this.sellItemStack = sellItemStack;
+        }
+
+        public void addMerchantRecipe(IMerchant merchant, MerchantRecipeList recipeList, Random random)
+        {
+            int i = this.priceInfo.getPrice(random);
+            recipeList.add(new MerchantRecipe(new ItemStack(Items.EMERALD, i), buyItemStack, sellItemStack));
+        }
     }
 
     public static class ListEnchantedBookForEmeralds implements EntityVillager.ITradeList {

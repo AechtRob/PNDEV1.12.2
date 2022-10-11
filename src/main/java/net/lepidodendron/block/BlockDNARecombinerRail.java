@@ -244,6 +244,10 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 				if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
 					return false;
 				}
+				if (getCentrifugeSlot(facing) == -1) {
+					//System.err.println("slot -1");
+					return false;
+				}
 				TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
@@ -255,13 +259,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						}
 					}
 				}
-				if (getCentrifugeSlot(facing) == -1) {
-					//System.err.println("slot -1");
-					return false;
-				}
-				else {
-					return true;
-				}
+				return true;
 			}
 			return false;
 		}
@@ -271,6 +269,8 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 			if (tileEntity != null) {
 				if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 					BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+					//System.err.println("centrifuge isLocked " + te.isLocked());
+					//System.err.println("centrifuge isProcessing " + te.isProcessing());
 					if (te.isLocked() && !te.isProcessing()) {
 						//The centrifuge is locked and ready:
 						//Does it contain the things we want?
@@ -286,6 +286,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						if (te.getStackInSlot(3).getItem() == ItemPhialDNA.block) {
 							return 3;
 						}
+						//System.err.println("Nothing in centrifuge");
 						te.setLocked(false); //Unlock the centrifuge as it seems there is nothing useable in it
 					}
 				}
@@ -300,6 +301,9 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 			if (this.getWorld().isRemote) {
 				return;
 			}
+
+			//System.err.println("this.isProcessing " + this.isProcessing);
+			//System.err.println("this.processTick " + this.processTick);
 
 			if (!this.isProcessing) {
 				if (this.canStartProcess()) {

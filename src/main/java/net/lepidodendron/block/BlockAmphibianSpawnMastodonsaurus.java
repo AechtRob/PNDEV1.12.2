@@ -4,8 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyInteger;
@@ -56,7 +56,7 @@ public class BlockAmphibianSpawnMastodonsaurus extends ElementsLepidodendronMod.
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimPermian) {
+		if (dimID != LepidodendronConfig.dimTriassic) {
 			return;
 		}
 
@@ -68,9 +68,10 @@ public class BlockAmphibianSpawnMastodonsaurus extends ElementsLepidodendronMod.
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomePermian) {
-				BiomePermian biomeP = (BiomePermian) biome;
-				if (biomeP.getBiomeType() == EnumBiomeTypePermian.Wetlands) {
+			if (biome instanceof BiomeTriassic) {
+				BiomeTriassic biomeT = (BiomeTriassic) biome;
+				if (biomeT.getBiomeType() == EnumBiomeTypeTriassic.Swamp
+					|| biomeT.getBiomeType() == EnumBiomeTypeTriassic.River) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

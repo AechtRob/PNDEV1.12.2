@@ -423,7 +423,8 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				this.centrifugeAngle = 0;
 			}
 
-			if (this.isProcessing && this.processTick >= this.processTickTime) {
+			if (this.processTick >= this.processTickTime) {
+				this.processTick = 0;
 				this.isProcessing = false; //Not processing but should be left locked if it was locked before
 			}
 

@@ -2,12 +2,14 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNAForge;
 import net.lepidodendron.item.ItemDNARecombiner;
 import net.lepidodendron.item.ItemOligoPool;
 import net.lepidodendron.item.ItemPhialDNA;
+import net.lepidodendron.item.ItemPlaceableLiving;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -19,6 +21,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -117,6 +120,15 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				world.removeTileEntity(pos);
 			}
 			super.breakBlock(world, pos, state);
+		}
+
+		@Override
+		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
+			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
+			if (entity instanceof EntityPlayer) {
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIDNAForge.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+			}
+			return true;
 		}
 
 		@Override
@@ -221,21 +233,27 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 	public static class TileEntityDNARecombinerForge extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(7, ItemStack.EMPTY);
 
-		protected boolean isLocked;
 		protected boolean isProcessing;
 		public int processTick;
 		public boolean hatchShut;
-		public double forgeAngle;
-		public double flareAngle;
-		private int processTickTime = 400; //20 seconds to process
+		private int processTickTime = 600; //30 seconds to process
+
+		public double oligoExtend;
+		public double oligoAngle;
+		public double fogDensity;
 
 		public boolean canStartProcess() {
 			if (!this.isProcessing
-				&& this.getStackInSlot(2).getItem() == ItemOligoPool.block
-				&& this.getStackInSlot(0).getItem() == ItemPhialDNA.block
-				&& this.hatchShut
+					&& this.getStackInSlot(2).getItem() == ItemOligoPool.block
+					&& this.getStackInSlot(0).getItem() == ItemPhialDNA.block
+					&& this.hatchShut
+					&& (this.getStackInSlot(3) == ItemStack.EMPTY
+						|| this.getStackInSlot(4) == ItemStack.EMPTY
+						|| this.getStackInSlot(5) == ItemStack.EMPTY
+						|| this.getStackInSlot(6) == ItemStack.EMPTY
+					)
 			) {
 				return true;
 			}
@@ -246,14 +264,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			if (this.isProcessing) {
 				return (double)this.processTick / (double)this.processTickTime;
 			}
-			if (this.isLocked) {
-				return 1;
-			}
 			return 0;
-		}
-
-		public boolean isLocked() {
-			return this.isLocked;
 		}
 
 		public boolean isProcessing() {
@@ -279,6 +290,11 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 		@Override
 		public void update() {
+
+			if (this.getWorld().isRemote) {
+				return;
+			}
+
 			if (!this.isProcessing
 					&& this.getStackInSlot(2) == ItemStack.EMPTY
 					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
@@ -287,20 +303,124 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				this.setInventorySlotContents(2, new ItemStack(ItemOligoPool.block, 1));
 				stack.shrink(1);
 			}
+
+			if (this.canStartProcess()) {
+				this.isProcessing = true;
+				this.processTick = 0;
+			}
+
+			if (this.isProcessing) {
+				this.processTick ++;
+			}
+
+			if (this.processTick < 20) {
+				this.oligoExtend = 5.5D * ((double)this.processTick / 20.0D);
+			}
+
+			if (this.processTick == 20) {
+				this.oligoExtend = 5.5D;
+			}
+
+			if (this.processTick >= 20 && this.processTick < 60) {
+				this.oligoAngle = 180.0D * (((double)this.processTick - 20.0D) / 40D);
+			}
+
+			if (this.processTick == 60) {
+				this.oligoAngle = 180.0;
+			}
+
+			if (this.processTick >= 100 && this.processTick < 140) {
+				this.oligoAngle = 180.0D * ((140.0D - (double)this.processTick) / 40D);
+			}
+
+			if (this.processTick == 140) {
+				this.oligoAngle = 0.0;
+			}
+
+			if (this.processTick >= 140 && this.processTick < 160) {
+				this.oligoExtend = 5.5D * ((160.0D - (double)this.processTick) / 20D);
+			}
+
+			if (this.processTick == 160) {
+				this.oligoExtend = 0.0;
+			}
+
+			if (this.processTick >= 140 && this.processTick < 180) {
+				this.fogDensity = (((double)this.processTick - 140.0D) / 40D);
+			}
+
+			if (this.processTick >= 180 && this.processTick < (this.processTickTime - 40)) {
+				this.fogDensity = 1;
+			}
+
+			if (this.processTick >= (this.processTickTime - 40) && this.processTick < processTickTime) {
+				this.fogDensity = (processTickTime - (double)this.processTick) / 40D;
+			}
+
+			if (this.processTick == this.processTickTime) {
+				this.fogDensity = 0;
+			}
+
+			if (this.processTick == this.processTickTime - 40) {
+				//Break the phial and replace now
+				world.playSound(null, pos, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.BLOCKS, 0.5F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
+				ItemStack stack = this.getStackInSlot(0);
+				ItemStack stackOutput = new ItemStack(ItemPlaceableLiving.block, 1);
+				if (stack.getItem() == ItemPhialDNA.block) {
+					String resourcelocation = stack.getTagCompound().getString("id_dna");
+					if (resourcelocation != null) {
+						if (!resourcelocation.equalsIgnoreCase("")) {
+							NBTTagCompound stackOutputNBT = new NBTTagCompound();
+							stackOutputNBT.setString("id_dna", resourcelocation);
+							stackOutput.setTagCompound(stackOutputNBT);
+							if (this.getStackInSlot(3) == ItemStack.EMPTY) {
+								this.setInventorySlotContents(3, stackOutput);
+							}
+							else if (this.getStackInSlot(4) == ItemStack.EMPTY) {
+								this.setInventorySlotContents(4, stackOutput);
+							}
+							else if (this.getStackInSlot(5) == ItemStack.EMPTY) {
+								this.setInventorySlotContents(5, stackOutput);
+							}
+							else if (this.getStackInSlot(6) == ItemStack.EMPTY) {
+								this.setInventorySlotContents(6, stackOutput);
+							}
+						}
+					}
+				}
+				this.setInventorySlotContents(0, ItemStack.EMPTY);
+				this.setInventorySlotContents(2, ItemStack.EMPTY);
+			}
+
+			if (this.processTick >= this.processTickTime) {
+				this.isProcessing = false;
+				this.processTick = 0;
+			}
 			
 			markDirty();
 
 		}
 
-		
+		public double getOligoExtend() {
+			return this.oligoExtend;
+		}
+
+		public double getOligoAngle() {
+			return this.oligoAngle;
+		}
+
+		public double getFogDensity() {
+			return this.fogDensity;
+		}
+
 		@Override
 		public int getInventoryStackLimit() {
-			return 1;
+			return 64;
 		}
 
 		@Override
 		public int getSizeInventory() {
-			return 4;
+			return 7;
 		}
 
 		@Override
@@ -325,11 +445,20 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
-			if (compound.hasKey("isLocked")) {
-				this.isLocked = compound.getBoolean("isLocked");
-			}
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
+			}
+			if (compound.hasKey("hatchShut")) {
+				this.hatchShut = compound.getBoolean("hatchShut");
+			}
+			if (compound.hasKey("oligoAngle")) {
+				this.oligoAngle = compound.getDouble("oligoAngle");
+			}
+			if (compound.hasKey("oligoExtend")) {
+				this.oligoExtend = compound.getDouble("oligoExtend");
+			}
+			if (compound.hasKey("fogDensity")) {
+				this.fogDensity = compound.getDouble("fogDensity");
 			}
 			this.forgeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
@@ -341,8 +470,11 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
-			compound.setBoolean("isLocked", this.isLocked);
 			compound.setInteger("processTick", this.processTick);
+			compound.setBoolean("hatchShut", this.hatchShut);
+			compound.setDouble("oligoAngle", this.oligoAngle);
+			compound.setDouble("oligoExtend", this.oligoExtend);
+			compound.setDouble("fogDensity", this.fogDensity);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
@@ -402,13 +534,13 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		}
 
 		//Slot 0 = phial: cannot add or remove
-		//Slot 1 = oligopool inventory: fully interactable
+		//Slot 1 = oligopool inventory: fully interactable by hand but hoppers only insert
 		//Slot 2 = oligopool: in use and cannot add or remove
-		//Slot 3 = output: can only remove
+		//Slot 3,4,5,6 = outputs: can only remove by any means
 
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
-			return new int[]{1,3};
+			return new int[]{1,3,4,5,6};
 		}
 
 		@Override
@@ -421,10 +553,29 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			if (index == 1 || index == 3) {
+			if (index == 3 || index == 4 || index == 5 || index == 6) {
 				return !this.isLocked();
 			}
 			return false;
+		}
+
+		@Override
+		public boolean isItemValidForSlot(int index, ItemStack stack) {
+			if (index == 0)
+				return false;
+			if (index == 1)
+				return stack.getItem() == ItemOligoPool.block;
+			if (index == 2)
+				return false;
+			if (index == 3)
+				return false;
+			if (index == 4)
+				return false;
+			if (index == 5)
+				return false;
+			if (index == 6)
+				return false;
+			return true;
 		}
 
 		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
