@@ -4,8 +4,8 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
-import net.lepidodendron.world.biome.triassic.BiomeTriassic;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyInteger;
@@ -30,16 +30,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:amphibian_spawn_metoposaurus_worldgen")
+public class BlockAmphibianSpawnWhatcheeria extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:amphibian_spawn_whatcheeria_worldgen")
 	public static final Block block = null;
-	public BlockAmphibianSpawnMetoposaurus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.amphibian_spawn_metoposaurus_worldgen);
+	public BlockAmphibianSpawnWhatcheeria(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.amphibian_spawn_whatcheeria);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("amphibian_spawn_metoposaurus_worldgen"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("amphibian_spawn_whatcheeria_worldgen"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -50,27 +50,28 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				//new ModelResourceLocation("lepidodendron:mobspawn_carboniferous", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockAmphibianSpawnMetoposaurus.LEVEL).build());
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockAmphibianSpawnWhatcheeria.LEVEL).build());
 	}
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
-		if (dimID != LepidodendronConfig.dimTriassic) {
+		if (dimID != LepidodendronConfig.dimCarboniferous) {
 			return;
 		}
 
 		int minWaterDepth = 1;
-		int waterDepthCheckMax = 5;
+		int waterDepthCheckMax = 10;
 		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
 		for (int i = 0; i < (int) 1; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128 - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
-			if (biome instanceof BiomeTriassic) {
-				BiomeTriassic biomeD = (BiomeTriassic) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeTriassic.Ocean) {
+			if (biome instanceof BiomeCarboniferous) {
+				BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
+				if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
+					|| biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
@@ -79,7 +80,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 	
 	public static class BlockCustom extends BlockMobSpawn  {
 		public BlockCustom() {
-			setTranslationKey("pf_amphibian_spawn_metoposaurus_worldgen");
+			setTranslationKey("pf_amphibian_spawn_whatcheeria_worldgen");
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
 		}
@@ -91,7 +92,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockAmphibianSpawnMetoposaurusPlaceable.block, (int) (1));
+			return new ItemStack(BlockAmphibianSpawnWhatcheeriaPlaceable.block, (int) (1));
 		}
 
 		@Override

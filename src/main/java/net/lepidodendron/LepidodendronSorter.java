@@ -3548,16 +3548,15 @@ public class LepidodendronSorter {
     public static final int furca_cooked = 3544;
     public static final int furca_raw = 3545;
     public static final int advancement_placeholder = 3546;
-
     public static final int amphibian_spawn_parmastega = 3547;
     public static final int amphibian_spawn_parmastega_worldgen = 3548;
-
     public static final int eggs_placodus = 3549;
     public static final int amphibian_spawn_metoposaurus = 3550;
     public static final int amphibian_spawn_metoposaurus_worldgen = 3551;
     public static final int amphibian_spawn_gerrothorax = 3552;
     public static final int amphibian_spawn_gerrothorax_worldgen = 3553;
-
+    public static final int amphibian_spawn_whatcheeria = 3554;
+    public static final int amphibian_spawn_whatcheeria_worldgen = 3555;
 
 
 }

@@ -30,16 +30,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:amphibian_spawn_metoposaurus_worldgen")
+public class BlockAmphibianSpawnGerrothorax extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:amphibian_spawn_gerrothorax_worldgen")
 	public static final Block block = null;
-	public BlockAmphibianSpawnMetoposaurus(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.amphibian_spawn_metoposaurus_worldgen);
+	public BlockAmphibianSpawnGerrothorax(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.amphibian_spawn_gerrothorax);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("amphibian_spawn_metoposaurus_worldgen"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("amphibian_spawn_gerrothorax_worldgen"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -50,7 +50,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				//new ModelResourceLocation("lepidodendron:mobspawn_carboniferous", "inventory"));
-		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockAmphibianSpawnMetoposaurus.LEVEL).build());
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockAmphibianSpawnGerrothorax.LEVEL).build());
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 		}
 
 		int minWaterDepth = 1;
-		int waterDepthCheckMax = 5;
+		int waterDepthCheckMax = 10;
 		int startHeight = world.getSeaLevel() - waterDepthCheckMax;
 		for (int i = 0; i < (int) 1; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
@@ -69,8 +69,8 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 			int l14 = chunkZ + random.nextInt(16) + 8;
 			Biome biome = world.getBiome(new BlockPos(l6, i11, l14));
 			if (biome instanceof BiomeTriassic) {
-				BiomeTriassic biomeD = (BiomeTriassic) biome;
-				if (biomeD.getBiomeType() != EnumBiomeTypeTriassic.Ocean) {
+				BiomeTriassic biomeP = (BiomeTriassic) biome;
+				if (biomeP.getBiomeType() == EnumBiomeTypeTriassic.River || biomeP.getBiomeType() == EnumBiomeTypeTriassic.Swamp) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
@@ -79,7 +79,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 	
 	public static class BlockCustom extends BlockMobSpawn  {
 		public BlockCustom() {
-			setTranslationKey("pf_amphibian_spawn_metoposaurus_worldgen");
+			setTranslationKey("pf_amphibian_spawn_gerrothorax_worldgen");
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
 		}
@@ -91,7 +91,7 @@ public class BlockAmphibianSpawnMetoposaurus extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockAmphibianSpawnMetoposaurusPlaceable.block, (int) (1));
+			return new ItemStack(BlockAmphibianSpawnGerrothoraxPlaceable.block, (int) (1));
 		}
 
 		@Override
