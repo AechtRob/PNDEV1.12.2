@@ -516,7 +516,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_skeemella", EntityPrehistoricFloraSkeemella.class, LepidodendronMod.ENTITY_SKEEMELLA, 64,0,0);
         registerEntity("prehistoric_flora_barameda", EntityPrehistoricFloraBarameda.class, LepidodendronMod.ENTITY_BARAMEDA, 64,0,0);
         registerEntity("prehistoric_flora_ornithoprion", EntityPrehistoricFloraOrnithoprion.class, LepidodendronMod.ENTITY_ORNITHOPRION, 64,0,0);
-        registerEntity("prehistoric_flora_anthracomartus", EntityPrehistoricFloraTrigonotarbid_Anthracomartus.class, LepidodendronMod.ENTITY_TRIGONOTARBID_ANTHRACOMARTUS, 64,0,0);
+        registerEntity("prehistoric_flora_trigonotarbid_anthracomartus", EntityPrehistoricFloraTrigonotarbid_Anthracomartus.class, LepidodendronMod.ENTITY_TRIGONOTARBID_ANTHRACOMARTUS, 64,0,0);
         registerEntity("prehistoric_flora_lasanius", EntityPrehistoricFloraLasanius.class, LepidodendronMod.ENTITY_LASANIUS, 64,0,0);
         registerEntity("prehistoric_flora_dunyu", EntityPrehistoricFloraDunyu.class, LepidodendronMod.ENTITY_DUNYU, 64,0,0);
         registerEntity("prehistoric_flora_eugaleaspis", EntityPrehistoricFloraEugaleaspis.class, LepidodendronMod.ENTITY_EUGALEASPIS, 64,0,0);

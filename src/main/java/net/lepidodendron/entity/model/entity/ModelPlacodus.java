@@ -307,7 +307,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, head);
 
         float speed = 0.2F;
-        AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
+        AdvancedModelRendererExtended[] Tail = {this.body2, this.tail, this.tail2, this.tail3, this.tail4};
 
         AdvancedModelRendererExtended[] FL = {this.armL, this.armL2, this.armL3};
         AdvancedModelRendererExtended[] FR = {this.armR, this.armR2, this.armR3};
@@ -328,8 +328,8 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
                 return;
             }
 
-            this.walk(this.armR, speed * 0.6F, 0.5F,true, -0.8F,0.6F, f2, 1F);
-            this.walk(this.armL, speed * 0.6F, 0.5F,true, 0.8F,0.6F, f2, 1F);
+            this.walk(this.armR, speed * 0.6F, 0.7F,true, -0.8F,0.6F, f2, 1F);
+            this.walk(this.armL, speed * 0.6F, 0.7F,true, 0.8F,0.6F, f2, 1F);
 
             this.walk(this.legR, speed * 0.6F, 0.15F,true, 0.8F,0.4F, f2, 1F);
             this.walk(this.legL, speed * 0.6F, 0.15F,true, 0.8F,0.4F, f2, 1F);
@@ -341,19 +341,22 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
         else {
 
             if (f3 == 0.0F) {
+
                 this.chainWave(Tail, speed, 0.05F, -3, f2, 1);
                 this.chainSwing(Tail, speed * 0.8F, 0.06F, -3, f2, 0.8F);
                 return;
             }
 
             speed = speed * 2F;
+            this.swing(this.body, speed * 0.6F, 0.3F,false, 0,0, f2, 1F);
+            //this.walk(this.body, speed * 0.6F, 0.3F,false, 0,0, f2, 1F);
 
             this.chainWaveExtended(FR, speed * 0.8F, -0.1F, 1.5, 0, f2, 0.8F);
             this.chainWaveExtended(FL, speed * 0.8F, -0.1F, 1.5, 3F, f2, 0.8F);
 
 
-            this.chainWaveExtended(FR, speed * 0.8F, -0.1F, 1.5, 0, f2, 0.8F);
-            this.chainWaveExtended(FL, speed * 0.8F, -0.1F, 1.5, 3F, f2, 0.8F);
+            this.chainWaveExtended(FR, speed * 0.8F, -0.3F, 1.5, 0, f2, 0.8F);
+            this.chainWaveExtended(FL, speed * 0.8F, -0.3F, 1.5, 3F, f2, 0.8F);
 
 
             this.chainSwingExtended(FR, speed * 0.8F, 0.1F, -1.5, 0, f2, 0.8F);
