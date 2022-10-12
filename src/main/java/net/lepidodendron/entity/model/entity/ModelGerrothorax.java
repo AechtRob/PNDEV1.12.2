@@ -151,7 +151,6 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         this.upperjaw = new AdvancedModelRenderer(this);
         this.upperjaw.setRotationPoint(0.0F, 0.025F, -3.0F);
         this.neck.addChild(upperjaw);
-        this.setRotateAngle(upperjaw, -1.0472F, 0.0F, 0.0F);
 
 
         this.cube_r6 = new AdvancedModelRenderer(this);
@@ -353,7 +352,6 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body.offsetY = -0.50F; //72
-        this.body.offsetZ = -1F; //72
 
         EntityPrehistoricFloraGerrothorax Gerrothorax = (EntityPrehistoricFloraGerrothorax) e;
 
@@ -444,6 +442,7 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
                 this.chainSwingExtended(BackL, speed * 0.85F, -0.13F, -2, 1F, f2, 1);
                 this.chainSwingExtended(BackR, speed * 0.85F, -0.13F, -2, 4F, f2, 1);
 
+
             }
             else if (f3 != 0 && Gerrothorax.getIsMoving()) {
                 this.flap(hindlegL, speed, 0.45F, false, 0, -0.35F, f2, 0.5F);
@@ -469,7 +468,7 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
                 this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
                 //this.bob(Mastodonsaurus, speed*2, 0.3F, false, f2, 1F);
 
-                this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.5), false, 1.5F, f2, 1);
+                this.body.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.5), false, 0, f2, 1);
 
             }
 

@@ -962,7 +962,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_TYRANNOPHONTES = 382;
 	public static final ResourceLocation TYRANNOPHONTES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/tyrannophontes"));
 	public static final int ENTITY_UROCORDYLUS = 383;
-	//public static final ResourceLocation UROCORDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urocordylus"));
+	public static final ResourceLocation UROCORDYLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/urocordylus"));
 	public static final int ENTITY_EDAPHOSAURUS = 384;
 	public static final ResourceLocation EDAPHOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/edaphosaurus"));
 	public static final ResourceLocation EDAPHOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/edaphosaurus_young"));

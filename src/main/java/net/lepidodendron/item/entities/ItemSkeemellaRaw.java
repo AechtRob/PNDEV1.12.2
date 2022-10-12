@@ -14,11 +14,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemUrocordylusCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:urocordylus_cooked")
+public class ItemSkeemellaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:skeemella_raw")
 	public static final Item block = null;
-	public ItemUrocordylusCooked(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.urocordylus_cooked);
+	public ItemSkeemellaRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.skeemella_raw);
 	}
 
 	@Override
@@ -29,16 +29,15 @@ public class ItemUrocordylusCooked extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/urocordylus_cooked", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/skeemella_raw", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
-			super(8, 0.8f, false);
-			setTranslationKey("pf_urocordylus_cooked");
-			setRegistryName("urocordylus_cooked");
+			super(2, 0.1f, false);
+			setTranslationKey("pf_skeemella_raw");
+			setRegistryName("skeemella_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
-
 	}
 }

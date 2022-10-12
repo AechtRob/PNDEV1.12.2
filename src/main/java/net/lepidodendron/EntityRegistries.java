@@ -403,7 +403,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_syllipsimopodi", EntityPrehistoricFloraSyllipsimopodi.class, LepidodendronMod.ENTITY_SYLLIPSIMOPODI, 64,-594965,-515);
         registerEntity("prehistoric_flora_thrinacodus", EntityPrehistoricFloraThrinacodus.class, LepidodendronMod.ENTITY_THRINACODUS, 64,-7916249,-7176334);
         registerEntity("prehistoric_flora_tyrannophontes", EntityPrehistoricFloraTyrannophontes.class, LepidodendronMod.ENTITY_TYRANNOPHONTES, 64,-5067864,-6851995);
-        //registerEntity("prehistoric_flora_urocordylus", EntityPrehistoricFloraUrocordylus.class, LepidodendronMod.ENTITY_UROCORDYLUS, 64,0,0);
+        registerEntity("prehistoric_flora_urocordylus", EntityPrehistoricFloraUrocordylus.class, LepidodendronMod.ENTITY_UROCORDYLUS, 64,0,0);
         registerEntity("prehistoric_flora_edaphosaurus", EntityPrehistoricFloraEdaphosaurus.class, LepidodendronMod.ENTITY_EDAPHOSAURUS, 64,-13092808,-4079167);
         //registerEntity("prehistoric_flora_arthropleura", EntityPrehistoricFloraArthropleura.class, LepidodendronMod.ENTITY_ARTHROPLEURA, 64,0,0);
         registerEntity("prehistoric_flora_cobelodus", EntityPrehistoricFloraCobelodus.class, LepidodendronMod.ENTITY_COBELODUS, 64,-5668543,-2110544);
@@ -482,7 +482,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_tanystropheus", EntityPrehistoricFloraTanystropheus.class, LepidodendronMod.ENTITY_TANYSTROPHEUS, 82,-7431564,-12304606);
         registerEntity("prehistoric_flora_teraterpeton", EntityPrehistoricFloraTeraterpeton.class, LepidodendronMod.ENTITY_TERATERPETON, 64,0,0);
         registerEntity("prehistoric_flora_teyujagua", EntityPrehistoricFloraTeyujagua.class, LepidodendronMod.ENTITY_TEYUJAGUA, 64,-14867694,-6445491);
-        //registerEntity("prehistoric_flora_thecodontosaurus", EntityPrehistoricFloraThecodontosaurus.class, LepidodendronMod.ENTITY_THECODONTOSAURUS, 64,0,0);
+        registerEntity("prehistoric_flora_thecodontosaurus", EntityPrehistoricFloraThecodontosaurus.class, LepidodendronMod.ENTITY_THECODONTOSAURUS, 64,0,0);
         registerEntity("prehistoric_flora_vancleavea", EntityPrehistoricFloraVancleavea.class, LepidodendronMod.ENTITY_VANCLEAVEA, 82,-13817820,-3563711);
         registerEntity("prehistoric_flora_xinpusaurus", EntityPrehistoricFloraXinpusaurus.class, LepidodendronMod.ENTITY_XINPUSAURUS, 64,-9402493,-3880518);
         registerEntity("prehistoric_flora_austriadactylus", EntityPrehistoricFloraAustriadactylus.class, LepidodendronMod.ENTITY_AUSTRIADACTYLUS, 82,-9811170,-3140);

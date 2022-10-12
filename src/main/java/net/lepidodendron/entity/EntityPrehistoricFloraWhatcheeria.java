@@ -54,8 +54,8 @@ public class EntityPrehistoricFloraWhatcheeria extends EntityPrehistoricFloraSwi
 		enablePersistence();
 		//minSize = 0.6F;
 		//maxSize = 1.0F;
-		minWidth = 0.1F;
-		maxWidth = 0.35F;
+		minWidth = 0.7F;
+		maxWidth = 0.5F;
 		maxHeight = 0.20F;
 		maxHealthAgeable = 10.0D;
 	}
