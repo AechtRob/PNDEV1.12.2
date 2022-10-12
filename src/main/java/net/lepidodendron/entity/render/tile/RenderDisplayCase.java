@@ -1756,7 +1756,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.87F,0.87F,0.87F);
+                        GlStateManager.scale(0.89F,0.89F,0.89F);
                         this.bindTexture(TEXTURE_GIGANTOSCORPIO);
                         modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
