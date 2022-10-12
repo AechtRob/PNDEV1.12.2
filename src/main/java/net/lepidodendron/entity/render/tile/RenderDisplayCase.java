@@ -104,6 +104,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_EURYPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eurypterus.png");
     private final ModelEurypterus modelEurypterus;
     private static final ResourceLocation TEXTURE_GONDWANASCORPIO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_gondwanascorpio.png");
+    private static final ResourceLocation TEXTURE_GIGANTOSCORPIO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_gigantoscorpio.png");
     private final ModelScorpion modelScorpion;
     private static final ResourceLocation TEXTURE_FORESTROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_forest.png");
     private static final ResourceLocation TEXTURE_GIGATITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_gigatitan.png");
@@ -177,6 +178,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_OPABINIA_NERF =  new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia_nerf.png");
     private static final ResourceLocation TEXTURE_OPABINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia.png");
     private final ModelOpabinia modelOpabinia;
+    private static final ResourceLocation TEXTURE_OPSIEOBUTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus.png");
     private static final ResourceLocation TEXTURE_ORTHROZANCLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
     private final ModelOrthrozanclus modelOrthrozanclus;
     private static final ResourceLocation TEXTURE_OTTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
@@ -210,6 +212,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_PROTOZYGOPTERA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protozygoptera.png");
     private static final ResourceLocation TEXTURE_PROTOZYGOPTERA_WING = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/protozygoptera_wing.png");
     private final ModelProtozygoptera modelProtozygoptera;
+    private static final ResourceLocation TEXTURE_PULMONOSCORPIO = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_pulmonoscorpius_pp.png");
     private static final ResourceLocation TEXTURE_RETIFACIES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/retifacies.png");
     private final ModelRetifacies modelRetifacies;
     private static final ResourceLocation TEXTURE_SCHINDERHANNES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schinderhannes.png");
@@ -1723,6 +1726,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_EURYPTERUS);
                         modelEurypterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemScorpionGigantoscorpioRaw.block) {
+                        double offset = 0.2;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.87F,0.87F,0.87F);
+                        this.bindTexture(TEXTURE_GIGANTOSCORPIO);
+                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemScorpionGondwanascorpioRaw.block) {
                         double offset = 0.15;
                         if (facing == EnumFacing.UP) {
@@ -3067,6 +3104,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         }
                         modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemScorpionOpsieobuthusRaw.block) {
+                        double offset = 0.15;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.61F,0.61F,0.61F);
+                        this.bindTexture(TEXTURE_OPSIEOBUTHUS);
+                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemOrthrozanclusRaw.block) {
                         double offset = 0.27;
                         if (facing == EnumFacing.UP) {
@@ -3652,6 +3723,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.disableBlend();
                         GlStateManager.disableNormalize();
                         GlStateManager.popMatrix();
+                    }
+                    else if (itemstack.getItem() == ItemScorpionPulmonoscorpiusRaw.block) {
+                        double offset = 0.24;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.1F,1.1F,1.1F);
+                        this.bindTexture(TEXTURE_PULMONOSCORPIO);
+                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemRetifaciesRaw.block) {
                         double offset = 0.63;

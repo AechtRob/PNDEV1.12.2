@@ -398,14 +398,16 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.basin1.render(f5 * 0.785F);
     }
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-
-        //this.chest.render(0.01F);
-
+        this.head1.rotateAngleX = (float) Math.toRadians(-14.9);
+        this.jaw1.rotateAngleX = (float) Math.toRadians(42.5);
+        this.chest1.offsetY = -0.01F;
+        this.chest1.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
