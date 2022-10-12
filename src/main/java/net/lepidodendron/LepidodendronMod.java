@@ -1301,7 +1301,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_COWIELEPIS = 544;
 	public static final int ENTITY_MAZOTHAIROS = 545;
 	public static final int ENTITY_TRIGONOTARBID_ANTHRACOMARTUS = 546;
-
+	public static final int GUI_COAL_TAR_PROCESSOR_ID = 547;
 
 
 

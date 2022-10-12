@@ -66,7 +66,7 @@ public class BlockAcidBathEndUp extends ElementsLepidodendronMod.ModElement {
 			setHardness(5F);
 			setResistance(5F);
 			setLightLevel(0);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(RF, LepidodendronConfig.machinesRF));
 		}

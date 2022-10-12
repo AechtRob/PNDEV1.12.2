@@ -56,7 +56,7 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return;
-		if (random.nextInt(2) == 0) {
+		if (random.nextInt(5) <= 2) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(30) + 1;
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

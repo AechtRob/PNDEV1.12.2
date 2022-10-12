@@ -82,7 +82,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			setHardness(0.5F);
 			setResistance(2F);
 			setLightLevel(0);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(RF, LepidodendronConfig.machinesRF));
 		}

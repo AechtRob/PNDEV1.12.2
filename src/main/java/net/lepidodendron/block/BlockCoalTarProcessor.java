@@ -2,31 +2,29 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
-import net.lepidodendron.gui.GUIDNAForge;
-import net.lepidodendron.item.ItemDNARecombiner;
-import net.lepidodendron.item.ItemOligoPool;
-import net.lepidodendron.item.ItemPhialDNA;
-import net.lepidodendron.item.ItemPlaceableLiving;
+import net.lepidodendron.gui.GUICoalTarProcessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
@@ -35,57 +33,74 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:dna_recombiner_forge")
+public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:coal_tar_processor")
 	public static final Block block = null;
-	public BlockDNARecombinerForge(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.dna_recombiner_forge);
+	public BlockCoalTarProcessor(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.coal_tar_processor);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("dna_recombiner_forge"));
-		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("coal_tar_processor"));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockDNARecombinerForge.TileEntityDNARecombinerForge.class, "lepidodendron:tileentitydna_recombiner_forge");
+		GameRegistry.registerTileEntity(BlockCoalTarProcessor.TileEntityCoalTarProcessor.class, "lepidodendron:tileentitycoal_tar_processor");
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-		//		new ModelResourceLocation("lepidodendron:dna_recombiner_forge", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation("lepidodendron:coal_tar_processor", "inventory"));
 	}
 	public static class BlockCustom extends Block {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.ADOBE);
-			setTranslationKey("pf_dna_recombiner_forge");
+			super(Material.ROCK);
+			setTranslationKey("pf_coal_tar_processor");
 			setSoundType(SoundType.GROUND);
 			setHarvestLevel("pickaxe", 0);
-			setHardness(0.5F);
-			setResistance(2F);
+			setHardness(2.5F);
+			setResistance(3.5F);
 			setLightLevel(0);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(RF, LepidodendronConfig.machinesRF);
+		}
+
+		@Override
+		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+			super.onBlockAdded(worldIn, pos, state);
+			worldIn.setBlockState(pos.up(), BlockCoalTarProcessorTop.block.getDefaultState());
+		}
+
+		@Override
+		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up());
 		}
 
 		@Override
@@ -96,11 +111,11 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new BlockDNARecombinerForge.TileEntityDNARecombinerForge();
+			return new BlockCoalTarProcessor.TileEntityCoalTarProcessor();
 		}
 
-		public BlockDNARecombinerForge.TileEntityDNARecombinerForge createNewTileEntity(World worldIn, int meta) {
-			return new BlockDNARecombinerForge.TileEntityDNARecombinerForge();
+		public BlockCoalTarProcessor.TileEntityCoalTarProcessor createNewTileEntity(World worldIn, int meta) {
+			return new BlockCoalTarProcessor.TileEntityCoalTarProcessor();
 		}
 
 		@Override
@@ -114,8 +129,8 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = world.getTileEntity(pos);
 			if (tileentity != null) {
-				if (tileentity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
-					InventoryHelper.dropInventoryItems(world, pos, (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileentity);
+				if (tileentity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+					InventoryHelper.dropInventoryItems(world, pos, (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileentity);
 				}
 				world.removeTileEntity(pos);
 			}
@@ -126,24 +141,14 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
 			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
 			if (entity instanceof EntityPlayer) {
-				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIDNAForge.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUICoalTarProcessor.GUIID, world, pos.getX(), pos.getY(), pos.getZ());
 			}
 			return true;
 		}
 
 		@Override
-		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(ItemDNARecombiner.block, 1);
-		}
-
-		@Override
-		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(Items.AIR, 1).getItem());
-		}
-
-		@Override
 		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
-			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING, RF});
 		}
 
 		@Override
@@ -162,6 +167,12 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		}
 
 		@Override
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+		{
+			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+		}
+
+		@Override
 		public int getMetaFromState(IBlockState state) {
 			return ((EnumFacing) state.getValue(FACING)).getIndex();
 		}
@@ -169,24 +180,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		@Override
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
-			if (state.getValue(FACING) == EnumFacing.DOWN || state.getValue(FACING) == EnumFacing.UP) {
-				super.neighborChanged(state, worldIn, pos, blockIn, fromPos);
-				return;
-			}
-
-			IBlockState endState = worldIn.getBlockState(pos.offset(state.getValue(FACING).rotateY()));
-			if (endState.getBlock() != BlockDNARecombinerCentrifuge.block) {
-				worldIn.destroyBlock(pos, true);
-				return;
-			}
-			else {
-				if (endState.getValue(FACING) != state.getValue(FACING)) {
-					worldIn.destroyBlock(pos, true);
-					return;
-				}
-			}
-
-			if (worldIn.getBlockState(pos.up()).getBlock() != BlockDNARecombinerRail.block) {
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockCoalTarProcessorTop.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}
@@ -231,32 +225,16 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		}
 	}
 
-	public static class TileEntityDNARecombinerForge extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements ITickable, ISidedInventory {
 
-		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(7, ItemStack.EMPTY);
+		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
-		public boolean hatchShut;
-		private int processTickTime = 600; //30 seconds to process
-
-		public double oligoExtend;
-		public double oligoAngle;
-		public double fogDensity;
+		private int processTickTime; //Depends on what we are doing it to
 
 		public boolean canStartProcess() {
-			if (!this.isProcessing
-					&& this.getStackInSlot(2).getItem() == ItemOligoPool.block
-					&& this.getStackInSlot(0).getItem() == ItemPhialDNA.block
-					&& this.hatchShut
-					&& (this.getStackInSlot(3) == ItemStack.EMPTY
-						|| this.getStackInSlot(4) == ItemStack.EMPTY
-						|| this.getStackInSlot(5) == ItemStack.EMPTY
-						|| this.getStackInSlot(6) == ItemStack.EMPTY
-					)
-			) {
-				return true;
-			}
+			
 			return false;
 		}
 
@@ -270,11 +248,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public boolean isProcessing() {
 			return this.isProcessing;
 		}
-
-		public void setHatchShut(boolean shut) {
-			this.hatchShut = shut;
-		}
-
+		
 		public boolean isEmpty()
 		{
 			for (ItemStack itemstack : this.forgeContents)
@@ -294,123 +268,10 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			if (this.getWorld().isRemote) {
 				return;
 			}
-
-			if (!this.isProcessing
-					&& this.getStackInSlot(2) == ItemStack.EMPTY
-					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
-			) {
-				ItemStack stack = this.getStackInSlot(1);
-				this.setInventorySlotContents(2, new ItemStack(ItemOligoPool.block, 1));
-				stack.shrink(1);
-			}
-
-			if (this.canStartProcess()) {
-				this.isProcessing = true;
-				this.processTick = 0;
-			}
-
-			if (this.isProcessing) {
-				this.processTick ++;
-			}
-
-			if (this.processTick < 20) {
-				this.oligoExtend = 5.5D * ((double)this.processTick / 20.0D);
-			}
-
-			if (this.processTick == 20) {
-				this.oligoExtend = 5.5D;
-			}
-
-			if (this.processTick >= 20 && this.processTick < 60) {
-				this.oligoAngle = 180.0D * (((double)this.processTick - 20.0D) / 40D);
-			}
-
-			if (this.processTick == 60) {
-				this.oligoAngle = 180.0;
-			}
-
-			if (this.processTick >= 100 && this.processTick < 140) {
-				this.oligoAngle = 180.0D * ((140.0D - (double)this.processTick) / 40D);
-			}
-
-			if (this.processTick == 140) {
-				this.oligoAngle = 0.0;
-			}
-
-			if (this.processTick >= 140 && this.processTick < 160) {
-				this.oligoExtend = 5.5D * ((160.0D - (double)this.processTick) / 20D);
-			}
-
-			if (this.processTick == 160) {
-				this.oligoExtend = 0.0;
-			}
-
-			if (this.processTick >= 140 && this.processTick < 180) {
-				this.fogDensity = (((double)this.processTick - 140.0D) / 40D);
-			}
-
-			if (this.processTick >= 180 && this.processTick < (this.processTickTime - 40)) {
-				this.fogDensity = 1;
-			}
-
-			if (this.processTick >= (this.processTickTime - 40) && this.processTick < processTickTime) {
-				this.fogDensity = (processTickTime - (double)this.processTick) / 40D;
-			}
-
-			if (this.processTick == this.processTickTime) {
-				this.fogDensity = 0;
-			}
-
-			if (this.processTick == this.processTickTime - 40) {
-				//Break the phial and replace now
-				world.playSound(null, pos, SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.BLOCKS, 0.5F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
-				ItemStack stack = this.getStackInSlot(0);
-				ItemStack stackOutput = new ItemStack(ItemPlaceableLiving.block, 1);
-				if (stack.getItem() == ItemPhialDNA.block) {
-					String resourcelocation = stack.getTagCompound().getString("id_dna");
-					if (resourcelocation != null) {
-						if (!resourcelocation.equalsIgnoreCase("")) {
-							NBTTagCompound stackOutputNBT = new NBTTagCompound();
-							stackOutputNBT.setString("id_dna", resourcelocation);
-							stackOutput.setTagCompound(stackOutputNBT);
-							if (this.getStackInSlot(3) == ItemStack.EMPTY) {
-								this.setInventorySlotContents(3, stackOutput);
-							}
-							else if (this.getStackInSlot(4) == ItemStack.EMPTY) {
-								this.setInventorySlotContents(4, stackOutput);
-							}
-							else if (this.getStackInSlot(5) == ItemStack.EMPTY) {
-								this.setInventorySlotContents(5, stackOutput);
-							}
-							else if (this.getStackInSlot(6) == ItemStack.EMPTY) {
-								this.setInventorySlotContents(6, stackOutput);
-							}
-						}
-					}
-				}
-				this.setInventorySlotContents(0, ItemStack.EMPTY);
-				this.setInventorySlotContents(2, ItemStack.EMPTY);
-			}
-
-			if (this.processTick >= this.processTickTime) {
-				this.isProcessing = false;
-				this.processTick = 0;
-			}
+			
 			
 			markDirty();
 
-		}
-
-		public double getOligoExtend() {
-			return this.oligoExtend;
-		}
-
-		public double getOligoAngle() {
-			return this.oligoAngle;
-		}
-
-		public double getFogDensity() {
-			return this.fogDensity;
 		}
 
 		@Override
@@ -420,23 +281,23 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 
 		@Override
 		public int getSizeInventory() {
-			return 7;
+			return 2;
 		}
 
 		@Override
 		public String getName() {
-			return "container.forge";
+			return "container.coal_tar_processor";
 		}
 
 		@Override
 		public String getGuiID()
 		{
-			return "lepidodendron:gui_dna_forge";
+			return "lepidodendron:gui_coal_tar_processor";
 		}
 
 		@Override
 		public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-			return new GUIDNAForge.GUILepidodendronDNAForge(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
+			return new GUICoalTarProcessor.GUILepidodendronCoalTarProcessor(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
 		}
 
 		@Override
@@ -447,18 +308,6 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			}
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
-			}
-			if (compound.hasKey("hatchShut")) {
-				this.hatchShut = compound.getBoolean("hatchShut");
-			}
-			if (compound.hasKey("oligoAngle")) {
-				this.oligoAngle = compound.getDouble("oligoAngle");
-			}
-			if (compound.hasKey("oligoExtend")) {
-				this.oligoExtend = compound.getDouble("oligoExtend");
-			}
-			if (compound.hasKey("fogDensity")) {
-				this.fogDensity = compound.getDouble("fogDensity");
 			}
 			this.forgeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
@@ -471,10 +320,6 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
-			compound.setBoolean("hatchShut", this.hatchShut);
-			compound.setDouble("oligoAngle", this.oligoAngle);
-			compound.setDouble("oligoExtend", this.oligoExtend);
-			compound.setDouble("fogDensity", this.fogDensity);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
@@ -533,47 +378,43 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			return this.forgeContents;
 		}
 
-		//Slot 0 = phial: cannot add or remove
-		//Slot 1 = oligopool inventory: fully interactable by hand but hoppers only insert
-		//Slot 2 = oligopool: in use and cannot add or remove
-		//Slot 3,4,5,6 = outputs: can only remove by any means
-
 		@Override
 		public int[] getSlotsForFace(EnumFacing side) {
-			return new int[]{1,3,4,5,6};
+			return new int[]{0,1};
 		}
 
 		@Override
 		public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-			if (index == 1) {
-				return !this.isLocked() && isItemValidForSlot(index, itemStackIn);
+			if (index == 0) {
+				return isItemValidForSlot(index, itemStackIn);
 			}
 			return false;
 		}
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-			if (index == 3 || index == 4 || index == 5 || index == 6) {
-				return !this.isLocked();
+			if (index == 1) {
+				return true;
 			}
 			return false;
 		}
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			if (index == 0)
-				return false;
+			if (index == 0) {
+				boolean flag = false;
+				if (OreDictionary.containsMatch(false, OreDictionary.getOres("itemCoal"), stack)) {
+					flag = true;
+				}
+				if (OreDictionary.containsMatch(false, OreDictionary.getOres("blockCoal"), stack)) {
+					flag = true;
+				}
+				if (OreDictionary.containsMatch(false, OreDictionary.getOres("logWood"), stack)) {
+					flag = true;
+				}
+				return flag;
+			}
 			if (index == 1)
-				return stack.getItem() == ItemOligoPool.block;
-			if (index == 2)
-				return false;
-			if (index == 3)
-				return false;
-			if (index == 4)
-				return false;
-			if (index == 5)
-				return false;
-			if (index == 6)
 				return false;
 			return true;
 		}

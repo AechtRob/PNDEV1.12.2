@@ -4767,6 +4767,9 @@ item.pf_phial_eggs_attercopus.name=Phial of Attercopus Eggs
 item.pf_phial_eggs_balanerpeton.name=Phial of Balanerpeton Spawn
 item.pf_phial_eggs_branchiosaur.name=Phial of Branchiosaur Spawn
 item.pf_phial_eggs_cacops.name=Phial of Cacops Spawn
+
+tile.pf_coal_tar_processor.name=Coal Tar Processor
+
 item.pf_phial_eggs_carcinosoma.name=Phial of Carcinosoma Eggs
 item.pf_phial_eggs_cladoselache.name=Phial of Cladoselache Eggs
 item.pf_phial_eggs_crassigyrinus.name=Phial of Crassigyrinus Spawn

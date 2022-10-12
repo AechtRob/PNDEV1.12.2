@@ -65,7 +65,7 @@ public class BlockSaltOre extends ElementsLepidodendronMod.ModElement {
 		if ((!dimensionCriteria) || (!biomeCriteria))
 			return;
 
-		for (int l1 = 0; l1 < 24; ++l1) {
+		for (int l1 = 0; l1 < 18; ++l1) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(120) + 30;
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

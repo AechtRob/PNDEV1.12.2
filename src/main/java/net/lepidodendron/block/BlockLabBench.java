@@ -18,9 +18,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -75,7 +72,7 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 			setHardness(2F);
 			setResistance(3F);
 			setLightLevel(0F);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
@@ -199,6 +196,9 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
+			if (face == EnumFacing.UP || face == EnumFacing.DOWN) {
+				return BlockFaceShape.SOLID;
+			}
 			return BlockFaceShape.UNDEFINED;
 		}
 
@@ -224,77 +224,7 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityLabBench extends TileEntity implements ITickable {
-
-		private int mb;
-		private int trayheight;
-		private int movement;
-
-		@Override
-		public void update() {
-
-		}
-
-		public int getHeight() {
-			return this.trayheight;
-		}
-
-		public int getFill() {
-			return this.mb;
-		}
-
-		public boolean setFill(int mb1) {
-			if (this.mb < 2000) {
-				this.mb = this.mb + mb1;
-				return true;
-			}
-			return false;
-		}
-
-		@Override
-		public void readFromNBT(NBTTagCompound compound) {
-			super.readFromNBT(compound);
-			if (compound.hasKey("mb")) {
-				this.mb = compound.getInteger("mb");
-			}
-			if (compound.hasKey("trayheight")) {
-				this.trayheight = compound.getInteger("height");
-			}
-		}
-
-		@Override
-		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-			super.writeToNBT(compound);
-			compound.setInteger("mb", this.mb);
-			compound.setInteger("trayheight", this.trayheight);
-			return compound;
-		}
-
-		@Override
-		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
-		{
-			return (oldState.getBlock() != newSate.getBlock());
-		}
-
-		@Override
-		public SPacketUpdateTileEntity getUpdatePacket() {
-			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
-		}
-
-		@Override
-		public NBTTagCompound getUpdateTag() {
-			return this.writeToNBT(new NBTTagCompound());
-		}
-
-		@Override
-		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-			this.readFromNBT(pkt.getNbtCompound());
-		}
-
-		@Override
-		public void handleUpdateTag(NBTTagCompound tag) {
-			this.readFromNBT(tag);
-		}
+	public static class TileEntityLabBench extends TileEntity {
 
 	}
 

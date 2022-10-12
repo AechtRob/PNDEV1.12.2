@@ -72,7 +72,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 			setHardness(5F);
 			setResistance(5F);
 			setLightLevel(0F);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH).withProperty(ACID, 0));
 		}
