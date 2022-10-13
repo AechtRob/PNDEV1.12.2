@@ -2159,7 +2159,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelHungioides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemIsotelusRaw.block) {
-                        double offset = 0.93;
+                        double offset = 0.76;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -2188,6 +2188,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.8F,0.8F,0.8F);
                         this.bindTexture(TEXTURE_ISOTELUS);
                         modelIsotelus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
