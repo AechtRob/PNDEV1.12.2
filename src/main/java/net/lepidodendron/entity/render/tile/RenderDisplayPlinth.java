@@ -162,6 +162,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelTiarajudens modelTiarajudens;
     private static final ResourceLocation TEXTURE_TIKTAALIK = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiktaalik.png");
     private final ModelTiktaalik modelTiktaalik;
+    private static final ResourceLocation TEXTURE_WEBSTEROPRION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/websteroprion.png");
+    private final ModelWebsteroprion modelWebsteroprion;
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
 
@@ -233,6 +235,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelThrinaxodon = new ModelThrinaxodon();
         this.modelTiarajudens = new ModelTiarajudens();
         this.modelTiktaalik = new ModelTiktaalik();
+        this.modelWebsteroprion = new ModelWebsteroprion();
         this.modelGerarus = new ModelGerarus();
 
     }
@@ -990,6 +993,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_TIKTAALIK);
                         GlStateManager.scale(0.22F,0.22F,0.22F);
                         modelTiktaalik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemWebsteroprionRaw.block) {
+                        double offset = 0.67;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_WEBSTEROPRION);
+                        GlStateManager.scale(0.26F,0.26F,0.26F);
+                        modelWebsteroprion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemProsictodonRaw.block) {
                         double offset = 0.16;

@@ -127,6 +127,9 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelHungioides modelHungioides;
     private static final ResourceLocation TEXTURE_ISOTELUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/isotelus.png");
     private final ModelIsotelus modelIsotelus;
+    private static final ResourceLocation TEXTURE_ITALOPHLEBIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/italophlebia.png");
+    private static final ResourceLocation TEXTURE_ITALOPHLEBIA_WING = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/italophlebia_wing.png");
+    private final ModelItalophlebia modelItalophlebia;
     private static final ResourceLocation TEXTURE_JIANSHANOPODIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jianshanopodia.png");
     private final ModelJianshanopodia modelJianshanopodia;
     private static final ResourceLocation TEXTURE_KALBARRIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kalbarria.png");
@@ -178,6 +181,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_OPABINIA_NERF =  new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia_nerf.png");
     private static final ResourceLocation TEXTURE_OPABINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opabinia.png");
     private final ModelOpabinia modelOpabinia;
+    private static final ResourceLocation TEXTURE_OPOLANKA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opolanka.png");
+    private final ModelOpolanka modelOpolanka;
     private static final ResourceLocation TEXTURE_OPSIEOBUTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus.png");
     private static final ResourceLocation TEXTURE_ORTHROZANCLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
     private final ModelOrthrozanclus modelOrthrozanclus;
@@ -300,6 +305,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelHelmetia= new ModelHelmetia();
         this.modelHungioides= new ModelHungioides();
         this.modelIsotelus= new ModelIsotelus();
+        this.modelItalophlebia= new ModelItalophlebia();
         this.modelJianshanopodia= new ModelJianshanopodia();
         this.modelKalbarria= new ModelKalbarria();
         this.modelKerygmachela= new ModelKerygmachela();
@@ -321,6 +327,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelOdaraia = new ModelOdaraia();
         this.modelOdontogriphus = new ModelOdontogriphus();
         this.modelOpabinia = new ModelOpabinia();
+        this.modelOpolanka = new ModelOpolanka();
         this.modelOrthrozanclus = new ModelOrthrozanclus();
         this.modelOttoia = new ModelOttoia();
         this.modelPalaeodictyoptera = new ModelPalaeodictyoptera();
@@ -2192,6 +2199,50 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_ISOTELUS);
                         modelIsotelus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemItalophlebiaRaw.block) {
+                        double offset = 0.26;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.3F,0.3F,0.3F);
+                        this.bindTexture(TEXTURE_ITALOPHLEBIA);
+                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                        GlStateManager.pushMatrix();
+                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                        GlStateManager.enableNormalize();
+                        GlStateManager.enableBlend();
+                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                        this.bindTexture(TEXTURE_ITALOPHLEBIA_WING);
+                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                        GlStateManager.disableBlend();
+                        GlStateManager.disableNormalize();
+                        GlStateManager.popMatrix();
+                    }
                     else if (itemstack.getItem() == ItemJianshanopodiaRaw.block) {
                         double offset = 0.32;
                         if (facing == EnumFacing.UP) {
@@ -3104,6 +3155,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             this.bindTexture(TEXTURE_OPABINIA);
                         }
                         modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemOpolankaRaw.block) {
+                        double offset = 0.45;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.77F,0.77F,0.77F);
+                        this.bindTexture(TEXTURE_OPOLANKA);
+                        modelOpolanka.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemScorpionOpsieobuthusRaw.block) {
                         double offset = 0.15;
