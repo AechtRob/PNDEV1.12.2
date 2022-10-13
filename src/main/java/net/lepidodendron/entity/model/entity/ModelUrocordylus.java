@@ -230,7 +230,14 @@ public class ModelUrocordylus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
 
         if (!Urocordylus.isReallyInWater()) {
-            return;
+            AdvancedModelRenderer[] FrontR = {this.ForelimbL, this.RoelimbLjoint};
+            AdvancedModelRenderer[] FrontL = {this.ForelimbR, this.ForelimbRjoint};
+            AdvancedModelRenderer[] BackR = {this.HindlimbL, this.HindlimbLjoint, this.HindlimbLjoint2};
+            AdvancedModelRenderer[] BackL = {this.HindlimbR, this.hindlimbRjoint, this.hindlimbRjoint2};
+            this.chainSwingExtended(FrontL, speed * 0.2F, -0.3F, -1, 0F, f2, 1);
+            this.chainSwingExtended(FrontR, speed *0.2F, -0.3F, -1, 3F, f2, 1);
+            this.chainSwingExtended(BackL, speed * 0.2F, -0.3F, -1, 0F, f2, 1);
+            this.chainSwingExtended(BackR, speed *0.2F, -0.3F, -1, 3F, f2, 1);
 
 
 
@@ -241,11 +248,14 @@ public class ModelUrocordylus extends AdvancedModelBaseExtended {
             //Feet:
             AdvancedModelRenderer[] FrontR = {this.ForelimbL, this.RoelimbLjoint};
             AdvancedModelRenderer[] FrontL = {this.ForelimbR, this.ForelimbRjoint};
+            AdvancedModelRenderer[] BackR = {this.HindlimbL, this.HindlimbLjoint, this.HindlimbLjoint2};
+            AdvancedModelRenderer[] BackL = {this.HindlimbR, this.hindlimbRjoint, this.hindlimbRjoint2};
 
             if (f3 == 0.0F || !Urocordylus.getIsMoving()) { //Not moving
                 this.chainSwingExtended(FrontL, speed * 0.2F, -0.3F, -1, 0F, f2, 1);
                 this.chainSwingExtended(FrontR, speed *0.2F, -0.3F, -1, 3F, f2, 1);
-                this.bob(Body1, speed*0.2F, 0.3F, false, f2, 1F);
+                this.chainSwingExtended(BackL, speed * 0.2F, -0.3F, -1, 0F, f2, 1);
+                this.chainSwingExtended(BackR, speed *0.2F, -0.3F, -1, 3F, f2, 1);
                 return;
             }
 
