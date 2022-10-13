@@ -3543,5 +3543,19 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3539;
     public static final int zosterophyllum_spore = 3540;
     public static final int advancement_placeholder = 3541;
+    public static final int eggs_barameda = 3542;
+    public static final int eggs_barameda_worldgen = 3543;
+    public static final int barameda_cooked = 3543;
+    public static final int barameda_raw = 3544;
+    public static final int ornithoprion_cooked = 3545;
+    public static final int ornithoprion_raw = 3546;
+    public static final int uralichas_cooked = 3547;
+    public static final int uralichas_raw = 3548;
+    public static final int arctinurus_cooked = 3549;
+    public static final int arctinurus_raw = 3550;
+    public static final int ogyginus_cooked = 3551;
+    public static final int ogyginus_raw = 3552;
+    public static final int torpedaspis_cooked = 3553;
+    public static final int torpedaspis_raw = 3554;
 
 }

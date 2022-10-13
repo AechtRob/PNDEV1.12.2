@@ -1290,11 +1290,17 @@ public class LepidodendronMod {
 	public static final int ENTITY_DUNYU = 533;
 	public static final int ENTITY_EUGALEASPIS = 534;
 	public static final int ENTITY_OGYGINUS = 535;
+	public static final ResourceLocation OGYGINUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ogyginus"));
 	public static final int ENTITY_ARCTINURUS = 536;
+	public static final ResourceLocation ARCTINURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/arctinurus"));
 	public static final int ENTITY_URALICHAS = 537;
+	public static final ResourceLocation URALICHAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/uralichas"));
 	public static final int ENTITY_LASANIUS = 538;
 	public static final int ENTITY_BARAMEDA = 539;
+	public static final ResourceLocation BARAMEDA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/barameda"));
+	public static final ResourceLocation BARAMEDA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/barameda_young"));
 	public static final int ENTITY_ORNITHOPRION = 540;
+	public static final ResourceLocation ORNITHOPRION_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ornithoprion"));
 	public static final int ENTITY_TORPEDASPIS = 541;
 	public static final int ENTITY_FURCA = 542;
 	public static final int ENTITY_TOMLINSONUS = 543;
