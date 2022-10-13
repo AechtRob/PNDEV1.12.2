@@ -4,7 +4,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCoalTarProcessor;
-import net.lepidodendron.item.ItemOligoPool;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -58,49 +57,20 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             this.x = x;
             this.y = y;
             this.z = z;
-            this.internal = new InventoryBasic("", true, 7);
+            this.internal = new InventoryBasic("", true, 2);
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
 
             this.internal.openInventory(player);
 
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 82 - 3, 56) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 59 - 3, 39) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return false;
-                }
-            }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 21 - 3, 21) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return (stack.getItem() == ItemOligoPool.block);
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return true;
-                }
-            }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 82 - 3, 34) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return false;
-                }
-            }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 137 - 3, 30) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
+                    if (ent instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+                        BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) ent;
+                        return te.isItemValidForSlot(0, stack);
+                    }
                     return false;
                 }
 
@@ -109,29 +79,7 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
                     return true;
                 }
             }));
-            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 155 - 3, 30) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return true;
-                }
-            }));
-            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 137 - 3, 48) {
-                @Override
-                public boolean isItemValid(ItemStack stack) {
-                    return false;
-                }
-
-                @Override
-                public boolean canTakeStack(EntityPlayer playerIn) {
-                    return true;
-                }
-            }));
-            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 155 - 3, 48) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 118 - 3, 39) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -174,18 +122,18 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             if (slot != null && slot.getHasStack()) {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
-                if (index < 7) {
+                if (index < 2) {
                     if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
                     slot.onSlotChange(itemstack1, itemstack);
-                } else if (!this.mergeItemStack(itemstack1, 0, 7, false)) {
+                } else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
                     if (index < 7 + 27) {
-                        if (!this.mergeItemStack(itemstack1, 7 + 27, this.inventorySlots.size(), true)) {
+                        if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
                             return ItemStack.EMPTY;
                         }
                     } else {
-                        if (!this.mergeItemStack(itemstack1, 7, 7 + 27, false)) {
+                        if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
                             return ItemStack.EMPTY;
                         }
                     }
@@ -319,7 +267,7 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             this.y = y;
             this.z = z;
             this.entity = entity;
-            this.xSize = 182;
+            this.xSize = 176;
             this.ySize = 166;
         }
         private static final ResourceLocation texture = new ResourceLocation("lepidodendron:textures/gui/coal_tar_processor_gui.png");
@@ -338,11 +286,25 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            this.drawTexturedModalRect(k + 68, l + 25, 19,166, this.getProgressBarLength(), 6);
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 20, l + 51, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 20, l + 51 - 16, 0, 166, 18, 26);
+                this.drawTexturedModalRect(k + 21, l + 52 - 16 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
             }
+            //Arrow:
+            this.drawTexturedModalRect(k + 79, l + 39, 176, 14, getProgressBarLength(), 16);
+            //Flames:
+            this.drawTexturedModalRect(k + 58, l + 23 + (14 - getFlameHeight()), 176, 0 + (14 - getFlameHeight()), 14, getFlameHeight());
+        }
+
+        private int getFlameHeight() {
+            TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+            if (tileEntity != null) {
+                if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+                    BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+                    return (int)Math.round(te.getGUIFlameHeight() * 14D);
+                }
+            }
+            return 0;
         }
 
         private int getRFHeight() {
@@ -363,7 +325,7 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
                     BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
-                    return (int)Math.round(te.progressFraction() * 46D);
+                    return (int)Math.round(te.progressFraction() * 22D);
                 }
             }
             return 0;
@@ -386,7 +348,7 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Coal Tar Processor", 53, 7, -16777216);
+            this.fontRenderer.drawString("Coal Tar Processor", 43, 7, -16777216);
         }
 
         @Override

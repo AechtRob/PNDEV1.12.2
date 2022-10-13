@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import net.lepidodendron.gui.GUIAcidBath;
+import net.lepidodendron.gui.GUICoalTarProcessor;
 import net.lepidodendron.gui.GUIDNACentrifuge;
 import net.lepidodendron.gui.GUIDNAForge;
 import net.minecraft.block.Block;
@@ -934,6 +935,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIDNAForge.GUIID) {
 				return new GUIDNAForge.GUILepidodendronDNAForge(world, x, y, z, player);
 			}
+			if (id == GUICoalTarProcessor.GUIID) {
+				return new GUICoalTarProcessor.GUILepidodendronCoalTarProcessor(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -947,6 +951,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUIDNAForge.GUIID) {
 				return new GUIDNAForge.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUICoalTarProcessor.GUIID) {
+				return new GUICoalTarProcessor.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

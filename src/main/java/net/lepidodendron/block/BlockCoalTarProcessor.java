@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUICoalTarProcessor;
+import net.lepidodendron.item.ItemBottleOfDNASolvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -19,6 +20,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -30,6 +32,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -45,6 +48,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
@@ -223,6 +227,24 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			}
 			return false;
 		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random random) {
+			super.randomDisplayTick(state, world, pos, random);
+
+			TileEntity tileEntity = world.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+					if (te.isProcessing && random.nextInt(8) == 0) {
+						for (int l = 0; l < 8; ++l) {
+							world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + 0.5, (double) pos.getY() + 1.8, (double) pos.getZ() + 0.5, 0, 0.075D, 0);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements ITickable, ISidedInventory {
@@ -232,10 +254,27 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime; //Depends on what we are doing it to
+		public int GUIFlameHeight;
 
 		public boolean canStartProcess() {
-			
+
+			if (this.isProcessing) {
+				return false;
+			}
+			if (isValidItemForProcess(this.getStackInSlot(0)) > 0 && this.isRoomForOutputStack()) {
+				//System.err.println("canStartProcess");
+				return true;
+			}
+			//System.err.println("cannotStartProcess");
 			return false;
+		}
+
+
+		public int isValidItemForProcess(ItemStack stack) {
+			if (this.isItemValidForSlot(0, stack)) {
+				return TileEntityFurnace.getItemBurnTime(stack);
+			}
+			return -1;
 		}
 
 		public double progressFraction() {
@@ -268,10 +307,75 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			if (this.getWorld().isRemote) {
 				return;
 			}
-			
-			
+
+			//System.err.println("Tick: " + this.processTick);
+			//System.err.println("TickTotal: " + this.processTickTime);
+
+			if (this.canStartProcess()) {
+				this.processTickTime = TileEntityFurnace.getItemBurnTime(this.getStackInSlot(0));
+				this.processTick = 0;
+				this.isProcessing = true;
+			}
+
+			if (this.isProcessing) {
+				this.processTick ++;
+				this.GUIFlameHeight = Math.min(60, this.GUIFlameHeight + 1);
+				if (this.getWorld().rand.nextInt(10) == 0) {
+					world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
+				}
+			}
+
+			if (!this.isProcessing) {
+				this.GUIFlameHeight = Math.max(0, this.GUIFlameHeight - 1);
+			}
+
+			if (!this.isRoomForOutputStack()) {
+				this.processTick = 0;
+				this.processTickTime = 0;
+				this.isProcessing = false;
+			}
+
+			if (this.isProcessing && ((this.isRoomForOutputStack() && this.processTick > this.processTickTime) || !(isValidItemForProcess(this.getStackInSlot(0)) > 0))) {
+				//System.err.println("Ending process");
+				this.processTick = 0;
+				this.processTickTime = 0;
+				this.isProcessing = false;
+				//move to output:
+				if (isValidItemForProcess(this.getStackInSlot(0)) > 0) {
+					double burntime = Math.min(32000D, Math.round((double)isValidItemForProcess(this.getStackInSlot(0))));
+					double fraction = (burntime / 32000D) * 4;
+					int resultSize = (int)Math.round(16D * fraction);
+					ItemStack stackProcessing = this.getStackInSlot(0);
+					stackProcessing.shrink(1);
+					this.setInventorySlotContents(1, new ItemStack(ItemBottleOfDNASolvent.block, resultSize + this.getStackInSlot(1).getCount()));
+				}
+			}
+
 			markDirty();
 
+		}
+
+		public boolean isRoomForOutputStack() {
+			double burntime = Math.min(32000D, Math.round((double)isValidItemForProcess(this.getStackInSlot(0))));
+			//System.err.println("burntime " + burntime);
+			double fraction = (burntime / 32000D) * 4;
+			//System.err.println("fraction " + fraction);
+			int resultSize = (int)Math.round(16D * fraction);
+			//System.err.println("resultSize " + resultSize);
+			if (this.getStackInSlot(1) != ItemStack.EMPTY && this.getStackInSlot(1).getItem() != ItemBottleOfDNASolvent.block) {
+				return false;
+			}
+			if ((this.getStackInSlot(1).getCount() + resultSize) <= 64) {
+				return true;
+			}
+			if (this.getStackInSlot(1) == ItemStack.EMPTY) {
+				return true;
+			}
+			return false;
+		}
+
+		public boolean getProcessing() {
+			return this.isProcessing;
 		}
 
 		@Override
@@ -300,14 +404,24 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			return new GUICoalTarProcessor.GUILepidodendronCoalTarProcessor(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), playerIn);
 		}
 
+		public double getGUIFlameHeight() {
+			return (double)this.GUIFlameHeight / 60D;
+		}
+
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
+			if (compound.hasKey("processTickTime")) {
+				this.processTickTime = compound.getInteger("processTickTime");
+			}
 			if (compound.hasKey("isProcessing")) {
 				this.isProcessing = compound.getBoolean("isProcessing");
+			}
+			if (compound.hasKey("GUIFlameHeight")) {
+				this.GUIFlameHeight = compound.getInteger("GUIFlameHeight");
 			}
 			this.forgeContents = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			if (!this.checkLootAndRead(compound)) {
@@ -320,6 +434,8 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			super.writeToNBT(compound);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
+			compound.setInteger("processTickTime", this.processTickTime);
+			compound.setInteger("GUIFlameHeight", this.GUIFlameHeight);
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.forgeContents);
 			}
@@ -402,6 +518,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 0) {
+				//System.err.println("Checking for slot 0");
 				boolean flag = false;
 				if (OreDictionary.containsMatch(false, OreDictionary.getOres("itemCoal"), stack)) {
 					flag = true;
@@ -412,11 +529,12 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				if (OreDictionary.containsMatch(false, OreDictionary.getOres("logWood"), stack)) {
 					flag = true;
 				}
+				//System.err.println(stack + " flag " + flag);
 				return flag;
 			}
 			if (index == 1)
 				return false;
-			return true;
+			return false;
 		}
 
 		net.minecraftforge.items.IItemHandler handlerUp = new net.minecraftforge.items.wrapper.SidedInvWrapper(this, EnumFacing.UP);
