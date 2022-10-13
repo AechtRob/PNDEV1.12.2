@@ -50,7 +50,7 @@
       "apply": [
         {
           "model": "lepidodendron:coal_tar_processor_bottom_rf",
-          "y": 180
+          "y": 270
         }
       ]
     },
@@ -60,7 +60,8 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:coal_tar_processor_bottom_rf"
+          "model": "lepidodendron:coal_tar_processor_bottom_rf",
+          "y": 90
         }
       ]
     },
@@ -70,8 +71,7 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:coal_tar_processor_bottom_rf",
-          "y": 270
+          "model": "lepidodendron:coal_tar_processor_bottom_rf"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "apply": [
         {
           "model": "lepidodendron:coal_tar_processor_bottom_rf",
-          "y": 90
+          "y": 180
         }
       ]
     }
