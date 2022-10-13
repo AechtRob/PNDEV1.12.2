@@ -342,15 +342,34 @@ public class ModelBatrachotomus extends AdvancedModelBaseExtended {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5);
     }
-    
+
     public void renderStatic(float f) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-
-        //this.chest.render(0.01F);
-
+        this.Head.rotateAngleX = (float) Math.toRadians(2.83);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(51.7);
+        this.HandR.rotateAngleX = (float) Math.toRadians(42.6);
+        this.HandR.rotateAngleY = (float) Math.toRadians(51.7);
+        this.HandR.rotateAngleZ = (float) Math.toRadians(-20.7);
+        this.HandL.rotateAngleX = (float) Math.toRadians(70);
+        this.HandL.rotateAngleY = (float) Math.toRadians(-50.5);
+        this.HandL.rotateAngleZ = (float) Math.toRadians(-14);
+        this.LowerArmR.rotateAngleX = (float) Math.toRadians(-41.9);
+        this.LowerArmL.rotateAngleX = (float) Math.toRadians(-46.9);
+        this.UpperArmR.rotateAngleX = (float) Math.toRadians(-18.2);
+        this.UpperArmR.rotateAngleY = (float) Math.toRadians(24);
+        this.UpperArmR.rotateAngleZ = (float) Math.toRadians(-9.6);
+        this.UpperArmL.rotateAngleX = (float) Math.toRadians(-18.4);
+        this.UpperArmL.rotateAngleY = (float) Math.toRadians(-16.5);
+        this.UpperArmL.rotateAngleZ = (float) Math.toRadians(10.3);
+        this.Neck.rotateAngleZ = (float) Math.toRadians(-7.5);
+        this.Neck.rotateAngleX = (float) Math.toRadians(-2.8);
+        this.Neck2.rotateAngleZ = (float) Math.toRadians(-5);
+        this.Neck2.rotateAngleX = (float) Math.toRadians(2.7);
+        this.Chest.offsetY = -0.05F;
+        this.Chest.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
