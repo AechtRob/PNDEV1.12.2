@@ -1,0 +1,22 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:dna_centrifuge"
+    },
+    {
+      "item": "lepidodendron:dna_forge"
+    },
+    {
+      "item": "lepidodendron:dna_rail"
+    },
+    {
+      "item": "lepidodendron:dna_claw"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:dna_recombiner_item",
+    "count": 1
+  }
+}

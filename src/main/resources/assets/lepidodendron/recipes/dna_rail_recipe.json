@@ -1,0 +1,43 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "ingotGold"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:dna_rail",
+    "count": 1
+  }
+}

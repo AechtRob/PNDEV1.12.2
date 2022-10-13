@@ -1,0 +1,50 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "paneGlass"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "7": {
+      "item": "minecraft:redstone_block"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:dna_centrifuge",
+    "count": 1
+  }
+}
