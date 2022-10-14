@@ -200,7 +200,8 @@ public class ModelUrocordylus extends AdvancedModelBaseExtended {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.Body1.rotateAngleY = (float) Math.toRadians(90);
-        this.Body1.offsetX = -0.09F;
+        this.Body1.offsetX = -0.25F;
+        this.Body1.offsetZ = 0.2F;
         this.Body1.offsetY = -0.2F;
         this.Body1.render(0.01F);
         GlStateManager.enableCull();
