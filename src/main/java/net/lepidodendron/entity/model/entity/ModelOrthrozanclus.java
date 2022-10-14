@@ -424,7 +424,7 @@ public class ModelOrthrozanclus extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Orthozanclus.render(0.015F);
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -316,9 +316,9 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.neck.rotateAngleX = (float) Math.toRadians(-1.6);
         this.neck2.rotateAngleX = (float) Math.toRadians(-22.5);
         this.neck3.rotateAngleX = (float) Math.toRadians(-15);
@@ -326,7 +326,7 @@ public class ModelSillosuchus extends AdvancedModelBaseExtended {
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(32.5);
         this.bodyfront.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

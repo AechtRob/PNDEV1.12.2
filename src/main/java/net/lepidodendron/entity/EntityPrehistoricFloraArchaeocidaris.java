@@ -102,7 +102,7 @@ public class EntityPrehistoricFloraArchaeocidaris extends EntityPrehistoricFlora
 
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		if (player.getHeldItem(hand) == ItemStack.EMPTY) {
+		if (player.getHeldItem(hand).isEmpty()) {
 			player.attackEntityFrom(DamageSource.CACTUS, (float) 2);
 		}
 		return super.processInteract(player, hand);

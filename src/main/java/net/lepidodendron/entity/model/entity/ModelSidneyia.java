@@ -183,12 +183,12 @@ public class ModelSidneyia extends AdvancedModelBase {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.body.render(0.016F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -173,9 +173,9 @@ public class ModelBarbclabornia extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(83);
         this.head.rotateAngleY = (float) Math.toRadians(-12.5);
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
@@ -187,7 +187,7 @@ public class ModelBarbclabornia extends AdvancedModelBase {
         this.body.offsetY = -0.14F;
         this.body.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

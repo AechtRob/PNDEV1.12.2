@@ -348,9 +348,9 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(45);
         this.Neckbase.rotateAngleY = (float) Math.toRadians(20);
         this.Neckbase.rotateAngleX = (float) Math.toRadians(-30);
@@ -365,7 +365,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
         this.Head.rotateAngleX = (float) Math.toRadians(30);
         this.Bodyfront.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

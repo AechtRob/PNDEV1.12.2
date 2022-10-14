@@ -52,12 +52,12 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                 if (te instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
                     BlockDNARecombinerForge.TileEntityDNARecombinerForge tee = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) te;
                     ItemStack itemstack = ItemStack.EMPTY;
-                    if (((BlockDNARecombinerForge.TileEntityDNARecombinerForge) te).getStackInSlot(0) != ItemStack.EMPTY) {
+                    if (!((BlockDNARecombinerForge.TileEntityDNARecombinerForge) te).getStackInSlot(0).isEmpty()) {
                         itemstack = tee.getStackInSlot(0);
                     }
 
                     //Render Phial of DNA for usage:
-                    if (itemstack != ItemStack.EMPTY) {
+                    if (!itemstack.isEmpty()) {
                         GlStateManager.enableRescaleNormal();
                         GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
                         GlStateManager.enableBlend();
@@ -97,10 +97,10 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
 
                     //Render Oligopool clamp:
                     itemstack = ItemStack.EMPTY;
-                    if (((BlockDNARecombinerForge.TileEntityDNARecombinerForge) te).getStackInSlot(2) != ItemStack.EMPTY) {
+                    if (!((BlockDNARecombinerForge.TileEntityDNARecombinerForge) te).getStackInSlot(2).isEmpty()) {
                         itemstack = tee.getStackInSlot(2);
                     }
-                    if (itemstack != ItemStack.EMPTY) {
+                    if (!itemstack.isEmpty()) {
                         this.bindTexture(TEXTURE_OLIGO_FULL);
                     }
                     else {

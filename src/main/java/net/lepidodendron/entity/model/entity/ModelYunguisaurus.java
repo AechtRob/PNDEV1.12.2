@@ -311,9 +311,9 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.neck2.offsetZ = -0.3F;
         this.head.rotateAngleY = (float)Math.toRadians(20);
         this.neck3.rotateAngleY = (float)Math.toRadians(-10);
@@ -322,7 +322,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
         this.neck2.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

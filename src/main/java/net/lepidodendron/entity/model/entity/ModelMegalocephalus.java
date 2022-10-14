@@ -279,9 +279,9 @@ public class ModelMegalocephalus extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(23);
         this.Head.rotateAngleX = (float) Math.toRadians(-20);
         this.Head.rotateAngleY = (float) Math.toRadians(-25);
@@ -297,7 +297,7 @@ public class ModelMegalocephalus extends AdvancedModelBase {
         this.Hips.offsetZ = -0.8F;
         this.Hips.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -324,9 +324,9 @@ public class ModelMegalocephalus extends AdvancedModelBase {
             if (f3 == 0.0F || !Megalocephalus.getIsMoving()) {
                 return;
             }
-            ////this.flap(Leftthigh, speed, 0.65F, false, -3, -0.35F, f2, 0.5F);
+            //this.flap(Leftthigh, speed, 0.65F, false, -3, -0.35F, f2, 0.5F);
             this.flap(Leftthigh, speed, 0.45F, false, -3, -0.35F, f2, 0.5F);
-            ////this.swing(Leftthigh, speed, -0.3F, true, -1, 0.25F, f2, 0.5F);
+            //this.swing(Leftthigh, speed, -0.3F, true, -1, 0.25F, f2, 0.5F);
             this.swing(Leftthigh, speed, -0.5F, true, -1, 1F, f2, 0.5F);
             this.walk(Leftshin, speed, -0.6F, true, -3, 0.0F, f2, 0.8F);
             //this.flap(Lefthindfoot, speed, 0.5F, false, 3, 0.4F, f2, 0.3F);
@@ -336,9 +336,9 @@ public class ModelMegalocephalus extends AdvancedModelBase {
             this.walk(Lefthindfoot, speed, 0.8F, false, 0, 0.4F, f2, 0.5F);
             this.swing(Lefthindfoot, speed, 0.4F, false, 0, 0F, f2, 0.5F);
 
-            ////this.flap(Rightthigh, speed, -0.65F, false, 0, 0.35F, f2, 0.5F);
+            //this.flap(Rightthigh, speed, -0.65F, false, 0, 0.35F, f2, 0.5F);
             this.flap(Rightthigh, speed, -0.45F, false, 0, 0.35F, f2, 0.5F);
-            ////this.swing(Rightthigh, speed, 0.3F, true, 2, -0.25F, f2, 0.5F);
+            //this.swing(Rightthigh, speed, 0.3F, true, 2, -0.25F, f2, 0.5F);
             this.swing(Rightthigh, speed, 0.5F, true, 2, -1F, f2, 0.5F);
             this.walk(Rightshin, speed, -0.6F, true, 0, 0.0F, f2, 0.8F);
             //this.flap(Righthindfoot, speed, -0.5F, false, 6, -0.4F, f2, 0.3F);

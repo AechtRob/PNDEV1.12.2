@@ -112,10 +112,10 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                 if (te instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
                     BlockAcidBathUp.TileEntityAcidBathUp tee = (BlockAcidBathUp.TileEntityAcidBathUp) te;
                     ItemStack itemstack = ItemStack.EMPTY;
-                    if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(1) != ItemStack.EMPTY) {
+                    if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(1).isEmpty()) {
                         itemstack = tee.getStackInSlot(1);
                     }
-                    else if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(5) != ItemStack.EMPTY) {
+                    else if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(5).isEmpty()) {
                         itemstack = tee.getStackInSlot(5);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
@@ -162,10 +162,10 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                     }
 
                     itemstack = ItemStack.EMPTY;
-                    if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(2) != ItemStack.EMPTY) {
+                    if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(2).isEmpty()) {
                         itemstack = tee.getStackInSlot(2);
                     }
-                    else if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(6) != ItemStack.EMPTY) {
+                    else if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(6).isEmpty()) {
                         itemstack = tee.getStackInSlot(6);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
@@ -213,10 +213,10 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                     }
 
                     itemstack = ItemStack.EMPTY;
-                    if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(3) != ItemStack.EMPTY) {
+                    if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(3).isEmpty()) {
                         itemstack = tee.getStackInSlot(3);
                     }
-                    else if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(7) != ItemStack.EMPTY) {
+                    else if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(7).isEmpty()) {
                         itemstack = tee.getStackInSlot(7);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
@@ -264,10 +264,10 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                     }
 
                     itemstack = ItemStack.EMPTY;
-                    if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(4) != ItemStack.EMPTY) {
+                    if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(4).isEmpty()) {
                         itemstack = tee.getStackInSlot(4);
                     }
-                    else if (((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(8) != ItemStack.EMPTY) {
+                    else if (!((BlockAcidBathUp.TileEntityAcidBathUp) te).getStackInSlot(8).isEmpty()) {
                         itemstack = tee.getStackInSlot(8);
                     }
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {

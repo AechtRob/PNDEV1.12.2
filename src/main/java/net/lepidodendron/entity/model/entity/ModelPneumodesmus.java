@@ -308,7 +308,7 @@ public class ModelPneumodesmus extends AdvancedModelBase {
         this.body.offsetZ = -0.08F;
         this.body.render(0.021F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

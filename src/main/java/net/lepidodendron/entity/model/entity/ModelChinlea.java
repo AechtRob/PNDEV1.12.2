@@ -226,7 +226,7 @@ public class ModelChinlea extends AdvancedModelBase {
         this.head.offsetY = -0.19F;
         this.head.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

@@ -217,9 +217,9 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.lowerJaw.rotateAngleX = (float) Math.toRadians(10);
         this.neck2.rotateAngleY = (float) Math.toRadians(18);
         this.neck.rotateAngleY = (float) Math.toRadians(15);
@@ -231,7 +231,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         this.Keichousaurus.offsetZ = -0.11F;
         this.Keichousaurus.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

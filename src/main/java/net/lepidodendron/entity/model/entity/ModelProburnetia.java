@@ -378,9 +378,9 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.proburnetia.offsetZ = -0.3F;
         this.Neck2.rotateAngleX = (float) Math.toRadians(-7.5);
         this.Neck2.rotateAngleY = (float) Math.toRadians(-27.5);
@@ -395,7 +395,7 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);
         this.proburnetia.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

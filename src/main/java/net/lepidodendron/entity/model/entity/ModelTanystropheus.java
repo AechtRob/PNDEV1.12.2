@@ -397,9 +397,9 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.neckbase.offsetZ = -0.3F;
         this.head.rotateAngleX = (float)Math.toRadians(3);
         this.head.rotateAngleY = (float)Math.toRadians(22.2);
@@ -410,7 +410,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
         this.neckbase.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

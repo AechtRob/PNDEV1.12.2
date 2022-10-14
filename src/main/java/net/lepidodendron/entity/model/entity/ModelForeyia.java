@@ -226,7 +226,7 @@ public class ModelForeyia extends AdvancedModelBase {
         //this.body.offsetX = -0.09F;
         this.body.offsetY = -0.19F;
         this.body.render(0.01F);
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

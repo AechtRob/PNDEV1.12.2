@@ -481,7 +481,7 @@ public class ModelHeliopeltis extends AdvancedModelBase {
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Heliopeltis.offsetZ = -0.03F;
         this.Heliopeltis.render(0.022f);
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -1132,7 +1132,7 @@ public class ModelParapeytoia extends AdvancedModelBase {
         this.head.offsetZ = -0.06F;
         this.head.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

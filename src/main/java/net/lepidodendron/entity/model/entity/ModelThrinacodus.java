@@ -151,9 +151,9 @@ public class ModelThrinacodus extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Thrinacodus.rotateAngleY = (float) Math.toRadians(90);
         this.Jaw.rotateAngleX = (float) Math.toRadians(20);
         this.Thrinacodus.rotateAngleY = (float) Math.toRadians(50);
@@ -168,7 +168,7 @@ public class ModelThrinacodus extends AdvancedModelBase {
         this.Thrinacodus.offsetZ = -0.07F;
         this.Thrinacodus.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

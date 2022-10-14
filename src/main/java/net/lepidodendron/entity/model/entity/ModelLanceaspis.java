@@ -287,7 +287,7 @@ public class ModelLanceaspis extends AdvancedModelBase {
         //this.Lanceaspis.offsetZ = 0.1F;
         this.Lanceaspis.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

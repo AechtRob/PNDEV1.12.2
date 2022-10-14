@@ -255,16 +255,16 @@ public class ModelTiarajudens extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(40);
         this.Head.rotateAngleY = (float) Math.toRadians(-17);
         this.Neck.rotateAngleY = (float) Math.toRadians(-24.8);
         this.Neck.rotateAngleX = (float) Math.toRadians(-14.4);
         this.Hips.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

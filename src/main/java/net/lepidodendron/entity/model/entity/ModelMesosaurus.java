@@ -277,9 +277,9 @@ public class ModelMesosaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.mandible.rotateAngleX = (float) Math.toRadians(10);
         this.neck.rotateAngleY = (float) Math.toRadians(18);
         this.neckbase.rotateAngleY = (float) Math.toRadians(15);
@@ -291,7 +291,7 @@ public class ModelMesosaurus extends AdvancedModelBaseExtended {
         this.body.offsetZ = -0.1F;
         this.body.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

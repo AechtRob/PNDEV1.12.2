@@ -9,7 +9,6 @@ import net.lepidodendron.item.ItemPhialDNA;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -135,7 +134,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                 if (te instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
                     BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge tee = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) te;
 
-                    if (tee.getStackInSlot(0) != ItemStack.EMPTY) {
+                    if (!tee.getStackInSlot(0).isEmpty()) {
                         //Render the model in position 0:
                         if (tee.getStackInSlot(0).getItem() == ItemPhialDNA.block) {
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_DNA);
@@ -162,7 +161,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         GlStateManager.popMatrix();
                     }
 
-                    if (tee.getStackInSlot(1) != ItemStack.EMPTY) {
+                    if (!tee.getStackInSlot(1).isEmpty()) {
                         //Render the model in position 1:
                         if (tee.getStackInSlot(1).getItem() == ItemPhialDNA.block) {
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_DNA);
@@ -189,7 +188,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         GlStateManager.popMatrix();
                     }
 
-                    if (tee.getStackInSlot(2) != ItemStack.EMPTY) {
+                    if (!tee.getStackInSlot(2).isEmpty()) {
                         //Render the model in position 2:
                         if (tee.getStackInSlot(2).getItem() == ItemPhialDNA.block) {
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_DNA);
@@ -216,7 +215,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         GlStateManager.popMatrix();
                     }
 
-                    if (tee.getStackInSlot(3) != ItemStack.EMPTY) {
+                    if (!tee.getStackInSlot(3).isEmpty()) {
                         //Render the model in position 3:
                         if (tee.getStackInSlot(3).getItem() == ItemPhialDNA.block) {
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_DNA);

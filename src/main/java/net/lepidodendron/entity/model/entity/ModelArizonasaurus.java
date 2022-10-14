@@ -258,9 +258,9 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Body2.offsetY = 0.04F;
         this.Head.rotateAngleX = (float)Math.toRadians(2.5);
         this.Neck2.rotateAngleX = (float)Math.toRadians(-12.5);
@@ -272,7 +272,7 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
         this.LeftArm2.rotateAngleX = (float)Math.toRadians(-105);
         this.Body2.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

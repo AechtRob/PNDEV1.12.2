@@ -225,9 +225,9 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Datheosaurus.offsetX = 0.5F;
         this.Datheosaurus.offsetZ = -0.2F;
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
@@ -239,7 +239,7 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         this.tail4.rotateAngleY = (float) Math.toRadians(-44);
         this.Datheosaurus.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

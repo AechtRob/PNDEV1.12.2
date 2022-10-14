@@ -215,7 +215,7 @@ public class ModelTrimerus extends AdvancedModelBase {
         //this.Trimerus.offsetZ = 0.1F;
         this.Trimerus.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

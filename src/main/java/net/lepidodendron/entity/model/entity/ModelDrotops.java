@@ -498,7 +498,7 @@ public class ModelDrotops extends AdvancedModelBase {
         //this.Drotops.offsetZ = 0.1F;
         this.Drotops.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

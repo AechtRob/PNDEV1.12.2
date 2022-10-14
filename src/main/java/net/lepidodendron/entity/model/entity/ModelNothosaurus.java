@@ -404,9 +404,9 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Neckbase.offsetZ = -0.3F;
         this.Head.rotateAngleY = (float)Math.toRadians(17.4);
         this.Neckmiddlebase.rotateAngleY = (float)Math.toRadians(-14.9);
@@ -415,7 +415,7 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
         this.Lowerjawback.rotateAngleX = (float)Math.toRadians(32.5);
         this.Neckbase.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

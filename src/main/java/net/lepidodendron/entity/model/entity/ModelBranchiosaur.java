@@ -248,12 +248,12 @@ public class ModelBranchiosaur extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Branchiosaurus.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -280,9 +280,9 @@ public class ModelBranchiosaur extends AdvancedModelBase {
             if (f3 == 0.0F) {
                 return;
             }
-            ////this.flap(Leftthigh, speed, 0.65F, false, -3, -0.35F, f2, 0.5F);
+            //this.flap(Leftthigh, speed, 0.65F, false, -3, -0.35F, f2, 0.5F);
             this.flap(backleftleg, speed, 0.45F, false, -3, -0.35F, f2, 0.5F);
-            ////this.swing(Leftthigh, speed, -0.3F, true, -1, 0.25F, f2, 0.5F);
+            //this.swing(Leftthigh, speed, -0.3F, true, -1, 0.25F, f2, 0.5F);
             this.swing(backleftleg, speed, -0.5F, true, -1, 1F, f2, 0.5F);
             this.walk(backleftleg2, speed, -0.6F, true, -3, 0.0F, f2, 0.8F);
             //this.flap(Lefthindfoot, speed, 0.5F, false, 3, 0.4F, f2, 0.3F);
@@ -292,9 +292,9 @@ public class ModelBranchiosaur extends AdvancedModelBase {
             this.walk(backleftleg3, speed, 0.8F, false, 0, 0.4F, f2, 0.5F);
             this.swing(backleftleg3, speed, 0.4F, false, 0, 0F, f2, 0.5F);
 
-            ////this.flap(Rightthigh, speed, -0.65F, false, 0, 0.35F, f2, 0.5F);
+            //this.flap(Rightthigh, speed, -0.65F, false, 0, 0.35F, f2, 0.5F);
             this.flap(backrightleg4, speed, -0.45F, false, 0, 0.35F, f2, 0.5F);
-            ////this.swing(Rightthigh, speed, 0.3F, true, 2, -0.25F, f2, 0.5F);
+            //this.swing(Rightthigh, speed, 0.3F, true, 2, -0.25F, f2, 0.5F);
             this.swing(backrightleg4, speed, 0.5F, true, 2, -1F, f2, 0.5F);
             this.walk(backrightleg5, speed, -0.6F, true, 0, 0.0F, f2, 0.8F);
             //this.flap(Righthindfoot, speed, -0.5F, false, 6, -0.4F, f2, 0.3F);
