@@ -261,6 +261,16 @@ public class ModelHyneria extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.rotateAngleY = (float) Math.toRadians(86);
+        this.head.rotateAngleY = (float) Math.toRadians(-12.5);
+        this.jaw.rotateAngleX = (float) Math.toRadians(16.5);
+        this.body2.rotateAngleY = (float) Math.toRadians(10);
+        this.body3.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body4.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body5.rotateAngleY = (float) Math.toRadians(7.5);
+        this.body.offsetX = -0.27F;
+        this.body.offsetY = -0.2F;
+        this.body.offsetZ = 0F;
         this.body.render(0.01F);
         GlStateManager.enableCull();
         //GlStateManager.disableBlend();
