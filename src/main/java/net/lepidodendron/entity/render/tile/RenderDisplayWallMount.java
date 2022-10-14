@@ -27,7 +27,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     public static final PropertyDirection FACING = BlockDirectional.FACING;
     private static final ResourceLocation TEXTURE_ACANTHODES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthodes.png");
     private final ModelAcanthodes modelAcanthodes;
-    private static final ResourceLocation TEXTURE_ACROLEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis_static.png");
+    private static final ResourceLocation TEXTURE_ACROLEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acrolepis.png");
     private final ModelAcrolepis modelAcrolepis;
     private static final ResourceLocation TEXTURE_AEGIROCASSIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis.png");
     private final ModelAegirocassis modelAegirocassis;
@@ -39,7 +39,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelAllenypterus modelAllenypterus;
     private static final ResourceLocation TEXTURE_ANTEOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anteosaurus.png");
     private final ModelAnteosaurus modelAnteosaurus;
-    private static final ResourceLocation TEXTURE_ANTINEOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus_static.png");
+    private static final ResourceLocation TEXTURE_ANTINEOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus.png");
     private final ModelAntineosteus modelAntineosteus;
     private static final ResourceLocation TEXTURE_ARANDASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arandaspis.png");
     private final ModelArandaspis modelArandaspis;
