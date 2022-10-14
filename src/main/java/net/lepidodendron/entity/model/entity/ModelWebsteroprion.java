@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraWebsteroprion;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelWebsteroprion extends AdvancedModelBase {
@@ -581,7 +580,7 @@ public class ModelWebsteroprion extends AdvancedModelBase {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.disableCull();
         this.setRotateAngle(head, -0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(tentacle, -0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(tentacle2, 0.0436F, -0.6109F, 0.0F);
@@ -619,7 +618,7 @@ public class ModelWebsteroprion extends AdvancedModelBase {
         this.head.offsetZ = 0.1F;
         this.head.render(0.1F);
         //GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
