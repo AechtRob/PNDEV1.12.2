@@ -166,7 +166,7 @@ public class ModelHylonomus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.7F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

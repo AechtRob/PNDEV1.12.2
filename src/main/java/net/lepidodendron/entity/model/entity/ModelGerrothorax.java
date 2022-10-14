@@ -338,7 +338,7 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         this.neck.offsetY = -0.001F;
         this.upperjaw.rotateAngleX = (float) Math.toRadians(35);
         this.neck.rotateAngleX = (float) Math.toRadians(-15);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

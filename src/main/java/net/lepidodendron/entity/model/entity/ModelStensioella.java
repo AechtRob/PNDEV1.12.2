@@ -190,7 +190,7 @@ public class ModelStensioella extends AdvancedModelBase {
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.offsetX = -0.08F;
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

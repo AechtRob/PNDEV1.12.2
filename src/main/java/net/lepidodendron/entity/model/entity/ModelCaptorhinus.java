@@ -242,7 +242,7 @@ public class ModelCaptorhinus extends AdvancedModelBase {
         this.setRotateAngle(Tail2, 0.0481F, -0.4359F, -0.0203F);
         this.setRotateAngle(Tail3, 0.1473F, -0.4755F, -0.0678F);
         this.Captorhinus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

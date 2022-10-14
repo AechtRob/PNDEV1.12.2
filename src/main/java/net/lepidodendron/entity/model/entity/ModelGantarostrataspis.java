@@ -178,7 +178,7 @@ public class ModelGantarostrataspis extends AdvancedModelBase {
         this.Gantarostrataspis.offsetY = 0F;
         this.Gantarostrataspis.offsetZ = 0.02F;
         this.Gantarostrataspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

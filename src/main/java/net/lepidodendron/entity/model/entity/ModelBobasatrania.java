@@ -240,7 +240,7 @@ public class ModelBobasatrania extends AdvancedModelBase {
         this.Bobasatrania.offsetY = -0.13F;
         this.Bobasatrania.offsetZ = 0.07F;
         this.Bobasatrania.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

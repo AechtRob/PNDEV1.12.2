@@ -304,7 +304,7 @@ public class ModelAulacephalodon extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         //this.aulacephalodon.offsetZ = -0.6F;
         this.aulacephalodon.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

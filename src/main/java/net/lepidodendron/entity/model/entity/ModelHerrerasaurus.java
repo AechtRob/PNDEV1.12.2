@@ -282,7 +282,7 @@ public class ModelHerrerasaurus extends AdvancedModelBaseExtended {
         this.upperarm2.rotateAngleX = (float) Math.toRadians(20);
         this.lowerarm2.rotateAngleX = (float) Math.toRadians(-70);
         this.chest.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -356,7 +356,7 @@ public class ModelTyrannophontes extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.bone.offsetZ = -0.04F;
         this.bone.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

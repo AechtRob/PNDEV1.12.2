@@ -301,7 +301,7 @@ public class ModelCyamodus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -1.31F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -253,7 +253,7 @@ public class ModelCartorhynchus extends AdvancedModelBaseExtended {
         this.tail2.rotateAngleY = (float) Math.toRadians(-27.5);
         this.tail3.rotateAngleY = (float) Math.toRadians(-37.5);
         this.root.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

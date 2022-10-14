@@ -414,7 +414,7 @@ public class ModelTerataspis extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.base.offsetZ = -0.04F;
         this.base.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

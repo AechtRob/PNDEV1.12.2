@@ -188,7 +188,7 @@ public class ModelLuoxiongichthys extends AdvancedModelBase {
         this.body.offsetX = -0.02F;
         this.body.offsetY = -0.16F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

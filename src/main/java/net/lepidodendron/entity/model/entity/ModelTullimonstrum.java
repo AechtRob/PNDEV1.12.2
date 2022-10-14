@@ -129,7 +129,7 @@ public class ModelTullimonstrum extends AdvancedModelBase {
         this.bone.offsetY = -0.19F;
         this.bone.offsetZ = 0.07F;
         this.bone.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

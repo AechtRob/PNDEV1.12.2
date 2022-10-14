@@ -258,7 +258,7 @@ public class ModelPagea extends AdvancedModelBase {
         this.legR4.rotateAngleX = (float) Math.toRadians(-15);
         this.legR5.rotateAngleX = (float) Math.toRadians(-24);
         this.carapace.render(0.04F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -399,7 +399,7 @@ public class ModelBunostegos extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.jaw.rotateAngleX = (float) Math.toRadians(23);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

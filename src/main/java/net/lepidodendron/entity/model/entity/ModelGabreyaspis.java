@@ -198,7 +198,7 @@ public class ModelGabreyaspis extends AdvancedModelBase {
         this.gabreyaspis.offsetY = 0F;
         this.gabreyaspis.offsetZ = 0.04F;
         this.gabreyaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

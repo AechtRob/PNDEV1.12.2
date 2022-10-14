@@ -228,7 +228,7 @@ public class ModelGroenlandaspis extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Groenlandaspis.rotateAngleY = (float) Math.toRadians(90);
         this.Groenlandaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

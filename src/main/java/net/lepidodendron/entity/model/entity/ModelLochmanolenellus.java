@@ -538,7 +538,7 @@ public class ModelLochmanolenellus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         //this.body.offsetZ = 0.1F;
         this.Lochmanolenellus.render(0.025f);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

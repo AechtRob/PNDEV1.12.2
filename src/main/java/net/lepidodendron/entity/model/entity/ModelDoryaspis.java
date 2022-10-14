@@ -136,7 +136,7 @@ public class ModelDoryaspis extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Doryaspis.rotateAngleY = (float) Math.toRadians(90);
         this.Doryaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

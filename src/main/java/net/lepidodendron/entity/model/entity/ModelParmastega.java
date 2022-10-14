@@ -293,7 +293,7 @@ public class ModelParmastega extends AdvancedModelBaseExtended {
         this.Tail3.rotateAngleY = (float) Math.toRadians(5);
         this.Parmastega.offsetZ = -1.2F;
         this.Parmastega.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

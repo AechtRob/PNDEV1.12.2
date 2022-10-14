@@ -210,7 +210,7 @@ public class ModelPlatyhystrix extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.3F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

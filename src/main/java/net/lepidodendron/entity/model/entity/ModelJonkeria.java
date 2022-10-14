@@ -264,7 +264,7 @@ public class ModelJonkeria extends AdvancedModelBaseExtended {
         this.neck2.rotateAngleX = (float) Math.toRadians(-13);
         this.neck3.rotateAngleX = (float) Math.toRadians(-2);
         this.neck1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

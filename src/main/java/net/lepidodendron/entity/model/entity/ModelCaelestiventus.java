@@ -345,7 +345,7 @@ public class ModelCaelestiventus extends AdvancedModelBaseExtended {
         this.chest.offsetZ = -0.3F;
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
         this.chest.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -376,7 +376,7 @@ public class ModelSaurosuchus extends AdvancedModelBaseExtended {
         this.Neck2.rotateAngleX = (float) Math.toRadians(2.7);
         this.Chest.offsetY = -0.02F;
         this.Chest.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -270,7 +270,7 @@ public class ModelTiktaalik extends AdvancedModelBaseExtended {
         this.body6.rotateAngleY = (float) Math.toRadians(5);
         this.body.offsetZ = -1.2F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

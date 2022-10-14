@@ -295,7 +295,7 @@ public class ModelCaturus extends AdvancedModelBase {
         this.Caturus.offsetX = -0.2F;
         this.Caturus.offsetY = -0.17F;
         this.Caturus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -291,7 +291,7 @@ public class ModelSpathicephalus extends AdvancedModelBase {
         this.Tail5.rotateAngleY = (float) Math.toRadians(5);
         this.Hips.offsetZ = -0.3F;
         this.Hips.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

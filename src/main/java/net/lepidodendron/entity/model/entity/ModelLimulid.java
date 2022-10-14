@@ -280,7 +280,7 @@ public class ModelLimulid extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.carapace.offsetZ = -0.14F;
         this.carapace.render(0.037F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

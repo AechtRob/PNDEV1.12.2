@@ -233,7 +233,7 @@ public class ModelKaibabvenator extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(26);
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

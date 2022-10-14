@@ -280,7 +280,7 @@ public class ModelPalaeoniscum extends AdvancedModelBase {
         this.Palaeoniscum.offsetX = -0.3F;
         this.Palaeoniscum.offsetY = -0.08F;
         this.Palaeoniscum.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

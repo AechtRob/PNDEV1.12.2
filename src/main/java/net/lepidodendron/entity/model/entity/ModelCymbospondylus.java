@@ -382,7 +382,7 @@ public class ModelCymbospondylus extends AdvancedModelBase {
         this.Jaw.rotateAngleX = (float) Math.toRadians(25);
         this.Head.rotateAngleX = (float) Math.toRadians(0);
         this.Head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

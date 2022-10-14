@@ -336,7 +336,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
         this.Neck.offsetY = -0.001F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

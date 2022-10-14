@@ -300,7 +300,7 @@ public class ModelDimetrodon extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
         this.Neckbase.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

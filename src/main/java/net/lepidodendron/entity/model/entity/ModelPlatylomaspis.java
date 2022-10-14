@@ -129,7 +129,7 @@ public class ModelPlatylomaspis extends AdvancedModelBase {
         this.Platylomaspis.offsetX = -0.06F;
         this.Platylomaspis.offsetZ = 0.F;
         this.Platylomaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

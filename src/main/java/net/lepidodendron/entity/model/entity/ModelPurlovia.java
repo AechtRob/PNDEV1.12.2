@@ -210,7 +210,7 @@ public class ModelPurlovia extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.PurloviaBase.offsetZ = -0.3F;
         this.PurloviaBase.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

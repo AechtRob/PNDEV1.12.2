@@ -404,7 +404,7 @@ public class ModelMontecaris extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.05F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

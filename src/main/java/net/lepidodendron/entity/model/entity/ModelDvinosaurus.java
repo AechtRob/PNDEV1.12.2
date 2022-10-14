@@ -380,7 +380,7 @@ public class ModelDvinosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(body7, 0.0F, -0.48F, 0.0F);
         this.setRotateAngle(body8, 0.0F, -0.3927F, 0.0F);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

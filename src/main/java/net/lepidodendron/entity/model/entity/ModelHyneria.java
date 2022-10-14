@@ -272,7 +272,7 @@ public class ModelHyneria extends AdvancedModelBase {
         this.body.offsetY = -0.2F;
         this.body.offsetZ = 0F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

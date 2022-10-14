@@ -364,7 +364,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
         this.Leftlowerarm.rotateAngleZ = (float) Math.toRadians(10);
         this.Head.rotateAngleX = (float) Math.toRadians(30);
         this.Bodyfront.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

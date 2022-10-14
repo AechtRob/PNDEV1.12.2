@@ -185,7 +185,7 @@ public class ModelCoelacanthus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodyfront.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

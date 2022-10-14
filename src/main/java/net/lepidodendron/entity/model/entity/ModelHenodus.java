@@ -252,7 +252,7 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.henodus.offsetZ = -0.11F;
         this.henodus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

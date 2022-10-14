@@ -238,7 +238,7 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         this.tail3.rotateAngleY = (float) Math.toRadians(-29.9);
         this.tail4.rotateAngleY = (float) Math.toRadians(-44);
         this.Datheosaurus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

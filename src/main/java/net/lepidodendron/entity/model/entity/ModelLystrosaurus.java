@@ -223,7 +223,7 @@ public class ModelLystrosaurus extends AdvancedModelBaseExtended {
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(30);
         this.Head.rotateAngleX = (float) Math.toRadians(-10);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

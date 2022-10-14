@@ -317,7 +317,7 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
         this.arms1.rotateAngleX = (float) Math.toRadians(20);
         this.arms2.rotateAngleX = (float) Math.toRadians(20);
         this.chest.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

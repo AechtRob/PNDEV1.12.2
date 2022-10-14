@@ -207,7 +207,7 @@ public class ModelPanderichthys extends AdvancedModelBase {
         this.body.offsetX = -0.09F;
         this.body.offsetZ = 0.03F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

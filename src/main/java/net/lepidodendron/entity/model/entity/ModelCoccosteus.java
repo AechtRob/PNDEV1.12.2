@@ -179,7 +179,7 @@ public class ModelCoccosteus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Body1.rotateAngleY = (float) Math.toRadians(90);
         this.Body1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -335,7 +335,7 @@ public class ModelSauroctonus extends AdvancedModelBaseExtended {
         this.Neck.offsetY = -0.001F;
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(35);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

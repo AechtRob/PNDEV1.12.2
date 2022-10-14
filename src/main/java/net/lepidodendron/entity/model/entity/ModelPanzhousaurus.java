@@ -218,7 +218,7 @@ public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.1F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

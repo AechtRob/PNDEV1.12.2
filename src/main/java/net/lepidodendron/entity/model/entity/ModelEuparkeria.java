@@ -200,7 +200,7 @@ public class ModelEuparkeria extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.bodybase1.offsetZ = -0.71F;
         this.bodybase1.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

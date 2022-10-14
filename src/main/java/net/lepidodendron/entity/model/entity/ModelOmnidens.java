@@ -638,7 +638,7 @@ public class ModelOmnidens extends AdvancedModelBase {
         this.head.rotateAngleY = (float) Math.toRadians(-7.5);
         this.body6.offsetZ = -2.5F;
         this.body6.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

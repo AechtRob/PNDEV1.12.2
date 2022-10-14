@@ -300,7 +300,7 @@ public class ModelCynognathus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(23);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

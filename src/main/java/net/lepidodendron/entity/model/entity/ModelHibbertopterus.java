@@ -273,7 +273,7 @@ public class ModelHibbertopterus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.carapace.offsetZ = -0.6F;
         this.carapace.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

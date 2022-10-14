@@ -204,7 +204,7 @@ public class ModelLunaspis extends AdvancedModelBase {
         this.Lunaspis.offsetX = 0.02F;
         this.Lunaspis.offsetZ = 0.03F;
         this.Lunaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

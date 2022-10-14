@@ -188,7 +188,7 @@ public class ModelTartuosteus extends AdvancedModelBase {
         this.Tartuosteus.offsetX = -0.09F;
         this.Tartuosteus.offsetY = -0.19F;
         this.Tartuosteus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

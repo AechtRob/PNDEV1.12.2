@@ -445,7 +445,7 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r23, 0.0175F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r24, -0.1571F, 0.0F, 0.0F);
         this.Dasyceps.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

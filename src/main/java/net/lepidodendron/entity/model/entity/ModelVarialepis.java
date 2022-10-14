@@ -216,7 +216,7 @@ public class ModelVarialepis extends AdvancedModelBase {
         this.varialepis.offsetY = -0.22F;
         this.varialepis.offsetZ = 0F;
         this.varialepis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -374,7 +374,7 @@ public class ModelAcutiramusPlinth extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.5F;
         this.body.render(0.04F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

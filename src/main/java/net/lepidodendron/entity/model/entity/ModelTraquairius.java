@@ -434,7 +434,7 @@ public class ModelTraquairius extends AdvancedModelBase {
         this.head.offsetY = -0.2F;
         this.head.offsetZ = 0.07F;
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

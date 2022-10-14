@@ -401,7 +401,7 @@ public class ModelAeger extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.bone.offsetZ = -0.08F;
         this.bone.render(0.037F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

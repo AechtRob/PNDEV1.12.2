@@ -191,7 +191,7 @@ public class ModelAulacoceras extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.14F;
         this.body.render(0.014F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

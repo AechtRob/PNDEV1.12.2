@@ -259,7 +259,7 @@ public class ModelAscendonanus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.AscendonanusBase.offsetZ = -0.7F;
         this.AscendonanusBase.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

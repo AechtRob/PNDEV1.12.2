@@ -254,7 +254,7 @@ public class ModelMorganucodon extends AdvancedModelBaseExtended {
         this.Hips.offsetZ = -0.3F;
         this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(20);
         this.Hips.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

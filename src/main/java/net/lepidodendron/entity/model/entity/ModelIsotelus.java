@@ -441,7 +441,7 @@ public class ModelIsotelus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Isotelus.offsetZ = 0.03F;
         this.Isotelus.render(0.037F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

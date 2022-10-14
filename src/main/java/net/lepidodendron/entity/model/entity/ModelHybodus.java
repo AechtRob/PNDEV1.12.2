@@ -256,7 +256,7 @@ public class ModelHybodus extends AdvancedModelBase {
         this.Hybodus.offsetX = -0.16F;
         this.Hybodus.offsetY = -0.14F;
         this.Hybodus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

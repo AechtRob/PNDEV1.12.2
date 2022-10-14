@@ -305,7 +305,7 @@ public class ModelAustrolimulus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.carapace.offsetZ = -0.04F;
         this.carapace.render(0.037F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

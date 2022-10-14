@@ -245,7 +245,7 @@ public class ModelDorypterus extends AdvancedModelBase {
         GlStateManager.disableCull();
         this.Dorypterus.rotateAngleY = (float) Math.toRadians(90);
         this.Dorypterus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

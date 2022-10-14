@@ -309,7 +309,7 @@ public class ModelEudimorphodon extends AdvancedModelBaseExtended {
         this.chest.offsetZ = -0.3F;
         this.jaw1.rotateAngleX = (float) Math.toRadians(20);
         this.chest.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -167,7 +167,7 @@ public class ModelPygopterus extends AdvancedModelBase {
         this.body.offsetY = -0.16F;
         this.body.offsetZ = 0.04F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

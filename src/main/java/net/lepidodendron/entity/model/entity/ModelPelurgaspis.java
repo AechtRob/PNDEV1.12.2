@@ -168,7 +168,7 @@ public class ModelPelurgaspis extends AdvancedModelBase {
         this.main.offsetY = -0.21F;
         this.main.offsetZ = 0.07F;
         this.main.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

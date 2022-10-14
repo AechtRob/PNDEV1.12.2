@@ -120,7 +120,7 @@ public class ModelThelodus extends AdvancedModelBase {
         this.body.offsetX = -0.13F;
         this.body.offsetZ = 0.07F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

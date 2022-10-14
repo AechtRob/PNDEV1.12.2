@@ -170,7 +170,7 @@ public class ModelPteraspis extends AdvancedModelBase {
         this.Headback.offsetX = -0.05F;
         this.Headback.offsetZ = 0.05F;
         this.Headback.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

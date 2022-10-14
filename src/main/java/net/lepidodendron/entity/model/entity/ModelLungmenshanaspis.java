@@ -115,7 +115,7 @@ public class ModelLungmenshanaspis extends AdvancedModelBase {
         this.Lungmenshanaspis.offsetX = -0.04F;
         this.Lungmenshanaspis.offsetZ = -0.03F;
         this.Lungmenshanaspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

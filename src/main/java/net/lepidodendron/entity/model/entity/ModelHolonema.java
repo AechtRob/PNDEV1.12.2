@@ -255,7 +255,7 @@ public class ModelHolonema extends AdvancedModelBase {
         this.headshield.offsetY = -0F;
         this.headshield.offsetZ = 0.02F;
         this.headshield.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

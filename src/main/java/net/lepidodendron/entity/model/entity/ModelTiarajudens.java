@@ -263,7 +263,7 @@ public class ModelTiarajudens extends AdvancedModelBaseExtended {
         this.Neck.rotateAngleY = (float) Math.toRadians(-24.8);
         this.Neck.rotateAngleX = (float) Math.toRadians(-14.4);
         this.Hips.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

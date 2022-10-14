@@ -196,7 +196,7 @@ public class ModelQilinyu extends AdvancedModelBase {
         this.head.offsetX = -0.06F;
         this.head.offsetZ = 0.F;
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

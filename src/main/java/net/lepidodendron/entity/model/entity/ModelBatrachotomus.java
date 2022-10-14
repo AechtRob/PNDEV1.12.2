@@ -370,7 +370,7 @@ public class ModelBatrachotomus extends AdvancedModelBaseExtended {
         this.Neck2.rotateAngleX = (float) Math.toRadians(2.7);
         this.Chest.offsetY = -0.05F;
         this.Chest.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

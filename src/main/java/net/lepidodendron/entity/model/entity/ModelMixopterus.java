@@ -238,7 +238,7 @@ public class ModelMixopterus extends AdvancedModelBase {
         this.carapace.offsetY = 0F;
         this.carapace.offsetZ = -0.02F;
         this.carapace.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

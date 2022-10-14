@@ -397,7 +397,7 @@ public class ModelOphiacodon extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.lower_jaw.rotateAngleX = (float) Math.toRadians(25);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

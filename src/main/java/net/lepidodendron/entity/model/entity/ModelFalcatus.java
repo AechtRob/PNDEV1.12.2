@@ -181,7 +181,7 @@ public class ModelFalcatus extends AdvancedModelBase {
         this.body.offsetX = -0.06F;
         this.body.offsetY = 0.03F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

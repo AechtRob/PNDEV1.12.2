@@ -288,7 +288,7 @@ public class ModelHeterosteus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.upperjaw.rotateAngleX = (float) Math.toRadians(26);
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

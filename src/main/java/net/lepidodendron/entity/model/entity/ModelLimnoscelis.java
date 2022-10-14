@@ -209,7 +209,7 @@ public class ModelLimnoscelis extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(20);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

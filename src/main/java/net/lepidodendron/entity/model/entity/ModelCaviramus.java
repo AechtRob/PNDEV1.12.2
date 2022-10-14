@@ -321,7 +321,7 @@ public class ModelCaviramus extends AdvancedModelBaseExtended {
         this.hips.offsetZ = -0.3F;
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
         this.hips.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

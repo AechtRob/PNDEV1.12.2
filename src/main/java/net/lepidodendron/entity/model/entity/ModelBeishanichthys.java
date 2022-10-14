@@ -221,7 +221,7 @@ public class ModelBeishanichthys extends AdvancedModelBase {
         this.bone2.offsetX = -2F;
         this.bone2.offsetY = -9F;
         this.bone2.render(0.48F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

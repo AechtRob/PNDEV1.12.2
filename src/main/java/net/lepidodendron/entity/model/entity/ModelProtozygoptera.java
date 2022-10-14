@@ -121,7 +121,7 @@ public class ModelProtozygoptera extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.04F;
         this.body.render(0.037F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

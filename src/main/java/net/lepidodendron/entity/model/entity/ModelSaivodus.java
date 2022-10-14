@@ -234,7 +234,7 @@ public class ModelSaivodus extends AdvancedModelBase {
         this.head.offsetY = -0.001F;
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(35);
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

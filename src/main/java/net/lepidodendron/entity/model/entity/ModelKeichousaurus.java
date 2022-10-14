@@ -230,7 +230,7 @@ public class ModelKeichousaurus extends AdvancedModelBaseExtended {
         this.tail3.rotateAngleY = (float) Math.toRadians(15);
         this.Keichousaurus.offsetZ = -0.11F;
         this.Keichousaurus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

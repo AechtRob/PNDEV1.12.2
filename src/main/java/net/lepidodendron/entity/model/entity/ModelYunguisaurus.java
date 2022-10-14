@@ -321,7 +321,7 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         this.neck5.rotateAngleY = (float)Math.toRadians(-7.5);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
         this.neck2.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

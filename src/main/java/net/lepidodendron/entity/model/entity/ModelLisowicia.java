@@ -263,7 +263,7 @@ public class ModelLisowicia extends AdvancedModelBaseExtended {
         this.jaw1.rotateAngleX = (float) Math.toRadians(2);
         this.head1.rotateAngleX = (float) Math.toRadians(7);
         this.head1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

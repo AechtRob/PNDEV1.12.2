@@ -293,7 +293,7 @@ public class ModelProterogyrinus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.main.offsetZ = -0.3F;
         this.main.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

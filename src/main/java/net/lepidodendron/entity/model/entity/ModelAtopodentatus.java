@@ -225,7 +225,7 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
         this.neck3.rotateAngleX = (float) Math.toRadians(-12.5);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

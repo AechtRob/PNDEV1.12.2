@@ -361,7 +361,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.upperjaw.rotateAngleX = (float) Math.toRadians(35);
         this.head.rotateAngleX = (float) Math.toRadians(-15);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

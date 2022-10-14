@@ -305,7 +305,7 @@ public class ModelDiplocaulus extends AdvancedModelBaseExtended {
         this.tail4.rotateAngleY = (float) Math.toRadians(30);
         this.tail5.rotateAngleY = (float) Math.toRadians(32.5);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

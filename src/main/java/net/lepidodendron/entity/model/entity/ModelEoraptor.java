@@ -347,7 +347,7 @@ public class ModelEoraptor extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.jaw1.rotateAngleX = (float) Math.toRadians(23);
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

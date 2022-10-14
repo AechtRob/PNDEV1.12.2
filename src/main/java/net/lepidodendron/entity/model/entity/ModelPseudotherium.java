@@ -226,7 +226,7 @@ public class ModelPseudotherium extends AdvancedModelBaseExtended {
         this.body2.offsetZ = -0.3F;
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
         this.body2.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -318,7 +318,7 @@ public class ModelSuminia extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.root.offsetZ = -0.3F;
         this.root.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

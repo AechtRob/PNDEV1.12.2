@@ -388,7 +388,7 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Lowerjaw.rotateAngleX = (float) Math.toRadians(25);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

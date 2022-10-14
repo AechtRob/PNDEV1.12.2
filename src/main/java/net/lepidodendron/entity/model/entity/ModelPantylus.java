@@ -260,7 +260,7 @@ public class ModelPantylus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Pantylus.offsetZ = -0.2F;
         this.Pantylus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

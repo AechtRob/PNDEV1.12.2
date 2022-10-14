@@ -935,7 +935,7 @@ public class ModelXenusion extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.bodyl5.offsetZ = -0.04F;
         this.bodyl5.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

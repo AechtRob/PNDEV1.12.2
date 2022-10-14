@@ -414,7 +414,7 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
         this.Neckfront.rotateAngleY = (float)Math.toRadians(17.4);
         this.Lowerjawback.rotateAngleX = (float)Math.toRadians(32.5);
         this.Neckbase.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

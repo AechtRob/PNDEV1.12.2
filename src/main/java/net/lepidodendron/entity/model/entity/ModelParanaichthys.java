@@ -260,7 +260,7 @@ public class ModelParanaichthys extends AdvancedModelBase {
         this.Paranaichthys.offsetX = -0.09F;
         this.Paranaichthys.offsetY = -0.24F;
         this.Paranaichthys.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

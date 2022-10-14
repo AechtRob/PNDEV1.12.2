@@ -248,7 +248,7 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
         this.tail6.rotateAngleY = (float)Math.toRadians(27.5);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(22.5);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

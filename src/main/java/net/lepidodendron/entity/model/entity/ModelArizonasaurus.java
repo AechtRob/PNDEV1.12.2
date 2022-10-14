@@ -271,7 +271,7 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
         this.LeftArm.rotateAngleX = (float)Math.toRadians(35);
         this.LeftArm2.rotateAngleX = (float)Math.toRadians(-105);
         this.Body2.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

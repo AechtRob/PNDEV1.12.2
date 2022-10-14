@@ -388,7 +388,7 @@ public class ModelJaekelopterus extends AdvancedModelBase {
         this.tergiteF.rotateAngleX = (float) Math.toRadians(7.5);
         this.telson.rotateAngleX = (float) Math.toRadians(20);
         this.body.render(0.04F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

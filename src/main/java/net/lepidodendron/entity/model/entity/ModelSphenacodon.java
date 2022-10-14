@@ -302,7 +302,7 @@ public class ModelSphenacodon extends AdvancedModelBaseExtended {
         this.Neckbase.offsetY = -0.001F;
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(35);
         this.Neckbase.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

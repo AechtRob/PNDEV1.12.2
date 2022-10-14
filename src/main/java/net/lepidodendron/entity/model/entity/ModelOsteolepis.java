@@ -199,7 +199,7 @@ public class ModelOsteolepis extends AdvancedModelBase {
         this.Osteolepis.offsetX = -0.09F;
         this.Osteolepis.offsetY = -0.2F;
         this.Osteolepis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

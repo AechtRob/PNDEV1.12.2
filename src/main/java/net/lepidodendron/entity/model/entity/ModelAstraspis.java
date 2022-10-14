@@ -185,7 +185,7 @@ public class ModelAstraspis extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Astraspis.rotateAngleY = (float) Math.toRadians(90);
         this.Astraspis.render(0.005F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

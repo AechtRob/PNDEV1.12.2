@@ -208,7 +208,7 @@ public class ModelPharyngolepis extends AdvancedModelBase {
         this.body.offsetX = -0.16F;
         this.body.offsetY = -0.19F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -188,7 +188,7 @@ public class ModelOttoia extends AdvancedModelBase {
         this.tail.offsetZ = -0.04F;
         this.tail.offsetY = -0.43F;
         this.tail.render(0.011F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

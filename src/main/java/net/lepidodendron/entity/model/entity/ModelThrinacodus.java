@@ -167,7 +167,7 @@ public class ModelThrinacodus extends AdvancedModelBase {
         this.Thrinacodus.offsetY = -0.2F;
         this.Thrinacodus.offsetZ = -0.07F;
         this.Thrinacodus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

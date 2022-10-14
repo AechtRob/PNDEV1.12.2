@@ -293,7 +293,7 @@ public class ModelPostosuchus extends AdvancedModelBaseExtended {
         this.jaw1.rotateAngleX = (float) Math.toRadians(42.5);
         this.chest1.offsetY = -0.06F;
         this.chest1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

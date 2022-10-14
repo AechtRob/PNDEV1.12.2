@@ -290,7 +290,7 @@ public class ModelMesosaurus extends AdvancedModelBaseExtended {
         this.tail3.rotateAngleY = (float) Math.toRadians(15);
         this.body.offsetZ = -0.1F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

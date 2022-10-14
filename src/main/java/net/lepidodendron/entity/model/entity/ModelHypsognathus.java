@@ -412,7 +412,7 @@ public class ModelHypsognathus extends AdvancedModelBase {
         this.tail3.rotateAngleY = (float) Math.toRadians(14.9);
         this.tail4.rotateAngleY = (float) Math.toRadians(16.8);
         this.Hypsognathus.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -260,7 +260,7 @@ public class ModelFeroxichthys extends AdvancedModelBase {
         this.Feroxichthys.offsetY = -0.19F;
         this.Feroxichthys.offsetZ = 0.07F;
         this.Feroxichthys.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

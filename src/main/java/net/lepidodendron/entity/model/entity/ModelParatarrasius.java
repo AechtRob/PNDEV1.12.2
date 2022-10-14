@@ -132,7 +132,7 @@ public class ModelParatarrasius extends AdvancedModelBase {
         this.bone3.offsetX = -0.1F;
         this.bone3.offsetY = -0.2F;
         this.bone3.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

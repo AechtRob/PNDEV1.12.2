@@ -376,7 +376,7 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
         this.neck2.rotateAngleX = (float)Math.toRadians(20);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(25);
         this.neck1.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

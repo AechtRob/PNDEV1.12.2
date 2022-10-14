@@ -245,7 +245,7 @@ public class ModelEusthenopteron extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

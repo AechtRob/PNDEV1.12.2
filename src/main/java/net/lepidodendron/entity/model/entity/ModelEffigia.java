@@ -317,7 +317,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
         this.legL4.rotateAngleX = (float)Math.toRadians(15);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(17.5);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

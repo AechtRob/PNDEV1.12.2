@@ -342,7 +342,7 @@ public class ModelEstemmenosuchus extends AdvancedModelBaseExtended {
         this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(46);
         this.Head.rotateAngleX = (float) Math.toRadians(-12);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

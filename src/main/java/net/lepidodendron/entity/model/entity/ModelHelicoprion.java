@@ -192,7 +192,7 @@ public class ModelHelicoprion extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
         this.Headback.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

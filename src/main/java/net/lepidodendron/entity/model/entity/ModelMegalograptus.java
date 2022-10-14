@@ -418,7 +418,7 @@ public class ModelMegalograptus extends AdvancedModelBase {
         this.Megalograptus.offsetY = 0F;
         this.Megalograptus.offsetZ = -0.04F;
         this.Megalograptus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

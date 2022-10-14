@@ -508,7 +508,7 @@ public class ModelLaminacaris extends AdvancedModelBase {
         this.body.offsetX = -0.08F;
         this.body.offsetZ = 0.01F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

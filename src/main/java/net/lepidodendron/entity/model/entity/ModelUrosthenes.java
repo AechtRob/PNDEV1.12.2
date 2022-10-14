@@ -252,7 +252,7 @@ public class ModelUrosthenes extends AdvancedModelBase {
         this.Urosthenes.offsetY = -0.16F;
         this.Urosthenes.offsetZ = 0.07F;
         this.Urosthenes.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

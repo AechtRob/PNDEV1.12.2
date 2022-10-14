@@ -531,7 +531,7 @@ public class ModelListracanthus extends AdvancedModelBase {
         this.bodybase.offsetY = -0.2F;
         this.bodybase.offsetZ = -0.07F;
         this.bodybase.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

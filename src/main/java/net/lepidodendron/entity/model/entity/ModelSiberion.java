@@ -495,7 +495,7 @@ public class ModelSiberion extends AdvancedModelBase {
         //GlStateManager.disableCull();
         //this.body.offsetZ = -0.1F;
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -473,7 +473,7 @@ public class ModelElginia extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         //this.elginia.offsetZ = -0.6F;
         this.elginia.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

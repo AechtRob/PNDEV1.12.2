@@ -526,7 +526,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         this.jaw1.rotateAngleX = (float) Math.toRadians(25);
         this.head1.rotateAngleX = (float) Math.toRadians(-15);
         this.neck2.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

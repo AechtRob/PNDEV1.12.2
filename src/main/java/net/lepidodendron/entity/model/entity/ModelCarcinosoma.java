@@ -348,7 +348,7 @@ public class ModelCarcinosoma extends AdvancedModelBase {
         this.telson.rotateAngleX = (float) Math.toRadians(25);
         this.tip.rotateAngleX = (float) Math.toRadians(40);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

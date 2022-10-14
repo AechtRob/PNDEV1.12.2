@@ -267,7 +267,7 @@ public class ModelSphenotitan extends AdvancedModelBaseExtended {
         this.forelegR.rotateAngleY = (float) Math.toRadians(22.5);
         this.hindlegR.rotateAngleY = (float) Math.toRadians(-45);
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

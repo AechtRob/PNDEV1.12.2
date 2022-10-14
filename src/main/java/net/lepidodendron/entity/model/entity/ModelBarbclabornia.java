@@ -186,7 +186,7 @@ public class ModelBarbclabornia extends AdvancedModelBase {
         this.body.offsetX = -0.26F;
         this.body.offsetY = -0.14F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -489,7 +489,7 @@ public class ModelAmplectobelua extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.15F;
         this.body.render(0.017F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

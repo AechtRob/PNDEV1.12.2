@@ -426,7 +426,7 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
         this.LowerJaw.rotateAngleX = (float) Math.toRadians(35);
         this.Head.rotateAngleX = (float) Math.toRadians(-15);
         this.Neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

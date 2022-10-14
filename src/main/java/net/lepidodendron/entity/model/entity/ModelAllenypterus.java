@@ -225,7 +225,7 @@ public class ModelAllenypterus extends AdvancedModelBase {
         this.Allenypterus.offsetX = -0.01F;
         this.Allenypterus.offsetY = -0.19F;
         this.Allenypterus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

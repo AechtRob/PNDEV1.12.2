@@ -141,7 +141,7 @@ public class ModelPlatysomus extends AdvancedModelBase {
         this.Body.offsetX = -0.07F;
         this.Body.offsetZ = 0.05F;
         this.Body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -148,7 +148,7 @@ public class ModelCarolowilhelmina extends AdvancedModelBase {
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
         this.body.offsetY = -0.16F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -189,7 +189,7 @@ public class ModelIchthyostega extends AdvancedModelBase {
         this.lowerjaw1.rotateAngleX = (float) Math.toRadians(13);
         this.body.offsetZ = -0.2F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

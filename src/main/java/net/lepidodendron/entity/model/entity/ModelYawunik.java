@@ -464,7 +464,7 @@ public class ModelYawunik extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.bodybase.offsetZ = -0.04F;
         this.bodybase.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

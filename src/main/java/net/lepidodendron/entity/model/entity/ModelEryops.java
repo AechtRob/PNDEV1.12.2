@@ -280,7 +280,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.jaw.rotateAngleX = (float) Math.toRadians(26);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

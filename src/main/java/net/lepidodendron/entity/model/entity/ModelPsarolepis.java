@@ -272,7 +272,7 @@ public class ModelPsarolepis extends AdvancedModelBase {
         this.Body1.offsetX = -0.07F;
         this.Body1.offsetZ = 0.05F;
         this.Body1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

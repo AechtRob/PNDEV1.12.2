@@ -275,7 +275,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         this.hands1.rotateAngleX = (float) Math.toRadians(45);
         this.upperarm2.rotateAngleX = (float) Math.toRadians(42.3);
         this.chest.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

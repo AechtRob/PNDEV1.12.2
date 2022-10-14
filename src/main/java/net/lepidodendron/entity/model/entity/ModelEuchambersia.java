@@ -260,7 +260,7 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
         this.RFoot.rotateAngleX = (float) Math.toRadians(5);
         this.Euchambersia.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -289,7 +289,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
         this.body1.rotateAngleX = (float) Math.toRadians(5);
         this.body1.offsetY = 0.07F;
         this.body1.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

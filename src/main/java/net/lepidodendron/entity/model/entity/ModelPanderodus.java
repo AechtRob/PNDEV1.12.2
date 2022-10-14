@@ -161,7 +161,7 @@ public class ModelPanderodus extends AdvancedModelBase {
         this.head.offsetX = -0.09F;
         this.head.offsetY = -0.24F;
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

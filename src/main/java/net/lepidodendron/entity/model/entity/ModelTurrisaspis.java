@@ -225,7 +225,7 @@ public class ModelTurrisaspis extends AdvancedModelBase {
         this.Body.offsetX = -0.14F;
         this.Body.offsetY = 0.08F;
         this.Body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -324,7 +324,7 @@ public class ModelPholiderpeton extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Head.offsetY = -0.035F;
         this.Head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

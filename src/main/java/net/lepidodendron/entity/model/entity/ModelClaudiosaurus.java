@@ -270,7 +270,7 @@ public class ModelClaudiosaurus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -1.4F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -227,7 +227,7 @@ public class ModelPaucipodia extends AdvancedModelBase {
         //GlStateManager.disableCull();
         //this.body.offsetZ = -0.1F;
         this.body4.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

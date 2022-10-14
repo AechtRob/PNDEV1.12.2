@@ -176,7 +176,7 @@ public class ModelCidaroida extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetY = -9F;
         this.body.render(0.325F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -223,7 +223,7 @@ public class ModelDapedium extends AdvancedModelBase {
         this.Dapedium.rotateAngleY = (float) Math.toRadians(90);
         this.Dapedium.offsetY = -0.06F;
         this.Dapedium.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

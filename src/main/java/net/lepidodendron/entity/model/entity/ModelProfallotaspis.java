@@ -506,7 +506,7 @@ public class ModelProfallotaspis extends AdvancedModelBase {
         GlStateManager.disableCull();
         this.Profallotaspis.offsetZ = -0.08F;
         this.Profallotaspis.render(0.022f);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

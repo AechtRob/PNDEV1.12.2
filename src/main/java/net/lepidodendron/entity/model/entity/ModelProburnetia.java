@@ -394,7 +394,7 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         this.Head.rotateAngleY = (float) Math.toRadians(-27);
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);
         this.proburnetia.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

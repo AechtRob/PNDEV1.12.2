@@ -121,7 +121,7 @@ public class ModelEurypterus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.body.offsetZ = -0.16F;
         this.body.render(0.02F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -198,7 +198,7 @@ public class ModelScaumenacia extends AdvancedModelBase {
         this.body.offsetY = -0.15F;
         this.body.offsetZ = 0.07F;
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -404,7 +404,7 @@ public class ModelTetraceratops extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Tetraceratops.offsetZ = -0.3F;
         this.Tetraceratops.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

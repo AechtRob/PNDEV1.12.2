@@ -348,7 +348,7 @@ public class ModelOrodus extends AdvancedModelBase {
         this.Orodus.offsetX = -0.24F;
         this.Orodus.offsetY = -0.1F;
         this.Orodus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

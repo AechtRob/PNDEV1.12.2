@@ -208,7 +208,7 @@ public class ModelBlourugia extends AdvancedModelBase {
         this.Blourugia.offsetY = -0.16F;
         this.Blourugia.offsetZ = 0.07F;
         this.Blourugia.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

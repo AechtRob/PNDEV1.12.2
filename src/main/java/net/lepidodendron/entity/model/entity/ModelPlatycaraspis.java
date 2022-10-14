@@ -140,7 +140,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
         this.platycaraspis.offsetX = -0.07F;
         this.platycaraspis.offsetZ = 0.01F;
         this.platycaraspis.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

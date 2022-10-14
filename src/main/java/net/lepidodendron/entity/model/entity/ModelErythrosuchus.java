@@ -302,7 +302,7 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
         this.Neck.offsetZ = -0.3F;
         this.Lowerjawback.rotateAngleX = (float)Math.toRadians(52.5);
         this.Neck.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -409,7 +409,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         this.neck4.rotateAngleY = (float)Math.toRadians(12.3);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(37.5);
         this.neckbase.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -375,7 +375,7 @@ public class ModelCtenospondylus extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(23);
         this.Neckbase.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

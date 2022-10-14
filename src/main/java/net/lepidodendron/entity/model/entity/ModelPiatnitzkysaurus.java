@@ -414,7 +414,7 @@ public class ModelPiatnitzkysaurus extends AdvancedModelBaseExtended {
 
         //this.chest.render(0.01F);
 
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -212,7 +212,7 @@ public class ModelLebachacanthus extends AdvancedModelBase {
         this.body5.rotateAngleX = (float) Math.toRadians(10);
         this.jaw.rotateAngleX = (float) Math.toRadians(25);
         this.body.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -618,7 +618,7 @@ public class ModelWebsteroprion extends AdvancedModelBase {
         this.setRotateAngle(tailR, 0.0F, -0.1745F, 0.0F);
         this.head.offsetZ = 0.1F;
         this.head.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

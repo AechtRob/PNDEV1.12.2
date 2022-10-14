@@ -422,7 +422,7 @@ public class ModelCobelodus extends AdvancedModelBase {
         this.Cobelodus.offsetX = -0.2F;
         this.Cobelodus.offsetY = -0.15F;
         this.Cobelodus.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

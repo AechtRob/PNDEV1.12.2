@@ -251,7 +251,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         this.head.rotateAngleX = (float) Math.toRadians(24);
         this.lowerjaw1.rotateAngleX = (float) Math.toRadians(46);
         this.neck.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

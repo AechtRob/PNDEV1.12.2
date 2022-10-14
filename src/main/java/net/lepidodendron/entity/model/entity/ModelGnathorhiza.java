@@ -224,7 +224,7 @@ public class ModelGnathorhiza extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.Bodymiddlefront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodymiddlefront.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

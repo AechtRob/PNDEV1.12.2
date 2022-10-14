@@ -216,7 +216,7 @@ public class ModelMenaspis extends AdvancedModelBase {
         this.Bodyfront.offsetX = -0.07F;
         this.Bodyfront.offsetZ = -0.01F;
         this.Bodyfront.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

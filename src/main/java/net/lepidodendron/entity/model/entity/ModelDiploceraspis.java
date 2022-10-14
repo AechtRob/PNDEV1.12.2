@@ -282,7 +282,7 @@ public class ModelDiploceraspis extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.body.offsetZ = -1.8F;
         this.body.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

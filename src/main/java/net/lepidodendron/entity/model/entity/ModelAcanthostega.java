@@ -208,7 +208,7 @@ public class ModelAcanthostega extends AdvancedModelBaseExtended {
         //GlStateManager.disableCull();
         this.chest.offsetZ = -0.1F;
         this.chest.render(0.1F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

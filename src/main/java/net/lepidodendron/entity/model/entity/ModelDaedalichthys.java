@@ -151,7 +151,7 @@ public class ModelDaedalichthys extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

@@ -224,7 +224,7 @@ public class ModelCeratodus extends AdvancedModelBase {
         this.Bodymiddlefront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodymiddlefront.offsetY = -0.04F;
         this.Bodymiddlefront.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }

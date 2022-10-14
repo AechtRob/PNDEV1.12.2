@@ -264,7 +264,7 @@ public class ModelKokomopterus extends AdvancedModelBase {
         //GlStateManager.disableCull();
         this.carapace.offsetZ = -0.1F;
         this.carapace.render(0.01F);
-        GlStateManager.enableCull();
+        //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
