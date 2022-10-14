@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCheirurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraOrnithoprion;
 import net.lepidodendron.entity.model.entity.ModelCheirurus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -27,7 +26,7 @@ public class RenderCheirurus extends RenderLiving<EntityPrehistoricFloraCheiruru
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCheirurus entity, float f) {
-        float scale = 0.3F;
+        float scale = 0.5F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

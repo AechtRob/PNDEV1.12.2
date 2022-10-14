@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "north", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom_rf"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom_rf",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom_rf",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west", "rf": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_bottom_rf",
+          "y": 270
+        }
+      ]
+    }
+  ]
+}

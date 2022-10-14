@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+		"1": "lepidodendron:blocks/oligopool_processor",
+		"particle": "lepidodendron:blocks/lab_bench_side"
+	},
+	"elements": [
+		{
+			"name": "RF",
+			"from": [15, 5, 5],
+			"to": [16, 11, 11],
+			"faces": {
+				"north": {"uv": [10, 0, 11, 6], "texture": "#1"},
+				"east": {"uv": [10, 0, 16, 6], "texture": "#1"},
+				"south": {"uv": [15, 0, 16, 6], "texture": "#1"},
+				"west": {"uv": [0, 0, 4, 4], "texture": "#missing"},
+				"up": {"uv": [10, 0, 11, 6], "texture": "#1"},
+				"down": {"uv": [15, 0, 16, 6], "texture": "#1"}
+			}
+		}
+	]
+}

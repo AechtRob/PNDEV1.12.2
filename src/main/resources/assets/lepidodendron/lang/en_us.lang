@@ -4771,6 +4771,7 @@ item.pf_phial_eggs_branchiosaur.name=Phial of Branchiosaur Spawn
 item.pf_phial_eggs_cacops.name=Phial of Cacops Spawn
 
 tile.pf_coal_tar_processor.name=Coal Tar Processor
+tile.pf_oligopool_machine.name=Oligopool Production Machine
 
 item.pf_phial_eggs_carcinosoma.name=Phial of Carcinosoma Eggs
 item.pf_phial_eggs_cladoselache.name=Phial of Cladoselache Eggs

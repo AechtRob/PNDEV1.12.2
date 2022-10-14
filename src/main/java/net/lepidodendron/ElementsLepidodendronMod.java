@@ -1,9 +1,6 @@
 package net.lepidodendron;
 
-import net.lepidodendron.gui.GUIAcidBath;
-import net.lepidodendron.gui.GUICoalTarProcessor;
-import net.lepidodendron.gui.GUIDNACentrifuge;
-import net.lepidodendron.gui.GUIDNAForge;
+import net.lepidodendron.gui.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -938,6 +935,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUICoalTarProcessor.GUIID) {
 				return new GUICoalTarProcessor.GUILepidodendronCoalTarProcessor(world, x, y, z, player);
 			}
+			if (id == GUIOligopoolMachine.GUIID) {
+				return new GUIOligopoolMachine.GUILepidodendronOligopoolMachine(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -954,6 +954,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUICoalTarProcessor.GUIID) {
 				return new GUICoalTarProcessor.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIOligopoolMachine.GUIID) {
+				return new GUIOligopoolMachine.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

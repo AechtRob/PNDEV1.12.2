@@ -1,0 +1,90 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north", "active": false
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south", "active": false
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east", "active": false
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west", "active": false
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top",
+          "y": 90
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "north", "active": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top_active",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south", "active": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top_active"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east", "active": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top_active",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west", "active": true
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:oligopool_machine_top_active",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

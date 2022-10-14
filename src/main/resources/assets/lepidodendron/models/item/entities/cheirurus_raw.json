@@ -2,5 +2,14 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "lepidodendron:items/entities/cheirurus_raw"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.165,
+        0.165,
+        0.165
+      ]
+    }
   }
 }

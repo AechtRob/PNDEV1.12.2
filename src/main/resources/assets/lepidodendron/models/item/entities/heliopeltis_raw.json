@@ -2,5 +2,14 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "paleopedia:heliopeltis_icon"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.165,
+        0.165,
+        0.165
+      ]
+    }
   }
 }
