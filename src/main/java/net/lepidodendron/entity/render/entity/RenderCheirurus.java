@@ -27,7 +27,7 @@ public class RenderCheirurus extends RenderLiving<EntityPrehistoricFloraCheiruru
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCheirurus entity, float f) {
-        float scale = 0.5F;
+        float scale = 0.3F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

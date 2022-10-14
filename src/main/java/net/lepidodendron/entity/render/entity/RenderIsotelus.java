@@ -1,8 +1,10 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.EntityPrehistoricFloraCheirurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraIsotelus;
 import net.lepidodendron.entity.model.entity.ModelIsotelus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -24,4 +26,10 @@ public class RenderIsotelus extends RenderLiving<EntityPrehistoricFloraIsotelus>
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraIsotelus entity, float f) {
+        float scale = 0.8F;
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.15F;
+    }
 }

@@ -3022,6 +3022,18 @@ public class RenderHandler {
                 return new RenderOrnithoprion(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraUralichas.class, new IRenderFactory<EntityPrehistoricFloraUralichas>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraUralichas> createRenderFor(RenderManager manager) {
+                return new RenderUralichas(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOgyginus.class, new IRenderFactory<EntityPrehistoricFloraOgyginus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOgyginus> createRenderFor(RenderManager manager) {
+                return new RenderOgyginus(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
