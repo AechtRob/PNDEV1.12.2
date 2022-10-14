@@ -115,7 +115,7 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
                 if (te instanceof BlockDNARecombinerRail.TileEntityDNARecombinerRail) {
                     BlockDNARecombinerRail.TileEntityDNARecombinerRail tee = (BlockDNARecombinerRail.TileEntityDNARecombinerRail) te;
                     ItemStack itemstack = ItemStack.EMPTY;
-                    if (((BlockDNARecombinerRail.TileEntityDNARecombinerRail) te).getStackInSlot(0) != ItemStack.EMPTY) {
+                    if (!((BlockDNARecombinerRail.TileEntityDNARecombinerRail) te).getStackInSlot(0).isEmpty()) {
                         itemstack = tee.getStackInSlot(0);
                     }
 

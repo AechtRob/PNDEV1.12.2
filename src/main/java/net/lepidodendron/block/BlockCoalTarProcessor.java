@@ -362,13 +362,13 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			//System.err.println("fraction " + fraction);
 			int resultSize = (int)Math.round(16D * fraction);
 			//System.err.println("resultSize " + resultSize);
-			if (this.getStackInSlot(1) != ItemStack.EMPTY && this.getStackInSlot(1).getItem() != ItemBottleOfDNASolvent.block) {
+			if ((!this.getStackInSlot(1).isEmpty()) && this.getStackInSlot(1).getItem() != ItemBottleOfDNASolvent.block) {
 				return false;
 			}
 			if ((this.getStackInSlot(1).getCount() + resultSize) <= 64) {
 				return true;
 			}
-			if (this.getStackInSlot(1) == ItemStack.EMPTY) {
+			if (this.getStackInSlot(1).isEmpty()) {
 				return true;
 			}
 			return false;

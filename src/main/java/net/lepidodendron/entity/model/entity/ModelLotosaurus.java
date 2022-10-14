@@ -312,7 +312,7 @@ public class ModelLotosaurus extends AdvancedModelBaseExtended {
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(25);
         this.Neck.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -389,7 +389,7 @@ public class ModelPterygotus extends AdvancedModelBase {
         this.telson.rotateAngleX = (float) Math.toRadians(20);
         this.body.render(0.04F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

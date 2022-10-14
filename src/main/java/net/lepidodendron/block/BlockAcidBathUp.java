@@ -513,29 +513,29 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			if (tileEntity != null) {
 				if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
 					te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
-					if (te.getStackInSlot(0) == ItemStack.EMPTY) {
+					if (te.getStackInSlot(0).isEmpty()) {
 						setInventorySlotContents(1, ItemStack.EMPTY);
 					}
-					if (te.getStackInSlot(1) == ItemStack.EMPTY) {
+					if (te.getStackInSlot(1).isEmpty()) {
 						setInventorySlotContents(2, ItemStack.EMPTY);
 					}
-					if (te.getStackInSlot(2) == ItemStack.EMPTY) {
+					if (te.getStackInSlot(2).isEmpty()) {
 						setInventorySlotContents(3, ItemStack.EMPTY);
 					}
-					if (te.getStackInSlot(3) == ItemStack.EMPTY) {
+					if (te.getStackInSlot(3).isEmpty()) {
 						setInventorySlotContents(4, ItemStack.EMPTY);
 					}
 
-					if (getStackInSlot(1) == ItemStack.EMPTY) {
+					if (getStackInSlot(1).isEmpty()) {
 						te.setInventorySlotContents(0, ItemStack.EMPTY);
 					}
-					if (getStackInSlot(2) == ItemStack.EMPTY) {
+					if (getStackInSlot(2).isEmpty()) {
 						te.setInventorySlotContents(1, ItemStack.EMPTY);
 					}
-					if (getStackInSlot(3) == ItemStack.EMPTY) {
+					if (getStackInSlot(3).isEmpty()) {
 						te.setInventorySlotContents(2, ItemStack.EMPTY);
 					}
-					if (getStackInSlot(4) == ItemStack.EMPTY) {
+					if (getStackInSlot(4).isEmpty()) {
 						te.setInventorySlotContents(3, ItemStack.EMPTY);
 					}
 				}
@@ -1044,12 +1044,12 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			//We  have 3 different analysables:
 			if (Math.random() > 0.4) { //Plants:
 				finalItem = getPlantStack(stack);
-				if (finalItem != null && finalItem != ItemStack.EMPTY) {
+				if (finalItem != null && !finalItem.isEmpty()) {
 					return finalItem;
 				}
 				else {
 					finalItem = getStaticsStack(stack);
-					if (finalItem != null && finalItem != ItemStack.EMPTY) {
+					if (finalItem != null && !finalItem.isEmpty()) {
 						return finalItem;
 					}
 					else {

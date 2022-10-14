@@ -399,9 +399,9 @@ public class ModelHypsognathus extends AdvancedModelBase {
     
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Hypsognathus.offsetZ = -0.3F;
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
         this.head.rotateAngleX = (float) Math.toRadians(-5);
@@ -413,7 +413,7 @@ public class ModelHypsognathus extends AdvancedModelBase {
         this.tail4.rotateAngleY = (float) Math.toRadians(16.8);
         this.Hypsognathus.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

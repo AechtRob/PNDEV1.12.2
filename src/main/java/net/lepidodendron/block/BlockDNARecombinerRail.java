@@ -252,7 +252,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 						BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
-						if (te.getStackInSlot(0) != ItemStack.EMPTY) {
+						if (!te.getStackInSlot(0).isEmpty()) {
 							//System.err.println("forge phial slot full");
 							//The phial slot in the DNA Forge is full at the moment so we can't proceed!
 							return false;

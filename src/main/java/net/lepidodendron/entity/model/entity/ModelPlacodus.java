@@ -278,9 +278,9 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(35);
         this.head.rotateAngleX = (float) Math.toRadians(-2.6);
         this.head.rotateAngleY = (float) Math.toRadians(-17.4);
@@ -290,7 +290,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
         this.body1.offsetY = 0.07F;
         this.body1.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

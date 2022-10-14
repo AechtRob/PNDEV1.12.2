@@ -213,9 +213,9 @@ public class ModelCaptorhinus extends AdvancedModelBase {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Captorhinus.offsetZ = -0.7F;
         this.setRotateAngle(LArm, 1.2436F, 1.2609F, -0.1212F);
         this.setRotateAngle(LArm2, -1.3391F, -0.3405F, -0.0786F);
@@ -243,7 +243,7 @@ public class ModelCaptorhinus extends AdvancedModelBase {
         this.setRotateAngle(Tail3, 0.1473F, -0.4755F, -0.0678F);
         this.Captorhinus.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -183,7 +183,7 @@ public class ModelOpolanka extends AdvancedModelBase {
         //this.carapace.offsetZ = 0.1F;
         this.carapace.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

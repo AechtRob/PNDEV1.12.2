@@ -251,7 +251,7 @@ public class ModelAntineosteus extends AdvancedModelBase {
         this.AnalfinL.rotateAngleZ = (float) Math.toRadians(+37.5);
         this.AnalfinR.rotateAngleZ = (float) Math.toRadians(-37.5);
         this.Antineosteus.render(0.01F);
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

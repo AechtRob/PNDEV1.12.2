@@ -226,7 +226,7 @@ public class ModelAllenypterus extends AdvancedModelBase {
         this.Allenypterus.offsetY = -0.19F;
         this.Allenypterus.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

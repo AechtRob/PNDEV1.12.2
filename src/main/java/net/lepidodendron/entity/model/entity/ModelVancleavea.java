@@ -367,9 +367,9 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.neck1.offsetZ = -0.3F;
         this.head.rotateAngleX = (float)Math.toRadians(2.5);
         this.neck1.rotateAngleX = (float)Math.toRadians(0);
@@ -377,7 +377,7 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(25);
         this.neck1.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

@@ -21,7 +21,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
-import org.lwjgl.opengl.GL11;
 
 public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCase.TileEntityDisplayCase> {
 
@@ -374,6 +373,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         EnumFacing facing;
+        boolean itemRender  = false;
         int currentRotation = 0;
         if (entity != null && entity.hasWorld()) {
             currentRotation = entity.getTileData().getInteger("rotation");
@@ -388,12 +388,19 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         return;
                     }
 
+                    /*
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
                     GlStateManager.enableBlend();
                     RenderHelper.enableStandardItemLighting();
                     GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
                     GlStateManager.pushMatrix();
+                     */
+
+                    GlStateManager.pushMatrix();
+                    GlStateManager.disableCull();
+                    GlStateManager.enableRescaleNormal();
+                    GlStateManager.enableAlpha();
 
                     if (itemstack.getItem() == ItemGerarusRaw.block) {
                         double offset = 0.12;
@@ -4636,6 +4643,14 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
                     // ********************************************************************
                     else { //standard items
+                        itemRender = true;
+
+                        GlStateManager.alphaFunc(516, 0.1F);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+                        //GlStateManager.pushMatrix();
+
                         float scale = 0.6666F;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y, z + 0.5);
@@ -4677,9 +4692,21 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
                     }
 
-                    GlStateManager.popMatrix();
-                    GlStateManager.disableRescaleNormal();
-                    GlStateManager.disableBlend();
+                    if (itemRender) {
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableAlpha();
+                        GlStateManager.disableBlend();
+                        GlStateManager.enableCull();
+                        GlStateManager.disableRescaleNormal();
+                        RenderHelper.disableStandardItemLighting();
+                        GlStateManager.popMatrix();
+                    }
+                    else {
+                        GlStateManager.disableAlpha();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.enableCull();
+                        GlStateManager.popMatrix();
+                    }
 
                 }
             }

@@ -245,14 +245,22 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public double fogDensity;
 
 		public boolean canStartProcess() {
-			if (!this.isProcessing
+			//System.err.println("this.isProcessing " + this.isProcessing);
+			//System.err.println("this.getStackInSlot(2).getItem() " +this.getStackInSlot(2).getItem());
+			//System.err.println("this.getStackInSlot(0).getItem() " +this.getStackInSlot(0).getItem());
+			//System.err.println("this.hatchShut " + this.hatchShut);
+			//System.err.println("this.getStackInSlot(3).getItem() " +this.getStackInSlot(3).getItem());
+			//System.err.println("this.getStackInSlot(4).getItem() " +this.getStackInSlot(4).getItem());
+			//System.err.println("this.getStackInSlot(5).getItem() " +this.getStackInSlot(5).getItem());
+			//System.err.println("this.getStackInSlot(6).getItem() " +this.getStackInSlot(6).getItem());
+			if ((!this.isProcessing)
 					&& this.getStackInSlot(2).getItem() == ItemOligoPool.block
 					&& this.getStackInSlot(0).getItem() == ItemPhialDNA.block
 					&& this.hatchShut
-					&& (this.getStackInSlot(3) == ItemStack.EMPTY
-						|| this.getStackInSlot(4) == ItemStack.EMPTY
-						|| this.getStackInSlot(5) == ItemStack.EMPTY
-						|| this.getStackInSlot(6) == ItemStack.EMPTY
+					&& ((this.getStackInSlot(3).isEmpty())
+						|| (this.getStackInSlot(4).isEmpty())
+						|| (this.getStackInSlot(5).isEmpty())
+						|| (this.getStackInSlot(6).isEmpty())
 					)
 			) {
 				return true;
@@ -296,7 +304,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			}
 
 			if (!this.isProcessing
-					&& this.getStackInSlot(2) == ItemStack.EMPTY
+					&& (this.getStackInSlot(2).isEmpty())
 					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
 			) {
 				ItemStack stack = this.getStackInSlot(1);
@@ -304,9 +312,12 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				stack.shrink(1);
 			}
 
+			//System.err.println("processTick " + this.processTick);
+
 			if (this.canStartProcess()) {
 				this.isProcessing = true;
 				this.processTick = 0;
+				//System.err.println("Process started");
 			}
 
 			if (this.isProcessing) {
@@ -370,19 +381,22 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 					String resourcelocation = stack.getTagCompound().getString("id_dna");
 					if (resourcelocation != null) {
 						if (!resourcelocation.equalsIgnoreCase("")) {
+							if (world.rand.nextInt(30) == 0) {
+								resourcelocation = resourcelocation + "_fail";
+							}
 							NBTTagCompound stackOutputNBT = new NBTTagCompound();
 							stackOutputNBT.setString("id_dna", resourcelocation);
 							stackOutput.setTagCompound(stackOutputNBT);
-							if (this.getStackInSlot(3) == ItemStack.EMPTY) {
+							if (this.getStackInSlot(3).isEmpty()) {
 								this.setInventorySlotContents(3, stackOutput);
 							}
-							else if (this.getStackInSlot(4) == ItemStack.EMPTY) {
+							else if (this.getStackInSlot(4).isEmpty()) {
 								this.setInventorySlotContents(4, stackOutput);
 							}
-							else if (this.getStackInSlot(5) == ItemStack.EMPTY) {
+							else if (this.getStackInSlot(5).isEmpty()) {
 								this.setInventorySlotContents(5, stackOutput);
 							}
-							else if (this.getStackInSlot(6) == ItemStack.EMPTY) {
+							else if (this.getStackInSlot(6).isEmpty()) {
 								this.setInventorySlotContents(6, stackOutput);
 							}
 						}

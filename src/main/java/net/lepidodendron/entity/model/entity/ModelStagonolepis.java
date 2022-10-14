@@ -347,7 +347,7 @@ public class ModelStagonolepis extends AdvancedModelBaseExtended {
         this.head.rotateAngleX = (float) Math.toRadians(-12.5);
         this.neck.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

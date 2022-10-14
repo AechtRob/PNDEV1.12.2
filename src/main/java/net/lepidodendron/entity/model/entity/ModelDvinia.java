@@ -186,9 +186,9 @@ public class ModelDvinia extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.basin.rotateAngleX = (float) Math.toRadians(-60);
         this.upperleg1.rotateAngleX = (float) Math.toRadians(30);
         this.upperleg2.rotateAngleX = (float) Math.toRadians(30);
@@ -203,7 +203,7 @@ public class ModelDvinia extends AdvancedModelBaseExtended {
         this.tail2.rotateAngleX = (float) Math.toRadians(25);
         this.basin.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

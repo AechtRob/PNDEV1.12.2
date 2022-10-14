@@ -162,7 +162,7 @@ public class ModelPalaeodictyoptera extends AdvancedModelBase {
         this.body.offsetZ = -0.1F;
         this.body.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

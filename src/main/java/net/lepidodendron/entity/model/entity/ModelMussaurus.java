@@ -261,9 +261,9 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.chest.offsetY = -0.03F;
         this.neck1.rotateAngleY = (float) Math.toRadians(-10);
         this.neck2.rotateAngleY = (float) Math.toRadians(-4.8);
@@ -276,7 +276,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         this.upperarm2.rotateAngleX = (float) Math.toRadians(42.3);
         this.chest.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

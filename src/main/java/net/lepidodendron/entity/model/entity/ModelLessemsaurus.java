@@ -348,7 +348,7 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
         this.jaw1.rotateAngleX = (float) Math.toRadians(35);
         this.neck1.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
 

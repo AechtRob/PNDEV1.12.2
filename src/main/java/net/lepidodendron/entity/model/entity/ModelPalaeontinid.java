@@ -118,7 +118,7 @@ public class ModelPalaeontinid extends AdvancedModelBase {
         //this.body.offsetZ = 0.1F;
         this.body.render(0.022f);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

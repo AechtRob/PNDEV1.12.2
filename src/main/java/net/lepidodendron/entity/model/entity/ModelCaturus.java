@@ -296,7 +296,7 @@ public class ModelCaturus extends AdvancedModelBase {
         this.Caturus.offsetY = -0.17F;
         this.Caturus.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {

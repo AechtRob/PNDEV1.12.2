@@ -154,7 +154,7 @@ public class ModelBrembodus extends AdvancedModelBase {
         this.body.offsetY = -0.02F;
         this.body.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

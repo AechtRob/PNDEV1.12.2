@@ -401,9 +401,9 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Dasyceps.offsetZ = -0.3F;
         this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
         this.setRotateAngle(Body1, 0.0F, 0.0436F, 0.0F);
@@ -446,7 +446,7 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
         this.setRotateAngle(cube_r24, -0.1571F, 0.0F, 0.0F);
         this.Dasyceps.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

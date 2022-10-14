@@ -235,9 +235,9 @@ public class ModelCartorhynchus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.root.offsetZ = -0.6F;
         this.jaw1.rotateAngleX = (float) Math.toRadians(12.5);
         this.head1.rotateAngleX = (float) Math.toRadians(2.61);
@@ -254,7 +254,7 @@ public class ModelCartorhynchus extends AdvancedModelBaseExtended {
         this.tail3.rotateAngleY = (float) Math.toRadians(-37.5);
         this.root.render(0.1F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {

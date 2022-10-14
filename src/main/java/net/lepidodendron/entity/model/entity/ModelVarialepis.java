@@ -217,7 +217,7 @@ public class ModelVarialepis extends AdvancedModelBase {
         this.varialepis.offsetZ = 0F;
         this.varialepis.render(0.01F);
         GlStateManager.enableCull();
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
