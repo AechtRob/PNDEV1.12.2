@@ -569,13 +569,13 @@ public class ModelHungioides extends AdvancedModelBase {
     }
 
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Hungioides.offsetZ = 0.02F;
         this.Hungioides.render(0.037F);
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

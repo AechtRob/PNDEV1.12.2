@@ -158,13 +158,18 @@ public class ModelPygopterus extends AdvancedModelBase {
         this.body.render(f5 * 0.342F);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        GlStateManager.disableCull();
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetX = -0.16F;
+        this.body.offsetY = -0.16F;
+        this.body.offsetZ = 0.04F;
         this.body.render(0.01F);
+        GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

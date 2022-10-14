@@ -278,7 +278,7 @@ public class ModelCasineria extends AdvancedModelBase {
         this.casineria.render(f5 * 0.2f);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
@@ -286,7 +286,7 @@ public class ModelCasineria extends AdvancedModelBase {
         this.casineria.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

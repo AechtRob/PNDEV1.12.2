@@ -268,14 +268,14 @@ public class ModelHelmetia extends AdvancedModelBase {
     }
 
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.Helmetia.render(0.02F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

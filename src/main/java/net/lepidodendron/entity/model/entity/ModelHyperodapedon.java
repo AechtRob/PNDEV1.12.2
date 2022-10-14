@@ -286,16 +286,17 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         this.hip.render(f5 * 0.8f);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.hip.render(0.1F);
+        this.head.rotateAngleX = (float)Math.toRadians(-25);
+        this.lowerjaw.rotateAngleX = (float)Math.toRadians(40);
+        this.neck.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
-
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;

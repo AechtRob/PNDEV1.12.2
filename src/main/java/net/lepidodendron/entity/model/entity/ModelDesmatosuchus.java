@@ -417,7 +417,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
     }
 
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.disableCull();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
@@ -427,7 +427,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.neck.render(0.01F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
 
 
