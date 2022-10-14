@@ -3036,8 +3036,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     }
                     else if (itemstack.getItem() == ItemHyneriaRaw.block) {
                         double offset = -0.03;
-                        double voffset = 0.85;
-                        double hoffset = 1.4;
+                        double voffset = 0;
+                        double hoffset = 0;
                         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
                             GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -4842,7 +4842,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                         modelRebellatrix.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemRhizodusRaw.block) {
-                        double offset = -0.9;
+                        double offset = -0.7;
                         //double voffset = 0.06;
                         double voffset = 0;
                         //double hoffset = 0.12;
