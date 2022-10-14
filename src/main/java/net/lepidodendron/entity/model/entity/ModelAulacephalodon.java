@@ -298,7 +298,7 @@ public class ModelAulacephalodon extends AdvancedModelBaseExtended {
         this.aulacephalodon.render(f5 * 0.42f);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
@@ -306,7 +306,7 @@ public class ModelAulacephalodon extends AdvancedModelBaseExtended {
         this.aulacephalodon.render(0.1F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
