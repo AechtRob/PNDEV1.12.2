@@ -439,7 +439,7 @@ public class ModelIsotelus extends AdvancedModelBase {
         GlStateManager.enableBlend();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
-        this.Isotelus.offsetZ = -0.09F;
+        this.Isotelus.offsetZ = 0.03F;
         this.Isotelus.render(0.037F);
         GlStateManager.enableCull();
         GlStateManager.disableBlend();
