@@ -208,9 +208,9 @@ public class ModelVarialepis extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.disableCull();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.disableCull();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.varialepis.rotateAngleY = (float) Math.toRadians(90);
         this.varialepis.offsetX = 0.01F;
         this.varialepis.offsetY = -0.22F;

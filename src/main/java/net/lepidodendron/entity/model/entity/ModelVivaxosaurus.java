@@ -212,8 +212,8 @@ public class ModelVivaxosaurus extends AdvancedModelBaseExtended {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Neck.render(0.01F);
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();

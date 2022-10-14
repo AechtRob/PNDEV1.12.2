@@ -579,8 +579,8 @@ public class ModelWebsteroprion extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableCull();
         this.setRotateAngle(head, -0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(tentacle, -0.0873F, 0.0F, 0.0F);

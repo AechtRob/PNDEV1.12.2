@@ -220,8 +220,8 @@ public class ModelForeyia extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.body.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
         this.body.offsetY = -0.19F;

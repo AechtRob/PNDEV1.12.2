@@ -235,8 +235,8 @@ public class ModelAntineosteus extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Antineosteus.rotateAngleY = (float) Math.toRadians(90);
         this.Bodysegment1.rotateAngleX = (float) Math.toRadians(-10);
         this.Bodysegment2.rotateAngleX = (float) Math.toRadians(7.5);

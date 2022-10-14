@@ -288,9 +288,9 @@ public class ModelCaturus extends AdvancedModelBase {
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.disableCull();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.disableCull();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Caturus.rotateAngleY = (float) Math.toRadians(90);
         this.Caturus.offsetX = -0.2F;
         this.Caturus.offsetY = -0.17F;

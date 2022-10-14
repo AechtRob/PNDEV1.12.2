@@ -418,9 +418,9 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
 
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.disableCull();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.enableBlend();
+        //GlStateManager.disableCull();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.neck.offsetY = -0.07F;
         this.jaw.rotateAngleX = (float) Math.toRadians(32.5);
         this.head.rotateAngleX = (float) Math.toRadians(-12.5);
