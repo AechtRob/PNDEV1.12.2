@@ -1,12 +1,17 @@
 package net.lepidodendron.entity.render.entity;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockAmphibianSpawnGerrothorax;
 import net.lepidodendron.entity.EntityPrehistoricFloraGerrothorax;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetoposaurus;
 import net.lepidodendron.entity.model.entity.ModelGerrothorax;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderGerrothorax extends RenderLiving<EntityPrehistoricFloraGerrothorax> {
@@ -31,13 +36,14 @@ public class RenderGerrothorax extends RenderLiving<EntityPrehistoricFloraGerrot
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
-    protected void preRenderCallback(EntityPrehistoricFloraMetoposaurus entity, float f) {
-        float scale = entity.getAgeScale()*0.7F;
+    protected void preRenderCallback(EntityPrehistoricFloraGerrothorax entity, float f) {
+        float scale = entity.getAgeScale()*0.39F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.67F;
     }
 
 }
+
 
 
 
