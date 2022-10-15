@@ -353,6 +353,7 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
                 this.chainSwingExtended(FrontR, speed *0.2F, -0.1F, -1, 3F, f2, 1);
                 this.chainSwingExtended(BackL, speed * 0.2F, -0.1F, -1, 0F, f2, 1);
                 this.chainSwingExtended(BackR, speed *0.2F, -0.1F, -1, 3F, f2, 1);
+                this.swing(Xinpusaurus, speed*0.6F, 0.2F, true, 0, 0, f2, 1);
                 return;
             }
 
