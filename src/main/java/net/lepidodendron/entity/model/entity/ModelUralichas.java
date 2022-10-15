@@ -603,13 +603,13 @@ public class ModelUralichas extends AdvancedModelBase {
     }
 
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        this.Uralichas.offsetZ = 0.02F;
+        //GlStateManager.pushMatrix();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        this.Uralichas.offsetZ = -0.1F;
         this.Uralichas.render(0.037F);
-        GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.disableBlend();
+        //GlStateManager.popMatrix();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
