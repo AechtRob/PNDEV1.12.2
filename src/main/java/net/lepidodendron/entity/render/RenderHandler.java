@@ -3035,6 +3035,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraArctinurus.class, new IRenderFactory<EntityPrehistoricFloraArctinurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraArctinurus> createRenderFor(RenderManager manager) {
+                return new RenderArctinurus(manager);
+            }
+        });
+
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
             //Ediacaran:

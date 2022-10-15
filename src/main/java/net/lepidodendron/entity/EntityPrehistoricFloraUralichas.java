@@ -31,7 +31,7 @@ public class EntityPrehistoricFloraUralichas extends EntityPrehistoricFloraTrilo
 
 	public EntityPrehistoricFloraUralichas(World world) {
 		super(world);
-		setSize(0.55F, 0.3F);
+		setSize(0.45F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
