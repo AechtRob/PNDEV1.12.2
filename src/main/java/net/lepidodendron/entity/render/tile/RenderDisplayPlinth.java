@@ -90,6 +90,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelEudimorphodon modelEudimorphodon;
     private static final ResourceLocation TEXTURE_EUPARKERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euparkeria.png");
     private final ModelEuparkeria modelEuparkeria;
+    private static final ResourceLocation TEXTURE_GERROTHORAX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerrothorax.png");
+    private final ModelGerrothorax modelGerrothorax;
     private static final ResourceLocation TEXTURE_HENODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
     private final ModelHenodus modelHenodus;
     private static final ResourceLocation TEXTURE_HIBBERTOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibbertopterus.png");
@@ -206,6 +208,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelEuchambersia = new ModelEuchambersia();
         this.modelEudimorphodon = new ModelEudimorphodon();
         this.modelEuparkeria = new ModelEuparkeria();
+        this.modelGerrothorax = new ModelGerrothorax();
         this.modelHenodus = new ModelHenodus();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
@@ -627,6 +630,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_EUPARKERIA);
                         GlStateManager.scale(0.13F,0.13F,0.13F);
                         modelEuparkeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemGerrothoraxRaw.block) {
+                        double offset = 0.82;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_GERROTHORAX);
+                        GlStateManager.scale(0.34F,0.34F,0.34F);
+                        modelGerrothorax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemHenodusRaw.block) {
                         double offset = 0.72;

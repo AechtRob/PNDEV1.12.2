@@ -169,13 +169,17 @@ public class ModelOrnithoprion extends AdvancedModelBase {
         this.ornithoprion.render(f5 * 0.342F);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.pushMatrix();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.ornithoprion.rotateAngleY = (float) Math.toRadians(90);
+        this.ornithoprion.offsetX = -0.09F;
+        this.ornithoprion.offsetY = -0.2F;
         this.ornithoprion.render(0.01F);
-        GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        //GlStateManager.enableCull();
+        //GlStateManager.disableBlend();
+        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
