@@ -312,7 +312,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			//System.err.println("TickTotal: " + this.processTickTime);
 
 			if (this.canStartProcess()) {
-				this.processTickTime = TileEntityFurnace.getItemBurnTime(this.getStackInSlot(0));
+				this.processTickTime = (int)Math.round(Math.sqrt(TileEntityFurnace.getItemBurnTime(this.getStackInSlot(0))) * 10);
 				this.processTick = 0;
 				this.isProcessing = true;
 			}
