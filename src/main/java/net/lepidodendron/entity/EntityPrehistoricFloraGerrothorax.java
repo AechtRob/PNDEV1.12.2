@@ -45,20 +45,20 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 		super(world);
 		this.moveHelper = new EntityPrehistoricFloraGerrothorax.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.5F, 2.0F);
+		setSize(0.1F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.2F;
-		maxWidth = 0.7F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 36.0D;
+		minWidth = 0.1F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 6.0D;
 	}
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.2;
+		return this.getAgeScale() < 0.8;
 	}
 
 	public static String getPeriod() {return "Triassic";}
@@ -184,7 +184,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -288,9 +288,9 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.HETEROSTEUS_LOOT_YOUNG;
+			return LepidodendronMod.GERROTHORAX_LOOT_YOUNG;
 		}
-		return LepidodendronMod.HETEROSTEUS_LOOT;
+		return LepidodendronMod.GERROTHORAX_LOOT;
 	}
 
 	@Override
