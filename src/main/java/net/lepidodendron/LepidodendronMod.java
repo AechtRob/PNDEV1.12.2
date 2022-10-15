@@ -1268,9 +1268,13 @@ public class LepidodendronMod {
 	public static final int ENTITY_NAHECARIS = 511;
 	public static final int ENTITY_COMETICERCUS = 512;
 	public static final int ENTITY_HARPES = 513;
+	public static final ResourceLocation HARPES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/harpes"));
 	public static final int ENTITY_BOHEMOHARPES = 514;
+	public static final ResourceLocation BOHEMOHARPES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bohemoharpes"));
 	public static final int ENTITY_AMPYX = 515;
+	public static final ResourceLocation AMPYX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx"));
 	public static final int ENTITY_LONCHODOMAS = 516;
+	public static final ResourceLocation LONCHODOMAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas"));
 	public static final int ENTITY_NEEYAMBASPIS= 517;
 	public static final int ENTITY_PITURIASPIS = 518;
 	public static final int ENTITY_TEGEOLEPIS = 519;
