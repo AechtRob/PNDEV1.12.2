@@ -47,6 +47,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_ARIDROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_arid.png");
     private static final ResourceLocation TEXTURE_ARCHOBLATTINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina.png");
     private final ModelArchoblattina modelArchoblattina;
+    private static final ResourceLocation TEXTURE_ARCTINURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arctinurus.png");
+    private final ModelArctinurus modelArctinurus;
     private static final ResourceLocation TEXTURE_ASAPHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asaphus.png");
     private final ModelAsaphus modelAsaphus;
     private static final ResourceLocation TEXTURE_ATTERCOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/attercopus.png");
@@ -281,6 +283,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAnomalocaris = new ModelAnomalocaris();
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
         this.modelArchoblattina = new ModelArchoblattina();
+        this.modelArctinurus = new ModelArctinurus();
         this.modelAsaphus = new ModelAsaphus();
         this.modelAulacoceras = new ModelAulacoceras();
         this.modelAustrolimulus = new ModelAustrolimulus();
@@ -780,6 +783,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.scale(0.7F,0.7F,0.7F);
                         this.bindTexture(TEXTURE_ARCHOBLATTINA);
                         modelArchoblattina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemArctinurusRaw.block) {
+                        double offset = 0.37;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.4F,0.4F,0.4F);
+                        this.bindTexture(TEXTURE_ARCTINURUS);
+                        modelArctinurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemAsaphusRaw.block) {
                         double offset = 0.57;

@@ -291,18 +291,23 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.Xinpusaurus.render(f5 * 0.465F);
     }
     public void renderStatic(float f) {
-        GlStateManager.pushMatrix();
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        GlStateManager.disableCull();
+        //GlStateManager.pushMatrix();
+        //GlStateManager.enableBlend();
+        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        //GlStateManager.disableCull();
         this.Xinpusaurus.rotateAngleY = (float) Math.toRadians(90);
-        this.Xinpusaurus.offsetX = -0.25F;
-        this.Xinpusaurus.offsetZ = 0.2F;
-        this.Xinpusaurus.offsetY = -0.2F;
+        this.Xinpusaurus.rotateAngleX = (float) Math.toRadians(-15);
+        this.Chest.rotateAngleX = (float) Math.toRadians(5);
+        this.Hip.rotateAngleX = (float) Math.toRadians(7.5);
+        this.Tail.rotateAngleX = (float) Math.toRadians(7.5);
+        this.Tail2.rotateAngleX = (float) Math.toRadians(10);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(25);
         this.Xinpusaurus.render(0.01F);
-        GlStateManager.enableCull();
-        GlStateManager.disableBlend();
-        GlStateManager.popMatrix();
+        this.Xinpusaurus.offsetY = -0.2F;
+        this.Xinpusaurus.offsetX = -0.15F;
+        //GlStateManager.enableCull();
+        //GlStateManager.disableBlend();
+        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

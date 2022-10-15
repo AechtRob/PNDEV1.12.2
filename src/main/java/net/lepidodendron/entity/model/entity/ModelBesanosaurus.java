@@ -349,8 +349,8 @@ public class ModelBesanosaurus extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
-        this.Head.offsetY = -0.001F;
-        this.Jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.Head.offsetY = 0.33F;
+        this.Jaw.rotateAngleX = (float) Math.toRadians(8);
         this.Head.rotateAngleX = (float) Math.toRadians(0);
         this.Head.render(0.01F);
         //GlStateManager.enableCull();
