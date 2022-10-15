@@ -90,6 +90,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelEudimorphodon modelEudimorphodon;
     private static final ResourceLocation TEXTURE_EUPARKERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euparkeria.png");
     private final ModelEuparkeria modelEuparkeria;
+    private static final ResourceLocation TEXTURE_GERROTHORAX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerrothorax.png");
+    private final ModelGerrothorax modelGerrothorax;
     private static final ResourceLocation TEXTURE_HENODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
     private final ModelHenodus modelHenodus;
     private static final ResourceLocation TEXTURE_HIBBERTOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibbertopterus.png");
@@ -121,6 +123,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelPantylus modelPantylus;
     private static final ResourceLocation TEXTURE_PANZHOUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/panzhousaurus.png");
     private final ModelPanzhousaurus modelPanzhousaurus;
+    private static final ResourceLocation TEXTURE_PARMASTEGA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parmastega.png");
+    private final ModelParmastega modelParmastega;
     private static final ResourceLocation TEXTURE_PEDERPES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pederpes.png");
     private final ModelPederpes modelPederpes;
     private static final ResourceLocation TEXTURE_PLATYHYSTRIX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/platyhystrix.png");
@@ -161,6 +165,10 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelTiarajudens modelTiarajudens;
     private static final ResourceLocation TEXTURE_TIKTAALIK = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiktaalik.png");
     private final ModelTiktaalik modelTiktaalik;
+    private static final ResourceLocation TEXTURE_UROCORDYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urocordylus.png");
+    private final ModelUrocordylus modelUrocordylus;
+    private static final ResourceLocation TEXTURE_WHATCHEERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
+    private final ModelWhatcheeria modelWhatcheeria;
     private static final ResourceLocation TEXTURE_WEBSTEROPRION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/websteroprion.png");
     private final ModelWebsteroprion modelWebsteroprion;
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
@@ -200,6 +208,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelEuchambersia = new ModelEuchambersia();
         this.modelEudimorphodon = new ModelEudimorphodon();
         this.modelEuparkeria = new ModelEuparkeria();
+        this.modelGerrothorax = new ModelGerrothorax();
         this.modelHenodus = new ModelHenodus();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
@@ -215,6 +224,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelPagea = new ModelPagea();
         this.modelPantylus = new ModelPantylus();
         this.modelPanzhousaurus = new ModelPanzhousaurus();
+        this.modelParmastega = new ModelParmastega();
         this.modelPederpes = new ModelPederpes();
         this.modelPlatyhystrix = new ModelPlatyhystrix();
         this.modelProburnetia = new ModelProburnetia();
@@ -234,6 +244,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelThrinaxodon = new ModelThrinaxodon();
         this.modelTiarajudens = new ModelTiarajudens();
         this.modelTiktaalik = new ModelTiktaalik();
+        this.modelUrocordylus = new ModelUrocordylus();
+        this.modelWhatcheeria = new ModelWhatcheeria();
         this.modelWebsteroprion = new ModelWebsteroprion();
         this.modelGerarus = new ModelGerarus();
 
@@ -619,6 +631,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.scale(0.13F,0.13F,0.13F);
                         modelEuparkeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemGerrothoraxRaw.block) {
+                        double offset = 0.82;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_GERROTHORAX);
+                        GlStateManager.scale(0.34F,0.34F,0.34F);
+                        modelGerrothorax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemHenodusRaw.block) {
                         double offset = 0.72;
                         //double voffset = -0.15;
@@ -793,6 +816,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_PANZHOUSAURUS);
                         GlStateManager.scale(0.08F,0.08F,0.08F);
                         modelPanzhousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemParmastegaRaw.block) {
+                        double offset = 0.58;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_PARMASTEGA);
+                        GlStateManager.scale(0.24F,0.24F,0.24F);
+                        modelParmastega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemPederpesRaw.block) {
                         double offset = 0.018;
@@ -1001,6 +1035,28 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_TIKTAALIK);
                         GlStateManager.scale(0.22F,0.22F,0.22F);
                         modelTiktaalik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemUrocordylusRaw.block) {
+                        double offset = -0.09;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_UROCORDYLUS);
+                        GlStateManager.scale(0.49F,0.49F,0.49F);
+                        modelUrocordylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemWhatcheeriaRaw.block) {
+                        double offset = 1;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_WHATCHEERIA);
+                        GlStateManager.scale(0.42F,0.42F,0.42F);
+                        modelWhatcheeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWebsteroprionRaw.block) {
                         double offset = 0.67;

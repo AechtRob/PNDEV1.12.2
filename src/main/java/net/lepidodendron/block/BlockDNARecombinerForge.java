@@ -325,11 +325,11 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			}
 
 			if (this.processTick < 20) {
-				this.oligoExtend = 5.5D * ((double)this.processTick / 20.0D);
+				this.oligoExtend = 5.75D * ((double)this.processTick / 20.0D);
 			}
 
 			if (this.processTick == 20) {
-				this.oligoExtend = 5.5D;
+				this.oligoExtend = 5.75D;
 			}
 
 			if (this.processTick >= 20 && this.processTick < 60) {
@@ -349,7 +349,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			}
 
 			if (this.processTick >= 140 && this.processTick < 160) {
-				this.oligoExtend = 5.5D * ((160.0D - (double)this.processTick) / 20D);
+				this.oligoExtend = 5.75D * ((160.0D - (double)this.processTick) / 20D);
 			}
 
 			if (this.processTick == 160) {

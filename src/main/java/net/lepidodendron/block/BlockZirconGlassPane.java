@@ -43,6 +43,7 @@ public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.GLASS, false);
 			setTranslationKey("pf_zircon_glass_pane");
+			setHardness(0.3F);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 

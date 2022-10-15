@@ -1043,27 +1043,37 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			String resLoc = "";
 			//We  have 3 different analysables:
 			if (Math.random() > 0.4) { //Plants:
-				finalItem = getPlantStack(stack);
+				finalItem = getStackWithFails(getPlantStack(stack));
 				if (finalItem != null && !finalItem.isEmpty()) {
 					return finalItem;
 				}
 				else {
-					finalItem = getStaticsStack(stack);
+					finalItem = getStackWithFails(getStaticsStack(stack));
 					if (finalItem != null && !finalItem.isEmpty()) {
 						return finalItem;
 					}
 					else {
-						return getPlantStack(stack);
+						return getStackWithFails(getPlantStack(stack));
 					}
 				}
 			}
 			else
 			if (Math.random() > 0.4) { //Mobs:
-				return getMobStack(stack);
+				return getStackWithFails(getMobStack(stack));
 			}
 			else { //Static creatures
-				return getStaticsStack(stack);
+				return getStackWithFails(getStaticsStack(stack));
 			}
+		}
+
+		public ItemStack getStackWithFails(ItemStack stack) {
+			if (world.rand.nextInt(5) == 0) {
+				if (world.rand.nextInt(5) == 0) {
+					return new ItemStack(Items.GOLD_NUGGET, 1);
+				}
+				return new ItemStack(Items.FLINT, 1);
+			}
+			return stack;
 		}
 
 		public void useAcid() {

@@ -3150,6 +3150,8 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge.class, new RenderDNACentrifuge());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockDNARecombinerForge.TileEntityDNARecombinerForge.class, new RenderDNAForge());
 
+        //Oligopool machine:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockOligopoolMachine.TileEntityOligopoolMachine.class, new RenderOligopoolMachine());
 
     }
 }

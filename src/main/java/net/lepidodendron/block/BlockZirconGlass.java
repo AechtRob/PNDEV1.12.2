@@ -17,6 +17,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -65,6 +66,7 @@ public class BlockZirconGlass extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.GLASS, false);
 			setSoundType(SoundType.GLASS);
+			setHardness(0.3F);
 			setTranslationKey("pf_zircon_glass");
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
@@ -108,6 +110,27 @@ public class BlockZirconGlass extends ElementsLepidodendronMod.ModElement {
 					WATERNORTH, WATEREAST, WATERSOUTH, WATERWEST, WATERUP, WATERDOWN
 
 			});
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side)
+		{
+			IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
+			Block block = iblockstate.getBlock();
+
+
+			if (blockState != iblockstate)
+			{
+				return true;
+			}
+
+			if (block == this)
+			{
+				return false;
+			}
+
+			return block == this ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 		}
 
 	}

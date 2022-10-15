@@ -2,7 +2,9 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.gui.GUIOligopoolMachine;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -170,6 +172,16 @@ public class BlockOligopoolMachineTop extends ElementsLepidodendronMod.ModElemen
 			}
 			return BlockFaceShape.UNDEFINED;
 		}
+
+		@Override
+		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
+			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
+			if (entity instanceof EntityPlayer) {
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUIOligopoolMachine.GUIID, world, pos.getX(), pos.getY() - 1, pos.getZ());
+			}
+			return true;
+		}
+
 	}
 
 }

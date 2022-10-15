@@ -3,7 +3,6 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockBacterialLayer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
@@ -23,6 +22,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -138,8 +138,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			if (!(world.isRemote)) {
 				if (rand.nextInt(12) == 0) {
 					failEntity = true; //baby slime
-				} else if (rand.nextInt(8) == 0) {
-					stack = new ItemStack(BlockBacterialLayer.block, rand.nextInt(2) + 1);
+				//}
+				//else if (rand.nextInt(8) == 0) {
+				//	stack = new ItemStack(BlockBacterialLayer.block, rand.nextInt(2) + 1);
 				} else if (rand.nextInt(4) == 0) {
 					stack = new ItemStack(Items.ROTTEN_FLESH, rand.nextInt(3) + 1);
 				} else {
@@ -159,6 +160,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			if (player instanceof EntityPlayerMP) {
 				ModTriggers.DNA_FAIL.trigger((EntityPlayerMP)player);
 			}
+			if (world.isRemote) {
+				player.sendMessage(new TextComponentString("The DNA was corrupted"));
+			}
+
 		}
 
 		public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
@@ -187,7 +192,13 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 					if (stringDNA != null) {
 						if (stringDNA.contains("_fail")) {
 							//Fail it:
+							if (iblockstate.getMaterial() != Material.WATER) {
+								blockpos = blockpos.offset(raytraceresult.sideHit);
+							}
 							failDNA(playerIn, worldIn, blockpos, itemRand);
+							if (!playerIn.isCreative()) {
+								itemstack.shrink(1);
+							}
 							return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 						}
 					}
