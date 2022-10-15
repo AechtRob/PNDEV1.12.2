@@ -83,6 +83,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelElginia modelElginia;
     private static final ResourceLocation TEXTURE_EORHYNCHOCHELYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eorhynchochelys.png");
     private final ModelEorhynchochelys modelEorhynchochelys;
+    private static final ResourceLocation TEXTURE_ERETMORHIPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eretmorhipis.png");
+    private final ModelEretmorhipis modelEretmorhipis;
     private static final ResourceLocation TEXTURE_EOSIMOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosimops.png");
     private static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
     private final ModelEuchambersia modelEuchambersia;
@@ -205,6 +207,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelEffigia = new ModelEffigia();
         this.modelElginia = new ModelElginia();
         this.modelEorhynchochelys = new ModelEorhynchochelys();
+        this.modelEretmorhipis = new ModelEretmorhipis();
         this.modelEuchambersia = new ModelEuchambersia();
         this.modelEudimorphodon = new ModelEudimorphodon();
         this.modelEuparkeria = new ModelEuparkeria();
@@ -598,6 +601,17 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         this.bindTexture(TEXTURE_EORHYNCHOCHELYS);
                         GlStateManager.scale(0.26F,0.26F,0.26F);
                         modelEorhynchochelys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemEretmorhipisRaw.block) {
+                        double offset = 0.33;
+                        //double voffset = -0.15;
+                        double voffset = 0;
+                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                        GlStateManager.rotate(180, 0F, 0F, 1F);
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        this.bindTexture(TEXTURE_ERETMORHIPIS);
+                        GlStateManager.scale(0.14F,0.14F,0.14F);
+                        modelEretmorhipis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemEuchambersiaRaw.block) {
                         double offset = 0.47;
