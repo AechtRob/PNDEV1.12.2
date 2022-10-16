@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.item.ItemFossilCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -138,8 +139,8 @@ public class BlockFossilCambrian extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		ItemStack[] getDropStack() {
-			return null;
+		public ItemStack getFossilDrop() {
+			return new ItemStack(ItemFossilCambrian.block, 1);
 		}
 	}
 }

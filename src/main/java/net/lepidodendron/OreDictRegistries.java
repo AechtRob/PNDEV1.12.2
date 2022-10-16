@@ -137,6 +137,22 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockFossil", BlockFossilNeogene.block);
 		OreDictionary.registerOre("blockFossil", BlockFossilPleistocene.block);
 
+		OreDictionary.registerOre("itemFossil", ItemFossilClean.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilPrecambrian.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilCambrian.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilOrdovician.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilSilurian.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilDevonian.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilCarboniferous.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilPermian.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilTriassic.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilJurassic.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilCretaceous.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilPaleogene.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilNeogene.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilPleistocene.block);
+		OreDictionary.registerOre("itemFossil", ItemFossilPleistocene.block);
+
 		//Coal:
 		OreDictionary.registerOre("blockCoal", BlockAnthracite.block);
 		OreDictionary.registerOre("itemCoal", ItemAnthracite.block);

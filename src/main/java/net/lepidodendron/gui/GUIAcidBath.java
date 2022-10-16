@@ -5,8 +5,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAcidBath;
 import net.lepidodendron.block.BlockAcidBathUp;
-import net.lepidodendron.block.BlockFossil;
-import net.minecraft.block.Block;
+import net.lepidodendron.item.*;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -66,7 +65,19 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
-                    return (Block.getBlockFromItem(stack.getItem()) instanceof BlockFossil);
+                    return (stack.getItem() == ItemFossilPrecambrian.block
+                            || stack.getItem() == ItemFossilCambrian.block
+                            || stack.getItem() == ItemFossilOrdovician.block
+                            || stack.getItem() == ItemFossilSilurian.block
+                            || stack.getItem() == ItemFossilDevonian.block
+                            || stack.getItem() == ItemFossilCarboniferous.block
+                            || stack.getItem() == ItemFossilPermian.block
+                            || stack.getItem() == ItemFossilTriassic.block
+                            || stack.getItem() == ItemFossilJurassic.block
+                            || stack.getItem() == ItemFossilCretaceous.block
+                            || stack.getItem() == ItemFossilPaleogene.block
+                            || stack.getItem() == ItemFossilNeogene.block
+                            || stack.getItem() == ItemFossilPleistocene.block);
                 }
             }));
             this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154 - 3, 30) {

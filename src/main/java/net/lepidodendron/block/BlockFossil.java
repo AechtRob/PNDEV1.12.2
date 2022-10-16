@@ -10,7 +10,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
@@ -46,9 +45,9 @@ import java.util.Random;
 			int ii = rand.nextInt(levelEnchantment + 2);
 			boolean dropped = false;
 			for (int i = 0; i < ii; ++i) {
-				player.addStat(StatList.getBlockStats(this));
-				if (this.getDropStack() != null) {
-					spawnAsEntity(worldIn, pos, getFossilDrop(getDropStack()));
+				if (rand.nextInt(5) == 0) {
+					player.addStat(StatList.getBlockStats(this));
+					spawnAsEntity(worldIn, pos, getFossilDrop());
 					dropped = true;
 				}
 			}
@@ -58,14 +57,6 @@ import java.util.Random;
 		} else {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
 		}
-	}
-
-	@Nullable
-	abstract ItemStack[] getDropStack();
-
-	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return new ItemStack(this, (int) (1)).getItem();
 	}
 
 	@Override
@@ -95,14 +86,7 @@ import java.util.Random;
 		return layer == BlockRenderLayer.CUTOUT_MIPPED;
 	}
 
-	public static ItemStack getFossilDrop(ItemStack[] stack) {
-		if (stack == null) {
-			return null;
-		}
-		int ii = (new Random()).nextInt(stack.length);
-		ItemStack i = stack[ii];
-		return i;
-	}
+	public abstract ItemStack getFossilDrop();
 
 }
 

@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.util.FossilDrops;
+import net.lepidodendron.item.ItemFossilPermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -113,8 +113,8 @@ public class BlockFossilPermian extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		ItemStack[] getDropStack() {
-			return FossilDrops.getPermianPetrifiedDrops();
+		public ItemStack getFossilDrop() {
+			return new ItemStack(ItemFossilPermian.block, 1);
 		}
 	}
 }
