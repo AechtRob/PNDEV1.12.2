@@ -1329,6 +1329,7 @@ public class ModTriggers
             CLICK_FURCA,
             CLICK_TOMLINSONUS,
             CLICK_COWIELEPIS,
+            CLICK_CASSINOCERAS,
             CLICK_TRIGONOTARBID_ANTHRACOMARTUS,
             CLICK_MAZOTHAIROS,
             CLICK_BRACHIOPOD_ORTHID,
