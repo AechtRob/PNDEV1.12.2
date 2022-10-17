@@ -33,7 +33,7 @@ public class LepidodendronOreHandler {
 				|| LepidodendronConfig.dimCarboniferous == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimDevonian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimSilurian == (int) event.getWorld().provider.getDimension()
-				|| LepidodendronConfig.dimSilurian == (int) event.getWorld().provider.getDimension()
+				|| LepidodendronConfig.dimOrdovician == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimCambrian == (int) event.getWorld().provider.getDimension()
 				|| LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
 			)

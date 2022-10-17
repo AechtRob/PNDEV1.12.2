@@ -75,6 +75,7 @@ public class AcidBathOutputPlants {
         String[] resLoc = {
                 ForgeRegistries.BLOCKS.getKey(BlockBaragwanathia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPrototaxites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockNematophyta.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString()
         };
         return resLoc;
@@ -97,6 +98,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockPertica.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockProtolepidodendropsisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPrototaxites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockNematophyta.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPseudobornia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPsilophyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockRellimia.block).toString(),

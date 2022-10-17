@@ -4,17 +4,13 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,7 +18,6 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -33,7 +28,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
@@ -67,9 +61,6 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 		{
 			if (isBlockFromItemStack(stack)) {
 				String resourcelocation = stack.getTagCompound().getString("id_dna");
-				if (resourcelocation.contains("_fail")) {
-					resourcelocation = resourcelocation.replace("_fail", "");
-				}
 				return "item.placeable_living_" + getDNAStr(resourcelocation);
 			}
 			return super.getTranslationKey(stack);
@@ -132,40 +123,6 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			return entityClass;
 		}
 
-		public void failDNA(EntityPlayer player, World world, BlockPos pos, Random rand) {
-			boolean failEntity = false;
-			ItemStack stack = ItemStack.EMPTY;
-			if (!(world.isRemote)) {
-				if (rand.nextInt(12) == 0) {
-					failEntity = true; //baby slime
-				//}
-				//else if (rand.nextInt(8) == 0) {
-				//	stack = new ItemStack(BlockBacterialLayer.block, rand.nextInt(2) + 1);
-				} else if (rand.nextInt(4) == 0) {
-					stack = new ItemStack(Items.ROTTEN_FLESH, rand.nextInt(3) + 1);
-				} else {
-					stack = new ItemStack(Items.SLIME_BALL, rand.nextInt(4) + 1);
-				}
-
-				if (!failEntity) {
-					EntityItem entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack);
-					entityToSpawn.setPickupDelay(10);
-					world.spawnEntity(entityToSpawn);
-				} else { //Is a slime
-					String nbtStr = "{Size:0}";
-					EntityPrehistoricFloraAgeableBase.summon(world, "minecraft:slime", nbtStr, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
-				}
-			}
-			world.playSound(player, pos, SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 1.0F, 1.0F);
-			if (player instanceof EntityPlayerMP) {
-				ModTriggers.DNA_FAIL.trigger((EntityPlayerMP)player);
-			}
-			if (world.isRemote) {
-				player.sendMessage(new TextComponentString("The DNA was corrupted"));
-			}
-
-		}
-
 		public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
 		{
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
@@ -187,21 +144,6 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 					}
 
 					IBlockState iblockstate = worldIn.getBlockState(blockpos);
-
-					String stringDNA = ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getString("id_dna") : null);
-					if (stringDNA != null) {
-						if (stringDNA.contains("_fail")) {
-							//Fail it:
-							if (iblockstate.getMaterial() != Material.WATER) {
-								blockpos = blockpos.offset(raytraceresult.sideHit);
-							}
-							failDNA(playerIn, worldIn, blockpos, itemRand);
-							if (!playerIn.isCreative()) {
-								itemstack.shrink(1);
-							}
-							return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-						}
-					}
 
 					if (getEntityFromNBT(itemstack) != null) {
 						//Entities:

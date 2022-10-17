@@ -56,7 +56,6 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 		}
-
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)

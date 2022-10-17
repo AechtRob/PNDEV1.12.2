@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.gui.GUIAcidBath;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.AcidBathOutputJunk;
 import net.lepidodendron.util.AcidBathOutputMobs;
 import net.lepidodendron.util.AcidBathOutputPlants;
 import net.lepidodendron.util.AcidBathOutputStatics;
@@ -1040,37 +1041,64 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public ItemStack itemChooser(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
+			if (world.rand.nextInt(5) != 0) {
+				return getFailStack(stack);
+			}
 			//We  have 3 different analysables:
 			if (Math.random() > 0.4) { //Plants:
-				finalItem = getStackWithFails(getPlantStack(stack));
+				finalItem = getPlantStack(stack);
 				if (finalItem != null && !finalItem.isEmpty()) {
 					return finalItem;
 				}
 				else {
-					finalItem = getStackWithFails(getStaticsStack(stack));
+					finalItem = getStaticsStack(stack);
 					if (finalItem != null && !finalItem.isEmpty()) {
 						return finalItem;
 					}
 					else {
-						return getStackWithFails(getPlantStack(stack));
+						return getPlantStack(stack);
 					}
 				}
 			}
 			else
 			if (Math.random() > 0.4) { //Mobs:
-				return getStackWithFails(getMobStack(stack));
+				return getMobStack(stack);
 			}
 			else { //Static creatures
-				return getStackWithFails(getStaticsStack(stack));
+				return getStaticsStack(stack);
 			}
 		}
 
-		public ItemStack getStackWithFails(ItemStack stack) {
-			if (world.rand.nextInt(5) == 0) {
-				if (world.rand.nextInt(5) == 0) {
-					return new ItemStack(Items.GOLD_NUGGET, 1);
+		public ItemStack getFailStack(ItemStack stack) {
+			if (world.rand.nextInt(5) != 0) {
+				ItemStack finalItem = null;
+				if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(1);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(2);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(3);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(4);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(5);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(6);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(7);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(8);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(9);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(10);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(11);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(12);
+				} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
+					return AcidBathOutputJunk.fossilAcidJunk(13);
 				}
-				return new ItemStack(Items.FLINT, 1);
 			}
 			return stack;
 		}
