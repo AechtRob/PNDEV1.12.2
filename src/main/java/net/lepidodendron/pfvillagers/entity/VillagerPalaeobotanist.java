@@ -105,7 +105,7 @@ public class VillagerPalaeobotanist {
 
             ItemStack itemstack = new ItemStack(Items.EMERALD, i, 0);
             ItemStack soldBook = this.enchantedItemStack.copy();
-            ItemEnchantedBook.addEnchantment(soldBook, new EnchantmentData(enchantment, 1 + random.nextInt(2)));
+            ItemEnchantedBook.addEnchantment(soldBook, new EnchantmentData(enchantment, 1));
             recipeList.add(new MerchantRecipe(itemstack, soldBook));
         }
     }
