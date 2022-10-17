@@ -6,10 +6,8 @@
       "item": "lepidodendron:bottle_of_dna_solvent"
     },
     {
-      "type": "minecraft:item_nbt",
-      "item": "lepidodendron:fossil_clean",
-      "count": 1,
-      "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_psephoderma"}}
+      "type": "forge:ore_dict",
+      "ore": "dnaPNAcadoaradoxides"
     },
     {
       "item": "lepidodendron:phial_empty"
@@ -19,6 +17,6 @@
     "type": "minecraft:item_nbt",
     "item": "lepidodendron:phial_dna",
     "count": 1,
-    "nbt": {"id_dna":"lepidodendron:prehistoric_flora_psephoderma"}
+    "nbt": {"id_dna":"prehistoric_flora_acadoaradoxides"}
   }
 }

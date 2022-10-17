@@ -5701,6 +5701,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 6));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 7));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 8));
+
 	}
 
 

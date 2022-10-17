@@ -3,6 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -36,7 +37,7 @@ public class ItemFossilSilurian extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_fossil_drop_silurian");
 			setRegistryName("fossil_drop_silurian");
 			maxStackSize = 64;
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
 	}

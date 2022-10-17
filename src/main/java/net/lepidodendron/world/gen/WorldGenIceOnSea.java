@@ -26,7 +26,8 @@ public class WorldGenIceOnSea extends WorldGenerator
             	)
             )
             {
-                worldIn.setBlockState(blockpos, Blocks.ICE.getStateFromMeta(0), 2);
+                //worldIn.setBlockState(blockpos, Blocks.ICE.getStateFromMeta(0), 2);
+                worldIn.setBlockState(blockpos, Blocks.PACKED_ICE.getDefaultState(), 2);
                 flag = true;
             }
         }

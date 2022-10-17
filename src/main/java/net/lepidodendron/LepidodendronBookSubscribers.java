@@ -5,14 +5,60 @@ import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class LepidodendronBookSubscribers {
 
-	@SubscribeEvent
+	protected RayTraceResult rayTrace(World worldIn, EntityPlayer playerIn, boolean useLiquids)
+	{
+		float f = playerIn.rotationPitch;
+		float f1 = playerIn.rotationYaw;
+		double d0 = playerIn.posX;
+		double d1 = playerIn.posY + (double)playerIn.getEyeHeight();
+		double d2 = playerIn.posZ;
+		Vec3d vec3d = new Vec3d(d0, d1, d2);
+		float f2 = MathHelper.cos(-f1 * 0.017453292F - (float)Math.PI);
+		float f3 = MathHelper.sin(-f1 * 0.017453292F - (float)Math.PI);
+		float f4 = -MathHelper.cos(-f * 0.017453292F);
+		float f5 = MathHelper.sin(-f * 0.017453292F);
+		float f6 = f3 * f4;
+		float f7 = f2 * f4;
+		double d3 = playerIn.getEntityAttribute(EntityPlayer.REACH_DISTANCE).getAttributeValue();
+		Vec3d vec3d1 = vec3d.add((double)f6 * d3, (double)f5 * d3, (double)f7 * d3);
+		return worldIn.rayTraceBlocks(vec3d, vec3d1, useLiquids, !useLiquids, false);
+	}
+
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public void onUseBook2(PlayerInteractEvent.RightClickItem event) {
+		if (!event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
+			return;
+		}
+		if (event.getItemStack().getTagCompound() != null) {
+			if (!event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
+				return;
+			}
+			RayTraceResult raytraceresult = this.rayTrace(event.getWorld(), event.getEntityPlayer(), true);
+			if (raytraceresult != null)
+			{
+				event.setCanceled(true);
+				return;
+			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onUseBook(PlayerInteractEvent.RightClickBlock event) {
 		/// click on blocks:
 		if (!event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
@@ -22,7 +68,8 @@ public class LepidodendronBookSubscribers {
 			if (!event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 				return;
 			}
-			Block target = event.getWorld().getBlockState(event.getPos()).getBlock();
+			IBlockState state = event.getWorld().getBlockState(event.getPos());
+			Block target = state.getBlock();
 
 			//Static animals:
 			//Ediacaran:
@@ -794,48 +841,42 @@ public class LepidodendronBookSubscribers {
 			}
 
 
-
-
-
-
-
-
 			//Lepidodendron tree:
-			else if (target == BlockWoodenLog.block
-				|| target == BlockLepidodendronStrobilus.block
-				|| target == BlockTreeLeaves.block) {
-				//System.err.println("Test player");
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNLepidodendron"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					//System.err.println("Is player");
 					ModTriggers.CLICK_LEPIDODENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);
+
 				return;
+
 			}
-			else if (target == BlockWoodenLog.block
-					|| target == BlockLepidodendronStrobilus.block
-					|| target == BlockTreeLeaves.block) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_LEPIDODENDRON.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				event.setCanceled(true);
-				return;
-			}
+
 		}
+
+
 	}
 
 	public void deliverStatsEntity(PlayerInteractEvent.EntityInteract event) {
 		String agePercent = "";
+		double maxHealth = 0;
+		double actualHealth = 0;
 		if (event.getTarget() instanceof EntityPrehistoricFloraAgeableBase) {
 			agePercent = Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F) + "%";
 		}
 		else {
 			agePercent = "100%";
 		}
+		if (event.getTarget() instanceof EntityLivingBase) {
+			maxHealth = ((EntityLivingBase) event.getTarget()).getMaxHealth();
+			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
+		}
 		if (event.getWorld().isRemote) {
-			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged " + agePercent));
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + actualHealth + "/" + maxHealth + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)"));
 		}
 	}
 
