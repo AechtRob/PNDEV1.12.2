@@ -3,6 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -36,7 +37,7 @@ public class ItemFossilTriassic extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_fossil_drop_triassic");
 			setRegistryName("fossil_drop_triassic");
 			maxStackSize = 64;
-			setCreativeTab(null);
+			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
 	}
