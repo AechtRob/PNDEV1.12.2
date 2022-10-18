@@ -11,6 +11,7 @@ import net.lepidodendron.item.ItemBottleOfDNASolvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -89,6 +90,11 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.BLACK;
 		}
 
 		@Override

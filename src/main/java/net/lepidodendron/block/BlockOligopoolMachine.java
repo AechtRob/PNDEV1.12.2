@@ -12,6 +12,7 @@ import net.lepidodendron.item.ItemOligoPool;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -78,7 +79,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.IRON);
 			setTranslationKey("pf_oligopool_machine");
 			setSoundType(SoundType.GROUND);
 			setHarvestLevel("pickaxe", 0);
@@ -87,6 +88,11 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 			setLightLevel(0);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
 		}
 
 		@Override

@@ -8,6 +8,7 @@ import net.lepidodendron.item.ItemAcidBath;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -89,6 +90,11 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ACID, 0));
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
 		}
 
 		@Override

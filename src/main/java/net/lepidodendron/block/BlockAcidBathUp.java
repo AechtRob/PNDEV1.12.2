@@ -13,6 +13,7 @@ import net.lepidodendron.util.AcidBathOutputStatics;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -93,6 +94,11 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
+		}
+
+		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 			boolean pipe = false;
 			TileEntity tileEntity = worldIn.getTileEntity(pos.down().offset(state.getValue(FACING).getOpposite()));
@@ -137,7 +143,6 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return (new ItemStack(Items.AIR, 1).getItem());
 		}
-
 
 		@Override
 		public boolean hasTileEntity(IBlockState state) {
@@ -321,7 +326,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		protected boolean isProcessing;
 		protected int processTick;
 		private int trayLiftTickTime = 120; //6 seconds to move the tray
-		private int processTickTime = 1200; //60 seconds to process the tray fully
+		private int processTickTime = 960; //48 seconds to process the tray fully
 		//private int processTickTime = 140; //TEST
 
 		public boolean canStartProcess() {
@@ -1041,7 +1046,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public ItemStack itemChooser(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
-			if (world.rand.nextInt(6) != 0) {
+			if (world.rand.nextInt(4) != 0) {
 				return getFailStack(stack);
 			}
 			//We  have 3 different analysables:
@@ -1056,21 +1061,39 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 						return finalItem;
 					}
 					else {
-						return getPlantStack(stack);
+						finalItem = getMobStack(stack);
+						if (finalItem != null && !finalItem.isEmpty()) {
+							return finalItem;
+						}
+						else {
+							return getFailStack(stack);
+						}
 					}
 				}
 			}
 			else
 			if (Math.random() > 0.4) { //Mobs:
-				return getMobStack(stack);
+				finalItem = getMobStack(stack);
+				if (finalItem != null && !finalItem.isEmpty()) {
+					return finalItem;
+				}
+				else {
+					return getFailStack(stack);
+				}
 			}
 			else { //Static creatures
-				return getStaticsStack(stack);
+				finalItem = getStaticsStack(stack);
+				if (finalItem != null && !finalItem.isEmpty()) {
+					return finalItem;
+				}
+				else {
+					return getFailStack(stack);
+				}
 			}
 		}
 
 		public ItemStack getFailStack(ItemStack stack) {
-			if (world.rand.nextInt(5) != 0) {
+			//if (world.rand.nextInt(5) != 0) {
 				ItemStack finalItem = null;
 				if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
 					return AcidBathOutputJunk.fossilAcidJunk(1);
@@ -1099,7 +1122,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
 					return AcidBathOutputJunk.fossilAcidJunk(13);
 				}
-			}
+			//}
 			return stack;
 		}
 
@@ -1111,7 +1134,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					if (tileEntity instanceof BlockAcidBath.TileEntityAcidBath) {
 						BlockAcidBath.TileEntityAcidBath te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
 						if (te.fluid != null) {
-							te.fluid.amount = Math.max(0, te.fluid.amount - 200);
+							te.fluid.amount = Math.max(0, te.fluid.amount - 150);
 							te.markDirty();
 						}
 					}

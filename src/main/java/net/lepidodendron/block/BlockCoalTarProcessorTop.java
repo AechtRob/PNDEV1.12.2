@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.gui.GUICoalTarProcessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -60,6 +61,11 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 			setLightLevel(0);
 			setLightOpacity(0);
 			setCreativeTab(null);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.BLACK;
 		}
 
 		@Override

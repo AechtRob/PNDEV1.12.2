@@ -3,10 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -18,19 +19,16 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -46,11 +44,6 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("lab_bench"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
-	}
-
-	@Override
-	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityLabBench.class, "lepidodendron:tileentitylab_bench");
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -73,8 +66,12 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 			setResistance(3F);
 			setLightLevel(0F);
 			setLightOpacity(0);
-			setCreativeTab(TabLepidodendronMisc.tab);
+			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+		}
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
 		}
 
 		@Override
@@ -82,34 +79,34 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 			boolean left = false;
 			boolean right = false;
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
-				if (worldIn.getBlockState(pos.east()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBenchHopper.block ) {
 					left = true;
 				}
-				if (worldIn.getBlockState(pos.west()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBenchHopper.block ) {
 					right = true;
 				}
 			}
 			else if (state.getValue(FACING) == EnumFacing.SOUTH) {
-				if (worldIn.getBlockState(pos.east()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBenchHopper.block ) {
 					right = true;
 				}
-				if (worldIn.getBlockState(pos.west()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBenchHopper.block ) {
 					left = true;
 				}
 			}
 			else if (state.getValue(FACING) == EnumFacing.WEST) {
-				if (worldIn.getBlockState(pos.north()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBenchHopper.block ) {
 					left = true;
 				}
-				if (worldIn.getBlockState(pos.south()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBenchHopper.block ) {
 					right = true;
 				}
 			}
 			else if (state.getValue(FACING) == EnumFacing.EAST) {
-				if (worldIn.getBlockState(pos.north()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBenchHopper.block ) {
 					right = true;
 				}
-				if (worldIn.getBlockState(pos.south()).getBlock() == this) {
+				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBenchHopper.block ) {
 					left = true;
 				}
 			}
@@ -123,28 +120,6 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public boolean hasTileEntity(IBlockState state) {
-			return true;
-		}
-
-		@Nullable
-		@Override
-		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new TileEntityLabBench();
-		}
-
-		public TileEntityLabBench createNewTileEntity(World worldIn, int meta) {
-			return new TileEntityLabBench();
-		}
-
-		@Override
-		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
-			super.eventReceived(state, worldIn, pos, eventID, eventParam);
-			TileEntity tileentity = worldIn.getTileEntity(pos);
-			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
-		}
-
-		@Override
 		public EnumBlockRenderType getRenderType(IBlockState state) {
 			return EnumBlockRenderType.MODEL;
 		}
@@ -154,11 +129,6 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		public BlockRenderLayer getRenderLayer()
 		{
 			return BlockRenderLayer.CUTOUT;
-		}
-
-		@Override
-		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-			return layer == BlockRenderLayer.TRANSLUCENT;
 		}
 
 		@Override
@@ -185,13 +155,6 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
 		{
 			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-		}
-
-		@Override
-		public void breakBlock(World world, BlockPos pos, IBlockState state) {
-			TileEntity tileentity = world.getTileEntity(pos);
-			world.removeTileEntity(pos);
-			super.breakBlock(world, pos, state);
 		}
 
 		@Override
@@ -222,10 +185,6 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return false;
 		}
-	}
-
-	public static class TileEntityLabBench extends TileEntity {
-
 	}
 
 }

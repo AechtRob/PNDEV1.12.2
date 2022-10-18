@@ -2305,6 +2305,7 @@ item.pf_brochoadmones_raw.name=Raw Brochoadmones
 item.pf_bug_cooked.name=Cooked Bug Meat
 item.pf_bug_raw.name=Raw Bug Meat
 tile.pf_lab_bench.name=Laboratory Bench
+tile.pf_lab_bench_hopper.name=Hopper Laboratory Bench
 item.pf_bumbudendron_item.name=Bumbudendron
 item.pf_bunostegos_cooked.name=Cooked Bunostegos
 item.pf_bunostegos_raw.name=Raw Bunostegos

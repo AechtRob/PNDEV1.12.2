@@ -75,7 +75,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.ADOBE);
+			super(Material.ROCK);
 			setTranslationKey("pf_dna_recombiner_centrifuge");
 			setSoundType(SoundType.GROUND);
 			setHarvestLevel("pickaxe", 0);
@@ -85,6 +85,11 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(RF, LepidodendronConfig.machinesRF));
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
 		}
 
 		@Override

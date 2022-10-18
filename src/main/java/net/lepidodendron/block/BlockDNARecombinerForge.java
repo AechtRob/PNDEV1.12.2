@@ -77,7 +77,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.ADOBE);
+			super(Material.ROCK);
 			setTranslationKey("pf_dna_recombiner_forge");
 			setSoundType(SoundType.GROUND);
 			setHarvestLevel("pickaxe", 0);
@@ -86,6 +86,11 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			setLightLevel(0);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronBuilding.tab);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.GRAY;
 		}
 
 		@Override

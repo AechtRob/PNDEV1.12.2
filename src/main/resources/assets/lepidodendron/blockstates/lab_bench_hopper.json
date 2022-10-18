@@ -1,0 +1,86 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench" }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench", "y": 270}
+      ]
+    },
+    {   "when": { "left": true, "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_left" }
+      ]
+    },
+    {   "when": { "right": true, "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_right" }
+      ]
+    },
+    {   "when": { "left": true, "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_left", "y": 180 }
+      ]
+    },
+    {   "when": { "right": true, "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_right", "y": 180 }
+      ]
+    },
+    {   "when": { "left": true, "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_left", "y": 90 }
+      ]
+    },
+    {   "when": { "right": true, "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_right", "y": 90 }
+      ]
+    },
+    {   "when": { "left": true, "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_left", "y": 270 }
+      ]
+    },
+    {   "when": { "right": true, "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_right", "y": 270 }
+      ]
+    },
+
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_hopper_outlet" }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_hopper_outlet", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_hopper_outlet", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:lab_bench_hopper_outlet", "y": 270}
+      ]
+    }
+
+  ]
+}
