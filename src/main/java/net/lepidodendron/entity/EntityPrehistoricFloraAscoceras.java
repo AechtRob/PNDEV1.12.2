@@ -10,9 +10,13 @@ import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemNautiloidEggsAscoceras;
-import net.lepidodendron.item.entities.ItemNautiloidEggsMooreoceras;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -22,6 +26,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -37,7 +42,7 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 
 	public EntityPrehistoricFloraAscoceras(World world) {
 		super(world);
-		//setSize(0.5F, 0.3F);
+		setSize(0.2F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -47,7 +52,14 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 		minWidth = 0.07F;
 		maxWidth = 0.3F;
 		maxHeight = 0.25F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 3.0D;
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setVariant(rand.nextInt(100));
+		return livingdata;
 	}
 
 	@Override
@@ -71,7 +83,7 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 
 	@Override
 	public int getAdultAge() {
-		return 48000;
+		return 64000;
 	}
 
 	@Override
@@ -99,12 +111,10 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 	}
 
 	public int getVariant() {
-
 		return this.dataManager.get(SHINY);
 	}
 
 	public void setVariant(int variant) {
-
 		this.dataManager.set(SHINY, variant);
 	}
 
@@ -149,6 +159,26 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 				world.spawnEntity(entityToSpawn);
 			}
 			this.setTicks(0);
+		}
+
+		//If this is somehow a baby, then make it a baby!
+		Entity entity = null;
+		if (this.getAgeTicks() < 32000)
+		{
+			if (!(world.isRemote)) {
+				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraAscoceras_Baby.class), (double) this.posX, (double) this.posY, (double) this.posZ);
+				if (entity != null) {
+					entity.setLocationAndAngles(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
+					entity.setPositionAndRotation(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
+					entity.ticksExisted = this.ticksExisted;
+					EntityPrehistoricFloraAscoceras ee = (EntityPrehistoricFloraAscoceras) entity;
+					ee.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(this.getMaxHealth());
+					ee.setHealth(this.getHealth());
+					ee.setAgeTicks(this.getAgeTicks());
+					ee.setScaleForAge(false);
+					this.setDead();
+				}
+			}
 		}
 	}
 

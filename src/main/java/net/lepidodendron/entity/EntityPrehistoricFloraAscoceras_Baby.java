@@ -4,24 +4,31 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EurypteridWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.ai.NautiloidWander;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.*;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.IEntityLivingData;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemMonsterPlacer;
-import net.minecraft.util.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFloraEurypteridBase {
+public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFloraNautiloidBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -36,10 +43,10 @@ public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFlora
 		enablePersistence();
 		//minSize = 0.8F;
 		//maxSize = 1.0F;
-		minWidth = 0.085F;
-		maxWidth = 0.6F;
-		maxHeight = 0.4F;
-		maxHealthAgeable = 2.0D;
+		minWidth = 0.07F;
+		maxWidth = 0.3F;
+		maxHeight = 0.25F;
+		maxHealthAgeable = 3.0D;
 	}
 
 	@Override
@@ -72,17 +79,26 @@ public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFlora
 
 	@Override
 	public int getAdultAge() {
-		return 32000;
+		return 64000;
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EurypteridWander(this, NO_ANIMATION));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(1, new NautiloidWander(this, NO_ANIMATION));
+		tasks.addTask(2, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 
 	@Override
-	protected float getAISpeedEurypterid() {
-		return 0.41F;
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		//We can use this here as the baby will never be an adult so the fishfood will only ever age it:
+		return (stack.getItem() == new ItemStack(ItemFishFood.block, (int) (1)).getItem());
+	}
+
+	@Override
+	protected float getAISpeedNautiloid() {
+		return 0.0698f;
 	}
 
 	@Override
@@ -107,10 +123,10 @@ public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFlora
 		return false;
 	}
 
-	@Override
-	protected double getSwimSpeed() {
-		return this.getSwimSpeed();
-	}
+	//@Override
+	//protected double getSwimSpeed() {
+	//	return this.getSwimSpeed();
+	//}
 
 	@Override
 	public boolean isInWater() {
@@ -173,26 +189,25 @@ public class EntityPrehistoricFloraAscoceras_Baby extends EntityPrehistoricFlora
 		super.onLivingUpdate();
 	}
 
+	@Override
 	public void onEntityUpdate()
 	{
 		super.onEntityUpdate();
 		Entity entity = null;
-		if (this.getAgeScale() >= 0.99)
+		if (this.getAgeTicks() >= 32000)
 		{
 			if (!(world.isRemote)) {
-				BlockPos pos = this.getPosition();
-				
-				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraAscoceras.class), (double) pos.getX() + 0.5D, (double) pos.getY() + 0.5D, (double) pos.getZ() + 0.5D);
-				
-
+				entity = ItemMonsterPlacer.spawnCreature(this.getEntityWorld(), EntityList.getKey(EntityPrehistoricFloraAscoceras.class), (double) this.posX, (double) this.posY, (double) this.posZ);
 				if (entity != null) {
+					entity.setLocationAndAngles(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
+					entity.setPositionAndRotation(this.posX, (double) this.posY, (double) this.posZ, this.rotationYaw, this.rotationPitch);
+					entity.ticksExisted = this.ticksExisted;
+					EntityPrehistoricFloraAscoceras ee = (EntityPrehistoricFloraAscoceras) entity;
+					ee.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(this.getMaxHealth());
+					ee.setHealth(this.getHealth());
+					ee.setAgeTicks(this.getAgeTicks());
+					ee.setScaleForAge(false);
 					this.setDead();
-					if (world instanceof WorldServer) {
-						((WorldServer) world).playSound(null, pos.up(), SoundEvents.BLOCK_SLIME_BREAK, SoundCategory.BLOCKS, 0.5F, 2.6F + (rand.nextFloat() - rand.nextFloat()) * 0.8F);
-						for (int k = 0; k < 8; ++k) {
-							((WorldServer) world).spawnParticle(EnumParticleTypes.EXPLOSION_NORMAL, (double) pos.getX() + Math.random(), (double) pos.getY() + Math.random(), (double) pos.getZ() + Math.random() + Math.random(), (int) 1, 0.5, 0.5, 0.5, 0.1, new int[0]);
-						}
-					}
 				}
 			}
 		}
