@@ -1041,7 +1041,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public ItemStack itemChooser(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
-			if (world.rand.nextInt(10) != 0) {
+			if (world.rand.nextInt(6) != 0) {
 				return getFailStack(stack);
 			}
 			//We  have 3 different analysables:
