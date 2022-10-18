@@ -3065,6 +3065,30 @@ public class RenderHandler {
                 return new RenderBohemoharpes(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTorpedaspis.class, new IRenderFactory<EntityPrehistoricFloraTorpedaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTorpedaspis> createRenderFor(RenderManager manager) {
+                return new RenderTorpedaspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCassinoceras.class, new IRenderFactory<EntityPrehistoricFloraCassinoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCassinoceras> createRenderFor(RenderManager manager) {
+                return new RenderCassinoceras(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAscoceras_Baby.class, new IRenderFactory<EntityPrehistoricFloraAscoceras_Baby>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAscoceras_Baby> createRenderFor(RenderManager manager) {
+                return new RenderAscoceras_Baby(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAscoceras.class, new IRenderFactory<EntityPrehistoricFloraAscoceras>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAscoceras> createRenderFor(RenderManager manager) {
+                return new RenderAscoceras(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
