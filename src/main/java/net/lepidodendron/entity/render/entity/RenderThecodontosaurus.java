@@ -27,9 +27,9 @@ public class RenderThecodontosaurus extends RenderLiving<EntityPrehistoricFloraT
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraThecodontosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 0.47F;
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.3F;
+        this.shadowSize = entity.width * scale * 0.35F;
     }
 
 }

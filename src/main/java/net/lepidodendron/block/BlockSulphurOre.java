@@ -2,7 +2,6 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
@@ -55,35 +54,45 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		boolean dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimPermian)
-			dimensionCriteria = true;
-
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
 		if (biome instanceof BiomePermian) {
 			BiomePermian BiomeP = (BiomePermian) biome;
-			if (BiomeP.getBiomeType() != EnumBiomeTypePermian.Floodbasalt) {
-				dimensionCriteria = false;
+			if (BiomeP.getBiomeType() == EnumBiomeTypePermian.Floodbasalt) {
+				if (random.nextInt(3) != 0)
+					return;
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(60) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
 			}
 		}
-		if (!dimensionCriteria)
-			return;
 
-		if (random.nextInt(6) != 0)
-			return;
+		if (dimID == 0) {
+			if (random.nextInt(2) != 0)
+				return;
+			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+			int y = random.nextInt(10) + 1;
+			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+			(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
+				public boolean apply(IBlockState blockAt) {
+					boolean blockCriteria = false;
+					IBlockState require;
+					if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+						blockCriteria = true;
+					return blockCriteria;
+				}
+			})).generate(world, random, new BlockPos(x, y, z));
 
-		int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-		int y = random.nextInt(40) + 1;
-		int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-		(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
-			public boolean apply(IBlockState blockAt) {
-				boolean blockCriteria = false;
-				IBlockState require;
-				if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
-					blockCriteria = true;
-				return blockCriteria;
-			}
-		})).generate(world, random, new BlockPos(x, y, z));
+		}
+
 	}
 
 	public static class BlockCustom extends BlockOre {

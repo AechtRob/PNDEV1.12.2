@@ -5975,5 +5975,53 @@
         "stream": false
       }
     ]
+  },
+  "thecodontosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thecodontosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_living05",
+        "stream": false
+      }
+    ]
+  },
+  "thecodontosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thecodontosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:thecodontosaurus_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "thecodontosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:thecodontosaurus_death",
+        "stream": false
+      }
+    ]
   }
 }

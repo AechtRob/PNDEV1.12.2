@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPrehistoricFlo
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.05F;
-		maxWidth = 0.350F;
+		maxWidth = 0.425F;
 		maxHeight = 0.675F;
 		maxHealthAgeable = 28.0D;
 	}
@@ -103,9 +103,9 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPrehistoricFlo
 			return 0.0F; //Is drinking
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+			speedBase = speedBase * 2.55F;
 		}
-		return speedBase;
+		return speedBase * 0.67F;
 	}
 
 	@Override
