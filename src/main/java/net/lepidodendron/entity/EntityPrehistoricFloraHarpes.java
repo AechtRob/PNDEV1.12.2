@@ -188,6 +188,9 @@ public class EntityPrehistoricFloraHarpes extends EntityPrehistoricFloraTrilobit
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (this.getVariant() <= 1) {
+			return LepidodendronMod.HARPES_LOOT_VARIANT;
+		}
 		return LepidodendronMod.HARPES_LOOT;
 	}
 
