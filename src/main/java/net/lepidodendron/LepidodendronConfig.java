@@ -24,6 +24,7 @@ public class LepidodendronConfig {
     public static int spreadPlants = 70;
     public static boolean biomeApple = true;
     public static boolean machinesRF = false;
+    public static boolean sulphuricAcidGrief = true;
 
     public static boolean genFossil = true;
     public static boolean modFire = true;
@@ -525,6 +526,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "machinesRF", machinesRF);
         prop.setComment("Prehistoric Nature Acid bath needs RF to function. [default: false]");
         machinesRF = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "sulphuricAcidGrief", sulphuricAcidGrief);
+        prop.setComment("Sulphuric Acid causes griefing to organic blocks. [default: true]");
+        sulphuricAcidGrief = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "modFire", modFire);

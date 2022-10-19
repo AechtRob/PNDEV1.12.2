@@ -36,7 +36,7 @@
       "ore": "ingotIron"
     },
     "7": {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:redstone"
     },
     "8": {
       "type": "forge:ore_dict",

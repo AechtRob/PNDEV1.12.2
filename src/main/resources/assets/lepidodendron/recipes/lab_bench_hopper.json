@@ -1,0 +1,21 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    " "
+  ],
+  "key": {
+    "1": {
+      "item": "lepidodendron:lab_bench"
+    },
+    "4": {
+      "item": "minecraft:hopper"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:lab_bench_hopper",
+    "count": 1
+  }
+}
