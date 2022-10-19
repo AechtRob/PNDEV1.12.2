@@ -24,7 +24,6 @@ public class ModTriggers
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
     public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
     public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
-    public static final CustomTrigger DNA_FAIL = new CustomTrigger("pf_dna_fail");
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
 
     //Knowledge of blocks:
@@ -692,7 +691,6 @@ public class ModTriggers
             USE_CAGE,
             USE_JAR,
             EPHEDRA,
-            DNA_FAIL,
             TAIL,
 
             //BLOCKS:

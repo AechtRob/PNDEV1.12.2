@@ -189,6 +189,9 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (this.getVariant() <= 1) {
+			return LepidodendronMod.ASCOCERAS_LOOT_VARIANT;
+		}
 		return LepidodendronMod.ASCOCERAS_LOOT;
 	}
 

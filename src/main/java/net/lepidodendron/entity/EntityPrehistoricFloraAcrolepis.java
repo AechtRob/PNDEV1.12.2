@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraAcrolepis extends EntityPrehistoricFloraAgeab
 
 	@Override
 	public int getAdultAge() {
-		return 0;
+		return 36000;
 	} //Only adults!
 
 	@Override
@@ -196,8 +196,10 @@ public class EntityPrehistoricFloraAcrolepis extends EntityPrehistoricFloraAgeab
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (!this.isPFAdult()) {
+			return LepidodendronMod.ACROLEPIS_LOOT_YOUNG;
+		}
 		return LepidodendronMod.ACROLEPIS_LOOT;
 	}
-
 }
 

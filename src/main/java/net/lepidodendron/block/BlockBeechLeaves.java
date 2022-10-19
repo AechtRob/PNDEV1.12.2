@@ -8,7 +8,6 @@ import net.lepidodendron.block.base.BlockLeavesPF;
 import net.lepidodendron.item.ItemBeechSeeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -44,7 +43,7 @@ public class BlockBeechLeaves extends ElementsLepidodendronMod.ModElement {
 	}
 	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
-			setSoundType(SoundType.PLANT);
+			setTranslationKey("pf_beech_leaves");
 		}
 
 		@Override
