@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockLeavesPF;
-import net.lepidodendron.item.ItemGinkgoFruit;
+import net.lepidodendron.item.ItemGinkgoitesFruit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
@@ -54,10 +54,10 @@ public class BlockGinkgoitesLeaves extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
 			if (LepidodendronConfig.doPropagation) {
-				return new ItemStack(ItemGinkgoFruit.block, (int) (1)).getItem();
+				return new ItemStack(ItemGinkgoitesFruit.block, (int) (1)).getItem();
 			}
 			else {
-				return Item.getItemFromBlock(BlockGinkgoSapling.block);
+				return Item.getItemFromBlock(BlockGinkgoitesSapling.block);
 			}
 		}
 	}
