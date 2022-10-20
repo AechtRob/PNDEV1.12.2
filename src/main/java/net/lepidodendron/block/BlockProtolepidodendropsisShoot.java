@@ -194,7 +194,7 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public Block planted() {
-			return BlockProtolepidodendropsis.block;
+			return BlockProtolepidodendropsisSapling.block;
 		}
 
 		@Override

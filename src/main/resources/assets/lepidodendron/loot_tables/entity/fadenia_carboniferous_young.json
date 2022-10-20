@@ -1,0 +1,24 @@
+{
+  "pools": [
+    {
+      "name": "fadenia_carboniferous",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:fadenia_carboniferous_raw",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

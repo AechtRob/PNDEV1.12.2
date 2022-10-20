@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelSaivodus extends AdvancedModelBase {
@@ -307,9 +306,9 @@ public class ModelSaivodus extends AdvancedModelBase {
 
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);
-        animator.move(this.head, 0,0,-0.2F);
-        animator.rotate(this.head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.lowerjaw, (float) Math.toRadians(40), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        //animator.move(this.head, 0,0,-0.2F);
+        //animator.rotate(this.head, (float) Math.toRadians(-15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.lowerjaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);

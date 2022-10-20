@@ -3102,6 +3102,18 @@ public class RenderHandler {
                 return new RenderWeinbergina(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFadeniaPermotriassic.class, new IRenderFactory<EntityPrehistoricFloraFadeniaPermotriassic>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFadeniaPermotriassic> createRenderFor(RenderManager manager) {
+                return new RenderFadeniaPermotriassic(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFadeniaCarboniferous.class, new IRenderFactory<EntityPrehistoricFloraFadeniaCarboniferous>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFadeniaCarboniferous> createRenderFor(RenderManager manager) {
+                return new RenderFadeniaCarboniferous(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {

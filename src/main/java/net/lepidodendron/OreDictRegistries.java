@@ -4382,7 +4382,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plankWood", BlockArchaeanthusPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockApplePlanks.block);
 
-		OreDictionary.registerOre("treeSapling", BlockSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockGlossopterisSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockGangamopterisSapling.block);
@@ -4724,7 +4723,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("trapdoorWood", BlockSpruceTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockOakTrapdoor.block);
 
-		OreDictionary.registerOre("plantPrehistoric", BlockSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGlossopterisSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGangamopterisSapling.block);
@@ -5313,7 +5311,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plantPrehistoric", ItemPetrifiedDicroidiumE.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumE.block);
 
-		OreDictionary.registerOre("plant", BlockSapling.block);
 		OreDictionary.registerOre("plant", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("plant", BlockGlossopterisSapling.block);
 		OreDictionary.registerOre("plant", BlockGangamopterisSapling.block);
@@ -5677,18 +5674,40 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.DOUBLE_PLANT, 1, 5));
+
+		//Vanilla trees:
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 2));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 5));
+		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.SAPLING, 1, 0));
+		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.SAPLING, 1, 1));
+		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.SAPLING, 1, 2));
+		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.SAPLING, 1, 3));
+		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.SAPLING, 1, 4));
+		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.SAPLING, 1, 5));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 2));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 1));
+		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LEAVES, 1, 0));
+		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LEAVES, 1, 1));
+		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LEAVES, 1, 2));
+		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LEAVES, 1, 3));
+		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.LEAVES2, 1, 0));
+		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LEAVES2, 1, 1));
+		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LOG, 1, 0));
+		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LOG, 1, 1));
+		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LOG, 1, 2));
+		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LOG, 1, 3));
+		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.LOG2, 1, 0));
+		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LOG2, 1, 1));
+
+
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.VINE, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.WATERLILY, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.YELLOW_FLOWER, 1, 0));

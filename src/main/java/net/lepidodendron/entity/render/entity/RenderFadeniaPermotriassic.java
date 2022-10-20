@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraFadeniaPermotriassic;
 import net.lepidodendron.entity.model.entity.ModelFadenia;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -11,7 +12,7 @@ public class RenderFadeniaPermotriassic extends RenderLiving<EntityPrehistoricFl
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_permotriassic.png");
 
     public RenderFadeniaPermotriassic(RenderManager mgr) {
-        super(mgr, new ModelFadenia(), 0.0f);
+        super(mgr, new ModelFadenia(), 0.5f);
     }
 
     @Override
@@ -24,7 +25,12 @@ public class RenderFadeniaPermotriassic extends RenderLiving<EntityPrehistoricFl
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraFadeniaPermotriassic entity, float f) {
+        float scale = entity.getAgeScale() * 0.27F;
+        if (scale < 0.1f) {scale = 0.1f;}
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.75F;
+    }
+
 }
-
-
-

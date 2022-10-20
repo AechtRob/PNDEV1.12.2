@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "name": "fadenia_permotriassic",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:fadenia_permotriassic_raw",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

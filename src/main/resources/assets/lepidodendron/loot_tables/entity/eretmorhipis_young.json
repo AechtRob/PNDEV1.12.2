@@ -1,0 +1,24 @@
+{
+  "pools": [
+    {
+      "name": "eretmorhipis",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "lepidodendron:eretmorhipis_raw",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 01,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

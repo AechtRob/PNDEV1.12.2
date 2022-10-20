@@ -68,6 +68,9 @@ public class BlockSapling extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNLepidodendron", BlockSapling.block);
+		OreDictionary.registerOre("treeSapling", BlockSapling.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockSapling.block);
+		OreDictionary.registerOre("plant", BlockSapling.block);
 	}
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
