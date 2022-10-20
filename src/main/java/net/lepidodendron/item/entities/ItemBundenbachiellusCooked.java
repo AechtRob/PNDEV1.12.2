@@ -14,31 +14,31 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:fadenia_carboniferous_raw")
+public class ItemBundenbachiellusCooked extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:bundenbachiellus_cooked")
 	public static final Item block = null;
-	public ItemFadeniaCarboniferousRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.fadenia_carboniferous_raw);
+	public ItemBundenbachiellusCooked(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.bundenbachiellus_cooked);
 	}
 
 	@Override
 	public void initElements() {
-
 		elements.items.add(() -> new ItemFoodCustom());
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/fadenia_carboniferous_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/bundenbachiellus_cooked", "inventory"));
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
-			super(2, 0.1f, false);
-			setTranslationKey("pf_fadenia_carboniferous_raw");
-			setRegistryName("fadenia_carboniferous_raw");
+			super(5, 0.7f, false);
+			setTranslationKey("pf_bundenbachiellus_cooked");
+			setRegistryName("bundenbachiellus_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
 	}
 }

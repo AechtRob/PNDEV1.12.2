@@ -14,29 +14,29 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:fadenia_carboniferous_raw")
+public class ItemIvoitesRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:ivoites_raw")
 	public static final Item block = null;
-	public ItemFadeniaCarboniferousRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.fadenia_carboniferous_raw);
+	public ItemIvoitesRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.ivoites_raw);
 	}
 
 	@Override
 	public void initElements() {
-
 		elements.items.add(() -> new ItemFoodCustom());
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/fadenia_carboniferous_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/ivoites_raw", "inventory"));
 	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_fadenia_carboniferous_raw");
-			setRegistryName("fadenia_carboniferous_raw");
+			setTranslationKey("pf_ivoites_raw");
+			setRegistryName("ivoites_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

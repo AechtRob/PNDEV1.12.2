@@ -3090,6 +3090,19 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWingertshellicus.class, new IRenderFactory<EntityPrehistoricFloraWingertshellicus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWingertshellicus> createRenderFor(RenderManager manager) {
+                return new RenderWingertshellicus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWeinbergina.class, new IRenderFactory<EntityPrehistoricFloraWeinbergina>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWeinbergina> createRenderFor(RenderManager manager) {
+                return new RenderWeinbergina(manager);
+            }
+        });
+
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
             //Ediacaran:

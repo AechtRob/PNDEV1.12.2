@@ -14,29 +14,29 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:fadenia_carboniferous_raw")
+public class ItemWingertshellicusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:wingertshellicus_raw")
 	public static final Item block = null;
-	public ItemFadeniaCarboniferousRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.fadenia_carboniferous_raw);
+	public ItemWingertshellicusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.wingertshellicus_raw);
 	}
 
 	@Override
 	public void initElements() {
-
 		elements.items.add(() -> new ItemFoodCustom());
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/fadenia_carboniferous_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/wingertshellicus_raw", "inventory"));
 	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_fadenia_carboniferous_raw");
-			setRegistryName("fadenia_carboniferous_raw");
+			setTranslationKey("pf_wingertshellicus_raw");
+			setRegistryName("wingertshellicus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

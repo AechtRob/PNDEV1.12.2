@@ -27,7 +27,7 @@ public class RenderHolonema extends RenderLiving<EntityPrehistoricFloraHolonema>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHolonema entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*1.3F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }
