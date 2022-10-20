@@ -246,7 +246,7 @@ public class ModelPlectodiscus extends AdvancedModelBase {
         this.Body.setScaleX(1.0F);
         this.Body.setScaleZ(1.0F);
         this.Body.scaleChildren = false;
-        this.Body.offsetY = -0.03F;
+        this.Body.offsetY = 0.30F;
 
         AdvancedModelRenderer[] tentacleF1 = {this.tentacle, this.tentacles};
         AdvancedModelRenderer[] tentacleF2 = {this.tentacle2, this.tentacles2};
