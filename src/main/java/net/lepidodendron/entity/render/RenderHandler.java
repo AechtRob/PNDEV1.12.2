@@ -3114,6 +3114,12 @@ public class RenderHandler {
                 return new RenderFadeniaCarboniferous(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPlectodiscus.class, new IRenderFactory<EntityPrehistoricFloraPlectodiscus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPlectodiscus> createRenderFor(RenderManager manager) {
+                return new RenderPlectodiscus(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {

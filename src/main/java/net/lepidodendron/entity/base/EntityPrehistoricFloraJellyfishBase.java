@@ -59,6 +59,10 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         }
     }
 
+    public boolean isSurface() {
+        return false;
+    }
+
     public static String getHabitat() {
         return I18n.translateToLocal("helper.pf_aquatic.name");
     }
@@ -229,8 +233,10 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         return false;
     }
 
+
     @Override
     public void onLivingUpdate() {
+
         //this.renderYawOffset = this.rotationYaw;
         //Updated from vanilla to disable jumping and limit rotations
         if (this.jumpTicks > 0)
@@ -317,10 +323,15 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
         if (this.getMateable() < 0) {
             this.setMateable(this.getMateable() + 1);
         }
+
+        if (this.isSurface() && this.isInsideOfMaterial(Material.WATER)) {
+            this.addVelocity(0, 0.01D, 0);
+        }
     }
 
     public void onEntityUpdate()
     {
+
         int i = this.getAir();
         super.onEntityUpdate();
 
@@ -399,6 +410,7 @@ public abstract class EntityPrehistoricFloraJellyfishBase extends EntityTameable
                     f4 += (0.54600006F - f4) * speedModifier / 3.0F;
                 }
                 this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+
                 this.motionX *= f4;
                 this.motionX *= 0.9;
                 this.motionY *= 0.9;

@@ -272,8 +272,9 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_palaeojelly4", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_jellyfish_precambrian", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_gemmactena", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_batofasciculus", "inventory")
-			);
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_batofasciculus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_plectodiscus", "inventory")
+				);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);
