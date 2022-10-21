@@ -9,9 +9,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemXenacanthusRaw extends ElementsLepidodendronMod.ModElement {
@@ -25,7 +27,14 @@ public class ItemXenacanthusRaw extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemFoodCustom());
 	}
-
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNXenacanthus", ItemXenacanthusRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemXenacanthusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemXenacanthusRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemXenacanthusRaw.block);
+	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
