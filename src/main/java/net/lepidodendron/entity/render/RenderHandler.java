@@ -3120,6 +3120,12 @@ public class RenderHandler {
                 return new RenderPlectodiscus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFlagellopantopus.class, new IRenderFactory<EntityPrehistoricFloraFlagellopantopus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFlagellopantopus> createRenderFor(RenderManager manager) {
+                return new RenderFlagellopantopus(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
