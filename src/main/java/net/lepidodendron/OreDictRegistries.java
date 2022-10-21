@@ -677,8 +677,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraSinodunbariaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraStenodictyaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraStenodictyaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAttercopusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAttercopusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeotarbusRaw.block);
@@ -689,8 +687,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemPalaeocharinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEophrynusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEophrynusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArchoblattinaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArchoblattinaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRoachoidAridRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRoachoidAridRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRoachoidForestRaw.block);
@@ -775,14 +771,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", Items.COOKED_RABBIT);
 		OreDictionary.registerOre("listAllmeatcooked", Items.COOKED_RABBIT);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAcanthodesRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAcanthodesRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthodesRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAcanthodesCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAcanthodesCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthodesCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAcanthodesCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemBothriolepisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBothriolepisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBothriolepisRaw.block);
@@ -798,14 +786,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemPteraspisCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemPteraspisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemPteraspisCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemArandaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArandaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArandaspisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemArandaspisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemArandaspisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemArandaspisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemArandaspisCooked.block);
 
 		OreDictionary.registerOre("listAllfishraw", ItemHyneriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHyneriaRaw.block);
@@ -835,9 +815,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllfishraw", ItemTemperocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTemperocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTemperocerasRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAphetocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAphetocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAphetocerasRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCamerocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCamerocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCamerocerasRaw.block);
@@ -861,9 +838,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemPalaeoCalamari.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeoCalamari.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAcutiramusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAcutiramusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcutiramusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCarcinosomaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCarcinosomaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCarcinosomaRaw.block);
@@ -960,14 +934,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemCheirurusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemCheirurusCooked.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAsaphusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAsaphusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAsaphusRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAsaphusCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAsaphusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAsaphusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAsaphusCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemWalliseropsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWalliseropsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWalliseropsRaw.block);
@@ -1000,14 +966,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemSchinderhannesCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemSchinderhannesCooked.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAegirocassisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAegirocassisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAegirocassisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAegirocassisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAegirocassisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAegirocassisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAegirocassisCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemTitanichthysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTitanichthysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTitanichthysRaw.block);
@@ -1036,12 +994,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemIchthyostegaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemIchthyostegaCooked.block);
 
-		OreDictionary.registerOre("listAllmeatraw", ItemAmphibamusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmphibamusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAmphibamusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAmphibamusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAmphibamusCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemLunataspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemLunataspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemLunataspisRaw.block);
@@ -1065,22 +1017,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemHemicyclaspisCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemHemicyclaspisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemHemicyclaspisCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemAiniktozoonRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAiniktozoonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAiniktozoonRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAiniktozoonCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAiniktozoonCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAiniktozoonCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAiniktozoonCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemAkmonistionRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAkmonistionRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAkmonistionRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAkmonistionCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAkmonistionCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAkmonistionCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAkmonistionCooked.block);
 
 		OreDictionary.registerOre("listAllfishraw", ItemBelantseaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBelantseaRaw.block);
@@ -1178,14 +1114,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemXenacanthusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemXenacanthusCooked.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAteleaspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAteleaspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAteleaspisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAteleaspisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAteleaspisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAteleaspisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAteleaspisCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemCephalaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCephalaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCephalaspisRaw.block);
@@ -1269,14 +1197,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemEglonaspisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemEglonaspisCooked.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAlacarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAlacarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAlacarisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAlacarisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAlacarisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAlacarisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAlacarisCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemSiberionRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSiberionRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSiberionRaw.block);
@@ -1348,22 +1268,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemOdaraiaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemOdaraiaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemOdaraiaCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemAmplectobeluaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAmplectobeluaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAmplectobeluaRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAmplectobeluaCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAmplectobeluaCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAmplectobeluaCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAmplectobeluaCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemAnomalocarisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAnomalocarisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAnomalocarisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAnomalocarisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAnomalocarisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAnomalocarisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAnomalocarisCooked.block);
 
 		OreDictionary.registerOre("listAllmeatraw", ItemMegalocephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMegalocephalusRaw.block);
@@ -1639,14 +1543,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemHeterosteusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemHeterosteusCooked.block);
 
-		OreDictionary.registerOre("listAllfishraw", ItemAcrolepisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAcrolepisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcrolepisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAcrolepisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAcrolepisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAcrolepisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAcrolepisCooked.block);
-
 		OreDictionary.registerOre("listAllfishraw", ItemCoelacanthusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCoelacanthusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCoelacanthusRaw.block);
@@ -1710,12 +1606,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemInostranceviaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemInostranceviaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemInostranceviaCooked.block);
-
-		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostegaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostegaRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAcanthostegaCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostegaCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAcanthostegaCooked.block);
 
 		OreDictionary.registerOre("listAllmeatraw", ItemSphenacodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSphenacodonRaw.block);
@@ -1997,12 +1887,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemMesosaurusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemMesosaurusCooked.block);
 
-		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostomatopsRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostomatopsRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAcanthostomatopsCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAcanthostomatopsCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAcanthostomatopsCooked.block);
-
 		OreDictionary.registerOre("listAllmeatraw", ItemDiadectesRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDiadectesRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemDiadectesCooked.block);
@@ -2033,19 +1917,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemTapinocephalusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemTapinocephalusCooked.block);
 
-		OreDictionary.registerOre("listAllmeatraw", ItemAnteosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAnteosaurusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAnteosaurusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAnteosaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAnteosaurusCooked.block);
-
-		OreDictionary.registerOre("listAllfishraw", ItemAlbertoniaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAlbertoniaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAlbertoniaRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAlbertoniaCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAlbertoniaCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAlbertoniaCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAlbertoniaCooked.block);
+		OreDictionary.registerOre("bakingEgg", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("egg", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("eggCookable", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("foodSimpleEgg", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("ingredientEgg", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("listAllegg", ItemEggsAnteosaurus.block);
+		OreDictionary.registerOre("objectEgg", ItemEggsAnteosaurus.block);
 
 		OreDictionary.registerOre("listAllfishraw", ItemSaivodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSaivodusRaw.block);
@@ -2096,13 +1974,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemLisowiciaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemLisowiciaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemLisowiciaCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAntineosteusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAntineosteusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAntineosteusRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAntineosteusCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAntineosteusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAntineosteusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAntineosteusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSuminiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSuminiaRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemSuminiaCooked.block);
@@ -2176,13 +2047,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemShringasaurusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemShringasaurusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemShringasaurusCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAntarcticarcinusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAntarcticarcinusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAntarcticarcinusRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAntarcticarcinusCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAntarcticarcinusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAntarcticarcinusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAntarcticarcinusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCtenospondylusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCtenospondylusRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemCtenospondylusCooked.block);
@@ -2193,11 +2057,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemSauroctonusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemSauroctonusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemSauroctonusCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArchosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArchosaurusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemArchosaurusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemArchosaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemArchosaurusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBranchiosaurRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBranchiosaurRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemBranchiosaurCooked.block);
@@ -2345,9 +2204,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemEnoplouraCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemEnoplouraCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemEnoplouraCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAdelophthalmusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAdelophthalmusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAdelophthalmusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGabreyaspisRaw.block);
@@ -2462,13 +2318,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemVarialepisCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemVarialepisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemVarialepisCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAllenypterusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAllenypterusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAllenypterusRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAllenypterusCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAllenypterusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAllenypterusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAllenypterusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBalanerpetonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBalanerpetonRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemBalanerpetonCooked.block);
@@ -2512,16 +2361,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemDiploceraspisCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemDiploceraspisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemDiploceraspisCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAscendonanusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAscendonanusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAscendonanusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAscendonanusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAscendonanusCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAulacephalodonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAulacephalodonRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAulacephalodonCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAulacephalodonCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAulacephalodonCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBunostegosRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBunostegosRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemBunostegosCooked.block);
@@ -2642,13 +2481,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemLochmanolenellusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemLochmanolenellusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemLochmanolenellusCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAstraspisRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAstraspisRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAstraspisRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAstraspisCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAstraspisCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAstraspisCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAstraspisCooked.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPanderodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPanderodusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPanderodusRaw.block);
@@ -2780,13 +2612,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemMegactenopetalusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemMegactenopetalusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemMegactenopetalusCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAustrolimulusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAustrolimulusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAustrolimulusRaw.block);
-		OreDictionary.registerOre("listAllfishcooked", ItemAustrolimulusCooked.block);
-		OreDictionary.registerOre("foodCooked", ItemAustrolimulusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAustrolimulusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAustrolimulusCooked.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBeishanichthysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBeishanichthysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBeishanichthysRaw.block);
@@ -2850,12 +2675,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemLuoxiongichthysCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemLuoxiongichthysCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemLuoxiongichthysCooked.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAegerRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAegerRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAegerRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemAulacocerasRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAulacocerasRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAulacocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCartorhynchusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCartorhynchusRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemCartorhynchusCooked.block);
@@ -2913,16 +2732,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemYunguisaurusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemYunguisaurusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemYunguisaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemArizonasaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemArizonasaurusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemArizonasaurusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemArizonasaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemArizonasaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAtopodentatusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAtopodentatusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAtopodentatusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAtopodentatusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAtopodentatusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBatrachotomusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBatrachotomusRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemBatrachotomusCooked.block);
@@ -3053,11 +2862,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodCooked", ItemVancleaveaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemVancleaveaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemVancleaveaCooked.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemAustriadactylusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemAustriadactylusRaw.block);
-		OreDictionary.registerOre("foodCooked", ItemAustriadactylusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemAustriadactylusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemAustriadactylusCooked.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCaelestiventusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCaelestiventusRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemCaelestiventusCooked.block);
@@ -3254,13 +3058,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("itemClay", ItemRedClayBall.block);
 		OreDictionary.registerOre("itemClay", Items.CLAY_BALL);
 
-		OreDictionary.registerOre("bakingEgg", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("egg", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("eggCookable", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("foodSimpleEgg", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("ingredientEgg", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("listAllegg", ItemEggsAnteosaurus.block);
-		OreDictionary.registerOre("objectEgg", ItemEggsAnteosaurus.block);
 		OreDictionary.registerOre("bakingEgg", ItemEggsArchosaurus.block);
 		OreDictionary.registerOre("egg", ItemEggsArchosaurus.block);
 		OreDictionary.registerOre("eggCookable", ItemEggsArchosaurus.block);
