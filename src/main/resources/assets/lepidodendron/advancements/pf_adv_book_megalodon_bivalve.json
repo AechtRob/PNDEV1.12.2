@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_megalodon_bivalve"
+			"trigger": "pf_book_bivalve_megalodon"
 		}
 	}
 }

@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_seaanemone"
+			"trigger": "pf_book_sea_anemone"
 		}
 	}
 }

@@ -1287,6 +1287,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation BOHEMOHARPES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bohemoharpes"));
 	public static final int ENTITY_AMPYX = 515;
 	public static final ResourceLocation AMPYX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx"));
+	public static final ResourceLocation AMPYX_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx_variant"));
 	public static final int ENTITY_LONCHODOMAS = 516;
 	public static final ResourceLocation LONCHODOMAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas"));
 	public static final int ENTITY_NEEYAMBASPIS= 517;

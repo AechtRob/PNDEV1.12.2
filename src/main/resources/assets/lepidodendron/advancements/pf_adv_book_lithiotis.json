@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_lithiotis"
+			"trigger": "pf_book_bivalve_lithiotis"
 		}
 	}
 }

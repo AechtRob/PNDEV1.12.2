@@ -101,7 +101,7 @@ public class EntityPrehistoricFloraWeinbergina extends EntityPrehistoricFloraTri
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override

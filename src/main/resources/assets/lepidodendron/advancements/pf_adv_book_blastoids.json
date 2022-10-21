@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_blastoids"
+			"trigger": "pf_book_blastoid"
 		}
 	}
 }

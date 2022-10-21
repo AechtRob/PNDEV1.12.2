@@ -217,7 +217,12 @@ public class BlockGlassJar extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, java.util.Random rand, int fortune) {
-			return (new ItemStack(ItemGlassJarItem.block, 1).getItem());
+			return (new ItemStack(this, 1).getItem());
+		}
+
+		@Override
+		protected ItemStack getSilkTouchDrop(IBlockState state) {
+			return new ItemStack(this, 1);
 		}
 
 		@Override

@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_echinosphaerites"
+			"trigger": "pf_book_cystoid_echinosphaerites"
 		}
 	}
 }

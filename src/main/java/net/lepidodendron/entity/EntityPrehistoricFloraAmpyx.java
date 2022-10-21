@@ -188,6 +188,9 @@ public class EntityPrehistoricFloraAmpyx extends EntityPrehistoricFloraTrilobite
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (this.getVariant() <= 6) {
+			return LepidodendronMod.AMPYX_LOOT_VARIANT;
+		}
 		return LepidodendronMod.AMPYX_LOOT;
 	}
 

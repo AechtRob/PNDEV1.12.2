@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_oesiamargaretia"
+			"trigger": "pf_book_oesia"
 		}
 	}
 }

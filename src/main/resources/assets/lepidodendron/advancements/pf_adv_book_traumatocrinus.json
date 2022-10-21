@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_traumatocrinus"
+			"trigger": "pf_book_crinoid_traumatocrinus"
 		}
 	}
 }

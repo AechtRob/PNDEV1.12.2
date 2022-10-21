@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraWingertshellicus extends EntityPrehistoricFlo
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override

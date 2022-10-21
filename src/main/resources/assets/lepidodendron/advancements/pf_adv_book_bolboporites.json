@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_bolboporites"
+			"trigger": "pf_book_cystoid_bolboporites"
 		}
 	}
 }

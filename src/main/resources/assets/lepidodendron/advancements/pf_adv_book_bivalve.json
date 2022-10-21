@@ -14,7 +14,15 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_bivalve"
+			"trigger": "pf_book_bivalve_cream",
+			"trigger": "pf_book_bivalve_dark",
+			"trigger": "pf_book_bivalve_dicerocardium",
+			"trigger": "pf_book_bivalve_green",
+			"trigger": "pf_book_bivalve_grey",
+			"trigger": "pf_book_bivalve_inoceramus",
+			"trigger": "pf_book_bivalve_tall",
+			"trigger": "pf_book_bivalve_upright",
+			"trigger": "pf_book_bivalve_white"
 		}
 	}
 }

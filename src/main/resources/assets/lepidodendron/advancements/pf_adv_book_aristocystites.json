@@ -14,7 +14,7 @@
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_book_aristocystites"
+			"trigger": "pf_book_cystoid_aristocystites"
 		}
 	}
 }
