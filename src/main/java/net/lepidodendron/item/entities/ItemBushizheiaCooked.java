@@ -9,9 +9,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBushizheiaCooked extends ElementsLepidodendronMod.ModElement {
@@ -30,6 +32,13 @@ public class ItemBushizheiaCooked extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/bushizheia_cooked", "inventory"));
+	}
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("listAllfishcooked", ItemBushizheiaCooked.block);
+		OreDictionary.registerOre("foodCooked", ItemBushizheiaCooked.block);
+		OreDictionary.registerOre("foodMeat", ItemBushizheiaCooked.block);
+		OreDictionary.registerOre("listAllmeatcooked", ItemBushizheiaCooked.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {

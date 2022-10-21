@@ -40,6 +40,8 @@ public class ItemAlacarisCooked extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodMeat", ItemAlacarisCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemAlacarisCooked.block);
 	}
+
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
