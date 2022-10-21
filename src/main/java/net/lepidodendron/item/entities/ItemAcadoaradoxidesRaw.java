@@ -38,6 +38,9 @@ public class ItemAcadoaradoxidesRaw extends ElementsLepidodendronMod.ModElement 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNAcadoaradoxides", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemAcadoaradoxidesRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemAcadoaradoxidesRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {
