@@ -7,9 +7,11 @@ import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemCothurnocystisRaw extends ElementsLepidodendronMod.ModElement {
@@ -29,6 +31,13 @@ public class ItemCothurnocystisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		//ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/cothurnocystis_raw", "inventory"));
+	}
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCothurnocystis", ItemCothurnocystisRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemCothurnocystisRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemCothurnocystisRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemCothurnocystisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
