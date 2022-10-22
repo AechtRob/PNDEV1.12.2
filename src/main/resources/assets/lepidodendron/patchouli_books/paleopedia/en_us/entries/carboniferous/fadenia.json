@@ -2,7 +2,7 @@
 	"name": "Fadenia (Carboniferous)",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/fadeniaG_icon.png",
-	"category": "lepidodendron:_animal",
+	"category": "lepidodendron:carboniferous_animal",
 	"turnin": "lepidodendron:pf_adv_book_fadenia_carboniferous",
 	"pages": [
 		{
