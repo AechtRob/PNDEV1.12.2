@@ -36,9 +36,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 import java.util.Random;
@@ -66,6 +68,14 @@ public class BlockBivalveGrey extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:bivalve_grey", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBivalveGrey.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNBivalveGrey", BlockBivalveGrey.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveGrey.block);
+	}
+
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {

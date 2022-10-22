@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeVineBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemBumbudendronItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -30,9 +31,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -64,6 +67,16 @@ public class BlockCallistophytales extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:callistophytales", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCallistophytales", BlockCallistophytales.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockCallistophytales.block);
+		OreDictionary.registerOre("plant", BlockCallistophytales.block);
+		OreDictionary.registerOre("itemMossForStone", BlockCallistophytales.block);
+	}
+
 	public static class BlockCustom extends SeedSporeVineBase {
 		public BlockCustom() {
 			//super(Material.VINE);

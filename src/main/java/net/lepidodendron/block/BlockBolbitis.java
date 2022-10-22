@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemBaragwanathiaItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -34,9 +35,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -63,6 +66,15 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:bolbitis", "inventory"));
 			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBolbitis.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNBolbitis", BlockBolbitis.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockBolbitis.block);
+		OreDictionary.registerOre("plant", BlockBolbitis.block);
+	}
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	

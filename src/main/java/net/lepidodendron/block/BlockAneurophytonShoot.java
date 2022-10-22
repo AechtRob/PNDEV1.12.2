@@ -55,6 +55,7 @@ public class BlockAneurophytonShoot extends ElementsLepidodendronMod.ModElement 
 		//		new ModelResourceLocation("lepidodendron:aneurophyton_shoot_worldgen", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
 	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();

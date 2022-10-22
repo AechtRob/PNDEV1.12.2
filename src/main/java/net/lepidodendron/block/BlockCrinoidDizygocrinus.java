@@ -41,9 +41,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -70,6 +72,13 @@ public class BlockCrinoidDizygocrinus extends ElementsLepidodendronMod.ModElemen
 				new ModelResourceLocation("lepidodendron:crinoid_dizygocrinus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMacrocystisKelp.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCrinoidDizygocrinus", BlockCrinoidDizygocrinus.block);
+	}
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	public static final PropertyBool TOPSHOOT = PropertyBool.create("topshoot");

@@ -1,12 +1,21 @@
 package net.lepidodendron.entity.ai;
 
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAITarget;
+import net.minecraft.entity.item.EntityBoat;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 
 public class EntityHurtByTargetSmallerThanMeAI extends EntityAITarget
 {
@@ -35,6 +44,14 @@ public class EntityHurtByTargetSmallerThanMeAI extends EntityAITarget
         int i = this.taskOwner.getRevengeTimer();
         EntityLivingBase entitylivingbase = this.taskOwner.getRevengeTarget();
 
+        if (entitylivingbase != null) { //Eurypterids and fish don't attack players on land:
+            if (this.taskOwner instanceof EntityPrehistoricFloraEurypteridBase || this.taskOwner instanceof EntityPrehistoricFloraAgeableFishBase) {
+                if (!isInWaterforHunting(entitylivingbase)) {
+                    return false;
+                }
+            }
+        }
+
         if (entitylivingbase != null) {
             if (this.taskOwner.getEntityBoundingBox().getAverageEdgeLength() * 1.25 <= entitylivingbase.getEntityBoundingBox().getAverageEdgeLength()
                 && (!(entitylivingbase instanceof EntityPlayer)))
@@ -49,6 +66,32 @@ public class EntityHurtByTargetSmallerThanMeAI extends EntityAITarget
         }
 
         return i != this.revengeTimerOld && entitylivingbase != null && this.isSuitableTarget(entitylivingbase, false);
+    }
+
+    public boolean isInWaterforHunting(Entity entity) {
+        BlockPos pos = entity.getPosition();
+        if (entity.world.getBlockState(pos).getMaterial() == Material.WATER
+                && this.isDirectPathBetweenPoints(this.taskOwner.getPositionVector(), new Vec3d(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5))) {
+            return true;
+        }
+        if (this.taskOwner instanceof EntityPrehistoricFloraAgeableBase) {
+            if (entity.isRiding() && ((EntityPrehistoricFloraAgeableBase)this.taskOwner).breaksBoat()) {
+                Entity boat = entity.getRidingEntity();
+                if (boat instanceof EntityBoat) {
+                    pos = boat.getPosition();
+                    if (entity.world.getBlockState(pos.down()).getMaterial() == Material.WATER
+                            && this.isDirectPathBetweenPoints(this.taskOwner.getPositionVector(), new Vec3d(pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5))) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
+        RayTraceResult movingobjectposition = this.taskOwner.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+        return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
     public void startExecuting()

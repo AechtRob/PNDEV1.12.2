@@ -36,9 +36,11 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 import java.util.Random;
@@ -65,6 +67,13 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:bivalve_dicerocardium", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockBivalveDicerocardium.LEVEL).build());
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNBivalveDicerocardium", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
 	}
 
 	@Override

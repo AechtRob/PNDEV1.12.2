@@ -47,6 +47,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -68,6 +69,12 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockAncientMoss.TileEntityCustom.class, "lepidodendron:tileentityancient_moss");
+
+		OreDictionary.registerOre("dnaPNMoss", BlockAncientMoss.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockAncientMoss.block);
+		OreDictionary.registerOre("plant", BlockAncientMoss.block);
+		OreDictionary.registerOre("itemMoss", BlockAncientMoss.block);
+		OreDictionary.registerOre("itemMossForStone", BlockAncientMoss.block);
 	}
 
 	@SideOnly(Side.CLIENT)

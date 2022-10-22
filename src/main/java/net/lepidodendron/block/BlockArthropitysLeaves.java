@@ -16,9 +16,11 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -42,6 +44,16 @@ public class BlockArthropitysLeaves extends ElementsLepidodendronMod.ModElement 
 				new ModelResourceLocation("lepidodendron:arthropitys_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNArthropitys", BlockArthropitysLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockArthropitysLeaves.block);
+		OreDictionary.registerOre("plant", BlockArthropitysLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockArthropitysLeaves.block);
+	}
+
 	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			setTranslationKey("pf_arthropitys_leaves");

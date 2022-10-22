@@ -27,9 +27,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -54,6 +56,16 @@ public class BlockCycadeoideaLeavesPlaceable extends ElementsLepidodendronMod.Mo
 				new ModelResourceLocation("lepidodendron:cycadeoidea_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCycadeoidea", BlockCycadeoideaLeavesPlaceable.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockCycadeoideaLeavesPlaceable.block);
+		OreDictionary.registerOre("plant", BlockCycadeoideaLeavesPlaceable.block);
+		OreDictionary.registerOre("treeLeaves", BlockCycadeoideaLeavesPlaceable.block);
+	}
+
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			//super();

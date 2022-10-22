@@ -12,9 +12,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockBushyAraucariaLog extends ElementsLepidodendronMod.ModElement {
@@ -36,6 +38,14 @@ public class BlockBushyAraucariaLog extends ElementsLepidodendronMod.ModElement 
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:monkeypuzzle_log", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNBushyAraucaria", BlockBushyAraucariaLog.block);
+		OreDictionary.registerOre("logWood", BlockBushyAraucariaLog.block);
+	}
+
 	public static class BlockCustom extends BlockLogPF {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {

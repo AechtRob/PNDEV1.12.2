@@ -28,9 +28,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +57,16 @@ public class BlockCycadopterisShootPlaceable extends ElementsLepidodendronMod.Mo
 				new ModelResourceLocation("lepidodendron:cycadopteris_shoot", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCycadopteris", BlockCycadopterisShootPlaceable.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockCycadopterisShootPlaceable.block);
+		OreDictionary.registerOre("plant", BlockCycadopterisShootPlaceable.block);
+		OreDictionary.registerOre("treeLeaves", BlockCycadopterisShootPlaceable.block);
+	}
+
 	public static class BlockCustom extends SeedSporeLeavesBase {
 
 		public BlockCustom() {

@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraArchosaurus extends EntityPrehistoricFloraLan
 		enablePersistence();
 		minWidth = 0.18F;
 		maxWidth = 0.76F;
-		maxHeight = 1.2F;
+		maxHeight = 0.65F;
 		maxHealthAgeable = 32.0D;
 	}
 

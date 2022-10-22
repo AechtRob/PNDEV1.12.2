@@ -24,9 +24,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
+
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockCalamitesLeavesPlaceable extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:calamites_leaves")
@@ -48,6 +51,17 @@ public class BlockCalamitesLeavesPlaceable extends ElementsLepidodendronMod.ModE
 				new ModelResourceLocation("lepidodendron:calamites_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCalamites", BlockCalamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockCalamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("plant", BlockCalamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("treeLeaves", BlockCalamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("leavesHorsetail", BlockCalamitesLeavesPlaceable.block);
+	}
+
 	public static class BlockCustom extends BlockLeaves {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {

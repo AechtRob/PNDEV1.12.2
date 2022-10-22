@@ -32,9 +32,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -61,6 +63,13 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 				new ModelResourceLocation("lepidodendron:crinoid_traumatocrinus", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockCrinoidTraumatocrinus.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNCrinoidTraumatocrinus", BlockCrinoidTraumatocrinus.block);
+	}
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	public static final PropertyBool TOPSHOOT = PropertyBool.create("topshoot");

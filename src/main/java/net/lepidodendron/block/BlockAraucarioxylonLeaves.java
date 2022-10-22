@@ -19,9 +19,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockAraucarioxylonLeaves extends ElementsLepidodendronMod.ModElement {
@@ -44,6 +46,16 @@ public class BlockAraucarioxylonLeaves extends ElementsLepidodendronMod.ModEleme
 				new ModelResourceLocation("lepidodendron:araucarioxylon_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNAraucarioxylon", BlockAraucarioxylonLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockAraucarioxylonLeaves.block);
+		OreDictionary.registerOre("plant", BlockAraucarioxylonLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockAraucarioxylonLeaves.block);
+	}
+
 	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			setTranslationKey("pf_araucarioxylon_leaves");

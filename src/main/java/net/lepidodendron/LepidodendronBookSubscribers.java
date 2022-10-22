@@ -2932,10 +2932,27 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNGigantospongia"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_GIGANTOSPONGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+
+
 
 			//Grouped ones:
-			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBlastoid"),
-					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+			//-------------
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBlastoid1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBlastoid2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBlastoid3"),
+						target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_BLASTOID.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
@@ -2944,7 +2961,10 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNCaytoniales"),
-					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNCaytoniales2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_CAYTONIALES.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
@@ -2988,7 +3008,23 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone"),
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone1"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone2"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone3"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone4"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone5"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone6"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone7"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone8"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSeaAnemone9"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_SEA_ANEMONE.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -3015,19 +3051,15 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNSponge"),
-					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBlueSponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBranchedSponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNBrownSponge"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+				) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_SPONGE.trigger((EntityPlayerMP) event.getEntityPlayer());
-				}
-				event.getEntityPlayer().swingArm(event.getHand());
-				event.setCanceled(true);
-				return;
-			}
-			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("dnaPNGigantospongia"),
-			target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
-				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
-					ModTriggers.CLICK_GIGANTOSPONGIA.trigger((EntityPlayerMP) event.getEntityPlayer());
 				}
 				event.getEntityPlayer().swingArm(event.getHand());
 				event.setCanceled(true);

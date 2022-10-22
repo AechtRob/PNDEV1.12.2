@@ -19,9 +19,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -44,6 +46,15 @@ public class BlockAgathisLeaves extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:agathis_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNAgathis", BlockAgathisLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockAgathisLeaves.block);
+		OreDictionary.registerOre("plant", BlockAgathisLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockAgathisLeaves.block);
 	}
 
 	public static class BlockCustom extends BlockLeavesPF {
