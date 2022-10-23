@@ -16,9 +16,11 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockGinkgoitesLeaves extends ElementsLepidodendronMod.ModElement {
@@ -41,6 +43,16 @@ public class BlockGinkgoitesLeaves extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:ginkgoites_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNGinkgoites", BlockGinkgoitesLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockGinkgoitesLeaves.block);
+		OreDictionary.registerOre("plant", BlockGinkgoitesLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockGinkgoitesLeaves.block);
+	}
+
 	public static class BlockCustom extends BlockLeavesPF {
 		public BlockCustom() {
 			setTranslationKey("pf_ginkgoites_leaves");

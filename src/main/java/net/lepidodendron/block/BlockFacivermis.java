@@ -46,6 +46,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -67,7 +68,9 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(TileEntityFacivermis.class, "lepidodendron:tileentityfacivermis");
+		OreDictionary.registerOre("dnaPNFacivermis", BlockFacivermis.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

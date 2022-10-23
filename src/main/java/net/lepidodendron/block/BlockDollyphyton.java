@@ -40,6 +40,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -61,7 +62,13 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(BlockDollyphyton.TileEntityCustom.class, "lepidodendron:tileentitydollyphyton");
+		OreDictionary.registerOre("dnaPNDollyphyton", BlockDollyphyton.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockDollyphyton.block);
+		OreDictionary.registerOre("plant", BlockDollyphyton.block);
+		OreDictionary.registerOre("itemMoss", BlockDollyphyton.block);
+		OreDictionary.registerOre("itemMossForStone", BlockDollyphyton.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -70,6 +77,7 @@ public class BlockDollyphyton extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:dollyphyton", "inventory"));
 	}
+
 	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
 
 		public static final PropertyBool NORTH = PropertyBool.create("north");

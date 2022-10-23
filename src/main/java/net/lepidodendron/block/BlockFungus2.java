@@ -32,9 +32,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -61,6 +63,14 @@ public class BlockFungus2 extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fungus_2", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockFungus2.BlockCustom.SPREADABLE).ignore(BlockFungus2.BlockCustom.NORTH).ignore(BlockFungus2.BlockCustom.SOUTH).ignore(BlockFungus2.BlockCustom.EAST).ignore(BlockFungus2.BlockCustom.WEST).ignore(BlockFungus2.BlockCustom.UP).ignore(BlockFungus2.BlockCustom.DOWN).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNFungus2", BlockFungus2.block);
+		OreDictionary.registerOre("itemFungus", BlockFungus2.block);
+	}
+
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;

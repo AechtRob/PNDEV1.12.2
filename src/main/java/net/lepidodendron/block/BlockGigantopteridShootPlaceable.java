@@ -32,9 +32,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -59,6 +61,16 @@ public class BlockGigantopteridShootPlaceable extends ElementsLepidodendronMod.M
 				new ModelResourceLocation("lepidodendron:gigantopterid_shoot", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNGigantopterid", BlockGigantopteridShootPlaceable.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockGigantopteridShootPlaceable.block);
+		OreDictionary.registerOre("plant", BlockGigantopteridShootPlaceable.block);
+		OreDictionary.registerOre("treeLeaves", BlockGigantopteridShootPlaceable.block);
+	}
+
 
 	public static final PropertyBool STEM = PropertyBool.create("stem");
     public static final PropertyBool TOP = PropertyBool.create("top");

@@ -41,6 +41,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -62,7 +63,13 @@ public class BlockEdwardsiphyton extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(BlockEdwardsiphyton.TileEntityCustom.class, "lepidodendron:tileentityedwardsiphyton");
+		OreDictionary.registerOre("dnaPNEdwardsiphyton", BlockEdwardsiphyton.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockEdwardsiphyton.block);
+		OreDictionary.registerOre("plant", BlockEdwardsiphyton.block);
+		OreDictionary.registerOre("itemMoss", BlockEdwardsiphyton.block);
+		OreDictionary.registerOre("itemMossForStone", BlockEdwardsiphyton.block);
 	}
 
 	@SideOnly(Side.CLIENT)

@@ -36,9 +36,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -64,6 +66,15 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:dicroidium_e", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNDicroidiumE", BlockDicroidiumE.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumE.block);
+		OreDictionary.registerOre("plant", BlockDicroidiumE.block);
+	}
+
 
 	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 2);
 	

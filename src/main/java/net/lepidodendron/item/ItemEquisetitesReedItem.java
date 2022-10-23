@@ -4,6 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.BlockEphedra;
 import net.lepidodendron.block.BlockEquisetitesReed;
 import net.lepidodendron.block.BlockEquisetitesReedStem;
 import net.lepidodendron.block.BlockEquisetitesReedTop;
@@ -25,9 +26,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 
@@ -49,6 +52,15 @@ public class ItemEquisetitesReedItem extends ElementsLepidodendronMod.ModElement
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:equisetites_reed_item", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNEquisetitesReed", ItemEquisetitesReedItem.block);
+		OreDictionary.registerOre("plantPrehistoric", ItemEquisetitesReedItem.block);
+		OreDictionary.registerOre("plant", ItemEquisetitesReedItem.block);
+	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setTranslationKey("pf_equisetites_reed_item");
