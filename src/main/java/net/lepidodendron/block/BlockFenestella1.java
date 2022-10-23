@@ -325,7 +325,7 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));

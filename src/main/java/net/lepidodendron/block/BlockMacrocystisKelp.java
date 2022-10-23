@@ -146,6 +146,7 @@ public class BlockMacrocystisKelp extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
+			setLightOpacity(3);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);
 			setTranslationKey("pf_macrocystis_kelp");

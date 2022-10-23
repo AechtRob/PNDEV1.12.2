@@ -218,6 +218,7 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
+			setLightOpacity(3);
 			crinoidheight = 3;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);

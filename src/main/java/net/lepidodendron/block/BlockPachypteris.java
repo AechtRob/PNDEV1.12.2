@@ -78,7 +78,7 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.5F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(DEEP,false));
 		}

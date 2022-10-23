@@ -57,7 +57,6 @@ public class BlockNelumboFlowerPlaceable extends ElementsLepidodendronMod.ModEle
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setTickRandomly(true);
 			setTranslationKey("pf_nelumbo_flower");

@@ -40,7 +40,7 @@ import java.util.Random;
 		setHardness(0.4F);
 		setResistance(0.2F);
 		setLightLevel(0F);
-		setLightOpacity(0);
+		setLightOpacity(3);
 		//this.setTickRandomly(true);
 		setCreativeTab(TabLepidodendronStatic.tab);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));

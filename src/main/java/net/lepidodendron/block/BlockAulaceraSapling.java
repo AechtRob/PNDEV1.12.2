@@ -84,6 +84,7 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
         	setResistance(0F);
+			setLightOpacity(3);
 			setTranslationKey("pf_aulacera_sapling");
 			this.setTickRandomly(true);
 			setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(STAGE, Integer.valueOf(0)));
