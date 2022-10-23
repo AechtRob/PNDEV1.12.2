@@ -268,7 +268,7 @@ public class BlockWebsteroprionBurrow extends ElementsLepidodendronMod.ModElemen
 			setHardness(0.5F);
 			setResistance(0.0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(OCCUPIED, true));
 		}

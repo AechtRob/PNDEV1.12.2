@@ -217,7 +217,7 @@ public class BlockNamapoikia extends ElementsLepidodendronMod.ModElement {
 			setHardness(1.5F);
 			setResistance(6F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(FACING, EnumFacing.UP));

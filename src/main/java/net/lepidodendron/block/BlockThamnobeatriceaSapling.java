@@ -32,9 +32,11 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -62,6 +64,14 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 
 	}
 
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNThamnobeatricea", BlockThamnobeatriceaSapling.block);
+		OreDictionary.registerOre("sponge", BlockThamnobeatriceaSapling.block);
+	}
+
+
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -74,6 +84,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
 			setResistance(0F);
+			setLightOpacity(3);
 			setTranslationKey("pf_thamnobeatricea_sapling");
 			this.setTickRandomly(true);
 			setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(STAGE, Integer.valueOf(0)));

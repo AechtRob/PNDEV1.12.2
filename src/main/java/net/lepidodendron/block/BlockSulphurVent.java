@@ -117,6 +117,7 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 			setHarvestLevel("pickaxe", 0);
 			setHardness(0.2F);
 			setResistance(0.5F);
+			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
 		}

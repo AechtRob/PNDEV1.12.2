@@ -54,6 +54,7 @@ public class BlockProtolepidodendropsisShoot extends ElementsLepidodendronMod.Mo
 		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation("lepidodendron:encblue_log", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).build());
 	}
+
 	public static class BlockCustom extends SeedSporeBlockBase {
 
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);

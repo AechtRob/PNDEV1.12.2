@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.SeedSporeBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemBaragwanathiaItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -87,7 +86,7 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.5F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState( this.blockState.getBaseState().withProperty(LEVEL, 0));
 		}

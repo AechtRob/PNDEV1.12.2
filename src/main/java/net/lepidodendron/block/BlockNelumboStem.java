@@ -63,7 +63,7 @@ public class BlockNelumboStem extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			setCreativeTab(null);
 			this.setTickRandomly(true);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0));

@@ -28,9 +28,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 
@@ -52,6 +54,16 @@ public class ItemSwampHorsetailItem extends ElementsLepidodendronMod.ModElement 
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:swamp_horsetail_item", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNSwampHorsetail", ItemSwampHorsetailItem.block);
+		OreDictionary.registerOre("plantPrehistoric", ItemSwampHorsetailItem.block);
+		OreDictionary.registerOre("plant", ItemSwampHorsetailItem.block);
+		OreDictionary.registerOre("leavesHorsetail", ItemSwampHorsetailItem.block);
+	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setTranslationKey("pf_swamp_horsetail_item");

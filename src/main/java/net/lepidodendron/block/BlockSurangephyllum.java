@@ -36,9 +36,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -64,7 +66,16 @@ public class BlockSurangephyllum extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:surangephyllum", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
-	
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNSurangephyllum", BlockSurangephyllum.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockSurangephyllum.block);
+		OreDictionary.registerOre("plant", BlockSurangephyllum.block);
+	}
+
+
 	public static final PropertyBool VAR = PropertyBool.create("var");
 	
 	public static class BlockCustom extends SeedSporeLeavesBase {

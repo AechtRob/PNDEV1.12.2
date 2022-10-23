@@ -78,6 +78,7 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {
 		public BlockCustom() {
 			super(Material.WATER);
+			setLightOpacity(3);
 			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_chaunograptus");
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0).withProperty(UP, Boolean.valueOf(false)).withProperty(NORTH, Boolean.valueOf(false)).withProperty(EAST, Boolean.valueOf(false)).withProperty(SOUTH, Boolean.valueOf(false)).withProperty(WEST, Boolean.valueOf(false)));

@@ -175,6 +175,7 @@ public class BlockCrinoidCaryocrinites extends ElementsLepidodendronMod.ModEleme
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
+			setLightOpacity(3);
 			crinoidheight = 2;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);

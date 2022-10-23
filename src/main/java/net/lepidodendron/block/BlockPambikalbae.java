@@ -42,6 +42,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -63,7 +64,9 @@ public class BlockPambikalbae extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(BlockPambikalbae.TileEntityCustom.class, "lepidodendron:tileentitypambikalbae");
+		OreDictionary.registerOre("dnaPNPambikalbae", BlockPambikalbae.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
@@ -103,7 +106,7 @@ public class BlockPambikalbae extends ElementsLepidodendronMod.ModElement {
 			setHardness(0.0F);
 			setResistance(0.0F);
 			setLightLevel(0F);
-			setLightOpacity(0);
+			setLightOpacity(3);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronStatic.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(LEVEL, 0));

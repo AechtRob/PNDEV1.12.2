@@ -118,7 +118,14 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
                 GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                 GlStateManager.scale(0.05F, 0.05F, 0.05F);
             }
-            Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+
+            try {
+                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+            }
+            catch (RuntimeException exception) {
+                //splice in something obvious so we can see it is broken!
+                Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png"));
+            }
 
             GlStateManager.enableAlpha();
             switch (eggType) {

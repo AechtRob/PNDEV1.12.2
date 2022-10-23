@@ -25,9 +25,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 
 @ElementsLepidodendronMod.ModElement.Tag
@@ -51,6 +53,16 @@ public class BlockPentoxylalesLeaves extends ElementsLepidodendronMod.ModElement
 				new ModelResourceLocation("lepidodendron:pentoxylales_leaves", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockLeaves.DECAYABLE, BlockLeaves.CHECK_DECAY).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPentoxylales", BlockPentoxylalesLeaves.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPentoxylalesLeaves.block);
+		OreDictionary.registerOre("plant", BlockPentoxylalesLeaves.block);
+		OreDictionary.registerOre("treeLeaves", BlockPentoxylalesLeaves.block);
+	}
+
 	public static class BlockCustom extends BlockLeaves {
 		public BlockCustom() {
 			super();
