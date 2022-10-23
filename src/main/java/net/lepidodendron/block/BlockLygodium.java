@@ -26,9 +26,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -59,6 +61,16 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:lygodium", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNLygodium", BlockLygodium.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockLygodium.block);
+		OreDictionary.registerOre("plant", BlockLygodium.block);
+		OreDictionary.registerOre("itemMossForStone", BlockLygodium.block);
+	}
+
 	public static class BlockCustom extends SeedSporeVineBase {
 		public BlockCustom() {
 			//super(Material.VINE);

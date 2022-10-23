@@ -27,9 +27,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockLyginopterisStem extends ElementsLepidodendronMod.ModElement {
@@ -51,6 +53,15 @@ public class BlockLyginopterisStem extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:lyginopteris_stem", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNLyginopteris", BlockLyginopterisStem.block);
+		OreDictionary.registerOre("logWood", BlockLyginopterisStem.block);
+		OreDictionary.registerOre("itemRope", BlockLyginopterisStem.block);
+	}
+
 	public static class BlockCustom extends Block {
 	
 		public static final PropertyDirection FACING = BlockDirectional.FACING;

@@ -31,9 +31,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -60,6 +62,15 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:nelumbo", "inventory"));
 			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNelumbo.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNNelumbo", BlockNelumbo.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockNelumbo.block);
+		OreDictionary.registerOre("plant", BlockNelumbo.block);
+	}
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	

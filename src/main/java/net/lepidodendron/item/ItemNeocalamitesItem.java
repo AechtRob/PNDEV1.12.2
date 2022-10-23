@@ -4,10 +4,7 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockNeocalamites;
-import net.lepidodendron.block.BlockNeocalamites2;
-import net.lepidodendron.block.BlockNeocalamites3;
-import net.lepidodendron.block.BlockNeocalamitesStem;
+import net.lepidodendron.block.*;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -26,9 +23,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.List;
 
@@ -50,6 +49,16 @@ public class ItemNeocalamitesItem extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:neocalamites_item", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNNeocalamites", ItemNeocalamitesItem.block);
+		OreDictionary.registerOre("plantPrehistoric", ItemNeocalamitesItem.block);
+		OreDictionary.registerOre("plant", ItemNeocalamitesItem.block);
+		OreDictionary.registerOre("stemHorsetail", ItemNeocalamitesItem.block);
+	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setTranslationKey("pf_neocalamites_item");
