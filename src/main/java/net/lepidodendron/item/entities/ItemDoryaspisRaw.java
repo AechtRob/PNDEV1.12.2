@@ -9,9 +9,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemDoryaspisRaw extends ElementsLepidodendronMod.ModElement {
@@ -30,6 +32,13 @@ public class ItemDoryaspisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/doryaspis_raw", "inventory"));
+	}
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNDoryaspis", ItemDoryaspisRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemDoryaspisRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemDoryaspisRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemDoryaspisRaw.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
