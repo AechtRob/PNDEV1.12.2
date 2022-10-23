@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.item.ItemPrimevalGrassItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -27,9 +28,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockPsaroniusBranch extends ElementsLepidodendronMod.ModElement {
@@ -51,6 +54,15 @@ public class BlockPsaroniusBranch extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:psaronius_branch", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPsaroniusGrass", BlockPsaroniusBranch.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPsaroniusBranch.block);
+		OreDictionary.registerOre("plant", BlockPsaroniusBranch.block);
+	}
+
 	public static class BlockCustom extends Block {
 
 		public static final PropertyBool NORTH = PropertyBool.create("north");

@@ -41,6 +41,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -62,7 +63,13 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		super.init(event);
 		GameRegistry.registerTileEntity(BlockSelaginella.TileEntityCustom.class, "lepidodendron:tileentityselaginella");
+		OreDictionary.registerOre("dnaPNSelaginella", BlockSelaginella.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockSelaginella.block);
+		OreDictionary.registerOre("plant", BlockSelaginella.block);
+		OreDictionary.registerOre("itemMoss", BlockSelaginella.block);
+		OreDictionary.registerOre("itemMossForStone", BlockSelaginella.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -71,6 +78,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:selaginella", "inventory"));
 	}
+
 	public static class BlockCustom extends SeedSporeFacingBlockBase implements net.minecraftforge.common.IShearable  {
 		
 		public static final PropertyDirection FACING = BlockDirectional.FACING;

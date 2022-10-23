@@ -126,7 +126,16 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
                     GlStateManager.translate(x + 0.5F, y + 1.500F, z + 0.5F);
                     GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                     GlStateManager.scale(0.05F, 0.05F, 0.05F);
-                    Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+
+                    try {
+                        Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
+                    }
+                    catch (RuntimeException exception) {
+                        //splice in something obvious so we can see it is broken!
+                        Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("minecraft:textures/blocks/wool_colored_purple.png"));
+                    }
+
+                    //Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EGG);
                     GlStateManager.enableAlpha();
                     switch (eggType) {
                         case 0:

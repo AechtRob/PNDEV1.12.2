@@ -27,9 +27,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -60,6 +62,16 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:palaeognetaleana", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPalaeognetaleana", BlockPalaeognetaleana.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPalaeognetaleana.block);
+		OreDictionary.registerOre("plant", BlockPalaeognetaleana.block);
+		OreDictionary.registerOre("itemMossForStone", BlockPalaeognetaleana.block);
+	}
+
 	public static class BlockCustom extends BlockVine {
 		public BlockCustom() {
 			//super(Material.VINE);

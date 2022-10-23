@@ -41,9 +41,11 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -71,6 +73,14 @@ public class BlockPinkSponge extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:pink_sponge", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockPinkSponge.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPinkSponge", BlockPinkSponge.block);
+		OreDictionary.registerOre("sponge", BlockPinkSponge.block);
+	}
+
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {		

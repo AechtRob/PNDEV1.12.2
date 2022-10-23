@@ -36,9 +36,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -65,6 +67,15 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:pachypteris", "inventory"));
 			ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockPachypteris.LEVEL).build());
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNWeichselia", BlockPachypteris.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPachypteris.block);
+		OreDictionary.registerOre("plant", BlockPachypteris.block);
+	}
+
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 	public static final PropertyBool DEEP = PropertyBool.create("deep");
