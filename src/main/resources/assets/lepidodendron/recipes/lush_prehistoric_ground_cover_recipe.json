@@ -12,8 +12,8 @@
       "data": 2
     },
     "1": {
-      "item": "minecraft:dirt",
-      "data": 2
+      "type": "forge:ore_dict",
+      "ore": "plantPrehistoric"
     },
     "2": {
       "item": "minecraft:dirt",
@@ -24,8 +24,8 @@
       "data": 2
     },
     "4": {
-      "type": "forge:ore_dict",
-      "ore": "plantPrehistoric"
+      "item": "minecraft:dirt",
+      "data": 2
     },
     "5": {
       "item": "minecraft:dirt",

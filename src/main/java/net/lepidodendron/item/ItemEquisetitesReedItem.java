@@ -4,7 +4,6 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockEphedra;
 import net.lepidodendron.block.BlockEquisetitesReed;
 import net.lepidodendron.block.BlockEquisetitesReedStem;
 import net.lepidodendron.block.BlockEquisetitesReedTop;
@@ -87,7 +86,7 @@ public class ItemEquisetitesReedItem extends ElementsLepidodendronMod.ModElement
                	else {
 	               	if (BlockEquisetitesReedStem.block.canPlaceBlockAt(worldIn, pos.up()))
 	                {
-	                   // worldIn.setBlockState(pos.up(), BlockEquisetitesReedStem.block.getDefaultState(), 3);
+	                   	worldIn.setBlockState(pos.up(), BlockEquisetitesReedStem.block.getDefaultState(), 3);
 	                    
 						int colWater = 1;
 						while (colWater < 6 && isWaterBlock(worldIn, pos.up(colWater))) {
@@ -99,7 +98,7 @@ public class ItemEquisetitesReedItem extends ElementsLepidodendronMod.ModElement
 				    		}
 				    		colWater = colWater + 1;
 				    	}
-						//System.err.println("colWater:" + colWater);
+						System.err.println("colWater:" + colWater);
 				    	if (BlockEquisetitesReed.block.canPlaceBlockAt(worldIn, pos.up(colWater)) && worldIn.isAirBlock(pos.up(colWater)))
 		                {
 			                worldIn.setBlockState(pos.up(colWater), BlockEquisetitesReed.block.getDefaultState(), 3);

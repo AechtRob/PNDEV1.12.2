@@ -69,6 +69,7 @@ public class BlockCoralSticky extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
+			setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		}
 
 		@SideOnly(Side.CLIENT)
