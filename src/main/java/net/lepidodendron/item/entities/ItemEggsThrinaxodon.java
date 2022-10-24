@@ -9,9 +9,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemEggsThrinaxodon extends ElementsLepidodendronMod.ModElement {
@@ -31,6 +33,19 @@ public class ItemEggsThrinaxodon extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eggs_thrinaxodon", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("bakingEgg", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("egg", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("eggCookable", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("foodSimpleEgg", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("ingredientEgg", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("listAllegg", ItemEggsThrinaxodon.block);
+		OreDictionary.registerOre("objectEgg", ItemEggsThrinaxodon.block);
+	}
+
 	public static class ItemCustom extends ItemEggsPF {
 		public ItemCustom() {
 			super();
