@@ -13,7 +13,7 @@
     },
     "1": {
       "type": "forge:ore_dict",
-      "ore": "ingotGold"
+      "ore": "ingotIron"
     },
     "2": {
       "type": "forge:ore_dict",

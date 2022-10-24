@@ -27,7 +27,7 @@
       "ore": "ingotIron"
     },
     "7": {
-      "item": "minecraft:redstone_block"
+      "item": "lepidodendron:redstone_component"
     },
     "8": {
       "type": "forge:ore_dict",

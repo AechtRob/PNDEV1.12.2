@@ -2,20 +2,28 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "0  ",
+    "012",
     "345",
     "678"
   ],
   "key": {
     "0": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "1": {
       "item": "lepidodendron:redstone_component"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
     },
     "3": {
       "type": "forge:ore_dict",
       "ore": "ingotIron"
     },
     "4": {
-      "item": "minecraft:bucket"
+      "item": "lepidodendron:redstone_component"
     },
     "5": {
       "type": "forge:ore_dict",
@@ -35,7 +43,7 @@
     }
   },
   "result": {
-    "item": "lepidodendron:acid_bath_item",
+    "item": "lepidodendron:oligopool_machine",
     "count": 1
   }
 }

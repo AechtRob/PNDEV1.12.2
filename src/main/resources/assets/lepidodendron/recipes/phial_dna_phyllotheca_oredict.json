@@ -3,7 +3,7 @@
  "type": "forge:ore_shapeless",
  "ingredients": [
  {
- "item": "lepidodendron:bottle_of_dna_solvent"
+ "item": "lepidodendron:bottle_of_dna_solvent_item"
  },
  {
  "type": "forge:ore_dict",
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:phyllotheca"}
+ "nbt": {"id_dna":"lepidodendron:phyllotheca_item"}
  }
 }

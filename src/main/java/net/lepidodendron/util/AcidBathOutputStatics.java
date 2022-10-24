@@ -1,6 +1,7 @@
 package net.lepidodendron.util;
 
 import net.lepidodendron.block.*;
+import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.Random;
@@ -321,7 +322,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEucalyptocrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidPetalocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidPisocrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidScyphocrinus.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemCrinoidScyphocrinusItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidAncyrocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCupressocrinites.block).toString(),
@@ -381,7 +382,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTabulata_Block3.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCyathocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEncrinus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCrinoidScyphocrinus.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemCrinoidScyphocrinusItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveMegalodon.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
