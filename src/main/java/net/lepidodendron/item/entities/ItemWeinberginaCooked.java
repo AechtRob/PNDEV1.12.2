@@ -30,7 +30,7 @@ public class ItemWeinberginaCooked extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("itemShellfish", ItemWeinberginaCooked.block);
+		OreDictionary.registerOre("listAllfishcooked", ItemWeinberginaCooked.block);
 		OreDictionary.registerOre("foodCooked", ItemWeinberginaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemWeinberginaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemWeinberginaCooked.block);

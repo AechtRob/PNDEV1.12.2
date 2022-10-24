@@ -13,10 +13,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class RedstoneComponent extends ElementsLepidodendronMod.ModElement {
+public class ItemRedstoneComponent extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:redstone_component")
 	public static final Item block = null;
-	public RedstoneComponent(ElementsLepidodendronMod instance) {
+	public ItemRedstoneComponent(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.redstone_component);
 	}
 

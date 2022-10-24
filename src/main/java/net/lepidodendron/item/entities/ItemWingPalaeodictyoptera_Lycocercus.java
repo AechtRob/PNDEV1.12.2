@@ -31,6 +31,7 @@ public class ItemWingPalaeodictyoptera_Lycocercus extends ElementsLepidodendronM
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNPalaeodictyopteraLycocercus", ItemWingPalaeodictyoptera_Lycocercus.block);
+		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Lycocercus.block);
 	}
 	@Override
 	public void initElements() {

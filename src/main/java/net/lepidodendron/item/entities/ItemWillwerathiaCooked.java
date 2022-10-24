@@ -28,6 +28,7 @@ public class ItemWillwerathiaCooked extends ElementsLepidodendronMod.ModElement 
 		OreDictionary.registerOre("foodCooked", ItemWillwerathiaCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemWillwerathiaCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemWillwerathiaCooked.block);
+		OreDictionary.registerOre("listAllfishcooked", ItemWillwerathiaCooked.block);
 	}
 	@Override
 	public void initElements() {

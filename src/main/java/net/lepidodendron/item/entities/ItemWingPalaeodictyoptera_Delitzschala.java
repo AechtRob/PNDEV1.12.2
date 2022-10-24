@@ -36,6 +36,7 @@ public class ItemWingPalaeodictyoptera_Delitzschala extends ElementsLepidodendro
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNPalaeodictyopteraDelitzschala", ItemWingPalaeodictyoptera_Delitzschala.block);
+		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Delitzschala.block);
 
 	}
 	@SideOnly(Side.CLIENT)
