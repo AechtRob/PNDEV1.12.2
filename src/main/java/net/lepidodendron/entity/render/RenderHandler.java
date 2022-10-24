@@ -3126,6 +3126,18 @@ public class RenderHandler {
                 return new RenderFlagellopantopus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNahecaris.class, new IRenderFactory<EntityPrehistoricFloraNahecaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNahecaris> createRenderFor(RenderManager manager) {
+                return new RenderNahecaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraChotecops.class, new IRenderFactory<EntityPrehistoricFloraChotecops>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraChotecops> createRenderFor(RenderManager manager) {
+                return new RenderChotecops(manager);
+            }
+        });
 
             //Tile Entities Ediacaran (etc):
         if (LepidodendronConfig.renderAnimations) {
