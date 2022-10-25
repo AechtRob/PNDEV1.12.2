@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/araucaria_hoop_log_end",
+    "up": "lepidodendron:blocks/araucaria_hoop_log_end",
+    "north": "lepidodendron:blocks/araucaria_hoop_log",
+    "east": "lepidodendron:blocks/araucaria_hoop_log",
+    "south": "lepidodendron:blocks/araucaria_hoop_log",
+    "west": "lepidodendron:blocks/araucaria_hoop_log",
+    "particle": "lepidodendron:blocks/araucaria_hoop_log_end"
+  }
+}

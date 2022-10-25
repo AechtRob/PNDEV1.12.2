@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:hoop_araucaria_fruit_1"},
+      {"model": "lepidodendron:hoop_araucaria_fruit_2"}
+    ]
+  }
+}

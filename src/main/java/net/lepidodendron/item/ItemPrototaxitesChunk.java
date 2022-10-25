@@ -10,9 +10,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPrototaxitesChunk extends ElementsLepidodendronMod.ModElement {
@@ -32,6 +34,14 @@ public class ItemPrototaxitesChunk extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:prototaxites_chunk", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPrototaxites", ItemPrototaxitesChunk.block);
+		OreDictionary.registerOre("itemFungus", ItemPrototaxitesChunk.block);
+	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);

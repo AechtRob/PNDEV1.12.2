@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/cunninghamia_log_end",
+    "up": "lepidodendron:blocks/cunninghamia_log_end",
+    "north": "lepidodendron:blocks/cunninghamia_log",
+    "east": "lepidodendron:blocks/cunninghamia_log",
+    "south": "lepidodendron:blocks/cunninghamia_log",
+    "west": "lepidodendron:blocks/cunninghamia_log",
+    "particle": "lepidodendron:blocks/cunninghamia_log_end"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:cunninghamia_fruit"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:cunninghamia_seed",
+    "count": 1
+  }
+}

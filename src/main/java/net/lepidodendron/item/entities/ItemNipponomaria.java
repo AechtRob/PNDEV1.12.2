@@ -19,9 +19,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -44,6 +46,16 @@ public class ItemNipponomaria extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/nipponomaria_item", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNNipponomaria", ItemNipponomaria.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemNipponomaria.block);
+		OreDictionary.registerOre("foodMeat", ItemNipponomaria.block);
+		OreDictionary.registerOre("itemShellfish", ItemNipponomaria.block);
+	}
+
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {

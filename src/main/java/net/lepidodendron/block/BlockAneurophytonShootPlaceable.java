@@ -61,10 +61,10 @@ public class BlockAneurophytonShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAneurophyton", BlockAneurophytonShoot.block);
-		OreDictionary.registerOre("treeLeaves", BlockAneurophytonShoot.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockAneurophytonShoot.block);
-		OreDictionary.registerOre("plant", BlockAneurophytonShoot.block);
+		OreDictionary.registerOre("dnaPNAneurophyton", BlockAneurophytonShootPlaceable.block);
+		OreDictionary.registerOre("treeLeaves", BlockAneurophytonShootPlaceable.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockAneurophytonShootPlaceable.block);
+		OreDictionary.registerOre("plant", BlockAneurophytonShootPlaceable.block);
 	}
 
 	public static class BlockCustom extends SeedSporeLeavesBase {

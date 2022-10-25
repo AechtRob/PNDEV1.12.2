@@ -75,12 +75,12 @@ public class ProcedureWorldGenPodocarp extends ElementsLepidodendronMod.ModEleme
 			yy = y + counter - 2;
 			if (Math.random() > 0.85) {
 				//North
-				ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockPodocarpLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure(x, yy, z - 1, world, BlockPodocarpLog.block, EnumFacing.WEST);
 				ProcedureLeavesAroundLog.executeProcedure(x, yy, z - 1, world, getLeaves(), 1, 0.4);
 			}
 			if (Math.random() > 0.85) {
 				//South
-				ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockPodocarpLog.block, EnumFacing.UP);
+				ProcedureTreeLog.executeProcedure(x, yy, z + 1, world, BlockPodocarpLog.block, EnumFacing.WEST);
 				ProcedureLeavesAroundLog.executeProcedure(x, yy, z + 1, world, getLeaves(), 1, 0.4);
 			}
 			if (Math.random() > 0.85) {

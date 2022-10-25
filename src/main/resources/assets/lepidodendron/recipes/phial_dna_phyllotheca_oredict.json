@@ -3,7 +3,7 @@
  "type": "forge:ore_shapeless",
  "ingredients": [
  {
- "item": "lepidodendron:bottle_of_dna_solvent_item"
+ "item": "lepidodendron:bottle_of_dna_solvent"
  },
  {
  "type": "forge:ore_dict",

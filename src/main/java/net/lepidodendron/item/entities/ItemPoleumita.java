@@ -19,9 +19,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPoleumita extends ElementsLepidodendronMod.ModElement {
@@ -42,6 +44,16 @@ public class ItemPoleumita extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/poleumita_item", "inventory"));
 	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("dnaPNPoleumita", ItemPoleumita.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemPoleumita.block);
+		OreDictionary.registerOre("foodMeat", ItemPoleumita.block);
+		OreDictionary.registerOre("itemShellfish", ItemPoleumita.block);
+	}
+
 
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
