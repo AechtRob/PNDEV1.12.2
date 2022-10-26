@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelBarameda extends AdvancedModelBase {
@@ -347,12 +346,11 @@ public class ModelBarameda extends AdvancedModelBase {
         //this.swing(pelvicfinR2, (float) (speed * 0.65), -0.4F, true, 1.5F, 0, f2, 0.35F);
 
         if (!e.isInWater()) {
-            this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.Body.offsetY = -0.6F;
-            this.bob(Body, -speed * 1.8F, 1.5F, false, f2, 1);
+            //this.Body.rotateAngleZ = (float) Math.toRadians(90);
+            this.Body.offsetY = 0.2F;
+            this.bob(Body, -speed * 3.8F, 0.25F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
-
         }
 
     }

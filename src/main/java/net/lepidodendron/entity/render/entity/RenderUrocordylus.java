@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraUrocordylus;
-import net.lepidodendron.entity.EntityPrehistoricFloraWhatcheeria;
 import net.lepidodendron.entity.model.entity.ModelUrocordylus;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -27,7 +26,7 @@ public class RenderUrocordylus extends RenderLiving<EntityPrehistoricFloraUrocor
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraUrocordylus entity, float f) {
-        float scale = entity.getAgeScale()*0.18F;
+        float scale = entity.getAgeScale() * 0.21F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

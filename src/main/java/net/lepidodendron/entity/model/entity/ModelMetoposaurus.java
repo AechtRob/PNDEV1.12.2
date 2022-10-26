@@ -3,14 +3,12 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraMastodonsaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetoposaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -67,17 +65,17 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.textureHeight = 128;
 
         this.body4 = new AdvancedModelRenderer(this);
-        this.body4.setRotationPoint(0.0F, 21.1F, 21.0F);
-        this.body4.cubeList.add(new ModelBox(body4, 42, 42, -3.0F, -1.45F, -1.0F, 6, 3, 4, 0.0F, false));
+        this.body4.setRotationPoint(0.0F, 22.017F, -0.205F);
+        this.body4.cubeList.add(new ModelBox(body4, 42, 42, -3.0F, -2.367F, 9.205F, 6, 3, 4, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
-        this.cube_r1.setRotationPoint(-0.5F, 3.5F, -6.0F);
+        this.cube_r1.setRotationPoint(-0.5F, 2.583F, 4.205F);
         this.body4.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.1222F, 0.0F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 50, 21, -2.0F, -1.4F, 4.25F, 5, 1, 5, 0.0F, false));
 
         this.hindlegR = new AdvancedModelRenderer(this);
-        this.hindlegR.setRotationPoint(-3.0F, 0.5F, 0.35F);
+        this.hindlegR.setRotationPoint(-3.0F, -0.417F, 10.555F);
         this.body4.addChild(hindlegR);
         this.setRotateAngle(hindlegR, 0.0F, -0.5236F, -0.2967F);
         this.hindlegR.cubeList.add(new ModelBox(hindlegR, 53, 34, -3.5F, -0.75F, -0.75F, 5, 2, 2, 0.0F, false));
@@ -95,7 +93,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.hindlegR3.cubeList.add(new ModelBox(hindlegR3, 61, 10, -2.75F, 0.0F, -1.4F, 3, 1, 3, 0.0F, false));
 
         this.hindlegL = new AdvancedModelRenderer(this);
-        this.hindlegL.setRotationPoint(3.0F, 0.5F, 0.35F);
+        this.hindlegL.setRotationPoint(3.0F, -0.417F, 10.555F);
         this.body4.addChild(hindlegL);
         this.setRotateAngle(hindlegL, 0.0F, 0.5236F, 0.2967F);
         this.hindlegL.cubeList.add(new ModelBox(hindlegL, 56, 27, -1.5F, -0.75F, -1.0F, 5, 2, 2, 0.0F, false));
@@ -113,7 +111,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.hindlegL3.cubeList.add(new ModelBox(hindlegL3, 62, 45, -0.25F, 0.0F, -1.4F, 3, 1, 3, 0.0F, false));
 
         this.tail = new AdvancedModelRenderer(this);
-        this.tail.setRotationPoint(0.0F, 0.0F, 3.0F);
+        this.tail.setRotationPoint(0.0F, -0.917F, 13.205F);
         this.body4.addChild(tail);
         this.setRotateAngle(tail, -0.0436F, 0.0F, 0.0F);
         this.tail.cubeList.add(new ModelBox(tail, 51, 55, -2.0F, -1.1F, -1.0F, 4, 3, 4, 0.0F, false));
@@ -143,7 +141,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         this.tail5.cubeList.add(new ModelBox(tail5, 0, 0, -0.5F, -0.6F, 0.0F, 1, 1, 2, 0.0F, false));
 
         this.body3 = new AdvancedModelRenderer(this);
-        this.body3.setRotationPoint(0.0F, 0.0F, 0.0F);
+        this.body3.setRotationPoint(0.0F, -0.917F, 10.205F);
         this.body4.addChild(body3);
         this.body3.cubeList.add(new ModelBox(body3, 24, 38, -3.5F, -1.85F, -4.0F, 7, 4, 4, 0.0F, false));
         this.body3.cubeList.add(new ModelBox(body3, 0, 52, -3.0F, 1.6F, -4.0F, 6, 1, 4, 0.0F, false));
@@ -377,7 +375,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.body4.offsetY = -0.50F; //72
-        this.body4.offsetZ = -1F; //72
+        //this.body4.offsetZ = -1F; //72
 
         EntityPrehistoricFloraMetoposaurus Metoposaurus = (EntityPrehistoricFloraMetoposaurus) e;
 

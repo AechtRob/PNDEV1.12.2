@@ -4503,7 +4503,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             GlStateManager.rotate(90, 0F, 1F, 0F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                        GlStateManager.scale(2.6,2.6,2.6);
+                        GlStateManager.scale(2.6 * 1.2F,2.6 * 1.2F,2.6 * 1.2F);
                         this.bindTexture(TEXTURE_PLACODUS);
                         modelPlacodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }

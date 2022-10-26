@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOrnithoprion extends AdvancedModelBase {
@@ -229,10 +228,10 @@ public class ModelOrnithoprion extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.ornithoprion.rotateAngleZ = (float) Math.toRadians(90);
-            this.ornithoprion.offsetY = 1.05F;
-            this.bob(ornithoprion, -speed * 1.9F, 2.5F, false, f2, 1);
-            this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F * still);
+            this.ornithoprion.offsetY = 0.95F;
+            this.bob(ornithoprion, -speed * 3.9F, 1.2F, false, f2, 1);
+            this.chainWave(fishTail, speed * 2.6F, 0.028F, -0.2, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * 2.6F, 0.28F, -0.55, f2, 0.4F * still);
 
         }
 

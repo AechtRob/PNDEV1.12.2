@@ -26,7 +26,7 @@ public class RenderPlacodus extends RenderLiving<EntityPrehistoricFloraPlacodus>
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
     protected void preRenderCallback(EntityPrehistoricFloraPlacodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * 1.2F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }
