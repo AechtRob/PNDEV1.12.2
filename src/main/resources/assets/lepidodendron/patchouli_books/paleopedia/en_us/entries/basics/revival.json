@@ -37,7 +37,7 @@
 		},
 		{
 			"type": "text",
-			"text": "As well as manual use, fossil items can be inserted into the Acid bath via a hopper (or modded item insertion) attached to the control panel, and cleaned fossils can be extracted via a hopper (or modded item extraction) placed under the head of the bath. Acid can be pumped into the bath via modded pipes, and there is a config option to require or not the use of RF Power for the machine. A redstone signal applied to the control panel will pause the acid bath. Finally the acid bath itself outputs a redstone comparator signal according to how full it is with acid."
+			"text": "As well as manual use, fossil items can be inserted into the Acid bath via a hopper attached to the control panel, and cleaned fossils can be extracted via a hopper placed under the head of the bath. Acid can be pumped into the bath via modded pipes, and there is a config option to require or not the use of RF Power for the machine. A redstone signal applied to the control panel will pause the acid bath. Finally the acid bath itself outputs a redstone comparator signal according to how full it is with acid."
 		},
 		{
 			"type": "crafting",
