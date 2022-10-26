@@ -4,15 +4,11 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraGerrothorax;
-import net.lepidodendron.entity.EntityPrehistoricFloraMetoposaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
 
 public class ModelGerrothorax extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer body;
@@ -362,13 +358,7 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.body2, this.body3, this.body4, this.body5, this.body6, this.body7};
 
-        boolean isAtBottom = false;
-        if (e.getPosition().getY() - 1 > 1) {
-            BlockPos pos = new BlockPos(e.getPosition().getX(), e.getPosition().getY() - 1, e.getPosition().getZ());
-            isAtBottom = ((e.isInsideOfMaterial(Material.WATER) || e.isInsideOfMaterial(Material.CORAL))
-                    && ((e.world.getBlockState(pos)).getMaterial() != Material.WATER)
-                    && ((double)e.getPosition().getY() + 0.334D) > e.posY);
-        }
+        boolean isAtBottom = Gerrothorax.isAtBottom();
         float bottomModifierTail = 1F;
         boolean atBottom = false;
         if (Gerrothorax.isReallyInWater() && isAtBottom && !Gerrothorax.getIsFast()) {
@@ -377,7 +367,6 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
             bottomModifierTail = 0.3F;
             atBottom = true;
         }
-
 
         if (!Gerrothorax.isReallyInWater()) {//on land
 

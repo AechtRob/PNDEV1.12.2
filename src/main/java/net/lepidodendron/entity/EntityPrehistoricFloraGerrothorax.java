@@ -10,12 +10,17 @@ import net.lepidodendron.block.BlockAmphibianSpawnGerrothorax;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -25,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -33,13 +39,14 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAgeableFishBase {
+	private static final DataParameter<Integer> BOTTOM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraGerrothorax.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SWIM_COOLDOWN = EntityDataManager.createKey(EntityPrehistoricFloraGerrothorax.class, DataSerializers.VARINT);
+	private static final DataParameter<Boolean> BOTTOM_FLAG = EntityDataManager.createKey(EntityPrehistoricFloraGerrothorax.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	int roarCooldown;
-	int bottomCooldown;
-	boolean bottomFlag;
 
 	public EntityPrehistoricFloraGerrothorax(World world) {
 		super(world);
@@ -64,6 +71,10 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 	public static String getPeriod() {return "Triassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
+
+	public boolean sinks() {
+		return this.getSwimCooldown() <= 0;
+	}
 
 	@Override
 	public void playLivingSound() {
@@ -119,10 +130,66 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 
 	@Override
 	protected float getAISpeedFish() {
-		if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
+		if (this.isAtBottom() && !this.getIsFast() && this.getEatTarget() == null) {
 			return 0;
 		}
 		return 0.232f;
+	}
+
+	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(BOTTOM_COOLDOWN, 0);
+		this.dataManager.register(SWIM_COOLDOWN, 0);
+		this.dataManager.register(BOTTOM_FLAG, false);
+	}
+
+	@Override
+	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
+		livingdata = super.onInitialSpawn(difficulty, livingdata);
+		this.setBottomCooldown(0);
+		this.setSwimCooldown(0);
+		this.setBottomFlag(false);
+		return livingdata;
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setInteger("bottomCooldown", this.getBottomCooldown());
+		compound.setInteger("swimCooldown", this.getSwimCooldown());
+		compound.setBoolean("bottomFlag", this.getBottomFlag());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setBottomCooldown(compound.getInteger("bottomCooldown"));
+		this.setSwimCooldown(compound.getInteger("swimCooldown"));
+		this.setBottomFlag(compound.getBoolean("bottomFlag"));
+	}
+
+	public int getBottomCooldown() {
+		return this.dataManager.get(BOTTOM_COOLDOWN);
+	}
+
+	public void setBottomCooldown(int cooldown) {
+		this.dataManager.set(BOTTOM_COOLDOWN, cooldown);
+	}
+
+	public int getSwimCooldown() {
+		return this.dataManager.get(SWIM_COOLDOWN);
+	}
+
+	public void setSwimCooldown(int cooldown) {
+		this.dataManager.set(SWIM_COOLDOWN, cooldown);
+	}
+
+	public boolean getBottomFlag() {
+		return this.dataManager.get(BOTTOM_FLAG);
+	}
+
+	public void setBottomFlag(boolean flag) {
+		this.dataManager.set(BOTTOM_FLAG, flag);
 	}
 
 	@Override
@@ -223,18 +290,44 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 		}
 		if (this.roarCooldown > 0) {this.roarCooldown -= 1;}
 
-		if (this.isAtBottom() && (!this.bottomFlag) && !this.getIsFast()) {
-			this.bottomFlag = true;
-			this.bottomCooldown = 2400;
+		if (!this.world.isRemote) {
+			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
+				this.setBottomFlag(true);
+				this.setBottomCooldown(300 + rand.nextInt(600));
+			}
+			if (this.isAtBottom() && (this.getBottomFlag())) {
+				this.setBottomCooldown(this.getBottomCooldown() - 1);
+			}
+			if (this.getBottomCooldown() < 0) {
+				this.setBottomCooldown(0);
+			}
+			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
+				this.setBottomFlag(false);
+				this.setSwimCooldown(200 + rand.nextInt(300));
+			}
+			if (!(this.getBottomFlag())) {
+				this.setSwimCooldown(this.getSwimCooldown() - 1);
+			}
+			if (this.getSwimCooldown() <= 0) {
+				this.setSwimCooldown(0);
+			}
+
 		}
-		if (!this.isAtBottom()) {
-			this.bottomFlag = false;
-			this.bottomCooldown = 0;
-		}
-		if (this.bottomCooldown > 0) {this.bottomCooldown -= 1;}
+
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	public boolean isAtBottom() {
+		//System.err.println("Testing position");
+		if (this.getPosition().getY() - 1 >= 0) {
+			BlockPos pos = new BlockPos(this.getPosition().getX(),this.getPosition().getY() - 1, this.getPosition().getZ());
+			return ((this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL))
+					&& ((this.world.getBlockState(pos)).getMaterial() != Material.WATER)
+					&& this.getSwimCooldown() <= 0 && this.onGround);
+		}
+		return false;
 	}
 
 	@Override
@@ -304,6 +397,10 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 				if (speedModifier > 3.0F) {
 					speedModifier = 3.0F;
 				}
+
+				BlockPos.PooledMutableBlockPos blockpos$pooledmutableblockpos = BlockPos.PooledMutableBlockPos.retain(this.posX, this.getEntityBoundingBox().minY - 1.0D, this.posZ);
+
+
 				if (!this.onGround) {
 					speedModifier *= 0.5F;
 				}
@@ -315,6 +412,26 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 				if (this.collidedHorizontally && this.isCollidingRim())
 				{
 					this.motionY = 0.05D;
+				}
+
+				if (this.sinks()) {
+					blockpos$pooledmutableblockpos.setPos(this.posX, 0.0D, this.posZ);
+
+					if (!this.world.isRemote || this.world.isBlockLoaded(blockpos$pooledmutableblockpos) && this.world.getChunk(blockpos$pooledmutableblockpos).isLoaded())
+					{
+						if (!this.hasNoGravity())
+						{
+							this.motionY -= 0.08D;
+						}
+					}
+					else if (this.posY > 0.0D)
+					{
+						this.motionY = -0.1D;
+					}
+					else
+					{
+						this.motionY = 0.0D;
+					}
 				}
 
 				this.motionX *= f4;

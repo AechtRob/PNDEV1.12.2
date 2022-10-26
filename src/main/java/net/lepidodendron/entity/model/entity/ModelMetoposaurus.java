@@ -6,11 +6,9 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetoposaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
 
 public class ModelMetoposaurus extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer body4;
@@ -390,13 +388,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.body2, this.body3};
 
-        boolean isAtBottom = false;
-        if (e.getPosition().getY() - 1 > 1) {
-            BlockPos pos = new BlockPos(e.getPosition().getX(), e.getPosition().getY() - 1, e.getPosition().getZ());
-            isAtBottom = ((e.isInsideOfMaterial(Material.WATER) || e.isInsideOfMaterial(Material.CORAL))
-                    && ((e.world.getBlockState(pos)).getMaterial() != Material.WATER)
-                    && ((double)e.getPosition().getY() + 0.334D) > e.posY);
-        }
+        boolean isAtBottom = Metoposaurus.isAtBottom();
         float bottomModifierTail = 1F;
         boolean atBottom = false;
         if (Metoposaurus.isReallyInWater() && isAtBottom && !Metoposaurus.getIsFast()) {
@@ -405,7 +397,6 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
             bottomModifierTail = 0.3F;
             atBottom = true;
         }
-
 
         if (!Metoposaurus.isReallyInWater()) {//on land
 

@@ -97,6 +97,10 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
         }
     }
 
+    public boolean sinks() {
+        return false;
+    }
+
     public static String getHabitat() {
         return I18n.translateToLocal("helper.pf_amphibious.name");
     }
@@ -370,6 +374,26 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 if (this.collidedHorizontally && this.isCollidingRim())
                 {
                     this.motionY = 0.05D;
+                }
+
+                if (this.sinks()) {
+                    blockpos$pooledmutableblockpos.setPos(this.posX, 0.0D, this.posZ);
+
+                    if (!this.world.isRemote || this.world.isBlockLoaded(blockpos$pooledmutableblockpos) && this.world.getChunk(blockpos$pooledmutableblockpos).isLoaded())
+                    {
+                        if (!this.hasNoGravity())
+                        {
+                            this.motionY -= 0.08D;
+                        }
+                    }
+                    else if (this.posY > 0.0D)
+                    {
+                        this.motionY = -0.1D;
+                    }
+                    else
+                    {
+                        this.motionY = 0.0D;
+                    }
                 }
 
                 this.motionX *= f4;

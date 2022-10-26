@@ -6,12 +6,9 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraMastodonsaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
 
 public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Mastodonsaurus;
@@ -455,13 +452,7 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2};
         AdvancedModelRenderer[] Torso = {this.Neck, this.Body, this.Body2, this.Body3};
 
-        boolean isAtBottom = false;
-        if (e.getPosition().getY() - 1 > 1) {
-            BlockPos pos = new BlockPos(e.getPosition().getX(), e.getPosition().getY() - 1, e.getPosition().getZ());
-            isAtBottom = ((e.isInsideOfMaterial(Material.WATER) || e.isInsideOfMaterial(Material.CORAL))
-                    && ((e.world.getBlockState(pos)).getMaterial() != Material.WATER)
-                    && ((double)e.getPosition().getY() + 0.334D) > e.posY);
-        }
+        boolean isAtBottom = Mastodonsaurus.isAtBottom();
         float bottomModifierTail = 1F;
         boolean atBottom = false;
         if (Mastodonsaurus.isReallyInWater() && isAtBottom && !Mastodonsaurus.getIsFast()) {
@@ -470,7 +461,6 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
             bottomModifierTail = 0.3F;
             atBottom = true;
         }
-
 
         if (!Mastodonsaurus.isReallyInWater()) {
 
