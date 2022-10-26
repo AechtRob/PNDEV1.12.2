@@ -229,7 +229,11 @@ public class ModelWeinbergina extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
-        this.Body.render(0.023F);
+        this.Body.rotateAngleY = (float) Math.toRadians(90);
+        this.Body.offsetX = -0F;
+        this.Body.offsetY = -0F;
+        this.Body.offsetZ = 0F;
+        this.Body.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();

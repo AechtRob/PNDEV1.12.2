@@ -264,13 +264,39 @@ public class ModelFadenia extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
-
-        /*
-        this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
-        this.Headback.render(0.01F);
-
-         */
-
+        this.head.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(cube_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(gillL, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(gillR, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.1309F, 0.2705F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.1309F, -0.2705F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.0873F, -0.2007F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.2182F, -0.2007F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.2182F, 0.2007F, 0.0F);
+        this.setRotateAngle(cube_r21, -0.0873F, 0.2007F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r22, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.8727F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.8727F);
+        this.setRotateAngle(body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.48F, 0.0F);
+        this.head.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
