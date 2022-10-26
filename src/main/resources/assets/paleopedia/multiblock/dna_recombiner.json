@@ -1,0 +1,12 @@
+"multiblock": {
+    "pattern": [
+        [ " R" ], 
+        [ "CF" ]
+    ],
+    "mapping": {
+        "C": "lepidodendron:dna_recombiner_centrifuge",
+        "R": "lepidodendron:dna_recombiner_rail",
+        "F": "lepidodendron:dna_recombiner_forge"
+    },
+    "symmetrical": true
+}
