@@ -5955,6 +5955,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         double offset = -0.4;
         double voffset = 0.55;
         double hoffset = 0.9;
+        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
         GlStateManager.scale(3.2, 3.2, 3.2);
         this.bindTexture(TEXTURE_FADENIAC);
         modelFadenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
