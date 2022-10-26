@@ -28,6 +28,7 @@ public class ItemWingertshellicusCooked extends ElementsLepidodendronMod.ModElem
 		OreDictionary.registerOre("foodCooked", ItemWingertshellicusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemWingertshellicusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemWingertshellicusCooked.block);
+		OreDictionary.registerOre("listAllfishcooked", ItemWingertshellicusCooked.block);
 	}
 	@Override
 	public void initElements() {

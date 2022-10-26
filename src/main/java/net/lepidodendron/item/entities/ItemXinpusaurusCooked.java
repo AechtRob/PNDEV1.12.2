@@ -31,7 +31,6 @@ public class ItemXinpusaurusCooked extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("listAllfishcooked", ItemXinpusaurusCooked.block);
 		OreDictionary.registerOre("foodCooked", ItemXinpusaurusCooked.block);
 		OreDictionary.registerOre("foodMeat", ItemXinpusaurusCooked.block);
 		OreDictionary.registerOre("listAllmeatcooked", ItemXinpusaurusCooked.block);

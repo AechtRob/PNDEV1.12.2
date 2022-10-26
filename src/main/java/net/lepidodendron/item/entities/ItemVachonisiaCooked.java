@@ -30,9 +30,10 @@ public class ItemVachonisiaCooked extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("listAllfishraw", ItemVachonisiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemVachonisiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemVachonisiaRaw.block);
+		OreDictionary.registerOre("listAllfishcooked", ItemVachonisiaCooked.block);
+		OreDictionary.registerOre("foodCooked", ItemVachonisiaCooked.block);
+		OreDictionary.registerOre("foodMeat", ItemVachonisiaCooked.block);
+		OreDictionary.registerOre("listAllmeatcooked", ItemVachonisiaCooked.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

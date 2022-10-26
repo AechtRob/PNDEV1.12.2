@@ -9,9 +9,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemPalaeoScampi extends ElementsLepidodendronMod.ModElement {
@@ -31,6 +33,15 @@ public class ItemPalaeoScampi extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/palaeo_scampi", "inventory"));
 	}
+
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("listAllfishcooked", ItemPalaeoScampi.block);
+		OreDictionary.registerOre("foodCooked", ItemPalaeoScampi.block);
+		OreDictionary.registerOre("foodMeat", ItemPalaeoScampi.block);
+		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeoScampi.block);
+	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);

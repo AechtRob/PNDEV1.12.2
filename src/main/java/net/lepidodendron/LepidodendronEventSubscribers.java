@@ -15,10 +15,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -29,8 +32,10 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -42,6 +47,36 @@ import java.util.List;
 import java.util.Random;
 
 public class LepidodendronEventSubscribers {
+
+	@SubscribeEvent //Replace petrified plants:
+	public void petrifieds(PlayerContainerEvent event) {
+		Container container = event.getContainer();
+		List<Slot> itemSlots = container.inventorySlots;
+
+		//Don't replace them if the player is still using the integration mod - that will swap them over by itself.
+		if (Loader.isModLoaded("prehistoricfloraintegration")) {
+			return;
+		}
+
+		for (Slot currentSlot : itemSlots) {
+			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();
+			if (!currentItemStack.isEmpty()) {
+				if (currentItemStack.getItem() instanceof ItemPetrified) {
+					int i = currentItemStack.getCount();
+					Item itemPetrified = ((ItemPetrified) currentItemStack.getItem()).getPlantStack().getItem();
+					String stringPetrified = itemPetrified.getRegistryName().toString();
+					ItemStack newStack = new ItemStack(ItemFossilClean.block, i);
+					NBTTagCompound plantNBT = new NBTTagCompound();
+					plantNBT.setString("id", stringPetrified);
+					NBTTagCompound stackNBT = new NBTTagCompound();
+					stackNBT.setTag("PFBlock", plantNBT);
+					newStack.setTagCompound(stackNBT);
+					container.putStackInSlot(currentSlot.slotNumber, newStack);
+				}
+			}
+		}
+	}
+
 
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {

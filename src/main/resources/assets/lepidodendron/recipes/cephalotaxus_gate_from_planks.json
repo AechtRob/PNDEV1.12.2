@@ -2,40 +2,35 @@
   "group": "lepidodendron",
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " 1 ",
     "345",
     "678"
   ],
   "key": {
-    "1": {
-      "type": "forge:ore_dict",
-      "ore": "ingotIron"
-    },
     "3": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "stickWood"
     },
     "4": {
-      "item": "minecraft:furnace"
+      "item": "lepidodendron:cephalotaxus_planks"
     },
     "5": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
-    },
+      "ore": "stickWood"
+     },
     "6": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
-    },
+      "ore": "stickWood"
+     },
     "7": {
-      "item": "minecraft:redstone_block"
-    },
+      "item": "lepidodendron:cephalotaxus_planks"
+   },
     "8": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
-    }
+      "ore": "stickWood"
+     }
   },
   "result": {
-    "item": "lepidodendron:coal_tar_processor",
-    "count": 1
+    "item": "lepidodendron:cephalotaxus_fence_gate",
+    "count": 3
   }
 }

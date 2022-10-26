@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -97,9 +98,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			Block blockOut = null;
 			String stringDNA = stack.getTagCompound().getString("id_dna");
 			if (stringDNA != null) {
-				blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA));;
+				blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA));
 			}
 			return blockOut;
+		}
+
+		@Nullable
+		public Item getItemFromNBT(ItemStack stack) {
+			Item itemOut = null;
+			String stringDNA = stack.getTagCompound().getString("id_dna");
+			if (stringDNA != null) {
+				itemOut = ForgeRegistries.ITEMS.getValue(new ResourceLocation(stringDNA));
+			}
+			return itemOut;
 		}
 
 		@Nullable
@@ -172,11 +183,18 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						}
 						return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 					}
-					else if (getStateFromNBT(itemstack) != null) {
+					else if (getStateFromNBT(itemstack) != null || getItemFromNBT(itemstack) != null) {
 						//Plants/Blocks:
 						Block block = getStateFromNBT(itemstack);
-						ItemStack pickBlock = block.getPickBlock(block.getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
-						Item item = pickBlock.getItem();
+						Item item = null;
+						System.err.println("block " + block);
+						if (block != null && block != Blocks.AIR) {
+							ItemStack pickBlock = block.getPickBlock(block.getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
+							item = pickBlock.getItem();
+						}
+						else {
+							item = getItemFromNBT(itemstack);
+						}
 						if (item != null) {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);

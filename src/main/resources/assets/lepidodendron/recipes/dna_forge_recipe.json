@@ -32,7 +32,7 @@
       "ore": "ingotIron"
     },
     "7": {
-      "item": "minecraft:redstone"
+      "item": "lepidodendron:redstone_component"
     },
     "8": {
       "type": "forge:ore_dict",

@@ -36,7 +36,7 @@ public class ItemWingTitanopteraGigatitan extends ElementsLepidodendronMod.ModEl
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNTitanopteraGigatitan", ItemWingTitanopteraGigatitan.block);
-
+		OreDictionary.registerOre("wingInsect", ItemWingTitanopteraGigatitan.block);
 	}
 
 	@SideOnly(Side.CLIENT)

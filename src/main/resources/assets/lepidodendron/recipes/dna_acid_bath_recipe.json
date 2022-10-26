@@ -8,7 +8,7 @@
   ],
   "key": {
     "0": {
-      "item": "minecraft:redstone"
+      "item": "lepidodendron:redstone_component"
     },
     "3": {
       "type": "forge:ore_dict",

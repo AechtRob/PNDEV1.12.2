@@ -32,7 +32,6 @@ public class ItemXinpusaurusRaw extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNXinpusaurus", ItemXinpusaurusRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemXinpusaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemXinpusaurusRaw.block);
 	}

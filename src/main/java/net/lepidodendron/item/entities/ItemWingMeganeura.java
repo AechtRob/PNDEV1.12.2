@@ -36,6 +36,7 @@ public class ItemWingMeganeura extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNMeganeura", ItemWingMeganeura.block);
+		OreDictionary.registerOre("wingInsect", ItemWingMeganeura.block);
 
 	}
 	@SideOnly(Side.CLIENT)

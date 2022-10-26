@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/cephalotaxus_log_end",
+    "up": "lepidodendron:blocks/cephalotaxus_log_end",
+    "north": "lepidodendron:blocks/cephalotaxus_log",
+    "east": "lepidodendron:blocks/cephalotaxus_log",
+    "south": "lepidodendron:blocks/cephalotaxus_log",
+    "west": "lepidodendron:blocks/cephalotaxus_log",
+    "particle": "lepidodendron:blocks/cephalotaxus_log_end"
+  }
+}

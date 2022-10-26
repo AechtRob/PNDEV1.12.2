@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:cunninghamia_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:cunninghamia_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:cunninghamia_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:cunninghamia_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:cunninghamia_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:cunninghamia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:cunninghamia_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

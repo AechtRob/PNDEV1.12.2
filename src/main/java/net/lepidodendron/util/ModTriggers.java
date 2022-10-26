@@ -347,6 +347,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ZYGOPTERIDACEAE = new CustomTrigger("pf_book_zygopteridaceae");
     public static final CustomTrigger CLICK_ZYGOPTERIS = new CustomTrigger("pf_book_zygopteris");
 
+    public static final CustomTrigger CLICK_CEPHALOTAXUS = new CustomTrigger("pf_book_cephalotaxus");
+    public static final CustomTrigger CLICK_CUNNINGHAMIA = new CustomTrigger("pf_book_cunninghamia");
+    public static final CustomTrigger CLICK_HOOP_ARAUCARIA = new CustomTrigger("pf_book_hoop_araucaria");
+
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
     public static final CustomTrigger CLICK_SPONGE = new CustomTrigger("pf_book_sponge");
@@ -1237,6 +1241,9 @@ public class ModTriggers
             CLICK_ZOSTEROPHYLLUM,
             CLICK_ZYGOPTERIDACEAE,
             CLICK_ZYGOPTERIS,
+            CLICK_CEPHALOTAXUS,
+            CLICK_CUNNINGHAMIA,
+            CLICK_HOOP_ARAUCARIA,
         
             //Grouped ones:
             CLICK_BLASTOID,

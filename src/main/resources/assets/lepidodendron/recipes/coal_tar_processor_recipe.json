@@ -1,0 +1,41 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "4": {
+      "item": "minecraft:furnace"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "7": {
+      "item": "lepidodendron:redstone_component"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:coal_tar_processor",
+    "count": 1
+  }
+}

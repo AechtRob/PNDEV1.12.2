@@ -36,6 +36,7 @@ public class ItemWingGerarus extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNGerarus", ItemWingGerarus.block);
+		OreDictionary.registerOre("wingInsect", ItemWingGerarus.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override

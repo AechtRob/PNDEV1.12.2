@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:hoop_araucaria_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:hoop_araucaria_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:hoop_araucaria_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:hoop_araucaria_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:hoop_araucaria_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:hoop_araucaria_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:hoop_araucaria_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

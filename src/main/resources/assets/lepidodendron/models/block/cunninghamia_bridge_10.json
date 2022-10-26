@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/bridge",
+ "textures": {
+ "wood": "lepidodendron:blocks/cunninghamia_planks",
+ "metal": "blocks/coal_block"
+ }
+}

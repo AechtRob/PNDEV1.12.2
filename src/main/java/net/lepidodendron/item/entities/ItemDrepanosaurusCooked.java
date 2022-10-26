@@ -11,7 +11,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemDrepanosaurusCooked extends ElementsLepidodendronMod.ModElement {
@@ -34,9 +33,9 @@ public class ItemDrepanosaurusCooked extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("foodCooked", ItemDrepanosaurusCooked.block);
-		OreDictionary.registerOre("foodMeat", ItemDrepanosaurusCooked.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemDrepanosaurusCooked.block);
+		//OreDictionary.registerOre("foodCooked", ItemDrepanosaurusCooked.block);
+		//OreDictionary.registerOre("foodMeat", ItemDrepanosaurusCooked.block);
+		//OreDictionary.registerOre("listAllmeatcooked", ItemDrepanosaurusCooked.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {

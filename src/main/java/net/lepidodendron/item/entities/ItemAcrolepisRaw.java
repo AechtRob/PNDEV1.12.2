@@ -33,6 +33,7 @@ public class ItemAcrolepisRaw extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/acrolepis_raw", "inventory"));
 	}
+
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("dnaPNAcrolepis", ItemAcrolepisRaw.block);
@@ -40,6 +41,7 @@ public class ItemAcrolepisRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemAcrolepisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAcrolepisRaw.block);
 	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);

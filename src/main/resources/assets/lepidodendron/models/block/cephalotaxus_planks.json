@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/cephalotaxus_planks",
+    "particle": "lepidodendron:blocks/cephalotaxus_planks"
+  }
+}
