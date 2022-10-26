@@ -1,0 +1,31 @@
+{
+	"name": "Ampyx",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ampyx_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_ampyx",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ampyx",
+			"title": "Ampyx",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Asaphida$(br)>Raphiophoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ampyx_short.png", "paleopedia:textures/ampyx_long.png"],
+			"title": "A. priscus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ampyx",
+			"type": "text",
+			"text": "Ampyx are trident shaped Ordovician to Silurian trilobites with elongated glabellar and genal spines. Ampyx are interesting due to the discovery of linear fossil clusters with adult individuals all facing the same direction which possibly suggests collective migratory behavior. Ampyx have been found across the world."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ampyx",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

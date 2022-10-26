@@ -1,0 +1,32 @@
+{
+	"name": "Besanosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/besanosaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_besanosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_besanosaurus",
+			"title": "Besanosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Sauropsida$(br)>Ichthyopterygia$(br)>Merriamosauria$(br)>Besanosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/besanosaurus.png"],
+			"title": "B. leptorhynchus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

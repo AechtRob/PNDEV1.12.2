@@ -1,0 +1,32 @@
+{
+	"name": "Xinpusaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/xinpusaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_xinpusaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_xinpusaurus",
+			"title": "Xinpusaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Clam Beds$(br2)>Reptilia$(br)>Thalattosauria$(br)>Thalattosauroidea"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/xinpusaurus.png"],
+			"title": "X. kohi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xinpusaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_xinpusaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Shellfish$(br)$(l)Breeds with:$() Shellfish$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

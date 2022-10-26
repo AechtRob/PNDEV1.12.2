@@ -1,0 +1,31 @@
+{
+	"name": "Harpes",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/harpes_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_harpes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_harpes",
+			"title": "Harpes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Harpetida$(br)>Harpetidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/harpes.png"],
+			"title": "Harpes sp.",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harpes",
+			"type": "text",
+			"text": "Harpes is a Devonian trilobite known from various places across the world but primarily Morocco. It notably had reduced eyes and a semicircular shaped cephalon. The Harpetid brim had numerous small pores. The fringes of the brim are steeply inclined as it reaches the end of the body. Harpes also lacks a rostral plate and has a short sub-triangular pygidium"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_harpes",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

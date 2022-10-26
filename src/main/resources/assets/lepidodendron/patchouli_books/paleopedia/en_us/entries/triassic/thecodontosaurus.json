@@ -1,0 +1,32 @@
+{
+	"name": "Thecodontosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/thecodontosaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_thecodontosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_thecodontosaurus",
+			"title": "Thecodontosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Volcanic Islands$(br2)>Dinosauria$(br)>Saurischia$(br)>Sauropodomorpha$(br)>Thecodontosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/thecodontosaurus.png"],
+			"title": "T. antiquus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thecodontosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_thecodontosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		}
+	]
+}
+

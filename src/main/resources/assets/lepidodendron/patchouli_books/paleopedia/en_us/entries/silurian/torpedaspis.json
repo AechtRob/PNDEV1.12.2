@@ -1,0 +1,31 @@
+{
+	"name": "Torpedaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/torpedaspis_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_torpedaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_torpedaspis",
+			"title": "Torpedaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Agnatha$(br)>Pteraspidomorphi$(br)>Cyathaspidiformes$(br)>Cyathaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/torpedaspis.png"],
+			"title": "T. elongata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_torpedaspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_torpedaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
