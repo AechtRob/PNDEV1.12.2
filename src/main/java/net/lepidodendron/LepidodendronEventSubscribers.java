@@ -254,8 +254,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						return;
-						//event.setCanceled(true);
+						//return;
+						event.setCanceled(true);
 					}
 				}
 			}
@@ -276,8 +276,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						return;
-						//event.setCanceled(true);
+						//return;
+						event.setCanceled(true);
 					}
 				}
 			}
@@ -298,8 +298,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						return;
-						//event.setCanceled(true);
+						//return;
+						event.setCanceled(true);
 					}
 				}
 			}
@@ -321,8 +321,8 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
-						return;
-						//event.setCanceled(true);
+						//return;
+						event.setCanceled(true);
 					}
 				}
 			}
