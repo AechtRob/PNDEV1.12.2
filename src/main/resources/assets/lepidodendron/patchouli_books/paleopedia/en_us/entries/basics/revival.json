@@ -1,0 +1,109 @@
+{
+	"name": "The Revival System",
+	"icon": "lepidodendron:dna_acid_bath",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Reviving prehistoric life is a multi-stage process, as follows:$(br)1) Obtain raw fossils$(br)2) Clean the raw fossils in an acid bath$(br)3) Combine the cleaned fossils with Benzo-Solvent to obtain DNA$(br)4) Combine the DNA with an Oligopool in the DNA Recombiner Machine"
+		},
+		{
+			"type": "text",
+			"text": "Fossiliferous Stone:$(br)Fossiliferous stone is a stone-like block which generates in the Overworld and the prehistoric dimensions in layers below sea-level. There is a different fossiliferous stone for each prehistoric time period. The longer ago the fossiliferous stone dates from, the lower down you will find it in each dimension, and the lower down it is the rarer the generation will be."
+		},
+		{
+			"type": "text",
+			"text": "So, for example, Precambrian fossiliferous stone is very deep and rather rare in the Overworld but if you travel to a time period closer to the Precambrian you will find it closer to the surface and more commonly. When broken with a Geologic Pick it has a chance to drop raw fossils from its time period."
+		},
+		{
+			"type": "text",
+			"text": "Geologic Pick:$(br)The geologic pick is used to break fossiliferous stone, and when used for that has a chance to drop a period-speciic raw fossil from them. When unsuccessful the fossiliferous stone will just drop gravel. The geologic pick responds to the Fortune enchantment."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:fossil_hammer_recipe"
+		},
+		{
+			"type": "text",
+			"text": "Redstone Component:$(br)The redstone component is used in the construction of many machines"
+		},		
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:redstone_component_recipe"
+		},
+		{
+			"type": "text",
+			"text": "Acid Bath:$(br)The acid bath is used clean raw fossils. It needs to be filled with up to two buckets of sulphuric acid and it will then dissolve any sediment around raw fossils, revealing the precious contents inside, or lack thereof. An acid bath can operate with as many as 4 fossils at a time but will also accept less. Only some cleaning attempts will result in a cleaned fossil; others will result in various types of junk outputs. "
+		},
+		{
+			"type": "text",
+			"text": "As well as manual use, fossil items can be inserted into the Acid bath via a hopper attached to the control panel, and cleaned fossils can be extracted via a hopper placed under the head of the bath. Acid can be pumped into the bath via modded pipes, and there is a config option to require or not the use of RF Power for the machine. A redstone signal applied to the control panel will pause the acid bath. Finally the acid bath itself outputs a redstone comparator signal according to how full it is with acid."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_acid_bath_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe"
+		},
+		{
+			"type": "text",
+			"text": "Sulphur Ore:$(br)Sulphur ore generates very commonly in the Nether. It can also be found rarely, deep in the Overworld, and it generates in volcanic areas in the prehistoric dimensions."
+		},
+		{
+			"type": "text",
+			"text": "Benzo-Solvent:$(br)Benzo-Solvent is an organic solvent produced from the controlled burning of logs and coals in the Coal Tar Processor. There is a config option to require or not the use of RF Power for the machine. Benzo-Solvent is used to dissolve cleaned fossils, raw meats or plant materals to extract DNA from them. It is also used in the manufacture of Oligopools. Hoppers (and modded equivalents) can be used to insert and extract from the machine. "
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:coal_tar_processor_recipe"
+		},
+		{
+			"type": "text",
+			"text": "Phial of DNA:$(br)Phials of DNA are produced by dissolving organic material in Benzo-Solvent in a phial. You can dissolve raw fossils produced from the acid bath, as well as raw meat dropped by mobs, or from static creatures and plants (logs and leaves only). Some example recipes are shown on the next few pages."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_dna_acanthodes",
+			"recipe2": "lepidodendron:phial_dna_charnia"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_dna_apple_sapling_oredict",
+			"recipe2": "lepidodendron:phial_dna_coelophysis_oredict"
+		},
+		{
+			"type": "text",
+			"text": "Oligopool:$(br)An oligopool is a synthetic mixture of DNA bases which are able to be used by the DNA Recombiner machine to selectively rebuild DNA from a map. They are produced by the Oligopool Machine by inserting Benzo-Solvent into it. There is a config option to require or not the use of RF Power for the machine. Hoppers (and modded equivalents) can be used to insert and extract from the machine."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:oligopool_machine_recipe"
+		},
+		{
+			"type": "text",
+			"text": "DNA Recombiner Machine:$(br)This machine is crafted from the four seperate components as shown in the recipe. Phials of DNA should be inserted into the centrifuge part of the machine. The machine will start processing once the lid is closed and the centrifuge is balanced. The centrifuge will accpt up to four phials of DNA although you can balance using empty phials if necessary. You can use hoppers (and modded equivalents) to insert phials into the Centrifuge. You cannot extract alread-centrifuged phials and the machine will remain locked until all centrifuged phials have been processed by the next stages."
+		},
+		{
+			"type": "text",
+			"text": "The machine will transfer the centrifuged DNA phial into the main DNA Forge part of the machine. This part needs to have a supply of oligopools in order to process the phial. You can use hoppers (and modded equivalents) to insert oligopools into the DNA Forge, and to extract completed DNA from it. Once complete the DNA Forge will produce a placeable cultured DNA item to create the living thing."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_centrifuge_recipe",
+			"recipe2": "lepidodendron:dna_claw_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_rail_recipe",
+			"recipe2": "lepidodendron:dna_forge_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_recombiner_recipe"
+		}
+	]
+}
