@@ -2,7 +2,7 @@
 	"name": "Gigantoproductus",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/gigantoproductus_icon.png",
-	"category": "lepidodendron:carboniferous_animal",
+	"category": "lepidodendron:carboniferous_static",
 	"turnin": "lepidodendron:pf_adv_book_gigantoproductus",
 	"pages": [
 		{
