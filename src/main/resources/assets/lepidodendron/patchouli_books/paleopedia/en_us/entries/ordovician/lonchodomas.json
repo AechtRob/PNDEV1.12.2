@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/lonchodomas.png"],
+			"images": ["paleopedia:textures/lonchodomas_short.png", "paleopedia:textures/lonchodomas_long.png"],
 			"title": "L. rostrata",
 			"text": ""
 		},
