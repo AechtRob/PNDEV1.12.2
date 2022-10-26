@@ -1,0 +1,31 @@
+{
+	"name": "Nahecaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/nahecaris_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_nahecaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_nahecaris",
+			"title": "Nahecaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Crustacea$(br)>Malacostraca$(br)>Phyllocarida$(br)>Archaeostraca"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/nahecaris.png"],
+			"title": "N. stuertzi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nahecaris",
+			"type": "text",
+			"text": "Nahecaris is around 15 cm long phyllocarid known from Devonian Hunsrück Slate, Germany. Known from over 60 specimens, it was one of the most adundant animal in that formation. Although it was once considered to belong to the genus Dilophaspis, the genus Nahecaris has priority over Dilophaspis."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_nahecaris",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

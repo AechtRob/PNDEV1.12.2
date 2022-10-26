@@ -1,0 +1,31 @@
+{
+	"name": "Ornithoprion",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ornithoprion_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_ornithoprion",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ornithoprion",
+			"title": "Ornithoprion",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Eugeneodontida$(br)>Caseodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ornithoprion.png"],
+			"title": "O. hertwigi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ornithoprion",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ornithoprion",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Lonchodomas",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/lonchodomas_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_lonchodomas",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_lonchodomas",
+			"title": "Lonchodomas",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Sponge Forest$(br2)>Trilobita$(br)>Asaphida$(br)>Raphiophoridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/lonchodomas.png"],
+			"title": "L. rostrata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lonchodomas",
+			"type": "text",
+			"text": "Lonchodomas are Ordovician trilobites from various parts of the world. They are similar to Ampyx but larger and with a diamond shaped glabella. Like all raphiophorid trilobites, Lonchodomas is blind, completely lacking eyes. Along with Ampyx, there seems to appear Lonchodomas with straight genal spines and more curved and wide genal spines. It seems to depend on individual."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_lonchodomas",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

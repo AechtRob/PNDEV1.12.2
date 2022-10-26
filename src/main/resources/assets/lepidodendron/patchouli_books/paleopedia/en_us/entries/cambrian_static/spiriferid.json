@@ -1,0 +1,31 @@
+{
+	"name": "Spiriferid",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/spiriferid_icon.png",
+	"category": "lepidodendron:ordovician_static",
+	"turnin": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
+			"title": "Spiriferid",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician-Jurassic$(br2)$(l)Habitat:$() $(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Spiriferida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/spiriferid.png"],
+			"title": "Spiriferida",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_brachiopod_spiriferid",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

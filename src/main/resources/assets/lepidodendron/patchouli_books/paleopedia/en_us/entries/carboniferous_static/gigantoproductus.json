@@ -1,0 +1,31 @@
+{
+	"name": "Gigantoproductus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/gigantoproductus_icon.png",
+	"category": "lepidodendron:carboniferous_animal",
+	"turnin": "lepidodendron:pf_adv_book_gigantoproductus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gigantoproductus",
+			"title": "Gigantoproductus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Aquatic$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gigantoproductus.png"],
+			"title": "G. giganteus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigantoproductus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gigantoproductus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

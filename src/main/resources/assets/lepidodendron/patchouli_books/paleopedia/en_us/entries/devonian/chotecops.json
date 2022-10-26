@@ -1,0 +1,31 @@
+{
+	"name": "Chotecops",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/chotecops_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_chotecops",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_chotecops",
+			"title": "Chotecops",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Trilobita$(br)>Phacopida$(br)>Phacopidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/chotecops.png"],
+			"title": "C. ferdinandi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chotecops",
+			"type": "text",
+			"text": "Chotecops is phacopid trilobite known from Europe. Some fossils known from Hunsrück Slate show soft tissues like antennae, legs, etc."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_chotecops",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
