@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMussaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMussaurus extends AdvancedModelBaseExtended {
@@ -256,7 +255,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.root.render(f5 * 0.82f);
+        this.root.render(f5);
     }
 
     public void renderStatic(float f) {
@@ -290,7 +289,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.basin.offsetY = 0.25F;
+        //this.basin.offsetY = 0.25F;
 
         EntityPrehistoricFloraMussaurus Mussaurus = (EntityPrehistoricFloraMussaurus) e;
         float masterSpeed = Mussaurus.getTravelSpeed();
@@ -341,7 +340,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
             this.hands2.rotateAngleZ = (float) Math.toRadians(75);
             this.hands2.rotateAngleY = (float) Math.toRadians(85);
 
-            this.basin.offsetY = 0.4825F;
+            //this.basin.offsetY = 0.4825F;
         }
 
 

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/ascoceras_raw_variant"
+    "layer0": "lepidodendron:items/entities/ascoceras_raw"
   }
 }

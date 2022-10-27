@@ -15,6 +15,10 @@ public class RenderFadeniaCarboniferous extends RenderLiving<EntityPrehistoricFl
         super(mgr, new ModelFadenia(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 1.125F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraFadeniaCarboniferous entity) {
         return RenderFadeniaCarboniferous.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderFadeniaCarboniferous extends RenderLiving<EntityPrehistoricFl
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraFadeniaCarboniferous entity, float f) {
-        float scale = entity.getAgeScale() * 1.125F;
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.75F;

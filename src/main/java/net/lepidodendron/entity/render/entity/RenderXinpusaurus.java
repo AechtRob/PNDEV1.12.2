@@ -16,6 +16,10 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
         super(mgr, new ModelXinpusaurus(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.7F * 0.375F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraXinpusaurus entity) {
         if (entity.getIsFemale()) {
@@ -29,11 +33,11 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
     protected void preRenderCallback(EntityPrehistoricFloraXinpusaurus entity, float f) {
-        float scale = entity.getAgeScale() * 0.7F;
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {
             scale = 0.1f;
         } else if (entity.getIsFemale()) {
-            scale = scale * 0.85F;
+            scale = scale * (0.85F/0.7F);
         }
 
         GlStateManager.scale(scale, scale, scale);

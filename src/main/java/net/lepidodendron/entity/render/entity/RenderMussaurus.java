@@ -16,6 +16,10 @@ public class RenderMussaurus extends RenderLiving<EntityPrehistoricFloraMussauru
         super(mgr, new ModelMussaurus(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 0.82f;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMussaurus entity) {
         double width = entity.getEntityBoundingBox().maxX-entity.getEntityBoundingBox().minX;
@@ -36,7 +40,7 @@ public class RenderMussaurus extends RenderLiving<EntityPrehistoricFloraMussauru
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMussaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.40F;
     }

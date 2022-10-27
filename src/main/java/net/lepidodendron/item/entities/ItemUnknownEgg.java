@@ -274,9 +274,19 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_gemmactena", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_batofasciculus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_plectodiscus", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_vachonisia", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ampyx", "inventory")
-				);
+				//new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_vachonisia", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ampyx", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_arctinurus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_bohemoharpes", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_chotecops", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_harpes", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_lonchodomas", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ogyginus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_skeemella", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_uralichas", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_wingertshellicusa", "inventory")
+
+		);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			String stringEgg = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("creature") : null);

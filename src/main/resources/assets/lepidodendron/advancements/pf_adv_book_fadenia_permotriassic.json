@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:fadenia_permotriassic_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_fadenia_permotriassic.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_fadenia_permotriassic.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_fadenia_permotriassic"
+		}
+	}
+}

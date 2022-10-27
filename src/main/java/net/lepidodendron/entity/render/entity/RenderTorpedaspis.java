@@ -15,6 +15,10 @@ public class RenderTorpedaspis extends RenderLiving<EntityPrehistoricFloraTorped
         super(mgr, new ModelTorpedaspis(), 0.3f);
     }
 
+    public static float getScaler() {
+        return 0.7F * 0.285F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTorpedaspis entity) {
         return RenderTorpedaspis.TEXTURE;
@@ -27,8 +31,10 @@ public class RenderTorpedaspis extends RenderLiving<EntityPrehistoricFloraTorped
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTorpedaspis entity, float f) {
-        float scale = 0.7F;
-        if (scale < 0.1f) {scale = 0.1f;}
+        float scale = this.getScaler();
+        if (scale < 0.1f) {
+            scale = 0.1f;
+        }
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

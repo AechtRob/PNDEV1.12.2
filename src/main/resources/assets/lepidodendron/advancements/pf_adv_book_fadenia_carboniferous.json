@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:fadenia_carboniferous_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_fadenia_carboniferous.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_fadenia_carboniferous.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_fadenia_carboniferous"
+		}
+	}
+}
