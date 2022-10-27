@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:nahecaris_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_nahecaris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_nahecaris.description"
+		}
+	},
+    "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_nahecaris"
+		}
+	}
+}
