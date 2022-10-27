@@ -1,0 +1,31 @@
+{
+	"name": "Arctinurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/arctinurus_icon.png",
+	"category": "lepidodendron:silurian_animal",
+	"turnin": "lepidodendron:pf_adv_book_arctinurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arctinurus",
+			"title": "Arctinurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/arctinurus.png"],
+			"title": "A. boltoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arctinurus",
+			"type": "text",
+			"text": "Arctinurus is a rather large Silurian Trilobite from Europe and North America. It reached lengths up to 30 cm and lived within semi-tropical waters. The pygidia is sectioned into leaf shaped portions which end in a spine. Many complete specimens of Arctinurus can be found in the Rochester Shale, New York, USA."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arctinurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Uralichas",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/uralichas_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_uralichas",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_uralichas",
+			"title": "Uralichas",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/uralichas.png"],
+			"title": "U. hispanicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uralichas",
+			"type": "text",
+			"text": "Uralichas is a large Ordovician trilobite from the Iberian peninsula and Morocco. It is well distinguished to other large trilobites for it's elongated telson and it's odd cephalon shape. Uralichas fossils suggest that they could've grown as large as 66 cm in length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_uralichas",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

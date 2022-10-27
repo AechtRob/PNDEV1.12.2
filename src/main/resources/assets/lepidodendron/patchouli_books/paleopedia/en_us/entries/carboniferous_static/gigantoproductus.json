@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gigantoproductus",
 			"title": "Gigantoproductus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Aquatic$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Strophomenata$(br)>Productida$(br)>Monticuliferidae"
 		},
 		{
 			"type": "image",

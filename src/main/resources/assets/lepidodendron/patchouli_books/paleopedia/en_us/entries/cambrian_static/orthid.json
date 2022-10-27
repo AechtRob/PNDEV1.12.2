@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brachiopod_orthid",
 			"title": "Orthid",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Permian$(br2)$(l)Habitat:$() $(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Orthida"
+			"text": "$(l)Temporal Range:$() Cambrian-Permian$(br2)$(l)Habitat:$() Marine$(br2)>Brachiopoda$(br)>Rhynchonellata$(br)>Orthida"
 		},
 		{
 			"type": "image",
