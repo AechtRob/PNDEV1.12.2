@@ -14,8 +14,10 @@ public class RenderThecodontosaurus extends RenderLiving<EntityPrehistoricFloraT
     public RenderThecodontosaurus(RenderManager mgr) {
         super(mgr, new ModelThecodontosaurus(), 0.3f);
     }
-    public float scalerModel = 0.47F;
 
+    public static float getScaler() {
+        return 0.47F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraThecodontosaurus entity) {
@@ -29,7 +31,7 @@ public class RenderThecodontosaurus extends RenderLiving<EntityPrehistoricFloraT
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraThecodontosaurus entity, float f) {
-        float scale = entity.getAgeScale() * this.scalerModel;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

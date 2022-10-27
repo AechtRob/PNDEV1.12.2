@@ -3,13 +3,11 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
-import net.lepidodendron.entity.EntityPrehistoricFloraUrocordylus;
 import net.lepidodendron.entity.EntityPrehistoricFloraXinpusaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelXinpusaurus extends AdvancedModelBaseExtended {
@@ -288,13 +286,10 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Xinpusaurus.render(f5 * 0.465F);
+        this.Xinpusaurus.render(f5);
     }
+
     public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
         this.Xinpusaurus.rotateAngleY = (float) Math.toRadians(90);
         this.Xinpusaurus.rotateAngleX = (float) Math.toRadians(-15);
         this.Chest.rotateAngleX = (float) Math.toRadians(5);
@@ -305,10 +300,8 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.Xinpusaurus.render(0.01F);
         this.Xinpusaurus.offsetY = -0.2F;
         this.Xinpusaurus.offsetX = -0.15F;
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -319,7 +312,7 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Xinpusaurus.offsetY = 0.85F; //72
+        //this.Xinpusaurus.offsetY = 0.85F; //72
 
         EntityPrehistoricFloraXinpusaurus Xin = (EntityPrehistoricFloraXinpusaurus) e;
 
