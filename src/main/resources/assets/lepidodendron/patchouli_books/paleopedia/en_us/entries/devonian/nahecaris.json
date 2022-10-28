@@ -1,7 +1,7 @@
 {
 	"name": "Nahecaris",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/nahecaris_icon.png",
+	"icon": "lepidodendron:nahecaris_raw",
 	"category": "lepidodendron:devonian_animal",
 	"turnin": "lepidodendron:pf_adv_book_nahecaris",
 	"pages": [
