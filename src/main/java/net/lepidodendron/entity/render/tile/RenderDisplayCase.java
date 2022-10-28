@@ -4741,7 +4741,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelWalliserops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWeinberginaRaw.block) {
-                        double offset = 0.77;
+                        double offset = 0.47;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -4770,7 +4770,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
+                        GlStateManager.scale(1.9,1.9,1.9);
                         this.bindTexture(TEXTURE_WEINBERGINA);
                         modelWeinbergina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -4809,7 +4809,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelWillwerathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWingertshellicusRaw.block) {
-                        double offset = 0.77;
+                        double offset = 0.26;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -4838,7 +4838,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
+                        GlStateManager.scale(1,1,1);
                         this.bindTexture(TEXTURE_WINGERTSHELLICUS);
                         modelWingertshellicus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }

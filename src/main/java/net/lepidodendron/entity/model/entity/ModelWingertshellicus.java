@@ -696,9 +696,9 @@ public class ModelWingertshellicus extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
         this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.4F;
-        this.Body.offsetY = -0.2F;
-        this.Body.offsetZ = 0.01F;
+        this.Body.offsetX = -0.F;
+        this.Body.offsetY = -0F;
+        this.Body.offsetZ = 0.0F;
         this.Body.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();

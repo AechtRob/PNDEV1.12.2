@@ -167,7 +167,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_EUSTHENOPTERON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eusthenopteron.png");
     private final ModelEusthenopteron modelEusthenopteron;
     private static final ResourceLocation TEXTURE_FADENIAC = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_carboniferous.png");
-    private static final ResourceLocation TEXTURE_FADENIAPT = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_permo_triassic.png");
+    private static final ResourceLocation TEXTURE_FADENIAPT = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fadenia_permotriassic.png");
     private final ModelFadenia modelFadenia;
     private static final ResourceLocation TEXTURE_FALCATUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/falcatus_m.png");
     private final ModelFalcatus modelFalcatus;
@@ -5896,25 +5896,25 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
 
     public void renderFadeniaCarboniferous(EnumFacing facing, float currentRotation, double x, double y, double z) {
-        double offset = -0.4;
-        double voffset = 0.55;
-        double hoffset = 0.9;
+        double offset = 0.1;
+        double voffset = 0;
+        double hoffset = 0;
         setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
         float scalerModel = RenderFadeniaCarboniferous.getScaler();
         GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
         this.bindTexture(TEXTURE_FADENIAC);
-        modelFadenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+        modelFadenia.renderStaticC(Minecraft.getMinecraft().player.ticksExisted);
     }
 
     public void renderFadeniaPermotriassic(EnumFacing facing, float currentRotation, double x, double y, double z) {
-        double offset = -0.4;
-        double voffset = 0.55;
-        double hoffset = 0.9;
+        double offset = 0.05;
+        double voffset = 0;
+        double hoffset = 0;
         setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
         float scalerModel = RenderFadeniaPermotriassic.getScaler();
         GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
         this.bindTexture(TEXTURE_FADENIAPT);
-        modelFadenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+        modelFadenia.renderStaticPT(Minecraft.getMinecraft().player.ticksExisted);
     }
 
     public void renderMussaurus(EnumFacing facing, float currentRotation, double x, double y, double z) {
