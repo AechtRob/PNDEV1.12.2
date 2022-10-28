@@ -1,0 +1,31 @@
+{
+	"name": "Ogyginus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ogyginus_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_ogyginus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ogyginus",
+			"title": "Ogyginus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ogyginus.png"],
+			"title": "O. corndensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ogyginus",
+			"type": "text",
+			"text": "Ogyginus is an Ordivician trilobite most commonly found in Wales. The medium sized type species, O. corndensis, inhabited the freezing sub-glacial oceans of the Ordovician. However, the species O. forteyi which comes from the Valongo Formation, Portugal, is known to grow up to lengths of 72 cm. Ogyginus therefore is among the largest trilobites and also lived in close proximity with other massive trilobites like Hungioides, Isotelus, and Uralichas."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ogyginus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
