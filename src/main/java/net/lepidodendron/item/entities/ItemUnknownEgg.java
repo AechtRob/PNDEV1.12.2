@@ -284,7 +284,9 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ogyginus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_skeemella", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_uralichas", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_wingertshellicusa", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_wingertshellicus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_nahecaris", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_weinbergina", "inventory")
 
 		);
 

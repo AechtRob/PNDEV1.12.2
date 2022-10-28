@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraThecodontosaurus extends EntityPrehistoricFlo
 
 	@Override
 	public int getEggType() {
-		return 1; //medium
+		return 0; //small
 	}
 
 	@Override

@@ -43,7 +43,7 @@ public class EntityPrehistoricFloraArctinurus extends EntityPrehistoricFloraTril
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

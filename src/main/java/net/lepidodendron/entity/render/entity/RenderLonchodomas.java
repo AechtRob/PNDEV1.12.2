@@ -30,7 +30,7 @@ public class RenderLonchodomas extends RenderLiving<EntityPrehistoricFloraLoncho
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLonchodomas entity, float f) {
-        float scale = 0.9F;
+        float scale = 0.9F * 1.50F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

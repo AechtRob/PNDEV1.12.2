@@ -164,7 +164,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
         if (this.getIsFast() && this.isReallyInWater()) {
             calcSpeed = calcSpeed * 1.52F;
         }
-		if (this.isAtBottom() && !this.getIsFast() && this.getEatTarget() == null) {
+		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
 			return 0;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;

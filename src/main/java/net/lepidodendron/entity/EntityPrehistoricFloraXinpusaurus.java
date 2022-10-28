@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		minWidth = 0.1F;
 		maxWidth = 0.5F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 14.0D;
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 
 	@Override
 	public boolean divesToLay() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -116,10 +116,9 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.2, 5, true, 0));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		//this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		tasks.addTask(4, new EntityAIWatchClosest(this, EntityPrehistoricFloraFishBase.class, 8.0F));
 		tasks.addTask(5, new EntityAILookIdle(this));
+		this.targetTasks.addTask(0, new EatShellfishItemsAI(this, 1));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		//this.targetTasks.addTask(1, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		//this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
@@ -233,6 +232,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		}
 		return LepidodendronMod.XINPUSAURUS_LOOT;
 	}
+
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraXinpusaurus(this.world);

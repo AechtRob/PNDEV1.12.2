@@ -426,7 +426,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
 
             this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
             this.chainSwing(Tail, speed, 0.1F, -0.2, f2, 0.5F);
-            this.chainSwing(Torso, speed, 0.1F, -0.2, f2, 0.7F);
+            this.chainSwing(Torso, speed, 0.025F, -0.2, f2, 0.7F);
             //this.bob(Mastodonsaurus, speed*2, 0.3F, false, f2, 1F);
 
             this.body4.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.5), false, -1, f2, 1);
@@ -486,8 +486,8 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
                 this.walk(forelegR3, speed, 0.6F, false, 1, 0.3F, f2, 0.5F);
 
                 this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
-                this.chainSwing(Torso, speed, 0.1F, -0.2, f2, 0.7F);
-                //this.bob(Mastodonsaurus, speed*2, 0.3F, false, f2, 1F);
+                this.chainSwing(Torso, speed, 0.05F, -0.2, f2, 0.7F);
+                this.bob(body4, speed*2, 0.05F, false, f2, 1F);
 
                 //this.body4.offsetZ = this.moveBoxExtended(speed * 2, (float) Math.toRadians(1.5), false, -1, f2, 1);
 
@@ -496,7 +496,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
             this.chainSwing(Tail, speed * bottomModifierTail, 0.6F * bottomModifierTail, -0.4, f2, 0.5F * bottomModifierTail);
             if (!atBottom) {
                 this.chainWave(Tail, speed, 0.05F, -0.2, f2, 0.7F);
-                this.chainSwing(Torso, speed, 0.15F, -0.2, f2, 0.7F);
+                this.chainSwing(Torso, speed, 0.05F, -0.2, f2, 0.7F);
             }
             else {
                 this.swing(neck, speed * bottomModifierTail * 0.33F, 0.1F, false, 0, -0.05F, f2, 0.5F);

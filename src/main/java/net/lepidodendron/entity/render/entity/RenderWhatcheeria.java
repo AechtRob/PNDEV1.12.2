@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraPederpes;
 import net.lepidodendron.entity.EntityPrehistoricFloraWhatcheeria;
 import net.lepidodendron.entity.model.entity.ModelWhatcheeria;
 import net.minecraft.client.renderer.GlStateManager;
@@ -28,7 +27,7 @@ public class RenderWhatcheeria extends RenderLiving<EntityPrehistoricFloraWhatch
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraWhatcheeria entity, float f) {
-        float scale = entity.getAgeScale()*2.1F;
+        float scale = entity.getAgeScale() * 2.05F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

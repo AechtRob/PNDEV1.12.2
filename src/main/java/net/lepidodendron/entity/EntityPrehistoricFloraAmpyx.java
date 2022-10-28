@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraAmpyx extends EntityPrehistoricFloraTrilobite
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician - Devonian";}
+	public static String getPeriod() {return "Ordovician - Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

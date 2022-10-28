@@ -10,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderBesanosaurus extends RenderLiving<EntityPrehistoricFloraBesanosaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/besanosaurus.png");
-    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/besanosaurus_baby.png");
 
     public RenderBesanosaurus(RenderManager mgr) {
         super(mgr, new ModelBesanosaurus(), 0.0f);
@@ -18,9 +17,6 @@ public class RenderBesanosaurus extends RenderLiving<EntityPrehistoricFloraBesan
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBesanosaurus entity) {
-        if (entity.isSmall()) {
-            return RenderBesanosaurus.TEXTURE_BABY;
-        }
         return RenderBesanosaurus.TEXTURE;
     }
 

@@ -130,7 +130,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 
 	@Override
 	protected float getAISpeedFish() {
-		if (this.isAtBottom() && !this.getIsFast() && this.getEatTarget() == null) {
+		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
 			return 0;
 		}
 		return 0.232f;
@@ -206,7 +206,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));

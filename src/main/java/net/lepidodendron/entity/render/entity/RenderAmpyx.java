@@ -30,7 +30,7 @@ public class RenderAmpyx extends RenderLiving<EntityPrehistoricFloraAmpyx> {
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmpyx entity, float f) {
-        float scale = 0.7F;
+        float scale = 0.7F * 1.65F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }
