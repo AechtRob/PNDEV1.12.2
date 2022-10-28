@@ -77,6 +77,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelCheirurus modelCheirurus;
     private static final ResourceLocation TEXTURE_CHELONIELLON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cheloniellon.png");
     private final ModelCheloniellon modelCheloniellon;
+    private static final ResourceLocation TEXTURE_CHOTECOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/chotecops.png");
+    private final ModelChotecops modelChotecops;
     private static final ResourceLocation TEXTURE_CLATROTITAN = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_clatrotitan.png");
     private static final ResourceLocation TEXTURE_CLATROTITAN_WING = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/titanoptera_clatrotitan_wing.png");
     private final ModelTitanoptera modelTitanoptera;
@@ -181,6 +183,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelMimetaster modelMimetaster;
     private static final ResourceLocation TEXTURE_MONTECARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/montecaris.png");
     private final ModelMontecaris modelMontecaris;
+    private static final ResourceLocation TEXTURE_NAHECARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nahecaris.png");
+    private final ModelNahecaris modelNahecaris;
     private static final ResourceLocation TEXTURE_NECTOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nectocaris.png");
     private final ModelNectocaris modelNectocaris;
     private static final ResourceLocation TEXTURE_ODARAIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/odaraia.png");
@@ -309,6 +313,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelCanadia = new ModelCanadia();
         this.modelCheirurus = new ModelCheirurus();
         this.modelCheloniellon = new ModelCheloniellon();
+        this.modelChotecops = new ModelChotecops();
         this.modelCrotalocephalus = new ModelCrotalocephalus();
         this.modelDalmanites = new ModelDalmanites();
         this.modelDiania = new ModelDiania();
@@ -347,6 +352,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelMicrodictyon = new ModelMicrodictyon();
         this.modelMimetaster = new ModelMimetaster();
         this.modelMontecaris = new ModelMontecaris();
+        this.modelNahecaris = new ModelNahecaris();
         this.modelNectocaris = new ModelNectocaris();
         this.modelOdaraia = new ModelOdaraia();
         this.modelOdontogriphus = new ModelOdontogriphus();
@@ -1319,6 +1325,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_CHELONIELLON);
                         modelCheloniellon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
+                    else if (itemstack.getItem() == ItemChotecopsRaw.block) {
+                        double offset = 0.38;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.7F,0.7F,0.7F);
+                        this.bindTexture(TEXTURE_CHOTECOPS);
+                        modelChotecops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemTitanopteraClatrotitanRaw.block) {
                         double offset = 0.49;
@@ -3223,6 +3263,40 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         this.bindTexture(TEXTURE_MONTECARIS);
                         modelMontecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
+                    else if (itemstack.getItem() == ItemNahecarisRaw.block) {
+                        double offset = 0.33;
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                        }
+                        if (facing == EnumFacing.NORTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.SOUTH) {
+                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 1F, 0F, 0F);
+                        }
+                        if (facing == EnumFacing.WEST) {
+                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(90, 0F, 0F, 1F);
+                        }
+                        if (facing == EnumFacing.EAST) {
+                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                            GlStateManager.rotate(270, 0F, 0F, 1F);
+                        }
+                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(1.6F,1.6F,1.6F);
+                        this.bindTexture(TEXTURE_NAHECARIS);
+                        modelNahecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    }
                     else if (itemstack.getItem() == ItemNectocarisRaw.block) {
                         double offset = 0.18;
                         if (facing == EnumFacing.UP) {
@@ -4741,7 +4815,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelWalliserops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWeinberginaRaw.block) {
-                        double offset = 0.77;
+                        double offset = 0.47;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -4770,7 +4844,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
+                        GlStateManager.scale(1.9,1.9,1.9);
                         this.bindTexture(TEXTURE_WEINBERGINA);
                         modelWeinbergina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -4809,7 +4883,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelWillwerathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWingertshellicusRaw.block) {
-                        double offset = 0.77;
+                        double offset = 0.26;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -4838,7 +4912,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
+                        GlStateManager.scale(1,1,1);
                         this.bindTexture(TEXTURE_WINGERTSHELLICUS);
                         modelWingertshellicus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
