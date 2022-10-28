@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/wingertshellicus.png"],
 			"title": "W. backesi",
 			"text": ""
 		},
