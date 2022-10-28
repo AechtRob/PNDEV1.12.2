@@ -127,7 +127,10 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_whatcheeria", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_urocordylus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_fadenia_permotriassic", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/phial_eggs_fadenia_carboniferous", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_fadenia_carboniferous", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_barameda", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_metoposaurus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_parmastega", "inventory")
 
 			);
 
@@ -158,7 +161,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 		{
 			if (isBlockFromItemStack(stack)) {
 				String resourcelocation = stack.getTagCompound().getString("id_eggs");
-				return "item.phial_eggs_" + getEggStr(resourcelocation);
+				return "item.pf_phial_eggs_" + getEggStr(resourcelocation);
 			}
 			return super.getTranslationKey(stack);
 		}

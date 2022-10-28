@@ -73,6 +73,7 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 		super.readEntityFromNBT(compound);
 		this.setVariant(compound.getInteger("variant"));
 	}
+
 	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
 		livingdata = super.onInitialSpawn(difficulty, livingdata);
 		this.setVariant(rand.nextInt(10));
@@ -188,6 +189,9 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
+		if (this.getVariant() <= 8) {
+			return LepidodendronMod.LONCHODOMAS_LOOT_VARIANT;
+		}
 		return LepidodendronMod.LONCHODOMAS_LOOT;
 	}
 

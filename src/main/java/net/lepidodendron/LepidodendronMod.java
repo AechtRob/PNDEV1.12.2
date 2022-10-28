@@ -1290,6 +1290,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation AMPYX_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx_variant"));
 	public static final int ENTITY_LONCHODOMAS = 516;
 	public static final ResourceLocation LONCHODOMAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas"));
+	public static final ResourceLocation LONCHODOMAS_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas_variant"));
 	public static final int ENTITY_NEEYAMBASPIS= 517;
 	public static final int ENTITY_PITURIASPIS = 518;
 	public static final int ENTITY_TEGEOLEPIS = 519;
@@ -1337,8 +1338,6 @@ public class LepidodendronMod {
 	public static final int GUI_COAL_TAR_PROCESSOR_ID = 547;
 	public static final int GUI_OLIGOPOOL_MACHINE_ID = 548;
 	public static final int ENTITY_ASCOCERAS_BABY = 549;
-
-
 
 
 

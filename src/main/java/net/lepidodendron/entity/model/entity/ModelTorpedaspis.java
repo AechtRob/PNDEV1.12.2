@@ -243,8 +243,8 @@ public class ModelTorpedaspis extends AdvancedModelBase {
 
     public void renderStatic(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.body.offsetX = -0.13F;
-        this.body.offsetZ = 0.07F;
+        this.body.offsetX = -0.05F;
+        this.body.offsetZ = 0.F;
         this.body.render(0.01F);
     }
 

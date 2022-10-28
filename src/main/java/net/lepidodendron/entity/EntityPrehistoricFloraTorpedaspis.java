@@ -7,8 +7,7 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
 import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -47,11 +46,6 @@ public class EntityPrehistoricFloraTorpedaspis extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraTorpedaspis(this.world);
-	}
-
-	@Override
 	public int getAdultAge() {
 		return 32000;
 	}
@@ -61,13 +55,13 @@ public class EntityPrehistoricFloraTorpedaspis extends EntityPrehistoricFloraAge
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -111,7 +105,7 @@ public class EntityPrehistoricFloraTorpedaspis extends EntityPrehistoricFloraAge
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
 		tasks.addTask(1, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}

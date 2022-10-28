@@ -411,7 +411,7 @@ public class ModelThecodontosaurus extends AdvancedModelBaseExtended {
         this.setRotateAngle(Caudal_Bodydistal_r1, -0.0524F, 0.0F, 0.0F);
         this.setRotateAngle(Caudaldistal_r1, -0.2094F, 0.0F, 0.0F);
         this.setRotateAngle(Tail5, -0.4363F, 0.0F, 0.0F);
-        this.Chest.offsetY = -0.05F;
+        this.Chest.offsetY = -0.0F;
         this.Chest.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();

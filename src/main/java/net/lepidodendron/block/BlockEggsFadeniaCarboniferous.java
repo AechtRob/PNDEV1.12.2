@@ -84,7 +84,7 @@ public class BlockEggsFadeniaCarboniferous extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-			return new ItemStack(BlockEggsHelicoprionPlaceable.block, (int) (1));
+			return new ItemStack(BlockEggsFadeniaCarboniferousPlaceable.block, (int) (1));
 		}
 
 		@Override

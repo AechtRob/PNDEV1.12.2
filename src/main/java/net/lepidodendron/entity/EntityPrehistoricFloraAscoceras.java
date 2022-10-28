@@ -67,7 +67,7 @@ public class EntityPrehistoricFloraAscoceras extends EntityPrehistoricFloraNauti
 		return true;
 	}
 
-	public static String getPeriod() {return "Ordovician";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnPederpes;
 import net.lepidodendron.block.BlockAmphibianSpawnWhatcheeria;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -54,15 +53,15 @@ public class EntityPrehistoricFloraWhatcheeria extends EntityPrehistoricFloraSwi
 		enablePersistence();
 		//minSize = 0.6F;
 		//maxSize = 1.0F;
-		minWidth = 0.7F;
+		minWidth = 0.12F;
 		maxWidth = 0.5F;
 		maxHeight = 0.20F;
-		maxHealthAgeable = 10.0D;
+		maxHealthAgeable = 18.0D;
 	}
 
 	@Override
 	public boolean isSmall() {
-		return true;
+		return this.getAgeScale() < 0.55;
 	}
 
 	public static String getPeriod() {return "Carboniferous";}
@@ -93,7 +92,7 @@ public class EntityPrehistoricFloraWhatcheeria extends EntityPrehistoricFloraSwi
 
 	@Override
 	public int getAdultAge() {
-		return 32000;
+		return 64000;
 	}
 
 	@Override

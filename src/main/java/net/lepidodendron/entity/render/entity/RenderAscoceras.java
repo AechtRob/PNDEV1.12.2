@@ -30,7 +30,7 @@ public class RenderAscoceras extends RenderLiving<EntityPrehistoricFloraAscocera
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAscoceras entity, float f) {
-        float scale = 0.85F;
+        float scale = entity.getAgeScale() * 0.85F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

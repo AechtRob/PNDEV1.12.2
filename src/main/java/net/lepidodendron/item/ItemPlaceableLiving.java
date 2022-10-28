@@ -3,6 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.entity.EntityPrehistoricFloraLonchodomas;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -161,7 +162,12 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						String nbtStr = "";
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-							nbtStr = "{AgeTicks:0}";
+							if (entity instanceof EntityPrehistoricFloraLonchodomas) {
+								nbtStr = "{AgeTicks:0,variant:" + itemRand.nextInt(20)+ "}";
+							}
+							else {
+								nbtStr = "{AgeTicks:0}";
+							}
 						}
 						if (!(worldIn.isRemote)) {
 							if (iblockstate.getMaterial() == Material.WATER) {
