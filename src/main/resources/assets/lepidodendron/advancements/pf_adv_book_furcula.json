@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:furcula_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_furcula.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_furcula.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_furcula"
+		}
+	}
+}

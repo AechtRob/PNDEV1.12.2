@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:rhynia_item"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_rhynia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_rhynia.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_rhynia"
+		}
+	}
+}

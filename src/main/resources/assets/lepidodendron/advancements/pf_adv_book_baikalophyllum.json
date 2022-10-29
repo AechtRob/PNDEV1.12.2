@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:baikalophyllum"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_baikalophyllum.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_baikalophyllum.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_baikalophyllum"
+		}
+	}
+}

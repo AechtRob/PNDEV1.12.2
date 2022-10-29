@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:umaltolepis"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_umaltolepis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_umaltolepis.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_umaltolepis"
+		}
+	}
+}

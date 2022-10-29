@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:odontopteris_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_odontopteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_odontopteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_odontopteris"
+		}
+	}
+}

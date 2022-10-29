@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:archaeopteris_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_archaeopteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_archaeopteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_archaeopteris"
+		}
+	}
+}

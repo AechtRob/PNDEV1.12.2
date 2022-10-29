@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.EntityPrehistoricFloraMastodonsaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraMetoposaurus;
 import net.lepidodendron.entity.model.entity.ModelMetoposaurus;
 import net.minecraft.client.renderer.GlStateManager;
@@ -27,7 +26,7 @@ public class RenderMetoposaurus extends RenderLiving<EntityPrehistoricFloraMetop
     }
 
     protected void preRenderCallback(EntityPrehistoricFloraMetoposaurus entity, float f) {
-        float scale = entity.getAgeScale()*0.7F;
+        float scale = entity.getAgeScale() * 0.7F * 0.8F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.67F;
     }

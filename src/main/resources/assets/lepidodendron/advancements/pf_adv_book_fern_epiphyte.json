@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:fern_epiphyte"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_fern_epiphyte.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_fern_epiphyte.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_fern_epiphyte"
+		}
+	}
+}

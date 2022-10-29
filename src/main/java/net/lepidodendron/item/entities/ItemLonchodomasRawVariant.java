@@ -3,7 +3,6 @@ package net.lepidodendron.item.entities;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
@@ -47,7 +46,7 @@ public class ItemLonchodomasRawVariant extends ElementsLepidodendronMod.ModEleme
 			super(2, 0.1f, false);
 			setTranslationKey("pf_lonchodomas_raw_variant");
 			setRegistryName("lonchodomas_raw_variant");
-			setCreativeTab(TabLepidodendronMobile.tab);
+			setCreativeTab(null);
 			setMaxStackSize(64);
 		}
 	}

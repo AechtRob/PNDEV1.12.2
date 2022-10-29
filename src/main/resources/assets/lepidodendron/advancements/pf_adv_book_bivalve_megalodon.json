@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:bivalve_megalodon"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_bivalve_megalodon.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_bivalve_megalodon.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_bivalve_megalodon"
+		}
+	}
+}

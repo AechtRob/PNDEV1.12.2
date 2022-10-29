@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:pertica"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_pertica.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_pertica.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_pertica"
+		}
+	}
+}

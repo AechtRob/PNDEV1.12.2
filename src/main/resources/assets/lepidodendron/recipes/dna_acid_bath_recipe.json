@@ -23,15 +23,15 @@
     },
     "6": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "slabIron"
     },
     "7": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "slabIron"
     },
     "8": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "slabIron"
     }
   },
   "result": {

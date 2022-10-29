@@ -3,7 +3,6 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteSwimBase;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteSwimBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderSwimWaterColumn;
@@ -148,7 +147,8 @@ public class EntityPrehistoricFloraFlagellopantopus extends EntityPrehistoricFlo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.FLAGELLOPANTOPUS_LOOT;
+		return null;
+		//return LepidodendronMod.FLAGELLOPANTOPUS_LOOT;
 	}
 
 }
