@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:coniopteris"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_coniopteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_coniopteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_coniopteris"
+		}
+	}
+}

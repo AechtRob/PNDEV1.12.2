@@ -6,12 +6,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -93,6 +93,8 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| dimID == LepidodendronConfig.dimCarboniferous
 				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
 		) {
 			dimensionCriteria = true;
 		}
@@ -109,7 +111,8 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 
 		if (dimID == LepidodendronConfig.dimSilurian
 				|| dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimCarboniferous
-				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimPermian || dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
 		)
 			weight = 30; //Less in these dimensions
 
@@ -139,6 +142,26 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Ocean) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeTriassic)
+		{
+			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
+			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+		if (biome instanceof BiomeJurassic)
+		{
+			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
+			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
 				biomeCriteria = true;
 			}
 			else {
@@ -182,6 +205,8 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
+				|| (dimID == LepidodendronConfig.dimTriassic)
+				|| (dimID == LepidodendronConfig.dimJurassic)
 				) {
 			dimWeight = 2;
 		}
@@ -616,7 +641,7 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Marine shelled creature");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian");}
+				tooltip.add("Periods: late Ordovician - Silurian - Devonian - Carboniferous - Permian - Triassic - mid-Jurassic");}
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 

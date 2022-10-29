@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraHarpes extends EntityPrehistoricFloraTrilobiteBottomBase {
 
-	private static final DataParameter<Integer> SHINY= EntityDataManager.createKey(EntityPrehistoricFloraHarpes.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> SHINY = EntityDataManager.createKey(EntityPrehistoricFloraHarpes.class, DataSerializers.VARINT);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -54,7 +54,6 @@ public class EntityPrehistoricFloraHarpes extends EntityPrehistoricFloraTrilobit
 
 	// these two could be used for many different alts in the future
 	public int getVariant() {
-
 		return this.dataManager.get(SHINY);
 	}
 

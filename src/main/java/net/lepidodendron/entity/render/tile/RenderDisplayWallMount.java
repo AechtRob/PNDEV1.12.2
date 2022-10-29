@@ -3800,7 +3800,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                         this.bindTexture(TEXTURE_MENASPIS);
                         modelMenaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     } else if (itemstack.getItem() == ItemMetoposaurusRaw.block) {
-                        double offset = -0.35;
+                        double offset = -0.26;
                         double voffset = 0.04;
                         if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
                             GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
@@ -3822,7 +3822,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             GlStateManager.rotate(90, 0F, 1F, 0F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                        GlStateManager.scale(5.4, 5.4, 5.4);
+                        GlStateManager.scale(5.4 * 0.8F, 5.4 * 0.8F, 5.4 * 0.8F);
                         this.bindTexture(TEXTURE_METOPOSAURUS);
                         modelMetoposaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     } else if (itemstack.getItem() == ItemMixopterusRaw.block) {
@@ -4046,7 +4046,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                             GlStateManager.rotate(90, 0F, 1F, 0F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                        GlStateManager.scale(1.4, 1.4, 1.4);
+                        GlStateManager.scale(1.4 * 1.2F, 1.4 * 1.2F, 1.4 * 1.2F);
                         this.bindTexture(TEXTURE_OSTEOLEPIS);
                         modelOsteolepis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     } else if (itemstack.getItem() == ItemPalaeoniscumRaw.block) {

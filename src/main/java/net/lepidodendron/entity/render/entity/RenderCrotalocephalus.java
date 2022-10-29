@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.entity;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraCrotalocephalus;
 import net.lepidodendron.entity.model.entity.ModelCrotalocephalus;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -23,5 +24,12 @@ public class RenderCrotalocephalus extends RenderLiving<EntityPrehistoricFloraCr
     protected void applyRotations(EntityPrehistoricFloraCrotalocephalus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraCrotalocephalus entity, float f) {
+        float scale = 0.5F;
+        GlStateManager.scale(scale, scale, scale);
+    }
+
 
 }

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:sciadopitys_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_sciadopitys.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_sciadopitys.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_sciadopitys"
+		}
+	}
+}

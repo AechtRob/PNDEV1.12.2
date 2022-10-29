@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:komlopteris_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_komlopteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_komlopteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_komlopteris"
+		}
+	}
+}

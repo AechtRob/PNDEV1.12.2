@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:stauropteris"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_stauropteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_stauropteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_stauropteris"
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:baragwanathia_item"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_baragwanathia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_baragwanathia.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_baragwanathia"
+		}
+	}
+}

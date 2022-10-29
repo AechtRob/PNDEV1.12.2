@@ -27,7 +27,7 @@ public class RenderOrnithoprion extends RenderLiving<EntityPrehistoricFloraOrnit
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOrnithoprion entity, float f) {
-        float scale = entity.getAgeScale()*0.5F;
+        float scale = entity.getAgeScale() * 0.5F * 1.2F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

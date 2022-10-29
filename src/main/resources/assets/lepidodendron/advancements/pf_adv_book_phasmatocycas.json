@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:phasmatocycas_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_phasmatocycas.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_phasmatocycas.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_phasmatocycas"
+		}
+	}
+}

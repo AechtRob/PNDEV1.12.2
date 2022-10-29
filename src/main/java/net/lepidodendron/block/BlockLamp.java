@@ -85,16 +85,16 @@ public class BlockLamp extends ElementsLepidodendronMod.ModElement {
 				return new AxisAlignedBB(0.07, 0.4, 0.07, 0.93, 1.0, 0.93);
 			}
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
-				return new AxisAlignedBB(0.07, 0.7, 0, 0.93, 1.0, 1);
+				return new AxisAlignedBB(0.07, 0.5, 0, 0.93, 0.9, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.SOUTH) {
-				return new AxisAlignedBB(0.07, 0.7, 0, 0.93, 1.0, 1);
+				return new AxisAlignedBB(0.07, 0.5, 0, 0.93, 0.9, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.EAST) {
-				return new AxisAlignedBB(0, 0.7, 0.07, 1, 1.0, 0.93);
+				return new AxisAlignedBB(0, 0.5, 0.07, 1, 0.9, 0.93);
 			}
 			else { //WEST
-				return new AxisAlignedBB(0, 0.7, 0.07, 1, 1.0, 0.93);
+				return new AxisAlignedBB(0, 0.5, 0.07, 1, 0.9, 0.93);
 			}
 		}
 

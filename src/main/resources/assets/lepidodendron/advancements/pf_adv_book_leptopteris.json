@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:leptopteris"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_leptopteris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_leptopteris.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_leptopteris"
+		}
+	}
+}
