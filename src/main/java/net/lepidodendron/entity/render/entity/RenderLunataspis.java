@@ -12,7 +12,7 @@ public class RenderLunataspis extends RenderLiving<EntityPrehistoricFloraLunatas
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/Lunataspis.png");
 
     public RenderLunataspis(RenderManager mgr) {
-        super(mgr, new ModelLunataspis(), 0.2f);
+        super(mgr, new ModelLunataspis(), 0.0f);
     }
 
     @Override

@@ -123,12 +123,12 @@ public class GUIOligopoolMachine extends ElementsLepidodendronMod.ModElement {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
                 if (index < 2) {
-                    if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
+                    if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
                         return ItemStack.EMPTY;
                     }
                     slot.onSlotChange(itemstack1, itemstack);
                 } else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
-                    if (index < 7 + 27) {
+                    if (index < 2 + 27) {
                         if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
                             return ItemStack.EMPTY;
                         }

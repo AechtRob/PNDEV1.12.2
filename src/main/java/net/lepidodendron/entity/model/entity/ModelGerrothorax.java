@@ -484,7 +484,37 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
+        animator.setAnimation(e.ROAR_ANIMATION); //130 ticks
+        animator.startKeyframe(10);
+        animator.rotate(this.neck, -(float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(62.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(10);
+        animator.startKeyframe(5);
+        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.startKeyframe(10);
+        animator.rotate(this.neck, -(float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(62.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(10);
+        animator.startKeyframe(5);
+        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
+        animator.startKeyframe(10);
+        animator.rotate(this.neck, -(float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(62.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(10);
+        animator.startKeyframe(5);
+        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(5);
         animator.startKeyframe(10);
         animator.rotate(this.neck, -(float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.upperjaw, -(float) Math.toRadians(62.5), (float) Math.toRadians(0), (float) Math.toRadians(0));

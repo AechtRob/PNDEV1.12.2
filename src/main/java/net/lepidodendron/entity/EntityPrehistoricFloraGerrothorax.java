@@ -79,6 +79,8 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 	@Override
 	public void playLivingSound() {
 		//if (this.isReallyInWater()) return;
+		return; //Do nothing because the roar is done by a ticker instead and has no sound
+		/*
 		if (this.getAnimation() != null) {
 			if (this.getAnimation() == NO_ANIMATION && !world.isRemote) {
 				this.setAnimation(ROAR_ANIMATION);
@@ -90,6 +92,8 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 				}
 			}
 		}
+		 */
+
 	}
 
 	@Override
@@ -99,7 +103,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 
 	@Override
 	public int getRoarLength() {
-		return 50;
+		return 130;
 	}
 
 	@Override
@@ -293,7 +297,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 		if (!this.world.isRemote) {
 			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
 				this.setBottomFlag(true);
-				this.setBottomCooldown(300 + rand.nextInt(600));
+				this.setBottomCooldown(600 + rand.nextInt(600));
 			}
 			if (this.isAtBottom() && (this.getBottomFlag())) {
 				this.setBottomCooldown(this.getBottomCooldown() - 1);
@@ -303,7 +307,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 			}
 			if (this.getBottomCooldown() <= 0 && this.getBottomFlag()) {
 				this.setBottomFlag(false);
-				this.setSwimCooldown(200 + rand.nextInt(300));
+				this.setSwimCooldown(200 + rand.nextInt(200));
 			}
 			if (!(this.getBottomFlag())) {
 				this.setSwimCooldown(this.getSwimCooldown() - 1);
