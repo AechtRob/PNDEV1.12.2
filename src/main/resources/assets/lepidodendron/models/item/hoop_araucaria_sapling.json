@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:blocks/hoop_araucaria_sapling"
+    "layer0": "lepidodendron:blocks/araucaria_hoop_sapling"
   }
 }
