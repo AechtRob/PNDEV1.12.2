@@ -1467,7 +1467,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
+                        GlStateManager.scale(0.8F * 0.5F,0.8F * 0.5F,0.8F * 0.5F);
                         this.bindTexture(TEXTURE_CRYPTOMARTUS);
                         modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -2829,7 +2829,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemLunataspisRaw.block) {
-                        double offset = 0.55;
+                        double offset = 0.335;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -2858,6 +2858,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(0.6F, 0.6F, 0.6F);
                         this.bindTexture(TEXTURE_LUNATASPIS);
                         modelLunataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }

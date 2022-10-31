@@ -1058,7 +1058,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.rotate(180, 0F, 0F, 1F);
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
                         this.bindTexture(TEXTURE_UROCORDYLUS);
-                        GlStateManager.scale(0.49F,0.49F,0.49F);
+                        GlStateManager.scale(0.49F * 1.4F,0.49F * 1.4F,0.49F * 1.4F);
                         modelUrocordylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWhatcheeriaRaw.block) {

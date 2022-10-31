@@ -24,14 +24,14 @@
     },
     "6": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "slabIron"
     },
     "7": {
       "item": "lepidodendron:redstone_component"
     },
     "8": {
       "type": "forge:ore_dict",
-      "ore": "ingotIron"
+      "ore": "slabIron"
     }
   },
   "result": {

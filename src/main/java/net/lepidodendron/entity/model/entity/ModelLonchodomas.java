@@ -7,7 +7,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 public class ModelLonchodomas extends AdvancedModelBase {
-    private final AdvancedModelRenderer Lanceaspis;
+    private final AdvancedModelRenderer LonchodomasMain;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
     private final AdvancedModelRenderer cube_r3;
@@ -30,48 +30,48 @@ public class ModelLonchodomas extends AdvancedModelBase {
         this.textureWidth = 64;
         this.textureHeight = 64;
 
-        this.Lanceaspis = new AdvancedModelRenderer(this);
-        this.Lanceaspis.setRotationPoint(-0.5F, 23.25F, 1.0F);
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 5, 11, 0.0F, -0.75F, -4.85F, 1, 1, 3, 0.0F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 12, 14, -0.5F, -0.5F, -0.3F, 2, 1, 1, -0.02F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 8, 6, 1.25F, -0.5F, -1.45F, 1, 1, 1, 0.02F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 6, 15, -1.25F, -0.5F, -1.45F, 1, 1, 1, 0.02F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 0, 7, -1.0F, -0.5F, -1.75F, 3, 1, 2, 0.03F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 10, 12, -1.0F, -0.5F, -2.75F, 3, 1, 1, 0.02F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 4, 0, -6.5F, 0.0F, -2.75F, 14, 0, 14, 0.02F, false));
-        this.Lanceaspis.cubeList.add(new ModelBox(Lanceaspis, 0, 0, 0.0F, -0.525F, -4.25F, 1, 1, 2, 0.02F, false));
+        this.LonchodomasMain = new AdvancedModelRenderer(this);
+        this.LonchodomasMain.setRotationPoint(-0.5F, 23.25F, 2.0F);
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 5, 11, 0.0F, -0.75F, -4.85F, 1, 1, 3, 0.0F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 12, 14, -0.5F, -0.5F, -0.3F, 2, 1, 1, -0.02F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 8, 6, 1.25F, -0.5F, -1.45F, 1, 1, 1, 0.02F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 6, 15, -1.25F, -0.5F, -1.45F, 1, 1, 1, 0.02F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 0, 7, -1.0F, -0.5F, -1.75F, 3, 1, 2, 0.03F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 10, 12, -1.0F, -0.5F, -2.75F, 3, 1, 1, 0.02F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 4, 0, -6.5F, 0.0F, -2.75F, 14, 0, 14, 0.0F, false));
+        this.LonchodomasMain.cubeList.add(new ModelBox(LonchodomasMain, 0, 0, 0.0F, -0.525F, -4.25F, 1, 1, 2, 0.02F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
         this.cube_r1.setRotationPoint(-3.0F, 0.5F, -2.0F);
-        this.Lanceaspis.addChild(cube_r1);
+        this.LonchodomasMain.addChild(cube_r1);
         this.setRotateAngle(cube_r1, 0.0F, -0.829F, 0.0F);
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 14, 0.675F, -1.0F, -3.95F, 1, 1, 2, -0.01F, false));
 
         this.cube_r2 = new AdvancedModelRenderer(this);
         this.cube_r2.setRotationPoint(0.5F, 0.25F, -4.75F);
-        this.Lanceaspis.addChild(cube_r2);
+        this.LonchodomasMain.addChild(cube_r2);
         this.setRotateAngle(cube_r2, -0.0873F, 0.0F, 0.0F);
         this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 0, -0.5F, -0.5F, -7.15F, 1, 0, 7, 0.0F, false));
 
         this.cube_r3 = new AdvancedModelRenderer(this);
         this.cube_r3.setRotationPoint(3.0F, 0.5F, -2.0F);
-        this.Lanceaspis.addChild(cube_r3);
+        this.LonchodomasMain.addChild(cube_r3);
         this.setRotateAngle(cube_r3, 0.0F, 0.829F, 0.0F);
         this.cube_r3.cubeList.add(new ModelBox(cube_r3, 0, 3, -1.0F, -1.0F, -3.225F, 1, 1, 2, -0.01F, false));
 
         this.AntennaeLeft = new AdvancedModelRenderer(this);
         this.AntennaeLeft.setRotationPoint(1.0F, 0.35F, -4.25F);
-        this.Lanceaspis.addChild(AntennaeLeft);
+        this.LonchodomasMain.addChild(AntennaeLeft);
         this.AntennaeLeft.cubeList.add(new ModelBox(AntennaeLeft, 0, 12, -0.25F, 0.0F, -1.75F, 3, 0, 2, 0.0F, false));
 
         this.AntennaeRight = new AdvancedModelRenderer(this);
         this.AntennaeRight.setRotationPoint(0.0F, 0.35F, -4.25F);
-        this.Lanceaspis.addChild(AntennaeRight);
+        this.LonchodomasMain.addChild(AntennaeRight);
         this.AntennaeRight.cubeList.add(new ModelBox(AntennaeRight, 0, 10, -2.75F, 0.0F, -1.75F, 3, 0, 2, 0.0F, false));
 
         this.LLeg1 = new AdvancedModelRenderer(this);
         this.LLeg1.setRotationPoint(1.0481F, 0.5436F, -2.5F);
-        this.Lanceaspis.addChild(LLeg1);
+        this.LonchodomasMain.addChild(LLeg1);
 
 
         this.cube_r4 = new AdvancedModelRenderer(this);
@@ -82,7 +82,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         this.LLeg2 = new AdvancedModelRenderer(this);
         this.LLeg2.setRotationPoint(1.0F, 0.5F, -1.25F);
-        this.Lanceaspis.addChild(LLeg2);
+        this.LonchodomasMain.addChild(LLeg2);
 
 
         this.cube_r5 = new AdvancedModelRenderer(this);
@@ -93,7 +93,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         this.LLeg3 = new AdvancedModelRenderer(this);
         this.LLeg3.setRotationPoint(1.0981F, 0.5436F, -0.1F);
-        this.Lanceaspis.addChild(LLeg3);
+        this.LonchodomasMain.addChild(LLeg3);
 
 
         this.cube_r6 = new AdvancedModelRenderer(this);
@@ -104,7 +104,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         this.RLeg1 = new AdvancedModelRenderer(this);
         this.RLeg1.setRotationPoint(-0.1481F, 0.5436F, -2.5F);
-        this.Lanceaspis.addChild(RLeg1);
+        this.LonchodomasMain.addChild(RLeg1);
 
 
         this.cube_r7 = new AdvancedModelRenderer(this);
@@ -115,7 +115,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         this.RLeg2 = new AdvancedModelRenderer(this);
         this.RLeg2.setRotationPoint(-0.1981F, 0.5436F, -1.3F);
-        this.Lanceaspis.addChild(RLeg2);
+        this.LonchodomasMain.addChild(RLeg2);
 
 
         this.cube_r8 = new AdvancedModelRenderer(this);
@@ -126,7 +126,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
         this.RLeg3 = new AdvancedModelRenderer(this);
         this.RLeg3.setRotationPoint(-0.1981F, 0.5436F, -0.1F);
-        this.Lanceaspis.addChild(RLeg3);
+        this.LonchodomasMain.addChild(RLeg3);
 
 
         this.cube_r9 = new AdvancedModelRenderer(this);
@@ -140,7 +140,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Lanceaspis.render(f5 * 0.2F);
+        this.LonchodomasMain.render(f5 * 0.2F);
     }
 
     public void renderStatic(float f) {
@@ -148,8 +148,8 @@ public class ModelLonchodomas extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.disableCull();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.Lanceaspis.offsetZ = 0.1F;
-        this.Lanceaspis.render(0.022f);
+        //this.LonchodomasMain.offsetZ = 0.1F;
+        this.LonchodomasMain.render(0.022f);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
@@ -165,7 +165,7 @@ public class ModelLonchodomas extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Lanceaspis.offsetY = 1.2F;
+        this.LonchodomasMain.offsetY = 1.2F;
 
         AdvancedModelRenderer[] legsL = {this.LLeg1, this.LLeg2, this.LLeg3};
         AdvancedModelRenderer[] legsR = {this.RLeg1, this.RLeg2, this.RLeg3};

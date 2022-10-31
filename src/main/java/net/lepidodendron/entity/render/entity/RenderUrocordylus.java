@@ -26,7 +26,7 @@ public class RenderUrocordylus extends RenderLiving<EntityPrehistoricFloraUrocor
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraUrocordylus entity, float f) {
-        float scale = entity.getAgeScale() * 0.21F;
+        float scale = entity.getAgeScale() * 0.21F * 1.4F;
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

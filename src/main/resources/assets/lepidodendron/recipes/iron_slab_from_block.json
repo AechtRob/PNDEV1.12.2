@@ -1,0 +1,26 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "blockIron"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "blockIron"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "blockIron"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:iron_slab",
+    "data": 0,
+    "count": 6
+  }
+}

@@ -1,0 +1,21 @@
+{
+	"display": {
+		"icon": {
+			"item": "minecraft:sapling",
+			"data": 1
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_spruce.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_spruce.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_spruce"
+		}
+	}
+}

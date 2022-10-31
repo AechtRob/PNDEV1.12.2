@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:prototaxites"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_prototaxites.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_prototaxites.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_prototaxites"
+		}
+	}
+}

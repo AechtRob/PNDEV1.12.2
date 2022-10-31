@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:tongchuanophyllum"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_tongchuanophyllum.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_tongchuanophyllum.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_tongchuanophyllum"
+		}
+	}
+}

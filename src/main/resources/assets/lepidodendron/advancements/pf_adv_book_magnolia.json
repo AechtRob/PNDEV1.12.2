@@ -1,0 +1,20 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:magnolia_sapling"
+		 },
+		"title": {
+			"translate": "advancements.pf_adv_book_magnolia.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_magnolia.description"
+		}
+	},
+ "parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_magnolia"
+		}
+	}
+}
