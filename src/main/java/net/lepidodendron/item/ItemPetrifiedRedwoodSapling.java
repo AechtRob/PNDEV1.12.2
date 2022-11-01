@@ -36,7 +36,7 @@ public class ItemPetrifiedRedwoodSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockRedwoodSapling.block);
 			setTranslationKey("pf_petrified_redwood_sapling");
 			setRegistryName("petrified_redwood_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

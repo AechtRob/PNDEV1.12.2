@@ -35,7 +35,6 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
@@ -52,11 +51,6 @@ public class LepidodendronEventSubscribers {
 	public void petrifieds(PlayerContainerEvent event) {
 		Container container = event.getContainer();
 		List<Slot> itemSlots = container.inventorySlots;
-
-		//Don't replace them if the player is still using the integration mod - that will swap them over by itself.
-		if (Loader.isModLoaded("prehistoricfloraintegration")) {
-			return;
-		}
 
 		for (Slot currentSlot : itemSlots) {
 			ItemStack currentItemStack = container.getSlot(currentSlot.slotNumber).getStack();

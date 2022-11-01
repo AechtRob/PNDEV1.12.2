@@ -38,7 +38,7 @@ public class ItemPetrifiedLiriodendronSapling extends ElementsLepidodendronMod.M
 			super(BlockLiriodendronSapling.block);
 			setTranslationKey("pf_petrified_liriodendron_sapling");
 			setRegistryName("petrified_liriodendron_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@Override

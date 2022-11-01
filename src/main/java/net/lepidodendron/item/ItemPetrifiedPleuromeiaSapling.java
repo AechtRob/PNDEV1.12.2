@@ -36,7 +36,7 @@ public class ItemPetrifiedPleuromeiaSapling extends ElementsLepidodendronMod.Mod
 			super(BlockPleuromeiaSapling.block);
 			setTranslationKey("pf_petrified_pleuromeia_sapling");
 			setRegistryName("petrified_pleuromeia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

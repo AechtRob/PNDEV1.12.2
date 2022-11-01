@@ -37,7 +37,7 @@ public class ItemPetrifiedNilssoniocladusSapling extends ElementsLepidodendronMo
 			super(BlockNilssoniocladusSapling.block);
 			setTranslationKey("pf_petrified_nilssoniocladus_sapling");
 			setRegistryName("petrified_nilssoniocladus_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

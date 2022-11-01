@@ -36,7 +36,7 @@ public class ItemPetrifiedSchizoneura extends ElementsLepidodendronMod.ModElemen
 			super(BlockSchizoneuraSapling.block);
 			setTranslationKey("pf_petrified_schizoneura");
 			setRegistryName("petrified_schizoneura");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

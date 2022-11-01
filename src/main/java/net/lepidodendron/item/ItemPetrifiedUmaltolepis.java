@@ -36,7 +36,7 @@ public class ItemPetrifiedUmaltolepis extends ElementsLepidodendronMod.ModElemen
 			super(BlockUmaltolepis.block);
 			setTranslationKey("pf_petrified_umaltolepis");
 			setRegistryName("petrified_umaltolepis");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

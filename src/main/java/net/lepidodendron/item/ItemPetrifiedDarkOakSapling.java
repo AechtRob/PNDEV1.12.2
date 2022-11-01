@@ -36,7 +36,7 @@ public class ItemPetrifiedDarkOakSapling extends ElementsLepidodendronMod.ModEle
 			super(Blocks.SAPLING.getStateFromMeta(5).getBlock());
 			setTranslationKey("pf_petrified_dark_oak_sapling");
 			setRegistryName("petrified_dark_oak_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

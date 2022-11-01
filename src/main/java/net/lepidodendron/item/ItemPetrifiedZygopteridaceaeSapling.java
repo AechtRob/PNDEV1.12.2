@@ -36,7 +36,7 @@ public class ItemPetrifiedZygopteridaceaeSapling extends ElementsLepidodendronMo
 			super(BlockZygopteridaceaeSapling.block);
 			setTranslationKey("pf_petrified_zygopteridaceae_sapling");
 			setRegistryName("petrified_zygopteridaceae_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

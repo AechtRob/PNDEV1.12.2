@@ -36,7 +36,7 @@ public class ItemPetrifiedSahnioxylonSapling extends ElementsLepidodendronMod.Mo
 			super(BlockSahnioxylonSapling.block);
 			setTranslationKey("pf_petrified_sahnioxylon_sapling");
 			setRegistryName("petrified_sahnioxylon_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

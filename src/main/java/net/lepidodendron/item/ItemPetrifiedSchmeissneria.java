@@ -36,7 +36,7 @@ public class ItemPetrifiedSchmeissneria extends ElementsLepidodendronMod.ModElem
 			super(BlockSchmeissneria.block);
 			setTranslationKey("pf_petrified_schmeissneria");
 			setRegistryName("petrified_schmeissneria");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

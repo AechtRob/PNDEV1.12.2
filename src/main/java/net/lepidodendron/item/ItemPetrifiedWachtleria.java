@@ -36,7 +36,7 @@ public class ItemPetrifiedWachtleria extends ElementsLepidodendronMod.ModElement
 			super(BlockWachtleria.block);
 			setTranslationKey("pf_petrified_wachtleria");
 			setRegistryName("petrified_wachtleria");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

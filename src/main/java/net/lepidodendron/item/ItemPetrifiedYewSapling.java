@@ -36,7 +36,7 @@ public class ItemPetrifiedYewSapling extends ElementsLepidodendronMod.ModElement
 			super(BlockYewSapling.block);
 			setTranslationKey("pf_petrified_yew_sapling");
 			setRegistryName("petrified_yew_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

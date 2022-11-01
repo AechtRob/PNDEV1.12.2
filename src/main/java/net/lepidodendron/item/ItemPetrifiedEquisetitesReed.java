@@ -41,7 +41,7 @@ public class ItemPetrifiedEquisetitesReed extends ElementsLepidodendronMod.ModEl
 			super(null);
 			setTranslationKey("pf_petrified_equisetites_reed");
 			setRegistryName("petrified_equisetites_reed");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

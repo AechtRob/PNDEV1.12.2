@@ -36,7 +36,7 @@ public class ItemPetrifiedTongchuanophyllum extends ElementsLepidodendronMod.Mod
 			super(BlockTongchuanophyllum.block);
 			setTranslationKey("pf_petrified_tongchuanophyllum");
 			setRegistryName("petrified_tongchuanophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

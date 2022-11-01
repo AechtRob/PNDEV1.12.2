@@ -36,7 +36,7 @@ public class ItemPetrifiedPetriellales extends ElementsLepidodendronMod.ModEleme
 			super(BlockPetriellales.block);
 			setTranslationKey("pf_petrified_petriellales");
 			setRegistryName("petrified_petriellales");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

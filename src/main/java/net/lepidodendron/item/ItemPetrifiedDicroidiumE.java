@@ -36,7 +36,7 @@ public class ItemPetrifiedDicroidiumE extends ElementsLepidodendronMod.ModElemen
 			super(BlockDicroidiumE.block);
 			setTranslationKey("pf_petrified_dicroidium_e");
 			setRegistryName("petrified_dicroidium_e");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

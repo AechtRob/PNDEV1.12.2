@@ -36,7 +36,7 @@ public class ItemPetrifiedStauropteris extends ElementsLepidodendronMod.ModEleme
 			super(BlockStauropteris.block);
 			setTranslationKey("pf_petrified_stauropteris");
 			setRegistryName("petrified_stauropteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

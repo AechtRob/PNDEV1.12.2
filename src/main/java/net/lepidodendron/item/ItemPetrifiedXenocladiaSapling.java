@@ -36,7 +36,7 @@ public class ItemPetrifiedXenocladiaSapling extends ElementsLepidodendronMod.Mod
 			super(BlockXenocladiaSapling.block);
 			setTranslationKey("pf_petrified_xenocladia_sapling");
 			setRegistryName("petrified_xenocladia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

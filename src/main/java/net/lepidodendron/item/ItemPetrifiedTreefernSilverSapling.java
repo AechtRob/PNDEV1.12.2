@@ -36,7 +36,7 @@ public class ItemPetrifiedTreefernSilverSapling extends ElementsLepidodendronMod
 			super(BlockTreefernSilverSapling.block);
 			setTranslationKey("pf_petrified_silver_treefern_sapling");
 			setRegistryName("petrified_silver_treefern_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

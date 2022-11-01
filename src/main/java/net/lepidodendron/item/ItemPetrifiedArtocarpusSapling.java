@@ -36,7 +36,7 @@ public class ItemPetrifiedArtocarpusSapling extends ElementsLepidodendronMod.Mod
 			super(BlockArtocarpusSapling.block);
 			setTranslationKey("pf_petrified_artocarpus_sapling");
 			setRegistryName("petrified_artocarpus_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

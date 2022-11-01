@@ -21,6 +21,7 @@ public class ModTriggers
     public static final CustomTrigger ENTER_JURASSIC = new CustomTrigger("enter_pf_jurassic");
     public static final CustomTrigger ENTER_CRETACEOUS = new CustomTrigger("enter_pf_cretaceous");
     public static final CustomTrigger REJUVENATE = new CustomTrigger("pf_rejuvenate");
+    public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
     public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
     public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
@@ -915,6 +916,7 @@ public class ModTriggers
             ENTER_JURASSIC,
             ENTER_CRETACEOUS,
             REJUVENATE,
+            ACID_CLEAN,
             USE_CAGE,
             USE_JAR,
             EPHEDRA,

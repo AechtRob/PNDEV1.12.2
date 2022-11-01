@@ -36,7 +36,7 @@ public class ItemPetrifiedElkinsia extends ElementsLepidodendronMod.ModElement {
 			super(BlockElkinsia.block);
 			setTranslationKey("pf_petrified_elkinsia");
 			setRegistryName("petrified_elkinsia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

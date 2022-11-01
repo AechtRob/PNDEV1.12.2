@@ -36,7 +36,7 @@ public class ItemPetrifiedBelemnopteris extends ElementsLepidodendronMod.ModElem
 			super(BlockBelemnopteris.block);
 			setTranslationKey("pf_petrified_belemnopteris");
 			setRegistryName("petrified_belemnopteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedCallistophytales extends ElementsLepidodendronMod.ModE
 			super(BlockCallistophytales.block);
 			setTranslationKey("pf_petrified_callistophytales");
 			setRegistryName("petrified_callistophytales");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

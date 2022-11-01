@@ -36,7 +36,7 @@ public class ItemPetrifiedLesleya extends ElementsLepidodendronMod.ModElement {
 			super(BlockLesleya.block);
 			setTranslationKey("pf_petrified_lesleya");
 			setRegistryName("petrified_lesleya");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

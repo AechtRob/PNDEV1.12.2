@@ -1,7 +1,6 @@
 
 package net.lepidodendron.item;
 
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -22,59 +21,11 @@ public class ItemPetrified extends Item {
 		setMaxDamage(0);
 		maxStackSize = 64;
 		this.plantBlock = plantBlock;
-		setCreativeTab(TabLepidodendronPlants.tab);
+		setCreativeTab(null);
 	}
 
 	public ItemStack getPlantStack() {
 		return new ItemStack(this.plantBlock, 1);
-	}
-
-	public boolean PrecambrianKnowledge() {
-		return false;
-	}
-
-	public boolean CambrianKnowledge() {
-		return false;
-	}
-
-	public boolean OrdovicianSilurianKnowledge() {
-		return false;
-	}
-
-	public boolean DevonianKnowledge() {
-		return false;
-	}
-
-	public boolean CarboniferousKnowledge() {
-		return false;
-	}
-
-	public boolean PermianKnowledge() {
-		return false;
-	}
-
-	public boolean TriassicKnowledge() {
-		return false;
-	}
-
-	public boolean JurassicKnowledge() {
-		return false;
-	}
-
-	public boolean CretaceousKnowledge() {
-		return false;
-	}
-
-	public boolean PaleogeneKnowledge() {
-		return false;
-	}
-
-	public boolean NeogeneKnowledge() {
-		return false;
-	}
-
-	public boolean PleistoceneKnowledge() {
-		return false;
 	}
 
 	@SideOnly(Side.CLIENT)

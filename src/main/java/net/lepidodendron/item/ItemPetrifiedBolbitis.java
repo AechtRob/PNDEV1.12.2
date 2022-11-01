@@ -36,7 +36,7 @@ public class ItemPetrifiedBolbitis extends ElementsLepidodendronMod.ModElement {
 			super(BlockBolbitis.block);
 			setTranslationKey("pf_petrified_bolbitis");
 			setRegistryName("petrified_bolbitis");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

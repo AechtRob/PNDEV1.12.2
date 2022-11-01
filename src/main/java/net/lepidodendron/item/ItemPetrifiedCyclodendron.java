@@ -37,7 +37,7 @@ public class ItemPetrifiedCyclodendron extends ElementsLepidodendronMod.ModEleme
 			super(BlockCyclodendron.block);
 			setTranslationKey("pf_petrified_cyclodendron");
 			setRegistryName("petrified_cyclodendron");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

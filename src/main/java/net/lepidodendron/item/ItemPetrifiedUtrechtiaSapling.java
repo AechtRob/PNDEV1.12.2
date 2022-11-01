@@ -36,7 +36,7 @@ public class ItemPetrifiedUtrechtiaSapling extends ElementsLepidodendronMod.ModE
 			super(BlockUtrechtiaSapling.block);
 			setTranslationKey("pf_petrified_utrechtia_sapling");
 			setRegistryName("petrified_utrechtia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

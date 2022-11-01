@@ -36,7 +36,7 @@ public class ItemPetrifiedZygopterisSapling extends ElementsLepidodendronMod.Mod
 			super(BlockZygopterisSapling.block);
 			setTranslationKey("pf_petrified_zygopteris_sapling");
 			setRegistryName("petrified_zygopteris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

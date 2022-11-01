@@ -36,7 +36,7 @@ public class ItemPetrifiedArthropitysSapling extends ElementsLepidodendronMod.Mo
 			super(BlockArthropitysSapling.block);
 			setTranslationKey("pf_petrified_arthropitys_sapling");
 			setRegistryName("petrified_arthropitys_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

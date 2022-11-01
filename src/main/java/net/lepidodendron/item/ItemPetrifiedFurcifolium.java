@@ -36,7 +36,7 @@ public class ItemPetrifiedFurcifolium extends ElementsLepidodendronMod.ModElemen
 			super(BlockFurcifolium.block);
 			setTranslationKey("pf_petrified_furcifolium");
 			setRegistryName("petrified_furcifolium");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

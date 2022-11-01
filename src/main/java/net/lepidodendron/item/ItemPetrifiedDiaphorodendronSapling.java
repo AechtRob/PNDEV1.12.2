@@ -37,7 +37,7 @@ public class ItemPetrifiedDiaphorodendronSapling extends ElementsLepidodendronMo
 			super(BlockDiaphorodendronSapling.block);
 			setTranslationKey("pf_petrified_diaphorodendron_sapling");
 			setRegistryName("petrified_diaphorodendron_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

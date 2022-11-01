@@ -36,7 +36,7 @@ public class ItemPetrifiedBaiera extends ElementsLepidodendronMod.ModElement {
 			super(BlockBaiera.block);
 			setTranslationKey("pf_petrified_baiera");
 			setRegistryName("petrified_baiera");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

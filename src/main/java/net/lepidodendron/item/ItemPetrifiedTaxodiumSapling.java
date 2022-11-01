@@ -36,7 +36,7 @@ public class ItemPetrifiedTaxodiumSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockTaxodiumSapling.block);
 			setTranslationKey("pf_petrified_taxodium_sapling");
 			setRegistryName("petrified_taxodium_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

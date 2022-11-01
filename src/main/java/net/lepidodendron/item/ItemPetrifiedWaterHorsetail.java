@@ -41,7 +41,7 @@ public class ItemPetrifiedWaterHorsetail extends ElementsLepidodendronMod.ModEle
 			super(null);
 			setTranslationKey("pf_petrified_water_horsetail");
 			setRegistryName("petrified_water_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

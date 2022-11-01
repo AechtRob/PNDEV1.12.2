@@ -36,7 +36,7 @@ public class ItemPetrifiedPodocarpSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockPodocarpSapling.block);
 			setTranslationKey("pf_petrified_podocarp_sapling");
 			setRegistryName("petrified_podocarp_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

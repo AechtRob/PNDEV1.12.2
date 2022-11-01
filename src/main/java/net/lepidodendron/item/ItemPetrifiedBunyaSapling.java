@@ -36,7 +36,7 @@ public class ItemPetrifiedBunyaSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockBunyaSapling.block);
 			setTranslationKey("pf_petrified_bunya_sapling");
 			setRegistryName("petrified_bunya_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

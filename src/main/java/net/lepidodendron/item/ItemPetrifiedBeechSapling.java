@@ -36,7 +36,7 @@ public class ItemPetrifiedBeechSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockBeechSapling.block);
 			setTranslationKey("pf_petrified_beech_sapling");
 			setRegistryName("petrified_beech_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

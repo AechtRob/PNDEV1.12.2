@@ -41,7 +41,7 @@ public class ItemPetrifiedSwampHorsetail extends ElementsLepidodendronMod.ModEle
 			super(null);
 			setTranslationKey("pf_petrified_swamp_horsetail");
 			setRegistryName("petrified_swamp_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@Override

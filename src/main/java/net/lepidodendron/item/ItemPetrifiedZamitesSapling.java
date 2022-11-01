@@ -36,7 +36,7 @@ public class ItemPetrifiedZamitesSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockZamitesSapling.block);
 			setTranslationKey("pf_petrified_zamites_sapling");
 			setRegistryName("petrified_zamites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

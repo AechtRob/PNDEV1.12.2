@@ -36,7 +36,7 @@ public class ItemPetrifiedCecropsis extends ElementsLepidodendronMod.ModElement 
 			super(BlockCecropsis.block);
 			setTranslationKey("pf_petrified_cecropsis");
 			setRegistryName("petrified_cecropsis");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedEquisetitesSapling extends ElementsLepidodendronMod.Mo
 			super(BlockEquisitesSapling.block);
 			setTranslationKey("pf_petrified_equisetites_sapling");
 			setRegistryName("petrified_equisetites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedEphedra extends ElementsLepidodendronMod.ModElement {
 			super(BlockEphedra.block);
 			setTranslationKey("pf_petrified_ephedra");
 			setRegistryName("petrified_ephedra");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

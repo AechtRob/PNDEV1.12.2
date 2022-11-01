@@ -36,7 +36,7 @@ public class ItemPetrifiedTempskyaSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockTempskyaSapling.block);
 			setTranslationKey("pf_petrified_tempskya_sapling");
 			setRegistryName("petrified_tempskya_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

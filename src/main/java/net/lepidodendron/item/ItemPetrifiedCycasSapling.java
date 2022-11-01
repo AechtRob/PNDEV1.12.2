@@ -36,7 +36,7 @@ public class ItemPetrifiedCycasSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockCycasSapling.block);
 			setTranslationKey("pf_petrified_cycas_sapling");
 			setRegistryName("petrified_cycas_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

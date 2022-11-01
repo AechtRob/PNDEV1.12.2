@@ -36,7 +36,7 @@ public class ItemPetrifiedPsaroniusSapling extends ElementsLepidodendronMod.ModE
 			super(BlockPsaroniusSapling.block);
 			setTranslationKey("pf_petrified_psaronius_sapling");
 			setRegistryName("petrified_psaronius_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

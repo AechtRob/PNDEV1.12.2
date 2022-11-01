@@ -36,7 +36,7 @@ public class ItemPetrifiedWattiezaSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockWattiezaSapling.block);
 			setTranslationKey("pf_petrified_wattieza_sapling");
 			setRegistryName("petrified_wattieza_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedNoeggerathialesSapling extends ElementsLepidodendronMo
 			super(BlockNoeggerathialesSapling.block);
 			setTranslationKey("pf_petrified_noeggerathiales_sapling");
 			setRegistryName("petrified_noeggerathiales_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

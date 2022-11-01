@@ -36,7 +36,7 @@ public class ItemPetrifiedCephalotaxusSapling extends ElementsLepidodendronMod.M
 			super(BlockCephalotaxusSapling.block);
 			setTranslationKey("pf_petrified_cephalotaxus_sapling");
 			setRegistryName("petrified_cephalotaxus_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

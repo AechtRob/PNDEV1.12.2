@@ -36,7 +36,7 @@ public class ItemPetrifiedRhacophyton extends ElementsLepidodendronMod.ModElemen
 			super(BlockRhacophyton.block);
 			setTranslationKey("pf_petrified_rhacophyton");
 			setRegistryName("petrified_rhacophyton");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

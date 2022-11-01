@@ -36,7 +36,7 @@ public class ItemPetrifiedAgathisSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockAgathisSapling.block);
 			setTranslationKey("pf_petrified_agathis_sapling");
 			setRegistryName("petrified_agathis_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

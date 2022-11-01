@@ -36,7 +36,7 @@ public class ItemPetrifiedCtenisSapling extends ElementsLepidodendronMod.ModElem
 			super(BlockCtenisSapling.block);
 			setTranslationKey("pf_petrified_ctenis_sapling");
 			setRegistryName("petrified_ctenis_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

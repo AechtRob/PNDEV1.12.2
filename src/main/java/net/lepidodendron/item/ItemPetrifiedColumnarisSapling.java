@@ -36,7 +36,7 @@ public class ItemPetrifiedColumnarisSapling extends ElementsLepidodendronMod.Mod
 			super(BlockColumnarisSapling.block);
 			setTranslationKey("pf_petrified_columnaris_sapling");
 			setRegistryName("petrified_columnaris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

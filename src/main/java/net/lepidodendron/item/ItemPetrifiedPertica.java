@@ -36,7 +36,7 @@ public class ItemPetrifiedPertica extends ElementsLepidodendronMod.ModElement {
 			super(BlockPertica.block);
 			setTranslationKey("pf_petrified_pertica");
 			setRegistryName("petrified_pertica");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

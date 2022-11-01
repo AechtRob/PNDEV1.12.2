@@ -36,7 +36,7 @@ public class ItemPetrifiedCunninghamiaSapling extends ElementsLepidodendronMod.M
 			super(BlockCunninghamiaSapling.block);
 			setTranslationKey("pf_petrified_cunninghamia_sapling");
 			setRegistryName("petrified_cunninghamia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

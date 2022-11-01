@@ -36,7 +36,7 @@ public class ItemPetrifiedNelumbo extends ElementsLepidodendronMod.ModElement {
 			super(BlockNelumbo.block);
 			setTranslationKey("pf_petrified_nelumbo");
 			setRegistryName("petrified_nelumbo");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

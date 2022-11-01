@@ -36,7 +36,7 @@ public class ItemPetrifiedOdontopteris extends ElementsLepidodendronMod.ModEleme
 			super(BlockOdontopterisSapling.block);
 			setTranslationKey("pf_petrified_odontopteris");
 			setRegistryName("petrified_odontopteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

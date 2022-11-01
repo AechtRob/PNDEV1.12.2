@@ -36,7 +36,7 @@ public class ItemPetrifiedWollemiSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockWollemiSapling.block);
 			setTranslationKey("pf_petrified_wollemi_sapling");
 			setRegistryName("petrified_wollemi_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

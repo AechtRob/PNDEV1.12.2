@@ -36,7 +36,7 @@ public class ItemPetrifiedSycamoreSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockSycamoreSapling.block);
 			setTranslationKey("pf_petrified_sycamore_sapling");
 			setRegistryName("petrified_sycamore_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

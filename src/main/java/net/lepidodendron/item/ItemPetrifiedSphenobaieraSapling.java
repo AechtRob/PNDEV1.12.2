@@ -36,7 +36,7 @@ public class ItemPetrifiedSphenobaieraSapling extends ElementsLepidodendronMod.M
 			super(BlockSphenobaieraSapling.block);
 			setTranslationKey("pf_petrified_sphenobaiera_sapling");
 			setRegistryName("petrified_sphenobaiera_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

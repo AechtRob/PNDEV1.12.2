@@ -36,7 +36,7 @@ public class ItemPetrifiedGiantHorsetail extends ElementsLepidodendronMod.ModEle
 			super(BlockGiantHorsetail.block);
 			setTranslationKey("pf_petrified_giant_horsetail");
 			setRegistryName("petrified_giant_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

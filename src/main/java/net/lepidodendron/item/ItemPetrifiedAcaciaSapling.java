@@ -3,7 +3,6 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -36,7 +35,7 @@ public class ItemPetrifiedAcaciaSapling extends ElementsLepidodendronMod.ModElem
 			super(Blocks.SAPLING.getStateFromMeta(4).getBlock());
 			setTranslationKey("pf_petrified_acacia_sapling");
 			setRegistryName("petrified_acacia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

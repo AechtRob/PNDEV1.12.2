@@ -36,7 +36,7 @@ public class ItemPetrifiedLygodium extends ElementsLepidodendronMod.ModElement {
 			super(BlockLygodium.block);
 			setTranslationKey("pf_petrified_lygodium");
 			setRegistryName("petrified_lygodium");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

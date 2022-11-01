@@ -36,7 +36,7 @@ public class ItemPetrifiedLyginopteris extends ElementsLepidodendronMod.ModEleme
 			super(BlockLyginopterisSapling.block);
 			setTranslationKey("pf_petrified_lyginopteris");
 			setRegistryName("petrified_lyginopteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

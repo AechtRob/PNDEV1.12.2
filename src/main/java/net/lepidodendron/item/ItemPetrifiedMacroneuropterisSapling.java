@@ -36,7 +36,7 @@ public class ItemPetrifiedMacroneuropterisSapling extends ElementsLepidodendronM
 			super(BlockMacroneuropterisSapling.block);
 			setTranslationKey("pf_petrified_macroneuropteris_sapling");
 			setRegistryName("petrified_macroneuropteris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

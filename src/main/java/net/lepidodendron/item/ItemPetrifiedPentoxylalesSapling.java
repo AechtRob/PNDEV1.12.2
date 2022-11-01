@@ -36,7 +36,7 @@ public class ItemPetrifiedPentoxylalesSapling extends ElementsLepidodendronMod.M
 			super(BlockPentoxylalesSapling.block);
 			setTranslationKey("pf_petrified_pentoxylales_sapling");
 			setRegistryName("petrified_pentoxylales_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedCladophlebis extends ElementsLepidodendronMod.ModEleme
 			super(BlockCladophlebis.block);
 			setTranslationKey("pf_petrified_cladophlebis");
 			setRegistryName("petrified_cladophlebis");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

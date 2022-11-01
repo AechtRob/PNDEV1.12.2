@@ -36,7 +36,7 @@ public class ItemPetrifiedClaytosmunda extends ElementsLepidodendronMod.ModEleme
 			super(BlockClaytosmunda.block);
 			setTranslationKey("pf_petrified_claytosmunda");
 			setRegistryName("petrified_claytosmunda");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

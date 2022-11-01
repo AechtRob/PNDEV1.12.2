@@ -36,7 +36,7 @@ public class ItemPetrifiedPlaneSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockPlaneSapling.block);
 			setTranslationKey("pf_petrified_plane_sapling");
 			setRegistryName("petrified_plane_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

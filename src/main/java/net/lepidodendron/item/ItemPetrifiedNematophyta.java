@@ -45,7 +45,7 @@ public class ItemPetrifiedNematophyta extends ElementsLepidodendronMod.ModElemen
 			super(BlockNematophyta.block);
 			setTranslationKey("pf_petrified_nematophyta");
 			setRegistryName("petrified_nematophyta");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

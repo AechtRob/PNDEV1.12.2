@@ -41,7 +41,7 @@ public class ItemPetrifiedBaragwanathia extends ElementsLepidodendronMod.ModElem
 			super(null);
 			setTranslationKey("pf_petrified_baragwanathia");
 			setRegistryName("petrified_baragwanathia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

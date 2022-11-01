@@ -36,7 +36,7 @@ public class ItemPetrifiedHermanophyton extends ElementsLepidodendronMod.ModElem
 			super(BlockHermanophyton.block);
 			setTranslationKey("pf_petrified_hermanophyton");
 			setRegistryName("petrified_hermanophyton");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

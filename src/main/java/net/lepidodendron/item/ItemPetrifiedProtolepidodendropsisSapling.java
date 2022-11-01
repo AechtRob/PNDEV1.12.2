@@ -36,7 +36,7 @@ public class ItemPetrifiedProtolepidodendropsisSapling extends ElementsLepidoden
 			super(BlockProtolepidodendropsisSapling.block);
 			setTranslationKey("pf_petrified_protolepidodendropsis_sapling");
 			setRegistryName("petrified_protolepidodendropsis_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

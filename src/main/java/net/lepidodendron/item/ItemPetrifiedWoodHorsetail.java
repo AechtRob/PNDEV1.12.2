@@ -36,7 +36,7 @@ public class ItemPetrifiedWoodHorsetail extends ElementsLepidodendronMod.ModElem
 			super(BlockWoodHorsetail.block);
 			setTranslationKey("pf_petrified_wood_horsetail");
 			setRegistryName("petrified_wood_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

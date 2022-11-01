@@ -36,7 +36,7 @@ public class ItemPetrifiedCalamitesSapling extends ElementsLepidodendronMod.ModE
 			super(BlockCalamitesSapling.block);
 			setTranslationKey("pf_petrified_calamites_sapling");
 			setRegistryName("petrified_calamites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

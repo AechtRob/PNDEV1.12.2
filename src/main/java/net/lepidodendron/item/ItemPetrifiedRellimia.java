@@ -36,7 +36,7 @@ public class ItemPetrifiedRellimia extends ElementsLepidodendronMod.ModElement {
 			super(BlockRellimia.block);
 			setTranslationKey("pf_petrified_rellimia");
 			setRegistryName("petrified_rellimia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

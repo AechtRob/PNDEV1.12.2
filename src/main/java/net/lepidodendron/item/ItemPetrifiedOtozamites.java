@@ -36,7 +36,7 @@ public class ItemPetrifiedOtozamites extends ElementsLepidodendronMod.ModElement
 			super(BlockOtozamites.block);
 			setTranslationKey("pf_petrified_otozamites");
 			setRegistryName("petrified_otozamites");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

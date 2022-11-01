@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAcidBath;
 import net.lepidodendron.block.BlockAcidBathUp;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -85,11 +86,38 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
+
+                @Override
+                public void onSlotChanged() {
+
+                    super.onSlotChanged();
+                }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
+                    ItemStack slotStack = ((BlockAcidBathUp.TileEntityAcidBathUp)tileEntity).getStackInSlot(1);
+
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem()  == ItemFossilClean.block) {
+                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    //System.err.println("Taken " + slotStack);
+                    return super.onTake(thePlayer, stack);
+                }
             }));
             this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154 - 3, 48) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
+                }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
+                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    //System.err.println("Taken " + stack);
+                    return super.onTake(thePlayer, stack);
                 }
             }));
             this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136 - 3, 30) {
@@ -97,11 +125,29 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                 public boolean isItemValid(ItemStack stack) {
                     return false;
                 }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
+                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    //System.err.println("Taken " + stack);
+                    return super.onTake(thePlayer, stack);
+                }
             }));
             this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136 - 3, 48) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
+                }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemFossilClean.block) {
+                        ModTriggers.ACID_CLEAN.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    //System.err.println("Taken " + stack);
+                    return super.onTake(thePlayer, stack);
                 }
             }));
             this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46 - 3, 58) {
@@ -200,7 +246,8 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                 if (itemstack1.getCount() == itemstack.getCount()) {
                     return ItemStack.EMPTY;
                 }
-                slot.onTake(playerIn, itemstack1);
+                //System.err.println("itemstack1 5 " + itemstack);
+                slot.onTake(playerIn, itemstack);
             }
             return itemstack;
         }

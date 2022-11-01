@@ -36,7 +36,7 @@ public class ItemPetrifiedAridHorsetail extends ElementsLepidodendronMod.ModElem
 			super(BlockAridHorsetail.block);
 			setTranslationKey("pf_petrified_arid_horsetail");
 			setRegistryName("petrified_arid_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

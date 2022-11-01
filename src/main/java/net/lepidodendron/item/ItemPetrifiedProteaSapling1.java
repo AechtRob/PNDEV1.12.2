@@ -36,7 +36,7 @@ public class ItemPetrifiedProteaSapling1 extends ElementsLepidodendronMod.ModEle
 			super(BlockProteaSapling1.block);
 			setTranslationKey("pf_petrified_protea_sapling_1");
 			setRegistryName("petrified_protea_sapling_1");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

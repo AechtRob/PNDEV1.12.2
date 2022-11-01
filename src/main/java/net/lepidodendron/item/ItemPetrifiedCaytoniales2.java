@@ -36,7 +36,7 @@ public class ItemPetrifiedCaytoniales2 extends ElementsLepidodendronMod.ModEleme
 			super(BlockCaytoniales2.block);
 			setTranslationKey("pf_petrified_caytoniales_2");
 			setRegistryName("petrified_caytoniales_2");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

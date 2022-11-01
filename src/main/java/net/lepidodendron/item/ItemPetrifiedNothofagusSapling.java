@@ -36,7 +36,7 @@ public class ItemPetrifiedNothofagusSapling extends ElementsLepidodendronMod.Mod
 			super(BlockNothofagusSapling.block);
 			setTranslationKey("pf_petrified_nothofagus_sapling");
 			setRegistryName("petrified_nothofagus_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

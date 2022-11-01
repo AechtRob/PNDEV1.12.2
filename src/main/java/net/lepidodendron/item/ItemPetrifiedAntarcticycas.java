@@ -36,7 +36,7 @@ public class ItemPetrifiedAntarcticycas extends ElementsLepidodendronMod.ModElem
 			super(BlockAntarcticycas.block);
 			setTranslationKey("pf_petrified_antarcticycas");
 			setRegistryName("petrified_antarcticycas");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

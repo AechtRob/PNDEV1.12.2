@@ -36,7 +36,7 @@ public class ItemPetrifiedPtilophyllumSapling extends ElementsLepidodendronMod.M
 			super(BlockPtilophyllumSapling.block);
 			setTranslationKey("pf_petrified_ptilophyllum_sapling");
 			setRegistryName("petrified_ptilophyllum_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

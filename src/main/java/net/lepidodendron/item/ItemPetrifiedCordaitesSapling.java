@@ -36,7 +36,7 @@ public class ItemPetrifiedCordaitesSapling extends ElementsLepidodendronMod.ModE
 			super(BlockCordaitesSapling.block);
 			setTranslationKey("pf_petrified_cordaites_sapling");
 			setRegistryName("petrified_cordaites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

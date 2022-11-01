@@ -36,7 +36,7 @@ public class ItemPetrifiedTallAraucariaSapling extends ElementsLepidodendronMod.
 			super(BlockTallAraucariaSapling.block);
 			setTranslationKey("pf_petrified_mirabilis_sapling");
 			setRegistryName("petrified_mirabilis_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

@@ -36,6 +36,6 @@ public class ItemPetrifiedSphenophyllales1 extends ElementsLepidodendronMod.ModE
 			super(BlockSphenophyllales1.block);
 			setTranslationKey("pf_petrified_sphenophyllales_1");
 			setRegistryName("petrified_sphenophyllales_1");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}}
 }

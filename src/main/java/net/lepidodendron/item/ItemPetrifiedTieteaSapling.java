@@ -4,7 +4,6 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.BlockTieteaSapling;
-import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -36,7 +35,7 @@ public class ItemPetrifiedTieteaSapling extends ElementsLepidodendronMod.ModElem
 			super(BlockTieteaSapling.block);
 			setTranslationKey("pf_petrified_tietea_sapling");
 			setRegistryName("petrified_tietea_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

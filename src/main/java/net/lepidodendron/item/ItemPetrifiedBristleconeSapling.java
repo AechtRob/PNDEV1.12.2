@@ -36,7 +36,7 @@ public class ItemPetrifiedBristleconeSapling extends ElementsLepidodendronMod.Mo
 			super(BlockBristleconeSapling.block);
 			setTranslationKey("pf_petrified_bristlecone_sapling");
 			setRegistryName("petrified_bristlecone_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

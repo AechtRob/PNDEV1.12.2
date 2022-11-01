@@ -36,7 +36,7 @@ public class ItemPetrifiedMarattia extends ElementsLepidodendronMod.ModElement {
 			super(BlockMarattia.block);
 			setTranslationKey("pf_petrified_marattia");
 			setRegistryName("petrified_marattia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

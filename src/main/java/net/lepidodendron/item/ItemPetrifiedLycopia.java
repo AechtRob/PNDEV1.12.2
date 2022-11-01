@@ -36,7 +36,7 @@ public class ItemPetrifiedLycopia extends ElementsLepidodendronMod.ModElement {
 			super(BlockLycopia.block);
 			setTranslationKey("pf_petrified_lycopia");
 			setRegistryName("petrified_lycopia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

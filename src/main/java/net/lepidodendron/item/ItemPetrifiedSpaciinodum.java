@@ -36,7 +36,7 @@ public class ItemPetrifiedSpaciinodum extends ElementsLepidodendronMod.ModElemen
 			super(BlockSpaciinodum.block);
 			setTranslationKey("pf_petrified_spaciinodum");
 			setRegistryName("petrified_spaciinodum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 	}

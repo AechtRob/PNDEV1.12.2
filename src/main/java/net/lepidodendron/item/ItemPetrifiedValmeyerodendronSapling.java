@@ -37,7 +37,7 @@ public class ItemPetrifiedValmeyerodendronSapling extends ElementsLepidodendronM
 			super(BlockValmeyerodendronSapling.block);
 			setTranslationKey("pf_petrified_valmeyerodendron_sapling");
 			setRegistryName("petrified_valmeyerodendron_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

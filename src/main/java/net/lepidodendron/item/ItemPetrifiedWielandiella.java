@@ -36,7 +36,7 @@ public class ItemPetrifiedWielandiella extends ElementsLepidodendronMod.ModEleme
 			super(BlockWielandiella.block);
 			setTranslationKey("pf_petrified_wielandiella");
 			setRegistryName("petrified_wielandiella");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

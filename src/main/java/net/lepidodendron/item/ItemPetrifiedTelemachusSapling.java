@@ -36,7 +36,7 @@ public class ItemPetrifiedTelemachusSapling extends ElementsLepidodendronMod.Mod
 			super(BlockTelemachusSapling.block);
 			setTranslationKey("pf_petrified_telemachus_sapling");
 			setRegistryName("petrified_telemachus_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

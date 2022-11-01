@@ -36,7 +36,7 @@ public class ItemPetrifiedZosterophyllum extends ElementsLepidodendronMod.ModEle
 			super(BlockZosterophyllum.block);
 			setTranslationKey("pf_petrified_zosterophyllum");
 			setRegistryName("petrified_zosterophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

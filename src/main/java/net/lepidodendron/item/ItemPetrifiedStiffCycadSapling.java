@@ -36,7 +36,7 @@ public class ItemPetrifiedStiffCycadSapling extends ElementsLepidodendronMod.Mod
 			super(BlockStiffCycadSapling.block);
 			setTranslationKey("pf_petrified_stiff_cycad_sapling");
 			setRegistryName("petrified_stiff_cycad_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

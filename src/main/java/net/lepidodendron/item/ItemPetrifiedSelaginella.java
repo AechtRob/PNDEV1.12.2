@@ -36,7 +36,7 @@ public class ItemPetrifiedSelaginella extends ElementsLepidodendronMod.ModElemen
 			super(BlockSelaginella.block);
 			setTranslationKey("pf_petrified_selaginella");
 			setRegistryName("petrified_selaginella");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

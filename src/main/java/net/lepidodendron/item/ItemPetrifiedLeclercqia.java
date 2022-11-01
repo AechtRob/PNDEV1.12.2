@@ -36,7 +36,7 @@ public class ItemPetrifiedLeclercqia extends ElementsLepidodendronMod.ModElement
 			super(BlockLeclercqia.block);
 			setTranslationKey("pf_petrified_leclercqia");
 			setRegistryName("petrified_leclercqia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

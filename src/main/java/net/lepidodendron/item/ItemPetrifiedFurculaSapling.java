@@ -36,7 +36,7 @@ public class ItemPetrifiedFurculaSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockFurculaSapling.block);
 			setTranslationKey("pf_petrified_furcula_sapling");
 			setRegistryName("petrified_furcula_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

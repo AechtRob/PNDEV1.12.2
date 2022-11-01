@@ -36,7 +36,7 @@ public class ItemPetrifiedWalchiaSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockWalchiaSapling.block);
 			setTranslationKey("pf_petrified_walchia_sapling");
 			setRegistryName("petrified_walchia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

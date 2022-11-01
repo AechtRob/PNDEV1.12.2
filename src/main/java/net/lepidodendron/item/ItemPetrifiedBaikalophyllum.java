@@ -36,7 +36,7 @@ public class ItemPetrifiedBaikalophyllum extends ElementsLepidodendronMod.ModEle
 			super(BlockBaikalophyllum.block);
 			setTranslationKey("pf_petrified_baikalophyllum");
 			setRegistryName("petrified_baikalophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

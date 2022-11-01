@@ -41,7 +41,7 @@ public class ItemPetrifiedRhynia extends ElementsLepidodendronMod.ModElement {
 			super(null);
 			setTranslationKey("pf_petrified_rhynia");
 			setRegistryName("petrified_rhynia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

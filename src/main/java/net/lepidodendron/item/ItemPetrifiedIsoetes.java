@@ -41,7 +41,7 @@ public class ItemPetrifiedIsoetes extends ElementsLepidodendronMod.ModElement {
 			super(null);
 			setTranslationKey("pf_petrified_isoetes");
 			setRegistryName("petrified_isoetes");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

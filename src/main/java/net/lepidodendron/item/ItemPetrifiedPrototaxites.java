@@ -36,7 +36,7 @@ public class ItemPetrifiedPrototaxites extends ElementsLepidodendronMod.ModEleme
 			super(BlockPrototaxites.block);
 			setTranslationKey("pf_petrified_prototaxites");
 			setRegistryName("petrified_prototaxites");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

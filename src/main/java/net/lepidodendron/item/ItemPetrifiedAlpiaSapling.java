@@ -36,7 +36,7 @@ public class ItemPetrifiedAlpiaSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockAlpiaSapling.block);
 			setTranslationKey("pf_petrified_alpia_sapling");
 			setRegistryName("petrified_alpia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

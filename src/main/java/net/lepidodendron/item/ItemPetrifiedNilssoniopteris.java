@@ -36,7 +36,7 @@ public class ItemPetrifiedNilssoniopteris extends ElementsLepidodendronMod.ModEl
 			super(BlockNilssoniopteris.block);
 			setTranslationKey("pf_petrified_nilssoniopteris");
 			setRegistryName("petrified_nilssoniopteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

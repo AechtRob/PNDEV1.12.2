@@ -5,6 +5,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDNARecombinerForge;
 import net.lepidodendron.item.ItemOligoPool;
+import net.lepidodendron.item.ItemPlaceableLiving;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
@@ -108,6 +110,14 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                 public boolean canTakeStack(EntityPlayer playerIn) {
                     return true;
                 }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemPlaceableLiving.block) {
+                        ModTriggers.REJUVENATE.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    return super.onTake(thePlayer, stack);
+                }
             }));
             this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 155 - 3, 30) {
                 @Override
@@ -118,6 +128,14 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
                     return true;
+                }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemPlaceableLiving.block) {
+                        ModTriggers.REJUVENATE.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    return super.onTake(thePlayer, stack);
                 }
             }));
             this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 137 - 3, 48) {
@@ -130,6 +148,14 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                 public boolean canTakeStack(EntityPlayer playerIn) {
                     return true;
                 }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemPlaceableLiving.block) {
+                        ModTriggers.REJUVENATE.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    return super.onTake(thePlayer, stack);
+                }
             }));
             this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 155 - 3, 48) {
                 @Override
@@ -140,6 +166,14 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                 @Override
                 public boolean canTakeStack(EntityPlayer playerIn) {
                     return true;
+                }
+
+                @Override
+                public ItemStack onTake(EntityPlayer thePlayer, ItemStack stack) {
+                    if (thePlayer instanceof EntityPlayerMP && stack.getItem() == ItemPlaceableLiving.block) {
+                        ModTriggers.REJUVENATE.trigger((EntityPlayerMP) thePlayer);
+                    }
+                    return super.onTake(thePlayer, stack);
                 }
             }));
 
@@ -199,7 +233,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
                 if (itemstack1.getCount() == itemstack.getCount()) {
                     return ItemStack.EMPTY;
                 }
-                slot.onTake(playerIn, itemstack1);
+                slot.onTake(playerIn, itemstack);
             }
             return itemstack;
         }

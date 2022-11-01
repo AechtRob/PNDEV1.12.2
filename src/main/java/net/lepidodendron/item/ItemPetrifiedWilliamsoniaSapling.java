@@ -36,6 +36,6 @@ public class ItemPetrifiedWilliamsoniaSapling extends ElementsLepidodendronMod.M
 			super(BlockWilliamsoniaSapling.block);
 			setTranslationKey("pf_petrified_williamsonia_sapling");
 			setRegistryName("petrified_williamsonia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}}
 }

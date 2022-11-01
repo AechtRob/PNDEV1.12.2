@@ -36,7 +36,7 @@ public class ItemPetrifiedCycadeoideaSapling extends ElementsLepidodendronMod.Mo
 			super(BlockCycadeoideaSapling.block);
 			setTranslationKey("pf_petrified_cycadeoidea_sapling");
 			setRegistryName("petrified_cycadeoidea_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

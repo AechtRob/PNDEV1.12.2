@@ -36,7 +36,7 @@ public class ItemPetrifiedAethophyllum extends ElementsLepidodendronMod.ModEleme
 			super(BlockAethophyllum.block);
 			setTranslationKey("pf_petrified_aethophyllum");
 			setRegistryName("petrified_aethophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

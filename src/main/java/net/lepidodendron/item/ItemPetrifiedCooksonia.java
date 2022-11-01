@@ -36,7 +36,7 @@ public class ItemPetrifiedCooksonia extends ElementsLepidodendronMod.ModElement 
 			super(BlockCooksonia.block);
 			setTranslationKey("pf_petrified_cooksonia");
 			setRegistryName("petrified_cooksonia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

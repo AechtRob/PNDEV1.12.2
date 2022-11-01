@@ -36,7 +36,7 @@ public class ItemPetrifiedRufloriaSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockRufloriaSapling.block);
 			setTranslationKey("pf_petrified_rufloria_sapling");
 			setRegistryName("petrified_rufloria_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

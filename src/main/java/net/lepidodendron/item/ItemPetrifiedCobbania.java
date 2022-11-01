@@ -41,7 +41,7 @@ public class ItemPetrifiedCobbania extends ElementsLepidodendronMod.ModElement {
 			super(null);
 			setTranslationKey("pf_petrified_cobbania");
 			setRegistryName("petrified_cobbania");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

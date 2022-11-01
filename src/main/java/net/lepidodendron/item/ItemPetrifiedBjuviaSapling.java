@@ -36,7 +36,7 @@ public class ItemPetrifiedBjuviaSapling extends ElementsLepidodendronMod.ModElem
 			super(BlockBjuviaSapling.block);
 			setTranslationKey("pf_petrified_bjuvia_sapling");
 			setRegistryName("petrified_bjuvia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

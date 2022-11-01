@@ -41,7 +41,7 @@ public class ItemPetrifiedMacrotaeniopteris extends ElementsLepidodendronMod.Mod
 			super(null);
 			setTranslationKey("pf_petrified_macrotaeniopteris");
 			setRegistryName("petrified_macrotaeniopteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

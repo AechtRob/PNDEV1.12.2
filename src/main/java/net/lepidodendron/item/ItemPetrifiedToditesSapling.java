@@ -36,7 +36,7 @@ public class ItemPetrifiedToditesSapling extends ElementsLepidodendronMod.ModEle
 			super(BlockToditesSapling.block);
 			setTranslationKey("pf_petrified_todites_sapling");
 			setRegistryName("petrified_todites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

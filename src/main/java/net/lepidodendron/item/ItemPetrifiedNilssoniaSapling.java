@@ -36,7 +36,7 @@ public class ItemPetrifiedNilssoniaSapling extends ElementsLepidodendronMod.ModE
 			super(BlockNilssoniaSapling.block);
 			setTranslationKey("pf_petrified_nilssonia_sapling");
 			setRegistryName("petrified_nilssonia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

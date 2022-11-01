@@ -36,7 +36,7 @@ public class ItemPetrifiedAraucarioxylonSaping extends ElementsLepidodendronMod.
 			super(BlockAraucarioxylonSapling.block);
 			setTranslationKey("pf_petrified_araucarioxylon_saping");
 			setRegistryName("petrified_araucarioxylon_saping");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

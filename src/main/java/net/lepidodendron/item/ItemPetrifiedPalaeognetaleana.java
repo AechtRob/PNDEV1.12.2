@@ -36,7 +36,7 @@ public class ItemPetrifiedPalaeognetaleana extends ElementsLepidodendronMod.ModE
 			super(BlockPalaeognetaleana.block);
 			setTranslationKey("pf_petrified_palaeognetaleana");
 			setRegistryName("petrified_palaeognetaleana");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

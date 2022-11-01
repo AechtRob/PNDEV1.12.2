@@ -36,7 +36,7 @@ public class ItemPetrifiedIbyka extends ElementsLepidodendronMod.ModElement {
 			super(BlockIbyka.block);
 			setTranslationKey("pf_petrified_ibyka");
 			setRegistryName("petrified_ibyka");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 	}

@@ -36,7 +36,7 @@ public class ItemPetrifiedTrichopitys extends ElementsLepidodendronMod.ModElemen
 			super(BlockTrichopitys.block);
 			setTranslationKey("pf_petrified_trichopitys");
 			setRegistryName("petrified_trichopitys");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

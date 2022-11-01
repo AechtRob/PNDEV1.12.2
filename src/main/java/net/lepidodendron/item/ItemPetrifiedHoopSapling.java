@@ -36,7 +36,7 @@ public class ItemPetrifiedHoopSapling extends ElementsLepidodendronMod.ModElemen
 			super(BlockHoopSapling.block);
 			setTranslationKey("pf_petrified_hoop_araucaria_sapling");
 			setRegistryName("petrified_hoop_araucaria_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

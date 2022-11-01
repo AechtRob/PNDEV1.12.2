@@ -36,7 +36,7 @@ public class ItemPetrifiedSanmiguelia extends ElementsLepidodendronMod.ModElemen
 			super(BlockSanmiguelia.block);
 			setTranslationKey("pf_petrified_sanmiguelia");
 			setRegistryName("petrified_sanmiguelia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

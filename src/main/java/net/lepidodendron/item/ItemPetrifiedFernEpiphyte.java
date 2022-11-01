@@ -36,7 +36,7 @@ public class ItemPetrifiedFernEpiphyte extends ElementsLepidodendronMod.ModEleme
 			super(BlockFernEpiphyte.block);
 			setTranslationKey("pf_petrified_fern_epiphyte");
 			setRegistryName("petrified_fern_epiphyte");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

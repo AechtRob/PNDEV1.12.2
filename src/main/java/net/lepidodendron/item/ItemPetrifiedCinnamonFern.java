@@ -36,7 +36,7 @@ public class ItemPetrifiedCinnamonFern extends ElementsLepidodendronMod.ModEleme
 			super(BlockCinnamonFern.block);
 			setTranslationKey("pf_petrified_cinnamon_fern");
 			setRegistryName("petrified_cinnamon_fern");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

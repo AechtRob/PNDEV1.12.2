@@ -41,7 +41,7 @@ public class ItemPetrifiedArchaefructus extends ElementsLepidodendronMod.ModElem
 			super(null);
 			setTranslationKey("pf_petrified_archaefructus");
 			setRegistryName("petrified_archaefructus");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

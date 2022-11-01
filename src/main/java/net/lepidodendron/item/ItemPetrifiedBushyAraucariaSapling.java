@@ -36,7 +36,7 @@ public class ItemPetrifiedBushyAraucariaSapling extends ElementsLepidodendronMod
 			super(BlockBushyAraucariaSapling.block);
 			setTranslationKey("pf_petrified_monkeypuzzle_sapling");
 			setRegistryName("petrified_monkeypuzzle_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

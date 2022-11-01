@@ -36,7 +36,7 @@ public class ItemPetrifiedPachypteris extends ElementsLepidodendronMod.ModElemen
 			super(BlockPachypteris.block);
 			setTranslationKey("pf_petrified_weichselia");
 			setRegistryName("petrified_pachypteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

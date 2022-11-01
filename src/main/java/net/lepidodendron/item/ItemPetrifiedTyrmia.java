@@ -36,7 +36,7 @@ public class ItemPetrifiedTyrmia extends ElementsLepidodendronMod.ModElement {
 			super(BlockTyrmia.block);
 			setTranslationKey("pf_petrified_tyrmia");
 			setRegistryName("petrified_tyrmia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

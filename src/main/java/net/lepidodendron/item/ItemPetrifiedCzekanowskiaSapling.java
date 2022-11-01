@@ -36,7 +36,7 @@ public class ItemPetrifiedCzekanowskiaSapling extends ElementsLepidodendronMod.M
 			super(BlockCzekanowskiaSapling.block);
 			setTranslationKey("pf_petrified_czekanowskia_sapling");
 			setRegistryName("petrified_czekanowskia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

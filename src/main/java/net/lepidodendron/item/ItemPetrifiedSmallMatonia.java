@@ -36,7 +36,7 @@ public class ItemPetrifiedSmallMatonia extends ElementsLepidodendronMod.ModEleme
 			super(BlockMatonia.block);
 			setTranslationKey("pf_petrified_small_matonia");
 			setRegistryName("petrified_small_matonia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

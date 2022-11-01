@@ -36,7 +36,7 @@ public class ItemPetrifiedMedullosalesSapling extends ElementsLepidodendronMod.M
 			super(BlockMedullosalesSapling.block);
 			setTranslationKey("pf_petrified_medullosales_sapling");
 			setRegistryName("petrified_medullosales_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

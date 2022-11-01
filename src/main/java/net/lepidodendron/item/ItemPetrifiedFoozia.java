@@ -36,7 +36,7 @@ public class ItemPetrifiedFoozia extends ElementsLepidodendronMod.ModElement {
 			super(BlockFoozia.block);
 			setTranslationKey("pf_petrified_foozia");
 			setRegistryName("petrified_foozia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

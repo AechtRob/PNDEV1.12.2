@@ -36,7 +36,7 @@ public class ItemPetrifiedPseudobornia extends ElementsLepidodendronMod.ModEleme
 			super(BlockPseudobornia.block);
 			setTranslationKey("pf_petrified_pseudobornia");
 			setRegistryName("petrified_pseudobornia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

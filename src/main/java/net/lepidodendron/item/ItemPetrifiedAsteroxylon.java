@@ -37,7 +37,7 @@ public class ItemPetrifiedAsteroxylon extends ElementsLepidodendronMod.ModElemen
 			super(BlockAsteroxylon.block);
 			setTranslationKey("pf_petrified_asteroxylon");
 			setRegistryName("petrified_asteroxylon");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

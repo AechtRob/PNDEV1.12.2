@@ -36,7 +36,7 @@ public class ItemPetrifiedArchaeopterisSapling extends ElementsLepidodendronMod.
 			super(BlockArchaeopterisSapling.block);
 			setTranslationKey("pf_petrified_archaeopteris_sapling");
 			setRegistryName("petrified_archaeopteris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

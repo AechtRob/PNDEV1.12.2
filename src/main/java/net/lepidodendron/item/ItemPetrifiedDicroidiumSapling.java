@@ -36,7 +36,7 @@ public class ItemPetrifiedDicroidiumSapling extends ElementsLepidodendronMod.Mod
 			super(BlockDicroidiumSapling.block);
 			setTranslationKey("pf_petrified_dicroidium_sapling");
 			setRegistryName("petrified_dicroidium_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

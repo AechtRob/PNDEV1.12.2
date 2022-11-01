@@ -36,7 +36,7 @@ public class ItemPetrifiedGinkgoitesSapling extends ElementsLepidodendronMod.Mod
 			super(BlockGinkgoitesSapling.block);
 			setTranslationKey("pf_petrified_ginkgoites_sapling");
 			setRegistryName("petrified_ginkgoites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

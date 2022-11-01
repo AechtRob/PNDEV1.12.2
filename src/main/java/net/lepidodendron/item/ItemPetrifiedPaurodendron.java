@@ -37,7 +37,7 @@ public class ItemPetrifiedPaurodendron extends ElementsLepidodendronMod.ModEleme
 			super(BlockPaurodendron.block);
 			setTranslationKey("pf_petrified_paurodendron");
 			setRegistryName("petrified_paurodendron");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

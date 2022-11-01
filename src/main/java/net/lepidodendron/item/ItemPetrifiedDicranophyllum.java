@@ -36,7 +36,7 @@ public class ItemPetrifiedDicranophyllum extends ElementsLepidodendronMod.ModEle
 			super(BlockDicranophyllum.block);
 			setTranslationKey("pf_petrified_dicranophyllum");
 			setRegistryName("petrified_dicranophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

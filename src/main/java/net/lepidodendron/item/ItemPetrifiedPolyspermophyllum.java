@@ -36,7 +36,7 @@ public class ItemPetrifiedPolyspermophyllum extends ElementsLepidodendronMod.Mod
 			super(BlockPolyspermophyllum.block);
 			setTranslationKey("pf_petrified_polyspermophyllum");
 			setRegistryName("petrified_polyspermophyllum");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

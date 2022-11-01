@@ -36,7 +36,7 @@ public class ItemPetrifiedGangamopterisSapling extends ElementsLepidodendronMod.
 			super(BlockGangamopterisSapling.block);
 			setTranslationKey("pf_petrified_gangamopteris_sapling");
 			setRegistryName("petrified_gangamopteris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

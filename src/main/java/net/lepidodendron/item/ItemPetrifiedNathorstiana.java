@@ -41,7 +41,7 @@ public class ItemPetrifiedNathorstiana extends ElementsLepidodendronMod.ModEleme
 			super(null);
 			setTranslationKey("pf_petrified_nathorstiana");
 			setRegistryName("petrified_nathorstiana");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 
 		@SideOnly(Side.CLIENT)

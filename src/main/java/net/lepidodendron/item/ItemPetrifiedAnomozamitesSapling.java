@@ -36,7 +36,7 @@ public class ItemPetrifiedAnomozamitesSapling extends ElementsLepidodendronMod.M
 			super(BlockAnomozamitesSapling.block);
 			setTranslationKey("pf_petrified_anomozamites_sapling");
 			setRegistryName("petrified_anomozamites_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

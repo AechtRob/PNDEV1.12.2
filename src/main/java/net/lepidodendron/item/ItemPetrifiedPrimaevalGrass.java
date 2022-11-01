@@ -41,7 +41,7 @@ public class ItemPetrifiedPrimaevalGrass extends ElementsLepidodendronMod.ModEle
 			super(null);
 			setTranslationKey("pf_petrified_primaeval_grass");
 			setRegistryName("petrified_primaeval_grass");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

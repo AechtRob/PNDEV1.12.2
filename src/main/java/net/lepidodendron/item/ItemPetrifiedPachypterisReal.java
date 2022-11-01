@@ -36,7 +36,7 @@ public class ItemPetrifiedPachypterisReal extends ElementsLepidodendronMod.ModEl
 			super(BlockPachypterisSapling.block);
 			setTranslationKey("pf_petrified_pachypteris_sapling");
 			setRegistryName("petrified_pachypteris_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

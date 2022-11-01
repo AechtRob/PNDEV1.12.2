@@ -36,7 +36,7 @@ public class ItemPetrifiedSkaaripteris extends ElementsLepidodendronMod.ModEleme
 			super(BlockSkaaripteris.block);
 			setTranslationKey("pf_petrified_skaaripteris");
 			setRegistryName("petrified_skaaripteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemPetrifiedNeuropteridium extends ElementsLepidodendronMod.ModEle
 			super(BlockNeuropteridium.block);
 			setTranslationKey("pf_petrified_neuropteridium");
 			setRegistryName("petrified_neuropteridium");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

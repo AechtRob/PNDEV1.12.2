@@ -36,7 +36,7 @@ public class ItemPetrifiedGrassyHorsetail extends ElementsLepidodendronMod.ModEl
 			super(BlockGrassyHorsetail.block);
 			setTranslationKey("pf_petrified_grassy_horsetail");
 			setRegistryName("petrified_grassy_horsetail");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

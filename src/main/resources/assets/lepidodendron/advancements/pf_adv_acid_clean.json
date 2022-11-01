@@ -1,20 +1,20 @@
 {
 	"display": {
 		"icon": {
-			"item": "lepidodendron:placeable_living"
+			"item": "lepidodendron:fossil_clean"
 		  },
 		"title": {
-			"translate": "advancements.pf_adv_rejuvenate.title"
+			"translate": "advancements.pf_adv_acid_clean.title"
 		},
 		"description": {
-			"translate": "advancements.pf_adv_rejuvenate.description"
+			"translate": "advancements.pf_adv_acid_clean.description"
 		}
 	},
 	"parent": "lepidodendron:pf_base_adv_knowledge",
 	"hidden": true,
 	"criteria": {
 		"pf_trigger": {
-			"trigger": "pf_rejuvenate"
+			"trigger": "pf_acid_clean"
 		}
 	},
   "rewards": {

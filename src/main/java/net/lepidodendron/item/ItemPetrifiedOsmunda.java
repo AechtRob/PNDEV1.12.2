@@ -36,7 +36,7 @@ public class ItemPetrifiedOsmunda extends ElementsLepidodendronMod.ModElement {
 			super(BlockOsmunda.block);
 			setTranslationKey("pf_petrified_osmunda");
 			setRegistryName("petrified_osmunda");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

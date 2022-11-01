@@ -36,7 +36,7 @@ public class ItemPetrifiedEdwardsiphyton extends ElementsLepidodendronMod.ModEle
 			super(BlockEdwardsiphyton.block);
 			setTranslationKey("pf_petrified_edwardsiphyton");
 			setRegistryName("petrified_edwardsiphyton");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

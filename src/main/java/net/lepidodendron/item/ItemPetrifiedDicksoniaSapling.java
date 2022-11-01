@@ -36,7 +36,7 @@ public class ItemPetrifiedDicksoniaSapling extends ElementsLepidodendronMod.ModE
 			super(BlockDicksoniaSapling.block);
 			setTranslationKey("pf_petrified_dicksonia_sapling");
 			setRegistryName("petrified_dicksonia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

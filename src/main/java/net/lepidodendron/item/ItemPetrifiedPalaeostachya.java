@@ -36,7 +36,7 @@ public class ItemPetrifiedPalaeostachya extends ElementsLepidodendronMod.ModElem
 			super(BlockPalaeostachyaSapling.block);
 			setTranslationKey("pf_petrified_palaeostachya");
 			setRegistryName("petrified_palaeostachya");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

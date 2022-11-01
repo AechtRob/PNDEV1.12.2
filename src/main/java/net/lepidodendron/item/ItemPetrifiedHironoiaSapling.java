@@ -36,7 +36,7 @@ public class ItemPetrifiedHironoiaSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockHironoiaSapling.block);
 			setTranslationKey("pf_petrified_hironoia_sapling");
 			setRegistryName("petrified_hironoia_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

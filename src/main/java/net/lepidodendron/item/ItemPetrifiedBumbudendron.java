@@ -41,7 +41,7 @@ public class ItemPetrifiedBumbudendron extends ElementsLepidodendronMod.ModEleme
 			super(null);
 			setTranslationKey("pf_petrified_bumbudendron");
 			setRegistryName("petrified_bumbudendron");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

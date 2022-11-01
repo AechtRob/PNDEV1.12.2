@@ -36,7 +36,7 @@ public class ItemPetrifiedNystroemia extends ElementsLepidodendronMod.ModElement
 			super(BlockNystroemia.block);
 			setTranslationKey("pf_petrified_nystroemia");
 			setRegistryName("petrified_nystroemia");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

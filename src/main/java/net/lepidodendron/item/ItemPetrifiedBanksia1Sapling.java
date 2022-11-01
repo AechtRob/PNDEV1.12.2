@@ -36,7 +36,7 @@ public class ItemPetrifiedBanksia1Sapling extends ElementsLepidodendronMod.ModEl
 			super(BlockBanksia1Sapling.block);
 			setTranslationKey("pf_petrified_banksia_1_sapling");
 			setRegistryName("petrified_banksia_1_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

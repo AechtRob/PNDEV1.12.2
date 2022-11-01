@@ -36,7 +36,7 @@ public class ItemPetrifiedGuangdedendron extends ElementsLepidodendronMod.ModEle
 			super(BlockGuangdedendron.block);
 			setTranslationKey("pf_petrified_guangdedendron");
 			setRegistryName("petrified_guangdedendron");
-			setCreativeTab(TabLepidodendronPlants.tab);
+			
 		}
 	}
 }

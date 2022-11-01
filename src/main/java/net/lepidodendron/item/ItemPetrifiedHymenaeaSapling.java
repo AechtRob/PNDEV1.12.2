@@ -36,7 +36,7 @@ public class ItemPetrifiedHymenaeaSapling extends ElementsLepidodendronMod.ModEl
 			super(BlockHymenaeaSapling.block);
 			setTranslationKey("pf_petrified_hymenaea_sapling");
 			setRegistryName("petrified_hymenaea_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

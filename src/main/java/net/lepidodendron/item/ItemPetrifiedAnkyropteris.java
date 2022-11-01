@@ -36,7 +36,7 @@ public class ItemPetrifiedAnkyropteris extends ElementsLepidodendronMod.ModEleme
 			super(BlockAnkyropterisSapling.block);
 			setTranslationKey("pf_petrified_ankyropteris");
 			setRegistryName("petrified_ankyropteris");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

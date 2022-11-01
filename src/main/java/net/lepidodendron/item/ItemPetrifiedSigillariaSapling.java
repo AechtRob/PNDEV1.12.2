@@ -36,7 +36,7 @@ public class ItemPetrifiedSigillariaSapling extends ElementsLepidodendronMod.Mod
 			super(BlockSigillariaSapling.block);
 			setTranslationKey("pf_petrified_sigillaria_sapling");
 			setRegistryName("petrified_sigillaria_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

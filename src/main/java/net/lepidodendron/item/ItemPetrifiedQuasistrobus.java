@@ -36,7 +36,7 @@ public class ItemPetrifiedQuasistrobus extends ElementsLepidodendronMod.ModEleme
 			super(BlockQuasistrobus.block);
 			setTranslationKey("pf_petrified_quasistrobus");
 			setRegistryName("petrified_quasistrobus");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

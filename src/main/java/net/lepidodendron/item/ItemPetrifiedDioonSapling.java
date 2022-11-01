@@ -36,7 +36,7 @@ public class ItemPetrifiedDioonSapling extends ElementsLepidodendronMod.ModEleme
 			super(BlockDioonSapling.block);
 			setTranslationKey("pf_petrified_dioon_sapling");
 			setRegistryName("petrified_dioon_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }

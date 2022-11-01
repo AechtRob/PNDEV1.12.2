@@ -41,7 +41,7 @@ public class ItemPetrifiedNeocalamites extends ElementsLepidodendronMod.ModEleme
 			super(null);
 			setTranslationKey("pf_petrified_neocalamites");
 			setRegistryName("petrified_neocalamites");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 
 		@SideOnly(Side.CLIENT)

@@ -36,7 +36,7 @@ public class ItemPetrifiedBirchSapling extends ElementsLepidodendronMod.ModEleme
 			super(Blocks.SAPLING.getStateFromMeta(2).getBlock());
 			setTranslationKey("pf_petrified_birch_sapling");
 			setRegistryName("petrified_birch_sapling");
-			setCreativeTab(TabLepidodendronPlants.tab);
+
 		}
 	}
 }
