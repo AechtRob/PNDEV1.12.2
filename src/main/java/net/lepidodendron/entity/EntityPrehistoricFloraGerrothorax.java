@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 
 	@Override
 	public int getRoarLength() {
-		return 130;
+		return 120;
 	}
 
 	@Override
@@ -288,16 +288,17 @@ public class EntityPrehistoricFloraGerrothorax extends EntityPrehistoricFloraAge
 			launchAttack();
 		}
 
-		if (this.getAnimation() == NO_ANIMATION && this.roarCooldown == 0 && this.isAtBottom()) {
-			this.setAnimation(ROAR_ANIMATION);
-			this.roarCooldown = 1200;
-		}
-		if (this.roarCooldown > 0) {this.roarCooldown -= 1;}
-
 		if (!this.world.isRemote) {
+
+			if (this.getAnimation() == NO_ANIMATION && this.roarCooldown == 0 && this.isAtBottom()) {
+				this.setAnimation(ROAR_ANIMATION);
+				this.roarCooldown = 700 + rand.nextInt(600);
+			}
+			if (this.roarCooldown > 0) {this.roarCooldown -= 1;}
+
 			if (this.isAtBottom() && (!this.getBottomFlag()) && !this.getIsFast() && this.getSwimCooldown() <= 0) {
 				this.setBottomFlag(true);
-				this.setBottomCooldown(600 + rand.nextInt(600));
+				this.setBottomCooldown(1000 + rand.nextInt(1000));
 			}
 			if (this.isAtBottom() && (this.getBottomFlag())) {
 				this.setBottomCooldown(this.getBottomCooldown() - 1);
