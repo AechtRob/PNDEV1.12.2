@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
 			"type": "text",
-			"text": ""
+			"text": "Besanosaurus leptorhynchus is a species of ichthyosaur that existed during the middle Triassic period. The animal, taking its genus name from the Italian town of Besano, was a roughly up to 8 m long reptile that swam with eel-like motions of the body, which made it a particularly maneuverable and quick predator in the tropical waters it inhabited."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
+			"type": "text",
+			"text": "This animal mainly fed on fish and cephalopods but it's hypothesised it would also eat smaller marine reptiles as well. Contrary to later ichthyosaurs, Besanosaurus didn't have the more characteristic dolphin-like shape of the body, instead having a smaller head relative to body size attached to an elongated trunk terminating in a modest caudal fin."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
+			"type": "text",
+			"text": "The animal was first described by Dal Sasso and Pinna in 1996, based on an almost complete specimen recovered three years prior in the Sasso Caldo quarry by volunteers. The skeleton required around 22 months to prepare and 145 radiographs to pinpoint inside the stone matrix it was embedded in. Today the animal is known from several specimens, some more complete than others, ranging from just 1 m to an estimated 8 m in length."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_besanosaurus",
