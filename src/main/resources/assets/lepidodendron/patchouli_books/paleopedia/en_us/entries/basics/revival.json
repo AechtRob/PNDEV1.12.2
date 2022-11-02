@@ -29,7 +29,8 @@
 		},		
 		{
 			"type": "crafting",
-			"recipe": "lepidodendron:redstone_component_recipe"
+			"recipe": "lepidodendron:redstone_component_recipe",
+			"title": "Recipes"
 		},
 		{
 			"type": "text",
@@ -42,12 +43,14 @@
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:dna_acid_bath_recipe",
-			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur"
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur",
+			"title": "Recipes"
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
-			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe"
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe",
+			"title": "Recipes"
 		},
 		{
 			"type": "text",
@@ -68,12 +71,14 @@
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:phial_dna_acanthodes",
-			"recipe2": "lepidodendron:phial_dna_charnia"
+			"recipe2": "lepidodendron:phial_dna_charnia",
+			"title": "Recipes"
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:phial_dna_apple_sapling_oredict",
-			"recipe2": "lepidodendron:phial_dna_coelophysis_oredict"
+			"recipe2": "lepidodendron:phial_dna_coelophysis_oredict",
+			"title": "Recipes"
 		},
 		{
 			"type": "text",
@@ -81,7 +86,8 @@
 		},
 		{
 			"type": "crafting",
-			"recipe": "lepidodendron:oligopool_machine_recipe"
+			"recipe": "lepidodendron:oligopool_machine_recipe",
+			"title": "Recipes"
 		},
 		{
 			"type": "text",
@@ -94,16 +100,19 @@
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:dna_centrifuge_recipe",
-			"recipe2": "lepidodendron:dna_claw_recipe"
+			"recipe2": "lepidodendron:dna_claw_recipe",
+			"title": "Recipes"
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:dna_rail_recipe",
-			"recipe2": "lepidodendron:dna_forge_recipe"
+			"recipe2": "lepidodendron:dna_forge_recipe",
+			"title": "Recipes"
 		},
 		{
 			"type": "crafting",
-			"recipe": "lepidodendron:dna_recombiner_recipe"
+			"recipe": "lepidodendron:dna_recombiner_recipe",
+			"title": "Recipes"
 		}
 	]
 }
