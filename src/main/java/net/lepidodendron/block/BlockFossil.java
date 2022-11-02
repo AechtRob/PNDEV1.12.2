@@ -45,7 +45,7 @@ import java.util.Random;
 			int ii = rand.nextInt(levelEnchantment + 2);
 			boolean dropped = false;
 			for (int i = 0; i < ii; ++i) {
-				if (rand.nextInt(5) == 0) {
+				if (rand.nextInt(3) == 0) {
 					player.addStat(StatList.getBlockStats(this));
 					spawnAsEntity(worldIn, pos, getFossilDrop());
 					dropped = true;

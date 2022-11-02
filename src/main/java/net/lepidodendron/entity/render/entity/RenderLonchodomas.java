@@ -9,8 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderLonchodomas extends RenderLiving<EntityPrehistoricFloraLonchodomas> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas_long.png");
-    private static final ResourceLocation TEXTURE_B = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas_short.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas.png");
 
     public RenderLonchodomas(RenderManager mgr) {
         super(mgr, new ModelLonchodomas(), 0.0f);
@@ -18,9 +17,6 @@ public class RenderLonchodomas extends RenderLiving<EntityPrehistoricFloraLoncho
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraLonchodomas entity) {
-        if (entity.getVariant() <= 8) {
-            return RenderLonchodomas.TEXTURE_B;
-        }
         return RenderLonchodomas.TEXTURE;
     }
 

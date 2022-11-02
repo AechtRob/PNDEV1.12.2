@@ -1282,15 +1282,12 @@ public class LepidodendronMod {
 	public static final int ENTITY_COMETICERCUS = 512;
 	public static final int ENTITY_HARPES = 513;
 	public static final ResourceLocation HARPES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/harpes"));
-	public static final ResourceLocation HARPES_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/harpes_variant"));
 	public static final int ENTITY_BOHEMOHARPES = 514;
 	public static final ResourceLocation BOHEMOHARPES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bohemoharpes"));
 	public static final int ENTITY_AMPYX = 515;
 	public static final ResourceLocation AMPYX_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx"));
-	public static final ResourceLocation AMPYX_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ampyx_variant"));
 	public static final int ENTITY_LONCHODOMAS = 516;
 	public static final ResourceLocation LONCHODOMAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas"));
-	public static final ResourceLocation LONCHODOMAS_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/lonchodomas_variant"));
 	public static final int ENTITY_NEEYAMBASPIS= 517;
 	public static final int ENTITY_PITURIASPIS = 518;
 	public static final int ENTITY_TEGEOLEPIS = 519;
@@ -1303,7 +1300,6 @@ public class LepidodendronMod {
 	public static final int ENTITY_JAMOYTIUS = 526;
 	public static final int ENTITY_ASCOCERAS = 527;
 	public static final ResourceLocation ASCOCERAS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ascoceras"));
-	public static final ResourceLocation ASCOCERAS_LOOT_VARIANT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ascoceras_variant"));
 	public static final ResourceLocation ASCOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ascoceras_young"));
 	public static final int ENTITY_CASSINOCERAS = 528;
 	public static final ResourceLocation CASSINOCERAS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/cassinoceras_young"));

@@ -9,18 +9,12 @@ import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,8 +22,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTrilobiteBottomBase {
-
-	private static final DataParameter<Integer> VARIANT= EntityDataManager.createKey(EntityPrehistoricFloraLonchodomas.class, DataSerializers.VARINT);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -46,39 +38,7 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 		enablePersistence();
 	}
 
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(VARIANT, (rand.nextInt(20)));
-		this.setScaleForAge(false);
-	}
 
-	// these two could be used for many different alts in the future
-	public int getVariant() {
-
-		return this.dataManager.get(VARIANT);
-	}
-
-	public void setVariant(int variant) {
-
-		this.dataManager.set(VARIANT, variant);
-	}
-
-	public void writeEntityToNBT(NBTTagCompound compound)
-	{
-		super.writeEntityToNBT(compound);
-		compound.setInteger("variant", this.getVariant());
-	}
-
-	public void readEntityFromNBT(NBTTagCompound compound) {
-		super.readEntityFromNBT(compound);
-		this.setVariant(compound.getInteger("variant"));
-	}
-
-	public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
-		livingdata = super.onInitialSpawn(difficulty, livingdata);
-		this.setVariant(rand.nextInt(10));
-		return livingdata;
-	}
 	@Override
 	public boolean isSmall() {
 		return true;
@@ -189,9 +149,6 @@ public class EntityPrehistoricFloraLonchodomas extends EntityPrehistoricFloraTri
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		if (this.getVariant() <= 8) {
-			return LepidodendronMod.LONCHODOMAS_LOOT_VARIANT;
-		}
 		return LepidodendronMod.LONCHODOMAS_LOOT;
 	}
 

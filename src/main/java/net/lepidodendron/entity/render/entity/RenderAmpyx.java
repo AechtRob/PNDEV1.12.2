@@ -9,8 +9,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderAmpyx extends RenderLiving<EntityPrehistoricFloraAmpyx> {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx_long.png");
-    private static final ResourceLocation TEXTURE_B = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx_short.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
 
     public RenderAmpyx(RenderManager mgr) {
         super(mgr, new ModelAmpyx(), 0.0f);
@@ -18,9 +17,6 @@ public class RenderAmpyx extends RenderLiving<EntityPrehistoricFloraAmpyx> {
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAmpyx entity) {
-        if (entity.getVariant() <= 6) {
-            return RenderAmpyx.TEXTURE_B;
-        }
         return RenderAmpyx.TEXTURE;
     }
 
