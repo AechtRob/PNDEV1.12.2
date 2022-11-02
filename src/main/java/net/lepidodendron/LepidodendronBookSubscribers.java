@@ -49,7 +49,7 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 			RayTraceResult raytraceresult = this.rayTrace(event.getWorld(), event.getEntityPlayer(), true);
-			if (raytraceresult != null)
+			if (raytraceresult != null && !event.getEntityPlayer().isSneaking())
 			{
 				event.setCanceled(true);
 				return;

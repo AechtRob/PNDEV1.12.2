@@ -466,6 +466,9 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
             }
             else {
                 this.swing(neck, speed * bottomModifierTail * 0.33F, 0.1F, false, 0, -0.05F, f2, 0.5F);
+                if (((EntityPrehistoricFloraGerrothorax) e).getAnimation() == ((EntityPrehistoricFloraGerrothorax) e).ROAR_ANIMATION) {
+                    this.swing(body, speed * bottomModifierTail, -0.6F * bottomModifierTail, false, 0, 0, f2, 0.5F * bottomModifierTail);
+                }
             }
         }
     }
@@ -484,15 +487,15 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
 
-        animator.setAnimation(e.ROAR_ANIMATION); //130 ticks
+        animator.setAnimation(e.ROAR_ANIMATION); //120 ticks
         animator.startKeyframe(10);
         animator.rotate(this.neck, -(float) Math.toRadians(15), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.rotate(this.upperjaw, -(float) Math.toRadians(62.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.startKeyframe(5);
-        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.neck, -(float) Math.toRadians(12.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(57.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.startKeyframe(10);
@@ -501,8 +504,8 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.startKeyframe(5);
-        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.neck, -(float) Math.toRadians(12.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(57.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.startKeyframe(10);
@@ -511,8 +514,8 @@ public class ModelGerrothorax extends AdvancedModelBaseExtended {
         animator.endKeyframe();
         animator.setStaticKeyframe(10);
         animator.startKeyframe(5);
-        animator.rotate(this.neck, -(float) Math.toRadians(10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.upperjaw, -(float) Math.toRadians(50), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.neck, -(float) Math.toRadians(12.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.upperjaw, -(float) Math.toRadians(57.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.startKeyframe(10);
