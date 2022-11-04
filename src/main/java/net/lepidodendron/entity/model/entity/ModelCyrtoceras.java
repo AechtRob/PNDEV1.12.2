@@ -250,6 +250,7 @@ public class ModelCyrtoceras extends AdvancedModelBaseExtended {
 
         this.resetToDefaultPose();
         this.body.offsetY = 1.2F;
+        float zOffset = 0.3F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.leg1, this.cube_r2};
         AdvancedModelRendererExtended[] tentacle2 = {this.leg2, this.cube_r4};
@@ -291,11 +292,12 @@ public class ModelCyrtoceras extends AdvancedModelBaseExtended {
 
         if (e.isInWater()) {
             this.bob(body, 0.1F, 2.0F, false, f2, 2);
-            this.body.offsetZ = this.moveBoxExtended(speed, 0.5F, false, 0, f2, 1);
+            this.body.offsetZ = this.moveBoxExtended(speed, 0.15F, false, 0, f2, 1) + zOffset;
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
             this.body.offsetY = 1.15F;
+            this.body.offsetZ = zOffset;
         }
 
     }

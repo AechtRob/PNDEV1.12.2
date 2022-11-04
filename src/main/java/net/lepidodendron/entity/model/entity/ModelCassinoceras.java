@@ -1,7 +1,6 @@
 package net.lepidodendron.entity.model.entity;
 
 
-import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
@@ -275,6 +274,7 @@ public class ModelCassinoceras extends AdvancedModelBaseExtended {
 
         this.resetToDefaultPose();
         this.shell.offsetY = 4F;
+        float offsetZ = -0.19F;
 
         AdvancedModelRendererExtended[] tentacle2 = {this.tentacle2, this.outertentacle2};
         AdvancedModelRendererExtended[] tentacle3 = {this.tentacle3, this.outertentacle3};
@@ -320,10 +320,12 @@ public class ModelCassinoceras extends AdvancedModelBaseExtended {
             this.walk(shell, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.shell.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 0.5F) + 1.3F;
             this.shell.rotateAngleY = (float) Math.toRadians(180);
+            this.shell.offsetZ = offsetZ;
         }
         else {
             this.shell.rotateAngleZ = (float) Math.toRadians(90);
             this.shell.offsetY = 1.32F;
+            this.shell.offsetZ = offsetZ;
         }
 
     }

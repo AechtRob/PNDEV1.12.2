@@ -228,7 +228,7 @@ public class ModelAscoceras extends AdvancedModelBaseExtended {
         if (e.isInWater()) {
             float bobSpeed = 0.1F;
             this.bob(shell, bobSpeed, 0.8F, false, f2, 2);
-            this.shell.offsetZ = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1);
+            this.shell.offsetZ = this.moveBoxExtended(speed, 0.05F, false, 0.5F, f2, 1);
         }
         else {
             this.shell.rotateAngleZ = (float) Math.toRadians(90);

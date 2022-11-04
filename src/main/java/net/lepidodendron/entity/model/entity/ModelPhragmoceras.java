@@ -280,7 +280,8 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.body.offsetY = 4F;
+         float offsetY = 1.3F;
+         this.body.rotateAngleY = (float)Math.toRadians(180);
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1, this.armb1};
         AdvancedModelRendererExtended[] tentacle2 = {this.arm2, this.armb2};
@@ -329,15 +330,16 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
         this.chainSwing(tentacle2, speed, 0.1F, -1.5, f2, 1F);
 
         if (e.isInWater()) {
-            this.bob(body, speed, 3.0F, false, f2, 2);
+            this.bob(body, speed, 0.25F, false, f2, 2);
             this.flap(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
             this.walk(body, speed*0.5F, 0.06F, false, 0, 0, f2, 2);
-            this.body.offsetY = this.moveBoxExtended(speed, 0.2F, false, 0, f2, 1) + 1.3F;
+            this.body.offsetY = this.moveBoxExtended(speed, 0.05F, false, 0, f2, 1) + offsetY;
+            this.body.offsetZ = this.moveBoxExtended(speed, -0.03F, false, 0, f2, 1);
 
         }
         else {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.22F;
+            this.body.offsetY = offsetY;
         }
 
     }

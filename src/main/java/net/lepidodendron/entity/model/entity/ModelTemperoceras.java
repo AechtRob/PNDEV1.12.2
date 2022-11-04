@@ -239,6 +239,7 @@ public class ModelTemperoceras extends AdvancedModelBaseExtended {
 
         this.resetToDefaultPose();
         this.wholething.offsetY = 1.3F;
+        float offsetZ = 0.1F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.top, this.top2};
         AdvancedModelRendererExtended[] tentacle2 = {this.topright, this.topright2};
@@ -282,11 +283,12 @@ public class ModelTemperoceras extends AdvancedModelBaseExtended {
 
         if (e.isInWater()) {
             this.bob(wholething, 0.1F, 2.0F, false, f2, 2);
-            this.wholething.offsetZ = this.moveBoxExtended(speed, 0.15F, false, 2.5F, f2, 1);
+            this.wholething.offsetZ = this.moveBoxExtended(speed, 0.075F, false, 3.5F, f2, 1) + offsetZ;
         }
         else {
             this.wholething.rotateAngleZ = (float) Math.toRadians(90);
             this.wholething.offsetY = 1.35F;
+            this.wholething.offsetZ = offsetZ;
         }
 
     }
