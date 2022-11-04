@@ -1,0 +1,7 @@
+{
+    "name": "Revival System",
+    "description": "$(l)This section will walk you through the mod's revival system!",
+    "icon": "lepidodendron:acid_bath_item",
+    "parent": "lepidodendron:basics",
+    "sortnum": 1
+}

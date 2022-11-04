@@ -1,0 +1,27 @@
+{
+	"name": "3 Acid Bath",
+	"icon": "lepidodendron:acid_bath_item",
+	"category": "lepidodendron:revival",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Acid Bath:$(br)The acid bath is used clean raw fossils. It needs to be filled with up to two buckets of sulphuric acid and it will then dissolve any sediment around raw fossils. An acid bath can operate with as many as 4 fossils at a time but will also accept less. Only some cleaning attempts will result in a cleaned fossil; others will result in various types of junk outputs."
+		},
+		{
+			"type": "text",
+			"text": "Fossil items can be inserted into the Acid bath via a hopper attached to the control panel, and cleaned fossils can be extracted via a hopper placed under the head of the bath. Acid can be pumped into the bath via modded pipes, and there is a config option to require or not the use of RF Power for the machine. A redstone signal applied to the control panel will pause the acid bath. Finally the acid bath itself outputs a redstone comparator signal according to how full it is with acid."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_acid_bath_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur",
+			"title": "Recipes"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
+			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe",
+			"title": "Recipes"
+		}
+	]
+}

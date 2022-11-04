@@ -1,0 +1,16 @@
+{
+	"name": "2 Redstone Component",
+	"icon": "lepidodendron:redstone_component",
+	"category": "lepidodendron:revival",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Redstone Component:$(br)The redstone component is used in the construction of many machines"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:redstone_component_recipe",
+			"title": "Recipe"
+		}
+	]
+}
