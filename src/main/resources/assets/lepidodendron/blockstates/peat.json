@@ -1,7 +1,10 @@
 {
   "variants": {
-    "normal": {
-      "model": "lepidodendron:peat"
-    }
+    "normal": [
+      { "model": "lepidodendron:peat" },
+      { "model": "lepidodendron:peat", "y": 90 },
+      { "model": "lepidodendron:peat", "y": 180 },
+      { "model": "lepidodendron:peat", "y": 270 }
+    ]
   }
 }
