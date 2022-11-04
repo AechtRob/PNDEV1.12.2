@@ -9,6 +9,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.EnumFacing;
@@ -59,31 +60,27 @@ public class BlockDriedMud extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-
-			//return super.canSustainPlant(state, world, pos, direction, plantable);
-
 			net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
-
+			if (plantable == Blocks.MELON_STEM || plantable == Blocks.PUMPKIN_STEM)
+			{
+				return true;
+			}
 			switch (plantType)
 			{
-				case Desert: return false;
-				case Nether: return false;
-				case Crop:   return false;
-				case Cave:   return true;
+				case Desert: return true;
+				case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
 				case Plains: return true;
-				case Water:  return false;
 				case Beach:
-					boolean isBeach = true;
 					boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
 							world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
 							world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
 							world.getBlockState(pos.south()).getMaterial() == Material.WATER);
-					return isBeach && hasWater;
+					return hasWater;
 			}
 
-			return false;
-
+			return super.canSustainPlant(state, world, pos, direction, plantable);
 		}
+
 
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)

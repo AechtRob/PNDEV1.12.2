@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -28,7 +29,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -60,9 +60,9 @@ public class BlockPrehistoricGroundMossy extends ElementsLepidodendronMod.ModEle
 
 	public static final PropertyBool SNOWY = PropertyBool.create("snowy");
 	
-	public static class BlockCustom extends Block implements IGrowable, ISustainsPlantType {
+	public static class BlockCustom extends Block implements IGrowable {
 		public BlockCustom() {
-			super(Material.GROUND);
+			super(Material.GROUND, MapColor.GREEN);
 			setTranslationKey("pf_mossy_prehistoric_ground_cover");
 			setSoundType(SoundType.PLANT);
         	setDefaultState(this.blockState.getBaseState().withProperty(SNOWY, Boolean.valueOf(false)));
@@ -81,45 +81,29 @@ public class BlockPrehistoricGroundMossy extends ElementsLepidodendronMod.ModEle
 	        return state.withProperty(SNOWY, Boolean.valueOf(block == Blocks.SNOW || block == Blocks.SNOW_LAYER));
 	    }
 
+
+
 		@Override
 		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+			net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
 			if (plantable == Blocks.MELON_STEM || plantable == Blocks.PUMPKIN_STEM)
 			{
 				return true;
 			}
-			net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
-			if (canSustainPlantType(world, pos, plantType)) {
-				return true;
+			switch (plantType)
+			{
+				case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
+				case Plains: return true;
+				case Beach:
+					boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.south()).getMaterial() == Material.WATER);
+					return hasWater;
 			}
+
 			return super.canSustainPlant(state, world, pos, direction, plantable);
 		}
-
-		public boolean canSustainPlantType(IBlockAccess world, BlockPos pos, EnumPlantType plantType)
-		{
-
-			// Note: EnumPlantType will be changed at runtime by other mods using a Forge functionality.
-			//       switch() does NOT work with enums in that case, but will crash when encountering
-			//       a value not known beforehand.
-
-			// support plains and cave plants
-			if (plantType == EnumPlantType.Plains || plantType == EnumPlantType.Cave)
-			{
-				return true;
-			}
-			// support beach plants if there's water alongside
-			if (plantType == EnumPlantType.Beach)
-			{
-				return (
-						world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
-								world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
-								world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
-								world.getBlockState(pos.south()).getMaterial() == Material.WATER
-				);
-			}
-			// don't support nether plants, water plants, or crops (require farmland), or anything else by default
-			return false;
-		}
-
 
 		@Override
 		public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)

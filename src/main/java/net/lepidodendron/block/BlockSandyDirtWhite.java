@@ -19,7 +19,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -48,7 +47,7 @@ public class BlockSandyDirtWhite extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:sandy_dirt_white", "inventory"));
 	}
 
-	public static class BlockCustom extends Block implements ISustainsPlantType {
+	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.GROUND);
 			setTranslationKey("pf_sandy_dirt_white");
@@ -61,38 +60,30 @@ public class BlockSandyDirtWhite extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.DIRT;
+			return MapColor.WHITE_STAINED_HARDENED_CLAY;
 		}
-
 
 		@Override
 		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
-
-			EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
-			if (canSustainPlantType(world, pos, plantType)) {
+			net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
+			if (plantable == Blocks.MELON_STEM || plantable == Blocks.PUMPKIN_STEM)
+			{
 				return true;
 			}
+			switch (plantType)
+			{
+				case Desert: return true;
+				case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
+				case Plains: return true;
+				case Beach:
+					boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.south()).getMaterial() == Material.WATER);
+					return hasWater;
+			}
+
 			return super.canSustainPlant(state, world, pos, direction, plantable);
-		}
-
-		public boolean canSustainPlantType(IBlockAccess world, BlockPos pos, EnumPlantType plantType)
-		{
-			// support desert, plains and cave plants
-			if (plantType == EnumPlantType.Desert || plantType == EnumPlantType.Plains || plantType == EnumPlantType.Cave)
-			{
-				return true;
-			}
-			// support beach plants if there's water alongside
-			if (plantType == EnumPlantType.Beach)
-			{
-				return (
-						world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.south()).getMaterial() == Material.WATER
-				);
-			}
-			return false;
 		}
 
 		@Override

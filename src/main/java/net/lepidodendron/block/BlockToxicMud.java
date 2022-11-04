@@ -27,6 +27,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -65,6 +66,11 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);
 			setDefaultSlipperiness(0.98f);
+		}
+
+		@Override
+		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+			return false;
 		}
 
 		//@Override

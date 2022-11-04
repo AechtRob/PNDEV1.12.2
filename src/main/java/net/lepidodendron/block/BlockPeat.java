@@ -13,9 +13,12 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.IPlantable;
@@ -23,34 +26,54 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.Random;
+
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockScorchedEarth extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:scorched_dirt")
+public class BlockPeat extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:peat")
 	public static final Block block = null;
-	public BlockScorchedEarth(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.scorched_dirt);
+	public BlockPeat(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.peat);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("scorched_dirt"));
-		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("peat"));
+		elements.items.add(() -> new ItemBlock(block){
+			@Override
+			public int getItemBurnTime(ItemStack itemStack) {
+				return 600;
+			}
+		}.setRegistryName(block.getRegistryName()));
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:scorched_dirt", "inventory"));
+				new ModelResourceLocation("lepidodendron:peat", "inventory"));
 	}
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
-			super(Material.GROUND);
-			this.setHardness(0.5F);
-			this.setHarvestLevel("shovel", 0);
-			this.setSoundType(SoundType.GROUND);
-			setTranslationKey("pf_scorched_dirt");
+			super(Material.GROUND, MapColor.BROWN);
+			setTranslationKey("pf_peat");
+			setSoundType(SoundType.SLIME);
+			setHarvestLevel("shovel", 0);
+			setHardness(0.5F);
+			setResistance(2F);
+			setLightLevel(0F);
+			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Override
+		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
+		}
+
+		@Override
+		public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return 5;
 		}
 
 		@Override
@@ -75,10 +98,18 @@ public class BlockScorchedEarth extends ElementsLepidodendronMod.ModElement {
 			return super.canSustainPlant(state, world, pos, direction, plantable);
 		}
 
-		@Override
-		public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
-			return MapColor.BLACK_STAINED_HARDENED_CLAY;
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+			if (stateIn.getBlock() == this) {
+				if (worldIn.isRainingAt(pos.up()) && !worldIn.getBlockState(pos.down()).isTopSolid() && rand.nextInt(15) == 1)
+				{
+					double d0 = (double)((float)pos.getX() + rand.nextFloat());
+					double d1 = (double)pos.getY() - 0.05D;
+					double d2 = (double)((float)pos.getZ() + rand.nextFloat());
+					worldIn.spawnParticle(EnumParticleTypes.DRIP_WATER, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+				}
+			}
 		}
-
 	}
 }

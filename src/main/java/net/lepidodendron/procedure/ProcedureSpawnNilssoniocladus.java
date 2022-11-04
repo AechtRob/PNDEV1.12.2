@@ -27,6 +27,9 @@ public class ProcedureSpawnNilssoniocladus extends ElementsLepidodendronMod.ModE
 				dimensionCriteria = true;
 			if (!TreeChosen && !LepidodendronConfig.genAllPlants)
 				dimensionCriteria = false;
+			if (dimID == LepidodendronConfig.dimJurassic) {
+				dimensionCriteria = true;
+			}
 			if (dimensionCriteria && !SaplingSpawn) {
 				Biome biome = world.getBiome(new BlockPos(x, y, z));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusBlacklistBiomes))) {
@@ -38,6 +41,9 @@ public class ProcedureSpawnNilssoniocladus extends ElementsLepidodendronMod.ModE
 						biomeCriteria = false;
 				}
 				if (matchBiome(biome, LepidodendronConfigPlants.genNilssoniocladusOverrideBiomes))
+					biomeCriteria = true;
+				}
+				if (dimID == LepidodendronConfig.dimJurassic) {
 					biomeCriteria = true;
 				}
 				if (biomeCriteria && !SaplingSpawn) {

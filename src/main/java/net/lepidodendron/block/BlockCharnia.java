@@ -332,9 +332,15 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 			super.addInformation(stack, player, tooltip, advanced);
 		}
 
+
 	}
 
 	public static class TileEntityCustom extends TileEntity {
+
+		@Override
+		public AxisAlignedBB getRenderBoundingBox() {
+			return new AxisAlignedBB(pos, pos.add(1, 2, 1));
+		}
 
 	}
 }

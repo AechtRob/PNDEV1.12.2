@@ -1,12 +1,11 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.procedure.ProcedureWorldGenNilssoniocladus;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.procedure.ProcedureWorldGenTallAraucaria;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
@@ -84,13 +83,14 @@ public class WorldGenTallAraucariaTree extends WorldGenAbstractTree
 					$_dependencies.put("y", position.getY());
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
-                    $_dependencies.put("SaplingSpawn", false);
-					ProcedureWorldGenTallAraucaria.executeProcedure($_dependencies);
-                    Biome biome = worldIn.getBiome(position);
-                    if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_cycad_thickets")) {
-                        ProcedureWorldGenNilssoniocladus.executeProcedure(position.getX() + (rand.nextInt(5) - 2), position.getY(), position.getZ() + (rand.nextInt(5) - 2), worldIn);
-                        ProcedureWorldGenNilssoniocladus.executeProcedure(position.getX() + (rand.nextInt(5) - 2), position.getY(), position.getZ() + (rand.nextInt(5) - 2), worldIn);
+                    if ((worldIn.provider.getDimension() != LepidodendronConfig.dimJurassic)
+                    ){
+                        $_dependencies.put("SaplingSpawn", true); // disables Nilssoniocladus
                     }
+                    else {
+                        $_dependencies.put("SaplingSpawn", false);
+                    }
+					ProcedureWorldGenTallAraucaria.executeProcedure($_dependencies);
                     return true;
                 }
                 else

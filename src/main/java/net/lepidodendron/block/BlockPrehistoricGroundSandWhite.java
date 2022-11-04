@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -27,7 +28,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -58,7 +58,7 @@ public class BlockPrehistoricGroundSandWhite extends ElementsLepidodendronMod.Mo
 
 	public static final PropertyBool SNOWY = PropertyBool.create("snowy");
 	
-	public static class BlockCustom extends BlockFalling implements IGrowable, ISustainsPlantType {
+	public static class BlockCustom extends BlockFalling implements IGrowable {
 		public BlockCustom() {
 			super(Material.SAND);
 			setTranslationKey("pf_sandy_prehistoric_ground_cover_white");
@@ -72,6 +72,11 @@ public class BlockPrehistoricGroundSandWhite extends ElementsLepidodendronMod.Mo
         	//useNeighborBrightness = true;
 		}
 
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.WHITE_STAINED_HARDENED_CLAY;
+		}
+
 		@Override    
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 	    {
@@ -81,38 +86,21 @@ public class BlockPrehistoricGroundSandWhite extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+			net.minecraftforge.common.EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
 
-			EnumPlantType plantType = plantable.getPlantType(world, pos.offset(direction));
-			if (canSustainPlantType(world, pos, plantType)) {
-				return true;
+			switch (plantType)
+			{
+				case Desert: return true;
+				case Cave:   return state.isSideSolid(world, pos, EnumFacing.UP);
+				case Beach:
+					boolean hasWater = (world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
+							world.getBlockState(pos.south()).getMaterial() == Material.WATER);
+					return hasWater;
 			}
+
 			return super.canSustainPlant(state, world, pos, direction, plantable);
-		}
-
-		public boolean canSustainPlantType(IBlockAccess world, BlockPos pos, EnumPlantType plantType)
-		{
-
-			// Note: EnumPlantType will be changed at runtime by other mods using a Forge functionality.
-			//       switch() does NOT work with enums in that case, but will crash when encountering
-			//       a value not known beforehand.
-
-			// support desert, plains and cave plants
-			if (plantType == EnumPlantType.Desert)
-			{
-				return true;
-			}
-			// support beach plants if there's water alongside
-			if (plantType == EnumPlantType.Beach)
-			{
-				return (
-						world.getBlockState(pos.east()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.west()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.north()).getMaterial() == Material.WATER ||
-						world.getBlockState(pos.south()).getMaterial() == Material.WATER
-				);
-			}
-			// don't support nether plants, water plants, or crops (require farmland), or anything else by default
-			return false;
 		}
 
 	    @Override
