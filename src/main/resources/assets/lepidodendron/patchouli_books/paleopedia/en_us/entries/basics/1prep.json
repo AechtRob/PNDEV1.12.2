@@ -1,7 +1,8 @@
 {
-	"name": "1 Preparation",
+	"name": "Preparation",
 	"icon": "lepidodendron:fossil_hammer",
 	"category": "lepidodendron:revival",
+	"sortnum": 1,
 	"pages": [
 		{
 			"type": "text",

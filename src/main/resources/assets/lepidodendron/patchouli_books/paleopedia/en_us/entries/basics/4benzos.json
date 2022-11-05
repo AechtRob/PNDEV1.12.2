@@ -1,7 +1,8 @@
 {
-	"name": "4 Benzo Solvent",
+	"name": "Benzo-Solvent",
 	"icon": "lepidodendron:bottle_of_dna_solvent",
 	"category": "lepidodendron:revival",
+	"sortnum": 4,
 	"pages": [
 		{
 			"type": "text",

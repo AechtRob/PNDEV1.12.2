@@ -1,7 +1,8 @@
 {
-	"name": "6 Oligo Pools",
+	"name": "Oligo Pools",
 	"icon": "lepidodendron:oligo_pool",
 	"category": "lepidodendron:revival",
+	"sortnum": 6,
 	"pages": [
 		{
 			"type": "text",

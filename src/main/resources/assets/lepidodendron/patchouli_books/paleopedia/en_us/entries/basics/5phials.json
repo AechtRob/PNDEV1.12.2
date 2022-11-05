@@ -1,7 +1,8 @@
 {
-	"name": "5 Phials",
+	"name": "DNA Phials",
 	"icon": "lepidodendron:phial_dna",
 	"category": "lepidodendron:revival",
+	"sortnum": 5,
 	"pages": [
 		{
 			"type": "text",

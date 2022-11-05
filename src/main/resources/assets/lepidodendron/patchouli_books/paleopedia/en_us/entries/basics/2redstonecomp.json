@@ -1,7 +1,8 @@
 {
-	"name": "2 Redstone Component",
+	"name": "Redstone Component",
 	"icon": "lepidodendron:redstone_component",
 	"category": "lepidodendron:revival",
+	"sortnum": 2,
 	"pages": [
 		{
 			"type": "text",

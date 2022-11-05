@@ -1,7 +1,8 @@
 {
-	"name": "3 Acid Bath",
+	"name": "Acid Bath",
 	"icon": "lepidodendron:acid_bath_item",
 	"category": "lepidodendron:revival",
+	"sortnum": 3,
 	"pages": [
 		{
 			"type": "text",
