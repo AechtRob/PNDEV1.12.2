@@ -5,23 +5,23 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Phial of DNA:$(br)Phials of DNA are produced by dissolving organic material in Benzo-Solvent in a phial. You can dissolve raw fossils produced from the acid bath, as well as raw meat dropped by mobs, or from static creatures and plants (logs and leaves only). Some example recipes are shown on the next few pages."
+			"text": "Phials of DNA are produced by dissolving organic material in Benzo-Solvent in a phial. You can dissolve raw fossils produced from the acid bath, as well as raw meat dropped by mobs, or from static creatures and plants (logs and leaves only). Some example recipes are shown on the next few pages."
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:phial_dna_acanthodes",
 			"recipe2": "lepidodendron:phial_dna_charnia",
-			"title": "Recipes"
+			"title": ""
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:phial_dna_apple_sapling_oredict",
-			"title": "Recipes"
+			"recipe2": "lepidodendron:phial_dna_coelophysis_oredict",
+			"title": ""
 		},
 		{
-			"type": "crafting",
-			"recipe": "lepidodendron:phial_dna_coelophysis_oredict",
-			"title": "Recipes"
+			"type": "text",
+			"text": ""
 		}
 	]
 }

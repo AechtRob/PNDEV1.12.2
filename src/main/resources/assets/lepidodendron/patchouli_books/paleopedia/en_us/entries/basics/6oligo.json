@@ -5,12 +5,12 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Oligopool:$(br)An oligopool is a synthetic mixture of DNA bases which are able to be used by the DNA Recombiner machine to selectively rebuild DNA from a map. They are produced by the Oligopool Machine by inserting Benzo-Solvent into it. There is a config option to require or not the use of RF Power for the machine. Hoppers (and modded equivalents) can be used to insert and extract from the machine."
+			"text": "An oligopool is a synthetic mixture of DNA bases which are able to be used by the DNA Recombiner machine to selectively rebuild DNA from a map. They are produced by the Oligopool Machine by inserting Benzo-Solvent into it. There is a config option to require or not the use of RF Power for the machine. Hoppers (and modded equivalents) can be used to insert and extract from the machine."
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:oligopool_machine_recipe",
-			"title": "Recipes"
+			"title": "Oligopool Machine"
 		}
 	]
 }

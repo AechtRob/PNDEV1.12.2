@@ -5,19 +5,19 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Reviving prehistoric life is a multi-stage process, as follows:$(br)1) Obtain raw fossils$(br)2) Clean the raw fossils in an acid bath$(br)3) Combine the cleaned fossils with Benzo-Solvent to obtain DNA$(br)4) Combine the DNA with an Oligopool in the DNA Recombiner Machine"
+			"text": "Reviving prehistoric life is a multi-stage process, as follows:$(li)Obtain raw fossils$(li)Clean the raw fossils in an acid bath$(li)Combine the cleaned fossils with Benzo-Solvent to obtain DNA$(li)Combine the DNA with an Oligopool in the DNA Recombiner Machine"
 		},
 		{
 			"type": "text",
-			"text": "Fossiliferous Stone:$(br)Fossiliferous stone is a stone-like block which generates in the Overworld and the prehistoric dimensions in layers below sea-level. There is a different fossiliferous stone for each prehistoric time period. The longer ago the fossiliferous stone dates from, the lower down you will find it in each dimension, and the lower down it is the rarer the generation will be."
+			"text": "Fossiliferous stone is a stone-like block which generates in the Overworld and the prehistoric dimensions in layers below sea-level. There is a different fossiliferous stone for each prehistoric time period. The longer ago the fossiliferous stone dates from, the lower down you will find it in each dimension, and the lower down it is the rarer the generation will be."
 		},
 		{
 			"type": "text",
-			"text": "So, for example, Precambrian fossiliferous stone is very deep and rather rare in the Overworld but if you travel to a time period closer to the Precambrian you will find it closer to the surface and more commonly. When broken with a Geologic Pick it has a chance to drop raw fossils from its time period."
+			"text": "So, for example, Precambrian fossiliferous stone is very deep and rather rare in the Overworld but if you travel to a time period closer to the Precambrian you will find it closer to the surface and more commonly. When broken with a $(l:basics/geologicpick)Geologic Pick$(/l) it has a chance to drop raw fossils from its time period."
 		},
 		{
 			"type": "text",
-			"text": "Geologic Pick:$(br)The geologic pick is used to break fossiliferous stone, and when used for that has a chance to drop a period-speciic raw fossil from them. When unsuccessful the fossiliferous stone will just drop gravel. The geologic pick responds to the Fortune enchantment."
+			"text": ""
 		}
 	]
 }

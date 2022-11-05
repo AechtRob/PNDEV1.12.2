@@ -5,7 +5,7 @@
 	"pages": [
 		{
 			"type": "text",
-			"text": "Acid Bath:$(br)The acid bath is used clean raw fossils. It needs to be filled with up to two buckets of sulphuric acid and it will then dissolve any sediment around raw fossils. An acid bath can operate with as many as 4 fossils at a time but will also accept less. Only some cleaning attempts will result in a cleaned fossil; others will result in various types of junk outputs."
+			"text": "The acid bath is used clean raw fossils. It needs to be filled with up to two buckets of sulphuric acid and it will then dissolve any sediment around raw fossils. An acid bath can operate with as many as 4 fossils at a time but will also accept less. Only some cleaning attempts will result in a cleaned fossil; others will result in various types of junk outputs."
 		},
 		{
 			"type": "text",
@@ -15,13 +15,13 @@
 			"type": "crafting",
 			"recipe": "lepidodendron:dna_acid_bath_recipe",
 			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur",
-			"title": "Recipes"
+			"title": ""
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
 			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe",
-			"title": "Recipes"
+			"title": ""
 		}
 	]
 }
