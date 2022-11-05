@@ -240,8 +240,6 @@ public class ModelUrocordylus extends AdvancedModelBaseExtended {
             this.chainSwingExtended(BackL, speed * 0.2F, -0.3F, -1, 0F, f2, 1);
             this.chainSwingExtended(BackR, speed *0.2F, -0.3F, -1, 3F, f2, 1);
 
-
-
         }
         else {
             speed = speed * 4F;
