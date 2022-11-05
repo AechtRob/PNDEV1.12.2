@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
@@ -75,9 +76,22 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		if (dimID == 0) {
-			if (random.nextInt(2) != 0)
-				return;
+		if (dimID == 0
+				|| dimID == LepidodendronConfig.dimPrecambrian
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene) {
+			//if (random.nextInt(2) != 0)
+			//	return;
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 			int y = random.nextInt(10) + 1;
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

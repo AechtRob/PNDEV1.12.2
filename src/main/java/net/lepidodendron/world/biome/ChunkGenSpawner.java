@@ -6,13 +6,15 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.util.*;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
+import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeTriassic;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
-import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
-import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -850,237 +852,110 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 k7 = rand.nextInt(16) + 8;
                                                                 j11 = rand.nextInt(16) + 8;
 
-                                                                i18 = 1;
-                                                                while (i18 < 255 && !posCheck) {
-                                                                    i18 = i18 + 1;
-                                                                    pos1 = new BlockPos(pos.getX() + k7, i18, pos.getZ() + j11);
-                                                                    //System.err.println("y: " + i18);
-                                                                    //System.err.println("block: " + (worldIn.getBlockState(pos1).getBlock()));
-                                                                    //System.err.println("topblock: " + topBlock.getBlock());
-                                                                    //First check if we are in an ocean biome with distinct shallow and deep parts:
-                                                                    Biome biome = world.getBiome(pos1);
-                                                                    if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                        boolean isOcean = false;
-                                                                        if (biome instanceof BiomeDevonian) {
-                                                                            if (((BiomeDevonian)biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-                                                                                isOcean = true;
-                                                                            }
-                                                                        }
-                                                                        if (biome instanceof BiomeCarboniferous) {
-                                                                            if (((BiomeCarboniferous)biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-                                                                                isOcean = true;
-                                                                            }
-                                                                        }
-                                                                        if (biome instanceof BiomePermian) {
-                                                                            if (((BiomePermian)biome).getBiomeType() == EnumBiomeTypePermian.Ocean) {
-                                                                                isOcean = true;
-                                                                            }
-                                                                        }
-                                                                        if (biome instanceof BiomeTriassic) {
-                                                                            if (((BiomeTriassic)biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-                                                                                isOcean = true;
-                                                                            }
-                                                                        }
-                                                                        if (isOcean) {
-                                                                            if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean"))) {
-                                                                                if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                        && (pos1.getY() > world.getSeaLevel() - 12)) {
-                                                                                    //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
-                                                                                    //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                    float entityHeight = entity.height;
-                                                                                    if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                        entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
-                                                                                    }
-                                                                                    if (entityHeight < 0.9) {
-                                                                                        posCheck = true;
-                                                                                    } else if (entityHeight < 1.9) {
-                                                                                        if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                            posCheck = true;
-                                                                                        }
-                                                                                    } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                        posCheck = true;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                            else {
-                                                                                posCheck = false;
-                                                                            }
-                                                                        } else if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                && (world.isAirBlock(pos1.up()) || world.getBlockState(pos1.up()).getMaterial() == Material.ICE)
-                                                                                && (pos1.up(2).getY() >= world.getSeaLevel())
-                                                                                && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
-                                                                        ) {
-                                                                            float entityHeight = entity.height;
-                                                                            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                            }
-                                                                            if (entityHeight < 0.9) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                            else if (entityHeight < 1.9) {
-                                                                                if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                            else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    else if (biome instanceof BiomeOrdovician) {
-                                                                        BiomeOrdovician biomeOR = (BiomeOrdovician) biome;
-                                                                        if (biomeOR.getBiomeType() == EnumBiomeTypeOrdovician.Ocean) {
-                                                                            if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                    && (pos1.getY() > world.getSeaLevel() - 25)) {
-                                                                                //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
-                                                                                //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                float entityHeight = entity.height;
-                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                                }
-                                                                                if (entityHeight < 0.9) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                                else if (entityHeight < 1.9) {
-                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                        posCheck = true;
-                                                                                    }
-                                                                                }
-                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                        else if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                && (world.isAirBlock(pos1.up()) || world.getBlockState(pos1.up()).getMaterial() == Material.ICE)
-                                                                                && (pos1.up(2).getY() >= world.getSeaLevel())
-                                                                                && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
-                                                                        ) {
-                                                                            float entityHeight = entity.height;
-                                                                            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                            }
-                                                                            if (entityHeight < 0.9) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                            else if (entityHeight < 1.9) {
-                                                                                if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                            else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    else if (biome instanceof BiomeSilurian) {
-                                                                        BiomeSilurian biomeOS = (BiomeSilurian) biome;
-                                                                        if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")) {
-                                                                            if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                    && (pos1.getY() > world.getSeaLevel() - 5)) {
-                                                                                //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
-                                                                                //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                float entityHeight = entity.height;
-                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                                }
-                                                                                if (entityHeight < 0.9) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                                else if (entityHeight < 1.9) {
-                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                        posCheck = true;
-                                                                                    }
-                                                                                }
-                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                        } else if (biomeOS.getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
-                                                                            if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                    && (pos1.getY() > world.getSeaLevel() - 25)) {
-                                                                                //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
-                                                                                //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                                float entityHeight = entity.height;
-                                                                                if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                    entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                                }
-                                                                                if (entityHeight < 0.9) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                                else if (entityHeight < 1.9) {
-                                                                                    if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                        posCheck = true;
-                                                                                    }
-                                                                                }
-                                                                                else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                        } else if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                && (world.isAirBlock(pos1.up()) || world.getBlockState(pos1.up()).getMaterial() == Material.ICE)
-                                                                                && (pos1.up(2).getY() >= world.getSeaLevel())
-                                                                                && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
-                                                                        ) {
-                                                                            float entityHeight = entity.height;
-                                                                            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                            }
-                                                                            if (entityHeight < 0.9) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                            else if (entityHeight < 1.9) {
-                                                                                if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                            else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_biome")) {
-                                                                        if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                                && (pos1.getY() > world.getSeaLevel() - 50)) {
-                                                                            //EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
-                                                                            //EntityLiving entity = (EntityLiving) ee.newInstance(world);
-                                                                            float entityHeight = entity.height;
-                                                                            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                                entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
-                                                                            }
-                                                                            if (entityHeight < 0.9) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                            else if (entityHeight < 1.9) {
-                                                                                if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
-                                                                                    posCheck = true;
-                                                                                }
-                                                                            }
-                                                                            else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
-                                                                                posCheck = true;
-                                                                            }
-                                                                        }
-                                                                    } else if ((world.getBlockState(pos1).getMaterial() == Material.WATER)
-                                                                            && (world.isAirBlock(pos1.up()) || world.getBlockState(pos1.up()).getMaterial() == Material.ICE)
-                                                                            && (pos1.up(2).getY() >= world.getSeaLevel())
-                                                                            && (world.getBlockState(pos1.down(4)).getMaterial() != Material.WATER)
-                                                                    ) {
-                                                                        posCheck = true;
-                                                                    }
+                                                                pos1 = new BlockPos(pos.getX() + k7, 0, pos.getZ() + j11);
+                                                                pos1 = getTopSolidBlock(pos1, world).up();
+                                                                if (world.getBlockState(pos1).getMaterial() != Material.WATER) {
+                                                                    break; //This isnt water so try again
+                                                                }
 
-                                                                    int xx = -1;
-                                                                    while (xx <= 1 && posCheck) {
-                                                                        int zz = -1;
-                                                                        while (zz <= 1 && posCheck) {
-                                                                            if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
-                                                                                posCheck = false;
-                                                                            }
-                                                                            zz = zz + 1;
+                                                                //System.err.println("y: " + i18);
+                                                                //System.err.println("block: " + (worldIn.getBlockState(pos1).getBlock()));
+                                                                //System.err.println("topblock: " + topBlock.getBlock());
+                                                                //First check if we are in an ocean biome with distinct shallow and deep parts:
+                                                                Biome biome = world.getBiome(pos1);
+                                                                if (biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
+                                                                    boolean isOcean = false;
+                                                                    if (biome instanceof BiomeDevonian) {
+                                                                        if (((BiomeDevonian)biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+                                                                            isOcean = true;
                                                                         }
-                                                                        xx = xx + 1;
+                                                                    }
+                                                                    if (biome instanceof BiomeCarboniferous) {
+                                                                        if (((BiomeCarboniferous)biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+                                                                            isOcean = true;
+                                                                        }
+                                                                    }
+                                                                    if (biome instanceof BiomePermian) {
+                                                                        if (((BiomePermian)biome).getBiomeType() == EnumBiomeTypePermian.Ocean
+                                                                            || ((BiomePermian)biome).getBiomeType() == EnumBiomeTypePermian.River) { //spawn conditions for rivers as shallow
+                                                                            isOcean = true;
+                                                                        }
+                                                                    }
+                                                                    if (biome instanceof BiomeTriassic) {
+                                                                        if (((BiomeTriassic)biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
+                                                                                || ((BiomeTriassic)biome).getBiomeType() == EnumBiomeTypeTriassic.River) { //spawn conditions for rivers as shallow
+                                                                            isOcean = true;
+                                                                        }
+                                                                    }
+                                                                    if (isOcean) {
+                                                                        if (!(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean")) && !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean"))) {
+                                                                            //We are in the shallow ocean biomes or a river:
+                                                                            float entityHeight = entity.height;
+                                                                            if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                                entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
+                                                                            }
+                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)) {
+                                                                                posCheck = true;
+                                                                            } else if (entityHeight < 1.9) {
+                                                                                if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                    posCheck = true;
+                                                                                }
+                                                                            } else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
+                                                                                posCheck = true;
+                                                                            }
+                                                                            //This is OK to spawn here at the sea floor with enough headroom
+                                                                        }
+                                                                        else {
+                                                                            posCheck = false; //This is deep ocean so we dont spawn here
+                                                                        }
+                                                                    }
+                                                                    else { //Is there a column of water above us no more than 6 blocks deep?
+                                                                        if (world.isAirBlock(pos1.up(6))
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.ICE
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.PACKED_ICE
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.VINE
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.LEAVES
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.PLANTS
+                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.WEB) {
+                                                                            posCheck = true;
+                                                                        }
+
+                                                                        //Get a position in the water column:
+                                                                        if (!posCheck) {
+                                                                            break;
+                                                                        }
+
+                                                                        posCheck = false; //final checks
+                                                                        float entityHeight = entity.height;
+                                                                        if (entity instanceof EntityPrehistoricFloraAgeableBase) {
+                                                                            entityHeight = ((EntityPrehistoricFloraAgeableBase)entity).maxHeight;
+                                                                        }
+                                                                        if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)) {
+                                                                            posCheck = true; //These are fine in a single block deep
+                                                                        }
+                                                                        else if (entityHeight < 1.9) {
+                                                                            if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
+                                                                                posCheck = true; //These are fine in a double block deep
+                                                                            }
+                                                                        }
+                                                                        else if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER && world.getBlockState(pos1.up(2)).getMaterial() == Material.WATER) {
+                                                                            posCheck = true; //Else require triple block deep
+                                                                        }
                                                                     }
                                                                 }
-                                                                i2 = i2 + 1;
+
+                                                                //Finally validate it's not just a tiny puddle:
+                                                                int xx = -1;
+                                                                while (xx <= 1 && posCheck) {
+                                                                    int zz = -1;
+                                                                    while (zz <= 1 && posCheck) {
+                                                                        if (world.getBlockState(pos1.add(xx, 0, zz)).getMaterial() != Material.WATER) {
+                                                                            posCheck = false;
+                                                                        }
+                                                                        zz = zz + 1;
+                                                                    }
+                                                                    xx = xx + 1;
+                                                                }
                                                             }
                                                             k7 = pos1.getX() - pos.getX();
                                                             i18 = pos1.getY() - pos.getY();
@@ -1531,7 +1406,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }, "pf_summon " + mobToSpawn + " " + posSpawn.getX() + " " + (posSpawn.getY() + 1) + " " + posSpawn.getZ() + " " + nbtStr);
                                                                     }
 
-                                                                    System.err.println("Spawned locID " + locationID + " " + mobToSpawn + " at " + posSpawn.getX() + " " + (posSpawn.getY() + 1) + " " + posSpawn.getZ());
+                                                                    //System.err.println("Spawned locID " + locationID + " " + mobToSpawn + " at " + posSpawn.getX() + " " + (posSpawn.getY() + 1) + " " + posSpawn.getZ());
 
                                                                 }
                                                             }
@@ -1609,7 +1484,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             blockpos1 = blockpos.down();
             IBlockState state = chunk.getBlockState(blockpos1);
 
-            if (state.getMaterial().blocksMovement() && state.getMaterial() != Material.WATER)
+            if (state.getMaterial().blocksMovement()
+                    && state.getMaterial() != Material.WATER
+                    && state.getMaterial() != Material.LEAVES
+                    && state.getMaterial() != Material.VINE
+                    && state.getMaterial() != Material.PLANTS)
             {
                 break;
             }
