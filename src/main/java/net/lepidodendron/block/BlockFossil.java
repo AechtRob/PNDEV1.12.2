@@ -83,8 +83,10 @@ import java.util.Random;
 
 	@Override
 	public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-		return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		//return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		return layer == BlockRenderLayer.TRANSLUCENT;
 	}
+
 
 	public abstract ItemStack getFossilDrop();
 
