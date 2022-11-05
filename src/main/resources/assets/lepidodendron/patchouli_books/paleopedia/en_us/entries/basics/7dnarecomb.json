@@ -1,0 +1,36 @@
+{
+	"name": "7 DNA Recombiner",
+	"icon": "lepidodendron:dna_recombiner_item",
+	"category": "lepidodendron:revival",
+	"pages": [
+		{
+			"type": "text",
+			"text": "DNA Recombiner Machine:$(br)This machine is crafted from the four seperate components as shown in the recipe. Phials of DNA should be inserted into the centrifuge part of the machine. The machine will start processing once the lid is closed and the centrifuge is balanced. The centrifuge will accpt up to four phials of DNA although you can balance using empty phials if necessary. You can use hoppers (and modded equivalents) to insert phials into the Centrifuge. You cannot extract alread-centrifuged phials and the machine will remain locked until all centrifuged phials have been processed by the next stages."
+		},
+		{
+			"type": "text",
+			"text": "The machine will transfer the centrifuged DNA phial into the main DNA Forge part of the machine. This part needs to have a supply of oligopools in order to process the phial. You can use hoppers (and modded equivalents) to insert oligopools into the DNA Forge, and to extract completed DNA from it. Once complete the DNA Forge will produce a placeable cultured DNA item to create the living thing."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_centrifuge_recipe",
+			"recipe2": "lepidodendron:dna_claw_recipe",
+			"title": "Recipes"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_forge_recipe",
+			"title": "Recipes"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_rail_recipe",
+			"title": "Recipes"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:dna_recombiner_recipe",
+			"title": "Recipes"
+		}
+	]
+}
