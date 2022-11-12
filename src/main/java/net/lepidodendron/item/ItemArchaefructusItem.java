@@ -58,7 +58,7 @@ public class ItemArchaefructusItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNArchaefructus", ItemArchaefructusItem.block);
+		OreDictionary.registerOre("plantdnaPNarchaefructus_item", ItemArchaefructusItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemArchaefructusItem.block);
 		OreDictionary.registerOre("plant", ItemArchaefructusItem.block);
 	}

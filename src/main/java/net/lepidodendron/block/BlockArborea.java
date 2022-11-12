@@ -66,7 +66,7 @@ public class BlockArborea extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockArborea.TileEntityCustom.class, "lepidodendron:tileentityarborea");
-		OreDictionary.registerOre("dnaPNArborea", BlockArborea.block);
+		OreDictionary.registerOre("staticdnaPNarborea", BlockArborea.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

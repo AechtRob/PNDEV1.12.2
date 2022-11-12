@@ -17,6 +17,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -89,7 +90,7 @@ public class BlockAcidBathEndUp extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return (new ItemStack(ItemAcidBath.block, 1).getItem());
+			return (new ItemStack(Items.AIR, 1).getItem());
 		}
 
 		@Override

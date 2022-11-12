@@ -25,8 +25,10 @@ public class LepidodendronConfig {
     public static boolean biomeApple = true;
     public static boolean machinesRF = false;
     public static boolean sulphuricAcidGrief = true;
+    public static boolean sulphuricAcidInfinite = false;
 
     public static boolean genFossil = true;
+    public static double junkFossil = 12.5;
     public static boolean modFire = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
@@ -136,7 +138,6 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsCanyonsPF = new String[]{"lepidodendron:prehistoric_flora_arizonasaurus:2:42:1","lepidodendron:prehistoric_flora_austriadactylus:6:22:1","lepidodendron:prehistoric_flora_austrolimulus:6:90:3","lepidodendron:prehistoric_flora_caviramus:6:22:1","lepidodendron:prehistoric_flora_ceratodus:4:80:3","lepidodendron:prehistoric_flora_chinlea:4:80:3","lepidodendron:prehistoric_flora_clevosaurus:2:26:1","lepidodendron:prehistoric_flora_dinodontosaurus:4:22:1","lepidodendron:prehistoric_flora_drepanosaurus:6:12:1","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_lagosuchus:3:42:1","lepidodendron:prehistoric_flora_lonchidion:1:36:3","lepidodendron:prehistoric_flora_lotosaurus:4:62:1","lepidodendron:prehistoric_flora_lystrosaurus:5:40:1","lepidodendron:prehistoric_flora_mastodonsaurus:2:17:3","lepidodendron:prehistoric_flora_metoposaurus:2:22:3","lepidodendron:prehistoric_flora_palaeontinid:3:30:1","lepidodendron:prehistoric_flora_roachoid_forest:5:14:1","lepidodendron:prehistoric_flora_roachoid_swamp:5:14:1","lepidodendron:prehistoric_flora_saurichthys_freshwater:5:90:3","lepidodendron:prehistoric_flora_semionotus:10:90:3","lepidodendron:prehistoric_flora_shringasaurus:3:63:1","lepidodendron:prehistoric_flora_smilosuchus:2:-8:1","lepidodendron:prehistoric_flora_smilosuchus:2:-8:3","lepidodendron:prehistoric_flora_snail_land:3:39:1","lepidodendron:prehistoric_flora_stagonolepis:3:8:1","lepidodendron:prehistoric_flora_stanocephalosaurus:3:8:1","lepidodendron:prehistoric_flora_tanystropheus:3:-18:3","lepidodendron:prehistoric_flora_teraterpeton:3:46:1","lepidodendron:prehistoric_flora_titanoptera_gigatitan:3:25:1","lepidodendron:prehistoric_flora_titanoptera_mesotitan:3:15:1","lepidodendron:prehistoric_flora_triadobatrachus:4:73:3","lepidodendron:prehistoric_flora_vancleavea:3:-55:3","lepidodendron:prehistoric_flora_xenacanthus:2:84:3"};
     public static String[] dimTriassicMobsIslandsPF = new String[]{"lepidodendron:prehistoric_flora_aeger:6:70:3","lepidodendron:prehistoric_flora_ammonite_asteroceras:2:60:3","lepidodendron:prehistoric_flora_ammonite_goniatites:2:60:3","lepidodendron:prehistoric_flora_atopodentatus:6:6:1","lepidodendron:prehistoric_flora_aulacoceras:4:62:3","lepidodendron:prehistoric_flora_birgeria:6:68:3","lepidodendron:prehistoric_flora_brembodus:8:75:3","lepidodendron:prehistoric_flora_cartorhynchus:2:74:3","lepidodendron:prehistoric_flora_cartorhynchus:2:15:1","lepidodendron:prehistoric_flora_caturus:6:62:3","lepidodendron:prehistoric_flora_chaohusaurus:3:60:3","lepidodendron:prehistoric_flora_cidaroida:5:100:3","lepidodendron:prehistoric_flora_eorhynchochelys:2:32:3","lepidodendron:prehistoric_flora_eretmorhipis:2:30:3","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_keichousaurus:2:8:3","lepidodendron:prehistoric_flora_limulid:4:28:3","lepidodendron:prehistoric_flora_nothosaurus:4:6:3","lepidodendron:prehistoric_flora_panzhousaurus:3:5:3","lepidodendron:prehistoric_flora_parhybodus:2:4:3","lepidodendron:prehistoric_flora_potanichthys:10:69:3","lepidodendron:prehistoric_flora_rebellatrix:5:78:3","lepidodendron:prehistoric_flora_saurichthys_marine:5:78:3","lepidodendron:prehistoric_flora_semionotus:10:85:3","lepidodendron:prehistoric_flora_thecodontosaurus:2:6:1"};
     public static String[] dimTriassicMobsMountainsPF = new String[]{"lepidodendron:prehistoric_flora_austriadactylus:2:1:1","lepidodendron:prehistoric_flora_clevosaurus:2:2:1","lepidodendron:prehistoric_flora_coelophysis:1:-1:1","lepidodendron:prehistoric_flora_eudimorphodon:2:1:1","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_lystrosaurus:3:2:1","lepidodendron:prehistoric_flora_morganucodon:3:5:1","lepidodendron:prehistoric_flora_roachoid_arid:5:5:1"};
-
 
     //------------ Fossils and Archeology mobs:
     public static String[] dimPrecambrianMobsFA = new String[0];
@@ -519,6 +520,11 @@ public class LepidodendronConfig {
         genFossil = prop.getBoolean();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "junkFossil", junkFossil);
+        prop.setComment("Percentage chance that the acid bath returns a junk output instead of a fossil (0-100). [default: 12.5]");
+        junkFossil = prop.getDouble();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("Global World-Gen", "biomeApple", biomeApple);
         prop.setComment("Set to false to disable the world-gen of this mod's overworld apple orchards. [default: true]");
         biomeApple = prop.getBoolean();
@@ -532,6 +538,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "sulphuricAcidGrief", sulphuricAcidGrief);
         prop.setComment("Sulphuric Acid causes griefing to organic blocks. [default: true]");
         sulphuricAcidGrief = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "sulphuricAcidInfinite", sulphuricAcidInfinite);
+        prop.setComment("Allow Sulphuric Acid to form an infinite source like vanilla water. [default: false]");
+        sulphuricAcidInfinite = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "modFire", modFire);

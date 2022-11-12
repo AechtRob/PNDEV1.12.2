@@ -60,7 +60,7 @@ public class BlockAneurophytonLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAneurophyton", BlockAneurophytonLog.block);
+		OreDictionary.registerOre("plantdnaPNaneurophyton_sapling", BlockAneurophytonLog.block);
 		OreDictionary.registerOre("logWood", BlockAneurophytonLog.block);
 	}
 

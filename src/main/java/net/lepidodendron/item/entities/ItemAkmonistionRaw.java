@@ -35,7 +35,7 @@ public class ItemAkmonistionRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAkmonistion", ItemAkmonistionRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_akmonistion", ItemAkmonistionRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAkmonistionRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAkmonistionRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAkmonistionRaw.block);

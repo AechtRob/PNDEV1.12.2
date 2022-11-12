@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAntineosteus extends RenderLiving<EntityPrehistoricFloraAntineosteus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus.png");
-    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus_baby.png");
+    private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus.png");
 
     public RenderAntineosteus(RenderManager mgr) {
         super(mgr, new ModelAntineosteus(), 0.25f);

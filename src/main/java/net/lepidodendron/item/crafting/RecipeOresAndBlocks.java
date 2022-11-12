@@ -37,13 +37,15 @@ public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
 
 		GameRegistry.addSmelting(new ItemStack(ItemRedClayBall.block, (int) (1)), new ItemStack(Items.BRICK, (int) (1)), 0.3F);
 
-		GameRegistry.addSmelting(new ItemStack(BlockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
+		GameRegistry.addSmelting(new ItemStack(BlockLavaRockZirconOre.block, (int) (1)), new ItemStack(ItemZircon.block, (int) (1)), 0.75F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockRedClay.block, (int) (1)), new ItemStack(Blocks.HARDENED_CLAY, (int) (1)), 0.35F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockCarboniferousMud.block, (int) (1)), new ItemStack(BlockDriedMud.block, (int) (1)), 0.15F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockDriedMud.block, (int) (1)), new ItemStack(BlockBrownstone.block, (int) (1)), 0.15F);
+
+		GameRegistry.addSmelting(new ItemStack(BlockBrownstone.block, (int) (1)), new ItemStack(BlockBrownstoneSmooth.block, (int) (1)), 0.1F);
 
 	}
 }

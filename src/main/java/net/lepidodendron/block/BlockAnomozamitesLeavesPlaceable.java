@@ -59,7 +59,7 @@ public class BlockAnomozamitesLeavesPlaceable extends ElementsLepidodendronMod.M
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAnomozamites", BlockAnomozamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNanomozamites_sapling", BlockAnomozamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAnomozamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("plant", BlockAnomozamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockAnomozamitesLeavesPlaceable.block);

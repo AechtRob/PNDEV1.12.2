@@ -1,0 +1,25 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "lepidodendron:zircon_lens"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    },
+    "7": {
+      "item": "lepidodendron:redstone_component"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:microscope",
+    "count": 1
+  }
+}

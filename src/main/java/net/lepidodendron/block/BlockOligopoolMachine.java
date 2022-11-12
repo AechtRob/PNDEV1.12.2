@@ -81,7 +81,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.IRON);
 			setTranslationKey("pf_oligopool_machine");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(2.5F);
 			setResistance(3.5F);

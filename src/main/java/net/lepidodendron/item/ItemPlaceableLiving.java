@@ -3,9 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.entity.EntityPrehistoricFloraLonchodomas;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,6 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -53,7 +52,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
-			maxStackSize = 1;
+			maxStackSize = 64;
 			setTranslationKey("pf_placeable_living");
 			setRegistryName("placeable_living");
 			setCreativeTab(null);
@@ -62,8 +61,21 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 		public String getTranslationKey(ItemStack stack)
 		{
 			if (isBlockFromItemStack(stack)) {
-				String resourcelocation = stack.getTagCompound().getString("id_dna");
-				return "item.placeable_living_" + getDNAStr(resourcelocation);
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.placeable_living_" + getDNAStr(resourcelocation);
+				}
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.placeable_living_" + getDNAStr(resourcelocation);
+				}
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.placeable_living_" + getDNAStr(resourcelocation);
+				}
 			}
 			return super.getTranslationKey(stack);
 		}
@@ -85,7 +97,13 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 		public static boolean isBlockFromItemStack(ItemStack stack) {
 			if (stack.hasTagCompound() == false
-					|| !stack.getTagCompound().hasKey("id_dna")) return false;
+					||
+					((!stack.getTagCompound().hasKey("PFPlant"))
+					&& (!stack.getTagCompound().hasKey("PFMob"))
+					&& (!stack.getTagCompound().hasKey("PFStatic")))
+			) {
+				return false;
+			}
 			return true;
 		}
 
@@ -95,29 +113,81 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Nullable
-		public Block getStateFromNBT(ItemStack stack) {
-			Block blockOut = null;
-			String stringDNA = stack.getTagCompound().getString("id_dna");
-			if (stringDNA != null) {
-				blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA));
+		public IBlockState getStateFromNBT(ItemStack stack) {
+			if ((!stack.getTagCompound().hasKey("PFPlant"))
+				&& (!stack.getTagCompound().hasKey("PFStatic"))) {
+			return null;
+			}
+			IBlockState blockOut = null;
+			if (stack.getTagCompound().hasKey("PFPlant")) {
+				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+				String stringDNA = (blockNBT.getString("id"));
+				if (stringDNA != null) {
+					if (stringDNA.equalsIgnoreCase("acacia_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(4);
+					}
+					else if (stringDNA.equalsIgnoreCase("birch_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(2);
+					}
+					else if (stringDNA.equalsIgnoreCase("dark_oak_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(5);
+					}
+					else if (stringDNA.equalsIgnoreCase("jungle_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(3);
+					}
+					else if (stringDNA.equalsIgnoreCase("oak_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(0);
+					}
+					else if (stringDNA.equalsIgnoreCase("spruce_sapling")) {
+						blockOut = Blocks.SAPLING.getStateFromMeta(1);
+					}
+					else {
+						blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA)).getDefaultState();
+					}
+				}
+			}
+			else if (stack.getTagCompound().hasKey("PFStatic")) {
+				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+				String stringDNA = (blockNBT.getString("id"));
+				if (stringDNA != null) {
+					blockOut = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(stringDNA)).getDefaultState();
+				}
 			}
 			return blockOut;
 		}
 
 		@Nullable
 		public Item getItemFromNBT(ItemStack stack) {
+			if ((!stack.getTagCompound().hasKey("PFPlant"))
+				&& (!stack.getTagCompound().hasKey("PFStatic"))) {
+				return null;
+			}
 			Item itemOut = null;
-			String stringDNA = stack.getTagCompound().getString("id_dna");
-			if (stringDNA != null) {
-				itemOut = ForgeRegistries.ITEMS.getValue(new ResourceLocation(stringDNA));
+			if (stack.getTagCompound().hasKey("PFPlant")) {
+				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+				String stringDNA = (blockNBT.getString("id"));
+				if (stringDNA != null) {
+					itemOut = ForgeRegistries.ITEMS.getValue(new ResourceLocation(stringDNA));
+				}
+			}
+			else if (stack.getTagCompound().hasKey("PFStatic")) {
+				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+				String stringDNA = (blockNBT.getString("id"));
+				if (stringDNA != null) {
+					itemOut = ForgeRegistries.ITEMS.getValue(new ResourceLocation(stringDNA));
+				}
 			}
 			return itemOut;
 		}
 
 		@Nullable
 		public Class getEntityFromNBT(ItemStack stack) {
+			if (!stack.getTagCompound().hasKey("PFMob")) {
+				return null;
+			}
 			Class classOut = null;
-			String stringDNA = ((stack).hasTagCompound() ? (stack).getTagCompound().getString("id_dna") : null);
+			NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+			String stringDNA = (blockNBT.getString("id"));
 			if (stringDNA != null) {
 				classOut = findEntity(stringDNA);
 			}
@@ -162,12 +232,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						String nbtStr = "";
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-							if (entity instanceof EntityPrehistoricFloraLonchodomas) {
-								nbtStr = "{AgeTicks:0,variant:" + itemRand.nextInt(20)+ "}";
-							}
-							else {
-								nbtStr = "{AgeTicks:0}";
-							}
+							nbtStr = "{AgeTicks:0}";
 						}
 						if (!(worldIn.isRemote)) {
 							if (iblockstate.getMaterial() == Material.WATER) {
@@ -191,11 +256,24 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 					}
 					else if (getStateFromNBT(itemstack) != null || getItemFromNBT(itemstack) != null) {
 						//Plants/Blocks:
-						Block block = getStateFromNBT(itemstack);
+						IBlockState block = getStateFromNBT(itemstack);
 						Item item = null;
-						System.err.println("block " + block);
-						if (block != null && block != Blocks.AIR) {
-							ItemStack pickBlock = block.getPickBlock(block.getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
+						//System.err.println("block " + block);
+
+						//Deal with vanilla first:
+						if (block.getBlock() == Blocks.SAPLING) {
+							if (block.getBlock().canPlaceBlockAt(worldIn, blockpos.offset(raytraceresult.sideHit))) {
+								worldIn.setBlockState(blockpos.offset(raytraceresult.sideHit), block);
+								worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
+								if (!playerIn.isCreative()) {
+									itemstack.shrink(1);
+								}
+								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
+							}
+						}
+						//Now modded:
+						else if (block != null && block != Blocks.AIR) {
+							ItemStack pickBlock = block.getBlock().getPickBlock(block.getBlock().getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
 							item = pickBlock.getItem();
 						}
 						else {

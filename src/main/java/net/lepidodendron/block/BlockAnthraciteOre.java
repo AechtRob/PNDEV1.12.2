@@ -16,6 +16,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
@@ -89,7 +90,7 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 		public BlockCustom() {
 			super(Material.ROCK);
 			setTranslationKey("pf_anthracite_ore");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.STONE);
 			setHardness(3F);
 			setResistance(5F);
 			setLightLevel(0F);
@@ -153,6 +154,18 @@ public class BlockAnthraciteOre extends ElementsLepidodendronMod.ModElement {
 			{
 				return this.quantityDropped(random);
 			}
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 	}

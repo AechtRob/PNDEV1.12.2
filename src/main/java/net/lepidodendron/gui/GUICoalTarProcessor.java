@@ -348,7 +348,8 @@ public class GUICoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Coal Tar Processor", 43, 7, -16777216);
+            this.fontRenderer.drawString("Coal Tar Processor", 43, 7, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
         }
 
         @Override

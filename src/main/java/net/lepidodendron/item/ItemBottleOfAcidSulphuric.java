@@ -17,10 +17,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBottleOfAcidSulphuric extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:bottle_of_acid_sulphuric")
+	@GameRegistry.ObjectHolder("lepidodendron:bottle_of_sulfuric_acid")
 	public static final Item block = null;
 	public ItemBottleOfAcidSulphuric(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.bottle_of_acid_sulphuric);
+		super(instance, LepidodendronSorter.bottle_of_sulfuric_acid);
 	}
 
 	@Override
@@ -31,14 +31,14 @@ public class ItemBottleOfAcidSulphuric extends ElementsLepidodendronMod.ModEleme
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:bottle_of_acid_sulphuric", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:bottle_of_sulfuric_acid", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			setMaxDamage(0);
 			maxStackSize = 8;
-			setTranslationKey("pf_bottle_of_acid_sulphuric");
-			setRegistryName("bottle_of_acid_sulphuric");
+			setTranslationKey("pf_bottle_of_sulfuric_acid");
+			setRegistryName("bottle_of_sulfuric_acid");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			setContainerItem(Items.GLASS_BOTTLE);
 		}

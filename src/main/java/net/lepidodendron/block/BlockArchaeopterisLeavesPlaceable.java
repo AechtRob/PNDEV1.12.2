@@ -58,7 +58,7 @@ public class BlockArchaeopterisLeavesPlaceable extends ElementsLepidodendronMod.
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNArchaeopteris", BlockArchaeopterisLeavesPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNarchaeopteris_sapling", BlockArchaeopterisLeavesPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockArchaeopterisLeavesPlaceable.block);
 		OreDictionary.registerOre("plant", BlockArchaeopterisLeavesPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockArchaeopterisLeavesPlaceable.block);

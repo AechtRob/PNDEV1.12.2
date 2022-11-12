@@ -35,7 +35,7 @@ public class ItemArizonasaurusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNArizonasaurus", ItemArizonasaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_arizonasaurus", ItemArizonasaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemArizonasaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemArizonasaurusRaw.block);
 	}

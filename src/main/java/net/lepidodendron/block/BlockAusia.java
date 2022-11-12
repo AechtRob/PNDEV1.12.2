@@ -71,7 +71,7 @@ public class BlockAusia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAusia", BlockAusia.block);
+		OreDictionary.registerOre("staticdnaPNausia", BlockAusia.block);
 	}
 
 

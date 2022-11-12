@@ -370,17 +370,17 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             this.drawTexturedModalRect(k + 151, l + 19 + (58 - this.getProgressBarHeight()), 18,166, 6, this.getProgressBarHeight());
             int yOffsetter = 0;
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 21, l + 51, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 22, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 21, l + 51 - 8, 0,166, 18, 26);
+                this.drawTexturedModalRect(k + 22, l + 52 + this.getRFHeight() - 8, 0, 192, 16, this.getRFHeight());
             }
             else {
                 yOffsetter = 12;
             }
             if (this.getLocked()) {
-                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter, 42, 166, 18, 28);
+                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter - 8, 42, 166, 18, 28);
             }
             else {
-                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter, 24, 166, 18, 28);
+                this.drawTexturedModalRect(k + 21, l + 18 + yOffsetter - 8, 24, 166, 18, 28);
             }
             this.itemRender.renderItemIntoGUI(new ItemStack(ItemDNACentrifuge.block, 1), k + 83, l + 40);
         }
@@ -438,7 +438,8 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("DNA Centrifuge", 53, 7, -16777216);
+            this.fontRenderer.drawString("DNA Centrifuge", 53, 7, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
         }
 
         @Override

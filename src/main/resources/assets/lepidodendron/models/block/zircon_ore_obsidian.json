@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/ore_layer",
+  "textures": {
+    "stone": "blocks/obsidian",
+    "particle": "blocks/obsidian",
+    "layer": "lepidodendron:blocks/zircon_ore"
+  }
+}

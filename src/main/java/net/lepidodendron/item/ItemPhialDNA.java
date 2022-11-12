@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -44,8 +45,21 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 		public String getTranslationKey(ItemStack stack)
 		{
 			if (isBlockFromItemStack(stack)) {
-				String resourcelocation = stack.getTagCompound().getString("id_dna");
-				return "item.phial_dna_" + getDNAStr(resourcelocation);
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.phial_dna_" + getDNAStr(resourcelocation);
+				}
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.phial_dna_" + getDNAStr(resourcelocation);
+				}
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					String resourcelocation = (blockNBT.getString("id"));
+					return "item.phial_dna_" + getDNAStr(resourcelocation);
+				}
 			}
 			return super.getTranslationKey(stack);
 		}
@@ -67,7 +81,12 @@ public class ItemPhialDNA extends ElementsLepidodendronMod.ModElement {
 
 		public static boolean isBlockFromItemStack(ItemStack stack) {
 			if (stack.hasTagCompound() == false
-					|| !stack.getTagCompound().hasKey("id_dna")) return false;
+					|| ((!stack.getTagCompound().hasKey("PFPlant"))
+					&& (!stack.getTagCompound().hasKey("PFMob"))
+					&& (!stack.getTagCompound().hasKey("PFStatic")))
+			) {
+				return false;
+			}
 			return true;
 		}
 

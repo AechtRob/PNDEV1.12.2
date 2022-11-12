@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -38,6 +39,22 @@ public class ItemFossilOrdovician extends ElementsLepidodendronMod.ModElement {
 			setRegistryName("fossil_drop_ordovician");
 			maxStackSize = 64;
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		public String getTranslationKey(ItemStack stack)
+		{
+			if (stack.hasTagCompound()) {
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					return super.getTranslationKey(stack) + "_plant";
+				}
+				else if (stack.getTagCompound().hasKey("PFMob")) {
+					return super.getTranslationKey(stack) + "_mob";
+				}
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					return super.getTranslationKey(stack) + "_static";
+				}
+			}
+			return super.getTranslationKey(stack);
 		}
 
 	}

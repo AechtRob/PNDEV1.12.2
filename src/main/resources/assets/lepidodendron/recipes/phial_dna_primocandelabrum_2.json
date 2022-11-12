@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:primocandelabrum_2"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:primocandelabrum_2"}}
     },
     {
       "item": "lepidodendron:phial_empty"

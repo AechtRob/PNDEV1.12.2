@@ -9,7 +9,6 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
@@ -41,18 +40,16 @@ import java.util.Random;
 	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 		Random rand = new Random();
 		if (!worldIn.isRemote && stack.getItem() == ItemFossilHammer.block) {
+			spawnAsEntity(worldIn, pos, getFossilDrop());
+			//fortune modifier:
 			int levelEnchantment = net.minecraft.enchantment.EnchantmentHelper.getEnchantmentLevel(net.minecraft.init.Enchantments.FORTUNE, stack);
-			int ii = rand.nextInt(levelEnchantment + 2);
-			boolean dropped = false;
+			int ii = rand.nextInt(levelEnchantment + 2) * 2;
+			spawnAsEntity(worldIn, pos, getFossilDrop());
 			for (int i = 0; i < ii; ++i) {
 				if (rand.nextInt(3) == 0) {
 					player.addStat(StatList.getBlockStats(this));
 					spawnAsEntity(worldIn, pos, getFossilDrop());
-					dropped = true;
 				}
-			}
-			if (!dropped) { //Drop gravel if nothing else was chosen
-				spawnAsEntity(worldIn, pos, new ItemStack(Blocks.GRAVEL, 1));
 			}
 		} else {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);

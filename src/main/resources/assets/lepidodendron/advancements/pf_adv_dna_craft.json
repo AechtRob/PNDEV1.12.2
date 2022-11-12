@@ -1,0 +1,23 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:phial_dna"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_dna_craft.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_dna_craft.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_dna_craft"
+		}
+	},
+  "rewards": {
+	  "experience": 20
+  }
+}

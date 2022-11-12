@@ -267,7 +267,7 @@
         },
         {
           "type": "item",
-          "name": "lepidodendron:phial",
+          "name": "lepidodendron:phial_empty",
           "functions": [
             {
               "function": "set_count",

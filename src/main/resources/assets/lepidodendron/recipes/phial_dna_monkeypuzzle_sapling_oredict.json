@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNMonkeypuzzle"
+ "ore": "dnaPNmonkeypuzzle_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

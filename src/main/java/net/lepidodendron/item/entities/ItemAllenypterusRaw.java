@@ -35,7 +35,7 @@ public class ItemAllenypterusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAllenypterus", ItemAllenypterusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_allenypterus", ItemAllenypterusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAllenypterusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAllenypterusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAllenypterusRaw.block);

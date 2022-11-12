@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:cystoid_echinosphaerites"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:cystoid_echinosphaerites"}}
     },
     {
       "item": "lepidodendron:phial_empty"

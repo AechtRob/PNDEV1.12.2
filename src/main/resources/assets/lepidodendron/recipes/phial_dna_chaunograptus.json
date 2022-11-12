@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:chaunograptus"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:chaunograptus"}}
     },
     {
       "item": "lepidodendron:phial_empty"

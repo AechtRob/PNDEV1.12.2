@@ -35,7 +35,7 @@ public class ItemAttercopusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAttercopus", ItemAttercopusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_attercopus", ItemAttercopusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAttercopusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAttercopusRaw.block);
 	}

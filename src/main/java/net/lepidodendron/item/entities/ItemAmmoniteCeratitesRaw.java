@@ -36,7 +36,7 @@ public class ItemAmmoniteCeratitesRaw extends ElementsLepidodendronMod.ModElemen
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAmmoniteCeratites", ItemAmmoniteCeratitesRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ammonite_ceratites", ItemAmmoniteCeratitesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAmmoniteCeratitesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmmoniteCeratitesRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAmmoniteCeratitesRaw.block);

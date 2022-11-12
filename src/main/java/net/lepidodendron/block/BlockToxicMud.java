@@ -68,6 +68,8 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 			setDefaultSlipperiness(0.98f);
 		}
 
+		public static final DamageSource CAUSTIC = new DamageSource("caustic");
+
 		@Override
 		public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
 			return false;
@@ -82,13 +84,13 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 			{
 				if ((((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR)
 					&& (!((EntityPlayer) entityIn).capabilities.isCreativeMode)) {
-					entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (float) 0.5F);
+					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);
 				}
 			}
 			else if (entityIn instanceof EntityLivingBase)
 			{
 				if (((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR)
-					entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (float) 0.5F);
+					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);
 			}
 		}
 

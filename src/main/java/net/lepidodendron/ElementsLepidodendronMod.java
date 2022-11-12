@@ -945,6 +945,15 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUIOligopoolMachine.GUIID) {
 				return new GUIOligopoolMachine.GUILepidodendronOligopoolMachine(world, x, y, z, player);
 			}
+			if (id == GUILabBench.GUIID) {
+				return new GUILabBench.GUILepidodendronLabBench(world, x, y, z, player);
+			}
+			if (id == GUIMicroscope.GUIID) {
+				return new GUIMicroscope.GUILepidodendronMicroscope(world, x, y, z, player);
+			}
+			if (id == GUISorterFossil.GUIID) {
+				return new GUISorterFossil.GUILepidodendronSorterFossil(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -964,6 +973,15 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUIOligopoolMachine.GUIID) {
 				return new GUIOligopoolMachine.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUILabBench.GUIID) {
+				return new GUILabBench.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUIMicroscope.GUIID) {
+				return new GUIMicroscope.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUISorterFossil.GUIID) {
+				return new GUISorterFossil.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

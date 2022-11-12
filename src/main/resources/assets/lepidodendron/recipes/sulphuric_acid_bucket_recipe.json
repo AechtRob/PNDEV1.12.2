@@ -3,13 +3,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lepidodendron:bottle_of_acid_sulphuric"
+      "item": "lepidodendron:bottle_of_sulfuric_acid"
     },
     {
-      "item": "lepidodendron:bottle_of_acid_sulphuric"
+      "item": "lepidodendron:bottle_of_sulfuric_acid"
     },
     {
-      "item": "lepidodendron:bottle_of_acid_sulphuric"
+      "item": "lepidodendron:bottle_of_sulfuric_acid"
     },
     {
       "item": "minecraft:bucket"
@@ -19,7 +19,7 @@
     "type": "minecraft:item_nbt",
     "item": "forge:bucketFilled",
     "nbt": {
-      "FluidName": "acid_sulphuric",
+      "FluidName": "sulfuric_acid",
       "Amount": 1000
     },
     "count": 1

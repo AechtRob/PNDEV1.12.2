@@ -35,7 +35,7 @@ public class ItemAmpyxRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAmpyx", ItemAmpyxRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ampyx", ItemAmpyxRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAmpyxRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmpyxRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAmpyxRaw.block);

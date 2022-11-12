@@ -69,7 +69,7 @@ public class BlockAdoketophyton extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAdoketophyton", BlockAdoketophyton.block);
+		OreDictionary.registerOre("plantdnaPNadoketophyton", BlockAdoketophyton.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAdoketophyton.block);
 		OreDictionary.registerOre("plant", BlockAdoketophyton.block);
 	}

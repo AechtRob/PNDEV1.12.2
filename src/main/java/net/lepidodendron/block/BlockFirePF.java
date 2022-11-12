@@ -20,6 +20,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -145,7 +146,7 @@ public class BlockFirePF extends BlockFire {
 		if (blockIn == Blocks.CARPET) {
 		return 60;
 		}
-		if (blockIn == BlockResin.block) {
+		if (blockIn == FluidRegistry.getFluid("resin").getBlock()) {
 			return 60;
 		}
 		return 0;
@@ -263,7 +264,7 @@ public class BlockFirePF extends BlockFire {
 		if (blockIn == Blocks.CARPET) {
 		return 20;
 		}
-		if (blockIn == BlockResin.block) {
+		if (blockIn == FluidRegistry.getFluid("resin").getBlock()) {
 			return 20;
 		}
 		return 0;

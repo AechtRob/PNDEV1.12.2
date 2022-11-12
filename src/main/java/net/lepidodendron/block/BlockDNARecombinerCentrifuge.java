@@ -75,9 +75,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.IRON);
 			setTranslationKey("pf_dna_recombiner_centrifuge");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(0.5F);
 			setResistance(2F);

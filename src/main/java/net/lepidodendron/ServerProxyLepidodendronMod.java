@@ -5,6 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
+
 public class ServerProxyLepidodendronMod implements IProxyLepidodendronMod {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
@@ -21,4 +22,6 @@ public class ServerProxyLepidodendronMod implements IProxyLepidodendronMod {
 	@Override
 	public void serverLoad(FMLServerStartingEvent event) {
 	}
+
 }
+

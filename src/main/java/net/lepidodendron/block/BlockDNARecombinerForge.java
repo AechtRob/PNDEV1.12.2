@@ -6,10 +6,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIDNAForge;
-import net.lepidodendron.item.ItemDNARecombiner;
-import net.lepidodendron.item.ItemOligoPool;
-import net.lepidodendron.item.ItemPhialDNA;
-import net.lepidodendron.item.ItemPlaceableLiving;
+import net.lepidodendron.item.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -77,9 +74,9 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.IRON);
 			setTranslationKey("pf_dna_recombiner_forge");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(0.5F);
 			setResistance(2F);
@@ -383,15 +380,26 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				ItemStack stack = this.getStackInSlot(0);
 				ItemStack stackOutput = new ItemStack(ItemPlaceableLiving.block, 1);
 				if (stack.getItem() == ItemPhialDNA.block) {
-					String resourcelocation = stack.getTagCompound().getString("id_dna");
+					String resourcelocation = null;
+					if (stack.hasTagCompound()) {
+						if (stack.getTagCompound().hasKey("PFPlant")) {
+							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+							resourcelocation = (blockNBT.getString("id"));
+						} else if (stack.getTagCompound().hasKey("PFMob")) {
+							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+							resourcelocation = (blockNBT.getString("id"));
+						} else if (stack.getTagCompound().hasKey("PFStatic")) {
+							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+							resourcelocation = (blockNBT.getString("id"));
+						}
+					}
 					if (resourcelocation != null) {
 						if (!resourcelocation.equalsIgnoreCase("")) {
-							if (world.rand.nextInt(30) == 0) {
-								resourcelocation = resourcelocation + "_fail";
-							}
-							NBTTagCompound stackOutputNBT = new NBTTagCompound();
-							stackOutputNBT.setString("id_dna", resourcelocation);
-							stackOutput.setTagCompound(stackOutputNBT);
+							NBTTagCompound plantNBT = new NBTTagCompound();
+							plantNBT.setString("id", resourcelocation);
+							NBTTagCompound stackNBT = new NBTTagCompound();
+							stackNBT.setTag("PFPlant", plantNBT);
+							stackOutput.setTagCompound(stackNBT);
 							if (this.getStackInSlot(3).isEmpty()) {
 								this.setInventorySlotContents(3, stackOutput);
 							}

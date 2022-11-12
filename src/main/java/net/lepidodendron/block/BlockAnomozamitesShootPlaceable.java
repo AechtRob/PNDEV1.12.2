@@ -61,7 +61,7 @@ public class BlockAnomozamitesShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAnomozamites", BlockAnomozamitesShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNanomozamites_sapling", BlockAnomozamitesShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockAnomozamitesShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAnomozamitesShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockAnomozamitesShootPlaceable.block);

@@ -63,7 +63,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
             if (ent instanceof IInventory)
                 this.internal = (IInventory) ent;
-            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30) {
+            this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 10 - 3, 30 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return (stack.getItem() == ItemFossilPrecambrian.block
@@ -81,7 +81,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                             || stack.getItem() == ItemFossilPleistocene.block);
                 }
             }));
-            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154 - 3, 30) {
+            this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 154 - 3, 30 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -105,7 +105,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return super.onTake(thePlayer, stack);
                 }
             }));
-            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154 - 3, 48) {
+            this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 154 - 3, 48 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -120,7 +120,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return super.onTake(thePlayer, stack);
                 }
             }));
-            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136 - 3, 30) {
+            this.customSlots.put(3, this.addSlotToContainer(new Slot(internal, 3, 136 - 3, 30 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -135,7 +135,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return super.onTake(thePlayer, stack);
                 }
             }));
-            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136 - 3, 48) {
+            this.customSlots.put(4, this.addSlotToContainer(new Slot(internal, 4, 136 - 3, 48 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -150,7 +150,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return super.onTake(thePlayer, stack);
                 }
             }));
-            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46 - 3, 58) {
+            this.customSlots.put(5, this.addSlotToContainer(new Slot(internal, 5, 46 - 3, 58 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -161,7 +161,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 64 - 3, 58) {
+            this.customSlots.put(6, this.addSlotToContainer(new Slot(internal, 6, 64 - 3, 58 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -172,7 +172,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 82 - 3, 58) {
+            this.customSlots.put(7, this.addSlotToContainer(new Slot(internal, 7, 82 - 3, 58 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -183,7 +183,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
                     return false;
                 }
             }));
-            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 100 - 3, 58) {
+            this.customSlots.put(8, this.addSlotToContainer(new Slot(internal, 8, 100 - 3, 58 - 8) {
                 @Override
                 public boolean isItemValid(ItemStack stack) {
                     return false;
@@ -381,11 +381,11 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             int l = (this.height - this.ySize) / 2;
             this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
             zLevel = 100.0F;
-            this.drawTexturedModalRect(k + 46, l + 32, 0,196, this.getProgressBarLength(), 6);
-            this.drawTexturedModalRect(k + 39, l + 45 + (30 - this.getAcidDepth()), 0,166, 84, this.getAcidDepth());
+            this.drawTexturedModalRect(k + 46, l + 32 - 8, 0,196, this.getProgressBarLength(), 6);
+            this.drawTexturedModalRect(k + 39, l + 45 + (30 - this.getAcidDepth()) - 8, 0,166, 84, this.getAcidDepth());
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 9, l + 51, 0,202, 18, 26);
-                this.drawTexturedModalRect(k + 10, l + 52 + this.getRFHeight(), 0, 229, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 9, l + 51 - 8, 0,202, 18, 26);
+                this.drawTexturedModalRect(k + 10, l + 52 + this.getRFHeight() - 8, 0, 229, 16, this.getRFHeight());
             }
         }
 
@@ -441,7 +441,8 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Acid Bath Fossil Cleaning", 25, 7, -16777216);
+            this.fontRenderer.drawString("Acid Bath Fossil Cleaning", 25, 7, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
         }
 
         @Override

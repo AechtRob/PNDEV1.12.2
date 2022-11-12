@@ -26,6 +26,7 @@ public class ModTriggers
     public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
     public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
+    public static final CustomTrigger DNA_CRAFT = new CustomTrigger("pf_dna_craft");
 
     //Knowledge of blocks:
     public static final CustomTrigger CLICK_ACACIA = new CustomTrigger("pf_book_acacia");
@@ -921,6 +922,7 @@ public class ModTriggers
             USE_JAR,
             EPHEDRA,
             TAIL,
+            DNA_CRAFT,
 
             //BLOCKS:
             //----------

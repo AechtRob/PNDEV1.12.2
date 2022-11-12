@@ -46,4 +46,5 @@ public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
 	@Override
 	public void serverLoad(FMLServerStartingEvent event) {
 	}
+
 }

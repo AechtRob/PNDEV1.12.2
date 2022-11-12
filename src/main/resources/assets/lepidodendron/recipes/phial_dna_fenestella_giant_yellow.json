@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:fenestella_giant_yellow"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:fenestella_giant_yellow"}}
     },
     {
       "item": "lepidodendron:phial_empty"

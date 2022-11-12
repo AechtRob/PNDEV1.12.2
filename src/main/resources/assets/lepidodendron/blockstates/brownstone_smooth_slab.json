@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:brownstone_smooth_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:brownstone_smooth_slab_top"
+    }
+  }
+}

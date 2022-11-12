@@ -48,7 +48,7 @@ public class EntityPrehistoricFloraArizonasaurus extends EntityPrehistoricFloraL
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.12F;
+		minWidth = 0.15F;
 		maxWidth = 0.85F;
 		maxHeight = 0.65F;
 		maxHealthAgeable = 40.0D;

@@ -1,0 +1,24 @@
+{
+  "multipart": [
+    {   "when": { "facing": "north" },
+      "apply": [
+        {"model": "lepidodendron:sorter_fossil" }
+      ]
+    },
+    {   "when": { "facing": "south" },
+      "apply": [
+        {"model": "lepidodendron:sorter_fossil", "y": 180 }
+      ]
+    },
+    {   "when": { "facing": "east" },
+      "apply": [
+        {"model": "lepidodendron:sorter_fossil", "y": 90 }
+      ]
+    },
+    {   "when": { "facing": "west" },
+      "apply": [
+        {"model": "lepidodendron:sorter_fossil", "y": 270 }
+      ]
+    }
+  ]
+}

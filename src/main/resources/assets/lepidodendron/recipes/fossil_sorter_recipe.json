@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "345",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "minecraft:hopper"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "itemFossil"
+    },
+    "4": {
+      "item": "minecraft:hopper"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "itemFossil"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "itemFossil"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:fossil_sorter",
+    "count": 1
+  }
+}

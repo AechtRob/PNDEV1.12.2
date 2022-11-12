@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "lepidodendron:blocks/brownstone_bricks",
+    "top": "lepidodendron:blocks/brownstone_bricks",
+    "side": "lepidodendron:blocks/brownstone_bricks"
+  }
+}

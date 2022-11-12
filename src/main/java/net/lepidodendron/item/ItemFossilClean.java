@@ -980,26 +980,36 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {
 				if (!ItemFossilClean.ItemCustom.isEntityFromItemStack(stack) && !ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
-					return new ModelResourceLocation(stack.getItem().getRegistryName(), "inventory");
-				}
-				else {
+					return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
+				} else {
 					if (ItemFossilClean.ItemCustom.isEntityFromItemStack(stack)) {
 						NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 						ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 						String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
 						return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + mobname + "_clean", "inventory");
+					} else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
+						if (stack.getTagCompound().hasKey("PFPlant")) {
+							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+							ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							blockname = blockname.replace("minecraft:", "");
+							return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+						} else if (stack.getTagCompound().hasKey("PFStatic")) {
+							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+							ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							blockname = blockname.replace("minecraft:", "");
+							return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+						}
 					}
-					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
-						NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFBlock");
-						ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-						String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-						blockname = blockname.replace("minecraft:", "");
-						return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+					else {
+						return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
 					}
-					else return new ModelResourceLocation(stack.getItem().getRegistryName(), "inventory");
 				}
+			} else {
+				return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
 			}
-			else return new ModelResourceLocation(stack.getItem().getRegistryName(), "inventory");
+			return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
 		});
 	}
 
@@ -1007,7 +1017,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 		public ItemCustom() {
 			setTranslationKey("pf_fossil_clean");
 			setRegistryName("fossil_clean");
-			maxStackSize = 16;
+			maxStackSize = 64;
 			setCreativeTab(null);
 		}
 
@@ -1020,26 +1030,39 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				return "item.pf_fossil_" + mobname + "_clean";
 			}
 			if (isBlockFromItemStack(stack)) {
-				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFBlock");
-				ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-				String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-				blockname = blockname.replace("minecraft:", "");
-				return "item.pf_fossil_" + blockname + "_clean";
+				if (stack.getTagCompound().hasKey("PFPlant")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
+					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+					String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+					blockname = blockname.replace("minecraft:", "");
+					return "item.pf_fossil_" + blockname + "_clean";
+				}
+				else if (stack.getTagCompound().hasKey("PFStatic")) {
+					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
+					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+					String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+					blockname = blockname.replace("minecraft:", "");
+					return "item.pf_fossil_" + blockname + "_clean";
+				}
 			}
 			return super.getTranslationKey(stack);
 		}
 
 		public static boolean isEntityFromItemStack(ItemStack stack) {
 			if (stack.hasTagCompound() == false
-					|| !stack.getTagCompound().hasKey("PFMob")) return false;
-
+					|| !stack.getTagCompound().hasKey("PFMob")) {
+				return false;
+			}
 			return true;
 		}
 
 		public static boolean isBlockFromItemStack(ItemStack stack) {
 			if (stack.hasTagCompound() == false
-					|| !stack.getTagCompound().hasKey("PFBlock")) return false;
-
+					|| ((!stack.getTagCompound().hasKey("PFPlant"))
+					&& (!stack.getTagCompound().hasKey("PFStatic")))
+			) {
+				return false;
+			}
 			return true;
 		}
 

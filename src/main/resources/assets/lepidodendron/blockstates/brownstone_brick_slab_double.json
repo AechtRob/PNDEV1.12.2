@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:brownstone_brick_slab_double"
+    }
+  }
+}

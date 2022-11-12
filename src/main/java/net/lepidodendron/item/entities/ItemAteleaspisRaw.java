@@ -35,7 +35,7 @@ public class ItemAteleaspisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAteleaspis", ItemAteleaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ateleaspis", ItemAteleaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAteleaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAteleaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAteleaspisRaw.block);

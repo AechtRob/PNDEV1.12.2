@@ -1,17 +1,17 @@
 package net.lepidodendron;
 
-import net.lepidodendron.block.BlockDisplayCase;
-import net.lepidodendron.block.BlockDisplayCaseMagnifying;
-import net.lepidodendron.block.BlockDisplayPlinth;
-import net.lepidodendron.block.BlockDisplayWallMount;
+import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.ModTriggers;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
@@ -37,6 +37,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -47,7 +48,7 @@ import java.util.Random;
 
 public class LepidodendronEventSubscribers {
 
-	@SubscribeEvent //Replace petrified plants:
+	@SubscribeEvent //Replace petrified plants and incorrect phials:
 	public void petrifieds(PlayerContainerEvent event) {
 		Container container = event.getContainer();
 		List<Slot> itemSlots = container.inventorySlots;
@@ -63,9 +64,25 @@ public class LepidodendronEventSubscribers {
 					NBTTagCompound plantNBT = new NBTTagCompound();
 					plantNBT.setString("id", stringPetrified);
 					NBTTagCompound stackNBT = new NBTTagCompound();
-					stackNBT.setTag("PFBlock", plantNBT);
+					stackNBT.setTag("PFPlant", plantNBT);
 					newStack.setTagCompound(stackNBT);
 					container.putStackInSlot(currentSlot.slotNumber, newStack);
+				}
+				if (currentItemStack.getItem() == ItemPhialFull.block) {
+					if (currentItemStack.hasTagCompound()) {
+						if (!ItemPhialFull.ItemCustom.isBlockFromItemStack(currentItemStack)) {
+							int i = currentItemStack.getCount();
+							ItemStack newStack = new ItemStack(ItemPhial.block, i);
+							container.putStackInSlot(currentSlot.slotNumber, newStack);
+						} else {
+							return;
+						}
+					}
+					else {
+						int i = currentItemStack.getCount();
+						ItemStack newStack = new ItemStack(ItemPhial.block, i);
+						container.putStackInSlot(currentSlot.slotNumber, newStack);
+					}
 				}
 			}
 		}
@@ -75,22 +92,22 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //Spawn Hadean meteors
 	public void meteors(WorldTickEvent event) {
 		boolean spawnShower = false;
-		if(event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
-			if( event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently, default 6000
+		if (event.world != null && !event.world.isRemote && LepidodendronConfig.doMeteorites) {
+			if (event.world.rand.nextInt(6000) == 0) {//Note that lowering this number spawns meteors more frequently, default 6000
 				if (!event.world.playerEntities.isEmpty()) {
 					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
-					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100),300,(p.posZ+ event.world.rand.nextInt(201) - 100));
-					if(p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
-						if(event.world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome"))
-						spawnShower = (event.world.rand.nextInt(50) == 0);
+					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100), 300, (p.posZ + event.world.rand.nextInt(201) - 100));
+					if (p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
+						if (event.world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome"))
+							spawnShower = (event.world.rand.nextInt(50) == 0);
 						{
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());					
+							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
 							meteor.motionX = event.world.rand.nextDouble() - 0.5;
 							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
 							event.world.spawnEntity(meteor);
 						}
 						if (spawnShower) {
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world,pos.getX(), pos.getY(), pos.getZ());
+							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
 							meteor.motionX = event.world.rand.nextDouble() - 0.5;
 							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
 							event.world.spawnEntity(meteor);
@@ -140,17 +157,16 @@ public class LepidodendronEventSubscribers {
 		if ((strPos1 > 0)) {
 			String modid = resLocation.substring(0, strPos1);
 			if (modid.equalsIgnoreCase("fossil") || modid.equalsIgnoreCase("rebornmod")
-				|| modid.equalsIgnoreCase("lepidodendron")) {
+					|| modid.equalsIgnoreCase("lepidodendron")) {
 				return;
-			}
-			else {
+			} else {
 				if (LepidodendronConfig.blockMobs) {
 					event.setResult(Event.Result.DENY);
 				}
 			}
 		}
 	}
-	
+
 	@SubscribeEvent //BlockTrap Horses and other mobs
 	public void onJoinSpawn(EntityJoinWorldEvent event) {
 		if ((event.getWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
@@ -193,8 +209,7 @@ public class LepidodendronEventSubscribers {
 			) {
 				if (LepidodendronConfig.blockMobsFAExceptions) {
 					event.setCanceled(true);
-				}
-				else if ((nautilus > 0 || coelacanth > 0)
+				} else if ((nautilus > 0 || coelacanth > 0)
 						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
@@ -203,8 +218,7 @@ public class LepidodendronEventSubscribers {
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPermian)) {
 					event.setCanceled(true);
-				}
-				else if ((sturgeon > 0)
+				} else if ((sturgeon > 0)
 						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
@@ -214,8 +228,7 @@ public class LepidodendronEventSubscribers {
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimPermian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimTriassic)) {
 					event.setCanceled(true);
-				}
-				else if ((alligator_gar > 0)
+				} else if ((alligator_gar > 0)
 						&& (event.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimCambrian
 						|| event.getWorld().provider.getDimension() == LepidodendronConfig.dimOrdovician
@@ -253,8 +266,7 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		}
-		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayCaseMagnifying.block
+		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayCaseMagnifying.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());
 			if (te != null) {
@@ -275,8 +287,7 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		}
-		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
+		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayWallMount.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());
 			if (te != null) {
@@ -297,8 +308,7 @@ public class LepidodendronEventSubscribers {
 					}
 				}
 			}
-		}
-		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayPlinth.block
+		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayPlinth.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
 			TileEntity te = event.getWorld().getTileEntity(event.getPos());
 			if (te != null) {
@@ -339,12 +349,11 @@ public class LepidodendronEventSubscribers {
 	@SubscribeEvent //We want to drop the real items or flowers
 	public void onSheared(PlayerInteractEvent.LeftClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
-			&& event.getItemStack().getItem() instanceof ItemShears && LepidodendronConfig.doPropagationVanilla
-			&& event.getHand() == EnumHand.MAIN_HAND) {
-			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
+				&& event.getItemStack().getItem() instanceof ItemShears && LepidodendronConfig.doPropagationVanilla
+				&& event.getHand() == EnumHand.MAIN_HAND) {
+			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
-			 || blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN)
-			{ //imitate a regular harvest without shears:
+					|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) { //imitate a regular harvest without shears:
 				event.getEntityPlayer().swingArm(event.getHand());
 				if (!(event.getWorld().isRemote)) {
 					event.getWorld().destroyBlock(event.getPos(), false);
@@ -352,13 +361,11 @@ public class LepidodendronEventSubscribers {
 				}
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
-			}
-			else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+			} else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
 					&& event.getWorld().getBlockState(event.getPos().down()).getBlock() == Blocks.DOUBLE_PLANT) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.GRASS
-					|| blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.FERN)
-				{ //imitate a regular harvest without shears:
+						|| blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.FERN) { //imitate a regular harvest without shears:
 					event.getEntityPlayer().swingArm(event.getHand());
 					if (!(event.getWorld().isRemote)) {
 						event.getWorld().destroyBlock(event.getPos(), false);
@@ -367,66 +374,53 @@ public class LepidodendronEventSubscribers {
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
-			}
-			else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE)
-			{ //spawn rose flowers:
+			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.ROSE) { //spawn rose flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemRoseFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
-			}
-			else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
-				&& event.getWorld().getBlockState(event.getPos().down()).getBlock() == Blocks.DOUBLE_PLANT) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
-				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.ROSE)
-				{ //spawn rose flowers:
+			} else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+					&& event.getWorld().getBlockState(event.getPos().down()).getBlock() == Blocks.DOUBLE_PLANT) {
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.ROSE) { //spawn rose flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemRoseFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
-			}
-			else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.PAEONIA)
-			{ //spawn Peony flowers:
+			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.PAEONIA) { //spawn Peony flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemPeonyFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
-			}
-			else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+			} else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
 					&& event.getWorld().getBlockState(event.getPos().down()).getBlock() == Blocks.DOUBLE_PLANT) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
-				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.PAEONIA)
-				{ //spawn Peony flowers:
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.PAEONIA) { //spawn Peony flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemPeonyFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
-			}
-			else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.SYRINGA)
-			{ //spawn lilac flowers:
+			} else if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.SYRINGA) { //spawn lilac flowers:
 				event.getEntityPlayer().swingArm(event.getHand());
 				Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemLilacFlower.block, 1));
 				event.getItemStack().damageItem(1, event.getEntityPlayer());
 				event.setCanceled(true);
-			}
-			else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
+			} else if (event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.HALF) == BlockDoublePlant.EnumBlockHalf.UPPER
 					&& event.getWorld().getBlockState(event.getPos().down()).getBlock() == Blocks.DOUBLE_PLANT) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
-				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.SYRINGA)
-				{ //spawn lilac flowers:
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttypeDown = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos().down()).getValue(BlockDoublePlant.VARIANT);
+				if (blockdoubleplant$enumplanttypeDown == BlockDoublePlant.EnumPlantType.SYRINGA) { //spawn lilac flowers:
 					event.getEntityPlayer().swingArm(event.getHand());
 					Block.spawnAsEntity(event.getWorld(), event.getPos(), new ItemStack(ItemLilacFlower.block, 1));
 					event.getItemStack().damageItem(1, event.getEntityPlayer());
 					event.setCanceled(true);
 				}
 			}
-		}
-		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
+		} else if (event.getWorld().getBlockState(event.getPos()).getBlock() == Blocks.DOUBLE_PLANT
 				&& (!(event.getItemStack().getItem() instanceof ItemShears)) && LepidodendronConfig.doPropagationVanilla
 				&& event.getHand() == EnumHand.MAIN_HAND) {
-			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
+			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getWorld().getBlockState(event.getPos()).getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
 					|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
 
@@ -441,17 +435,15 @@ public class LepidodendronEventSubscribers {
 		}
 		boolean dropSelf = true;
 		if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
-			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getState().getValue(BlockDoublePlant.VARIANT);
+			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN
-				|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS)
-			{
+					|| blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS) {
 				dropSelf = false; //the large fern and large grass don't drop themselves, but we want to make it so that they do
 			}
 		}
 		if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
-			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType)event.getState().getValue(BlockTallGrass.TYPE);
-			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS)
-			{
+			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
+			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS) {
 				dropSelf = false; //the grass needs shears but we want to drop it without needing them
 			}
 		}
@@ -461,31 +453,28 @@ public class LepidodendronEventSubscribers {
 			Block block = Block.getBlockFromItem(item);
 
 			if (event.getState().getBlock() instanceof BlockDoublePlant && LepidodendronConfig.doPropagationVanilla) {
-				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getState().getValue(BlockDoublePlant.VARIANT);
+				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN
-					&& item == new ItemStack(Blocks.DOUBLE_PLANT, 1, 3).getItem())
-				{
+						&& item == new ItemStack(Blocks.DOUBLE_PLANT, 1, 3).getItem()) {
 					dropSelf = true; //a drop already exists so no need to add a new one
 				}
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
-					&& item == new ItemStack(Blocks.DOUBLE_PLANT, 1, 2).getItem()  && LepidodendronConfig.doPropagationVanilla)
-				{
+						&& item == new ItemStack(Blocks.DOUBLE_PLANT, 1, 2).getItem() && LepidodendronConfig.doPropagationVanilla) {
 					dropSelf = true; //a drop already exists so no need to add a new one
 				}
 			}
 
 			if (event.getState().getBlock() instanceof BlockTallGrass && LepidodendronConfig.doPropagationVanilla) {
-				BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType)event.getState().getValue(BlockTallGrass.TYPE);
+				BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
 				if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS
-					&& item == new ItemStack(Blocks.TALLGRASS, 1, 1).getItem())
-				{
+						&& item == new ItemStack(Blocks.TALLGRASS, 1, 1).getItem()) {
 					dropSelf = true; //a drop already exists so no need to add a new one
 				}
 			}
 
 			if (item == Items.APPLE && LepidodendronConfig.fixApples &&
-				(event.getState().getBlock() == Blocks.LEAVES
-						|| event.getState().getBlock() == Blocks.LEAVES2) ) {
+					(event.getState().getBlock() == Blocks.LEAVES
+							|| event.getState().getBlock() == Blocks.LEAVES2)) {
 				event.getDrops().remove(i);
 			}
 
@@ -520,12 +509,12 @@ public class LepidodendronEventSubscribers {
 				BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS
 						&& item == new ItemStack(Blocks.TALLGRASS, 1, 1).getItem()) {
-					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT,1, 2));
+					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
 					dropSelf = true; //This now drops itself
 				}
 				if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN
 						&& item == new ItemStack(Blocks.TALLGRASS, 1, 2).getItem() && LepidodendronConfig.doPropagationVanilla) {
-					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT,1, 3));
+					event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 					dropSelf = true; //This now drops itself
 				}
 			}
@@ -533,21 +522,18 @@ public class LepidodendronEventSubscribers {
 		}
 
 		if (event.getState().getBlock() instanceof BlockDoublePlant && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) { //Spawn the block drop for these ones
-			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType)event.getState().getValue(BlockDoublePlant.VARIANT);
-			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN)
-			{
-				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT,1, 3));
+			BlockDoublePlant.EnumPlantType blockdoubleplant$enumplanttype = (BlockDoublePlant.EnumPlantType) event.getState().getValue(BlockDoublePlant.VARIANT);
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.FERN) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 3));
 			}
-			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS)
-			{
-				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT,1, 2));
+			if (blockdoubleplant$enumplanttype == BlockDoublePlant.EnumPlantType.GRASS) {
+				event.getDrops().add(i, new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
 			}
 		}
 		if (event.getState().getBlock() instanceof BlockTallGrass && (!dropSelf) && LepidodendronConfig.doPropagationVanilla) {
-			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType)event.getState().getValue(BlockTallGrass.TYPE);
-			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS)
-			{
-				event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS,1, 1));
+			BlockTallGrass.EnumType blocktallgrass$enumtype = (BlockTallGrass.EnumType) event.getState().getValue(BlockTallGrass.TYPE);
+			if (blocktallgrass$enumtype == BlockTallGrass.EnumType.GRASS) {
+				event.getDrops().add(i, new ItemStack(Blocks.TALLGRASS, 1, 1));
 			}
 		}
 		//if (event.getState().getBlock() == Blocks.VINE) {
@@ -569,10 +555,9 @@ public class LepidodendronEventSubscribers {
 					int z = (int) entity.posZ - 16;
 					while (z <= entity.posZ + 16) {
 						pos = new BlockPos(x, y, z);
-						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up()))
-						{
-							if (world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") && rand.nextInt(150) == 0 ) {
-								world.spawnParticle(EnumParticleTypes.CLOUD, (double)pos.getX() + Math.random(), (double)pos.getY() + 0.95, (double)pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
+						if (world.getBlockState(pos).getMaterial() == Material.WATER && world.isAirBlock(pos.up())) {
+							if (world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_springs") && rand.nextInt(150) == 0) {
+								world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + Math.random(), (double) pos.getY() + 0.95, (double) pos.getZ() + Math.random(), 0.0D, 0.03D, 0.0D);
 								//System.err.println("smokin' at " + pos.getX() + " " + pos.getY() + " " + pos.getZ());
 							}
 						}
@@ -604,18 +589,56 @@ public class LepidodendronEventSubscribers {
 			List<String> tt = event.getToolTip();
 			try {
 				tt.add(I18n.translateToLocal("helper.pf_period.name") + ": " + ee.getMethod("getPeriod", (Class[]) null).invoke(null).toString());
-			}
-			catch (Throwable throwable) {
+			} catch (Throwable throwable) {
 				//Do nothing - it's all good
 			}
 			try {
 				tt.add(I18n.translateToLocal("helper.pf_habitat.name") + ": " + ee.getMethod("getHabitat", (Class[]) null).invoke(null).toString());
-			}
-			catch (Throwable throwable) {
+			} catch (Throwable throwable) {
 				//Do nothing - it's all good
 			}
 
 		}
 
 	}
+
+
+	@SubscribeEvent //Make obsidian variants
+	public void onEvent(BlockEvent.FluidPlaceBlockEvent event) {
+		if (!event.getWorld().isRemote) {
+			if (event.getState().getBlock() == Blocks.OBSIDIAN) {
+				if (event.getWorld().rand.nextFloat() > 0.98) {
+					if (event.getWorld().rand.nextFloat() > 0.5) {
+						event.setNewState(BlockObsidianSulphurOre.block.getDefaultState());
+					}
+					else {
+						event.setNewState(BlockObsidianZirconOre.block.getDefaultState());
+					}
+				}
+			}
+		}
+	}
+
+	@SubscribeEvent //Allow acid to form sourceblocks
+	public void onEvent(BlockEvent.CreateFluidSourceEvent event) {
+		if ((!event.getWorld().isRemote) && LepidodendronConfig.sulphuricAcidInfinite) {
+			try { //Its possible that our fluid isnt registered in a modpack if another mod took precedence
+				if (event.getState().getBlock() == BlockAcid.block) {
+					event.setResult(Event.Result.ALLOW);
+				}
+			}
+			catch (RuntimeException exception) {
+			}
+		}
+	}
+
+	@SubscribeEvent //Advancement for DNA
+	public void onEvent(PlayerEvent.ItemCraftedEvent event) {
+		if ((!event.player.getEntityWorld().isRemote) && event.crafting.getItem() == ItemPhialDNA.block) {
+			if (event.player instanceof EntityPlayerMP) {
+				ModTriggers.DNA_CRAFT.trigger((EntityPlayerMP) event.player);
+			}
+		}
+	}
+
 }

@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:crinoid_encrinus"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:crinoid_encrinus"}}
     },
     {
       "item": "lepidodendron:phial_empty"

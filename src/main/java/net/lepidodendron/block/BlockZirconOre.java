@@ -11,9 +11,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -30,7 +32,7 @@ import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:zircon_ore")
+	@GameRegistry.ObjectHolder("lepidodendron:zircon_ore_stone")
 	public static final Block block = null;
 	public BlockZirconOre(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.zircon_ore);
@@ -38,7 +40,7 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("zircon_ore"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("zircon_ore_stone"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -46,25 +48,52 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:zircon_ore", "inventory"));
+				new ModelResourceLocation("lepidodendron:zircon_ore_stone", "inventory"));
 	}
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		boolean dimensionCriteria = false;
-		if (dimID == LepidodendronConfig.dimPrecambrian)
-			dimensionCriteria = true;
-		if (!dimensionCriteria)
-			return;
-		if (random.nextInt(5) <= 2) {
+		if (dimID == 0
+				|| dimID == LepidodendronConfig.dimPrecambrian
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimOrdovician
+				|| dimID == LepidodendronConfig.dimSilurian
+				|| dimID == LepidodendronConfig.dimDevonian
+				|| dimID == LepidodendronConfig.dimCarboniferous
+				|| dimID == LepidodendronConfig.dimPermian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimJurassic
+				|| dimID == LepidodendronConfig.dimCretaceous
+				|| dimID == LepidodendronConfig.dimPaleogene
+				|| dimID == LepidodendronConfig.dimNeogene
+				|| dimID == LepidodendronConfig.dimPleistocene) {
+			//if (random.nextInt(2) != 0)
+			//	return;
+			for (int l1 = 0; l1 < 2; ++l1) {
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(10) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
+			}
+		}
+
+		for (int l1 = 0; l1 < 3; ++l1) {
 			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-			int y = random.nextInt(30) + 1;
+			int y = random.nextInt(5) + 1;
 			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-			(new WorldGenMinable(block.getDefaultState(), 48, new com.google.common.base.Predicate<IBlockState>() {
+			(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
 				public boolean apply(IBlockState blockAt) {
 					boolean blockCriteria = false;
 					IBlockState require;
-					if (blockAt.getBlock() == BlockLavaRock.block.getDefaultState().getBlock())
+					if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
 						blockCriteria = true;
 					return blockCriteria;
 				}
@@ -75,8 +104,8 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.ROCK);
-			setTranslationKey("pf_zircon_ore");
-			setSoundType(SoundType.GROUND);
+			setTranslationKey("pf_zircon_ore_stone");
+			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 2);
 			setHardness(2F);
 			setResistance(4F);
@@ -129,6 +158,18 @@ public class BlockZirconOre extends ElementsLepidodendronMod.ModElement {
 			{
 				return this.quantityDropped(random);
 			}
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 	}

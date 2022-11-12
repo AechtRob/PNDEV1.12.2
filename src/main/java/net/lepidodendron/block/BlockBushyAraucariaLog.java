@@ -42,7 +42,7 @@ public class BlockBushyAraucariaLog extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBushyAraucaria", BlockBushyAraucariaLog.block);
+		OreDictionary.registerOre("dnaPNmonkeypuzzle_sapling", BlockBushyAraucariaLog.block);
 		OreDictionary.registerOre("logWood", BlockBushyAraucariaLog.block);
 	}
 

@@ -66,7 +66,7 @@ public class BlockArchaeanthusSapling extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNArchaeanthus", BlockArchaeanthusSapling.block);
+		OreDictionary.registerOre("plantdnaPNarchaeanthus_sapling", BlockArchaeanthusSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockArchaeanthusSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockArchaeanthusSapling.block);
 		OreDictionary.registerOre("plant", BlockArchaeanthusSapling.block);

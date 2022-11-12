@@ -170,13 +170,13 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			super.harvestBlock(worldIn, player, pos, state, te, stack);
-			worldIn.setBlockState(pos, BlockResin.block.getDefaultState());
+			worldIn.setBlockState(pos, FluidRegistry.getFluid("resin").getBlock().getDefaultState());
 		}
 
 		@Override
 		public void onExplosionDestroy(World worldIn, BlockPos pos, Explosion explosionIn) {
 			super.onExplosionDestroy(worldIn, pos, explosionIn);
-			worldIn.setBlockState(pos, BlockResin.block.getDefaultState());
+			worldIn.setBlockState(pos, FluidRegistry.getFluid("resin").getBlock().getDefaultState());
 		}
 
 		@Override
@@ -261,7 +261,7 @@ public class BlockResinExtractorFull extends ElementsLepidodendronMod.ModElement
 			//Flood if left too long and uncovered!
 			if (isBlockActive(world, pos, state.getValue(FACING))) {
 				if ((Math.random() > 0.85) && world.isAirBlock(pos.up())) {
-					world.setBlockState(pos.up(), BlockResin.block.getDefaultState());
+					world.setBlockState(pos.up(), FluidRegistry.getFluid("resin").getBlock().getDefaultState());
 				}
 			}
 		}

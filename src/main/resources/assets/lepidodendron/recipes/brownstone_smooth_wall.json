@@ -1,0 +1,32 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:brownstone_smooth"
+    },
+    "1": {
+      "item": "lepidodendron:brownstone_smooth"
+    },
+    "2": {
+      "item": "lepidodendron:brownstone_smooth"
+    },
+    "3": {
+      "item": "lepidodendron:brownstone_smooth"
+    },
+    "4": {
+      "item": "lepidodendron:brownstone_smooth"
+    },
+    "5": {
+      "item": "lepidodendron:brownstone_smooth"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:brownstone_smooth_wall",
+    "count": 6
+  }
+}

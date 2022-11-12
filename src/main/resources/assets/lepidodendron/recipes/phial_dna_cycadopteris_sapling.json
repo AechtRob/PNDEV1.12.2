@@ -9,7 +9,7 @@
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:fossil_clean",
       "count": 1,
-      "nbt": {"PFBlock":{"id":"lepidodendron:cycadopteris_sapling"}}
+      "nbt": {"PFPlant":{"id":"lepidodendron:cycadopteris_sapling"}}
     },
     {
       "item": "lepidodendron:phial_empty"

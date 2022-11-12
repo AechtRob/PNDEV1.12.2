@@ -81,9 +81,9 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		public static final PropertyBool RF = PropertyBool.create("rf");
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.IRON);
 			setTranslationKey("pf_coal_tar_processor");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(2.5F);
 			setResistance(3.5F);

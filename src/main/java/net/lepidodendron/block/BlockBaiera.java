@@ -70,7 +70,7 @@ public class BlockBaiera extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBaiera", BlockBaiera.block);
+		OreDictionary.registerOre("plantdnaPNbaiera", BlockBaiera.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBaiera.block);
 		OreDictionary.registerOre("plant", BlockBaiera.block);
 	}

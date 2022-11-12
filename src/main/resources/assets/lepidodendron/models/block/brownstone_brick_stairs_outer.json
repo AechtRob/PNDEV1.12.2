@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/brownstone_bricks",
+    "top": "lepidodendron:blocks/brownstone_bricks",
+    "side": "lepidodendron:blocks/brownstone_bricks"
+  }
+}

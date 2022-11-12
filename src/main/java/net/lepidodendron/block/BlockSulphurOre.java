@@ -92,19 +92,35 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPleistocene) {
 			//if (random.nextInt(2) != 0)
 			//	return;
-			int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-			int y = random.nextInt(10) + 1;
-			int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-			(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
-				public boolean apply(IBlockState blockAt) {
-					boolean blockCriteria = false;
-					IBlockState require;
-					if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
-						blockCriteria = true;
-					return blockCriteria;
-				}
-			})).generate(world, random, new BlockPos(x, y, z));
+			for (int l1 = 0; l1 < 2; ++l1) {
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(10) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
+			}
 
+			for (int l1 = 0; l1 < 4; ++l1) {
+				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				int y = random.nextInt(5) + 1;
+				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
+				(new WorldGenMinable(block.getDefaultState(), 5, new com.google.common.base.Predicate<IBlockState>() {
+					public boolean apply(IBlockState blockAt) {
+						boolean blockCriteria = false;
+						IBlockState require;
+						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+							blockCriteria = true;
+						return blockCriteria;
+					}
+				})).generate(world, random, new BlockPos(x, y, z));
+			}
 		}
 
 	}
@@ -136,6 +152,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
+
 		@Override
 		public int quantityDropped(Random random)
 		{

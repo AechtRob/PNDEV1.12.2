@@ -35,7 +35,7 @@ public class ItemAscendonanusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAscendonanus", ItemAscendonanusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ascendonanus", ItemAscendonanusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAscendonanusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAscendonanusRaw.block);
 	}

@@ -52,9 +52,9 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 	public static class BlockCustom extends Block {
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.IRON);
 			setTranslationKey("pf_coal_tar_processor_top");
-			setSoundType(SoundType.GROUND);
+			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(2.5F);
 			setResistance(3.5F);

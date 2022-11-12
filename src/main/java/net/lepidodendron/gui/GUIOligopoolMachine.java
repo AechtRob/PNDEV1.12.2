@@ -336,8 +336,9 @@ public class GUIOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("Oligopool Production from", 23, 7, -16777216);
-            this.fontRenderer.drawString("Benzo-Solvent", 49, 18, -16777216);
+            this.fontRenderer.drawString("Oligopool Production from", 23, 7, 4210752);
+            this.fontRenderer.drawString("Benzo-Solvent", 49, 18, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
         }
 
         @Override

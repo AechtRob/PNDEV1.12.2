@@ -58,7 +58,7 @@ public class ItemBaragwanathiaItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBaragwanathia", ItemBaragwanathiaItem.block);
+		OreDictionary.registerOre("plantdnaPNbaragwanathia_item", ItemBaragwanathiaItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemBaragwanathiaItem.block);
 		OreDictionary.registerOre("plant", ItemBaragwanathiaItem.block);
 	}

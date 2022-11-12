@@ -35,7 +35,7 @@ public class ItemAcutiramusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNAcutiramus", ItemAcutiramusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_acutiramus", ItemAcutiramusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAcutiramusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAcutiramusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAcutiramusRaw.block);

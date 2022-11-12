@@ -374,8 +374,8 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             zLevel = 100.0F;
             this.drawTexturedModalRect(k + 68, l + 25, 19,166, this.getProgressBarLength(), 6);
             if (LepidodendronConfig.machinesRF) {
-                this.drawTexturedModalRect(k + 20, l + 51, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 20, l + 51 - 8, 0,166, 18, 26);
+                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight() - 8, 0, 192, 16, this.getRFHeight());
             }
         }
 
@@ -420,7 +420,8 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
 
         @Override
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-            this.fontRenderer.drawString("DNA Oligo-Forge", 53, 7, -16777216);
+            this.fontRenderer.drawString("DNA Oligo-Forge", 53, 7, 4210752);
+            this.fontRenderer.drawString("Inventory", 8, 72, 4210752);
         }
 
         @Override

@@ -135,6 +135,32 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockFossil", BlockFossilPaleogene.block);
 		OreDictionary.registerOre("blockFossil", BlockFossilNeogene.block);
 		OreDictionary.registerOre("blockFossil", BlockFossilPleistocene.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilPrecambrian.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilCambrian.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilOrdovician.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilSilurian.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilDevonian.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilCarboniferous.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilPermian.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilTriassic.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilJurassic.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilCretaceous.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilPaleogene.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilNeogene.block);
+		OreDictionary.registerOre("oreFossil", BlockFossilPleistocene.block);
+		OreDictionary.registerOre("blockStone", BlockFossilPrecambrian.block);
+		OreDictionary.registerOre("blockStone", BlockFossilCambrian.block);
+		OreDictionary.registerOre("blockStone", BlockFossilOrdovician.block);
+		OreDictionary.registerOre("blockStone", BlockFossilSilurian.block);
+		OreDictionary.registerOre("blockStone", BlockFossilDevonian.block);
+		OreDictionary.registerOre("blockStone", BlockFossilCarboniferous.block);
+		OreDictionary.registerOre("blockStone", BlockFossilPermian.block);
+		OreDictionary.registerOre("blockStone", BlockFossilTriassic.block);
+		OreDictionary.registerOre("blockStone", BlockFossilJurassic.block);
+		OreDictionary.registerOre("blockStone", BlockFossilCretaceous.block);
+		OreDictionary.registerOre("blockStone", BlockFossilPaleogene.block);
+		OreDictionary.registerOre("blockStone", BlockFossilNeogene.block);
+		OreDictionary.registerOre("blockStone", BlockFossilPleistocene.block);
 
 		OreDictionary.registerOre("itemFossil", ItemFossilClean.block);
 		OreDictionary.registerOre("itemFossil", ItemFossilPrecambrian.block);
@@ -803,7 +829,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("foodSalt", ItemSalt.block);
 		OreDictionary.registerOre("blockSalt", BlockSaltBlock.block);
 
-		OreDictionary.registerOre("oreZircon", BlockZirconOre.block);
+		OreDictionary.registerOre("oreZircon", BlockLavaRockZirconOre.block);
 		OreDictionary.registerOre("gemZircon", ItemZircon.block);
 		OreDictionary.registerOre("blockZircon", BlockZircon.block);
 		OreDictionary.registerOre("blockGlass", BlockZirconGlass.block);
@@ -814,6 +840,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		//OreDictionary.registerOre("leavesHay", new ItemStack(Blocks.REEDS, 1));
 		OreDictionary.registerOre("leavesHay", new ItemStack(Blocks.TALLGRASS, 1, 1));
 		OreDictionary.registerOre("leavesHay", new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG, 1, 0));
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG, 1, 1));
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG, 1, 2));
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG, 1, 3));
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG2, 1, 0));
+		OreDictionary.registerOre("logWood", new ItemStack(Blocks.LOG2, 1, 1));
 
 		OreDictionary.registerOre("slabWood", BlockWoodenSlab.block);
 		OreDictionary.registerOre("slabWood", BlockAlpiaSlab.block);
@@ -1268,7 +1301,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.SAPLING, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.SAPLING, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.SAPLING, 1, 3));
-		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.SAPLING, 1, 4));
+		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.SAPLING, 1, 4));
 		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.SAPLING, 1, 5));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 1));
@@ -1280,13 +1313,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LEAVES, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LEAVES, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LEAVES, 1, 3));
-		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.LEAVES2, 1, 0));
+		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LEAVES2, 1, 0));
 		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LEAVES2, 1, 1));
 		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LOG, 1, 0));
 		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LOG, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LOG, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LOG, 1, 3));
-		OreDictionary.registerOre("dnaPNAcacia", new ItemStack(Blocks.LOG2, 1, 0));
+		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LOG2, 1, 0));
 		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LOG2, 1, 1));
 
 
