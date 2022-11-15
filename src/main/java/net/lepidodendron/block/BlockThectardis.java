@@ -71,7 +71,7 @@ public class BlockThectardis extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNThectardis", BlockThectardis.block);
+		OreDictionary.registerOre("staticdnaPNthectardis", BlockThectardis.block);
 	}
 
 

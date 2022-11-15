@@ -30,7 +30,7 @@ public class ItemVestinautilusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVestinautilus", ItemVestinautilusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_vestinautilus", ItemVestinautilusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemVestinautilusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVestinautilusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVestinautilusRaw.block);

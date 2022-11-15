@@ -69,7 +69,7 @@ public class BlockSanmiguelia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSanmiguelia", BlockSanmiguelia.block);
+		OreDictionary.registerOre("plantdnaPNsanmiguelia", BlockSanmiguelia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSanmiguelia.block);
 		OreDictionary.registerOre("plant", BlockSanmiguelia.block);
 	}

@@ -37,7 +37,7 @@ public class ItemPurloviaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPurlovia", ItemPurloviaRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_purlovia", ItemPurloviaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPurloviaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPurloviaRaw.block);
 	}

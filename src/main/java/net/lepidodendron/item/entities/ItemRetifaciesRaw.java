@@ -37,7 +37,7 @@ public class ItemRetifaciesRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRetifacies", ItemRetifaciesRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_retifacies", ItemRetifaciesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemRetifaciesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRetifaciesRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRetifaciesRaw.block);

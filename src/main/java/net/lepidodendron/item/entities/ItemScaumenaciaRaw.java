@@ -37,7 +37,7 @@ public class ItemScaumenaciaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNScaumenacia", ItemScaumenaciaRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_scaumenacia", ItemScaumenaciaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemScaumenaciaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemScaumenaciaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemScaumenaciaRaw.block);

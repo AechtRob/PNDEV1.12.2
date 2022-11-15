@@ -53,7 +53,7 @@ public class BlockSphenobaieraLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSphenobaiera", BlockSphenobaieraLog.block);
+		OreDictionary.registerOre("plantdnaPNsphenobaiera_sapling", BlockSphenobaieraLog.block);
 		OreDictionary.registerOre("logWood", BlockSphenobaieraLog.block);
 	}
 

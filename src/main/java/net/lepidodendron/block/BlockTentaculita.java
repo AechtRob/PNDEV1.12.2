@@ -81,7 +81,7 @@ public class BlockTentaculita extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTentaculita", BlockTentaculita.block);
+		OreDictionary.registerOre("staticdnaPNtentaculita", BlockTentaculita.block);
 	}
 
 

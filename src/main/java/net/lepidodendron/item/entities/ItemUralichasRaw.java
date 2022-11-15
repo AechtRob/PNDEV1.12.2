@@ -36,7 +36,7 @@ public class ItemUralichasRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNUralichas", ItemUralichasRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_uralichas", ItemUralichasRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemUralichasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemUralichasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemUralichasRaw.block);

@@ -68,7 +68,7 @@ public class BlockQuadrocladus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNQuadrocladus", BlockQuadrocladus.block);
+		OreDictionary.registerOre("plantdnaPNquadrocladus", BlockQuadrocladus.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockQuadrocladus.block);
 		OreDictionary.registerOre("plant", BlockQuadrocladus.block);
 	}

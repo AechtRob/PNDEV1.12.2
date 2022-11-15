@@ -31,7 +31,7 @@ public class ItemWhatcheeriaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWhatcheeria", ItemWhatcheeriaRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_whatcheeria", ItemWhatcheeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWhatcheeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWhatcheeriaRaw.block);
 	}

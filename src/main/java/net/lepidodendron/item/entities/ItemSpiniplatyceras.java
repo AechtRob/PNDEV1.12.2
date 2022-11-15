@@ -50,7 +50,7 @@ public class ItemSpiniplatyceras extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSpiniplatyceras", ItemSpiniplatyceras.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_spiniplatyceras", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("foodMeat", ItemSpiniplatyceras.block);
 		OreDictionary.registerOre("itemShellfish", ItemSpiniplatyceras.block);

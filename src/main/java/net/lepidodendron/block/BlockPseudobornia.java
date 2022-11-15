@@ -72,7 +72,7 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPseudobornia", BlockPseudobornia.block);
+		OreDictionary.registerOre("plantdnaPNpseudobornia", BlockPseudobornia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPseudobornia.block);
 		OreDictionary.registerOre("plant", BlockPseudobornia.block);
 		OreDictionary.registerOre("stemHorsetail", BlockPseudobornia.block);

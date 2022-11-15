@@ -57,7 +57,7 @@ public class BlockTieteaLeavesSmallPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTietea", BlockTieteaLeavesSmallPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNtietea_sapling", BlockTieteaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTieteaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plant", BlockTieteaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockTieteaLeavesSmallPlaceable.block);

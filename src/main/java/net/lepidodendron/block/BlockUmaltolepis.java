@@ -68,7 +68,7 @@ public class BlockUmaltolepis extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNUmaltolepis", BlockUmaltolepis.block);
+		OreDictionary.registerOre("plantdnaPNumaltolepis", BlockUmaltolepis.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockUmaltolepis.block);
 		OreDictionary.registerOre("plant", BlockUmaltolepis.block);
 	}

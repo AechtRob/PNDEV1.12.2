@@ -37,7 +37,7 @@ public class ItemTanystropheusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTanystropheus", ItemTanystropheusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_tanystropheus", ItemTanystropheusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTanystropheusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTanystropheusRaw.block);
 	}

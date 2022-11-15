@@ -37,7 +37,7 @@ public class ItemUranocentrodonRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNUranocentrodon", ItemUranocentrodonRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_uranocentrodon", ItemUranocentrodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemUranocentrodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemUranocentrodonRaw.block);
 	}

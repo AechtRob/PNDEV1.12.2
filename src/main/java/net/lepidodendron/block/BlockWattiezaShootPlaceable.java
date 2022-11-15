@@ -64,7 +64,7 @@ public class BlockWattiezaShootPlaceable extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWattieza", BlockWattiezaShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNwattieza_sapling", BlockWattiezaShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockWattiezaShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockWattiezaShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockWattiezaShootPlaceable.block);

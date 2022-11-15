@@ -64,7 +64,7 @@ public class BlockStromatoveris extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockStromatoveris.TileEntityCustom.class, "lepidodendron:tileentitystromatoveris");
-		OreDictionary.registerOre("dnaPNStromatoveris", BlockStromatoveris.block);
+		OreDictionary.registerOre("staticdnaPNstromatoveris", BlockStromatoveris.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

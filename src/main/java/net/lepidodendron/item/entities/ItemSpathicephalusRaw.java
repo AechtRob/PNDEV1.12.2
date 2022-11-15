@@ -37,7 +37,7 @@ public class ItemSpathicephalusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSpathicephalus", ItemSpathicephalusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_spathicephalus", ItemSpathicephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSpathicephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSpathicephalusRaw.block);
 	}

@@ -61,7 +61,7 @@ public class BlockPetriellales extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPetriellales", BlockPetriellales.block);
+		OreDictionary.registerOre("plantdnaPNpetriellales", BlockPetriellales.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPetriellales.block);
 		OreDictionary.registerOre("plant", BlockPetriellales.block);
 	}

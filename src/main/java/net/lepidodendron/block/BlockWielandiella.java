@@ -71,7 +71,7 @@ public class BlockWielandiella extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWielandiella", BlockWielandiella.block);
+		OreDictionary.registerOre("plantdnaPNwielandiella", BlockWielandiella.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockWielandiella.block);
 		OreDictionary.registerOre("plant", BlockWielandiella.block);
 	}

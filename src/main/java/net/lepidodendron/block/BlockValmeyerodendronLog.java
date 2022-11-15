@@ -62,7 +62,7 @@ public class BlockValmeyerodendronLog extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNValmeyerodendron", BlockValmeyerodendronLog.block);
+		OreDictionary.registerOre("plantdnaPNvalmeyerodendron_sapling", BlockValmeyerodendronLog.block);
 		OreDictionary.registerOre("logWood", BlockValmeyerodendronLog.block);
 	}
 

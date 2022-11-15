@@ -53,7 +53,7 @@ public class BlockSigillariaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSigillaria", BlockSigillariaLog.block);
+		OreDictionary.registerOre("plantdnaPNsigillaria_sapling", BlockSigillariaLog.block);
 		OreDictionary.registerOre("logWood", BlockSigillariaLog.block);
 	}
 

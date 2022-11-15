@@ -37,7 +37,7 @@ public class ItemRoachoidForestRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRoachoidForest", ItemRoachoidForestRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_roachoid_forest", ItemRoachoidForestRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRoachoidForestRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRoachoidForestRaw.block);
 	}

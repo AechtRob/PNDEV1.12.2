@@ -65,7 +65,7 @@ public class BlockSelaginella extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockSelaginella.TileEntityCustom.class, "lepidodendron:tileentityselaginella");
-		OreDictionary.registerOre("dnaPNSelaginella", BlockSelaginella.block);
+		OreDictionary.registerOre("plantdnaPNselaginella", BlockSelaginella.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSelaginella.block);
 		OreDictionary.registerOre("plant", BlockSelaginella.block);
 		OreDictionary.registerOre("itemMoss", BlockSelaginella.block);

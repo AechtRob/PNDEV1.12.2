@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNPsarolepis"
+ "ore": "mobdnaPNprehistoric_flora_psarolepis"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:prehistoric_flora_psarolepis"}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_psarolepis"}}
  }
 }

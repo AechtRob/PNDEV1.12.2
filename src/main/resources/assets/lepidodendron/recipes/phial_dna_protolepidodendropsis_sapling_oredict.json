@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNProtolepidodendropsis"
+ "ore": "plantdnaPNprotolepidodendropsis_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:protolepidodendropsis_sapling"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:protolepidodendropsis_sapling"}}
  }
 }

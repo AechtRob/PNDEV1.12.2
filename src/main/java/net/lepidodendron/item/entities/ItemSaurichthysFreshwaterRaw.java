@@ -37,7 +37,7 @@ public class ItemSaurichthysFreshwaterRaw extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSaurichthysFreshwater", ItemSaurichthysFreshwaterRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_saurichthys_freshwater", ItemSaurichthysFreshwaterRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSaurichthysFreshwaterRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSaurichthysFreshwaterRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSaurichthysFreshwaterRaw.block);

@@ -37,7 +37,7 @@ public class ItemKreischeriaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTrigonotarbidKreischeria", ItemKreischeriaRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_trigonotarbid_kreischeria", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKreischeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKreischeriaRaw.block);
 	}

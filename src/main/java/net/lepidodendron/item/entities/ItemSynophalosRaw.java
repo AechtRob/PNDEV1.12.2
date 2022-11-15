@@ -37,7 +37,7 @@ public class ItemSynophalosRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSynophalos", ItemSynophalosRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_synophalos", ItemSynophalosRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSynophalosRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSynophalosRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSynophalosRaw.block);

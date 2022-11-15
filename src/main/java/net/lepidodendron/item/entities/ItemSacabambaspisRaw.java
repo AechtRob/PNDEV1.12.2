@@ -37,7 +37,7 @@ public class ItemSacabambaspisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSacabambaspis", ItemSacabambaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_sacabambaspis", ItemSacabambaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSacabambaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSacabambaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSacabambaspisRaw.block);

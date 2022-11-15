@@ -75,7 +75,7 @@ public class BlockSiphusauctum extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSiphusauctum", BlockSiphusauctum.block);
+		OreDictionary.registerOre("staticdnaPNsiphusauctum", BlockSiphusauctum.block);
 	}
 
 

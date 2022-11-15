@@ -30,7 +30,7 @@ public class ItemVarialepisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVarialepis", ItemVarialepisRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_varialepis", ItemVarialepisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemVarialepisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVarialepisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVarialepisRaw.block);

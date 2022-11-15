@@ -64,7 +64,7 @@ public class BlockSahnioxylonShootPlaceable extends ElementsLepidodendronMod.Mod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSahnioxylon", BlockSahnioxylonShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNsahnioxylon_sapling", BlockSahnioxylonShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSahnioxylonShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockSahnioxylonShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockSahnioxylonShootPlaceable.block);

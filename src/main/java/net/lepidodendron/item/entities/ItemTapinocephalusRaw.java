@@ -37,7 +37,7 @@ public class ItemTapinocephalusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTapinocephalus", ItemTapinocephalusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_tapinocephalus", ItemTapinocephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTapinocephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTapinocephalusRaw.block);
 	}

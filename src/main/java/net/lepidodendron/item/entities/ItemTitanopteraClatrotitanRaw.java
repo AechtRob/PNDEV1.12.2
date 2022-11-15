@@ -37,7 +37,7 @@ public class ItemTitanopteraClatrotitanRaw extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTitanopteraClatrotitan", ItemTitanopteraClatrotitanRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_titanoptera_clatrotitan", ItemTitanopteraClatrotitanRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTitanopteraClatrotitanRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTitanopteraClatrotitanRaw.block);
 	}

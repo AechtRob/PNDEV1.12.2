@@ -37,7 +37,7 @@ public class ItemScutosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNScutosaurus", ItemScutosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_scutosaurus", ItemScutosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemScutosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemScutosaurusRaw.block);
 	}

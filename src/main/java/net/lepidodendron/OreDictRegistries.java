@@ -1298,7 +1298,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 5));
 		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.SAPLING, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.SAPLING, 1, 1));
+		OreDictionary.registerOre("plantdnaPNspruce_sapling", new ItemStack(Blocks.SAPLING, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.SAPLING, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.SAPLING, 1, 3));
 		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.SAPLING, 1, 4));
@@ -1310,13 +1310,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 1));
 		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LEAVES, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LEAVES, 1, 1));
+		OreDictionary.registerOre("plantdnaPNspruce_sapling", new ItemStack(Blocks.LEAVES, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LEAVES, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LEAVES, 1, 3));
 		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LEAVES2, 1, 0));
 		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LEAVES2, 1, 1));
 		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LOG, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LOG, 1, 1));
+		OreDictionary.registerOre("plantdnaPNspruce_sapling", new ItemStack(Blocks.LOG, 1, 1));
 		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LOG, 1, 2));
 		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LOG, 1, 3));
 		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LOG2, 1, 0));

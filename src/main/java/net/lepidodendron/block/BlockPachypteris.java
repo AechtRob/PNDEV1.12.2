@@ -71,7 +71,7 @@ public class BlockPachypteris extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWeichselia", BlockPachypteris.block);
+		OreDictionary.registerOre("plantdnaPNpachypteris", BlockPachypteris.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPachypteris.block);
 		OreDictionary.registerOre("plant", BlockPachypteris.block);
 	}

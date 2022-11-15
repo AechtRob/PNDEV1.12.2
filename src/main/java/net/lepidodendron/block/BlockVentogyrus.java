@@ -71,7 +71,7 @@ public class BlockVentogyrus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVentogyrus", BlockVentogyrus.block);
+		OreDictionary.registerOre("staticdnaPNventogyrus", BlockVentogyrus.block);
 	}
 
 

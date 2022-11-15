@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNScorpionGondwanascorpio"
+ "ore": "mobdnaPNprehistoric_flora_scorpion_gondwanascorpio"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:prehistoric_flora_scorpion_gondwanascorpio"}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_scorpion_gondwanascorpio"}}
  }
 }

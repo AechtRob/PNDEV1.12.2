@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNThrombolite"
+ "ore": "staticdnaPNthrombolite"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:thrombolite"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:thrombolite"}}
  }
 }

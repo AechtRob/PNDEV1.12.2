@@ -30,7 +30,7 @@ public class ItemWeinberginaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWeinbergina", ItemWeinberginaRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_weinbergina", ItemWeinberginaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemWeinberginaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWeinberginaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWeinberginaRaw.block);

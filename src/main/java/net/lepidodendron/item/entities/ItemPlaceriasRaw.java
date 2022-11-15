@@ -37,7 +37,7 @@ public class ItemPlaceriasRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPlacerias", ItemPlaceriasRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_placerias", ItemPlaceriasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPlaceriasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPlaceriasRaw.block);
 	}

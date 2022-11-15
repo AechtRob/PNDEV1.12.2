@@ -66,7 +66,7 @@ public class BlockToditesShootPlaceable extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTodites", BlockToditesShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNtodites_sapling", BlockToditesShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockToditesShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockToditesShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockToditesShootPlaceable.block);

@@ -69,7 +69,7 @@ public class BlockThucydia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNThucydia", BlockThucydia.block);
+		OreDictionary.registerOre("plantdnaPNthucydia", BlockThucydia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockThucydia.block);
 		OreDictionary.registerOre("plant", BlockThucydia.block);
 	}

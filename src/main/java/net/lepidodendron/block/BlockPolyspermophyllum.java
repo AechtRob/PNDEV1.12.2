@@ -71,7 +71,7 @@ public class BlockPolyspermophyllum extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPolyspermophyllum", BlockPolyspermophyllum.block);
+		OreDictionary.registerOre("plantdnaPNpolyspermophyllum", BlockPolyspermophyllum.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPolyspermophyllum.block);
 		OreDictionary.registerOre("plant", BlockPolyspermophyllum.block);
 	}

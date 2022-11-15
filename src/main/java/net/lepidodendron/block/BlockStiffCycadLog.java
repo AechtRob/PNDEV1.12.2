@@ -59,7 +59,7 @@ public class BlockStiffCycadLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNStiffCycad", BlockStiffCycadLog.block);
+		OreDictionary.registerOre("plantdnaPNstiff_cycad_sapling", BlockStiffCycadLog.block);
 		OreDictionary.registerOre("logWood", BlockStiffCycadLog.block);
 	}
 
