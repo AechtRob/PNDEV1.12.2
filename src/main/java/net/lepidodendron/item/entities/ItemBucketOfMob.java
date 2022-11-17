@@ -7,8 +7,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.IResource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,6 +37,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.io.IOException;
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
@@ -477,7 +481,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
 
-				new ModelResourceLocation("lepidodendron:mob_bucket_empty", "inventory")
+				new ModelResourceLocation("lepidodendron:mob_bucket_empty", "inventory"),
+				new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory")
 
 			);
 
@@ -489,7 +494,18 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 					ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 					String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-					return new ModelResourceLocation(LepidodendronMod.MODID +":entities/" + mobname + "_bucket", "inventory");
+					ModelResourceLocation model =  new ModelResourceLocation(LepidodendronMod.MODID +":entities/" + mobname + "_bucket", "inventory");
+					List<IResource> list = null;
+					try {
+						list =  Minecraft.getMinecraft().getResourceManager().getAllResources(new ResourceLocation(LepidodendronMod.MODID + ":models/item/entities/" + mobname + "_bucket.json"));
+					} catch (IOException e) {
+					}
+					if (!(list == null || list.isEmpty())) {
+						return model;
+					}
+					else {
+						return new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory");
+					}
 				}
 			}
 			else return new ModelResourceLocation(stack.getItem().getRegistryName() + "_empty", "inventory");

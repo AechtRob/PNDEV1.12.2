@@ -53,7 +53,7 @@ public class BlockPodozamitesLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPodozamites", BlockPodozamitesLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:podozamites_sapling", BlockPodozamitesLog.block);
 		OreDictionary.registerOre("logWood", BlockPodozamitesLog.block);
 	}
 

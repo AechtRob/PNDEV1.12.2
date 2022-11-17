@@ -59,7 +59,7 @@ public class ItemCrinoidScyphocrinusItem extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCrinoidScyphocrinus", ItemCrinoidScyphocrinusItem.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_scyphocrinus_item", ItemCrinoidScyphocrinusItem.block);
 	}
 
 	public static class ItemCustom extends Item {

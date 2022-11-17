@@ -35,7 +35,7 @@ public class ItemAnomalocarisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_anomalocaris", ItemAnomalocarisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_anomalocaris", ItemAnomalocarisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAnomalocarisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAnomalocarisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAnomalocarisRaw.block);

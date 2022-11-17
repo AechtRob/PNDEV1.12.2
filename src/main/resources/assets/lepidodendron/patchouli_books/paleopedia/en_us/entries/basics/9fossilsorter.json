@@ -1,0 +1,24 @@
+{
+	"name": "Fossil Sorter",
+	"icon": "lepidodendron:sorter_fossil",
+	"category": "lepidodendron:revival",
+	"sortnum": 9,
+	"pages": [
+		{
+			"type": "text",
+			"text": "The fossil sorter looks and behaves very like a hopper, although it has four output sides. If it contains any fossil or DNA item known to belong to a plant, mob or static creature it will sort those items by outputting them on the sides marked with coloured dots as follows: $(li)green = plants $(li)red = mobs $(li)brown = static creatures"
+		},
+		{
+			"type": "text",
+			"text": "Any items not capable of being sorted will be output through the bottom of the sorter. Items capable of being sorted include cleaned fossils, phials of DNA, nodules of cultivated DNA and raw fossils which you have pre-identified using the $(l:basics/8microscope)microscope$(/l). It will only output if there is a inventory-holding block ready to accept the output, like a chest or other hopper etc. Fungi and algae are included in the plants category for sorting."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:fossil_sorter_recipe"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

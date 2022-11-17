@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNantarcticycas"
+ "ore": "plantdnaPNlepidodendron:antarcticycas"
  },
  {
  "item": "lepidodendron:phial_empty"

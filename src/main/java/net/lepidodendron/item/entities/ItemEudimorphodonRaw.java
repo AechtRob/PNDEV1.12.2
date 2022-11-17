@@ -36,7 +36,7 @@ public class ItemEudimorphodonRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEudimorphodon", ItemEudimorphodonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eudimorphodon", ItemEudimorphodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEudimorphodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEudimorphodonRaw.block);
 	}

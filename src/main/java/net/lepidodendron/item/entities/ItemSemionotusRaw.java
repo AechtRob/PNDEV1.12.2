@@ -37,7 +37,7 @@ public class ItemSemionotusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSemionotus", ItemSemionotusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_semionotus", ItemSemionotusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSemionotusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSemionotusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSemionotusRaw.block);

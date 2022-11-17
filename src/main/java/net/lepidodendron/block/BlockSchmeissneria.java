@@ -70,7 +70,7 @@ public class BlockSchmeissneria extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSchmeissneria", BlockSchmeissneria.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:schmeissneria", BlockSchmeissneria.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSchmeissneria.block);
 		OreDictionary.registerOre("plant", BlockSchmeissneria.block);
 	}

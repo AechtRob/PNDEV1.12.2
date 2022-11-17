@@ -37,7 +37,7 @@ public class ItemRebellatrixRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRebellatrix", ItemRebellatrixRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_rebellatrix", ItemRebellatrixRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemRebellatrixRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRebellatrixRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRebellatrixRaw.block);

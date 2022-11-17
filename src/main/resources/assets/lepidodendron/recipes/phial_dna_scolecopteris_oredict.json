@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNScolecopteris"
+ "ore": "plantdnaPNlepidodendron:scolecopteris"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:scolecopteris"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:scolecopteris"}}
  }
 }

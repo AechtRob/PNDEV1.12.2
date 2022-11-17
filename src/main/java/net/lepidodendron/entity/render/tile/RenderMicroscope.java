@@ -44,7 +44,7 @@ public class RenderMicroscope extends TileEntitySpecialRenderer<BlockMicroscope.
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -76,7 +76,7 @@ public class RenderMicroscope extends TileEntitySpecialRenderer<BlockMicroscope.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
                 }

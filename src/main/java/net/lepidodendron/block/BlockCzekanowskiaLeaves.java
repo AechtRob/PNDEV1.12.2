@@ -47,7 +47,7 @@ public class BlockCzekanowskiaLeaves extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCzekanowskia", BlockCzekanowskiaLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:czekanowskia_sapling", BlockCzekanowskiaLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCzekanowskiaLeaves.block);
 		OreDictionary.registerOre("plant", BlockCzekanowskiaLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockCzekanowskiaLeaves.block);

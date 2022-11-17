@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_ascendonanus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_ascendonanus"
  },
  {
  "item": "lepidodendron:phial_empty"

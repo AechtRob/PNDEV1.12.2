@@ -61,7 +61,7 @@ public class BlockCephalotaxusLeavesBerries extends ElementsLepidodendronMod.Mod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCephalotaxus", BlockCephalotaxusLeavesBerries.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cephalotaxus_sapling", BlockCephalotaxusLeavesBerries.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCephalotaxusLeavesBerries.block);
 		OreDictionary.registerOre("plant", BlockCephalotaxusLeavesBerries.block);
 		OreDictionary.registerOre("treeLeaves", BlockCephalotaxusLeavesBerries.block);

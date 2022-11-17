@@ -35,7 +35,7 @@ public class ItemBushizheiaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBushizheia", ItemBushizheiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bushizheia", ItemBushizheiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBushizheiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBushizheiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBushizheiaRaw.block);

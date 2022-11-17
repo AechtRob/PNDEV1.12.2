@@ -62,7 +62,7 @@ public class BlockElkinsia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNElkinsia", BlockElkinsia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:elkinsia", BlockElkinsia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockElkinsia.block);
 		OreDictionary.registerOre("plant", BlockElkinsia.block);
 	}

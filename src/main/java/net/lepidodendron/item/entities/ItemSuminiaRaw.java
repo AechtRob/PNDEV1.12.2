@@ -37,7 +37,7 @@ public class ItemSuminiaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSuminia", ItemSuminiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_suminia", ItemSuminiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSuminiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSuminiaRaw.block);
 	}

@@ -32,6 +32,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ACACIA = new CustomTrigger("pf_book_acacia");
     public static final CustomTrigger CLICK_ADOKETOPHYTON = new CustomTrigger("pf_book_adoketophyton");
     public static final CustomTrigger CLICK_AETHOPHYLLUM = new CustomTrigger("pf_book_aethophyllum");
+    public static final CustomTrigger CLICK_MOSS = new CustomTrigger("pf_book_ancient_moss");
     public static final CustomTrigger CLICK_AGATHIS = new CustomTrigger("pf_book_agathis");
     public static final CustomTrigger CLICK_ALETHOPTERIS = new CustomTrigger("pf_book_alethopteris");
     public static final CustomTrigger CLICK_ALLIOPTERIS = new CustomTrigger("pf_book_alliopteris");
@@ -929,6 +930,7 @@ public class ModTriggers
             CLICK_ACACIA,
             CLICK_ADOKETOPHYTON,
             CLICK_AETHOPHYLLUM,
+            CLICK_MOSS,
             CLICK_AGATHIS,
             CLICK_ALETHOPTERIS,
             CLICK_ALLIOPTERIS,
@@ -1790,10 +1792,7 @@ public class ModTriggers
             CLICK_COWIELEPIS,
             CLICK_CASSINOCERAS,
             CLICK_TRIGONOTARBID_ANTHRACOMARTUS,
-            CLICK_MAZOTHAIROS,
-            CLICK_BRACHIOPOD_ORTHID,
-            CLICK_BRACHIOPOD_GIGANTOPRODUCTUS,
-            CLICK_BRACHIOPOD_SPIRIFERID
+            CLICK_MAZOTHAIROS
 
 
 

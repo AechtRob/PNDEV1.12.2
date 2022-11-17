@@ -64,7 +64,7 @@ public class BlockDioonShootPlaceable extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDioon", BlockDioonShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:dioon_sapling", BlockDioonShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDioonShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockDioonShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockDioonShootPlaceable.block);

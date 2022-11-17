@@ -65,7 +65,7 @@ public class BlockTreefernSilverShootPlaceable extends ElementsLepidodendronMod.
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTreefernSilver", BlockTreefernSilverShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:silver_treefern_sapling", BlockTreefernSilverShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTreefernSilverShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockTreefernSilverShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockTreefernSilverShootPlaceable.block);

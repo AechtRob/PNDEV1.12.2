@@ -68,7 +68,7 @@ public class BlockMatoniaLarge extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMatoniaLarge", BlockMatoniaLarge.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:matonia_large", BlockMatoniaLarge.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockMatoniaLarge.block);
 		OreDictionary.registerOre("plant", BlockMatoniaLarge.block);
 	}

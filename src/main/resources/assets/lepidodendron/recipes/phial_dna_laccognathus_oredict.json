@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNLaccognathus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_laccognathus"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:prehistoric_flora_laccognathus"}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_laccognathus"}}
  }
 }

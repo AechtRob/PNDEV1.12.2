@@ -67,7 +67,7 @@ public class BlockAulaceraSapling extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNaulacera_sapling", BlockAulaceraSapling.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:aulacera_sapling", BlockAulaceraSapling.block);
 		OreDictionary.registerOre("sponge", BlockAulaceraSapling.block);
 	}
 

@@ -68,7 +68,7 @@ public class BlockLesleya extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLesleya", BlockLesleya.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:lesleya", BlockLesleya.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockLesleya.block);
 		OreDictionary.registerOre("plant", BlockLesleya.block);
 	}

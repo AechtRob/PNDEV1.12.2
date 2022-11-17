@@ -37,7 +37,7 @@ public class ItemSillosuchusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSillosuchus", ItemSillosuchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sillosuchus", ItemSillosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSillosuchusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSillosuchusRaw.block);
 	}

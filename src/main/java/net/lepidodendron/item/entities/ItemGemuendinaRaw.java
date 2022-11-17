@@ -36,7 +36,7 @@ public class ItemGemuendinaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGemuendina", ItemGemuendinaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gemuendina", ItemGemuendinaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGemuendinaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGemuendinaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGemuendinaRaw.block);

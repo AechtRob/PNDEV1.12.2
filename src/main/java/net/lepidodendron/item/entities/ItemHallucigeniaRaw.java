@@ -37,7 +37,7 @@ public class ItemHallucigeniaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHallucigenia", ItemHallucigeniaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_hallucigenia", ItemHallucigeniaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHallucigeniaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHallucigeniaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHallucigeniaRaw.block);

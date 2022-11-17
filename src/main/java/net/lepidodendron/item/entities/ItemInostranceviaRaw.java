@@ -37,7 +37,7 @@ public class ItemInostranceviaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNInostrancevia", ItemInostranceviaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_inostrancevia", ItemInostranceviaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemInostranceviaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemInostranceviaRaw.block);
 	}

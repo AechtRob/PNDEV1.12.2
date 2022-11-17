@@ -35,7 +35,7 @@ public class ItemDeltoptychiusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDeltoptychius", ItemDeltoptychiusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_deltoptychius", ItemDeltoptychiusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemDeltoptychiusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDeltoptychiusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDeltoptychiusRaw.block);

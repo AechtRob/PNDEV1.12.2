@@ -58,7 +58,7 @@ public class BlockZygopteridaceaeLeavesPlaceable extends ElementsLepidodendronMo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNZygopteridaceae", BlockZygopteridaceaeLeavesPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:zygopteridaceae_sapling", BlockZygopteridaceaeLeavesPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockZygopteridaceaeLeavesPlaceable.block);
 		OreDictionary.registerOre("plant", BlockZygopteridaceaeLeavesPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockZygopteridaceaeLeavesPlaceable.block);

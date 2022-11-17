@@ -35,7 +35,7 @@ public class ItemBranchiosaurRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBranchiosaur", ItemBranchiosaurRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_branchiosaur", ItemBranchiosaurRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBranchiosaurRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBranchiosaurRaw.block);
 	}

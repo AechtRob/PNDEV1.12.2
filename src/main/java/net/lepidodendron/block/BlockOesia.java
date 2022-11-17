@@ -68,7 +68,7 @@ public class BlockOesia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockOesia.TileEntityCustom.class, "lepidodendron:tileentityoesia");
-		OreDictionary.registerOre("dnaPNOesia", BlockOesia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:oesia", BlockOesia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

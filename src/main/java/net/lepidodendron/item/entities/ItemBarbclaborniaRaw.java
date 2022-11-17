@@ -35,7 +35,7 @@ public class ItemBarbclaborniaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBarbclabornia", ItemBarbclaborniaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_barbclabornia", ItemBarbclaborniaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBarbclaborniaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBarbclaborniaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBarbclaborniaRaw.block);

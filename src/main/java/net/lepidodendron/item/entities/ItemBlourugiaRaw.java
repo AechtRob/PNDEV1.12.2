@@ -35,7 +35,7 @@ public class ItemBlourugiaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBlourugia", ItemBlourugiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_blourugia", ItemBlourugiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBlourugiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBlourugiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBlourugiaRaw.block);

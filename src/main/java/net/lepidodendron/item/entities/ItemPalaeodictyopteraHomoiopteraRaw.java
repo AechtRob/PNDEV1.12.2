@@ -37,7 +37,7 @@ public class ItemPalaeodictyopteraHomoiopteraRaw extends ElementsLepidodendronMo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeodictyopteraHomoioptera", ItemPalaeodictyopteraHomoiopteraRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_homoioptera", ItemPalaeodictyopteraHomoiopteraRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraHomoiopteraRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraHomoiopteraRaw.block);
 	}

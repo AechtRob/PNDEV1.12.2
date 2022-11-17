@@ -77,7 +77,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEscumasia", BlockEscumasia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:escumasia", BlockEscumasia.block);
 	}
 
 

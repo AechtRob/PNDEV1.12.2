@@ -54,7 +54,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
             GlStateManager.rotate(facing.rotateY().rotateY().rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         }
-        GlStateManager.enableAlpha();
+        //GlStateManager.enableAlpha();
         float rotateAngleInitial = 0F;
         float rotateAngle = 0F;
         float flareAngle = 0F;
@@ -75,7 +75,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
             modelDNARecombinerCentrifugeLid.lid.rotateAngleZ = (f * ((float)Math.PI / 2F));
         }
         modelDNARecombinerCentrifugeLid.renderAll(1.25f);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
@@ -92,7 +92,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
             GlStateManager.rotate(facing.rotateY().rotateY().rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
         }
-        GlStateManager.enableAlpha();
+        //GlStateManager.enableAlpha();
         if (entity.isProcessing()) {
             modelDNARecombinerCentrifugeLidHatch.lid.rotateAngleZ = 0;
         }
@@ -105,7 +105,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         modelDNARecombinerCentrifugeLidHatch.left.offsetZ = 1.25F * (float) entity.getHatchVal();
         modelDNARecombinerCentrifugeLidHatch.right.offsetZ = -1.25F * (float) entity.getHatchVal();
         modelDNARecombinerCentrifugeLidHatch.renderAll(1.25f);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         //GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
@@ -118,10 +118,10 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
-        GlStateManager.enableAlpha();
+        //GlStateManager.enableAlpha();
         GlStateManager.rotate(rotateAngle, 0, 1, 0);
         modelDNARecombinerCentrifugeSpindle.renderAll(1.25f);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.popMatrix();
 
         //Render phials if present
@@ -151,13 +151,13 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                             GlStateManager.rotate(facing.rotateY().rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                         }
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         modelDNARecombinerCentrifugePhial.phial1pivot.rotateAngleX = (float) -Math.toRadians(flareAngle);
                         modelDNARecombinerCentrifugePhial.phial1pivot.scaleChildren = true;
                         modelDNARecombinerCentrifugePhial.phial1pivot.setScale(0.5F, 0.5F, 0.5F);
                         GlStateManager.rotate(rotateAngle, 0, 1, 0);
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
                     }
 
@@ -178,13 +178,13 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                             GlStateManager.rotate(facing.rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                         }
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         modelDNARecombinerCentrifugePhial.phial1pivot.rotateAngleX = (float) -Math.toRadians(flareAngle);
                         modelDNARecombinerCentrifugePhial.phial1pivot.scaleChildren = true;
                         modelDNARecombinerCentrifugePhial.phial1pivot.setScale(0.5F, 0.5F, 0.5F);
                         GlStateManager.rotate(rotateAngle, 0, 1, 0);
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
                     }
 
@@ -205,13 +205,13 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                         }
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         modelDNARecombinerCentrifugePhial.phial1pivot.rotateAngleX = (float) -Math.toRadians(flareAngle);
                         modelDNARecombinerCentrifugePhial.phial1pivot.scaleChildren = true;
                         modelDNARecombinerCentrifugePhial.phial1pivot.setScale(0.5F, 0.5F, 0.5F);
                         GlStateManager.rotate(rotateAngle, 0, 1, 0);
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
                     }
 
@@ -232,17 +232,18 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                             GlStateManager.rotate(facing.rotateY().rotateY().rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                         }
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         modelDNARecombinerCentrifugePhial.phial1pivot.rotateAngleX = (float) -Math.toRadians(flareAngle);
                         modelDNARecombinerCentrifugePhial.phial1pivot.scaleChildren = true;
                         modelDNARecombinerCentrifugePhial.phial1pivot.setScale(0.5F, 0.5F, 0.5F);
                         GlStateManager.rotate(rotateAngle, 0, 1, 0);
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
                     }
                 }
             }
         }
+
     }
 }

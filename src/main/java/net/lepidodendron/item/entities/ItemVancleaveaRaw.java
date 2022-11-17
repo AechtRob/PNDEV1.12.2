@@ -30,7 +30,7 @@ public class ItemVancleaveaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVancleavea", ItemVancleaveaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_vancleavea", ItemVancleaveaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemVancleaveaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemVancleaveaRaw.block);
 	}

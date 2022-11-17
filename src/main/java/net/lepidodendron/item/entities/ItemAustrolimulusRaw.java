@@ -35,7 +35,7 @@ public class ItemAustrolimulusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_austrolimulus", ItemAustrolimulusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_austrolimulus", ItemAustrolimulusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAustrolimulusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAustrolimulusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAustrolimulusRaw.block);

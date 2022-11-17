@@ -35,7 +35,7 @@ public class ItemCobelodusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCobelodus", ItemCobelodusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cobelodus", ItemCobelodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCobelodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCobelodusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCobelodusRaw.block);

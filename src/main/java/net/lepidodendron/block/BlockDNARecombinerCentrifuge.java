@@ -278,7 +278,47 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 					&& (!((!getStackInSlot(1).isEmpty()) && getStackInSlot(3).isEmpty()))
 					&& (!((!getStackInSlot(3).isEmpty()) && getStackInSlot(1).isEmpty()))
 				) {
-				return true;
+				boolean flag1 = false;
+				boolean flag2 = false;
+				boolean flag3 = false;
+				boolean flag4 = false;
+				if (!getStackInSlot(0).isEmpty()) {
+					if (getStackInSlot(0).hasTagCompound()) {
+						if (this.getStackInSlot(0).getTagCompound().hasKey("PFPlant")
+						|| this.getStackInSlot(0).getTagCompound().hasKey("PFStatic")
+						|| this.getStackInSlot(0).getTagCompound().hasKey("PFMob")) {
+							flag1 = true;
+						}
+					}
+				}
+				if (!getStackInSlot(1).isEmpty()) {
+					if (getStackInSlot(1).hasTagCompound()) {
+						if (this.getStackInSlot(1).getTagCompound().hasKey("PFPlant")
+								|| this.getStackInSlot(1).getTagCompound().hasKey("PFStatic")
+								|| this.getStackInSlot(1).getTagCompound().hasKey("PFMob")) {
+							flag2 = true;
+						}
+					}
+				}
+				if (!getStackInSlot(2).isEmpty()) {
+					if (getStackInSlot(2).hasTagCompound()) {
+						if (this.getStackInSlot(2).getTagCompound().hasKey("PFPlant")
+								|| this.getStackInSlot(2).getTagCompound().hasKey("PFStatic")
+								|| this.getStackInSlot(2).getTagCompound().hasKey("PFMob")) {
+							flag3 = true;
+						}
+					}
+				}
+				if (!getStackInSlot(3).isEmpty()) {
+					if (getStackInSlot(3).hasTagCompound()) {
+						if (this.getStackInSlot(3).getTagCompound().hasKey("PFPlant")
+								|| this.getStackInSlot(3).getTagCompound().hasKey("PFStatic")
+								|| this.getStackInSlot(3).getTagCompound().hasKey("PFMob")) {
+							flag4 = true;
+						}
+					}
+				}
+				return (flag1 || flag2 || flag3 || flag4);
 			}
 			return false;
 		}

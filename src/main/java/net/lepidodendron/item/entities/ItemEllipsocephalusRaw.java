@@ -36,7 +36,7 @@ public class ItemEllipsocephalusRaw extends ElementsLepidodendronMod.ModElement 
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEllipsocephalus", ItemEllipsocephalusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ellipsocephalus", ItemEllipsocephalusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEllipsocephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEllipsocephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEllipsocephalusRaw.block);

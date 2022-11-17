@@ -35,7 +35,7 @@ public class ItemDiploceraspisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDiploceraspis", ItemDiploceraspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diploceraspis", ItemDiploceraspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDiploceraspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDiploceraspisRaw.block);
 	}

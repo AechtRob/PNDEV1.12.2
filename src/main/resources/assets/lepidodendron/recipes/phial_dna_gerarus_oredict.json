@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNGerarus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_gerarus"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:prehistoric_flora_gerarus"}
+ "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_gerarus"}}
  }
 }

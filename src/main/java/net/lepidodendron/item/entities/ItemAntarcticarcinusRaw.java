@@ -35,7 +35,7 @@ public class ItemAntarcticarcinusRaw extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_antarcticarcinus", ItemAntarcticarcinusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_antarcticarcinus", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAntarcticarcinusRaw.block);

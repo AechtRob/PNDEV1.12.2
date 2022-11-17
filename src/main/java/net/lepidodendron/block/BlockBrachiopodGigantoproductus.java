@@ -75,7 +75,7 @@ public class BlockBrachiopodGigantoproductus extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBrachiopodGigantoproductus", BlockBrachiopodGigantoproductus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_gigantoproductus", BlockBrachiopodGigantoproductus.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodGigantoproductus.block);
 	}
 

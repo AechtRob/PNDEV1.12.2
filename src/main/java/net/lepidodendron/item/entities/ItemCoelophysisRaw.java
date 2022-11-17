@@ -35,7 +35,7 @@ public class ItemCoelophysisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCoelophysis", ItemCoelophysisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_coelophysis", ItemCoelophysisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCoelophysisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCoelophysisRaw.block);
 	}

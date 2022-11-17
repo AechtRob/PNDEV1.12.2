@@ -57,7 +57,7 @@ public class ItemMacrotaeniopterisItem extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMacrotaeniopteris", ItemMacrotaeniopterisItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:macrotaeniopteris_item", ItemMacrotaeniopterisItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemMacrotaeniopterisItem.block);
 		OreDictionary.registerOre("plant", ItemMacrotaeniopterisItem.block);
 	}

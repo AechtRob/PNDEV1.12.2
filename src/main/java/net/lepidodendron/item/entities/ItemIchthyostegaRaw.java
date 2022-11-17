@@ -37,7 +37,7 @@ public class ItemIchthyostegaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNIchthyostega", ItemIchthyostegaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ichthyostega", ItemIchthyostegaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemIchthyostegaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemIchthyostegaRaw.block);
 	}

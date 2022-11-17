@@ -880,7 +880,7 @@ public class BlockRopeBarrier extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return INFINITE_EXTENT_AABB;
+			return new AxisAlignedBB(pos.add(-1, 0, -1), pos.add(2, 1, 2));
 		}
 	}
 }

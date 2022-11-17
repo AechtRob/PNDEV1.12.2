@@ -35,7 +35,7 @@ public class ItemBunostegosRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBunostegos", ItemBunostegosRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bunostegos", ItemBunostegosRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBunostegosRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBunostegosRaw.block);
 	}

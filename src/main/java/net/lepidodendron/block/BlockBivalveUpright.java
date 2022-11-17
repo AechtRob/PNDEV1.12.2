@@ -72,7 +72,7 @@ public class BlockBivalveUpright extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBivalveUpright", BlockBivalveUpright.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_upright", BlockBivalveUpright.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveUpright.block);
 	}
 

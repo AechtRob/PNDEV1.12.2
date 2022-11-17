@@ -69,7 +69,7 @@ public class BlockBolbitis extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBolbitis", BlockBolbitis.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:bolbitis", BlockBolbitis.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBolbitis.block);
 		OreDictionary.registerOre("plant", BlockBolbitis.block);
 	}

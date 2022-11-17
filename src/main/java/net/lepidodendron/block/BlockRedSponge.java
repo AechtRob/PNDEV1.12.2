@@ -77,7 +77,7 @@ public class BlockRedSponge extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRedSponge", BlockRedSponge.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:red_sponge", BlockRedSponge.block);
 		OreDictionary.registerOre("sponge", BlockRedSponge.block);
 	}
 

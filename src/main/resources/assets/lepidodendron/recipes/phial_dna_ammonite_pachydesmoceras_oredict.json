@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_ammonite_pachydesmoceras"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_ammonite_pachydesmoceras"
  },
  {
  "item": "lepidodendron:phial_empty"

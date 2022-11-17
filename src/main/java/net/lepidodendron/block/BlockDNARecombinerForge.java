@@ -381,25 +381,45 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				ItemStack stackOutput = new ItemStack(ItemPlaceableLiving.block, 1);
 				if (stack.getItem() == ItemPhialDNA.block) {
 					String resourcelocation = null;
+					int type = 0;
 					if (stack.hasTagCompound()) {
 						if (stack.getTagCompound().hasKey("PFPlant")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 0;
 						} else if (stack.getTagCompound().hasKey("PFMob")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 1;
 						} else if (stack.getTagCompound().hasKey("PFStatic")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 2;
 						}
 					}
 					if (resourcelocation != null) {
 						if (!resourcelocation.equalsIgnoreCase("")) {
-							NBTTagCompound plantNBT = new NBTTagCompound();
-							plantNBT.setString("id", resourcelocation);
-							NBTTagCompound stackNBT = new NBTTagCompound();
-							stackNBT.setTag("PFPlant", plantNBT);
-							stackOutput.setTagCompound(stackNBT);
+							if (type == 0) {
+								NBTTagCompound plantNBT = new NBTTagCompound();
+								plantNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFPlant", plantNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
+							if (type == 1) {
+								NBTTagCompound mobNBT = new NBTTagCompound();
+								mobNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFMob", mobNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
+							if (type == 2) {
+								NBTTagCompound staticNBT = new NBTTagCompound();
+								staticNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFStatic", staticNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
 							if (this.getStackInSlot(3).isEmpty()) {
 								this.setInventorySlotContents(3, stackOutput);
 							}

@@ -36,7 +36,7 @@ public class ItemEuparkeriaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEuparkeria", ItemEuparkeriaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_euparkeria", ItemEuparkeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEuparkeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEuparkeriaRaw.block);
 	}

@@ -70,7 +70,7 @@ public class BlockGuangdedendron extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGuangdedendron", BlockGuangdedendron.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:guangdedendron", BlockGuangdedendron.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGuangdedendron.block);
 		OreDictionary.registerOre("plant", BlockGuangdedendron.block);
 	}

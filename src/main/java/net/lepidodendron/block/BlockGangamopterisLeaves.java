@@ -47,7 +47,7 @@ public class BlockGangamopterisLeaves extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGangamopteris", BlockGangamopterisLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:gangamopteris_sapling", BlockGangamopterisLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGangamopterisLeaves.block);
 		OreDictionary.registerOre("plant", BlockGangamopterisLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockGangamopterisLeaves.block);

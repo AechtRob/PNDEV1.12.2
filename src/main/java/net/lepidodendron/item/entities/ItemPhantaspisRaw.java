@@ -37,7 +37,7 @@ public class ItemPhantaspisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPhantaspis", ItemPhantaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phantaspis", ItemPhantaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPhantaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPhantaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPhantaspisRaw.block);

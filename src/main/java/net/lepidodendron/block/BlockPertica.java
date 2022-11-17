@@ -63,7 +63,7 @@ public class BlockPertica extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPertica", BlockPertica.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:pertica", BlockPertica.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPertica.block);
 		OreDictionary.registerOre("plant", BlockPertica.block);
 	}

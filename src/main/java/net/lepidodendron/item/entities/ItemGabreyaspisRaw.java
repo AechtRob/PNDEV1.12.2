@@ -36,7 +36,7 @@ public class ItemGabreyaspisRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGabreyaspis", ItemGabreyaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gabreyaspis", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGabreyaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGabreyaspisRaw.block);

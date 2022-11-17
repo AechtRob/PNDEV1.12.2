@@ -57,7 +57,7 @@ public class BlockDicroidiumLeavesSmallPlaceable extends ElementsLepidodendronMo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDicroidium", BlockDicroidiumLeavesSmallPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:dicroidium_sapling", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plant", BlockDicroidiumLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockDicroidiumLeavesSmallPlaceable.block);

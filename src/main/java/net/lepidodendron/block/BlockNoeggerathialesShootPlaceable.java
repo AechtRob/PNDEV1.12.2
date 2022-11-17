@@ -63,7 +63,7 @@ public class BlockNoeggerathialesShootPlaceable extends ElementsLepidodendronMod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNoeggerathiales", BlockNoeggerathialesShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:noeggerathiales_sapling", BlockNoeggerathialesShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNoeggerathialesShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockNoeggerathialesShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockNoeggerathialesShootPlaceable.block);

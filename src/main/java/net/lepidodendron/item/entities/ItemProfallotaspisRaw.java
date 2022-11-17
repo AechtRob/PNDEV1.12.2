@@ -37,7 +37,7 @@ public class ItemProfallotaspisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNProfallotaspis", ItemProfallotaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_profallotaspis", ItemProfallotaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemProfallotaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemProfallotaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemProfallotaspisRaw.block);

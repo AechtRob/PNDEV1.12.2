@@ -61,7 +61,7 @@ public class BlockCycadopterisShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCycadopteris", BlockCycadopterisShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cycadopteris_sapling", BlockCycadopterisShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCycadopterisShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockCycadopterisShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockCycadopterisShootPlaceable.block);

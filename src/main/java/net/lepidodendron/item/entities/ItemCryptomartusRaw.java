@@ -33,10 +33,14 @@ public class ItemCryptomartusRaw extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/cryptomartus_raw", "inventory"));
 	}
+
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCryptomartus", ItemCryptomartusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_cryptomartus", ItemCryptomartusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemEophrynusRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemEophrynusRaw.block);
 	}
+
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(1, 0.05f, false);

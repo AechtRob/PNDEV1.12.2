@@ -37,7 +37,7 @@ public class ItemPalaeontinidRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeontinid", ItemPalaeontinidRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeontinid", ItemPalaeontinidRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeontinidRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeontinidRaw.block);
 	}

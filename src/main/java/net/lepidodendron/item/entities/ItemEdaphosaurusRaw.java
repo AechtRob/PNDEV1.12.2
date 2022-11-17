@@ -36,7 +36,7 @@ public class ItemEdaphosaurusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEdaphosaurus", ItemEdaphosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_edaphosaurus", ItemEdaphosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEdaphosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEdaphosaurusRaw.block);
 	}

@@ -36,7 +36,7 @@ public class ItemEdestusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEdestus", ItemEdestusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_edestus", ItemEdestusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEdestusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEdestusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEdestusRaw.block);

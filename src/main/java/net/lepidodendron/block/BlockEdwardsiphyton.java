@@ -65,7 +65,7 @@ public class BlockEdwardsiphyton extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockEdwardsiphyton.TileEntityCustom.class, "lepidodendron:tileentityedwardsiphyton");
-		OreDictionary.registerOre("dnaPNEdwardsiphyton", BlockEdwardsiphyton.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:edwardsiphyton", BlockEdwardsiphyton.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockEdwardsiphyton.block);
 		OreDictionary.registerOre("plant", BlockEdwardsiphyton.block);
 		OreDictionary.registerOre("itemMoss", BlockEdwardsiphyton.block);

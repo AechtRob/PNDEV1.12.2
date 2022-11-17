@@ -58,7 +58,7 @@ public class ItemNathorstianaItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNathorstiana", ItemNathorstianaItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nathorstiana_item", ItemNathorstianaItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemNathorstianaItem.block);
 		OreDictionary.registerOre("plant", ItemNathorstianaItem.block);
 	}

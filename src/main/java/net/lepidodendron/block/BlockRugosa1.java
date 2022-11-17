@@ -79,7 +79,7 @@ public class BlockRugosa1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRugosa1", BlockRugosa1.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:rugosa_1", BlockRugosa1.block);
 	}
 
 

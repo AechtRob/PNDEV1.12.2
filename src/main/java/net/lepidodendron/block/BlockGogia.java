@@ -75,7 +75,7 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGogia", BlockGogia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:gogia", BlockGogia.block);
 	}
 
 

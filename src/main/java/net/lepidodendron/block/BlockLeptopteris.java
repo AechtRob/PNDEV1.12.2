@@ -74,7 +74,7 @@ public class BlockLeptopteris extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLeptopteris", BlockLeptopteris.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:leptopteris", BlockLeptopteris.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockLeptopteris.block);
 		OreDictionary.registerOre("plant", BlockLeptopteris.block);
 	}

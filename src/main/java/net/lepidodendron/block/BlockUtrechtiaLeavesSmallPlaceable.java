@@ -56,7 +56,7 @@ public class BlockUtrechtiaLeavesSmallPlaceable extends ElementsLepidodendronMod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNUtrechtia", BlockUtrechtiaLeavesSmallPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:utrechtia_sapling", BlockUtrechtiaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockUtrechtiaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plant", BlockUtrechtiaLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockUtrechtiaLeavesSmallPlaceable.block);

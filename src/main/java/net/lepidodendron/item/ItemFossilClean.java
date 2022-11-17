@@ -4,8 +4,10 @@ package net.lepidodendron.item;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.IResource;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -15,6 +17,9 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.io.IOException;
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
@@ -802,6 +807,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stiff_cycad_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stromatocystites_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_stromatoveris_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_stromatolite_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_thrombolite_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_suminia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_surangephyllum_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_swamp_horsetail_item_clean", "inventory"),
@@ -972,36 +979,77 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_parmastega_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_thecodontosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_whatcheeria_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_ancient_moss_clean", "inventory"),
 
-				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory")
+				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
 
 			);
 
 		ModelLoader.setCustomMeshDefinition(block, stack -> {
 			if (stack.hasTagCompound()) {
-				if (!ItemFossilClean.ItemCustom.isEntityFromItemStack(stack) && !ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
+				if (!ItemFossilClean.ItemCustom.isEntityFromItemStack(stack) && !ItemFossilClean.ItemCustom.isBlockFromItemStack(stack) && !ItemFossilClean.ItemCustom.isPlantFromItemStack(stack)) {
 					return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
 				} else {
 					if (ItemFossilClean.ItemCustom.isEntityFromItemStack(stack)) {
 						NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 						ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 						String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-						return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + mobname + "_clean", "inventory");
-					} else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
+						mobname = mobname.replace("minecraft:", "");
+						ModelResourceLocation model = new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + mobname + "_clean", "inventory");
+						List<IResource> list = null;
+						try {
+							list =  Minecraft.getMinecraft().getResourceManager().getAllResources(new ResourceLocation(LepidodendronMod.MODID + ":models/item/fossils/fossil_" + mobname + "_clean.json"));
+						} catch (IOException e) {
+						}
+						if (!(list == null || list.isEmpty())) {
+							return model;
+						}
+						else {
+							return new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory");
+						}
+					}
+					else if (ItemFossilClean.ItemCustom.isPlantFromItemStack(stack)) {
 						if (stack.getTagCompound().hasKey("PFPlant")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 							ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
 							String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
 							blockname = blockname.replace("minecraft:", "");
-							return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
-						} else if (stack.getTagCompound().hasKey("PFStatic")) {
+							ModelResourceLocation model =  new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+							List<IResource> list = null;
+							try {
+								list =  Minecraft.getMinecraft().getResourceManager().getAllResources(new ResourceLocation(LepidodendronMod.MODID + ":models/item/fossils/fossil_" + blockname + "_clean.json"));
+							} catch (IOException e) {
+							}
+							if (!(list == null || list.isEmpty())) {
+								return model;
+							}
+							else {
+								return new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory");
+							}
+						}
+					}
+					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stack)) {
+						if (stack.getTagCompound().hasKey("PFStatic")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
 							ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
 							String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
 							blockname = blockname.replace("minecraft:", "");
-							return new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+							ModelResourceLocation model = new ModelResourceLocation(LepidodendronMod.MODID + ":fossils/fossil_" + blockname + "_clean", "inventory");
+							List<IResource> list = null;
+							try {
+								list =  Minecraft.getMinecraft().getResourceManager().getAllResources(new ResourceLocation(LepidodendronMod.MODID + ":models/item/fossils/fossil_" + blockname + "_clean.json"));
+							} catch (IOException e) {
+							}
+							if (!(list == null || list.isEmpty())) {
+								return model;
+							}
+							else {
+								return new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory");
+							}
 						}
 					}
+
 					else {
 						return new ModelResourceLocation("lepidodendron:fossil_clean", "inventory");
 					}
@@ -1027,9 +1075,10 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 				ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 				String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
+				mobname = mobname.replace("minecraft:", "");
 				return "item.pf_fossil_" + mobname + "_clean";
 			}
-			if (isBlockFromItemStack(stack)) {
+			if (isPlantFromItemStack(stack)) {
 				if (stack.getTagCompound().hasKey("PFPlant")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
@@ -1037,7 +1086,9 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 					blockname = blockname.replace("minecraft:", "");
 					return "item.pf_fossil_" + blockname + "_clean";
 				}
-				else if (stack.getTagCompound().hasKey("PFStatic")) {
+			}
+			if (isBlockFromItemStack(stack)) {
+				if (stack.getTagCompound().hasKey("PFStatic")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
 					ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
 					String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
@@ -1049,21 +1100,24 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public static boolean isEntityFromItemStack(ItemStack stack) {
-			if (stack.hasTagCompound() == false
-					|| !stack.getTagCompound().hasKey("PFMob")) {
+			if (stack.hasTagCompound() == false) {
 				return false;
 			}
-			return true;
+			return (stack.getTagCompound().hasKey("PFMob"));
+		}
+
+		public static boolean isPlantFromItemStack(ItemStack stack) {
+			if (stack.hasTagCompound() == false) {
+				return false;
+			}
+			return (stack.getTagCompound().hasKey("PFPlant"));
 		}
 
 		public static boolean isBlockFromItemStack(ItemStack stack) {
-			if (stack.hasTagCompound() == false
-					|| ((!stack.getTagCompound().hasKey("PFPlant"))
-					&& (!stack.getTagCompound().hasKey("PFStatic")))
-			) {
+			if (stack.hasTagCompound() == false) {
 				return false;
 			}
-			return true;
+			return (stack.getTagCompound().hasKey("PFStatic"));
 		}
 
 	}

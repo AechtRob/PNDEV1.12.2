@@ -65,7 +65,7 @@ public class BlockLygodium extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLygodium", BlockLygodium.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:lygodium", BlockLygodium.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockLygodium.block);
 		OreDictionary.registerOre("plant", BlockLygodium.block);
 		OreDictionary.registerOre("itemMossForStone", BlockLygodium.block);

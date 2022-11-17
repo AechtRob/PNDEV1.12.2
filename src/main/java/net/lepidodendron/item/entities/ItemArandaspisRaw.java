@@ -35,7 +35,7 @@ public class ItemArandaspisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_arandaspis", ItemArandaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_arandaspis", ItemArandaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemArandaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemArandaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemArandaspisRaw.block);

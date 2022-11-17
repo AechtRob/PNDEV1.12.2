@@ -35,7 +35,7 @@ public class ItemAphetocerasRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_aphetoceras", ItemAphetocerasRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_aphetoceras", ItemAphetocerasRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAphetocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAphetocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAphetocerasRaw.block);

@@ -69,7 +69,7 @@ public class BlockAsteroxylon extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNasteroxylon", BlockAsteroxylon.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:asteroxylon", BlockAsteroxylon.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAsteroxylon.block);
 		OreDictionary.registerOre("plant", BlockAsteroxylon.block);
 	}

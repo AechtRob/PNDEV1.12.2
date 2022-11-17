@@ -35,7 +35,7 @@ public class ItemBobasatraniaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBobasatrania", ItemBobasatraniaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bobasatrania", ItemBobasatraniaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBobasatraniaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBobasatraniaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBobasatraniaRaw.block);

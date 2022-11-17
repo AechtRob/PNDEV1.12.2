@@ -37,7 +37,7 @@ public class ItemPalaeodictyopteraSinodunbariaRaw extends ElementsLepidodendronM
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeodictyopteraSinodunbaria", ItemPalaeodictyopteraSinodunbariaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_sinodunbaria", ItemPalaeodictyopteraSinodunbariaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraSinodunbariaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraSinodunbariaRaw.block);
 	}

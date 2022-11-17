@@ -70,7 +70,7 @@ public class BlockAncientMoss extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockAncientMoss.TileEntityCustom.class, "lepidodendron:tileentityancient_moss");
 
-		OreDictionary.registerOre("dnaPNMoss", BlockAncientMoss.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:ancient_moss", BlockAncientMoss.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAncientMoss.block);
 		OreDictionary.registerOre("plant", BlockAncientMoss.block);
 		OreDictionary.registerOre("itemMoss", BlockAncientMoss.block);

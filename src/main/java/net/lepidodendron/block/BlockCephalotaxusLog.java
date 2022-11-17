@@ -53,7 +53,7 @@ public class BlockCephalotaxusLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCephalotaxus", BlockCephalotaxusLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cephalotaxus_sapling", BlockCephalotaxusLog.block);
 		OreDictionary.registerOre("logWood", BlockCephalotaxusLog.block);
 	}
 

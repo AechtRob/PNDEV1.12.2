@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNPrimaevalGrass"
+ "ore": "plantdnaPNlepidodendron:primaeval_grass_item"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:primaeval_grass_item"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:primaeval_grass_item"}}
  }
 }

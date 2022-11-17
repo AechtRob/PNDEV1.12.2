@@ -36,7 +36,7 @@ public class ItemGorgonopsRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGorgonops", ItemGorgonopsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gorgonops", ItemGorgonopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGorgonopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGorgonopsRaw.block);
 	}

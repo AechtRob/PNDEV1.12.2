@@ -324,24 +324,39 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 					ItemStack stackProcessing1 = this.getStackInSlot(0);
 					ItemStack stackProcessing2 = this.getStackInSlot(2);
 					ItemStack stackProcessing3 = this.getStackInSlot(3);
+					ResourceLocation resourcelocation = null;
+					String blockname;
 					if (ItemFossilClean.ItemCustom.isEntityFromItemStack(stackProcessing1)) {
 						NBTTagCompound entityNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFMob");
-						ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
-						id_dna = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+						try {
+							resourcelocation = new ResourceLocation(entityNBT.getString("id"));
+							//id_dna = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFMob";
 					}
-					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stackProcessing1)) {
+					else if (ItemFossilClean.ItemCustom.isPlantFromItemStack(stackProcessing1)) {
 						NBTTagCompound blockNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFPlant");
-						ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-						String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-						id_dna = blockname.replace("minecraft:", "");
+						try {
+							resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							//blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFPlant";
 					}
 					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stackProcessing1)) {
 						NBTTagCompound blockNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFStatic");
-						ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-						String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-						id_dna = blockname.replace("minecraft:", "");
+						try {
+							resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							//blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFStatic";
 					}
 

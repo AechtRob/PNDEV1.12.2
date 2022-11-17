@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNRugosa3"
+ "ore": "staticdnaPNlepidodendron:rugosa_3"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:rugosa_3"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:rugosa_3"}}
  }
 }

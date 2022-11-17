@@ -41,7 +41,7 @@ public class RenderOligopoolMachine extends TileEntitySpecialRenderer<BlockOligo
                     if (!(itemstack.isEmpty() || tee.isEmpty())) {
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -73,7 +73,7 @@ public class RenderOligopoolMachine extends TileEntitySpecialRenderer<BlockOligo
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
                 }

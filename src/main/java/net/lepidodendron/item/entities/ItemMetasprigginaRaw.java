@@ -37,7 +37,7 @@ public class ItemMetasprigginaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMetaspriggina", ItemMetasprigginaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_metaspriggina", ItemMetasprigginaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMetasprigginaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMetasprigginaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMetasprigginaRaw.block);

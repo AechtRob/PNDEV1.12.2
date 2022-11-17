@@ -53,7 +53,7 @@ public class ItemNeocalamitesItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNeocalamites", ItemNeocalamitesItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:neocalamites_item", ItemNeocalamitesItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemNeocalamitesItem.block);
 		OreDictionary.registerOre("plant", ItemNeocalamitesItem.block);
 		OreDictionary.registerOre("stemHorsetail", ItemNeocalamitesItem.block);

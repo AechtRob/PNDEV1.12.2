@@ -73,7 +73,7 @@ public class BlockHelicocystis extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHelicocystis", BlockHelicocystis.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:helicocystis", BlockHelicocystis.block);
 	}
 
 	@Override

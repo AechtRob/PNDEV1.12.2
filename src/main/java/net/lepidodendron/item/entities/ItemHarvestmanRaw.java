@@ -37,7 +37,7 @@ public class ItemHarvestmanRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHarvestman", ItemHarvestmanRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_harvestman", ItemHarvestmanRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHarvestmanRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHarvestmanRaw.block);
 	}

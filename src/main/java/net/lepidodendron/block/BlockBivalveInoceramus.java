@@ -72,7 +72,7 @@ public class BlockBivalveInoceramus extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBivalveInoceramus", BlockBivalveInoceramus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_inoceramus", BlockBivalveInoceramus.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveInoceramus.block);
 	}
 

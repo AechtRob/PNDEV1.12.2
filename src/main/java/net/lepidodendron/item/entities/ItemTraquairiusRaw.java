@@ -37,7 +37,7 @@ public class ItemTraquairiusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTraquairius", ItemTraquairiusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_traquairius", ItemTraquairiusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemTraquairiusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTraquairiusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTraquairiusRaw.block);

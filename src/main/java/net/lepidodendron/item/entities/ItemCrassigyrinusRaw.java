@@ -35,7 +35,7 @@ public class ItemCrassigyrinusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCrassigyrinus", ItemCrassigyrinusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_crassigyrinus", ItemCrassigyrinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCrassigyrinusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCrassigyrinusRaw.block);
 	}

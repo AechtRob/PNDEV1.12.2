@@ -35,7 +35,7 @@ public class ItemCarolowilhelminaRaw extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCarolowilhelmina", ItemCarolowilhelminaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_carolowilhelmina", ItemCarolowilhelminaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCarolowilhelminaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCarolowilhelminaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCarolowilhelminaRaw.block);

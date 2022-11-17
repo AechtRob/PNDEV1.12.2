@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNFenestella4"
+ "ore": "staticdnaPNlepidodendron:fenestella_4"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:fenestella_4"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:fenestella_4"}}
  }
 }

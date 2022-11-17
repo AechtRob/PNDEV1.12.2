@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNNathorstiana"
+ "ore": "plantdnaPNlepidodendron:nathorstiana_item"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:nathorstiana_item"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:nathorstiana_item"}}
  }
 }

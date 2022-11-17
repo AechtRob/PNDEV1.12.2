@@ -66,7 +66,7 @@ public class BlockNelumbo extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNelumbo", BlockNelumbo.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nelumbo", BlockNelumbo.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNelumbo.block);
 		OreDictionary.registerOre("plant", BlockNelumbo.block);
 	}

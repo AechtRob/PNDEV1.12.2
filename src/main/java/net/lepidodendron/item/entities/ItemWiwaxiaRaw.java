@@ -30,7 +30,7 @@ public class ItemWiwaxiaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWiwaxia", ItemWiwaxiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wiwaxia", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWiwaxiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWiwaxiaRaw.block);

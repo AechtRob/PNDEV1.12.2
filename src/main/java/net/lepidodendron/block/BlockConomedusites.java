@@ -73,7 +73,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNConomedusites", BlockConomedusites.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:conomedusites", BlockConomedusites.block);
 	}
 
 

@@ -73,7 +73,7 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDendrograptus", BlockDendrograptus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:dendrograptus", BlockDendrograptus.block);
 	}
 
 

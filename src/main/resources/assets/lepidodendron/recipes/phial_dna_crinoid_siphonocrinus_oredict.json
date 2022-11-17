@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNCrinoidSiphonocrinus"
+ "ore": "staticdnaPNlepidodendron:crinoid_siphonocrinus"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:crinoid_siphonocrinus"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:crinoid_siphonocrinus"}}
  }
 }

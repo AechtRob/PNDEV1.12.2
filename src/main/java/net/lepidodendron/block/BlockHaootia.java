@@ -71,7 +71,7 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHaootia", BlockHaootia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:haootia", BlockHaootia.block);
 	}
 
 

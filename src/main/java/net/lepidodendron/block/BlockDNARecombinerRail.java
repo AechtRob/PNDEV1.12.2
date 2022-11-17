@@ -233,10 +233,9 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		private int centrifugeDepth = 95;
 		private int railLength = 100;
 
-
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return INFINITE_EXTENT_AABB;
+			return new AxisAlignedBB(pos.add(-1, -1, -1), pos.add(1, 2, 1));
 		}
 
 		public boolean canStartProcess() {

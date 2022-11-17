@@ -68,7 +68,7 @@ public class BlockPseudovoltzia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPseudovoltzia", BlockPseudovoltzia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:pseudovoltzia", BlockPseudovoltzia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPseudovoltzia.block);
 		OreDictionary.registerOre("plant", BlockPseudovoltzia.block);
 	}

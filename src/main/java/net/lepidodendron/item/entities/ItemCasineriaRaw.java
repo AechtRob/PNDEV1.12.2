@@ -35,7 +35,7 @@ public class ItemCasineriaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCasineria", ItemCasineriaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_casineria", ItemCasineriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCasineriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCasineriaRaw.block);
 	}

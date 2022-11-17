@@ -35,7 +35,7 @@ public class ItemCyamodusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCyamodus", ItemCyamodusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cyamodus", ItemCyamodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCyamodusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCyamodusRaw.block);
 	}

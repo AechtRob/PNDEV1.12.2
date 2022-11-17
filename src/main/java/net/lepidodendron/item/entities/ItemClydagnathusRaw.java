@@ -35,7 +35,7 @@ public class ItemClydagnathusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNClydagnathus", ItemClydagnathusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_clydagnathus", ItemClydagnathusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemClydagnathusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemClydagnathusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemClydagnathusRaw.block);

@@ -37,7 +37,7 @@ public class ItemPantylusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPantylus", ItemPantylusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pantylus", ItemPantylusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPantylusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPantylusRaw.block);
 	}

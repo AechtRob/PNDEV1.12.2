@@ -35,7 +35,7 @@ public class ItemBanffiaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_banffia", ItemBanffiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_banffia", ItemBanffiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBanffiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBanffiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBanffiaRaw.block);

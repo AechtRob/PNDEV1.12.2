@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNadoketophyton"
+ "ore": "plantdnaPNlepidodendron:adoketophyton"
  },
  {
  "item": "lepidodendron:phial_empty"

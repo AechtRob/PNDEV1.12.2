@@ -75,7 +75,7 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCystoidPseudocrinites", BlockCystoidPseudocrinites.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:cystoid_pseudocrinites", BlockCystoidPseudocrinites.block);
 	}
 
 

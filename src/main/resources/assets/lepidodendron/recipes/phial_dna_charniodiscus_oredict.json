@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNCharniodiscus"
+ "ore": "staticdnaPNlepidodendron:charniodiscus"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:charniodiscus"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:charniodiscus"}}
  }
 }

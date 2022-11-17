@@ -71,7 +71,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBurykhia", BlockBurykhia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:burykhia", BlockBurykhia.block);
 	}
 
 

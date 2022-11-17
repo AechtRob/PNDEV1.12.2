@@ -60,7 +60,7 @@ public class BlockDicksoniaLeavesPlaceable extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDicksonia", BlockDicksoniaLeavesPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:dicksonia_sapling", BlockDicksoniaLeavesPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockDicksoniaLeavesPlaceable.block);
 		OreDictionary.registerOre("plant", BlockDicksoniaLeavesPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockDicksoniaLeavesPlaceable.block);

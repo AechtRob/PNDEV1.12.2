@@ -55,7 +55,7 @@ public class ItemEquisetitesReedItem extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEquisetitesReed", ItemEquisetitesReedItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:equisetites_reed_item", ItemEquisetitesReedItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemEquisetitesReedItem.block);
 		OreDictionary.registerOre("plant", ItemEquisetitesReedItem.block);
 	}

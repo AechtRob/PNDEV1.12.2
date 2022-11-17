@@ -35,7 +35,7 @@ public class ItemAcanthostomatopsRaw extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_acanthostomatops", ItemAcanthostomatopsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acanthostomatops", ItemAcanthostomatopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostomatopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAcanthostomatopsRaw.block);
 	}

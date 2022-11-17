@@ -33,7 +33,7 @@ public class ItemDoswelliaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("dnaPNDoswellia", ItemDoswelliaRaw.block);
+		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_doswellia", ItemDoswelliaRaw.block);
 		//OreDictionary.registerOre("listAllmeatraw", ItemDoswelliaRaw.block);
 		//OreDictionary.registerOre("foodMeat", ItemDoswelliaRaw.block);
 	}

@@ -37,7 +37,7 @@ public class ItemThrinaxodonRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNThrinaxodon", ItemThrinaxodonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_thrinaxodon", ItemThrinaxodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemThrinaxodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemThrinaxodonRaw.block);
 	}

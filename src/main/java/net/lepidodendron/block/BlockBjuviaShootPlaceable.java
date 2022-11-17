@@ -64,7 +64,7 @@ public class BlockBjuviaShootPlaceable extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBjuvia", BlockBjuviaShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:bjuvia_sapling", BlockBjuviaShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBjuviaShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockBjuviaShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockBjuviaShootPlaceable.block);

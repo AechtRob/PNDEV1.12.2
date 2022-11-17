@@ -33,7 +33,7 @@ public class ItemBrachydectesRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("dnaPNBrachydectes", ItemBrachydectesRaw.block);
+		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_brachydectes", ItemBrachydectesRaw.block);
 		//OreDictionary.registerOre("listAllmeatraw", ItemBrachydectesRaw.block);
 		//OreDictionary.registerOre("foodMeat", ItemBrachydectesRaw.block);
 	}

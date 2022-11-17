@@ -232,16 +232,16 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		//NORTH
-		protected static final AxisAlignedBB AABBS = new AxisAlignedBB(0.3125, 0.25D, 0.0D, 0.6875, 0.75, 0.25);
+		protected static final AxisAlignedBB AABBS = new AxisAlignedBB(0.3125, 0.0D, 0.0D, 0.6875, 0.75, 0.25);
 
 		//SOUTH
-		protected static final AxisAlignedBB AABBN = new AxisAlignedBB(0.3125, 0.25D, 0.75D, 0.6875, 0.75, 1.00);
+		protected static final AxisAlignedBB AABBN = new AxisAlignedBB(0.3125, 0.0D, 0.75D, 0.6875, 0.75, 1.00);
 
 		//EAST
-		protected static final AxisAlignedBB AABBW = new AxisAlignedBB(0.75D, 0.25D, 0.3125, 1.00, 0.75, 0.6875);
+		protected static final AxisAlignedBB AABBW = new AxisAlignedBB(0.75D, 0.0D, 0.3125, 1.00, 0.75, 0.6875);
 
 		//WEST
-		protected static final AxisAlignedBB AABBE = new AxisAlignedBB(0.0D, 0.25D, 0.3125, 0.25, 0.75, 0.6875);
+		protected static final AxisAlignedBB AABBE = new AxisAlignedBB(0.0D, 0.0D, 0.3125, 0.25, 0.75, 0.6875);
 
 
 		@Override

@@ -6,18 +6,19 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.gui.GUICoalTarProcessor;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -50,10 +51,11 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 		//		new ModelResourceLocation("lepidodendron:coal_tar_processor_top", "inventory"));
 	}
 	public static class BlockCustom extends Block {
+		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
 			super(Material.IRON);
-			setTranslationKey("pf_coal_tar_processor_top");
+			setTranslationKey("pf_coal_tar_processor");
 			setSoundType(SoundType.METAL);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(2.5F);
@@ -74,6 +76,36 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 		}
 
 		@Override
+		protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+			return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+		}
+
+		@Override
+		public IBlockState withRotation(IBlockState state, Rotation rot) {
+			return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+			return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
+		}
+
+		@Override
+		public IBlockState getStateFromMeta(int meta) {
+			return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
+		}
+
+		@Override
+		public int getMetaFromState(IBlockState state) {
+			return ((EnumFacing) state.getValue(FACING)).getIndex();
+		}
+
+		@Override
+		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+			return BlockFaceShape.UNDEFINED;
+		}
+
+		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 			return (new ItemStack(Items.AIR, 1).getItem());
 		}
@@ -81,7 +113,7 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 		@Override
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 			
-			if (worldIn.getBlockState(pos.down()).getBlock() != BlockCoalTarProcessor.block) {
+			if (worldIn.getBlockState(pos.down()).getBlock() != BlockCoalTarProcessorCentre.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}
@@ -126,7 +158,7 @@ public class BlockCoalTarProcessorTop extends ElementsLepidodendronMod.ModElemen
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entity, EnumHand hand, EnumFacing direction, float hitX, float hitY, float hitZ) {
 			super.onBlockActivated(world, pos, state, entity, hand, direction, hitX, hitY, hitZ);
 			if (entity instanceof EntityPlayer) {
-				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUICoalTarProcessor.GUIID, world, pos.getX(), pos.getY() - 1, pos.getZ());
+				((EntityPlayer) entity).openGui(LepidodendronMod.instance, GUICoalTarProcessor.GUIID, world, pos.getX(), pos.getY() - 2, pos.getZ());
 			}
 			return true;
 		}

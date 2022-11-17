@@ -37,7 +37,7 @@ public class ItemSiberionRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSiberion", ItemSiberionRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_siberion", ItemSiberionRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemSiberionRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemSiberionRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemSiberionRaw.block);

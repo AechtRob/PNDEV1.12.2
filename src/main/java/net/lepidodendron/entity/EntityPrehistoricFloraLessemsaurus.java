@@ -4,6 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -52,6 +53,15 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 		maxHeight = 2.4F;
 		maxHealthAgeable = 100.0D;
 		NOISE_ANIMATION = Animation.create(35);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(2.0, 2.0, 2.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override

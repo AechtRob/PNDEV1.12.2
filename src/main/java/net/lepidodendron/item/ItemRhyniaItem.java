@@ -59,7 +59,7 @@ public class ItemRhyniaItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNRhynia", ItemRhyniaItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:rhynia_item", ItemRhyniaItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemRhyniaItem.block);
 		OreDictionary.registerOre("plant", ItemRhyniaItem.block);
 	}

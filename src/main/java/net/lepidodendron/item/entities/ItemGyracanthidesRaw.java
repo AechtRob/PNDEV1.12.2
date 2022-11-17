@@ -36,7 +36,7 @@ public class ItemGyracanthidesRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGyracanthides", ItemGyracanthidesRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gyracanthides", ItemGyracanthidesRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGyracanthidesRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGyracanthidesRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGyracanthidesRaw.block);

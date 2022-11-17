@@ -38,7 +38,7 @@ public class ItemFadeniaPermotriassicRaw extends ElementsLepidodendronMod.ModEle
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFadeniaPermotriassic", ItemFadeniaPermotriassicRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fadenia_permotriassic", ItemFadeniaPermotriassicRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFadeniaPermotriassicRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemFadeniaPermotriassicRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemFadeniaPermotriassicRaw.block);

@@ -37,7 +37,7 @@ public class ItemFadeniaCarboniferousRaw extends ElementsLepidodendronMod.ModEle
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFadeniaCarboniferous", ItemFadeniaCarboniferousRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_fadenia_carboniferous", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemFadeniaCarboniferousRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemFadeniaCarboniferousRaw.block);

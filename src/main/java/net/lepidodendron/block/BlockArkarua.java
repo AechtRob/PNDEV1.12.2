@@ -71,7 +71,7 @@ public class BlockArkarua extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNarkarua", BlockArkarua.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:arkarua", BlockArkarua.block);
 	}
 
 	@Override

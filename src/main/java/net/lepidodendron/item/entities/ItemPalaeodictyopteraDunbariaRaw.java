@@ -37,7 +37,7 @@ public class ItemPalaeodictyopteraDunbariaRaw extends ElementsLepidodendronMod.M
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeodictyopteraDunbaria", ItemPalaeodictyopteraDunbariaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_dunbaria", ItemPalaeodictyopteraDunbariaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPalaeodictyopteraDunbariaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPalaeodictyopteraDunbariaRaw.block);
 	}

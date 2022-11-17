@@ -74,7 +74,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGrypania", BlockGrypania.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:grypania", BlockGrypania.block);
 	}
 
 

@@ -37,7 +37,7 @@ public class ItemGerrothoraxRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGerrothorax", ItemGerrothoraxRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gerrothorax", ItemGerrothoraxRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGerrothoraxRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGerrothoraxRaw.block);
 	}

@@ -37,7 +37,7 @@ public class ItemEretmorhipisRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEretmorhipis", ItemEretmorhipisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eretmorhipis", ItemEretmorhipisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEretmorhipisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEretmorhipisRaw.block);
 	}

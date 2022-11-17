@@ -77,7 +77,7 @@ public class BlockDictyonema extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDictyonema", BlockDictyonema.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:dictyonema", BlockDictyonema.block);
 	}
 
 

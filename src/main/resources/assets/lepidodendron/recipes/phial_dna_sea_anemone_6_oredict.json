@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNSeaAnemone6"
+ "ore": "staticdnaPNlepidodendron:sea_anemone_6"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:sea_anemone_6"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:sea_anemone_6"}}
  }
 }

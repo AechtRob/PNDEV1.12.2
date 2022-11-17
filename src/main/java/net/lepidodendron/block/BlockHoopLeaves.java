@@ -51,7 +51,7 @@ public class BlockHoopLeaves extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHoop", BlockHoopLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:hoop_araucaria_sapling", BlockHoopLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockHoopLeaves.block);
 		OreDictionary.registerOre("plant", BlockHoopLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockHoopLeaves.block);

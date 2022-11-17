@@ -36,7 +36,7 @@ public class ItemElrathiaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNElrathia", ItemElrathiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_elrathia", ItemElrathiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemElrathiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemElrathiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemElrathiaRaw.block);

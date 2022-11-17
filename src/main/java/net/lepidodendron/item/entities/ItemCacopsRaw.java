@@ -35,7 +35,7 @@ public class ItemCacopsRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCacops", ItemCacopsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cacops", ItemCacopsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCacopsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCacopsRaw.block);
 	}

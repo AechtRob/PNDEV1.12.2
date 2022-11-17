@@ -37,7 +37,7 @@ public class ItemParmastegaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNParmastega", ItemParmastegaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_parmastega", ItemParmastegaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemParmastegaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemParmastegaRaw.block);
 	}

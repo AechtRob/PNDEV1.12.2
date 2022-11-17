@@ -57,6 +57,15 @@ public class EntityPrehistoricFloraTanystropheus extends EntityPrehistoricFloraS
 		maxHealthAgeable = 32.0D;
 	}
 
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(1.5, 0.25, 1.5);
+		}
+		return this.getEntityBoundingBox();
+	}
+
 	@Override
 	public boolean isSmall() {
 		return this.getAgeScale() < 0.3;

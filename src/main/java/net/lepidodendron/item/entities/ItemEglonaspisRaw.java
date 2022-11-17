@@ -36,7 +36,7 @@ public class ItemEglonaspisRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEglonaspis", ItemEglonaspisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eglonaspis", ItemEglonaspisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEglonaspisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEglonaspisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEglonaspisRaw.block);

@@ -72,7 +72,7 @@ public class BlockBivalveDicerocardium extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBivalveDicerocardium", BlockBivalveDicerocardium.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_dicerocardium", BlockBivalveDicerocardium.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDicerocardium.block);
 	}
 

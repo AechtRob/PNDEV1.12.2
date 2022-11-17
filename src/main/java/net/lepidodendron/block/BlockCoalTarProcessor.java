@@ -16,6 +16,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
@@ -105,12 +106,13 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 			super.onBlockAdded(worldIn, pos, state);
-			worldIn.setBlockState(pos.up(), BlockCoalTarProcessorTop.block.getDefaultState());
+			worldIn.setBlockState(pos.up(), BlockCoalTarProcessorCentre.block.getDefaultState().withProperty(BlockCoalTarProcessorCentre.BlockCustom.FACING, state.getValue(FACING)));
+			worldIn.setBlockState(pos.up(2), BlockCoalTarProcessorTop.block.getDefaultState().withProperty(BlockCoalTarProcessorTop.BlockCustom.FACING, state.getValue(FACING)));
 		}
 
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up());
+			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up()) && isReplaceable(worldIn, pos.up(2));
 		}
 
 		@Override
@@ -190,7 +192,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
-			if (worldIn.getBlockState(pos.up()).getBlock() != BlockCoalTarProcessorTop.block) {
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockCoalTarProcessorCentre.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}
@@ -213,6 +215,14 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		}
+
+		@Override
+		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+			if (face == EnumFacing.DOWN) {
+				return BlockFaceShape.SOLID;
+			}
+			return BlockFaceShape.UNDEFINED;
 		}
 
 		@Override
@@ -245,7 +255,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
 					if (te.isProcessing && random.nextInt(8) == 0) {
 						for (int l = 0; l < 8; ++l) {
-							world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + 0.5, (double) pos.getY() + 1.8, (double) pos.getZ() + 0.5, 0, 0.075D, 0);
+							world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + 0.5, (double) pos.getY() + 3.0, (double) pos.getZ() + 0.5, 0, 0.075D, 0);
 						}
 					}
 				}

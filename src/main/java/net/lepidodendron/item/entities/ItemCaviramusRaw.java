@@ -35,7 +35,7 @@ public class ItemCaviramusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCaviramus", ItemCaviramusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_caviramus", ItemCaviramusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCaviramusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCaviramusRaw.block);
 	}

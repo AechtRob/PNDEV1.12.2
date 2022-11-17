@@ -37,7 +37,7 @@ public class ItemQilinyuRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNQilinyu", ItemQilinyuRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_qilinyu", ItemQilinyuRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemQilinyuRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemQilinyuRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemQilinyuRaw.block);

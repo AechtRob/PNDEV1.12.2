@@ -39,6 +39,8 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
@@ -70,6 +72,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private Animation currentAnimation;
 
     private int inPFLove;
+    private int canGrow;
     private boolean laying;
     private EntityItem eatTarget;
     private EntityLiving grappleTarget;
@@ -81,6 +84,15 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+    }
+
+    @SideOnly(Side.CLIENT)
+    public AxisAlignedBB getRenderBoundingBox()
+    {
+        if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+            return this.getEntityBoundingBox().grow(1.0, 0.25, 1.0);
+        }
+        return this.getEntityBoundingBox();
     }
 
     @Nullable
@@ -559,6 +571,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
         compound.setInteger("InPFLove", this.inPFLove);
+        compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
@@ -578,6 +591,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
         this.inPFLove = compound.getInteger("InPFLove");
+        this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
@@ -710,6 +724,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.inPFLove > 0)
         {
             --this.inPFLove;
+        }
+
+        if (this.canGrow > 0)
+        {
+            --this.canGrow;
         }
 
         if (this.getMateable() < 0) {
@@ -1174,13 +1193,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.isBreedingItem(itemstack) && this.isPFAdult() && this.inPFLove <= 0 && this.getMateable() == 0)
             {
                 this.consumeItemFromStack(player, itemstack);
-                if (this.isPFAdult()) {
-                    this.inPFLove = 600;
-                    this.world.setEntityState(this, (byte) 18);
-                }
+                this.inPFLove = 600;
+                this.world.setEntityState(this, (byte) 18);
                 return true;
             }
-            if (this.isBreedingItem(itemstack) && (!this.isPFAdult())) {
+            if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
+                this.consumeItemFromStack(player, itemstack);
+                this.canGrow = 3000;
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
                 return true;
             }

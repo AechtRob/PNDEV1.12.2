@@ -37,7 +37,7 @@ public class ItemTegopelteRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTegopelte", ItemTegopelteRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_tegopelte", ItemTegopelteRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemTegopelteRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemTegopelteRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemTegopelteRaw.block);

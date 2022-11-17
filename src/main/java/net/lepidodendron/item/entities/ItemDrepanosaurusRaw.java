@@ -33,7 +33,7 @@ public class ItemDrepanosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("dnaPNDrepanosaurus", ItemDrepanosaurusRaw.block);
+		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_drepanosaurus", ItemDrepanosaurusRaw.block);
 		//OreDictionary.registerOre("listAllmeatraw", ItemDrepanosaurusRaw.block);
 		//OreDictionary.registerOre("foodMeat", ItemDrepanosaurusRaw.block);
 	}

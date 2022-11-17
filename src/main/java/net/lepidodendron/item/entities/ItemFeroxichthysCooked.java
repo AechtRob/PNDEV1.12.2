@@ -36,7 +36,7 @@ public class ItemFeroxichthysCooked extends ElementsLepidodendronMod.ModElement 
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFeroxichthys", ItemFeroxichthysRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_feroxichthys", ItemFeroxichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemFeroxichthysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemFeroxichthysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemFeroxichthysRaw.block);

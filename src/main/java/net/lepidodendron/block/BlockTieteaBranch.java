@@ -57,7 +57,7 @@ public class BlockTieteaBranch extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTietea", BlockTieteaBranch.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tietea_sapling", BlockTieteaBranch.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTieteaBranch.block);
 		OreDictionary.registerOre("plant", BlockTieteaBranch.block);
 	}

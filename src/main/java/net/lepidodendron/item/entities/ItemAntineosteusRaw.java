@@ -35,7 +35,7 @@ public class ItemAntineosteusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_antineosteus", ItemAntineosteusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_antineosteus", ItemAntineosteusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAntineosteusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAntineosteusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAntineosteusRaw.block);

@@ -1,0 +1,29 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"2": "lepidodendron:blocks/coal_tar_processor",
+		"4": "lepidodendron:blocks/coal_tar_processor_3",
+		"particle": "lepidodendron:blocks/lab_bench_side"
+	},
+	"elements": [
+		{
+			"from": [3.5, 5, 15.01],
+			"to": [12.5, 9, 15.01],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 16]},
+			"faces": {
+				"south": {"uv": [7, 10, 16, 14], "texture": "#2"}
+			}
+		},
+		{
+			"from": [1, 0, 1],
+			"to": [15, 14, 15],
+			"faces": {
+				"north": {"uv": [1, 1, 15, 15], "texture": "#4"},
+				"east": {"uv": [1, 1, 15, 15], "texture": "#4"},
+				"south": {"uv": [1, 0, 15, 14], "texture": "#4"},
+				"west": {"uv": [1, 0, 15, 14], "texture": "#4"},
+				"up": {"uv": [1, 1, 15, 15], "texture": "#4"}
+			}
+		}
+	]
+}

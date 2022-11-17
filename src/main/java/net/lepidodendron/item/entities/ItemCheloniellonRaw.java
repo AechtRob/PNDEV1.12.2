@@ -35,7 +35,7 @@ public class ItemCheloniellonRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCheloniellon", ItemCheloniellonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cheloniellon", ItemCheloniellonRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCheloniellonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCheloniellonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCheloniellonRaw.block);

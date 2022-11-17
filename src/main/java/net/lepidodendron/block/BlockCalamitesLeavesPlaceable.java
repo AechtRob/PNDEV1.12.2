@@ -55,7 +55,7 @@ public class BlockCalamitesLeavesPlaceable extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCalamites", BlockCalamitesLeavesPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:calamites_sapling", BlockCalamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCalamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("plant", BlockCalamitesLeavesPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockCalamitesLeavesPlaceable.block);

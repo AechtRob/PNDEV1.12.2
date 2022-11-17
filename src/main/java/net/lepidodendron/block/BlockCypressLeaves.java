@@ -48,7 +48,7 @@ public class BlockCypressLeaves extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCypress", BlockCypressLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cypress_sapling", BlockCypressLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCypressLeaves.block);
 		OreDictionary.registerOre("plant", BlockCypressLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockCypressLeaves.block);

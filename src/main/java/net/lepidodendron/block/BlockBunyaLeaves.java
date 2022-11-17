@@ -51,7 +51,7 @@ public class BlockBunyaLeaves extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBunya", BlockBunyaLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:bunya_sapling", BlockBunyaLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBunyaLeaves.block);
 		OreDictionary.registerOre("plant", BlockBunyaLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockBunyaLeaves.block);

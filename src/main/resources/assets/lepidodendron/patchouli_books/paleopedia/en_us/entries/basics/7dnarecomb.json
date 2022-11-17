@@ -10,11 +10,11 @@
 		},
 		{
 			"type": "text",
-			"text": "You can use hoppers (and modded equivalents) to insert phials into the Centrifuge. You cannot extract already-centrifuged phials and the machine will remain locked until all centrifuged phials have been processed by the next stages. The machine will transfer the centrifuged DNA phial into the main DNA Forge part of the machine. This part needs to have a supply of oligopools in order to process the phial."
+			"text": "You can use hoppers (and modded equivalents) to insert phials into the Centrifuge. You cannot extract already-centrifuged phials and the machine will remain locked until all centrifuged phials have been processed by the next stages. The machine will transfer the centrifuged DNA phial into the main DNA Forge part of the machine. This part needs to have a supply of $(l:basics/6oligo)oligopools$(/l) in order to process the phial."
 		},
 		{
 			"type": "text",
-			"text": "You can again use hoppers (and modded equivalents) to insert oligopools into the DNA Forge, and to extract completed DNA from it. Once complete the DNA Forge will produce a placeable cultured DNA item to create the living thing."
+			"text": "You can again use hoppers (and modded equivalents) to insert $(l:basics/6oligo)oligopools$(/l) into the DNA Forge, and to extract completed DNA from it. Once complete the DNA Forge will produce a placeable cultured DNA item to create the living thing."
 		},
 		{
 			"type": "crafting",

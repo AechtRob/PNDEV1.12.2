@@ -37,7 +37,7 @@ public class ItemPlatyhystrixRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPlatyhystrix", ItemPlatyhystrixRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_platyhystrix", ItemPlatyhystrixRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPlatyhystrixRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPlatyhystrixRaw.block);
 	}

@@ -35,7 +35,7 @@ public class ItemCaptorhinusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCaptorhinus", ItemCaptorhinusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_captorhinus", ItemCaptorhinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCaptorhinusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCaptorhinusRaw.block);
 	}

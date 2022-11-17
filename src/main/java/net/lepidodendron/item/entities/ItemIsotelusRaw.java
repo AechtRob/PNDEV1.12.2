@@ -37,7 +37,7 @@ public class ItemIsotelusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNIsotelus", ItemIsotelusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_isotelus", ItemIsotelusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemIsotelusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemIsotelusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemIsotelusRaw.block);

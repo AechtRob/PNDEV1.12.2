@@ -64,7 +64,7 @@ public class BlockFunisia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockFunisia.TileEntityCustom.class, "lepidodendron:tileentityfunisia");
-		OreDictionary.registerOre("dnaPNFunisia", BlockFunisia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:funisia", BlockFunisia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

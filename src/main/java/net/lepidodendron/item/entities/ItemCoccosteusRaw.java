@@ -35,7 +35,7 @@ public class ItemCoccosteusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCoccosteus", ItemCoccosteusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_coccosteus", ItemCoccosteusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCoccosteusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCoccosteusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCoccosteusRaw.block);

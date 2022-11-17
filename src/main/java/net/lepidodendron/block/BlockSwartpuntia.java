@@ -71,7 +71,7 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNSwartpuntia", BlockSwartpuntia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:swartpuntia", BlockSwartpuntia.block);
 	}
 
 

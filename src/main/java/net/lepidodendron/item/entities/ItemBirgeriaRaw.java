@@ -35,7 +35,7 @@ public class ItemBirgeriaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBirgeria", ItemBirgeriaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_birgeria", ItemBirgeriaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBirgeriaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBirgeriaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBirgeriaRaw.block);

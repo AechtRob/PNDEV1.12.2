@@ -77,7 +77,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemBaragwanathiaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPrototaxites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNematophyta.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -113,7 +114,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWattiezaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXenocladiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXihuphyllum.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -157,7 +159,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockValmeyerodendronSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWalchiaSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -224,7 +227,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWoodHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZygopterisSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPhasmatocycasSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPhasmatocycasSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -296,7 +300,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTongchuanophyllum.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWoodHorsetail.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZamitesSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZamitesSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -384,7 +389,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockKomlopterisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
         return resLoc;
     }
@@ -495,9 +501,10 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "dark_oak_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:spruce_sapling"
         };
         return resLoc;
     }
@@ -567,12 +574,13 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
         return resLoc;
     }
@@ -638,12 +646,13 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
         return resLoc;
     }
@@ -709,12 +718,13 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
         return resLoc;
     }

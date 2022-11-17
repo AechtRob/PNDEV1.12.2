@@ -35,7 +35,7 @@ public class ItemCotylorhynchusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCotylorhynchus", ItemCotylorhynchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cotylorhynchus", ItemCotylorhynchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCotylorhynchusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCotylorhynchusRaw.block);
 	}

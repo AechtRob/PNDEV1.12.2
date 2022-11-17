@@ -35,7 +35,7 @@ public class ItemCanadiaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCanadia", ItemCanadiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_canadia", ItemCanadiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCanadiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCanadiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCanadiaRaw.block);

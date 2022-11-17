@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNBivalveUpright"
+ "ore": "staticdnaPNlepidodendron:bivalve_upright"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:bivalve_upright"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:bivalve_upright"}}
  }
 }

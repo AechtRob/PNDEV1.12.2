@@ -56,7 +56,7 @@ public class BlockNothofagusLeaves extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNothofagus", BlockNothofagusLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nothofagus_sapling", BlockNothofagusLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNothofagusLeaves.block);
 		OreDictionary.registerOre("plant", BlockNothofagusLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockNothofagusLeaves.block);

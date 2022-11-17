@@ -55,7 +55,7 @@ public class ItemPhyllothecaItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPhyllotheca", ItemPhyllothecaItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:phyllotheca_item", ItemPhyllothecaItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemPhyllothecaItem.block);
 		OreDictionary.registerOre("plant", ItemPhyllothecaItem.block);
 		OreDictionary.registerOre("stemHorsetail", ItemPhyllothecaItem.block);

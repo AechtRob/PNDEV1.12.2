@@ -37,7 +37,7 @@ public class ItemMeganeuropsisRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMeganeuropsis", ItemMeganeuropsisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_meganeuropsis", ItemMeganeuropsisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMeganeuropsisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMeganeuropsisRaw.block);
 	}

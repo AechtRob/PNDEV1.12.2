@@ -65,7 +65,7 @@ public class BlockWilliamsoniaShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWilliamsonia", BlockWilliamsoniaShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:williamsonia_sapling", BlockWilliamsoniaShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockWilliamsoniaShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockWilliamsoniaShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockWilliamsoniaShootPlaceable.block);

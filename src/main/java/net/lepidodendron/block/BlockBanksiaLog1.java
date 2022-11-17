@@ -62,7 +62,7 @@ public class BlockBanksiaLog1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNbanksia_1_sapling", BlockBanksiaLog1.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:banksia_1_sapling", BlockBanksiaLog1.block);
 		OreDictionary.registerOre("logWood", BlockBanksiaLog1.block);
 	}
 

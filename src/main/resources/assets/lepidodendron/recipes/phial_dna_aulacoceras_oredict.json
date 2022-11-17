@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_aulacoceras"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_aulacoceras"
  },
  {
  "item": "lepidodendron:phial_empty"

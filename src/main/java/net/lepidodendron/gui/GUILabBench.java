@@ -281,6 +281,7 @@ public class GUILabBench extends ElementsLepidodendronMod.ModElement {
                 this.internal = (IInventory) ent;
 
             this.internal.closeInventory(playerIn);
+
         }
 
         private void slotChanged(int slotid, int ctype, int meta) {

@@ -35,7 +35,7 @@ public class ItemDianiaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDiania", ItemDianiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diania", ItemDianiaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemDianiaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDianiaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDianiaRaw.block);

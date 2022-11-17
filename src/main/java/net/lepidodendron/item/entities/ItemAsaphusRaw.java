@@ -35,7 +35,7 @@ public class ItemAsaphusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_asaphus", ItemAsaphusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_asaphus", ItemAsaphusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAsaphusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAsaphusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAsaphusRaw.block);

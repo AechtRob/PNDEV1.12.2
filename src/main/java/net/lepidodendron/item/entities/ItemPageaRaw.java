@@ -37,7 +37,7 @@ public class ItemPageaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPagea", ItemPageaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_pagea", ItemPageaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPageaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPageaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPageaRaw.block);

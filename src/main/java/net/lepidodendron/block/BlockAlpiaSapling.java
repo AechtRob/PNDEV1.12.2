@@ -66,7 +66,7 @@ public class BlockAlpiaSapling extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNalpia_sapling", BlockAlpiaSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:alpia_sapling", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAlpiaSapling.block);
 		OreDictionary.registerOre("plant", BlockAlpiaSapling.block);

@@ -35,7 +35,7 @@ public class ItemDiictodonRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDiictodon", ItemDiictodonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_diictodon", ItemDiictodonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDiictodonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDiictodonRaw.block);
 		OreDictionary.registerOre("foodCooked", ItemDiictodonRaw.block);

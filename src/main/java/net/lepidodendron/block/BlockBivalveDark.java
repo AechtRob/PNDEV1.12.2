@@ -72,7 +72,7 @@ public class BlockBivalveDark extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBivalveDark", BlockBivalveDark.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:bivalve_dark", BlockBivalveDark.block);
 		OreDictionary.registerOre("itemShellfish", BlockBivalveDark.block);
 	}
 

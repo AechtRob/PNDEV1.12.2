@@ -37,7 +37,7 @@ public class ItemPostosuchusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPostosuchus", ItemPostosuchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_postosuchus", ItemPostosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPostosuchusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPostosuchusRaw.block);
 	}

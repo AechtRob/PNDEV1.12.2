@@ -1297,30 +1297,30 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 4));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.SAPLING, 1, 5));
-		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.SAPLING, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.SAPLING, 1, 1));
-		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.SAPLING, 1, 2));
-		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.SAPLING, 1, 3));
-		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.SAPLING, 1, 4));
-		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.SAPLING, 1, 5));
+		OreDictionary.registerOre("plantdnaPNminecraft:oak_sapling", new ItemStack(Blocks.SAPLING, 1, 0));
+		OreDictionary.registerOre("plantdnaPNminecraft:spruce_sapling", new ItemStack(Blocks.SAPLING, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:birch_sapling", new ItemStack(Blocks.SAPLING, 1, 2));
+		OreDictionary.registerOre("plantdnaPNminecraft:jungle_sapling", new ItemStack(Blocks.SAPLING, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:acacia_sapling", new ItemStack(Blocks.SAPLING, 1, 4));
+		OreDictionary.registerOre("plantdnaPNminecraft:dark_oak_sapling", new ItemStack(Blocks.SAPLING, 1, 5));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 1));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 2));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES, 1, 3));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 0));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.LEAVES2, 1, 1));
-		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LEAVES, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LEAVES, 1, 1));
-		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LEAVES, 1, 2));
-		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LEAVES, 1, 3));
-		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LEAVES2, 1, 0));
-		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LEAVES2, 1, 1));
-		OreDictionary.registerOre("dnaPNOak", new ItemStack(Blocks.LOG, 1, 0));
-		OreDictionary.registerOre("dnaPNSpruce", new ItemStack(Blocks.LOG, 1, 1));
-		OreDictionary.registerOre("dnaPNBirch", new ItemStack(Blocks.LOG, 1, 2));
-		OreDictionary.registerOre("dnaPNJungle", new ItemStack(Blocks.LOG, 1, 3));
-		OreDictionary.registerOre("plantdnaPNacacia_sapling", new ItemStack(Blocks.LOG2, 1, 0));
-		OreDictionary.registerOre("dnaPNDarkOak", new ItemStack(Blocks.LOG2, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:oak_sapling", new ItemStack(Blocks.LEAVES, 1, 0));
+		OreDictionary.registerOre("plantdnaPNminecraft:spruce_sapling", new ItemStack(Blocks.LEAVES, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:birch_sapling", new ItemStack(Blocks.LEAVES, 1, 2));
+		OreDictionary.registerOre("plantdnaPNminecraft:jungle_sapling", new ItemStack(Blocks.LEAVES, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:acacia_sapling", new ItemStack(Blocks.LEAVES2, 1, 0));
+		OreDictionary.registerOre("plantdnaPNminecraft:dark_oak_sapling", new ItemStack(Blocks.LEAVES2, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:oak_sapling", new ItemStack(Blocks.LOG, 1, 0));
+		OreDictionary.registerOre("plantdnaPNminecraft:spruce_sapling", new ItemStack(Blocks.LOG, 1, 1));
+		OreDictionary.registerOre("plantdnaPNminecraft:birch_sapling", new ItemStack(Blocks.LOG, 1, 2));
+		OreDictionary.registerOre("plantdnaPNminecraft:jungle_sapling", new ItemStack(Blocks.LOG, 1, 3));
+		OreDictionary.registerOre("plantdnaPNminecraft:acacia_sapling", new ItemStack(Blocks.LOG2, 1, 0));
+		OreDictionary.registerOre("plantdnaPNminecraft:dark_oak_sapling", new ItemStack(Blocks.LOG2, 1, 1));
 
 
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.VINE, 1));
@@ -1335,6 +1335,13 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 6));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 7));
 		OreDictionary.registerOre("plant", new ItemStack(Blocks.RED_FLOWER, 1, 8));
+
+		OreDictionary.registerOre("mobdnaPNminecraft:cow", new ItemStack(Items.BEEF, 1));
+		OreDictionary.registerOre("mobdnaPNminecraft:pig", new ItemStack(Items.PORKCHOP, 1));
+		OreDictionary.registerOre("mobdnaPNminecraft:sheep", new ItemStack(Items.MUTTON, 1));
+		OreDictionary.registerOre("mobdnaPNminecraft:chicken", new ItemStack(Items.CHICKEN, 1));
+		OreDictionary.registerOre("mobdnaPNminecraft:rabbit", new ItemStack(Items.RABBIT, 1));
+		OreDictionary.registerOre("mobdnaPNminecraft:zombie", new ItemStack(Items.ROTTEN_FLESH, 1));
 
 	}
 

@@ -74,7 +74,7 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFernEpiphyte", BlockFernEpiphyte.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:fern_epiphyte", BlockFernEpiphyte.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockFernEpiphyte.block);
 		OreDictionary.registerOre("plant", BlockFernEpiphyte.block);
 	}

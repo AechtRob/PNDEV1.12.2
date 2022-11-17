@@ -35,7 +35,7 @@ public class ItemBandringaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_bandringa", ItemBandringaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bandringa", ItemBandringaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBandringaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBandringaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBandringaRaw.block);

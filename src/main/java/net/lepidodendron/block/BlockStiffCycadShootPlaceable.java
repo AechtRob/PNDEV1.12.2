@@ -67,7 +67,7 @@ public class BlockStiffCycadShootPlaceable extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNStiffCycad", BlockStiffCycadShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:stiff_cycad_sapling", BlockStiffCycadShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockStiffCycadShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockStiffCycadShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockStiffCycadShootPlaceable.block);

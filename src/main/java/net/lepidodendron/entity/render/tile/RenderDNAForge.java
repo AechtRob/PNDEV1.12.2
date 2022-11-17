@@ -29,6 +29,10 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
     private final ModelDNARecombinerForgeOligopool modelDNARecombinerForgeOligopool;
     private final ModelDNARecombinerForgeFog modelDNARecombinerForgeFog;
 
+    private int redAdj;
+    private int greenAdj;
+    private int blueAdj;
+
     public RenderDNAForge() {
         this.modelDNARecombinerForgeFog = new ModelDNARecombinerForgeFog();
         this.modelDNARecombinerForgeOligopool = new ModelDNARecombinerForgeOligopool();
@@ -117,11 +121,11 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                     if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                         GlStateManager.rotate(facing.rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                     }
-                    GlStateManager.enableAlpha();
+                    //GlStateManager.enableAlpha();
                     modelDNARecombinerForgeOligopool.oligo.rotateAngleX = (float)Math.toRadians(entity.getOligoAngle());
                     modelDNARecombinerForgeOligopool.oligo.offsetX = (float)entity.getOligoExtend();
                     modelDNARecombinerForgeOligopool.renderAll(1.25f);
-                    GlStateManager.disableAlpha();
+                    //GlStateManager.disableAlpha();
                     //GlStateManager.enableCull();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.popMatrix();
@@ -137,14 +141,14 @@ public class RenderDNAForge extends TileEntitySpecialRenderer<BlockDNARecombiner
                     if (!(facing == EnumFacing.DOWN || facing == EnumFacing.UP)) {
                         GlStateManager.rotate(facing.rotateY().getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
                     }
-                    GlStateManager.enableAlpha();
+                    //GlStateManager.enableAlpha();
                     GlStateManager.enableBlend();
                     GlStateManager.blendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
                     Random rand = new Random();
-                    GlStateManager.color(1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/5F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/5F) * (float)entity.getFogDensity()), (float) entity.getFogDensity());
+                    GlStateManager.color(1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), 1.0F + ((rand.nextFloat()/10F) * (float)entity.getFogDensity()) - ((rand.nextFloat()/10F) * (float)entity.getFogDensity()), (float) entity.getFogDensity());
                     modelDNARecombinerForgeFog.renderAll(1.25f);
-                    GlStateManager.disableAlpha();
                     GlStateManager.disableBlend();
+                    //GlStateManager.disableAlpha();
                     GlStateManager.disableRescaleNormal();
                     GlStateManager.popMatrix();
 

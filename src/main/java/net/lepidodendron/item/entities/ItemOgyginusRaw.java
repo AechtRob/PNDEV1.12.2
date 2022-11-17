@@ -36,7 +36,7 @@ public class ItemOgyginusRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOgyginus", ItemOgyginusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ogyginus", ItemOgyginusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemOgyginusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemOgyginusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemOgyginusRaw.block);

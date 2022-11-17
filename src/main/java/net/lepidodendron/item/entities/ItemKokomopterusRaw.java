@@ -37,7 +37,7 @@ public class ItemKokomopterusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNKokomopterus", ItemKokomopterusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kokomopterus", ItemKokomopterusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemKokomopterusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemKokomopterusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemKokomopterusRaw.block);

@@ -37,7 +37,7 @@ public class ItemMicrodictyonRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMicrodictyon", ItemMicrodictyonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_microdictyon", ItemMicrodictyonRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemMicrodictyonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemMicrodictyonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemMicrodictyonRaw.block);

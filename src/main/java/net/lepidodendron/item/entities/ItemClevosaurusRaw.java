@@ -35,7 +35,7 @@ public class ItemClevosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNClevosaurus", ItemClevosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_clevosaurus", ItemClevosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemClevosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemClevosaurusRaw.block);
 	}

@@ -35,7 +35,7 @@ public class ItemDesmatosuchusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDesmatosuchus", ItemDesmatosuchusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_desmatosuchus", ItemDesmatosuchusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDesmatosuchusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDesmatosuchusRaw.block);
 	}

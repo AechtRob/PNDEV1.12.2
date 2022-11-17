@@ -30,7 +30,7 @@ public class ItemWingPalaeodictyoptera_Lithomantis extends ElementsLepidodendron
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeodictyopteraLithomantis", ItemWingPalaeodictyoptera_Lithomantis.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_lithomantis", ItemWingPalaeodictyoptera_Lithomantis.block);
 		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Lithomantis.block);
 	}
 	@Override

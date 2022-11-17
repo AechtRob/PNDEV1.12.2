@@ -35,7 +35,7 @@ public class ItemAegirocassisRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_aegirocassis", ItemAegirocassisRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_aegirocassis", ItemAegirocassisRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAegirocassisRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAegirocassisRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAegirocassisRaw.block);

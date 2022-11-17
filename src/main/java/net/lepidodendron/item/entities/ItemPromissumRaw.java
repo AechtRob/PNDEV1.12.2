@@ -37,7 +37,7 @@ public class ItemPromissumRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPromissum", ItemPromissumRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_promissum", ItemPromissumRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemPromissumRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPromissumRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPromissumRaw.block);

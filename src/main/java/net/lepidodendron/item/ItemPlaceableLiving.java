@@ -109,6 +109,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 		public static String getDNAStr(String string) {
 			string = string.replace("lepidodendron:", "");
+			string = string.replace("minecraft:", "");
 			return string;
 		}
 
@@ -123,22 +124,22 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 				String stringDNA = (blockNBT.getString("id"));
 				if (stringDNA != null) {
-					if (stringDNA.equalsIgnoreCase("acacia_sapling")) {
+					if (stringDNA.equalsIgnoreCase("minecraft:acacia_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(4);
 					}
-					else if (stringDNA.equalsIgnoreCase("birch_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:birch_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(2);
 					}
-					else if (stringDNA.equalsIgnoreCase("dark_oak_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:dark_oak_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(5);
 					}
-					else if (stringDNA.equalsIgnoreCase("jungle_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:jungle_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(3);
 					}
-					else if (stringDNA.equalsIgnoreCase("oak_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:oak_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(0);
 					}
-					else if (stringDNA.equalsIgnoreCase("spruce_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:spruce_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(1);
 					}
 					else {
@@ -233,6 +234,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 							nbtStr = "{AgeTicks:0}";
+						}
+						else {
+							nbtStr = "{Age:-25000}";
 						}
 						if (!(worldIn.isRemote)) {
 							if (iblockstate.getMaterial() == Material.WATER) {

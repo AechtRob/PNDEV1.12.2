@@ -35,7 +35,7 @@ public class ItemClaudiosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNClaudiosaurus", ItemClaudiosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_claudiosaurus", ItemClaudiosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemClaudiosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemClaudiosaurusRaw.block);
 	}

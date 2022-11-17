@@ -36,7 +36,7 @@ public class ItemOpolankaRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOpolanka", ItemOpolankaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_opolanka", ItemOpolankaRaw.block);
 		OreDictionary.registerOre("itemShellfish", ItemOpolankaRaw.block);
 	}
 

@@ -79,7 +79,7 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBrachiopodSpiriferid", BlockBrachiopodSpiriferid.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_spiriferid", BlockBrachiopodSpiriferid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodSpiriferid.block);
 	}
 

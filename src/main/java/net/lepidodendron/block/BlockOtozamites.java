@@ -70,7 +70,7 @@ public class BlockOtozamites extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOtozamites", BlockOtozamites.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:otozamites", BlockOtozamites.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockOtozamites.block);
 		OreDictionary.registerOre("plant", BlockOtozamites.block);
 	}

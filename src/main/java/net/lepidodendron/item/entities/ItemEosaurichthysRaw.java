@@ -36,7 +36,7 @@ public class ItemEosaurichthysRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEosaurichthys", ItemEosaurichthysRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eosaurichthys", ItemEosaurichthysRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemEosaurichthysRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemEosaurichthysRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemEosaurichthysRaw.block);

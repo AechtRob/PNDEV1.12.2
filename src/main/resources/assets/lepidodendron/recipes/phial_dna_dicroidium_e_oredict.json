@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNDicroidiumE"
+ "ore": "plantdnaPNlepidodendron:dicroidium_e"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:dicroidium_e"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:dicroidium_e"}}
  }
 }

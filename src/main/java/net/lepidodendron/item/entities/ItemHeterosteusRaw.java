@@ -37,7 +37,7 @@ public class ItemHeterosteusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHeterosteus", ItemHeterosteusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_heterosteus", ItemHeterosteusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHeterosteusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHeterosteusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHeterosteusRaw.block);

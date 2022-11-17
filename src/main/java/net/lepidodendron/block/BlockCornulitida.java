@@ -81,7 +81,7 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCornulitida", BlockCornulitida.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:cornulitida", BlockCornulitida.block);
 	}
 
 

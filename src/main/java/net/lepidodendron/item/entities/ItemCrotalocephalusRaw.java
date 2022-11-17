@@ -35,7 +35,7 @@ public class ItemCrotalocephalusRaw extends ElementsLepidodendronMod.ModElement 
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCrotalocephalus", ItemCrotalocephalusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_crotalocephalus", ItemCrotalocephalusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemCrotalocephalusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCrotalocephalusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCrotalocephalusRaw.block);

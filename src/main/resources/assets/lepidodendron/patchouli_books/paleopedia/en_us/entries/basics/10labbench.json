@@ -1,0 +1,18 @@
+{
+	"name": "Laboratory Bench",
+	"icon": "lepidodendron:lab_bench",
+	"category": "lepidodendron:revival",
+	"sortnum": 10,
+	"pages": [
+		{
+			"type": "text",
+			"text": "The Laboratory Bench is a block used either decoratively or else as part of an automation of $(l:basics/5phials)DNA crafting$(/l). It also comes in a hopper variant, with no crafting function, only a hopper-like one."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lab_bench",
+			"recipe2": "lepidodendron:lab_bench_hopper",
+			"title": "Lab Benches"
+		}
+	]
+}

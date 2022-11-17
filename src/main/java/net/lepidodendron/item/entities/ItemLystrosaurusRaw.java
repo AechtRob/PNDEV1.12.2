@@ -37,7 +37,7 @@ public class ItemLystrosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLystrosaurus", ItemLystrosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_lystrosaurus", ItemLystrosaurusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemLystrosaurusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemLystrosaurusRaw.block);
 	}

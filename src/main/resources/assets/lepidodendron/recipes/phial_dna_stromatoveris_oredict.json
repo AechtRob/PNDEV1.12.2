@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNStromatoveris"
+ "ore": "staticdnaPNlepidodendron:stromatoveris"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:stromatoveris"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:stromatoveris"}}
  }
 }

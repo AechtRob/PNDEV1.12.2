@@ -40,7 +40,7 @@ public class BlockFurculaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFurcula", BlockFurculaLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:furcula_sapling", BlockFurculaLog.block);
 		OreDictionary.registerOre("logWood", BlockFurculaLog.block);
 	}
 

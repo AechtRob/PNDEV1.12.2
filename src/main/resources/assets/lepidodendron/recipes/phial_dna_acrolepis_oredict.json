@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_acrolepis"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_acrolepis"
  },
  {
  "item": "lepidodendron:phial_empty"

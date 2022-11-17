@@ -35,7 +35,7 @@ public class ItemDasycepsRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNDasyceps", ItemDasycepsRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_dasyceps", ItemDasycepsRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemDasycepsRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemDasycepsRaw.block);
 	}

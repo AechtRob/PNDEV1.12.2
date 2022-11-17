@@ -35,7 +35,7 @@ public class ItemAmphibamusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_amphibamus", ItemAmphibamusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_amphibamus", ItemAmphibamusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmphibamusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAmphibamusRaw.block);
 	}

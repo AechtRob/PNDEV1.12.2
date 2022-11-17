@@ -25,7 +25,7 @@ public class ItemWingertshellicusRaw extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNWingertshellicus", ItemWingertshellicusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_wingertshellicus", ItemWingertshellicusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemWingertshellicusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemWingertshellicusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemWingertshellicusRaw.block);

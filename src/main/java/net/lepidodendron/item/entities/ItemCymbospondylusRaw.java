@@ -35,7 +35,7 @@ public class ItemCymbospondylusRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCymbospondylus", ItemCymbospondylusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cymbospondylus", ItemCymbospondylusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCymbospondylusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCymbospondylusRaw.block);
 	}

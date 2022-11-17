@@ -19,6 +19,6 @@
     "type": "minecraft:item_nbt",
     "item": "lepidodendron:phial_dna",
     "count": 1,
-    "nbt": {"id_dna":"lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"}
+    "nbt": {"PFMob":{"id":"lepidodendron:prehistoric_flora_trigonotarbid_kreischeria"}}
   }
 }

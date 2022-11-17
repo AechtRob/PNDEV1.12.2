@@ -23,7 +23,7 @@ import net.minecraftforge.client.ForgeHooksClient;
 
 public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.TileEntityAcidBathUp> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/acid_bath.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/blocks/acid_bath_supports.png");
     private static final ResourceLocation TEXTURE_GRID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acid_bath_grid.png");
     private final ModelAcidBathTray modelAcidBathTray;
     private final ModelAcidBathTrayGrid modelAcidBathTrayGrid;
@@ -69,9 +69,9 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-        GlStateManager.enableAlpha();
+        //GlStateManager.enableAlpha();
         modelAcidBathTray.renderAll(1.25f);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
@@ -95,9 +95,9 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
         GlStateManager.scale(0.05F, 0.05F, 0.05F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-        GlStateManager.enableAlpha();
+        //GlStateManager.enableAlpha();
         modelAcidBathTrayGrid.renderAll(1.25f);
-        GlStateManager.disableAlpha();
+        //GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
 
@@ -127,7 +127,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         //GlStateManager.pushMatrix();
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -157,7 +157,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -177,7 +177,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         //GlStateManager.pushMatrix();
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -208,7 +208,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -228,7 +228,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         //GlStateManager.pushMatrix();
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -259,7 +259,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
 
@@ -279,7 +279,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
                         //GlStateManager.pushMatrix();
 
                         GlStateManager.enableRescaleNormal();
-                        GlStateManager.enableAlpha();
+                        //GlStateManager.enableAlpha();
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
                         RenderHelper.enableStandardItemLighting();
@@ -309,7 +309,7 @@ public class RenderAcidBathUp extends TileEntitySpecialRenderer<BlockAcidBathUp.
 
                         GlStateManager.popMatrix();
                         GlStateManager.disableRescaleNormal();
-                        GlStateManager.disableAlpha();
+                        //GlStateManager.disableAlpha();
                         GlStateManager.disableBlend();
                     }
                 }

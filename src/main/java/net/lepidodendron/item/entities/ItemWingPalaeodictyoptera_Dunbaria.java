@@ -30,7 +30,7 @@ public class ItemWingPalaeodictyoptera_Dunbaria extends ElementsLepidodendronMod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeodictyopteraDunbaria", ItemWingPalaeodictyoptera_Dunbaria.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_palaeodictyoptera_dunbaria", ItemWingPalaeodictyoptera_Dunbaria.block);
 		OreDictionary.registerOre("wingInsect", ItemWingPalaeodictyoptera_Dunbaria.block);
 	}
 	@Override

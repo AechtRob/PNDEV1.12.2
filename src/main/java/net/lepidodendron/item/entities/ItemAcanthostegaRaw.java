@@ -35,7 +35,7 @@ public class ItemAcanthostegaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_acanthostega", ItemAcanthostegaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_acanthostega", ItemAcanthostegaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAcanthostegaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAcanthostegaRaw.block);
 	}

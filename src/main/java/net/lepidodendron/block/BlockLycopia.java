@@ -69,7 +69,7 @@ public class BlockLycopia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLycopia", BlockLycopia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:lycopia", BlockLycopia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockLycopia.block);
 		OreDictionary.registerOre("plant", BlockLycopia.block);
 	}

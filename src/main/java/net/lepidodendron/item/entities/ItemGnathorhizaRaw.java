@@ -36,7 +36,7 @@ public class ItemGnathorhizaRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGnathorhiza", ItemGnathorhizaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gnathorhiza", ItemGnathorhizaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGnathorhizaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGnathorhizaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGnathorhizaRaw.block);

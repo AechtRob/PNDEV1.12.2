@@ -35,7 +35,7 @@ public class ItemBaramedaRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBarameda", ItemBaramedaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_barameda", ItemBaramedaRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBaramedaRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBaramedaRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBaramedaRaw.block);

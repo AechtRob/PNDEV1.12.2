@@ -62,7 +62,7 @@ public class BlockClaytosmunda extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNClaytosmunda", BlockClaytosmunda.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:claytosmunda", BlockClaytosmunda.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockClaytosmunda.block);
 		OreDictionary.registerOre("plant", BlockClaytosmunda.block);
 	}

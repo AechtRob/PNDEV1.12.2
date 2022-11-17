@@ -73,7 +73,7 @@ public class BlockXianguangia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNXianguangia", BlockXianguangia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:xianguangia", BlockXianguangia.block);
 	}
 
 
