@@ -253,6 +253,37 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					//System.err.println("slot -1");
 					return false;
 				}
+				//TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
+				//if (tileEntity != null) {
+				//	if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
+				//		BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
+				//		if (!te.getStackInSlot(0).isEmpty()) {
+				//			//System.err.println("forge phial slot full");
+				//			//The phial slot in the DNA Forge is full at the moment so we can't proceed!
+				//			return false;
+				//		}
+				//	}
+				//}
+				return true;
+			}
+			return false;
+		}
+
+		public boolean canCompleteProcess() {
+			//System.err.println("canCompleteProcess");
+			if (this.isProcessing) {
+				IBlockState state = this.getWorld().getBlockState(this.getPos());
+				if (state.getBlock() != BlockDNARecombinerRail.block) {
+					return false;
+				}
+				EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+				if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
+					return false;
+				}
+				//if (getCentrifugeSlot(facing) == -1) {
+				//	//System.err.println("slot -1");
+				//	return false;
+				//}
 				TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
@@ -303,6 +334,16 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void update() {
 
+			int stage2 = this.centrifugeDepth;
+			int stage3 = stage2 + this.centrifugeDepth;
+			int stage4 = stage3 + this.railLength;
+			int stage5 = stage4 + this.centrifugeDepth + 30; //Depth of the forge holder
+			int stage6 = stage5 + 30;
+			int stage7 = stage6 + this.centrifugeDepth + 30; //Depth of the forge holder
+			int stage8 = stage7 + this.centrifugeDepth;
+			int stage9 = stage8 + this.railLength;
+
+
 			if (this.getWorld().isRemote) {
 				return;
 			}
@@ -337,7 +378,15 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 			}
 			else {
 				//The rail is processing, so do the stuff:
-				this.processTick ++;
+				boolean shouldContinue = false;
+				if ((this.processTick < (stage4)) || (this.processTick > (stage4))
+					|| (this.processTick == (stage4) && this.canCompleteProcess())){
+					shouldContinue = true;
+				}
+
+				if (shouldContinue) {
+					this.processTick++;
+				}
 
 				if (this.processTick >= 0 && this.processTick < this.centrifugeDepth) {
 					//The claw needs to descend first
@@ -390,14 +439,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					// We have filled the claw with the phial now
 				}
 
-				int stage2 = this.centrifugeDepth;
-				int stage3 = stage2 + this.centrifugeDepth;
-				int stage4 = stage3 + this.railLength;
-				int stage5 = stage4 + this.centrifugeDepth + 30; //Depth of the forge holder
-				int stage6 = stage5 + 30;
-				int stage7 = stage6 + this.centrifugeDepth + 30; //Depth of the forge holder
-				int stage8 = stage7 + this.centrifugeDepth;
-				int stage9 = stage8 + this.railLength;
+
 
 				double clawAngleOpen = this.clawAngle;
 
@@ -428,10 +470,18 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					}
 				}
 
+				if (this.processTick == stage3) {
+					IBlockState state = this.getWorld().getBlockState(this.getPos());
+					if (state.getBlock() == BlockDNARecombinerRail.block) {
+						EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+						int n = getCentrifugeSlot(facing);
+					}
+				}
+
 				if (this.processTick <= stage4 && this.processTick > stage3) {
 					//Move horizontally:
 					this.clawVert = 0;
-					this.clawHoriz = this.clawHoriz + 0.01;
+					this.clawHoriz = Math.min(this.clawHoriz + 0.01, (stage4 - stage3) * 0.01);
 				}
 
 				if (this.processTick > (stage4 + 20) && this.processTick <= (stage4 + 40)) {

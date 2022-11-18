@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -244,23 +245,28 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 
 					//"Waterblocks":
 					if (world.getBlockState(pos.north()).getMaterial() == Material.WATER
-							&& (!(world.getBlockState(pos.north()).getBlock() instanceof BlockFluidBase))) {
+							&& (!(world.getBlockState(pos.north()).getBlock() instanceof BlockFluidBase))
+							&& (!(world.getBlockState(pos.north()).getBlock() instanceof BlockLiquid))) {
 						world.destroyBlock(pos.north(), true);
 					}
 					if (world.getBlockState(pos.south()).getMaterial() == Material.WATER
-							&& (!(world.getBlockState(pos.south()).getBlock() instanceof BlockFluidBase))) {
+							&& (!(world.getBlockState(pos.south()).getBlock() instanceof BlockFluidBase))
+							&& (!(world.getBlockState(pos.south()).getBlock() instanceof BlockLiquid))) {
 						world.destroyBlock(pos.south(), true);
 					}
 					if (world.getBlockState(pos.east()).getMaterial() == Material.WATER
-							&& (!(world.getBlockState(pos.east()).getBlock() instanceof BlockFluidBase))) {
+							&& (!(world.getBlockState(pos.east()).getBlock() instanceof BlockFluidBase))
+							&& (!(world.getBlockState(pos.east()).getBlock() instanceof BlockLiquid))) {
 						world.destroyBlock(pos.east(), true);
 					}
 					if (world.getBlockState(pos.west()).getMaterial() == Material.WATER
-							&& (!(world.getBlockState(pos.west()).getBlock() instanceof BlockFluidBase))) {
+							&& (!(world.getBlockState(pos.west()).getBlock() instanceof BlockFluidBase))
+							&& (!(world.getBlockState(pos.west()).getBlock() instanceof BlockLiquid))) {
 						world.destroyBlock(pos.west(), true);
 					}
 					if (world.getBlockState(pos.down()).getMaterial() == Material.WATER
-							&& (!(world.getBlockState(pos.down()).getBlock() instanceof BlockFluidBase))) {
+							&& (!(world.getBlockState(pos.down()).getBlock() instanceof BlockFluidBase))
+							&& (!(world.getBlockState(pos.down()).getBlock() instanceof BlockLiquid))) {
 						world.destroyBlock(pos.down(), true);
 					}
 
