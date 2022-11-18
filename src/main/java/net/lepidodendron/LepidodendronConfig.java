@@ -29,6 +29,7 @@ public class LepidodendronConfig {
 
     public static boolean genFossil = true;
     public static double junkFossil = 12.5;
+    public static double playerSleepPercent = 100.0;
     public static boolean modFire = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
@@ -523,6 +524,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "junkFossil", junkFossil);
         prop.setComment("Percentage chance that the acid bath returns a junk output instead of a fossil (0-100). [default: 12.5]");
         junkFossil = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "playerSleepPercent", playerSleepPercent);
+        prop.setComment("Percentage of sleepable players who must sleep in order for a night to pass (0-100). [default: 100.0]");
+        playerSleepPercent = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "biomeApple", biomeApple);

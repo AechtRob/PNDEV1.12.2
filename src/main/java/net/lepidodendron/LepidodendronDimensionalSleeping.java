@@ -37,7 +37,7 @@ public class LepidodendronDimensionalSleeping {
 						for (EntityPlayer p: playersInWorld) {
 							if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW) {
 								//The player "could" sleep here, so add the world to the iterator if not already there:
-								if (IntStream.of(dimsPlayers).anyMatch(x -> x == i)) {
+								if (!(IntStream.of(dimsPlayers).anyMatch(x -> x == i))) {
 									dimsPlayers = addX(dimsPlayers, i);
 								}
 							}
@@ -125,7 +125,14 @@ public class LepidodendronDimensionalSleeping {
 				}
 			}
 			//System.err.println("allPlayersSleeping result " + (j > 0 && j >= playersInWorld.size() - i));
-			return j > 0 && j >= playersInWorld.size() - i;
+			double sleep = LepidodendronConfig.playerSleepPercent;
+			if (sleep < 0.0) {
+				sleep = 0.0;
+			}
+			if (sleep > 100.0) {
+				sleep = 100.0;
+			}
+			return j > 0 && j >= (int)Math.floor((playersInWorld.size() - i) * (sleep / 100D));
 		}
 		//System.err.println("allPlayersSleeping result false default");
 		return false;
@@ -135,7 +142,7 @@ public class LepidodendronDimensionalSleeping {
 
 		//System.err.println("areAllPlayersAsleep");
 
-		if (allPlayersSleeping(world) && !world.isRemote)
+		if (allPlayersSleeping(world))
 		{
 			List<EntityPlayer> playersInWorld = world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
 			for (EntityPlayer entityplayer : playersInWorld)

@@ -1,6 +1,6 @@
 {
     "name": "Devonian",
-    "description": "$(l)The Age of Fish$()$(br)This period is known for lots and lots of fish such as the famous placoderms as well as many eurypterids, though they were in decline. Tetrapods also first emerged during this time.$(br)$(l)Portal Block: Archaeopteris Planks",
+    "description": "$(l)The Age of Fish$()$(br)This period is known for lots and lots of fish such as the famous placoderms as well as many eurypterids, though they were in decline. Tetrapods also first emerged during this time.$(br2)$(l)Portal Block: Archaeopteris Planks",
     "icon": "paleopedia:textures/category_icon/icon_devonian.png",
     "sortnum": 4
 }
