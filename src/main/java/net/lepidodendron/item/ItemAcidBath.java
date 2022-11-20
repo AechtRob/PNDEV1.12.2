@@ -98,11 +98,17 @@ public class ItemAcidBath extends ElementsLepidodendronMod.ModElement {
 				if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
 				{
 					IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					IBlockState iblockstate2 = worldIn.getBlockState(pos.up());
+					IBlockState iblockstate3 = worldIn.getBlockState(blockpos.up());
 					boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
+					boolean flag6 = iblockstate2.getBlock().isReplaceable(worldIn, pos.up());
+					boolean flag7 = iblockstate3.getBlock().isReplaceable(worldIn, blockpos.up());
 					boolean flag2 = flag || worldIn.isAirBlock(pos);
 					boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+					boolean flag4 = flag6 || worldIn.isAirBlock(pos.up());
+					boolean flag5 = flag7 || worldIn.isAirBlock(blockpos.up());
 
-					if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					if (flag2 && flag3 && flag4 && flag5 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
 					{
 						worldIn.setBlockState(pos, BlockAcidBath.block.getDefaultState().withProperty(BlockAcidBath.BlockCustom.FACING, enumfacing), 3);
 						worldIn.setBlockState(pos.offset(enumfacing), BlockAcidBathEnd.block.getDefaultState().withProperty(BlockAcidBathEnd.BlockCustom.FACING, enumfacing.getOpposite()), 3);

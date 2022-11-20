@@ -28,6 +28,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -144,12 +146,19 @@ public class BlockSpongeReef extends ElementsLepidodendronMod.ModElement {
 			super(Material.CORAL);
 			setTranslationKey("pf_sponge_reef");
 			setSoundType(SoundType.STONE);
-			setHardness(2.0F);
-			setResistance(2.0F);
+			setHardness(1.0F);
+			setResistance(1.5F);
 			//setLightLevel(0.5F);
 			setLightOpacity(0);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
+		}
+
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
+			return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.01D, ((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.01D, ((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.01D);
 		}
 
 		@SideOnly(Side.CLIENT)

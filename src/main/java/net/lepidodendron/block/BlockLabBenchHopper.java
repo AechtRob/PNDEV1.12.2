@@ -79,6 +79,12 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isTopSolid(IBlockState state)
+		{
+			return true;
+		}
+
+		@Override
 		public TileEntity createNewTileEntity(World worldIn, int meta)
 		{
 			return new TileEntityHopper();

@@ -184,6 +184,10 @@ public class BlockWhiteSponge extends ElementsLepidodendronMod.ModElement {
 		{
 			multiplier = 20;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
+		{
+			multiplier = 30;
+		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;

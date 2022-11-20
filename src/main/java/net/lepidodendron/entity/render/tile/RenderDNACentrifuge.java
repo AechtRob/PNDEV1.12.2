@@ -20,7 +20,7 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
     private static final ResourceLocation TEXTURE_CENTRIFUGE_LID = new ResourceLocation("lepidodendron:textures/entities/dna_recombiner_centrifuge_top.png");
     private static final ResourceLocation TEXTURE_CENTRIFUGE_PHIAL_DNA = new ResourceLocation("lepidodendron:textures/entities/centrifuge_phial.png");
     private static final ResourceLocation TEXTURE_CENTRIFUGE_PHIAL_EMPTY = new ResourceLocation("lepidodendron:textures/entities/centrifuge_phial_empty.png");
-    private static final ResourceLocation TEXTURE_IRON_BLOCK = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
+    private static final ResourceLocation TEXTURE_IRON_BLOCK = new ResourceLocation("lepidodendron:textures/blocks/centrifuge_spindle.png");
 
     private final ModelDNARecombinerCentrifugeLid modelDNARecombinerCentrifugeLid;
     private final ModelDNARecombinerCentrifugeLidHatch modelDNARecombinerCentrifugeLidHatch;

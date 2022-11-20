@@ -1,0 +1,58 @@
+{
+	"parent": "block/cube_all",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/amblysiphonella",
+		"particle": "lepidodendron:blocks/amblysiphonella"
+	},
+	"elements": [
+		{
+			"from": [7, 5, 3],
+			"to": [9, 9, 5],
+			"faces": {
+				"north": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"east": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"south": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"west": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [5, 3, 7, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [6.5, 9, 2.5],
+			"to": [9.5, 18, 5.5],
+			"faces": {
+				"north": {"uv": [5, 3, 8, 12], "texture": "#0"},
+				"east": {"uv": [5, 3, 8, 12], "texture": "#0"},
+				"south": {"uv": [5, 3, 8, 12], "texture": "#0"},
+				"west": {"uv": [5, 3, 8, 12], "texture": "#0"},
+				"up": {"uv": [13, 13, 16, 16], "texture": "#0"},
+				"down": {"uv": [5, 3, 8, 6], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7, 3, 1],
+			"to": [9, 7, 3],
+			"faces": {
+				"north": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"east": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"south": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"west": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [5, 3, 7, 5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.01, 2, 0],
+			"to": [9.01, 5, 2],
+			"faces": {
+				"north": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"east": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"south": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"west": {"uv": [5, 3, 7, 7], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [5, 3, 7, 5], "texture": "#0"}
+			}
+		}
+	]
+}

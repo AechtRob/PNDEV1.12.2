@@ -38,6 +38,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ALLIOPTERIS = new CustomTrigger("pf_book_alliopteris");
     public static final CustomTrigger CLICK_ALLONNIA = new CustomTrigger("pf_book_allonnia");
     public static final CustomTrigger CLICK_ALPIA = new CustomTrigger("pf_book_alpia");
+    public static final CustomTrigger CLICK_AMBLYSIPHONELLA = new CustomTrigger("pf_book_amblysiphonella");
     public static final CustomTrigger CLICK_ANEUROPHYTON = new CustomTrigger("pf_book_aneurophyton");
     public static final CustomTrigger CLICK_ANKYROPTERIS = new CustomTrigger("pf_book_ankyropteris");
     public static final CustomTrigger CLICK_ANOMOZAMITES = new CustomTrigger("pf_book_anomozamites");
@@ -936,6 +937,7 @@ public class ModTriggers
             CLICK_ALLIOPTERIS,
             CLICK_ALLONNIA,
             CLICK_ALPIA,
+            CLICK_AMBLYSIPHONELLA,
             CLICK_ANEUROPHYTON,
             CLICK_ANKYROPTERIS,
             CLICK_ANOMOZAMITES,

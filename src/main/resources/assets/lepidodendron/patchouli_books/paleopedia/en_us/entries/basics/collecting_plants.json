@@ -17,9 +17,18 @@
 			"text": "$(li)Other Cone-bearing plants: conifers will drop cones when broken. Break or craft cones into seeds.$(li)True, flower-bearing plants: harvest a flower using shears. Right click that flower onto a flower still on a parent plant to pollinate it and obtain seeds."
 		},
 		{
+			"type": "text",
+			"text": "An envelope full of spores or seeds can be used in crafting recipes to create the living plants. You can also simply sow the contents direct from the envelope into suitable ground by right-clicking with it, and that will also give you a chance to get more plants out of each envelope."
+		},
+		{
 			"type": "crafting",
 			"recipe": "lepidodendron:spore_envelope_recipe",
-			"title": "Envelope"
+			"recipe2": "lepidodendron:alliopteris_recipe",
+			"title": "Envelopes"
+		},
+		{
+			"type": "text",
+			"text": ""
 		}
 	]
 }

@@ -127,6 +127,7 @@ public class AlgaeGenerator extends WorldGenerator
 							|| (this.algae == BlockFenestellaGiantOrange.block)
 							|| (this.algae == BlockFenestellaGiantRed.block)
 							|| (this.algae == BlockFenestellaGiantYellow.block)
+							|| (this.algae == BlockAmblysiphonella.block)
 					) {
 						int yy = 1;
 						while (yy <= 4 && waterDepthCheckMin) {

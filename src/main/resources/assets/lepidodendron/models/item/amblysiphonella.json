@@ -1,0 +1,27 @@
+{
+  "parent": "lepidodendron:block/amblysiphonella_1",
+  "display": {
+    "thirdperson": {
+      "rotation": [
+        10,
+        -45,
+        170
+      ],
+      "translation": [
+        0,
+        1.5,
+        -2.75
+      ],
+      "scale": [
+        0.375,
+        0.375,
+        0.375
+      ]
+    },
+    "gui": {
+      "rotation": [ 30, 325, 0 ],
+      "scale": [0.6, 0.4, 0.6],
+      "translation": [0, -2.0, 0]
+    }
+  }
+}

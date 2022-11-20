@@ -95,11 +95,17 @@ public class ItemDNARecombiner extends ElementsLepidodendronMod.ModElement {
 				if (player.canPlayerEdit(pos, facing, itemstack) && player.canPlayerEdit(blockpos, facing, itemstack))
 				{
 					IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
+					IBlockState iblockstate2 = worldIn.getBlockState(pos.up());
+					IBlockState iblockstate3 = worldIn.getBlockState(blockpos.up());
 					boolean flag1 = iblockstate1.getBlock().isReplaceable(worldIn, blockpos);
 					boolean flag2 = flag || worldIn.isAirBlock(pos);
 					boolean flag3 = flag1 || worldIn.isAirBlock(blockpos);
+					boolean flag6 = iblockstate2.getBlock().isReplaceable(worldIn, pos.up());
+					boolean flag7 = iblockstate3.getBlock().isReplaceable(worldIn, blockpos.up());
+					boolean flag4 = flag6 || worldIn.isAirBlock(pos.up());
+					boolean flag5 = flag7 || worldIn.isAirBlock(blockpos.up());
 
-					if (flag2 && flag3 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
+					if (flag2 && flag3 && flag4 && flag5 && worldIn.getBlockState(pos.down()).isTopSolid() && worldIn.getBlockState(blockpos.down()).isTopSolid())
 					{
 						worldIn.setBlockState(pos, BlockDNARecombinerCentrifuge.block.getDefaultState().withProperty(BlockDNARecombinerCentrifuge.BlockCustom.FACING, enumfacing.rotateY()), 3);
 						worldIn.setBlockState(pos.offset(enumfacing), BlockDNARecombinerForge.block.getDefaultState().withProperty(BlockDNARecombinerForge.BlockCustom.FACING, enumfacing.rotateY()), 3);

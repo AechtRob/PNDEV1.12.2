@@ -153,6 +153,12 @@
 			"conditions": {
 				"biome": "lepidodendron:permian_wetlands_unwooded"
 			}
+		},
+		"permian_ocean_sponge_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_ocean_sponge_reef"
+			}
 		}
 	},
 	"requirements": [
@@ -201,6 +207,9 @@
 		[
 			"permian_ocean",
 			"permian_ocean_cliff"
+		],
+		[
+			"permian_ocean_sponge_reef"
 		],
 		[
 			"permian_ocean_shore"

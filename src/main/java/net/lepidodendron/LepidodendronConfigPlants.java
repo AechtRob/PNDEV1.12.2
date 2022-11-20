@@ -1524,6 +1524,10 @@ public class LepidodendronConfigPlants {
     public static String[] genSpongeReefOverrideBiomes = new String[0];
     public static int[] dimSpongeReef = new int[]{};
 
+    public static String[] genGlassSpongeReefBlacklistBiomes = new String[0];
+    public static String[] genGlassSpongeReefOverrideBiomes = new String[0];
+    public static int[] dimGlassSpongeReef = new int[]{};
+
     public static String[] genShellyReefBlacklistBiomes = new String[0];
     public static String[] genShellyReefOverrideBiomes = new String[0];
     public static int[] dimShellyReef = new int[]{};
@@ -1988,6 +1992,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sponge Reef", "genSpongeReefOverrideBiomes", genSpongeReefOverrideBiomes);
         prop.setComment("List of biomes Sponge Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genSpongeReefOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Glass Sponge Reef", "dimGlassSpongeReef", dimGlassSpongeReef);
+        prop.setComment("List of dimension IDs Glass Sponge Reef blocks can generate in [default: empty]");
+        dimGlassSpongeReef = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glass Sponge Reef", "genGlassSpongeReefBlacklistBiomes", genGlassSpongeReefBlacklistBiomes);
+        prop.setComment("List of biomes Glass Sponge Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genGlassSpongeReefBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Glass Sponge Reef", "genGlassSpongeReefOverrideBiomes", genGlassSpongeReefOverrideBiomes);
+        prop.setComment("List of biomes Glass Sponge Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genGlassSpongeReefOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Reef", "dimShellyReef", dimShellyReef);

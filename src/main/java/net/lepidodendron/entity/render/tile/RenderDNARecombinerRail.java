@@ -21,8 +21,8 @@ import org.lwjgl.opengl.GL11;
 
 public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNARecombinerRail.TileEntityDNARecombinerRail> {
 
-    private static final ResourceLocation TEXTURE_CLAW = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
-    private static final ResourceLocation TEXTURE_HATCH = new ResourceLocation("minecraft:textures/blocks/iron_block.png");
+    private static final ResourceLocation TEXTURE_CLAW = new ResourceLocation("lepidodendron:textures/blocks/dna_claw.png");
+    private static final ResourceLocation TEXTURE_HATCH = new ResourceLocation("lepidodendron:textures/blocks/dna_forge_hatch.png");
     private final ModelDNARecombinerClaw modelDNARecombinerClaw;
     private final ModelDNARecombinerHatch modelDNARecombinerHatch;
 

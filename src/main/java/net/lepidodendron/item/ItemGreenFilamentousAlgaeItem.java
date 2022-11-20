@@ -134,10 +134,10 @@ public class ItemGreenFilamentousAlgaeItem extends ElementsLepidodendronMod.ModE
 			return false;
 		}
 
-    	if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
-    	{
-    		return false;
-    	}
+    	//if (!worldIn.canSeeSky(pos) && (worldIn.getBlockState(pos).getLightValue() < 7))
+    	//{
+    	//	return false;
+    	//}
 
     	return true;
     	 
