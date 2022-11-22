@@ -73,6 +73,12 @@ public class BlockArchaeocyatha extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
+		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+		}
+
 		@SideOnly(Side.CLIENT)
 		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
 			int i = source.getCombinedLight(pos, state.getLightValue(source, pos));

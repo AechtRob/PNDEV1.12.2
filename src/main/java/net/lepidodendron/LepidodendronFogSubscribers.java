@@ -62,7 +62,10 @@ public class LepidodendronFogSubscribers {
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous) {
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
 			return;
 		}
 
@@ -87,6 +90,9 @@ public class LepidodendronFogSubscribers {
 			for (int x = -distance; x <= distance; ++x) {
 				for (int z = -distance; z <= distance; ++z) {
 					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
+					if (!player.getEntityWorld().isBlockLoaded(pos, false)) {
+						break;
+					}
 					Biome biome = player.world.getBiome(pos);
 					float density = this.getFogDensity(player);
 					float biomeFog = getBiomeFactor(biome); //==0?
@@ -114,6 +120,10 @@ public class LepidodendronFogSubscribers {
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogColors event) {
 
+		//if (1 == 1) {
+		//	return;
+		//}
+
 		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
@@ -140,7 +150,11 @@ public class LepidodendronFogSubscribers {
 						|| world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| world.provider.getDimension() == LepidodendronConfig.dimPermian
 						|| world.provider.getDimension() == LepidodendronConfig.dimTriassic
-						|| player.world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceous
+						|| world.provider.getDimension() == LepidodendronConfig.dimPaleogene
+						|| world.provider.getDimension() == LepidodendronConfig.dimNeogene
+						|| world.provider.getDimension() == LepidodendronConfig.dimPleistocene
 				) {
 					if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
@@ -158,6 +172,9 @@ public class LepidodendronFogSubscribers {
 								for (int z = -distance; z <= distance; ++z)
 								{
 									BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
+									if (!world.isBlockLoaded(pos, false)) {
+										break;
+									}
 									Biome biome = player.world.getBiome(pos);
 									Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
 									red += fogColor.x;

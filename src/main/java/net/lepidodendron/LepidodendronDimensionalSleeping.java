@@ -22,60 +22,66 @@ import java.util.stream.IntStream;
 public class LepidodendronDimensionalSleeping {
 
 	@SubscribeEvent
-	public void onWorldTick(TickEvent.ServerTickEvent event) throws IllegalAccessException {
+	public void onWorldTick(TickEvent.ServerTickEvent event) {
 
 		//System.err.println("Testing");
-
-		if (event.phase == TickEvent.Phase.START) {
-			int[] dims = DimensionManager.getRegisteredDimensions().values().stream().flatMap(Collection::stream).mapToInt(Integer::intValue).toArray();
-			int[] dimsPlayers = {};
-			for (int i: dims) {
-				WorldServer WorldTest = DimensionManager.getWorld(i);
-				if (WorldTest != null) {
-					List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
-					if (!playersInWorld.isEmpty()) {
-						for (EntityPlayer p: playersInWorld) {
-							if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW) {
-								//The player "could" sleep here, so add the world to the iterator if not already there:
-								if (!(IntStream.of(dimsPlayers).anyMatch(x -> x == i))) {
-									dimsPlayers = addX(dimsPlayers, i);
+		try {
+			if (event.phase == TickEvent.Phase.START) {
+				int[] dims = DimensionManager.getRegisteredDimensions().values().stream().flatMap(Collection::stream).mapToInt(Integer::intValue).toArray();
+				int[] dimsPlayers = {};
+				if (dims.length <= 0) {
+					return;
+				}
+				for (int i : dims) {
+					WorldServer WorldTest = DimensionManager.getWorld(i);
+					if (WorldTest != null) {
+						List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+						if (!playersInWorld.isEmpty()) {
+							for (EntityPlayer p : playersInWorld) {
+								if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW) {
+									//The player "could" sleep here, so add the world to the iterator if not already there:
+									if (!(IntStream.of(dimsPlayers).anyMatch(x -> x == i))) {
+										dimsPlayers = addX(dimsPlayers, i);
+									}
 								}
 							}
 						}
 					}
 				}
-			}
 
-			//Iterate over the identified populated dimensions:
-			if (dimsPlayers.length <= 0) {
-				return;
-			}
-			for (int i: dimsPlayers) {
-				WorldServer WorldTest = DimensionManager.getWorld(i);
-				List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
-				if (!playersInWorld.isEmpty()) {
-					if (!areAllPlayersAsleep(WorldTest)) {
-						return;
+				//Iterate over the identified populated dimensions:
+				if (dimsPlayers.length <= 0) {
+					return;
+				}
+				for (int i : dimsPlayers) {
+					WorldServer WorldTest = DimensionManager.getWorld(i);
+					List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
+					if (!playersInWorld.isEmpty()) {
+						if (!areAllPlayersAsleep(WorldTest)) {
+							return;
+						}
 					}
 				}
-			}
 
-			World Overworld = DimensionManager.getWorld(0);
-			if (Overworld.getGameRules().getBoolean("doDaylightCycle"))
-			{
-				long i = Overworld.getWorldTime() + 24000L;
-				Overworld.setWorldTime(i - i % 24000L);
-				//System.err.println("Setting morning");
-			}
-			if (Overworld.getGameRules().getBoolean("doWeatherCycle"))
-			{
-				Overworld.provider.resetRainAndThunder();
-			}
-			for (int i: dims) {
-				WorldServer WorldTest = DimensionManager.getWorld(i);
-				wakeAllPlayers(WorldTest);
+				World Overworld = DimensionManager.getWorld(0);
+				if (Overworld.getGameRules().getBoolean("doDaylightCycle")) {
+					long i = Overworld.getWorldTime() + 24000L;
+					Overworld.setWorldTime(i - i % 24000L);
+					//System.err.println("Setting morning");
+				}
+				if (Overworld.getGameRules().getBoolean("doWeatherCycle")) {
+					Overworld.provider.resetRainAndThunder();
+				}
+				for (int i : dims) {
+					WorldServer WorldTest = DimensionManager.getWorld(i);
+					wakeAllPlayers(WorldTest);
+				}
 			}
 		}
+		catch (IllegalAccessException error) {
+			//Just ignore it for now, errors when players are in the process of logging in
+		}
+
 	}
 
 	// Function to add x in arr

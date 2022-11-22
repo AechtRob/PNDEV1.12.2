@@ -158,6 +158,12 @@ public class BlockAlgalReef extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+		}
+
+		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 		{
 			boolean boolVar = false;

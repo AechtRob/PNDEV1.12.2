@@ -155,6 +155,12 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+		}
+
+		@Override
 		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
 		{
 			long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());

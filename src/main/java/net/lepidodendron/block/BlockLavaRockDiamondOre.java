@@ -15,6 +15,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -145,6 +146,18 @@ public class BlockLavaRockDiamondOre extends ElementsLepidodendronMod.ModElement
 		public int damageDropped(IBlockState state)
 		{
 			return 0;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
 		}
 
 	}

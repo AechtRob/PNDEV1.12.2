@@ -14,6 +14,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -100,5 +101,17 @@ public class BlockDominicanAmberOre extends ElementsLepidodendronMod.ModElement 
 	    {
 	        return true;
 	    }
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer()
+		{
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		}
 	}
 }

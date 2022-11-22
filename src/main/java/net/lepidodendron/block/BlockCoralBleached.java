@@ -73,6 +73,12 @@ public class BlockCoralBleached extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
 
+		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+		}
+
 		@Deprecated
 		@SideOnly(Side.CLIENT)
 		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos)

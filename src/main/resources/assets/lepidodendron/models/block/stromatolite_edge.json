@@ -4,7 +4,8 @@
         "particle": "lepidodendron:blocks/stromatolite",
         "texture": "lepidodendron:blocks/stromatolite" 
     },
-    "elements": [        {	"from": [ 0.05, 7, -1 ],
+    "elements": [
+        {	"from": [ 0.05, 7, -1 ],
             "to": [ 15.95, 13, 0 ],
             "shade":false,
             "faces": {
