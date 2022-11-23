@@ -40,7 +40,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAlacaris modelAlacaris;
     private static final ResourceLocation TEXTURE_AMPLECTOBELUA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/amplectobelua.png");
     private final ModelAmplectobelua modelAmplectobelua;
-    private static final ResourceLocation TEXTURE_AMPYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx_long.png");
+    private static final ResourceLocation TEXTURE_AMPYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
     private final ModelAmpyx modelAmpyx;
     private static final ResourceLocation TEXTURE_ANOMALOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
     private final ModelAnomalocaris modelAnomalocaris;
@@ -156,7 +156,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelLimulid modelLimulid;
     private static final ResourceLocation TEXTURE_LOCHMANOLENELLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lochmanolenellus.png");
     private final ModelLochmanolenellus modelLochmanolenellus;
-    private static final ResourceLocation TEXTURE_LONCHODOMAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas_long.png");
+    private static final ResourceLocation TEXTURE_LONCHODOMAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lonchodomas.png");
     private final ModelLonchodomas modelLonchodomas;
     private static final ResourceLocation TEXTURE_LITHOMANTIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lithomantis.png");
     private static final ResourceLocation TEXTURE_LUNATASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lunataspis.png");
