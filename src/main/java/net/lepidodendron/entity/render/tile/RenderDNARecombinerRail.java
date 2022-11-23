@@ -94,12 +94,12 @@ public class RenderDNARecombinerRail extends TileEntitySpecialRenderer<BlockDNAR
         }
         GL11.glPushMatrix();
         GL11.glColor3ub((byte)255,(byte)255,(byte)255);
+        GL11.glLineWidth(5);
         GL11.glBegin(GL11.GL_LINES);
         GL11.glVertex3f((float)doubleX, (float)y + 1.05F - 0.22F,(float)doubleZ);
         GL11.glVertex3f((float)doubleX, (float)doubleY - 0.3F,(float)doubleZ);
         GL11.glEnd();
         GL11.glPopMatrix();
-
 
         //Render phial if present
         float scale = 0.50F;

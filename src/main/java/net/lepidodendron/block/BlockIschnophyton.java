@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -73,7 +74,7 @@ public class BlockIschnophyton extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plant", BlockIschnophyton.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_ischnophyton");
@@ -274,6 +275,16 @@ public class BlockIschnophyton extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return true;
 	    }
+
+		@Override
+		public Block planted() {
+			return BlockIschnophyton.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 
 	}
 }

@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.SeedSporeReedBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.item.ItemEquisetitesReedItem;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
@@ -113,12 +112,16 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 		if (LepidodendronConfig.dimCarboniferous == dimID)
 			biomeCriteria = true;
 
+		boolean heightCheck = false;
 
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomePermian = (BiomeCarboniferous) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ice
 					|| biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
 				biomeCriteria = false;
+			}
+			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
+				heightCheck = true;
 			}
 		}
 
@@ -145,6 +148,9 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
+		if (heightCheck) {
+			minheight = world.getSeaLevel() + 2;
+		}
 		final int maxH = maxheight;
 		final int minH = minheight;
 			
@@ -152,6 +158,7 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			final boolean heightChecker = heightCheck;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {

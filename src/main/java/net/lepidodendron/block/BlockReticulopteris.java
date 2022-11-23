@@ -113,11 +113,16 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 
 
+		boolean heightCheck = false;
+
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomePermian = (BiomeCarboniferous) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ice
 					|| biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
 				biomeCriteria = false;
+			}
+			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
+				heightCheck = true;
 			}
 		}
 		if (!biomeCriteria)
@@ -143,6 +148,9 @@ public class BlockReticulopteris extends ElementsLepidodendronMod.ModElement {
 		if (maxheight > 250) {maxheight = 250;}
 		if (minheight < 1) {minheight = 1;}
 		if (minheight > 250) {minheight = 250;}
+		if (heightCheck) {
+			minheight = world.getSeaLevel() + 2;
+		}
 		final int maxH = maxheight;
 		final int minH = minheight;
 			

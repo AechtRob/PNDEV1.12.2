@@ -1,7 +1,7 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"0": "lepidodendron:blocks/glass_sponge_main",
+		"texture": "lepidodendron:blocks/glass_sponge_main",
 		"1": "lepidodendron:blocks/glass_sponge_1",
 		"particle": "lepidodendron:blocks/glass_sponge_main"
 	},

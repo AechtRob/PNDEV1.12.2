@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -78,7 +79,7 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger VAR = PropertyInteger.create("var", 0, 2);
 	
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_dicroidium_e");
@@ -313,5 +314,14 @@ public class BlockDicroidiumE extends ElementsLepidodendronMod.ModElement {
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockDicroidiumE.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

@@ -19,6 +19,10 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
@@ -36,6 +40,8 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandBase {
+
+	private static final DataParameter<Boolean> JUVENILE = EntityDataManager.createKey(EntityPrehistoricFloraMussaurus.class, DataSerializers.BOOLEAN);
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -62,6 +68,33 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 	}
 
 	@Override
+	protected void entityInit() {
+		super.entityInit();
+		this.dataManager.register(JUVENILE, false);
+		this.setScaleForAge(false);
+	}
+
+	public void writeEntityToNBT(NBTTagCompound compound)
+	{
+		super.writeEntityToNBT(compound);
+		compound.setBoolean("juvenile", this.getJuvenile());
+	}
+
+	public void readEntityFromNBT(NBTTagCompound compound) {
+		super.readEntityFromNBT(compound);
+		this.setJuvenile(compound.getBoolean("juvenile"));
+	}
+
+	public void setJuvenile(boolean val)
+	{
+		this.dataManager.set(JUVENILE, val);
+	}
+
+	public boolean getJuvenile() {
+		return this.dataManager.get(JUVENILE);
+	}
+
+	@Override
 	public int getEggType() {
 		return 2; //large
 	}
@@ -83,10 +116,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 
 	@Override
 	public boolean isDrinking() {
-		double width = this.getEntityBoundingBox().maxX-this.getEntityBoundingBox().minX;
-		double depth = this.getEntityBoundingBox().maxZ-this.getEntityBoundingBox().minZ;
-		double height = this.getEntityBoundingBox().maxY-this.getEntityBoundingBox().minY;
-		if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+		if (getJuvenile()) {
 			return false;
 		}
 		return super.isDrinking();
@@ -260,6 +290,20 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
 
+		if (!world.isRemote) {
+			double width = this.getEntityBoundingBox().maxX - this.getEntityBoundingBox().minX;
+			double depth = this.getEntityBoundingBox().maxZ - this.getEntityBoundingBox().minZ;
+			double height = this.getEntityBoundingBox().maxY - this.getEntityBoundingBox().minY;
+			if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
+				if (!this.getJuvenile()) {
+					this.setJuvenile(true);
+				}
+			}
+			else if (this.getJuvenile()) {
+				this.setJuvenile(false);
+			}
+		}
+
 		if (this.getAnimation() != DRINK_ANIMATION) {
 			this.renderYawOffset = this.rotationYaw;
 		}
@@ -280,10 +324,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		}
 
 		//Sometimes stand up and look around:
-		double width = this.getEntityBoundingBox().maxX-this.getEntityBoundingBox().minX;
-		double depth = this.getEntityBoundingBox().maxZ-this.getEntityBoundingBox().minZ;
-		double height = this.getEntityBoundingBox().maxY-this.getEntityBoundingBox().minY;
-		if ((!(height <= 0.9375 && width <= 1.0 && depth <= 1.0)) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
+		if ((!getJuvenile()) && this.getEatTarget() == null && this.getAttackTarget() == null && this.getRevengeTarget() == null
 				&& !this.getIsMoving() && this.getAnimation() == NO_ANIMATION && standCooldown == 0) {
 			this.setAnimation(STAND_ANIMATION);
 			this.standCooldown = 2000;

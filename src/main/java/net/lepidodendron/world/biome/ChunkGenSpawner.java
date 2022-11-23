@@ -235,6 +235,17 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 if (LepidodendronConfig.doSpawnsReborn) {
                     MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsHillsReborn);
                 }
+            } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_estuary")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_estuary_helper")) {
+                if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsEstuaryPF);
+                }
+                if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsEstuaryFA);
+                }
+                if (LepidodendronConfig.doSpawnsReborn) {
+                    MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsEstuaryReborn);
+                }
             } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")
                     || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")) {
                 if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
