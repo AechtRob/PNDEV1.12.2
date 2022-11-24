@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraLimulid extends EntityPrehistoricFloraWalking
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 	
 	@Override

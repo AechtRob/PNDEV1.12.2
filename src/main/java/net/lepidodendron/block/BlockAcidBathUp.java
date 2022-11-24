@@ -371,6 +371,8 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			if (canStartProcess()) {
 				ItemStack inputStack = getStackInSlot(0);
 				ItemStack processStack = inputStack.copy();
@@ -402,7 +404,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				//We have filled our tank up:
 				this.isProcessing = true;
 				processTick = 0;
-				this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick < this.processTickTime) {
@@ -419,6 +421,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					}
 					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 				}
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick == (this.processTickTime - this.trayLiftTickTime)) {
@@ -463,6 +466,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 						setInventorySlotContents(8, result);
 					}
 				}
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick >= this.processTickTime) {
@@ -510,6 +514,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				this.isProcessing = false;
 				this.trayheight = 0;
 				useAcid();
+				updated = true;
 			}
 
 			//Finally match the inventories of the main block and the helper inventory underneath it,
@@ -521,32 +526,43 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					te = (BlockAcidBath.TileEntityAcidBath) tileEntity;
 					if (te.getStackInSlot(0).isEmpty()) {
 						setInventorySlotContents(1, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (te.getStackInSlot(1).isEmpty()) {
 						setInventorySlotContents(2, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (te.getStackInSlot(2).isEmpty()) {
 						setInventorySlotContents(3, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (te.getStackInSlot(3).isEmpty()) {
 						setInventorySlotContents(4, ItemStack.EMPTY);
+						updated = true;
 					}
 
 					if (getStackInSlot(1).isEmpty()) {
 						te.setInventorySlotContents(0, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (getStackInSlot(2).isEmpty()) {
 						te.setInventorySlotContents(1, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (getStackInSlot(3).isEmpty()) {
 						te.setInventorySlotContents(2, ItemStack.EMPTY);
+						updated = true;
 					}
 					if (getStackInSlot(4).isEmpty()) {
 						te.setInventorySlotContents(3, ItemStack.EMPTY);
+						updated = true;
 					}
 				}
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -1296,7 +1312,6 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
 		}
 
 		@Override

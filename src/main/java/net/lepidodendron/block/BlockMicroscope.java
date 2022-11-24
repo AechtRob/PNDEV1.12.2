@@ -258,13 +258,17 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			if (this.canStartProcess()) {
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
 				this.processTick ++;
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick > this.processTickTime) {
@@ -291,6 +295,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 						if (outputStack.getTagCompound().hasKey("PFMob")) {
@@ -302,6 +307,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 						if (outputStack.getTagCompound().hasKey("PFStatic")) {
@@ -313,6 +319,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 					}
@@ -339,8 +346,12 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 					world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 					this.setInventorySlotContents(1, outputStack);
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -410,7 +421,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

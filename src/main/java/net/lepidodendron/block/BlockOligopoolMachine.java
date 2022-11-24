@@ -299,12 +299,15 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			//System.err.println("Tick: " + this.processTick);
 			//System.err.println("TickTotal: " + this.processTickTime);
 
 			if (this.canStartProcess()) {
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
@@ -312,6 +315,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 				//if (this.getWorld().rand.nextInt(10) == 0) {
 				//	world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 				//}
+				updated = true;
 			}
 
 			if (!this.isRoomForOutputStack()) {
@@ -329,8 +333,12 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 					stackProcessing.shrink(1);
 					this.setInventorySlotContents(1, new ItemStack(ItemOligoPool.block, 1 + this.getStackInSlot(1).getCount()));
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -413,7 +421,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

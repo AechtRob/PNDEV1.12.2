@@ -46,8 +46,8 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 1.75F;
-		maxHeight = 1.5F;
+		maxWidth = 1.85F;
+		maxHeight = 0.5F;
 		maxHealthAgeable = 36.0D;
 	}
 
@@ -101,7 +101,7 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 
 	@Override
 	protected float getAISpeedFish() {
-		if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
+		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
 			return 0;
 		}
 		return 0.232f;
@@ -136,8 +136,8 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 	public boolean isBreedingItem(ItemStack stack)
 	{
 		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					|| stack.getItem() == ItemFishFood.block
+			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
+				|| stack.getItem() == ItemFishFood.block
 		);
 	}
 
@@ -313,9 +313,9 @@ public class EntityPrehistoricFloraHeterosteus extends EntityPrehistoricFloraAge
 				float speed = getAISpeedFish();
 				this.EntityBase.setAIMoveSpeed(speed);
 
-				if (this.EntityBase.isAtBottom()) {
-					this.EntityBase.setAIMoveSpeed(speed * 0.25F);
-				}
+				//if (this.EntityBase.isAtBottom()) {
+				//	this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+				//}
 
 				this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
 			} else {

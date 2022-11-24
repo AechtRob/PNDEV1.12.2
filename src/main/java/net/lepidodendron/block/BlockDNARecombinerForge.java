@@ -305,6 +305,8 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				return;
 			}
 
+			boolean updated = false;
+
 			if (!this.isProcessing
 					&& (this.getStackInSlot(2).isEmpty())
 					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
@@ -312,6 +314,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				ItemStack stack = this.getStackInSlot(1);
 				this.setInventorySlotContents(2, new ItemStack(ItemOligoPool.block, 1));
 				stack.shrink(1);
+				updated = true;
 			}
 
 			//System.err.println("processTick " + this.processTick);
@@ -319,59 +322,73 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			if (this.canStartProcess()) {
 				this.isProcessing = true;
 				this.processTick = 0;
+				updated = true;
 				//System.err.println("Process started");
 			}
 
 			if (this.isProcessing) {
 				this.processTick ++;
+				updated = true;
 			}
 
 			if (this.processTick < 20) {
 				this.oligoExtend = 5.75D * ((double)this.processTick / 20.0D);
+				updated = true;
 			}
 
 			if (this.processTick == 20) {
 				this.oligoExtend = 5.75D;
+				updated = true;
 			}
 
 			if (this.processTick >= 20 && this.processTick < 60) {
 				this.oligoAngle = 180.0D * (((double)this.processTick - 20.0D) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick == 60) {
 				this.oligoAngle = 180.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 100 && this.processTick < 140) {
 				this.oligoAngle = 180.0D * ((140.0D - (double)this.processTick) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick == 140) {
 				this.oligoAngle = 0.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 140 && this.processTick < 160) {
 				this.oligoExtend = 5.75D * ((160.0D - (double)this.processTick) / 20D);
+				updated = true;
 			}
 
 			if (this.processTick == 160) {
 				this.oligoExtend = 0.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 140 && this.processTick < 180) {
 				this.fogDensity = (((double)this.processTick - 140.0D) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick >= 180 && this.processTick < (this.processTickTime - 40)) {
 				this.fogDensity = 1;
+				updated = true;
 			}
 
 			if (this.processTick >= (this.processTickTime - 40) && this.processTick < processTickTime) {
 				this.fogDensity = (processTickTime - (double)this.processTick) / 40D;
+				updated = true;
 			}
 
 			if (this.processTick == this.processTickTime) {
 				this.fogDensity = 0;
+				updated = true;
 			}
 
 			if (this.processTick == this.processTickTime - 40) {
@@ -437,13 +454,18 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				}
 				this.setInventorySlotContents(0, ItemStack.EMPTY);
 				this.setInventorySlotContents(2, ItemStack.EMPTY);
+				updated = true;
 			}
 
 			if (this.processTick >= this.processTickTime) {
 				this.isProcessing = false;
 				this.processTick = 0;
+				updated = true;
 			}
-			
+
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -528,7 +550,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			return compound;
 		}
 
-		private void notifyBlockUpdate() {
+		public void notifyBlockUpdate() {
 			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
@@ -537,7 +559,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

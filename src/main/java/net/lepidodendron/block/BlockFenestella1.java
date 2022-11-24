@@ -172,6 +172,7 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")
 		) {
 			multiplier = 2;
 		}

@@ -123,6 +123,12 @@ public class EntityMateAI extends EntityAIBase
                 double d5 = random.nextDouble() * (double)this.animal.width * 2.0D - (double)this.animal.width;
                 this.world.spawnParticle(EnumParticleTypes.HEART, this.animal.posX + d3, this.animal.posY + d4, this.animal.posZ + d5, d0, d1, d2);
             }
+            this.animal.setTicks(24000);
+            this.animal.setLaying(true);
+            this.animal.resetInLove();
+            this.targetMate.resetInLove();
+            this.animal.setNotMateable();
+            this.targetMate.setNotMateable();
 
             if (this.world.getGameRules().getBoolean("doMobLoot"))
             {

@@ -183,8 +183,26 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
-			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river"))
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
+
+
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_coastal")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_estuary")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_hills")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_polar")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+				
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_coastal")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands")
+
+		)
 		{
 			multiplier = 48;
 		}

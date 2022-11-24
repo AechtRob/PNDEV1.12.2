@@ -324,6 +324,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						}
 						//System.err.println("Nothing in centrifuge");
 						te.setLocked(false); //Unlock the centrifuge as it seems there is nothing useable in it
+						te.notifyBlockUpdate();
 					}
 				}
 			}
@@ -347,6 +348,8 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 			if (this.getWorld().isRemote) {
 				return;
 			}
+
+			boolean updated = false;
 
 			//System.err.println("this.isProcessing " + this.isProcessing);
 			//System.err.println("this.processTick " + this.processTick);
@@ -374,6 +377,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 							}
 						}
 					}
+					updated = true;
 				}
 			}
 			else {
@@ -404,6 +408,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 							if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 								BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
 								te.setHatchVal((20D - (40D - (double) this.processTick)) / 20D);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
@@ -431,6 +436,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 										ItemStack stack = te.getStackInSlot(useSlot);
 										this.setInventorySlotContents(0, stack);
 										te.setInventorySlotContents(useSlot, ItemStack.EMPTY);
+										te.notifyBlockUpdate();
 									}
 								}
 							}
@@ -465,6 +471,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 							if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 								BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
 								te.setHatchVal((((double)stage2 + 90D) - (double)this.processTick) / 20D);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
@@ -495,6 +502,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 							BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
 							te.setHatchShut(false);
+							te.notifyBlockUpdate();
 						}
 					}
 				}
@@ -522,6 +530,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 								ItemStack stack = this.getStackInSlot(0);
 								this.setInventorySlotContents(0, ItemStack.EMPTY);
 								te.setInventorySlotContents(0, stack);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
@@ -545,6 +554,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 							BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
 							te.setHatchShut(true);
+							te.notifyBlockUpdate();
 						}
 					}
 				}
@@ -569,9 +579,13 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					this.processTick = 0;
 					this.isProcessing = false;
 				}
+				updated = true;
 
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -697,7 +711,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

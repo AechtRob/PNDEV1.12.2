@@ -310,13 +310,17 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			if (this.canStartProcess()) {
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
 				this.processTick ++;
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick > this.processTickTime) {
@@ -402,8 +406,12 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 
 					this.setInventorySlotContents(1, outputStack);
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -473,7 +481,7 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

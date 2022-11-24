@@ -324,6 +324,8 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			//System.err.println("Tick: " + this.processTick);
 			//System.err.println("TickTotal: " + this.processTickTime);
 
@@ -331,6 +333,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				this.processTickTime = (int)Math.round(Math.sqrt(TileEntityFurnace.getItemBurnTime(this.getStackInSlot(0))) * 10);
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
@@ -339,6 +342,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				if (this.getWorld().rand.nextInt(10) == 0) {
 					world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 				}
+				updated = true;
 			}
 
 			if (!this.isProcessing) {
@@ -365,8 +369,12 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 					stackProcessing.shrink(1);
 					this.setInventorySlotContents(1, new ItemStack(ItemBottleOfDNASolvent.block, resultSize + this.getStackInSlot(1).getCount()));
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -467,7 +475,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

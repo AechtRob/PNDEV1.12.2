@@ -109,7 +109,7 @@ public class EntityPrehistoricFloraLaccognathus extends EntityPrehistoricFloraSw
 	@Override
 	protected float getAISpeedSwimmingAmphibian() {
 		if (this.isReallyInWater()) {
-			if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast()) {
+			if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
 				return 0;
 			}
 			return 0.372f;

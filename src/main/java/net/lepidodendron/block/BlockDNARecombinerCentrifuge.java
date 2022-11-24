@@ -385,6 +385,8 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void update() {
 
+			boolean updated = false;
+
 			int i = this.pos.getX();
 			int j = this.pos.getY();
 			int k = this.pos.getZ();
@@ -441,6 +443,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 					if (this.lidAngle < 0.0F) {
 						this.lidAngle = 0.0F;
 					}
+					updated = true;
 				}
 			}
 
@@ -454,7 +457,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				this.isLocked = true;
 				processTick = 0;
 				startTick = world.getTotalWorldTime(); //Used for rendering
-				this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick < this.processTickTime) {
@@ -462,6 +465,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 				//Calculate the rotation needed:
 				this.centrifugeAngle = floorAngle(this.getRotationAngle(this.processTick));
+				updated = true;
 			}
 			else {
 				this.flareAngle = 0;
@@ -473,6 +477,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				this.isProcessing = false; //Not processing but should be left locked if it was locked before
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -616,7 +623,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			this.hatchVal = val;
 		}
 
-		private void notifyBlockUpdate() {
+		public void notifyBlockUpdate() {
 			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
@@ -625,7 +632,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override
