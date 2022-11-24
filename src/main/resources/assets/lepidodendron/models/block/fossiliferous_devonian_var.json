@@ -1,8 +1,7 @@
 {
-  "parent": "lepidodendron:block/ore_layer_flipped",
+  "parent": "lepidodendron:block/overlay_all_flipped",
   "textures": {
-    "stone": "blocks/stone",
     "particle": "blocks/stone",
-    "layer": "lepidodendron:blocks/fossiliferous_devonian"
+    "all": "lepidodendron:blocks/fossiliferous_devonian"
   }
 }

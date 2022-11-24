@@ -14,6 +14,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -36,6 +37,7 @@ import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -255,7 +257,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 			if (classEntity != null) {
 				if (player != null) { //Aggro on the player
-					if (!player.capabilities.isCreativeMode) {
+					if (Minecraft.getMinecraft().gameSettings.difficulty != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
 						List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)));
 						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
 							if (currentEntity.isPFAdult() && !player.isInvisible()) {

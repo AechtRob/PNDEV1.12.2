@@ -1,22 +1,96 @@
 {
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:multi-layer",
+    "custom": {
+      "base": "lepidodendron:fossil_precambrian#base",
+      "Solid": "lepidodendron:fossil_precambrian#base",
+      "Translucent": "lepidodendron:fossil_precambrian#trans"
+    },
+    "transform": "forge:default-block"
+  },
   "variants": {
-    "normal": [
-      { "model": "lepidodendron:fossiliferous_precambrian" },
-      { "model": "lepidodendron:fossiliferous_precambrian_var" },
-      { "model": "lepidodendron:fossiliferous_precambrian", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian", "x": 90, "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_precambrian_var", "x": 90, "y": 90, "z": 90 }
+    "normal": [{}],
+    "inventory": [{}],
+    "base": [
+      { "model": "stone" },
+      { "model": "stone_mirrored" },
+      { "model": "stone", "y": 180 },
+      { "model": "stone_mirrored", "y": 180 }
+    ],
+    "trans": [
+      {
+        "model": "lepidodendron:fossiliferous_precambrian"
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var"
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "x": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "x": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "x": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "x": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian",
+        "x": 90,
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_precambrian_var",
+        "x": 90,
+        "y": 90,
+        "z": 90
+      }
     ]
   }
 }

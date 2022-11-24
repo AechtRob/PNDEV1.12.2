@@ -45,4 +45,5 @@ public class BlockAcaciaBench extends ElementsLepidodendronMod.ModElement {
 			setTranslationKey("pf_acacia_bench");
 		}
 	}
+
 }

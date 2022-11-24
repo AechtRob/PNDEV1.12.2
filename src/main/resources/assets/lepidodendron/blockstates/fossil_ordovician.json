@@ -1,22 +1,96 @@
 {
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:multi-layer",
+    "custom": {
+      "base": "lepidodendron:fossil_ordovician#base",
+      "Solid": "lepidodendron:fossil_ordovician#base",
+      "Translucent": "lepidodendron:fossil_ordovician#trans"
+    },
+    "transform": "forge:default-block"
+  },
   "variants": {
-    "normal": [
-      { "model": "lepidodendron:fossiliferous_ordovician" },
-      { "model": "lepidodendron:fossiliferous_ordovician_var" },
-      { "model": "lepidodendron:fossiliferous_ordovician", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician", "x": 90, "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_ordovician_var", "x": 90, "y": 90, "z": 90 }
+    "normal": [{}],
+    "inventory": [{}],
+    "base": [
+      { "model": "stone" },
+      { "model": "stone_mirrored" },
+      { "model": "stone", "y": 180 },
+      { "model": "stone_mirrored", "y": 180 }
+    ],
+    "trans": [
+      {
+        "model": "lepidodendron:fossiliferous_ordovician"
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var"
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "x": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "x": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "x": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "x": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician",
+        "x": 90,
+        "y": 90,
+        "z": 90
+      },
+      {
+        "model": "lepidodendron:fossiliferous_ordovician_var",
+        "x": 90,
+        "y": 90,
+        "z": 90
+      }
     ]
   }
 }

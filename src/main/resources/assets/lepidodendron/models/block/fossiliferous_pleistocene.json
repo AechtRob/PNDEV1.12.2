@@ -1,8 +1,7 @@
 {
-  "parent": "lepidodendron:block/ore_layer",
+  "parent": "lepidodendron:block/overlay_all",
   "textures": {
-    "stone": "blocks/stone",
     "particle": "blocks/stone",
-    "layer": "lepidodendron:blocks/fossiliferous_pleistocene"
+    "all": "lepidodendron:blocks/fossiliferous_pleistocene"
   }
 }

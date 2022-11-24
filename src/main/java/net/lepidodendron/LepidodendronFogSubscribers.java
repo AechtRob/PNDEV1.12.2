@@ -39,6 +39,12 @@ public class LepidodendronFogSubscribers {
 	@SideOnly(Side.CLIENT)
 	public void fogEvent(EntityViewRenderEvent.RenderFogEvent event) {
 
+		if (event.getFogMode() == -1) {
+			return;
+		}
+
+		//int fogMode = event.getFogMode();
+
 		Entity player = event.getEntity();
 		//double y = player.posY;
 		//Block b = event.getState().getBlock();
@@ -90,15 +96,14 @@ public class LepidodendronFogSubscribers {
 			for (int x = -distance; x <= distance; ++x) {
 				for (int z = -distance; z <= distance; ++z) {
 					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-					if (!player.getEntityWorld().isBlockLoaded(pos, false)) {
-						break;
+					if (player.getEntityWorld().isBlockLoaded(pos, false)) {
+						Biome biome = player.world.getBiome(pos);
+						float density = this.getFogDensity(player);
+						float biomeFog = getBiomeFactor(biome); //==0?
+						float foggy = biomeFog + (density * 5000F);
+						fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
+						divider++;
 					}
-					Biome biome = player.world.getBiome(pos);
-					float density = this.getFogDensity(player);
-					float biomeFog = getBiomeFactor(biome); //==0?
-					float foggy = biomeFog + (density * 5000F);
-					fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
-					divider++;
 				}
 			}
 
@@ -120,9 +125,9 @@ public class LepidodendronFogSubscribers {
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogColors event) {
 
-		//if (1 == 1) {
-		//	return;
-		//}
+		if (1 == 1) {
+			return;
+		}
 
 		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();
@@ -172,15 +177,14 @@ public class LepidodendronFogSubscribers {
 								for (int z = -distance; z <= distance; ++z)
 								{
 									BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-									if (!world.isBlockLoaded(pos, false)) {
-										break;
+									if (world.isBlockLoaded(pos, false)) {
+										Biome biome = player.world.getBiome(pos);
+										Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
+										red += fogColor.x;
+										green += fogColor.y;
+										blue += fogColor.z;
+										divider++;
 									}
-									Biome biome = player.world.getBiome(pos);
-									Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
-									red += fogColor.x;
-									green += fogColor.y;
-									blue += fogColor.z;
-									divider++;
 								}
 							}
 

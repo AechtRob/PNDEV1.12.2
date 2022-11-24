@@ -276,9 +276,14 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							}
 						}
 						//Now modded:
-						else if (block != null && block != Blocks.AIR) {
-							ItemStack pickBlock = block.getBlock().getPickBlock(block.getBlock().getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
-							item = pickBlock.getItem();
+						else if (block != null) {
+							if (block.getBlock() != Blocks.AIR) {
+								ItemStack pickBlock = block.getBlock().getPickBlock(block.getBlock().getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
+								item = pickBlock.getItem();
+							}
+							else {
+								item = getItemFromNBT(itemstack);
+							}
 						}
 						else {
 							item = getItemFromNBT(itemstack);
