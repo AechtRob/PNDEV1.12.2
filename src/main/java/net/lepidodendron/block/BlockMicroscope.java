@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIMicroscope;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.AcidBathOutputPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -326,8 +327,9 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 
 					//Copied logic from AcidBathUp:
 					if (Math.random() > 0.55) { //Plants:
-						if (outputStack.getItem() == ItemFossilPrecambrian.block
-								|| outputStack.getItem() == ItemFossilCambrian.block) {
+						if ((outputStack.getItem() == ItemFossilPrecambrian.block && (!(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants().length >= 1)))
+								|| (outputStack.getItem() == ItemFossilCambrian.block && (!(AcidBathOutputPlants.getCambrianCleanedFossilsPlants().length >= 1)))
+						) {
 							type = "PFStatic";
 						}
 						else {

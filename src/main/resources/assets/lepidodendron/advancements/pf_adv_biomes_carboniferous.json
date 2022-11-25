@@ -105,6 +105,18 @@
 			"conditions": {
 				"biome": "lepidodendron:carboniferous_swamp_hills"
 			}
+		},
+		"carboniferous_estuary": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_estuary"
+			}
+		},
+		"carboniferous_estuary_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_estuary_helper"
+			}
 		}
 	},
 	"requirements": [
@@ -137,6 +149,10 @@
 		],
 		[
 			"carboniferous_ocean_shore"
+		],
+		[
+			"carboniferous_estuary",
+			"carboniferous_estuary_helper"
 		],
 		[
 			"carboniferous_swamp",

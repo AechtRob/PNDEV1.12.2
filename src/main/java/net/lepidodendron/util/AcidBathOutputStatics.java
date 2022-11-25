@@ -1,8 +1,10 @@
 package net.lepidodendron.util;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.item.ItemCrinoidScyphocrinusItem;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Random;
 
@@ -13,54 +15,93 @@ public class AcidBathOutputStatics {
         switch (dim) {
             case 1:
             default: //Precambrian
+                if (!(getPrecambrianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 int ii = (new Random()).nextInt(getPrecambrianCleanedFossilsStatics().length);
                 return getPrecambrianCleanedFossilsStatics()[ii];
 
             case 2: //Cambrian
+                if (!(getCambrianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getCambrianCleanedFossilsStatics().length);
                 return getCambrianCleanedFossilsStatics()[ii];
 
             case 3: //Ordovician
+                if (!(getOrdovicianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getOrdovicianCleanedFossilsStatics().length);
                 return getOrdovicianCleanedFossilsStatics()[ii];
 
             case 4: //Silurian
+                if (!(getSilurianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getSilurianCleanedFossilsStatics().length);
                 return getSilurianCleanedFossilsStatics()[ii];
 
             case 5: //Devonian
+                if (!(getDevonianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getDevonianCleanedFossilsStatics().length);
                 return getDevonianCleanedFossilsStatics()[ii];
 
             case 6: //Carboniferous
+                if (!(getCarboniferousCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getCarboniferousCleanedFossilsStatics().length);
                 return getCarboniferousCleanedFossilsStatics()[ii];
 
             case 7: //Permian
+                if (!(getPermianCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPermianCleanedFossilsStatics().length);
                 return getPermianCleanedFossilsStatics()[ii];
 
             case 8: //Triassic
+                if (!(getTriassicCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getTriassicCleanedFossilsStatics().length);
                 return getTriassicCleanedFossilsStatics()[ii];
 
             case 9: //Jurassic
+                if (!(getJurassicCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getJurassicCleanedFossilsStatics().length);
                 return getJurassicCleanedFossilsStatics()[ii];
 
             case 10: //Cretaceous
+                if (!(getCretaceousCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getCretaceousCleanedFossilsStatics().length);
                 return getCretaceousCleanedFossilsStatics()[ii];
 
             case 11: //Paleogene
+                if (!(getPaleogeneCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPaleogeneCleanedFossilsStatics().length);
                 return getPaleogeneCleanedFossilsStatics()[ii];
 
             case 12: //Neogene
+                if (!(getNeogeneCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getNeogeneCleanedFossilsStatics().length);
                 return getNeogeneCleanedFossilsStatics()[ii];
 
             case 13: //Pleistocene
+                if (!(getPleistoceneCleanedFossilsStatics().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPleistoceneCleanedFossilsStatics().length);
                 return getPleistoceneCleanedFossilsStatics()[ii];
         }
@@ -99,6 +140,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGrypania.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;
     }
 
@@ -146,6 +188,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
         return resLoc;
     }
 
@@ -207,6 +250,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTabulata_Block3.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThamnobeatriceaSapling.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsOrdovician);
         return resLoc;
     }
 
@@ -266,6 +310,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidSiphonocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCystoidPseudocrinites.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsSilurian);
         return resLoc;
     }
 
@@ -328,6 +373,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCupressocrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidVadarocrinus.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsDevonian);
         return resLoc;
     }
 
@@ -395,6 +441,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantRed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantYellow.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCarboniferous);
         return resLoc;
     }
 
@@ -452,6 +499,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidJimbacrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGigantospongia.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPermian);
         return resLoc;
     }
 
@@ -495,6 +543,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidVostocovacrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsTriassic);
         return resLoc;
     }
 
@@ -529,6 +578,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
         return resLoc;
     }
 
@@ -563,6 +613,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
     }
 
@@ -595,6 +646,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPaleogene);
         return resLoc;
     }
 
@@ -627,6 +679,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsNeogene);
         return resLoc;
     }
 
@@ -659,6 +712,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPleistocene);
         return resLoc;
     }
 

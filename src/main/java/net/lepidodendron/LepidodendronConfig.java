@@ -253,6 +253,49 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsMountainsReborn = new String[0];
     //------------
 
+    public static String[] revMobsPrecambrian = new String[0];
+    public static String[] revMobsCambrian = new String[0];
+    public static String[] revMobsOrdovician = new String[0];
+    public static String[] revMobsSilurian = new String[0];
+    public static String[] revMobsDevonian = new String[0];
+    public static String[] revMobsCarboniferous = new String[0];
+    public static String[] revMobsPermian = new String[0];
+    public static String[] revMobsTriassic = new String[0];
+    public static String[] revMobsJurassic = new String[0];
+    public static String[] revMobsCretaceous = new String[0];
+    public static String[] revMobsPaleogene = new String[0];
+    public static String[] revMobsNeogene = new String[0];
+    public static String[] revMobsPleistocene = new String[0];
+
+
+    public static String[] revPlantsPrecambrian = new String[0];
+    public static String[] revPlantsCambrian = new String[0];
+    public static String[] revPlantsOrdovician = new String[0];
+    public static String[] revPlantsSilurian = new String[0];
+    public static String[] revPlantsDevonian = new String[0];
+    public static String[] revPlantsCarboniferous = new String[0];
+    public static String[] revPlantsPermian = new String[0];
+    public static String[] revPlantsTriassic = new String[0];
+    public static String[] revPlantsJurassic = new String[0];
+    public static String[] revPlantsCretaceous = new String[0];
+    public static String[] revPlantsPaleogene = new String[0];
+    public static String[] revPlantsNeogene = new String[0];
+    public static String[] revPlantsPleistocene = new String[0];
+
+
+    public static String[] revStaticsPrecambrian = new String[0];
+    public static String[] revStaticsCambrian = new String[0];
+    public static String[] revStaticsOrdovician = new String[0];
+    public static String[] revStaticsSilurian = new String[0];
+    public static String[] revStaticsDevonian = new String[0];
+    public static String[] revStaticsCarboniferous = new String[0];
+    public static String[] revStaticsPermian = new String[0];
+    public static String[] revStaticsTriassic = new String[0];
+    public static String[] revStaticsJurassic = new String[0];
+    public static String[] revStaticsCretaceous = new String[0];
+    public static String[] revStaticsPaleogene = new String[0];
+    public static String[] revStaticsNeogene = new String[0];
+    public static String[] revStaticsPleistocene = new String[0];
 
     public static boolean showTooltips = true;
     public static boolean doPropagation = true;
@@ -326,6 +369,201 @@ public class LepidodendronConfig {
         Property prop = cfg.get("Global World-Gen", "genGlobalBlacklist", genGlobalBlacklist);
         prop.setComment("List of biomes all plants are blacklisted from, in the format: modid:biomeid [default: empty]");
         genGlobalBlacklist = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsPrecambrian", revMobsPrecambrian);
+        prop.setComment("List of mobs from OTHER mods which can be found in Precambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsPrecambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+        
+        prop = cfg.get("Revival Integration", "revMobsCambrian", revMobsCambrian);
+        prop.setComment("List of mobs from OTHER mods which can be found in Cambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsCambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsOrdovician", revMobsOrdovician);
+        prop.setComment("List of mobs from OTHER mods which can be found in Ordovician fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsOrdovician = prop.getStringList();
+        propOrder.add(prop.getName());
+        
+        prop = cfg.get("Revival Integration", "revMobsSilurian", revMobsSilurian);
+        prop.setComment("List of mobs from OTHER mods which can be found in Silurian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsSilurian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsDevonian", revMobsDevonian);
+        prop.setComment("List of mobs from OTHER mods which can be found in Devonian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsDevonian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsCarboniferous", revMobsCarboniferous);
+        prop.setComment("List of mobs from OTHER mods which can be found in Carboniferous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsCarboniferous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsPermian", revMobsPermian);
+        prop.setComment("List of mobs from OTHER mods which can be found in Permian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsPermian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsTriassic", revMobsTriassic);
+        prop.setComment("List of mobs from OTHER mods which can be found in Triassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsTriassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsJurassic", revMobsJurassic);
+        prop.setComment("List of mobs from OTHER mods which can be found in Jurassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsJurassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsCretaceous", revMobsCretaceous);
+        prop.setComment("List of mobs from OTHER mods which can be found in Cretaceous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsCretaceous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsPaleogene", revMobsPaleogene);
+        prop.setComment("List of mobs from OTHER mods which can be found in Paleogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsPaleogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsNeogene", revMobsNeogene);
+        prop.setComment("List of mobs from OTHER mods which can be found in Neogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsNeogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revMobsPleistocene", revMobsPleistocene);
+        prop.setComment("List of mobs from OTHER mods which can be found in Pleistocene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revMobsPleistocene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsPrecambrian", revPlantsPrecambrian);
+        prop.setComment("List of plants from OTHER mods which can be found in Precambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsPrecambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsCambrian", revPlantsCambrian);
+        prop.setComment("List of plants from OTHER mods which can be found in Cambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsCambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsOrdovician", revPlantsOrdovician);
+        prop.setComment("List of plants from OTHER mods which can be found in Ordovician fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsOrdovician = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsSilurian", revPlantsSilurian);
+        prop.setComment("List of plants from OTHER mods which can be found in Silurian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsSilurian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsDevonian", revPlantsDevonian);
+        prop.setComment("List of plants from OTHER mods which can be found in Devonian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsDevonian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsCarboniferous", revPlantsCarboniferous);
+        prop.setComment("List of plants from OTHER mods which can be found in Carboniferous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsCarboniferous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsPermian", revPlantsPermian);
+        prop.setComment("List of plants from OTHER mods which can be found in Permian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsPermian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsTriassic", revPlantsTriassic);
+        prop.setComment("List of plants from OTHER mods which can be found in Triassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsTriassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsJurassic", revPlantsJurassic);
+        prop.setComment("List of plants from OTHER mods which can be found in Jurassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsJurassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsCretaceous", revPlantsCretaceous);
+        prop.setComment("List of plants from OTHER mods which can be found in Cretaceous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsCretaceous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsPaleogene", revPlantsPaleogene);
+        prop.setComment("List of plants from OTHER mods which can be found in Paleogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsPaleogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsNeogene", revPlantsNeogene);
+        prop.setComment("List of plants from OTHER mods which can be found in Neogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsNeogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revPlantsPleistocene", revPlantsPleistocene);
+        prop.setComment("List of plants from OTHER mods which can be found in Pleistocene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revPlantsPleistocene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsPrecambrian", revStaticsPrecambrian);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Precambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsPrecambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsCambrian", revStaticsCambrian);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Cambrian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsCambrian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsOrdovician", revStaticsOrdovician);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Ordovician fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsOrdovician = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsSilurian", revStaticsSilurian);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Silurian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsSilurian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsDevonian", revStaticsDevonian);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Devonian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsDevonian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsCarboniferous", revStaticsCarboniferous);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Carboniferous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsCarboniferous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsPermian", revStaticsPermian);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Permian fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsPermian = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsTriassic", revStaticsTriassic);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Triassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsTriassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsJurassic", revStaticsJurassic);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Jurassic fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsJurassic = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsCretaceous", revStaticsCretaceous);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Cretaceous fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsCretaceous = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsPaleogene", revStaticsPaleogene);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Paleogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsPaleogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsNeogene", revStaticsNeogene);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Neogene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsNeogene = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Revival Integration", "revStaticsPleistocene", revStaticsPleistocene);
+        prop.setComment("List of static creatures from OTHER mods which can be found in Pleistocene fossils from the Acid Bath, in the format: modid:entityid [default: empty]");
+        revStaticsPleistocene = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "genLogResin", genLogResin);

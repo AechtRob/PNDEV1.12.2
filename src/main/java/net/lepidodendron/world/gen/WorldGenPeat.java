@@ -28,9 +28,20 @@ public class WorldGenPeat extends WorldGenerator
                     || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
             	)
             )
+            if (rand.nextInt(2) == 0)
             {
                 worldIn.setBlockState(blockpos.down(), BlockPeat.block.getDefaultState(), 2);
                 flag = true;
+            }
+            else {
+                if (((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.GROUND)
+                        || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.GRASS)
+                        || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.SAND)
+                        || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.ROCK)
+                        || ((worldIn.getBlockState(blockpos.down(2))).getMaterial() == Material.CLAY)) {
+                    worldIn.setBlockState(blockpos.down(2), BlockPeat.block.getDefaultState(), 2);
+                    flag = true;
+                }
             }
         }
 
