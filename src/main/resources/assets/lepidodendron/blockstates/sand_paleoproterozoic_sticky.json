@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:sand_paleoproterozoic" },
+      { "model": "lepidodendron:sand_paleoproterozoic", "y": 90 },
+      { "model": "lepidodendron:sand_paleoproterozoic", "y": 180 },
+      { "model": "lepidodendron:sand_paleoproterozoic", "y": 270 }
+    ]
+  }
+}

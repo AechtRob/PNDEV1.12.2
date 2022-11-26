@@ -10,6 +10,8 @@ import java.lang.reflect.Method;
 public class ModTriggers
 
 {
+
+    public static final CustomTrigger WELCOME = new CustomTrigger("pf_book_craft_prompt");
     public static final CustomTrigger ENTER_PRECAMBRIAN = new CustomTrigger("enter_pf_precambrian");
     public static final CustomTrigger ENTER_CAMBRIAN = new CustomTrigger("enter_pf_cambrian");
     public static final CustomTrigger ENTER_ORDOVICIAN = new CustomTrigger("enter_pf_ordovician");
@@ -908,6 +910,7 @@ public class ModTriggers
      * This array just makes it convenient to register all the criteria.
      */
     public static final CustomTrigger[] TRIGGER_ARRAY = new CustomTrigger[] {
+            WELCOME,
             ENTER_PRECAMBRIAN,
             ENTER_CAMBRIAN,
             ENTER_ORDOVICIAN,

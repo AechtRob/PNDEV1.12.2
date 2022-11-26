@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+    {"model": "lepidodendron:purple_microbial_mat_0" },
+      {"model": "lepidodendron:purple_microbial_mat_1" },
+      {"model": "lepidodendron:purple_microbial_mat_2" },
+      {"model": "lepidodendron:purple_microbial_mat_3" },
+      {"model": "lepidodendron:purple_microbial_mat_4" }
+    ]
+  }
+}

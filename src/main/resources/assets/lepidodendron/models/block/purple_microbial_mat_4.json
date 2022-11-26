@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/purple_microbial_mat_4",
+    "particle": "lepidodendron:blocks/purple_microbial_mat_4"
+  }
+}

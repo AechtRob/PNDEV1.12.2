@@ -29,7 +29,7 @@ public class BlockSandPangaeanSticky extends ElementsLepidodendronMod.ModElement
 	@GameRegistry.ObjectHolder("lepidodendron:sand_pangaean_sticky")
 	public static final Block block = null;
 	public BlockSandPangaeanSticky(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.sand_pangaean_sticky);
+		super(instance, LepidodendronSorter.sand_pangaean);
 	}
 
 	@Override
