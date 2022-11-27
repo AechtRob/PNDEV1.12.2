@@ -20,7 +20,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class LepidodendronGlassBottleSubscribers {
 
-	protected RayTraceResult rayTrace(World worldIn, EntityPlayer playerIn, boolean useLiquids)
+	protected RayTraceResult rayTraceBottle(World worldIn, EntityPlayer playerIn, boolean useLiquids)
 	{
 		float f = playerIn.rotationPitch;
 		float f1 = playerIn.rotationYaw;
@@ -48,7 +48,7 @@ public class LepidodendronGlassBottleSubscribers {
 		EntityPlayer playerIn = event.getEntityPlayer();
 		ItemStack itemstack = event.getItemStack();
 
-		RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
+		RayTraceResult raytraceresult = this.rayTraceBottle(worldIn, playerIn, true);
 
 		if (raytraceresult == null)
 		{

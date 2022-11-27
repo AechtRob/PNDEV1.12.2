@@ -24,6 +24,7 @@ public class WorldGenCobbleLava extends WorldGenerator
             		((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GROUND)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.GRASS)
             		|| ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.SAND)
+                    || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.ROCK)
                     || ((worldIn.getBlockState(blockpos.down())).getMaterial() == Material.CLAY)
             	)
             )
