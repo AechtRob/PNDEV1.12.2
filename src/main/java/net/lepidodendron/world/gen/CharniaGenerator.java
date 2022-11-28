@@ -69,6 +69,7 @@ public class CharniaGenerator extends WorldGenerator
 		int bound = 8;
 
 		int multiplier = 1;
+
 		if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 				&& this.charnia == BlockGrypania.block)
 		{

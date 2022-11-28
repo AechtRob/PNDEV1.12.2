@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.gen.CharniaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -89,9 +90,9 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) 24; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel()+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+			BlockPos spawnPos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world);
+			(new CharniaGenerator((Block) block)).generate(world, random, spawnPos);
 		}
 	}
 

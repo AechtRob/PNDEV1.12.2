@@ -1,13 +1,11 @@
 package net.lepidodendron;
 
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -221,7 +219,7 @@ public class LepidodendronFogSubscribers {
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
+		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
 			r = 192D/255D;
 			g = 192D/255D;
 			b = 192D/255D;
@@ -229,6 +227,60 @@ public class LepidodendronFogSubscribers {
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
+
+		else if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+				r = 227D/255D;
+				g = 141D/255D;
+				b = 61D/255D;
+				Vec3d fog = new Vec3d(r,g,b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic) {
+				r = 226D/255D;
+				g = 193D/255D;
+				b = 253D/255D;
+				Vec3d fog = new Vec3d(r,g,b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic) {
+				r = 156D/255D;
+				g = 228D/255D;
+				b = 184D/255D;
+				Vec3d fog = new Vec3d(r,g,b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Neoproterozoic) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
+					r = 177D / 255D;
+					g = 192D / 255D;
+					b = 216D / 255D;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+				} else {
+					r = 138D / 255D;
+					g = 240D / 255D;
+					b = 255D / 255D;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+				}
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
+				r = 138D / 255D;
+				g = 240D / 255D;
+				b = 255D / 255D;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+		}
+
 
 		r = worldFog.x;
 		g = worldFog.y;
