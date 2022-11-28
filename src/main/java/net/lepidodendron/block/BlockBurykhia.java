@@ -92,7 +92,9 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			dimensionCriteria = true;
+			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+				dimensionCriteria = true;
+			}
 		}
 		if (!dimensionCriteria)
 			return;

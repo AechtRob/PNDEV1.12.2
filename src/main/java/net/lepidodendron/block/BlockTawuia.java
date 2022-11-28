@@ -89,7 +89,10 @@ public class BlockTawuia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)) {
-			biomeCriteria = true;
+			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+				|| world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
+				biomeCriteria = true;
+			}
 		}
 		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimDevonian)

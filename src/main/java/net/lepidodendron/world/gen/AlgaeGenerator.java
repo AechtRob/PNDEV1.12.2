@@ -94,6 +94,11 @@ public class AlgaeGenerator extends WorldGenerator
 			multiplier = 10;
 		}
 
+		if (this.algae == BlockTawuia.block
+			&& worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
+			multiplier = 15;
+		}
+
 		for (int i = 0; i < (64 * multiplier); ++i)
 		{
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);

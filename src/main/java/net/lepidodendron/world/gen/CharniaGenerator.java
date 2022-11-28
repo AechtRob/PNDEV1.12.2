@@ -2,6 +2,7 @@ package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.block.BlockGrypania;
 import net.lepidodendron.block.BlockStromatolite;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -54,14 +55,27 @@ public class CharniaGenerator extends WorldGenerator
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			dimensionCriteria = true;
+			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+				||
+					(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+						&& this.charnia == BlockGrypania.block)
+					) {
+				dimensionCriteria = true;
+			}
 		}
 		if (!dimensionCriteria)
 			return true;
 
 		int bound = 8;
 
-		for (int i = 0; i < 32; ++i)
+		int multiplier = 1;
+		if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				&& this.charnia == BlockGrypania.block)
+		{
+			multiplier = 8;
+		}
+
+		for (int i = 0; i < 32 * multiplier; ++i)
 		{
 			int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
 			int k = position.getY() + rand.nextInt(4) - rand.nextInt(4);
