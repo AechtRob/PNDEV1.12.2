@@ -125,9 +125,9 @@ public class LepidodendronFogSubscribers {
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogColors event) {
 
-		if (1 == 1) {
-			return;
-		}
+		//if (1 == 1) {
+		//	return;
+		//}
 
 		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();

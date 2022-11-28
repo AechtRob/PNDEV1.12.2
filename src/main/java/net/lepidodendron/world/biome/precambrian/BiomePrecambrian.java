@@ -1,4 +1,4 @@
-package net.lepidodendron.world.biome.permian;
+package net.lepidodendron.world.biome.precambrian;
 
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.minecraft.world.biome.Biome;
@@ -13,6 +13,5 @@ public abstract class BiomePrecambrian extends Biome {
     }
 
     public abstract EnumBiomeTypePrecambrian getBiomeType();
-
 
 }

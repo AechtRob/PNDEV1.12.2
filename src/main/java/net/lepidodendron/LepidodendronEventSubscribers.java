@@ -5,7 +5,7 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
-import net.lepidodendron.world.biome.permian.BiomePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
