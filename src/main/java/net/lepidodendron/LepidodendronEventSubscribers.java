@@ -103,35 +103,34 @@ public class LepidodendronEventSubscribers {
 					if (p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
 						Biome biome = event.world.getBiome(pos);
 						if (biome instanceof BiomePrecambrian) {
-							if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+							if (((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
 								spawnShower = (event.world.rand.nextInt(50) == 0);
+								{
+									EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+									meteor.motionX = event.world.rand.nextDouble() - 0.5;
+									meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+									event.world.spawnEntity(meteor);
+								}
+								if (spawnShower) {
+									EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+									meteor.motionX = event.world.rand.nextDouble() - 0.5;
+									meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+									event.world.spawnEntity(meteor);
+									if (event.world.rand.nextInt(3) == 0) {
+										EntityPrehistoricFloraMeteor meteor2 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+										meteor.motionX = event.world.rand.nextDouble() - 0.5;
+										meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+										event.world.spawnEntity(meteor2);
+									}
+									if (event.world.rand.nextInt(3) == 0) {
+										EntityPrehistoricFloraMeteor meteor3 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+										meteor.motionX = event.world.rand.nextDouble() - 0.5;
+										meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+										event.world.spawnEntity(meteor3);
+									}
+								}
 							}
 						}
-						{
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-							meteor.motionX = event.world.rand.nextDouble() - 0.5;
-							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-							event.world.spawnEntity(meteor);
-						}
-						if (spawnShower) {
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-							meteor.motionX = event.world.rand.nextDouble() - 0.5;
-							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-							event.world.spawnEntity(meteor);
-							if (event.world.rand.nextInt(3) == 0) {
-								EntityPrehistoricFloraMeteor meteor2 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-								meteor.motionX = event.world.rand.nextDouble() - 0.5;
-								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-								event.world.spawnEntity(meteor2);
-							}
-							if (event.world.rand.nextInt(3) == 0) {
-								EntityPrehistoricFloraMeteor meteor3 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-								meteor.motionX = event.world.rand.nextDouble() - 0.5;
-								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-								event.world.spawnEntity(meteor3);
-							}
-						}
-
 					}
 				}
 			}
