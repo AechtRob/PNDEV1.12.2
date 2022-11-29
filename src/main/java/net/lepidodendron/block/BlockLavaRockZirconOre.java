@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemZircon;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -18,6 +20,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -55,6 +58,12 @@ public class BlockLavaRockZirconOre extends ElementsLepidodendronMod.ModElement 
 		boolean dimensionCriteria = false;
 		if (dimID == LepidodendronConfig.dimPrecambrian)
 			dimensionCriteria = true;
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16));
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() != EnumBiomeTypePrecambrian.Hadean) {
+				dimensionCriteria = false;
+			}
+		}
 		if (!dimensionCriteria)
 			return;
 		if (random.nextInt(5) <= 2) {

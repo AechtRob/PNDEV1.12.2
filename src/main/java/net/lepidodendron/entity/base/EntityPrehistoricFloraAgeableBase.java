@@ -1201,10 +1201,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.consumeItemFromStack(player, itemstack);
                 this.canGrow = 3000;
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
+                this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                 return true;
             }
         }
         return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    private void spawnParticles(EnumParticleTypes particleType)
+    {
+        for (int i = 0; i < 5; ++i)
+        {
+            double d0 = this.rand.nextGaussian() * 0.02D;
+            double d1 = this.rand.nextGaussian() * 0.02D;
+            double d2 = this.rand.nextGaussian() * 0.02D;
+            this.world.spawnParticle(particleType, this.posX + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + 1.0D + (double)(this.rand.nextFloat() * this.height), this.posZ + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, d0, d1, d2);
+        }
     }
 
     @Override

@@ -9,7 +9,8 @@ public enum EnumBiomeTypePrecambrian implements IStringSerializable {
     Paleoproterozoic("paleoproterozoic"),
     Mesoproterozoic("mesoproterozoic"),
     Neoproterozoic("neoproterozoic"),
-    Ediacaran("ediacaran")
+    Ediacaran("ediacaran"),
+    Proterozoic_Land("proterozoic_land")
     ;
 
     private final String name;

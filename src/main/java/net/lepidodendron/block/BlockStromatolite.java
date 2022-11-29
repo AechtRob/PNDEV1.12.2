@@ -6,7 +6,9 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -72,8 +74,9 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimStromatolite))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-			|| dimID == LepidodendronConfig.dimCambrian
-			|| dimID == LepidodendronConfig.dimTriassic) {
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimPrecambrian) {
 			dimensionCriteria = true;
 		}
 		if (!dimensionCriteria)
@@ -98,6 +101,20 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			biomeCriteria = true;
 		}
+
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+			) {
+				biomeCriteria = false;
+			}
+			else {
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+					biomeCriteria = true;
+			}
+		}
+
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {

@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -98,6 +100,17 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
 			biomeCriteria = true;
+		}
+
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Archean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+			) {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
