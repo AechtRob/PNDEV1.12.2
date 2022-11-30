@@ -127,10 +127,10 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		{
 			EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
-			if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-			{
-				enumfacing = EnumFacing.NORTH;
-			}
+			//if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+			//{
+			//	enumfacing = EnumFacing.NORTH;
+			//}
 
 			return this.getDefaultState().withProperty(FACING, enumfacing);
 		}
@@ -257,8 +257,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 
 		//@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
-					&& (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
 				return super.canPlaceBlockAt(worldIn, pos);
 			}
 
@@ -271,7 +270,8 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER
+					|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer) iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;

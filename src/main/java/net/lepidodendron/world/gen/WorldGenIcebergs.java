@@ -20,6 +20,10 @@ public class WorldGenIcebergs extends WorldGenerator {
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, false);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean onLand) {
 
         if (rand.nextInt(64) != 0 ) {
             return false;
@@ -44,7 +48,7 @@ public class WorldGenIcebergs extends WorldGenerator {
 
             if (worldIn.isRemote ||
                     (worldIn.getBlockState(new BlockPos(ii, jj, kk)).getMaterial() != Material.WATER
-                        && worldIn.getBlockState(new BlockPos(ii, jj, kk)).getMaterial() != Material.ICE))
+                        && worldIn.getBlockState(new BlockPos(ii, jj, kk)).getMaterial() != Material.ICE && !onLand))
                 return false;
 
             BlockPos startpos = new BlockPos(ii, jj, kk);

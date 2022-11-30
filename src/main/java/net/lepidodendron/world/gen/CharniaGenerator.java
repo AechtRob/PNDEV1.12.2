@@ -52,16 +52,32 @@ public class CharniaGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
+		boolean upsideDown = false;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
 				||
-					(worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+					((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+							|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+							|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+							|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+					)
 						&& this.charnia == BlockGrypania.block)
 					) {
 				dimensionCriteria = true;
 			}
+
+			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+					||
+					((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+							|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+					)
+							&& this.charnia == BlockGrypania.block)
+			) {
+				upsideDown = true;
+			}
+
 		}
 		if (!dimensionCriteria)
 			return true;
@@ -70,10 +86,20 @@ public class CharniaGenerator extends WorldGenerator
 
 		int multiplier = 1;
 
-		if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+		if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
+			)
+			&& this.charnia == BlockGrypania.block)
+		{
+			multiplier = 16;
+		}
+
+		if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
+		)
 				&& this.charnia == BlockGrypania.block)
 		{
-			multiplier = 8;
+			multiplier = 24;
 		}
 
 		for (int i = 0; i < 32 * multiplier; ++i)
@@ -110,6 +136,14 @@ public class CharniaGenerator extends WorldGenerator
 						worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
 						return true;
 					}
+				}
+				else if (upsideDown) {
+					//Can we place this here upside down?
+					if (worldIn.getBlockState(new BlockPos(j, k + 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(128) == 0) {
+						worldIn.setBlockState(new BlockPos(j, k, l), this.state.withProperty(BlockGrypania.FACING, EnumFacing.DOWN), 2);
+						return true;
+					}
+
 				}
 			}
 		}

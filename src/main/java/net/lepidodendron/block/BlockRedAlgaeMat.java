@@ -732,9 +732,9 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		{
 
 			//System.err.println("Can place");
-			
+
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
-				return super.canPlaceBlockAt(worldIn, pos); 
+				return super.canPlaceBlockAt(worldIn, pos);
 			}
 			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
@@ -786,7 +786,9 @@ public class BlockRedAlgaeMat extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	    public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER
+					|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE
+			) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;

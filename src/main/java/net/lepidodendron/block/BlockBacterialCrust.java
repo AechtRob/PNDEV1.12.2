@@ -1225,32 +1225,38 @@ public class BlockBacterialCrust extends ElementsLepidodendronMod.ModElement {
 	    	boolean blockface  = true;
 			if (side == EnumFacing.NORTH) {
 	        	if (worldIn.getBlockState(pos.south()).getBlockFaceShape(worldIn, pos.south(), side) != BlockFaceShape.SOLID
-					|| worldIn.getBlockState(pos.south()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.SOUTH) {
 	        	if (worldIn.getBlockState(pos.north()).getBlockFaceShape(worldIn, pos.north(), side) != BlockFaceShape.SOLID
-						|| worldIn.getBlockState(pos.north()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.north()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.EAST) {
 	        	if (worldIn.getBlockState(pos.west()).getBlockFaceShape(worldIn, pos.west(), side) != BlockFaceShape.SOLID
-						|| worldIn.getBlockState(pos.west()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.west()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.WEST) {
 	        	if (worldIn.getBlockState(pos.east()).getBlockFaceShape(worldIn, pos.east(), side) != BlockFaceShape.SOLID
-						|| worldIn.getBlockState(pos.east()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.east()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.UP) {
 	        	if (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), side) != BlockFaceShape.SOLID
-						|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.down()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			if (side == EnumFacing.DOWN) {
 	        	if (worldIn.getBlockState(pos.up()).getBlockFaceShape(worldIn, pos.up(), side) != BlockFaceShape.SOLID
-						|| worldIn.getBlockState(pos.up()).getMaterial() == Material.ICE)
+						|| worldIn.getBlockState(pos.up()).getMaterial() == Material.ICE
+						|| worldIn.getBlockState(pos.south()).getMaterial() == Material.PACKED_ICE)
 	        		blockface = false;
 			}
 			

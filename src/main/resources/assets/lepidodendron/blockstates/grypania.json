@@ -21,8 +21,8 @@
 			{"model": "lepidodendron:grypania_var"}
 		],
 		"facing=down": [
-			{"model": "lepidodendron:grypania"},
-			{"model": "lepidodendron:grypania_var"}
+			{"model": "lepidodendron:grypania", "x": 180},
+			{"model": "lepidodendron:grypania_var", "x": 180}
 		]
 	}
 }

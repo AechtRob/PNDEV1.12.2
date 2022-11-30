@@ -39,6 +39,7 @@ public class AlgaeGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
+		boolean upsideDown = false;
 		boolean algae = (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockBrownAlgae.block || this.algae == BlockGreenCharaAlgae.block || this.algae == BlockGreenCodiumAlgae.block || this.algae == BlockGreenCrustedAlgae.block || this.algae == BlockGreenLeafyAlgae.block || this.algae == BlockGreenSproutingAlgae.block || this.algae == BlockPiledAlgae.block || this.algae == BlockStalkedAlgae.block || this.algae == BlockStalkyBrownAlgae.block);
 		boolean gunk = (this.algae == BlockWaterBottomGunk.block);
 		boolean rugosas = (this.algae == BlockRugosa1.block || this.algae == BlockRugosa2.block || this.algae == BlockRugosa3.block || this.algae == BlockRugosa4.block || this.algae == BlockRugosa5.block);
@@ -94,9 +95,20 @@ public class AlgaeGenerator extends WorldGenerator
 			multiplier = 10;
 		}
 
-		if (this.algae == BlockTawuia.block
-			&& worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")) {
-			multiplier = 15;
+		if (this.algae == BlockTawuia.block) {
+			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+				|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+				multiplier = 2;
+				upsideDown = true;
+			}
+		}
+
+		if (this.algae == BlockGreenAlgaeMat.block || this.algae == BlockRedAlgaeMat.block) {
+			if (worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")) {
+				multiplier = 3;
+				upsideDown = true;
+			}
 		}
 
 		for (int i = 0; i < (64 * multiplier); ++i)
@@ -180,7 +192,14 @@ public class AlgaeGenerator extends WorldGenerator
 							} else {
 								worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
 							}
-							return true;
+							if (!upsideDown ||
+								(
+									(this.algae == BlockGreenAlgaeMat.block || this.algae == BlockRedAlgaeMat.block)
+									&& rand.nextInt(12) == 0 && upsideDown
+								)
+							) {
+								return true;
+							}
 						} else {
 							if ( //exclude ones which are better not/can't go sideways!
 									(this.algae != BlockGreenCharaAlgae.block)
@@ -203,6 +222,7 @@ public class AlgaeGenerator extends WorldGenerator
 											&& (this.algae != BlockCrinoidPetalocrinus.block)
 											&& (this.algae != BlockCrinoidVadarocrinus.block)
 											&& (this.algae != BlockWaterBottomGunk.block)
+											&& (this.algae != BlockTawuia.block)
 							) {
 								for (EnumFacing enumfacing1 : FACING.getAllowedValues()) {
 									pos = new BlockPos(j, k, l);
@@ -237,11 +257,23 @@ public class AlgaeGenerator extends WorldGenerator
 							}
 						}
 					}
+					if (upsideDown && rand.nextInt(56) == 0) {
+						PropertyDirection FACING = BlockDirectional.FACING;
+						//Can we place this under sea ice upside down?
+						if (this.algae.canPlaceBlockAt(worldIn, new BlockPos(j, worldIn.getSeaLevel() - 2, l))) {
+							if (worldIn.getBlockState(new BlockPos(j, worldIn.getSeaLevel() - 1, l)).getMaterial() == Material.PACKED_ICE && rand.nextInt(24) == 0) {
+								worldIn.setBlockState(new BlockPos(j, worldIn.getSeaLevel() - 2, l), this.state.withProperty(FACING, EnumFacing.DOWN), 2);
+								if (this.algae != BlockTawuia.block) {
+									return true;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 		return true;
-		}
+	}
 
 
 	public boolean shouldGenerateInDimension(int id, int[] dims) {

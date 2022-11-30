@@ -21,6 +21,10 @@ public class WorldGenSnow extends WorldGenerator
     }
 
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight) {
+        return generate(worldIn, rand, position, minHeight,false);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, boolean seaSnow) {
         boolean flag = false;
 
         for (int i = 0; i < 32; ++i)
@@ -40,12 +44,23 @@ public class WorldGenSnow extends WorldGenerator
                 }
             }
             else {
-                if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() + rand.nextInt(4) - 4) >= minHeight  && worldIn.isAirBlock(blockpos)
-                        && (canPlaceBlockAt(worldIn, blockpos))
-                        && (worldIn.canSeeSky(blockpos))
-                ) {
-                    worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
-                    flag = true;
+                if (seaSnow) {
+                    if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() + rand.nextInt(4) - 4) >= minHeight && worldIn.isAirBlock(blockpos)
+                            && (canPlaceBlockAtSeaIce(worldIn, blockpos))
+                            && (worldIn.canSeeSky(blockpos))
+                    ) {
+                        worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
+                        flag = true;
+                    }
+                }
+                else {
+                    if ((!worldIn.provider.isNether() || blockpos.getY() < 254) && (blockpos.getY() + rand.nextInt(4) - 4) >= minHeight && worldIn.isAirBlock(blockpos)
+                            && (canPlaceBlockAt(worldIn, blockpos))
+                            && (worldIn.canSeeSky(blockpos))
+                    ) {
+                        worldIn.setBlockState(blockpos, Blocks.SNOW_LAYER.getDefaultState().withProperty(LAYERS, 1), 2);
+                        flag = true;
+                    }
                 }
             }
         }
@@ -59,6 +74,22 @@ public class WorldGenSnow extends WorldGenerator
         Block block = iblockstate.getBlock();
 
         if (block != Blocks.ICE && block != Blocks.PACKED_ICE && block != Blocks.BARRIER)
+        {
+            BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP);
+            return blockfaceshape == BlockFaceShape.SOLID || iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down());
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public boolean canPlaceBlockAtSeaIce(World worldIn, BlockPos pos)
+    {
+        IBlockState iblockstate = worldIn.getBlockState(pos.down());
+        Block block = iblockstate.getBlock();
+
+        if (block != Blocks.ICE && block != Blocks.BARRIER)
         {
             BlockFaceShape blockfaceshape = iblockstate.getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP);
             return blockfaceshape == BlockFaceShape.SOLID || iblockstate.getBlock().isLeaves(iblockstate, worldIn, pos.down());
