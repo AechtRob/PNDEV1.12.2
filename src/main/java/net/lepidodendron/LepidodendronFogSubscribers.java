@@ -410,7 +410,22 @@ public class LepidodendronFogSubscribers {
 								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
 									fog = backgroundFog2 * 5F;
 								}
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_desert") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome instanceof BiomePrecambrian && player.posY >= player.world.getSeaLevel() - 4) {
+								if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+									fog = backgroundFog2 * 10F;
+								}
 							}
+
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
