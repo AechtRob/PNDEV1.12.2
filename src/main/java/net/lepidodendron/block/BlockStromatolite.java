@@ -106,6 +106,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
 			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
 				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_shallow_sea")
 			) {
 				biomeCriteria = false;
 			}
@@ -132,6 +133,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) {genChance = 0.65;}
 		if (dimID == LepidodendronConfig.dimCambrian) {genChance = 0.8;}
 		if (dimID == LepidodendronConfig.dimTriassic) {genChance = 0.15;}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_tide_pools")) {genChance = 0.00;}
 		
 		if (Math.random() > genChance) {
 			for (int i = 0; i < 10; i++) {

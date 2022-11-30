@@ -13,12 +13,11 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class WorldGenArcheanProterozoicLakes extends WorldGenerator
-    //Used for the Archean tide pools biome:
+public class WorldGenNeoproterozoicLakes extends WorldGenerator
 {
     private final Block block;
 
-    public WorldGenArcheanProterozoicLakes(Block blockIn)
+    public WorldGenNeoproterozoicLakes(Block blockIn)
     {
         this.block = blockIn;
     }
@@ -110,18 +109,7 @@ public class WorldGenArcheanProterozoicLakes extends WorldGenerator
                                 if (worldIn.getBlockState(position.add(l1, i4-2, i3)).getBlockFaceShape(
                                         worldIn, position.add(l1, i4-2, i3), EnumFacing.UP) == BlockFaceShape.SOLID) {
                                     worldIn.setBlockState(position.add(l1, i4-1, i3), this.block.getDefaultState());
-                                    if (rand.nextInt(6) == 0) {
-                                        worldIn.setBlockState(position.add(l1, i4-2, i3), BlockBacterialLayerArchean.block.getDefaultState());
-                                    }
-                                    else if (rand.nextInt(6) == 0) {
-                                        worldIn.setBlockState(position.add(l1, i4-2, i3), Blocks.GRAVEL.getDefaultState());
-                                    }
-                                    else if (rand.nextInt(8) == 0) {
-                                        worldIn.setBlockState(position.add(l1, i4-2, i3), BlockToxicMud.block.getDefaultState());
-                                    }
-                                    else {
-                                        worldIn.setBlockState(position.add(l1, i4 - 2, i3), BlockSandBlackWavy.block.getDefaultState());
-                                    }
+                                    worldIn.setBlockState(position.add(l1, i4-2, i3), BlockBacterialLayer.block.getDefaultState());
                                 }
                             }
                         }
@@ -155,12 +143,7 @@ public class WorldGenArcheanProterozoicLakes extends WorldGenerator
                                     }
                                 }
                                 if (this.block.getDefaultState().getMaterial() == Material.WATER) {
-                                    if (rand.nextInt(2) == 0) {
-                                        worldIn.setBlockState(blockpos, BlockToxicMud.block.getDefaultState(), 2);
-                                    }
-                                    else {
-                                        worldIn.setBlockState(blockpos, BlockSandBlack.block.getDefaultState(), 2);
-                                    }
+                                    worldIn.setBlockState(blockpos, BlockBacterialLayer.block.getDefaultState(), 2);
                                 }
                             }
                         }

@@ -16,12 +16,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -86,11 +88,21 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 					&& (!((EntityPlayer) entityIn).capabilities.isCreativeMode)) {
 					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);
 				}
+				else if (Math.random() > 0.97) {
+					worldIn.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
+					((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).damageItem(5, (EntityLivingBase) entityIn);
+				}
+
 			}
 			else if (entityIn instanceof EntityLivingBase)
 			{
-				if (((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR)
+				if (((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).getItem() == Items.AIR) {
 					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);
+				}
+				else if (Math.random() > 0.97) {
+					worldIn.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
+					((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).damageItem(5, (EntityLivingBase) entityIn);
+				}
 			}
 		}
 
