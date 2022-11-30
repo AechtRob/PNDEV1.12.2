@@ -139,7 +139,11 @@ public class WorldGenHadeanLakes extends WorldGenerator
                                         }
                                     }
                                     else {
-                                        worldIn.setBlockState(blockpos, BlockVolcanicAsh.block.getDefaultState(), 2);
+                                        if (Math.random() > 0.5) {
+                                            worldIn.setBlockState(blockpos, BlockVolcanicAsh.block.getDefaultState(), 2);
+                                        } else {
+                                            worldIn.setBlockState(blockpos, BlockLavaCobbleMolten.block.getDefaultState(), 2);
+                                        }
                                     }
                                 }
                                 if (this.block.getDefaultState().getMaterial() == Material.WATER) {
