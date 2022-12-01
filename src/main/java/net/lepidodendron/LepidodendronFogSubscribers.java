@@ -284,6 +284,14 @@ public class LepidodendronFogSubscribers {
 					return fog;
 				}
 			}
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:proterozoic_hills")) {
+				r = 156D/255D;
+				g = 228D/255D;
+				b = 184D/255D;
+				Vec3d fog = new Vec3d(r,g,b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
 			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
 				r = 138D / 255D;
 				g = 240D / 255D;
@@ -338,6 +346,11 @@ public class LepidodendronFogSubscribers {
 		if (biome instanceof BiomeJurassic) {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
+				return 150;
+			}
+		}
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
 				return 150;
 			}
 		}
