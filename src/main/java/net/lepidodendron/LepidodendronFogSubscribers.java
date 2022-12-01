@@ -315,6 +315,12 @@ public class LepidodendronFogSubscribers {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) {
 			return 150;
 		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
+			return 130;
+		}
+
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
