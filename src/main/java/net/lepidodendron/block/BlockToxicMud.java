@@ -89,9 +89,12 @@ public class BlockToxicMud extends ElementsLepidodendronMod.ModElement {
 					&& (!((EntityPlayer) entityIn).capabilities.isCreativeMode)) {
 					entityIn.attackEntityFrom(CAUSTIC, (float) 0.5F);
 				}
-				else if (Math.random() > 0.97 && (!((EntityPlayer)entityIn).isCreative())
-					&& ((ItemArmor)((((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET)).getItem())).getArmorMaterial() != ItemArmor.ArmorMaterial.GOLD
-					) {
+				else if (Math.random() > 0.97 && (!((EntityPlayer)entityIn).isCreative())) {
+					if (((((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET)).getItem()) instanceof ItemArmor) {
+						if (((ItemArmor) ((((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET)).getItem())).getArmorMaterial() == ItemArmor.ArmorMaterial.GOLD) {
+							return;
+						}
+					}
 					worldIn.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (worldIn.rand.nextFloat() - worldIn.rand.nextFloat()) * 0.8F);
 					((EntityLivingBase) entityIn).getItemStackFromSlot(EntityEquipmentSlot.FEET).damageItem(5, (EntityLivingBase) entityIn);
 				}

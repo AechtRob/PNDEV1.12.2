@@ -61,6 +61,10 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
+		if (player.getEntityWorld().isRainingAt(player.getPosition())) {
+			return;
+		}
+
 		if (player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
@@ -134,6 +138,11 @@ public class LepidodendronFogSubscribers {
 		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
+
+			if (world.isRainingAt(player.getPosition())) {
+				return;
+			}
+
 			//Biome biome = player.world.getBiome(player.getPosition());
 			//IBlockState state = world.getBlockState(player.getPosition());
 			//Block b = state.getBlock();
