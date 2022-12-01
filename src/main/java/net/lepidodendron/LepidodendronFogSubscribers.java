@@ -354,6 +354,12 @@ public class LepidodendronFogSubscribers {
 				return 150;
 			}
 		}
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+				return 200;
+			}
+		}
+
 		return 0;
 	}
 
@@ -454,6 +460,9 @@ public class LepidodendronFogSubscribers {
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
 									&& biome instanceof BiomePrecambrian && player.posY >= player.world.getSeaLevel() - 4) {
 								if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+									fog = backgroundFog2 * 10F;
+								}
+								else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
 									fog = backgroundFog2 * 10F;
 								}
 							}
