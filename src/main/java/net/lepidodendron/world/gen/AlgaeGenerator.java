@@ -159,6 +159,9 @@ public class AlgaeGenerator extends WorldGenerator
 					if (algae && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 10)) {
 						waterDepthCheckMin = false;
 					}
+					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 30)) {
+						waterDepthCheckMin = false;
+					}
 					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 18)) {
 						waterDepthCheckMin = false;
 					}
