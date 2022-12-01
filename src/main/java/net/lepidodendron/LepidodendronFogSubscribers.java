@@ -224,11 +224,26 @@ public class LepidodendronFogSubscribers {
 		double g = 0;
 		double b = 0;
 
+		float f2 = MathHelper.cos(world.getCelestialAngle(partialTicks) * (float)Math.PI * 2.0F) * 2.0F + 0.5F;
+
+		if (f2 < 0.0F)
+		{
+			f2 = 0.0F;
+		}
+
+		if (f2 > 1.0F)
+		{
+			f2 = 1.0F;
+		}
+		
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt")) {
 			r = 96D/255D;
 			g = 96D/255D;
 			b = 96D/255D;
-			Vec3d fog = new Vec3d(r,g,b);
+			r *= 0.94F + 0.06F;
+			g *= 0.94F + 0.06F;
+			b *= 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
@@ -236,17 +251,24 @@ public class LepidodendronFogSubscribers {
 			r = 192D/255D;
 			g = 192D/255D;
 			b = 192D/255D;
-			Vec3d fog = new Vec3d(r,g,b);
+			r *= 0.94F + 0.06F;
+			g *= 0.94F + 0.06F;
+			b *= 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
 
 		else if (biome instanceof BiomePrecambrian) {
+			
 			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
 				r = 227D/255D;
 				g = 141D/255D;
 				b = 61D/255D;
-				Vec3d fog = new Vec3d(r,g,b);
+				r *= 0.94F + 0.06F;
+				g *= 0.94F + 0.06F;
+				b *= 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
 				//System.out.println("Fog: "+fog.x);
 				return fog;
 			}
@@ -254,7 +276,10 @@ public class LepidodendronFogSubscribers {
 				r = 226D/255D;
 				g = 193D/255D;
 				b = 253D/255D;
-				Vec3d fog = new Vec3d(r,g,b);
+				r *= r * 0.94F + 0.06F;
+				g *= g * 0.94F + 0.06F;
+				b *= b * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
 				//System.out.println("Fog: "+fog.x);
 				return fog;
 			}
@@ -262,7 +287,10 @@ public class LepidodendronFogSubscribers {
 				r = 156D/255D;
 				g = 228D/255D;
 				b = 184D/255D;
-				Vec3d fog = new Vec3d(r,g,b);
+				r *= 0.94F + 0.06F;
+				g *= 0.94F + 0.06F;
+				b *= 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
 				//System.out.println("Fog: "+fog.x);
 				return fog;
 			}
@@ -272,6 +300,9 @@ public class LepidodendronFogSubscribers {
 					r = 177D / 255D;
 					g = 192D / 255D;
 					b = 216D / 255D;
+					r *= 0.94F + 0.06F;
+					g *= 0.94F + 0.06F;
+					b *= 0.91F + 0.09F;
 					Vec3d fog = new Vec3d(r, g, b);
 					//System.out.println("Fog: "+fog.x);
 					return fog;
@@ -279,6 +310,9 @@ public class LepidodendronFogSubscribers {
 					r = 138D / 255D;
 					g = 240D / 255D;
 					b = 255D / 255D;
+					r *= 0.94F + 0.06F;
+					g *= 0.94F + 0.06F;
+					b *= 0.91F + 0.09F;
 					Vec3d fog = new Vec3d(r, g, b);
 					//System.out.println("Fog: "+fog.x);
 					return fog;
@@ -288,7 +322,10 @@ public class LepidodendronFogSubscribers {
 				r = 156D/255D;
 				g = 228D/255D;
 				b = 184D/255D;
-				Vec3d fog = new Vec3d(r,g,b);
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
 				//System.out.println("Fog: "+fog.x);
 				return fog;
 			}
@@ -296,6 +333,9 @@ public class LepidodendronFogSubscribers {
 				r = 138D / 255D;
 				g = 240D / 255D;
 				b = 255D / 255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
 				Vec3d fog = new Vec3d(r, g, b);
 				//System.out.println("Fog: "+fog.x);
 				return fog;
