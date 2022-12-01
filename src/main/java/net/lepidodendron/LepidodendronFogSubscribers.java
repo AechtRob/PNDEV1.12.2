@@ -41,6 +41,10 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
+		//if (1 == 1) {
+		//	return;
+		//}
+
 		//int fogMode = event.getFogMode();
 
 		Entity player = event.getEntity();
