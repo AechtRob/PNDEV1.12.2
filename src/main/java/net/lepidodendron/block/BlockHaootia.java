@@ -92,8 +92,18 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
-				dimensionCriteria = true;
+			if (BlockArkarua.isPrecambrianUpdated()) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_trench")) {
+					dimensionCriteria = true;
+				}
+				else {
+					dimensionCriteria = false;
+				}
+			}
+			else {
+				if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+					dimensionCriteria = true;
+				}
 			}
 		}
 		if (!dimensionCriteria)

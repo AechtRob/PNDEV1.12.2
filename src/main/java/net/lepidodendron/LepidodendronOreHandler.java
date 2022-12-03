@@ -21,9 +21,9 @@ public class LepidodendronOreHandler {
             	event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.IRON)){
-			if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
-			)
-				event.setResult(Event.Result.DENY);
+			//if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
+			//)
+			//	event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.DIRT )){ //dirt is blocked to avoid grass etc accidentally appearring
 			if (LepidodendronConfig.dimCretaceous == (int) event.getWorld().provider.getDimension()
@@ -40,19 +40,19 @@ public class LepidodendronOreHandler {
 				event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.ANDESITE )){
-			if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
-			)
-				event.setResult(Event.Result.DENY);
+			//if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
+			//)
+			//	event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.GRANITE )){
-			if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
-			)
-				event.setResult(Event.Result.DENY);
+			//if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
+			//)
+			//	event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.DIORITE )){
-			if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
-			)
-				event.setResult(Event.Result.DENY);
+			//if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
+			//)
+			//	event.setResult(Event.Result.DENY);
 		}
 		if (event.getType().equals(EventType.SILVERFISH )){
 			if (LepidodendronConfig.dimDevonian == (int) event.getWorld().provider.getDimension()
