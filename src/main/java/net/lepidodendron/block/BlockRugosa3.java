@@ -328,7 +328,7 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_rugosa_2");
+			setTranslationKey("pf_rugosa_3");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);

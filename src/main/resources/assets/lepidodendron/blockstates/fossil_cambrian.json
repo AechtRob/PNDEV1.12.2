@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_cambrian#base",
-      "Solid": "lepidodendron:fossil_cambrian#base",
-      "Translucent": "lepidodendron:fossil_cambrian#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_cambrian"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_cambrian_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_cambrian" },
+      {"model": "lepidodendron:fossiliferous_cambrian", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_cambrian_var" },
+      {"model": "lepidodendron:fossiliferous_cambrian_var", "y": 180 }
     ]
   }
 }

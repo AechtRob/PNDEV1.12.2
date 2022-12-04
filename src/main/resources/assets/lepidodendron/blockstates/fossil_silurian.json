@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_silurian#base",
-      "Solid": "lepidodendron:fossil_silurian#base",
-      "Translucent": "lepidodendron:fossil_silurian#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_silurian"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_silurian_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_silurian" },
+      {"model": "lepidodendron:fossiliferous_silurian", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_silurian_var" },
+      {"model": "lepidodendron:fossiliferous_silurian_var", "y": 180 }
     ]
   }
 }

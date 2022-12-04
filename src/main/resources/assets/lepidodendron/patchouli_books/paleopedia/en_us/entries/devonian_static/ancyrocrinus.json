@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_ancyrocrinus",
 	"category": "lepidodendron:devonian_static",
-	"turnin": "lepidodendron:pf_adv_book_ancyrocrinus",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_ancyrocrinus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_ancyrocrinus",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_ancyrocrinus",
 			"title": "Ancyrocrinus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ancyrocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_ancyrocrinus",
 			"type": "text",
 			"text": "Ancyrocrinus was a Devonian crinoid that was a suspension feeder. It lived attached to the seafloor and it had many little 'branches' extending from the top end of its stalk."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_ancyrocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_ancyrocrinus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_permian#base",
-      "Solid": "lepidodendron:fossil_permian#base",
-      "Translucent": "lepidodendron:fossil_permian#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_permian"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_permian_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_permian" },
+      {"model": "lepidodendron:fossiliferous_permian", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_permian_var" },
+      {"model": "lepidodendron:fossiliferous_permian_var", "y": 180 }
     ]
   }
 }

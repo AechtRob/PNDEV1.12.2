@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_devonian#base",
-      "Solid": "lepidodendron:fossil_devonian#base",
-      "Translucent": "lepidodendron:fossil_devonian#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_devonian"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_devonian_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_devonian" },
+      {"model": "lepidodendron:fossiliferous_devonian", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_devonian_var" },
+      {"model": "lepidodendron:fossiliferous_devonian_var", "y": 180 }
     ]
   }
 }

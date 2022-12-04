@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_pleistocene#base",
-      "Solid": "lepidodendron:fossil_pleistocene#base",
-      "Translucent": "lepidodendron:fossil_pleistocene#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_pleistocene_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_pleistocene" },
+      {"model": "lepidodendron:fossiliferous_pleistocene", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_pleistocene_var" },
+      {"model": "lepidodendron:fossiliferous_pleistocene_var", "y": 180 }
     ]
   }
 }

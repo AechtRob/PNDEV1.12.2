@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_caryocrinites",
 	"category": "lepidodendron:ordovician_static",
-	"turnin": "lepidodendron:pf_adv_book_caryocrinites",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_caryocrinites",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_caryocrinites",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_caryocrinites",
 			"title": "Caryocrinites",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Rhombifera$(br)>Caryocrinitidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_caryocrinites",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_caryocrinites",
 			"type": "text",
 			"text": "Caryocrinites is a crinoid looking blastoid that grew relatively tall. It had a bulb on the end of its stalk with arms extending from it. It probably lived a life similar to other crinoids and blastoids."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_caryocrinites",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_caryocrinites",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

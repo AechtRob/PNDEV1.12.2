@@ -1467,7 +1467,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F * 0.5F,0.8F * 0.5F,0.8F * 0.5F);
+                        GlStateManager.scale(0.8F,0.8F,0.8F);
                         this.bindTexture(TEXTURE_CRYPTOMARTUS);
                         modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }

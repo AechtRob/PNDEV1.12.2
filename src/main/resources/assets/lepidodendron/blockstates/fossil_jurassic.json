@@ -1,96 +1,10 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:multi-layer",
-    "custom": {
-      "base": "lepidodendron:fossil_jurassic#base",
-      "Solid": "lepidodendron:fossil_jurassic#base",
-      "Translucent": "lepidodendron:fossil_jurassic#trans"
-    },
-    "transform": "forge:default-block"
-  },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}],
-    "base": [
-      { "model": "stone" },
-      { "model": "stone_mirrored" },
-      { "model": "stone", "y": 180 },
-      { "model": "stone_mirrored", "y": 180 }
-    ],
-    "trans": [
-      {
-        "model": "lepidodendron:fossiliferous_jurassic"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var"
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "x": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "x": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "x": 90,
-        "y": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      },
-      {
-        "model": "lepidodendron:fossiliferous_jurassic_var",
-        "x": 90,
-        "y": 90,
-        "z": 90
-      }
+    "normal": [
+      {"model": "lepidodendron:fossiliferous_jurassic" },
+      {"model": "lepidodendron:fossiliferous_jurassic", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_jurassic_var" },
+      {"model": "lepidodendron:fossiliferous_jurassic_var", "y": 180 }
     ]
   }
 }
