@@ -83,7 +83,12 @@ public class LepidodendronConfig {
 
     public static String[] jarMobs = new String[0];
 
-    public static String[] dimPrecambrianMobsPF = new String[]{"lepidodendron:prehistoric_flora_jellyfish_precambrian:8:28","lepidodendron:prehistoric_flora_dickinsonia:2:42","lepidodendron:prehistoric_flora_kimberella:3:48","lepidodendron:prehistoric_flora_eoandromeda:10:40","lepidodendron:prehistoric_flora_parvancorina:3:50","lepidodendron:prehistoric_flora_spriggina:3:50","lepidodendron:prehistoric_flora_yilingia:2:55","lepidodendron:prehistoric_flora_yorgia:3:50"};
+    public static String[] dimHadeanMobsPF = new String[0];
+    public static String[] dimArcheanMobsPF = new String[0];
+    public static String[] dimPaleoproterozoicMobsPF = new String[0];
+    public static String[] dimMesoproterozoicMobsPF = new String[0];
+    public static String[] dimNeoproterozoicMobsPF = new String[0];
+    public static String[] dimEdiacaranMobsPF = new String[]{"lepidodendron:prehistoric_flora_jellyfish_precambrian:8:7","lepidodendron:prehistoric_flora_dickinsonia:2:10","lepidodendron:prehistoric_flora_kimberella:3:12","lepidodendron:prehistoric_flora_eoandromeda:10:10","lepidodendron:prehistoric_flora_parvancorina:3:13","lepidodendron:prehistoric_flora_spriggina:3:12","lepidodendron:prehistoric_flora_yilingia:2:14","lepidodendron:prehistoric_flora_yorgia:3:13"};
 
     public static String[] dimCambrianMobsPF = new String[]{"lepidodendron:prehistoric_flora_acadoaradoxides:3:40:3","lepidodendron:prehistoric_flora_alacaris:3:40:3","lepidodendron:prehistoric_flora_anomalocaris:1:40:2","lepidodendron:prehistoric_flora_banffia:5:40:3","lepidodendron:prehistoric_flora_cambroraster:3:40:3","lepidodendron:prehistoric_flora_canadaspis:3:40:3","lepidodendron:prehistoric_flora_canadia:3:40:2","lepidodendron:prehistoric_flora_ellipsocephalus:3:40:3","lepidodendron:prehistoric_flora_elrathia:3:40:3","lepidodendron:prehistoric_flora_hallucigenia:3:40:2","lepidodendron:prehistoric_flora_helmetia:3:40:3","lepidodendron:prehistoric_flora_kerygmachela:3:40:2","lepidodendron:prehistoric_flora_kodymirus:3:40:2","lepidodendron:prehistoric_flora_lochmanolenellus:4:40:3","lepidodendron:prehistoric_flora_marrella:8:40:2","lepidodendron:prehistoric_flora_metaspriggina:8:40:3","lepidodendron:prehistoric_flora_nectocaris:6:40:3","lepidodendron:prehistoric_flora_odaraia:3:40:3","lepidodendron:prehistoric_flora_odontogriphus:3:40:2","lepidodendron:prehistoric_flora_opabinia:2:40:3","lepidodendron:prehistoric_flora_orthrozanclus:6:40:2","lepidodendron:prehistoric_flora_ottoia:2:40:2","lepidodendron:prehistoric_flora_palaeojelly1:1:40:2","lepidodendron:prehistoric_flora_palaeojelly2:1:40:2","lepidodendron:prehistoric_flora_palaeojelly3:1:40:2","lepidodendron:prehistoric_flora_paradoxides:3:40:3","lepidodendron:prehistoric_flora_phantaspis:3:40:3","lepidodendron:prehistoric_flora_pikaia:8:40:3","lepidodendron:prehistoric_flora_profallotaspis:4:40:2","lepidodendron:prehistoric_flora_siberion:3:40:2","lepidodendron:prehistoric_flora_sidneyia:3:40:3","lepidodendron:prehistoric_flora_tegopelte:3:40:3","lepidodendron:prehistoric_flora_tokummia:3:40:3","lepidodendron:prehistoric_flora_wiwaxia:6:40:3","lepidodendron:prehistoric_flora_xenusion:3:40:2","lepidodendron:prehistoric_flora_yawunik:6:40:3","lepidodendron:prehistoric_flora_yohoia:8:40:3"};
     public static String[] dimCambrianEstuaryMobsPF = new String[]{"lepidodendron:prehistoric_flora_amplectobelua:1:40:3","lepidodendron:prehistoric_flora_batofasciculus:1:40:3","lepidodendron:prehistoric_flora_bushizheia:3:40:3","lepidodendron:prehistoric_flora_canadaspis:3:40:3","lepidodendron:prehistoric_flora_diania:3:40:3","lepidodendron:prehistoric_flora_eoredlichia:3:40:3","lepidodendron:prehistoric_flora_fortiforceps:4:40:3","lepidodendron:prehistoric_flora_gemmactena:3:40:3","lepidodendron:prehistoric_flora_haikouichthys:4:40:3","lepidodendron:prehistoric_flora_jianshanopodia:3:40:3","lepidodendron:prehistoric_flora_laminacaris:1:40:3","lepidodendron:prehistoric_flora_lyrarapax:3:40:3","lepidodendron:prehistoric_flora_microdictyon:3:40:3","lepidodendron:prehistoric_flora_nectocaris:6:40:3","lepidodendron:prehistoric_flora_omnidens:1:25:3","lepidodendron:prehistoric_flora_palaeojelly4:1:40:3","lepidodendron:prehistoric_flora_parapeytoia:2:40:3","lepidodendron:prehistoric_flora_paucipodia:3:40:3","lepidodendron:prehistoric_flora_pomatrum:8:40:3","lepidodendron:prehistoric_flora_retifacies:5:40:3","lepidodendron:prehistoric_flora_sidneyia:3:40:3","lepidodendron:prehistoric_flora_synophalos{chain:8}:16:40:3","lepidodendron:prehistoric_flora_vetulicola:4:40:3","lepidodendron:prehistoric_flora_wiwaxia:6:40:3","lepidodendron:prehistoric_flora_yunnanozoon:8:40:3"};
@@ -142,7 +147,7 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsMountainsPF = new String[]{"lepidodendron:prehistoric_flora_austriadactylus:2:1:1","lepidodendron:prehistoric_flora_clevosaurus:2:2:1","lepidodendron:prehistoric_flora_coelophysis:1:-1:1","lepidodendron:prehistoric_flora_eudimorphodon:2:1:1","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_lystrosaurus:3:2:1","lepidodendron:prehistoric_flora_morganucodon:3:5:1","lepidodendron:prehistoric_flora_roachoid_arid:5:5:1"};
 
     //------------ Fossils and Archeology mobs:
-    public static String[] dimPrecambrianMobsFA = new String[0];
+    public static String[] dimEdiacaranMobsFA = new String[0];
 
     public static String[] dimCambrianMobsFA = new String[0];
     public static String[] dimCambrianEstuaryMobsFA = new String[0];
@@ -198,7 +203,7 @@ public class LepidodendronConfig {
     //------------
 
     //------------ Reborn mobs:
-    public static String[] dimPrecambrianMobsReborn = new String[0];
+    public static String[] dimEdiacaranMobsReborn = new String[0];
 
     public static String[] dimCambrianMobsReborn = new String[0];
     public static String[] dimCambrianEstuaryMobsReborn = new String[0];

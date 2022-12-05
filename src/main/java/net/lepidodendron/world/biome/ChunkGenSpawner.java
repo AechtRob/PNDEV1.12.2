@@ -8,13 +8,11 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.material.Material;
@@ -70,16 +68,45 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                 //Biome biome = world.getBiome(pos.add(16, 0, 16)); //move to the centre of the 2x2 of chunks we are populating so the biome is more "likely" to be right
                 Biome biome = world.getBiome(spawnPos);
                 //System.err.println("chunkSpawn " + world.getChunk(pos).x + " " + world.getChunk(pos).z + " biome: " + biome.getBiomeName());
-                if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
-                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_creek")) {
+                if (biome instanceof BiomePrecambrian) {
+                    if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+                        if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                            MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimHadeanMobsPF);
+                        }
+                    }
+                //} else if (biome instanceof BiomePrecambrian) {
+                    else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+                        if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                            MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimArcheanMobsPF);
+                        }
+                    }
+                //} else if (biome instanceof BiomePrecambrian) {
+                    else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic) {
+                        if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                            MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPaleoproterozoicMobsPF);
+                        }
+                    }
+                //} else if (biome instanceof BiomePrecambrian) {
+                    else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic) {
+                        if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                            MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimMesoproterozoicMobsPF);
+                        }
+                    }
+                //} else if (biome instanceof BiomePrecambrian) {
+                    else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Neoproterozoic) {
+                        if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                            MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimNeoproterozoicMobsPF);
+                        }
+                    }
+                }
+
+               if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
-                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsPF);
-                    }
-                    if (LepidodendronConfig.doSpawnsFossilsArcheology) {
-                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsFA);
-                    }
-                    if (LepidodendronConfig.doSpawnsReborn) {
-                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimPrecambrianMobsReborn);
+                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimEdiacaranMobsPF);
                     }
                 } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
