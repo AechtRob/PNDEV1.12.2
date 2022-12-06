@@ -1,5 +1,5 @@
 {
-    "name": "Cryptomartus",
+    "name": "Anthracomartus",
     "read_by_default": true,
     "icon": "paleopedia:textures/cryptomartus_icon.png",
     "category": "lepidodendron:carboniferous_animal",
@@ -14,12 +14,12 @@
 	{
             "type": "image",
             "images": ["paleopedia:textures/Cryptomartus.png"],
-            "title": "Cryptomartus hindi"
+            "title": "Anthracomartus hindi"
         },
 	{
 		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
 		"type": "text",
-		"text": "Cryptomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head. "
+		"text": "Anthracomartus is a Carboniferous trigonotarbid which lived in the forested environments. It had a tick shaped body with a pointed head."
 	},
 	{
 		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
