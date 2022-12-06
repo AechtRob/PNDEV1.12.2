@@ -295,8 +295,19 @@ public class LepidodendronFogSubscribers {
 				return fog;
 			}
 			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Neoproterozoic) {
-				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")
-					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")) {
+					r = 177D / 255D;
+					g = 192D / 255D;
+					b = 216D / 255D;
+					r *= f2 * 0.94F + 0.06F;
+					g *= f2 * 0.94F + 0.06F;
+					b *= f2 * 0.91F + 0.09F;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+					
+				}
+				else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
 					r = 177D / 255D;
 					g = 192D / 255D;
 					b = 216D / 255D;
