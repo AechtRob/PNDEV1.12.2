@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
@@ -241,12 +242,30 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public int processTick;
 		public boolean hatchShut;
 		private int processTickTime = 600; //30 seconds to process
+		private int minEnergyNeeded = 500;
 
 		public double oligoExtend;
 		public double oligoAngle;
 		public double fogDensity;
 
+		public BlockPos getCentrifugePos() {
+			return pos.offset(world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+		}
+
 		public boolean canStartProcess() {
+
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						if (!centrifuge.hasEnergy(minEnergyNeeded)) {
+							return false;
+						}
+					}
+				}
+			}
+
 			//System.err.println("this.isProcessing " + this.isProcessing);
 			//System.err.println("this.getStackInSlot(2).getItem() " +this.getStackInSlot(2).getItem());
 			//System.err.println("this.getStackInSlot(0).getItem() " +this.getStackInSlot(0).getItem());
@@ -326,8 +345,15 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				//System.err.println("Process started");
 			}
 
-			if (this.isProcessing) {
+			if (this.isProcessing) { //We will allow the forge to run a ful cycle even if the power runs out :)
 				this.processTick ++;
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						centrifuge.drainEnergy(100);
+					}
+				}
 				updated = true;
 			}
 

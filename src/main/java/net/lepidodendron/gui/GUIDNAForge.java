@@ -3,6 +3,7 @@ package net.lepidodendron.gui;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockDNARecombinerCentrifuge;
 import net.lepidodendron.block.BlockDNARecombinerForge;
 import net.lepidodendron.item.ItemOligoPool;
 import net.lepidodendron.item.ItemPlaceableLiving;
@@ -375,7 +376,7 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             this.drawTexturedModalRect(k + 68, l + 25, 19,166, this.getProgressBarLength(), 6);
             if (LepidodendronConfig.machinesRF) {
                 this.drawTexturedModalRect(k + 20, l + 51 - 8, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 21, l + 52 + this.getRFHeight() - 8, 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 21, l + 52 + (24 - this.getRFHeight()) - 8, 0, 192, 16, this.getRFHeight());
             }
         }
 
@@ -383,10 +384,17 @@ public class GUIDNAForge extends ElementsLepidodendronMod.ModElement {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
-                    BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
-                    //return (int)Math.round(te.progressFraction() * 70D);
-                    double fraction = 0.5D;
-                    return (int)Math.round(fraction * 24D);
+                    BlockPos RFStorage = new BlockPos(x, y, z);
+                    RFStorage = RFStorage.offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+                            BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity2;
+                            //return (int)Math.round(te.progressFraction() * 70D);
+                            double fraction = te.getEnergyFraction();
+                            return (int) Math.round(fraction * 24D);
+                        }
+                    }
                 }
             }
             return 0;

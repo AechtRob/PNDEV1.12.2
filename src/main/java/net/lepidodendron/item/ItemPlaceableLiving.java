@@ -270,7 +270,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 								worldIn.setBlockState(blockpos.offset(raytraceresult.sideHit), block);
 								worldIn.playSound(playerIn, blockpos, SoundEvents.BLOCK_GRASS_PLACE, SoundCategory.BLOCKS, 1.0F, 1.0F);
 								if (!playerIn.isCreative()) {
-									itemstack.shrink(1);
+									//itemstack.shrink(1);
 								}
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
@@ -292,7 +292,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
 							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-								itemstack.shrink(1);
+								//itemstack.shrink(1);
 							}
 							if (result == EnumActionResult.SUCCESS) {
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
@@ -301,7 +301,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 								//Try the right click action instead:
 								ActionResult actionResult = item.onItemRightClick(worldIn, playerIn, handIn);
 								if (!playerIn.isCreative() && actionResult.getResult() == EnumActionResult.SUCCESS) {
-									itemstack.shrink(1);
+									//itemstack.shrink(1);
 								}
 								if (actionResult.getResult() == EnumActionResult.SUCCESS) {
 									return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
@@ -324,7 +324,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 											result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
 											if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-												itemstack.shrink(1);
+												//itemstack.shrink(1);
 											}
 											if (result == EnumActionResult.SUCCESS) {
 												return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);

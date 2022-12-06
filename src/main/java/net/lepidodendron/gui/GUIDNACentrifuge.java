@@ -371,7 +371,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
             int yOffsetter = 0;
             if (LepidodendronConfig.machinesRF) {
                 this.drawTexturedModalRect(k + 21, l + 51 - 8, 0,166, 18, 26);
-                this.drawTexturedModalRect(k + 22, l + 52 + this.getRFHeight() - 8, 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 22, l + 52 + (24 - this.getRFHeight()) - 8, 0, 192, 16, this.getRFHeight());
             }
             else {
                 yOffsetter = 12;
@@ -391,7 +391,7 @@ public class GUIDNACentrifuge extends ElementsLepidodendronMod.ModElement {
                 if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
                     BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
                     //return (int)Math.round(te.progressFraction() * 70D);
-                    double fraction = 0.5D;
+                    double fraction = te.getEnergyFraction();
                     return (int)Math.round(fraction * 24D);
                 }
             }

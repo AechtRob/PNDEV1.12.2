@@ -5,6 +5,7 @@ import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -165,6 +166,15 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(2.0, 0.25, 2.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override

@@ -20,6 +20,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -28,14 +31,19 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
@@ -53,6 +61,11 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new BlockCustom().setRegistryName("acid_bath_end"));
 		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(BlockAcidBathEnd.TileEntityAcidBathEnd.class, "lepidodendron:tileentityacid_bath_end");
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -79,6 +92,37 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean hasTileEntity(IBlockState state) {
+			return true;
+		}
+
+		@Nullable
+		@Override
+		public TileEntity createTileEntity(World world, IBlockState state) {
+			return new BlockAcidBathEnd.TileEntityAcidBathEnd();
+		}
+
+		public BlockAcidBathEnd.TileEntityAcidBathEnd createNewTileEntity(World worldIn, int meta) {
+			return new BlockAcidBathEnd.TileEntityAcidBathEnd();
+		}
+
+		@Override
+		public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+			super.eventReceived(state, worldIn, pos, eventID, eventParam);
+			TileEntity tileentity = worldIn.getTileEntity(pos);
+			return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
+		}
+
+		@Override
+		public void breakBlock(World world, BlockPos pos, IBlockState state) {
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity != null) {
+				world.removeTileEntity(pos);
+			}
+			super.breakBlock(world, pos, state);
+		}
+
+		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 			return MapColor.GRAY;
 		}
@@ -99,18 +143,14 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
 				return AABBN;
-			}
-			else if (state.getValue(FACING) == EnumFacing.SOUTH) {
+			} else if (state.getValue(FACING) == EnumFacing.SOUTH) {
 				return AABBS;
-			}
-			else if (state.getValue(FACING) == EnumFacing.EAST) {
+			} else if (state.getValue(FACING) == EnumFacing.EAST) {
 				return AABBE;
-			}
-			else if (state.getValue(FACING) == EnumFacing.WEST) {
+			} else if (state.getValue(FACING) == EnumFacing.WEST) {
 				return AABBW;
-			}
-			else {
-				return new AxisAlignedBB(0,0,0,1,1,1);
+			} else {
+				return new AxisAlignedBB(0, 0, 0, 1, 1, 1);
 			}
 		}
 
@@ -118,14 +158,11 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 		public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBN);
-			}
-			else if (state.getValue(FACING) == EnumFacing.SOUTH) {
+			} else if (state.getValue(FACING) == EnumFacing.SOUTH) {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBS);
-			}
-			else if (state.getValue(FACING) == EnumFacing.EAST) {
+			} else if (state.getValue(FACING) == EnumFacing.EAST) {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBE);
-			}
-			else if (state.getValue(FACING) == EnumFacing.WEST) {
+			} else if (state.getValue(FACING) == EnumFacing.WEST) {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, AABBW);
 			}
 
@@ -143,8 +180,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 			if (endState.getBlock() != BlockAcidBath.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
-			}
-			else {
+			} else {
 				if (endState.getValue(FACING) != state.getValue(FACING).getOpposite()) {
 					worldIn.destroyBlock(pos, true);
 					return;
@@ -202,8 +238,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 
 		@SideOnly(Side.CLIENT)
 		@Override
-		public BlockRenderLayer getRenderLayer()
-		{
+		public BlockRenderLayer getRenderLayer() {
 			return BlockRenderLayer.CUTOUT;
 		}
 
@@ -250,8 +285,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public boolean isFullCube(IBlockState state)
-		{
+		public boolean isFullCube(IBlockState state) {
 			return false;
 		}
 
@@ -271,7 +305,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 			if (te == null || (!(te instanceof BlockAcidBath.TileEntityAcidBath))) {
 				return false;
 			}
-			IFluidHandler handler = ((BlockAcidBath.TileEntityAcidBath)te).getCapabilityBucket(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, facing);
+			IFluidHandler handler = ((BlockAcidBath.TileEntityAcidBath) te).getCapabilityBucket(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, facing);
 			ItemStack stack = playerIn.getHeldItem(hand);
 
 			if (FluidUtil.getFluidContained(stack) != null) {
@@ -288,4 +322,162 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
+	public static class TileEntityAcidBathEnd extends TileEntity implements ITickable, IEnergyStorage {
+
+		@Override
+		public void update() {
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockAcidBathEnd.TileEntityAcidBathEnd) {
+					BlockAcidBathEnd.TileEntityAcidBathEnd te = (BlockAcidBathEnd.TileEntityAcidBathEnd) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@Override
+		public void readFromNBT(NBTTagCompound compound) {
+			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
+		}
+
+		@Override
+		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
+			return compound;
+		}
+
+		@Override
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
+			return (oldState.getBlock() != newSate.getBlock());
+		}
+
+		@Override
+		public SPacketUpdateTileEntity getUpdatePacket() {
+			return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
+		}
+
+		@Override
+		public NBTTagCompound getUpdateTag() {
+			return this.writeToNBT(new NBTTagCompound());
+		}
+
+		@Override
+		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+			this.readFromNBT(pkt.getNbtCompound());
+		}
+
+		@Override
+		public void handleUpdateTag(NBTTagCompound tag) {
+			this.readFromNBT(tag);
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 50000;
+		protected int maxReceive = 500;
+		protected int maxExtract = 250;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+				return true;
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Nullable
+		@Override
+		public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing)
+		{
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockAcidBathEnd.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
+		}
+
+	}
 }

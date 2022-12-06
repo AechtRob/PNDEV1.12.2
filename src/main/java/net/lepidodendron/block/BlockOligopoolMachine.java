@@ -42,6 +42,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -239,16 +241,23 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntityOligopoolMachine extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityOligopoolMachine extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
 
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
 		protected boolean isProcessing;
 		public int processTick;
 		private int processTickTime = 200; //10 seconds
+		private int minEnergyNeeded = 200;
 
 		public boolean canStartProcess() {
-
+			
+			if (LepidodendronConfig.machinesRF) {
+				if (!this.hasEnergy(minEnergyNeeded)) {
+					return false;
+				}
+			}
+			
 			if (this.isProcessing) {
 				return false;
 			}
@@ -299,6 +308,31 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockOligopoolMachine.TileEntityOligopoolMachine) {
+					BlockOligopoolMachine.TileEntityOligopoolMachine te = (BlockOligopoolMachine.TileEntityOligopoolMachine) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockOligopoolMachine.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
 			boolean updated = false;
 
 			//System.err.println("Tick: " + this.processTick);
@@ -310,8 +344,9 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 				updated = true;
 			}
 
-			if (this.isProcessing) {
+			if (this.isProcessing && this.hasEnergy(minEnergyNeeded)) {
 				this.processTick ++;
+				this.drainEnergy(40);
 				//if (this.getWorld().rand.nextInt(10) == 0) {
 				//	world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 				//}
@@ -389,6 +424,9 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -404,6 +442,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			if (!this.checkLootAndWrite(compound)) {
@@ -526,7 +565,111 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 				}
 
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockOligopoolMachine.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockOligopoolMachine.TileEntityOligopoolMachine) {
+					BlockOligopoolMachine.TileEntityOligopoolMachine te = (BlockOligopoolMachine.TileEntityOligopoolMachine) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockOligopoolMachine.TileEntityOligopoolMachine) {
+					BlockOligopoolMachine.TileEntityOligopoolMachine te = (BlockOligopoolMachine.TileEntityOligopoolMachine) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 50000;
+		protected int maxReceive = 500;
+		protected int maxExtract = 250;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockOligopoolMachine.BlockCustom.FACING).getOpposite();
+			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+				return true;
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
 		}
 
 	}

@@ -36,6 +36,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -241,7 +243,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		}
 	}
 
-	public static class TileEntityDNARecombinerCentrifuge extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityDNARecombinerCentrifuge extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
 
 		private NonNullList<ItemStack> centrifugeContents = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 
@@ -256,6 +258,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		private int processCooldown = 200; //10 seconds to startup/slowdown
 		private int processTickTime = 600; //30 seconds to spin (including startup/cooldown)
 		public double cooldownDegrees = 360 * 7; //during warmup and cooldown we rotate this amount
+		private int minEnergyNeeded = 500;
 
 		public float lidAngle;
 		public float prevLidAngle;
@@ -264,7 +267,13 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 
 		public boolean canStartProcess() {
-
+			
+			if (LepidodendronConfig.machinesRF) {
+				if (!this.hasEnergy(minEnergyNeeded)) {
+					return false;
+				}
+			}
+			
 			if ((!this.isProcessing)
 					&& (!isCentrifugePaused())
 					&& (!this.isLocked)
@@ -385,6 +394,31 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void update() {
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+					BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.rotateY());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing.rotateY().rotateY().rotateY());
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
 			boolean updated = false;
 
 			int i = this.pos.getX();
@@ -460,8 +494,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				updated = true;
 			}
 
-			if (this.isProcessing && this.processTick < this.processTickTime) {
+			if (this.isProcessing && this.processTick < this.processTickTime) { //We will allow the centrifuge to run a ful cycle even if the power runs out :)
 				this.processTick++;
+				this.drainEnergy(100);
 
 				//Calculate the rotation needed:
 				this.centrifugeAngle = floorAngle(this.getRotationAngle(this.processTick));
@@ -564,6 +599,9 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			if (compound.hasKey("lidAngle")) {
 				this.lidAngle = compound.getFloat("lidAngle");
 			}
@@ -600,6 +638,7 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setFloat("lidAngle", this.lidAngle);
 			compound.setFloat("prevLidAngle", this.prevLidAngle);
 			compound.setInteger("numPlayersUsing", this.numPlayersUsing);
@@ -765,7 +804,111 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				}
 
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+					BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+					BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 50000;
+		protected int maxReceive = 500;
+		protected int maxExtract = 250;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
+			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+				return true;
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
 		}
 
 	}

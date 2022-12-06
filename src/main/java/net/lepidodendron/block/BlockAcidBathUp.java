@@ -326,11 +326,18 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		protected int trayheight;
 		protected boolean isProcessing;
 		protected int processTick;
+		private int minEnergyNeeded = 100;
 		private int trayLiftTickTime = 120; //6 seconds to move the tray
 		private int processTickTime = 960; //48 seconds to process the tray fully
 		//private int processTickTime = 140; //TEST
 
 		public boolean canStartProcess() {
+
+			if (LepidodendronConfig.machinesRF) {
+				if (!this.hasEnergy(minEnergyNeeded)) {
+					return false;
+				}
+			}
 
 			if ((!isProcessing)
 					&& (!isTankPaused())
@@ -360,8 +367,8 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 
 		public boolean canFizz() {
 			return this.isProcessing
-				&& (this.processTick < (this.processTickTime - this.trayLiftTickTime))
-				&& (this.processTick > this.trayLiftTickTime);
+					&& (this.processTick < (this.processTickTime - this.trayLiftTickTime))
+					&& (this.processTick > this.trayLiftTickTime);
 		}
 
 		@Override
@@ -407,15 +414,14 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				updated = true;
 			}
 
-			if (this.isProcessing && this.processTick < this.processTickTime) {
-				this.processTick ++;
+			if (this.isProcessing && this.processTick < this.processTickTime && (this.hasEnergy(minEnergyNeeded))) {
+				this.processTick++;
+				this.drainEnergy(10);
 				if (this.processTick <= this.trayLiftTickTime) {
-					this.trayheight ++;
-				}
-				else if (this.processTick >= (this.processTickTime - this.trayLiftTickTime)) {
-					this.trayheight --;
-				}
-				else {
+					this.trayheight++;
+				} else if (this.processTick >= (this.processTickTime - this.trayLiftTickTime)) {
+					this.trayheight--;
+				} else {
 					if (this.getWorld().rand.nextInt(10) == 0) {
 						world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 					}
@@ -431,8 +437,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					ItemStack result = itemChooser(getStackInSlot(5));
 					if (result == null) {
 						setInventorySlotContents(5, ItemStack.EMPTY);
-					}
-					else {
+					} else {
 						setInventorySlotContents(5, result);
 					}
 				}
@@ -441,8 +446,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					ItemStack result = itemChooser(getStackInSlot(6));
 					if (result == null) {
 						setInventorySlotContents(6, ItemStack.EMPTY);
-					}
-					else {
+					} else {
 						setInventorySlotContents(6, result);
 					}
 				}
@@ -451,8 +455,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					ItemStack result = itemChooser(getStackInSlot(7));
 					if (result == null) {
 						setInventorySlotContents(7, ItemStack.EMPTY);
-					}
-					else {
+					} else {
 						setInventorySlotContents(7, result);
 					}
 				}
@@ -461,8 +464,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					ItemStack result = itemChooser(getStackInSlot(8));
 					if (result == null) {
 						setInventorySlotContents(8, ItemStack.EMPTY);
-					}
-					else {
+					} else {
 						setInventorySlotContents(8, result);
 					}
 				}
@@ -1180,7 +1182,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		public ItemStack itemChooser(ItemStack stack) {
 			ItemStack finalItem = null;
 			String resLoc = "";
-			float junk = (float)LepidodendronConfig.junkFossil;
+			float junk = (float) LepidodendronConfig.junkFossil;
 			if (junk < 0F) {
 				junk = 0F;
 			}
@@ -1239,34 +1241,34 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 
 		public ItemStack getFailStack(ItemStack stack) {
 			//if (world.rand.nextInt(5) != 0) {
-				ItemStack finalItem = null;
-				if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(1);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(2);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(3);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(4);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(5);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(6);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(7);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(8);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(9);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(10);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(11);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(12);
-				} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
-					return AcidBathOutputJunk.fossilAcidJunk(13);
-				}
+			ItemStack finalItem = null;
+			if (stack.getItem() == (new ItemStack(ItemFossilPrecambrian.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(1);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilCambrian.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(2);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilOrdovician.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(3);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilSilurian.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(4);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilDevonian.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(5);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilCarboniferous.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(6);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilPermian.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(7);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilTriassic.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(8);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilJurassic.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(9);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilCretaceous.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(10);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilPaleogene.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(11);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilNeogene.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(12);
+			} else if (stack.getItem() == (new ItemStack(ItemFossilPleistocene.block, 1)).getItem()) {
+				return AcidBathOutputJunk.fossilAcidJunk(13);
+			}
 			//}
 			return stack;
 		}
@@ -1289,7 +1291,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 
 		public double progressFraction() {
 			if (this.isProcessing) {
-				return (double)this.processTick / (double)this.processTickTime;
+				return (double) this.processTick / (double) this.processTickTime;
 			}
 			return 0;
 		}
@@ -1299,14 +1301,11 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 			EnumFacing face = EnumFacing.NORTH;
 			if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.NORTH) {
 				face = EnumFacing.SOUTH;
-			}
-			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
+			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.SOUTH) {
 				face = EnumFacing.NORTH;
-			}
-			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
+			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.EAST) {
 				face = EnumFacing.WEST;
-			}
-			else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
+			} else if (state.getValue(BlockAcidBathUp.BlockCustom.FACING) == EnumFacing.WEST) {
 				face = EnumFacing.EAST;
 			}
 			if (this.getWorld().isSidePowered(this.getPos().offset(face), face.getOpposite())
@@ -1432,8 +1431,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate)
-		{
+		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
 			return (oldState.getBlock() != newSate.getBlock());
 		}
 
@@ -1456,6 +1454,42 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void handleUpdateTag(NBTTagCompound tag) {
 			this.readFromNBT(tag);
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+					BlockPos RFStorage = this.getPos().down().offset(world.getBlockState(this.getPos()).getValue(BlockAcidBathUp.BlockCustom.FACING));
+					TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+					if (tileEntity2 != null) {
+						if (tileEntity2 instanceof BlockAcidBathEnd.TileEntityAcidBathEnd) {
+							BlockAcidBathEnd.TileEntityAcidBathEnd te = (BlockAcidBathEnd.TileEntityAcidBathEnd) tileEntity2;
+							te.extractEnergy(energy,false);
+						}
+					}
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
+					BlockPos RFStorage = this.getPos().down().offset(world.getBlockState(this.getPos()).getValue(BlockAcidBathUp.BlockCustom.FACING));
+					TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+					if (tileEntity2 != null) {
+						if (tileEntity2 instanceof BlockAcidBathEnd.TileEntityAcidBathEnd) {
+							BlockAcidBathEnd.TileEntityAcidBathEnd te = (BlockAcidBathEnd.TileEntityAcidBathEnd) tileEntity2;
+							return te.getEnergyStored() > minEnergy;
+						}
+					}
+				}
+			}
+			return false;
 		}
 
 	}

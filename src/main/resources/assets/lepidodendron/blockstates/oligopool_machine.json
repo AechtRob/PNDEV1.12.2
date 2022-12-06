@@ -49,7 +49,8 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:oligopool_machine_bottom_rf"
+          "model": "lepidodendron:oligopool_machine_bottom_rf",
+          "y": 90
         }
       ]
     },
@@ -60,7 +61,7 @@
       "apply": [
         {
           "model": "lepidodendron:oligopool_machine_bottom_rf",
-          "y": 180
+          "y": 270
         }
       ]
     },
@@ -71,7 +72,7 @@
       "apply": [
         {
           "model": "lepidodendron:oligopool_machine_bottom_rf",
-          "y": 90
+          "y": 180
         }
       ]
     },
@@ -81,8 +82,7 @@
       },
       "apply": [
         {
-          "model": "lepidodendron:oligopool_machine_bottom_rf",
-          "y": 270
+          "model": "lepidodendron:oligopool_machine_bottom_rf"
         }
       ]
     }

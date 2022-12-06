@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_palaeodictyoptera_dunbaria",
 			"title": "Dunbaria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Dunbaria$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
+			"text": "$(l)Temporal Range:$() early Permian$(br2)$(l)Habitat:$() Terrestrial$(br2)>Insecta$(br)>Palaeodictyoptera$(br)>Spilapteridae"
 		},
 		{
 			"type": "image",

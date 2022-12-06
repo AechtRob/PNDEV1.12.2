@@ -327,11 +327,5 @@ import java.util.Random;
 		return false;
 	}
 
-	@Override
-	public Block.EnumOffsetType getOffsetType()
-		{
-			return Block.EnumOffsetType.XZ;
-		}
-
 }
 
