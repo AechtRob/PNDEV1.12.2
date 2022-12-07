@@ -558,23 +558,18 @@ public class ModelSmok extends AdvancedModelBaseExtended {
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraSmok entity = (EntityPrehistoricFloraSmok) entitylivingbaseIn;
-
-
-
-
-
         int animCycle = 50;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*50))*-3), body1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*50))*-5)), body1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*50))*-3)));
+        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*50))*-3), body1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*50))*5), body1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*50))*3));
         this.body1.offsetX = (float) Math.toRadians(0);
         this.body1.offsetY = (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*50))*-0.5);
-        this.body1.offsetZ = (float) Math.toRadians(0);
+        this.body1.offsetZ = (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*50))*2);
 
 
-        this.setRotateAngle(chest1, chest1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*50))*-2), chest1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*-5)), chest1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*20))*3)));
+        this.setRotateAngle(chest1, chest1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*50))*-2), chest1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*5), chest1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*20))*-3));
 
 
         this.setRotateAngle(ArmL1, ArmL1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/50D)*2.5D)-1)*360/2.5-((Math.PI/180)*50))*5), ArmL1.rotateAngleY + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/50D)*2.5D)-1)*360/2.5-((Math.PI/180)*50))*5), ArmL1.rotateAngleZ + (float) Math.toRadians(0));
@@ -595,19 +590,19 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(0), HandR.rotateAngleY + (float) Math.toRadians(0), HandR.rotateAngleZ + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*50))*5));
 
 
-        this.setRotateAngle(neck1, neck1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-0)*2), neck1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*110))*5)), neck1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*-3)));
+        this.setRotateAngle(neck1, neck1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-0)*2), neck1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*110))*-5), neck1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*3));
 
 
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*60))*4), neck2.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*210))*-3)), neck2.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*60))*4), neck2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*210))*3), neck2.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(head1, head1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*100))*-3), head1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*-3)), head1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*3)));
+        this.setRotateAngle(head1, head1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*100))*-3), head1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*3), head1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*30))*-3));
 
 
         this.setRotateAngle(jaw1, jaw1.rotateAngleX + (float) Math.toRadians(-1+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*50))*0.5), jaw1.rotateAngleY + (float) Math.toRadians(0), jaw1.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(basin1, basin1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*30))*4), basin1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*80))*-3)), basin1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*80))*2)));
+        this.setRotateAngle(basin1, basin1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5+((Math.PI/180)*30))*4), basin1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*90))*-3), basin1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*90))*-2));
 
 
 
@@ -649,7 +644,7 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             yy = Math.toRadians(Math.sin((Math.PI/180)*2.5D*((double)tickAnim/50D)*360/0.2)*0.5) + (((tickAnim - 5D) / 5D) * (-1D-(Math.sin((Math.PI/180)*2.5D*((double)tickAnim/50D)*360/0.2)*0.5D)));
             zz = -0.5D + (((tickAnim - 5D) / 5D) * (0D-(-0.5D)));
         }
-        if (tickAnim >= 10 && tickAnim < 25) {
+        else if (tickAnim >= 10 && tickAnim < 25) {
             xx = 0D + (((tickAnim - 10D) / 15D) * (0D-(0D)));
             yy = -1D + (((tickAnim - 10D) / 15D) * (1D-(-1D)));
             zz = 0D + (((tickAnim - 10D) / 15D) * (1D-(0D)));
@@ -742,12 +737,12 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 25D) / 10D) * (0D-(0D)));
         }
         else if (tickAnim >= 35 && tickAnim < 43) {
-            xx = 72.5D + (((tickAnim - 35D) / 8D) * (-20D-(72.5D)));
+            xx = 72.5D + (((tickAnim - 35D) / 8D) * (20D-(72.5D)));
             yy = 0D + (((tickAnim - 35D) / 8D) * (0D-(0D)));
             zz = 0D + (((tickAnim - 35D) / 8D) * (0D-(0D)));
         }
         else if (tickAnim >= 43 && tickAnim < 50) {
-            xx = -20D + (((tickAnim - 43D) / 7D) * (25D-(-20D)));
+            xx = 20D + (((tickAnim - 43D) / 7D) * (25D-(20D)));
             yy = 0D + (((tickAnim - 43D) / 7D) * (0D-(0D)));
             zz = 0D + (((tickAnim - 43D) / 7D) * (0D-(0D)));
         }
@@ -910,9 +905,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 30D) / 5D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.LegR.offsetX = (float) Math.toRadians(xx);
         this.LegR.offsetY = (float) Math.toRadians(yy);
@@ -927,12 +922,12 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 0D) / 10D) * (0D-(0D)));
         }
         else if (tickAnim >= 10 && tickAnim < 18) {
-            xx = 72.5D + (((tickAnim - 10D) / 8D) * (-20D-(72.5D)));
+            xx = 72.5D + (((tickAnim - 10D) / 8D) * (20D-(72.5D)));
             yy = 0D + (((tickAnim - 10D) / 8D) * (0D-(0D)));
             zz = 0D + (((tickAnim - 10D) / 8D) * (0D-(0D)));
         }
         else if (tickAnim >= 18 && tickAnim < 25) {
-            xx = -20D + (((tickAnim - 18D) / 7D) * (25D-(-20D)));
+            xx = 20D + (((tickAnim - 18D) / 7D) * (25D-(20D)));
             yy = 0D + (((tickAnim - 18D) / 7D) * (0D-(0D)));
             zz = 0D + (((tickAnim - 18D) / 7D) * (0D-(0D)));
         }
@@ -960,9 +955,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 30D) / 5D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.FeetR.offsetX = (float) Math.toRadians(xx);
         this.FeetR.offsetY = (float) Math.toRadians(yy);
@@ -1000,43 +995,33 @@ public class ModelSmok extends AdvancedModelBaseExtended {
 
 
 
-        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*30))*-3), tail1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*120))*10)), tail1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*30))*3)));
+        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*30))*-3), tail1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5+((Math.PI/180)*80))*-10), tail1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*30))*3));
 
 
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*90))*-2), tail2.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*50))*-10)), tail2.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*90))*3)));
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*90))*-2), tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*90))*5), tail2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*90))*-3));
 
 
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*120))*-2), tail3.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*-10)), tail3.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*120))*3)));
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*120))*-2), tail3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*10), tail3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*120))*-3));
 
 
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*150))*-2), tail4.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*180))*-8)), tail4.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*5)));
-
-
-
-
-
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*720/2.5-((Math.PI/180)*150))*-2), tail4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*180))*8), tail4.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/50D)*2.5D)*360/2.5-((Math.PI/180)*150))*-5));
 
     }
 
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         EntityPrehistoricFloraSmok entity = (EntityPrehistoricFloraSmok) entitylivingbaseIn;
-
-
-
-
-
         int animCycle = 25;
         double tickAnim = (entity.ticksExisted + entity.getTickOffset()) - (int) (Math.floor((double) (entity.ticksExisted + entity.getTickOffset()) / (double) animCycle) * (double) animCycle) + partialTickTime;
         double xx = 0;
         double yy = 0;
         double zz = 0;
-        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25)*-5), body1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+50)*-6)), body1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+50)*-2)));
+        this.setRotateAngle(body1, body1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25)*-5), body1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*6), body1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*2));
         this.body1.offsetX = (float) Math.toRadians(0);
         this.body1.offsetY = (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25)*0.5);
-        this.body1.offsetZ = (float) Math.toRadians(0);
+        this.body1.offsetZ = (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25)*-2);
 
 
-        this.setRotateAngle(chest1, chest1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*60))*4), chest1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*4)), chest1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25)*3)));
+        this.setRotateAngle(chest1, chest1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*60))*4), chest1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*-4), chest1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25)*-3));
 
 
         this.setRotateAngle(ArmL1, ArmL1.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*90))*5), ArmL1.rotateAngleY + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+1)*360/1.25+((Math.PI/180)*90))*-5), ArmL1.rotateAngleZ + (float) Math.toRadians(-5));
@@ -1057,19 +1042,19 @@ public class ModelSmok extends AdvancedModelBaseExtended {
         this.setRotateAngle(HandR, HandR.rotateAngleX + (float) Math.toRadians(0), HandR.rotateAngleY + (float) Math.toRadians(0), HandR.rotateAngleZ + (float) Math.toRadians(-10+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)-0.1)*360/1.25)*10));
 
 
-        this.setRotateAngle(neck1, neck1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*160))*-8), neck1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*100))*-9)), neck1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*5))*-5)));
+        this.setRotateAngle(neck1, neck1.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*160))*-8), neck1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*100))*9), neck1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*5))*5));
 
 
-        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*100))*8), neck2.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*160))*5)), neck2.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(neck2, neck2.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*100))*8), neck2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*160))*-5), neck2.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(head1, head1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*170))*3), head1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*50))*5)), head1.rotateAngleZ + (float) Math.toRadians(0));
+        this.setRotateAngle(head1, head1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*170))*3), head1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*50))*-5), head1.rotateAngleZ + (float) Math.toRadians(0));
 
 
         this.setRotateAngle(jaw1, jaw1.rotateAngleX + (float) Math.toRadians(-1+Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*100))*0.5), jaw1.rotateAngleY + (float) Math.toRadians(0), jaw1.rotateAngleZ + (float) Math.toRadians(0));
 
 
-        this.setRotateAngle(basin1, basin1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*30))*5), basin1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*80))*5)), basin1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*80))*2)));
+        this.setRotateAngle(basin1, basin1.rotateAngleX + (float) Math.toRadians(-5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*30))*5), basin1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*80))*-5), basin1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*80))*-2));
 
 
 
@@ -1177,9 +1162,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 7D) / 2D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.LegL.offsetX = (float) Math.toRadians(xx);
         this.LegL.offsetY = (float) Math.toRadians(yy);
@@ -1227,9 +1212,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 7D) / 2D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.FeetL.offsetX = (float) Math.toRadians(xx);
         this.FeetL.offsetY = (float) Math.toRadians(yy);
@@ -1372,9 +1357,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 18D) / 3D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.LegR.offsetX = (float) Math.toRadians(xx);
         this.LegR.offsetY = (float) Math.toRadians(yy);
@@ -1422,9 +1407,9 @@ public class ModelSmok extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 18D) / 3D) * (0D-(0D)));
         }
         else {
-            xx = 0D;
-            yy = 0D;
-            zz =  0D;
+            xx = 0;
+            yy= 0;
+            zz = 0;
         }
         this.FeetR.offsetX = (float) Math.toRadians(xx);
         this.FeetR.offsetY = (float) Math.toRadians(yy);
@@ -1462,16 +1447,17 @@ public class ModelSmok extends AdvancedModelBaseExtended {
 
 
 
-        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*90))*-3), tail1.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*90))*5)), tail1.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*90))*3)));
+        this.setRotateAngle(tail1, tail1.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*90))*-3), tail1.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*90))*-5), tail1.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*90))*-3));
 
 
-        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*30))*3), tail2.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*5)), tail2.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*3)));
+        this.setRotateAngle(tail2, tail2.rotateAngleX + (float) Math.toRadians(Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25+((Math.PI/180)*30))*3), tail2.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*-5), tail2.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*50))*-3));
 
 
-        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*30))*5), tail3.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*30))*5)), tail3.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*30))*3)));
+        this.setRotateAngle(tail3, tail3.rotateAngleX + (float) Math.toRadians(5+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*30))*5), tail3.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*30))*-5), tail3.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25+((Math.PI/180)*30))*-3));
 
 
-        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*50))*5), tail4.rotateAngleY + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*5)), tail4.rotateAngleZ + (float) Math.toRadians(-(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*3)));
+        this.setRotateAngle(tail4, tail4.rotateAngleX + (float) Math.toRadians(10+Math.sin((Math.PI/180)*((((double)tickAnim/25D)*1.25D)+0.1)*720/1.25-((Math.PI/180)*50))*5), tail4.rotateAngleY + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*-5), tail4.rotateAngleZ + (float) Math.toRadians(Math.sin((Math.PI/180)*(((double)tickAnim/25D)*1.25D)*360/1.25-((Math.PI/180)*30))*-3));
+
 
     }
 

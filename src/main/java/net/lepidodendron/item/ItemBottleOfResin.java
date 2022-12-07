@@ -186,8 +186,12 @@ public class ItemBottleOfResin extends ElementsLepidodendronMod.ModElement {
 				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSpongeReefSticky.block.getDefaultState().withProperty(BlockSpongeReefSticky.FACING, iblockstate.getValue(BlockSpongeReef.FACING)), 2);}
 				resined = true;
 			}
-			else if (blockTarget == BlockSandMicrobial.block) {
-				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockSandMicrobialSticky.block.getDefaultState(), 2);}
+			else if (blockTarget == BlockStromatoporoideaReef.block) {
+				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockStromatoporoideaReefSticky.block.getDefaultState().withProperty(BlockSpongeReefSticky.FACING, iblockstate.getValue(BlockStromatoporoideaReef.FACING)), 2);}
+				resined = true;
+			}
+			else if (blockTarget == BlockBryozoanReef.block) {
+				if (!worldIn.isRemote) {worldIn.setBlockState(target, BlockBryozoanReefSticky.block.getDefaultState().withProperty(BlockSpongeReefSticky.FACING, iblockstate.getValue(BlockStromatoporoideaReef.FACING)), 2);}
 				resined = true;
 			}
 

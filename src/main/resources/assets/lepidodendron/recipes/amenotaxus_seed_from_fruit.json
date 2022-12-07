@@ -1,0 +1,13 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lepidodendron:amentotaxus_berries"
+    }
+  ],
+  "result": {
+    "item": "lepidodendron:amentotaxus_seed",
+    "count": 1
+  }
+}

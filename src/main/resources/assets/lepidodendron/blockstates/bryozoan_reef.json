@@ -1,0 +1,24 @@
+{
+	"multipart" : [
+		{	"when": { "facing": "north" },
+			"apply": [
+				{"model": "lepidodendron:bryozoan_reef"}
+			]
+		},
+		{	"when": { "facing": "east" },
+			"apply": [
+				{"model": "lepidodendron:bryozoan_reef", "y": 90 }
+			]
+		},
+		{	"when": { "facing": "south" },
+			"apply": [
+				{"model": "lepidodendron:bryozoan_reef", "y": 180 }
+			]
+		},
+		{	"when": { "facing": "west" },
+			"apply": [
+				{"model": "lepidodendron:bryozoan_reef", "y": 270 }
+			]
+		}
+	]
+}

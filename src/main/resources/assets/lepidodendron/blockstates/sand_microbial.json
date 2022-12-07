@@ -1,10 +1,13 @@
 {
   "variants": {
-    "normal": [
+    "snowy=false": [
       { "model": "lepidodendron:sand_microbial" },
       { "model": "lepidodendron:sand_microbial", "y": 90 },
       { "model": "lepidodendron:sand_microbial", "y": 180 },
       { "model": "lepidodendron:sand_microbial", "y": 270 }
+    ],
+    "snowy=true": [
+      { "model": "lepidodendron:sand_microbial_snowed" }
     ]
   }
 }

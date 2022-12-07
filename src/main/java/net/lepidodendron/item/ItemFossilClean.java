@@ -979,6 +979,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_thecodontosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_whatcheeria_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_ancient_moss_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_amentotaxus_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")

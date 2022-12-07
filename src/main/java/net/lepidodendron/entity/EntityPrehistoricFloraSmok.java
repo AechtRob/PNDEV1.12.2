@@ -140,7 +140,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.580F;
+		float speedBase = 0.430F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -148,7 +148,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 			return 0.0F; //Is drinking
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+			speedBase = speedBase * 1.65F;
 		}
 		return speedBase;
 	}

@@ -1,0 +1,50 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+  	"0": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "1": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "2": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "3": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "4": {
+      "item": "lepidodendron:bacterial_crust"
+    },
+    "5": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "6": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "7": {
+      "item": "minecraft:sand",
+      "data": 0
+    },
+    "8": {
+      "item": "minecraft:sand",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sand_microbial",
+    "count": 8
+  }
+}

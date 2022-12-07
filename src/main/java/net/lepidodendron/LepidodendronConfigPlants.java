@@ -1319,6 +1319,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightPseudovoltzia = 0;
     public static double multiplierPseudovoltzia = 1;
 
+    public static boolean genAmentotaxus = false;
+    public static String[] genAmentotaxusBlacklistBiomes = new String[0];
+    public static String[] genAmentotaxusOverrideBiomes = new String[0];
+    public static int[] dimAmentotaxus = new int[]{0};
+    public static int minheightAmentotaxus = 1;
+    public static int maxheightAmentotaxus = 0;
+    public static double multiplierAmentotaxus = 1;
+
     public static boolean genWachtlerina = false;
     public static String[] genWachtlerinaBlacklistBiomes = new String[0];
     public static String[] genWachtlerinaOverrideBiomes = new String[0];
@@ -1531,6 +1539,10 @@ public class LepidodendronConfigPlants {
     public static String[] genShellyReefBlacklistBiomes = new String[0];
     public static String[] genShellyReefOverrideBiomes = new String[0];
     public static int[] dimShellyReef = new int[]{};
+
+    public static String[] genBryozoanReefBlacklistBiomes = new String[0];
+    public static String[] genBryozoanReefOverrideBiomes = new String[0];
+    public static int[] dimBryozoanReef = new int[]{};
 
     public static String[] genAlgalReefBlacklistBiomes = new String[0];
     public static String[] genAlgalReefOverrideBiomes = new String[0];
@@ -2018,6 +2030,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Reef", "genShellyReefOverrideBiomes", genShellyReefOverrideBiomes);
         prop.setComment("List of biomes Shelly Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genShellyReefOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Reef", "dimBryozoanReef", dimBryozoanReef);
+        prop.setComment("List of dimension IDs Bryozoan Reef blocks can generate in [default: empty]");
+        dimBryozoanReef = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genBryozoanReefBlacklistBiomes", genBryozoanReefBlacklistBiomes);
+        prop.setComment("List of biomes Bryozoan Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBryozoanReefBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genBryozoanReefOverrideBiomes", genBryozoanReefOverrideBiomes);
+        prop.setComment("List of biomes Bryozoan Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genBryozoanReefOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Reef", "dimAlgalReef", dimAlgalReef);
@@ -8242,6 +8267,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Quadrocladus", "multiplierQuadrocladus", multiplierQuadrocladus);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierQuadrocladus = prop.getDouble();
+
+
+        prop = cfg.get("WorldGen Amentotaxus", "genAmentotaxus", genAmentotaxus);
+        prop.setComment("Set to true to generate Amentotaxus naturally [default: false]");
+        genAmentotaxus = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Amentotaxus", "genAmentotaxusBlacklistBiomes", genAmentotaxusBlacklistBiomes);
+        prop.setComment("List of biomes Amentotaxus are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAmentotaxusBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Amentotaxus", "genAmentotaxusOverrideBiomes", genAmentotaxusOverrideBiomes);
+        prop.setComment("List of biomes Amentotaxus are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAmentotaxusOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Amentotaxus", "dimAmentotaxus", dimAmentotaxus);
+        prop.setComment("List of dimension IDs Amentotaxus can generate in [default: 0]");
+        dimAmentotaxus = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Amentotaxus", "minheightAmentotaxus", minheightAmentotaxus);
+        prop.setComment("Minimum height that Amentotaxus can generate (1 to 250) [default: 1]");
+        minheightAmentotaxus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Amentotaxus", "maxheightAmentotaxus", maxheightAmentotaxus);
+        prop.setComment("Maximum height that Amentotaxus can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightAmentotaxus = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Amentotaxus", "multiplierAmentotaxus", multiplierAmentotaxus);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAmentotaxus = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Pseudovoltzia", "genPseudovoltzia", genPseudovoltzia);

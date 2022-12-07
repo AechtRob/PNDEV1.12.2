@@ -356,6 +356,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CEPHALOTAXUS = new CustomTrigger("pf_book_cephalotaxus");
     public static final CustomTrigger CLICK_CUNNINGHAMIA = new CustomTrigger("pf_book_cunninghamia");
     public static final CustomTrigger CLICK_HOOP_ARAUCARIA = new CustomTrigger("pf_book_hoop_araucaria");
+    public static final CustomTrigger CLICK_AMENOTAXUS = new CustomTrigger("pf_book_amentotaxus");
 
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
@@ -1255,6 +1256,7 @@ public class ModTriggers
             CLICK_CEPHALOTAXUS,
             CLICK_CUNNINGHAMIA,
             CLICK_HOOP_ARAUCARIA,
+            CLICK_AMENOTAXUS,
         
             //Grouped ones:
             CLICK_BLASTOID,
