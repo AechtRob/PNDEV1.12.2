@@ -309,7 +309,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 			ItemStack stack = playerIn.getHeldItem(hand);
 
 			if (FluidUtil.getFluidContained(stack) != null) {
-				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("sulfuric_acid")) {
+				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("pn_sulfuric_acid")) {
 					return false;
 				}
 			}

@@ -250,10 +250,10 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 				if (tileEntity instanceof TileEntityAcidBath) {
 					TileEntityAcidBath te = (TileEntityAcidBath) tileEntity;
 					if (te.getFill() > 7) {
-						world.setBlockState(pos, FluidRegistry.getFluid("sulfuric_acid").getBlock().getDefaultState());
+						world.setBlockState(pos, FluidRegistry.getFluid("pn_sulfuric_acid").getBlock().getDefaultState());
 					}
 					if (te.getFill() == 15) {
-						world.setBlockState(pos.offset(state.getValue(FACING)), FluidRegistry.getFluid("sulfuric_acid").getBlock().getDefaultState());
+						world.setBlockState(pos.offset(state.getValue(FACING)), FluidRegistry.getFluid("pn_sulfuric_acid").getBlock().getDefaultState());
 					}
 				}
 			}
@@ -335,7 +335,7 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 			ItemStack stack = playerIn.getHeldItem(hand);
 
 			if (FluidUtil.getFluidContained(stack) != null) {
-				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("sulfuric_acid")) {
+				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("pn_sulfuric_acid")) {
 					return false;
 				}
 			}
@@ -657,7 +657,7 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 		 */
 		public boolean canFillFluidType(FluidStack fluid)
 		{
-			if (fluid.getFluid() == FluidRegistry.getFluid("sulfuric_acid")) {
+			if (fluid.getFluid() == FluidRegistry.getFluid("pn_sulfuric_acid")) {
 				return canFill();
 			}
 			return false;

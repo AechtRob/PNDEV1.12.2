@@ -67,7 +67,7 @@ public class LepidodendronGlassBottleSubscribers {
 
 				if (worldIn.getBlockState(blockpos).getMaterial() == Material.WATER)
 				{
-					if (worldIn.getBlockState(blockpos).getBlock() == (new FluidStack(FluidRegistry.getFluid("sulfuric_acid"), 1000)).getFluid().getBlock()) {
+					if (worldIn.getBlockState(blockpos).getBlock() == (new FluidStack(FluidRegistry.getFluid("pn_sulfuric_acid"), 1000)).getFluid().getBlock()) {
 						event.getEntityPlayer().swingArm(event.getHand());
 						worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 						this.turnBottleIntoItem(itemstack, playerIn, new ItemStack(ItemBottleOfAcidSulphuric.block, 1));

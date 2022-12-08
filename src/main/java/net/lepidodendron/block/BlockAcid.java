@@ -45,7 +45,7 @@ public class BlockAcid extends ElementsLepidodendronMod.ModElement {
 	private Fluid fluid;
 	public BlockAcid(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sulfuric_acid);
-		fluid = new Fluid("sulfuric_acid", new ResourceLocation("lepidodendron:blocks/sulfuric_acidstill"), new ResourceLocation("lepidodendron:blocks/sulfuric_acidflow"))
+		fluid = new Fluid("pn_sulfuric_acid", new ResourceLocation("lepidodendron:blocks/sulfuric_acidstill"), new ResourceLocation("lepidodendron:blocks/sulfuric_acidflow"))
 				.setLuminosity(0).setDensity(1000).setViscosity(1000).setGaseous(false).setColor(-2958436);
 	}
 
