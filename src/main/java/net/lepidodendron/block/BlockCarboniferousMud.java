@@ -10,6 +10,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -84,7 +85,7 @@ public class BlockCarboniferousMud extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn)
 		{
-			if (entityIn instanceof EntityPlayer && Math.abs(entityIn.motionY) < 0.1D && !entityIn.isSneaking())
+			if ((entityIn instanceof EntityPlayer || entityIn instanceof EntityVillager) && Math.abs(entityIn.motionY) < 0.1D && !entityIn.isSneaking())
 			{
 				double d0 = 0.4D + Math.abs(entityIn.motionY) * 0.2D;
 				entityIn.motionX *= d0;

@@ -44,7 +44,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "52.04";
+	public static final String VERSION = "53.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -1337,6 +1337,7 @@ public class LepidodendronMod {
 	public static final int GUI_LAB_BENCH_ID = 550;
 	public static final int GUI_MICROSCOPE_ID = 551;
 	public static final int GUI_SORTER_FOSSIL_ID = 552;
+	public static final int GUI_TAXIDERMY_TABLE_ID = 553;
 
 
 

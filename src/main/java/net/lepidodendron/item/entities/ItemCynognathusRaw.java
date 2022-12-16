@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -39,7 +38,7 @@ public class ItemCynognathusRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemCynognathusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemCynognathusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(3, 0.3f, false);
 			setTranslationKey("pf_cynognathus_raw");

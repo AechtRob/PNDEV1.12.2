@@ -250,7 +250,7 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //We want to drop the items
+	@SubscribeEvent //We want to drop the items (also for the Taxidermy finished items)
 	public void clickDisplays(PlayerInteractEvent.LeftClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayCase.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
@@ -331,6 +331,30 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
+						//return;
+						event.setCanceled(true);
+					}
+				}
+			}
+		}
+		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTaxidermyTable.block
+				&& event.getHand() == EnumHand.MAIN_HAND) {
+			TileEntity te = event.getWorld().getTileEntity(event.getPos());
+			if (te != null) {
+				if (te instanceof BlockTaxidermyTable.TileEntityTaxidermyTable) {
+					BlockTaxidermyTable.TileEntityTaxidermyTable tee = (BlockTaxidermyTable.TileEntityTaxidermyTable) te;
+					if (!tee.getStackInSlot(1).isEmpty()) {
+						if (!(event.getWorld().isRemote)) {
+							ItemStack itemstack = tee.getStackInSlot(1);
+							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
+							//tee.setInventorySlotContents(0, ItemStack.EMPTY);
+
+							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
+							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							event.getEntityPlayer().swingArm(event.getHand());
+						}
+						tee.removeStackFromSlot(1);
+						tee.notifyBlockUpdate();
 						//return;
 						event.setCanceled(true);
 					}

@@ -113,7 +113,9 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River) {
 				biomeCriteria = true;
 			}
 			else {
@@ -142,6 +144,10 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			GenChance = 156;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
+			GenChance = 192;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")) {
 			GenChance = 192;
 		}
 

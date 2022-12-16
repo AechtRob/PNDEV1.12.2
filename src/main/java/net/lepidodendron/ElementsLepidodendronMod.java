@@ -954,6 +954,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			if (id == GUISorterFossil.GUIID) {
 				return new GUISorterFossil.GUILepidodendronSorterFossil(world, x, y, z, player);
 			}
+			if (id == GUITaxidermyTable.GUIID) {
+				return new GUITaxidermyTable.GUILepidodendronTaxidermyTable(world, x, y, z, player);
+			}
 			return null;
 		}
 
@@ -982,6 +985,9 @@ public class ElementsLepidodendronMod implements IFuelHandler, IWorldGenerator {
 			}
 			if (id == GUISorterFossil.GUIID) {
 				return new GUISorterFossil.GuiWindow(world, x, y, z, player);
+			}
+			if (id == GUITaxidermyTable.GUIID) {
+				return new GUITaxidermyTable.GuiWindow(world, x, y, z, player);
 			}
 			return null;
 		}

@@ -2,9 +2,9 @@ package net.lepidodendron.entity.render.tile;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayPlinth;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.item.ItemRoseFlower;
-import net.lepidodendron.item.entities.*;
+import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,13 +14,19 @@ import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import javax.annotation.Nullable;
 
 public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayPlinth.TileEntityDisplayPlinth> {
 
@@ -259,7 +265,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         EnumFacing facing;
-        boolean itemRender  = false;
+        boolean itemRender  = true;
         int currentRotation = 0;
         if (entity != null && entity.hasWorld()) {
             currentRotation = entity.getTileData().getInteger("rotation");
@@ -274,837 +280,754 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         return;
                     }
 
-                    /*
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-                    GlStateManager.enableBlend();
-                    RenderHelper.enableStandardItemLighting();
-                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-                    GlStateManager.pushMatrix();
-                     */
-
                     GlStateManager.pushMatrix();
                     GlStateManager.disableCull();
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.enableAlpha();
 
-                    if (itemstack.getItem() == ItemRoseFlower.block) {
-                        double offset = 0.12;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_GERARUS);
-                        modelGerarus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAcanthostegaRaw.block) {
-                        double offset = 0.17;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ACANTHOSTEGA);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelAcanthostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAcanthostomatopsRaw.block) {
-                        double offset = 0.38;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ACANTHOSTOMATOPS);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelAcanthostomatops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAcutiramusRaw.block) {
-                        double offset = 2.3;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ACUTIRAMUS);
-                        GlStateManager.scale(1.1F,1.1F,1.1F);
-                        modelAcutiramusPlinth.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAmphibamusRaw.block) {
-                        double offset = 0.3;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_AMPHIBAMUS);
-                        GlStateManager.scale(0.28F,0.28F,0.28F);
-                        modelAmphibamus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAscendonanusRaw.block) {
-                        double offset = 0.15;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ASCENDONANUS);
-                        GlStateManager.scale(0.06F,0.06F,0.06F);
-                        modelAscendonanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAulacephalodonRaw.block) {
-                        double offset = 0.63;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_AULACEPHALODON);
-                        GlStateManager.scale(0.26F,0.26F,0.26F);
-                        modelAulacephalodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAustriadactylusRaw.block) {
-                        double offset = 0.3;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_AUSTRIADACTYLUS);
-                        GlStateManager.scale(0.12F,0.12F,0.12F);
-                        modelAustriadactylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemBalanerpetonRaw.block) {
-                        double offset = 0.4;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_BALANERPETON);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelBalanerpeton.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemBranchiosaurRaw.block) {
-                        double offset = 0.3;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_BRANCHIOSAUR);
-                        GlStateManager.scale(0.12F,0.12F,0.12F);
-                        modelBranchiosaur.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCacopsRaw.block) {
-                        double offset = 0.28;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CACOPS);
-                        GlStateManager.scale(0.12F,0.12F,0.12F);
-                        modelCacops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCaelestiventusRaw.block) {
-                        double offset = 0.44;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CAELESTIVENTUS);
-                        GlStateManager.scale(0.18F,0.18F,0.18F);
-                        modelCaelestiventus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCaptorhinusRaw.block) {
-                        double offset = 0.32;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CAPTORHINUS);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelCaptorhinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCarcinosomaRaw.block) {
-                        double offset = 1.53;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CARCINOSOMA);
-                        GlStateManager.scale(0.51F,0.51F,0.51F);
-                        modelCarcinosoma.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCartorhynchusRaw.block) {
-                        double offset = 0.167;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CARTORHYNCHUS);
-                        GlStateManager.scale(0.076F,0.076F,0.076F);
-                        modelCartorhynchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCasineriaRaw.block) {
-                        double offset = 0.35;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CASINERIA);
-                        GlStateManager.scale(0.14F,0.14F,0.14F);
-                        modelCasineria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCaviramusRaw.block) {
-                        double offset = 0.34;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CAVIRAMUS);
-                        GlStateManager.scale(0.14F,0.14F,0.14F);
-                        modelCaviramus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemClaudiosaurusRaw.block) {
-                        double offset = 0.23;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CLAUDIOSAURUS);
-                        GlStateManager.scale(0.09F,0.09F,0.09F);
-                        modelClaudiosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemClevosaurusRaw.block) {
-                        double offset = 0.31;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CLEVOSAURUS);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelClevosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCyamodusRaw.block) {
-                        double offset = 0.67;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CYAMODUS);
-                        GlStateManager.scale(0.261F,0.261F,0.261F);
-                        modelCyamodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDasycepsRaw.block) {
-                        double offset = 0.42;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DASYCEPS);
-                        GlStateManager.scale(0.18F,0.18F,0.18F);
-                        modelDasyceps.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDatheosaurusRaw.block) {
-                        double offset = 0.85;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DATHEOSAURUS);
-                        GlStateManager.scale(0.35F,0.35F,0.35F);
-                        modelDatheosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEosimopsRaw.block) {
-                        double offset = 0.16;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EOSIMOPS);
-                        GlStateManager.scale(0.21F,0.21F,0.21F);
-                        modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDiictodonRaw.block) {
-                        double offset = 0.16;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DIICTODON);
-                        GlStateManager.scale(0.2F,0.2F,0.2F);
-                        modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDiplocaulusRaw.block) {
-                        double offset = 0.55;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DIPLOCAULUS);
-                        GlStateManager.scale(0.23F,0.23F,0.23F);
-                        modelDiplocaulus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDiploceraspisRaw.block) {
-                        double offset = 0.33;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DIPLOCERASPIS);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelDiploceraspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDviniaRaw.block) {
-                        double offset = 0.41;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DVINIA);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelDvinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDvinosaurusRaw.block) {
-                        double offset = 0.73;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DVINOSAURUS);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        modelDvinosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEffigiaRaw.block) {
-                        double offset = 0.54;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EFFIGIA);
-                        GlStateManager.scale(0.22F,0.22F,0.22F);
-                        modelEffigia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemElginiaRaw.block) {
-                        double offset = 0.55;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ELGINIA);
-                        GlStateManager.scale(0.23F,0.23F,0.23F);
-                        modelElginia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEorhynchochelysRaw.block) {
-                        double offset = 0.62;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EORHYNCHOCHELYS);
-                        GlStateManager.scale(0.26F,0.26F,0.26F);
-                        modelEorhynchochelys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEretmorhipisRaw.block) {
-                        double offset = 0.33;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ERETMORHIPIS);
-                        GlStateManager.scale(0.14F,0.14F,0.14F);
-                        modelEretmorhipis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEuchambersiaRaw.block) {
-                        double offset = 0.47;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EUCHAMBERSIA);
-                        GlStateManager.scale(0.2F,0.2F,0.2F);
-                        modelEuchambersia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEudimorphodonRaw.block) {
-                        double offset = 0.28;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EUDIMORPHODON);
-                        GlStateManager.scale(0.12F,0.12F,0.12F);
-                        modelEudimorphodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEuparkeriaRaw.block) {
-                        double offset = 0.33;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EUPARKERIA);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelEuparkeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemGerrothoraxRaw.block) {
-                        double offset = 0.82;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_GERROTHORAX);
-                        GlStateManager.scale(0.34F,0.34F,0.34F);
-                        modelGerrothorax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHenodusRaw.block) {
-                        double offset = 0.72;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_HENODUS);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        modelHenodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHibbertopterusRaw.block) {
-                        double offset = 1.4;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_HIBBERTOPTERUS);
-                        GlStateManager.scale(0.64F,0.64F,0.64F);
-                        modelHibbertopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHylonomusRaw.block) {
-                        double offset = 0.06;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_HYLONOMUS);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelHylonomus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHypsognathusRaw.block) {
-                        double offset = 0.365;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_HYPSOGNATHUS);
-                        GlStateManager.scale(0.15F,0.15F,0.15F);
-                        modelHypsognathus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemIchthyostegaRaw.block) {
-                        double offset = 0.12;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ICHTHYOSTEGA);
-                        GlStateManager.rotate(5,-1,0,0);
-                        GlStateManager.scale(0.28F,0.28F,0.28F);
-                        modelIchthyostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemJaekelopterusRaw.block) {
-                        double offset = 3;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_JAEKELOPTERUS);
-                        GlStateManager.scale(1.1F,1.1F,1.1F);
-                        modelJaekelopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKeichousaurusRaw.block) {
-                        double offset = 0.42;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_KEICHOUSAURUS);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelKeichousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLabidosaurusRaw.block) {
-                        double offset = 0.58;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_LABIDOSAURUS);
-                        GlStateManager.scale(0.24F,0.24F,0.24F);
-                        modelLabidosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMegalocephalusRaw.block) {
-                        double offset = 0.38;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_MEGALOCEPHALUS);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelMegalocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMegazostrodonRaw.block) {
-                        double offset = 0.27;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_MEGAZOSTRODON);
-                        GlStateManager.scale(0.11F,0.11F,0.11F);
-                        modelMorganucodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMesosaurusRaw.block) {
-                        double offset = 0.04;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_MESOSAURUS);
-                        GlStateManager.scale(0.07F,0.07F,0.07F);
-                        modelMesosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMorganucodonRaw.block) {
-                        double offset = 0.27;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_MORGANUCODON);
-                        GlStateManager.scale(0.11F,0.11F,0.11F);
-                        modelMorganucodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOmnidensRaw.block) {
-                        double offset = 0.58;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_OMNIDENS);
-                        GlStateManager.scale(0.24F,0.24F,0.24F);
-                        modelOmnidens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPageaRaw.block) {
-                        double offset = 0.9;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PAGEA);
-                        GlStateManager.scale(1.1F,1.1F,1.1F);
-                        modelPagea.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPantylusRaw.block) {
-                        double offset = 0.43;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PANTYLUS);
-                        GlStateManager.scale(0.18F,0.18F,0.18F);
-                        modelPantylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPanzhousaurusRaw.block) {
-                        double offset = 0.013;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PANZHOUSAURUS);
-                        GlStateManager.scale(0.08F,0.08F,0.08F);
-                        modelPanzhousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemParmastegaRaw.block) {
-                        double offset = 0.58;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PARMASTEGA);
-                        GlStateManager.scale(0.24F,0.24F,0.24F);
-                        modelParmastega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPederpesRaw.block) {
-                        double offset = 0.018;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PEDERPES);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelPederpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPlatyhystrixRaw.block) {
-                        double offset = 0.57;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PLATYHYSTRIX);
-                        GlStateManager.scale(0.25F,0.25F,0.25F);
-                        modelPlatyhystrix.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProburnetiaRaw.block) {
-                        double offset = 0.49;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PROBURNETIA);
-                        GlStateManager.scale(0.21F,0.21F,0.21F);
-                        modelProburnetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProcynosuchusRaw.block) {
-                        double offset = 0.6;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PROCYNOSUCHUS);
-                        GlStateManager.scale(0.25F,0.25F,0.25F);
-                        modelProcynosuchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProterogyrinusRaw.block) {
-                        double offset = 0.96;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PROTEROGYRINUS);
-                        GlStateManager.scale(0.4F,0.4F,0.4F);
-                        modelProterogyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPseudotheriumRaw.block) {
-                        double offset = 0.22;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PSEUDOTHERIUM);
-                        GlStateManager.scale(0.09F,0.09F,0.09F);
-                        modelPseudotherium.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPterygotusRaw.block) {
-                        double offset = 1.8;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PTERYGOTUS);
-                        GlStateManager.scale(0.7F,0.7F,0.7F);
-                        modelPterygotus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPurloviaRaw.block) {
-                        double offset = 0.57;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PURLOVIA);
-                        GlStateManager.scale(0.24F,0.24F,0.24F);
-                        modelPurlovia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRemigiomontanusRaw.block) {
-                        double offset = 0.52;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_REMIGIOMONTANUS);
-                        GlStateManager.scale(0.22F,0.22F,0.22F);
-                        modelRemigiomontanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSclerocormusRaw.block) {
-                        double offset = 0.43;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SCLEROCORMUS);
-                        GlStateManager.scale(0.18F,0.18F,0.18F);
-                        modelSclerocormus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemScleromochlusRaw.block) {
-                        double offset = 0.23;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SCLEROMOCHLUS);
-                        GlStateManager.scale(0.09F,0.09F,0.09F);
-                        modelScleromochlus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSpathicephalusRaw.block) {
-                        double offset = 0.37;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SPATHICEPHALUS);
-                        GlStateManager.scale(0.16F,0.16F,0.16F);
-                        modelSpathicephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSphenotitanRaw.block) {
-                        double offset = 0.55;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SPHENOTITAN);
-                        GlStateManager.scale(0.23F,0.23F,0.23F);
-                        modelSphenotitan.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSuminiaRaw.block) {
-                        double offset = 0.21;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SUMINIA);
-                        GlStateManager.scale(0.09F,0.09F,0.09F);
-                        modelSuminia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTeleocraterRaw.block) {
-                        double offset = 0.6;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_TELEOCRATER);
-                        GlStateManager.scale(0.25F,0.25F,0.25F);
-                        modelTeleocrater.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTetraceratopsRaw.block) {
-                        double offset = 0.43;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_TETRACERATOPS);
-                        GlStateManager.scale(0.18F,0.18F,0.18F);
-                        modelTetraceratops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemThrinaxodonRaw.block) {
-                        double offset = 0.34;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_THRINAXODON);
-                        GlStateManager.scale(0.14F,0.14F,0.14F);
-                        modelThrinaxodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTiarajudensRaw.block) {
-                        double offset = 0.61;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_TIARAJUDENS);
-                        GlStateManager.scale(2.6F,2.6F,2.6F);
-                        modelTiarajudens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTiktaalikRaw.block) {
-                        double offset = 0.58;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_TIKTAALIK);
-                        GlStateManager.scale(0.22F,0.22F,0.22F);
-                        modelTiktaalik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemUrocordylusRaw.block) {
-                        double offset = -0.09;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_UROCORDYLUS);
-                        GlStateManager.scale(0.49F * 1.4F,0.49F * 1.4F,0.49F * 1.4F);
-                        modelUrocordylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWhatcheeriaRaw.block) {
-                        double offset = 1;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_WHATCHEERIA);
-                        GlStateManager.scale(0.42F,0.42F,0.42F);
-                        modelWhatcheeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWebsteroprionRaw.block) {
-                        double offset = 0.67;
-                        //double voffset = -0.15;
-                        double voffset = 0;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_WEBSTEROPRION);
-                        GlStateManager.scale(0.26F,0.26F,0.26F);
-                        modelWebsteroprion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProsictodonRaw.block) {
-                        double offset = 0.16;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PROSICTODON);
-                        GlStateManager.scale(0.19F,0.19F,0.19F);
-                        modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRobertiaRaw.block) {
-                        double offset = 0.1;
-                        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-                        GlStateManager.rotate(180, 0F, 0F, 1F);
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ROBERTIA);
-                        GlStateManager.scale(0.13F,0.13F,0.13F);
-                        modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                    if (itemstack.getItem() == ItemTaxidermyDisplayItem.block) {
+
+                        Class classEntity = getEntityFromNBT(itemstack);
+                        if (classEntity != null) {
+                            itemRender = false;
+
+                            if (classEntity == EntityPrehistoricFloraAcanthostega.class) {
+                                double offset = 0.17;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ACANTHOSTEGA);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelAcanthostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAcanthostomatops.class) {
+                                double offset = 0.38;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ACANTHOSTOMATOPS);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelAcanthostomatops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAcutiramus.class) {
+                                double offset = 2.3;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ACUTIRAMUS);
+                                GlStateManager.scale(1.1F, 1.1F, 1.1F);
+                                modelAcutiramusPlinth.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAmphibamus.class) {
+                                double offset = 0.3;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_AMPHIBAMUS);
+                                GlStateManager.scale(0.28F, 0.28F, 0.28F);
+                                modelAmphibamus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAscendonanus.class) {
+                                double offset = 0.15;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ASCENDONANUS);
+                                GlStateManager.scale(0.06F, 0.06F, 0.06F);
+                                modelAscendonanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAulacephalodon.class) {
+                                double offset = 0.63;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_AULACEPHALODON);
+                                GlStateManager.scale(0.26F, 0.26F, 0.26F);
+                                modelAulacephalodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAustriadactylus.class) {
+                                double offset = 0.3;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_AUSTRIADACTYLUS);
+                                GlStateManager.scale(0.12F, 0.12F, 0.12F);
+                                modelAustriadactylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraBalanerpeton.class) {
+                                double offset = 0.4;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_BALANERPETON);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelBalanerpeton.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraBranchiosaur.class) {
+                                double offset = 0.3;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_BRANCHIOSAUR);
+                                GlStateManager.scale(0.12F, 0.12F, 0.12F);
+                                modelBranchiosaur.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCacops.class) {
+                                double offset = 0.28;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CACOPS);
+                                GlStateManager.scale(0.12F, 0.12F, 0.12F);
+                                modelCacops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCaelestiventus.class) {
+                                double offset = 0.44;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CAELESTIVENTUS);
+                                GlStateManager.scale(0.18F, 0.18F, 0.18F);
+                                modelCaelestiventus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCaptorhinus.class) {
+                                double offset = 0.32;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CAPTORHINUS);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelCaptorhinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCarcinosoma.class) {
+                                double offset = 1.53;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CARCINOSOMA);
+                                GlStateManager.scale(0.51F, 0.51F, 0.51F);
+                                modelCarcinosoma.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCartorhynchus.class) {
+                                double offset = 0.167;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CARTORHYNCHUS);
+                                GlStateManager.scale(0.076F, 0.076F, 0.076F);
+                                modelCartorhynchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCasineria.class) {
+                                double offset = 0.35;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CASINERIA);
+                                GlStateManager.scale(0.14F, 0.14F, 0.14F);
+                                modelCasineria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCaviramus.class) {
+                                double offset = 0.34;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CAVIRAMUS);
+                                GlStateManager.scale(0.14F, 0.14F, 0.14F);
+                                modelCaviramus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraClaudiosaurus.class) {
+                                double offset = 0.23;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CLAUDIOSAURUS);
+                                GlStateManager.scale(0.09F, 0.09F, 0.09F);
+                                modelClaudiosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraClevosaurus.class) {
+                                double offset = 0.31;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CLEVOSAURUS);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelClevosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCyamodus.class) {
+                                double offset = 0.67;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CYAMODUS);
+                                GlStateManager.scale(0.261F, 0.261F, 0.261F);
+                                modelCyamodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDasyceps.class) {
+                                double offset = 0.42;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DASYCEPS);
+                                GlStateManager.scale(0.18F, 0.18F, 0.18F);
+                                modelDasyceps.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDatheosaurus.class) {
+                                double offset = 0.85;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DATHEOSAURUS);
+                                GlStateManager.scale(0.35F, 0.35F, 0.35F);
+                                modelDatheosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEosimops.class) {
+                                double offset = 0.16;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EOSIMOPS);
+                                GlStateManager.scale(0.21F, 0.21F, 0.21F);
+                                modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDiictodon.class) {
+                                double offset = 0.16;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DIICTODON);
+                                GlStateManager.scale(0.2F, 0.2F, 0.2F);
+                                modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDiplocaulus.class) {
+                                double offset = 0.55;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DIPLOCAULUS);
+                                GlStateManager.scale(0.23F, 0.23F, 0.23F);
+                                modelDiplocaulus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDiploceraspis.class) {
+                                double offset = 0.33;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DIPLOCERASPIS);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelDiploceraspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDvinia.class) {
+                                double offset = 0.41;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DVINIA);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelDvinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDvinosaurus.class) {
+                                double offset = 0.73;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DVINOSAURUS);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                modelDvinosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEffigia.class) {
+                                double offset = 0.54;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EFFIGIA);
+                                GlStateManager.scale(0.22F, 0.22F, 0.22F);
+                                modelEffigia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraElginia.class) {
+                                double offset = 0.55;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ELGINIA);
+                                GlStateManager.scale(0.23F, 0.23F, 0.23F);
+                                modelElginia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEorhynchochelys.class) {
+                                double offset = 0.62;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EORHYNCHOCHELYS);
+                                GlStateManager.scale(0.26F, 0.26F, 0.26F);
+                                modelEorhynchochelys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEretmorhipis.class) {
+                                double offset = 0.33;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ERETMORHIPIS);
+                                GlStateManager.scale(0.14F, 0.14F, 0.14F);
+                                modelEretmorhipis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
+                                double offset = 0.47;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EUCHAMBERSIA);
+                                GlStateManager.scale(0.2F, 0.2F, 0.2F);
+                                modelEuchambersia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEudimorphodon.class) {
+                                double offset = 0.28;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EUDIMORPHODON);
+                                GlStateManager.scale(0.12F, 0.12F, 0.12F);
+                                modelEudimorphodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEuparkeria.class) {
+                                double offset = 0.33;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EUPARKERIA);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelEuparkeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraGerrothorax.class) {
+                                double offset = 0.82;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_GERROTHORAX);
+                                GlStateManager.scale(0.34F, 0.34F, 0.34F);
+                                modelGerrothorax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHenodus.class) {
+                                double offset = 0.72;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_HENODUS);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                modelHenodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHibbertopterus.class) {
+                                double offset = 1.4;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_HIBBERTOPTERUS);
+                                GlStateManager.scale(0.64F, 0.64F, 0.64F);
+                                modelHibbertopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHylonomus.class) {
+                                double offset = 0.06;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_HYLONOMUS);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelHylonomus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHypsognathus.class) {
+                                double offset = 0.365;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_HYPSOGNATHUS);
+                                GlStateManager.scale(0.15F, 0.15F, 0.15F);
+                                modelHypsognathus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraIchthyostega.class) {
+                                double offset = 0.12;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ICHTHYOSTEGA);
+                                GlStateManager.rotate(5, -1, 0, 0);
+                                GlStateManager.scale(0.28F, 0.28F, 0.28F);
+                                modelIchthyostega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraJaekelopterus.class) {
+                                double offset = 3;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_JAEKELOPTERUS);
+                                GlStateManager.scale(1.1F, 1.1F, 1.1F);
+                                modelJaekelopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraKeichousaurus.class) {
+                                double offset = 0.42;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_KEICHOUSAURUS);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelKeichousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLabidosaurus.class) {
+                                double offset = 0.58;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_LABIDOSAURUS);
+                                GlStateManager.scale(0.24F, 0.24F, 0.24F);
+                                modelLabidosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMegalocephalus.class) {
+                                double offset = 0.38;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_MEGALOCEPHALUS);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelMegalocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMegazostrodon.class) {
+                                double offset = 0.27;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_MEGAZOSTRODON);
+                                GlStateManager.scale(0.11F, 0.11F, 0.11F);
+                                modelMorganucodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMesosaurus.class) {
+                                double offset = 0.04;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_MESOSAURUS);
+                                GlStateManager.scale(0.07F, 0.07F, 0.07F);
+                                modelMesosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMorganucodon.class) {
+                                double offset = 0.27;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_MORGANUCODON);
+                                GlStateManager.scale(0.11F, 0.11F, 0.11F);
+                                modelMorganucodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOmnidens.class) {
+                                double offset = 0.58;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_OMNIDENS);
+                                GlStateManager.scale(0.24F, 0.24F, 0.24F);
+                                modelOmnidens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPagea.class) {
+                                double offset = 0.9;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PAGEA);
+                                GlStateManager.scale(1.1F, 1.1F, 1.1F);
+                                modelPagea.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPantylus.class) {
+                                double offset = 0.43;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PANTYLUS);
+                                GlStateManager.scale(0.18F, 0.18F, 0.18F);
+                                modelPantylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPanzhousaurus.class) {
+                                double offset = 0.013;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PANZHOUSAURUS);
+                                GlStateManager.scale(0.08F, 0.08F, 0.08F);
+                                modelPanzhousaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraParmastega.class) {
+                                double offset = 0.58;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PARMASTEGA);
+                                GlStateManager.scale(0.24F, 0.24F, 0.24F);
+                                modelParmastega.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPederpes.class) {
+                                double offset = 0.018;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PEDERPES);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelPederpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPlatyhystrix.class) {
+                                double offset = 0.57;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PLATYHYSTRIX);
+                                GlStateManager.scale(0.25F, 0.25F, 0.25F);
+                                modelPlatyhystrix.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProburnetia.class) {
+                                double offset = 0.49;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PROBURNETIA);
+                                GlStateManager.scale(0.21F, 0.21F, 0.21F);
+                                modelProburnetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProcynosuchus.class) {
+                                double offset = 0.6;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PROCYNOSUCHUS);
+                                GlStateManager.scale(0.25F, 0.25F, 0.25F);
+                                modelProcynosuchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProterogyrinus.class) {
+                                double offset = 0.96;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PROTEROGYRINUS);
+                                GlStateManager.scale(0.4F, 0.4F, 0.4F);
+                                modelProterogyrinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPseudotherium.class) {
+                                double offset = 0.22;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PSEUDOTHERIUM);
+                                GlStateManager.scale(0.09F, 0.09F, 0.09F);
+                                modelPseudotherium.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPterygotus.class) {
+                                double offset = 1.8;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PTERYGOTUS);
+                                GlStateManager.scale(0.7F, 0.7F, 0.7F);
+                                modelPterygotus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPurlovia.class) {
+                                double offset = 0.57;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PURLOVIA);
+                                GlStateManager.scale(0.24F, 0.24F, 0.24F);
+                                modelPurlovia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRemigiomontanus.class) {
+                                double offset = 0.52;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_REMIGIOMONTANUS);
+                                GlStateManager.scale(0.22F, 0.22F, 0.22F);
+                                modelRemigiomontanus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSclerocormus.class) {
+                                double offset = 0.43;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SCLEROCORMUS);
+                                GlStateManager.scale(0.18F, 0.18F, 0.18F);
+                                modelSclerocormus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraScleromochlus.class) {
+                                double offset = 0.23;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SCLEROMOCHLUS);
+                                GlStateManager.scale(0.09F, 0.09F, 0.09F);
+                                modelScleromochlus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSpathicephalus.class) {
+                                double offset = 0.37;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SPATHICEPHALUS);
+                                GlStateManager.scale(0.16F, 0.16F, 0.16F);
+                                modelSpathicephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSphenotitan.class) {
+                                double offset = 0.55;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SPHENOTITAN);
+                                GlStateManager.scale(0.23F, 0.23F, 0.23F);
+                                modelSphenotitan.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSuminia.class) {
+                                double offset = 0.21;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SUMINIA);
+                                GlStateManager.scale(0.09F, 0.09F, 0.09F);
+                                modelSuminia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTeleocrater.class) {
+                                double offset = 0.6;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_TELEOCRATER);
+                                GlStateManager.scale(0.25F, 0.25F, 0.25F);
+                                modelTeleocrater.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTetraceratops.class) {
+                                double offset = 0.43;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_TETRACERATOPS);
+                                GlStateManager.scale(0.18F, 0.18F, 0.18F);
+                                modelTetraceratops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraThrinaxodon.class) {
+                                double offset = 0.34;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_THRINAXODON);
+                                GlStateManager.scale(0.14F, 0.14F, 0.14F);
+                                modelThrinaxodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTiarajudens.class) {
+                                double offset = 0.61;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_TIARAJUDENS);
+                                GlStateManager.scale(2.6F, 2.6F, 2.6F);
+                                modelTiarajudens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTiktaalik.class) {
+                                double offset = 0.58;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_TIKTAALIK);
+                                GlStateManager.scale(0.22F, 0.22F, 0.22F);
+                                modelTiktaalik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraUrocordylus.class) {
+                                double offset = -0.09;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_UROCORDYLUS);
+                                GlStateManager.scale(0.49F * 1.4F, 0.49F * 1.4F, 0.49F * 1.4F);
+                                modelUrocordylus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWhatcheeria.class) {
+                                double offset = 1;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_WHATCHEERIA);
+                                GlStateManager.scale(0.42F, 0.42F, 0.42F);
+                                modelWhatcheeria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWebsteroprion.class) {
+                                double offset = 0.67;
+                                //double voffset = -0.15;
+                                double voffset = 0;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_WEBSTEROPRION);
+                                GlStateManager.scale(0.26F, 0.26F, 0.26F);
+                                modelWebsteroprion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProsictodon.class) {
+                                double offset = 0.16;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PROSICTODON);
+                                GlStateManager.scale(0.19F, 0.19F, 0.19F);
+                                modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRobertia.class) {
+                                double offset = 0.1;
+                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+                                GlStateManager.rotate(180, 0F, 0F, 1F);
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ROBERTIA);
+                                GlStateManager.scale(0.13F, 0.13F, 0.13F);
+                                modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else {
+                                itemRender = true;
+                            }
+                        }
                     }
 
                     // ********************************************************************
-                    else { //standard items
-                        itemRender = true;
+                    else if (itemRender){ //standard items
 
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
@@ -1142,9 +1065,33 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                         GlStateManager.enableCull();
                         GlStateManager.popMatrix();
                     }
-
                 }
             }
         }
+    }
+            
+    @Nullable
+    public Class getEntityFromNBT(ItemStack stack) {
+        if (!stack.getTagCompound().hasKey("PFMob")) {
+            return null;
+        }
+        Class classOut = null;
+        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+        String stringDNA = (blockNBT.getString("id"));
+        if (stringDNA != null) {
+            classOut = findEntity(stringDNA);
+        }
+        return classOut;
+    }
+
+    @Nullable
+    private static Class<? extends Entity> findEntity(String entity) {
+        Class<? extends Entity> entityClass;
+        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entity));
+        entityClass = ee == null ? null : ee.getEntityClass();
+        if (entityClass == null) {
+            return null;
+        }
+        return entityClass;
     }
 }

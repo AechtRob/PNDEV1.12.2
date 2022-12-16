@@ -139,19 +139,13 @@ public class LepidodendronFogSubscribers {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
 
-			if (world.isRainingAt(player.getPosition())) {
-				return;
-			}
-
-			//Biome biome = player.world.getBiome(player.getPosition());
-			//IBlockState state = world.getBlockState(player.getPosition());
-			//Block b = state.getBlock();
+			//if (world.isRainingAt(player.getPosition())) {
+			//	return;
+			//}
 
 			IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
 			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
-			//double y = vec3d.y;
 			Block b = state.getBlock();
-			//Vec3d worldFog = world.getFogColor(0);
 
 			float red = 0;
 			float green = 0;
@@ -205,8 +199,6 @@ public class LepidodendronFogSubscribers {
 							red *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
 							green *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
 							blue *= (1.0F - rain * 0.4F)*(1.0F - thunder * 0.5F);
-							//System.out.println("Red: "+red+" Green:"+green+" Blue: "+blue);
-							// int multiplier = (red / divider & 255) << 16 | (green / divider & 255) << 8 | blue / divider & 255;
 							event.setRed(red/divider);
 							event.setGreen(green/divider);
 							event.setBlue(blue/divider);

@@ -119,7 +119,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 			//System.err.println("Placed by: " + placer);
-			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+			return this.getDefaultState().withProperty(FACING, facing);
 		}
 
 		@Override

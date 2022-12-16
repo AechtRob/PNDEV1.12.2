@@ -48,5 +48,6 @@ public class ItemAiniktozoonRaw extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
 	}
 }

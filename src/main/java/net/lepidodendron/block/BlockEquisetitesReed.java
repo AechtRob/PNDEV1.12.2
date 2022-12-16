@@ -137,6 +137,11 @@ public class BlockEquisetitesReed extends ElementsLepidodendronMod.ModElement {
 			GenChance = 64;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")) {
+			GenChance = 64;
+		}
+
 		int maxheight = LepidodendronConfigPlants.maxheightEquisetitesReed;
 		int minheight = LepidodendronConfigPlants.minheightEquisetitesReed;
 		if (maxheight < 0) {maxheight = 0;}

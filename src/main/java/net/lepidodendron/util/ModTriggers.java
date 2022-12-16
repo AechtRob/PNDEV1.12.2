@@ -26,6 +26,7 @@ public class ModTriggers
     public static final CustomTrigger ACID_CLEAN = new CustomTrigger("pf_acid_clean");
     public static final CustomTrigger USE_CAGE = new CustomTrigger("pf_use_cage");
     public static final CustomTrigger USE_JAR = new CustomTrigger("pf_use_jar");
+    public static final CustomTrigger TAXIDERMY = new CustomTrigger("pf_taxidermy");
     public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
     public static final CustomTrigger DNA_CRAFT = new CustomTrigger("pf_dna_craft");
@@ -926,6 +927,7 @@ public class ModTriggers
             ACID_CLEAN,
             USE_CAGE,
             USE_JAR,
+            TAXIDERMY,
             EPHEDRA,
             TAIL,
             DNA_CRAFT,

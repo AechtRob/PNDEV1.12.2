@@ -3253,8 +3253,11 @@ public class RenderHandler {
         //Oligopool machine:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockOligopoolMachine.TileEntityOligopoolMachine.class, new RenderOligopoolMachine());
 
-        //Micriscope:
+        //Microscope:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMicroscope.TileEntityMicroscope.class, new RenderMicroscope());
+
+        //Taxidermy:
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockTaxidermyTable.TileEntityTaxidermyTable.class, new RenderTaxidermyTable());
 
     }
 }

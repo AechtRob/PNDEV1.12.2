@@ -4,15 +4,15 @@
   "ingredients": [
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "item": "minecraft:bucket"

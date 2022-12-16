@@ -3,8 +3,9 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCase;
+import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.item.entities.*;
+import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -14,13 +15,19 @@ import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+
+import javax.annotation.Nullable;
 
 public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCase.TileEntityDisplayCase> {
 
@@ -409,7 +416,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         EnumFacing facing;
-        boolean itemRender  = false;
+        boolean itemRender  = true;
         int currentRotation = 0;
         if (entity != null && entity.hasWorld()) {
             currentRotation = entity.getTileData().getInteger("rotation");
@@ -424,4671 +431,4536 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                         return;
                     }
 
-                    /*
-                    GlStateManager.enableRescaleNormal();
-                    GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-                    GlStateManager.enableBlend();
-                    RenderHelper.enableStandardItemLighting();
-                    GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
-                    GlStateManager.pushMatrix();
-                     */
-
                     GlStateManager.pushMatrix();
                     GlStateManager.disableCull();
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.enableAlpha();
 
-                    if (itemstack.getItem() == ItemGerarusRaw.block) {
-                        double offset = 0.12;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
+                    if (itemstack.getItem() == ItemTaxidermyDisplayItem.block) {
+
+                        Class classEntity = getEntityFromNBT(itemstack);
+                        if (classEntity != null) {
+                            itemRender = false;
+
+                            if (classEntity == EntityPrehistoricFloraGerarusInsect.class) {
+                                double offset = 0.12;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_GERARUS);
+                                modelGerarus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAcadoaradoxides.class) {
+                                double offset = 0.54;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ACADOARADOXIDES);
+                                modelAcadoaradoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAdelophthalmus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.9F, 0.9F, 0.9F);
+                                this.bindTexture(TEXTURE_ADELOPHTHALMUS);
+                                modelAdelophthalmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAeger.class) {
+                                double offset = 0.27;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.3, 0.3, 0.3);
+                                this.bindTexture(TEXTURE_AEGER);
+                                modelAeger.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAiniktozoon.class) {
+                                double offset = 0.44;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_AINIKTOZOON);
+                                modelAiniktozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAlacaris.class) {
+                                double offset = 0.35;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.5, 1.5, 1.5);
+                                this.bindTexture(TEXTURE_ALACARIS);
+                                modelAlacaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAmplectobelua.class) {
+                                double offset = 0.48;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_AMPLECTOBELUA);
+                                modelAmplectobelua.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAmpyx.class) {
+                                double offset = 0.19;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.35F, 0.35F, 0.35F);
+                                this.bindTexture(TEXTURE_AMPYX);
+                                modelAmpyx.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAnomalocaris.class) {
+                                double offset = 0.46;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1, 0.85, 1);
+                                this.bindTexture(TEXTURE_ANOMALOCARIS);
+                                modelAnomalocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAntarcticarcinus.class) {
+                                double offset = 0.46;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.8, 1.8, 1.8);
+                                this.bindTexture(TEXTURE_ANTARCTICARCINUS);
+                                modelAntarcticarcinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRoachoidAridInsect.class) {
+                                double offset = 0.29;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                                this.bindTexture(TEXTURE_ARIDROACHOID);
+                                modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraArchoblattinaInsect.class) {
+                                double offset = 0.37;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.7F, 0.7F, 0.7F);
+                                this.bindTexture(TEXTURE_ARCHOBLATTINA);
+                                modelArchoblattina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraArctinurus.class) {
+                                double offset = 0.37;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.4F, 0.4F, 0.4F);
+                                this.bindTexture(TEXTURE_ARCTINURUS);
+                                modelArctinurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAsaphus.class) {
+                                double offset = 0.57;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.3, 2.3, 2.3);
+                                this.bindTexture(TEXTURE_ASAPHUS);
+                                modelAsaphus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAttercopus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_ATTERCOPUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAulacoceras.class) {
+                                double offset = 0.29;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.9F, 0.9F, 0.9F);
+                                this.bindTexture(TEXTURE_AULACOCERAS);
+                                modelAulacoceras.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraAustrolimulus.class) {
+                                double offset = 0.26;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                this.bindTexture(TEXTURE_AUSTROLIMULUS);
+                                modelAustrolimulus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraBanffia.class) {
+                                double offset = 0.37;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.5, 1.5, 1.5);
+                                this.bindTexture(TEXTURE_BANFFIA);
+                                modelBanffia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraBohemoharpes.class) {
+                                double offset = 0.32;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.3F, 1.3F, 1.3F);
+                                this.bindTexture(TEXTURE_BOHEMOHARPES);
+                                modelBohemoharpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraBushizheia.class) {
+                                double offset = 0.34;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_BUSHIZHEIA);
+                                modelBushizheia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCalvapilosa.class) {
+                                double offset = 0.34;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.4F, 1.4F, 1.4F);
+                                this.bindTexture(TEXTURE_CALVAPILOSA);
+                                modelCalvapilosa.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCambroraster.class) {
+                                double offset = 0.68;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1F, 0.7F, 1F);
+                                this.bindTexture(TEXTURE_CAMBRORASTER);
+                                modelCambroraster.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCanadaspis.class) {
+                                double offset = 0.36;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.4, 1.4, 1.4);
+                                this.bindTexture(TEXTURE_CANADASPIS);
+                                modelCanadaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCanadia.class) {
+                                double offset = 0.17;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6, 0.6, 0.6);
+                                this.bindTexture(TEXTURE_CANADIA);
+                                modelCanadia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_CANADIA_LAYER);
+                                modelCanadia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraCheirurus.class) {
+                                double offset = 0.56;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.3, 2.3, 2.3);
+                                this.bindTexture(TEXTURE_CHEIRURUS);
+                                modelCheirurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraCheloniellon.class) {
+                                double offset = 0.48;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CHELONIELLON);
+                                modelCheloniellon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraChotecops.class) {
+                                double offset = 0.38;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.7F, 0.7F, 0.7F);
+                                this.bindTexture(TEXTURE_CHOTECOPS);
+                                modelChotecops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTitanopteraClatrotitan.class) {
+                                double offset = 0.49;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(4F, 4F, 4F);
+                                this.bindTexture(TEXTURE_CLATROTITAN);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_CLATROTITAN_WING);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraCrotalocephalus.class) {
+                                double offset = 0.46;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_CROTALOCEPHALUS);
+                                modelCrotalocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Cryptomartus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_CRYPTOMARTUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDalmanites.class) {
+                                double offset = 0.35;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_DALMANITES);
+                                modelDalmanites.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Delitzschala.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_DELITZSCHALA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDiania.class) {
+                                double offset = 0.12;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                if (LepidodendronConfig.doLowRes) {
+                                    this.bindTexture(TEXTURE_DIANIA_NERF);
+                                } else {
+                                    this.bindTexture(TEXTURE_DIANIA);
+                                }
+                                modelDiania.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraDrotops.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_DROTOPS);
+                                modelDrotops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Dunbaria.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_DUNBARIA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEllipsocephalus.class) {
+                                double offset = 0.3;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ELLIPSOCEPHALUS);
+                                modelEllipsocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraElrathia.class) {
+                                double offset = 0.33;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_ELRATHIA);
+                                modelElrathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEnoploura.class) {
+                                double offset = 0.3;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_ENOPLOURA);
+                                modelEnoploura.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEoarthropleura.class) {
+                                double offset = 0.61;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_EOARTHROPLEURA);
+                                modelEoarthropleura.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Eophrynus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_EOPHRYNUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEoredlichia.class) {
+                                double offset = 0.52;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EOREDLICHIA);
+                                modelEoredlichia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEricixerxes.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_ERICIXERXES);
+                                modelEricixerxes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraEurypterus.class) {
+                                double offset = 0.47;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_EURYPTERUS);
+                                modelEurypterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraScorpion_Gigantoscorpio.class) {
+                                double offset = 0.2;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.89F, 0.89F, 0.89F);
+                                this.bindTexture(TEXTURE_GIGANTOSCORPIO);
+                                modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraScorpion_Gondwanascorpio.class) {
+                                double offset = 0.15;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.61F, 0.61F, 0.61);
+                                this.bindTexture(TEXTURE_GONDWANASCORPIO);
+                                modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRoachoidForestInsect.class) {
+                                double offset = 0.29;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                                this.bindTexture(TEXTURE_FORESTROACHOID);
+                                modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTitanopteraGigatitan.class) {
+                                double offset = 0.49;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(4F, 4F, 4F);
+                                this.bindTexture(TEXTURE_GIGATITAN);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_GIGATITAN_WING);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraHaikouichthys.class) {
+                                double offset = 0.1;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.4, 0.4, 0.4);
+                                this.bindTexture(TEXTURE_HAIKOUICHTHYS);
+                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_HAIKOUICHTHYS_FIN);
+                                modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraHallucigenia.class) {
+                                double offset = 0.17;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                if (LepidodendronConfig.doLowRes) {
+                                    this.bindTexture(TEXTURE_HALLUCIGENIA_NERF);
+                                } else {
+                                    this.bindTexture(TEXTURE_HALLUCIGENIA);
+                                }
+                                modelHallucigenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHarpes.class) {
+                                double offset = 0.39;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.6F, 1.6F, 1.6F);
+                                this.bindTexture(TEXTURE_HARPES);
+                                this.modelHarpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHarvestman.class) {
+                                double offset = 0.19;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.2F, 0.2F, 0.2F);
+                                this.bindTexture(TEXTURE_HARVESTMAN);
+                                modelHarvestman.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHeliopeltis.class) {
+                                double offset = 0.21;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.38F, 0.38F, 0.38F);
+                                this.bindTexture(TEXTURE_HELIOPELTIS);
+                                modelHeliopeltis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHelmetia.class) {
+                                double offset = 0.45;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.85F, 0.85F, 0.85F);
+                                this.bindTexture(TEXTURE_HELMETIA);
+                                modelHelmetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homoioptera.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_HOMOIOPTERA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Homaloneura.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_HOMALONEURA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraHungioides.class) {
+                                double offset = 0.75;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.85F, 0.85F, 0.85F);
+                                this.bindTexture(TEXTURE_HUNGIOIDES);
+                                modelHungioides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraIsotelus.class) {
+                                double offset = 0.76;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_ISOTELUS);
+                                modelIsotelus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraItalophlebia.class) {
+                                double offset = 0.26;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                this.bindTexture(TEXTURE_ITALOPHLEBIA);
+                                modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_ITALOPHLEBIA_WING);
+                                modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraJianshanopodia.class) {
+                                double offset = 0.32;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_JIANSHANOPODIA);
+                                modelJianshanopodia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraKalbarria.class) {
+                                double offset = 0.5;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_KALBARRIA);
+                                modelKalbarria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraKerygmachela.class) {
+                                double offset = 0.32;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.3F, 1.3F, 1.3F);
+                                this.bindTexture(TEXTURE_KERYGMACHELA);
+                                modelKerygmachela.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraKodymirus.class) {
+                                double offset = 0.3;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_KODYMIRUS);
+                                modelKodymirus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraKokomopterus.class) {
+                                double offset = 0.41;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.3F, 1.7F, 2.3F);
+                                this.bindTexture(TEXTURE_KOKOMOPTERUS);
+                                modelKokomopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Kreischeria.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_KREISCHERIA);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLanceaspis.class) {
+                                double offset = 0.33;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_LANCEASPIS);
+                                modelLanceaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLimulid.class) {
+                                double offset = 0.8;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.9F, 0.9F, 0.9F);
+                                this.bindTexture(TEXTURE_LIMULID);
+                                modelLimulid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLochmanolenellus.class) {
+                                double offset = 0.31;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                                this.bindTexture(TEXTURE_LOCHMANOLENELLUS);
+                                modelLochmanolenellus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLonchodomas.class) {
+                                double offset = 0.25;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.48F, 0.48F, 0.48F);
+                                this.bindTexture(TEXTURE_LONCHODOMAS);
+                                this.modelLonchodomas.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lithomantis.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_LITHOMANTIS);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLunataspis.class) {
+                                double offset = 0.335;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_LUNATASPIS);
+                                modelLunataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Lycocercus.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_LYCOCERCUS);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraLyrarapax.class) {
+                                double offset = 0.46;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_LYRARAPAX);
+                                modelLyrarapax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMarrella.class) {
+                                double offset = 0.34;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_MARRELLA);
+                                modelMarrella.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMeganeura.class) {
+                                double offset = 0.28;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.77F, 0.77F, 0.77F);
+                                this.bindTexture(TEXTURE_MEGANEURA);
+                                modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_MEGANEURA_WING);
+                                modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraMeganeuropsis.class) {
+                                double offset = 0.28;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.77F, 0.77F, 0.77F);
+                                this.bindTexture(TEXTURE_MEGANEUROPSIS);
+                                modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_MEGANEUROPSIS_WING);
+                                modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraMegarachne.class) {
+                                double offset = 0.73;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(3F, 3F, 3F);
+                                this.bindTexture(TEXTURE_MEGARACHNE);
+                                modelMegarachne.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTitanopteraMesotitan.class) {
+                                double offset = 0.49;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(4F, 4F, 4F);
+                                this.bindTexture(TEXTURE_MESOTITAN);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_MESOTITAN_WING);
+                                modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraMetaspriggina.class) {
+                                double offset = 0.21;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_METASPRIGGINA);
+                                modelMetaspriggina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMicrodictyon.class) {
+                                double offset = 0.17;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.7F, 0.7F, 0.7F);
+                                this.bindTexture(TEXTURE_MICRODICTYON);
+                                modelMicrodictyon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMimetaster.class) {
+                                double offset = 0.36;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.5F, 1.5F, 1.5F);
+                                this.bindTexture(TEXTURE_MIMETASTER);
+                                modelMimetaster.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraMontecaris.class) {
+                                double offset = 0.29;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.1F, 1.3F, 2.1F);
+                                this.bindTexture(TEXTURE_MONTECARIS);
+                                modelMontecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraNahecaris.class) {
+                                double offset = 0.33;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.6F, 1.6F, 1.6F);
+                                this.bindTexture(TEXTURE_NAHECARIS);
+                                modelNahecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraNectocaris.class) {
+                                double offset = 0.18;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.7F, 0.7F, 0.7F);
+                                this.bindTexture(TEXTURE_NECTOCARIS);
+                                modelNectocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOdaraia.class) {
+                                double offset = 0.23;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.9F, 0.9F, 0.9F);
+                                this.bindTexture(TEXTURE_ODARAIA);
+                                modelOdaraia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOdontogriphus.class) {
+                                double offset = 0.39;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.6F, 1.6F, 1.6F);
+                                this.bindTexture(TEXTURE_ODONTOGRIPHUS);
+                                modelOdontogriphus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOgyginus.class) {
+                                double offset = 0.5;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.55F, 0.55F, 0.55F);
+                                this.bindTexture(TEXTURE_OGYGINUS);
+                                this.modelOgyginus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOpabinia.class) {
+                                double offset = 0.3;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                if (LepidodendronConfig.doLowRes) {
+                                    this.bindTexture(TEXTURE_OPABINIA_NERF);
+                                } else {
+                                    this.bindTexture(TEXTURE_OPABINIA);
+                                }
+                                modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOpolanka.class) {
+                                double offset = 0.45;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.77F, 0.77F, 0.77F);
+                                this.bindTexture(TEXTURE_OPOLANKA);
+                                modelOpolanka.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraScorpion_Opsieobuthus.class) {
+                                double offset = 0.15;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.61F, 0.61F, 0.61F);
+                                this.bindTexture(TEXTURE_OPSIEOBUTHUS);
+                                modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOrthrozanclus.class) {
+                                double offset = 0.27;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.75F, 0.75F, 0.75F);
+                                this.bindTexture(TEXTURE_ORTHROZANCLUS);
+                                modelOrthrozanclus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraOttoia.class) {
+                                double offset = 0.05;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
+                                this.bindTexture(TEXTURE_OTTOIA);
+                                modelOttoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Palaeocharinus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_PALAEOCHARINUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeoisopus.class) {
+                                double offset = 0.6;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PALAEOISOPUS);
+                                modelPalaeoisopus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeontinid.class) {
+                                double offset = 0.33;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_PALAEONTINID);
+                                modelPalaeontinid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Palaeotarbus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_PALAEOTARBUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraParadoxides.class) {
+                                double offset = 0.57;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.3F, 2.3F, 2.3F);
+                                this.bindTexture(TEXTURE_PARADOXIDES);
+                                modelParadoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraParapeytoia.class) {
+                                double offset = 0.3;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_PARAPEYTOIA);
+                                modelParapeytoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraParvancorina.class) {
+                                double offset = 0.6;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.5F, 2.5F, 2.5F);
+                                this.bindTexture(TEXTURE_PARVANCORINA);
+                                modelParvancorina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPaucipodia.class) {
+                                double offset = 0.16;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_PAUCIPODIA);
+                                modelPaucipodia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrigonotarbid_Permotarbus.class) {
+                                double offset = 0.43;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_PERMOTARBUS);
+                                modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPhantaspis.class) {
+                                double offset = 0.32;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_PHANTASPIS);
+                                modelPhantaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPikaia.class) {
+                                double offset = 0.05;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                this.bindTexture(TEXTURE_PIKAIA);
+                                modelPikaia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPneumodesmus.class) {
+                                double offset = 0.45;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.9F, 0.9F, 0.9F);
+                                this.bindTexture(TEXTURE_PNEUMODESMUS);
+                                modelPneumodesmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPomatrum.class) {
+                                double offset = 0.42;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.7F, 1.7F, 1.7F);
+                                this.bindTexture(TEXTURE_POMATRUM);
+                                modelPomatrum.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProfallotaspis.class) {
+                                double offset = 0.33;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.6F, 0.6F, 0.6F);
+                                this.bindTexture(TEXTURE_PROFALLOTASPIS);
+                                modelProfallotaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraProtozygoptera.class) {
+                                double offset = 0.26;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
+                                this.bindTexture(TEXTURE_PROTOZYGOPTERA);
+                                modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_PROTOZYGOPTERA_WING);
+                                modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraScorpion_Pulmonoscorpius.class) {
+                                double offset = 0.24;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.1F, 1.1F, 1.1F);
+                                this.bindTexture(TEXTURE_PULMONOSCORPIO);
+                                modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRetifacies.class) {
+                                double offset = 0.63;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_RETIFACIES);
+                                modelRetifacies.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSchinderhannes.class) {
+                                double offset = 0.37;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SCHINDERHANNES);
+                                modelSchinderhannes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSelenopeltis.class) {
+                                double offset = 0.41;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.6F, 1.6F, 1.6F);
+                                this.bindTexture(TEXTURE_SELENOPELTIS);
+                                modelSelenopeltis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSiberion.class) {
+                                double offset = 0.2;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.8F, 0.8F, 0.8F);
+                                this.bindTexture(TEXTURE_SIBERION);
+                                modelSiberion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSidneyia.class) {
+                                double offset = 0.42;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SIDNEYIA);
+                                modelSidneyia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Sinodunbaria.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_SINODUNBARIA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraPalaeodictyoptera_Stenodictya.class) {
+                                double offset = 0.65;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.2F, 1.2F, 1.2F);
+                                this.bindTexture(TEXTURE_STENODICTYA);
+                                modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraRoachoidSwampInsect.class) {
+                                double offset = 0.29;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                                this.bindTexture(TEXTURE_SWAMPROACHOID);
+                                modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSkeemella.class) {
+                                double offset = 0.27;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1F, 1F, 1F);
+                                this.bindTexture(TEXTURE_SKEEMELLA);
+                                modelSkeemella.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSyllipsimopodi.class) {
+                                double offset = 0.24;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.66F, 0.66F, 0.66F);
+                                this.bindTexture(TEXTURE_SYLLIPSIMOPODI);
+                                modelSyllipsimopodi.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraSynophalos.class) {
+                                double offset = 0.15;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_SYNOPHALOS);
+                                modelSynophalos.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTegopelte.class) {
+                                double offset = 0.34;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_TEGOPELTE);
+                                modelTegopelte.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.pushMatrix();
+                                GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
+                                GlStateManager.enableNormalize();
+                                GlStateManager.enableBlend();
+                                GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+                                this.bindTexture(TEXTURE_TEGOPELTE_LAYER);
+                                modelTegopelte.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                                GlStateManager.disableBlend();
+                                GlStateManager.disableNormalize();
+                                GlStateManager.popMatrix();
+                            } else if (classEntity == EntityPrehistoricFloraTerataspis.class) {
+                                double offset = 0.57;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(2.3F, 2.3F, 2.3F);
+                                this.bindTexture(TEXTURE_TERATASPIS);
+                                modelTerataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTokummia.class) {
+                                double offset = 0.4;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                if (LepidodendronConfig.doLowRes) {
+                                    this.bindTexture(TEXTURE_TOKUMMIA_NERF);
+                                } else {
+                                    this.bindTexture(TEXTURE_TOKUMMIA);
+                                }
+                                modelTokummia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTrimerus.class) {
+                                double offset = 0.54;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1F, 1F, 1F);
+                                this.bindTexture(TEXTURE_TRIMERUS);
+                                modelTrimerus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraTyrannophontes.class) {
+                                double offset = 0.19;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.78F, 0.78F, 0.78F);
+                                this.bindTexture(TEXTURE_TYRANNOPHONTES);
+                                modelTyrannophontes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraUralichas.class) {
+                                double offset = 0.45;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                                this.bindTexture(TEXTURE_URALICHAS);
+                                modelUralichas.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraVetulicola.class) {
+                                double offset = 0.39;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.8F, 1.8F, 1.8F);
+                                this.bindTexture(TEXTURE_VETULICOLA);
+                                modelVetulicola.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWalliserops.class) {
+                                double offset = 0.55;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_WALLISEROPS);
+                                modelWalliserops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWeinbergina.class) {
+                                double offset = 0.47;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.9, 1.9, 1.9);
+                                this.bindTexture(TEXTURE_WEINBERGINA);
+                                modelWeinbergina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWillwerathia.class) {
+                                double offset = 0.77;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.4, 1.4, 1.4);
+                                this.bindTexture(TEXTURE_WILLWERATHIA);
+                                modelWillwerathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWingertshellicus.class) {
+                                double offset = 0.26;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1, 1, 1);
+                                this.bindTexture(TEXTURE_WINGERTSHELLICUS);
+                                modelWingertshellicus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraWiwaxia.class) {
+                                double offset = 0.25;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_WIWAXIA);
+                                modelWiwaxia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraXenusion.class) {
+                                double offset = 0.25;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                this.bindTexture(TEXTURE_XENUSION);
+                                modelXenusion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraYawunik.class) {
+                                double offset = 0.35;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1.5, 1.5, 1.5);
+                                this.bindTexture(TEXTURE_YAWUNIK);
+                                modelYawunik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraYohoia.class) {
+                                double offset = 0.24;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(1, 1, 1);
+                                this.bindTexture(TEXTURE_YOHOIA);
+                                modelYohoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            } else if (classEntity == EntityPrehistoricFloraYunnanozoon.class) {
+                                double offset = 0.18;
+                                if (facing == EnumFacing.UP) {
+                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.DOWN) {
+                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+                                }
+                                if (facing == EnumFacing.NORTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.SOUTH) {
+                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 1F, 0F, 0F);
+                                }
+                                if (facing == EnumFacing.WEST) {
+                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(90, 0F, 0F, 1F);
+                                }
+                                if (facing == EnumFacing.EAST) {
+                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                                    GlStateManager.rotate(180, 0F, 0F, 1F);
+                                    GlStateManager.rotate(270, 0F, 0F, 1F);
+                                }
+                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                                GlStateManager.scale(0.7, 0.7, 0.7);
+                                this.bindTexture(TEXTURE_YUNNANOZOON);
+                                modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+                            }
+                            else {
+                                itemRender = true;
+                            }
                         }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_GERARUS);
-                        modelGerarus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAcadoaradoxidesRaw.block) {
-                        double offset = 0.54;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ACADOARADOXIDES);
-                        modelAcadoaradoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAdelophthalmusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.9F,0.9F,0.9F);
-                        this.bindTexture(TEXTURE_ADELOPHTHALMUS);
-                        modelAdelophthalmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAegerRaw.block) {
-                        double offset = 0.27;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.3,0.3,0.3);
-                        this.bindTexture(TEXTURE_AEGER);
-                        modelAeger.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
-                        double offset = 0.44;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_AINIKTOZOON);
-                        modelAiniktozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAlacarisRaw.block) {
-                        double offset = 0.35;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.5,1.5,1.5);
-                        this.bindTexture(TEXTURE_ALACARIS);
-                        modelAlacaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAmplectobeluaRaw.block) {
-                        double offset = 0.48;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_AMPLECTOBELUA);
-                        modelAmplectobelua.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAmpyxRaw.block) {
-                        double offset = 0.19;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.35F,0.35F,0.35F);
-                        this.bindTexture(TEXTURE_AMPYX);
-                        modelAmpyx.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAnomalocarisRaw.block) {
-                        double offset = 0.46;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1,0.85,1);
-                        this.bindTexture(TEXTURE_ANOMALOCARIS);
-                        modelAnomalocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAntarcticarcinusRaw.block) {
-                        double offset = 0.46;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.8,1.8,1.8);
-                        this.bindTexture(TEXTURE_ANTARCTICARCINUS);
-                        modelAntarcticarcinus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRoachoidAridRaw.block) {
-                        double offset = 0.29;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.5F,0.5F,0.5F);
-                        this.bindTexture(TEXTURE_ARIDROACHOID);
-                        modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemArchoblattinaRaw.block) {
-                        double offset = 0.37;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.7F,0.7F,0.7F);
-                        this.bindTexture(TEXTURE_ARCHOBLATTINA);
-                        modelArchoblattina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemArctinurusRaw.block) {
-                        double offset = 0.37;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.4F,0.4F,0.4F);
-                        this.bindTexture(TEXTURE_ARCTINURUS);
-                        modelArctinurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAsaphusRaw.block) {
-                        double offset = 0.57;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.3,2.3,2.3);
-                        this.bindTexture(TEXTURE_ASAPHUS);
-                        modelAsaphus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAttercopusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_ATTERCOPUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAulacocerasRaw.block) {
-                        double offset = 0.29;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.9F,0.9F,0.9F);
-                        this.bindTexture(TEXTURE_AULACOCERAS);
-                        modelAulacoceras.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAustrolimulusRaw.block) {
-                        double offset = 0.26;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        this.bindTexture(TEXTURE_AUSTROLIMULUS);
-                        modelAustrolimulus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemBanffiaRaw.block) {
-                        double offset = 0.37;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.5,1.5,1.5);
-                        this.bindTexture(TEXTURE_BANFFIA);
-                        modelBanffia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemBohemoharpesRaw.block) {
-                        double offset = 0.32;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.3F,1.3F,1.3F);
-                        this.bindTexture(TEXTURE_BOHEMOHARPES);
-                        modelBohemoharpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemBushizheiaRaw.block) {
-                        double offset = 0.34;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_BUSHIZHEIA);
-                        modelBushizheia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCalvapilosaRaw.block) {
-                        double offset = 0.34;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4F,1.4F,1.4F);
-                        this.bindTexture(TEXTURE_CALVAPILOSA);
-                        modelCalvapilosa.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCambrorasterRaw.block) {
-                        double offset = 0.68;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1F,0.7F,1F);
-                        this.bindTexture(TEXTURE_CAMBRORASTER);
-                        modelCambroraster.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCanadaspisRaw.block) {
-                        double offset = 0.36;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
-                        this.bindTexture(TEXTURE_CANADASPIS);
-                        modelCanadaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCanadiaRaw.block) {
-                        double offset = 0.17;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6,0.6,0.6);
-                        this.bindTexture(TEXTURE_CANADIA);
-                        modelCanadia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.9F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_CANADIA_LAYER);
-                        modelCanadia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemCheirurusRaw.block) {
-                        double offset = 0.56;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.3,2.3,2.3);
-                        this.bindTexture(TEXTURE_CHEIRURUS);
-                        modelCheirurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCheloniellonRaw.block) {
-                        double offset = 0.48;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CHELONIELLON);
-                        modelCheloniellon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemChotecopsRaw.block) {
-                        double offset = 0.38;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.7F,0.7F,0.7F);
-                        this.bindTexture(TEXTURE_CHOTECOPS);
-                        modelChotecops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTitanopteraClatrotitanRaw.block) {
-                        double offset = 0.49;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(4F,4F,4F);
-                        this.bindTexture(TEXTURE_CLATROTITAN);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_CLATROTITAN_WING);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemCrotalocephalusRaw.block) {
-                        double offset = 0.46;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_CROTALOCEPHALUS);
-                        modelCrotalocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemCryptomartusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_CRYPTOMARTUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDalmanitesRaw.block) {
-                        double offset = 0.35;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_DALMANITES);
-                        modelDalmanites.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraDelitzschalaRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_DELITZSCHALA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDianiaRaw.block) {
-                        double offset = 0.12;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        if (LepidodendronConfig.doLowRes) {
-                            this.bindTexture(TEXTURE_DIANIA_NERF);
-                        }
-                        else {
-                            this.bindTexture(TEXTURE_DIANIA);
-                        }
-                        modelDiania.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemDrotopsRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_DROTOPS);
-                        modelDrotops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraDunbariaRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_DUNBARIA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEllipsocephalusRaw.block) {
-                        double offset = 0.3;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ELLIPSOCEPHALUS);
-                        modelEllipsocephalus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemElrathiaRaw.block) {
-                        double offset = 0.33;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_ELRATHIA);
-                        modelElrathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEnoplouraRaw.block) {
-                        double offset = 0.3;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F,0.6F,0.6F);
-                        this.bindTexture(TEXTURE_ENOPLOURA);
-                        modelEnoploura.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEoarthropleuraRaw.block) {
-                        double offset = 0.61;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_EOARTHROPLEURA);
-                        modelEoarthropleura.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEophrynusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_EOPHRYNUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEoredlichiaRaw.block) {
-                        double offset = 0.52;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EOREDLICHIA);
-                        modelEoredlichia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEricixerxesRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_ERICIXERXES);
-                        modelEricixerxes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemEurypterusRaw.block) {
-                        double offset = 0.47;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_EURYPTERUS);
-                        modelEurypterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemScorpionGigantoscorpioRaw.block) {
-                        double offset = 0.2;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.89F,0.89F,0.89F);
-                        this.bindTexture(TEXTURE_GIGANTOSCORPIO);
-                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemScorpionGondwanascorpioRaw.block) {
-                        double offset = 0.15;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.61F,0.61F,0.61);
-                        this.bindTexture(TEXTURE_GONDWANASCORPIO);
-                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRoachoidForestRaw.block) {
-                        double offset = 0.29;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.5F,0.5F,0.5F);
-                        this.bindTexture(TEXTURE_FORESTROACHOID);
-                        modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTitanopteraGigatitanRaw.block) {
-                        double offset = 0.49;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(4F,4F,4F);
-                        this.bindTexture(TEXTURE_GIGATITAN);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_GIGATITAN_WING);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemHaikouichthysRaw.block) {
-                        double offset = 0.1;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.4,0.4,0.4);
-                        this.bindTexture(TEXTURE_HAIKOUICHTHYS);
-                        modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_HAIKOUICHTHYS_FIN);
-                        modelHaikouichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemHallucigeniaRaw.block) {
-                        double offset = 0.17;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        if (LepidodendronConfig.doLowRes) {
-                            this.bindTexture(TEXTURE_HALLUCIGENIA_NERF);
-                        }
-                        else {
-                            this.bindTexture(TEXTURE_HALLUCIGENIA);
-                        }
-                        modelHallucigenia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHarpesRaw.block) {
-                        double offset = 0.39;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.6F,1.6F,1.6F);
-                        this.bindTexture(TEXTURE_HARPES);
-                        this.modelHarpes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHarvestmanRaw.block) {
-                        double offset = 0.19;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.2F,0.2F,0.2F);
-                        this.bindTexture(TEXTURE_HARVESTMAN);
-                        modelHarvestman.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHeliopeltisRaw.block) {
-                        double offset = 0.21;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.38F,0.38F,0.38F);
-                        this.bindTexture(TEXTURE_HELIOPELTIS);
-                        modelHeliopeltis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHelmetiaRaw.block) {
-                        double offset = 0.45;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.85F,0.85F,0.85F);
-                        this.bindTexture(TEXTURE_HELMETIA);
-                        modelHelmetia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraHomoiopteraRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_HOMOIOPTERA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraHomaloneuraRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_HOMALONEURA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemHungioidesRaw.block) {
-                        double offset = 0.75;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.85F,0.85F,0.85F);
-                        this.bindTexture(TEXTURE_HUNGIOIDES);
-                        modelHungioides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemIsotelusRaw.block) {
-                        double offset = 0.76;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_ISOTELUS);
-                        modelIsotelus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemItalophlebiaRaw.block) {
-                        double offset = 0.26;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        this.bindTexture(TEXTURE_ITALOPHLEBIA);
-                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_ITALOPHLEBIA_WING);
-                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemJianshanopodiaRaw.block) {
-                        double offset = 0.32;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_JIANSHANOPODIA);
-                        modelJianshanopodia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKalbarriaRaw.block) {
-                        double offset = 0.5;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_KALBARRIA);
-                        modelKalbarria.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKerygmachelaRaw.block) {
-                        double offset = 0.32;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.3F,1.3F,1.3F);
-                        this.bindTexture(TEXTURE_KERYGMACHELA);
-                        modelKerygmachela.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKodymirusRaw.block) {
-                        double offset = 0.3;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_KODYMIRUS);
-                        modelKodymirus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKokomopterusRaw.block) {
-                        double offset = 0.41;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.3F,1.7F,2.3F);
-                        this.bindTexture(TEXTURE_KOKOMOPTERUS);
-                        modelKokomopterus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemKreischeriaRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_KREISCHERIA);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLanceaspisRaw.block) {
-                        double offset = 0.33;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F,0.6F,0.6F);
-                        this.bindTexture(TEXTURE_LANCEASPIS);
-                        modelLanceaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLimulidRaw.block) {
-                        double offset = 0.8;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.9F,0.9F,0.9F);
-                        this.bindTexture(TEXTURE_LIMULID);
-                        modelLimulid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLochmanolenellusRaw.block) {
-                        double offset = 0.31;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.5F,0.5F,0.5F);
-                        this.bindTexture(TEXTURE_LOCHMANOLENELLUS);
-                        modelLochmanolenellus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLonchodomasRaw.block) {
-                        double offset = 0.25;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.48F,0.48F,0.48F);
-                        this.bindTexture(TEXTURE_LONCHODOMAS);
-                        this.modelLonchodomas.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraLithomantisRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_LITHOMANTIS);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLunataspisRaw.block) {
-                        double offset = 0.335;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F, 0.6F, 0.6F);
-                        this.bindTexture(TEXTURE_LUNATASPIS);
-                        modelLunataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraLycocercusRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_LYCOCERCUS);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemLyrarapaxRaw.block) {
-                        double offset = 0.46;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_LYRARAPAX);
-                        modelLyrarapax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMarrellaRaw.block) {
-                        double offset = 0.34;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_MARRELLA);
-                        modelMarrella.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMeganeuraRaw.block) {
-                        double offset = 0.28;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.77F,0.77F,0.77F);
-                        this.bindTexture(TEXTURE_MEGANEURA);
-                        modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_MEGANEURA_WING);
-                        modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemMeganeuropsisRaw.block) {
-                        double offset = 0.28;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.77F,0.77F,0.77F);
-                        this.bindTexture(TEXTURE_MEGANEUROPSIS);
-                        modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_MEGANEUROPSIS_WING);
-                        modelMeganeuropsis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemMegarachneRaw.block) {
-                        double offset = 0.73;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(3F,3F,3F);
-                        this.bindTexture(TEXTURE_MEGARACHNE);
-                        modelMegarachne.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTitanopteraMesotitanRaw.block) {
-                        double offset = 0.49;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(4F,4F,4F);
-                        this.bindTexture(TEXTURE_MESOTITAN);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_MESOTITAN_WING);
-                        modelTitanoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemMetasprigginaRaw.block) {
-                        double offset = 0.21;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_METASPRIGGINA);
-                        modelMetaspriggina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMicrodictyonRaw.block) {
-                        double offset = 0.17;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.7F,0.7F,0.7F);
-                        this.bindTexture(TEXTURE_MICRODICTYON);
-                        modelMicrodictyon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMimetasterRaw.block) {
-                        double offset = 0.36;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.5F,1.5F,1.5F);
-                        this.bindTexture(TEXTURE_MIMETASTER);
-                        modelMimetaster.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemMontecarisRaw.block) {
-                        double offset = 0.29;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.1F,1.3F,2.1F);
-                        this.bindTexture(TEXTURE_MONTECARIS);
-                        modelMontecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemNahecarisRaw.block) {
-                        double offset = 0.33;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.6F,1.6F,1.6F);
-                        this.bindTexture(TEXTURE_NAHECARIS);
-                        modelNahecaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemNectocarisRaw.block) {
-                        double offset = 0.18;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.7F,0.7F,0.7F);
-                        this.bindTexture(TEXTURE_NECTOCARIS);
-                        modelNectocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOdaraiaRaw.block) {
-                        double offset = 0.23;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.9F,0.9F,0.9F);
-                        this.bindTexture(TEXTURE_ODARAIA);
-                        modelOdaraia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOdontogriphusRaw.block) {
-                        double offset = 0.39;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.6F,1.6F,1.6F);
-                        this.bindTexture(TEXTURE_ODONTOGRIPHUS);
-                        modelOdontogriphus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOgyginusRaw.block) {
-                        double offset = 0.5;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.55F,0.55F,0.55F);
-                        this.bindTexture(TEXTURE_OGYGINUS);
-                        this.modelOgyginus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOpabiniaRaw.block) {
-                        double offset = 0.3;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        if (LepidodendronConfig.doLowRes) {
-                            this.bindTexture(TEXTURE_OPABINIA_NERF);
-                        }
-                        else {
-                            this.bindTexture(TEXTURE_OPABINIA);
-                        }
-                        modelOpabinia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOpolankaRaw.block) {
-                        double offset = 0.45;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.77F,0.77F,0.77F);
-                        this.bindTexture(TEXTURE_OPOLANKA);
-                        modelOpolanka.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemScorpionOpsieobuthusRaw.block) {
-                        double offset = 0.15;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.61F,0.61F,0.61F);
-                        this.bindTexture(TEXTURE_OPSIEOBUTHUS);
-                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOrthrozanclusRaw.block) {
-                        double offset = 0.27;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.75F,0.75F,0.75F);
-                        this.bindTexture(TEXTURE_ORTHROZANCLUS);
-                        modelOrthrozanclus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemOttoiaRaw.block) {
-                        double offset = 0.05;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 1F, 0F, 0F);
-                        this.bindTexture(TEXTURE_OTTOIA);
-                        modelOttoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeocharinusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_PALAEOCHARINUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeoisopusRaw.block) {
-                        double offset = 0.6;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PALAEOISOPUS);
-                        modelPalaeoisopus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeontinidRaw.block) {
-                        double offset = 0.33;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F,0.6F,0.6F);
-                        this.bindTexture(TEXTURE_PALAEONTINID);
-                        modelPalaeontinid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeotarbusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_PALAEOTARBUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemParadoxidesRaw.block) {
-                        double offset = 0.57;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.3F,2.3F,2.3F);
-                        this.bindTexture(TEXTURE_PARADOXIDES);
-                        modelParadoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemParapeytoiaRaw.block) {
-                        double offset = 0.3;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_PARAPEYTOIA);
-                        modelParapeytoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemParvancorinaRaw.block) {
-                        double offset = 0.6;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.5F,2.5F,2.5F);
-                        this.bindTexture(TEXTURE_PARVANCORINA);
-                        modelParvancorina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPaucipodiaRaw.block) {
-                        double offset = 0.16;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F,0.6F,0.6F);
-                        this.bindTexture(TEXTURE_PAUCIPODIA);
-                        modelPaucipodia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPermotarbusRaw.block) {
-                        double offset = 0.43;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_PERMOTARBUS);
-                        modelTrigonotarbid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPhantaspisRaw.block) {
-                        double offset = 0.32;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_PHANTASPIS);
-                        modelPhantaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPikaiaRaw.block) {
-                        double offset = 0.05;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        this.bindTexture(TEXTURE_PIKAIA);
-                        modelPikaia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPneumodesmusRaw.block) {
-                        double offset = 0.45;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.9F,0.9F,0.9F);
-                        this.bindTexture(TEXTURE_PNEUMODESMUS);
-                        modelPneumodesmus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPomatrumRaw.block) {
-                        double offset = 0.42;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.7F,1.7F,1.7F);
-                        this.bindTexture(TEXTURE_POMATRUM);
-                        modelPomatrum.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProfallotaspisRaw.block) {
-                        double offset = 0.33;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.6F,0.6F,0.6F);
-                        this.bindTexture(TEXTURE_PROFALLOTASPIS);
-                        modelProfallotaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemProtozygopteraRaw.block) {
-                        double offset = 0.26;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.3F,0.3F,0.3F);
-                        this.bindTexture(TEXTURE_PROTOZYGOPTERA);
-                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_PROTOZYGOPTERA_WING);
-                        modelProtozygoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemScorpionPulmonoscorpiusRaw.block) {
-                        double offset = 0.24;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.1F,1.1F,1.1F);
-                        this.bindTexture(TEXTURE_PULMONOSCORPIO);
-                        modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRetifaciesRaw.block) {
-                        double offset = 0.63;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_RETIFACIES);
-                        modelRetifacies.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSchinderhannesRaw.block) {
-                        double offset = 0.37;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SCHINDERHANNES);
-                        modelSchinderhannes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSelenopeltisRaw.block) {
-                        double offset = 0.41;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.6F,1.6F,1.6F);
-                        this.bindTexture(TEXTURE_SELENOPELTIS);
-                        modelSelenopeltis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSiberionRaw.block) {
-                        double offset = 0.2;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.8F,0.8F,0.8F);
-                        this.bindTexture(TEXTURE_SIBERION);
-                        modelSiberion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSidneyiaRaw.block) {
-                        double offset = 0.42;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SIDNEYIA);
-                        modelSidneyia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraSinodunbariaRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_SINODUNBARIA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemPalaeodictyopteraStenodictyaRaw.block) {
-                        double offset = 0.65;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.2F,1.2F,1.2F);
-                        this.bindTexture(TEXTURE_STENODICTYA);
-                        modelPalaeodictyoptera.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemRoachoidSwampRaw.block) {
-                        double offset = 0.29;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.5F,0.5F,0.5F);
-                        this.bindTexture(TEXTURE_SWAMPROACHOID);
-                        modelRoachoid.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSkeemellaRaw.block) {
-                        double offset = 0.27;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1F,1F,1F);
-                        this.bindTexture(TEXTURE_SKEEMELLA);
-                        modelSkeemella.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSyllipsimopodiRaw.block) {
-                        double offset = 0.24;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.66F,0.66F,0.66F);
-                        this.bindTexture(TEXTURE_SYLLIPSIMOPODI);
-                        modelSyllipsimopodi.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemSynophalosRaw.block) {
-                        double offset = 0.15;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_SYNOPHALOS);
-                        modelSynophalos.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTegopelteRaw.block) {
-                        double offset = 0.34;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_TEGOPELTE);
-                        modelTegopelte.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.pushMatrix();
-                        GlStateManager.color(1.0F, 1.0F, 1.0F, 0.8F);
-                        GlStateManager.enableNormalize();
-                        GlStateManager.enableBlend();
-                        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                        this.bindTexture(TEXTURE_TEGOPELTE_LAYER);
-                        modelTegopelte.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                        GlStateManager.disableBlend();
-                        GlStateManager.disableNormalize();
-                        GlStateManager.popMatrix();
-                    }
-                    else if (itemstack.getItem() == ItemTerataspisRaw.block) {
-                        double offset = 0.57;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(2.3F,2.3F,2.3F);
-                        this.bindTexture(TEXTURE_TERATASPIS);
-                        modelTerataspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTokummiaRaw.block) {
-                        double offset = 0.4;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        if (LepidodendronConfig.doLowRes) {
-                            this.bindTexture(TEXTURE_TOKUMMIA_NERF);
-                        }
-                        else {
-                            this.bindTexture(TEXTURE_TOKUMMIA);
-                        }
-                        modelTokummia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTrimerusRaw.block) {
-                        double offset = 0.54;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1F,1F,1F);
-                        this.bindTexture(TEXTURE_TRIMERUS);
-                        modelTrimerus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemTyrannophontesRaw.block) {
-                        double offset = 0.19;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.78F,0.78F,0.78F);
-                        this.bindTexture(TEXTURE_TYRANNOPHONTES);
-                        modelTyrannophontes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemUralichasRaw.block) {
-                        double offset = 0.45;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.5F,0.5F,0.5F);
-                        this.bindTexture(TEXTURE_URALICHAS);
-                        modelUralichas.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemVetulicolaRaw.block) {
-                        double offset = 0.39;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.8F,1.8F,1.8F);
-                        this.bindTexture(TEXTURE_VETULICOLA);
-                        modelVetulicola.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWalliseropsRaw.block) {
-                        double offset = 0.55;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_WALLISEROPS);
-                        modelWalliserops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWeinberginaRaw.block) {
-                        double offset = 0.47;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.9,1.9,1.9);
-                        this.bindTexture(TEXTURE_WEINBERGINA);
-                        modelWeinbergina.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWillwerathiaRaw.block) {
-                        double offset = 0.77;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.4,1.4,1.4);
-                        this.bindTexture(TEXTURE_WILLWERATHIA);
-                        modelWillwerathia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWingertshellicusRaw.block) {
-                        double offset = 0.26;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1,1,1);
-                        this.bindTexture(TEXTURE_WINGERTSHELLICUS);
-                        modelWingertshellicus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemWiwaxiaRaw.block) {
-                        double offset = 0.25;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_WIWAXIA);
-                        modelWiwaxia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemXenusionRaw.block) {
-                        double offset = 0.25;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_XENUSION);
-                        modelXenusion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemYawunikRaw.block) {
-                        double offset = 0.35;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1.5,1.5,1.5);
-                        this.bindTexture(TEXTURE_YAWUNIK);
-                        modelYawunik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemYohoiaRaw.block) {
-                        double offset = 0.24;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(1,1,1);
-                        this.bindTexture(TEXTURE_YOHOIA);
-                        modelYohoia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemYunnanozoonRaw.block) {
-                        double offset = 0.18;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        GlStateManager.scale(0.7,0.7,0.7);
-                        this.bindTexture(TEXTURE_YUNNANOZOON);
-                        modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
 
                     // ********************************************************************
-                    else { //standard items
-                        itemRender = true;
+                    else if (itemRender) { //standard items
+                        //itemRender = true;
 
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
@@ -5156,5 +5028,30 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                 }
             }
         }
+    }
+
+    @Nullable
+    public Class getEntityFromNBT(ItemStack stack) {
+        if (!stack.getTagCompound().hasKey("PFMob")) {
+            return null;
+        }
+        Class classOut = null;
+        NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
+        String stringDNA = (blockNBT.getString("id"));
+        if (stringDNA != null) {
+            classOut = findEntity(stringDNA);
+        }
+        return classOut;
+    }
+
+    @Nullable
+    private static Class<? extends Entity> findEntity(String entity) {
+        Class<? extends Entity> entityClass;
+        EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(entity));
+        entityClass = ee == null ? null : ee.getEntityClass();
+        if (entityClass == null) {
+            return null;
+        }
+        return entityClass;
     }
 }
