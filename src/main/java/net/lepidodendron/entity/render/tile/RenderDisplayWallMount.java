@@ -5901,8 +5901,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
             return false;
         }
-        double offset = -0.6;
-        double voffset = 0;
+        double offset = -0.25;
+        double voffset = 0.0;
         double hoffset = 0.0;
         setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
         float scalerModel = RenderSmok.getScaler();
