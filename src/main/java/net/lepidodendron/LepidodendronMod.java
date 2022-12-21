@@ -1340,6 +1340,23 @@ public class LepidodendronMod {
 	public static final int GUI_MICROSCOPE_ID = 551;
 	public static final int GUI_SORTER_FOSSIL_ID = 552;
 	public static final int GUI_TAXIDERMY_TABLE_ID = 553;
+	public static final int ENTITY_OPHTHALMOSAURUS = 554;
+	public static final ResourceLocation OPHTHALMOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ophthalmosaurus"));
+	public static final ResourceLocation OPHTHALMOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/ophthalmosaurus_young"));
+	public static final int ENTITY_MACROMESODON = 555;
+	public static final ResourceLocation MACROMESODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/macromesodon"));
+	public static final int ENTITY_ARDUAFRONS = 556;
+	public static final ResourceLocation ARDUAFRONS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/arduafrons"));
+	public static final int ENTITY_ASPIDORHYNCHUS = 557;
+	public static final ResourceLocation ASPIDORHYNCHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aspidorhynchus"));
+	public static final int ENTITY_ERYON = 558;
+	public static final ResourceLocation ERYON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eryon"));
+	public static final int ENTITY_AETHEOLEPIS = 559;
+	public static final ResourceLocation AETHEOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aetheolepis"));
+	public static final int ENTITY_APHNELEPIS = 560;
+	public static final ResourceLocation APHNELEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aphnelepis"));
+	public static final int ENTITY_NOTIDANOIDES = 561;
+	public static final ResourceLocation NOTIDANOIDES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/notidanoides"));
 
 
 	@Mod.EventHandler
