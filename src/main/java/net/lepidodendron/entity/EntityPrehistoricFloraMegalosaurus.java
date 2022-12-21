@@ -9,22 +9,21 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockDirectional;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -32,28 +31,23 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarnivoreBase {
+public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraSmok(World world) {
+	public EntityPrehistoricFloraMegalosaurus(World world) {
 		super(world);
-		//setSize(0.6F, 0.35F);
+		setSize(1.0F, 1.0F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.12F;
-		maxWidth = 0.85F;
-		maxHeight = 1.82F;
-		maxHealthAgeable = 60.0D;
-	}
-
-	@Override
-	public int getNoiseLength() {
-		return 25;
+		minWidth = 0.20F;
+		maxWidth = 1.75F;
+		maxHeight = 2.2F;
+		maxHealthAgeable = 96.0D;
 	}
 
 	@Override
@@ -64,40 +58,9 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		return 2; //large
 	}
 
-	@Override
-	public boolean placesNest() {
-		return true;
-	}
+	public static String getPeriod() {return "Jurassic";}
 
-	@Override
-	public boolean isNestMound() {
-		return true;
-	}
-
-	@Override
-	public boolean nestBlockMatch(World world, BlockPos pos) {
-		boolean match = false;
-		if (!match) {
-			match = ((world.getBlockState(pos.down()).getMaterial() == Material.GROUND
-					|| world.getBlockState(pos.down()).getMaterial() == Material.GRASS
-					|| world.getBlockState(pos.down()).getMaterial() == Material.CLAY
-					|| (world.getBlockState(pos.down()).getMaterial() == Material.SAND
-						&& world.getBlockState(pos.down()).getBlock() != Blocks.GRAVEL))
-					&& world.isAirBlock(pos));
-		}
-		return match;
-	}
-
-	public boolean testLay(World world, BlockPos pos) {
-		return (
-				nestBlockMatch(world, pos)
-		);
-	}
-
-	@Override
-	public int getDrinkLength() {
-		return 60;
-	}
+	//public static String getHabitat() {return "Terrestrial Gorgonopsian";}
 
 	@Override
 	public int getEatLength() {
@@ -106,12 +69,13 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 
 	@Override
 	public int getRoarLength() {
-		return 30;
+		return 0;
 	}
 
-	public static String getPeriod() {return "Triassic";}
-
-	//public static String getHabitat() {return "Terrestrial Saurischian(?)";}
+	@Override
+	public int getNoiseLength() {
+		return 0;
+	}
 
 	@Override
 	public boolean hasNest() {
@@ -139,7 +103,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.430F;
+		float speedBase = 0.445F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -147,33 +111,31 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.65F;
+			speedBase = speedBase * 2.47F;
 		}
 		return speedBase;
 	}
 
-
-
 	@Override
 	public int getTalkInterval() {
-		return 260;
+		return 180;
 	}
 
 	@Override
 	public int getAdultAge() {
-		return 56000;
+		return 128000;
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 0.25F;
-		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+		float size = this.getRenderSizeModifier() * 2.50F * this.getAgeScale();
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public AxisAlignedBB getRenderBoundingBox() {
 		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
-			return this.getEntityBoundingBox().grow(2.0, 0.25, 2.0);
+			return this.getEntityBoundingBox().grow(3.0, 1.00, 3.0);
 		}
 		return this.getEntityBoundingBox();
 	}
@@ -181,7 +143,13 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	@Override
 	public float getEyeHeight()
 	{
-		return Math.max(super.getEyeHeight(), this.height * 0.95F);
+		return Math.max(super.getEyeHeight(), this.height * 0.8F);
+	}
+
+	@Override
+	public float getSwimHeight()
+	{
+		return this.height * 1.1F;
 	}
 
 	protected void initEntityAI() {
@@ -189,17 +157,16 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		//tasks.addTask(4, new PanicAI(this, 1.6D));
-		tasks.addTask(5, new LandWanderNestInBlockAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 40));
-		tasks.addTask(7, new EntityWatchClosestAI(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityWatchClosestAI(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityLookIdleAI(this));
+		tasks.addTask(4, new LandWanderNestAI(this));
+		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(8, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(3, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
-
+		this.targetTasks.addTask(3, new HuntAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
+		this.targetTasks.addTask(4, new HuntSmallerThanMeAIAgeable(this, EntityLivingBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase, 0.2));
 	}
 
 	@Override
@@ -209,7 +176,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 			(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
 		);
 	}
-	
+
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
@@ -224,32 +191,32 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
-	public SoundEvent getAmbientSound() {
+	public SoundEvent getRoarSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:smok_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_roar"));
+	}
+
+	@Override
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:megalosaurus_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:smok_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:smok_death"));
-	}
-
-	@Override
-	public SoundEvent getRoarSound() {
-		return (SoundEvent) SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:smok_roar"));
+	            .getObject(new ResourceLocation("lepidodendron:megalosaurus_death"));
 	}
 
 	@Override
@@ -261,28 +228,58 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	public boolean getCanSpawnHere() {
 		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
 	}
-	
 
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 1F, 1F);
-		}
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 10 && this.getAttackTarget() != null) {
-			launchAttack();
-			if (this.getOneHit()) {
-				this.setAttackTarget(null);
-				this.setRevengeTarget(null);
+		this.renderYawOffset = this.rotationYaw;
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAttackTarget() != null) {
+			if (this.getAnimationTick() == 18) {
+				launchAttack();
+				double d1 = this.posX - this.getAttackTarget().posX;
+				double d0;
+				for (d0 = this.posZ -  this.getAttackTarget().posZ; d1 * d1 + d0 * d0 < 1.0E-4D; d0 = (Math.random() - Math.random()) * 0.01D)
+				{
+					d1 = (Math.random() - Math.random()) * 0.01D;
+				}
+				this.getAttackTarget().knockBack(this, 0.15F, d1, d0);
+				this.getAttackTarget().addVelocity(0, 0.115, 0);
+				if (this.getOneHit()) {
+					this.setAttackTarget(null);
+					this.setRevengeTarget(null);
+				}
 			}
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+		//System.err.println("Eating: " + this.getEatTarget() + " isFast " + this.getIsFast());
+
+	}
+
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
+
+	public boolean testLay(World world, BlockPos pos) {
+		//System.err.println("Testing laying conditions");
+		BlockPos posNest = pos;
+		if (isLayableNest(world, posNest)) {
+			String eggRenderType = new Object() {
+				public String getValue(BlockPos posNest, String tag) {
+					TileEntity tileEntity = world.getTileEntity(posNest);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos(posNest), "egg");
+
+			//System.err.println("eggRenderType " + eggRenderType);
+
+			if (eggRenderType.equals("")) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -302,9 +299,9 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarniv
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		if (!this.isPFAdult()) {
-			return LepidodendronMod.SMOK_LOOT_YOUNG;
+			return LepidodendronMod.MEGALOSAURUS_LOOT_YOUNG;
 		}
-		return LepidodendronMod.SMOK_LOOT;
+		return LepidodendronMod.MEGALOSAURUS_LOOT;
 	}
 
 }

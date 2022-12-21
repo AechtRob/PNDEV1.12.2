@@ -211,6 +211,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
 			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
 
+			if (!itemstack.hasTagCompound()) {
+				return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+			}
+
 			if (raytraceresult == null)
 			{
 				return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);

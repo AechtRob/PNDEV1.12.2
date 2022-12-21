@@ -1330,7 +1330,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_TOMLINSONUS = 543;
 	public static final int ENTITY_COWIELEPIS = 544;
 	public static final int ENTITY_MAZOTHAIROS = 545;
-	public static final int ENTITY_TRIGONOTARBID_ANTHRACOMARTUS = 546;
+	public static final int ENTITY_MEGALOSAURUS = 546;
+	public static final ResourceLocation MEGALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megalosaurus"));
+	public static final ResourceLocation MEGALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megalosaurus_young"));
 	public static final int GUI_COAL_TAR_PROCESSOR_ID = 547;
 	public static final int GUI_OLIGOPOOL_MACHINE_ID = 548;
 	public static final int ENTITY_ASCOCERAS_BABY = 549;
@@ -1355,7 +1357,6 @@ public class LepidodendronMod {
 	public static final ResourceLocation APHNELEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/aphnelepis"));
 	public static final int ENTITY_NOTIDANOIDES = 561;
 	public static final ResourceLocation NOTIDANOIDES_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/notidanoides"));
-
 
 
 	@Mod.EventHandler
