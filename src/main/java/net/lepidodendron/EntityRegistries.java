@@ -566,7 +566,14 @@ public class EntityRegistries {
         //registerEntity("prehistoric_flora_furca", EntityPrehistoricFloraFurca.class, LepidodendronMod.ENTITY_FURCA, 64,0,0);
         //registerEntity("prehistoric_flora_tomlinsonus", EntityPrehistoricFloraTomlinsonus.class, LepidodendronMod.ENTITY_TOMLINSONUS, 64,0,0);
         //registerEntity("prehistoric_flora_jamoytius", EntityPrehistoricFloraJamoytius.class, LepidodendronMod.ENTITY_JAMOYTIUS, 64,0,0);
-
+        registerEntity("prehistoric_flora_ophthalmosaurus", EntityPrehistoricFloraOphthalmosaurus.class, LepidodendronMod.ENTITY_OPHTHALMOSAURUS, 64,0,0);
+        registerEntity("prehistoric_flora_aphnelepis", EntityPrehistoricFloraAphnelepis.class, LepidodendronMod.ENTITY_APHNELEPIS, 64,0,0);
+        registerEntity("prehistoric_flora_aetheolepis", EntityPrehistoricFloraAetheolepis.class, LepidodendronMod.ENTITY_AETHEOLEPIS, 64,0,0);
+        registerEntity("prehistoric_flora_eryon", EntityPrehistoricFloraEryon.class, LepidodendronMod.ENTITY_ERYON, 64,0,0);
+        registerEntity("prehistoric_flora_macromesodon", EntityPrehistoricFloraMacromesodon.class, LepidodendronMod.ENTITY_MACROMESODON, 64,0,0);
+        registerEntity("prehistoric_flora_arduafrons", EntityPrehistoricFloraArduafrons.class, LepidodendronMod.ENTITY_ARDUAFRONS, 64,0,0);
+        registerEntity("prehistoric_flora_aspidorhynchus", EntityPrehistoricFloraAspidorhynchus.class, LepidodendronMod.ENTITY_ASPIDORHYNCHUS, 64,0,0);
+        registerEntity("prehistoric_flora_notidanoides", EntityPrehistoricFloraNotidanoides.class, LepidodendronMod.ENTITY_NOTIDANOIDES, 64,0,0);
 
         //registerEntity("prehistoric_flora_", EntityPrehistoricFlora.class, LepidodendronMod.ENTITY_, 64,0,0); TEMPLATE
 
