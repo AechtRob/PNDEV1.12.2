@@ -1338,6 +1338,9 @@ public class LepidodendronMod {
 	public static final int GUI_MICROSCOPE_ID = 551;
 	public static final int GUI_SORTER_FOSSIL_ID = 552;
 	public static final int GUI_TAXIDERMY_TABLE_ID = 553;
+	public static final int ENTITY_MEGALOSAURUS = 562;
+	public static final ResourceLocation MEGALOSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megalosaurus"));
+	public static final ResourceLocation MEGALOSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/megalosaurus_young"));
 
 
 

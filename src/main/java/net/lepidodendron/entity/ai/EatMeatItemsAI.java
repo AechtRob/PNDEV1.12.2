@@ -74,7 +74,7 @@ public class EatMeatItemsAI extends EntityAIBase {
         this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, 1D);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
         if (distance < Math.max(1.0F, this.entity.getEntityBoundingBox().getAverageEdgeLength())) {
-            if (this.targetItem != null) {
+            if (this.targetItem != null && this.entity.getAnimation() == this.entity.NO_ANIMATION) {
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);

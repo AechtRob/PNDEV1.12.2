@@ -7,7 +7,7 @@
     "sulfuric_acid": [
       {
         "custom": {
-          "fluid": "sulfuric_acid"
+          "fluid": "pn_sulfuric_acid"
         }
       }
     ]

@@ -387,11 +387,15 @@ public class WalkNodeProcessorNoWater extends NodeProcessor
     {
         PathNodeType pathnodetype = this.getPathNodeTypeRaw(blockaccessIn, x, y, z);
 
-        if (blockaccessIn.getBlockState(new BlockPos(x, y , z)).getMaterial() == Material.WATER)
-        {
-            pathnodetype = PathNodeType.BLOCKED;
+        if (y >= 1) {
+            if (blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getMaterial() == Material.WATER) {
+                pathnodetype = PathNodeType.BLOCKED;
+            }
         }
-
+        //if (blockaccessIn.getBlockState(new BlockPos(x, y , z)).getBlock() instanceof BlockPalisadePF)
+        //{
+        //    pathnodetype = PathNodeType.BLOCKED;
+        //}
         if (pathnodetype == PathNodeType.OPEN && y >= 1)
         {
             Block block = blockaccessIn.getBlockState(new BlockPos(x, y - 1, z)).getBlock();

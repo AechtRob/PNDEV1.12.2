@@ -41,6 +41,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -69,6 +70,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation ATTACK_ANIMATION;
     public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
+    public Animation MAKE_NEST_ANIMATION;
     private Animation currentAnimation;
 
     private int inPFLove;
@@ -84,6 +86,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+        MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
     }
 
     @SideOnly(Side.CLIENT)
@@ -312,7 +315,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{ATTACK_ANIMATION,ROAR_ANIMATION};
+        return new Animation[]{ATTACK_ANIMATION,ROAR_ANIMATION,MAKE_NEST_ANIMATION};
     }
 
     public SoundEvent getSoundForAnimation(Animation animation) {
@@ -359,7 +362,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public void launchAttack() {
         IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
         if (getAttackTarget() != null) {
-            boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+            boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue() * this.getAgeScale());
             EntityLivingBase ee = this.getAttackTarget();
             if (ee.isRiding() && this.breaksBoat()) {
                 Entity boat = ee.getRidingEntity();
@@ -701,6 +704,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
                 if (this.getAttackTarget().isDead) {
@@ -1203,6 +1207,21 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
                 this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                 return true;
+            }
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
+                //Prompt to create a nest:
+                //Does this mob have nests like this and is it OK to do this now?
+                if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {
+                    //Does the mob already have a nest?
+                    if (this.getNestLocation() == null) {
+                        //Can we make a nest in this exact spot?
+                        if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
+                            this.setAnimation(MAKE_NEST_ANIMATION);
+                            this.consumeItemFromStack(player, itemstack);
+                            return true;
+                        }
+                    }
+                }
             }
         }
         return false;

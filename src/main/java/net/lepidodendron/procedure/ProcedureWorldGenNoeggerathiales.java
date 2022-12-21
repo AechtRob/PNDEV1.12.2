@@ -55,7 +55,7 @@ public class ProcedureWorldGenNoeggerathiales extends ElementsLepidodendronMod.M
 			TrunkHeight = Math.round(Math.random() * 10) - 1;
 			if (Math.random() > 0.4) TrunkHeight = Math.round(TrunkHeight * 0.5);
 			if (TrunkHeight < 0) TrunkHeight = 0;
-			if (!BlockNoeggerathialesShootPlaceable.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
+			if (!BlockNoeggerathialesShootPlaceable.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) (y + TrunkHeight), (int) z))) {
 				return;
 			}
 
