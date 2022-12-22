@@ -1,12 +1,12 @@
 {
   "pools": [
     {
-      "name": "thecodontosaurus",
+      "name": "megalosaurus",
       "rolls": 1,
       "entries": [
         {
           "type": "item",
-          "name": "lepidodendron:thecodontosaurus_raw",
+          "name": "lepidodendron:megalosaurus_raw",
           "weight": 1,
           "functions": [
             {
