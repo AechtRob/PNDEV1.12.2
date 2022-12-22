@@ -692,7 +692,9 @@ public class AcidBathOutputMobs {
     }
 
     public static String[] getJurassicCleanedFossilsMobs() {
-        String[] resLoc = LepidodendronConfig.revMobsJurassic;
+        String[] resLoc = {
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraMegalosaurus.class)).getRegistryName().toString()
+        };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsJurassic);
         return resLoc;
     }

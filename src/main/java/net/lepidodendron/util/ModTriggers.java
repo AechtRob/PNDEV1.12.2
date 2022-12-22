@@ -902,7 +902,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FURCA = new CustomTrigger("pf_book_furca");
     public static final CustomTrigger CLICK_TOMLINSONUS = new CustomTrigger("pf_book_tomlinsonus");
     public static final CustomTrigger CLICK_COWIELEPIS = new CustomTrigger("pf_book_cowielepis");
-    public static final CustomTrigger CLICK_TRIGONOTARBID_ANTHRACOMARTUS = new CustomTrigger("pf_book_trigonotarbid_anthracomartus");
+    public static final CustomTrigger CLICK_MEGALOSAURUS = new CustomTrigger("pf_book_megalosaurus");
 
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
@@ -1800,7 +1800,7 @@ public class ModTriggers
             CLICK_TOMLINSONUS,
             CLICK_COWIELEPIS,
             CLICK_CASSINOCERAS,
-            CLICK_TRIGONOTARBID_ANTHRACOMARTUS,
+            CLICK_MEGALOSAURUS,
             CLICK_MAZOTHAIROS
 
 
