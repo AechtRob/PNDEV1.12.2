@@ -904,6 +904,14 @@ public class ModTriggers
     public static final CustomTrigger CLICK_COWIELEPIS = new CustomTrigger("pf_book_cowielepis");
     public static final CustomTrigger CLICK_MEGALOSAURUS = new CustomTrigger("pf_book_megalosaurus");
 
+    public static final CustomTrigger CLICK_OPHTHALMOSAURUS = new CustomTrigger("pf_book_ophthalmosaurus");
+    public static final CustomTrigger CLICK_MACROMESODON = new CustomTrigger("pf_book_macromesodon");
+    public static final CustomTrigger CLICK_NOTIDANOIDES = new CustomTrigger("pf_book_notidanoides");
+    public static final CustomTrigger CLICK_ERYON = new CustomTrigger("pf_book_eryon");
+    public static final CustomTrigger CLICK_ARDUAFRONS = new CustomTrigger("pf_book_arduafrons");
+    public static final CustomTrigger CLICK_AETHEOLEPIS = new CustomTrigger("pf_book_aetheolepis");
+    public static final CustomTrigger CLICK_APHNELEPIS = new CustomTrigger("pf_book_aphnelepis");
+    public static final CustomTrigger CLICK_ASPIDORHYNCHUS = new CustomTrigger("pf_book_aspidorhynchus");
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
 
@@ -1801,7 +1809,15 @@ public class ModTriggers
             CLICK_COWIELEPIS,
             CLICK_CASSINOCERAS,
             CLICK_MEGALOSAURUS,
-            CLICK_MAZOTHAIROS
+            CLICK_MAZOTHAIROS,
+            CLICK_OPHTHALMOSAURUS,
+            CLICK_MACROMESODON,
+            CLICK_NOTIDANOIDES,
+            CLICK_ERYON,
+            CLICK_ASPIDORHYNCHUS,
+            CLICK_ARDUAFRONS,
+            CLICK_AETHEOLEPIS,
+            CLICK_APHNELEPIS
 
 
 
