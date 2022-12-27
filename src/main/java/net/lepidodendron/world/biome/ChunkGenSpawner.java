@@ -1648,6 +1648,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             nbtStr = "{AgeTicks:" + spawnAge + "}";
                                                                         }
                                                                     }
+                                                                    else if (mobToSpawn.startsWith("fossil:")) {
+                                                                        nbtStr = "{Gender:" + rand.nextInt(2) + "}";
+                                                                    }
                                                                     //Spawn the mob via a command:
                                                                     if (!world.isRemote && world.getMinecraftServer() != null) {
                                                                         //System.err.println("summon " + mobToSpawn + " " + pos.add(k7, i18, j11).getX() + " " + pos.add(k7, i18, j11).getY() + " " + pos.add(k7, i18, j11).getZ() + " " + nbtStr);
@@ -1677,7 +1680,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 return false;
                                                                             }
 
-                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ() + " " + nbtStr);
+                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + 2) + " " + spawnPos.getZ() + " " + nbtStr);
                                                                     }
 
                                                                     //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());
