@@ -1640,7 +1640,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             int spawnAge = rand.nextInt(adultAge) + 1;
                                                                             nbtStr = "{AgeTicks:" + spawnAge + "}";
                                                                         }
-                                                                    } else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0 && doAgeVar) {
+                                                                    }
+                                                                    else if (entity instanceof EntityPrehistoricFloraAgeableFishBase && rand.nextInt(20) == 0 && doAgeVar) {
                                                                         EntityPrehistoricFloraAgeableFishBase ageableBase = (EntityPrehistoricFloraAgeableFishBase) entity;
                                                                         int adultAge = ageableBase.getAdultAge();
                                                                         if (adultAge > 0) {
