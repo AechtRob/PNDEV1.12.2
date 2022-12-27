@@ -240,7 +240,17 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							nbtStr = "{AgeTicks:0}";
 						}
 						else {
-							nbtStr = "{Age:-25000}";
+							if (itemstack.getTagCompound().hasKey("PFMob")) {
+								NBTTagCompound blockNBT = (NBTTagCompound) itemstack.getTagCompound().getTag("PFMob");
+								String stringDNA = (blockNBT.getString("id"));
+								if (stringDNA.startsWith("fossil:")) {
+									nbtStr = "{Age:-25000, Gender:" + itemRand.nextInt(2) + "}";
+								} else {
+									nbtStr = "{Age:-25000}";
+								}
+							} else {
+								nbtStr = "{Age:-25000}";
+							}
 						}
 						if (!(worldIn.isRemote)) {
 							if (iblockstate.getMaterial() == Material.WATER) {
