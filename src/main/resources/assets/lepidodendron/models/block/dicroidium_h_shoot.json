@@ -1,0 +1,94 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "e":"lepidodendron:blocks/dicroidium_h_shoot_e",
+    "w":"lepidodendron:blocks/dicroidium_h_shoot_w",
+    "particle": "lepidodendron:blocks/dicroidium_h_shoot_w"
+  },
+  "elements": [
+    {
+      "name": "n",
+      "from": [7.99, -3, -8],
+      "to": [7.99, 13, 8],
+      "shade": false,
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#e"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#w"}
+      }
+    },
+    {
+      "name": "e",
+      "from": [8, -3, 7.99],
+      "to": [24, 13, 7.99],
+      "shade": false,
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#w"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#e"}
+      }
+    },
+    {
+      "name": "s",
+      "from": [8.01, -3, 8],
+      "to": [8.01, 13, 24],
+      "shade": false,
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#w"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#e"}
+      }
+    },
+    {
+      "name": "w",
+      "from": [-8, -3, 8.01],
+      "to": [8, 13, 8.01],
+      "shade": false,
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "texture": "#e"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#w"}
+      }
+    },
+    {
+      "name": "nw",
+      "from": [7.99, -3, -7],
+      "to": [7.99, 13, 8],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "east": {"uv": [0, 0, 15, 16], "texture": "#e"},
+        "west": {"uv": [0, 0, 15, 16], "texture": "#w"}
+      }
+    },
+    {
+      "name": "ne",
+      "from": [8.01, -3, -8],
+      "to": [8.01, 13, 8],
+      "shade": false,
+      "rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#e"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#w"}
+      }
+    },
+    {
+      "name": "se",
+      "from": [8.01, -3, 8],
+      "to": [8.01, 13, 23],
+      "shade": false,
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "east": {"uv": [0, 0, 15, 16], "texture": "#w"},
+        "west": {"uv": [0, 0, 15, 16], "texture": "#e"}
+      }
+    },
+    {
+      "name": "sw",
+      "from": [7.99, -3, 8],
+      "to": [7.99, 13, 24],
+      "shade": false,
+      "rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "east": {"uv": [0, 0, 16, 16], "texture": "#w"},
+        "west": {"uv": [0, 0, 16, 16], "texture": "#e"}
+      }
+    }
+  ]
+}

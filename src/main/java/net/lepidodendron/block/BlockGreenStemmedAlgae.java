@@ -131,13 +131,34 @@ public class BlockGreenStemmedAlgae extends ElementsLepidodendronMod.ModElement 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_marsh")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
 
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_coastal_black")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_flooded_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_gondwanan_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_warm_lakeland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_creek_xeric")
+
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_arid")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands"))
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands")
+
+
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_coastal")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_fern_pasture")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_floodplain")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_garrigue")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_ginkgo_woodland")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_redwood_forest")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_creek_southern_taiga")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")
+		)
 		{
 			multiplier = 8;
 		}

@@ -1,8 +1,6 @@
 package net.lepidodendron.world.gen;
 
-import net.lepidodendron.block.BlockTreefernBlackLog;
-import net.lepidodendron.block.BlockTreefernBlackShoot;
-import net.lepidodendron.block.BlockTreefernBlackShootPlaceable;
+import net.lepidodendron.block.*;
 import net.lepidodendron.procedure.ProcedureWorldGenTreefernBlack;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -116,6 +114,11 @@ public class WorldGenBlackTreefernTree extends WorldGenAbstractTree
                             if (worldIn.getBlockState(blockpos.add(0,iii,-1)).getBlock() == BlockTreefernBlackLog.block) {
                                 isClear = false;
                             }
+                        }
+                        if (worldIn.getBlockState(blockpos).getBlock() == BlockTreefernBlackLog.block
+                                || worldIn.getBlockState(blockpos).getBlock() == BlockTreefernBlackShootPlaceable.block
+                                || worldIn.getBlockState(blockpos).getBlock() == BlockTreefernBlackShoot.block) {
+                            isClear = false;
                         }
                         isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
                         if (blockpos.getY() >= worldIn.getSeaLevel()-4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight()-30)) {

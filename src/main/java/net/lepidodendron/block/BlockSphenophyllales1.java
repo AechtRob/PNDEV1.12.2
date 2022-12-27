@@ -61,7 +61,7 @@ public class BlockSphenophyllales1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenophyllales1", BlockSphenophyllales1.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:sphenophyllales_1", BlockSphenophyllales1.block);
 		OreDictionary.registerOre("treeSapling", BlockSphenophyllales1.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSphenophyllales1.block);
 		OreDictionary.registerOre("plant", BlockSphenophyllales1.block);

@@ -154,6 +154,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DICRANOPHYLLUM = new CustomTrigger("pf_book_dicranophyllum");
     public static final CustomTrigger CLICK_DICROIDIUM_E = new CustomTrigger("pf_book_dicroidium_e");
     public static final CustomTrigger CLICK_DICROIDIUM_F = new CustomTrigger("pf_book_dicroidium_f");
+    public static final CustomTrigger CLICK_DICROIDIUM_H = new CustomTrigger("pf_book_dicroidium_h");
     public static final CustomTrigger CLICK_DICROIDIUM_O = new CustomTrigger("pf_book_dicroidium_o");
     public static final CustomTrigger CLICK_DICROIDIUM = new CustomTrigger("pf_book_dicroidium");
     public static final CustomTrigger CLICK_DICTYONEMA = new CustomTrigger("pf_book_dictyonema");
@@ -1064,6 +1065,7 @@ public class ModTriggers
             CLICK_DICRANOPHYLLUM,
             CLICK_DICROIDIUM_E,
             CLICK_DICROIDIUM_F,
+            CLICK_DICROIDIUM_H,
             CLICK_DICROIDIUM_O,
             CLICK_DICROIDIUM,
             CLICK_DICTYONEMA,

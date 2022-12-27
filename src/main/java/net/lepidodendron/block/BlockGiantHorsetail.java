@@ -212,7 +212,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 5;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 256;
 		}
 

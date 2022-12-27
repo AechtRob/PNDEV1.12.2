@@ -146,6 +146,27 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsIslandsPF = new String[]{"lepidodendron:prehistoric_flora_aeger:6:70:3","lepidodendron:prehistoric_flora_ammonite_asteroceras:2:60:3","lepidodendron:prehistoric_flora_ammonite_goniatites:2:60:3","lepidodendron:prehistoric_flora_atopodentatus:6:6:1","lepidodendron:prehistoric_flora_aulacoceras:4:62:3","lepidodendron:prehistoric_flora_birgeria:6:68:3","lepidodendron:prehistoric_flora_brembodus:8:75:3","lepidodendron:prehistoric_flora_cartorhynchus:2:74:3","lepidodendron:prehistoric_flora_cartorhynchus:2:15:1","lepidodendron:prehistoric_flora_caturus:6:62:3","lepidodendron:prehistoric_flora_chaohusaurus:3:60:3","lepidodendron:prehistoric_flora_cidaroida:5:100:3","lepidodendron:prehistoric_flora_eorhynchochelys:2:32:3","lepidodendron:prehistoric_flora_eretmorhipis:2:30:3","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_keichousaurus:2:8:3","lepidodendron:prehistoric_flora_limulid:4:28:3","lepidodendron:prehistoric_flora_nothosaurus:4:6:3","lepidodendron:prehistoric_flora_panzhousaurus:3:5:3","lepidodendron:prehistoric_flora_parhybodus:2:4:3","lepidodendron:prehistoric_flora_potanichthys:10:69:3","lepidodendron:prehistoric_flora_rebellatrix:5:78:3","lepidodendron:prehistoric_flora_saurichthys_marine:5:78:3","lepidodendron:prehistoric_flora_semionotus:10:85:3","lepidodendron:prehistoric_flora_thecodontosaurus:2:6:1"};
     public static String[] dimTriassicMobsMountainsPF = new String[]{"lepidodendron:prehistoric_flora_austriadactylus:2:1:1","lepidodendron:prehistoric_flora_clevosaurus:2:2:1","lepidodendron:prehistoric_flora_coelophysis:1:-1:1","lepidodendron:prehistoric_flora_eudimorphodon:2:1:1","lepidodendron:prehistoric_flora_harvestman:2:30:1","lepidodendron:prehistoric_flora_lystrosaurus:3:2:1","lepidodendron:prehistoric_flora_morganucodon:3:5:1","lepidodendron:prehistoric_flora_roachoid_arid:5:5:1"};
 
+    public static String[] dimJurassicMobsOceanPF = new String[0];
+    public static String[] dimJurassicMobsOceanGlassSpongePF = new String[0];
+    public static String[] dimJurassicMobsRiverPF = new String[0];
+    public static String[] dimJurassicMobsGarriguePF = new String[0];
+    public static String[] dimJurassicMobsGarrigueTreesPF = new String[0];
+    public static String[] dimJurassicMobsGarrigueBouldersPF = new String[0];
+    public static String[] dimJurassicMobsGarrigueCycadsPF = new String[0];
+    public static String[] dimJurassicMobsFernPasturePF = new String[0];
+    public static String[] dimJurassicMobsFloodplainPF = new String[0];
+    public static String[] dimJurassicMobsFloodplainForestedPF = new String[0];
+    public static String[] dimJurassicMobsGinkgoPF = new String[0];
+    public static String[] dimJurassicMobsMirePF = new String[0];
+    public static String[] dimJurassicMobsMudflatsPF = new String[0];
+    public static String[] dimJurassicMobsOutcropsPF = new String[0];
+    public static String[] dimJurassicMobsConiferousPF = new String[0];
+    public static String[] dimJurassicMobsRoughHillsPF = new String[0];
+    public static String[] dimJurassicMobsAtollsPF = new String[0];
+    public static String[] dimJurassicMobsTaigaPF = new String[0];
+    public static String[] dimJurassicMobsTaigaBeachPF = new String[0];
+    
+
     //------------ Fossils and Archeology mobs:
     public static String[] dimEdiacaranMobsFA = new String[0];
 
@@ -200,6 +221,26 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsCanyonsFA = new String[0];
     public static String[] dimTriassicMobsIslandsFA = new String[0];
     public static String[] dimTriassicMobsMountainsFA = new String[0];
+
+    public static String[] dimJurassicMobsOceanFA = new String[0];
+    public static String[] dimJurassicMobsOceanGlassSpongeFA = new String[0];
+    public static String[] dimJurassicMobsRiverFA = new String[0];
+    public static String[] dimJurassicMobsGarrigueFA = new String[0];
+    public static String[] dimJurassicMobsGarrigueTreesFA = new String[0];
+    public static String[] dimJurassicMobsGarrigueBouldersFA = new String[0];
+    public static String[] dimJurassicMobsGarrigueCycadsFA = new String[0];
+    public static String[] dimJurassicMobsFernPastureFA = new String[0];
+    public static String[] dimJurassicMobsFloodplainFA = new String[0];
+    public static String[] dimJurassicMobsFloodplainForestedFA = new String[0];
+    public static String[] dimJurassicMobsGinkgoFA = new String[0];
+    public static String[] dimJurassicMobsMireFA = new String[0];
+    public static String[] dimJurassicMobsMudflatsFA = new String[0];
+    public static String[] dimJurassicMobsOutcropsFA = new String[0];
+    public static String[] dimJurassicMobsConiferousFA = new String[0];
+    public static String[] dimJurassicMobsRoughHillsFA = new String[0];
+    public static String[] dimJurassicMobsAtollsFA = new String[0];
+    public static String[] dimJurassicMobsTaigaFA = new String[0];
+    public static String[] dimJurassicMobsTaigaBeachFA = new String[0];
     //------------
 
     //------------ Reborn mobs:
@@ -256,6 +297,26 @@ public class LepidodendronConfig {
     public static String[] dimTriassicMobsCanyonsReborn = new String[0];
     public static String[] dimTriassicMobsIslandsReborn = new String[0];
     public static String[] dimTriassicMobsMountainsReborn = new String[0];
+    
+    public static String[] dimJurassicMobsOceanReborn = new String[0];
+    public static String[] dimJurassicMobsOceanGlassSpongeReborn = new String[0];
+    public static String[] dimJurassicMobsRiverReborn = new String[0];
+    public static String[] dimJurassicMobsGarrigueReborn = new String[0];
+    public static String[] dimJurassicMobsGarrigueTreesReborn = new String[0];
+    public static String[] dimJurassicMobsGarrigueBouldersReborn = new String[0];
+    public static String[] dimJurassicMobsGarrigueCycadsReborn = new String[0];
+    public static String[] dimJurassicMobsFernPastureReborn = new String[0];
+    public static String[] dimJurassicMobsFloodplainReborn = new String[0];
+    public static String[] dimJurassicMobsFloodplainForestedReborn = new String[0];
+    public static String[] dimJurassicMobsGinkgoReborn = new String[0];
+    public static String[] dimJurassicMobsMireReborn = new String[0];
+    public static String[] dimJurassicMobsMudflatsReborn = new String[0];
+    public static String[] dimJurassicMobsOutcropsReborn = new String[0];
+    public static String[] dimJurassicMobsConiferousReborn = new String[0];
+    public static String[] dimJurassicMobsRoughHillsReborn = new String[0];
+    public static String[] dimJurassicMobsAtollsReborn = new String[0];
+    public static String[] dimJurassicMobsTaigaReborn = new String[0];
+    public static String[] dimJurassicMobsTaigaBeachReborn = new String[0];
     //------------
 
     public static String[] revMobsPrecambrian = new String[0];
@@ -272,7 +333,6 @@ public class LepidodendronConfig {
     public static String[] revMobsNeogene = new String[0];
     public static String[] revMobsPleistocene = new String[0];
 
-
     public static String[] revPlantsPrecambrian = new String[0];
     public static String[] revPlantsCambrian = new String[0];
     public static String[] revPlantsOrdovician = new String[0];
@@ -286,7 +346,6 @@ public class LepidodendronConfig {
     public static String[] revPlantsPaleogene = new String[0];
     public static String[] revPlantsNeogene = new String[0];
     public static String[] revPlantsPleistocene = new String[0];
-
 
     public static String[] revStaticsPrecambrian = new String[0];
     public static String[] revStaticsCambrian = new String[0];
