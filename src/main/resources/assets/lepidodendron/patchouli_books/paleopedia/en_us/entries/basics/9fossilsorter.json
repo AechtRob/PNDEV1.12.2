@@ -1,6 +1,6 @@
 {
 	"name": "Fossil Sorter",
-	"icon": "lepidodendron:sorter_fossil",
+	"icon": "lepidodendron:fossil_sorter",
 	"category": "lepidodendron:revival",
 	"sortnum": 9,
 	"pages": [
