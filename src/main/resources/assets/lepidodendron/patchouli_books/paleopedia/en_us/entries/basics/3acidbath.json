@@ -16,13 +16,13 @@
 			"type": "crafting",
 			"recipe": "lepidodendron:dna_acid_bath_recipe",
 			"recipe2": "lepidodendron:sulphuric_acid_bucket_from_sulphur",
-			"title": ""
+			"title": "Recipes"
 		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:sulphuric_acid_bottle_recipe",
 			"recipe2": "lepidodendron:sulphuric_acid_bucket_recipe",
-			"title": ""
+			"title": "Recipes"
 		}
 	]
 }
