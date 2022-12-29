@@ -53,7 +53,7 @@ public class EntityPrehistoricFloraAntarcticarcinus extends EntityPrehistoricFlo
 		return true;
 	}
 
-	public static String getPeriod() {return "late Carboniferous - early Permioan";}
+	public static String getPeriod() {return "late Carboniferous - early Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

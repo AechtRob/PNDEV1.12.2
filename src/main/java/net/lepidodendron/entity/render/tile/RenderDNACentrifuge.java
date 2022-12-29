@@ -8,12 +8,14 @@ import net.lepidodendron.entity.model.tile.ModelDNARecombinerCentrifugeSpindle;
 import net.lepidodendron.item.ItemPhialDNA;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.lwjgl.opengl.GL11;
 
 public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge> {
 
@@ -45,6 +47,11 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         double yy = 1.5D;
         this.bindTexture(TEXTURE_CENTRIFUGE_LID);
         ModelDNARecombinerCentrifugeLid modelDNARecombinerCentrifugeLid = this.modelDNARecombinerCentrifugeLid;
+        //GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
         GlStateManager.pushMatrix();
         GlStateManager.disableCull();
         GlStateManager.enableRescaleNormal();
@@ -78,6 +85,8 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
         //GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
 
         //Centrifuge lid hatch:
         yy = 1.5D;
@@ -143,8 +152,12 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_EMPTY);
                         }
                         ModelDNARecombinerCentrifugePhial modelDNARecombinerCentrifugePhial = this.modelDNARecombinerCentrifugePhial;
-                        GlStateManager.pushMatrix();
                         GlStateManager.enableRescaleNormal();
+                        GlStateManager.alphaFunc(516, 0.1f);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.pushMatrix();
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
                         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -159,6 +172,8 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
                         //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableBlend();
                     }
 
                     if (!tee.getStackInSlot(1).isEmpty()) {
@@ -170,8 +185,12 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_EMPTY);
                         }
                         ModelDNARecombinerCentrifugePhial modelDNARecombinerCentrifugePhial = this.modelDNARecombinerCentrifugePhial;
-                        GlStateManager.pushMatrix();
                         GlStateManager.enableRescaleNormal();
+                        GlStateManager.alphaFunc(516, 0.1f);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.pushMatrix();
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
                         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -186,6 +205,8 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
                         //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableBlend();
                     }
 
                     if (!tee.getStackInSlot(2).isEmpty()) {
@@ -197,8 +218,12 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_EMPTY);
                         }
                         ModelDNARecombinerCentrifugePhial modelDNARecombinerCentrifugePhial = this.modelDNARecombinerCentrifugePhial;
-                        GlStateManager.pushMatrix();
                         GlStateManager.enableRescaleNormal();
+                        GlStateManager.alphaFunc(516, 0.1f);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.pushMatrix();
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
                         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -213,6 +238,8 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
                         //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableBlend();
                     }
 
                     if (!tee.getStackInSlot(3).isEmpty()) {
@@ -224,8 +251,12 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                             this.bindTexture(TEXTURE_CENTRIFUGE_PHIAL_EMPTY);
                         }
                         ModelDNARecombinerCentrifugePhial modelDNARecombinerCentrifugePhial = this.modelDNARecombinerCentrifugePhial;
-                        GlStateManager.pushMatrix();
                         GlStateManager.enableRescaleNormal();
+                        GlStateManager.alphaFunc(516, 0.1f);
+                        GlStateManager.enableBlend();
+                        RenderHelper.enableStandardItemLighting();
+                        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+                        GlStateManager.pushMatrix();
                         GlStateManager.translate(x + 0.5, y + yy, z + 0.5);
                         GlStateManager.rotate(180.0F, 1.0F, 0.0F, 0.0F);
                         GlStateManager.scale(0.05F, 0.05F, 0.05F);
@@ -240,6 +271,8 @@ public class RenderDNACentrifuge extends TileEntitySpecialRenderer<BlockDNARecom
                         modelDNARecombinerCentrifugePhial.renderAll(1.25f);
                         //GlStateManager.disableAlpha();
                         GlStateManager.popMatrix();
+                        GlStateManager.disableRescaleNormal();
+                        GlStateManager.disableBlend();
                     }
                 }
             }

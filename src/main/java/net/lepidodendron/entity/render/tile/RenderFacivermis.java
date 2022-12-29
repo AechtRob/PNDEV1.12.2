@@ -7,9 +7,11 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacivermis> {
 
@@ -51,29 +53,41 @@ public class RenderFacivermis extends TileEntitySpecialRenderer<TileEntityFacive
 
         this.bindTexture(TEXTURE_FACIVERMIS);
         ModelFacivermis modelFacivermis = this.modelFacivermis;
-        GlStateManager.pushMatrix();
         GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
+        GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + (2.4 * scaler), z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.scale(scaler,scaler,scaler);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         modelFacivermis.scaler = scaler;
         modelFacivermis.renderAll(Minecraft.getMinecraft().player.ticksExisted);
+        GlStateManager.popMatrix();
         GlStateManager.disableRescaleNormal();
-        GlStateManager.popMatrix();
-        GlStateManager.popMatrix();
+        GlStateManager.disableBlend();
+        //GlStateManager.popMatrix();
 
         this.bindTexture(TEXTURE_FACIVERMIS_BASE);
         ModelFacivermis modelFacivermisBase = this.modelFacivermis;
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
         GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
-        GlStateManager.pushMatrix();
+        //GlStateManager.pushMatrix();
         modelFacivermisBase.scaler = scaler;
         modelFacivermisBase.renderAll(Minecraft.getMinecraft().player.ticksExisted);
         GlStateManager.popMatrix();
-        GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
+        //GlStateManager.popMatrix();
     }
 }
