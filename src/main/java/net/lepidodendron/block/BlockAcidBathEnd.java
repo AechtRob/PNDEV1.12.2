@@ -314,7 +314,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 
 			if (stack.getItem() == ItemBottleOfAcidSulphuric.block) {
 				BlockAcidBath.TileEntityAcidBath bath = (BlockAcidBath.TileEntityAcidBath) te;
-				if (bath.getCapacity() - bath.getFill() >= 333) {
+				if (bath.getCapacity() - bath.getFluidAmount() >= 333) {
 					bath.fillInternal(new FluidStack(FluidRegistry.getFluid("pn_sulfuric_acid"), 333), true);
 					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
 					playerIn.getEntityWorld().playSound(playerIn, playerIn.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
