@@ -37,9 +37,11 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -75,6 +77,12 @@ public class BlockChaunograptus extends ElementsLepidodendronMod.ModElement {
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);
 
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:chaunograptus", BlockChaunograptus.block);
+	}
+	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable {
 		public BlockCustom() {
 			super(Material.WATER);

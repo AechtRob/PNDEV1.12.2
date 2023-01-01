@@ -7,11 +7,13 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import org.lwjgl.opengl.GL11;
 
 public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntityCustom> {
 
@@ -80,12 +82,19 @@ public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntity
                 this.bindTexture(TEXTURE10);
             }
             ModelOesia modelOesia = this.modelOesia;
+            GlStateManager.enableRescaleNormal();
+            GlStateManager.alphaFunc(516, 0.1f);
+            GlStateManager.enableBlend();
+            RenderHelper.enableStandardItemLighting();
+            GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
             GlStateManager.pushMatrix();
             GlStateManager.translate(x + 0.5, y + 2.4, z + 0.5);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(facing.getHorizontalAngle(), 0.0F, 1.0F, 0.0F);
             modelOesia.renderAll(Minecraft.getMinecraft().player.ticksExisted);
             GlStateManager.popMatrix();
+            GlStateManager.disableRescaleNormal();
+            GlStateManager.disableBlend();
         }
     }
 }
