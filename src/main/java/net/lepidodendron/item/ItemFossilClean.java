@@ -40,6 +40,14 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
+				new ModelResourceLocation("lepidodendron:fossils/aphnelepis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/aetheolepis_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/arduafrons_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/aspidorhynchus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/notidanoides_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/eryon_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/ophthalmosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/macromesodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_acacia_sapling_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_acadoaradoxides_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_acanthodes_clean", "inventory"),
