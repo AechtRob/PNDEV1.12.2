@@ -67,8 +67,8 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 			setSoundType(SoundType.STONE);
 			setHardness(1.0F);
 			setResistance(1.5F);
-			//setLightLevel(0.5F);
-			setLightOpacity(0);
+			setLightLevel(0F);
+			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}

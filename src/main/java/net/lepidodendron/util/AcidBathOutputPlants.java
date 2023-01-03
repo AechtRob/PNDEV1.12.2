@@ -279,7 +279,6 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTmesipteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTrichopitys.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockUtrechtiaSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockWachtleria.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWachtlerina.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWalchiaSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
@@ -362,7 +361,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWoodHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZamitesSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockDicroidiumHSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockDicroidiumHSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockWachtleria.block).toString(),
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
         return resLoc;

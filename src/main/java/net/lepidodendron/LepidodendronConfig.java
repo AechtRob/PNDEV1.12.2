@@ -162,7 +162,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsOutcropsPF = new String[0];
     public static String[] dimJurassicMobsConiferousPF = new String[0];
     public static String[] dimJurassicMobsRoughHillsPF = new String[0];
-    public static String[] dimJurassicMobsAtollsPF = new String[0];
+    public static String[] dimJurassicMobsAtollsPF = new String[]{"lepidodendron:prehistoric_flora_megalosaurus:2:-1:1"};
     public static String[] dimJurassicMobsTaigaPF = new String[0];
     public static String[] dimJurassicMobsTaigaBeachPF = new String[0];
     

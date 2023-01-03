@@ -544,6 +544,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightDicroidiumElongatum = 195;
     public static double multiplierDicroidiumElongatum = 1;
 
+    public static boolean genDicroidiumHughesii = false;
+    public static String[] genDicroidiumHughesiiBlacklistBiomes = new String[0];
+    public static String[] genDicroidiumHughesiiOverrideBiomes = new String[0];
+    public static int[] dimDicroidiumHughesii = new int[]{0};
+    public static int minheightDicroidiumHughesii = 1;
+    public static int maxheightDicroidiumHughesii = 195;
+    public static double multiplierDicroidiumHughesii = 1;
+
     public static boolean genCaytoniales = false;
     public static String[] genCaytonialesBlacklistBiomes = new String[0];
     public static String[] genCaytonialesOverrideBiomes = new String[0];
@@ -5016,6 +5024,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Dicroidium elongatum", "multiplierDicroidiumElongatum", multiplierDicroidiumElongatum);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDicroidiumElongatum = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Dicroidium hughesii", "genDicroidiumHughesii", genDicroidiumHughesii);
+        prop.setComment("Set to true to generate Dicroidium hughesii naturally [default: false]");
+        genDicroidiumHughesii = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dicroidium hughesii", "genDicroidiumHughesiiBlacklistBiomes", genDicroidiumHughesiiBlacklistBiomes);
+        prop.setComment("List of biomes Dicroidium hughesii are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genDicroidiumHughesiiBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dicroidium hughesii", "genDicroidiumHughesiiOverrideBiomes", genDicroidiumHughesiiOverrideBiomes);
+        prop.setComment("List of biomes Dicroidium hughesii are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genDicroidiumHughesiiOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Dicroidium hughesii", "dimDicroidiumHughesii", dimDicroidiumHughesii);
+        prop.setComment("List of dimension IDs Dicroidium hughesii can generate in [default: 0]");
+        dimDicroidiumHughesii = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dicroidium hughesii", "minheightDicroidiumHughesii", minheightDicroidiumHughesii);
+        prop.setComment("Minimum height that Dicroidium hughesii can generate (1 to 250) [default: 1]");
+        minheightDicroidiumHughesii = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dicroidium hughesii", "maxheightDicroidiumHughesii", maxheightDicroidiumHughesii);
+        prop.setComment("Maximum height that Dicroidium hughesii can generate (1 to 250, or set to 0 for unlimited) [default: 195]");
+        maxheightDicroidiumHughesii = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Dicroidium hughesii", "multiplierDicroidiumHughesii", multiplierDicroidiumHughesii);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierDicroidiumHughesii = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Trichopitys", "genTrichopitys", genTrichopitys);
