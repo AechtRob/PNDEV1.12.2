@@ -1205,7 +1205,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.consumeItemFromStack(player, itemstack);
                 this.canGrow = 3000;
                 this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
-                this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                if (world.isRemote) {
+                    this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                }
                 return true;
             }
             if (OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
@@ -1218,6 +1220,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
                             this.setAnimation(MAKE_NEST_ANIMATION);
                             this.consumeItemFromStack(player, itemstack);
+                            if (world.isRemote) {
+                                this.spawnParticles(EnumParticleTypes.ITEM_TAKE);
+                            }
                             return true;
                         }
                     }
