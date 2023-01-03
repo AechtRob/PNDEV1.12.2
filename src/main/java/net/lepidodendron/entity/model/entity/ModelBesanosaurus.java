@@ -441,7 +441,7 @@ public class ModelBesanosaurus extends AdvancedModelBase {
         animator.setAnimation(e.ATTACK_ANIMATION);
         animator.startKeyframe(5);
         animator.rotate(this.Head, (float) Math.toRadians(5), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.Jaw, (float) Math.toRadians(-7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Jaw, -(float) Math.toRadians(-7.5), (float) Math.toRadians(0), (float) Math.toRadians(0));
         animator.endKeyframe();
         animator.setStaticKeyframe(5);
         animator.resetKeyframe(2);
