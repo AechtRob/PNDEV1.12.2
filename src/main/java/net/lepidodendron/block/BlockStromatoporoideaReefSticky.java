@@ -65,8 +65,8 @@ public class BlockStromatoporoideaReefSticky extends ElementsLepidodendronMod.Mo
 			setSoundType(SoundType.STONE);
 			setHardness(2.0F);
 			setResistance(2.0F);
-			//setLightLevel(0.5F);
-			setLightOpacity(0);
+			setLightLevel(0F);
+			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(null);
 		}

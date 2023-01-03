@@ -1,0 +1,8 @@
+{
+  "parent": "lepidodendron:block/ore_layer",
+  "textures": {
+    "stone": "lepidodendron:blocks/lava_rock",
+    "particle": "lepidodendron:blocks/lava_rock",
+    "layer": "lepidodendron:blocks/sulphur_ore"
+  }
+}

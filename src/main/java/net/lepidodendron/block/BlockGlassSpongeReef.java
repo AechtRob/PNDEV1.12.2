@@ -88,6 +88,9 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeReefOverrideBiomes))
 			biomeCriteria = true;
 
+		if (matchBiome(biome, LepidodendronConfigPlants.genGlassSpongeReefOverrideBiomes))
+			biomeCriteria = true;
+
 		if (!biomeCriteria)
 			return;
 
@@ -146,8 +149,8 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 			setSoundType(SoundType.GLASS);
 			setHardness(1.0F);
 			setResistance(1.5F);
-			//setLightLevel(0.5F);
-			setLightOpacity(0);
+			setLightLevel(0F);
+			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
@@ -215,6 +218,7 @@ public class BlockGlassSpongeReef extends ElementsLepidodendronMod.ModElement {
 				return i;
 			}
 		}
+
 /*
 		@Deprecated
 		@SideOnly(Side.CLIENT)

@@ -365,7 +365,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
 
         //Eat algae!
         BlockPos pos = this.getPosition();
-        if ((this.getHealth() < this.getMaxHealth())
+        if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
                 && ((this.world.getBlockState(pos).getBlock() == BlockGreenAlgaeMat.block)
                 || (this.world.getBlockState(pos).getBlock() == BlockRedAlgaeMat.block))
         ) {

@@ -6,19 +6,18 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -33,16 +32,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:sulphur_ore")
+public class BlockSulphurOreLavaRock extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:sulphur_ore_lava")
 	public static final Block block = null;
-	public BlockSulphurOre(ElementsLepidodendronMod instance) {
+	public BlockSulphurOreLavaRock(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.sulphur_ore);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("sulphur_ore"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("sulphur_ore_lava"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -50,31 +49,12 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:sulphur_ore", "inventory"));
+				new ModelResourceLocation("lepidodendron:sulphur_ore_lava", "inventory"));
 	}
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
-		if (biome instanceof BiomePermian) {
-			BiomePermian BiomeP = (BiomePermian) biome;
-			if (BiomeP.getBiomeType() == EnumBiomeTypePermian.Floodbasalt) {
-				if (random.nextInt(3) != 0)
-					return;
-				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				int y = random.nextInt(60) + 1;
-				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				(new WorldGenMinable(block.getDefaultState(), 8, new com.google.common.base.Predicate<IBlockState>() {
-					public boolean apply(IBlockState blockAt) {
-						boolean blockCriteria = false;
-						IBlockState require;
-						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
-							blockCriteria = true;
-						return blockCriteria;
-					}
-				})).generate(world, random, new BlockPos(x, y, z));
-			}
-		}
 
 		if (dimID == 0
 				|| dimID == LepidodendronConfig.dimPrecambrian
@@ -100,7 +80,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;
 						IBlockState require;
-						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+						if (blockAt.getBlock() == BlockLavaRock.block)
 							blockCriteria = true;
 						return blockCriteria;
 					}
@@ -115,7 +95,7 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;
 						IBlockState require;
-						if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
+						if (blockAt.getBlock() == BlockLavaRock.block)
 							blockCriteria = true;
 						return blockCriteria;
 					}
@@ -128,11 +108,16 @@ public class BlockSulphurOre extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockOre {
 		public BlockCustom() {
 			setHardness(1.25F);
-			setResistance(5.0F);
+			setResistance(4.2F);
 			setSoundType(SoundType.STONE);
-			setTranslationKey("pf_sulphur_ore");
+			setTranslationKey("pf_sulphur_ore_lava");
 			setCreativeTab(TabLepidodendronMisc.tab);
 			setHarvestLevel("pickaxe",1);
+		}
+
+		@Override
+		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return MapColor.BLACK;
 		}
 
 		@Override
