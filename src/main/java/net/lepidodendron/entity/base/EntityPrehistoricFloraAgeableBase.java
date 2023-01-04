@@ -872,11 +872,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setWillHunt(true);
             }
             else {
-                this.setWillHunt(oldHealthRatio < (float) aHealth);
+                this.setWillHunt(oldHealthRatio <= (float) aHealth);
             }
         }
         else {
-            this.setWillHunt(oldHealthRatio < (float) aHealth);
+            this.setWillHunt(oldHealthRatio <= (float) aHealth);
         }
         double adult = (double) LepidodendronConfig.adultAge;
         if (adult > 100) {adult = 100;}
