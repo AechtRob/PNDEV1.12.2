@@ -78,6 +78,7 @@ public class VillagerPalaeontologist {
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockAraucarioxylonLogPetrified.block), new EntityVillager.PriceInfo(4, 4)));
         palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemGlassJarItem.block, 3), new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemCageSmallItem.block, 2), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemTaxidermyScalpel.block, 1), new EntityVillager.PriceInfo(1, 1)));
 
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemFossilHammer.block, new EntityVillager.PriceInfo(2, 3)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemBottleOfResin.block, new EntityVillager.PriceInfo(1, 1)));

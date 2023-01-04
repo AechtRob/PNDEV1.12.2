@@ -24,11 +24,17 @@ public class LepidodendronDimensionalSleeping {
 	@SubscribeEvent
 	public void onWorldTick(TickEvent.ServerTickEvent event) {
 
+		if (!LepidodendronConfig.playerSleep) {
+			return;
+		}
+
 		//System.err.println("Testing");
 		try {
 			if (event.phase == TickEvent.Phase.START) {
 				int[] dims = DimensionManager.getRegisteredDimensions().values().stream().flatMap(Collection::stream).mapToInt(Integer::intValue).toArray();
 				int[] dimsPlayers = {};
+				int playerCount = 0; //Count of players to test
+				int playerCountAsleep = 0; //Count of players asleep
 				if (dims.length <= 0) {
 					return;
 				}
@@ -38,11 +44,13 @@ public class LepidodendronDimensionalSleeping {
 						List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
 						if (!playersInWorld.isEmpty()) {
 							for (EntityPlayer p : playersInWorld) {
-								if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW) {
+								if (p.getEntityWorld().provider.canSleepAt(p, p.getPosition()) == WorldProvider.WorldSleepResult.ALLOW
+									&& (!p.isSpectator()) ) {
 									//The player "could" sleep here, so add the world to the iterator if not already there:
 									if (!(IntStream.of(dimsPlayers).anyMatch(x -> x == i))) {
 										dimsPlayers = addX(dimsPlayers, i);
 									}
+									playerCount ++;
 								}
 							}
 						}
@@ -53,28 +61,41 @@ public class LepidodendronDimensionalSleeping {
 				if (dimsPlayers.length <= 0) {
 					return;
 				}
+				if (!(playerCount > 0)) {
+					return;
+				}
 				for (int i : dimsPlayers) {
 					WorldServer WorldTest = DimensionManager.getWorld(i);
 					List<EntityPlayer> playersInWorld = WorldTest.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
 					if (!playersInWorld.isEmpty()) {
-						if (!areAllPlayersAsleep(WorldTest)) {
-							return;
-						}
+						playerCountAsleep = playerCountAsleep + getPlayersAsleepInWorld(WorldTest);
 					}
 				}
 
-				World Overworld = DimensionManager.getWorld(0);
-				if (Overworld.getGameRules().getBoolean("doDaylightCycle")) {
-					long i = Overworld.getWorldTime() + 24000L;
-					Overworld.setWorldTime(i - i % 24000L);
-					//System.err.println("Setting morning");
+				//Test for move to daytime:
+				double sleep = LepidodendronConfig.playerSleepPercent;
+				if (sleep < 0.0) {
+					sleep = 0.0;
 				}
-				if (Overworld.getGameRules().getBoolean("doWeatherCycle")) {
-					Overworld.provider.resetRainAndThunder();
+				if (sleep > 100.0) {
+					sleep = 100.0;
 				}
-				for (int i : dims) {
-					WorldServer WorldTest = DimensionManager.getWorld(i);
-					wakeAllPlayers(WorldTest);
+				if (playerCountAsleep > 0
+						&& (((double)playerCountAsleep)/((double)playerCount)) >= (sleep/100D)) {
+
+					World Overworld = DimensionManager.getWorld(0);
+					if (Overworld.getGameRules().getBoolean("doDaylightCycle")) {
+						long i = Overworld.getWorldTime() + 24000L;
+						Overworld.setWorldTime(i - i % 24000L);
+						//System.err.println("Setting morning");
+					}
+					if (Overworld.getGameRules().getBoolean("doWeatherCycle")) {
+						Overworld.provider.resetRainAndThunder();
+					}
+					for (int i : dims) {
+						WorldServer WorldTest = DimensionManager.getWorld(i);
+						wakeAllPlayers(WorldTest);
+					}
 				}
 			}
 		}
@@ -104,75 +125,37 @@ public class LepidodendronDimensionalSleeping {
 		return newarr;
 	}
 
-	public boolean allPlayersSleeping(WorldServer world)
-	{
-		if (world == null) {
-			return false;
-		}
+	public int getPlayersAsleepInWorld(WorldServer world) throws IllegalAccessException {
 
-		//System.err.println("allPlayersSleeping");
+		int playersAsleep = 0;
+		if (world == null) {
+			return 0;
+		}
 
 		List<EntityPlayer> playersInWorld = world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
 
-		if (!playersInWorld.isEmpty())
-		{
-			int i = 0;
-			int j = 0;
-
-			for (EntityPlayer entityplayer : playersInWorld)
-			{
-				if (entityplayer.isSpectator())
-				{
-					++i;
-				}
-				else if (entityplayer.isPlayerSleeping())
-				{
-					++j;
+		if (!playersInWorld.isEmpty()) {
+			for (EntityPlayer entityplayer : playersInWorld) {
+				if ((!entityplayer.isSpectator()) ) {
+					if (entityplayer.isPlayerSleeping()) {
+						if (isPlayerFullyAsleep(entityplayer)) {
+							playersAsleep ++;
+						}
+					}
 				}
 			}
-			//System.err.println("allPlayersSleeping result " + (j > 0 && j >= playersInWorld.size() - i));
-			double sleep = LepidodendronConfig.playerSleepPercent;
-			if (sleep < 0.0) {
-				sleep = 0.0;
-			}
-			if (sleep > 100.0) {
-				sleep = 100.0;
-			}
-			return j > 0 && j >= (int)Math.floor((playersInWorld.size() - i) * (sleep / 100D));
 		}
-		//System.err.println("allPlayersSleeping result false default");
-		return false;
-	}
-
-	public boolean areAllPlayersAsleep(WorldServer world) throws IllegalAccessException {
-
-		//System.err.println("areAllPlayersAsleep");
-
-		if (allPlayersSleeping(world))
-		{
-			List<EntityPlayer> playersInWorld = world.getPlayers(EntityPlayerMP.class, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase);
-			for (EntityPlayer entityplayer : playersInWorld)
-			{
-				if (!entityplayer.isSpectator() && !isPlayerFullyAsleep(entityplayer))
-				{
-					return false;
-				}
-			}
-
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return playersAsleep;
 	}
 
 	public boolean isPlayerFullyAsleep(EntityPlayer player) throws IllegalAccessException {
 		Field f1 = ObfuscationReflectionHelper.findField(EntityPlayer.class, "field_71076_b");
 		//f1.setAccessible(true);
+		//int pp = f1.getInt(player);
 		if (player.dimension == 0 && f1.getInt(player) >= 96) {
 			f1.set(player, 96);
 		}
+		//pp = f1.getInt(player);
 		return player.isPlayerSleeping() && f1.getInt(player) >= 95;
 	}
 

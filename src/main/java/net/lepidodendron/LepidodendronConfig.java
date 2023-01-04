@@ -30,6 +30,7 @@ public class LepidodendronConfig {
     public static boolean genFossil = true;
     public static double junkFossil = 12.5;
     public static double playerSleepPercent = 100.0;
+    public static boolean playerSleep = true;
     public static boolean modFire = true;
     public static int genPalaeobotanist = 30;
     public static int genPalaeontologist = 30;
@@ -831,8 +832,13 @@ public class LepidodendronConfig {
         junkFossil = prop.getDouble();
         propOrder.add(prop.getName());
 
+        prop = cfg.get("Global World-Gen", "playerSleep", playerSleep);
+        prop.setComment("Allow Prehistoric Nature to manage player sleeping in dimensions and multiplayer. [default: true]");
+        playerSleep = prop.getBoolean();
+        propOrder.add(prop.getName());
+
         prop = cfg.get("Global World-Gen", "playerSleepPercent", playerSleepPercent);
-        prop.setComment("Percentage of sleepable players who must sleep in order for a night to pass (0-100). [default: 100.0]");
+        prop.setComment("Percentage of sleepable (including creative) players who must sleep in order for a night to pass (0-100). [default: 100.0]");
         playerSleepPercent = prop.getDouble();
         propOrder.add(prop.getName());
 

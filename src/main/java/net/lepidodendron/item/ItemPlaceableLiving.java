@@ -308,11 +308,14 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
 							//	itemstack.shrink(1);
 							//}
-							if (result == EnumActionResult.SUCCESS) {
+							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
+								if (!playerIn.isCreative()) {
+									itemstack.shrink(1);
+								}
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
 							else {
-								//Try the right click action instead:
+								//Try the right click action instead
 								ActionResult actionResult = item.onItemRightClick(worldIn, playerIn, handIn);
 								if (!playerIn.isCreative() && actionResult.getType() == EnumActionResult.SUCCESS) {
 									itemstack.shrink(1);
