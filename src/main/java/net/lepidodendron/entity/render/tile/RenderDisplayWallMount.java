@@ -5456,8 +5456,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_THRINACODUS);
                                 modelThrinacodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraTitanichthys.class) {
-                                double offset = -0.63;
-                                double voffset = 0.15;
+                                double offset = -1.3;
+                                double voffset = 0;
                                 if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
                                     GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
                                     GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -5478,7 +5478,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                     GlStateManager.rotate(90, 0F, 1F, 0F);
                                 }
                                 GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(5.8, 5.8, 5.8);
+                                GlStateManager.scale(6.4, 6.4, 6.4);
                                 this.bindTexture(TEXTURE_TITANICHTHYS);
                                 modelTitanicthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraTorpedaspis.class) {

@@ -4,7 +4,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelTitanicthys extends AdvancedModelBase {
@@ -57,6 +56,7 @@ public class ModelTitanicthys extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r31;
     private final AdvancedModelRenderer cube_r32;
     private final AdvancedModelRenderer cube_r33;
+    private final AdvancedModelRenderer throatback;
 
     public ModelTitanicthys() {
         this.textureWidth = 256;
@@ -353,6 +353,11 @@ public class ModelTitanicthys extends AdvancedModelBase {
         this.setRotateAngle(cube_r33, -0.1571F, -0.2618F, 0.0F);
         this.cube_r33.cubeList.add(new ModelBox(cube_r33, 0, 126, 0.0F, -1.6F, 0.0F, 3, 2, 14, 0.0F, false));
 
+        throatback = new AdvancedModelRenderer(this);
+        throatback.setRotationPoint(0.0F, 12.0F, 24.0F);
+        Head.addChild(throatback);
+        throatback.cubeList.add(new ModelBox(throatback, 57, 13, -7.5F, -20.2F, -24.01F, 15, 15, 3, 0.0F, false));
+
         updateDefaultPose();
     }
 
@@ -360,16 +365,13 @@ public class ModelTitanicthys extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Body.render(f5);
     }
+
     public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
         this.Lowerjaw.rotateAngleX = (float) Math.toRadians(35);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.Head.offsetY = 0.12F;
+        this.Head.render(0.01F);
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
