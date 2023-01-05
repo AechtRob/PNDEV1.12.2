@@ -36,7 +36,7 @@ public class ItemRemigiomontanusRaw extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_remigiomontanus", ItemRemigiomontanusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_remigiomontanus", ItemRemigiomontanusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemRemigiomontanusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemRemigiomontanusRaw.block);
 	}

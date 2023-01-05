@@ -13,7 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -31,8 +30,6 @@ import java.util.Random;
 		setHarvestLevel("pickaxe", 1);
 		setHardness(1.5F);
 		setResistance(6F);
-		setLightLevel(0F);
-		setLightOpacity(255);
 		setCreativeTab(TabLepidodendronMisc.tab);
 	}
 
@@ -62,28 +59,23 @@ import java.util.Random;
 	}
 
 	@Override
-	public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
-		return 0;
-	}
-
-	@Override
 	public MapColor getMapColor(IBlockState state, IBlockAccess blockAccess, BlockPos pos) {
 		return MapColor.STONE;
 	}
+
+	public abstract ItemStack getFossilDrop();
+
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public BlockRenderLayer getRenderLayer()
 	{
-		return BlockRenderLayer.SOLID;
+		return BlockRenderLayer.CUTOUT;
 	}
 
 	@Override
 	public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-		return true;
+		return layer == BlockRenderLayer.CUTOUT_MIPPED;
 	}
-
-	public abstract ItemStack getFossilDrop();
-
 }
 
