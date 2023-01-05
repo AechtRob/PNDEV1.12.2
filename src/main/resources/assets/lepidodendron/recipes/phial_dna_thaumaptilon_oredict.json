@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNthaumaptilon"
+ "ore": "staticdnaPNlepidodendron:thaumaptilon"
  },
  {
  "item": "lepidodendron:phial_empty"

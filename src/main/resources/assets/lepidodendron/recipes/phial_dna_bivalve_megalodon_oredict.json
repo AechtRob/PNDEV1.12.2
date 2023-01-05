@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNBivalveMegalodon"
+ "ore": "staticdnaPNlepidodendron:bivalve_megalodon"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:bivalve_megalodon"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:bivalve_megalodon"}}
  }
 }

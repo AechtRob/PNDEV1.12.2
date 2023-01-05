@@ -109,6 +109,7 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 
 		public static String getDNAStr(String string) {
 			string = string.replace("lepidodendron:", "");
+			string = string.replace("minecraft:", "");
 			return string;
 		}
 
@@ -123,22 +124,22 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 				NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 				String stringDNA = (blockNBT.getString("id"));
 				if (stringDNA != null) {
-					if (stringDNA.equalsIgnoreCase("acacia_sapling")) {
+					if (stringDNA.equalsIgnoreCase("minecraft:acacia_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(4);
 					}
-					else if (stringDNA.equalsIgnoreCase("birch_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:birch_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(2);
 					}
-					else if (stringDNA.equalsIgnoreCase("dark_oak_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:dark_oak_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(5);
 					}
-					else if (stringDNA.equalsIgnoreCase("jungle_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:jungle_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(3);
 					}
-					else if (stringDNA.equalsIgnoreCase("oak_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:oak_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(0);
 					}
-					else if (stringDNA.equalsIgnoreCase("spruce_sapling")) {
+					else if (stringDNA.equalsIgnoreCase("minecraft:spruce_sapling")) {
 						blockOut = Blocks.SAPLING.getStateFromMeta(1);
 					}
 					else {
@@ -210,6 +211,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
 			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, true);
 
+			if (!itemstack.hasTagCompound()) {
+				return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
+			}
+
 			if (raytraceresult == null)
 			{
 				return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
@@ -233,6 +238,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						Entity entity = EntityList.createEntityByIDFromName(EntityList.getKey(getEntityFromNBT(itemstack)), worldIn);
 						if (entity instanceof EntityPrehistoricFloraAgeableBase) {
 							nbtStr = "{AgeTicks:0}";
+						}
+						else {
+							if (itemstack.getTagCompound().hasKey("PFMob")) {
+								NBTTagCompound blockNBT = (NBTTagCompound) itemstack.getTagCompound().getTag("PFMob");
+								String stringDNA = (blockNBT.getString("id"));
+								if (stringDNA.startsWith("fossil:")) {
+									nbtStr = "{Age:-25000, Gender:" + itemRand.nextInt(2) + "}";
+								} else {
+									nbtStr = "{Age:-25000}";
+								}
+							} else {
+								nbtStr = "{Age:-25000}";
+							}
 						}
 						if (!(worldIn.isRemote)) {
 							if (iblockstate.getMaterial() == Material.WATER) {
@@ -272,9 +290,14 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							}
 						}
 						//Now modded:
-						else if (block != null && block != Blocks.AIR) {
-							ItemStack pickBlock = block.getBlock().getPickBlock(block.getBlock().getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
-							item = pickBlock.getItem();
+						else if (block != null) {
+							if (block.getBlock() != Blocks.AIR) {
+								ItemStack pickBlock = block.getBlock().getPickBlock(block.getBlock().getDefaultState(), new RayTraceResult(playerIn), worldIn, blockpos, playerIn);
+								item = pickBlock.getItem();
+							}
+							else {
+								item = getItemFromNBT(itemstack);
+							}
 						}
 						else {
 							item = getItemFromNBT(itemstack);
@@ -282,16 +305,19 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 						if (item != null) {
 							//System.err.println("blockpos " + blockpos);
 							EnumActionResult result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
-							if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-								itemstack.shrink(1);
-							}
-							if (result == EnumActionResult.SUCCESS) {
+							//if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
+							//	itemstack.shrink(1);
+							//}
+							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
+								if (!playerIn.isCreative()) {
+									itemstack.shrink(1);
+								}
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
 							else {
-								//Try the right click action instead:
+								//Try the right click action instead
 								ActionResult actionResult = item.onItemRightClick(worldIn, playerIn, handIn);
-								if (!playerIn.isCreative() && actionResult.getResult() == EnumActionResult.SUCCESS) {
+								if (!playerIn.isCreative() && actionResult.getType() == EnumActionResult.SUCCESS) {
 									itemstack.shrink(1);
 								}
 								if (actionResult.getResult() == EnumActionResult.SUCCESS) {
@@ -314,9 +340,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 											}
 
 											result = item.onItemUse(playerIn, worldIn, blockpos, handIn, raytraceresult.sideHit, 0.5F, 0F, 0.5F);
-											if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
-												itemstack.shrink(1);
-											}
+											//if (!playerIn.isCreative() && result == EnumActionResult.SUCCESS) {
+											//	itemstack.shrink(1);
+											//}
 											if (result == EnumActionResult.SUCCESS) {
 												return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 											}

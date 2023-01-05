@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -37,13 +36,13 @@ public class ItemHybodusRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHybodus", ItemHybodusRaw.block);
+		OreDictionary.registerOre("mobdnaPNprehistoric_flora_hybodus", ItemHybodusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemHybodusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemHybodusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemHybodusRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_hybodus_raw");

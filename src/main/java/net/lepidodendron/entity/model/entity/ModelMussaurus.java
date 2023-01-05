@@ -298,26 +298,18 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 6, neck2);
         this.faceTarget(f3, f4, 6, head1);
 
-        double width = Mussaurus.getEntityBoundingBox().maxX-Mussaurus.getEntityBoundingBox().minX;
-        double depth = Mussaurus.getEntityBoundingBox().maxZ-Mussaurus.getEntityBoundingBox().minZ;
-        double height = Mussaurus.getEntityBoundingBox().maxY-Mussaurus.getEntityBoundingBox().minY;
-        boolean isBaby = false;
-        if (height <= 0.9375 && width <= 1.0 && depth <= 1.0) {
-            isBaby = true;
-        }
-            //Is a baby so is quadrapedal:
-        if (isBaby) {
+        boolean isBaby = Mussaurus.getJuvenile();
 
+        //Is a baby so is quadrapedal:
+        if (isBaby) {
             this.head1.scaleChildren = true;
             this.neck3.scaleChildren = true;
             this.neck2.scaleChildren = true;
             this.neck1.scaleChildren = true;
-            //this.head1.setScale(1.66F, 1.66F, 1.66F);
             this.neck1.setScale(1.175F, 1.175F, 1.175F);
             this.neck2.setScale(1.175F, 1.175F, 1.175F);
             this.neck3.setScale(1.175F, 1.175F, 1.175F);
             this.head1.setScale(1.175F, 1.175F, 1.175F);
-            //this.head1.offsetY = -0.05F;
 
             this.upperleg1.rotateAngleX = (float) Math.toRadians(-61.2);
             this.lowerleg1.rotateAngleX = (float) Math.toRadians(74.67);
@@ -341,6 +333,16 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
             this.hands2.rotateAngleY = (float) Math.toRadians(85);
 
             //this.basin.offsetY = 0.4825F;
+        }
+        else {
+            this.head1.scaleChildren = true;
+            this.neck3.scaleChildren = true;
+            this.neck2.scaleChildren = true;
+            this.neck1.scaleChildren = true;
+            this.neck1.setScale(1F, 1, 1F);
+            this.neck2.setScale(1F, 1, 1F);
+            this.neck3.setScale(1F, 1, 1F);
+            this.head1.setScale(1F, 1, 1F);
         }
 
 

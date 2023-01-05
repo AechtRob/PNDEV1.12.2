@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraLebachacanthus extends EntityPrehistoricFlora
 		return this.getAgeScale() < 0.2;
 	}
 
-	public static String getPeriod() {return "Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

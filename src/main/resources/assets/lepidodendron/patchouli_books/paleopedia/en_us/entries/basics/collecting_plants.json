@@ -1,0 +1,34 @@
+{
+	"name": "Plant Collection",
+	"read_by_default": true,
+	"icon": "lepidodendron:sapling",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Unless you have altered the mod config, plants need to be propagated. There are several methods:$(li)Spore-bearing plants: collect spores by clicking an envelope onto the spore-bearing parts of the plant.$(li)Seed-bearing plans without cubic leafblocks: collect seeds by clicking an envelope onto the seed-bearing parts of the plant."
+		},
+		{
+			"type": "text",
+			"text": "$(li)Seed-bearing plants with cubic leafblocks: these drop seeds or fruits when you break the leaves. Fruits can be crafted to obtain seeds. If you can see berries or seeds on the block itself, they can also be directly harvested by right clicking.$(li)Cycads: cycads produce cones on a natural cycle. Right click to harvest a cone. Craft cones into seeds."
+		},
+		{
+			"type": "text",
+			"text": "$(li)Other Cone-bearing plants: conifers will drop cones when broken. Break or craft cones into seeds.$(li)True, flower-bearing plants: harvest a flower using shears. Right click that flower onto a flower still on a parent plant to pollinate it and obtain seeds."
+		},
+		{
+			"type": "text",
+			"text": "An envelope full of spores or seeds can be used in crafting recipes to create the living plants. You can also simply sow the contents direct from the envelope into suitable ground by right-clicking with it, and that will also give you a chance to get more plants out of each envelope."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:spore_envelope_recipe",
+			"recipe2": "lepidodendron:alliopteris_recipe",
+			"title": "Envelopes"
+		},
+		{
+			"type": "text",
+			"text": ""
+		}
+	]
+}

@@ -58,7 +58,7 @@ public class BlockXenocladiaStemNE extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNxenocladia_sapling", BlockXenocladiaStemNE.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:xenocladia_sapling", BlockXenocladiaStemNE.block);
 		OreDictionary.registerOre("logWood", BlockXenocladiaStemNE.block);
 		OreDictionary.registerOre("itemRope", BlockXenocladiaStemNE.block);
 	}

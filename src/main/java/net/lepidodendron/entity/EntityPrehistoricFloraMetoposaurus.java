@@ -57,8 +57,8 @@ public class EntityPrehistoricFloraMetoposaurus extends EntityPrehistoricFloraSw
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.1F;
-		maxWidth = 1.20F;
-		maxHeight = 1.02F;
+		maxWidth = 1.22F;
+		maxHeight = 0.98F;
 		maxHealthAgeable = 24.0D;
 	}
 

@@ -40,7 +40,7 @@ public class BlockBeechLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBeech", BlockBeechLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:beech_sapling", BlockBeechLog.block);
 		OreDictionary.registerOre("logWood", BlockBeechLog.block);
 	}
 

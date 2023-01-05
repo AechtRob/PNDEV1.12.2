@@ -39,6 +39,9 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -67,9 +70,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation ATTACK_ANIMATION;
     public Animation ROAR_ANIMATION;
     public Animation LAY_ANIMATION;
+    public Animation MAKE_NEST_ANIMATION;
     private Animation currentAnimation;
 
     private int inPFLove;
+    private int canGrow;
     private boolean laying;
     private EntityItem eatTarget;
     private EntityLiving grappleTarget;
@@ -81,6 +86,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ATTACK_ANIMATION = Animation.create(this.getAttackLength());
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
+        MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    @SideOnly(Side.CLIENT)
+    public AxisAlignedBB getRenderBoundingBox()
+    {
+        if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+            return this.getEntityBoundingBox().grow(1.0, 0.25, 1.0);
+        }
+        return this.getEntityBoundingBox();
     }
 
     @Nullable
@@ -300,7 +315,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{ATTACK_ANIMATION,ROAR_ANIMATION};
+        return new Animation[]{ATTACK_ANIMATION,ROAR_ANIMATION,MAKE_NEST_ANIMATION};
     }
 
     public SoundEvent getSoundForAnimation(Animation animation) {
@@ -347,7 +362,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public void launchAttack() {
         IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
         if (getAttackTarget() != null) {
-            boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue());
+            boolean b = this.getAttackTarget().attackEntityFrom(DamageSource.causeMobDamage(this), (float) iattributeinstance.getAttributeValue() * this.getAgeScale());
             EntityLivingBase ee = this.getAttackTarget();
             if (ee.isRiding() && this.breaksBoat()) {
                 Entity boat = ee.getRidingEntity();
@@ -559,6 +574,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         compound.setBoolean("willHunt", this.getWillHunt());
         compound.setBoolean("isFast", this.getIsFast());
         compound.setInteger("InPFLove", this.inPFLove);
+        compound.setInteger("canGrow", this.canGrow);
         compound.setBoolean("laying", this.laying);
         compound.setInteger("mateable", this.getMateable());
         if (this.getNestLocation() != null) {
@@ -578,6 +594,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setWillHunt(compound.getBoolean("willHunt"));
         this.setIsFast(compound.getBoolean("isFast"));
         this.inPFLove = compound.getInteger("InPFLove");
+        this.canGrow = compound.getInteger("canGrow");
         this.laying = compound.getBoolean("laying");
         this.setMateable(compound.getInteger("mateable"));
         if (compound.hasKey("PosX")) {
@@ -687,6 +704,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     @Override
     public void onLivingUpdate() {
         super.onLivingUpdate();
+
         if (!world.isRemote) {
             if (this.getAttackTarget() != null) {
                 if (this.getAttackTarget().isDead) {
@@ -710,6 +728,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.inPFLove > 0)
         {
             --this.inPFLove;
+        }
+
+        if (this.canGrow > 0)
+        {
+            --this.canGrow;
         }
 
         if (this.getMateable() < 0) {
@@ -849,11 +872,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setWillHunt(true);
             }
             else {
-                this.setWillHunt(oldHealthRatio < (float) aHealth);
+                this.setWillHunt(oldHealthRatio <= (float) aHealth);
             }
         }
         else {
-            this.setWillHunt(oldHealthRatio < (float) aHealth);
+            this.setWillHunt(oldHealthRatio <= (float) aHealth);
         }
         double adult = (double) LepidodendronConfig.adultAge;
         if (adult > 100) {adult = 100;}
@@ -1174,18 +1197,51 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             if (this.isBreedingItem(itemstack) && this.isPFAdult() && this.inPFLove <= 0 && this.getMateable() == 0)
             {
                 this.consumeItemFromStack(player, itemstack);
-                if (this.isPFAdult()) {
-                    this.inPFLove = 600;
-                    this.world.setEntityState(this, (byte) 18);
+                this.inPFLove = 600;
+                this.world.setEntityState(this, (byte) 18);
+                return true;
+            }
+            if (this.isBreedingItem(itemstack) && (!this.isPFAdult()) && this.canGrow <= 0) {
+                this.consumeItemFromStack(player, itemstack);
+                this.canGrow = 3000;
+                this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
+                if (world.isRemote) {
+                    this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                 }
                 return true;
             }
-            if (this.isBreedingItem(itemstack) && (!this.isPFAdult())) {
-                this.setAgeTicks(Math.min(this.getAdultAge(), this.getAgeTicks() + 6000));
-                return true;
+            if (OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
+                //Prompt to create a nest:
+                //Does this mob have nests like this and is it OK to do this now?
+                if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {
+                    //Does the mob already have a nest?
+                    if (this.getNestLocation() == null) {
+                        //Can we make a nest in this exact spot?
+                        if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
+                            this.setAnimation(MAKE_NEST_ANIMATION);
+                            this.consumeItemFromStack(player, itemstack);
+                            if (world.isRemote) {
+                                this.spawnParticles(EnumParticleTypes.ITEM_TAKE);
+                            }
+                            return true;
+                        }
+                    }
+                }
             }
         }
         return false;
+    }
+
+    @SideOnly(Side.CLIENT)
+    private void spawnParticles(EnumParticleTypes particleType)
+    {
+        for (int i = 0; i < 5; ++i)
+        {
+            double d0 = this.rand.nextGaussian() * 0.02D;
+            double d1 = this.rand.nextGaussian() * 0.02D;
+            double d2 = this.rand.nextGaussian() * 0.02D;
+            this.world.spawnParticle(particleType, this.posX + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + 1.0D + (double)(this.rand.nextFloat() * this.height), this.posZ + (double)(this.rand.nextFloat() * this.width * 2.0F) - (double)this.width, d0, d1, d2);
+        }
     }
 
     @Override

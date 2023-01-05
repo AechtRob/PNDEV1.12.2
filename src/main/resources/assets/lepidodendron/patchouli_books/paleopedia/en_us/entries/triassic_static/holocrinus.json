@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_holocrinus",
 	"category": "lepidodendron:triassic_static",
-	"turnin": "lepidodendron:pf_adv_book_holocrinus",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_holocrinus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_holocrinus",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_holocrinus",
 			"title": "Holocrinus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_holocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_holocrinus",
 			"type": "text",
 			"text": "Holocrinus is an encrinid crinoid which lived a sessile life on the sea floor. It was a suspension feeder, and at the end of its stalk there were several thin arms used for catching small prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_holocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_holocrinus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

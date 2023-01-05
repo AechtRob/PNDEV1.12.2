@@ -61,7 +61,7 @@ public class BlockSpaciinodum extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNspaciinodum", BlockSpaciinodum.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:spaciinodum", BlockSpaciinodum.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSpaciinodum.block);
 		OreDictionary.registerOre("plant", BlockSpaciinodum.block);
 		OreDictionary.registerOre("stemHorsetail", BlockSpaciinodum.block);

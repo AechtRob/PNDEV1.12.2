@@ -72,7 +72,7 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGigantospongia", BlockGigantospongia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:gigantospongia", BlockGigantospongia.block);
 		OreDictionary.registerOre("sponge", BlockGigantospongia.block);
 	}
 
@@ -115,7 +115,8 @@ public class BlockGigantospongia extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
-			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")) {
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
 				biomeCriteria = true;
 			}
 			else {

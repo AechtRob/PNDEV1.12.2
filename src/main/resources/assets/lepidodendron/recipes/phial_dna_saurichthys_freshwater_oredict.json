@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_saurichthys_freshwater"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_saurichthys_freshwater"
  },
  {
  "item": "lepidodendron:phial_empty"

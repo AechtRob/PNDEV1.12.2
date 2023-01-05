@@ -1,0 +1,46 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:taxidermy_table"}
+    ],
+    "facing=north,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table"}
+    ],
+    "facing=east,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table", "y": 90}
+    ],
+    "facing=south,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table", "y": 180}
+    ],
+
+    "facing=west,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table", "y": 270}
+    ],
+    "facing=up,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table"}
+    ],
+    "facing=down,scalpel=false": [
+      {"model": "lepidodendron:taxidermy_table", "x": 180}
+    ],
+
+    "facing=north,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel"}
+    ],
+    "facing=east,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel", "y": 90}
+    ],
+    "facing=south,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel", "y": 180}
+    ],
+
+    "facing=west,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel", "y": 270}
+    ],
+    "facing=up,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel"}
+    ],
+    "facing=down,scalpel=true": [
+      {"model": "lepidodendron:taxidermy_table_scalpel", "x": 180}
+    ]
+  }
+}

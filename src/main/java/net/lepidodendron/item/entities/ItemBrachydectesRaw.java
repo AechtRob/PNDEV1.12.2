@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -33,12 +32,12 @@ public class ItemBrachydectesRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		//OreDictionary.registerOre("dnaPNBrachydectes", ItemBrachydectesRaw.block);
+		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_brachydectes", ItemBrachydectesRaw.block);
 		//OreDictionary.registerOre("listAllmeatraw", ItemBrachydectesRaw.block);
 		//OreDictionary.registerOre("foodMeat", ItemBrachydectesRaw.block);
 	}
 
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_brachydectes_raw");

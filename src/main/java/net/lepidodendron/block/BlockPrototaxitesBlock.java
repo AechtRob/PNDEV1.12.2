@@ -56,7 +56,7 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNprototaxites", BlockPrototaxitesBlock.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:prototaxites", BlockPrototaxitesBlock.block);
 		OreDictionary.registerOre("itemFungus", BlockPrototaxitesBlock.block);
 	}
 

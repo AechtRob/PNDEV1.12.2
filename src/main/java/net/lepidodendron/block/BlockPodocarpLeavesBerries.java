@@ -61,7 +61,7 @@ public class BlockPodocarpLeavesBerries extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNpodocarp_sapling", BlockPodocarpLeavesBerries.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:podocarp_sapling", BlockPodocarpLeavesBerries.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPodocarpLeavesBerries.block);
 		OreDictionary.registerOre("plant", BlockPodocarpLeavesBerries.block);
 		OreDictionary.registerOre("treeLeaves", BlockPodocarpLeavesBerries.block);

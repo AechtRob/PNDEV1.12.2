@@ -36,7 +36,7 @@ public class ItemAmmonitePachydiscusRaw extends ElementsLepidodendronMod.ModElem
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ammonite_pachydiscus", ItemAmmonitePachydiscusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_pachydiscus", ItemAmmonitePachydiscusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAmmonitePachydiscusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAmmonitePachydiscusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAmmonitePachydiscusRaw.block);

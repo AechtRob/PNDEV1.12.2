@@ -69,7 +69,7 @@ public class BlockCaytoniales2 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCaytoniales2", BlockCaytoniales2.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:caytoniales2", BlockCaytoniales2.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCaytoniales2.block);
 		OreDictionary.registerOre("plant", BlockCaytoniales2.block);
 	}

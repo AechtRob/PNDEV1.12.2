@@ -71,7 +71,7 @@ public class BlockNamapoikia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNamapoikia", BlockNamapoikia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:namapoikia", BlockNamapoikia.block);
 	}
 
 

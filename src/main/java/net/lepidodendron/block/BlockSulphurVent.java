@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemSulphur;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -27,6 +29,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenReed;
@@ -65,6 +68,13 @@ public class BlockSulphurVent extends ElementsLepidodendronMod.ModElement {
 
 		if (dimID != LepidodendronConfig.dimPrecambrian) {
 			return;
+		}
+
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, 128, chunkZ + 16));
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() != EnumBiomeTypePrecambrian.Ediacaran) {
+				return;
+			}
 		}
 
 		double genChance = 0.5;

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNpseudobornia"
+ "ore": "plantdnaPNlepidodendron:pseudobornia"
  },
  {
  "item": "lepidodendron:phial_empty"

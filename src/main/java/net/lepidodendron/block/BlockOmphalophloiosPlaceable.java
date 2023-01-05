@@ -65,7 +65,7 @@ public class BlockOmphalophloiosPlaceable extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOmphalophloios", BlockOmphalophloiosPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:omphalophloios_sapling", BlockOmphalophloiosPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockOmphalophloiosPlaceable.block);
 		OreDictionary.registerOre("plant", BlockOmphalophloiosPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockOmphalophloiosPlaceable.block);

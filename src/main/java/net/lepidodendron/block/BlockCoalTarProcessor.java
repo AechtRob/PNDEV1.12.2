@@ -16,6 +16,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
@@ -42,6 +43,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -105,12 +108,13 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 			super.onBlockAdded(worldIn, pos, state);
-			worldIn.setBlockState(pos.up(), BlockCoalTarProcessorTop.block.getDefaultState());
+			worldIn.setBlockState(pos.up(), BlockCoalTarProcessorCentre.block.getDefaultState().withProperty(BlockCoalTarProcessorCentre.BlockCustom.FACING, state.getValue(FACING)));
+			worldIn.setBlockState(pos.up(2), BlockCoalTarProcessorTop.block.getDefaultState().withProperty(BlockCoalTarProcessorTop.BlockCustom.FACING, state.getValue(FACING)));
 		}
 
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up());
+			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up()) && isReplaceable(worldIn, pos.up(2));
 		}
 
 		@Override
@@ -190,7 +194,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 
-			if (worldIn.getBlockState(pos.up()).getBlock() != BlockCoalTarProcessorTop.block) {
+			if (worldIn.getBlockState(pos.up()).getBlock() != BlockCoalTarProcessorCentre.block) {
 				worldIn.destroyBlock(pos, true);
 				return;
 			}
@@ -213,6 +217,14 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
 			return layer == BlockRenderLayer.CUTOUT_MIPPED;
+		}
+
+		@Override
+		public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
+			if (face == EnumFacing.DOWN) {
+				return BlockFaceShape.SOLID;
+			}
+			return BlockFaceShape.UNDEFINED;
 		}
 
 		@Override
@@ -245,7 +257,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
 					if (te.isProcessing && random.nextInt(8) == 0) {
 						for (int l = 0; l < 8; ++l) {
-							world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + 0.5, (double) pos.getY() + 1.8, (double) pos.getZ() + 0.5, 0, 0.075D, 0);
+							world.spawnParticle(EnumParticleTypes.CLOUD, (double) pos.getX() + 0.5, (double) pos.getY() + 3.0, (double) pos.getZ() + 0.5, 0, 0.075D, 0);
 						}
 					}
 				}
@@ -253,7 +265,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements ITickable, ISidedInventory {
+	public static class TileEntityCoalTarProcessor extends TileEntityLockableLoot implements ITickable, ISidedInventory, IEnergyStorage {
 
 		private NonNullList<ItemStack> forgeContents = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 
@@ -261,8 +273,15 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		public int processTick;
 		private int processTickTime; //Depends on what we are doing it to
 		public int GUIFlameHeight;
+		private int minEnergyNeeded = 200;
 
 		public boolean canStartProcess() {
+
+			if (LepidodendronConfig.machinesRF) {
+				if (!this.hasEnergy(minEnergyNeeded)) {
+					return false;
+				}
+			}
 
 			if (this.isProcessing) {
 				return false;
@@ -314,6 +333,33 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(this.pos);
+				if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
+						//Is there a power-supplying block in the right place?
+						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING);
+						BlockPos powerBlockPos = this.pos.offset(facing.getOpposite());
+						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+						if (teStorage != null) {
+							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing);
+							if (powerBlockStorage != null) {
+								if (powerBlockStorage.canExtract()) {
+									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+									powerBlockStorage.extractEnergy(energyTransferIn, false);
+									this.receiveEnergy(energyTransferIn, false);
+									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			boolean updated = false;
+
 			//System.err.println("Tick: " + this.processTick);
 			//System.err.println("TickTotal: " + this.processTickTime);
 
@@ -321,18 +367,22 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				this.processTickTime = (int)Math.round(Math.sqrt(TileEntityFurnace.getItemBurnTime(this.getStackInSlot(0))) * 10);
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
-			if (this.isProcessing) {
+			if (this.isProcessing && this.hasEnergy(minEnergyNeeded)) {
 				this.processTick ++;
+				this.drainEnergy(40);
 				this.GUIFlameHeight = Math.min(60, this.GUIFlameHeight + 1);
 				if (this.getWorld().rand.nextInt(10) == 0) {
 					world.playSound(null, pos, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 0.5F, 0.8F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 				}
+				updated = true;
 			}
 
-			if (!this.isProcessing) {
+			if ((!this.isProcessing || !this.hasEnergy(minEnergyNeeded)) && this.GUIFlameHeight > 0) {
 				this.GUIFlameHeight = Math.max(0, this.GUIFlameHeight - 1);
+				updated = true;
 			}
 
 			if (!this.isRoomForOutputStack()) {
@@ -355,8 +405,12 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 					stackProcessing.shrink(1);
 					this.setInventorySlotContents(1, new ItemStack(ItemBottleOfDNASolvent.block, resultSize + this.getStackInSlot(1).getCount()));
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -417,6 +471,9 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void readFromNBT(NBTTagCompound compound) {
 			super.readFromNBT(compound);
+			if (compound.hasKey("energystored")) {
+				this.energy = compound.getInteger("energystored");
+			}
 			if (compound.hasKey("processTick")) {
 				this.processTick = compound.getInteger("processTick");
 			}
@@ -438,6 +495,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 			super.writeToNBT(compound);
+			compound.setInteger("energystored", this.energy);
 			compound.setBoolean("isProcessing", this.isProcessing);
 			compound.setInteger("processTick", this.processTick);
 			compound.setInteger("processTickTime", this.processTickTime);
@@ -449,15 +507,15 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 		}
 
 		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override
@@ -574,7 +632,112 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 				}
 
 			}
-			return super.getCapability(capability, facing);
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
+			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
+
+		}
+
+		public void drainEnergy(int energy) {
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+					te.extractEnergy(energy,false);
+				}
+			}
+		}
+
+		public boolean hasEnergy(int minEnergy) {
+			if (!LepidodendronConfig.machinesRF) {
+				return true;
+			}
+			TileEntity tileEntity = world.getTileEntity(this.getPos());
+			if (tileEntity != null) {
+				if (tileEntity instanceof BlockCoalTarProcessor.TileEntityCoalTarProcessor) {
+					BlockCoalTarProcessor.TileEntityCoalTarProcessor te = (BlockCoalTarProcessor.TileEntityCoalTarProcessor) tileEntity;
+					return te.getEnergyStored() > minEnergy;
+				}
+			}
+			return false;
+		}
+
+		//Energy addin:
+		//-------------
+		protected int energy;
+		protected int capacity = 50000;
+		protected int maxReceive = 500;
+		protected int maxExtract = 250;
+
+		@Override
+		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockCoalTarProcessor.BlockCustom.FACING).getOpposite();
+			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+				return true;
+			}
+			return super.hasCapability(capability, facing);
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate)
+		{
+			if (!canReceive())
+				return 0;
+
+			int energyReceived = Math.min(capacity - energy, Math.min(this.maxReceive, maxReceive));
+			if (!simulate) {
+				energy += energyReceived;
+				if (energyReceived > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyReceived;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate)
+		{
+			if (!canExtract())
+				return 0;
+
+			int energyExtracted = Math.min(energy, Math.min(this.maxExtract, maxExtract));
+			if (!simulate) {
+				energy -= energyExtracted;
+				if (energyExtracted > 0) {
+					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+				}
+			}
+			return energyExtracted;
+		}
+
+		@Override
+		public int getEnergyStored()
+		{
+			return energy;
+		}
+
+		@Override
+		public int getMaxEnergyStored()
+		{
+			return capacity;
+		}
+
+		@Override
+		public boolean canExtract()
+		{
+			return this.maxExtract > 0;
+		}
+
+		@Override
+		public boolean canReceive()
+		{
+			return this.maxReceive > 0;
+		}
+
+		public double getEnergyFraction() {
+			if (this.capacity > 0) {
+				return ((double) this.energy) / ((double) this.capacity);
+			}
+			return 0;
 		}
 
 	}

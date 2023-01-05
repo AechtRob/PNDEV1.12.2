@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_urocordylus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_urocordylus"
  },
  {
  "item": "lepidodendron:phial_empty"

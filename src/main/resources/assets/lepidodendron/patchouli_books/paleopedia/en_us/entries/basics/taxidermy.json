@@ -19,7 +19,16 @@
 		{
 			"type": "text",
 			"text": "Wall mounts are appropriate for fishes and medium to large animals, resulting in either a body or shoulder mount; large arthropods like Laminacaris and Megalograptus also go here. Simply right clicking with the appropriate item in hand on the right base will show the model of the animal. If the base is wrong, the item will be shown in a similar fashion to a vanilla item frame."
-		},		
+		},
+		{
+			"type": "text",
+			"text": "To create a taxidermy kit for display, you will need to craft a Taxidermy Table. The table will need a stock of stuffing material, such as wool or wheat, etc., plus a taxidermy scalpel. ONce you have supplied your table with those items, you can then add your raw meat from the mob to craft a Taxidermy Kit which can be placed into the various display options as above. "
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:taxidermy_table",
+			"recipe2": "lepidodendron:taxidermy_scalpel"
+		},
 		{
 			"type": "crafting",
 			"recipe": "lepidodendron:display_case_recipe",

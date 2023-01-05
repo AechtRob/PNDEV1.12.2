@@ -67,7 +67,7 @@ public class BlockCrinoidTraumatocrinus extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCrinoidTraumatocrinus", BlockCrinoidTraumatocrinus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_traumatocrinus", BlockCrinoidTraumatocrinus.block);
 	}
 
 

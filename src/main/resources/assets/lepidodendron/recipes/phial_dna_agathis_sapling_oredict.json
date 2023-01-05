@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNagathis_sapling"
+ "ore": "plantdnaPNlepidodendron:agathis_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

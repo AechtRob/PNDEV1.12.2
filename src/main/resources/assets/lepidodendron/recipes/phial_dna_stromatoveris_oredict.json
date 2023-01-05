@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNstromatoveris"
+ "ore": "staticdnaPNlepidodendron:stromatoveris"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_allenypterus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_allenypterus"
  },
  {
  "item": "lepidodendron:phial_empty"

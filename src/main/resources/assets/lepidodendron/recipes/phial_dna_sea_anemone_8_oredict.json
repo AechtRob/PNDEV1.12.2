@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNsea_anemone_8"
+ "ore": "staticdnaPNlepidodendron:sea_anemone_8"
  },
  {
  "item": "lepidodendron:phial_empty"

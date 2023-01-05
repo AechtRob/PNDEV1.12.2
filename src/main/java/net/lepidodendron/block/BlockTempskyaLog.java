@@ -53,7 +53,7 @@ public class BlockTempskyaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNtempskya_sapling", BlockTempskyaLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tempskya_sapling", BlockTempskyaLog.block);
 		OreDictionary.registerOre("logWood", BlockTempskyaLog.block);
 	}
 

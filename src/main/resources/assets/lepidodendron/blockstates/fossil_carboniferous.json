@@ -1,22 +1,10 @@
 {
   "variants": {
     "normal": [
-      { "model": "lepidodendron:fossiliferous_carboniferous" },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var" },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous", "x": 90, "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_carboniferous_var", "x": 90, "y": 90, "z": 90 }
+      {"model": "lepidodendron:fossiliferous_carboniferous" },
+      {"model": "lepidodendron:fossiliferous_carboniferous", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_carboniferous_var" },
+      {"model": "lepidodendron:fossiliferous_carboniferous_var", "y": 180 }
     ]
   }
 }

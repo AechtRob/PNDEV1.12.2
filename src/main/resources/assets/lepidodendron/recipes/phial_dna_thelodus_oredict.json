@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_thelodus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_thelodus"
  },
  {
  "item": "lepidodendron:phial_empty"

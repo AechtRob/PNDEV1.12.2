@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNsurangephyllum"
+ "ore": "plantdnaPNlepidodendron:surangephyllum"
  },
  {
  "item": "lepidodendron:phial_empty"

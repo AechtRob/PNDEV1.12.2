@@ -71,7 +71,7 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBurykhia", BlockBurykhia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:burykhia", BlockBurykhia.block);
 	}
 
 
@@ -92,7 +92,21 @@ public class BlockBurykhia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			dimensionCriteria = true;
+			if (BlockArkarua.isPrecambrianUpdated()) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+					dimensionCriteria = true;
+				}
+				else {
+					dimensionCriteria = false;
+				}
+			}
+			else {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+					dimensionCriteria = true;
+				}
+			}
 		}
 		if (!dimensionCriteria)
 			return;

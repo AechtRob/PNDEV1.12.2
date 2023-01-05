@@ -1,6 +1,6 @@
 {
     "name": "PN Guides/Tutorials",
-    "description": "$(l)This section will tell you all about the mod's features, recipes, and more!$()",
+    "description": "$(l)This section will tell you all about the mod's features, recipes, and more!$()$(br2)Click below for revival info:",
     "icon": "lepidodendron:fossil_hammer",
     "sortnum": 16
 }

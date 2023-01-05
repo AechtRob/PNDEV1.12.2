@@ -1,8 +1,10 @@
 package net.lepidodendron.util;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.item.*;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Random;
 
@@ -13,55 +15,108 @@ public class AcidBathOutputPlants {
         switch (dim) {
             case 1:
             default: //Precambrian
-                return "";
+                if (!(getPrecambrianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
+                int ii = (new Random()).nextInt(getPrecambrianCleanedFossilsPlants().length);
+                return getPrecambrianCleanedFossilsPlants()[ii];
 
             case 2: //Cambrian
-                return "";
+                if (!(getCambrianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getCambrianCleanedFossilsPlants().length);
+                return getCambrianCleanedFossilsPlants()[ii];
 
             case 3: //Ordovician
-                int ii = (new Random()).nextInt(getOrdovicianCleanedFossilsPlants().length);
+                if (!(getOrdovicianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
+                ii = (new Random()).nextInt(getOrdovicianCleanedFossilsPlants().length);
                 return getOrdovicianCleanedFossilsPlants()[ii];
 
             case 4: //Silurian
+                if (!(getSilurianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getSilurianCleanedFossilsPlants().length);
                 return getSilurianCleanedFossilsPlants()[ii];
 
             case 5: //Devonian
+                if (!(getDevonianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getDevonianCleanedFossilsPlants().length);
                 return getDevonianCleanedFossilsPlants()[ii];
 
             case 6: //Carboniferous
+                if (!(getCarboniferousCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getCarboniferousCleanedFossilsPlants().length);
                 return getCarboniferousCleanedFossilsPlants()[ii];
 
             case 7: //Permian
+                if (!(getPermianCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPermianCleanedFossilsPlants().length);
                 return getPermianCleanedFossilsPlants()[ii];
 
             case 8: //Triassic
+                if (!(getTriassicCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getTriassicCleanedFossilsPlants().length);
                 return getTriassicCleanedFossilsPlants()[ii];
 
             case 9: //Jurassic
+                if (!(getJurassicCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getJurassicCleanedFossilsPlants().length);
                 return getJurassicCleanedFossilsPlants()[ii];
 
             case 10: //Cretaceous
+                if (!(getCretaceousCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getCretaceousCleanedFossilsPlants().length);
                 return getCretaceousCleanedFossilsPlants()[ii];
 
             case 11: //Paleogene
+                if (!(getPaleogeneCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPaleogeneCleanedFossilsPlants().length);
                 return getPaleogeneCleanedFossilsPlants()[ii];
 
             case 12: //Neogene
+                if (!(getNeogeneCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getNeogeneCleanedFossilsPlants().length);
                 return getNeogeneCleanedFossilsPlants()[ii];
 
             case 13: //Pleistocene
+                if (!(getPleistoceneCleanedFossilsPlants().length >= 1)) {
+                    return "";
+                }
                 ii = (new Random()).nextInt(getPleistoceneCleanedFossilsPlants().length);
                 return getPleistoceneCleanedFossilsPlants()[ii];
         }
+    }
+
+    public static String[] getPrecambrianCleanedFossilsPlants() {
+        String[] resLoc = LepidodendronConfig.revPlantsPrecambrian;
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPrecambrian);
+        return resLoc;
+    }
+
+    public static String[] getCambrianCleanedFossilsPlants() {
+        String[] resLoc = LepidodendronConfig.revPlantsCambrian;
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCambrian);
+        return resLoc;
     }
 
     public static String[] getOrdovicianCleanedFossilsPlants() {
@@ -69,6 +124,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockDollyphyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockEdwardsiphyton.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsOrdovician);
         return resLoc;
     }
 
@@ -77,8 +133,10 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.ITEMS.getKey(ItemBaragwanathiaItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockPrototaxites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockNematophyta.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsSilurian);
         return resLoc;
     }
 
@@ -113,8 +171,10 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockWattiezaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXenocladiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockXihuphyllum.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZosterophyllum.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsDevonian);
         return resLoc;
     }
 
@@ -157,8 +217,10 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockValmeyerodendronSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWalchiaSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCarboniferous);
         return resLoc;
     }
 
@@ -217,15 +279,16 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTmesipteris.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockTrichopitys.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockUtrechtiaSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockWachtleria.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWachtlerina.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWalchiaSapling.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWoodHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZygopteridaceaeSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockZygopterisSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockPhasmatocycasSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockPhasmatocycasSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPermian);
         return resLoc;
     }
 
@@ -296,8 +359,12 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockTongchuanophyllum.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemWaterHorsetailItem.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockWoodHorsetail.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockZamitesSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockZamitesSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockDicroidiumHSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockWachtleria.block).toString(),
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsTriassic);
         return resLoc;
     }
 
@@ -384,8 +451,11 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockKomlopterisSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString()
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;
     }
 
@@ -495,10 +565,13 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "dark_oak_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:spruce_sapling"
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsCretaceous);
         return resLoc;
     }
 
@@ -567,13 +640,16 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPaleogene);
         return resLoc;
     }
 
@@ -638,13 +714,16 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsNeogene);
         return resLoc;
     }
 
@@ -709,13 +788,16 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockCunninghamiaSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCephalotaxusSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
-                "oak_sapling",
-                "acacia_sapling",
-                "dark_oak_sapling",
-                "jungle_sapling",
-                "birch_sapling",
-                "spruce_sapling"
+                ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
+                "minecraft:oak_sapling",
+                "minecraft:acacia_sapling",
+                "minecraft:dark_oak_sapling",
+                "minecraft:jungle_sapling",
+                "minecraft:birch_sapling",
+                "minecraft:spruce_sapling"
         };
+        ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsPleistocene);
         return resLoc;
     }
 

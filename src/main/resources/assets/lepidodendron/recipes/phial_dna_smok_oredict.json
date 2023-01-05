@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_smok"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_smok"
  },
  {
  "item": "lepidodendron:phial_empty"

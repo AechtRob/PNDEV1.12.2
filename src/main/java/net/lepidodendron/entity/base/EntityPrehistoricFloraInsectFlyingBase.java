@@ -668,7 +668,7 @@ public abstract class EntityPrehistoricFloraInsectFlyingBase extends EntityTamea
         } else {
             this.moveHelper.action = EntityMoveHelper.Action.WAIT;
         }
-        if (flying && this.ticksExisted % 20 == 0 && !world.isRemote && this.getAttachmentPos() == null) {
+        if (flying && this.ticksExisted % 20 == 0 && !world.isRemote && this.getAttachmentPos() == null && this.FlightSound() != null) {
             this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
                     .getObject(this.FlightSound()), this.getSoundVolume(), 1);
         }

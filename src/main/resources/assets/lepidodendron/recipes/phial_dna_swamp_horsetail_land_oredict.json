@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNswamp_horsetail_item"
+ "ore": "plantdnaPNlepidodendron:swamp_horsetail_item"
  },
  {
  "item": "lepidodendron:phial_empty"

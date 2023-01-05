@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNsphenophyllales1"
+ "ore": "plantdnaPNlepidodendron:sphenophyllales_1"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"PFPlant":{"id":"lepidodendron:sphenophyllales1"}}
+ "nbt": {"PFPlant":{"id":"lepidodendron:sphenophyllales_1"}}
  }
 }

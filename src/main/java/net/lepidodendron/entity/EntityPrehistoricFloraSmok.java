@@ -3,12 +3,12 @@ package net.lepidodendron.entity;
 
 import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -32,13 +32,11 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
+public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandCarnivoreBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	public int ambientSoundTime;
-	public Animation NOISE_ANIMATION;
 
 	public EntityPrehistoricFloraSmok(World world) {
 		super(world);
@@ -51,8 +49,15 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 		maxWidth = 0.85F;
 		maxHeight = 1.82F;
 		maxHealthAgeable = 60.0D;
-		NOISE_ANIMATION = Animation.create(25);
 	}
+
+	@Override
+	public int getNoiseLength() {
+		return 25;
+	}
+
+	@Override
+	public int getEatTick() {return 12;}
 
 	@Override
 	public int getEggType() {
@@ -90,18 +95,13 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	}
 
 	@Override
-	public Animation[] getAnimations() {
-		return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION};
-	}
-
-	@Override
 	public int getDrinkLength() {
 		return 60;
 	}
 
 	@Override
 	public int getEatLength() {
-		return 20;
+		return 40;
 	}
 
 	@Override
@@ -120,7 +120,7 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 
 	@Override
 	public int getAttackLength() {
-		return 20;
+		return 30;
 	}
 
 	@Override
@@ -139,18 +139,20 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.580F;
+		float speedBase = 0.430F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			return 0.0F; //Is drinking
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.55F;
+			speedBase = speedBase * 1.65F;
 		}
 		return speedBase;
 	}
+
+
 
 	@Override
 	public int getTalkInterval() {
@@ -165,6 +167,15 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	public AxisAlignedBB getAttackBoundingBox() {
 		float size = this.getRenderSizeModifier() * 0.25F;
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
+	}
+
+	@Override
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox() {
+		if (LepidodendronConfig.renderBigMobsProperly && (this.maxWidth * this.getAgeScale()) > 1F) {
+			return this.getEntityBoundingBox().grow(2.0, 0.25, 2.0);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override
@@ -233,6 +244,12 @@ public class EntityPrehistoricFloraSmok extends EntityPrehistoricFloraLandBase {
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:smok_death"));
+	}
+
+	@Override
+	public SoundEvent getRoarSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:smok_roar"));
 	}
 
 	@Override

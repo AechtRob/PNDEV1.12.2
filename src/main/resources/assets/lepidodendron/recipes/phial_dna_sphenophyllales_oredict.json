@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNsphenophyllales"
+ "ore": "plantdnaPNlepidodendron:sphenophyllales"
  },
  {
  "item": "lepidodendron:phial_empty"

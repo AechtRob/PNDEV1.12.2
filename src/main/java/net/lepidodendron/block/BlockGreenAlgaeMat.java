@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -98,6 +100,17 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 			|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
 			biomeCriteria = true;
+		}
+
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Archean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+			) {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
@@ -719,9 +732,9 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		{
 
 			//System.err.println("Can place");
-			
+
 			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
-				return super.canPlaceBlockAt(worldIn, pos); 
+				return super.canPlaceBlockAt(worldIn, pos);
 			}
 			//if (((world.getBlockState(pos.down()).getMaterial() != Material.SAND)
 			//	&& (world.getBlockState(pos.down()).getMaterial() != Material.ROCK)
@@ -773,7 +786,9 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 	    }
 
 	    public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER
+					|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE
+			) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer)iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;

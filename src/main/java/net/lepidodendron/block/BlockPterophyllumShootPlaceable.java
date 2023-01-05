@@ -64,7 +64,7 @@ public class BlockPterophyllumShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNpterophyllum_sapling", BlockPterophyllumShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:pterophyllum_sapling", BlockPterophyllumShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPterophyllumShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockPterophyllumShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockPterophyllumShootPlaceable.block);

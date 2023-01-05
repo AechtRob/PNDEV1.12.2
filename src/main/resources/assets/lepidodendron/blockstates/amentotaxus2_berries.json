@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amentotaxus2_berries"},
+      {"model": "lepidodendron:amentotaxus2_var_berries"}
+    ]
+  }
+}

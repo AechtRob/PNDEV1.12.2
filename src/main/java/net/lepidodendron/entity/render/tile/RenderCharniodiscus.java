@@ -8,9 +8,11 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderCharniodiscus extends TileEntitySpecialRenderer<BlockCharniodiscus.TileEntityCustom> {
 
@@ -30,6 +32,11 @@ public class RenderCharniodiscus extends TileEntitySpecialRenderer<BlockCharniod
         }
         this.bindTexture(TEXTURE);
         ModelCharniodiscus modelCharniodiscus = this.modelCharniodiscus;
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
         GlStateManager.pushMatrix();
         if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
             GlStateManager.disableLighting();
@@ -42,5 +49,7 @@ public class RenderCharniodiscus extends TileEntitySpecialRenderer<BlockCharniod
             GlStateManager.enableLighting();
         }
         GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
     }
 }

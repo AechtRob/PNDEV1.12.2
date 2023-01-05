@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -33,11 +32,15 @@ public class ItemCryptomartusRaw extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/cryptomartus_raw", "inventory"));
 	}
+
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCryptomartus", ItemCryptomartusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_cryptomartus", ItemCryptomartusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemEophrynusRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemEophrynusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemFood {
+
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(1, 0.05f, false);
 			setTranslationKey("pf_cryptomartus_raw");

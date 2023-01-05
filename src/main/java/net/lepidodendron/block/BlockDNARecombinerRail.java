@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.item.ItemDNARecombiner;
@@ -229,18 +230,34 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		protected double hatchVal;
 		protected boolean isProcessing;
 		protected int processTick;
+		private int minEnergyNeeded = 500;
 
 		private int centrifugeDepth = 95;
 		private int railLength = 100;
 
+		public BlockPos getCentrifugePos() {
+			return pos.down().offset(world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+		}
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return INFINITE_EXTENT_AABB;
+			return new AxisAlignedBB(pos.add(-1, -1, -1), pos.add(1, 2, 1));
 		}
 
 		public boolean canStartProcess() {
-			//System.err.println("canStartProcess");
+
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						if (!centrifuge.hasEnergy(minEnergyNeeded)) {
+							return false;
+						}
+					}
+				}
+			}
+
 			if (!isProcessing) {
 				IBlockState state = this.getWorld().getBlockState(this.getPos());
 				if (state.getBlock() != BlockDNARecombinerRail.block) {
@@ -254,6 +271,37 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					//System.err.println("slot -1");
 					return false;
 				}
+				//TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
+				//if (tileEntity != null) {
+				//	if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
+				//		BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
+				//		if (!te.getStackInSlot(0).isEmpty()) {
+				//			//System.err.println("forge phial slot full");
+				//			//The phial slot in the DNA Forge is full at the moment so we can't proceed!
+				//			return false;
+				//		}
+				//	}
+				//}
+				return true;
+			}
+			return false;
+		}
+
+		public boolean canCompleteProcess() {
+			//System.err.println("canCompleteProcess");
+			if (this.isProcessing) {
+				IBlockState state = this.getWorld().getBlockState(this.getPos());
+				if (state.getBlock() != BlockDNARecombinerRail.block) {
+					return false;
+				}
+				EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+				if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
+					return false;
+				}
+				//if (getCentrifugeSlot(facing) == -1) {
+				//	//System.err.println("slot -1");
+				//	return false;
+				//}
 				TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 				if (tileEntity != null) {
 					if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
@@ -294,6 +342,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						}
 						//System.err.println("Nothing in centrifuge");
 						te.setLocked(false); //Unlock the centrifuge as it seems there is nothing useable in it
+						te.notifyBlockUpdate();
 					}
 				}
 			}
@@ -304,9 +353,21 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void update() {
 
+			int stage2 = this.centrifugeDepth;
+			int stage3 = stage2 + this.centrifugeDepth;
+			int stage4 = stage3 + this.railLength;
+			int stage5 = stage4 + this.centrifugeDepth + 30; //Depth of the forge holder
+			int stage6 = stage5 + 30;
+			int stage7 = stage6 + this.centrifugeDepth + 30; //Depth of the forge holder
+			int stage8 = stage7 + this.centrifugeDepth;
+			int stage9 = stage8 + this.railLength;
+
+
 			if (this.getWorld().isRemote) {
 				return;
 			}
+
+			boolean updated = false;
 
 			//System.err.println("this.isProcessing " + this.isProcessing);
 			//System.err.println("this.processTick " + this.processTick);
@@ -334,40 +395,68 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 							}
 						}
 					}
+					updated = true;
 				}
 			}
 			else {
 				//The rail is processing, so do the stuff:
-				this.processTick ++;
+				boolean shouldContinue = false;
+				if ((this.processTick < (stage4)) || (this.processTick > (stage4))
+					|| (this.processTick == (stage4) && this.canCompleteProcess())){
+					shouldContinue = true;
+				}
 
-				if (this.processTick >= 0 && this.processTick < this.centrifugeDepth) {
+				boolean hasPower = true;
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						if (!centrifuge.hasEnergy(minEnergyNeeded)) {
+							hasPower = false;
+						}
+					}
+				}
+
+				if (shouldContinue && hasPower) {
+					this.processTick++;
+					tileEntity = world.getTileEntity(getCentrifugePos());
+					if (tileEntity != null) {
+						if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+							BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+							centrifuge.drainEnergy(50);
+						}
+					}
+				}
+
+				if (this.processTick >= 0 && this.processTick < this.centrifugeDepth && hasPower) {
 					//The claw needs to descend first
 					this.clawHoriz = 0;
 					this.clawVert = this.clawVert - 0.01;
 				}
 
-				if (this.processTick > (20) && this.processTick <= (40)) {
+				if (this.processTick > (20) && this.processTick <= (40) && hasPower) {
 					//Open the hatch:
 					IBlockState state = this.getWorld().getBlockState(this.getPos());
 					EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
 					if (!(facing == EnumFacing.UP || facing == EnumFacing.DOWN)) {
-						TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
+						tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 								BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
 								te.setHatchVal((20D - (40D - (double) this.processTick)) / 20D);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
 				}
 
-				if (this.processTick > (this.centrifugeDepth - 30) && this.processTick < this.centrifugeDepth) {
+				if (this.processTick > (this.centrifugeDepth - 30) && this.processTick < this.centrifugeDepth && hasPower) {
 					//Open the claw gradually on the way down near the bottom:
 					this.clawHoriz = 0;
 					this.clawAngle = this.processTick - (this.centrifugeDepth - 30);
 				}
 
-				if (this.processTick == this.centrifugeDepth) {
+				if (this.processTick == this.centrifugeDepth && hasPower) {
 					this.clawHoriz = 0;
 					//We are in extraction position for the centrifuge:
 					IBlockState state = this.getWorld().getBlockState(this.getPos());
@@ -375,7 +464,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 						EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
 						if (!(facing == EnumFacing.UP || facing == EnumFacing.DOWN)) {
 							int useSlot = getCentrifugeSlot(facing);
-							TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
+							tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
 							if (tileEntity != null) {
 								if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 									BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
@@ -383,6 +472,7 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 										ItemStack stack = te.getStackInSlot(useSlot);
 										this.setInventorySlotContents(0, stack);
 										te.setInventorySlotContents(useSlot, ItemStack.EMPTY);
+										te.notifyBlockUpdate();
 									}
 								}
 							}
@@ -391,81 +481,84 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					// We have filled the claw with the phial now
 				}
 
-				int stage2 = this.centrifugeDepth;
-				int stage3 = stage2 + this.centrifugeDepth;
-				int stage4 = stage3 + this.railLength;
-				int stage5 = stage4 + this.centrifugeDepth + 30; //Depth of the forge holder
-				int stage6 = stage5 + 30;
-				int stage7 = stage6 + this.centrifugeDepth + 30; //Depth of the forge holder
-				int stage8 = stage7 + this.centrifugeDepth;
-				int stage9 = stage8 + this.railLength;
+
 
 				double clawAngleOpen = this.clawAngle;
 
-				if (this.processTick > (stage2) && this.processTick <= (stage2 + 5)) {
+				if (this.processTick > (stage2) && this.processTick <= (stage2 + 5) && hasPower) {
 					//Close the claw quicker while stationary:
 					this.clawHoriz = 0;
 					this.clawAngle = ((5D - ((double)this.processTick - (double)stage2)) / 5D) * clawAngleOpen;
 				}
 
-				if (this.processTick < stage3 && this.processTick > stage2) {
+				if (this.processTick < stage3 && this.processTick > stage2 && hasPower) {
 					//The claw needs to ascend again
 					this.clawHoriz = 0;
 					this.clawVert = this.clawVert + 0.01;
 				}
 
-				if (this.processTick > (stage2 + 70) && this.processTick <= (stage2 + 90)) {
+				if (this.processTick > (stage2 + 70) && this.processTick <= (stage2 + 90) && hasPower) {
 					//Close the hatch:
 					IBlockState state = this.getWorld().getBlockState(this.getPos());
 					EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
 					if (!(facing == EnumFacing.UP || facing == EnumFacing.DOWN)) {
-						TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
+						tileEntity = this.getWorld().getTileEntity(this.getPos().down().offset(facing.rotateY()));
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
 								BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge te = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
 								te.setHatchVal((((double)stage2 + 90D) - (double)this.processTick) / 20D);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
 				}
 
-				if (this.processTick <= stage4 && this.processTick > stage3) {
-					//Move horizontally:
-					this.clawVert = 0;
-					this.clawHoriz = this.clawHoriz + 0.01;
+				if (this.processTick == stage3 && hasPower) {
+					IBlockState state = this.getWorld().getBlockState(this.getPos());
+					if (state.getBlock() == BlockDNARecombinerRail.block) {
+						EnumFacing facing = state.getValue(BlockDNARecombinerRail.BlockCustom.FACING);
+						int n = getCentrifugeSlot(facing);
+					}
 				}
 
-				if (this.processTick > (stage4 + 20) && this.processTick <= (stage4 + 40)) {
+				if (this.processTick <= stage4 && this.processTick > stage3 && hasPower) {
+					//Move horizontally:
+					this.clawVert = 0;
+					this.clawHoriz = Math.min(this.clawHoriz + 0.01, (stage4 - stage3) * 0.01);
+				}
+
+				if (this.processTick > (stage4 + 20) && this.processTick <= (stage4 + 40) && hasPower) {
 					//Open the hatch:
 					this.hatchVal = (20D - (((double)stage4 + 40D) - (double)this.processTick)) / 20D;
 				}
 
-				if (this.processTick > (stage4 + 40)) {
-					TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
+				if (this.processTick > (stage4 + 40) && hasPower) {
+					tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 					if (tileEntity != null) {
 						if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 							BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
 							te.setHatchShut(false);
+							te.notifyBlockUpdate();
 						}
 					}
 				}
 
-				if (this.processTick > stage4 && this.processTick < stage5) {
+				if (this.processTick > stage4 && this.processTick < stage5 && hasPower) {
 					//The claw needs to descend first
 					this.clawHoriz = 1;
 					this.clawVert = this.clawVert - 0.01;
 				}
 
-				if (this.processTick > stage5 && this.processTick < stage6) {
+				if (this.processTick > stage5 && this.processTick < stage6 && hasPower) {
 					//Open the claw
 					this.clawAngle = this.processTick - (stage6 - 30);
 				}
 
-				if (this.processTick == stage6) {
+				if (this.processTick == stage6 && hasPower) {
 					//Release the phial
 					IBlockState state = this.getWorld().getBlockState(this.getPos());
 					if (state.getBlock() == BlockDNARecombinerRail.block) {
-						TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
+						tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 						if (tileEntity != null) {
 							if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 								//System.err.println("IsForge");
@@ -473,46 +566,48 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 								ItemStack stack = this.getStackInSlot(0);
 								this.setInventorySlotContents(0, ItemStack.EMPTY);
 								te.setInventorySlotContents(0, stack);
+								te.notifyBlockUpdate();
 							}
 						}
 					}
 				}
 				//We have now put the phial into the forge finally
 
-				if (this.processTick > stage6 && this.processTick < stage7) {
+				if (this.processTick > stage6 && this.processTick < stage7 && hasPower) {
 					//The claw needs to ascend again
 					this.clawHoriz = 1;
 					this.clawVert = this.clawVert + 0.01;
 				}
 
-				if (this.processTick > (stage6 + 60) && this.processTick <= (stage6 + 80)) {
+				if (this.processTick > (stage6 + 60) && this.processTick <= (stage6 + 80) && hasPower) {
 					//Close the hatch:
 					this.hatchVal = (((double)stage6 + 80D) - (double)this.processTick) / 20D;
 				}
 
-				if (this.processTick > (stage6 + 80)) {
-					TileEntity tileEntity = this.getWorld().getTileEntity(this.getPos().down());
+				if (this.processTick > (stage6 + 80) && hasPower) {
+					tileEntity = this.getWorld().getTileEntity(this.getPos().down());
 					if (tileEntity != null) {
 						if (tileEntity instanceof BlockDNARecombinerForge.TileEntityDNARecombinerForge) {
 							BlockDNARecombinerForge.TileEntityDNARecombinerForge te = (BlockDNARecombinerForge.TileEntityDNARecombinerForge) tileEntity;
 							te.setHatchShut(true);
+							te.notifyBlockUpdate();
 						}
 					}
 				}
 
 				clawAngleOpen = this.clawAngle;
-				if (this.processTick > (stage6 + 15) && this.processTick <= (stage6 + 20)) {
+				if (this.processTick > (stage6 + 15) && this.processTick <= (stage6 + 20) && hasPower) {
 					//Close the claw quicker while raising:
 					this.clawAngle = ((5D - ((double)this.processTick - ((double)stage6 + 15))) / 5D) * clawAngleOpen;
 				}
 
-				if (this.processTick >= stage7 && this.processTick < stage8) {
+				if (this.processTick >= stage7 && this.processTick < stage8 && hasPower) {
 					//Move horizontally:
 					this.clawVert = 0;
 					this.clawHoriz = this.clawHoriz - 0.01;
 				}
 
-				if (this.processTick >= stage8) { //Reset it all
+				if (this.processTick >= stage8 && hasPower) { //Reset it all
 					this.clawVert = 0;
 					this.clawHoriz = 0;
 					this.clawAngle = 0;
@@ -520,9 +615,13 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 					this.processTick = 0;
 					this.isProcessing = false;
 				}
+				updated = true;
 
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -640,15 +739,15 @@ public class BlockDNARecombinerRail extends ElementsLepidodendronMod.ModElement 
 		}
 
 		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

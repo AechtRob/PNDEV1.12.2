@@ -66,7 +66,7 @@ public class BlockBomakellia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockBomakellia.TileEntityCustom.class, "lepidodendron:tileentitybomakellia");
-		OreDictionary.registerOre("dnaPNBomakellia", BlockBomakellia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:bomakellia", BlockBomakellia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

@@ -70,7 +70,7 @@ public class BlockQuasistrobus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNquasistrobus", BlockQuasistrobus.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:quasistrobus", BlockQuasistrobus.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockQuasistrobus.block);
 		OreDictionary.registerOre("plant", BlockQuasistrobus.block);
 	}

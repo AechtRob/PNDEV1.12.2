@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_pederpes"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_pederpes"
  },
  {
  "item": "lepidodendron:phial_empty"

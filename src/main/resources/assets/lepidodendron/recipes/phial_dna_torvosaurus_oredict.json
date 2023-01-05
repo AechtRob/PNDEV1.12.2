@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_torvosaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_torvosaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

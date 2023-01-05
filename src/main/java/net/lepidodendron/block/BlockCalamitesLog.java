@@ -43,7 +43,7 @@ public class BlockCalamitesLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCalamites", BlockCalamitesLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:calamites_sapling", BlockCalamitesLog.block);
 		OreDictionary.registerOre("listAllfiber", BlockCalamitesLog.block);
 	}
 

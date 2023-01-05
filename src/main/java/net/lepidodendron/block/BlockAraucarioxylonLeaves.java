@@ -50,7 +50,7 @@ public class BlockAraucarioxylonLeaves extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNaraucarioxylon_sapling", BlockAraucarioxylonLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:araucarioxylon_sapling", BlockAraucarioxylonLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAraucarioxylonLeaves.block);
 		OreDictionary.registerOre("plant", BlockAraucarioxylonLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockAraucarioxylonLeaves.block);

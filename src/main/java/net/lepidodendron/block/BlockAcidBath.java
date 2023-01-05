@@ -5,6 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.item.ItemAcidBath;
+import net.lepidodendron.item.ItemBottleOfAcidSulphuric;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -18,6 +19,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
@@ -44,6 +47,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -250,10 +254,10 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 				if (tileEntity instanceof TileEntityAcidBath) {
 					TileEntityAcidBath te = (TileEntityAcidBath) tileEntity;
 					if (te.getFill() > 7) {
-						world.setBlockState(pos, FluidRegistry.getFluid("sulfuric_acid").getBlock().getDefaultState());
+						world.setBlockState(pos, FluidRegistry.getFluid("pn_sulfuric_acid").getBlock().getDefaultState());
 					}
 					if (te.getFill() == 15) {
-						world.setBlockState(pos.offset(state.getValue(FACING)), FluidRegistry.getFluid("sulfuric_acid").getBlock().getDefaultState());
+						world.setBlockState(pos.offset(state.getValue(FACING)), FluidRegistry.getFluid("pn_sulfuric_acid").getBlock().getDefaultState());
 					}
 				}
 			}
@@ -334,8 +338,22 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 			IFluidHandler handler = ((TileEntityAcidBath)te).getCapabilityBucket(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, facing);
 			ItemStack stack = playerIn.getHeldItem(hand);
 
+			if (stack.getItem() == ItemBottleOfAcidSulphuric.block) {
+				TileEntityAcidBath bath = (TileEntityAcidBath) te;
+				if (bath.getCapacity() - bath.getFluidAmount() >= 333) {
+					bath.fillInternal(new FluidStack(FluidRegistry.getFluid("pn_sulfuric_acid"), 333), true);
+					SoundEvent soundevent = SoundEvents.ITEM_BOTTLE_EMPTY;
+					playerIn.getEntityWorld().playSound(playerIn, playerIn.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+					if (!playerIn.isCreative()) {
+						stack.shrink(1);
+						ItemHandlerHelper.giveItemToPlayer(playerIn, new ItemStack(Items.GLASS_BOTTLE, 1));
+					}
+					return true;
+				}
+			}
+
 			if (FluidUtil.getFluidContained(stack) != null) {
-				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("sulfuric_acid")) {
+				if (FluidUtil.getFluidContained(stack).getFluid() != FluidRegistry.getFluid("pn_sulfuric_acid")) {
 					return false;
 				}
 			}
@@ -657,7 +675,7 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 		 */
 		public boolean canFillFluidType(FluidStack fluid)
 		{
-			if (fluid.getFluid() == FluidRegistry.getFluid("sulfuric_acid")) {
+			if (fluid.getFluid() == FluidRegistry.getFluid("pn_sulfuric_acid")) {
 				return canFill();
 			}
 			return false;
@@ -738,9 +756,9 @@ public class BlockAcidBath extends ElementsLepidodendronMod.ModElement {
 		}
 
 		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override

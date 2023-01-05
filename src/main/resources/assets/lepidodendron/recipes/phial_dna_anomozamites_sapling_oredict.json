@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNanomozamites_sapling"
+ "ore": "plantdnaPNlepidodendron:anomozamites_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

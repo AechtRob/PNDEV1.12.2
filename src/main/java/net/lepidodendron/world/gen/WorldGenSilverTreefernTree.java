@@ -117,6 +117,11 @@ public class WorldGenSilverTreefernTree extends WorldGenAbstractTree
                                 isClear = false;
                             }
                         }
+                        if (worldIn.getBlockState(blockpos).getBlock() == BlockTreefernSilverLog.block
+                                || worldIn.getBlockState(blockpos).getBlock() == BlockTreefernSilverShootPlaceable.block
+                                || worldIn.getBlockState(blockpos).getBlock() == BlockTreefernSilverShoot.block) {
+                            isClear = false;
+                        }
                         isSoil = state.getBlock().canSustainPlant(state, worldIn, down, net.minecraft.util.EnumFacing.UP, (net.minecraft.block.BlockSapling)Blocks.SAPLING);
                         if (blockpos.getY() >= worldIn.getSeaLevel() - 4 && isClear && isSoil && blockpos.getY() < (worldIn.getHeight() - 30)) {
                             $_dependencies.put("x", blockpos.getX());

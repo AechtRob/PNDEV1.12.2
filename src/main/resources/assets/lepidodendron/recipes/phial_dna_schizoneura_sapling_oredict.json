@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNschizoneura_sapling"
+ "ore": "plantdnaPNlepidodendron:schizoneura_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

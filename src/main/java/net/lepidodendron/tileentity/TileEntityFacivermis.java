@@ -22,7 +22,7 @@ public class TileEntityFacivermis extends TileEntity implements ITickable {
 
 	@Override
 	public AxisAlignedBB getRenderBoundingBox() {
-		return INFINITE_EXTENT_AABB;
+		return new AxisAlignedBB(pos, pos.add(1, 2, 1));
 	}
 
 	public int getHidden() {

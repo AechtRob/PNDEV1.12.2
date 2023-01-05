@@ -70,7 +70,7 @@ public class BlockBaikalophyllum extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNbaikalophyllum", BlockBaikalophyllum.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:baikalophyllum", BlockBaikalophyllum.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBaikalophyllum.block);
 		OreDictionary.registerOre("plant", BlockBaikalophyllum.block);
 	}

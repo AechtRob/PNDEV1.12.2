@@ -62,7 +62,7 @@ public class BlockGrassyHorsetail extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGrassyHorsetail", BlockGrassyHorsetail.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:grassy_horsetail", BlockGrassyHorsetail.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGrassyHorsetail.block);
 		OreDictionary.registerOre("plant", BlockGrassyHorsetail.block);
 		OreDictionary.registerOre("stemHorsetail", BlockGrassyHorsetail.block);

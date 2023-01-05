@@ -3,7 +3,9 @@ package net.lepidodendron;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraMeteor;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.ModTriggers;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -28,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.entity.player.BonemealEvent;
@@ -98,33 +101,36 @@ public class LepidodendronEventSubscribers {
 					EntityPlayer p = (EntityPlayer) event.world.playerEntities.get(event.world.rand.nextInt(event.world.playerEntities.size()));
 					BlockPos pos = new BlockPos((p.posX + event.world.rand.nextInt(201) - 100), 300, (p.posZ + event.world.rand.nextInt(201) - 100));
 					if (p != null && p.dimension == LepidodendronConfig.dimPrecambrian) {
-						if (event.world.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_biome"))
-							spawnShower = (event.world.rand.nextInt(50) == 0);
-						{
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-							meteor.motionX = event.world.rand.nextDouble() - 0.5;
-							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-							event.world.spawnEntity(meteor);
-						}
-						if (spawnShower) {
-							EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-							meteor.motionX = event.world.rand.nextDouble() - 0.5;
-							meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-							event.world.spawnEntity(meteor);
-							if (event.world.rand.nextInt(3) == 0) {
-								EntityPrehistoricFloraMeteor meteor2 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-								meteor.motionX = event.world.rand.nextDouble() - 0.5;
-								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-								event.world.spawnEntity(meteor2);
+						Biome biome = event.world.getBiome(pos);
+						if (biome instanceof BiomePrecambrian) {
+							if (((BiomePrecambrian) biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+								spawnShower = (event.world.rand.nextInt(50) == 0);
+								{
+									EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+									meteor.motionX = event.world.rand.nextDouble() - 0.5;
+									meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+									event.world.spawnEntity(meteor);
+								}
+								if (spawnShower) {
+									EntityPrehistoricFloraMeteor meteor = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+									meteor.motionX = event.world.rand.nextDouble() - 0.5;
+									meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+									event.world.spawnEntity(meteor);
+									if (event.world.rand.nextInt(3) == 0) {
+										EntityPrehistoricFloraMeteor meteor2 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+										meteor.motionX = event.world.rand.nextDouble() - 0.5;
+										meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+										event.world.spawnEntity(meteor2);
+									}
+									if (event.world.rand.nextInt(3) == 0) {
+										EntityPrehistoricFloraMeteor meteor3 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
+										meteor.motionX = event.world.rand.nextDouble() - 0.5;
+										meteor.motionZ = event.world.rand.nextDouble() - 0.5;
+										event.world.spawnEntity(meteor3);
+									}
+								}
 							}
-							if (event.world.rand.nextInt(3) == 0) {
-								EntityPrehistoricFloraMeteor meteor3 = new EntityPrehistoricFloraMeteor(event.world, pos.getX(), pos.getY(), pos.getZ());
-								meteor.motionX = event.world.rand.nextDouble() - 0.5;
-								meteor.motionZ = event.world.rand.nextDouble() - 0.5;
-								event.world.spawnEntity(meteor3);
-							}
 						}
-
 					}
 				}
 			}
@@ -244,7 +250,7 @@ public class LepidodendronEventSubscribers {
 		}
 	}
 
-	@SubscribeEvent //We want to drop the items
+	@SubscribeEvent //We want to drop the items (also for the Taxidermy finished items)
 	public void clickDisplays(PlayerInteractEvent.LeftClickBlock event) {
 		if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockDisplayCase.block
 				&& event.getHand() == EnumHand.MAIN_HAND) {
@@ -325,6 +331,30 @@ public class LepidodendronEventSubscribers {
 							event.getEntityPlayer().swingArm(event.getHand());
 						}
 						tee.setDisplay(ItemStack.EMPTY);
+						//return;
+						event.setCanceled(true);
+					}
+				}
+			}
+		}
+		else if (event.getWorld().getBlockState(event.getPos()).getBlock() == BlockTaxidermyTable.block
+				&& event.getHand() == EnumHand.MAIN_HAND) {
+			TileEntity te = event.getWorld().getTileEntity(event.getPos());
+			if (te != null) {
+				if (te instanceof BlockTaxidermyTable.TileEntityTaxidermyTable) {
+					BlockTaxidermyTable.TileEntityTaxidermyTable tee = (BlockTaxidermyTable.TileEntityTaxidermyTable) te;
+					if (!tee.getStackInSlot(1).isEmpty()) {
+						if (!(event.getWorld().isRemote)) {
+							ItemStack itemstack = tee.getStackInSlot(1);
+							Block.spawnAsEntity(event.getWorld(), event.getPos(), itemstack);
+							//tee.setInventorySlotContents(0, ItemStack.EMPTY);
+
+							SoundEvent soundevent = SoundEvents.ENTITY_ITEMFRAME_REMOVE_ITEM;
+							((WorldServer) event.getEntityPlayer().getEntityWorld()).playSound(null, event.getPos(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+							event.getEntityPlayer().swingArm(event.getHand());
+						}
+						tee.removeStackFromSlot(1);
+						tee.notifyBlockUpdate();
 						//return;
 						event.setCanceled(true);
 					}

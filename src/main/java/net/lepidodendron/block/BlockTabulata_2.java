@@ -79,7 +79,7 @@ public class BlockTabulata_2 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNtabulata_2", BlockTabulata_2.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:tabulata_2", BlockTabulata_2.block);
 	}
 
 

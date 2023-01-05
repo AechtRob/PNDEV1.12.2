@@ -64,7 +64,7 @@ public class BlockParviscopa extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockParviscopa.TileEntityCustom.class, "lepidodendron:tileentityparviscopa");
-		OreDictionary.registerOre("dnaPNParviscopa", BlockParviscopa.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:parviscopa", BlockParviscopa.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

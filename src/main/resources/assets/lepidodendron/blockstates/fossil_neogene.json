@@ -1,22 +1,10 @@
 {
   "variants": {
     "normal": [
-      { "model": "lepidodendron:fossiliferous_neogene" },
-      { "model": "lepidodendron:fossiliferous_neogene_var" },
-      { "model": "lepidodendron:fossiliferous_neogene", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "x": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "x": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "y": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "x": 90, "y": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene", "x": 90, "y": 90, "z": 90 },
-      { "model": "lepidodendron:fossiliferous_neogene_var", "x": 90, "y": 90, "z": 90 }
+      {"model": "lepidodendron:fossiliferous_neogene" },
+      {"model": "lepidodendron:fossiliferous_neogene", "y": 180 },
+      {"model": "lepidodendron:fossiliferous_neogene_var" },
+      {"model": "lepidodendron:fossiliferous_neogene_var", "y": 180 }
     ]
   }
 }

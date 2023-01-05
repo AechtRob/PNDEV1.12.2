@@ -8,9 +8,11 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class RenderHapsidophyllas extends TileEntitySpecialRenderer<BlockHapsidophyllas.TileEntityCustom> {
 
@@ -33,6 +35,11 @@ public class RenderHapsidophyllas extends TileEntitySpecialRenderer<BlockHapsido
         if ((!LepidodendronConfig.renderEdiacaranLighting) && entity.getWorld().provider.getDimension() == LepidodendronConfig.dimPrecambrian) {
             GlStateManager.disableLighting();
         }
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.alphaFunc(516, 0.1f);
+        GlStateManager.enableBlend();
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
         GlStateManager.pushMatrix();
         GlStateManager.translate(x + 0.5, y + 1.21, z + 0.5);
         GlStateManager.scale(0.5,0.5,0.5);
@@ -43,5 +50,7 @@ public class RenderHapsidophyllas extends TileEntitySpecialRenderer<BlockHapsido
             GlStateManager.enableLighting();
         }
         GlStateManager.popMatrix();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.disableBlend();
     }
 }

@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_macrocrinus",
 	"category": "lepidodendron:carboniferous_static",
-	"turnin": "lepidodendron:pf_adv_book_macrocrinus",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_macrocrinus",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 			"title": "Macrocrinus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Batocrinidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_macrocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 			"type": "text",
 			"text": "Macrocrinus is a crinoid known from the Carboniferous period."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_macrocrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_macrocrinus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

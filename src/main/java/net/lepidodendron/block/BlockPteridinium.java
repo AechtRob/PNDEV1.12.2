@@ -64,7 +64,7 @@ public class BlockPteridinium extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockPteridinium.TileEntityCustom.class, "lepidodendron:tileentitypteridinium");
-		OreDictionary.registerOre("staticdnaPNpteridinium", BlockPteridinium.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:pteridinium", BlockPteridinium.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

@@ -8,7 +8,7 @@
     },
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     }
   ],
   "result": {

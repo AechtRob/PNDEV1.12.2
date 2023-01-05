@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_saivodus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_saivodus"
  },
  {
  "item": "lepidodendron:phial_empty"

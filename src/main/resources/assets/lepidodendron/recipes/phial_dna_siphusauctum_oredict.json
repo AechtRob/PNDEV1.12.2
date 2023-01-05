@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNsiphusauctum"
+ "ore": "staticdnaPNlepidodendron:siphusauctum"
  },
  {
  "item": "lepidodendron:phial_empty"

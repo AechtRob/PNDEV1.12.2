@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_vivaxosaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_vivaxosaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

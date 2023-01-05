@@ -77,7 +77,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEscumasia", BlockEscumasia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:escumasia", BlockEscumasia.block);
 	}
 
 
@@ -90,8 +90,13 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCambrian)
-				
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
+				|| (dimID == LepidodendronConfig.dimPermian)
+				|| (dimID == LepidodendronConfig.dimTriassic)
+				|| (dimID == LepidodendronConfig.dimCretaceous)
+				|| (dimID == LepidodendronConfig.dimPaleogene)
+				|| (dimID == LepidodendronConfig.dimNeogene)
+				|| (dimID == LepidodendronConfig.dimPleistocene)
 		) {
 			dimensionCriteria = false;
 		}
@@ -128,7 +133,7 @@ public class BlockEscumasia extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeCarboniferous)
 		{
 			BiomeCarboniferous biomeCarb = (BiomeCarboniferous) biome;
-			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp) {
+			if (biomeCarb.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
 				biomeCriteria = true;
 			}
 			else {

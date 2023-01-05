@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUIMicroscope;
 import net.lepidodendron.item.*;
+import net.lepidodendron.util.AcidBathOutputPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -258,13 +259,17 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			if (this.canStartProcess()) {
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
 				this.processTick ++;
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick > this.processTickTime) {
@@ -291,6 +296,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 						if (outputStack.getTagCompound().hasKey("PFMob")) {
@@ -302,6 +308,7 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 						if (outputStack.getTagCompound().hasKey("PFStatic")) {
@@ -313,14 +320,16 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 							world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 							this.setInventorySlotContents(1, outputStack);
 							markDirty();
+							updated = true;
 							return;
 						}
 					}
 
 					//Copied logic from AcidBathUp:
 					if (Math.random() > 0.55) { //Plants:
-						if (outputStack.getItem() == ItemFossilPrecambrian.block
-								|| outputStack.getItem() == ItemFossilCambrian.block) {
+						if ((outputStack.getItem() == ItemFossilPrecambrian.block && (!(AcidBathOutputPlants.getPrecambrianCleanedFossilsPlants().length >= 1)))
+								|| (outputStack.getItem() == ItemFossilCambrian.block && (!(AcidBathOutputPlants.getCambrianCleanedFossilsPlants().length >= 1)))
+						) {
 							type = "PFStatic";
 						}
 						else {
@@ -339,8 +348,12 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 					world.playSound(null, pos, SoundEvents.BLOCK_NOTE_PLING, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 					this.setInventorySlotContents(1, outputStack);
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -402,15 +415,15 @@ public class BlockMicroscope extends ElementsLepidodendronMod.ModElement {
 		}
 
 		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

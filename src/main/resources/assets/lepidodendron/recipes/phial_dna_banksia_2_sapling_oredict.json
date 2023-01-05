@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNbanksia_2_sapling"
+ "ore": "plantdnaPNlepidodendron:banksia_2_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

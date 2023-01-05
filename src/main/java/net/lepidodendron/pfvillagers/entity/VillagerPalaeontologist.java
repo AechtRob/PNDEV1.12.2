@@ -30,7 +30,7 @@ public class VillagerPalaeontologist {
     public static void register() {
         VillagerRegistry.VillagerCareer palaeoCareer = new VillagerRegistry.VillagerCareer(PALAEONTOLOGIST_PROFESSION, "pn_palaeontologist");
 
-        palaeoCareer.addTrade(1, new ItemAndEmeraldForItem(new ItemStack(Items.BUCKET, 1), new EntityVillager.PriceInfo(10, 10), FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("sulfuric_acid"), 1000))));
+        palaeoCareer.addTrade(1, new ItemAndEmeraldForItem(new ItemStack(Items.BUCKET, 1), new EntityVillager.PriceInfo(10, 10), FluidUtil.getFilledBucket(new FluidStack(FluidRegistry.getFluid("pn_sulfuric_acid"), 1000))));
 
         //palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(Blocks.IRON_BARS), new EntityVillager.PriceInfo(2, 2)));
         //palaeoCareer.addTrade(1, new EntityVillager.EmeraldForItems(Items.REDSTONE, new EntityVillager.PriceInfo(1, 1)));
@@ -78,6 +78,7 @@ public class VillagerPalaeontologist {
         palaeoCareer.addTrade(2, new EntityVillager.EmeraldForItems(Item.getItemFromBlock(BlockAraucarioxylonLogPetrified.block), new EntityVillager.PriceInfo(4, 4)));
         palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemGlassJarItem.block, 3), new EntityVillager.PriceInfo(1, 1)));
         palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemCageSmallItem.block, 2), new EntityVillager.PriceInfo(1, 1)));
+        palaeoCareer.addTrade(2, new EntityVillager.ListItemForEmeralds(new ItemStack(ItemTaxidermyScalpel.block, 1), new EntityVillager.PriceInfo(1, 1)));
 
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemFossilHammer.block, new EntityVillager.PriceInfo(2, 3)));
         palaeoCareer.addTrade(3, new EntityVillager.ListItemForEmeralds(ItemBottleOfResin.block, new EntityVillager.PriceInfo(1, 1)));

@@ -68,7 +68,7 @@ public class BlockAntarcticycas extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNantarcticycas", BlockAntarcticycas.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:antarcticycas", BlockAntarcticycas.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockAntarcticycas.block);
 		OreDictionary.registerOre("plant", BlockAntarcticycas.block);
 	}

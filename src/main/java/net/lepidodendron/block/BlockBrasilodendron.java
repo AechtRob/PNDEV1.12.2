@@ -70,7 +70,7 @@ public class BlockBrasilodendron extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBrasilodendron", BlockBrasilodendron.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:brasilodendron", BlockBrasilodendron.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBrasilodendron.block);
 		OreDictionary.registerOre("plant", BlockBrasilodendron.block);
 	}

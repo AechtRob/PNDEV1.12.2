@@ -36,7 +36,7 @@ public class ItemGoniocerasRaw extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGonioceras", ItemGoniocerasRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_gonioceras", ItemGoniocerasRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemGoniocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemGoniocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGoniocerasRaw.block);

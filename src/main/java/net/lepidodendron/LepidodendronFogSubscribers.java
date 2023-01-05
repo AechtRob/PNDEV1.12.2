@@ -1,13 +1,11 @@
 package net.lepidodendron;
 
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -39,6 +37,16 @@ public class LepidodendronFogSubscribers {
 	@SideOnly(Side.CLIENT)
 	public void fogEvent(EntityViewRenderEvent.RenderFogEvent event) {
 
+		if (event.getFogMode() == -1) {
+			return;
+		}
+
+		//if (1 == 1) {
+		//	return;
+		//}
+
+		//int fogMode = event.getFogMode();
+
 		Entity player = event.getEntity();
 		//double y = player.posY;
 		//Block b = event.getState().getBlock();
@@ -53,6 +61,10 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
+		if (player.getEntityWorld().isRainingAt(player.getPosition())) {
+			return;
+		}
+
 		if (player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimOrdovician
@@ -62,7 +74,10 @@ public class LepidodendronFogSubscribers {
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPermian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimTriassic
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimJurassic
-			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous) {
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCretaceous
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
+			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
 			return;
 		}
 
@@ -87,12 +102,14 @@ public class LepidodendronFogSubscribers {
 			for (int x = -distance; x <= distance; ++x) {
 				for (int z = -distance; z <= distance; ++z) {
 					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-					Biome biome = player.world.getBiome(pos);
-					float density = this.getFogDensity(player);
-					float biomeFog = getBiomeFactor(biome); //==0?
-					float foggy = biomeFog + (density * 5000F);
-					fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
-					divider++;
+					if (player.getEntityWorld().isBlockLoaded(pos, false)) {
+						Biome biome = player.world.getBiome(pos);
+						float density = this.getFogDensity(player);
+						float biomeFog = getBiomeFactor(biome); //==0?
+						float foggy = biomeFog + (density * 5000F);
+						fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
+						divider++;
+					}
 				}
 			}
 
@@ -114,18 +131,21 @@ public class LepidodendronFogSubscribers {
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogColors event) {
 
+		//if (1 == 1) {
+		//	return;
+		//}
+
 		if (LepidodendronConfig.renderFog) {
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
-			//Biome biome = player.world.getBiome(player.getPosition());
-			//IBlockState state = world.getBlockState(player.getPosition());
-			//Block b = state.getBlock();
+
+			//if (world.isRainingAt(player.getPosition())) {
+			//	return;
+			//}
 
 			IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
 			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
-			//double y = vec3d.y;
 			Block b = state.getBlock();
-			//Vec3d worldFog = world.getFogColor(0);
 
 			float red = 0;
 			float green = 0;
@@ -140,7 +160,11 @@ public class LepidodendronFogSubscribers {
 						|| world.provider.getDimension() == LepidodendronConfig.dimCarboniferous
 						|| world.provider.getDimension() == LepidodendronConfig.dimPermian
 						|| world.provider.getDimension() == LepidodendronConfig.dimTriassic
-						|| player.world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimJurassic
+						|| world.provider.getDimension() == LepidodendronConfig.dimCretaceous
+						|| world.provider.getDimension() == LepidodendronConfig.dimPaleogene
+						|| world.provider.getDimension() == LepidodendronConfig.dimNeogene
+						|| world.provider.getDimension() == LepidodendronConfig.dimPleistocene
 				) {
 					if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
@@ -158,12 +182,14 @@ public class LepidodendronFogSubscribers {
 								for (int z = -distance; z <= distance; ++z)
 								{
 									BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
-									Biome biome = player.world.getBiome(pos);
-									Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
-									red += fogColor.x;
-									green += fogColor.y;
-									blue += fogColor.z;
-									divider++;
+									if (world.isBlockLoaded(pos, false)) {
+										Biome biome = player.world.getBiome(pos);
+										Vec3d fogColor = getBiomeFogColors(world, biome, (float) event.getRenderPartialTicks());
+										red += fogColor.x;
+										green += fogColor.y;
+										blue += fogColor.z;
+										divider++;
+									}
 								}
 							}
 
@@ -173,8 +199,6 @@ public class LepidodendronFogSubscribers {
 							red *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
 							green *= (1.0F - rain * 0.5F)*(1.0F - thunder * 0.5F);
 							blue *= (1.0F - rain * 0.4F)*(1.0F - thunder * 0.5F);
-							//System.out.println("Red: "+red+" Green:"+green+" Blue: "+blue);
-							// int multiplier = (red / divider & 255) << 16 | (green / divider & 255) << 8 | blue / divider & 255;
 							event.setRed(red/divider);
 							event.setGreen(green/divider);
 							event.setBlue(blue/divider);
@@ -192,22 +216,135 @@ public class LepidodendronFogSubscribers {
 		double g = 0;
 		double b = 0;
 
+		float f2 = MathHelper.cos(world.getCelestialAngle(partialTicks) * (float)Math.PI * 2.0F) * 2.0F + 0.5F;
+
+		if (f2 < 0.0F)
+		{
+			f2 = 0.0F;
+		}
+
+		if (f2 > 1.0F)
+		{
+			f2 = 1.0F;
+		}
+		
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt")) {
 			r = 96D/255D;
 			g = 96D/255D;
 			b = 96D/255D;
-			Vec3d fog = new Vec3d(r,g,b);
+			r *= f2 * 0.94F + 0.06F;
+			g *= f2 * 0.94F + 0.06F;
+			b *= f2 * 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
+		else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_floodbasalt_edge")) {
 			r = 192D/255D;
 			g = 192D/255D;
 			b = 192D/255D;
-			Vec3d fog = new Vec3d(r,g,b);
+			r *= f2 * 0.94F + 0.06F;
+			g *= f2 * 0.94F + 0.06F;
+			b *= f2 * 0.91F + 0.09F;
+			Vec3d fog = new Vec3d(r, g, b);
 			//System.out.println("Fog: "+fog.x);
 			return fog;
 		}
+
+		else if (biome instanceof BiomePrecambrian) {
+			
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+				r = 227D/255D;
+				g = 141D/255D;
+				b = 61D/255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Paleoproterozoic) {
+				r = 226D/255D;
+				g = 193D/255D;
+				b = 253D/255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Mesoproterozoic) {
+				r = 156D/255D;
+				g = 228D/255D;
+				b = 184D/255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Neoproterozoic) {
+				if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")) {
+					r = 177D / 255D;
+					g = 192D / 255D;
+					b = 216D / 255D;
+					r *= f2 * 0.94F + 0.06F;
+					g *= f2 * 0.94F + 0.06F;
+					b *= f2 * 0.91F + 0.09F;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+					
+				}
+				else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
+					r = 177D / 255D;
+					g = 192D / 255D;
+					b = 216D / 255D;
+					r *= f2 * 0.94F + 0.06F;
+					g *= f2 * 0.94F + 0.06F;
+					b *= f2 * 0.91F + 0.09F;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+				} else {
+					r = 138D / 255D;
+					g = 240D / 255D;
+					b = 255D / 255D;
+					r *= f2 * 0.94F + 0.06F;
+					g *= f2 * 0.94F + 0.06F;
+					b *= f2 * 0.91F + 0.09F;
+					Vec3d fog = new Vec3d(r, g, b);
+					//System.out.println("Fog: "+fog.x);
+					return fog;
+				}
+			}
+			else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:proterozoic_hills")) {
+				r = 156D/255D;
+				g = 228D/255D;
+				b = 184D/255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+			else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Ediacaran) {
+				r = 138D / 255D;
+				g = 240D / 255D;
+				b = 255D / 255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
+		}
+
 
 		r = worldFog.x;
 		g = worldFog.y;
@@ -226,6 +363,15 @@ public class LepidodendronFogSubscribers {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) {
 			return 150;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) {
+			return 150;
+		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
+			return 130;
+		}
+
 		if (biome instanceof BiomePermian) {
 			BiomePermian biomePermian = (BiomePermian) biome;
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
@@ -246,6 +392,17 @@ public class LepidodendronFogSubscribers {
 				return 150;
 			}
 		}
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+				return 150;
+			}
+		}
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+				return 200;
+			}
+		}
+
 		return 0;
 	}
 
@@ -300,11 +457,11 @@ public class LepidodendronFogSubscribers {
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && state.getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));
@@ -334,7 +491,25 @@ public class LepidodendronFogSubscribers {
 								if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
 									fog = backgroundFog2 * 5F;
 								}
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_desert") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean") && player.posY >= player.world.getSeaLevel() - 4) {
+									fog = backgroundFog2 * 5F;								
+							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase) && state.getMaterial() != Material.WATER)
+									&& biome instanceof BiomePrecambrian && player.posY >= player.world.getSeaLevel() - 4) {
+								if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+									fog = backgroundFog2 * 10F;
+								}
+								else if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+									fog = backgroundFog2 * 10F;
+								}
 							}
+
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
@@ -358,6 +533,7 @@ public class LepidodendronFogSubscribers {
 		}
 		return 0F;
 	}
+
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogDensity event) {
@@ -401,11 +577,11 @@ public class LepidodendronFogSubscribers {
 								fogTop = 175;
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY <= fogTop) {
 								fog = backgroundFog + (fullFogAddition * ((float) (Math.min(fogTop - fogBottom, Math.max(0, player.posY - fogBottom)) / (fogTop - fogBottom))));
 							} else if ((!(b instanceof BlockLiquid)) && (!(b instanceof BlockFluidBase)) && event.getState().getMaterial() != Material.WATER
-									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
+									&& (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_mountains") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_highlands") || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")) && playerEyes >= (double) player.world.getSeaLevel() - 4
 									&& player.posY > fogTop) {
 								int fogTopFree = 125;
 								fog = backgroundFog + fullFogAddition - (fullFogAddition * ((float) (Math.min(fogTopFree - fogTop, Math.max(0, player.posY - fogTop)) / (fogTopFree - fogTop))));

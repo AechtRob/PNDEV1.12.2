@@ -64,7 +64,7 @@ public class BlockCoronacollina extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockCoronacollina.TileEntityCustom.class, "lepidodendron:tileentitycoronacollina");
-		OreDictionary.registerOre("dnaPNCoronacollina", BlockCoronacollina.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:coronacollina", BlockCoronacollina.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

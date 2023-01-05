@@ -19,6 +19,6 @@
     "type": "minecraft:item_nbt",
     "item": "lepidodendron:phial_dna",
     "count": 1,
-    "nbt": {"id_dna":"lepidodendron:bothrodendron_sapling"}
+    "nbt": {"PFPlant":{"id":"lepidodendron:bothrodendron_sapling"}}
   }
 }

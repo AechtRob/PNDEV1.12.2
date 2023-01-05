@@ -69,7 +69,7 @@ public class BlockFoozia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFoozia", BlockFoozia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:foozia", BlockFoozia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockFoozia.block);
 		OreDictionary.registerOre("plant", BlockFoozia.block);
 	}

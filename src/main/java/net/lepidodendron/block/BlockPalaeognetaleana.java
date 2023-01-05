@@ -66,7 +66,7 @@ public class BlockPalaeognetaleana extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPalaeognetaleana", BlockPalaeognetaleana.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:palaeognetaleana", BlockPalaeognetaleana.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPalaeognetaleana.block);
 		OreDictionary.registerOre("plant", BlockPalaeognetaleana.block);
 		OreDictionary.registerOre("itemMossForStone", BlockPalaeognetaleana.block);

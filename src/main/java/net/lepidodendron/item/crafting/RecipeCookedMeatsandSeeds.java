@@ -465,7 +465,17 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemWhatcheeriaRaw.block, (int) (1)), new ItemStack(ItemWhatcheeriaCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemWingertshellicusRaw.block, (int) (1)), new ItemStack(ItemWingertshellicusCooked.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemXinpusaurusRaw.block, (int) (1)), new ItemStack(ItemXinpusaurusCooked.block, (int) (1)), 0.35F);
-
+		/*
+		GameRegistry.addSmelting(new ItemStack(ItemMegalosaurusRaw.block, (int) (1)), new ItemStack(ItemMegalosaurusCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemMacromesodonRaw.block, (int) (1)), new ItemStack(ItemMacromesodonCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemArduafronsRaw.block, (int) (1)), new ItemStack(ItemArduafronsCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemAspidorhynchusRaw.block, (int) (1)), new ItemStack(ItemAspidorhynchusCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemAetheolepisRaw.block, (int) (1)), new ItemStack(ItemAetheolepisCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemAphnelepisRaw.block, (int) (1)), new ItemStack(ItemAphnelepisCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemOphthalmosaurusRaw.block, (int) (1)), new ItemStack(ItemOphthalmosaurusCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemNotidanoidesRaw.block, (int) (1)), new ItemStack(ItemNotidanoidesCooked.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemEryonRaw.block, (int) (1)), new ItemStack(ItemEryonCooked.block, (int) (1)), 0.35F);
+		*/
 
 
 		//All our conifers:

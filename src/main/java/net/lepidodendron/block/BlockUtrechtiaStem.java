@@ -54,7 +54,7 @@ public class BlockUtrechtiaStem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNutrechtia_sapling", BlockUtrechtiaStem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:utrechtia_sapling", BlockUtrechtiaStem.block);
 		OreDictionary.registerOre("logWood", BlockUtrechtiaStem.block);
 	}
 

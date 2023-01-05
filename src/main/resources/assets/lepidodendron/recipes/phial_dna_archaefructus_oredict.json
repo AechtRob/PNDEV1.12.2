@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNarchaefructus_item"
+ "ore": "plantdnaPNlepidodendron:archaefructus_item"
  },
  {
  "item": "lepidodendron:phial_empty"

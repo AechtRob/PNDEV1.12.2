@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNtribrachidium"
+ "ore": "staticdnaPNlepidodendron:tribrachidium"
  },
  {
  "item": "lepidodendron:phial_empty"

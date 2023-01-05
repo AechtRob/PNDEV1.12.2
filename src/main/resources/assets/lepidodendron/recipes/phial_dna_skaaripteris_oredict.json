@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNskaaripteris"
+ "ore": "plantdnaPNlepidodendron:skaaripteris"
  },
  {
  "item": "lepidodendron:phial_empty"

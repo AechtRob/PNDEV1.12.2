@@ -64,7 +64,7 @@ public class BlockSigillariaShootPlaceable extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNsigillaria_sapling", BlockSigillariaShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:sigillaria_sapling", BlockSigillariaShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSigillariaShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockSigillariaShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockSigillariaShootPlaceable.block);

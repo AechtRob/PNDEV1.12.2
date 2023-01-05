@@ -72,7 +72,7 @@ public class BlockCloudina extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCloudina", BlockCloudina.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:cloudina", BlockCloudina.block);
 	}
 
 

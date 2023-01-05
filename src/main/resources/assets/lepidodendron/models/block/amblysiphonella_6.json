@@ -1,0 +1,33 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "lepidodendron:blocks/amblysiphonella",
+		"particle": "lepidodendron:blocks/amblysiphonella"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 6, 9],
+			"shade": false, "faces": {
+				"north": {"uv": [5, 3, 7, 9], "shade": false, "texture":  "#0"},
+				"east": {"uv": [5, 3, 7, 9], "shade": false, "texture":  "#0"},
+				"south": {"uv": [5, 3, 7, 9], "shade": false, "texture":  "#0"},
+				"west": {"uv": [5, 3, 7, 9], "shade": false, "texture":  "#0"},
+				"up": {"uv": [0, 0, 2, 2], "shade": false, "texture":  "#0"},
+				"down": {"uv": [5, 3, 7, 5], "shade": false, "texture":  "#0"}
+			}
+		},
+		{
+			"from": [6.5, 6, 6.5],
+			"to": [9.5, 15, 9.5],
+			"shade": false, "faces": {
+				"north": {"uv": [5, 3, 8, 12], "shade": false, "texture":  "#0"},
+				"east": {"uv": [5, 3, 8, 12], "shade": false, "texture":  "#0"},
+				"south": {"uv": [5, 3, 8, 12], "shade": false, "texture":  "#0"},
+				"west": {"uv": [5, 3, 8, 12], "shade": false, "texture":  "#0"},
+				"up": {"uv": [13, 13, 16, 16], "shade": false, "texture":  "#0"},
+				"down": {"uv": [5, 3, 8, 6], "shade": false, "texture":  "#0"}
+			}
+		}
+	]
+}

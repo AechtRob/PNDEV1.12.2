@@ -57,7 +57,7 @@ public class BlockPsaroniusLeavesSmallPlaceable extends ElementsLepidodendronMod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNpsaronius_sapling", BlockPsaroniusLeavesSmallPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:psaronius_sapling", BlockPsaroniusLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockPsaroniusLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("plant", BlockPsaroniusLeavesSmallPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockPsaroniusLeavesSmallPlaceable.block);

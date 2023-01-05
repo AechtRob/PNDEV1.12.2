@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobsdnaPNprehistoric_flora_yunguisaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_yunguisaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

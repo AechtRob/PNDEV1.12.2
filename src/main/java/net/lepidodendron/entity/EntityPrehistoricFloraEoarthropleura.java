@@ -181,7 +181,7 @@ public class EntityPrehistoricFloraEoarthropleura extends EntityPrehistoricFlora
 
 		//Eat moss!
 		BlockPos pos = this.getPosition();
-		if ((this.getHealth() < this.getMaxHealth())
+		if ((this.getHealth() < this.getMaxHealth()) && this.getHealth() > 0
 			&& ((this.world.getBlockState(pos).getBlock() == BlockDollyphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block)
 			|| (this.world.getBlockState(pos).getBlock() == BlockAncientMoss.block)

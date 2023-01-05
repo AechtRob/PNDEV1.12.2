@@ -6,7 +6,9 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -72,8 +74,9 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimStromatolite))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-			|| dimID == LepidodendronConfig.dimCambrian
-			|| dimID == LepidodendronConfig.dimTriassic) {
+				|| dimID == LepidodendronConfig.dimCambrian
+				|| dimID == LepidodendronConfig.dimTriassic
+				|| dimID == LepidodendronConfig.dimPrecambrian) {
 			dimensionCriteria = true;
 		}
 		if (!dimensionCriteria)
@@ -98,6 +101,21 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			biomeCriteria = true;
 		}
+
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_shallow_sea")
+			) {
+				biomeCriteria = false;
+			}
+			else {
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+					biomeCriteria = true;
+			}
+		}
+
 		if (biome instanceof BiomeTriassic) {
 			BiomeTriassic biomeTriassic = (BiomeTriassic) biome;
 			if (biomeTriassic.getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
@@ -115,6 +133,7 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) {genChance = 0.65;}
 		if (dimID == LepidodendronConfig.dimCambrian) {genChance = 0.8;}
 		if (dimID == LepidodendronConfig.dimTriassic) {genChance = 0.15;}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_tide_pools")) {genChance = 0.00;}
 		
 		if (Math.random() > genChance) {
 			for (int i = 0; i < 10; i++) {
@@ -182,6 +201,12 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			setDefaultSlipperiness(0.7f);
 			useNeighborBrightness = true;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(NORTH, false).withProperty(SOUTH, false).withProperty(EAST, false).withProperty(WEST, false).withProperty(TOPSHOOT, true));
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
 		}
 		
 		@Override

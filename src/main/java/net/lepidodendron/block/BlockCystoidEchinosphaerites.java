@@ -75,7 +75,7 @@ public class BlockCystoidEchinosphaerites extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCystoidEchinosphaerites", BlockCystoidEchinosphaerites.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:cystoid_echinosphaerites", BlockCystoidEchinosphaerites.block);
 	}
 
 

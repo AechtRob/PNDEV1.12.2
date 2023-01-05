@@ -49,16 +49,17 @@ public class ProcedureWorldGenNoeggerathiales extends ElementsLepidodendronMod.M
 			&& material != Material.ROCK
 			&& material != Material.SAND
 			&& material != Material.WOOD
-			) {			
-			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
+			) {
 			
 			//Trunk:
 			TrunkHeight = Math.round(Math.random() * 10) - 1;
 			if (Math.random() > 0.4) TrunkHeight = Math.round(TrunkHeight * 0.5);
 			if (TrunkHeight < 0) TrunkHeight = 0;
-			if (!BlockNoeggerathialesShootPlaceable.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) (y + counter), (int) z))) {
+			if (!BlockNoeggerathialesShootPlaceable.block.canPlaceBlockAt(world, new BlockPos((int) x, (int) (y + TrunkHeight), (int) z))) {
 				return;
 			}
+
+			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 
 			counter = 0;
 			while (counter <= TrunkHeight) {

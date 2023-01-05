@@ -77,7 +77,7 @@ public class BlockBranchedSponge extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBranchedSponge", BlockBranchedSponge.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:branched_sponge", BlockBranchedSponge.block);
 		OreDictionary.registerOre("sponge", BlockBranchedSponge.block);
 	}
 
@@ -183,6 +183,10 @@ public class BlockBranchedSponge extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sponge_forest"))
 		{
 			multiplier = 20;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
+		{
+			multiplier = 30;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

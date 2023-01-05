@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNbaragwanathia_item"
+ "ore": "plantdnaPNlepidodendron:baragwanathia_item"
  },
  {
  "item": "lepidodendron:phial_empty"

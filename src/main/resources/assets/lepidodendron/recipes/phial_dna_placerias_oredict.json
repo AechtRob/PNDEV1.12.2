@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_placerias"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_placerias"
  },
  {
  "item": "lepidodendron:phial_empty"

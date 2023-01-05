@@ -66,7 +66,7 @@ public class BlockCharnia extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockCharnia.TileEntityCustom.class, "lepidodendron:tileentitycharnia");
-		OreDictionary.registerOre("dnaPNCharnia", BlockCharnia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:charnia", BlockCharnia.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

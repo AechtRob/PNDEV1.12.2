@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_eucalyptocrinites",
 	"category": "lepidodendron:silurian_static",
-	"turnin": "lepidodendron:pf_adv_book_eucalyptocrinites",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_eucalyptocrinites",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",
 			"title": "Eucalyptocrinites",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Monobathrida$(br)>Eucalyptocrinitidae"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eucalyptocrinites",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",
 			"type": "text",
 			"text": "Eucalyptocrinites is a crinoid from the Silurian to Devonian periods. It was likely a suspension feeder like other crinoids that grew to relatively tall heights."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_eucalyptocrinites",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_eucalyptocrinites",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNsilver_treefern_sapling"
+ "ore": "plantdnaPNlepidodendron:silver_treefern_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

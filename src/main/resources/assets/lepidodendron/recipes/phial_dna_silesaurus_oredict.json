@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_silesaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_silesaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

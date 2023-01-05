@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.gen.CharniaGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -74,7 +75,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGrypania", BlockGrypania.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:grypania", BlockGrypania.block);
 	}
 
 
@@ -89,9 +90,9 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 
 		for (int i = 0; i < (int) 24; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel()+1);
 			int l14 = chunkZ + random.nextInt(16) + 8;
-			(new CharniaGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+			BlockPos spawnPos = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world);
+			(new CharniaGenerator((Block) block)).generate(world, random, spawnPos);
 		}
 	}
 
@@ -118,7 +119,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 			//System.err.println("Placed by: " + placer);
-			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+			return this.getDefaultState().withProperty(FACING, facing);
 		}
 
 		@Override
@@ -126,10 +127,10 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		{
 			EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
-			if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-			{
-				enumfacing = EnumFacing.NORTH;
-			}
+			//if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+			//{
+			//	enumfacing = EnumFacing.NORTH;
+			//}
 
 			return this.getDefaultState().withProperty(FACING, enumfacing);
 		}
@@ -256,8 +257,7 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 
 		//@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))
-					&& (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.SOLID)) {
+			if ((isWaterBlock(worldIn, pos)) && (isWaterBlock(worldIn, pos.up()))) {
 				return super.canPlaceBlockAt(worldIn, pos);
 			}
 
@@ -270,7 +270,8 @@ public class BlockGrypania extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public boolean isWaterBlock(World world, BlockPos pos) {
-			if (world.getBlockState(pos).getMaterial() == Material.WATER) {
+			if (world.getBlockState(pos).getMaterial() == Material.WATER
+					|| world.getBlockState(pos).getMaterial() == Material.PACKED_ICE) {
 				//IBlockState iblockstate = world.getBlockState(pos);
 				//if (((Integer) iblockstate.getValue(BlockLiquid.LEVEL)).intValue() == 0) {
 					return true;

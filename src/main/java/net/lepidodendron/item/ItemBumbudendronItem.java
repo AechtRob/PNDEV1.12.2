@@ -59,7 +59,7 @@ public class ItemBumbudendronItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBumbudendron", ItemBumbudendronItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:bumbudendron_item", ItemBumbudendronItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemBumbudendronItem.block);
 		OreDictionary.registerOre("plant", ItemBumbudendronItem.block);
 	}

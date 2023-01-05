@@ -71,7 +71,7 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNswartpuntia", BlockSwartpuntia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:swartpuntia", BlockSwartpuntia.block);
 	}
 
 
@@ -93,7 +93,21 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			dimensionCriteria = true;
+			if (BlockArkarua.isPrecambrianUpdated()) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_beach")
+						|| world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_extreme_hills")) {
+					dimensionCriteria = true;
+				}
+				else {
+					dimensionCriteria = false;
+				}
+			}
+			else {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+					dimensionCriteria = true;
+				}
+			}
 		}
 		if (!dimensionCriteria)
 			return;
@@ -102,7 +116,7 @@ public class BlockSwartpuntia extends ElementsLepidodendronMod.ModElement {
 		maxWaterDepth = 6;
 		startHeight = world.getSeaLevel() - maxWaterDepth;
 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 16; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;

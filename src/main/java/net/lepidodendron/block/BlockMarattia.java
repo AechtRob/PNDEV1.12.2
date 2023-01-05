@@ -70,7 +70,7 @@ public class BlockMarattia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMarattia", BlockMarattia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:marattia", BlockMarattia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockMarattia.block);
 		OreDictionary.registerOre("plant", BlockMarattia.block);
 	}

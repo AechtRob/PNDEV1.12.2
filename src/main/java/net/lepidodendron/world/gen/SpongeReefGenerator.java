@@ -9,7 +9,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
@@ -39,10 +38,13 @@ public class SpongeReefGenerator extends WorldGenerator
 		if (shouldGenerateInDimension(dimID, dimCheck))
 			dimensionCriteria = true;
 
+		/*
 		Biome biome = worldIn.getBiome(position);
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean")) {
 			dimensionCriteria = true;
 		}
+
+		 */
 
 		if (!dimensionCriteria)
 			return true;

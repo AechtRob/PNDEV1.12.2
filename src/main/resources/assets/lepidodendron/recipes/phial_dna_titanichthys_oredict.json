@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_titanichthys"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_titanichthys"
  },
  {
  "item": "lepidodendron:phial_empty"

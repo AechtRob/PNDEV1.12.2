@@ -79,7 +79,7 @@ public class BlockFenestella3 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNFenestella3", BlockFenestella3.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:fenestella_3", BlockFenestella3.block);
 	}
 
 
@@ -170,7 +170,8 @@ public class BlockFenestella3 extends ElementsLepidodendronMod.ModElement {
 			return;
 
 		int multiplier = 1;
-		if ((dimID == LepidodendronConfig.dimCarboniferous)
+		if ((dimID == LepidodendronConfig.dimCarboniferous
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
 		) {
 			multiplier = 2;
 		}

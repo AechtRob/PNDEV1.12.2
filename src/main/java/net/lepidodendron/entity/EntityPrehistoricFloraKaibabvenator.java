@@ -22,6 +22,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
@@ -51,6 +52,15 @@ public class EntityPrehistoricFloraKaibabvenator extends EntityPrehistoricFloraA
 		maxWidth = 0.99F;
 		maxHeight = 0.89F;
 		maxHealthAgeable = 58.0D;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public AxisAlignedBB getRenderBoundingBox()
+	{
+		if (LepidodendronConfig.renderBigMobsProperly) {
+			return this.getEntityBoundingBox().grow(2.5, 0.25, 2.5);
+		}
+		return this.getEntityBoundingBox();
 	}
 
 	@Override

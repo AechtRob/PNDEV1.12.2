@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_postosuchus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_postosuchus"
  },
  {
  "item": "lepidodendron:phial_empty"

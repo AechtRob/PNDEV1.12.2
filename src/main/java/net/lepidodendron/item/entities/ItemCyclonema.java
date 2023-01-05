@@ -48,7 +48,7 @@ public class ItemCyclonema extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCyclonema", ItemCyclonema.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_cyclonema", ItemCyclonema.block);
 		OreDictionary.registerOre("itemShellfish", ItemCyclonema.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemCyclonema.block);
 		OreDictionary.registerOre("foodMeat", ItemCyclonema.block);

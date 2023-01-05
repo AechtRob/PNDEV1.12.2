@@ -70,7 +70,7 @@ public class BlockNystroemia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNystroemia", BlockNystroemia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:nystroemia", BlockNystroemia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNystroemia.block);
 		OreDictionary.registerOre("plant", BlockNystroemia.block);
 	}

@@ -61,7 +61,7 @@ public class BlockWachtleria extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNwachtleria", BlockWachtleria.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:wachtleria", BlockWachtleria.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockWachtleria.block);
 		OreDictionary.registerOre("plant", BlockWachtleria.block);
 	}

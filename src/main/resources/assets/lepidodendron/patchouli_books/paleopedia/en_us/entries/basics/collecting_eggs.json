@@ -1,0 +1,17 @@
+{
+	"name": "Egg Collection",
+	"read_by_default": true,
+	"icon": "lepidodendron:phial_empty",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "Eggs can be found in several places:$(li)Laid in nests: right click the nest with an empty hand or break the nest.$(li)In rotten wood and mosses: smaller eggs need collecting in a phial, larger eggs can be collected by breaking the block.$(li)Underwater eggs of all kinds: need collecting in a phial."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:phial_recipe",
+			"text": "Eggs produced by mobs will not hatch unless a player interacts with them by collecting them and placing them down again."
+		}
+	]
+}

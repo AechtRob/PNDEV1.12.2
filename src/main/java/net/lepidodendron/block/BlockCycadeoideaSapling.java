@@ -66,7 +66,7 @@ public class BlockCycadeoideaSapling extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCycadeoidea", BlockCycadeoideaSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cycadeoidea_sapling", BlockCycadeoideaSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockCycadeoideaSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCycadeoideaSapling.block);
 		OreDictionary.registerOre("plant", BlockCycadeoideaSapling.block);

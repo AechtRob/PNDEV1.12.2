@@ -66,7 +66,7 @@ public class BlockCordaitesSapling extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCordaites", BlockCordaitesSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cordaites_sapling", BlockCordaitesSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockCordaitesSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCordaitesSapling.block);
 		OreDictionary.registerOre("plant", BlockCordaitesSapling.block);

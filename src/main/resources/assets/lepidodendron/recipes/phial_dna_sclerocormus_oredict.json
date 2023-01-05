@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_sclerocormus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_sclerocormus"
  },
  {
  "item": "lepidodendron:phial_empty"

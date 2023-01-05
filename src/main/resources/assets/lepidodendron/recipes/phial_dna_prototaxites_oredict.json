@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNprototaxites"
+ "ore": "plantdnaPNlepidodendron:prototaxites"
  },
  {
  "item": "lepidodendron:phial_empty"

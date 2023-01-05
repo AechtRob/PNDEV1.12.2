@@ -52,7 +52,7 @@ public class BlockTaxodiumKnee extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNtaxodium_sapling", BlockTaxodiumKnee.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:taxodium_sapling", BlockTaxodiumKnee.block);
 		OreDictionary.registerOre("logWood", BlockTaxodiumKnee.block);
 	}
 

@@ -74,7 +74,7 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNGiantHorsetail", BlockGiantHorsetail.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:giant_horsetail", BlockGiantHorsetail.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockGiantHorsetail.block);
 		OreDictionary.registerOre("plant", BlockGiantHorsetail.block);
 		OreDictionary.registerOre("stemHorsetail", BlockGiantHorsetail.block);
@@ -164,7 +164,8 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
 				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
                 || biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Sandbanks
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_rough_hills")) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Highlands) {
 				biomeCriteria = true;
 			}
 			else {
@@ -204,6 +205,15 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 			GenChance = 156;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
+			GenChance = 256;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats_helper")) {
+			GenChance = 5;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 256;
 		}
 

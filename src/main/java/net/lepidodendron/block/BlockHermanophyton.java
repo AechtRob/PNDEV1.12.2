@@ -68,7 +68,7 @@ public class BlockHermanophyton extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNHermanophyton", BlockHermanophyton.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:hermanophyton", BlockHermanophyton.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockHermanophyton.block);
 		OreDictionary.registerOre("plant", BlockHermanophyton.block);
 	}

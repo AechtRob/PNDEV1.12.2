@@ -56,7 +56,7 @@ public class BlockAnemone1Dead extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNsea_anemone_1", BlockAnemone1Dead.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:sea_anemone_1", BlockAnemone1Dead.block);
 	}
 
 	public static class BlockCustom extends Block {

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_snail_land"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_snail_land"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNGigantopterid"
+ "ore": "plantdnaPNlepidodendron:gigantopterid_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:gigantopterid_sapling"}
+ "nbt": {"PFPlant":{"id":"lepidodendron:gigantopterid_sapling"}}
  }
 }

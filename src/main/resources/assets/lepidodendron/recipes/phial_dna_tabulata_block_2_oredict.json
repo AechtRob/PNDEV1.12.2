@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNtabulata_block_2"
+ "ore": "staticdnaPNlepidodendron:tabulata_block_2"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:dicroidium_h_shoot" }
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:dicroidium_h_shoot_inventory"
+    }
+  }
+}

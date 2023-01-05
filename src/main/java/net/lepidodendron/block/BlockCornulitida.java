@@ -81,7 +81,7 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCornulitida", BlockCornulitida.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:cornulitida", BlockCornulitida.block);
 	}
 
 
@@ -103,9 +103,6 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 		int weight = LepidodendronConfigPlants.weightCrinoid;
 		if (weight > 100) {weight = 100;}
 		if (weight < 0) {weight = 0;}
-		if (dimID == LepidodendronConfig.dimCambrian
-		)
-			weight = 100; //Full scale populations in these dims
 
 		if (Math.random() < ((double) (100 - (double) weight)/100)) {
 			return;
@@ -131,28 +128,28 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeO = (BiomeOrdovician) biome;
-			if (biomeO.getBiomeType() == EnumBiomeTypeOrdovician.Ocean) {
+			if (biomeO.getBiomeType() != EnumBiomeTypeOrdovician.Ocean) {
 				biomeCriteria = false;
 			}
 		}
 
 		if (biome instanceof BiomeSilurian) {
 			BiomeSilurian biomeS = (BiomeSilurian) biome;
-			if (biomeS.getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
+			if (biomeS.getBiomeType() != EnumBiomeTypeSilurian.Ocean) {
 				biomeCriteria = false;
 			}
 		}
 
 		if (biome instanceof BiomeDevonian) {
 			BiomeDevonian biomeD = (BiomeDevonian) biome;
-			if (biomeD.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+			if (biomeD.getBiomeType() != EnumBiomeTypeDevonian.Ocean) {
 				biomeCriteria = false;
 			}
 		}
 
 		if (biome instanceof BiomeCarboniferous) {
 			BiomeCarboniferous biomeC = (BiomeCarboniferous) biome;
-			if (biomeC.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
+			if (biomeC.getBiomeType() != EnumBiomeTypeCarboniferous.Ocean) {
 				biomeCriteria = false;
 			}
 		}

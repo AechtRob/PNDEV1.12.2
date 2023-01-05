@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNwachtleria"
+ "ore": "plantdnaPNlepidodendron:wachtleria"
  },
  {
  "item": "lepidodendron:phial_empty"

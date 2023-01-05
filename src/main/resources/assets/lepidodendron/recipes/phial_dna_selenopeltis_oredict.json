@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_selenopeltis"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_selenopeltis"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_proterogyrinus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_proterogyrinus"
  },
  {
  "item": "lepidodendron:phial_empty"

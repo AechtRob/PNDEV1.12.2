@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelTrigonotarbid extends AdvancedModelBase {
@@ -193,7 +192,7 @@ public class ModelTrigonotarbid extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.disableCull();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //this.body.offsetZ = 0.1F;
+        this.body.offsetY = -0.005F;
         this.body.render(0.022f);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();

@@ -49,7 +49,7 @@ public class BlockOmphalophloiosBase extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOmphalophloios", BlockOmphalophloiosBase.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:omphalophloios_sapling", BlockOmphalophloiosBase.block);
 		OreDictionary.registerOre("logWood", BlockOmphalophloiosBase.block);
 	}
 

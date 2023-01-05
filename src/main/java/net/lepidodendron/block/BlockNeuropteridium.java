@@ -59,7 +59,7 @@ public class BlockNeuropteridium extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNeuropteridium", BlockNeuropteridium.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:neuropteridium", BlockNeuropteridium.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockNeuropteridium.block);
 		OreDictionary.registerOre("plant", BlockNeuropteridium.block);
 	}

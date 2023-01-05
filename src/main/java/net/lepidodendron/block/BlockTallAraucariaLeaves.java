@@ -58,7 +58,7 @@ public class BlockTallAraucariaLeaves extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNTallAraucaria", BlockTallAraucariaLeaves.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:mirabilis_sapling", BlockTallAraucariaLeaves.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTallAraucariaLeaves.block);
 		OreDictionary.registerOre("plant", BlockTallAraucariaLeaves.block);
 		OreDictionary.registerOre("treeLeaves", BlockTallAraucariaLeaves.block);

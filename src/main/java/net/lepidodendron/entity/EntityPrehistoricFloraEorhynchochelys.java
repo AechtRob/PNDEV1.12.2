@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraEorhynchochelys extends EntityPrehistoricFlor
         if (this.getIsFast() && this.isReallyInWater()) {
             calcSpeed = calcSpeed * 1.52F;
         }
-		if (this.isAtBottom() && this.bottomCooldown > 0 && !this.getIsFast() && this.getEatTarget() == null) {
+		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && this.getEatTarget() == null && (!this.isInLove())) {
 			return 0;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;

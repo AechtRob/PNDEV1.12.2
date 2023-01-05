@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNwattieza_sapling"
+ "ore": "plantdnaPNlepidodendron:wattieza_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

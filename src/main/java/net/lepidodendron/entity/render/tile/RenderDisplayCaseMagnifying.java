@@ -3,8 +3,6 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCaseMagnifying;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.item.ItemRoseFlower;
-import net.lepidodendron.item.entities.*;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
@@ -91,40 +89,8 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                     GlStateManager.enableRescaleNormal();
                     GlStateManager.enableAlpha();
 
-                    if (itemstack.getItem() == ItemRoseFlower.block) {
-                        double offset = 0.18;
-                        if (facing == EnumFacing.UP) {
-                            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.DOWN) {
-                            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                        }
-                        if (facing == EnumFacing.NORTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.SOUTH) {
-                            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 1F, 0F, 0F);
-                        }
-                        if (facing == EnumFacing.WEST) {
-                            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(90, 0F, 0F, 1F);
-                        }
-                        if (facing == EnumFacing.EAST) {
-                            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                            GlStateManager.rotate(180, 0F, 0F, 1F);
-                            GlStateManager.rotate(270, 0F, 0F, 1F);
-                        }
-                        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                        this.bindTexture(TEXTURE_GERARUS);
-                        modelGerarus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                    }
-                    else if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
+                    /*
+                    if (itemstack.getItem() == ItemAiniktozoonRaw.block) {
                         double offset = 0.43;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
@@ -154,6 +120,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_AINIKTOZOON);
                         modelAiniktozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -187,6 +154,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_ACADOARADOXIDES);
                         modelAcadoaradoxides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -220,6 +188,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_AMPLECTOBELUA);
                         modelAmplectobelua.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -253,11 +222,12 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_LYRARAPAX);
                         modelLyrarapax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemMarrellaRaw.block) {
-                        double offset = 0.34;
+                        double offset = 0.90;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -286,6 +256,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_MARRELLA);
                         modelMarrella.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -319,6 +290,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_PHANTASPIS);
                         modelPhantaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
@@ -352,11 +324,12 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_SIDNEYIA);
                         modelSidneyia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
                     else if (itemstack.getItem() == ItemWalliseropsRaw.block) {
-                        double offset = 0.55;
+                        double offset = 1.15;
                         if (facing == EnumFacing.UP) {
                             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
                             GlStateManager.rotate(180, 0F, 0F, 1F);
@@ -385,12 +358,16 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                             GlStateManager.rotate(270, 0F, 0F, 1F);
                         }
                         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+                        GlStateManager.scale(2.0,2.0,2.0);
                         this.bindTexture(TEXTURE_WALLISEROPS);
                         modelWalliserops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                     }
 
+
+                     */
+
                     // ********************************************************************
-                    else { //standard items
+                    //else { //standard items
                         itemRender = true;
 
                         GlStateManager.alphaFunc(516, 0.1F);
@@ -438,7 +415,7 @@ public class RenderDisplayCaseMagnifying extends TileEntitySpecialRenderer<Block
                         //model = ForgeHooksClient.handleCameraTransforms(model, ItemCameraTransforms.TransformType.GROUND, false);
                         Minecraft.getMinecraft().getTextureManager().bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
                         Minecraft.getMinecraft().getRenderItem().renderItem(itemstack, model);
-                    }
+                    //}
 
                     if (itemRender) {
                         GlStateManager.disableRescaleNormal();

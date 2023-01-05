@@ -60,7 +60,7 @@ public class BlockTieteaLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNtietea_sapling", BlockTieteaLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tietea_sapling", BlockTieteaLog.block);
 		OreDictionary.registerOre("logWood", BlockTieteaLog.block);
 	}
 

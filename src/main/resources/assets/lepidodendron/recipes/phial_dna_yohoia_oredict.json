@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobsdnaPNprehistoric_flora_yohoia"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_yohoia"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_platylomaspis"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_platylomaspis"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -6,7 +6,6 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -35,12 +34,12 @@ public class ItemAntarcticarcinusRaw extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_antarcticarcinus", ItemAntarcticarcinusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_antarcticarcinus", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAntarcticarcinusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAntarcticarcinusRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_antarcticarcinus_raw");

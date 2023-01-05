@@ -1,0 +1,47 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_centre",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_centre"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_centre",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_centre",
+          "y": 90
+        }
+      ]
+    }
+  ]
+}

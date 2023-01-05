@@ -70,7 +70,7 @@ public class BlockTyrmia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNtyrmia", BlockTyrmia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:tyrmia", BlockTyrmia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTyrmia.block);
 		OreDictionary.registerOre("plant", BlockTyrmia.block);
 	}

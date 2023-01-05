@@ -1,0 +1,9 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "particle": "lepidodendron:blocks/sand_microbial",
+        "bottom": "lepidodendron:blocks/sand_microbial",
+        "top": "lepidodendron:blocks/sand_microbial",
+        "side": "lepidodendron:blocks/sand_microbial_side_snowed"
+    }
+}

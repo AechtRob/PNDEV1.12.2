@@ -1,7 +1,47 @@
 {
-  "variants": {
-    "normal": [
-      {"model": "lepidodendron:coal_tar_processor_top"}
-    ]
-  }
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_top",
+          "y": 180
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_top"
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_top",
+          "y": 270
+        }
+      ]
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": [
+        {
+          "model": "lepidodendron:coal_tar_processor_top",
+          "y": 90
+        }
+      ]
+    }
+  ]
 }

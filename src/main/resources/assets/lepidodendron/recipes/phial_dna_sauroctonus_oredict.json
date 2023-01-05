@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_sauroctonus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_sauroctonus"
  },
  {
  "item": "lepidodendron:phial_empty"

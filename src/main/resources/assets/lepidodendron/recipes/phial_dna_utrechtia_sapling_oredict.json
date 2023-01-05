@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNutrechtia_sapling"
+ "ore": "plantdnaPNlepidodendron:utrechtia_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

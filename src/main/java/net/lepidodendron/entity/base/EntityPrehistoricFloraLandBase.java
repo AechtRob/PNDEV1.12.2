@@ -2,6 +2,7 @@ package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialResin;
@@ -23,6 +24,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
@@ -384,6 +386,19 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void onLivingUpdate()
     {
+
+        if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
+            if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 1) {
+                this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
+                TileEntity te = world.getTileEntity(this.getPosition());
+                if (te != null) {
+                    te.getTileData().setString("creature", getEntityId(this));
+                }
+                SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                this.setNestLocation(this.getPosition());
+            }
+        }
 
         if (!this.world.isRemote) {
             selectNavigator();

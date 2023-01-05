@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNstromatolite"
+ "ore": "staticdnaPNlepidodendron:stromatolite"
  },
  {
  "item": "lepidodendron:phial_empty"

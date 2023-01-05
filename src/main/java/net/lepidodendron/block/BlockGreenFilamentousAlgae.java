@@ -113,7 +113,9 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain
-				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Forest
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River) {
 				biomeCriteria = true;
 			}
 			else {
@@ -142,6 +144,11 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 			GenChance = 156;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
+			GenChance = 192;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire")
+			|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_helper")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mire_lakes")) {
 			GenChance = 192;
 		}
 
@@ -390,11 +397,11 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 	    		return false;
 	    	}
 
-	    	double getLight = worldIn.getLight(pos);
-	    	if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
-	    	{
-	    		return false;
-	    	}
+	    	//double getLight = worldIn.getLight(pos);
+	    	//if (!worldIn.canSeeSky(pos) && (worldIn.isDaytime()) && (getLight < 7))
+	    	//{
+	    	//	return false;
+	    	//}
 
 			if (worldIn.getBlockState(pos.down(3)).getMaterial() == Material.WATER)
 			{

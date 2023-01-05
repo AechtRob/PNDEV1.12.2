@@ -4,6 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAcidBath;
+import net.lepidodendron.block.BlockAcidBathEnd;
 import net.lepidodendron.block.BlockAcidBathUp;
 import net.lepidodendron.item.*;
 import net.lepidodendron.util.ModTriggers;
@@ -385,7 +386,7 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             this.drawTexturedModalRect(k + 39, l + 45 + (30 - this.getAcidDepth()) - 8, 0,166, 84, this.getAcidDepth());
             if (LepidodendronConfig.machinesRF) {
                 this.drawTexturedModalRect(k + 9, l + 51 - 8, 0,202, 18, 26);
-                this.drawTexturedModalRect(k + 10, l + 52 + this.getRFHeight() - 8, 0, 229, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 10, l + 52 + (24 - this.getRFHeight()) - 8, 0, 228, 16, this.getRFHeight());
             }
         }
 
@@ -393,10 +394,17 @@ public class GUIAcidBath extends ElementsLepidodendronMod.ModElement {
             TileEntity tileEntity = world.getTileEntity(new BlockPos(x, y, z));
             if (tileEntity != null) {
                 if (tileEntity instanceof BlockAcidBathUp.TileEntityAcidBathUp) {
-                    BlockAcidBathUp.TileEntityAcidBathUp te = (BlockAcidBathUp.TileEntityAcidBathUp) tileEntity;
-                    //return (int)Math.round(te.progressFraction() * 70D);
-                    double fraction = 0.5D;
-                    return (int)Math.round(fraction * 24D);
+                    BlockPos RFStorage = new BlockPos(x, y, z);
+                    RFStorage = RFStorage.down().offset(world.getBlockState(new BlockPos(x, y, z)).getValue(BlockAcidBathUp.BlockCustom.FACING));
+                    TileEntity tileEntity2 = world.getTileEntity(RFStorage);
+                    if (tileEntity2 != null) {
+                        if (tileEntity2 instanceof BlockAcidBathEnd.TileEntityAcidBathEnd) {
+                            BlockAcidBathEnd.TileEntityAcidBathEnd te = (BlockAcidBathEnd.TileEntityAcidBathEnd) tileEntity2;
+                            //return (int)Math.round(te.progressFraction() * 70D);
+                            double fraction = te.getEnergyFraction();
+                            return (int) Math.round(fraction * 24D);
+                        }
+                    }
                 }
             }
             return 0;

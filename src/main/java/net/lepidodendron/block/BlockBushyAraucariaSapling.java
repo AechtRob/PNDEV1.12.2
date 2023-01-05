@@ -66,7 +66,7 @@ public class BlockBushyAraucariaSapling extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNmonkeypuzzle_sapling", BlockBushyAraucariaSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:monkeypuzzle_sapling", BlockBushyAraucariaSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockBushyAraucariaSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBushyAraucariaSapling.block);
 		OreDictionary.registerOre("plant", BlockBushyAraucariaSapling.block);

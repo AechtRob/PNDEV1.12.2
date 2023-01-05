@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNtentaculita"
+ "ore": "staticdnaPNlepidodendron:tentaculita"
  },
  {
  "item": "lepidodendron:phial_empty"

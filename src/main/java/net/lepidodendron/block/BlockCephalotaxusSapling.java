@@ -66,7 +66,7 @@ public class BlockCephalotaxusSapling extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCephalotaxus", BlockCephalotaxusSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cephalotaxus_sapling", BlockCephalotaxusSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockCephalotaxusSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCephalotaxusSapling.block);
 		OreDictionary.registerOre("plant", BlockCephalotaxusSapling.block);

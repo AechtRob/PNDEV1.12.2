@@ -67,7 +67,7 @@ public class BlockThamnobeatriceaSapling extends ElementsLepidodendronMod.ModEle
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNthamnobeatricea_sapling", BlockThamnobeatriceaSapling.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:thamnobeatricea_sapling", BlockThamnobeatriceaSapling.block);
 		OreDictionary.registerOre("sponge", BlockThamnobeatriceaSapling.block);
 	}
 

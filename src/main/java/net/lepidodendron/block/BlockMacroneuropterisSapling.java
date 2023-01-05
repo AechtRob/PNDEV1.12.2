@@ -66,7 +66,7 @@ public class BlockMacroneuropterisSapling extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMacroneuropteris", BlockMacroneuropterisSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:macroneuropteris_sapling", BlockMacroneuropterisSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockMacroneuropterisSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockMacroneuropterisSapling.block);
 		OreDictionary.registerOre("plant", BlockMacroneuropterisSapling.block);

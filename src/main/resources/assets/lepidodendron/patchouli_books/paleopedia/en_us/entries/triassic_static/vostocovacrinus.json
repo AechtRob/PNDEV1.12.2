@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:crinoid_vostocovacrinus",
 	"category": "lepidodendron:triassic_static",
-	"turnin": "lepidodendron:pf_adv_book_vostocovacrinus",
+	"turnin": "lepidodendron:pf_adv_book_crinoid_vostocovacrinus",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_vostocovacrinus",
+			"trigger": "lepidodendron:pf_adv_book_crinoid_vostocovacrinus",
 			"title": "Vostocovacrinus",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Crinoidea$(br)>Encrinida"
@@ -18,12 +18,12 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_vostocovacrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_vostocovacrinus",
 			"type": "text",
 			"text": "Vostocovacrinus is an encrinid crinoid which lived a sessile life on the sea floor. It was a suspension feeder, and at the end of its stalk there were several thin arms used for catching small prey."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_vostocovacrinus",
+			"advancement": "lepidodendron:pf_adv_book_crinoid_vostocovacrinus",
 			"type": "text",
 			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
 		}

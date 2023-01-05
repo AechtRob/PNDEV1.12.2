@@ -71,7 +71,7 @@ public class BlockTrichopitys extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNtrichopitys", BlockTrichopitys.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:trichopitys", BlockTrichopitys.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockTrichopitys.block);
 		OreDictionary.registerOre("plant", BlockTrichopitys.block);
 	}

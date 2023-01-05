@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNprimaeval_grass_item"
+ "ore": "plantdnaPNlepidodendron:primaeval_grass_item"
  },
  {
  "item": "lepidodendron:phial_empty"

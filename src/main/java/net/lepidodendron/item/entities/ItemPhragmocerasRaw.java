@@ -37,7 +37,7 @@ public class ItemPhragmocerasRaw extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_phragmoceras", ItemPhragmocerasRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phragmoceras", ItemPhragmocerasRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPhragmocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemPhragmocerasRaw.block);
 	}

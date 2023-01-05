@@ -58,7 +58,7 @@ public class ItemIsoetesItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNIsoetes", ItemIsoetesItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:isoetes_item", ItemIsoetesItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemIsoetesItem.block);
 		OreDictionary.registerOre("plant", ItemIsoetesItem.block);
 	}

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_sphenotitan"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_sphenotitan"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "dnaPNDarkPinkSponge"
+ "ore": "staticdnaPNlepidodendron:dark_pink_sponge"
  },
  {
  "item": "lepidodendron:phial_empty"
@@ -17,6 +17,6 @@
  "type": "minecraft:item_nbt",
  "item": "lepidodendron:phial_dna",
  "count": 1,
- "nbt": {"id_dna":"lepidodendron:dark_pink_sponge"}
+ "nbt": {"PFStatic":{"id":"lepidodendron:dark_pink_sponge"}}
  }
 }

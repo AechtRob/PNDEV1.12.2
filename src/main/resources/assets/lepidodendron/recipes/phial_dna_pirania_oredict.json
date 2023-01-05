@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNpirania"
+ "ore": "staticdnaPNlepidodendron:pirania"
  },
  {
  "item": "lepidodendron:phial_empty"

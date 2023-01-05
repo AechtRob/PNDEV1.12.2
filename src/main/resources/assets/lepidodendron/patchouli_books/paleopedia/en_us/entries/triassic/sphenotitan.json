@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sphenotitan",
 			"title": "Sphenotitan",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Shrubland, Volcanic Hills$(br2)>Reptilia$(br)>Rhynchocephalia$(br)>Opisthodontia"
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() Xeric Scrubland, Volcanic Hills$(br2)>Reptilia$(br)>Rhynchocephalia$(br)>Opisthodontia"
 		},
 		{
 			"type": "image",

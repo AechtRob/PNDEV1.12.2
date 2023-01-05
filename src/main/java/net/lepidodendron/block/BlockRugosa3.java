@@ -79,7 +79,7 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNrugosa_3", BlockRugosa3.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:rugosa_3", BlockRugosa3.block);
 	}
 
 
@@ -328,7 +328,7 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
     
 		public BlockCustom() {
 			super(Material.WATER);
-			setTranslationKey("pf_rugosa_2");
+			setTranslationKey("pf_rugosa_3");
 			setSoundType(SoundType.PLANT);
 			setHardness(0.0F);
 			setResistance(0.0F);

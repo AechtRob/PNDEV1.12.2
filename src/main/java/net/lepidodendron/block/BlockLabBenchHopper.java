@@ -29,6 +29,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -50,10 +51,10 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
-	//@Override
-	//public void init(FMLInitializationEvent event) {
-	//	GameRegistry.registerTileEntity(TileEntityHopper.class, "lepidodendron:tileentitydna_recombiner_centrifuge");
-	//}
+	@Override
+	public void init(FMLInitializationEvent event) {
+		GameRegistry.registerTileEntity(TileEntityLabBenchHopper.class, "lepidodendron:tileentitylab_bench_hopper");
+	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
@@ -64,7 +65,7 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends BlockHopper {
 		public static final PropertyBool LEFT = PropertyBool.create("left");
-		public static final PropertyBool RIGHT= PropertyBool.create("right");
+		public static final PropertyBool RIGHT = PropertyBool.create("right");
 
 		public BlockCustom() {
 			super();
@@ -79,9 +80,13 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public TileEntity createNewTileEntity(World worldIn, int meta)
-		{
-			return new TileEntityHopper();
+		public boolean isTopSolid(IBlockState state) {
+			return true;
+		}
+
+		@Override
+		public TileEntity createNewTileEntity(World worldIn, int meta) {
+			return new TileEntityLabBenchHopper();
 		}
 
 		@Override
@@ -95,34 +100,31 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 			boolean right = false;
 
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
-				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBench.block ) {
+				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBench.block) {
 					left = true;
 				}
-				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBench.block ) {
+				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBench.block) {
 					right = true;
 				}
-			}
-			else if (state.getValue(FACING) == EnumFacing.SOUTH) {
-				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBench.block ) {
+			} else if (state.getValue(FACING) == EnumFacing.SOUTH) {
+				if (worldIn.getBlockState(pos.west()).getBlock() == this || worldIn.getBlockState(pos.west()).getBlock() == BlockLabBench.block) {
 					right = true;
 				}
-				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBench.block ) {
+				if (worldIn.getBlockState(pos.east()).getBlock() == this || worldIn.getBlockState(pos.east()).getBlock() == BlockLabBench.block) {
 					left = true;
 				}
-			}
-			else if (state.getValue(FACING) == EnumFacing.WEST) {
-				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBench.block ) {
+			} else if (state.getValue(FACING) == EnumFacing.WEST) {
+				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBench.block) {
 					left = true;
 				}
-				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBench.block ) {
+				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBench.block) {
 					right = true;
 				}
-			}
-			else if (state.getValue(FACING) == EnumFacing.EAST) {
-				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBench.block ) {
+			} else if (state.getValue(FACING) == EnumFacing.EAST) {
+				if (worldIn.getBlockState(pos.south()).getBlock() == this || worldIn.getBlockState(pos.south()).getBlock() == BlockLabBench.block) {
 					right = true;
 				}
-				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBench.block ) {
+				if (worldIn.getBlockState(pos.north()).getBlock() == this || worldIn.getBlockState(pos.north()).getBlock() == BlockLabBench.block) {
 					left = true;
 				}
 			}
@@ -152,41 +154,32 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-		{
+		public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 			return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing()).withProperty(ENABLED, Boolean.valueOf(true));
 		}
 
 		@Override
-		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
-		{
+		public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 			super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
 
-			if (stack.hasDisplayName())
-			{
+			if (stack.hasDisplayName()) {
 				TileEntity tileentity = worldIn.getTileEntity(pos);
 
-				if (tileentity instanceof TileEntityHopper)
-				{
-					((TileEntityHopper)tileentity).setCustomName(stack.getDisplayName());
+				if (tileentity instanceof TileEntityLabBenchHopper) {
+					((TileEntityLabBenchHopper) tileentity).setCustomName(stack.getDisplayName());
 				}
 			}
 		}
 
 		@Override
-		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-		{
-			if (worldIn.isRemote)
-			{
+		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+			if (worldIn.isRemote) {
 				return true;
-			}
-			else
-			{
+			} else {
 				TileEntity tileentity = worldIn.getTileEntity(pos);
 
-				if (tileentity instanceof TileEntityHopper)
-				{
-					playerIn.displayGUIChest((TileEntityHopper)tileentity);
+				if (tileentity instanceof TileEntityLabBenchHopper) {
+					playerIn.displayGUIChest((TileEntityLabBenchHopper) tileentity);
 					playerIn.addStat(StatList.HOPPER_INSPECTED);
 				}
 
@@ -195,13 +188,11 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-		{
+		public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 
-			if (tileentity instanceof TileEntityHopper)
-			{
-				InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityHopper)tileentity);
+			if (tileentity instanceof TileEntityLabBenchHopper) {
+				InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityLabBenchHopper) tileentity);
 				worldIn.updateComparatorOutputLevel(pos, this);
 			}
 
@@ -210,4 +201,8 @@ public class BlockLabBenchHopper extends ElementsLepidodendronMod.ModElement {
 
 	}
 
+	public static class TileEntityLabBenchHopper extends TileEntityHopper {
+		
+	}
+	
 }

@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
@@ -241,12 +242,30 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 		public int processTick;
 		public boolean hatchShut;
 		private int processTickTime = 600; //30 seconds to process
+		private int minEnergyNeeded = 500;
 
 		public double oligoExtend;
 		public double oligoAngle;
 		public double fogDensity;
 
+		public BlockPos getCentrifugePos() {
+			return pos.offset(world.getBlockState(this.getPos()).getValue(BlockDNARecombinerForge.BlockCustom.FACING).rotateY());
+		}
+
 		public boolean canStartProcess() {
+
+			if (LepidodendronConfig.machinesRF) {
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						if (!centrifuge.hasEnergy(minEnergyNeeded)) {
+							return false;
+						}
+					}
+				}
+			}
+
 			//System.err.println("this.isProcessing " + this.isProcessing);
 			//System.err.println("this.getStackInSlot(2).getItem() " +this.getStackInSlot(2).getItem());
 			//System.err.println("this.getStackInSlot(0).getItem() " +this.getStackInSlot(0).getItem());
@@ -305,6 +324,8 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				return;
 			}
 
+			boolean updated = false;
+
 			if (!this.isProcessing
 					&& (this.getStackInSlot(2).isEmpty())
 					&& this.getStackInSlot(1).getItem() == ItemOligoPool.block
@@ -312,6 +333,7 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				ItemStack stack = this.getStackInSlot(1);
 				this.setInventorySlotContents(2, new ItemStack(ItemOligoPool.block, 1));
 				stack.shrink(1);
+				updated = true;
 			}
 
 			//System.err.println("processTick " + this.processTick);
@@ -319,59 +341,80 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			if (this.canStartProcess()) {
 				this.isProcessing = true;
 				this.processTick = 0;
+				updated = true;
 				//System.err.println("Process started");
 			}
 
-			if (this.isProcessing) {
+			if (this.isProcessing) { //We will allow the forge to run a ful cycle even if the power runs out :)
 				this.processTick ++;
+				TileEntity tileEntity = world.getTileEntity(getCentrifugePos());
+				if (tileEntity != null) {
+					if (tileEntity instanceof BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) {
+						BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge centrifuge = (BlockDNARecombinerCentrifuge.TileEntityDNARecombinerCentrifuge) tileEntity;
+						centrifuge.drainEnergy(100);
+					}
+				}
+				updated = true;
 			}
 
 			if (this.processTick < 20) {
 				this.oligoExtend = 5.75D * ((double)this.processTick / 20.0D);
+				updated = true;
 			}
 
 			if (this.processTick == 20) {
 				this.oligoExtend = 5.75D;
+				updated = true;
 			}
 
 			if (this.processTick >= 20 && this.processTick < 60) {
 				this.oligoAngle = 180.0D * (((double)this.processTick - 20.0D) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick == 60) {
 				this.oligoAngle = 180.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 100 && this.processTick < 140) {
 				this.oligoAngle = 180.0D * ((140.0D - (double)this.processTick) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick == 140) {
 				this.oligoAngle = 0.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 140 && this.processTick < 160) {
 				this.oligoExtend = 5.75D * ((160.0D - (double)this.processTick) / 20D);
+				updated = true;
 			}
 
 			if (this.processTick == 160) {
 				this.oligoExtend = 0.0;
+				updated = true;
 			}
 
 			if (this.processTick >= 140 && this.processTick < 180) {
 				this.fogDensity = (((double)this.processTick - 140.0D) / 40D);
+				updated = true;
 			}
 
 			if (this.processTick >= 180 && this.processTick < (this.processTickTime - 40)) {
 				this.fogDensity = 1;
+				updated = true;
 			}
 
 			if (this.processTick >= (this.processTickTime - 40) && this.processTick < processTickTime) {
 				this.fogDensity = (processTickTime - (double)this.processTick) / 40D;
+				updated = true;
 			}
 
 			if (this.processTick == this.processTickTime) {
 				this.fogDensity = 0;
+				updated = true;
 			}
 
 			if (this.processTick == this.processTickTime - 40) {
@@ -381,25 +424,45 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				ItemStack stackOutput = new ItemStack(ItemPlaceableLiving.block, 1);
 				if (stack.getItem() == ItemPhialDNA.block) {
 					String resourcelocation = null;
+					int type = 0;
 					if (stack.hasTagCompound()) {
 						if (stack.getTagCompound().hasKey("PFPlant")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFPlant");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 0;
 						} else if (stack.getTagCompound().hasKey("PFMob")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 1;
 						} else if (stack.getTagCompound().hasKey("PFStatic")) {
 							NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFStatic");
 							resourcelocation = (blockNBT.getString("id"));
+							type = 2;
 						}
 					}
 					if (resourcelocation != null) {
 						if (!resourcelocation.equalsIgnoreCase("")) {
-							NBTTagCompound plantNBT = new NBTTagCompound();
-							plantNBT.setString("id", resourcelocation);
-							NBTTagCompound stackNBT = new NBTTagCompound();
-							stackNBT.setTag("PFPlant", plantNBT);
-							stackOutput.setTagCompound(stackNBT);
+							if (type == 0) {
+								NBTTagCompound plantNBT = new NBTTagCompound();
+								plantNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFPlant", plantNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
+							if (type == 1) {
+								NBTTagCompound mobNBT = new NBTTagCompound();
+								mobNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFMob", mobNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
+							if (type == 2) {
+								NBTTagCompound staticNBT = new NBTTagCompound();
+								staticNBT.setString("id", resourcelocation);
+								NBTTagCompound stackNBT = new NBTTagCompound();
+								stackNBT.setTag("PFStatic", staticNBT);
+								stackOutput.setTagCompound(stackNBT);
+							}
 							if (this.getStackInSlot(3).isEmpty()) {
 								this.setInventorySlotContents(3, stackOutput);
 							}
@@ -417,13 +480,18 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 				}
 				this.setInventorySlotContents(0, ItemStack.EMPTY);
 				this.setInventorySlotContents(2, ItemStack.EMPTY);
+				updated = true;
 			}
 
 			if (this.processTick >= this.processTickTime) {
 				this.isProcessing = false;
 				this.processTick = 0;
+				updated = true;
 			}
-			
+
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -508,16 +576,16 @@ public class BlockDNARecombinerForge extends ElementsLepidodendronMod.ModElement
 			return compound;
 		}
 
-		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+		public void notifyBlockUpdate() {
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

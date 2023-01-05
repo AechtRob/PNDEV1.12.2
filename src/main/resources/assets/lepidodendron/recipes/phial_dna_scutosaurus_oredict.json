@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_scutosaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_scutosaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

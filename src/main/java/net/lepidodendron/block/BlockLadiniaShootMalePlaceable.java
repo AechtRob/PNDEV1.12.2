@@ -63,7 +63,7 @@ public class BlockLadiniaShootMalePlaceable extends ElementsLepidodendronMod.Mod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNLadinia", BlockLadiniaShootMalePlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:ladinia_sapling", BlockLadiniaShootMalePlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockLadiniaShootMalePlaceable.block);
 		OreDictionary.registerOre("plant", BlockLadiniaShootMalePlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockLadiniaShootMalePlaceable.block);

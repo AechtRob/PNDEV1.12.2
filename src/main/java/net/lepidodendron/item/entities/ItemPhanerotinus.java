@@ -50,7 +50,7 @@ public class ItemPhanerotinus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_phanerotinus", ItemPhanerotinus.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_phanerotinus", ItemPhanerotinus.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemPhanerotinus.block);
 		OreDictionary.registerOre("foodMeat", ItemPhanerotinus.block);
 		OreDictionary.registerOre("itemShellfish", ItemPhanerotinus.block);

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_protorosaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_protorosaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

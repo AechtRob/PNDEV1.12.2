@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_tapinocephalus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_tapinocephalus"
  },
  {
  "item": "lepidodendron:phial_empty"

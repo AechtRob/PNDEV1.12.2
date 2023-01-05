@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNventogyrus"
+ "ore": "staticdnaPNlepidodendron:ventogyrus"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -64,7 +64,7 @@ public class BlockThaumaptilon extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockThaumaptilon.TileEntityCustom.class, "lepidodendron:tileentitythaumaptilon");
-		OreDictionary.registerOre("staticdnaPNthaumaptilon", BlockThaumaptilon.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:thaumaptilon", BlockThaumaptilon.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

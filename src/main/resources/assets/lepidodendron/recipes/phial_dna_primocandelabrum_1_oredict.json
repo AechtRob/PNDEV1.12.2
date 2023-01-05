@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNprimocandelabrum_1"
+ "ore": "staticdnaPNlepidodendron:primocandelabrum_1"
  },
  {
  "item": "lepidodendron:phial_empty"

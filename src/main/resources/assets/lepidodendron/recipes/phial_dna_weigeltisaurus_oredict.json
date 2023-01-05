@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_weigeltisaurus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_weigeltisaurus"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNred_sponge"
+ "ore": "staticdnaPNlepidodendron:red_sponge"
  },
  {
  "item": "lepidodendron:phial_empty"

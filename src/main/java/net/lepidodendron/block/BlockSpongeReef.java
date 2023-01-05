@@ -144,13 +144,28 @@ public class BlockSpongeReef extends ElementsLepidodendronMod.ModElement {
 			super(Material.CORAL);
 			setTranslationKey("pf_sponge_reef");
 			setSoundType(SoundType.STONE);
-			setHardness(2.0F);
-			setResistance(2.0F);
-			//setLightLevel(0.5F);
-			setLightOpacity(0);
+			setHardness(1.0F);
+			setResistance(1.5F);
+			setLightLevel(0F);
+			setLightOpacity(255);
 			//this.setTickRandomly(true);
 			setCreativeTab(TabLepidodendronMisc.tab);
 		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+		{
+		}
+
+		/*
+		@Override
+		public Vec3d getOffset(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+		{
+			long i = MathHelper.getCoordinateRandom(pos.getX(), 0, pos.getZ());
+			return new Vec3d(((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.01D, ((double)((float)(i >> 16 & 15L) / 15.0F) - 0.5D) * 0.01D, ((double)((float)(i >> 24 & 15L) / 15.0F) - 0.5D) * 0.01D);
+		}
+		 */
 
 		@SideOnly(Side.CLIENT)
 		public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
@@ -304,5 +319,9 @@ public class BlockSpongeReef extends ElementsLepidodendronMod.ModElement {
 			return BlockFaceShape.SOLID;
 		}
 
+		@Override
+		public boolean doesSideBlockRendering(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing face) {
+			return true;
+		}
 	}
 }

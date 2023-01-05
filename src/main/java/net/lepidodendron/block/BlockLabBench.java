@@ -98,6 +98,12 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isTopSolid(IBlockState state)
+		{
+			return true;
+		}
+
+		@Override
 		public boolean hasTileEntity(IBlockState state) {
 			return true;
 		}
@@ -304,13 +310,17 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 
+			boolean updated = false;
+
 			if (this.canStartProcess()) {
 				this.processTick = 0;
 				this.isProcessing = true;
+				updated = true;
 			}
 
 			if (this.isProcessing) {
 				this.processTick ++;
+				updated = true;
 			}
 
 			if (this.isProcessing && this.processTick > this.processTickTime) {
@@ -324,24 +334,39 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 					ItemStack stackProcessing1 = this.getStackInSlot(0);
 					ItemStack stackProcessing2 = this.getStackInSlot(2);
 					ItemStack stackProcessing3 = this.getStackInSlot(3);
+					ResourceLocation resourcelocation = null;
+					String blockname;
 					if (ItemFossilClean.ItemCustom.isEntityFromItemStack(stackProcessing1)) {
 						NBTTagCompound entityNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFMob");
-						ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
-						id_dna = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+						try {
+							resourcelocation = new ResourceLocation(entityNBT.getString("id"));
+							//id_dna = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFMob";
 					}
-					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stackProcessing1)) {
+					else if (ItemFossilClean.ItemCustom.isPlantFromItemStack(stackProcessing1)) {
 						NBTTagCompound blockNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFPlant");
-						ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-						String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-						id_dna = blockname.replace("minecraft:", "");
+						try {
+							resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							//blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFPlant";
 					}
 					else if (ItemFossilClean.ItemCustom.isBlockFromItemStack(stackProcessing1)) {
 						NBTTagCompound blockNBT = (NBTTagCompound) stackProcessing1.getTagCompound().getTag("PFStatic");
-						ResourceLocation resourcelocation = new ResourceLocation(blockNBT.getString("id"));
-						String blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
-						id_dna = blockname.replace("minecraft:", "");
+						try {
+							resourcelocation = new ResourceLocation(blockNBT.getString("id"));
+							//blockname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":", "");
+							id_dna = resourcelocation.toString();
+						}
+						catch (RuntimeException e) {
+						}
 						tag = "PFStatic";
 					}
 
@@ -381,8 +406,12 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 
 					this.setInventorySlotContents(1, outputStack);
 				}
+				updated = true;
 			}
 
+			if (updated) {
+				this.notifyBlockUpdate();
+			}
 			markDirty();
 
 		}
@@ -444,15 +473,15 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 		}
 
 		private void notifyBlockUpdate() {
-			this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
+			//this.getWorld().notifyNeighborsOfStateChange(this.getPos(), this.getBlockType(), true);
 			this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
-			this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
+			//this.getWorld().markBlockRangeForRenderUpdate(this.getPos(), this.getPos());
 		}
 
 		@Override
 		public void markDirty() {
 			super.markDirty();
-			notifyBlockUpdate();
+			//notifyBlockUpdate();
 		}
 
 		@Override

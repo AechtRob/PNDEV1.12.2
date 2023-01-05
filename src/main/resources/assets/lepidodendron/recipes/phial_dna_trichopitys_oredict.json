@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNtrichopitys"
+ "ore": "plantdnaPNlepidodendron:trichopitys"
  },
  {
  "item": "lepidodendron:phial_empty"

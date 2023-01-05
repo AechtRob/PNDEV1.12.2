@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNrhacophyton"
+ "ore": "plantdnaPNlepidodendron:rhacophyton"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -66,7 +66,7 @@ public class BlockPambikalbae extends ElementsLepidodendronMod.ModElement {
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		GameRegistry.registerTileEntity(BlockPambikalbae.TileEntityCustom.class, "lepidodendron:tileentitypambikalbae");
-		OreDictionary.registerOre("dnaPNPambikalbae", BlockPambikalbae.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:pambikalbae", BlockPambikalbae.block);
 	}
 
 	public static final PropertyInteger LEVEL = PropertyInteger.create("level", 0, 15);

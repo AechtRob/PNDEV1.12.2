@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNquadrocladus"
+ "ore": "plantdnaPNlepidodendron:quadrocladus"
  },
  {
  "item": "lepidodendron:phial_empty"

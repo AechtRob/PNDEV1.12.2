@@ -73,7 +73,7 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNConomedusites", BlockConomedusites.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:conomedusites", BlockConomedusites.block);
 	}
 
 
@@ -85,7 +85,9 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 			dimensionCriteria = true;
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
-			dimensionCriteria = true;
+			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+				dimensionCriteria = true;
+			}
 		}
 		if (!dimensionCriteria)
 			return;
@@ -111,7 +113,9 @@ public class BlockConomedusites extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
-			biomeCriteria = true;
+			if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
+				biomeCriteria = true;
+			}
 		}
 
 		if (!biomeCriteria)

@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraBatrachotomus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
@@ -57,6 +56,7 @@ public class ModelBatrachotomus extends AdvancedModelBaseExtended {
     private final AdvancedModelRendererExtended FootL;
     private final AdvancedModelRendererExtended ToesL;
     private final AdvancedModelRendererExtended bone;
+
     private ModelAnimator animator;
 
     public ModelBatrachotomus() {
@@ -374,6 +374,7 @@ public class ModelBatrachotomus extends AdvancedModelBaseExtended {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;

@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.SeedSporeLeavesBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -63,13 +64,13 @@ public class BlockMedullosalesShootPlaceable extends ElementsLepidodendronMod.Mo
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNMedullosales", BlockMedullosalesShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:medullosales_sapling", BlockMedullosalesShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockMedullosalesShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockMedullosalesShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockMedullosalesShootPlaceable.block);
 	}
 
-	public static class BlockCustom extends BlockLeaves {
+	public static class BlockCustom extends SeedSporeLeavesBase {
 		public BlockCustom() {
 			super();
 			setTranslationKey("pf_medullosales_shoot");
@@ -211,5 +212,14 @@ public class BlockMedullosalesShootPlaceable extends ElementsLepidodendronMod.Mo
 	        return true;
 	    }
 
+		@Override
+		public Block planted() {
+			return BlockMedullosalesSapling.block;
+		}
+
+		@Override
+		public int offsetY() {
+			return 1;
+		}
 	}
 }

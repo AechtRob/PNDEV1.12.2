@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "lepidodendron:blocks/sand_paleoproterozoic",
+    "top": "lepidodendron:blocks/sand_paleoproterozoic_wavy",
+    "side": "lepidodendron:blocks/sand_paleoproterozoic",
+    "particle": "lepidodendron:blocks/sand_paleoproterozoic"
+  }
+}

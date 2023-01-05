@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNaulacera_sapling"
+ "ore": "staticdnaPNlepidodendron:aulacera_sapling"
  },
  {
  "item": "lepidodendron:phial_empty"

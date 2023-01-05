@@ -63,7 +63,7 @@ public class BlockRellimia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNrellimia", BlockRellimia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:rellimia", BlockRellimia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockRellimia.block);
 		OreDictionary.registerOre("plant", BlockRellimia.block);
 	}

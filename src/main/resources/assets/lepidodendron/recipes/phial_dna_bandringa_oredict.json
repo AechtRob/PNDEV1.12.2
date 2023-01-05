@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_bandringa"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_bandringa"
  },
  {
  "item": "lepidodendron:phial_empty"

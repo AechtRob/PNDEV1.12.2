@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNasteroxylon"
+ "ore": "plantdnaPNlepidodendron:asteroxylon"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_tanystropheus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_tanystropheus"
  },
  {
  "item": "lepidodendron:phial_empty"

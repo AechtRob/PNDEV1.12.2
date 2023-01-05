@@ -68,7 +68,7 @@ public class BlockOrtiseia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNOrtiseia", BlockOrtiseia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:ortiseia", BlockOrtiseia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockOrtiseia.block);
 		OreDictionary.registerOre("plant", BlockOrtiseia.block);
 	}

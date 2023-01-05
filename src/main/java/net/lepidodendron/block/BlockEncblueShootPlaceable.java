@@ -64,7 +64,7 @@ public class BlockEncblueShootPlaceable extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEncblue", BlockEncblueShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:encblue_sapling", BlockEncblueShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockEncblueShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockEncblueShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockEncblueShootPlaceable.block);

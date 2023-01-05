@@ -53,7 +53,7 @@ public class BlockMonkeyPuzzleAraucariaLog extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNmonkeypuzzle_sapling_araucaria_sapling", BlockMonkeyPuzzleAraucariaLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:monkey_puzzle_araucaria_sapling", BlockMonkeyPuzzleAraucariaLog.block);
 		OreDictionary.registerOre("logWood", BlockMonkeyPuzzleAraucariaLog.block);
 	}
 

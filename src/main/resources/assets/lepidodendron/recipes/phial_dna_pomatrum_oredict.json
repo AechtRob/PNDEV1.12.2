@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_pomatrum"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_pomatrum"
  },
  {
  "item": "lepidodendron:phial_empty"

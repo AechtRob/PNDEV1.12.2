@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_trimerus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_trimerus"
  },
  {
  "item": "lepidodendron:phial_empty"

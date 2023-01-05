@@ -62,7 +62,7 @@ public class BlockCinnamonFern extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCinnamonFern", BlockCinnamonFern.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cinnamon_fern", BlockCinnamonFern.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCinnamonFern.block);
 		OreDictionary.registerOre("plant", BlockCinnamonFern.block);
 	}

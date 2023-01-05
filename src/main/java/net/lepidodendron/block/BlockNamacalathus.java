@@ -72,7 +72,7 @@ public class BlockNamacalathus extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNNamacalathus", BlockNamacalathus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:namacalathus", BlockNamacalathus.block);
 	}
 
 

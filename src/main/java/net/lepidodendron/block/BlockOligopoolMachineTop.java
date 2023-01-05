@@ -70,6 +70,12 @@ public class BlockOligopoolMachineTop extends ElementsLepidodendronMod.ModElemen
 		}
 
 		@Override
+		public boolean isTopSolid(IBlockState state)
+		{
+			return true;
+		}
+
+		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 			return MapColor.GRAY;
 		}

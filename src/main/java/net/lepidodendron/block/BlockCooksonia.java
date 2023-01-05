@@ -69,7 +69,7 @@ public class BlockCooksonia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCooksonia", BlockCooksonia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:cooksonia", BlockCooksonia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCooksonia.block);
 		OreDictionary.registerOre("plant", BlockCooksonia.block);
 	}

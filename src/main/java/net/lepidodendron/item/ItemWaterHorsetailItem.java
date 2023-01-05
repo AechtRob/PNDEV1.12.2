@@ -57,7 +57,7 @@ public class ItemWaterHorsetailItem extends ElementsLepidodendronMod.ModElement 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNwater_horsetail_item", ItemWaterHorsetailItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:water_horsetail_item", ItemWaterHorsetailItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemWaterHorsetailItem.block);
 		OreDictionary.registerOre("plant", ItemWaterHorsetailItem.block);
 		OreDictionary.registerOre("stemHorsetail", ItemWaterHorsetailItem.block);

@@ -1,0 +1,16 @@
+{
+	"name": "Microscope",
+	"icon": "lepidodendron:microscope",
+	"category": "lepidodendron:revival",
+	"sortnum": 8,
+	"pages": [
+		{
+			"type": "text",
+			"text": "The microscope can analyse any raw fossil item and determine whether it contains a fossil of a plant, mob or static creature."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:microscope_recipe"
+		}
+	]
+}

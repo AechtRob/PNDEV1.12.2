@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_thrinacodus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_thrinacodus"
  },
  {
  "item": "lepidodendron:phial_empty"

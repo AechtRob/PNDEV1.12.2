@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNschmeissneria"
+ "ore": "plantdnaPNlepidodendron:schmeissneria"
  },
  {
  "item": "lepidodendron:phial_empty"

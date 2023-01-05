@@ -81,7 +81,7 @@ public class BlockBlastoid1 extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBlastoid1", BlockBlastoid1.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:blastoid_1", BlockBlastoid1.block);
 	}
 
 

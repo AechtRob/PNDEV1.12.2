@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNrellimia"
+ "ore": "plantdnaPNlepidodendron:rellimia"
  },
  {
  "item": "lepidodendron:phial_empty"

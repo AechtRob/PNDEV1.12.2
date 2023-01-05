@@ -260,7 +260,6 @@ public class BlockGlossopterisStrobilus extends ElementsLepidodendronMod.ModElem
 		    }
 	    }
 
-
 		@Override
 		public Block planted() {
 			return BlockGlossopterisSapling.block;

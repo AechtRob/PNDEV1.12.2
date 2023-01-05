@@ -1,0 +1,36 @@
+{
+	"multipart" : [
+		{	"when": { "facing": "north" },
+			"apply": [
+				{"model": "lepidodendron:glass_sponge_reef_1"},
+				{"model": "lepidodendron:glass_sponge_reef_2"},
+				{"model": "lepidodendron:glass_sponge_reef_2"},
+				{"model": "lepidodendron:glass_sponge_reef_2"}
+			]
+		},
+		{	"when": { "facing": "east" },
+			"apply": [
+				{"model": "lepidodendron:glass_sponge_reef_1", "y": 90 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 90 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 90 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 90 }
+			]
+		},
+		{	"when": { "facing": "south" },
+			"apply": [
+				{"model": "lepidodendron:glass_sponge_reef_1", "y": 180 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 180 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 180 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 180 }
+			]
+		},
+		{	"when": { "facing": "west" },
+			"apply": [
+				{"model": "lepidodendron:glass_sponge_reef_1", "y": 270 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 270 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 270 },
+				{"model": "lepidodendron:glass_sponge_reef_2", "y": 270 }
+			]
+		}
+	]
+}

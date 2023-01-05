@@ -61,6 +61,7 @@
       ]
     },
 
+
     {   "when": { "facing": "north" },
       "apply": [
         {"model": "lepidodendron:lab_bench_hopper_outlet" }

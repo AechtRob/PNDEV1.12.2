@@ -53,7 +53,7 @@ public class BlockPitysLog extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNpitys_sapling", BlockPitysLog.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:pitys_sapling", BlockPitysLog.block);
 		OreDictionary.registerOre("logWood", BlockPitysLog.block);
 	}
 

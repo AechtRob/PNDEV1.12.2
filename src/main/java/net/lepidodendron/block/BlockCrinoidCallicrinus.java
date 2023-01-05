@@ -74,7 +74,7 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCrinoidCallicrinus", BlockCrinoidCallicrinus.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_callicrinus", BlockCrinoidCallicrinus.block);
 	}
 
 

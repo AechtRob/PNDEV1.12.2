@@ -139,8 +139,8 @@ public class BlockPrehistoricGroundMossy extends ElementsLepidodendronMod.ModEle
 												|| (iblockstate1.getBlock() == BlockSandyDirtPangaean.block)
 												|| (iblockstate1.getBlock() == BlockSandyDirtRed.block)
 												|| (iblockstate1.getBlock() == BlockSiltyDirt.block)
-													|| (iblockstate1.getBlock() == BlockSandyDirtWhite.block)
-													|| (iblockstate1.getBlock() == BlockSandyDirtBlack.block)
+												|| (iblockstate1.getBlock() == BlockSandyDirtWhite.block)
+												|| (iblockstate1.getBlock() == BlockSandyDirtBlack.block)
 									)
 											&& (worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
 							)
@@ -186,7 +186,7 @@ public class BlockPrehistoricGroundMossy extends ElementsLepidodendronMod.ModEle
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			drops.add(new ItemStack(Blocks.DIRT, (int) (1), 0));
-			if (Math.random() > 0.05) {
+			if (Math.random() > 0.95) {
 				drops.add(new ItemStack(BlockAncientMoss.block, (int) (1), 0));
 			}
 		}

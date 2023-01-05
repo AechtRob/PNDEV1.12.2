@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNwielandiella"
+ "ore": "plantdnaPNlepidodendron:wielandiella"
  },
  {
  "item": "lepidodendron:phial_empty"

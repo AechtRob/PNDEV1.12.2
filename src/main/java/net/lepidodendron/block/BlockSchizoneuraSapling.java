@@ -65,7 +65,7 @@ public class BlockSchizoneuraSapling extends ElementsLepidodendronMod.ModElement
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNschizoneura_sapling", BlockSchizoneuraSapling.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:schizoneura_sapling", BlockSchizoneuraSapling.block);
 		OreDictionary.registerOre("treeSapling", BlockSchizoneuraSapling.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockSchizoneuraSapling.block);
 		OreDictionary.registerOre("plant", BlockSchizoneuraSapling.block);

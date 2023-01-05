@@ -42,7 +42,7 @@ public class ItemBobasatraniaCooked extends ElementsLepidodendronMod.ModElement 
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
-			super(10, 0.9f, false);
+			super(5, 0.7f, false);
 			setTranslationKey("pf_bobasatrania_cooked");
 			setRegistryName("bobasatrania_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);

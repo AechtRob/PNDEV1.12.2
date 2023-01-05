@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_saurosuchus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_saurosuchus"
  },
  {
  "item": "lepidodendron:phial_empty"

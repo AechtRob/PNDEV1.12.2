@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "staticdnaPNswartpuntia"
+ "ore": "staticdnaPNlepidodendron:swartpuntia"
  },
  {
  "item": "lepidodendron:phial_empty"

@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "mobdnaPNprehistoric_flora_trigonotarbid_palaeocharinus"
+ "ore": "mobdnaPNlepidodendron:prehistoric_flora_trigonotarbid_palaeocharinus"
  },
  {
  "item": "lepidodendron:phial_empty"

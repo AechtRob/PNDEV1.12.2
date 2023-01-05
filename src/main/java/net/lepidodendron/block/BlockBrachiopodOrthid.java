@@ -79,7 +79,7 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBrachiopodOrthid", BlockBrachiopodOrthid.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_orthid", BlockBrachiopodOrthid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodOrthid.block);
 	}
 
@@ -184,8 +184,13 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 			multiplier = 10;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
+			multiplier = 6;
+		}
+
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
+				|| dimID == LepidodendronConfig.dimPermian
 				) {
 			dimWeight = 2;
 		}

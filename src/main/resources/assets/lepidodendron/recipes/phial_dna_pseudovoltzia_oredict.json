@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNpseudovoltzia"
+ "ore": "plantdnaPNlepidodendron:pseudovoltzia"
  },
  {
  "item": "lepidodendron:phial_empty"

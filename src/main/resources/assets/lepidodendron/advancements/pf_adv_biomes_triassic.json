@@ -177,6 +177,12 @@
 			"conditions": {
 				"biome": "lepidodendron:triassic_mountains"
 			}
+		},
+		"triassic_desert_pleuromeia_beds": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:triassic_desert_pleuromeia_beds"
+			}
 		}
 	},
 	"requirements": [
@@ -196,6 +202,9 @@
 			"triassic_desert_plateau",
 			"triassic_desert_plateau_broken",
 			"triassic_desert_plateau_canyons"
+		],
+		[
+			"triassic_desert_pleuromeia_beds"
 		],
 		[
 			"triassic_desert_rocky"

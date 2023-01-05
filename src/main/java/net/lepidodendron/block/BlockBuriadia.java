@@ -68,7 +68,7 @@ public class BlockBuriadia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBuriadia", BlockBuriadia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:buriadia", BlockBuriadia.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockBuriadia.block);
 		OreDictionary.registerOre("plant", BlockBuriadia.block);
 	}

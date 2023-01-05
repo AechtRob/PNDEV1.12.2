@@ -71,7 +71,7 @@ public class BlockCallistophytales extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNCallistophytales", BlockCallistophytales.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:callistophytales", BlockCallistophytales.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockCallistophytales.block);
 		OreDictionary.registerOre("plant", BlockCallistophytales.block);
 		OreDictionary.registerOre("itemMossForStone", BlockCallistophytales.block);

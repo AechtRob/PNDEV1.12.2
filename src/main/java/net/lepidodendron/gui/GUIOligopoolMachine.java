@@ -288,7 +288,7 @@ public class GUIOligopoolMachine extends ElementsLepidodendronMod.ModElement {
             zLevel = 100.0F;
             if (LepidodendronConfig.machinesRF) {
                 this.drawTexturedModalRect(k + 20, l + 51 - 16, 0, 166, 18, 26);
-                this.drawTexturedModalRect(k + 21, l + 52 - 16 + this.getRFHeight(), 0, 192, 16, this.getRFHeight());
+                this.drawTexturedModalRect(k + 21, l + 52 + (24 - this.getRFHeight()) - 16, 0, 192, 16, this.getRFHeight());
             }
             //Arrow:
             this.drawTexturedModalRect(k + 79, l + 39, 176, 14, getProgressBarLength(), 16);
@@ -301,7 +301,7 @@ public class GUIOligopoolMachine extends ElementsLepidodendronMod.ModElement {
                 if (tileEntity instanceof BlockOligopoolMachine.TileEntityOligopoolMachine) {
                     BlockOligopoolMachine.TileEntityOligopoolMachine te = (BlockOligopoolMachine.TileEntityOligopoolMachine) tileEntity;
                     //return (int)Math.round(te.progressFraction() * 70D);
-                    double fraction = 0.5D;
+                    double fraction = te.getEnergyFraction();
                     return (int)Math.round(fraction * 24D);
                 }
             }

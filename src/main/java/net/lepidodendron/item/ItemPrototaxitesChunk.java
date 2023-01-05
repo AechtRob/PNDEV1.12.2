@@ -38,7 +38,7 @@ public class ItemPrototaxitesChunk extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNprototaxites", ItemPrototaxitesChunk.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:prototaxites", ItemPrototaxitesChunk.block);
 		OreDictionary.registerOre("itemFungus", ItemPrototaxitesChunk.block);
 	}
 

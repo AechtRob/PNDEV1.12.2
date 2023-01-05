@@ -79,7 +79,7 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBrachiopodSpiriferid", BlockBrachiopodSpiriferid.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:brachiopod_spiriferid", BlockBrachiopodSpiriferid.block);
 		OreDictionary.registerOre("itemShellfish", BlockBrachiopodSpiriferid.block);
 	}
 
@@ -203,10 +203,16 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 			multiplier = 10;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef")) {
+			multiplier = 6;
+		}
+
+
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 				|| (dimID == LepidodendronConfig.dimJurassic)
+				|| dimID == LepidodendronConfig.dimPermian
 				) {
 			dimWeight = 2;
 		}

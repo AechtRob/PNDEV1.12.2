@@ -72,7 +72,7 @@ public class EatAlgaeItemsAI extends EntityAIBase {
         this.entity.setEatTarget(this.targetItem);
         this.entity.getNavigator().tryMoveToXYZ(this.targetItem.posX, this.targetItem.posY, this.targetItem.posZ, this.speed);
         //if (distance < Math.max(this.entity.getEntityBoundingBox().getAverageEdgeLength(), 1D)) {
-        if (distance <= this.entity.getEntityBoundingBox().getAverageEdgeLength()) {
+        if (distance < Math.max(1.0F, this.entity.getEntityBoundingBox().getAverageEdgeLength())) {
             if (this.targetItem != null) {
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());

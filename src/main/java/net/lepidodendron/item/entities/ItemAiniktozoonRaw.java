@@ -35,7 +35,7 @@ public class ItemAiniktozoonRaw extends ElementsLepidodendronMod.ModElement {
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNprehistoric_flora_ainiktozoon", ItemAiniktozoonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ainiktozoon", ItemAiniktozoonRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemAiniktozoonRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemAiniktozoonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAiniktozoonRaw.block);
@@ -48,5 +48,6 @@ public class ItemAiniktozoonRaw extends ElementsLepidodendronMod.ModElement {
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
 	}
 }

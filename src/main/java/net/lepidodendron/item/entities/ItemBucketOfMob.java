@@ -7,8 +7,10 @@ import net.lepidodendron.LepidodendronSorter;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.IResource;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,6 +37,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.io.IOException;
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
@@ -57,24 +61,24 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 
 		ModelBakery.registerItemVariants(block,
 				//new ModelResourceLocation("lepidodendron:entities/angelina_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/brongniartella_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/chaohusaurus_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/cothurnocystis_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/elephantoceras_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/elonichthys_bucket", "inventory"), (Changed to Paramblypterus)
-//new ModelResourceLocation("lepidodendron:entities/greererpeton_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/hoplitaspis_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/micromitra_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/nagini_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/nautilus_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/paraceraurus_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/potanichthys_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/psychopyge_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/rhenocystis_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/sagenodus_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/silurolepis_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/strobilopterus_bucket", "inventory"),
-//new ModelResourceLocation("lepidodendron:entities/triadobatrachus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/brongniartella_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/chaohusaurus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/cothurnocystis_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/elephantoceras_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/elonichthys_bucket", "inventory"), (Changed to Paramblypterus)
+				//new ModelResourceLocation("lepidodendron:entities/greererpeton_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/hoplitaspis_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/micromitra_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/nagini_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/nautilus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/paraceraurus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/potanichthys_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/psychopyge_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/rhenocystis_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/sagenodus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/silurolepis_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/strobilopterus_bucket", "inventory"),
+				//new ModelResourceLocation("lepidodendron:entities/triadobatrachus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/acadoaradoxides_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/acanthodes_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/acanthostega_bucket", "inventory"),
@@ -472,12 +476,21 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/yorgia_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/yunguisaurus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/yunnanozoon_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/aetheolepis_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/aphnelepis_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/arduafrons_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/aspidorhynchus_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/notidanoides_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/eryon_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/macromesodon_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/ophthalmosaurus_bucket", "inventory"),
 
 
 
 				//new ModelResourceLocation("lepidodendron:entities/_bucket", "inventory"), (Keep here as template)
 
-				new ModelResourceLocation("lepidodendron:mob_bucket_empty", "inventory")
+				new ModelResourceLocation("lepidodendron:mob_bucket_empty", "inventory"),
+				new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory")
 
 			);
 
@@ -489,7 +502,18 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 					NBTTagCompound entityNBT = (NBTTagCompound) stack.getTagCompound().getTag("Mob");
 					ResourceLocation resourcelocation = new ResourceLocation(entityNBT.getString("id"));
 					String mobname = resourcelocation.toString().replace(LepidodendronMod.MODID + ":prehistoric_flora_", "");
-					return new ModelResourceLocation(LepidodendronMod.MODID +":entities/" + mobname + "_bucket", "inventory");
+					ModelResourceLocation model =  new ModelResourceLocation(LepidodendronMod.MODID +":entities/" + mobname + "_bucket", "inventory");
+					List<IResource> list = null;
+					try {
+						list =  Minecraft.getMinecraft().getResourceManager().getAllResources(new ResourceLocation(LepidodendronMod.MODID + ":models/item/entities/" + mobname + "_bucket.json"));
+					} catch (IOException e) {
+					}
+					if (!(list == null || list.isEmpty())) {
+						return model;
+					}
+					else {
+						return new ModelResourceLocation("lepidodendron:mob_bucket_missing_texture", "inventory");
+					}
 				}
 			}
 			else return new ModelResourceLocation(stack.getItem().getRegistryName() + "_empty", "inventory");
@@ -521,6 +545,11 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
 			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, false);
 			ActionResult<ItemStack> ret = onBucketUse(playerIn, worldIn, itemstack, raytraceresult);
+			if (raytraceresult != null) {
+				if (worldIn.getBlockState(raytraceresult.getBlockPos()).getBlock().getRegistryName().toString().equalsIgnoreCase("jaff:tank")) {
+					ret = null;
+				}
+			}
 			if (ret != null) return ret;
 
 			if (raytraceresult == null)
@@ -541,7 +570,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				}
 
 				{
-					boolean flag1 = worldIn.getBlockState(blockpos).getBlock().isReplaceable(worldIn, blockpos);
+					boolean flag1 = worldIn.getBlockState(blockpos).getBlock().isReplaceable(worldIn, blockpos) || (worldIn.getBlockState(blockpos).getBlock().getRegistryName().toString().equalsIgnoreCase("jaff:tank") && raytraceresult.sideHit == EnumFacing.UP);
 					BlockPos blockpos1 = flag1 && raytraceresult.sideHit == EnumFacing.UP ? blockpos : blockpos.offset(raytraceresult.sideHit);
 
 					if (!playerIn.canPlayerEdit(blockpos1, raytraceresult.sideHit, itemstack))
@@ -556,7 +585,10 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 						}
 
 						playerIn.addStat(StatList.getObjectUseStats(this));
-						return !playerIn.capabilities.isCreativeMode ? new ActionResult(EnumActionResult.SUCCESS, new ItemStack(Items.BUCKET)) : new ActionResult(EnumActionResult.SUCCESS, itemstack);
+
+						//return !playerIn.capabilities.isCreativeMode ? new ActionResult(EnumActionResult.SUCCESS, new ItemStack(Items.BUCKET)) : new ActionResult(EnumActionResult.SUCCESS, itemstack);
+						//Edited to always remove the mob bucket or else we duplicate UUIDs of mobs and they dont work:
+						return new ActionResult(EnumActionResult.SUCCESS, new ItemStack(Items.BUCKET));
 					}
 					else
 					{
@@ -573,8 +605,9 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				Material material = iblockstate.getMaterial();
 				boolean flag = !material.isSolid();
 				boolean flag1 = iblockstate.getBlock().isReplaceable(worldIn, posIn);
+				boolean flag2 = iblockstate.getBlock().getRegistryName().toString().equalsIgnoreCase("jaff:tank");
 
-				if (!worldIn.isAirBlock(posIn) && !flag && !flag1)
+				if (!worldIn.isAirBlock(posIn) && !flag && !flag1 && !flag2)
 				{
 					return false;
 				}
@@ -594,14 +627,18 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 					}
 					else
 					{
-						if (!worldIn.isRemote && (flag || flag1) && !material.isLiquid())
+						if (!worldIn.isRemote && (flag || flag1 || flag2) && !material.isLiquid())
 						{
-							worldIn.destroyBlock(posIn, true);
+							if (!flag2) {
+								worldIn.destroyBlock(posIn, true);
+							}
 						}
 
 						SoundEvent soundevent = SoundEvents.ITEM_BUCKET_EMPTY;
 						worldIn.playSound(player, posIn, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-						worldIn.setBlockState(posIn, Blocks.FLOWING_WATER.getDefaultState(), 11);
+						if (!flag2) {
+							worldIn.setBlockState(posIn, Blocks.FLOWING_WATER.getDefaultState(), 11);
+						}
 
 						if (!(worldIn.isRemote)) {
 							spawnEntityFromItemStack(stack, worldIn, (double) posIn.getX() + 0.5D, (double) posIn.getY(), (double) posIn.getZ() + 0.5D);

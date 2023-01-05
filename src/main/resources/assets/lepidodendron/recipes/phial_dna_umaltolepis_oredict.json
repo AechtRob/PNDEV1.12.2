@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNumaltolepis"
+ "ore": "plantdnaPNlepidodendron:umaltolepis"
  },
  {
  "item": "lepidodendron:phial_empty"

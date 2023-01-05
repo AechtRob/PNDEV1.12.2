@@ -7,11 +7,13 @@ import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import org.lwjgl.opengl.GL11;
 
 public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetogaster.TileEntityCustom> {
 
@@ -38,6 +40,11 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
             }.getValue(new BlockPos(entity.getPos()), "rotation");
             Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_HERPETOGASTER);
 
+            GlStateManager.enableRescaleNormal();
+            GlStateManager.alphaFunc(516, 0.1f);
+            GlStateManager.enableBlend();
+            RenderHelper.enableStandardItemLighting();
+            GlStateManager.tryBlendFuncSeparate(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, 1, 0);
             GlStateManager.pushMatrix();
             if (facing == EnumFacing.DOWN) {
                 //Impossible to place like this but anyway.....
@@ -102,6 +109,8 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
                 this.herpetogaster.renderAll(Minecraft.getMinecraft().player.ticksExisted);
             }
             GlStateManager.popMatrix();
+            GlStateManager.disableRescaleNormal();
+            GlStateManager.disableBlend();
         }
     }
 }

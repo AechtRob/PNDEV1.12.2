@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNbaiera"
+ "ore": "plantdnaPNlepidodendron:baiera"
  },
  {
  "item": "lepidodendron:phial_empty"

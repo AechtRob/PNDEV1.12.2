@@ -57,7 +57,7 @@ public class BlockEquisitesShootPlaceable extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNEquisetites", BlockEquisitesShootPlaceable.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:equisetites_sapling", BlockEquisitesShootPlaceable.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockEquisitesShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockEquisitesShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockEquisitesShootPlaceable.block);

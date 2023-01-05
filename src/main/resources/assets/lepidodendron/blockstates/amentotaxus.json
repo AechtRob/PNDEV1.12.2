@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:amentotaxus"},
+      {"model": "lepidodendron:amentotaxus_var"}
+    ]
+  }
+}

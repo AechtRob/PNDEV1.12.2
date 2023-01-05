@@ -4,15 +4,15 @@
   "ingredients": [
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "type": "forge:ore_dict",
-      "ore": "itemSulphur"
+      "ore": "dustSulfur"
     },
     {
       "item": "minecraft:bucket"
@@ -25,7 +25,7 @@
     "type": "minecraft:item_nbt",
     "item": "forge:bucketFilled",
     "nbt": {
-      "FluidName": "sulfuric_acid",
+      "FluidName": "pn_sulfuric_acid",
       "Amount": 1000
     },
     "count": 1

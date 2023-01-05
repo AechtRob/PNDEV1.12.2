@@ -73,7 +73,7 @@ public class BlockAllonnia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNallonnia", BlockAllonnia.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:allonnia", BlockAllonnia.block);
 	}
 
 	@Override

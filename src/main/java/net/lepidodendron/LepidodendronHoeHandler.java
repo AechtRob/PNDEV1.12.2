@@ -112,6 +112,19 @@ public class LepidodendronHoeHandler {
             }
         }
 
+        if (block == BlockSandPaleoproterozoic.block || block == BlockSandPaleoproterozoicSticky.block)
+        {
+            result = true;
+            world.setBlockState(pos, BlockSandPaleoproterozoicWavy.block.getDefaultState());
+        }
+        else {
+            if (block == BlockSandPaleoproterozoicWavy.block || block == BlockSandPaleoproterozoicWavySticky.block)
+            {
+                result = true;
+                world.setBlockState(pos, BlockSandPaleoproterozoic.block.getDefaultState());
+            }
+        }
+
         if ((block == BlockPrehistoricGroundLush.block)
                 || (block == BlockPrehistoricGroundBasic.block)
                 || (block == BlockPrehistoricGroundSand.block)

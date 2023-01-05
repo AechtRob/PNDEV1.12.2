@@ -58,7 +58,7 @@ public class ItemPrimevalGrassItem extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNPrimevalGrass", ItemPrimevalGrassItem.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:primaeval_grass_item", ItemPrimevalGrassItem.block);
 		OreDictionary.registerOre("plantPrehistoric", ItemPrimevalGrassItem.block);
 		OreDictionary.registerOre("plant", ItemPrimevalGrassItem.block);
 		OreDictionary.registerOre("leavesHay", ItemPrimevalGrassItem.block);

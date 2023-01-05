@@ -7,7 +7,7 @@
  },
  {
  "type": "forge:ore_dict",
- "ore": "plantdnaPNsanmiguelia"
+ "ore": "plantdnaPNlepidodendron:sanmiguelia"
  },
  {
  "item": "lepidodendron:phial_empty"

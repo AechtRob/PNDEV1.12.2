@@ -61,7 +61,7 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNIbyka", BlockIbyka.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:ibyka", BlockIbyka.block);
 		OreDictionary.registerOre("plantPrehistoric", BlockIbyka.block);
 		OreDictionary.registerOre("plant", BlockIbyka.block);
 	}
