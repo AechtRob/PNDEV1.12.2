@@ -327,6 +327,10 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 
 					stackProcessing1.shrink(1);
 					stackProcessing2.attemptDamageItem(5, new Random(), null);
+					if (stackProcessing2.getItemDamage() >= stackProcessing2.getMaxDamage()) {
+						world.playSound(null, pos, SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
+						stackProcessing2.shrink(1);
+					}
 					stackProcessing3.shrink(1);
 					world.playSound(null, pos, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, SoundCategory.BLOCKS, 0.2F, 1.0F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.4F);
 					ItemStack outputStack = new ItemStack(ItemTaxidermyDisplayItem.block, 1);
