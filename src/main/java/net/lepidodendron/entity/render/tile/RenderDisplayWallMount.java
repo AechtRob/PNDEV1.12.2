@@ -5456,7 +5456,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_THRINACODUS);
                                 modelThrinacodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraTitanichthys.class) {
-                                double offset = -1.3;
+                                double offset = -1.36;
                                 double voffset = 0;
                                 if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
                                     GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
