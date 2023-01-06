@@ -9,6 +9,7 @@ import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraCrawlingFlyingInsectBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraInsectFlyingBase;
+import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -19,6 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -122,6 +124,9 @@ public class ItemGlassJarItem extends ElementsLepidodendronMod.ModElement {
 				stack.shrink(1);
 				//Pick up this entity with the Jar:
 				ItemHandlerHelper.giveItemToPlayer(playerIn, BlockGlassJar.BlockCustom.createJarWithEntity(target));
+				if ((playerIn instanceof EntityPlayerMP)) {
+					ModTriggers.USE_JAR.trigger((EntityPlayerMP) playerIn);
+				}
 			}
 			return super.itemInteractionForEntity(stack, playerIn, target, hand);
 		}
