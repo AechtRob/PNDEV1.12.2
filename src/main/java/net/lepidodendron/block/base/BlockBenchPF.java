@@ -436,7 +436,6 @@ public class BlockBenchPF extends Block implements ITileEntityProvider {
 			return this.writeToNBT(new NBTTagCompound());
 		}
 
-
 		@Override
 		public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
 			this.readFromNBT(pkt.getNbtCompound());

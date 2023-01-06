@@ -8,9 +8,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class ItemScorpionGigantoscorpioRaw extends ElementsLepidodendronMod.ModElement {
@@ -23,6 +25,13 @@ public class ItemScorpionGigantoscorpioRaw extends ElementsLepidodendronMod.ModE
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemFoodCustom());
+	}
+
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_scorpion_gigantoscorpio", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemScorpionGigantoscorpioRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemScorpionGigantoscorpioRaw.block);
 	}
 
 	@SideOnly(Side.CLIENT)
