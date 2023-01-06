@@ -40,7 +40,7 @@ public class ItemAiniktozoonRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemAiniktozoonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAiniktozoonRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_ainiktozoon_raw");

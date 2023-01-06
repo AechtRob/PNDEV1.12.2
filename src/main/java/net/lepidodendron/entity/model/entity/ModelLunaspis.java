@@ -201,7 +201,7 @@ public class ModelLunaspis extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
         this.Lunaspis.rotateAngleY = (float) Math.toRadians(90);
-        this.Lunaspis.offsetX = 0.02F;
+        this.Lunaspis.offsetX = -0.02F;
         this.Lunaspis.offsetZ = 0.03F;
         this.Lunaspis.render(0.01F);
         //GlStateManager.enableCull();
