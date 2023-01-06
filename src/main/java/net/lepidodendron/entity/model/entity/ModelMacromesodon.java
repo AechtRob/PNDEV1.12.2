@@ -226,7 +226,7 @@ public class ModelMacromesodon extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Macromesodon.offsetY = 1.35F;
+        this.Macromesodon.offsetY = 0;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5};
@@ -247,7 +247,7 @@ public class ModelMacromesodon extends AdvancedModelBase {
             this.swing(Macromesodon, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.Macromesodon.rotateAngleZ = (float) Math.toRadians(90);
-                this.Macromesodon.offsetY = 0.95F;
+                this.Macromesodon.offsetY = 0.65F;
                 this.bob(Macromesodon, -speed, 5F, false, f2, 1);
             }
         }
