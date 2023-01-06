@@ -40,7 +40,7 @@ public class ItemAulacocerasRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemAulacocerasRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemAulacocerasRaw.block);
 	}
-	public static class ItemFoodCustom extends ItemFood {
+	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
 			setTranslationKey("pf_aulacoceras_raw");
