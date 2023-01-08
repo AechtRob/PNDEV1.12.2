@@ -3171,7 +3171,7 @@ public class RenderHandler {
                 return new RenderAetheolepis(manager);
             }
         });
-        /*
+   
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEryon.class, new IRenderFactory<EntityPrehistoricFloraEryon>() {
             @Override
             public Render<? super EntityPrehistoricFloraEryon> createRenderFor(RenderManager manager) {
@@ -3184,6 +3184,7 @@ public class RenderHandler {
                 return new RenderNotidanoides(manager);
             }
         });
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAspidorhynchus.class, new IRenderFactory<EntityPrehistoricFloraAspidorhynchus>() {
             @Override
             public Render<? super EntityPrehistoricFloraAspidorhynchus> createRenderFor(RenderManager manager) {
@@ -3192,7 +3193,7 @@ public class RenderHandler {
         });
 
 
-         */
+
 
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegalosaurus.class, new IRenderFactory<EntityPrehistoricFloraMegalosaurus>() {

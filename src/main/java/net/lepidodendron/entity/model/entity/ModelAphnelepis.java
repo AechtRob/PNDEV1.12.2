@@ -208,6 +208,7 @@ public class ModelAphnelepis extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         this.aphnelepis.offsetY = 0F;
+        this.aphnelepis.rotateAngleY = (float)Math.toRadians(180);
         //this.Gills.rotateAngleY = f3 / (180F / (float) Math.PI);
         //this.Gills.rotateAngleX = f4 / (180F / (float) Math.PI);
 
@@ -218,8 +219,7 @@ public class ModelAphnelepis extends AdvancedModelBase {
             speed = 0.7F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
-            this.chainSwing(fishTail, speed, 0.5F, -3, f2, 1);
+            this.chainSwing(fishTail, speed, 0.3F, -3, f2, 1);
             this.swing(aphnelepis, speed, 0.3F, true, 0, 0, f2, 1);
             this.walk(jaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.walk(pectoralL, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
