@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -1210,18 +1211,28 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
                 return true;
             }
-            if (OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
+            if (this.isPFAdult() && OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
                 //Prompt to create a nest:
                 //Does this mob have nests like this and is it OK to do this now?
                 if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {
                     //Does the mob already have a nest?
                     if (this.getNestLocation() == null) {
                         //Can we make a nest in this exact spot?
-                        if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
+                        if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
+                            if (this.getPosition().getY() > 8) {
+                                this.setAnimation(MAKE_NEST_ANIMATION);
+                                this.consumeItemFromStack(player, itemstack);
+                                if (world.isRemote) {
+                                    this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                                }
+                                return true;
+                            }
+                        }
+                        else if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
                             this.setAnimation(MAKE_NEST_ANIMATION);
                             this.consumeItemFromStack(player, itemstack);
                             if (world.isRemote) {
-                                this.spawnParticles(EnumParticleTypes.ITEM_TAKE);
+                                this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                             }
                             return true;
                         }

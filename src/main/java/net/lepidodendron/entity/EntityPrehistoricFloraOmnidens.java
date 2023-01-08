@@ -185,7 +185,7 @@ public class EntityPrehistoricFloraOmnidens extends EntityPrehistoricFloraAgeabl
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, false, 0));
 		tasks.addTask(2, new AttackAI(this, 1.0, false, this.getAttackLength()));
-		tasks.addTask(3, new OmnidensWanderBottom(this, NO_ANIMATION));
+		tasks.addTask(3, new AgeableFishBaseWalkBottom(this, NO_ANIMATION));
 		tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));

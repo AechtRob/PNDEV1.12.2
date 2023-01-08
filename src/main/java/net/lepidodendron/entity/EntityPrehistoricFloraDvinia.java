@@ -139,6 +139,9 @@ public class EntityPrehistoricFloraDvinia extends EntityPrehistoricFloraDiictodo
 		if (this.getAnimation() == LOOK_ANIMATION) {
 			return 0.0F; //Is looking
 		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		return speedBase;
 	}
 

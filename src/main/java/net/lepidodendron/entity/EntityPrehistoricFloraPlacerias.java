@@ -97,6 +97,9 @@ public class EntityPrehistoricFloraPlacerias extends EntityPrehistoricFloraLandB
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.25F;
 		}

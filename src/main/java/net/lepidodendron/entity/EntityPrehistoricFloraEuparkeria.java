@@ -97,6 +97,9 @@ public class EntityPrehistoricFloraEuparkeria extends EntityPrehistoricFloraLand
 		if (this.getIsFast()) {
 			return 0.688F;
 		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		return 0.498F;
 	}
 

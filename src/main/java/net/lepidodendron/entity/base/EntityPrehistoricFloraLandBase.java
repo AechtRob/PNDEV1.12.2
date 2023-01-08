@@ -3,6 +3,7 @@ package net.lepidodendron.entity.base;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.block.BlockNest;
+import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialResin;
@@ -366,7 +367,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setAnimation(DRINK_ANIMATION);
                 //this.setIsDrinking(rand.nextInt(800) + 700);
             }
-            if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() == DRINK_ANIMATION.getDuration() - 1) {
+            if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() >= DRINK_ANIMATION.getDuration() - 1) {
                 int i = Math.max((int)Math.round(getDrinkCooldown()/2), 1);
                 this.setIsDrinking(rand.nextInt(i) + i);
                 this.getNavigator().clearPath();
@@ -388,15 +389,33 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     {
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
-            if (this.getAnimationTick() == this.MAKE_NEST_ANIMATION.getDuration() - 1) {
-                this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
-                TileEntity te = world.getTileEntity(this.getPosition());
-                if (te != null) {
-                    te.getTileData().setString("creature", getEntityId(this));
+            if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {
+                if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
+                    EntityPrehistoricFloraDiictodon burrower = (EntityPrehistoricFloraDiictodon) this;
+                    if (!world.isRemote && this.getPosition().getY() > 8) {
+                        BlockPos pos = burrower.buildBurrow(this.world, this.getPosition(), burrower.hasLargeBurrow());
+                        this.world.setBlockState(pos, BlockNest.block.getDefaultState());
+                        TileEntity te = world.getTileEntity(pos);
+                        if (te != null) {
+                            te.getTileData().setString("creature", getEntityId(this));
+                        }
+                        this.setNestLocation(pos);
+                        SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+                        this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    }
                 }
-                SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
-                this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                this.setNestLocation(this.getPosition());
+                else {
+                    if (!world.isRemote) {
+                        this.world.setBlockState(this.getPosition(), BlockNest.block.getDefaultState());
+                        TileEntity te = world.getTileEntity(this.getPosition());
+                        if (te != null) {
+                            te.getTileData().setString("creature", getEntityId(this));
+                        }
+                        this.setNestLocation(this.getPosition());
+                    }
+                    SoundEvent soundevent = SoundEvents.BLOCK_GRASS_PLACE;
+                    this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                }
             }
         }
 

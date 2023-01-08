@@ -7,7 +7,7 @@
     "resin": [
       {
         "custom": {
-          "fluid": "resin"
+          "fluid": "pn_resin"
         }
       }
     ]
