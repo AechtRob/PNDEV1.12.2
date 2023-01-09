@@ -30,7 +30,7 @@ public class StructureSpawnCambrianVolcano extends ElementsLepidodendronMod.ModE
 			return;
 
 		//int GenChance = 4000;
-		int GenChance = 3500;
+		int GenChance = 2500;
 
 		if ((random.nextInt(1000000) + 1) <= GenChance) {
 			int count = random.nextInt(1) + 1;

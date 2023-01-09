@@ -9,17 +9,16 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
 
-public class AlgalReefGenerator extends WorldGenerator
+public class ArchaeocyathaReefGenerator extends WorldGenerator
 {
 	private Block reef;
     private IBlockState state;
 
-    public AlgalReefGenerator(Block reefIn)
+    public ArchaeocyathaReefGenerator(Block reefIn)
     {
         this.setGeneratedBlock(reefIn);
     }
@@ -35,21 +34,11 @@ public class AlgalReefGenerator extends WorldGenerator
     {
 		int dimID = worldIn.provider.getDimension();
 		boolean dimensionCriteria = false;
-		int[] dimCheck = LepidodendronConfigPlants.dimAlgalReef;
+		int[] dimCheck = LepidodendronConfigPlants.dimArchaeocyathaReef;
 		if (shouldGenerateInDimension(dimID, dimCheck))
-			dimensionCriteria = true;
-
-		Biome biome = worldIn.getBiome(position);
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_ocean")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_ocean_ice")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_ocean_icebergs")
-		) {
-			dimensionCriteria = true;
-		}
-
+		dimensionCriteria = true;
 		if (!dimensionCriteria)
 			return true;
-
 
 		int bound = 8;
 		for (int i = 0; i < 32; ++i)

@@ -146,7 +146,7 @@ public class BlockFirePF extends BlockFire {
 		if (blockIn == Blocks.CARPET) {
 		return 60;
 		}
-		if (blockIn == FluidRegistry.getFluid("resin").getBlock()) {
+		if (blockIn == FluidRegistry.getFluid("pn_resin").getBlock()) {
 			return 60;
 		}
 		return 0;
@@ -264,7 +264,7 @@ public class BlockFirePF extends BlockFire {
 		if (blockIn == Blocks.CARPET) {
 		return 20;
 		}
-		if (blockIn == FluidRegistry.getFluid("resin").getBlock()) {
+		if (blockIn == FluidRegistry.getFluid("pn_resin").getBlock()) {
 			return 20;
 		}
 		return 0;

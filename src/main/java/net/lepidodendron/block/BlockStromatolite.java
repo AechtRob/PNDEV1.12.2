@@ -163,7 +163,12 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 												|| (world.getBlockState(blockpos1.up(k).down()).getMaterial() == Material.ROCK)
 												|| (world.getBlockState(blockpos1.up(k).down()).getBlock() == block))
 												&& (blockpos1.up(k).getY() >= (world.getSeaLevel() - 5))
-												&& (blockpos1.up(k).getY() <= (world.getSeaLevel()))
+												&& (blockpos1.up(k).getY() < (world.getSeaLevel())
+													|| (blockpos1.up(k).getY() <= world.getSeaLevel() &&
+														(BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN)
+														|| BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+													)
+												)
 												&& ((world.isAirBlock(blockpos1.up(k)))
 												|| (world.getBlockState(blockpos1.up(k)).getMaterial() == Material.WATER))
 												&&
