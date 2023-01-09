@@ -36,7 +36,7 @@ public class BlockResin extends ElementsLepidodendronMod.ModElement {
 	private Fluid fluid;
 	public BlockResin(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.resin);
-		fluid = new Fluid("resin", new ResourceLocation("lepidodendron:blocks/resinstill"), new ResourceLocation("lepidodendron:blocks/resinflow"))
+		fluid = new Fluid("pn_resin", new ResourceLocation("lepidodendron:blocks/resinstill"), new ResourceLocation("lepidodendron:blocks/resinflow"))
 				.setLuminosity(0).setDensity(1000).setViscosity(10000).setGaseous(false);
 	}
 

@@ -1,6 +1,8 @@
 package net.lepidodendron;
 
 import net.lepidodendron.item.ItemBottleOfAcidSulphuric;
+import net.lepidodendron.item.ItemBottleOfResin;
+import net.lepidodendron.util.MaterialResin;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -71,6 +73,16 @@ public class LepidodendronGlassBottleSubscribers {
 						event.getEntityPlayer().swingArm(event.getHand());
 						worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 						this.turnBottleIntoItem(itemstack, playerIn, new ItemStack(ItemBottleOfAcidSulphuric.block, 1));
+						event.setCanceled(true);
+						return;
+					}
+				}
+				if (worldIn.getBlockState(blockpos).getMaterial() == MaterialResin.RESIN)
+				{
+					if (worldIn.getBlockState(blockpos).getBlock() == (new FluidStack(FluidRegistry.getFluid("pn_resin"), 1000)).getFluid().getBlock()) {
+						event.getEntityPlayer().swingArm(event.getHand());
+						worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+						this.turnBottleIntoItem(itemstack, playerIn, new ItemStack(ItemBottleOfResin.block, 1));
 						event.setCanceled(true);
 						return;
 					}

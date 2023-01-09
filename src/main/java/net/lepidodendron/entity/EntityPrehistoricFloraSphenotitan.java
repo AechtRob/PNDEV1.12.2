@@ -79,7 +79,9 @@ public class EntityPrehistoricFloraSphenotitan extends EntityPrehistoricFloraLan
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
-		//return 0;
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		return 0.448F;
 	}
 

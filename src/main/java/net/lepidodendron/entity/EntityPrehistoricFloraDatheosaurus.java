@@ -88,6 +88,9 @@ public class EntityPrehistoricFloraDatheosaurus extends EntityPrehistoricFloraLa
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.56F;
 		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		return speedBase;
 	}
 

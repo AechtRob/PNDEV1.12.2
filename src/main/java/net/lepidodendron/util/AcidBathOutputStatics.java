@@ -222,7 +222,6 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBlastoid3.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrachiopodOrthid.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBrachiopodSpiriferid.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockAulaceraSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCornulitida.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCallicrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCaryocrinites.block).toString(),

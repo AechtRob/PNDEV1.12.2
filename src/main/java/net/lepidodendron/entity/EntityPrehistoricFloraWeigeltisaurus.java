@@ -193,7 +193,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 
 	@Override
 	public boolean placesNest() {
-		return true;
+		return false;
 	}
 
 	@Override

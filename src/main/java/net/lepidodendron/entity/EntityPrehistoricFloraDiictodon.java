@@ -122,6 +122,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
+			return 0.0F;
+		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 1.25F;
 		}
@@ -606,6 +609,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	}
 
 	public static void setBurrowBlock(int blockTop, World world, BlockPos pos) {
+		if (pos.getY() <= 1) {
+			return;
+		}
 		world.setBlockState(pos, Blocks.STRUCTURE_VOID.getDefaultState());
 		world.setBlockState(pos.north(), newBurrowState(world, pos.north()));
 		world.setBlockState(pos.south(), newBurrowState(world, pos.south()));
@@ -642,6 +648,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		else if (oldBurrowState == BlockSandWhite.block.getDefaultState() || oldBurrowState == BlockSandWhiteWavy.block) {
 			return BlockSandWhiteSticky.block.getDefaultState();
 		}
+		else if (oldBurrowState == BlockSandPaleoproterozoic.block.getDefaultState() || oldBurrowState == BlockSandPaleoproterozoicWavy.block) {
+			return BlockSandPaleoproterozoicSticky.block.getDefaultState();
+		}
 		else if (world.isAirBlock(pos) ||
 			(oldBurrowState.getMaterial() != Material.ROCK
 				&& oldBurrowState.getMaterial() != Material.GROUND
@@ -664,6 +673,9 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 			}
 			else if (world.getBiome(pos).topBlock == BlockSandWhite.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandWhiteWavy.block) {
 				return BlockSandWhiteSticky.block.getDefaultState();
+			}
+			else if (world.getBiome(pos).topBlock == BlockSandPaleoproterozoic.block.getDefaultState() || world.getBiome(pos).topBlock == BlockSandPaleoproterozoicWavy.block) {
+				return BlockSandPaleoproterozoicSticky.block.getDefaultState();
 			}
 			return world.getBiome(pos).topBlock;
 		}
