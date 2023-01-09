@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:scoria" },
+      { "model": "lepidodendron:scoria_mirrored" },
+      { "model": "lepidodendron:scoria", "y": 180 },
+      { "model": "lepidodendron:scoria_mirrored", "y": 180 }
+    ]
+  }
+}

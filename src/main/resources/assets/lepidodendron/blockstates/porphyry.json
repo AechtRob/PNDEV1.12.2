@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "lepidodendron:porphyry" },
+      { "model": "lepidodendron:porphyry_mirrored" },
+      { "model": "lepidodendron:porphyry", "y": 180 },
+      { "model": "lepidodendron:porphyry_mirrored", "y": 180 }
+    ]
+  }
+}
