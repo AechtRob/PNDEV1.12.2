@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 
 	public EntityPrehistoricFloraNotidanoides(World world) {
 		super(world);
-		setSize(0.9F, 0.9F);
+		setSize(0.9F, 0.4F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
-		maxHeight = 1.1F;
+		maxHeight = 0.4F;
 		maxHealthAgeable = 30.0D;
 	}
 

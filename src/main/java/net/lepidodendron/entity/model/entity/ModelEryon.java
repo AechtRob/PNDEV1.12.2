@@ -3,6 +3,7 @@ package net.lepidodendron.entity.model.entity;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -254,7 +255,7 @@ public class ModelEryon extends AdvancedModelBase {
         if (!e.isInWater()) {
             speed = 0.7F;
         }
-        EntityPrehistoricFloraEurypteridBase ee = (EntityPrehistoricFloraEurypteridBase) e;
+        EntityPrehistoricFloraTrilobiteBottomBase ee = (EntityPrehistoricFloraTrilobiteBottomBase) e;
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
 

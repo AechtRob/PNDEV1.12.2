@@ -3151,14 +3151,13 @@ public class RenderHandler {
                 return new RenderMacromesodon(manager);
             }
         });
-        /*
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOphthalmosaurus.class, new IRenderFactory<EntityPrehistoricFloraOphthalmosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraOphthalmosaurus> createRenderFor(RenderManager manager) {
                 return new RenderOphthalmosaurus(manager);
             }
         });
-        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAphnelepis.class, new IRenderFactory<EntityPrehistoricFloraAphnelepis>() {
             @Override
             public Render<? super EntityPrehistoricFloraAphnelepis> createRenderFor(RenderManager manager) {
@@ -3200,6 +3199,13 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraMegalosaurus> createRenderFor(RenderManager manager) {
                 return new RenderMegalosaurus(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBalhuticaris.class, new IRenderFactory<EntityPrehistoricFloraBalhuticaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBalhuticaris> createRenderFor(RenderManager manager) {
+                return new RenderBalhuticaris(manager);
             }
         });
 

@@ -45,9 +45,9 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 		//minSize = 0.1F;
 		//maxSize = 1.0F;
 		minWidth = 0.15F;
-		maxWidth = 2.4F;
-		maxHeight = 1.5F;
-		maxHealthAgeable = 50.0D;
+		maxWidth = 1.2F;
+		maxHeight = 1F;
+		maxHealthAgeable = 35.0D;
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -137,7 +137,7 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 		tasks.addTask(0, new EntityMateAI(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue()));
 		tasks.addTask(2, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1, -5, true));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 0.1, 0, true));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
