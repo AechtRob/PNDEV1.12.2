@@ -1556,6 +1556,10 @@ public class LepidodendronConfigPlants {
     public static String[] genAlgalReefOverrideBiomes = new String[0];
     public static int[] dimAlgalReef = new int[]{};
 
+    public static String[] genArchaeocyathaReefBlacklistBiomes = new String[0];
+    public static String[] genArchaeocyathaReefOverrideBiomes = new String[0];
+    public static int[] dimArchaeocyathaReef = new int[]{};
+
     public static int[] dimEdiacaran = new int[0];
     //public static boolean animateEdiacaran = true;
     public static int weightEdiacaran = 100;
@@ -2064,6 +2068,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Reef", "genAlgalReefOverrideBiomes", genAlgalReefOverrideBiomes);
         prop.setComment("List of biomes Algal Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
         genAlgalReefOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Reef", "dimArchaeocyathaReef", dimArchaeocyathaReef);
+        prop.setComment("List of dimension IDs Archaeocyatha Reef blocks can generate in [default: empty]");
+        dimArchaeocyathaReef = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genArchaeocyathaReefBlacklistBiomes", genArchaeocyathaReefBlacklistBiomes);
+        prop.setComment("List of biomes Archaeocyatha Reef blocks are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genArchaeocyathaReefBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Reef", "genArchaeocyathaReefOverrideBiomes", genArchaeocyathaReefOverrideBiomes);
+        prop.setComment("List of biomes Archaeocyatha Reef blocks are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genArchaeocyathaReefOverrideBiomes = prop.getStringList();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Ediacaran", "dimEdiacaran", dimEdiacaran);

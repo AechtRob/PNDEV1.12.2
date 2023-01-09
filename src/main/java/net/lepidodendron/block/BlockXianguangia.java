@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -116,9 +118,13 @@ public class BlockXianguangia extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			biomeCriteria = true;
 		}
-		if (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")
-		)
-			biomeCriteria = false;
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Estuary
+			) {
+				biomeCriteria = false;
+			}
+		}
 		if (!biomeCriteria)
 			return;
 

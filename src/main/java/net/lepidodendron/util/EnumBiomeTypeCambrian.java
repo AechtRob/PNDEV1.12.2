@@ -2,16 +2,18 @@ package net.lepidodendron.util;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum EnumBiomeTypeOrdovician implements IStringSerializable {
+public enum EnumBiomeTypeCambrian implements IStringSerializable {
 
     BarrenLand("barren_land"),
-    Ocean("ocean"),
-    Bog("bog")
+    Dusty("dusty_land"),
+    Moist("moist_land"),
+    Estuary("estuary"),
+    Ocean("ocean")
     ;
 
     private final String name;
 
-    private EnumBiomeTypeOrdovician(String name) {
+    private EnumBiomeTypeCambrian(String name) {
         this.name = name;
     }
 

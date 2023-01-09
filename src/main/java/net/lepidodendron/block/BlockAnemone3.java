@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -107,6 +108,13 @@ public class BlockAnemone3 extends ElementsLepidodendronMod.ModElement {
 				
 		) {
 			biomeCriteria = true;
+		}
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
+			) {
+				biomeCriteria = false;
+			}
 		}
 		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {

@@ -4,6 +4,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.block.BlockStromatoveris;
 import net.lepidodendron.block.BlockThaumaptilon;
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -13,6 +15,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 import java.util.Random;
@@ -56,6 +59,14 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 		dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = true;
+		}
+		Biome biome = worldIn.getBiome(position);
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
+			) {
+				dimensionCriteria = false;
+			}
 		}
 		if (seaPen == BlockStromatoveris.block && (!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")) && dimID == LepidodendronConfig.dimCambrian) {
 			dimensionCriteria = false;

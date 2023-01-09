@@ -2,8 +2,10 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.world.gen.ArchaeocyathaReefGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockFalling;
@@ -28,8 +30,12 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -57,6 +63,79 @@ public class BlockArchaeocyatha extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:archaeocyatha", "inventory"));
+	}
+
+	@Override
+	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
+		Biome biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		boolean dimensionCriteria = false;
+		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimArchaeocyathaReef))
+			dimensionCriteria = true;
+
+		if (!dimensionCriteria)
+			return;
+
+		boolean biomeCriteria = false;
+		//biome = world.getBiome(new BlockPos(chunkX + 16, world.getSeaLevel(), chunkZ + 16));
+		if (!matchBiome(biome, LepidodendronConfigPlants.genArchaeocyathaReefBlacklistBiomes)) {
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
+				biomeCriteria = true;
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DEAD))
+				biomeCriteria = false;
+		}
+		if (matchBiome(biome, LepidodendronConfigPlants.genArchaeocyathaReefOverrideBiomes))
+			biomeCriteria = true;
+
+		if (!biomeCriteria)
+			return;
+
+		int multiplier = 1;
+
+		for (int i = 0; i < (int) 10 * multiplier; i++) {
+			int l6 = chunkX + random.nextInt(16) + 8;
+			int i11 = random.nextInt(128);
+			int l14 = chunkZ + random.nextInt(16) + 8;
+			(new ArchaeocyathaReefGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14));
+		}
+	}
+
+	public static boolean matchBiome(Biome biome, String[] biomesList) {
+
+		//String regName = biome.getRegistryName().toString();
+
+		String[] var2 = biomesList;
+		int var3 = biomesList.length;
+
+		for(int var4 = 0; var4 < var3; ++var4) {
+			String checkBiome = var2[var4];
+			if (!checkBiome.contains(":")) {
+				//System.err.println("modid test: " + biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":") - 1));
+				if (checkBiome.equalsIgnoreCase(
+						biome.getRegistryName().toString().substring(0, biome.getRegistryName().toString().indexOf(":"))
+				)) {
+					return true;
+				}
+			}
+			if (checkBiome.equalsIgnoreCase(biome.getRegistryName().toString())) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public boolean shouldGenerateInDimension(int id, int[] dims) {
+		int[] var2 = dims;
+		int var3 = dims.length;
+		for (int var4 = 0; var4 < var3; ++var4) {
+			int dim = var2[var4];
+			if (dim == id) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static class BlockCustom extends BlockFalling {
