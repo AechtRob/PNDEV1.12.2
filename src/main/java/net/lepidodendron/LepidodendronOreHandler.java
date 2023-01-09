@@ -55,7 +55,7 @@ public class LepidodendronOreHandler {
 			)
 				event.setResult(Event.Result.DENY);
 		}
-		if (event.getType().equals(EventType.ANDESITE )){
+		if (event.getType().equals(EventType.ANDESITE )) {
 			if (LepidodendronConfig.dimPrecambrian == (int) event.getWorld().provider.getDimension()
 			) {
 				genStandardOre1(event.getPos(), event.getWorld(), event.getRand(), 10,
