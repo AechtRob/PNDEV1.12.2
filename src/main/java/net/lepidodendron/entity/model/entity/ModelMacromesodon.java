@@ -210,7 +210,8 @@ public class ModelMacromesodon extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Macromesodon.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
-        this.Macromesodon.offsetY = -0.02F;
+        this.Macromesodon.offsetY = -0.1F;
+        this.Macromesodon.offsetX = -0.08F;
         this.Macromesodon.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();

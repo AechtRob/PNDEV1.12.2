@@ -339,8 +339,9 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
-        this.Head.offsetY = 0.33F;
-        this.Jaw.rotateAngleX = (float) Math.toRadians(8);
+        this.Head.offsetY = -0F;
+        this.Head.offsetX = 0.01F;
+        this.Jaw.rotateAngleX = (float) Math.toRadians(22.5);
         this.Head.rotateAngleX = (float) Math.toRadians(0);
         this.Head.render(0.01F);
         //GlStateManager.enableCull();

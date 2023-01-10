@@ -171,7 +171,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.5F);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -186,8 +186,8 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.body4.rotateAngleX = (float) Math.toRadians(7.5);
         this.body5.rotateAngleX = (float) Math.toRadians(10);
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
-        this.body.offsetX = -0.16F;
-        this.body.offsetY = -0.14F;
+        this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.22F;
         this.body.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
@@ -204,7 +204,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 0.7F;
+        //this.body.offsetY = 0.7F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.tail};
 
@@ -245,7 +245,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.6F;
+            this.body.offsetY = -0.35F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);
