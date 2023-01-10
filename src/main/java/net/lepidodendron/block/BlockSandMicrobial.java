@@ -135,7 +135,7 @@ public class BlockSandMicrobial extends ElementsLepidodendronMod.ModElement {
 										&& worldIn.getLightFromNeighbors(blockpos.up()) >= 4 && iblockstate.getLightOpacity(worldIn, pos.up()) <= 2)
 								)
 							{
-								worldIn.setBlockState(blockpos, BlockPrehistoricGroundSand.block.getDefaultState());
+								worldIn.setBlockState(blockpos, BlockSandMicrobial.block.getDefaultState());
 							}
 						}
 					}
