@@ -215,8 +215,8 @@ public class ModelAspidorhynchus extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
         this.Root.rotateAngleY = (float) Math.toRadians(90);
-        this.Root.offsetX = -0.13F;
-        this.Root.offsetY = -0.19F;
+        this.Root.offsetX = -0.06F;
+        this.Root.offsetY = -0.2F;
         this.Root.offsetZ = 0.07F;
         this.Root.render(0.01F);
         //GlStateManager.enableCull();

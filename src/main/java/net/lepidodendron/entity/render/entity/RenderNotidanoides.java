@@ -16,7 +16,7 @@ public class RenderNotidanoides extends RenderLiving<EntityPrehistoricFloraNotid
     }
 
     public static float getScaler() {
-        return 1.00F;
+        return 0.9F;
     }
 
     @Override

@@ -186,8 +186,8 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.body4.rotateAngleX = (float) Math.toRadians(7.5);
         this.body5.rotateAngleX = (float) Math.toRadians(10);
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
-        this.body.offsetX = -0.16F;
-        this.body.offsetY = -0.14F;
+        this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.22F;
         this.body.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
@@ -245,7 +245,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.6F;
+            this.body.offsetY = -0.35F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

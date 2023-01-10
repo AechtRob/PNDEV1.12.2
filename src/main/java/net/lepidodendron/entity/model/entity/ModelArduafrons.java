@@ -199,7 +199,8 @@ public class ModelArduafrons extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.Arduafrons.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
-        this.Arduafrons.offsetY = -0.02F;
+        this.Arduafrons.offsetY = -0.13F;
+        this.Arduafrons.offsetX = -0.06F;
         this.Arduafrons.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();

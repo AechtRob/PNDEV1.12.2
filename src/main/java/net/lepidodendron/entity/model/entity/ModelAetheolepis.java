@@ -201,7 +201,8 @@ public class ModelAetheolepis extends AdvancedModelBase {
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         this.main.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
-        this.main.offsetY = -0.02F;
+        this.main.offsetY = -0.15F;
+        this.main.offsetX = -0.04F;
         this.main.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
