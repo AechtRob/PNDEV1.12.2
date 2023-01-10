@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import net.lepidodendron.util.*;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
@@ -94,7 +95,8 @@ public class LepidodendronFogSubscribers {
 			GameSettings settings = Minecraft.getMinecraft().gameSettings;
 			int distance = 0;
 			if (ranges.length > 0) {
-				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length - 1)];
+				//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length - 1)];
+				distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
 			}
 
 			int divider = 0;
@@ -174,7 +176,8 @@ public class LepidodendronFogSubscribers {
 							int distance = 0;
 							if (ranges.length > 0)
 							{
-								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
+								//distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, ranges.length-1)];
+								distance = ranges[MathHelper.clamp(settings.renderDistanceChunks, 0, 8)];
 							}
 							int divider = 0;
 							for (int x = -distance; x <= distance; ++x)
@@ -249,6 +252,20 @@ public class LepidodendronFogSubscribers {
 			Vec3d fog = new Vec3d(r, g, b);
 			//System.out.println("Fog: "+fog.x);
 			return fog;
+		}
+
+		else if (biome instanceof BiomeCambrian) {
+			if (((BiomeCambrian)biome).getBiomeType() == EnumBiomeTypeCambrian.Dusty) {
+				r = 255D / 255D;
+				g = 252D / 255D;
+				b = 166D / 255D;
+				r *= f2 * 0.94F + 0.06F;
+				g *= f2 * 0.94F + 0.06F;
+				b *= f2 * 0.91F + 0.09F;
+				Vec3d fog = new Vec3d(r, g, b);
+				//System.out.println("Fog: "+fog.x);
+				return fog;
+			}
 		}
 
 		else if (biome instanceof BiomePrecambrian) {
@@ -345,7 +362,6 @@ public class LepidodendronFogSubscribers {
 			}
 		}
 
-
 		r = worldFog.x;
 		g = worldFog.y;
 		b = worldFog.z;
@@ -367,9 +383,24 @@ public class LepidodendronFogSubscribers {
 			return 150;
 		}
 
+		if (biome instanceof BiomePrecambrian) {
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
+				return 150;
+			}
+			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
+				return 200;
+			}
+		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_desert")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ice_ocean")) {
 			return 130;
+		}
+
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Dusty) {
+				return 120;
+			}
 		}
 
 		if (biome instanceof BiomePermian) {
@@ -390,16 +421,6 @@ public class LepidodendronFogSubscribers {
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Redwood) {
 				return 150;
-			}
-		}
-		if (biome instanceof BiomePrecambrian) {
-			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Archean) {
-				return 150;
-			}
-		}
-		if (biome instanceof BiomePrecambrian) {
-			if (((BiomePrecambrian)biome).getBiomeType() == EnumBiomeTypePrecambrian.Hadean) {
-				return 200;
 			}
 		}
 
