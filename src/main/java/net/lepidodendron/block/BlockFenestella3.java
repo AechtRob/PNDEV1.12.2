@@ -129,6 +129,9 @@ public class BlockFenestella3 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 		)
 			biomeCriteria = true;
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+		)
+			biomeCriteria = false;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
@@ -174,6 +177,10 @@ public class BlockFenestella3 extends ElementsLepidodendronMod.ModElement {
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))
 		) {
 			multiplier = 2;
+		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bryozoan_reef")
+		) {
+			multiplier = 12;
 		}
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)

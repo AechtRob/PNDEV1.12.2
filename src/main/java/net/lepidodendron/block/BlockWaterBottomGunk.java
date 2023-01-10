@@ -6,7 +6,9 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -91,8 +93,8 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genUnderwaterGunkOverrideBiomes))
 			biomeCriteria = true;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician
-				|| dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimOrdovician)
+				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 				|| (dimID == LepidodendronConfig.dimCambrian)
 				|| (dimID == LepidodendronConfig.dimPrecambrian)
@@ -100,6 +102,17 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 				|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
 			biomeCriteria = false;
+		}
+
+		if (biome instanceof BiomeOrdovician)
+		{
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
 
 		if (biome instanceof BiomeTriassic)
@@ -119,6 +132,10 @@ public class BlockWaterBottomGunk extends ElementsLepidodendronMod.ModElement {
 		if ((dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 52;
+		}
+		if ((dimID == LepidodendronConfig.dimOrdovician)
+		) {
+			multiplier = 18;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

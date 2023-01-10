@@ -15,6 +15,10 @@ public class RenderNotidanoides extends RenderLiving<EntityPrehistoricFloraNotid
         super(mgr, new ModelNotidanoides(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 1.00F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraNotidanoides entity) {
         return RenderNotidanoides.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderNotidanoides extends RenderLiving<EntityPrehistoricFloraNotid
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraNotidanoides entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

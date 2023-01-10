@@ -130,9 +130,12 @@ public class BlockPiledAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 		) {
 			multiplier = 24;
+
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+			)
+				multiplier = 48;
 		}
 
 		for (int i = 0; i < (int) 10 * multiplier; i++) {

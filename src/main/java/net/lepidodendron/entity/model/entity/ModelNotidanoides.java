@@ -171,7 +171,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.5F);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -204,7 +204,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 0.7F;
+        //this.body.offsetY = 0.7F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.tail};
 

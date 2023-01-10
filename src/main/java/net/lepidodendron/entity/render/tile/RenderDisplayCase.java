@@ -31,6 +31,8 @@ import javax.annotation.Nullable;
 
 public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCase.TileEntityDisplayCase> {
 
+    public final float scaler = 6.0F;
+
     public static final PropertyDirection FACING = BlockDirectional.FACING;
 
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");

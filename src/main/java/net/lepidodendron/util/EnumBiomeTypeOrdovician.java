@@ -5,8 +5,14 @@ import net.minecraft.util.IStringSerializable;
 public enum EnumBiomeTypeOrdovician implements IStringSerializable {
 
     BarrenLand("barren_land"),
+    FrozenLand("frozen_land"),
+    Bog("bog"),
+    Estuary("estuary"),
     Ocean("ocean"),
-    Bog("bog")
+    Sponge("sponge"),
+    Algae("algae"),
+    Bryozoan("bryozoan"),
+    FrozenOcean("frozen_ocean")
     ;
 
     private final String name;

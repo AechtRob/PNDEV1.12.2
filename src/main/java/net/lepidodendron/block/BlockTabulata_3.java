@@ -131,6 +131,8 @@ public class BlockTabulata_3 extends ElementsLepidodendronMod.ModElement {
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_algal_reef")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_bryozoan_reef")
 		)
 			biomeCriteria = false;
 
