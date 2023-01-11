@@ -293,7 +293,15 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eryon", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_aspidorhynchus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_macromesodon", "inventory"),
-				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_notidanoides", "inventory")
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_notidanoides", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_bundenbachiellus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_dunyu", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_lasanius", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_eugaleaspis", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_pituriaspis", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_neeyambaspis", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_sphooceras", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/egg_prehistoric_flora_ivoites", "inventory")
 
 		);
 

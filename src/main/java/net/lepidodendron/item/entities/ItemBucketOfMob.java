@@ -71,7 +71,6 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				//new ModelResourceLocation("lepidodendron:entities/micromitra_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/nagini_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/nautilus_bucket", "inventory"),
-				//new ModelResourceLocation("lepidodendron:entities/paraceraurus_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/potanichthys_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/psychopyge_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/rhenocystis_bucket", "inventory"),
@@ -223,7 +222,6 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/ericixerxes_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/eryops_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/eugaleaspis_bucket", "inventory"),
-				//new ModelResourceLocation("lepidodendron:entities/eunotosaurus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/eurypterus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/eusthenopteron_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/fadenia_carboniferous_bucket", "inventory"),
@@ -293,7 +291,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/laccognathus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/laminacaris_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/lanceaspis_bucket", "inventory"),
-				//new ModelResourceLocation("lepidodendron:entities/lasanius_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/lasanius_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/lebachacanthus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/limnoscelis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/limulid_bucket", "inventory"),
@@ -380,7 +378,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/pholiderpeton_bucket", "inventory"),
 				//new ModelResourceLocation("lepidodendron:entities/phyllolepis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/pikaia_bucket", "inventory"),
-				//new ModelResourceLocation("lepidodendron:entities/pituriaspis_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/pituriaspis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/placodus_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/platycaraspis_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/platyhystrix_bucket", "inventory"),
@@ -423,7 +421,7 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/sidneyia_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/skeemella_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/spathicephalus_bucket", "inventory"),
-				//new ModelResourceLocation("lepidodendron:entities/sphooceras_bucket", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/sphooceras_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/spiniplatyceras_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/spriggina_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/squatinactis_bucket", "inventory"),
@@ -484,6 +482,8 @@ public class ItemBucketOfMob extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:entities/eryon_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/macromesodon_bucket", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/ophthalmosaurus_bucket", "inventory"),
+
+				new ModelResourceLocation("lepidodendron:entities/eastmanosteus_bucket", "inventory"),
 
 
 
