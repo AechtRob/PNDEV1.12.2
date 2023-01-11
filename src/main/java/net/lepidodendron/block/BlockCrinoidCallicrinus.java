@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -95,7 +97,7 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimCrinoid)) {
 			dimensionCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimSilurian
+		if (dimID == LepidodendronConfig.dimSilurian || dimID == LepidodendronConfig.dimOrdovician
 		) {
 			dimensionCriteria = true;
 		}
@@ -118,6 +120,19 @@ public class BlockCrinoidCallicrinus extends ElementsLepidodendronMod.ModElement
 		) {
 			biomeCriteria = true;
 		}
+
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;

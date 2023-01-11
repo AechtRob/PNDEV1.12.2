@@ -6,12 +6,10 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeJurassic;
-import net.lepidodendron.util.EnumBiomeTypePermian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -109,6 +107,21 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		}
 
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef")) {
 			biomeCriteria = false;
 		}
@@ -157,13 +170,16 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimTriassic)
 		) {
 			multiplier = 2;
 		}
-
+		if (dimID == LepidodendronConfig.dimOrdovician)
+		{
+			multiplier = 4;
+		}
 		if ((dimID == LepidodendronConfig.dimCarboniferous))
 		{
 			multiplier = 5;
@@ -171,6 +187,8 @@ public class BlockRedLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
 		)
 			multiplier = 24;
 

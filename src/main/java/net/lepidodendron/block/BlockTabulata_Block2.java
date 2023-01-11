@@ -127,6 +127,8 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
@@ -550,7 +552,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Tabulate Coral");
-				tooltip.add("Periods: Ordovician - Silurian - Devonian - Carboniferous - Permian");
+				tooltip.add("Periods: [Ordovician -] Silurian - Devonian - Carboniferous - Permian");
 			}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

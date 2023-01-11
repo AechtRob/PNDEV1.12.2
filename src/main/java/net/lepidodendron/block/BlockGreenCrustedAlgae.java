@@ -110,7 +110,7 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 				|| (dimID == LepidodendronConfig.dimJurassic)
 		) {
@@ -121,6 +121,10 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 		{
 			multiplier = 3;
 		}
+		if (dimID == LepidodendronConfig.dimOrdovician)
+		{
+			multiplier = 4;
+		}
 		if ((dimID == LepidodendronConfig.dimCarboniferous))
 		{
 			multiplier = 5;
@@ -128,6 +132,8 @@ public class BlockGreenCrustedAlgae extends ElementsLepidodendronMod.ModElement 
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
 		)
 			multiplier = 24;
 

@@ -102,6 +102,9 @@ public class BlockCystoidPseudocrinites extends ElementsLepidodendronMod.ModElem
 		if (dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = true;
 		}
+		if (dimID == LepidodendronConfig.dimOrdovician) {
+			biomeCriteria = false;
+		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;

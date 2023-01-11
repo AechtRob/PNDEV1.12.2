@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -111,20 +113,37 @@ public class BlockDendrograptus extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimOrdovician
-		)
-			biomeCriteria = true;
+
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+				|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;
 		if (!biomeCriteria)
 			return;
 
+		int multiplier = 1;
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae) {
+				multiplier = 12;
+			}
+		}
+
 		int minWaterDepth = 2;
 		int maxWaterDepth = 25;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
-		for (int i = 0; i < (12); i++) {
+		for (int i = 0; i < (12 * multiplier); i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;

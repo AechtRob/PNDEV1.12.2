@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -99,9 +101,19 @@ public class BlockCystoidEchinosphaerites extends ElementsLepidodendronMod.ModEl
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimOrdovician) {
-			biomeCriteria = true;
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
 		)
 			biomeCriteria = false;

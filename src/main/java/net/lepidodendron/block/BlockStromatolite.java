@@ -6,8 +6,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
+import net.lepidodendron.util.EnumBiomeTypeCambrian;
+import net.lepidodendron.util.EnumBiomeTypeOrdovician;
 import net.lepidodendron.util.EnumBiomeTypePrecambrian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -98,9 +102,34 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) {
 			biomeCriteria = true;
 		}
-		if (dimID == LepidodendronConfig.dimCambrian) {
-			biomeCriteria = true;
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary
+			) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
+
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
+			) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 
 		if (biome instanceof BiomePrecambrian) {
 			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;

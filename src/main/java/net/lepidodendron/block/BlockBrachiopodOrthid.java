@@ -6,13 +6,11 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.EnumBiomeTypeCambrian;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -138,6 +136,21 @@ public class BlockBrachiopodOrthid extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimCambrian || dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
 		)
 			biomeCriteria = true;
+
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 		if (biome instanceof BiomeCambrian) {
 			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
 			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean

@@ -10,6 +10,7 @@ import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
+import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
@@ -105,6 +106,21 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		}
 
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
@@ -164,10 +180,14 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimDevonian)
-				|| (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
+				|| (dimID == LepidodendronConfig.dimSilurian)
 				|| (dimID == LepidodendronConfig.dimPermian)
 		) {
 			multiplier = 2;
+		}
+		if (dimID == LepidodendronConfig.dimOrdovician)
+		{
+			multiplier = 4;
 		}
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
 		) {
@@ -176,6 +196,8 @@ public class BlockGreenCodiumAlgae extends ElementsLepidodendronMod.ModElement {
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
 		)
 			multiplier = 24;
 
