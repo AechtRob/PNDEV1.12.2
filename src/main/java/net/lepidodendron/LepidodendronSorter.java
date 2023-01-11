@@ -3675,4 +3675,10 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 3671;
     public static final int advancement_placeholder = 3672;
 
+    public static final int lasanius_raw = 3673;
+    public static final int lasanius_cooked = 3674;
+    public static final int eastmanosteus_raw = 3675;
+    public static final int eastmanosteus_cooked = 3676;
+
+    public static final int eggs_ivoites = 3677;
 }

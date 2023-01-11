@@ -913,6 +913,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_AETHEOLEPIS = new CustomTrigger("pf_book_aetheolepis");
     public static final CustomTrigger CLICK_APHNELEPIS = new CustomTrigger("pf_book_aphnelepis");
     public static final CustomTrigger CLICK_ASPIDORHYNCHUS = new CustomTrigger("pf_book_aspidorhynchus");
+
+    public static final CustomTrigger CLICK_EASTMANOSTEUS = new CustomTrigger("pf_book_eastmanosteus");
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
 
@@ -1819,7 +1821,8 @@ public class ModTriggers
             CLICK_ASPIDORHYNCHUS,
             CLICK_ARDUAFRONS,
             CLICK_AETHEOLEPIS,
-            CLICK_APHNELEPIS
+            CLICK_APHNELEPIS,
+            CLICK_EASTMANOSTEUS
 
 
 

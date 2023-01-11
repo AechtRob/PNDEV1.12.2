@@ -3387,8 +3387,8 @@ public class ModelBalhuticaris extends AdvancedModelBase {
             float degreeFin = 0.22F * feedModifier;
             this.chainWave(BodyF, speed * feedModifier, tailVdegree, -3, f2, 0.4F);
             this.chainSwing(BodyF, speed*  feedModifier, tailHdegree, -2.5, f2, 0.5F);
-            this.chainFlap(LegsL, speed*  feedModifier, 0.2F, -2.5, f2, 0.5F);
-            this.chainFlap(LegsR, speed*  feedModifier, -0.2F, -2.5, f2, 0.5F);
+            this.chainFlap(LegsL, speed*  feedModifier, 0.3F, -2.5, f2, 0.5F);
+            this.chainFlap(LegsR, speed*  feedModifier, -0.3F, -2.5, f2, 0.5F);
 
 
             if (!e.isInWater()) {

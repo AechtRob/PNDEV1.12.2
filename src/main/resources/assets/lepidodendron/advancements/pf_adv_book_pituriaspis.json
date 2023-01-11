@@ -1,0 +1,19 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:pituriaspis_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_pituriaspis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_pituriaspis.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_pituriaspis"
+		}
+	}
+}
