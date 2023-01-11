@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemMegalosaurusRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:megalosaurus_raw")
+public class ItemEastmanosteusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:eastmanosteus_raw")
 	public static final Item block = null;
-	public ItemMegalosaurusRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.megalosaurus_raw);
+	public ItemEastmanosteusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.eastmanosteus_raw);
 	}
 
 	@Override
@@ -30,23 +30,24 @@ public class ItemMegalosaurusRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/megalosaurus_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/eastmanosteus_raw", "inventory"));
 	}
-
+	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_megalosaurus", ItemMegalosaurusRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemMegalosaurusRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemMegalosaurusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_eastmanosteus", ItemEastmanosteusRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemEastmanosteusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemEastmanosteusRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemEastmanosteusRaw.block);
 	}
-
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_megalosaurus_raw");
-			setRegistryName("megalosaurus_raw");
+			setTranslationKey("pf_eastmanosteus_raw");
+			setRegistryName("eastmanosteus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
+
 	}
 }

@@ -1,25 +1,26 @@
 
 package net.lepidodendron.item.entities;
 
-
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemMegalosaurusCooked extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:megalosaurus_cooked")
+public class ItemDunyuCooked extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:dunyu_cooked")
 	public static final Item block = null;
-	public ItemMegalosaurusCooked(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.megalosaurus_cooked);
+	public ItemDunyuCooked(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.dunyu_cooked);
 	}
 
 	@Override
@@ -30,18 +31,25 @@ public class ItemMegalosaurusCooked extends ElementsLepidodendronMod.ModElement 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/megalosaurus_cooked", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/dunyu_cooked", "inventory"));
+	}
+
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		OreDictionary.registerOre("listAllfishcooked", ItemDunyuCooked.block);
+		OreDictionary.registerOre("foodCooked", ItemDunyuCooked.block);
+		OreDictionary.registerOre("foodMeat", ItemDunyuCooked.block);
+		OreDictionary.registerOre("listAllmeatcooked", ItemDunyuCooked.block);
 	}
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
-			super(8, 0.8f, false);
-			setTranslationKey("pf_megalosaurus_cooked");
-			setRegistryName("megalosaurus_cooked");
+			super(5, 0.7f, false);
+			setTranslationKey("pf_dunyu_cooked");
+			setRegistryName("dunyu_cooked");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
 
 	}
 }
-
-
