@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:sandstone_slab_paleoproterozoic"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:sandstone_slab_paleoproterozoic_top"
+    }
+  }
+}
