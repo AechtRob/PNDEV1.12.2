@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "lepidodendron:blocks/sandstone_paleoproterozoic_top",
+    "top": "lepidodendron:blocks/sandstone_paleoproterozoic_top",
+    "side": "lepidodendron:blocks/sandstone_paleoproterozoic"
+  }
+}
