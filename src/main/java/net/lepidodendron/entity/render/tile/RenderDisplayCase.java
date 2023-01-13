@@ -5,10 +5,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -28,6 +30,7 @@ import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 
 public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCase.TileEntityDisplayCase> {
 
@@ -296,6 +299,9 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelYohoia modelYohoia;
     private static final ResourceLocation TEXTURE_YUNNANOZOON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunnanozoon.png");
     private final ModelYunnanozoon modelYunnanozoon;
+
+    private static final ResourceLocation TEXTURE_ERYON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryon.png");
+
 
     public RenderDisplayCase() {
         this.modelGerarus = new ModelGerarus();
@@ -4954,6 +4960,22 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 this.bindTexture(TEXTURE_YUNNANOZOON);
                                 modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+
+                            else if (classEntity == EntityPrehistoricFloraEryon.class) {
+                                double offset = 0.18;
+                                try {
+                                    itemRender = renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                        TEXTURE_ERYON, RenderEryon.getScaler(), new ModelEryon(), offset);
+                                } catch (Exception e) {
+                                    itemRender = true;
+                                }
+                            }
+
+
+
+
+
+
                             else {
                                 itemRender = true;
                             }
@@ -5056,4 +5078,65 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         }
         return entityClass;
     }
+
+    public boolean renderTaxidermy(EnumFacing facing, float x, float y, float z,
+           float currentRotation,
+           ResourceLocation TEXTURE,
+           float scalerModel,
+           ModelBase model,
+           double offset
+    ) {
+        if (facing == EnumFacing.UP) {
+            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+        }
+        if (facing == EnumFacing.DOWN) {
+            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+        }
+        if (facing == EnumFacing.NORTH) {
+            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(90, 1F, 0F, 0F);
+        }
+        if (facing == EnumFacing.SOUTH) {
+            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(270, 1F, 0F, 0F);
+        }
+        if (facing == EnumFacing.WEST) {
+            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(90, 0F, 0F, 1F);
+        }
+        if (facing == EnumFacing.EAST) {
+            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(270, 0F, 0F, 1F);
+        }
+        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+        GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+        this.bindTexture(TEXTURE);
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStatic");
+        if (renderMethod != null) {
+            try {
+                renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+            } catch (Exception e) {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Nullable
+    public Method testAndGetMethod(Class clazz, String methodname) {
+        Method methodToFind = null;
+        try {
+            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+        } catch (NoSuchMethodException | SecurityException e) {
+        }
+        return methodToFind;
+    }
+
 }

@@ -297,9 +297,22 @@ public class ModelXinpusaurus extends AdvancedModelBaseExtended {
         this.Tail.rotateAngleX = (float) Math.toRadians(7.5);
         this.Tail2.rotateAngleX = (float) Math.toRadians(10);
         this.Jaw.rotateAngleX = (float) Math.toRadians(25);
-        this.Xinpusaurus.render(0.01F);
         this.Xinpusaurus.offsetY = -0.2F;
-        this.Xinpusaurus.offsetX = -0.15F;
+        this.Xinpusaurus.offsetX = 0.0F;
+        this.Xinpusaurus.render(0.01F);
+    }
+
+    public void renderStaticSuspended(float f) {
+        this.Xinpusaurus.rotateAngleY = (float) Math.toRadians(90);
+        this.Xinpusaurus.rotateAngleX = (float) Math.toRadians(-15);
+        this.Chest.rotateAngleX = (float) Math.toRadians(5);
+        this.Hip.rotateAngleX = (float) Math.toRadians(7.5);
+        this.Tail.rotateAngleX = (float) Math.toRadians(7.5);
+        this.Tail2.rotateAngleX = (float) Math.toRadians(10);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(25);
+        this.Xinpusaurus.offsetY = 0F;
+        this.Xinpusaurus.offsetX = 0F;
+        this.Xinpusaurus.render(0.01F);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

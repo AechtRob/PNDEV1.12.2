@@ -9,6 +9,7 @@ import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -26,8 +27,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.lwjgl.opengl.GL11;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 
 public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDisplayWallMount.TileEntityDisplayWallMount> {
 
@@ -432,7 +435,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_XENACANTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenacanthus.png");
     private final ModelXenacanthus modelXenacanthus;
     private static final ResourceLocation TEXTURE_XINPUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus.png");
-    private final ModelXinpusaurus modelXinpusaurus;
     private static final ResourceLocation TEXTURE_YUNGUISAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
     private final ModelYunguisaurus modelYunguisaurus;
 
@@ -630,35 +632,44 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelVarialepis = new ModelVarialepis();
         this.modelVivaxosaurus = new ModelVivaxosaurus();
         this.modelXenacanthus = new ModelXenacanthus();
-        this.modelXinpusaurus = new ModelXinpusaurus();
         this.modelYunguisaurus = new ModelYunguisaurus();
     }
 
     public void setRotations(EnumFacing facing, double x, double y, double z, double voffset, double offset, double hoffset, float currentRotation) {
-        if (facing == EnumFacing.UP ||facing ==EnumFacing.DOWN ||facing ==EnumFacing.NORTH)
+        if (facing == EnumFacing.UP) {
+
+        }
+        else if (facing == EnumFacing.DOWN) {
+            GlStateManager.translate(x + 0.5, y + 0.5, z + 0.5);
+            GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+        }
+        else if (facing == EnumFacing.NORTH)
         {
             GlStateManager.translate(x + 0.5 - hoffset, y + 0.5 + voffset, z + (1 - offset));
             GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
         }
-        if (facing == EnumFacing.SOUTH)
+        else if (facing == EnumFacing.SOUTH)
         {
             GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(180, 0F, 1F, 0F);
+            GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
         }
-        if (facing == EnumFacing.WEST)
+        else if (facing == EnumFacing.WEST)
         {
             GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(270, 0F, 1F, 0F);
+            GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
         }
-        if (facing == EnumFacing.EAST)
+        else if (facing == EnumFacing.EAST)
         {
             GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
             GlStateManager.rotate(180, 0F, 0F, 1F);
             GlStateManager.rotate(90, 0F, 1F, 0F);
+            GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
         }
-        GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
     }
 
     @Override
@@ -5806,7 +5817,21 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_XENACANTHUS);
                                 modelXenacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
-                                itemRender = !renderXinpusaurus(facing, currentRotation, x, y, z);
+                                double offsetWall = 0.05;
+                                double voffset = 0;
+                                double hoffset = 0;
+                                double frontverticallinedepth = 0.8;
+                                double backverticallinedepth = 0.9;
+                                double frontlineoffset = 0.2;
+                                double backlineoffset = 0.2;
+                                try {
+                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                        TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), new ModelXinpusaurus(),
+                                        offsetWall, voffset, hoffset, frontverticallinedepth, backverticallinedepth, frontlineoffset, backlineoffset);
+                                }
+                                catch (Exception e) {
+                                    itemRender = true;
+                                }
                             } else if (classEntity == EntityPrehistoricFloraYunguisaurus.class) {
                                 double offset = -0.3;
                                 double voffset = 0;
@@ -5912,6 +5937,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         modelAetheolepis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
         return true;
     }
+
     public boolean renderArduafrons(EnumFacing facing, float currentRotation, double x, double y, double z) {
         if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
             return false;
@@ -6074,21 +6100,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         return true;
     }
 
-    public boolean renderXinpusaurus(EnumFacing facing, float currentRotation, double x, double y, double z) {
-        if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
-            return false;
-        }
-        double offset = 0.05;
-        double voffset = 0;
-        double hoffset = 0;
-        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
-        GlStateManager.rotate(90, 0, 0, 1);
-        float scalerModel = RenderXinpusaurus.getScaler();
-        GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
-        this.bindTexture(TEXTURE_XINPUSAURUS);
-        modelXinpusaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-        return true;
-    }
 
     @Nullable
     public Class getEntityFromNBT(ItemStack stack) {
@@ -6113,5 +6124,91 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             return null;
         }
         return entityClass;
+    }
+
+    public boolean renderTaxidermy(EnumFacing facing, float x, float y, float z,
+           float currentRotation,
+           ResourceLocation TEXTURE,
+           float scalerModel,
+           ModelBase model,
+           double offset,
+           double voffset,
+           double hoffset,
+           double frontverticallinedepth,
+           double backverticallinedepth,
+           double frontlineoffset,
+           double backlineoffset
+    ) {
+        if (facing == EnumFacing.DOWN) {
+            GL11.glPushMatrix();
+            GL11.glLineWidth(5);
+            GL11.glDisable(GL11.GL_TEXTURE_2D);
+            GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+            GL11.glBegin(GL11.GL_LINES);
+            GL11.glVertex3f((float) x + 0.5F + (float) frontlineoffset, (float) y + 1, (float) z + 0.5F);
+            GL11.glVertex3f((float) x + 0.5F + (float) frontlineoffset, (float) y + 1 - (float) frontverticallinedepth, (float) z + 0.5F);
+            GL11.glEnd();
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            GL11.glPopMatrix();
+
+            GL11.glPushMatrix();
+            GL11.glLineWidth(5);
+            //GL11.glDisable(GL11.GL_LIGHTING);
+            GL11.glDisable(GL11.GL_TEXTURE_2D);
+            GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+            GL11.glBegin(GL11.GL_LINES);
+            GL11.glVertex3f((float) x + 0.5F - (float) backlineoffset, (float) y + 1, (float) z + 0.5F);
+            GL11.glVertex3f((float) x + 0.5F - (float) backlineoffset, (float) y + 1 - (float) backverticallinedepth, (float) z + 0.5F);
+            GL11.glEnd();
+            GL11.glEnable(GL11.GL_TEXTURE_2D);
+            GL11.glPopMatrix();
+
+            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+            GlStateManager.rotate(180, 0, 0, 1);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
+            GlStateManager.enableLighting();
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended");
+            if (renderMethod != null) {
+                try {
+                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                }
+                catch (Exception e) {return false;}
+                return true;
+            } else {
+                return false;
+            }
+        }
+        else if (facing == EnumFacing.UP) {
+            return false;
+        }
+        else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
+            setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
+            GlStateManager.rotate(90, 0, 0, 1);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStatic");
+            if (renderMethod != null) {
+                try {
+                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                } catch (Exception e) {
+                    return false;
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    @Nullable
+    public Method testAndGetMethod(Class clazz, String methodname) {
+        Method methodToFind = null;
+        try {
+            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+        } catch (NoSuchMethodException | SecurityException e) {
+        }
+        return methodToFind;
     }
 }
