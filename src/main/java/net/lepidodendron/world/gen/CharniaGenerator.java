@@ -104,7 +104,15 @@ public class CharniaGenerator extends WorldGenerator
 
 		int yTop = ChunkGenSpawner.getTopSolidBlock(position, worldIn).getY();
 
-		int multiplier = 1;
+		double multiplier = 1;
+
+		double edicarandensity = LepidodendronConfig.genEdiacaran;
+		if (edicarandensity < 0.01) {
+			edicarandensity = 0.01;
+		}
+		if (edicarandensity > 1.0) {
+			edicarandensity = 1.0;
+		}
 
 		if (BlockArkarua.isPrecambrianUpdated()) {
 			//Very deep spawns:
@@ -139,7 +147,7 @@ public class CharniaGenerator extends WorldGenerator
 					)
 				)
 			{
-				multiplier = 18;
+				multiplier = (double)18.0 * edicarandensity;
 			}
 			//Shallow spawns:
 			else if (((!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest"))
@@ -150,7 +158,7 @@ public class CharniaGenerator extends WorldGenerator
 					)
 				)
 			{
-				multiplier = 22;
+				multiplier = (double)22.0 * edicarandensity;
 			}
 			else if (((!worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest"))
 					&& yTop > 75)
@@ -160,7 +168,7 @@ public class CharniaGenerator extends WorldGenerator
 					)
 				)
 			{
-				multiplier = 12;
+				multiplier = (double)12.0 * edicarandensity;
 			}
 			//Some to be a little deeper
 			else if (BlockArkarua.isPrecambrianUpdated()
@@ -214,7 +222,7 @@ public class CharniaGenerator extends WorldGenerator
 			multiplier = 64;
 		}
 
-		for (int i = 0; i < 4 * multiplier; ++i)
+		for (int i = 0; i < (int)Math.max(1, (int)(4.0D * multiplier)); ++i)
 		{
 
 			if (rand.nextInt(64) == 0) {

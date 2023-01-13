@@ -29,6 +29,7 @@ public class LepidodendronConfig {
 
     public static boolean genFossil = true;
     public static boolean genStone = true;
+    public static double genEdiacaran = 1.0D;
     public static double junkFossil = 12.5;
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
@@ -903,6 +904,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "renderEdiacaranLighting", renderEdiacaranLighting);
         prop.setComment("Set to false to switch off some of the light and shadowing effects in the Ediacaran dimension (useful for low performance graphics cards or for conflicts with Optifine). [default: true]");
         renderEdiacaranLighting = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "genEdiacaran", genEdiacaran);
+        prop.setComment("Set to a lower value to reduce the amount of animated entities in the Ediacaran Frondose Forest, in case of fps problems with the default (0.01 to 1.0). [default: 1.0]");
+        genEdiacaran = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "renderCustomSkies", renderCustomSkies);
