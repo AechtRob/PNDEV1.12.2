@@ -7,6 +7,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -50,7 +51,7 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
-		if (dimID == 0
+		if ((dimID == 0 && LepidodendronConfig.genStone)
 				|| dimID == LepidodendronConfig.dimPrecambrian
 				|| dimID == LepidodendronConfig.dimCambrian
 				|| dimID == LepidodendronConfig.dimOrdovician
@@ -83,12 +84,12 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
-			super(Material.ROCK);
+			super(Material.ROCK, MapColor.RED);
 			setTranslationKey("pf_porphyry");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 0);
-			setHardness(1.5F);
-			setResistance(6.0F);
+			setHardness(2.0F);
+			setResistance(6F);
 			setLightLevel(0F);
 			setLightOpacity(255);
 			setCreativeTab(TabLepidodendronMisc.tab);

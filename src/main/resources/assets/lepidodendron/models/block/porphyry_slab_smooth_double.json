@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/porphyry_smooth",
+    "particle": "lepidodendron:blocks/porphyry_smooth"
+  }
+}

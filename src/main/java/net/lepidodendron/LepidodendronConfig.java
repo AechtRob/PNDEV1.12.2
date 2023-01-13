@@ -28,6 +28,7 @@ public class LepidodendronConfig {
     public static boolean sulphuricAcidInfinite = false;
 
     public static boolean genFossil = true;
+    public static boolean genStone = true;
     public static double junkFossil = 12.5;
     public static double playerSleepPercent = 100.0;
     public static boolean playerSleep = true;
@@ -825,6 +826,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "genFossil", genFossil);
         prop.setComment("Set to false to disable the world-gen of this mod's fossil blocks. [default: true]");
         genFossil = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "genStone", genStone);
+        prop.setComment("Set to false to disable the world-gen of this mod's stone blocks in the overworld. [default: true]");
+        genStone = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "junkFossil", junkFossil);

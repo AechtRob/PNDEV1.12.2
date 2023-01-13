@@ -1,0 +1,26 @@
+{
+  "group": "lepidodendron",
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": [
+      {
+        "item": "lepidodendron:sandstone_paleoproterozoic"
+      },
+      {
+        "item": "lepidodendron:sandstone_paleoproterozoic_smooth"
+      },
+      {
+        "item": "lepidodendron:sandstone_paleoproterozoic_carved"
+      }
+    ]
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_stairs_paleoproterozoic",
+    "count": 4
+  }
+}

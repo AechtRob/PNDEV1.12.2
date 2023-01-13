@@ -1,0 +1,8 @@
+{
+  "parent": "block/half_slab",
+  "textures": {
+    "bottom": "lepidodendron:blocks/scoria_smooth",
+    "top": "lepidodendron:blocks/scoria_smooth",
+    "side": "lepidodendron:blocks/scoria_smooth"
+  }
+}

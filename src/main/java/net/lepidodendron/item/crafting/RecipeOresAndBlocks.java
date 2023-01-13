@@ -31,9 +31,12 @@ public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickMossy.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockLavaBrickCarved.block, (int) (1)), new ItemStack(BlockLavaBrickCracked.block, (int) (1)), 0.1F);
 
+		GameRegistry.addSmelting(new ItemStack(BlockSandPaleoproterozoic.block, (int) (1)), new ItemStack(Items.IRON_NUGGET, (int) (1)), 0.05F);
+
 		GameRegistry.addSmelting(new ItemStack(BlockSandstoneBlack.block, (int) (1)), new ItemStack(BlockSandstoneBlackSmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockSandstoneWhite.block, (int) (1)), new ItemStack(BlockSandstoneWhiteSmooth.block, (int) (1)), 0.1F);
 		GameRegistry.addSmelting(new ItemStack(BlockSandstonePangaean.block, (int) (1)), new ItemStack(BlockSandstonePangaeanSmooth.block, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockSandstonePaleoproterozoic.block, (int) (1)), new ItemStack(BlockSandstonePaleoproterozoicSmooth.block, (int) (1)), 0.1F);
 
 		GameRegistry.addSmelting(new ItemStack(ItemRedClayBall.block, (int) (1)), new ItemStack(Items.BRICK, (int) (1)), 0.3F);
 
@@ -46,6 +49,8 @@ public class RecipeOresAndBlocks extends ElementsLepidodendronMod.ModElement {
 		GameRegistry.addSmelting(new ItemStack(BlockDriedMud.block, (int) (1)), new ItemStack(BlockBrownstone.block, (int) (1)), 0.15F);
 
 		GameRegistry.addSmelting(new ItemStack(BlockBrownstone.block, (int) (1)), new ItemStack(BlockBrownstoneSmooth.block, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockStoneScoria.block, (int) (1)), new ItemStack(BlockStoneScoriaSmooth.block, (int) (1)), 0.1F);
+		GameRegistry.addSmelting(new ItemStack(BlockStonePorphyry.block, (int) (1)), new ItemStack(BlockStonePorphyrySmooth.block, (int) (1)), 0.1F);
 
 	}
 }

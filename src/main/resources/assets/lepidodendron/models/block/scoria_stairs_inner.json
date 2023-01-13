@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/scoria",
+    "top": "lepidodendron:blocks/scoria",
+    "side": "lepidodendron:blocks/scoria"
+  }
+}

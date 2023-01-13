@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:scoria_slab_smooth_double"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:scoria"
+    },
+    "1": {
+      "item": "lepidodendron:scoria"
+    },
+    "2": {
+      "item": "lepidodendron:scoria"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:scoria_slab",
+    "data": 0,
+    "count": 6
+  }
+}

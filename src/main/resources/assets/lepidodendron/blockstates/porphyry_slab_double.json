@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "variant=default": {
+      "model": "lepidodendron:porphyry_slab_double"
+    }
+  }
+}

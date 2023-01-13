@@ -1,0 +1,27 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01 ",
+    "34 ",
+    "   "
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:sand_paleoproterozoic"
+    },
+    "1": {
+      "item": "lepidodendron:sand_paleoproterozoic"
+    },
+    "3": {
+      "item": "lepidodendron:sand_paleoproterozoic"
+    },
+    "4": {
+      "item": "lepidodendron:sand_paleoproterozoic"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:sandstone_paleoproterozoic",
+    "count": 1
+  }
+}

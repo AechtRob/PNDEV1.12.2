@@ -1,0 +1,33 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:porphyry"
+    },
+    "3": {
+      "item": "lepidodendron:porphyry"
+    },
+    "4": {
+      "item": "lepidodendron:porphyry"
+    },
+    "6": {
+      "item": "lepidodendron:porphyry"
+    },
+    "7": {
+      "item": "lepidodendron:porphyry"
+    },
+    "8": {
+      "item": "lepidodendron:porphyry"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:porphyry_stairs",
+    "count": 4
+  }
+}
