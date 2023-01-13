@@ -9,9 +9,11 @@ import net.lepidodendron.creativetab.TabLepidodendronStatic;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeSilurian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -123,13 +125,21 @@ public class BlockCrinoidCyathocrinus extends ElementsLepidodendronMod.ModElemen
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimSilurian
-		) {
-			biomeCriteria = true;
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;

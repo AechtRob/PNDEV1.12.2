@@ -11,6 +11,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -128,10 +129,6 @@ public class BlockBivalveCream extends ElementsLepidodendronMod.ModElement {
 		if (matchBiome(biome, LepidodendronConfigPlants.genBivalveOverrideBiomes))
 			biomeCriteria = true;
 
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
-
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
 			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
@@ -147,9 +144,19 @@ public class BlockBivalveCream extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (biome instanceof BiomeDevonian)
 		{

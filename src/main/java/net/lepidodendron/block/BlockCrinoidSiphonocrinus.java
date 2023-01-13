@@ -6,6 +6,8 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.util.EnumBiomeTypeSilurian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -114,13 +116,21 @@ public class BlockCrinoidSiphonocrinus extends ElementsLepidodendronMod.ModEleme
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimSilurian
-		) {
-			biomeCriteria = true;
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+
 		if (!biomeCriteria)
 			return;
 

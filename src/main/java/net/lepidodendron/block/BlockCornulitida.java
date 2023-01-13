@@ -120,25 +120,40 @@ public class BlockCornulitida extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimDevonian)
+		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
 		)
 			biomeCriteria = true;
 
 		if (biome instanceof BiomeOrdovician) {
-			BiomeOrdovician biomeO = (BiomeOrdovician) biome;
-			if (biomeO.getBiomeType() != EnumBiomeTypeOrdovician.Ocean) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
 				biomeCriteria = false;
 			}
 		}
 
 		if (biome instanceof BiomeSilurian) {
-			BiomeSilurian biomeS = (BiomeSilurian) biome;
-			if (biomeS.getBiomeType() != EnumBiomeTypeSilurian.Ocean) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
 				biomeCriteria = false;
 			}
 		}
+
 
 		if (biome instanceof BiomeDevonian) {
 			BiomeDevonian biomeD = (BiomeDevonian) biome;

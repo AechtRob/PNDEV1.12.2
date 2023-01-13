@@ -240,9 +240,6 @@ public class BlockLiriodendronFlower extends ElementsLepidodendronMod.ModElement
 		    int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			//if (world.isBlockIndirectlyGettingPowered(new BlockPos(x, y, z)) > 0) {
-			//	} else {
-			//	}
 				{
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("x", x);

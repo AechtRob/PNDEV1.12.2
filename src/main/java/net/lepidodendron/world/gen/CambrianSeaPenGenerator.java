@@ -61,10 +61,16 @@ public class CambrianSeaPenGenerator extends WorldGenerator
 			dimensionCriteria = true;
 		}
 		Biome biome = worldIn.getBiome(position);
+
 		if (biome instanceof BiomeCambrian) {
 			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
 			) {
+				//Pass
+			}
+			else {
 				dimensionCriteria = false;
 			}
 		}

@@ -9,9 +9,11 @@ import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
 import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.EnumBiomeTypeSilurian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -79,7 +81,6 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("staticdnaPNlepidodendron:tabulata_block_2", BlockTabulata_Block2.block);
 	}
 
-
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
 
@@ -102,7 +103,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		if (dimID == LepidodendronConfig.dimDevonian
 				|| dimID == LepidodendronConfig.dimSilurian
 				|| dimID == LepidodendronConfig.dimCarboniferous
-				
+
 		)
 			weight = 100; //Full scale populations in these dims
 
@@ -122,16 +123,21 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genTabulataOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_icebergs")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_shore_frozen")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_beach_frozen")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+
+		if (biome instanceof BiomeSilurian)
+		{
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (biome instanceof BiomePermian)
 		{
@@ -172,7 +178,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		double multiplier = 1;
 		if ((dimID == LepidodendronConfig.dimSilurian)
 		) {
-			multiplier = 4;
+			multiplier = 3;
 		}
 		if ((dimID == LepidodendronConfig.dimDevonian)
 				|| (dimID == LepidodendronConfig.dimCarboniferous)
@@ -181,11 +187,11 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 		}
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
-				) {
+		) {
 			dimWeight = 2;
 		}
 		int minWaterDepth = 2 * dimWeight;
-		int maxWaterDepth = 20;
+		int maxWaterDepth = 15;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
@@ -242,7 +248,7 @@ public class BlockTabulata_Block2 extends ElementsLepidodendronMod.ModElement {
 										|| (world.getBlockState(pos1).getMaterial() == Material.GROUND)
 										|| (world.getBlockState(pos1).getMaterial() == Material.CLAY))
 										&& (world.getBlockState(pos1).getBlockFaceShape(world, pos1, EnumFacing.UP) == BlockFaceShape.SOLID)) {
-									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockTabulata_Block2.BlockCustom.FACING, enumfacing), 2);
+									world.setBlockState(blockpos1, block.getDefaultState().withProperty(BlockTabulata_Block1.BlockCustom.FACING, enumfacing), 2);
 									return true;
 								}
 							}

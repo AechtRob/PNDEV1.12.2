@@ -114,9 +114,10 @@ public class BlockCystoidEchinosphaerites extends ElementsLepidodendronMod.ModEl
 			}
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
+		if (dimID == LepidodendronConfig.dimSilurian){
 			biomeCriteria = false;
+		}
+
 		if (!biomeCriteria)
 			return;
 

@@ -13,6 +13,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -134,9 +135,19 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genBivalveOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimCambrian || dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
+
+		if (biome instanceof BiomeCambrian) {
+			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
+			) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
@@ -153,11 +164,13 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 			}
 		}
 
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
-					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary) {
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
 				biomeCriteria = true;
 			}
 			else {
@@ -165,9 +178,6 @@ public class BlockBrachiopodSpiriferid extends ElementsLepidodendronMod.ModEleme
 			}
 		}
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;

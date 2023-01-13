@@ -5,11 +5,14 @@ import net.minecraft.util.IStringSerializable;
 public enum EnumBiomeTypeSilurian implements IStringSerializable {
 
     BarrenLand("barren_land"),
-    Dusty("dusty_land"),
-    Lush("lush"),
+    Lagoon("lagoon"),
+    LushPatch("lush_patch"),
+    Cooksonia("cooksonia"),
+    Sands("sands"),
     Ocean("ocean"),
     Reef("reef"),
-    Crinoid("crinoid")
+    Crinoid("crinoid"),
+    Coral("coral")
     ;
 
     private final String name;

@@ -129,13 +129,19 @@ public class BlockGogia extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		if (dimID == LepidodendronConfig.dimCambrian
 		)
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
-			) {
-				biomeCriteria = false;
+
+			if (biome instanceof BiomeCambrian) {
+				BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
+				if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+						|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
+						|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
+				) {
+					biomeCriteria = true;
+				}
+				else {
+					biomeCriteria = false;
+				}
 			}
-		}
 		if (!biomeCriteria)
 			return;
 

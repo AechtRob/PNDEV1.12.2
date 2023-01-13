@@ -7,11 +7,11 @@ import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.lepidodendron.util.*;
-import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -103,15 +103,8 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = false;
 		}
 
-		if (biome instanceof BiomeCambrian) {
-			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
-			) {
-				biomeCriteria = false;
-			}
-		}
-		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimDevonian)
+
+		if ((dimID == LepidodendronConfig.dimDevonian)
 				 ) {
 			biomeCriteria = true;
 		}
@@ -124,6 +117,20 @@ public class BlockRedTuftedAlgae extends ElementsLepidodendronMod.ModElement {
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
 					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
 				biomeCriteria = true;
 			}
 			else {

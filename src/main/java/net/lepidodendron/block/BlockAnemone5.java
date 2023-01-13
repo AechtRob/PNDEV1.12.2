@@ -13,6 +13,7 @@ import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.lepidodendron.world.gen.AlgaeGenerator;
 import net.minecraft.block.Block;
@@ -103,16 +104,21 @@ public class BlockAnemone5 extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genAnemoneOverrideBiomes))
 			biomeCriteria = true;
-		if ((dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian)
-				|| (dimID == LepidodendronConfig.dimCambrian)
-				
+
+		if ((dimID == LepidodendronConfig.dimPrecambrian)
 		) {
-			biomeCriteria = true;
+			biomeCriteria = false;
 		}
+
 		if (biome instanceof BiomeCambrian) {
 			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
 			) {
+				biomeCriteria = true;
+			}
+			else {
 				biomeCriteria = false;
 			}
 		}
@@ -131,13 +137,21 @@ public class BlockAnemone5 extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		if ((dimID == LepidodendronConfig.dimPrecambrian)
-		) {
-			biomeCriteria = false;
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;

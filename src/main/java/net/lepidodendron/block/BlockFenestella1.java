@@ -6,14 +6,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
-import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
-import net.lepidodendron.util.EnumBiomeTypeDevonian;
-import net.lepidodendron.util.EnumBiomeTypeOrdovician;
-import net.lepidodendron.util.EnumBiomeTypePermian;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.permian.BiomePermian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -129,9 +127,6 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genFenestellaOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian
-		)
-			biomeCriteria = true;
 
 		if (biome instanceof BiomeOrdovician) {
 			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
@@ -146,9 +141,21 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
-		)
-			biomeCriteria = false;
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
+			}
+		}
+
 		if (biome instanceof BiomePermian)
 		{
 			BiomePermian biomePermian = (BiomePermian) biome;
@@ -198,11 +205,12 @@ public class BlockFenestella1 extends ElementsLepidodendronMod.ModElement {
 		}
 		int dimWeight = 1;
 		if ((dimID == LepidodendronConfig.dimCarboniferous)
-				) {
-			dimWeight = 2; //Allows to generate at deeper seas depths in these dims
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_coral"))
+		{
+			dimWeight = 2;
 		}
 		int minWaterDepth = 2 * dimWeight;
-		int maxWaterDepth = 18;
+		int maxWaterDepth = 18 * dimWeight;
 		int startHeight = world.getSeaLevel() - maxWaterDepth;
 
 		for (int i = 0; i < (12 * multiplier); i++) {

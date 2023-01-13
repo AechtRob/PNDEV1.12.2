@@ -156,13 +156,22 @@ public class AlgaeGenerator extends WorldGenerator
 					}
 
 					//And check that algae do not generate too deep and some other tests:
-					if (algae && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 10)) {
+					if (algae && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 10) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
-					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 30)) {
+					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 30) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
-					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 18)) {
+					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 18) && !worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
+						waterDepthCheckMin = false;
+					}
+					if (algae && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
+						waterDepthCheckMin = false;
+					}
+					if (this.algae == BlockRedAlgaeMat.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
+						waterDepthCheckMin = false;
+					}
+					if (rugosas && this.algae != BlockRugosa5.block && (k + (rand.nextInt(3) - 1)) < (worldIn.getSeaLevel() - 35) && worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")) {
 						waterDepthCheckMin = false;
 					}
 					if (gunk && (k + (rand.nextInt(3) - 1)) > (worldIn.getSeaLevel() - 22)) {

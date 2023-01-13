@@ -126,13 +126,16 @@ public class BlockAllonnia extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genCrinoidOverrideBiomes))
 			biomeCriteria = true;
-		if (dimID == LepidodendronConfig.dimCambrian
-		)
-			biomeCriteria = true;
+
 		if (biome instanceof BiomeCambrian) {
 			BiomeCambrian biomeCambrian = (BiomeCambrian) biome;
-			if (biomeCambrian.getBiomeType() != EnumBiomeTypeCambrian.Ocean
+			if (biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Ocean
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Reef
+					|| biomeCambrian.getBiomeType() == EnumBiomeTypeCambrian.Estuary
 			) {
+				biomeCriteria = true;
+			}
+			else {
 				biomeCriteria = false;
 			}
 		}

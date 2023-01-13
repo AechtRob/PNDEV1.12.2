@@ -159,7 +159,7 @@ public class WorldGenAncientMoss extends WorldGenerator
 			String stringEgg = "";
 			int i;
 
-			if (dimID == LepidodendronConfig.dimSilurian && worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")) {
+			if (dimID == LepidodendronConfig.dimSilurian) {
 				i = rand.nextInt(2); //Trigonotarbid or Eoarthropleura
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_os";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_eoarthropleura";}

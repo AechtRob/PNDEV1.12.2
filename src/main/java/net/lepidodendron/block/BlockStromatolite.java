@@ -6,13 +6,11 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronMisc;
-import net.lepidodendron.util.EnumBiomeTypeCambrian;
-import net.lepidodendron.util.EnumBiomeTypeOrdovician;
-import net.lepidodendron.util.EnumBiomeTypePrecambrian;
-import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.ordovician.BiomeOrdovician;
 import net.lepidodendron.world.biome.precambrian.BiomePrecambrian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -98,23 +96,18 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genStromatoliteOverrideBiomes))
 			biomeCriteria = true;
-			
-		if (dimID == LepidodendronConfig.dimOrdovician || dimID == LepidodendronConfig.dimSilurian) {
-			biomeCriteria = true;
-		}
-		if (biome instanceof BiomeOrdovician) {
-			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
-			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
-					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary
+
+		if (biome instanceof BiomePrecambrian) {
+			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
+			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
+					|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
+					|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_shallow_sea")
 			) {
-				biomeCriteria = true;
+				biomeCriteria = false;
 			}
 			else {
-				biomeCriteria = false;
+				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
+					biomeCriteria = true;
 			}
 		}
 
@@ -130,18 +123,32 @@ public class BlockStromatolite extends ElementsLepidodendronMod.ModElement {
 			}
 		}
 
-
-		if (biome instanceof BiomePrecambrian) {
-			BiomePrecambrian biomePrecambrian = (BiomePrecambrian) biome;
-			if (biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Hadean
-				|| biomePrecambrian.getBiomeType() == EnumBiomeTypePrecambrian.Proterozoic_Land
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:archean_shallow_sea")
-			) {
-				biomeCriteria = false;
+		if (biome instanceof BiomeOrdovician) {
+			BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
+			if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Algae
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Bryozoan
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean
+					|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
+				biomeCriteria = true;
 			}
 			else {
-				if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OCEAN))
-					biomeCriteria = true;
+				biomeCriteria = false;
+			}
+		}
+
+		if (biome instanceof BiomeSilurian) {
+			BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+			if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+					|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 

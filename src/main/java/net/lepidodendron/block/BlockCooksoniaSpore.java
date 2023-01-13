@@ -291,6 +291,11 @@ public class BlockCooksoniaSpore extends ElementsLepidodendronMod.ModElement {
 	    }
 
 		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
+		@Override
 		public Block planted() {
 			return BlockCooksonia.block;
 		}

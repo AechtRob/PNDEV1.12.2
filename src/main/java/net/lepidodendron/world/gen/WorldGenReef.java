@@ -1,6 +1,9 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.block.BlockCoral;
+import net.lepidodendron.block.BlockTabulata_Block1;
+import net.lepidodendron.block.BlockTabulata_Block2;
+import net.lepidodendron.block.BlockTabulata_Block3;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
@@ -48,27 +51,66 @@ public class WorldGenReef extends WorldGenerator
                             || (worldIn.getBlockState(pos.down()).getMaterial() == Material.GROUND))
                             && BlockCoral.block.canPlaceBlockAt(worldIn, pos)
                             && ((Math.pow(Math.abs(xct),2)) + (Math.pow(Math.abs(zct),2)) <= (Math.pow(Math.abs(layerRadius),2)))) {
-                            int ii = rand.nextInt(4);
-                            if (ii == 0) {facing = EnumFacing.NORTH;}
-                            if (ii == 1) {facing = EnumFacing.SOUTH;}
-                            if (ii == 2) {facing = EnumFacing.EAST;}
-                            if (ii == 3) {facing = EnumFacing.WEST;}
-                            worldIn.setBlockState(pos, state.withProperty(BlockCoral.FACING, facing));
+                            if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
+                                worldIn.setBlockState(pos, state.getBlock().getDefaultState());
+                            }
+                            else {
+                                int ii = rand.nextInt(4);
+                                if (ii == 0) {
+                                    facing = EnumFacing.NORTH;
+                                }
+                                if (ii == 1) {
+                                    facing = EnumFacing.SOUTH;
+                                }
+                                if (ii == 2) {
+                                    facing = EnumFacing.EAST;
+                                }
+                                if (ii == 3) {
+                                    facing = EnumFacing.WEST;
+                                }
+                                worldIn.setBlockState(pos, state.withProperty(BlockCoral.FACING, facing));
+                            }
                             //Always a chance to grow straight up:
                             if ((Math.random() > 0.65) && (position.getY() + layer + 1) < worldIn.getSeaLevel()) {
-                                ii = rand.nextInt(4);
-                                if (ii == 0) {facing = EnumFacing.NORTH;}
-                                if (ii == 1) {facing = EnumFacing.SOUTH;}
-                                if (ii == 2) {facing = EnumFacing.EAST;}
-                                if (ii == 3) {facing = EnumFacing.WEST;}
-                                worldIn.setBlockState(pos.up(), state.withProperty(BlockCoral.FACING, facing));
+                                if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
+                                    worldIn.setBlockState(pos.up(), state.getBlock().getDefaultState());
+                                }
+                                else {
+                                    int ii = rand.nextInt(4);
+                                    if (ii == 0) {
+                                        facing = EnumFacing.NORTH;
+                                    }
+                                    if (ii == 1) {
+                                        facing = EnumFacing.SOUTH;
+                                    }
+                                    if (ii == 2) {
+                                        facing = EnumFacing.EAST;
+                                    }
+                                    if (ii == 3) {
+                                        facing = EnumFacing.WEST;
+                                    }
+                                    worldIn.setBlockState(pos.up(), state.withProperty(BlockCoral.FACING, facing));
+                                }
                                 if ((Math.random() > 0.65) && (position.getY() + layer + 2) < worldIn.getSeaLevel()) {
-                                    ii = rand.nextInt(4);
-                                    if (ii == 0) {facing = EnumFacing.NORTH;}
-                                    if (ii == 1) {facing = EnumFacing.SOUTH;}
-                                    if (ii == 2) {facing = EnumFacing.EAST;}
-                                    if (ii == 3) {facing = EnumFacing.WEST;}
-                                    worldIn.setBlockState(pos.up(2), state.withProperty(BlockCoral.FACING, facing));
+                                    if (state.getBlock() == BlockTabulata_Block1.block || state.getBlock() == BlockTabulata_Block2.block || state.getBlock() == BlockTabulata_Block3.block) {
+                                        worldIn.setBlockState(pos.up(2), state.getBlock().getDefaultState());
+                                    }
+                                    else {
+                                        int ii = rand.nextInt(4);
+                                        if (ii == 0) {
+                                            facing = EnumFacing.NORTH;
+                                        }
+                                        if (ii == 1) {
+                                            facing = EnumFacing.SOUTH;
+                                        }
+                                        if (ii == 2) {
+                                            facing = EnumFacing.EAST;
+                                        }
+                                        if (ii == 3) {
+                                            facing = EnumFacing.WEST;
+                                        }
+                                        worldIn.setBlockState(pos.up(2), state.withProperty(BlockCoral.FACING, facing));
+                                    }
                                 }
                             }
                         }

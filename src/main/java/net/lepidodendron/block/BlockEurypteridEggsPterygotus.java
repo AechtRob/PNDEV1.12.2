@@ -5,7 +5,9 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.util.EnumBiomeTypeDevonian;
+import net.lepidodendron.util.EnumBiomeTypeSilurian;
 import net.lepidodendron.world.biome.devonian.BiomeDevonian;
+import net.lepidodendron.world.biome.silurian.BiomeSilurian;
 import net.lepidodendron.world.gen.MobSpawnGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -70,8 +72,15 @@ public class BlockEurypteridEggsPterygotus extends ElementsLepidodendronMod.ModE
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
-			else {
-				(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+			else if (biome instanceof BiomeSilurian) {
+				BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
+				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
+						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral
+						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
+						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
+						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon) {
+					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
+				}
 			}
 		}
 	}
