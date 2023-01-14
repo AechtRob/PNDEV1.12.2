@@ -184,6 +184,9 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		float Health = this.getHealth();
 		float HealthRatio = (float) (Health / (float) HealthMax);
 		double aHealth = (double) LepidodendronConfig.attackHealth;
+		if (aHealth > 100) {aHealth = 100;}
+		if (aHealth < 0) {aHealth = 0;}
+		aHealth = aHealth/100D;
 		EntityLivingBase attackTarget = this.getAttackTarget();
 		if (attackTarget != null ) {
 			if (attackTarget instanceof EntityPlayer && LepidodendronConfig.attackPlayerAlways) {
