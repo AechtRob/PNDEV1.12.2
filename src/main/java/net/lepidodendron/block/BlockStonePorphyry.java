@@ -65,9 +65,13 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 				|| dimID == LepidodendronConfig.dimPaleogene
 				|| dimID == LepidodendronConfig.dimNeogene
 				|| dimID == LepidodendronConfig.dimPleistocene) {
+			int height = 80;
+			if (dimID == LepidodendronConfig.dimPrecambrian) {
+				height = 170;
+			}
 			for (int l1 = 0; l1 < 3; ++l1) {
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				int y = random.nextInt(80) + 1; //Level 1 to 80
+				int y = random.nextInt(height) + 1; //Level y
 				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 				(new WorldGenMinable(block.getDefaultState(), 13, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {

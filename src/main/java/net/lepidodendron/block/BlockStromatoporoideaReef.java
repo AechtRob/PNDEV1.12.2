@@ -136,6 +136,8 @@ public class BlockStromatoporoideaReef extends ElementsLepidodendronMod.ModEleme
 				return i;
 			}
 		}
+
+
 /*
 		@Deprecated
 		@SideOnly(Side.CLIENT)
