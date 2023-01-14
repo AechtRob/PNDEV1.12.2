@@ -12,6 +12,7 @@ public enum EnumBiomeTypeSilurian implements IStringSerializable {
     Ocean("ocean"),
     Reef("reef"),
     Crinoid("crinoid"),
+    Swamp("swamp"),
     Coral("coral")
     ;
 

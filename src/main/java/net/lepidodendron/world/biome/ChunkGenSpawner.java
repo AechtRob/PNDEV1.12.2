@@ -303,7 +303,9 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                }
                else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lush_patch")
                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_silty_swamp")
-                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_cooksonia")) {
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_cooksonia")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_creek_silty_swamp")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_creek_cooksonia")) {
                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsSwampPF);
                    }
