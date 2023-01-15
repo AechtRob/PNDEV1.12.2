@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/ampyx_short.png", "paleopedia:textures/ampyx_long.png"],
+			"images": ["paleopedia:textures/ampyx_long.png"],
 			"title": "A. priscus",
 			"text": ""
 		},

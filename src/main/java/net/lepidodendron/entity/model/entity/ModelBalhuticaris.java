@@ -3356,7 +3356,7 @@ public class ModelBalhuticaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Body.offsetY = -1;
+        this.Body.offsetY = 0;
 
 
         AdvancedModelRenderer[] BodyF = {this.Body2, this.Body3, this.Body4, this.Body5, this.Body6, this.Body7, this.Body8, this.Body9, this.Body10, this.Body11, this.Body12, this.Body13, this.Body14, this.Body15, this.Body16, this.Body17, this.Body18, this.Body19, this.Body20, this.Body21, this.Body22, this.Body23, this.Body24, this.Body25, this.telson};
@@ -3371,7 +3371,7 @@ public class ModelBalhuticaris extends AdvancedModelBase {
                 , this.legR76, this.legR77, this.legR78, this.legR79, this.legR80, this.legR81, this.legR82, this.legR83, this.legR84, this.legR85, this.legR86, this.legR87, this.legR88, this.legR89, this.legR90, this.legR91, this.legR92, this.legR93, this.legR94, this.legR95, this.legR96, this.legR97, this.legR98, this.legR99, this.legR100
                 , this.legR101, this.legR102, this.legR103, this.legR104, this.legR105, this.legR106, this.legR107, this.legR108, this.legR109, this.legR110};
 
-        float speed = 0.16F;
+        float speed = 0.5F;
         if (!e.isInWater()) {
             speed = 0.7F;
         }
@@ -3379,7 +3379,7 @@ public class ModelBalhuticaris extends AdvancedModelBase {
 
             float feedModifier = 1;
             if (f3 == 0.0) {
-                feedModifier = 0.15F;
+                feedModifier = 0.5F;
             }
 
             float tailVdegree = 0.03F;
@@ -3395,7 +3395,7 @@ public class ModelBalhuticaris extends AdvancedModelBase {
                 this.bob(Body, -speed * 1.5F, 1.5F, false, f2, 1);
                 this.Body.offsetY = -0.6F;
             } else {
-                this.Body.rotateAngleZ = (float) Math.toRadians(180);
+                //this.Body.rotateAngleZ = (float) Math.toRadians(180);
                 if (f3 == 0.0F) {
                     this.bob(Body, -speed, 0.01F, false, f2, 2);
                 } else {
