@@ -210,8 +210,8 @@ public class BlockAlethopterisStrobilus extends ElementsLepidodendronMod.ModElem
 		@Override
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
 			TileEntity tileentity = world.getTileEntity(pos);
-			//if (tileentity instanceof TileEntityCustom)
-				//InventoryHelper.dropInventoryItems(world, pos, (TileEntityCustom) tileentity);
+			//if (tileentity instanceof TileEntityNest)
+				//InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
 			world.removeTileEntity(pos);
 			super.breakBlock(world, pos, state);
 		}

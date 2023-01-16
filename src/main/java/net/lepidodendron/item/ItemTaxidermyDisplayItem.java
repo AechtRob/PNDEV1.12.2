@@ -46,7 +46,7 @@ public class ItemTaxidermyDisplayItem extends ElementsLepidodendronMod.ModElemen
 		@Override
 		public String getItemStackDisplayName(ItemStack stack)
 		{
-			if (isBlockFromItemStack(stack)) {
+			if (getMobFromStack(stack)) {
 				if (stack.getTagCompound().hasKey("PFMob")) {
 					NBTTagCompound blockNBT = (NBTTagCompound) stack.getTagCompound().getTag("PFMob");
 					String resourcelocation = (blockNBT.getString("id"));
@@ -73,7 +73,7 @@ public class ItemTaxidermyDisplayItem extends ElementsLepidodendronMod.ModElemen
 			return 1F;
 		}
 
-		public static boolean isBlockFromItemStack(ItemStack stack) {
+		public static boolean getMobFromStack(ItemStack stack) {
 			if (stack.hasTagCompound() == false
 					|| ((!stack.getTagCompound().hasKey("PFMob")))
 			) {

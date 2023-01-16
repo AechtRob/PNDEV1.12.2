@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCustom> {
+public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNest> {
 
     private final ModelEggSmall small_egg;
     private final ModelEggMedium medium_egg;
@@ -40,7 +40,7 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityCu
     }
 
     @Override
-    public void render(BlockNest.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+    public void render(BlockNest.TileEntityNest entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         //EnumFacing facing = EnumFacing.NORTH;
 
         int eggType = 0;

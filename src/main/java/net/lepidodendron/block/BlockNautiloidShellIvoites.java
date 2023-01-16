@@ -49,7 +49,7 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		//GameRegistry.registerTileEntity(BlockNautiloidShellIvoites.TileEntityCustom.class, "lepidodendron:tileentityshell_ivoites");
+		//GameRegistry.registerTileEntity(BlockNautiloidShellIvoites.TileEntityNest.class, "lepidodendron:tileentityshell_ivoites");
 	}
 
 	@SideOnly(Side.CLIENT)

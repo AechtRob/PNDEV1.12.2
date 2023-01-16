@@ -4,10 +4,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.base.*;
 import net.lepidodendron.util.*;
 import net.lepidodendron.world.biome.cambrian.BiomeCambrian;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
@@ -1097,7 +1094,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     errFound = true;
                 } else {
                     String locationStr = checkEntity.substring(checkEntity.length() - 1, checkEntity.length());
-                    if (!(locationStr.equals((String) "1") || locationStr.equals((String) "2") || locationStr.equals((String) "3") || locationStr.equals((String) "4") || locationStr.equals((String) "5") || locationStr.equals((String) "6") || locationStr.equals((String) "7"))) {
+                    if (!(locationStr.equals((String) "1") || locationStr.equals((String) "2") || locationStr.equals((String) "3") || locationStr.equals((String) "4") || locationStr.equals((String) "5") || locationStr.equals((String) "6") || locationStr.equals((String) "7") || locationStr.equals((String) "8"))) {
                         errFound = true;
                     } else {
                         locationID = (int) Integer.parseInt(locationStr);
@@ -1168,11 +1165,14 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                     //System.err.println(mobToSpawn + " in ID " + locationID);
                                                     EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(mobToSpawn));
                                                     EntityLiving entity = (EntityLiving) ee.newInstance(world);
+                                                    int offsetter = 0;
 
                                                     switch (locationID) {
 
-                                                        case 1: //Land
+                                                        case 1: //Land (or land near water)
+                                                        case 8:
                                                         default:
+                                                            offsetter = 2; //Trying to help avoid spawning into cliffsides :/
                                                             //System.err.println("Case: 1");
                                                             //We'll check a block is the biome topblock and that there are at least 4 blocks of non-solid blocks above it:
                                                             BlockPos pos1 = world.getTopSolidOrLiquidBlock(new BlockPos(spawnPos.getX(), 0, spawnPos.getZ()));
@@ -1185,9 +1185,41 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             && ((world.isAirBlock(pos1.up(2))) || (world.getBlockState(pos1.up(2)).getMaterial() == Material.PLANTS))
                                                                             && ((world.isAirBlock(pos1.up(3))) || (world.getBlockState(pos1.up(3)).getMaterial() == Material.PLANTS))
                                                             ) {
-                                                                posCheck = true;
-                                                                //System.err.println("Spawnable " + checkEntity);
-                                                                spawnPos = pos1;
+                                                                if (locationID == 1) {
+                                                                    posCheck = true;
+                                                                    //System.err.println("Spawnable " + checkEntity);
+                                                                    spawnPos = pos1;
+                                                                }
+                                                                else if (locationID == 8) {
+                                                                    //Check for water:
+                                                                    boolean waterCriteria = false;
+                                                                    int i = pos1.getX();
+                                                                    int j = pos1.getY();
+                                                                    int k = pos1.getZ();
+                                                                    //Is there water nearby?
+                                                                    int xct = -3;
+                                                                    int yct;
+                                                                    int zct;
+                                                                    while ((xct < 4) && (!waterCriteria)) {
+                                                                        yct = -2;
+                                                                        while ((yct <= 0) && (!waterCriteria)) {
+                                                                            zct = -3;
+                                                                            while ((zct < 4) && (!waterCriteria)) {
+                                                                                if ((world.getBlockState(new BlockPos(i + xct, j + yct, k + zct))).getMaterial() == Material.WATER) {
+                                                                                    waterCriteria = true;
+                                                                                }
+                                                                                zct = zct + 1;
+                                                                            }
+                                                                            yct = yct + 1;
+                                                                        }
+                                                                        xct = xct + 1;
+                                                                    }
+                                                                    if (waterCriteria) {
+                                                                        posCheck = true;
+                                                                        //System.err.println("Spawnable " + checkEntity);
+                                                                        spawnPos = pos1;
+                                                                    }
+                                                                }
                                                             }
                                                             break;
 
@@ -1267,7 +1299,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                                     entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                                 }
-                                                                                if (entityHeight < 0.9) {
+                                                                                if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                                     posCheck = true;
                                                                                 } else if (entityHeight < 1.9) {
                                                                                     if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1379,7 +1415,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                                 entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                             }
-                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)) {
+                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                                 posCheck = true;
                                                                             } else if (entityHeight < 1.9) {
                                                                                 if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1394,12 +1434,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         }
                                                                     } else { //Is there a column of water above us no more than 6 blocks deep?
                                                                         if (world.isAirBlock(pos1.up(6))
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.ICE
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.PACKED_ICE
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.VINE
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.LEAVES
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.PLANTS
-                                                                                || world.getBlockState(pos.up(6)).getMaterial() == Material.WEB) {
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.ICE
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.PACKED_ICE
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.VINE
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.LEAVES
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.PLANTS
+                                                                                || world.getBlockState(pos1.up(6)).getMaterial() == Material.WEB) {
                                                                             posCheck = true;
                                                                         }
 
@@ -1410,7 +1450,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                                 entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                             }
-                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)) {
+                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                                 posCheck = true; //These are fine in a single block deep
                                                                             } else if (entityHeight < 1.9) {
                                                                                 if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1423,12 +1467,12 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     }
                                                                 } else { //Is there a column of water above us no more than 6 blocks deep?
                                                                     if (world.isAirBlock(pos1.up(6))
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.ICE
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.PACKED_ICE
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.VINE
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.LEAVES
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.PLANTS
-                                                                            || world.getBlockState(pos.up(6)).getMaterial() == Material.WEB) {
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.ICE
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.PACKED_ICE
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.VINE
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.LEAVES
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.PLANTS
+                                                                            || world.getBlockState(pos1.up(6)).getMaterial() == Material.WEB) {
                                                                         posCheck = true;
                                                                     }
 
@@ -1439,7 +1483,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                         if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                             entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                         }
-                                                                        if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)) {
+                                                                        if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                             posCheck = true; //These are fine in a single block deep
                                                                         } else if (entityHeight < 1.9) {
                                                                             if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1600,7 +1648,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                                     entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                                 }
-                                                                                if (entityHeight < 0.9) {
+                                                                                if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                        || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                                     posCheck = true;
                                                                                 } else if (entityHeight < 1.9) {
                                                                                     if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1726,7 +1778,11 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             if (entity instanceof EntityPrehistoricFloraAgeableBase) {
                                                                                 entityHeight = ((EntityPrehistoricFloraAgeableBase) entity).maxHeight;
                                                                             }
-                                                                            if (entityHeight < 0.9) {
+                                                                            if (entityHeight < 0.9 || (entity instanceof EntityPrehistoricFloraAmphibianBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraFishBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraSlitheringWaterBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase)
+                                                                                    || (entity instanceof EntityPrehistoricFloraTrilobiteSwimBase)) {
                                                                                 posCheck = true;
                                                                             } else if (entityHeight < 1.9) {
                                                                                 if (world.getBlockState(pos1.up()).getMaterial() == Material.WATER) {
@@ -1828,7 +1884,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                     world.setBlockState(pos1, BlockNest.block.getDefaultState());
                                                                     TileEntity te = world.getTileEntity(pos1);
                                                                     if (te != null) {
-                                                                        if (te instanceof BlockNest.TileEntityCustom) {
+                                                                        if (te instanceof BlockNest.TileEntityNest) {
                                                                             te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
                                                                         }
                                                                     }
@@ -1842,7 +1898,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                             world.setBlockState(spawnPos, BlockNest.block.getDefaultState());
                                                                             TileEntity te = world.getTileEntity(spawnPos);
                                                                             if (te != null) {
-                                                                                if (te instanceof BlockNest.TileEntityCustom) {
+                                                                                if (te instanceof BlockNest.TileEntityNest) {
                                                                                     te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
                                                                                     te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                     if (Math.random() > 0.75) { // 1:4 chance of nest containing eggs
@@ -1855,7 +1911,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 world.setBlockState(spawnPos, BlockNest.block.getDefaultState());
                                                                                 TileEntity te = world.getTileEntity(spawnPos);
                                                                                 if (te != null) {
-                                                                                    if (te instanceof BlockNest.TileEntityCustom) {
+                                                                                    if (te instanceof BlockNest.TileEntityNest) {
                                                                                         te.getTileData().setString("creature", EntityRegistry.getEntry(entity.getClass()).getRegistryName().toString());
                                                                                         te.getTileData().setBoolean("isMound", EntityLandBase.isNestMound());
                                                                                         // Mounds always contain eggs:
@@ -1922,7 +1978,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                                 return false;
                                                                             }
 
-                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + 2) + " " + spawnPos.getZ() + " " + nbtStr);
+                                                                        }, "pf_summon " + mobToSpawn + " " + spawnPos.getX() + " " + (spawnPos.getY() + offsetter) + " " + spawnPos.getZ() + " " + nbtStr);
                                                                     }
 
                                                                     //System.err.println("Spawned in " + world.getBiome(spawnPos).getBiomeName() + " at locID " + locationID + " " + mobToSpawn + " at " + spawnPos.getX() + " " + (spawnPos.getY() + 1) + " " + spawnPos.getZ());
@@ -2000,13 +2056,13 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
     public static BlockPos getTopSolidBlock(BlockPos pos, World world)
     {
         Chunk chunk = world.getChunk(pos);
-        BlockPos blockpos;
-        BlockPos blockpos1;
-
-        for (blockpos = new BlockPos(pos.getX(), chunk.getTopFilledSegment() + 16, pos.getZ()); blockpos.getY() >= 0; blockpos = blockpos1)
+        BlockPos blockpos = new BlockPos(pos.getX(), chunk.getTopFilledSegment() + 16, pos.getZ());
+        BlockPos blockpos1 = blockpos;
+        int yy = blockpos.getY();
+        while (yy > 0)
         {
-            blockpos1 = blockpos.down();
-            IBlockState state = chunk.getBlockState(blockpos1);
+            blockpos1 = new BlockPos(pos.getX(), yy, pos.getZ());
+            IBlockState state = world.getBlockState(blockpos1);
 
             if (state.getMaterial().blocksMovement()
                     && state.getMaterial() != Material.WATER
@@ -2016,9 +2072,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
             {
                 break;
             }
+            yy --;
         }
 
-        return blockpos;
+        return blockpos1;
     }
 
 }

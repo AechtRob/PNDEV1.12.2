@@ -116,6 +116,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return getEntityId(this);
     }
 
+    @Nullable
     public BlockPos findNest(Entity entity, int dist, boolean empty) {
         int xx;
         int yy;
@@ -133,6 +134,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         if (!empty) {
                             if (this.isHomeableNest(world, randPos)) {
                                 if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                                    setNestAsMine(world, randPos);
                                     return randPos;
                                 }
                             }
@@ -140,6 +142,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         else {
                             if (this.isLayableNest(world, randPos)) {
                                 if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                                    setNestAsMine(world, randPos);
                                     return randPos;
                                 }
                             }
@@ -152,6 +155,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             xx += 1;
         }
         return null;
+    }
+
+    public void setNestAsMine(World world, BlockPos pos) {
+        TileEntity te = world.getTileEntity(pos);
+        if (te != null) {
+            te.getTileData().setString("creature", getEntityId(this));
+        }
     }
 
     public boolean canSpawnOnLeaves() {
@@ -170,7 +180,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
             TileEntity te = world.getTileEntity(pos);
-            if (te instanceof BlockNest.TileEntityCustom) {
+            if (te instanceof BlockNest.TileEntityNest) {
                 String nestType = new Object() {
                     public String getValue(BlockPos pos1, String tag) {
                         TileEntity tileEntity = world.getTileEntity(pos1);
@@ -192,7 +202,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean isMyNest(World world, BlockPos pos) {
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
-            if (te instanceof BlockNest.TileEntityCustom) {
+            if (te instanceof BlockNest.TileEntityNest) {
                 String nestType = new Object() {
                     public String getValue(BlockPos pos1, String tag) {
                         TileEntity tileEntity = world.getTileEntity(pos1);
@@ -233,7 +243,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
             TileEntity te = world.getTileEntity(pos);
-            if (te instanceof BlockNest.TileEntityCustom) {
+            if (te instanceof BlockNest.TileEntityNest) {
 
                 String eggType = new Object() {
                     public String getValue(BlockPos pos1, String tag) {

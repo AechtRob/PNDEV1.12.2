@@ -3355,7 +3355,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSelaginella.TileEntityCustom.class, new RenderSelaginella());
 
         //Nests and land eggs:
-        ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityCustom.class, new RenderNest());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNest.TileEntityNest.class, new RenderNest());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockEggs.TileEntityCustom.class, new RenderEggsLand());
 
         //Rope barrier:

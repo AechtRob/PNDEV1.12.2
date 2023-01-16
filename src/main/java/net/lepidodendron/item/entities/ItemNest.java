@@ -54,7 +54,7 @@ public abstract class ItemNest extends Item {
 				if (BlockNest.block.canPlaceBlockAt(worldIn, blockpos)) {
 					if (!(worldIn.isRemote)) {
 						worldIn.setBlockState(blockpos, BlockNest.block.getDefaultState());
-						worldIn.setTileEntity(blockpos, new BlockNest.TileEntityCustom());
+						worldIn.setTileEntity(blockpos, new BlockNest.TileEntityNest());
 						TileEntity te = worldIn.getTileEntity(blockpos);
 						te.getTileData().setString("creature", getMobString());
 						te.getTileData().setString("egg", "");

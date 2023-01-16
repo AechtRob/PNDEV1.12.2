@@ -18,12 +18,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -72,7 +72,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockNest.TileEntityCustom.class, "lepidodendron:tileentitynest");
+		GameRegistry.registerTileEntity(TileEntityNest.class, "lepidodendron:tileentitynest");
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -95,7 +95,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMobile.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(MOUND, false).withProperty(BIRD, true));
-
 		}
 
 		@Override
@@ -312,6 +311,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+			if (!state.getValue(MOUND)) {
+				return new ItemStack(Items.STICK, (int) (1)).getItem();
+			}
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 
@@ -341,23 +343,26 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public void breakBlock(World world, BlockPos pos, IBlockState state) {
-			if (!world.isRemote ) {
-				SpawnEggs(world, pos);
+			TileEntity tileentity = world.getTileEntity(pos);
+			if (tileentity != null) {
+				if (tileentity instanceof TileEntityNest) {
+					InventoryHelper.dropInventoryItems(world, pos, (TileEntityNest) tileentity);
+				}
+				world.removeTileEntity(pos);
 			}
-			world.removeTileEntity(pos);
 
 			super.breakBlock(world, pos, state);
 		}
 
 		@Override
 		public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-			if (!worldIn.isRemote) {
+			//if (worldIn.isRemote) {
 				ItemStack stack = playerIn.getHeldItemMainhand();
 				if (stack.getItem() == Items.SHEARS && !this.isMound(worldIn, pos)) {
 					//This will harvest:
 					AggroMob(worldIn, pos, getNestOwner(worldIn, pos), playerIn, false);
+			//	}
 				}
-			}
 			super.onBlockClicked(worldIn, pos, playerIn);
 		}
 
@@ -388,8 +393,8 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 							TileEntity te = world.getTileEntity(pos);
 							if (te != null) {
 								te.getTileData().setString("egg", "");
-								if (te instanceof TileEntityCustom) {
-									TileEntityCustom tee = (TileEntityCustom) te;
+								if (te instanceof TileEntityNest) {
+									TileEntityNest tee = (TileEntityNest) te;
 									tee.setInventorySlotContents(0, ItemStack.EMPTY);
 								}
 							}
@@ -415,6 +420,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			return super.removedByPlayer(state, world, pos, player, willHarvest);
 		}
 
+		/*
 		public void SpawnEggs(World world, BlockPos pos) {
 			String eggRenderType = new Object() {
 				public String getValue(BlockPos pos, String tag) {
@@ -439,6 +445,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				//System.err.println("Spawned " + entityToSpawn);
 			}
 		}
+		 */
 
 		@Override
 		public boolean hasTileEntity(IBlockState state) {
@@ -448,11 +455,11 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new BlockNest.TileEntityCustom();
+			return new TileEntityNest();
 		}
 
-		public BlockNest.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
-			return new BlockNest.TileEntityCustom();
+		public TileEntityNest createNewTileEntity(World worldIn, int meta) {
+			return new TileEntityNest();
 		}
 
 		@Override
@@ -499,7 +506,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityCustom extends TileEntityLockableLoot implements ITickable {
+	public static class TileEntityNest extends TileEntityLockableLoot implements ITickable {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 		private String egg;

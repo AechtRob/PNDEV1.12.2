@@ -1,8 +1,10 @@
 package net.lepidodendron;
 
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.util.ModTriggers;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -10,11 +12,10 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.*;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -73,7 +74,16 @@ public class LepidodendronBookSubscribers {
 			IBlockState state = event.getWorld().getBlockState(event.getPos());
 			Block target = state.getBlock();
 
-			if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:acacia_sapling"),
+			//Nest info:
+			if (target == BlockNest.block) {
+				event.getEntityPlayer().swingArm(event.getHand());
+				deliverStatsNest(event);
+				event.setCanceled(true);
+				return;
+			}
+
+			//Plant/block info:
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("plantdnaPNlepidodendron:acacia_sapling"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_ACACIA.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -3217,6 +3227,8 @@ public class LepidodendronBookSubscribers {
 		String agePercent = "";
 		double maxHealth = 0;
 		double actualHealth = 0;
+		BlockPos nestPos = null;
+		String nestString = "";
 		if (event.getTarget() instanceof EntityPrehistoricFloraAgeableBase) {
 			agePercent = Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F) + "%";
 		}
@@ -3227,8 +3239,50 @@ public class LepidodendronBookSubscribers {
 			maxHealth = ((EntityLivingBase) event.getTarget()).getMaxHealth();
 			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
 		}
+		if (event.getTarget() instanceof EntityPrehistoricFloraLandBase) {
+			nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
+			if (nestPos != null
+					&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
+					&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
+				nestString = " has nest at " + nestPos.getX() + " "  + nestPos.getY() + " " + nestPos.getZ();
+			}
+			else {
+				nestString = " with no known nest";
+			}
+		}
+
 		if (event.getWorld().isRemote) {
-			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + actualHealth + "/" + maxHealth + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)"));
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + actualHealth + "/" + maxHealth + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
+		}
+	}
+
+	public void deliverStatsNest(PlayerInteractEvent.RightClickBlock event) {
+		String nestOwner = "nobody";
+		IBlockState state = event.getWorld().getBlockState(event.getPos());
+		Block target = state.getBlock();
+		if (target == BlockNest.block) {
+			String nestType = new Object() {
+				public String getValue(BlockPos pos1, String tag) {
+					TileEntity tileEntity = event.getWorld().getTileEntity(pos1);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(event.getPos(), "creature");
+			if (!nestType.equals("")) {
+				//Get the mob:
+				nestType = nestType.replace("lepidodendron:", "");
+				nestOwner = I18n.translateToLocal("entity." + nestType + ".name").trim();
+			}
+			else {
+				nestOwner = "nobody";
+			}
+		}
+		else {
+			nestOwner = "nobody";
+		}
+		if (event.getWorld().isRemote) {
+			event.getEntityPlayer().sendMessage(new TextComponentString("Nest belonging to " + nestOwner));
 		}
 	}
 
