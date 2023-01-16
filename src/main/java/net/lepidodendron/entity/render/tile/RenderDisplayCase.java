@@ -5115,7 +5115,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
         this.bindTexture(TEXTURE);
-        Method renderMethod = testAndGetMethod(model.getClass(), "renderStatic");
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase");
         if (renderMethod != null) {
             try {
                 renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);

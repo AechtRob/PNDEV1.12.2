@@ -5820,11 +5820,11 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 double voffset = 0;
                                 double hoffset = 0;
                                 double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.9;
+                                double upperbackverticallinedepth = 0.5;
                                 double upperfrontlineoffset = 0.2;
                                 double upperbacklineoffset = 0.2;
-                                double lowerfrontverticallinedepth = 10;
-                                double lowerbackverticallinedepth = 10;
+                                double lowerfrontverticallinedepth = 0.8;
+                                double lowerbackverticallinedepth = 0.5;
                                 double lowerfrontlineoffset = 0.2;
                                 double lowerbacklineoffset = 0.2;
                                 try {
@@ -6165,8 +6165,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F + (float) upperfrontlineoffset, (float) y + 1, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F + (float) upperfrontlineoffset, (float) y + 1 - (float) upperfrontverticallinedepth, (float) z + 0.5F);
+                    float xoffsetter = (float) (upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation)));
+                    float zoffsetter = (float) (upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1, (float) z + 0.5F + zoffsetter);
+                    GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1 - (float) upperfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
                     GL11.glEnd();
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
@@ -6178,8 +6180,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F - (float) upperbacklineoffset, (float) y + 1, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F - (float) upperbacklineoffset, (float) y + 1 - (float) upperbackverticallinedepth, (float) z + 0.5F);
+                    float xoffsetter = (float) (upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation)));
+                    float zoffsetter = (float) (upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1, (float) z + 0.5F - zoffsetter);
+                    GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1 - (float) upperbackverticallinedepth, (float) z + 0.5F - zoffsetter);
                     GL11.glEnd();
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
@@ -6211,8 +6215,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F + (float) lowerfrontlineoffset, (float) y, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F + (float) lowerfrontlineoffset, (float) y + (float) lowerfrontverticallinedepth, (float) z + 0.5F);
+                    float xoffsetter = (float) (lowerfrontlineoffset * Math.cos(Math.toRadians(-currentRotation)));
+                    float zoffsetter = (float) (lowerfrontlineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
+                    GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) lowerfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
                     GL11.glEnd();
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
@@ -6224,8 +6230,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F - (float) lowerbacklineoffset, (float) y, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F - (float) lowerbacklineoffset, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F);
+                    float xoffsetter = (float) (lowerbacklineoffset * Math.cos(Math.toRadians(-currentRotation)));
+                    float zoffsetter = (float) (lowerbacklineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y, (float) z + 0.5F - zoffsetter);
+                    GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F - zoffsetter);
                     GL11.glEnd();
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
