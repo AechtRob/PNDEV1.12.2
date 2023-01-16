@@ -12,6 +12,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -81,6 +82,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends Block implements ITileEntityProvider {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
+		public static final PropertyBool ISFLOOR = PropertyBool.create("full");
 
 		public BlockCustom() {
 			super(Material.CARPET, MapColor.WOOD);
@@ -90,6 +92,8 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 			setResistance(0F);
 			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronMisc.tab);
+
+			this.setDefaultState(this.blockState.getBaseState().withProperty(ISFLOOR, Boolean.valueOf(false)));
 		}
 
 		@SideOnly(Side.CLIENT)
@@ -99,6 +103,22 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 				tooltip.add("Place Taxidermy kits into the display");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			if (state.getValue(FACING) == EnumFacing.UP) {
+				TileEntity tileEntity = worldIn.getTileEntity((pos));
+				if (tileEntity != null && tileEntity.hasWorld()) {
+					if (tileEntity instanceof BlockDisplayWallMount.TileEntityDisplayWallMount) {
+						ItemStack itemstack = ((BlockDisplayWallMount.TileEntityDisplayWallMount)tileEntity).getStackInSlot(0);
+						if (!itemstack.isEmpty()) {
+							return state.withProperty(ISFLOOR, true);
+						}
+					}
+				}
+			}
+			return state.withProperty(ISFLOOR, false);
 		}
 
 		@Override
@@ -177,6 +197,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 							if (!playerIn.isCreative()) {
 								stack.shrink(1);
 							}
+							worldIn.markBlockRangeForRenderUpdate(pos, pos);
 						}
 					}
 				}
@@ -215,7 +236,7 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		protected BlockStateContainer createBlockState() {
-			return new BlockStateContainer(this, new IProperty[]{FACING});
+			return new BlockStateContainer(this, new IProperty[]{FACING, ISFLOOR});
 		}
 
 		@SideOnly(Side.CLIENT)

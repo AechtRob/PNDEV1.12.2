@@ -41,10 +41,18 @@
     },
     {
       "when": {
-        "facing": "up"
+        "facing": "up", "full": "false"
       },
       "apply": {
         "model": "lepidodendron:display_wall_mount"
+      }
+    },
+    {
+      "when": {
+        "facing": "up", "full": "true"
+      },
+      "apply": {
+        "model": "lepidodendron:display_wall_mount_floor_full"
       }
     },
     {
