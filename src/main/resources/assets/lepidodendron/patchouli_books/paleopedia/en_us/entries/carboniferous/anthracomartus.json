@@ -14,7 +14,8 @@
 	{
             "type": "image",
             "images": ["paleopedia:textures/Cryptomartus.png"],
-            "title": "Anthracomartus hindi"
+            "title": "A. hindi",
+	    "text": ""
         },
 	{
 		"advancement": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
