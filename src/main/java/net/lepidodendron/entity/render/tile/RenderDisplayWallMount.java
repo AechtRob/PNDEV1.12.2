@@ -6103,6 +6103,9 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
 
     @Nullable
     public Class getEntityFromNBT(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            return null;
+        }
         if (!stack.getTagCompound().hasKey("PFMob")) {
             return null;
         }

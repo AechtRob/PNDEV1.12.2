@@ -5056,6 +5056,9 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
 
     @Nullable
     public Class getEntityFromNBT(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            return null;
+        }
         if (!stack.getTagCompound().hasKey("PFMob")) {
             return null;
         }

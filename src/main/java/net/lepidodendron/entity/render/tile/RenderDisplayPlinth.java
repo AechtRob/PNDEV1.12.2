@@ -1072,6 +1072,9 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
             
     @Nullable
     public Class getEntityFromNBT(ItemStack stack) {
+        if (!stack.hasTagCompound()) {
+            return null;
+        }
         if (!stack.getTagCompound().hasKey("PFMob")) {
             return null;
         }
