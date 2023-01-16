@@ -2036,34 +2036,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(1.1, 1.1, 1.1);
                                 this.bindTexture(TEXTURE_DAEDALICHTHYS);
                                 modelDaedalichthys.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraDapedium.class) {
-                                double offset = 0.01;
-                                double voffset = 0.2;
-                                double hoffset = 0.07;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 - hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(1.7, 1.7, 1.7);
-                                this.bindTexture(TEXTURE_DAPEDIUM);
-                                modelDapedium.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraDeltoptychius.class) {
+                            }
+                            else if (classEntity == EntityPrehistoricFloraDeltoptychius.class) {
                                 double offset = -0.03;
                                 double voffset = 0;
                                 double hoffset = 0.05;
@@ -5816,23 +5790,49 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_XENACANTHUS);
                                 modelXenacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
-
-                            else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
-                                double offsetWall = 0.05;
+                            else if (classEntity == EntityPrehistoricFloraDapedium.class) {
+                                double offsetWall = 0.01;
                                 double voffset = 0;
                                 double hoffset = 0;
                                 double upperfrontverticallinedepth = 0.8;
                                 double upperbackverticallinedepth = 0.5;
                                 double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = 0.2F;
+                                double upperfrontlineoffsetperpendiular = 0F;
                                 double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = 0.2F;
+                                double upperbacklineoffsetperpendiular = 0F;
                                 double lowerfrontverticallinedepth = 0.8;
-                                double lowerbackverticallinedepth = 0.5;
+                                double lowerbackverticallinedepth = 0;
+                                double lowerfrontlineoffset = -0.01;
+                                double lowerfrontlineoffsetperpendiular = 0F;
+                                double lowerbacklineoffset = 0;
+                                double lowerbacklineoffsetperpendiular = 0F;
+                                try {
+                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                            TEXTURE_DAPEDIUM, RenderDapedium.getScaler(), new ModelDapedium(),
+                                            offsetWall, voffset, hoffset,
+                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
+                                }
+                                catch (Exception e) {
+                                    itemRender = true;
+                                }
+                            }
+                            else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
+                                double offsetWall = 0.05;
+                                double voffset = 0;
+                                double hoffset = 0;
+                                double upperfrontverticallinedepth = 0.8;
+                                double upperbackverticallinedepth = 0.8;
+                                double upperfrontlineoffset = 0.2;
+                                double upperfrontlineoffsetperpendiular = -0.04F;
+                                double upperbacklineoffset = 0.2;
+                                double upperbacklineoffsetperpendiular = -0.04F;
+                                double lowerfrontverticallinedepth = 1.1;
+                                double lowerbackverticallinedepth = 1.2;
                                 double lowerfrontlineoffset = 0.2;
-                                double lowerfrontlineoffsetperpendiular = 0.2F;
+                                double lowerfrontlineoffsetperpendiular = -0.04F;
                                 double lowerbacklineoffset = 0.2;
-                                double lowerbacklineoffsetperpendiular = 0.2F;
+                                double lowerbacklineoffsetperpendiular = -0.04F;
                                 try {
                                     itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
                                             TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), new ModelXinpusaurus(),

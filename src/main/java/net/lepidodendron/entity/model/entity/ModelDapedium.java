@@ -213,20 +213,55 @@ public class ModelDapedium extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Dapedium.render(f5 * 0.25F);
+        this.Dapedium.render(f5);
     }
-    public void renderStatic(float f) {
+    public void renderStaticWall(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         //GlStateManager.disableCull();
         this.Dapedium.rotateAngleY = (float) Math.toRadians(90);
-        this.Dapedium.offsetY = -0.06F;
+        this.Dapedium.rotateAngleX = (float) Math.toRadians(90);
+        this.Dapedium.offsetY = -0.1F;
         this.Dapedium.render(0.01F);
         //GlStateManager.enableCull();
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Dapedium, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, -0.1485F, 0.0432F, -0.0065F);
+        this.setRotateAngle(cube_r1, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.9163F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, -1.1345F, 0.0F);
+        this.setRotateAngle(VentralR, -0.4826F, 0.4445F, -0.1608F);
+        this.setRotateAngle(VentralL, -0.4928F, -0.483F, 0.1837F);
+        this.setRotateAngle(Body2, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.7941F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -1.0647F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.6458F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0175F, 0.0F, 0.0F);
+        this.Dapedium.rotateAngleY = (float) Math.toRadians(90);
+        this.Dapedium.offsetY = -0.4F;
+        this.Dapedium.offsetX = -0F;
+        this.Dapedium.offsetZ = 0.03F;
+        this.Dapedium.render(0.01F);
+    }
+
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
         AdvancedModelRenderer.rotateAngleY = y;
@@ -237,7 +272,7 @@ public class ModelDapedium extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Dapedium.offsetY = 1.15F;
+        //this.Dapedium.offsetY = 1.15F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Tail};
@@ -262,7 +297,7 @@ public class ModelDapedium extends AdvancedModelBase {
             this.swing(Dapedium, speed, 0.3F, true, 0, 0, f2, 1);
              if (!e.isInWater()) {
                 this.Dapedium.rotateAngleZ = (float) Math.toRadians(90);
-                this.Dapedium.offsetY = 1.15F;
+                //this.Dapedium.offsetY = 1.15F;
                 this.bob(Dapedium, -speed, 5F, false, f2, 1);
             }
         }
