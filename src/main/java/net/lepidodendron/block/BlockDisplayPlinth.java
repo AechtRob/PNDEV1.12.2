@@ -110,16 +110,16 @@ public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
 				return new AxisAlignedBB(0, 0.5, 0, 1, 1, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.NORTH) {
-				return new AxisAlignedBB(0, 0.15, 0, 1, 0.5, 1);
+				return new AxisAlignedBB(0, 0, 0, 1, 0.5, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.SOUTH) {
-				return new AxisAlignedBB(0, 0.15, 0, 1, 0.5, 1);
+				return new AxisAlignedBB(0, 0, 0, 1, 0.5, 1);
 			}
 			if (state.getValue(FACING) == EnumFacing.EAST) {
-				return new AxisAlignedBB(0, 0.15, 0, 0, 0.5, 1);
+				return new AxisAlignedBB(0, 0, 0, 1, 0.5, 1);
 			}
 			else { //WEST
-				return new AxisAlignedBB(0, 0.15, 0, 1, 0.5, 1);
+				return new AxisAlignedBB(0, 0, 0, 1, 0.5, 1);
 			}
 		}
 
