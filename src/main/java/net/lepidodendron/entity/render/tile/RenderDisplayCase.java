@@ -301,7 +301,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelYunnanozoon modelYunnanozoon;
 
     private static final ResourceLocation TEXTURE_ERYON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryon.png");
-
+    private final ModelEryon modelEryon;
 
     public RenderDisplayCase() {
         this.modelGerarus = new ModelGerarus();
@@ -417,6 +417,8 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelYawunik = new ModelYawunik();
         this.modelYohoia = new ModelYohoia();
         this.modelYunnanozoon = new ModelYunnanozoon();
+
+        this.modelEryon = new ModelEryon();
     }
 
     @Override
@@ -4965,7 +4967,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 double offset = 0.18;
                                 try {
                                     itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                        TEXTURE_ERYON, RenderEryon.getScaler(), new ModelEryon(), offset);
+                                        TEXTURE_ERYON, RenderEryon.getScaler(), modelEryon, offset);
                                 } catch (Exception e) {
                                     itemRender = true;
                                 }
