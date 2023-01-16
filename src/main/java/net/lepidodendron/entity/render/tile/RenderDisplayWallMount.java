@@ -636,10 +636,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     public void setRotations(EnumFacing facing, double x, double y, double z, double voffset, double offset, double hoffset, float currentRotation) {
-        if (facing == EnumFacing.UP) {
-
-        }
-        else if (facing == EnumFacing.DOWN) {
+        if (facing == EnumFacing.UP || facing == EnumFacing.DOWN) {
             GlStateManager.translate(x + 0.5, y + 0.5, z + 0.5);
             GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         }
@@ -5816,22 +5813,35 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(3.2, 3.2, 3.2);
                                 this.bindTexture(TEXTURE_XENACANTHUS);
                                 modelXenacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
+                            }
+
+                            else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
                                 double offsetWall = 0.05;
                                 double voffset = 0;
                                 double hoffset = 0;
-                                double frontverticallinedepth = 0.8;
-                                double backverticallinedepth = 0.9;
-                                double frontlineoffset = 0.2;
-                                double backlineoffset = 0.2;
+                                double upperfrontverticallinedepth = 0.8;
+                                double upperbackverticallinedepth = 0.9;
+                                double upperfrontlineoffset = 0.2;
+                                double upperbacklineoffset = 0.2;
+                                double lowerfrontverticallinedepth = 10;
+                                double lowerbackverticallinedepth = 10;
+                                double lowerfrontlineoffset = 0.2;
+                                double lowerbacklineoffset = 0.2;
                                 try {
                                     itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
                                         TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), new ModelXinpusaurus(),
-                                        offsetWall, voffset, hoffset, frontverticallinedepth, backverticallinedepth, frontlineoffset, backlineoffset);
+                                        offsetWall, voffset, hoffset, 
+                                        upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperbacklineoffset,
+                                        lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerbacklineoffset);
                                 }
                                 catch (Exception e) {
                                     itemRender = true;
                                 }
+
+
+
+
+                                
                             } else if (classEntity == EntityPrehistoricFloraYunguisaurus.class) {
                                 double offset = -0.3;
                                 double voffset = 0;
@@ -6137,41 +6147,51 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
            double offset,
            double voffset,
            double hoffset,
-           double frontverticallinedepth,
-           double backverticallinedepth,
-           double frontlineoffset,
-           double backlineoffset
+           double upperfrontverticallinedepth,
+           double upperbackverticallinedepth,
+           double upperfrontlineoffset,
+           double upperbacklineoffset,
+           double lowerfrontverticallinedepth,
+           double lowerbackverticallinedepth,
+           double lowerfrontlineoffset,
+           double lowerbacklineoffset
     ) {
         if (facing == EnumFacing.DOWN) {
-            GL11.glPushMatrix();
-            GL11.glLineWidth(5);
-            GL11.glDisable(GL11.GL_TEXTURE_2D);
-            GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-            GL11.glBegin(GL11.GL_LINES);
-            GL11.glVertex3f((float) x + 0.5F + (float) frontlineoffset, (float) y + 1, (float) z + 0.5F);
-            GL11.glVertex3f((float) x + 0.5F + (float) frontlineoffset, (float) y + 1 - (float) frontverticallinedepth, (float) z + 0.5F);
-            GL11.glEnd();
-            GL11.glEnable(GL11.GL_TEXTURE_2D);
-            GL11.glPopMatrix();
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended");
+            if (renderMethod != null) {
+                if (upperfrontverticallinedepth > 0) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(5);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F + (float) upperfrontlineoffset, (float) y + 1, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F + (float) upperfrontlineoffset, (float) y + 1 - (float) upperfrontverticallinedepth, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
 
-            GL11.glPushMatrix();
-            GL11.glLineWidth(5);
-            //GL11.glDisable(GL11.GL_LIGHTING);
-            GL11.glDisable(GL11.GL_TEXTURE_2D);
-            GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-            GL11.glBegin(GL11.GL_LINES);
-            GL11.glVertex3f((float) x + 0.5F - (float) backlineoffset, (float) y + 1, (float) z + 0.5F);
-            GL11.glVertex3f((float) x + 0.5F - (float) backlineoffset, (float) y + 1 - (float) backverticallinedepth, (float) z + 0.5F);
-            GL11.glEnd();
-            GL11.glEnable(GL11.GL_TEXTURE_2D);
-            GL11.glPopMatrix();
+                if (upperbackverticallinedepth > 0) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(5);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F - (float) upperbacklineoffset, (float) y + 1, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F - (float) upperbacklineoffset, (float) y + 1 - (float) upperbackverticallinedepth, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
+            }
 
             setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
             GlStateManager.rotate(180, 0, 0, 1);
             GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
             this.bindTexture(TEXTURE);
             GlStateManager.enableLighting();
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended");
+            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
             if (renderMethod != null) {
                 try {
                     renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
@@ -6183,14 +6203,59 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             }
         }
         else if (facing == EnumFacing.UP) {
-            return false;
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticFloor");
+            if (renderMethod != null) {
+                if (lowerfrontverticallinedepth > 0) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(5);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F + (float) lowerfrontlineoffset, (float) y, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F + (float) lowerfrontlineoffset, (float) y + (float) lowerfrontverticallinedepth, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
+
+                if (lowerbackverticallinedepth > 0) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(5);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F - (float) lowerbacklineoffset, (float) y, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F - (float) lowerbacklineoffset, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
+            }
+
+            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+            GlStateManager.rotate(180, 0, 0, 1);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
+            GlStateManager.enableLighting();
+            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+            if (renderMethod != null) {
+                try {
+                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                }
+                catch (Exception e) {return false;}
+                return true;
+            } else {
+                return false;
+            }
         }
         else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
             setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
             GlStateManager.rotate(90, 0, 0, 1);
             GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
             this.bindTexture(TEXTURE);
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStatic");
+            GlStateManager.enableLighting();
+            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticWall");
             if (renderMethod != null) {
                 try {
                     renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);

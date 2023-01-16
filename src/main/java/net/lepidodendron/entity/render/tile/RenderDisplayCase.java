@@ -4964,16 +4964,12 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                             else if (classEntity == EntityPrehistoricFloraEryon.class) {
                                 double offset = 0.18;
                                 try {
-                                    itemRender = renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
                                         TEXTURE_ERYON, RenderEryon.getScaler(), new ModelEryon(), offset);
                                 } catch (Exception e) {
                                     itemRender = true;
                                 }
                             }
-
-
-
-
 
 
                             else {
