@@ -96,7 +96,7 @@ public class BlockDisplayPlinth extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Try placing raw meat/creatures in the display");
+				tooltip.add("Place Taxidermy kits into the display");
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}

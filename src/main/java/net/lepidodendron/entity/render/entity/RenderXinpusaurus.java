@@ -32,6 +32,7 @@ public class RenderXinpusaurus extends RenderLiving<EntityPrehistoricFloraXinpus
     protected void applyRotations(EntityPrehistoricFloraXinpusaurus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
+
     protected void preRenderCallback(EntityPrehistoricFloraXinpusaurus entity, float f) {
         float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {

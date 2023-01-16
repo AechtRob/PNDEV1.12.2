@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUITaxidermyTable;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
@@ -501,7 +502,8 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 0) {
 				//System.err.println("Checking for slot 0");
-				if (!(stack.getItem() instanceof ItemPNTaxidermyItem)) {
+				if (!(stack.getItem() instanceof ItemPNTaxidermyItem)
+					&& !(Block.getBlockFromItem(stack.getItem()) instanceof BlockPNTaxidermyItem)) {
 					return false;
 				}
 				boolean flag = false;

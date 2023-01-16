@@ -438,6 +438,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_YUNGUISAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
     private final ModelYunguisaurus modelYunguisaurus;
 
+    private static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
+
 
     public RenderDisplayWallMount() {
         this.modelAcanthodes = new ModelAcanthodes();
@@ -5822,27 +5824,54 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 double upperfrontverticallinedepth = 0.8;
                                 double upperbackverticallinedepth = 0.5;
                                 double upperfrontlineoffset = 0.2;
+                                double upperfrontlineoffsetperpendiular = 0.2F;
                                 double upperbacklineoffset = 0.2;
+                                double upperbacklineoffsetperpendiular = 0.2F;
                                 double lowerfrontverticallinedepth = 0.8;
                                 double lowerbackverticallinedepth = 0.5;
                                 double lowerfrontlineoffset = 0.2;
+                                double lowerfrontlineoffsetperpendiular = 0.2F;
                                 double lowerbacklineoffset = 0.2;
+                                double lowerbacklineoffsetperpendiular = 0.2F;
                                 try {
                                     itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                        TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), new ModelXinpusaurus(),
-                                        offsetWall, voffset, hoffset, 
-                                        upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperbacklineoffset,
-                                        lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerbacklineoffset);
-                                }
-                                catch (Exception e) {
+                                            TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), new ModelXinpusaurus(),
+                                            offsetWall, voffset, hoffset,
+                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
+                                } catch (Exception e) {
                                     itemRender = true;
                                 }
-
-
-
+                            }
+                            else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
+                                double offsetWall = 0.05;
+                                double voffset = 0;
+                                double hoffset = 0;
+                                double upperfrontverticallinedepth = 0.8;
+                                double upperbackverticallinedepth = 0.5;
+                                double upperfrontlineoffset = 0.2;
+                                double upperfrontlineoffsetperpendiular = 0.0F;
+                                double upperbacklineoffset = 0.2;
+                                double upperbacklineoffsetperpendiular = 0.0F;
+                                double lowerfrontverticallinedepth = 0.8;
+                                double lowerbackverticallinedepth = 0.5;
+                                double lowerfrontlineoffset = 0.2;
+                                double lowerfrontlineoffsetperpendiular = 0.0F;
+                                double lowerbacklineoffset = 0.2;
+                                double lowerbacklineoffsetperpendiular = 0.0F;
+                                try {
+                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                            TEXTURE_EUCHAMBERSIA, RenderEuchambersia.getScaler(), new ModelEuchambersia(),
+                                            offsetWall, voffset, hoffset,
+                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
+                                } catch (Exception e) {
+                                    itemRender = true;
+                                }
+                            }
 
                                 
-                            } else if (classEntity == EntityPrehistoricFloraYunguisaurus.class) {
+                            else if (classEntity == EntityPrehistoricFloraYunguisaurus.class) {
                                 double offset = -0.3;
                                 double voffset = 0;
                                 if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
@@ -6150,11 +6179,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
            double upperfrontverticallinedepth,
            double upperbackverticallinedepth,
            double upperfrontlineoffset,
+           double upperfrontlineoffsetperpendiular,
            double upperbacklineoffset,
+           double upperbacklineoffsetperpendiular,
            double lowerfrontverticallinedepth,
            double lowerbackverticallinedepth,
            double lowerfrontlineoffset,
-           double lowerbacklineoffset
+           double lowerfrontlineoffsetperpendiular,
+           double lowerbacklineoffset,
+           double lowerbacklineoffsetperpendiular
     ) {
         if (facing == EnumFacing.DOWN) {
             Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended");
@@ -6165,8 +6198,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    float xoffsetter = (float) (upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation)));
-                    float zoffsetter = (float) (upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
+                    float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1, (float) z + 0.5F + zoffsetter);
                     GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1 - (float) upperfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
                     GL11.glEnd();
@@ -6180,8 +6213,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    float xoffsetter = (float) (upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation)));
-                    float zoffsetter = (float) (upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
+                    float zoffsetter = (float) ((upperbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1, (float) z + 0.5F - zoffsetter);
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + 1 - (float) upperbackverticallinedepth, (float) z + 0.5F - zoffsetter);
                     GL11.glEnd();
@@ -6215,8 +6248,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    float xoffsetter = (float) (lowerfrontlineoffset * Math.cos(Math.toRadians(-currentRotation)));
-                    float zoffsetter = (float) (lowerfrontlineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    float xoffsetter = (float) ((lowerfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (lowerfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
+                    float zoffsetter = (float) ((lowerfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (lowerfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y, (float) z + 0.5F + zoffsetter);
                     GL11.glVertex3f((float) x + 0.5F + (float) xoffsetter, (float) y + (float) lowerfrontverticallinedepth, (float) z + 0.5F + zoffsetter);
                     GL11.glEnd();
@@ -6230,8 +6263,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
-                    float xoffsetter = (float) (lowerbacklineoffset * Math.cos(Math.toRadians(-currentRotation)));
-                    float zoffsetter = (float) (lowerbacklineoffset * Math.sin(Math.toRadians(-currentRotation)));
+                    float xoffsetter = (float) ((lowerbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (lowerbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
+                    float zoffsetter = (float) ((lowerbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (lowerbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y, (float) z + 0.5F - zoffsetter);
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F - zoffsetter);
                     GL11.glEnd();

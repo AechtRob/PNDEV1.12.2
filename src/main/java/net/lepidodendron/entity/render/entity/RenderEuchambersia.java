@@ -15,6 +15,10 @@ public class RenderEuchambersia extends RenderLiving<EntityPrehistoricFloraEucha
         super(mgr, new ModelEuchambersia(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 0.33F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEuchambersia entity) {
         return RenderEuchambersia.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderEuchambersia extends RenderLiving<EntityPrehistoricFloraEucha
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEuchambersia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

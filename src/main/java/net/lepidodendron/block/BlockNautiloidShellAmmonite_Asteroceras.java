@@ -3,11 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -34,6 +34,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -51,11 +52,6 @@ public class BlockNautiloidShellAmmonite_Asteroceras extends ElementsLepidodendr
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom.class, "lepidodendron:tileentityshell_asteroceras");
-	}
-
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
@@ -64,12 +60,18 @@ public class BlockNautiloidShellAmmonite_Asteroceras extends ElementsLepidodendr
 		//ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNautiloidShellAmmonite_Asteroceras.LEVEL).build());
 	}
 
-	public static class BlockCustom extends Block {
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
+		GameRegistry.registerTileEntity(BlockNautiloidShellAmmonite_Asteroceras.TileEntityCustom.class, "lepidodendron:tileentityshell_asteroceras");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_asteroceras", BlockNautiloidShellAmmonite_Asteroceras.block);
+	}
+
+	public static class BlockCustom extends BlockPNTaxidermyItem {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
 			setTranslationKey("pf_shell_asteroceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);

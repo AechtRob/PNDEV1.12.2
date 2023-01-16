@@ -225,6 +225,7 @@ public class ModelEryon extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 );
     }
+
     public void renderStaticDisplayCase(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -236,6 +237,7 @@ public class ModelEryon extends AdvancedModelBase {
         //GlStateManager.disableBlend();
         //GlStateManager.popMatrix();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
