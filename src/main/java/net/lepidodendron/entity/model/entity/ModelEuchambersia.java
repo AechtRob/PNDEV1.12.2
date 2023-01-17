@@ -222,7 +222,7 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.Euchambersia.render(f5);
     }
 
-    public void renderStatic(float f) {
+    public void renderStaticPlinth(float f) {
         this.Jaw.rotateAngleX = (float) Math.toRadians(32.5);
         this.Head.rotateAngleX = (float) Math.toRadians(-23.9);
         this.Head.rotateAngleY = (float) Math.toRadians(-32.6);
@@ -254,7 +254,7 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.RLeg.rotateAngleX = (float) Math.toRadians(-10);
         this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
         this.RFoot.rotateAngleX = (float) Math.toRadians(5);
-        this.Euchambersia.render(0.1F);
+        this.Euchambersia.render(0.01F);
     }
 
     public void renderStaticFloor(float f) {
