@@ -8,11 +8,13 @@ public enum EnumBiomeTypeDevonian implements IStringSerializable {
     Floodplain("floodplain"),
     Forest("forest"),
     Ocean("ocean"),
-    Springs("hot_springs"),
+    Springs("springs"),
     Mountains("mountains"),
+    Savanna("savanna"),
     Hypersaline("hypersaline"),
     Vale("vale"),
-    BarrierReef("barrier_reef")
+    Reef("reef"),
+    Meadow("meadow")
     ;
 
     private final String name;
