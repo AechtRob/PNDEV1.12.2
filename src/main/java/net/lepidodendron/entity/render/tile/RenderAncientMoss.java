@@ -13,7 +13,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 
 public class RenderAncientMoss extends TileEntitySpecialRenderer<BlockAncientMoss.TileEntityCustom> {
 
@@ -42,15 +41,13 @@ public class RenderAncientMoss extends TileEntitySpecialRenderer<BlockAncientMos
 
     @Override
     public void render(BlockAncientMoss.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        String eggRenderType = new Object() {
-            public String getValue(BlockPos pos, String tag) {
-                TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
-                if (tileEntity != null)
-                    return tileEntity.getTileData().getString(tag);
-                return "";
+        String eggRenderType = "";
+        TileEntity tileEntity = entity.getWorld().getTileEntity(entity.getPos());
+        if (tileEntity != null) {
+            if (tileEntity.getTileData().hasKey("egg")) {
+                eggRenderType = tileEntity.getTileData().getString("egg");
             }
-        }.getValue(new BlockPos(entity.getPos()), "egg");
-
+        }
         if (!eggRenderType.equals("")) {
 
             EnumFacing facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);

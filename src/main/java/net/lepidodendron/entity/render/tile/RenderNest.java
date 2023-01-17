@@ -94,14 +94,13 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
             }
 
             //Render eggs:
-            String eggRenderType = new Object() {
-                public String getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getString(tag);
-                    return "";
+            String eggRenderType = "";
+            TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
+            if (tileEntity != null) {
+                if (tileEntity.getTileData().hasKey("egg")) {
+                    eggRenderType = tileEntity.getTileData().getString("egg");
                 }
-            }.getValue(pos, "egg");
+            }
 
             //System.err.println("eggRenderType " + eggRenderType);
 

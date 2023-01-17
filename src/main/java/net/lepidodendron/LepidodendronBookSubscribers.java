@@ -3261,14 +3261,14 @@ public class LepidodendronBookSubscribers {
 		IBlockState state = event.getWorld().getBlockState(event.getPos());
 		Block target = state.getBlock();
 		if (target == BlockNest.block) {
-			String nestType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = event.getWorld().getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+			String nestType = "";
+			TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
+			if (tileEntity != null) {
+				if (tileEntity.getTileData().hasKey("creature")) {
+					nestType = tileEntity.getTileData().getString("creature");
 				}
-			}.getValue(event.getPos(), "creature");
+			}
+
 			if (!nestType.equals("")) {
 				//Get the mob:
 				nestType = nestType.replace("lepidodendron:", "");

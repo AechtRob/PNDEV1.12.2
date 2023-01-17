@@ -80,14 +80,13 @@ public class BlockNautiloidShellAphetoceras extends ElementsLepidodendronMod.Mod
 		}
 
 		public int getRotation(World world, BlockPos pos) {
-			int currentRotation = (int) new Object() {
-				public double getValue(BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getInteger(tag);
-				return 0;
+			int currentRotation = 0;
+			TileEntity tileEntity = world.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity.getTileData().hasKey("rotation")) {
+					currentRotation = tileEntity.getTileData().getInteger("rotation");
 				}
-			}.getValue(pos, "rotation");
+			}
 			return currentRotation;
 		}
 

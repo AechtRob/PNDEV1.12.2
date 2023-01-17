@@ -64,14 +64,15 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
 
-        int variant = new Object() {
-            public int getValue(BlockPos pos1, String tag) {
-                TileEntity tileEntity = world.getTileEntity(pos1);
-                if (tileEntity != null)
-                    return tileEntity.getTileData().getInteger(tag);
-                return 0;
+        int variant = 0;
+        TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
+        if (tileEntity != null) {
+            if (tileEntity.getTileData().hasKey("variant")) {
+                variant = tileEntity.getTileData().getInteger("variant");
             }
-        }.getValue(pos, "variant");
+        }
+
+
         ResourceLocation TEXTURE_END = TEXTURE_END_0;
         switch (variant) {
             case 0: default:
@@ -142,51 +143,32 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
 
         if (entity != null && entity.hasWorld() && world.getBlockState(pos).getBlock() == BlockRopeBarrier.block) {
 
-            boolean north = new Object() {
-                public boolean getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getBoolean(tag);
-                    return false;
+            boolean north = false;
+            boolean south = false;
+            boolean east = false;
+            boolean west = false;
+            if (tileEntity != null) {
+                if (tileEntity.getTileData().hasKey("north")) {
+                    north = tileEntity.getTileData().getBoolean("north");
                 }
-            }.getValue(pos, "north");
-
-            boolean south = new Object() {
-                public boolean getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getBoolean(tag);
-                    return false;
+                if (tileEntity.getTileData().hasKey("south")) {
+                    south = tileEntity.getTileData().getBoolean("south");
                 }
-            }.getValue(pos, "south");
-
-            boolean east = new Object() {
-                public boolean getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getBoolean(tag);
-                    return false;
+                if (tileEntity.getTileData().hasKey("east")) {
+                    east = tileEntity.getTileData().getBoolean("east");
                 }
-            }.getValue(pos, "east");
-
-            boolean west = new Object() {
-                public boolean getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getBoolean(tag);
-                    return false;
+                if (tileEntity.getTileData().hasKey("west")) {
+                    west = tileEntity.getTileData().getBoolean("west");
                 }
-            }.getValue(pos, "west");
+            }
 
             if (north) {
-                int dye = new Object() {
-                    public int getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getInteger(tag);
-                        return 16;
+                int dye = 16;
+                if (tileEntity != null) {
+                    if (tileEntity.getTileData().hasKey("northDye")) {
+                        dye = tileEntity.getTileData().getInteger("northDye");
                     }
-                }.getValue(pos, "northDye");
+                }
                 ResourceLocation TEXTURE_DYE = TEXTURE_DYE_16;
                 switch (dye) {
                     case 16:
@@ -285,14 +267,12 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
             }
 
             if (south) {
-                int dye = new Object() {
-                    public int getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getInteger(tag);
-                        return 16;
+                int dye = 16;
+                if (tileEntity != null) {
+                    if (tileEntity.getTileData().hasKey("southDye")) {
+                        dye = tileEntity.getTileData().getInteger("southDye");
                     }
-                }.getValue(pos, "southDye");
+                }
                 ResourceLocation TEXTURE_DYE = TEXTURE_DYE_16;
                 switch (dye) {
                     case 16:
@@ -391,14 +371,12 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
             }
 
             if (east) {
-                int dye = new Object() {
-                    public int getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getInteger(tag);
-                        return 16;
+                int dye = 16;
+                if (tileEntity != null) {
+                    if (tileEntity.getTileData().hasKey("eastDye")) {
+                        dye = tileEntity.getTileData().getInteger("eastDye");
                     }
-                }.getValue(pos, "eastDye");
+                }
                 ResourceLocation TEXTURE_DYE = TEXTURE_DYE_16;
                 switch (dye) {
                     case 16:
@@ -498,14 +476,12 @@ public class RenderRopeBarrier extends TileEntitySpecialRenderer<BlockRopeBarrie
 
 
             if (west) {
-                int dye = new Object() {
-                    public int getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getInteger(tag);
-                        return 16;
+                int dye = 16;
+                if (tileEntity != null) {
+                    if (tileEntity.getTileData().hasKey("westDye")) {
+                        dye = tileEntity.getTileData().getInteger("westDye");
                     }
-                }.getValue(pos, "westDye");
+                }
                 ResourceLocation TEXTURE_DYE = TEXTURE_DYE_16;
                 switch (dye) {
                     case 16:
