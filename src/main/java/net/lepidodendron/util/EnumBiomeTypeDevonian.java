@@ -13,7 +13,6 @@ public enum EnumBiomeTypeDevonian implements IStringSerializable {
     Savanna("savanna"),
     Hypersaline("hypersaline"),
     Vale("vale"),
-    Reef("reef"),
     Meadow("meadow"),
     Brackish("brackish")
     ;

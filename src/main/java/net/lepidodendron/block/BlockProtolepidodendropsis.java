@@ -97,14 +97,16 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 		}
 		if (matchBiome(biome, LepidodendronConfigPlants.genProtolepidodendropsisOverrideBiomes))
 			biomeCriteria = true;
+
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Springs) {
-					biomeCriteria = false;
+				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest
+					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp) {
+					biomeCriteria = true;
 				}
 				else {
-					biomeCriteria = true;
+					biomeCriteria = false;
 				}
 			}
 		}

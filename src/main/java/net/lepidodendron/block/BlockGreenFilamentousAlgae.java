@@ -140,7 +140,8 @@ public class BlockGreenFilamentousAlgae extends ElementsLepidodendronMod.ModElem
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_floodplain_forested")) {
 			GenChance = 92;
 		}
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")) {
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_marsh")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")) {
 			GenChance = 156;
 		}
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp")) {
