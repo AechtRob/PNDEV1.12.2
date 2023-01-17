@@ -3,11 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -35,6 +35,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -55,6 +56,7 @@ public class BlockNautiloidShellAmmonite_Pachydesmoceras extends ElementsLepidod
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockNautiloidShellAmmonite_Pachydesmoceras.TileEntityCustom.class, "lepidodendron:tileentityshell_pachydesmoceras");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ammonite_pachydesmoceras", BlockNautiloidShellAmmonite_Pachydesmoceras.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -65,12 +67,12 @@ public class BlockNautiloidShellAmmonite_Pachydesmoceras extends ElementsLepidod
 		//ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockNautiloidShellAmmonite_pachydesmoceras.LEVEL).build());
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends BlockPNTaxidermyItem {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			//super(Material.ROCK);
 			setTranslationKey("pf_shell_pachydesmoceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);

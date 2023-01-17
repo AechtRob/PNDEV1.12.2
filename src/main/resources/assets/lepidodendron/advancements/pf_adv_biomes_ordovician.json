@@ -16,16 +16,82 @@
 		"experience": 500
 	},
 	"criteria": {
+		"ordovician_beach": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_beach"
+			}
+		},
+		"ordovician_beach_frozen": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_beach_frozen"
+			}
+		},
+		"ordovician_bog": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_bog"
+			}
+		},
+		"ordovician_crags": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_crags"
+			}
+		},
+		"ordovician_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_hills"
+			}
+		},
+		"ordovician_hills_frozen": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_hills_frozen"
+			}
+		},
+		"ordovician_lagoon": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_lagoon"
+			}
+		},
+		"ordovician_lagoon_helper": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_lagoon_helper"
+			}
+		},
 		"ordovician_land": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:ordovician_land"
 			}
 		},
-		"ordovician_sponge_forest": {
+		"ordovician_land_flat": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:ordovician_sponge_forest"
+				"biome": "lepidodendron:ordovician_land_flat"
+			}
+		},
+		"ordovician_bryozoan_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_bryozoan_reef"
+			}
+		},
+		"ordovician_land_frozen": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_land_frozen"
+			}
+		},
+		"ordovician_algal_reef": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_algal_reef"
 			}
 		},
 		"ordovician_sea": {
@@ -45,21 +111,88 @@
 			"conditions": {
 				"biome": "lepidodendron:ordovician_sea_icebergs"
 			}
+		},
+		"ordovician_sea_ice_trench": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea_ice_trench"
+			}
+		},
+		"ordovician_sea_shore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea_shore"
+			}
+		},
+		"ordovician_sea_shore_frozen": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sea_shore_frozen"
+			}
+		},
+		"ordovician_sponge_forest": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:ordovician_sponge_forest"
+			}
 		}
 	},
 	"requirements": [
 		[
-			"ordovician_sea_ice",
-			"ordovician_sea_icebergs"
+			"ordovician_beach"
+		],
+		[
+			"ordovician_beach_frozen"
+		],
+		[
+			"ordovician_bog"
+		],
+		[
+			"ordovician_crags"
+		],
+		[
+			"ordovician_hills"
+		],
+		[
+			"ordovician_hills_frozen"
+		],
+		[
+			"ordovician_lagoon",
+			"ordovician_lagoon_helper"
+		],
+		[
+			"ordovician_land",
+			"ordovician_land_flat"
+		],
+		[
+			"ordovician_land_frozen"
+		],
+		[
+			"ordovician_algal_reef"
+		],
+		[
+			"ordovician_bryozoan_reef"
 		],
 		[
 			"ordovician_sea"
 		],
 		[
-			"ordovician_sponge_forest"
+			"ordovician_sea_ice"
 		],
 		[
-			"ordovician_land"
+			"ordovician_sea_icebergs"
+		],
+		[
+			"ordovician_sea_ice_trench"
+		],
+		[
+			"ordovician_sea_shore"
+		],
+		[
+			"ordovician_sea_shore_frozen"
+		],
+		[
+			"ordovician_sponge_forest"
 		]
 	]
 }

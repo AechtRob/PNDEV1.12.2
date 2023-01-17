@@ -3,11 +3,11 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -33,6 +33,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -53,6 +54,7 @@ public class BlockNautiloidShellEndoceras extends ElementsLepidodendronMod.ModEl
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockNautiloidShellEndoceras.TileEntityCustom.class, "lepidodendron:tileentityshell_endoceras");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_endoceras", BlockNautiloidShellEndoceras.block);
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -62,12 +64,12 @@ public class BlockNautiloidShellEndoceras extends ElementsLepidodendronMod.ModEl
 				new ModelResourceLocation("lepidodendron:shell_endoceras", "inventory"));
 	}
 
-	public static class BlockCustom extends Block {
+	public static class BlockCustom extends BlockPNTaxidermyItem {
 
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
-			super(Material.ROCK);
+			//super(Material.ROCK);
 			setTranslationKey("pf_shell_endoceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);

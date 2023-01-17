@@ -72,6 +72,7 @@ public class BlockNautiloidShellAmmonite_Asteroceras extends ElementsLepidodendr
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
+			//super(Material.ROCK);
 			setTranslationKey("pf_shell_asteroceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);

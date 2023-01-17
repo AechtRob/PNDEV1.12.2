@@ -22,10 +22,46 @@
 				"biome": "lepidodendron:cambrian_biome"
 			}
 		},
+		"cambrian_beach": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_beach"
+			}
+		},
+		"cambrian_crags": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_crags"
+			}
+		},
+		"cambrian_dusty": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_dusty"
+			}
+		},
+		"cambrian_estuary": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_estuary"
+			}
+		},
 		"cambrian_estuary_helper": {
 			"trigger": "minecraft:location",
 			"conditions": {
 				"biome": "lepidodendron:cambrian_estuary_helper"
+			}
+		},
+		"cambrian_hills": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_hills"
+			}
+		},
+		"cambrian_moist": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_moist"
 			}
 		},
 		"cambrian_sea": {
@@ -34,23 +70,50 @@
 				"biome": "lepidodendron:cambrian_sea"
 			}
 		},
-		"cambrian_estuary": {
+		"cambrian_sea_reefs": {
 			"trigger": "minecraft:location",
 			"conditions": {
-				"biome": "lepidodendron:cambrian_estuary"
+				"biome": "lepidodendron:cambrian_sea_reefs"
+			}
+		},
+		"cambrian_sea_shore": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:cambrian_sea_shore"
 			}
 		}
 	},
 	"requirements": [
 		[
-			"cambrian_land",
-			"cambrian_estuary_helper"
+			"cambrian_land"
 		],
 		[
 			"cambrian_sea"
 		],
 		[
-			"cambrian_estuary"
+			"cambrian_sea_shore"
+		],
+		[
+			"cambrian_estuary",
+			"cambrian_estuary_helper"
+		],
+		[
+			"cambrian_beach"
+		],
+		[
+			"cambrian_crags"
+		],
+		[
+			"cambrian_dusty"
+		],
+		[
+			"cambrian_hills"
+		],
+		[
+			"cambrian_moist"
+		],
+		[
+			"cambrian_sea_reefs"
 		]
 	]
 }
