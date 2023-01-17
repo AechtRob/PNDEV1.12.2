@@ -14,7 +14,8 @@ public enum EnumBiomeTypeDevonian implements IStringSerializable {
     Hypersaline("hypersaline"),
     Vale("vale"),
     Reef("reef"),
-    Meadow("meadow")
+    Meadow("meadow"),
+    Brackish("brackish")
     ;
 
     private final String name;
