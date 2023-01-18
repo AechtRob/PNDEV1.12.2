@@ -2,7 +2,6 @@ package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.EntityPrehistoricFloraIvoites;
-import net.lepidodendron.entity.model.entity.ModelAmmonite15cm;
 import net.lepidodendron.entity.model.entity.ModelIvoites;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -14,6 +13,10 @@ public class RenderIvoites extends RenderLiving<EntityPrehistoricFloraIvoites> {
 
     public RenderIvoites(RenderManager mgr) {
         super(mgr, new ModelIvoites(), 0.1f);
+    }
+
+    public static float getScaler() {
+        return 0.12F;
     }
 
     @Override
@@ -28,7 +31,7 @@ public class RenderIvoites extends RenderLiving<EntityPrehistoricFloraIvoites> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraIvoites entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

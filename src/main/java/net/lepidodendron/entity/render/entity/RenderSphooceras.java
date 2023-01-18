@@ -14,6 +14,9 @@ public class RenderSphooceras extends RenderLiving<EntityPrehistoricFloraSphooce
     public RenderSphooceras(RenderManager mgr) {
         super(mgr, new ModelSphooceras(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.85F * 0.19F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSphooceras entity) {
@@ -26,7 +29,7 @@ public class RenderSphooceras extends RenderLiving<EntityPrehistoricFloraSphooce
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSphooceras entity, float f) {
-        float scale = entity.getAgeScale() * 0.85F;
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

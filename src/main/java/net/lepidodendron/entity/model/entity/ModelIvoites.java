@@ -248,7 +248,7 @@ public class ModelIvoites extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Shell1.render(f5 * 0.12F);
+        this.Shell1.render(f5);
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -262,7 +262,7 @@ public class ModelIvoites extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.Shell1.offsetY = 1.25F;
+        //this.Shell1.offsetY = 1.25F;
 
         AdvancedModelRendererExtended[] tentacle1 = {this.Tentacles1, this.Tentacle1};
         AdvancedModelRendererExtended[] tentacle2 = {this.Temtacles2, this.Tentacle2};
@@ -304,11 +304,11 @@ public class ModelIvoites extends AdvancedModelBaseExtended {
 
         if (e.isInWater()) {
             this.bob(Shell1, 0.1F, 2.0F, false, f2, 2);
-            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.04F, false, 3, f2, 1);
+            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1);
         }
         else {
             this.Shell1.rotateAngleZ = (float) Math.toRadians(90);
-            this.Shell1.offsetY = 1.33F;
+            this.Shell1.offsetY = 0.08F;
         }
 
     }
