@@ -6203,7 +6203,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glLineWidth(5);
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glBegin(GL11.GL_QUADS);
                     float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                     float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1, (float) z + 0.5F + zoffsetter);
@@ -6216,7 +6216,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                 if (upperbackverticallinedepth > 0) {
                     GL11.glPushMatrix();
                     GL11.glLineWidth(5);
-                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glDisable(GL11.GL_QUADS);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
                     float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
