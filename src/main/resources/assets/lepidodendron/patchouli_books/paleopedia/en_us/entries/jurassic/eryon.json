@@ -13,7 +13,7 @@
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/eryon.png"],
+			"images": ["paleopedia:textures/eryontop.png"],
 			"title": "E. cuvieri",
 			"text": ""
 		},

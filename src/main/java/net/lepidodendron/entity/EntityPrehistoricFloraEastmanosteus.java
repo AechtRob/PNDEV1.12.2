@@ -51,7 +51,7 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 		minWidth = 0.2F;
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
-		maxHealthAgeable = 46.0D;
+		maxHealthAgeable = 24.0D;
 	}
 
 	@Override
@@ -172,9 +172,9 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(12D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(6D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(24.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(42.0D);
 	}
 
 	@Override
