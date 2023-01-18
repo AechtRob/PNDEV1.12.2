@@ -1,7 +1,7 @@
 {
     "name": "Jurassic Animals",
     "description": "Animals of the Jurassic (None Yet)",
-    "icon": "lepidodendron:shell_titanites",
+    "icon": "paleopedia:textures/megalosaurus_icon.png",
     "parent": "lepidodendron:jurassic",
     "sortnum": 1
 }
