@@ -9,7 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.item.ItemFishFood;
-import net.lepidodendron.item.entities.ItemNautiloidEggsAphetoceras;
+import net.lepidodendron.item.entities.ItemNautiloidEggsGoniatites;
 import net.lepidodendron.item.entities.ItemNautiloidEggsIvoites;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
@@ -24,6 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
+
 public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautiloidBase {
 
 	public BlockPos currentTarget;
@@ -32,17 +33,17 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 
 	public EntityPrehistoricFloraIvoites(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.2F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		//minSize = 0.3F;
+		//minSize = 0.8F;
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.3F;
-		maxHealthAgeable = 6.0D;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
+		maxHealthAgeable = 3;
 	}
 
 	@Override
@@ -66,7 +67,7 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 
 	@Override
 	public int getAdultAge() {
-		return 48000;
+		return 36000;
 	}
 
 	@Override
@@ -115,7 +116,7 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 	public void onEntityUpdate() {
 		super.onEntityUpdate();
 		//Drop an egg perhaps:
-		if (!world.isRemote && this.getCanBreed() && (LepidodendronConfig.doMultiplyMobs || this.getLaying())) {
+		if (!world.isRemote && this.isPFAdult() && this.getCanBreed() && LepidodendronConfig.doMultiplyMobs) {
 			if (Math.random() > 0.5) {
 				ItemStack itemstack = new ItemStack(ItemNautiloidEggsIvoites.block, (int) (1));
 				EntityItem entityToSpawn = new EntityItem(world, this.getPosition().getX(), this.getPosition().getY(), this.getPosition().getZ(), itemstack);
@@ -128,7 +129,7 @@ public class EntityPrehistoricFloraIvoites extends EntityPrehistoricFloraNautilo
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		 		if (!this.isPFAdult()) {
+		if (!this.isPFAdult()) {
 			return LepidodendronMod.IVOITES_LOOT_YOUNG;
 		}
 		return LepidodendronMod.IVOITES_LOOT;

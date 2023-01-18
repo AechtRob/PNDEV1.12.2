@@ -13,7 +13,7 @@ public class RenderBalhuticaris extends RenderLiving<EntityPrehistoricFloraBalhu
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/balhuticaris.png");
 
     public static float getScaler() {
-        return 0.3F;
+        return 0.3F * 0.5F;
     }
     public RenderBalhuticaris(RenderManager mgr) {
         super(mgr, new ModelBalhuticaris(), 0.0f);
