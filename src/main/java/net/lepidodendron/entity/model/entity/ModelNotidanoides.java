@@ -173,11 +173,7 @@ public class ModelNotidanoides extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.head.rotateAngleX = (float) Math.toRadians(-15);
         this.body.rotateAngleX = (float) Math.toRadians(-15);
@@ -189,9 +185,54 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.body.offsetX = -0.09F;
         this.body.offsetY = -0.22F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(body0, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.1745F, 0.1309F, 1.0472F);
+        this.setRotateAngle(pelvicfinL, 0.1745F, -0.1309F, -1.0472F);
+        this.setRotateAngle(body4, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.4363F, 0.0F);
+        this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.22F;
+        this.body.render(0.01F);
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 1.2217F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -1.2217F);
+        this.setRotateAngle(body0, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.1745F, 0.1309F, 1.0472F);
+        this.setRotateAngle(pelvicfinL, 0.1745F, -0.1309F, -1.0472F);
+        this.setRotateAngle(body4, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.4363F, 0.0F);
+        this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.22F;
+        this.body.render(0.01F);
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
