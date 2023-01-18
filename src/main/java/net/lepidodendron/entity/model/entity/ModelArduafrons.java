@@ -192,19 +192,44 @@ public class ModelArduafrons extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Arduafrons.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+    public void renderStaticWall(float f) {
         this.Arduafrons.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
         this.Arduafrons.offsetY = -0.13F;
         this.Arduafrons.offsetX = -0.06F;
         this.Arduafrons.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Arduafrons, 0.7418F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(cube_r1, -0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.8552F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 1.2741F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.9599F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.9774F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.6545F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r14, 1.1694F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -1.2217F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0F, -0.3054F, 0.0F);
+        //this.body.offsetX = -0.09F;
+        this.Arduafrons.offsetY = -0.13F;
+        this.Arduafrons.offsetZ = -0.04F;
+        this.Arduafrons.offsetX = -0.06F;
+        this.Arduafrons.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
