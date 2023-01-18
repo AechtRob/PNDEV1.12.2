@@ -1272,9 +1272,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_FLAGELLOPANTOPUS = 506;
 	//public static final ResourceLocation FLAGELLOPANTOPUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/flagellopantopus"));
 	public static final int ENTITY_VACHONISIA = 507;
-	//public static final ResourceLocation VACHONISIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vachonisia"));
+	public static final ResourceLocation VACHONISIA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/vachonisia"));
 	public static final int ENTITY_BUNDENBACHIELLUS = 508;
-	//public static final ResourceLocation BUNDENBACHIELLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bundenbachiellus"));
+	public static final ResourceLocation BUNDENBACHIELLUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/bundenbachiellus"));
 	public static final int ENTITY_WINGERTSHELLICUS = 509;
 	public static final ResourceLocation WINGERTSHELLICUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wingertshellicus"));
 	public static final int ENTITY_WEINBERGINA = 510;

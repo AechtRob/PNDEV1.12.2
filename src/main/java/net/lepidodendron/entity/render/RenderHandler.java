@@ -3240,14 +3240,14 @@ public class RenderHandler {
                 return new RenderLasanius(manager);
             }
         });
-        /*
+        
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBundenbachiellus.class, new IRenderFactory<EntityPrehistoricFloraBundenbachiellus>() {
             @Override
             public Render<? super EntityPrehistoricFloraBundenbachiellus> createRenderFor(RenderManager manager) {
                 return new RenderBundenbachiellus(manager);
             }
         });
-        */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraIvoites.class, new IRenderFactory<EntityPrehistoricFloraIvoites>() {
             @Override
             public Render<? super EntityPrehistoricFloraIvoites> createRenderFor(RenderManager manager) {
@@ -3267,6 +3267,12 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraEugaleaspis> createRenderFor(RenderManager manager) {
                 return new RenderEugaleaspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEastmanosteus.class, new IRenderFactory<EntityPrehistoricFloraEastmanosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEastmanosteus> createRenderFor(RenderManager manager) {
+                return new RenderEastmanosteus(manager);
             }
         });
         /*

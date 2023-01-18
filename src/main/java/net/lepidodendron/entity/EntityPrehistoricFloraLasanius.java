@@ -205,7 +205,9 @@ public class EntityPrehistoricFloraLasanius extends EntityPrehistoricFloraFishBa
 	public boolean isInFeedingPosition() {
 		return
 				super.isInWater()
-						&& (this.world.getBlockState(this.getPosition().down()).getMaterial() != Material.WATER);
+						&& (this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.SAND
+						|| this.world.getBlockState(this.getPosition().down()).getMaterial() == Material.CORAL
+							);
 	}
 
 	@Override
