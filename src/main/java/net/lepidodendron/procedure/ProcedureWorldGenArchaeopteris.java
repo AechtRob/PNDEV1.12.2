@@ -45,6 +45,7 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
 		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
+		boolean vines = (boolean) dependencies.get("vines");
 		int TrunkHeight = 0;
 		int counter = 0;
 		int yy = y;
@@ -73,6 +74,13 @@ public class ProcedureWorldGenArchaeopteris extends ElementsLepidodendronMod.Mod
 
 			while (counter <= TrunkHeight) {
 				ProcedureTreeLog.executeProcedure((int) x, (int) (y + counter), (int) z, world, BlockArchaeopterisLog.block, EnumFacing.NORTH);
+				//Random vines for world-gen only:
+				if ((vines) && (Math.random() > 0.8)) {
+					int vinexx = x;
+					int vineyy = y + counter;
+					int vinezz = z;
+					ProcedureVines.executeProcedure(vinexx, vineyy, vinezz, world);
+				}
 				counter = counter + 1;
 			}
 

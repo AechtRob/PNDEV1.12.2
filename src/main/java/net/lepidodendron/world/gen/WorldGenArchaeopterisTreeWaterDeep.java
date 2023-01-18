@@ -8,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 import java.util.Random;
@@ -114,6 +115,10 @@ public class WorldGenArchaeopterisTreeWaterDeep extends WorldGenAbstractTree
                         position = position.down(2);
                     }
                 }
+                Biome biome = worldIn.getBiome(position);
+                boolean vines = (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_swamp"));
 
                 if (position.getY() >= worldIn.getSeaLevel()-4 && isSoil && position.getY() < worldIn.getHeight() - i - 1)
                 {
@@ -123,6 +128,7 @@ public class WorldGenArchaeopterisTreeWaterDeep extends WorldGenAbstractTree
 					$_dependencies.put("z", position.getZ());
 					$_dependencies.put("world", worldIn);
                     $_dependencies.put("SaplingSpawn", false);
+                    $_dependencies.put("vines", vines);
 					ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
                     return true;
                 }

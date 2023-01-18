@@ -198,7 +198,6 @@ public class BlockValmeyerodendronSapling extends ElementsLepidodendronMod.ModEl
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte tree");
 				tooltip.add("Periods: early Carboniferous");
-				tooltip.add("Note: Coal swamps");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

@@ -111,12 +111,13 @@ public class BlockPseudobornia extends ElementsLepidodendronMod.ModElement {
 		if (LepidodendronConfig.dimDevonian == dimID) {
 			if (biome instanceof BiomeDevonian) {
 				BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Springs
-					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-					biomeCriteria = false;
+				if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Forest
+						|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Swamp
+						|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Vale) {
+					biomeCriteria = true;
 				}
 				else {
-					biomeCriteria = true;
+					biomeCriteria = false;
 				}
 			}
 		}
