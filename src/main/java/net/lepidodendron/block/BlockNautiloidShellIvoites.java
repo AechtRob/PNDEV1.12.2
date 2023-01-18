@@ -12,9 +12,12 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
@@ -26,10 +29,12 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -43,21 +48,21 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 
 	@Override
 	public void initElements() {
-		//elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_ivoites"));
-		//elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_ivoites"));
+		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		//GameRegistry.registerTileEntity(BlockNautiloidShellIvoites.TileEntityNest.class, "lepidodendron:tileentityshell_ivoites");
-		//OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ivoites", BlockNautiloidShellIvoites.block);
+		GameRegistry.registerTileEntity(BlockNautiloidShellIvoites.TileEntityCustom.class, "lepidodendron:tileentityshell_ivoites");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ivoites", BlockNautiloidShellIvoites.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-		//		new ModelResourceLocation("lepidodendron:shell_ivoites", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation("lepidodendron:shell_ivoites", "inventory"));
 	}
 
 	public static class BlockCustom extends BlockPNTaxidermyItem {

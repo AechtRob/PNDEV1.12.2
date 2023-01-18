@@ -304,7 +304,7 @@ public class ModelIvoites extends AdvancedModelBaseExtended {
 
         if (e.isInWater()) {
             this.bob(Shell1, 0.1F, 2.0F, false, f2, 2);
-            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.04F, false, 3, f2, 1);
+            this.Shell1.offsetZ = this.moveBoxExtended(speed, 0.40F, false, 3, f2, 1);
         }
         else {
             this.Shell1.rotateAngleZ = (float) Math.toRadians(90);
