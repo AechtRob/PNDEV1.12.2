@@ -1,0 +1,41 @@
+{
+	"name": "Aphnelepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/aphnelepis_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_aphnelepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_aphnelepis",
+			"title": "Aphnelepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/aphnelepis.png"],
+			"title": "A. australis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphnelepis",
+			"type": "text",
+			"text": "Aphnelepis australis is a species of Actinopterygian fish from the Jurassic of Australia. The small fish, being only around 10 cm long, possesses a long and thin body with a laterally flattened head, elongated jaws and a characteristic concave shape of the dorsal fin, which starts tall and quickly recedes as it moves along the body length."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphnelepis",
+			"type": "text",
+			"text": "The dorsal fin, aside from the characteristic shape, was obliquely opposed to the anal fin, while the pectoral fins were particularly thin; the caudal fin in the genus was slightly forked with relatively large lobes. The scales in this species were particularly large and deep, especially once compared with other members of the Archaeomaenidae, a shape of the scales that places Aphnelepis "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphnelepis",
+			"type": "text",
+			"text": "close to other relatives like Aetheolepis. Aphnelepis was first described by English Palaeontologist Sir Arthur Smith Woodward in 1895 based on numerous remains that were found in the Talbragar deposits of New South Wales; the fish was originally identified as an archaic Semionotid and only in a second time redescribed as an Archaeomaenid, position it still holds to this day."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aphnelepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

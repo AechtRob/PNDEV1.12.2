@@ -1,0 +1,51 @@
+{
+	"name": "Macromesodon",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/macromesodon_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_macromesodon",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_macromesodon",
+			"title": "Macromesodon",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic - Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/macromesodon.png"],
+			"title": "M. macropterus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "Macromesodon macropterus is a species of Pycnodont fish from the late Jurassic of Europe. Up to half a meter in length, this animal would have used the down-pointed mouth to pick hard foods it would then crush using the specialized battery of flattened teeth plating the inside of its mouth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "Differentiating this animal from other members of its group are a series of features both derived and primitive coming together in a weird mix; The fish had an oval and flattened body with a large dorsal fin towards the base of the rounded caudal fin, while the anal fin was opposed to the dorsal but much smaller than the latter."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "The head was flattened and down-pointing, attached to a body sometimes square-shaped by a gibbosity in the front. Macromesodon is an archaic member among Pycnodonts, which are Actinopterygians close to Teleosts, the group of fishes which encapsulates more than 90% of all living fishes today."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "The animal saw quite the complicated taxonomic history, with members of other genera like Turbomesodon, Eomesodon and Apomesodon being attributed to this animal in the past, while specimens once described as Mesodon being eventually identified as part of this species."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "The animal is perhaps most famous from German digsites like those seen in Solnhofen but a second recognized species is also known from Cerin in France. "
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_macromesodon",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

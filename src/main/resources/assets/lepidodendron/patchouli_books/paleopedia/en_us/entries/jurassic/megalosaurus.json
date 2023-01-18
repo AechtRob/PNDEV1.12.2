@@ -1,0 +1,31 @@
+{
+	"name": "Megalosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/megalosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_megalosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_megalosaurus",
+			"title": "Megalosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Dinosauria$(br)>Theropoda$(br)>Megalosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/megalosaurus.png"],
+			"title": "M. bucklandii",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_megalosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

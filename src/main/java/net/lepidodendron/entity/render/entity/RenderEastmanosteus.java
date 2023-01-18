@@ -11,6 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderEastmanosteus extends RenderLiving<EntityPrehistoricFloraEastmanosteus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
 
+    public static float getScaler() {
+        return 0.6F;
+    }
     public RenderEastmanosteus(RenderManager mgr) {
         super(mgr, new ModelEastmanosteus(), 1.0f);
     }
@@ -29,7 +32,7 @@ public class RenderEastmanosteus extends RenderLiving<EntityPrehistoricFloraEast
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEastmanosteus entity, float f) {
-        float scale = entity.getAgeScale()*0.6F;
+        float scale = entity.getAgeScale()*getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

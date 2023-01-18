@@ -1,0 +1,31 @@
+{
+	"name": "Pituriaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/pituriaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_pituriaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_pituriaspis",
+			"title": "Pituriaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Estuarine$(br2)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/pituriaspis.png"],
+			"title": "P. doylei",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Neeyambaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/neeyambaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_neeyambaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_neeyambaspis",
+			"title": "Neeyambaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Estuarine$(br2)>Pituriaspida$(br)>Pituriaspidiformes$(br)>Pituriaspididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/neeyambaspis.png"],
+			"title": "N. enigmatica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
