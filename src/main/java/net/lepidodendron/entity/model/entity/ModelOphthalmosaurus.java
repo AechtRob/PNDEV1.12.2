@@ -334,19 +334,14 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Ophthalmosaurus.render(f5 * 1F);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Head.offsetY = -0F;
+    public void renderStaticWall(float f) {
+        this.Head.offsetY = -0.01F;
         this.Head.offsetX = 0.01F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(22.5);
         this.Head.rotateAngleX = (float) Math.toRadians(0);
+        this.Head.rotateAngleZ = (float) Math.toRadians(0);
         this.Head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
