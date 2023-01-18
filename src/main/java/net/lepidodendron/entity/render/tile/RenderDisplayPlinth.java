@@ -4,10 +4,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayPlinth;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
+import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.block.model.IBakedModel;
@@ -27,8 +29,11 @@ import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import javax.annotation.Nullable;
+import java.lang.reflect.Method;
 
 public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayPlinth.TileEntityDisplayPlinth> {
+
+    public final float scaler = 6.0F;
 
     public static final PropertyDirection FACING = BlockDirectional.FACING;
     private static final ResourceLocation TEXTURE_ACANTHOSTEGA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthostega.png");
@@ -577,16 +582,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_ERETMORHIPIS);
                                 GlStateManager.scale(0.14F, 0.14F, 0.14F);
                                 modelEretmorhipis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
-                                double offset = 0.47;
-                                //double voffset = -0.15;
-                                double voffset = 0;
-                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                                GlStateManager.rotate(180, 0F, 0F, 1F);
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_EUCHAMBERSIA);
-                                GlStateManager.scale(0.2F, 0.2F, 0.2F);
-                                modelEuchambersia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraEudimorphodon.class) {
                                 double offset = 0.28;
                                 double voffset = 0;
@@ -1020,7 +1015,22 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_ROBERTIA);
                                 GlStateManager.scale(0.13F, 0.13F, 0.13F);
                                 modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else {
+                            }
+
+
+                            else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
+                                double offset = 0.47;
+                                try {
+                                    itemRender = !renderTaxidermy((float) x, (float) y, (float) z, currentRotation,
+                                            TEXTURE_EUCHAMBERSIA, RenderEuchambersia.getScaler(), modelEuchambersia, offset);
+                                } catch (Exception e) {
+                                    itemRender = true;
+                                }
+                            }
+
+
+
+                            else {
                                 itemRender = true;
                             }
                         }
@@ -1097,4 +1107,41 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         }
         return entityClass;
     }
+
+    public boolean renderTaxidermy(float x, float y, float z,
+                                   float currentRotation,
+                                   ResourceLocation TEXTURE,
+                                   float scalerModel,
+                                   ModelBase model,
+                                   double offset
+    ) {
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticPlinth");
+        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+        GlStateManager.rotate(180, 0F, 0F, 1F);
+        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+        GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+        this.bindTexture(TEXTURE);
+        if (renderMethod != null) {
+            try {
+                renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+            }
+            catch (Exception e) {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Nullable
+    public Method testAndGetMethod(Class clazz, String methodname) {
+        Method methodToFind = null;
+        try {
+            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+        } catch (NoSuchMethodException | SecurityException e) {
+        }
+        return methodToFind;
+    }
+
 }

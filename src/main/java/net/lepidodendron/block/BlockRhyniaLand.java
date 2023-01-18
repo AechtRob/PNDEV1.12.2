@@ -289,6 +289,12 @@ public class BlockRhyniaLand extends ElementsLepidodendronMod.ModElement {
 			return BlockFaceShape.UNDEFINED;
 		}
 
+		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
+
 		//@Override
 		public static boolean canSurviveAt(World worldIn, BlockPos pos) {
 

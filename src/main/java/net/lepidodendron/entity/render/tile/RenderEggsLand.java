@@ -55,14 +55,14 @@ public class RenderEggsLand extends TileEntitySpecialRenderer<BlockEggs.TileEnti
         BlockPos pos = entity.getPos();
         World world = entity.getWorld();
         if (entity != null && entity.hasWorld()) {
-            String creatureType = new Object() {
-                public String getValue(BlockPos pos1, String tag) {
-                    TileEntity tileEntity = world.getTileEntity(pos1);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getString(tag);
-                    return "";
+
+            String creatureType = "";
+            TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
+            if (tileEntity != null) {
+                if (tileEntity.getTileData().hasKey("creature")) {
+                    creatureType = tileEntity.getTileData().getString("creature");
                 }
-            }.getValue(pos, "creature");
+            }
             if (!creatureType.equals("")) {
                 if (creatureType.equalsIgnoreCase(LepidodendronMod.MODID + ":prehistoric_flora_hylonomus")) {
                     TEXTURE_EGG = TEXTURE_HYLONOMUS_EGG;

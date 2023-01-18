@@ -106,7 +106,8 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDevonian = (BiomeDevonian) biome;
-			if (biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
+			if ( biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Ocean
+					|| biomeDevonian.getBiomeType() == EnumBiomeTypeDevonian.Hypersaline) {
 				biomeCriteria = false;
 			}
 			else {
@@ -189,6 +190,10 @@ public class BlockGreenCharaAlgae extends ElementsLepidodendronMod.ModElement {
 		{
 			multiplier = 48;
 		}
+
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
+		)
+			multiplier = 42;
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_estuary")

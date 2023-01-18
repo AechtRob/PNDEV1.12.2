@@ -148,6 +148,10 @@ public class BlockGreenLeafyAlgae extends ElementsLepidodendronMod.ModElement {
 		)
 			multiplier = 24;
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
+		)
+			multiplier = 36;
+
 		for (int i = 0; i < (int) 10 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
 			int i11 = random.nextInt(128);

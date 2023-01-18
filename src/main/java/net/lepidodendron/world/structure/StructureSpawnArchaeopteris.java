@@ -179,6 +179,7 @@ public class StructureSpawnArchaeopteris extends ElementsLepidodendronMod.ModEle
 					$_dependencies.put("z", k);
 					$_dependencies.put("world", world);
 					$_dependencies.put("SaplingSpawn", false);
+					$_dependencies.put("vines", false);
 					if ((world.canSeeSky(spawnTo)) || 
 					(((world.getBlockState(spawnTo)).getMaterial() == Material.SNOW)
 					&& world.canSeeSky(spawnTo.up()))) {

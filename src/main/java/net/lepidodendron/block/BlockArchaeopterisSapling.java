@@ -155,6 +155,7 @@ public class BlockArchaeopterisSapling extends ElementsLepidodendronMod.ModEleme
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
 					$_dependencies.put("SaplingSpawn", true);
+					$_dependencies.put("vines", false);
 					ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
 				}
 	        }

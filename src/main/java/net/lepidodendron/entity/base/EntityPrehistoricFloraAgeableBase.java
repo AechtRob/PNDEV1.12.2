@@ -179,16 +179,13 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public boolean isHomeableNest (World world, BlockPos pos) {
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             //System.err.println("Testing layable");
+
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
-                String nestType = new Object() {
-                    public String getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getString(tag);
-                        return "";
-                    }
-                }.getValue(pos, "creature");
+                String nestType = "";
+                if (te.getTileData().hasKey("creature")) {
+                    nestType = te.getTileData().getString("creature");
+                }
 
                 if (nestType.equalsIgnoreCase("")
                         || isMyNest(world, pos)) {
@@ -203,14 +200,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (world.getBlockState(pos).getBlock() == BlockNest.block) {
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
-                String nestType = new Object() {
-                    public String getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getString(tag);
-                        return "";
-                    }
-                }.getValue(pos, "creature");
+                String nestType = "";
+                if (te.getTileData().hasKey("creature")) {
+                    nestType = te.getTileData().getString("creature");
+                }
 
                 if (nestType.equalsIgnoreCase(EntityRegistry.getEntry(this.getClass()).getRegistryName().toString())) {
                     return true;
@@ -245,14 +238,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
 
-                String eggType = new Object() {
-                    public String getValue(BlockPos pos1, String tag) {
-                        TileEntity tileEntity = world.getTileEntity(pos1);
-                        if (tileEntity != null)
-                            return tileEntity.getTileData().getString(tag);
-                        return "";
-                    }
-                }.getValue(pos, "egg");
+                String eggType = "";
+                if (te.getTileData().hasKey("egg")) {
+                    eggType = te.getTileData().getString("egg");
+                }
 
                 if (eggType.equalsIgnoreCase("")
                     && isHomeableNest(world, pos)) {

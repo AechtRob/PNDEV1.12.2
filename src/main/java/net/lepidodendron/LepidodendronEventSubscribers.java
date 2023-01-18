@@ -310,6 +310,7 @@ public class LepidodendronEventSubscribers {
 						}
 						tee.setDisplay(ItemStack.EMPTY);
 						//return;
+						event.getWorld().markBlockRangeForRenderUpdate(event.getPos(), event.getPos());
 						event.setCanceled(true);
 					}
 				}

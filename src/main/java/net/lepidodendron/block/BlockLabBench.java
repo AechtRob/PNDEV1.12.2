@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
+import net.lepidodendron.block.base.BlockPNTaxidermyItem;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.lepidodendron.gui.GUILabBench;
 import net.lepidodendron.item.ItemBottleOfDNASolvent;
@@ -573,7 +574,10 @@ public class BlockLabBench extends ElementsLepidodendronMod.ModElement {
 					if (stack.getItem() == ItemFossilClean.block) {
 						flag = true;
 					}
-					//System.err.println(stack + " flag " + flag);
+
+					if (Block.getBlockFromItem(stack.getItem()) instanceof BlockPNTaxidermyItem) {
+						flag = false; //Do not allow blocks like shells to be used here
+					}
 				}
 				return flag;
 			}

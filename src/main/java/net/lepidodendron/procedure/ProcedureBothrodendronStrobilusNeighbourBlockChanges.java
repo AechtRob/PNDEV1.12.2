@@ -35,15 +35,16 @@ public class ProcedureBothrodendronStrobilusNeighbourBlockChanges extends Elemen
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+
+		boolean decayable = false;
+		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+		if (tileEntity != null) {
+			if (tileEntity.getTileData().hasKey("decayable")) {
+				decayable = tileEntity.getTileData().getBoolean("decayable");
+			}
+		}
 		if (((!((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == BlockBothrodendronLeaves.block.getDefaultState()
-				.getBlock())) && ((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "decayable")) == (true)))) {
+				.getBlock())) && (decayable))) {
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 		}
 	}

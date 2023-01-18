@@ -177,7 +177,7 @@ public class BlockBlueSponge extends ElementsLepidodendronMod.ModElement {
 				biomeCriteria = false;
 			}
 		}
-		
+
 		if (biome instanceof BiomeDevonian)
 		{
 			BiomeDevonian biomeDev = (BiomeDevonian) biome;

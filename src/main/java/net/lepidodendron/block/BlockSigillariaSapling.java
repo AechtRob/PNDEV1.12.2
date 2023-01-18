@@ -199,8 +199,7 @@ public class BlockSigillariaSapling extends ElementsLepidodendronMod.ModElement 
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Lycophyte tree");
-				tooltip.add("Periods: late Devonian - Carboniferous - early Permian");
-				tooltip.add("Note: Coal swamps");
+				tooltip.add("Periods: mid Devonian - Carboniferous - early Permian");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

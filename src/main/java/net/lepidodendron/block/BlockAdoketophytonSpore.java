@@ -291,6 +291,11 @@ public class BlockAdoketophytonSpore extends ElementsLepidodendronMod.ModElement
 	    }
 
 		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
+		@Override
 		public Block planted() {
 			return BlockAdoketophyton.block;
 		}

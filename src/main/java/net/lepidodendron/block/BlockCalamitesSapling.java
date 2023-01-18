@@ -214,7 +214,7 @@ public class BlockCalamitesSapling extends ElementsLepidodendronMod.ModElement {
 	        if (LepidodendronConfig.showTooltips) {
 				tooltip.add("Type: Horsetail tree");
 				tooltip.add("Periods: Carboniferous");
-				tooltip.add("Note: Coal swamps. Capable of spreading from underground rhizomes.");
+				tooltip.add("Note: Capable of spreading from underground rhizomes.");
 				tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }

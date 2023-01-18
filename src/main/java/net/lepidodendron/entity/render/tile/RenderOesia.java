@@ -12,7 +12,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
 public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntityCustom> {
@@ -40,6 +39,15 @@ public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntity
         EnumFacing facing = EnumFacing.NORTH;
         if (entity != null && entity.hasWorld()) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
+
+            int variant = 0;
+            TileEntity te = getWorld().getTileEntity(entity.getPos());
+            if (te != null) {
+                if (te.getTileData().hasKey("variant")) {
+                    variant = te.getTileData().getInteger("variant");
+                }
+            }
+            /*
             int variant = new Object() {
                 public int getValue(BlockPos pos, String tag) {
                     TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
@@ -48,6 +56,8 @@ public class RenderOesia extends TileEntitySpecialRenderer<BlockOesia.TileEntity
                     return 0;
                 }
             }.getValue(new BlockPos(entity.getPos()), "variant");
+             */
+
             if (variant == 0) {
                 this.bindTexture(TEXTURE);
             }

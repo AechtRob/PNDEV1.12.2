@@ -294,6 +294,11 @@ public class BlockZosterophyllumSpore extends ElementsLepidodendronMod.ModElemen
 	    }
 
 		@Override
+		public EnumOffsetType getOffsetType() {
+			return EnumOffsetType.XZ;
+		}
+
+		@Override
 		public Block planted() {
 			return BlockZosterophyllum.block;
 		}

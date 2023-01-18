@@ -72,6 +72,7 @@ public class BlockNautiloidShellAmmonite_Asteroceras extends ElementsLepidodendr
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 
 		public BlockCustom() {
+			//super(Material.ROCK);
 			setTranslationKey("pf_shell_asteroceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);
@@ -83,14 +84,13 @@ public class BlockNautiloidShellAmmonite_Asteroceras extends ElementsLepidodendr
 		}
 
 		public int getRotation(World world, BlockPos pos) {
-			int currentRotation = (int) new Object() {
-				public double getValue(BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getInteger(tag);
-				return 0;
+			int currentRotation = 0;
+			TileEntity tileEntity = world.getTileEntity(pos);
+			if (tileEntity != null) {
+				if (tileEntity.getTileData().hasKey("rotation")) {
+					currentRotation = tileEntity.getTileData().getInteger("rotation");
 				}
-			}.getValue(pos, "rotation");
+			}
 			return currentRotation;
 		}
 

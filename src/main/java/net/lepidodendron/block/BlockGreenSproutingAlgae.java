@@ -129,6 +129,10 @@ public class BlockGreenSproutingAlgae extends ElementsLepidodendronMod.ModElemen
 			multiplier = 10;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
+		)
+			multiplier = 36;
+
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")

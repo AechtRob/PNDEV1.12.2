@@ -1,0 +1,19 @@
+{
+	"parent": "block/half_slab",
+	"ambientocclusion": false,
+	"textures": {
+		"texture": "lepidodendron:blocks/floor_mount",
+		"particle": "lepidodendron:blocks/floor_mount"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [1, 0.05, 1],
+			"to": [16, 0.05, 16],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#texture"}
+			}
+		}
+	]
+}

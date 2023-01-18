@@ -12,7 +12,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 
 public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetogaster.TileEntityCustom> {
@@ -30,14 +29,14 @@ public class RenderHerpetogaster extends TileEntitySpecialRenderer<BlockHerpetog
         EnumFacing facing = EnumFacing.NORTH;
         if (entity != null && entity.hasWorld()) {
             facing = entity.getWorld().getBlockState(entity.getPos()).getValue(FACING);
-            int rotation = new Object() {
-                public int getValue(BlockPos pos, String tag) {
-                    TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
-                    if (tileEntity != null)
-                        return tileEntity.getTileData().getInteger(tag);
-                    return 0;
+
+            int rotation = 0;
+            TileEntity tileEntity = entity.getWorld().getTileEntity(entity.getPos());
+            if (tileEntity != null) {
+                if (tileEntity.getTileData().hasKey("rotation")) {
+                    rotation = tileEntity.getTileData().getInteger("rotation");
                 }
-            }.getValue(new BlockPos(entity.getPos()), "rotation");
+            }
             Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_HERPETOGASTER);
 
             GlStateManager.enableRescaleNormal();

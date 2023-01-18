@@ -13,7 +13,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 
 public class RenderSelaginella extends TileEntitySpecialRenderer<BlockSelaginella.TileEntityCustom> {
 
@@ -42,14 +41,13 @@ public class RenderSelaginella extends TileEntitySpecialRenderer<BlockSelaginell
 
     @Override
     public void render(BlockSelaginella.TileEntityCustom entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        String eggRenderType = new Object() {
-            public String getValue(BlockPos pos, String tag) {
-                TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
-                if (tileEntity != null)
-                    return tileEntity.getTileData().getString(tag);
-                return "";
+        String eggRenderType = "";
+        TileEntity tileEntity = entity.getWorld().getTileEntity(entity.getPos());
+        if (tileEntity != null) {
+            if (tileEntity.getTileData().hasKey("egg")) {
+                eggRenderType = tileEntity.getTileData().getString("egg");
             }
-        }.getValue(new BlockPos(entity.getPos()), "egg");
+        }
 
         if (!eggRenderType.equals("")) {
 
