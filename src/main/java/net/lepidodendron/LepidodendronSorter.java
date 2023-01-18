@@ -3698,4 +3698,6 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 3694;
     public static final int advancement_placeholder = 3695;
 
+    public static final int shell_sphooceras = 3696;
+
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/eugaleaspis_raw"
+    "layer0": "palaeopedia:eugaleaspis_icon"
   }
 }

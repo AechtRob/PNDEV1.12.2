@@ -26,6 +26,11 @@ advancements.pf_adv_biomes_silurian.description=Find all of the Silurian biomes
 advancements.pf_adv_biomes_silurian.title=Silurian Explorer
 advancements.pf_adv_biomes_triassic.description=Find all of the Triassic biomes
 advancements.pf_adv_biomes_triassic.title=Triassic Explorer
+
+
+
+advancements.pf_adv_book_eastmanosteus.description=Unlock the entry for Eastmanosteus in the Palaeopedia
+advancements.pf_adv_book_eastmanosteus.title=Eastmanosteus
 advancements.pf_adv_book_acacia.description=Unlock the entry for Acacia in the Palaeopedia
 advancements.pf_adv_book_acacia.title=Acacia
 advancements.pf_adv_book_acadoaradoxides.description=Unlock the entry for Acadoparadoxides in the Palaeopedia
@@ -1840,6 +1845,10 @@ advancements.pf_adv_book_aspidorhynchus.description=Unlock the entry for Aspidor
 advancements.pf_adv_book_notidanoides.description=Unlock the entry for Notidanoides in the Palaeopedia
 advancements.pf_adv_book_eryon.description=Unlock the entry for Eryon in the Palaeopedia
 advancements.pf_adv_book_ophthalmosaurus.description=Unlock the entry for Ophthalmosaurus in the Palaeopedia
+advancements.pf_adv_book_lasanius.description=Unlock the entry for Lasanius in the Palaeopedia
+
+
+
 advancements.pf_adv_book_aphnelepis.title=Aphnelepis
 advancements.pf_adv_book_aetheolepis.title=Aetheolepis
 advancements.pf_adv_book_arduafrons.title=Arduafrons
@@ -1848,6 +1857,23 @@ advancements.pf_adv_book_aspidorhynchus.title=Aspidorhynchus
 advancements.pf_adv_book_notidanoides.title=Notidanoides
 advancements.pf_adv_book_eryon.title=Eryon
 advancements.pf_adv_book_ophthalmosaurus.title=Ophthalmosaurus
+advancements.pf_adv_book_lasanius.title=Lasanius
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 death.attack.acid.player=%1$s took a terminal dip in acid because of %2$s
 death.attack.acid=%1$s took a terminal dip in acid
 death.attack.caustic.player=%1$s got seared by caustic conditions because of %2$s
@@ -2407,6 +2433,13 @@ entity.prehistoric_flora_aspidorhynchus.name=Aspidorhynchus
 entity.prehistoric_flora_notidanoides.name=Notidanoides
 entity.prehistoric_flora_eryon.name=Eryon
 entity.prehistoric_flora_ophthalmosaurus.name=Ophthalmosaurus
+entity.prehistoric_flora_eastmanosteus.name=Eastmanosteus
+entity.prehistoric_flora_lasanius.name=Lasanius
+
+
+
+
+
 entity.Villager.palaeobotanist=Palaeobotanist
 entity.Villager.pn_palaeontologist=Palaeontologist
 fluid.pn_sulfuric_acid=Lab-Grade Sulfuric Acid
@@ -2676,6 +2709,29 @@ item.egg_prehistoric_flora_yilingia.name=Yilingia Reproductive Blob
 item.egg_prehistoric_flora_yohoia.name=Yohoia Egg
 item.egg_prehistoric_flora_yorgia.name=Yorgia Reproductive Blob
 item.egg_prehistoric_flora_yunnanozoon.name=Yunnanozoon Egg
+item.pf_eggs_dunyu.name=Dunyu Eggs
+item.pf_eggs_eugaleaspis.name=Eugaleaspis Eggs
+item.pf_eggs_pituriaspis.name=Pituriaspis Eggs
+item.pf_eggs_neeyambaspis.name=Neeyambaspis Eggs
+item.pf_eggs_lasanius.name=Lasanius Eggs
+item.pf_eggs_bundenbachiellus.name=Bundenbachiellus Eggs
+item.pf_eggs_ivoites.name=Ivoites Eggs
+item.pf_eggs_sphooceras.name=Sphooceras Eggs
+item.pf_eggs_balhuticaris.name=Balhuticaris Eggs
+item.pf_eggs_arduafrons.name=Arduafrons Eggs
+item.pf_eggs_aetheolepis.name=Aetheolepis Eggs
+item.pf_eggs_aphnelepis.name=Aphnelepis Eggs
+item.pf_eggs_aspidorhynchus.name=Aspidorhynchus Eggs
+item.pf_eggs_eryon.name=Eryon Eggs
+item.pf_eggs_macromesodon.name=Macromesodon Eggs
+
+
+
+
+
+
+
+
 item.furcula_door_item.name=Furcula Door
 item.gangamopteris_door_item.name=Gangamopteris Door
 item.ginkgoites_door_item.name=Ginkgoites Door
@@ -2710,6 +2766,12 @@ item.pf_macromesodon_raw.name=Raw Macromesodon
 item.pf_aspidorhynchus_raw.name=Raw Aspidorhynchus
 item.pf_notidanoides_raw.name=Raw Notidanoides
 item.pf_eryon_raw.name=Raw Eryon
+item.pf_eastmanosteus_cooked.name=Cooked Eastmanosteus
+item.pf_eastmanosteus_raw.name=Raw Eastmanosteus
+item.pf_dunyu_raw.name=Raw Dunyu
+item.pf_lasanius_raw.name=Raw Lasanius
+item.pf_dunyu_cooked.name=Cooked Dunyu
+item.pf_lasanius_cooked.name=Cooked Lasanius
 
 
 
@@ -3930,6 +3992,26 @@ item.pf_fossil_aspidorhynchus_clean.name=Cleaned Aspidorhynchus Fossil
 item.pf_fossil_notidanoides_clean.name=Cleaned Notidanoides Fossil
 item.pf_fossil_eryon_clean.name=Cleaned Eryon Fossil
 item.pf_fossil_ophthalmosaurus_clean.name=Cleaned Ophthalmosaurus Fossil
+item.pf_fossil_eastmanosteus_clean.name=Cleaned Eastmanosteus Fossil
+item.pf_fossil_lasanius_clean.name=Cleaned Lasanius Fossil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.pf_fossil_drop_cambrian.name=Cambrian Raw Fossil
 item.pf_fossil_drop_cambrian_mob.name=Cambrian Raw Mob Fossil
 item.pf_fossil_drop_cambrian_plant.name=Cambrian Raw Plant Fossil
@@ -5947,6 +6029,17 @@ item.pf_aspidorhynchus_bucket.name=Bucket of Aspidorhynchus
 item.pf_notidanoides_bucket.name=Bucket of Notidanoides
 item.pf_eryon_bucket.name=Bucket of Eryon
 item.pf_ophthalmosaurus_bucket.name=Bucket of Ophthalmosaurus
+item.pf_eastmanosteus_bucket.name=Bucket of Eastmanosteus
+item.pf_dunyu_bucket.name=Bucket of Dunyu
+item.pf_lasanius_bucket.name=Bucket of Lasanius
+
+
+
+
+
+
+
+
 item.phial_dna_acacia_sapling.name=Phial of Acacia DNA
 item.phial_dna_adoketophyton.name=Phial of Adoketophyton DNA
 item.phial_dna_aethophyllum.name=Phial of Aethophyllum DNA
@@ -6763,6 +6856,16 @@ item.phial_dna_prehistoric_flora_aspidorhynchus.name=Phial of Aspidorhynchus DNA
 item.phial_dna_prehistoric_flora_notidanoides.name=Phial of Notidanoides DNA
 item.phial_dna_prehistoric_flora_eryon.name=Phial of Eryon DNA
 item.phial_dna_prehistoric_flora_ophthalmosaurus.name=Phial of Ophthalmosaurus DNA
+item.phial_dna_prehistoric_flora_eastmanosteus.name=Phial of Eastmanosteus DNA
+item.phial_dna_prehistoric_flora_lasanius.name=Phial of Lasanius DNA
+
+
+
+
+
+
+
+
 item.phial_dna_primaeval_grass_item.name=Phial of Primaeval Grass DNA
 item.phial_dna_primocandelabrum_1.name=Phial of Yellow Primocandelabrum DNA
 item.phial_dna_primocandelabrum_2.name=Phial of Blue Primocandelabrum DNA
@@ -7691,6 +7794,21 @@ item.placeable_living_prehistoric_flora_yohoia.name=Placeable Cultured Nodule of
 item.placeable_living_prehistoric_flora_yorgia.name=Placeable Cultured Nodule of Yorgia DNA
 item.placeable_living_prehistoric_flora_yunguisaurus.name=Placeable Cultured Nodule of Yunguisaurus DNA
 item.placeable_living_prehistoric_flora_yunnanozoon.name=Placeable Cultured Nodule of Yunnanozoon DNA
+item.placeable_living_prehistoric_flora_eastmanosteus.name=Placeable Cultured Nodule of Eastmanosteus DNA
+item.placeable_living_prehistoric_flora_lasanius.name=Placeable Cultured Nodule of Lasanius DNA
+item.placeable_living_prehistoric_flora_arduafrons.name=Placeable Cultured Nodule of Arduafrons DNA
+item.placeable_living_prehistoric_flora_aetheolepis.name=Placeable Cultured Nodule of Aetheolepis DNA
+item.placeable_living_prehistoric_flora_aphnelepis.name=Placeable Cultured Nodule of Aphnelepis DNA
+item.placeable_living_prehistoric_flora_aspidorhynchus.name=Placeable Cultured Nodule of Aspidorhynchus DNA
+item.placeable_living_prehistoric_flora_notidanoides.name=Placeable Cultured Nodule of Notidanoides DNA
+item.placeable_living_prehistoric_flora_eryon.name=Placeable Cultured Nodule of Eryon DNA
+item.placeable_living_prehistoric_flora_macromesodon.name=Placeable Cultured Nodule of Macromesodon DNA
+item.placeable_living_prehistoric_flora_ophthalmosaurus.name=Placeable Cultured Nodule of Ophthalmosaurus DNA
+
+
+
+
+
 item.placeable_living_primaeval_grass_item.name=Placeable Cultured Nodule of Primaeval Grass DNA
 item.placeable_living_primocandelabrum_1.name=Placeable Cultured Nodule of Yellow Primocandelabrum DNA
 item.placeable_living_primocandelabrum_2.name=Placeable Cultured Nodule of Blue Primocandelabrum DNA

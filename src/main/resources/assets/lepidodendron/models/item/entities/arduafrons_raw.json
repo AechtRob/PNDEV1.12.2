@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/arduafrons_raw"
+    "layer0": "palaeopedia:arduafrons_icon"
   }
 }

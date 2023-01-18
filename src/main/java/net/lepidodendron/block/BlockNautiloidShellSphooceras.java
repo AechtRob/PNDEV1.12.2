@@ -39,30 +39,30 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:shell_ivoites")
+public class BlockNautiloidShellSphooceras extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:shell_sphooceras")
 	public static final Block block = null;
-	public BlockNautiloidShellIvoites(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.shell_ivoites);
+	public BlockNautiloidShellSphooceras(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.shell_sphooceras);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_ivoites"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("shell_sphooceras"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(BlockNautiloidShellIvoites.TileEntityCustom.class, "lepidodendron:tileentityshell_ivoites");
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ivoites", BlockNautiloidShellIvoites.block);
+		GameRegistry.registerTileEntity(BlockNautiloidShellSphooceras.TileEntityCustom.class, "lepidodendron:tileentityshell_sphooceras");
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sphooceras_baby", BlockNautiloidShellSphooceras.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:shell_ivoites", "inventory"));
+				new ModelResourceLocation("lepidodendron:shell_sphooceras", "inventory"));
 	}
 
 	public static class BlockCustom extends BlockPNTaxidermyItem {
@@ -71,7 +71,7 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 
 		public BlockCustom() {
 			//super(Material.ROCK);
-			setTranslationKey("pf_shell_ivoites");
+			setTranslationKey("pf_shell_sphooceras");
 			setSoundType(SoundType.STONE);
 			setHardness(1.25F);
 			setResistance(1.00F);
@@ -94,7 +94,7 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.3D, 0.6D);
+			return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.15D, 0.75D);
 		}
 
 		@Override
@@ -105,11 +105,11 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new BlockNautiloidShellIvoites.TileEntityCustom();
+			return new BlockNautiloidShellSphooceras.TileEntityCustom();
 		}
 
-		public BlockNautiloidShellIvoites.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
-			return new BlockNautiloidShellIvoites.TileEntityCustom();
+		public BlockNautiloidShellSphooceras.TileEntityCustom createNewTileEntity(World worldIn, int meta) {
+			return new BlockNautiloidShellSphooceras.TileEntityCustom();
 		}
 
 		@Override
