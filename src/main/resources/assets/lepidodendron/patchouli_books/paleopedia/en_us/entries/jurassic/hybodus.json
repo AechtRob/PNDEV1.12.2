@@ -1,0 +1,31 @@
+{
+	"name": "Hybodus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/hybodus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_hybodus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_hybodus",
+			"title": "Hybodus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/hybodus.png"],
+			"title": "H. hauffianus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "Notidanoides",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/notidanoides_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_notidanoides",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_notidanoides",
+			"title": "Notidanoides",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Chondrichthyes$(br)>Hexanchiformes$(br)>Crassodontidanidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/notidanoides.png"],
+			"title": "N. muensteri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notidanoides",
+			"type": "text",
+			"text": "Notidanoides is hexanchiiform shark known from Solnhofen, related to modern cow shark. With length reaching 3 m, it had much slenderer body compared to modern relative. Although large and mostly complete specimen exists, it was destroyed during the war, and other than that it is known from a few body fossils and many teeth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_notidanoides",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish$(br)$(l)Breeds with:$() Fish$(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

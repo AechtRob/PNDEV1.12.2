@@ -1,0 +1,31 @@
+{
+	"name": "Inoceramus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/inoceramus_icon.png",
+	"category": "lepidodendron:jurassic_static",
+	"turnin": "lepidodendron:pf_adv_book_inoceramus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_inoceramus",
+			"title": "Inoceramus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Bivalvia$(br)>Pteriida$(br)>Inoceramidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/inoceramus.png"],
+			"title": "I. steenstrupi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_inoceramus",
+			"type": "text",
+			"text": "$(l)Eats:$() N/A$(br)$(l)Breeds with:$() N/A$(br)$(l)Egg Type:$() N/A$(br)$(l)Method of Obtaining:$() Shears"
+		}
+	]
+}

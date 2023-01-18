@@ -1,0 +1,41 @@
+{
+	"name": "Balhuticaris",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/balhuticaris_icon.png",
+	"category": "lepidodendron:cambrian_animal",
+	"turnin": "lepidodendron:pf_adv_book_balhuticaris",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_balhuticaris",
+			"title": "Balhuticaris",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Hymenocarina"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/balhuticaris.png"],
+			"title": "B. voltae",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_balhuticaris",
+			"type": "text",
+			"text": "Balhuticaris voltae is a species of Hymenocarine Arthropod from the Cambrian of British Columbia. The same order he belongs to also houses animals like Canadaspis and Tokummia, which have been found in the Marble Canyon unit of the Burgess Shales, just like Balhuticaris. Largest among the Hymenocarines, Balhuticaris could reach lengths up to 25 cm,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_balhuticaris",
+			"type": "text",
+			"text": "making it among the largest arthropods of the Burgess Shales, excluding Radiodonts. Balhuticaris is most recognizable by the extreme segmentation of its body, with more than one hundred segments along its body! The animal was described in 2022 on the basis of around a dozen fossils found in the second half of the 2010s in the Burgess Shale deposits."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_balhuticaris",
+			"type": "text",
+			"text": "Its discovery testifies how gigantism in arthropods may have been more widespread in the Cambrian compared to what we once thought. Like in Tokummia, some people hypothesize the animal might have swam upside down."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

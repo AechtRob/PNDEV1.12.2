@@ -1,0 +1,31 @@
+{
+	"name": "Bundenbachiellus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/bundenbachiellus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_bundenbachiellus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bundenbachiellus",
+			"title": "Bundenbachiellus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthropoda$(br)>Enaliktidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bundenbachiellus.png"],
+			"title": "B. giganteus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bundenbachiellus",
+			"type": "text",
+			"text": "Bundenbachiellus is an over 20 cm-long arthropod known from Devonian Hunsrück Slate, Germany. This animal is known from two specimens, large specimen which lacks anterior part, and a smaller complete specimen once named "Eschenbachiellus". It lacked eyes, and probably used its whip-like appendages as antennae."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bundenbachiellus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

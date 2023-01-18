@@ -1,0 +1,31 @@
+{
+	"name": "Ivoites",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/ivoites_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_ivoites",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_ivoites",
+			"title": "Ivoites",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Cephalopoda$(br)>Ammonoidea$(br)>Mimosphinctidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/ivoites.png"],
+			"title": "I. hunsrueckianus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ivoites",
+			"type": "text",
+			"text": "Ivoites is ammonoid cephalopod known from Devonian Hunsrück Slate, Germany. Like Ordovician nautiloid Aphetoceras, it is characterized with a loosely coiled shell. This seems to indicate the evolution of bactritids with straight shells into ammonoids with coiled shells."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_ivoites",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Kill for Eggs/Bucket"
+		}
+	]
+}

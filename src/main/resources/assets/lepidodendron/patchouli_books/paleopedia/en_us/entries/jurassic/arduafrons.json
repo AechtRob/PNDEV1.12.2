@@ -1,0 +1,41 @@
+{
+	"name": "Arduafrons",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/arduafrons_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_arduafrons",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arduafrons",
+			"title": "Arduafrons",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Gladiopycnodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/arduafrons.png"],
+			"title": "A. prominoris",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arduafrons",
+			"type": "text",
+			"text": "Arduafrons prominoris is a species of Pycnodont fish from the Jurassic of Germany. Reaching 40-50 cm in length, this pycnodont was quite large among it's peers, possessing the characteristic flattened disc shape of the body and opposed anal and dorsal fins. The head of Arduafrons was particularly long and terminated in a small mouth packed with large flattened teeth."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arduafrons",
+			"type": "text",
+			"text": "Perhaps most recognizable would be the spike-like extension of the body seen in the anterior section of its back, behind which the long dorsal fin would grow, almost touching the triangular shaped caudal fin. Arduafrons was first described in 1991 by German Palaeontologist Karl Albert Frickhinger based on fossils coming from the world renowned fossil deposits in Solnhofen, Bavaria."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arduafrons",
+			"type": "text",
+			"text": "Like usual for fossils coming from that area, the remains of Arduafrons were particularly well preserved and allowed researchers to observe this bizarre animal in detail. Arduafrons was strangely enough a particularly archaic member among Pycnodontiformes despite it's late appearance in the fossil record, with some papers placing it close to Gyrodus."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arduafrons",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
