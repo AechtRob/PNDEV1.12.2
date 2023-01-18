@@ -209,19 +209,46 @@ public class ModelAspidorhynchus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Root.render(f5 );
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Root.rotateAngleY = (float) Math.toRadians(90);
         this.Root.offsetX = -0.06F;
         this.Root.offsetY = -0.2F;
         this.Root.offsetZ = 0.07F;
         this.Root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Root, -0.2618F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(cube_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, -0.2758F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.2269F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(GillR, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.0349F, 0.0F);
+        this.setRotateAngle(GillL, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0349F, 0.0F);
+        this.setRotateAngle(PectoralR, -1.2255F, -0.1372F, 0.6534F);
+        this.setRotateAngle(PectoralR2, -1.2255F, 0.1372F, -0.6534F);
+        this.setRotateAngle(Body, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(Tail4, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(PelvicR, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -1.3766F, -0.1001F, 0.4702F);
+        this.setRotateAngle(PelvicL, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -1.3766F, 0.1001F, -0.4702F);
+        this.Root.offsetX = 0.01F;
+        this.Root.offsetY = -0.3F;
+        this.Root.offsetZ = -0.08F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
