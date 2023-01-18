@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "palaeopedia:macromesodon_icon"
+    "layer0": "paleopedia:macromesodon_icon"
   }
 }

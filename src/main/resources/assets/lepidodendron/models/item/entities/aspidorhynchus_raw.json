@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "palaeopedia:aspidorhynchus_icon"
+    "layer0": "paleopedia:aspidorhynchus_icon"
   }
 }

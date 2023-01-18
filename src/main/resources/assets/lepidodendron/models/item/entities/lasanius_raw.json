@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "palaeopedia:lasanius_icon"
+    "layer0": "paleopedia:lasanius_icon"
   }
 }
