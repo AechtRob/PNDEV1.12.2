@@ -392,6 +392,55 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
         this.Ophthalmosaurus.render(0.01F);
         resetToDefaultPose();
     }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(Ophthalmosaurus, -0.3927F, (float) Math.toRadians(90), -0.6054F);
+        this.setRotateAngle(cube_r1, -0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.192F, 0.0F, 0.0F);
+        this.setRotateAngle(ForelimbL, 0.5249F, 0.194F, 0.2123F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.0F, 0.6545F);
+        this.setRotateAngle(ForelimbR, 0.5249F, -0.194F, -0.2123F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0F, -0.6545F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(HindlimbL, 0.5601F, -0.2276F, 0.2018F);
+        this.setRotateAngle(cube_r13, 0.0F, 0.0F, 0.6109F);
+        this.setRotateAngle(HindlimbR, 0.5601F, 0.2276F, -0.2018F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.0F, -0.6109F);
+        this.setRotateAngle(Body5, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(Body6, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(Body7, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(Body8, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r18, -0.7679F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.8203F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.1833F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r21, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.3316F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r24, 0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r25, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r26, 0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r27, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r28, -0.1745F, 0.0F, 0.0F);
+        this.Ophthalmosaurus.offsetY = 0.05F;
+        this.Ophthalmosaurus.offsetX = -0.08F;
+        this.Ophthalmosaurus.offsetZ = -0.13F;
+        this.Ophthalmosaurus.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedAdvancedModelRenderer, float x, float y, float z) {
         AdvancedAdvancedModelRenderer.rotateAngleX = x;
