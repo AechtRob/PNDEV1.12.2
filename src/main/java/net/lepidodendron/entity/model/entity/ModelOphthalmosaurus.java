@@ -360,7 +360,7 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
         this.resetToDefaultPose();
 
 
-       AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5, this.Body6, this.Body7, this.Body8};
+        AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5, this.Body6, this.Body7, this.Body8};
         AdvancedModelRenderer[] upperBody = {this.Head};
 
         float speed = 0.15F;
