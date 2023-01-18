@@ -216,18 +216,14 @@ public class ModelDapedium extends AdvancedModelBase {
         this.Dapedium.render(f5);
     }
     public void renderStaticWall(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
         this.Dapedium.rotateAngleY = (float) Math.toRadians(90);
-        this.Dapedium.rotateAngleX = (float) Math.toRadians(90);
-        this.Dapedium.offsetY = -0.1F;
+        this.Dapedium.rotateAngleX = (float) Math.toRadians(0);
+        this.Dapedium.offsetY = -0.18F;
+        this.Dapedium.offsetX = -0.04F;
         this.Dapedium.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(Dapedium, 0.1309F, 0.0F, 0.0F);
         this.setRotateAngle(Body1, -0.1485F, 0.0432F, -0.0065F);
@@ -260,6 +256,7 @@ public class ModelDapedium extends AdvancedModelBase {
         this.Dapedium.offsetX = -0F;
         this.Dapedium.offsetZ = 0.03F;
         this.Dapedium.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
