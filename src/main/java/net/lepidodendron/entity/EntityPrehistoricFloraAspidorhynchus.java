@@ -243,6 +243,7 @@ public class EntityPrehistoricFloraAspidorhynchus extends EntityPrehistoricFlora
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0.14F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_ASPIDORHYNCHUS;
 	}

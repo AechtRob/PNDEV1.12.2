@@ -303,6 +303,7 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0.15F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
 	}

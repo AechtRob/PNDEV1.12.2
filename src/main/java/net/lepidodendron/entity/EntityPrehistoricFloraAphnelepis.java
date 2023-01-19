@@ -198,6 +198,7 @@ public class EntityPrehistoricFloraAphnelepis extends EntityPrehistoricFloraFish
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_APHNELEPIS;
 	}

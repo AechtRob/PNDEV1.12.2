@@ -306,6 +306,7 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0.4F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_OPHTHALMOSAURUS;
 	}

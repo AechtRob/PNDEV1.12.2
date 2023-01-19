@@ -160,6 +160,7 @@ public class EntityPrehistoricFloraBundenbachiellus extends EntityPrehistoricFlo
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetCase() { return 0.36; }
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_BUNDENBACHIELLUS;
 	}

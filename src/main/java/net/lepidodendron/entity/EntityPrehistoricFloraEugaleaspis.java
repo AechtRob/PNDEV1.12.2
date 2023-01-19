@@ -209,6 +209,7 @@ public class EntityPrehistoricFloraEugaleaspis extends EntityPrehistoricFloraFis
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EUGALEASPIS;
 	}

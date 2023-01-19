@@ -200,6 +200,7 @@ public class EntityPrehistoricFloraAetheolepis extends EntityPrehistoricFloraFis
 		return -0F;
 	}
 	@SideOnly(Side.CLIENT)
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_AETHEOLEPIS;
 	}

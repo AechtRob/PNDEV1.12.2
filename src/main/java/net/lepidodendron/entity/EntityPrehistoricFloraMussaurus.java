@@ -460,6 +460,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0.04F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_MUSSAURUS;
 	}
