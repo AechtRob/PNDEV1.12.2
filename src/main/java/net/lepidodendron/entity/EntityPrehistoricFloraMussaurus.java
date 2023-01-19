@@ -9,8 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderMussaurus;
-import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.client.model.ModelBase;
@@ -462,10 +461,10 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 		return -0.04F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_MUSSAURUS;
+		return RenderDisplays.TEXTURE_MUSSAURUS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelMussaurus;
+		return RenderDisplays.modelMussaurus;
 	}
 	public static float getScaler() {
 		return RenderMussaurus.getScaler();

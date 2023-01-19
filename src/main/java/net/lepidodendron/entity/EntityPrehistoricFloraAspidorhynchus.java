@@ -9,8 +9,7 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderAspidorhynchus;
-import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -245,10 +244,10 @@ public class EntityPrehistoricFloraAspidorhynchus extends EntityPrehistoricFlora
 		return -0.14F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_ASPIDORHYNCHUS;
+		return RenderDisplays.TEXTURE_ASPIDORHYNCHUS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelAspidorhynchus;
+		return RenderDisplays.modelAspidorhynchus;
 	}
 	public static float getScaler() {
 		return RenderAspidorhynchus.getScaler();

@@ -9,8 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderPituriaspis;
-import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -210,10 +209,10 @@ public class EntityPrehistoricFloraPituriaspis extends EntityPrehistoricFloraFis
 		return -0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_PITURIASPIS;
+		return RenderDisplays.TEXTURE_PITURIASPIS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelPituriaspis;
+		return RenderDisplays.modelPituriaspis;
 	}
 	public static float getScaler() {
 		return RenderPituriaspis.getScaler();

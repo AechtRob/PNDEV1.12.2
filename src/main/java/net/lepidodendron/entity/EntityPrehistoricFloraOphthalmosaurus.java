@@ -12,7 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderOphthalmosaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
@@ -307,10 +307,10 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 		return -0.4F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_OPHTHALMOSAURUS;
+		return RenderDisplays.TEXTURE_OPHTHALMOSAURUS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelOphthalmosaurus;
+		return RenderDisplays.modelOphthalmosaurus;
 	}
 	public static float getScaler() {
 		return RenderOphthalmosaurus.getScaler();

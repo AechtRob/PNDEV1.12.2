@@ -9,7 +9,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -283,10 +283,10 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 		return -0.04F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_XINPUSAURUS;
+		return RenderDisplays.TEXTURE_XINPUSAURUS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelXinpusaurus;
+		return RenderDisplays.modelXinpusaurus;
 	}
 	public static float getScaler() {
 		return RenderXinpusaurus.getScaler();

@@ -5,7 +5,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -4962,21 +4961,67 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 this.bindTexture(TEXTURE_YUNNANOZOON);
                                 modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+                            else {
 
-                            else if (classEntity == EntityPrehistoricFloraEryon.class) {
-                                double offset = 0.18;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                        TEXTURE_ERYON, RenderEryon.getScaler(), modelEryon, offset);
-                                } catch (Exception e) {
+                                double offsetCase = 0F;
+                                ResourceLocation textureDisplay = null;
+                                ModelBase modelDisplay = null;
+                                float getScaler = 0;
+
+                                Method method = testAndGetMethod(classEntity, "offsetCase", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        offsetCase = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
+                                method = testAndGetMethod(classEntity, "textureDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        textureDisplay = (ResourceLocation) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "modelDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        modelDisplay = (ModelBase) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "getScaler", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        getScaler = (float) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
 
-
-                            else {
-                                itemRender = true;
+                                if (!itemRender) {
+                                    try {
+                                        itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                                textureDisplay, getScaler, modelDisplay,
+                                                offsetCase);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                }
                             }
+                        }
+                        else {
+                            itemRender = true;
                         }
                     }
 
@@ -5117,7 +5162,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
         GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
         this.bindTexture(TEXTURE);
-        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase");
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[] { float.class });
         if (renderMethod != null) {
             try {
                 renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
@@ -5130,11 +5175,13 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         }
     }
 
+
+
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname) {
+    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
         Method methodToFind = null;
         try {
-            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+            methodToFind = clazz.getMethod(methodname, params);
         } catch (NoSuchMethodException | SecurityException e) {
         }
         return methodToFind;

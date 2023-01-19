@@ -9,8 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderNeeyambaspis;
-import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -211,10 +210,10 @@ public class EntityPrehistoricFloraNeeyambaspis extends EntityPrehistoricFloraFi
 		return -0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_NEEYAMBASPIS;
+		return RenderDisplays.TEXTURE_NEEYAMBASPIS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelNeeyambaspis;
+		return RenderDisplays.modelNeeyambaspis;
 	}
 	public static float getScaler() {
 		return RenderNeeyambaspis.getScaler();

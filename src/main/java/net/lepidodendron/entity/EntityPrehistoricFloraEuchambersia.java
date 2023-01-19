@@ -9,7 +9,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.render.entity.RenderEuchambersia;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -187,9 +187,8 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetWall() {
-		return 0.05;
-	}
+	public static double offsetPlinth() { return 0.47; }
+	public static double offsetWall() { return 0.05; }
 	public static double upperfrontverticallinedepth() {
 		return 0.8;
 	}
@@ -227,10 +226,10 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 		return 0.0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_EUCHAMBERSIA;
+		return RenderDisplays.TEXTURE_EUCHAMBERSIA;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelEuchambersia;
+		return RenderDisplays.modelEuchambersia;
 	}
 	public static float getScaler() {
 		return RenderEuchambersia.getScaler();

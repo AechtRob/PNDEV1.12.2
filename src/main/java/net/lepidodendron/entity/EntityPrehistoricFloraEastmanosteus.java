@@ -12,7 +12,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
@@ -304,10 +304,10 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 		return -0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_EASTMANOSTEUS;
+		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelEastmanosteus;
+		return RenderDisplays.modelEastmanosteus;
 	}
 	public static float getScaler() {
 		return RenderEastmanosteus.getScaler();

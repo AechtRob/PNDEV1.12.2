@@ -8,6 +8,9 @@ import net.lepidodendron.entity.ai.EatFishFoodAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.EntityMateAITrilobiteBottomBase;
 import net.lepidodendron.entity.ai.TrilobiteWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
+import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -149,6 +152,19 @@ public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobite
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.ERYON_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.18; }
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ERYON;
+	}
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelEryon;
+	}
+	public static float getScaler() {
+		return RenderEryon.getScaler();
 	}
 
 }

@@ -9,8 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderDapedium;
-import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -200,10 +199,10 @@ public class EntityPrehistoricFloraDapedium extends EntityPrehistoricFloraFishBa
 		return 0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_DAPEDIUM;
+		return RenderDisplays.TEXTURE_DAPEDIUM;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelDapedium;
+		return RenderDisplays.modelDapedium;
 	}
 	public static float getScaler() {
 		return RenderDapedium.getScaler();

@@ -13,7 +13,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderNotidanoides;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
@@ -297,10 +297,10 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 		return -0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_NOTIDANOIDES;
+		return RenderDisplays.TEXTURE_NOTIDANOIDES;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelNotidanoides;
+		return RenderDisplays.modelNotidanoides;
 	}
 	public static float getScaler() {
 		return RenderNotidanoides.getScaler();

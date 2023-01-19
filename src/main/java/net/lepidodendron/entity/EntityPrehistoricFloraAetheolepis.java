@@ -9,7 +9,7 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderAetheolepis;
-import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -200,10 +200,10 @@ public class EntityPrehistoricFloraAetheolepis extends EntityPrehistoricFloraFis
 		return -0F;
 	}
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplayWallMount.TEXTURE_AETHEOLEPIS;
+		return RenderDisplays.TEXTURE_AETHEOLEPIS;
 	}
 	public static ModelBase modelDisplay() {
-		return RenderDisplayWallMount.modelAetheolepis;
+		return RenderDisplays.modelAetheolepis;
 	}
 	public static float getScaler() {
 		return RenderAetheolepis.getScaler();

@@ -4,7 +4,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayPlinth;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -97,8 +96,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_ERETMORHIPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eretmorhipis.png");
     private final ModelEretmorhipis modelEretmorhipis;
     private static final ResourceLocation TEXTURE_EOSIMOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosimops.png");
-    private static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
-    private final ModelEuchambersia modelEuchambersia;
     private static final ResourceLocation TEXTURE_EUDIMORPHODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eudimorphodon.png");
     private final ModelEudimorphodon modelEudimorphodon;
     private static final ResourceLocation TEXTURE_EUPARKERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euparkeria.png");
@@ -187,6 +184,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
 
+    public static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
+    public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
 
     public RenderDisplayPlinth() {
         this.modelAcanthostega = new ModelAcanthostega();
@@ -219,7 +218,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelElginia = new ModelElginia();
         this.modelEorhynchochelys = new ModelEorhynchochelys();
         this.modelEretmorhipis = new ModelEretmorhipis();
-        this.modelEuchambersia = new ModelEuchambersia();
         this.modelEudimorphodon = new ModelEudimorphodon();
         this.modelEuparkeria = new ModelEuparkeria();
         this.modelGerrothorax = new ModelGerrothorax();
@@ -1016,28 +1014,72 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 GlStateManager.scale(0.13F, 0.13F, 0.13F);
                                 modelDiictodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+                            else {
 
+                                double offsetPlinth = 0F;
+                                ResourceLocation textureDisplay = null;
+                                ModelBase modelDisplay = null;
+                                float getScaler = 0;
 
-                            else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
-                                double offset = 0.47;
-                                try {
-                                    itemRender = !renderTaxidermy((float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_EUCHAMBERSIA, RenderEuchambersia.getScaler(), modelEuchambersia, offset);
-                                } catch (Exception e) {
+                                Method method = testAndGetMethod(classEntity, "offsetPlinth", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        offsetPlinth = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
+                                method = testAndGetMethod(classEntity, "textureDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        textureDisplay = (ResourceLocation) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "modelDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        modelDisplay = (ModelBase) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "getScaler", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        getScaler = (float) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+
+                                if (!itemRender) {
+                                    try {
+                                        itemRender = !renderTaxidermy((float) x, (float) y, (float) z, currentRotation,
+                                                textureDisplay, getScaler, modelDisplay,
+                                                offsetPlinth);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                }
                             }
-
-
-
-                            else {
-                                itemRender = true;
-                            }
+                        }
+                        else {
+                            itemRender = true;
                         }
                     }
 
                     // ********************************************************************
-                    else if (itemRender){ //standard items
+                    if (itemRender){ //standard items
 
                         GlStateManager.alphaFunc(516, 0.1F);
                         GlStateManager.enableBlend();
@@ -1115,7 +1157,7 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                    ModelBase model,
                                    double offset
     ) {
-        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticPlinth");
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticPlinth", new Class[] { float.class });
         GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
@@ -1135,10 +1177,10 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     }
 
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname) {
+    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
         Method methodToFind = null;
         try {
-            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+            methodToFind = clazz.getMethod(methodname, params);
         } catch (NoSuchMethodException | SecurityException e) {
         }
         return methodToFind;
