@@ -192,7 +192,7 @@ public class EntityPrehistoricFloraNeeyambaspis extends EntityPrehistoricFloraFi
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0.7;
+		return 0.09;
 	}
 	public static double lowerbackverticallinedepth() {
 		return 0;
@@ -201,7 +201,7 @@ public class EntityPrehistoricFloraNeeyambaspis extends EntityPrehistoricFloraFi
 		return 0.01;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return -0F;
 	}
 	public static double lowerbacklineoffset() {
 		return 0;

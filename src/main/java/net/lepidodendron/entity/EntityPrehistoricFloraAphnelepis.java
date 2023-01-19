@@ -160,13 +160,13 @@ public class EntityPrehistoricFloraAphnelepis extends EntityPrehistoricFloraFish
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return 0.09;
+		return -0.03;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 0.8;
 	}
 	public static double upperbackverticallinedepth() {
-		return 0.8;
+		return -0.3;
 	}
 	public static double upperfrontlineoffset() {
 		return 0.2;
@@ -190,7 +190,7 @@ public class EntityPrehistoricFloraAphnelepis extends EntityPrehistoricFloraFish
 		return 0.01;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return -0F;
 	}
 	public static double lowerbacklineoffset() {
 		return 0;

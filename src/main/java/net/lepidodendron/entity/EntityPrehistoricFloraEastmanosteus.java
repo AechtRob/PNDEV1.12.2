@@ -265,43 +265,43 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return 0.09;
+		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 0.8;
+		return 1.4;
 	}
 	public static double upperbackverticallinedepth() {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset() {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return -0F;
 	}
 	public static double upperbacklineoffset() {
-		return 0.2;
+		return 0.4;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0.04F;
+		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0.7;
+		return 1.3;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 0;
+		return 1.3;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.01;
+		return 0.4;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return -0F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0;
+		return 0.4;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0F;
+		return -0.15F;
 	}
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
