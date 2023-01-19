@@ -22,7 +22,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer head;
     private final AdvancedModelRenderer head5_r1;
     private final AdvancedModelRenderer head4_r1;
-    private final AdvancedModelRenderer head1_r1;
+    private final AdvancedModelRenderer head5_r2;
     private final AdvancedModelRenderer eyeL;
     private final AdvancedModelRenderer eyeL_r1;
     private final AdvancedModelRenderer eyeR;
@@ -31,6 +31,8 @@ public class ModelEryops extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer jaw5_r1;
     private final AdvancedModelRenderer jaw4_r1;
     private final AdvancedModelRenderer jaw2_r1;
+    private final AdvancedModelRenderer head4_r2;
+    private final AdvancedModelRenderer head3_r1;
     private final AdvancedModelRenderer tail;
     private final AdvancedModelRenderer tail2;
     private final AdvancedModelRenderer tail3;
@@ -98,6 +100,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         this.head.setRotationPoint(0.0F, -1.0F, 0.0F);
         this.headpart.addChild(head);
         this.head.cubeList.add(new ModelBox(head, 15, 62, -2.5F, -1.001F, -10.0F, 5, 2, 5, 0.0F, false));
+        this.head.cubeList.add(new ModelBox(head, 58, 91, -1.5F, 0.749F, -9.6F, 3, 1, 0, 0.0F, false));
         this.head.cubeList.add(new ModelBox(head, 41, 55, -3.0F, -1.001F, -5.0F, 6, 2, 5, 0.0F, false));
 
         this.head5_r1 = new AdvancedModelRenderer(this);
@@ -105,6 +108,8 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         this.head.addChild(head5_r1);
         this.setRotateAngle(head5_r1, 0.0F, -0.1745F, 0.0F);
         this.head5_r1.cubeList.add(new ModelBox(head5_r1, 0, 44, -3.75F, -7.0F, -6.25F, 2, 2, 10, 0.0F, false));
+        this.head5_r1.cubeList.add(new ModelBox(head5_r1, 75, 74, -3.0F, -5.25F, -5.5F, 0, 1, 3, 0.0F, true));
+        this.head5_r1.cubeList.add(new ModelBox(head5_r1, 60, 74, -3.45F, -5.25F, -5.75F, 0, 1, 7, 0.0F, true));
 
         this.head4_r1 = new AdvancedModelRenderer(this);
         this.head4_r1.setRotationPoint(0.0F, 6.0F, -3.0F);
@@ -113,11 +118,13 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         this.head4_r1.cubeList.add(new ModelBox(head4_r1, 63, 25, -2.0F, -8.0F, -6.0F, 4, 2, 5, 0.0F, false));
         this.head4_r1.cubeList.add(new ModelBox(head4_r1, 48, 48, -3.5F, -8.0F, -1.0F, 7, 2, 5, 0.0F, false));
 
-        this.head1_r1 = new AdvancedModelRenderer(this);
-        this.head1_r1.setRotationPoint(0.0F, 6.0F, -3.0F);
-        this.head.addChild(head1_r1);
-        this.setRotateAngle(head1_r1, 0.0F, 0.1745F, 0.0F);
-        this.head1_r1.cubeList.add(new ModelBox(head1_r1, 36, 0, 1.75F, -7.0F, -6.25F, 2, 2, 10, 0.0F, false));
+        this.head5_r2 = new AdvancedModelRenderer(this);
+        this.head5_r2.setRotationPoint(0.0F, 6.0F, -3.0F);
+        this.head.addChild(head5_r2);
+        this.setRotateAngle(head5_r2, 0.0F, 0.1745F, 0.0F);
+        this.head5_r2.cubeList.add(new ModelBox(head5_r2, 75, 74, 3.0F, -5.25F, -5.5F, 0, 1, 3, 0.0F, false));
+        this.head5_r2.cubeList.add(new ModelBox(head5_r2, 60, 74, 3.45F, -5.25F, -5.75F, 0, 1, 7, 0.0F, false));
+        this.head5_r2.cubeList.add(new ModelBox(head5_r2, 36, 0, 1.75F, -7.0F, -6.25F, 2, 2, 10, 0.0F, false));
 
         this.eyeL = new AdvancedModelRenderer(this);
         this.eyeL.setRotationPoint(2.0F, -2.0F, -4.0F);
@@ -145,6 +152,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         this.jaw.setRotationPoint(0.0F, 1.0F, 0.0F);
         this.headpart.addChild(jaw);
         this.jaw.cubeList.add(new ModelBox(jaw, 0, 57, -2.501F, -1.499F, -9.75F, 5, 2, 5, 0.0F, false));
+        this.jaw.cubeList.add(new ModelBox(jaw, 58, 91, -1.5F, -2.001F, -9.5F, 3, 1, 0, 0.0F, false));
         this.jaw.cubeList.add(new ModelBox(jaw, 19, 55, -3.0F, -1.499F, -4.75F, 6, 2, 5, 0.0F, false));
 
         this.jaw5_r1 = new AdvancedModelRenderer(this);
@@ -165,6 +173,18 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         this.jaw.addChild(jaw2_r1);
         this.setRotateAngle(jaw2_r1, 0.0F, 0.1745F, 0.0F);
         this.jaw2_r1.cubeList.add(new ModelBox(jaw2_r1, 16, 34, 1.75F, -5.0F, -6.0F, 2, 2, 10, 0.0F, false));
+
+        this.head4_r2 = new AdvancedModelRenderer(this);
+        this.head4_r2.setRotationPoint(0.0F, 4.0F, -3.0F);
+        this.jaw.addChild(head4_r2);
+        this.setRotateAngle(head4_r2, 0.0F, -0.1745F, 0.0F);
+        this.head4_r2.cubeList.add(new ModelBox(head4_r2, 60, 74, -3.325F, -6.0F, -5.75F, 0, 1, 7, 0.0F, true));
+
+        this.head3_r1 = new AdvancedModelRenderer(this);
+        this.head3_r1.setRotationPoint(0.0F, 4.0F, -3.0F);
+        this.jaw.addChild(head3_r1);
+        this.setRotateAngle(head3_r1, 0.0F, 0.1745F, 0.0F);
+        this.head3_r1.cubeList.add(new ModelBox(head3_r1, 60, 74, 3.325F, -6.0F, -5.75F, 0, 1, 7, 0.0F, false));
 
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(0.0F, 0.0F, 8.0F);
