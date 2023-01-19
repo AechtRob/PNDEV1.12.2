@@ -22,6 +22,7 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -1389,6 +1390,7 @@ public class LepidodendronMod {
 	public void init(FMLInitializationEvent event) {
 		elements.getElements().forEach(element -> element.init(event));
 		proxy.init(event);
+
 		MinecraftForge.TERRAIN_GEN_BUS.register(new LepidodendronDecorationHandler());
 		MinecraftForge.TERRAIN_GEN_BUS.register(new LepidodendronBespokeSpawner());
 		MinecraftForge.ORE_GEN_BUS.register(new LepidodendronOreHandler());

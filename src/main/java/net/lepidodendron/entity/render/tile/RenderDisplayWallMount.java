@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.*;
@@ -6253,6 +6254,27 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     float zoffsetter = (float) ((lowerbacklineoffset * Math.sin(Math.toRadians(-currentRotation))) - (lowerbacklineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y, (float) z + 0.5F - zoffsetter);
                     GL11.glVertex3f((float) x + 0.5F - (float) xoffsetter, (float) y + (float) lowerbackverticallinedepth, (float) z + 0.5F - zoffsetter);
+                    GL11.glEnd();
+                    GL11.glEnable(GL11.GL_TEXTURE_2D);
+                    GL11.glPopMatrix();
+                }
+
+                if (ClientProxyLepidodendronMod.keyB.isPressed()) {
+                    GL11.glPushMatrix();
+                    GL11.glLineWidth(20);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
+                    GL11.glColor3ub((byte) 255, (byte) 0, (byte) 0);
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+                    GL11.glEnd();
+                    GL11.glBegin(GL11.GL_LINES);
+                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
+                    GL11.glVertex3f((float) x + 0.5F - 0.5F, (float) y + 0.5F, (float) z + 0.5F);
                     GL11.glEnd();
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
