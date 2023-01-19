@@ -161,7 +161,7 @@ public class EntityPrehistoricFloraAetheolepis extends EntityPrehistoricFloraFis
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return 0.09;
+		return 0.01;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 0.8;
@@ -191,7 +191,7 @@ public class EntityPrehistoricFloraAetheolepis extends EntityPrehistoricFloraFis
 		return 0.01;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return -0.04F;
+		return -0F;
 	}
 	public static double lowerbacklineoffset() {
 		return 0;

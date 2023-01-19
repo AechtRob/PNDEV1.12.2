@@ -35,7 +35,7 @@ public class ItemBundenbachiellusRaw extends ElementsLepidodendronMod.ModElement
 	}
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNBundenbachiellus", ItemBundenbachiellusRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_bundenbachiellus", ItemBundenbachiellusRaw.block);
 		OreDictionary.registerOre("listAllfishraw", ItemBundenbachiellusRaw.block);
 		OreDictionary.registerOre("listAllmeatraw", ItemBundenbachiellusRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBundenbachiellusRaw.block);

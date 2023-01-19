@@ -227,15 +227,14 @@ public class ModelEryon extends AdvancedModelBase {
     }
 
     public void renderStaticDisplayCase(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+        this.body.offsetZ = -0.01F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticDisplayFloor(float f) {
         this.body.offsetZ = -0.04F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

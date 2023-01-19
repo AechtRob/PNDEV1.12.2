@@ -544,19 +544,12 @@ public class ModelBundenbachiellus extends AdvancedModelBase {
         //this.head.render(f5 * 0.25F);
         this.Body.render(f5 );
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticDisplayCase(float f) {
         this.Body.rotateAngleY = (float) Math.toRadians(90);
-        this.Body.offsetX = -0.F;
+        this.Body.offsetX = -0.05F;
         this.Body.offsetY = -0F;
         this.Body.offsetZ = 0.0F;
         this.Body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
