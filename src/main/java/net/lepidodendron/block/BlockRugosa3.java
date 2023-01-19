@@ -204,6 +204,11 @@ public class BlockRugosa3 extends ElementsLepidodendronMod.ModElement {
 		{
 			dimWeight = 2;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky"))
+		{
+			dimWeight = 2;
+			multiplier = 10;
+		}
 		if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))
 		) {
 			dimWeight = 1;
