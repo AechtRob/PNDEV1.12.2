@@ -12,7 +12,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderNotidanoides;
+import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
@@ -249,6 +252,58 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.NOTIDANOIDES_LOOT;
+	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.09;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.7;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.01;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplayWallMount.TEXTURE_NOTIDANOIDES;
+	}
+	public static ModelBase modelDisplay() {
+		return RenderDisplayWallMount.modelNotidanoides;
+	}
+	public static float getScaler() {
+		return RenderNotidanoides.getScaler();
 	}
 
 }

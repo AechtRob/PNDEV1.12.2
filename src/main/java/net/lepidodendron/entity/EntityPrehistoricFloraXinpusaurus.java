@@ -8,6 +8,9 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderXinpusaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplayWallMount;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -236,6 +239,57 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
 		return new EntityPrehistoricFloraXinpusaurus(this.world);
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.05;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.1;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.2;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplayWallMount.TEXTURE_XINPUSAURUS;
+	}
+	public static ModelBase modelDisplay() {
+		return RenderDisplayWallMount.modelXinpusaurus;
+	}
+	public static float getScaler() {
+		return RenderXinpusaurus.getScaler();
 	}
 
 }
