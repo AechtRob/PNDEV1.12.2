@@ -8,6 +8,10 @@ import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderBundenbachiellus;
+import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -151,6 +155,19 @@ public class EntityPrehistoricFloraBundenbachiellus extends EntityPrehistoricFlo
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.BUNDENBACHIELLUS_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.36; }
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_BUNDENBACHIELLUS;
+	}
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelBundenbachiellus;
+	}
+	public static float getScaler() {
+		return RenderBundenbachiellus.getScaler();
 	}
 
 }

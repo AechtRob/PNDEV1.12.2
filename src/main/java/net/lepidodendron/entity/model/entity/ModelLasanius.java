@@ -159,16 +159,34 @@ public class ModelLasanius extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Head.rotateAngleY = (float) Math.toRadians(90);
+        this.Head.offsetX = -0.18F;
+        this.Head.offsetY = 0.05F;
+        this.Head.offsetZ = 0.0F;
         this.Head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Head, 0.9599F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(cube_r1, -0.2705F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.7545F, 0.5698F, 0.6557F);
+        this.setRotateAngle(cube_r4, 0.7545F, -0.5698F, -0.6557F);
+        this.setRotateAngle(tail, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, -0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.5498F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.5498F, 0.0F, 0.0F);
+        this.Head.offsetY = 0.55F;
+        this.Head.offsetX = -0.05F;
+        this.Head.offsetZ = 0.08F;
+        this.Head.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
