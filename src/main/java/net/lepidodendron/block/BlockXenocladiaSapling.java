@@ -196,7 +196,7 @@ public class BlockXenocladiaSapling extends ElementsLepidodendronMod.ModElement 
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Climbing plant (Cladoxylopsid)");
+				tooltip.add("Type: Cladoxylopsid climbing plant");
 				tooltip.add("Periods: mid Devonian");
 				tooltip.add("Note: Must be planted against a climbable surface");
 				tooltip.add("Propagation: spores");

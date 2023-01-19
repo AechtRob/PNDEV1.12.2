@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
@@ -38,11 +39,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:ibyka")
+public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:pietzschia")
 	public static final Block block = null;
-	public BlockIbyka(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.ibyka);
+	public BlockPietzschia(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.pietzschia);
 	}
 
 	@Override
@@ -55,17 +56,16 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:ibyka", "inventory"));
+				new ModelResourceLocation("lepidodendron:pietzschia", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:ibyka", BlockIbyka.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockIbyka.block);
-		OreDictionary.registerOre("plant", BlockIbyka.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:pietzschia", BlockPietzschia.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockPietzschia.block);
+		OreDictionary.registerOre("plant", BlockPietzschia.block);
 	}
-
 
 	public static class BlockCustomFlower extends SeedSporeBushBase {
 		public BlockCustomFlower() {
@@ -75,8 +75,8 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_ibyka");
-			setRegistryName("ibyka");
+			setTranslationKey("pf_pietzschia");
+			setRegistryName("pietzschia");
 		}
 
 		@Override
@@ -126,15 +126,33 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-			return EnumPlantType.Plains;
+			return EnumPlantType.Desert;
 		}
+
+		@Override
+		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
+		}
+
+		//@Override
+		//public BlockFlower.EnumFlowerColor getBlockType() {
+		//	return BlockFlower.EnumFlowerColor.YELLOW;
+		//}
+
+		//@SideOnly(Side.CLIENT)
+		//@Override
+		//public void getSubBlocks(CreativeTabs tab, net.minecraft.util.NonNullList<ItemStack> list) {
+		//	for (BlockFlower.EnumFlowerType blockflower$enumflowertype : BlockFlower.EnumFlowerType.getTypes(this.getBlockType())) {
+		//		list.add(new ItemStack(this, 1, blockflower$enumflowertype.getMeta()));
+		//	}
+		//}
 		
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Iridopteridales proto-plant/horsetail");
-	        	tooltip.add("Periods: mid Devonian");
+				tooltip.add("Type: Cladoxylopsid bush");
+	        	tooltip.add("Periods: late Devonian");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
 	    }
@@ -147,7 +165,7 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockIbyka.block;
+			return BlockPietzschia.block;
 		}
 
 		@Override
