@@ -198,6 +198,7 @@ public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobite
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_ERYON;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelEryon;
 	}

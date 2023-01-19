@@ -205,6 +205,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_BALHUTICARIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelBalhuticaris;
 	}

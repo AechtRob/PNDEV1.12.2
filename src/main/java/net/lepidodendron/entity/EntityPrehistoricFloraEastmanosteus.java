@@ -306,6 +306,7 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelEastmanosteus;
 	}

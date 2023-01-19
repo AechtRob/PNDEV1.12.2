@@ -201,6 +201,7 @@ public class EntityPrehistoricFloraDapedium extends EntityPrehistoricFloraFishBa
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_DAPEDIUM;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelDapedium;
 	}

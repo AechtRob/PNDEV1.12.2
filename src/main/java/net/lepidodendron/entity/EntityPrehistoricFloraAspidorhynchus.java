@@ -246,6 +246,7 @@ public class EntityPrehistoricFloraAspidorhynchus extends EntityPrehistoricFlora
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_ASPIDORHYNCHUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelAspidorhynchus;
 	}

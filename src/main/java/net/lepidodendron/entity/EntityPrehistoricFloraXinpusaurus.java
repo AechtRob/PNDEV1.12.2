@@ -285,6 +285,7 @@ public class EntityPrehistoricFloraXinpusaurus extends EntityPrehistoricFloraAge
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_XINPUSAURUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelXinpusaurus;
 	}

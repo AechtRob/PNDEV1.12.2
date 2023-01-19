@@ -212,6 +212,7 @@ public class EntityPrehistoricFloraEugaleaspis extends EntityPrehistoricFloraFis
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EUGALEASPIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelEugaleaspis;
 	}

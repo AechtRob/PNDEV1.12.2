@@ -5935,10 +5935,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 if (!itemRender) {
                                     try {
                                         itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                                textureDisplay, getScaler, modelDisplay,
-                                                offsetWall, 0, 0,
-                                                upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                                lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
+                                            textureDisplay, getScaler, modelDisplay,
+                                            offsetWall, 0, 0,
+                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
+                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
                                     } catch (Exception e) {
                                         itemRender = true;
                                     }
@@ -5966,7 +5966,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                         //GlStateManager.pushMatrix();
 
                         float scale = 0.6666F;
-                        if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + 0.02, z + 0.5);
+                            GlStateManager.scale(scale, scale, scale);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + 0.98, z + 0.5);
+                            GlStateManager.scale(scale, scale, scale);
+                        }
+                        if (facing == EnumFacing.NORTH) {
                             GlStateManager.translate(x + 0.5, y + 0.5, z + 0.98);
                             GlStateManager.scale(scale, scale, scale);
                         }
@@ -6208,25 +6216,47 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
                 }
-            }
 
-            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
-            GlStateManager.rotate(180, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            if (renderMethod != null) {
-                try {
-                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+                GlStateManager.rotate(180, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+                if (renderMethod != null) {
+                    try {
+                        renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                    return true;
+                } else {
+                    return false;
                 }
-                catch (Exception e) {return false;}
-                return true;
-            } else {
-                return false;
             }
         }
         else if (facing == EnumFacing.UP) {
+            //Arrow to show location:
+            if (ClientProxyLepidodendronMod.keyB.isKeyDown()) {
+                GL11.glPushMatrix();
+                GL11.glLineWidth(12);
+                GL11.glDisable(GL11.GL_TEXTURE_2D);
+                GL11.glColor3ub((byte) 255, (byte) 0, (byte) 0);
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F - 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glEnable(GL11.GL_TEXTURE_2D);
+                GL11.glPopMatrix();
+            }
             Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[] { float.class });
             if (renderMethod != null) {
                 if (lowerfrontverticallinedepth > 0) {
@@ -6259,42 +6289,22 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glPopMatrix();
                 }
 
-                if (ClientProxyLepidodendronMod.keyB.isPressed()) {
-                    GL11.glPushMatrix();
-                    GL11.glLineWidth(20);
-                    GL11.glDisable(GL11.GL_TEXTURE_2D);
-                    GL11.glColor3ub((byte) 255, (byte) 0, (byte) 0);
-                    GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
-                    GL11.glEnd();
-                    GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
-                    GL11.glEnd();
-                    GL11.glBegin(GL11.GL_LINES);
-                    GL11.glVertex3f((float) x + 0.5F, (float) y, (float) z + 0.5F);
-                    GL11.glVertex3f((float) x + 0.5F - 0.5F, (float) y + 0.5F, (float) z + 0.5F);
-                    GL11.glEnd();
-                    GL11.glEnable(GL11.GL_TEXTURE_2D);
-                    GL11.glPopMatrix();
+                setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+                GlStateManager.rotate(180, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+                if (renderMethod != null) {
+                    try {
+                        renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                    return true;
+                } else {
+                    return false;
                 }
-            }
-
-            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
-            GlStateManager.rotate(180, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            if (renderMethod != null) {
-                try {
-                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
-                }
-                catch (Exception e) {return false;}
-                return true;
-            } else {
-                return false;
             }
         }
         else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {

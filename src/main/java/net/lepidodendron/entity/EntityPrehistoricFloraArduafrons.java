@@ -202,6 +202,7 @@ public class EntityPrehistoricFloraArduafrons extends EntityPrehistoricFloraFish
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_ARDUAFRONS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelArduafrons;
 	}

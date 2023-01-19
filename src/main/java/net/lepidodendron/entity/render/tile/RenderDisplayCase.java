@@ -5132,38 +5132,38 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
            ModelBase model,
            double offset
     ) {
-        if (facing == EnumFacing.UP) {
-            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-        }
-        if (facing == EnumFacing.DOWN) {
-            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-        }
-        if (facing == EnumFacing.NORTH) {
-            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(90, 1F, 0F, 0F);
-        }
-        if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(270, 1F, 0F, 0F);
-        }
-        if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(90, 0F, 0F, 1F);
-        }
-        if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(270, 0F, 0F, 1F);
-        }
-        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-        GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-        this.bindTexture(TEXTURE);
         Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[] { float.class });
         if (renderMethod != null) {
+            if (facing == EnumFacing.UP) {
+                GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+            }
+            if (facing == EnumFacing.DOWN) {
+                GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+            }
+            if (facing == EnumFacing.NORTH) {
+                GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(90, 1F, 0F, 0F);
+            }
+            if (facing == EnumFacing.SOUTH) {
+                GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(270, 1F, 0F, 0F);
+            }
+            if (facing == EnumFacing.WEST) {
+                GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(90, 0F, 0F, 1F);
+            }
+            if (facing == EnumFacing.EAST) {
+                GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(270, 0F, 0F, 1F);
+            }
+            GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
             try {
                 renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
             } catch (Exception e) {

@@ -201,6 +201,7 @@ public class EntityPrehistoricFloraAphnelepis extends EntityPrehistoricFloraFish
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_APHNELEPIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelAphnelepis;
 	}

@@ -184,8 +184,8 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private static final ResourceLocation TEXTURE_GERARUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerarus.png");
     private final ModelGerarus modelGerarus;
 
-    public static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
-    public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
+    //public static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
+    //public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
 
     public RenderDisplayPlinth() {
         this.modelAcanthostega = new ModelAcanthostega();
@@ -1158,12 +1158,12 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                    double offset
     ) {
         Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticPlinth", new Class[] { float.class });
-        GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
-        GlStateManager.rotate(180, 0F, 0F, 1F);
-        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-        GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-        this.bindTexture(TEXTURE);
         if (renderMethod != null) {
+            GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
+            GlStateManager.rotate(180, 0F, 0F, 1F);
+            GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
             try {
                 renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
             }

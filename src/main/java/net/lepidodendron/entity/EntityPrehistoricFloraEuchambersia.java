@@ -225,9 +225,11 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 	public static double lowerbacklineoffsetperpendiular() {
 		return 0.0F;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_EUCHAMBERSIA;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelEuchambersia;
 	}

@@ -299,6 +299,7 @@ public class EntityPrehistoricFloraNotidanoides extends EntityPrehistoricFloraAg
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_NOTIDANOIDES;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelNotidanoides;
 	}

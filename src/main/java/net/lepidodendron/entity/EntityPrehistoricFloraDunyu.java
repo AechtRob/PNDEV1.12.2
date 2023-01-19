@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderDunyu;
-import net.lepidodendron.entity.render.entity.RenderLasanius;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -209,9 +208,11 @@ public class EntityPrehistoricFloraDunyu extends EntityPrehistoricFloraFishBase 
 	public static double lowerbacklineoffsetperpendiular() {
 		return -0;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_DUNYU;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelDunyu;
 	}

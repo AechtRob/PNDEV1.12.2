@@ -309,6 +309,7 @@ public class EntityPrehistoricFloraOphthalmosaurus extends EntityPrehistoricFlor
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_OPHTHALMOSAURUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelOphthalmosaurus;
 	}

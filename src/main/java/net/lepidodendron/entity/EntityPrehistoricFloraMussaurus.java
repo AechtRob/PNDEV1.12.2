@@ -463,6 +463,7 @@ public class EntityPrehistoricFloraMussaurus extends EntityPrehistoricFloraLandB
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_MUSSAURUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelMussaurus;
 	}

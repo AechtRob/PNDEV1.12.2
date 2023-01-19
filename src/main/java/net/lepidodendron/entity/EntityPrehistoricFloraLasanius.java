@@ -317,6 +317,7 @@ public class EntityPrehistoricFloraLasanius extends EntityPrehistoricFloraFishBa
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_LASANIUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelLasanius;
 	}

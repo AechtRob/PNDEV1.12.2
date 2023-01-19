@@ -201,6 +201,7 @@ public class EntityPrehistoricFloraMacromesodon extends EntityPrehistoricFloraFi
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_MACROMESODON;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelMacromesodon;
 	}

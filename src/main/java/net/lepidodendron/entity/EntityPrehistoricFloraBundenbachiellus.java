@@ -163,6 +163,7 @@ public class EntityPrehistoricFloraBundenbachiellus extends EntityPrehistoricFlo
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_BUNDENBACHIELLUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelBundenbachiellus;
 	}

@@ -211,6 +211,7 @@ public class EntityPrehistoricFloraPituriaspis extends EntityPrehistoricFloraFis
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_PITURIASPIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelPituriaspis;
 	}

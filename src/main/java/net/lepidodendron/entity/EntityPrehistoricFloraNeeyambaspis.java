@@ -212,6 +212,7 @@ public class EntityPrehistoricFloraNeeyambaspis extends EntityPrehistoricFloraFi
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_NEEYAMBASPIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelNeeyambaspis;
 	}
