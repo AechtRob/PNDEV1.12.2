@@ -22,6 +22,13 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelBundenbachiellus modelBundenbachiellus = new ModelBundenbachiellus();
     public static final ResourceLocation TEXTURE_DAPEDIUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dapedium.png");
     public static final ModelDapedium modelDapedium = new ModelDapedium();
+    public static final ResourceLocation TEXTURE_DIICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diictodon.png");
+    public static final ResourceLocation TEXTURE_EOSIMOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosimops.png");
+    public static final ResourceLocation TEXTURE_PROSICTODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prosictodon.png");
+    public static final ResourceLocation TEXTURE_ROBERTIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
+    public static final ModelDiictodon modelDiictodon = new ModelDiictodon();
+    public static final ResourceLocation TEXTURE_DIMETRODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dimetrodon.png");
+    public static final ModelDimetrodon modelDimetrodon = new ModelDimetrodon();
     public static final ResourceLocation TEXTURE_DUNYU = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunyu.png");
     public static final ModelDunyu modelDunyu = new ModelDunyu();
     public static final ResourceLocation TEXTURE_EASTMANOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
@@ -32,6 +39,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
     public static final ResourceLocation TEXTURE_EUGALEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eugaleaspis.png");
     public static final ModelEugaleaspis modelEugaleaspis = new ModelEugaleaspis();
+    public static final ResourceLocation TEXTURE_INOSTRANCEVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/inostrancevia.png");
+    public static final ModelInostrancevia modelInostrancevia = new ModelInostrancevia();
     public static final ResourceLocation TEXTURE_LASANIUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lasanius.png");
     public static final ModelLasanius modelLasanius = new ModelLasanius();
     public static final ResourceLocation TEXTURE_MACROMESODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/macromesodon.png");

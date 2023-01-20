@@ -15,6 +15,8 @@ public class RenderDimetrodon extends RenderLiving<EntityPrehistoricFloraDimetro
         super(mgr, new ModelDimetrodon(), 0.5f);
     }
 
+    public static float getScaler() {return 0.8f; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDimetrodon entity) {
         return RenderDimetrodon.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderDimetrodon extends RenderLiving<EntityPrehistoricFloraDimetro
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDimetrodon entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.350F;
     }

@@ -241,19 +241,52 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.775f);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.head.rotateAngleX = (float) Math.toRadians(24);
         this.lowerjaw1.rotateAngleX = (float) Math.toRadians(46);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, 0.1745F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(bodyfront, -0.1658F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.35F, -0.0794F, 0.3036F);
+        this.setRotateAngle(head, -0.286F, -0.617F, 0.0453F);
+        this.setRotateAngle(lowerjaw1, 0.9505F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw2, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw3, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjawslope, -0.3643F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjawteeth1, -0.2793F, 0.0F, 0.0F);
+        this.setRotateAngle(jawparting, -0.4554F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw1, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjaw2, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(nose, 0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjawteeth, 0.0785F, 0.0F, 0.0F);
+        this.setRotateAngle(upperjawteeth1, 0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(lefttupperarm, 1.5272F, 0.0F, 0.0F);
+        this.setRotateAngle(leftlowerarm, -2.0508F, 0.0F, 0.0F);
+        this.setRotateAngle(leftfrontfoot, 1.3265F, 0.0F, 0.0F);
+        this.setRotateAngle(rightupperarm, 0.0075F, 0.0F, 0.0F);
+        this.setRotateAngle(rightlowerarm, -1.0036F, 0.0F, 0.0F);
+        this.setRotateAngle(rightfrontfoot, 0.9774F, 0.0F, 0.0F);
+        this.setRotateAngle(hips, -0.2007F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, -0.1916F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.3377F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.2656F, 0.0F, 0.0F);
+        this.setRotateAngle(leftthigh, -0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(leftshin, 0.6283F, 0.0F, 0.0F);
+        this.setRotateAngle(lefthindfoot, -0.2182F, 0.0F, -0.0175F);
+        this.setRotateAngle(rightthigh, 0.3752F, 0.0F, 0.0F);
+        this.setRotateAngle(rightshin, 0.8465F, 0.0F, 0.0F);
+        this.setRotateAngle(righthindfoot, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(fur1, 0.4098F, 0.0F, 0.0F);
+        this.setRotateAngle(fur2, 0.182F, 0.0F, 0.0F);
+        this.setRotateAngle(fur3, 0.182F, 0.0F, 0.0F);
+        this.body.offsetY = -0.04F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -265,7 +298,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.7F;
+        this.body.offsetY = 0.48F;
 
         EntityPrehistoricFloraInostrancevia Inostrancevia = (EntityPrehistoricFloraInostrancevia) e;
         float masterSpeed = Inostrancevia.getTravelSpeed();
