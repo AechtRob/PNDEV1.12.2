@@ -6250,14 +6250,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             }
         }
         else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
-            setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
-            //GlStateManager.rotate(90, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
             Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticWall", new Class[] { float.class });
             if (renderMethod != null) {
+                setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
+                //GlStateManager.rotate(90, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+
                 try {
                     renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
                 } catch (Exception e) {
