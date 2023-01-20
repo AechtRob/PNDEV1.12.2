@@ -209,7 +209,6 @@ public class EntityPrehistoricFloraDunyu extends EntityPrehistoricFloraFishBase 
 		return -0;
 	}
 	@SideOnly(Side.CLIENT)
-	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_DUNYU;
 	}

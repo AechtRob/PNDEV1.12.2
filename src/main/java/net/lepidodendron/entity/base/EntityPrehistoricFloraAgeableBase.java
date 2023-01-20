@@ -30,7 +30,6 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -237,13 +236,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //System.err.println("Testing layable");
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
-
-                String eggType = "";
-                if (te.getTileData().hasKey("egg")) {
-                    eggType = te.getTileData().getString("egg");
-                }
-
-                if (eggType.equalsIgnoreCase("")
+                BlockNest.TileEntityNest tileNest = (BlockNest.TileEntityNest) te;
+                if (tileNest.getStackInSlot(0).isEmpty()
                     && isHomeableNest(world, pos)) {
                     return true;
                 }
@@ -930,12 +924,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
                     if (te != null) {
-                        te.getTileData().setString("egg", this.getEggNBT());
                         te.getTileData().setString("creature", getEntityId(this));
-                        if (te instanceof TileEntityLockableLoot) {
+                        if (te instanceof BlockNest.TileEntityNest) {
                             ItemStack stack = BlockNest.BlockCustom.getEggItemStack(getEntityId(this));
                             stack.setCount(1);
-                            ((TileEntityLockableLoot) te).setInventorySlotContents((int) (0), stack);
+                            ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                         }
                     }
                     IBlockState state = world.getBlockState(nestPos);

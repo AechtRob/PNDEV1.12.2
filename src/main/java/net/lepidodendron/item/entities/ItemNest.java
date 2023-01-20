@@ -57,7 +57,6 @@ public abstract class ItemNest extends Item {
 						worldIn.setTileEntity(blockpos, new BlockNest.TileEntityNest());
 						TileEntity te = worldIn.getTileEntity(blockpos);
 						te.getTileData().setString("creature", getMobString());
-						te.getTileData().setString("egg", "");
 					}
 					if (!playerIn.capabilities.isCreativeMode) {
 						itemstack.shrink(1);
