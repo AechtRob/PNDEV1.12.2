@@ -3,7 +3,7 @@ package net.lepidodendron.item.entities;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
@@ -16,11 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemPalaeoCalamari extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:palaeo_calamari")
+public class ItemPalaeoThermidor extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:palaeo_thermidor")
 	public static final Item block = null;
-	public ItemPalaeoCalamari(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.palaeo_calamari);
+	public ItemPalaeoThermidor(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.palaeo_thermidor);
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class ItemPalaeoCalamari extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/palaeo_calamari", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/palaeo_thermidor", "inventory"));
 	}
 
 	public void init(FMLInitializationEvent event) {
@@ -43,9 +43,9 @@ public class ItemPalaeoCalamari extends ElementsLepidodendronMod.ModElement {
 	public static class ItemFoodCustom extends ItemFood {
 		public ItemFoodCustom() {
 			super(5, 0.7f, false);
-			setTranslationKey("pf_palaeo_calamari");
-			setRegistryName("palaeo_calamari");
-			setCreativeTab(TabLepidodendronMobile.tab);
+			setTranslationKey("pf_palaeo_thermidor");
+			setRegistryName("palaeo_thermidor");
+			setCreativeTab(TabLepidodendronMisc.tab);
 			setMaxStackSize(64);
 		}
 
