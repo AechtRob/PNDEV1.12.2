@@ -291,18 +291,63 @@ public class ModelDimetrodon extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.8f);
+        this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Lowerjawback.rotateAngleX = (float) Math.toRadians(26);
         this.Neckbase.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Hips, -0.4245F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.3834F, -0.081F, -0.0326F);
+        this.setRotateAngle(Bodyfront, 0.1077F, -0.1735F, -0.0187F);
+        this.setRotateAngle(Neckbase, -0.2915F, -0.4337F, 0.0493F);
+        this.setRotateAngle(Neckend, 0.0241F, -0.3483F, -0.0232F);
+        this.setRotateAngle(Head, -0.3278F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawback, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawmiddle, 0.1911F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront, -0.2335F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerfrontteeth, 0.7006F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawslope, 0.3768F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerteeth, -0.0637F, 0.1698F, 0.0F);
+        this.setRotateAngle(Rightlowerteeth, -0.0637F, -0.1698F, 0.0F);
+        this.setRotateAngle(Jawparting, -0.3183F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawback, 0.4245F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawmiddle, -0.5943F, 0.0F, 0.0F);
+        this.setRotateAngle(Nosebridge, 0.9976F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawfront, 0.9128F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperfrontteeth, -0.2972F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperfrontteeth, 0.2759F, -0.0637F, 0.0F);
+        this.setRotateAngle(Rightupperfrontteeth, 0.2759F, 0.0637F, 0.0F);
+        this.setRotateAngle(Leftupperbackteeth, -0.1061F, -0.0213F, 0.0F);
+        this.setRotateAngle(Rightupperteethback, -0.1061F, 0.0213F, 0.0F);
+        this.setRotateAngle(Forehead, 0.3183F, 0.0F, 0.0F);
+        this.setRotateAngle(Sailfrontend, 0.3609F, 0.0F, 0.0F);
+        this.setRotateAngle(Sailfrontbase, 0.0848F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperarm, 1.3797F, 0.1061F, -0.2122F);
+        this.setRotateAngle(Leftlowerarm, -1.6816F, 0.0637F, 0.2122F);
+        this.setRotateAngle(Leftfrontfoot, 1.4163F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.5943F, -0.1061F, 0.2122F);
+        this.setRotateAngle(Rightlowerarm, -0.64F, 0.0046F, -0.2051F);
+        this.setRotateAngle(Rightfrontfoot, -0.0236F, 0.0F, 0.0F);
+        this.setRotateAngle(Sailmiddlefront, -0.0637F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.0216F, -0.1745F, -0.0038F);
+        this.setRotateAngle(Tailmiddlebase, -0.0659F, -0.2613F, 0.0171F);
+        this.setRotateAngle(Tailmiddleend, 0.2195F, -0.2558F, -0.0564F);
+        this.setRotateAngle(Tailend, 0.2031F, -0.3424F, -0.069F);
+        this.setRotateAngle(Leftthigh, -0.5117F, -0.1485F, -0.2546F);
+        this.setRotateAngle(Leftshin, 0.868F, -0.1274F, 0.0848F);
+        this.setRotateAngle(Lefthindfoot, 0.1108F, 0.0F, -0.0213F);
+        this.setRotateAngle(Rightthigh, -0.0754F, 0.1485F, 0.2546F);
+        this.setRotateAngle(Rightshin, 1.3043F, 0.1274F, -0.0848F);
+        this.setRotateAngle(Righthindfoot, -0.4128F, 0.0F, 0.0213F);
+        this.setRotateAngle(Sailend, 0.3821F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.14F;
+        this.Hips.offsetX = 0.08F;
+        this.Hips.offsetZ = -0.09F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -314,7 +359,7 @@ public class ModelDimetrodon extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.3F;
+        this.Hips.offsetY = 0.013F;
 
         EntityPrehistoricFloraDimetrodon Dimetrodon = (EntityPrehistoricFloraDimetrodon) e;
         float masterSpeed = Dimetrodon.getTravelSpeed();
