@@ -15,6 +15,7 @@ public class RenderPlacerias extends RenderLiving<EntityPrehistoricFloraPlaceria
     public RenderPlacerias(RenderManager mgr) {
         super(mgr, new ModelPlacerias(), 0.5f);
     }
+    public static float getScaler() {return 0.467f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPlacerias entity) {
@@ -32,7 +33,7 @@ public class RenderPlacerias extends RenderLiving<EntityPrehistoricFloraPlaceria
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPlacerias entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }

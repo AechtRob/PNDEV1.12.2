@@ -15,6 +15,8 @@ public class RenderCoelophysis extends RenderLiving<EntityPrehistoricFloraCoelop
         super(mgr, new ModelCoelophysis(), 0.5f);
     }
 
+    public static float getScaler() {return 0.495f; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCoelophysis entity) {
         return RenderCoelophysis.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderCoelophysis extends RenderLiving<EntityPrehistoricFloraCoelop
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCoelophysis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.38F;
     }
