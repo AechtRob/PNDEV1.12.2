@@ -66,7 +66,8 @@ public class BlockEurypteridEggsMegalograptus extends ElementsLepidodendronMod.M
 			if (biome instanceof BiomeOrdovician) {
 				BiomeOrdovician biomeOrdovician = (BiomeOrdovician) biome;
 				if (biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Ocean
-						|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge) {
+						|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Sponge
+						|| biomeOrdovician.getBiomeType() == EnumBiomeTypeOrdovician.Estuary) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}

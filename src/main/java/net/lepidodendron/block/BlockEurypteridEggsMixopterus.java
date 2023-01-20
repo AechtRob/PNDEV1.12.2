@@ -66,10 +66,7 @@ public class BlockEurypteridEggsMixopterus extends ElementsLepidodendronMod.ModE
 			if (biome instanceof BiomeSilurian) {
 				BiomeSilurian biomeSilurian = (BiomeSilurian) biome;
 				if (biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Ocean
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Coral
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Reef
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid
-						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Lagoon) {
+						|| biomeSilurian.getBiomeType() == EnumBiomeTypeSilurian.Crinoid) {
 					(new MobSpawnGenerator((Block) block)).generate(world, random, new BlockPos(l6, i11, l14), minWaterDepth, waterDepthCheckMax);
 				}
 			}
