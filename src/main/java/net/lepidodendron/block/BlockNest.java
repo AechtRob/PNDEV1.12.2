@@ -20,7 +20,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
@@ -308,9 +307,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			if (!state.getValue(MOUND)) {
-				return new ItemStack(Items.STICK, (int) (1)).getItem();
-			}
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 

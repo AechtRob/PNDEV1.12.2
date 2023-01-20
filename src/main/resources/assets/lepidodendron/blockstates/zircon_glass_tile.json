@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:zircon_glass_tile"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:zircon_glass_tile", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:zircon_glass_tile"}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:zircon_glass_tile", "x": 180}
+    ]
+  }
+}

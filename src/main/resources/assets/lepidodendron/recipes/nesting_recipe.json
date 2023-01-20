@@ -1,0 +1,51 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "1": {
+      "type": "forge:ore_dict",
+      "ore": "plant"
+    },
+    "2": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "3": {
+      "type": "forge:ore_dict",
+      "ore": "plant"
+    },
+    "4": {
+      "type": "forge:ore_dict",
+      "ore": "itemFluffy"
+    },
+    "5": {
+      "type": "forge:ore_dict",
+      "ore": "plant"
+    },
+    "6": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    },
+    "7": {
+      "type": "forge:ore_dict",
+      "ore": "plant"
+    },
+    "8": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:nesting",
+    "count": 1
+  }
+}

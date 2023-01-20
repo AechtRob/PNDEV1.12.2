@@ -1269,7 +1269,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation BALHUTICARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/balhuticaris"));
 	public static final int ENTITY_CERATIOCARIS = 504;
 	public static final int ENTITY_PLECTODISCUS= 505;
-	public static final ResourceLocation PLECTODISCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/plectodiscus"));
+	//public static final ResourceLocation PLECTODISCUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/plectodiscus"));
 	public static final int ENTITY_FLAGELLOPANTOPUS = 506;
 	//public static final ResourceLocation FLAGELLOPANTOPUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/flagellopantopus"));
 	public static final int ENTITY_VACHONISIA = 507;

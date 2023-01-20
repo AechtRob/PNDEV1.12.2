@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -41,7 +42,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -1203,7 +1203,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
                 return true;
             }
-            if (this.isPFAdult() && OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
+            if (this.isPFAdult() && itemstack.getItem() == ItemNesting.block) {
                 //Prompt to create a nest:
                 //Does this mob have nests like this and is it OK to do this now?
                 if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {
