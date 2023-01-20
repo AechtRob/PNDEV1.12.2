@@ -174,19 +174,18 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.body.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
-        this.head.rotateAngleX = (float) Math.toRadians(-15);
-        this.body.rotateAngleX = (float) Math.toRadians(-15);
-        this.body2.rotateAngleX = (float) Math.toRadians(5);
-        this.body3.rotateAngleX = (float) Math.toRadians(7.5);
+        this.body.rotateAngleY  = (float) Math.toRadians(90);
         this.body4.rotateAngleX = (float) Math.toRadians(7.5);
         this.body5.rotateAngleX = (float) Math.toRadians(10);
         this.lowerjaw.rotateAngleX = (float) Math.toRadians(25);
-        this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.06F;
+        this.body.offsetY = -0.21F;
         this.body.render(0.01F);
+        resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
+        this.body.rotateAngleY  = (float) Math.toRadians(90);
         this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 1.2217F);
         this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -1.2217F);
         this.setRotateAngle(body0, 0.0F, -0.1309F, 0.0F);
@@ -206,11 +205,14 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
         this.setRotateAngle(body5, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(tail, 0.0F, -0.4363F, 0.0F);
-        this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.04F;
+        this.body.offsetZ = -0.08F;
+        this.body.offsetY = -0.28F;
         this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.body.rotateAngleY  = (float) Math.toRadians(90);
         this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 1.2217F);
         this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -1.2217F);
         this.setRotateAngle(body0, 0.0F, -0.1309F, 0.0F);
@@ -230,9 +232,11 @@ public class ModelNotidanoides extends AdvancedModelBase {
         this.setRotateAngle(cube_r8, 0.3054F, 0.0F, 0.0F);
         this.setRotateAngle(body5, 0.0F, -0.4363F, 0.0F);
         this.setRotateAngle(tail, 0.0F, -0.4363F, 0.0F);
-        this.body.offsetX = -0.09F;
-        this.body.offsetY = -0.22F;
+        this.body.offsetX = -0.04F;
+        this.body.offsetZ = -0.08F;
+        this.body.offsetY = -0.05F;
         this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

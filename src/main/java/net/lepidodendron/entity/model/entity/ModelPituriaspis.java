@@ -172,8 +172,13 @@ public class ModelPituriaspis extends AdvancedModelBase {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.rotateAngleZ = (float) Math.toRadians(90);
+        this.main.offsetX = -0.09F;
+        this.main.offsetY = -0.19F;
+        this.main.offsetZ = 0.051F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, 0.2051F, 0.0F, 0.0F);
@@ -195,7 +200,10 @@ public class ModelPituriaspis extends AdvancedModelBase {
         this.setRotateAngle(cube_r12, 0.1178F, 0.0F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, 0.3054F, 0.0F);
         this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.08F;
+        this.main.offsetZ = -0.035F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

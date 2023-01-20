@@ -109,9 +109,11 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 			            if (checkBlock.equalsIgnoreCase(Block.REGISTRY.getNameForObject((Block)block).toString())) {
 			            	if (meta == -1) {
 			            		OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block)block, (int) (1)));
+								OreDictionary.registerOre("plant", new ItemStack((Block)block, (int) (1)));
 			            	}
 			            	else {
 			            		OreDictionary.registerOre("plantPrehistoric", new ItemStack((Block)block, (int) (1), meta));
+								OreDictionary.registerOre("plant", new ItemStack((Block)block, (int) (1), meta));
 			            	}
 			            }
 
@@ -188,7 +190,6 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 
 		//Mud:
 		OreDictionary.registerOre("blockMud", BlockCarboniferousMud.block);
-
 
 		//Ropes:
 		OreDictionary.registerOre("itemRope", BlockHoldfast.block);
@@ -836,6 +837,26 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("blockGlass", Blocks.GLASS);
 		OreDictionary.registerOre("paneGlass", BlockZirconGlassPane.block);
 		OreDictionary.registerOre("paneGlass", Blocks.GLASS_PANE);
+
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.TALLGRASS, 1, 1));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.DOUBLE_PLANT, 1, 2));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Items.WHEAT, 1));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 0));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 1));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 2));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 3));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 4));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 5));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 6));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 7));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 8));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 9));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 10));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 11));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 12));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 13));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 14));
+		OreDictionary.registerOre("itemFluffy", new ItemStack(Blocks.WOOL, 1, 15));
 
 		//OreDictionary.registerOre("leavesHay", new ItemStack(Blocks.REEDS, 1));
 		OreDictionary.registerOre("leavesHay", new ItemStack(Blocks.TALLGRASS, 1, 1));

@@ -9,6 +9,7 @@ import net.lepidodendron.block.BlockCageSmall;
 import net.lepidodendron.block.BlockMobSpawn;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -30,7 +31,6 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityLockableLoot;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -42,7 +42,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
@@ -237,13 +236,8 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //System.err.println("Testing layable");
             TileEntity te = world.getTileEntity(pos);
             if (te instanceof BlockNest.TileEntityNest) {
-
-                String eggType = "";
-                if (te.getTileData().hasKey("egg")) {
-                    eggType = te.getTileData().getString("egg");
-                }
-
-                if (eggType.equalsIgnoreCase("")
+                BlockNest.TileEntityNest tileNest = (BlockNest.TileEntityNest) te;
+                if (tileNest.getStackInSlot(0).isEmpty()
                     && isHomeableNest(world, pos)) {
                     return true;
                 }
@@ -930,12 +924,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
                     if (te != null) {
-                        te.getTileData().setString("egg", this.getEggNBT());
                         te.getTileData().setString("creature", getEntityId(this));
-                        if (te instanceof TileEntityLockableLoot) {
+                        if (te instanceof BlockNest.TileEntityNest) {
                             ItemStack stack = BlockNest.BlockCustom.getEggItemStack(getEntityId(this));
                             stack.setCount(1);
-                            ((TileEntityLockableLoot) te).setInventorySlotContents((int) (0), stack);
+                            ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
                         }
                     }
                     IBlockState state = world.getBlockState(nestPos);
@@ -1210,7 +1203,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 }
                 return true;
             }
-            if (this.isPFAdult() && OreDictionary.containsMatch(false, OreDictionary.getOres("stickWood"), itemstack)) {
+            if (this.isPFAdult() && itemstack.getItem() == ItemNesting.block) {
                 //Prompt to create a nest:
                 //Does this mob have nests like this and is it OK to do this now?
                 if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {

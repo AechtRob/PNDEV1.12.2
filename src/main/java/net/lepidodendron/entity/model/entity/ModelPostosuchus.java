@@ -282,20 +282,54 @@ public class ModelPostosuchus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body1.render(f5 * 0.785F);
+        this.body1.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.head1.rotateAngleX = (float) Math.toRadians(-14.9);
         this.jaw1.rotateAngleX = (float) Math.toRadians(42.5);
+        this.chest1.offsetX = 0F;
+        this.chest1.offsetZ = 0.03F;
         this.chest1.offsetY = -0.06F;
         this.chest1.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body1, 0.2143F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(chest1, -0.0363F, 0.0872F, -0.0032F);
+        this.setRotateAngle(upperarm1, 0.5558F, 0.2152F, -0.4707F);
+        this.setRotateAngle(arm1, -1.1135F, 0.0F, 0.0F);
+        this.setRotateAngle(hand1, -0.0044F, 0.0F, -0.1745F);
+        this.setRotateAngle(upperarm2, 0.7664F, 0.0F, 0.1396F);
+        this.setRotateAngle(arm2, -1.0699F, 0.0F, 0.0F);
+        this.setRotateAngle(hand2, -0.0044F, 0.0F, 0.1745F);
+        this.setRotateAngle(neck1, -0.1904F, 0.0857F, -0.0165F);
+        this.setRotateAngle(neck2, -0.2086F, 0.1281F, -0.027F);
+        this.setRotateAngle(head1, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw1, 0.5934F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw2, 0.12F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw3, -0.3F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw4, -0.2F, 0.0F, 0.0F);
+        this.setRotateAngle(gums1, -0.1585F, 0.0F, 0.0F);
+        this.setRotateAngle(head2, 0.1361F, 0.0F, 0.0F);
+        this.setRotateAngle(head3, 0.1056F, 0.0F, 0.0F);
+        this.setRotateAngle(head4, -0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(chestosteoderms1, 0.0017F, 0.0F, 0.0F);
+        this.setRotateAngle(basin1, -0.0428F, 0.0F, -0.0079F);
+        this.setRotateAngle(upperleg1, -0.5863F, 0.0F, 0.0F);
+        this.setRotateAngle(leg1, 0.4609F, 0.0F, 0.0F);
+        this.setRotateAngle(feet1, 0.258F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, -0.0627F, 0.0F, 0.0F);
+        this.setRotateAngle(leg2, 1.0282F, 0.0F, 0.0F);
+        this.setRotateAngle(feet2, 0.2143F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.09F, -0.1304F, -0.0117F);
+        this.setRotateAngle(tail2, -0.2181F, -0.1278F, 0.0282F);
+        this.setRotateAngle(tail3, -0.2253F, 0.1702F, -0.0388F);
+        this.setRotateAngle(tail4, -0.1864F, 0.2145F, -0.0401F);
+        this.body1.offsetY = -0.14F;
+        this.body1.offsetX = -0.07F;
+        this.body1.offsetZ = 0.04F;
+        this.body1.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -307,7 +341,7 @@ public class ModelPostosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body1.offsetY = 0.30F;
+        this.body1.offsetY = 0F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraPostosuchus Postosuchus = (EntityPrehistoricFloraPostosuchus) e;

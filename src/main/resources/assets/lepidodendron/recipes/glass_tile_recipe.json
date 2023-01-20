@@ -1,0 +1,18 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " 4 ",
+    "   "
+  ],
+  "key": {
+    "4": {
+      "item": "lepidodendron:zircon_glass_pane"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:zircon_glass_tile",
+    "count": 2
+  }
+}

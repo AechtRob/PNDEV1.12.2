@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDiictodon extends AdvancedModelBaseExtended {
@@ -207,17 +206,43 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.30f);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+
+    public void renderStaticPlinth(float f) {
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.0524F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(bodyfront, 0.0549F, -0.305F, -0.0165F);
+        this.setRotateAngle(neck, -0.3102F, -0.2917F, 0.0919F);
+        this.setRotateAngle(headbase, -0.0171F, -0.4574F, -0.151F);
+        this.setRotateAngle(lowermouth, -0.384F, 0.0F, 0.0F);
+        this.setRotateAngle(snoutbase, 0.3142F, 0.0F, 0.0F);
+        this.setRotateAngle(snout, 0.6283F, 0.0F, 0.0F);
+        this.setRotateAngle(uppermouth, -0.9425F, 0.0F, 0.0F);
+        this.setRotateAngle(muzzleleft, -0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(muzzleright, -0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg1, -0.0327F, -0.7013F, 0.7761F);
+        this.setRotateAngle(frontleftleg2, 0.2793F, 0.2793F, 0.8727F);
+        this.setRotateAngle(frontleftfoot, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(frontrightleg1, 0.0F, -0.2269F, -0.6981F);
+        this.setRotateAngle(frontrightleg2, -0.5617F, -1.0501F, -0.4518F);
+        this.setRotateAngle(frontrightfoot, 0.0F, 1.4835F, 0.0F);
+        this.setRotateAngle(pelvis, -0.1806F, 0.2577F, -0.0465F);
+        this.setRotateAngle(tailbase, 0.0358F, 0.218F, 0.0077F);
+        this.setRotateAngle(tail1, 0.0371F, -0.3488F, -0.0127F);
+        this.setRotateAngle(tail2, 0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(rearleftleg1, 0.193F, 0.0364F, 0.2824F);
+        //this.setRotateAngle(rearrightleg, 0.3491F, -0.2269F, 1.2741F);
+        this.setRotateAngle(rearleftfoot, -1.5708F, 0.0F, 0.0F);
+        this.setRotateAngle(rearrightleg1, 0.3198F, -0.9025F, -0.663F);
+        //this.setRotateAngle(rearleftleg, 0.3744F, 0.1805F, -1.1491F);
+        this.setRotateAngle(rearrightfoot, -1.5708F, 0.1745F, -0.2618F);
+        this.body.offsetY = 0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -230,7 +255,7 @@ public class ModelDiictodon extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.35F;
+        this.body.offsetY = 1.02F;
 
         EntityPrehistoricFloraDiictodon Diictodon = (EntityPrehistoricFloraDiictodon) e;
         float masterSpeed = Diictodon.getTravelSpeed();

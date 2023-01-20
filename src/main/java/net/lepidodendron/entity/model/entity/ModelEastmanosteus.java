@@ -363,8 +363,10 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.Eastmanosteus.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.Eastmanosteus.rotateAngleX = (float) Math.toRadians(26);
+        this.Jaw.rotateAngleX = (float) Math.toRadians(20);
+        this.Head.offsetY = 0.15F;
         this.Head.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, -1.5708F, -1.4137F, 1.5746F);
@@ -413,8 +415,11 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.setRotateAngle(Tail2, 0.0F, 0.3054F, 0.0F);
         this.setRotateAngle(cube_r33, 0.2793F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r34, 0.4014F, 0.0F, 0.0F);
-        this.Eastmanosteus.rotateAngleX = (float) Math.toRadians(26);
-        this.Head.render(0.01F);
+        this.Eastmanosteus.rotateAngleY = (float) Math.toRadians(90);
+        this.Eastmanosteus.offsetY = -0.43F;
+        this.Eastmanosteus.offsetX = -0.1F;
+        this.Eastmanosteus.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
         this.setRotateAngle(cube_r1, -1.5708F, -1.4137F, 1.5746F);
@@ -463,8 +468,11 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.setRotateAngle(Tail2, 0.0F, 0.3054F, 0.0F);
         this.setRotateAngle(cube_r33, 0.2793F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r34, 0.4014F, 0.0F, 0.0F);
+        this.Eastmanosteus.rotateAngleY = (float) Math.toRadians(90);
         this.Eastmanosteus.rotateAngleX = (float) Math.toRadians(26);
-        this.Head.render(0.01F);
+        this.Eastmanosteus.offsetX = -0.05F;
+        this.Eastmanosteus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

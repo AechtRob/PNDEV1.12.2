@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.render.tile;
 
+import net.lepidodendron.ClientProxyLepidodendronMod;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayWallMount;
 import net.lepidodendron.entity.*;
@@ -44,8 +45,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_AEGIROCASSIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis.png");
     private final ModelAegirocassis modelAegirocassis;
 
-    private static final ResourceLocation TEXTURE_AETHEOLEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aetheolepis.png");
-    private final ModelAetheolepis modelAetheolepis;
     private static final ResourceLocation TEXTURE_AKMONISTION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/akmonistion.png");
     private final ModelAkmonistion modelAkmonistion;
     private static final ResourceLocation TEXTURE_ALBERTONIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/albertonia.png");
@@ -56,20 +55,14 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelAnteosaurus modelAnteosaurus;
     private static final ResourceLocation TEXTURE_ANTINEOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antineosteus.png");
     private final ModelAntineosteus modelAntineosteus;
-    private static final ResourceLocation TEXTURE_APHNELEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aphnelepis.png");
-    private final ModelAphnelepis modelAphnelepis;
     private static final ResourceLocation TEXTURE_ARANDASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arandaspis.png");
     private final ModelArandaspis modelArandaspis;
     private static final ResourceLocation TEXTURE_ARCHOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archosaurus.png");
     private final ModelArchosaurus modelArchosaurus;
 
-    private static final ResourceLocation TEXTURE_ARDUAFRONS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arduafrons.png");
-    private final ModelArduafrons modelArduafrons;
     private static final ResourceLocation TEXTURE_ARIZONASAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arizonasaurus.png");
     private final ModelArizonasaurus modelArizonasaurus;
 
-    private static final ResourceLocation TEXTURE_ASPIDORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aspidorhynchus.png");
-    private final ModelAspidorhynchus modelAspidorhynchus;
     private static final ResourceLocation TEXTURE_ASTRASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/astraspis.png");
     private final ModelAstraspis modelAstraspis;
     private static final ResourceLocation TEXTURE_ATELEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ateleaspis.png");
@@ -130,8 +123,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelCoccosteus modelCoccosteus;
     private static final ResourceLocation TEXTURE_COELACANTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelacanthus.png");
     private final ModelCoelacanthus modelCoelacanthus;
-    private static final ResourceLocation TEXTURE_COELOPHYSIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelophysis.png");
-    private final ModelCoelophysis modelCoelophysis;
     private static final ResourceLocation TEXTURE_COELUROSAURAVUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/coelurosauravus.png");
     private final ModelWeigeltisaurid modelWeigeltisaurid;
     private static final ResourceLocation TEXTURE_COTYLORHYNCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cotylorhynchus.png");
@@ -146,16 +137,12 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelCynognathus modelCynognathus;
     private static final ResourceLocation TEXTURE_DAEDALICHTHYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/daedalichthys.png");
     private final ModelDaedalichthys modelDaedalichthys;
-    private static final ResourceLocation TEXTURE_DAPEDIUM = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dapedium.png");
-    private final ModelDapedium modelDapedium;
     private static final ResourceLocation TEXTURE_DELTOPTYCHIUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/deltoptychius.png");
     private final ModelDeltoptychius modelDeltoptychius;
     private static final ResourceLocation TEXTURE_DESMATOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/desmatosuchus.png");
     private final ModelDesmatosuchus modelDesmatosuchus;
     private static final ResourceLocation TEXTURE_DIADECTES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diadectes.png");
     private final ModelDiadectes modelDiadectes;
-    private static final ResourceLocation TEXTURE_DIMETRODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dimetrodon.png");
-    private final ModelDimetrodon modelDimetrodon;
     private static final ResourceLocation TEXTURE_DORYASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/doryaspis.png");
     private final ModelDoryaspis modelDoryaspis;
     private static final ResourceLocation TEXTURE_DORYPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dorypterus.png");
@@ -166,8 +153,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelDrepanaspis modelDrepanaspis;
     private static final ResourceLocation TEXTURE_DUNKLEOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunkleosteus.png");
     private final ModelDunkleosteus modelDunkleosteus;
-    private static final ResourceLocation TEXTURE_EASTAMANOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
-    private final ModelEastmanosteus modelEastmanosteus;
     private static final ResourceLocation TEXTURE_EBENAQUA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ebenaqua.png");
     private final ModelEbenaqua modelEbenaqua;
     private static final ResourceLocation TEXTURE_EDAPHOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/edaphosaurus.png");
@@ -176,8 +161,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelEdestus modelEdestus;
     private static final ResourceLocation TEXTURE_EGLONASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eglonaspis.png");
     private final ModelEglonaspis modelEglonaspis;
-    private static final ResourceLocation TEXTURE_EORAPTOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoraptor.png");
-    private final ModelEoraptor modelEoraptor;
     private static final ResourceLocation TEXTURE_EOSAURICHTHYS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eosaurichthys.png");
     private final ModelSaurichthys modelSaurichthys;
     private static final ResourceLocation TEXTURE_ERYOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryops.png");
@@ -236,8 +219,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelHyperodapedon modelHyperodapedon;
     private static final ResourceLocation TEXTURE_INIOPTERYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/iniopteryx.png");
     private final ModelIniopteryx modelIniopteryx;
-    private static final ResourceLocation TEXTURE_INOSTRANCEVIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/inostrancevia.png");
-    private final ModelInostrancevia modelInostrancevia;
     private static final ResourceLocation TEXTURE_JANASSA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/janassa.png");
     private final ModelJanassa modelJanassa;
     private static final ResourceLocation TEXTURE_JONKERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/jonkeria.png");
@@ -250,8 +231,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelLaminacaris modelLaminacaris;
     private static final ResourceLocation TEXTURE_LEBACHACANTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lebachacanthus.png");
     private final ModelLebachacanthus modelLebachacanthus;
-    private static final ResourceLocation TEXTURE_LESSEMSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lessemsaurus.png");
-    private final ModelLessemsaurus modelLessemsaurus;
     private static final ResourceLocation TEXTURE_LILIENSTERNUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/liliensternus.png");
     private final ModelLiliensternus modelLiliensternus;
     private static final ResourceLocation TEXTURE_LIMNOSCELIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limnoscelis.png");
@@ -273,8 +252,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_LYSTROSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lystrosaurus.png");
     private final ModelLystrosaurus modelLystrosaurus;
 
-    private static final ResourceLocation TEXTURE_MACROMESODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/macromesodon.png");
-    private final ModelMacromesodon modelMacromesodon;
     private static final ResourceLocation TEXTURE_MASTODONSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mastodonsaurus.png");
     private final ModelMastodonsaurus modelMastodonsaurus;
     private static final ResourceLocation TEXTURE_MCNAMARASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mcnamaraspis.png");
@@ -293,22 +270,13 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelMixopterus modelMixopterus;
     private static final ResourceLocation TEXTURE_MOSCHOPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/moschops.png");
     private final ModelMoschops modelMoschops;
-    private static final ResourceLocation TEXTURE_MUSSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mussaurus.png");
-    private final ModelMussaurus modelMussaurus;
-    private static final ResourceLocation TEXTURE_NEEYAMBASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/neeyambaspis.png");
-    private final ModelNeeyambaspis modelNeeyambaspis;
     private static final ResourceLocation TEXTURE_NOTHOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/nothosaurus.png");
     private final ModelNothosaurus modelNothosaurus;
 
-    private static final ResourceLocation TEXTURE_NOTIDANOIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/notidanoides.png");
-    private final ModelNotidanoides modelNotidanoides;
     private static final ResourceLocation TEXTURE_ONYCHODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/onychodus.png");
     private final ModelOnychodus modelOnychodus;
     private static final ResourceLocation TEXTURE_OPHIACODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ophiacodon.png");
     private final ModelOphiacodon modelOphiacodon;
-
-    private static final ResourceLocation TEXTURE_OPHTHALMOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ophthalmosaurus.png");
-    private final ModelOphthalmosaurus modelOphthalmosaurus;
     private static final ResourceLocation TEXTURE_ORODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orodus.png");
     private final ModelOrodus modelOrodus;
     private static final ResourceLocation TEXTURE_ORNITHOPRION = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ornithoprion.png");
@@ -334,10 +302,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelPharyngolepis modelPharyngolepis;
     private static final ResourceLocation TEXTURE_PHOLIDERPETON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pholiderpeton.png");
     private final ModelPholiderpeton modelPholiderpeton;
-    private static final ResourceLocation TEXTURE_PITURIASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pituriaspis.png");
-    private final ModelPituriaspis modelPituriaspis;
-    private static final ResourceLocation TEXTURE_PLACERIAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/placerias.png");
-    private final ModelPlacerias modelPlacerias;
     private static final ResourceLocation TEXTURE_PLACODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/placodus.png");
     private final ModelPlacodus modelPlacodus;
     private static final ResourceLocation TEXTURE_PLATEOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/plateosaurus.png");
@@ -352,8 +316,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelPoposaurus modelPoposaurus;
     private static final ResourceLocation TEXTURE_PORASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/poraspis.png");
     private final ModelPoraspis modelPoraspis;
-    private static final ResourceLocation TEXTURE_POSTOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/postosuchus.png");
-    private final ModelPostosuchus modelPostosuchus;
     private static final ResourceLocation TEXTURE_PRIONOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
     private final ModelPrionosuchus modelPrionosuchus;
     private static final ResourceLocation TEXTURE_PRISTEROGNATHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pristerognathus.png");
@@ -442,31 +404,23 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private static final ResourceLocation TEXTURE_WEIGELTISAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/weigeltisaurus.png");
     private static final ResourceLocation TEXTURE_XENACANTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xenacanthus.png");
     private final ModelXenacanthus modelXenacanthus;
-    private static final ResourceLocation TEXTURE_XINPUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus.png");
-    private final ModelXinpusaurus modelXinpusaurus;
+
     private static final ResourceLocation TEXTURE_YUNGUISAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/yunguisaurus.png");
     private final ModelYunguisaurus modelYunguisaurus;
-
-    private static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
-    private final ModelEuchambersia modelEuchambersia;
 
 
     public RenderDisplayWallMount() {
         this.modelAcanthodes = new ModelAcanthodes();
         this.modelAcrolepis = new ModelAcrolepis();
         this.modelAegirocassis = new ModelAegirocassis();
-        this.modelAetheolepis = new ModelAetheolepis();
         this.modelAkmonistion = new ModelAkmonistion();
         this.modelAlbertonia = new ModelAlbertonia();
         this.modelAllenypterus = new ModelAllenypterus();
         this.modelAnteosaurus = new ModelAnteosaurus();
         this.modelAntineosteus = new ModelAntineosteus();
-        this.modelAphnelepis = new ModelAphnelepis();
         this.modelArandaspis = new ModelArandaspis();
         this.modelArchosaurus = new ModelArchosaurus();
-        this.modelArduafrons = new ModelArduafrons();
         this.modelArizonasaurus = new ModelArizonasaurus();
-        this.modelAspidorhynchus = new ModelAspidorhynchus();
         this.modelAstraspis = new ModelAstraspis();
         this.modelAteleaspis = new ModelAteleaspis();
         this.modelAtopodentatus = new ModelAtopodentatus();
@@ -497,7 +451,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelCobelodus = new ModelCobelodus();
         this.modelCoccosteus = new ModelCoccosteus();
         this.modelCoelacanthus = new ModelCoelacanthus();
-        this.modelCoelophysis = new ModelCoelophysis();
         this.modelWeigeltisaurid = new ModelWeigeltisaurid();
         this.modelCotylorhynchus = new ModelCotylorhynchus();
         this.modelCrassigyrinus = new ModelCrassigyrinus();
@@ -505,22 +458,18 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelCymbospondylus = new ModelCymbospondylus();
         this.modelCynognathus = new ModelCynognathus();
         this.modelDaedalichthys = new ModelDaedalichthys();
-        this.modelDapedium = new ModelDapedium();
         this.modelDeltoptychius = new ModelDeltoptychius();
         this.modelDesmatosuchus = new ModelDesmatosuchus();
         this.modelDiadectes = new ModelDiadectes();
-        this.modelDimetrodon = new ModelDimetrodon();
         this.modelDoryaspis = new ModelDoryaspis();
         this.modelDorypterus = new ModelDorypterus();
         this.modelDracopristis = new ModelDracopristis();
         this.modelDrepanaspis = new ModelDrepanaspis();
         this.modelDunkleosteus = new ModelDunkleosteus();
-        this.modelEastmanosteus = new ModelEastmanosteus();
         this.modelEbenaqua = new ModelEbenaqua();
         this.modelEdaphosaurus = new ModelEdaphosaurus();
         this.modelEdestus = new ModelEdestus();
         this.modelEglonaspis = new ModelEglonaspis();
-        this.modelEoraptor = new ModelEoraptor();
         this.modelEryops = new ModelEryops();
         this.modelErythrosuchus = new ModelErythrosuchus();
         this.modelEstemmenosuchus = new ModelEstemmenosuchus();
@@ -548,14 +497,12 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelHyneria = new ModelHyneria();
         this.modelHyperodapedon = new ModelHyperodapedon();
         this.modelIniopteryx = new ModelIniopteryx();
-        this.modelInostrancevia = new ModelInostrancevia();
         this.modelJanassa = new ModelJanassa();
         this.modelJonkeria = new ModelJonkeria();
         this.modelKaibabvenator = new ModelKaibabvenator();
         this.modelLaccognathus = new ModelLaccognathus();
         this.modelLaminacaris = new ModelLaminacaris();
         this.modelLebachacanthus = new ModelLebachacanthus();
-        this.modelLessemsaurus = new ModelLessemsaurus();
         this.modelLiliensternus = new ModelLiliensternus();
         this.modelLimnoscelis = new ModelLimnoscelis();
         this.modelLisowicia = new ModelLisowicia();
@@ -566,7 +513,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelLungmenshanaspis = new ModelLungmenshanaspis();
         this.modelLuoxiongichthys = new ModelLuoxiongichthys();
         this.modelLystrosaurus = new ModelLystrosaurus();
-        this.modelMacromesodon = new ModelMacromesodon();
         this.modelMastodonsaurus = new ModelMastodonsaurus();
         this.modelMcnamaraspis = new ModelMcnamaraspis();
         this.modelMegactenopetalus = new ModelMegactenopetalus();
@@ -576,13 +522,9 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelMetoposaurus = new ModelMetoposaurus();
         this.modelMixopterus = new ModelMixopterus();
         this.modelMoschops = new ModelMoschops();
-        this.modelMussaurus = new ModelMussaurus();
-        this.modelNeeyambaspis = new ModelNeeyambaspis();
         this.modelNothosaurus = new ModelNothosaurus();
-        this.modelNotidanoides = new ModelNotidanoides();
         this.modelOnychodus = new ModelOnychodus();
         this.modelOphiacodon = new ModelOphiacodon();
-        this.modelOphthalmosaurus = new ModelOphthalmosaurus();
         this.modelOrodus = new ModelOrodus();
         this.modelOrnithoprion = new ModelOrnithoprion();
         this.modelOsteolepis = new ModelOsteolepis();
@@ -595,8 +537,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelPelurgaspis = new ModelPelurgaspis();
         this.modelPharyngolepis = new ModelPharyngolepis();
         this.modelPholiderpeton = new ModelPholiderpeton();
-        this.modelPituriaspis = new ModelPituriaspis();
-        this.modelPlacerias = new ModelPlacerias();
         this.modelPlacodus = new ModelPlacodus();
         this.modelPlateosaurus = new ModelPlateosaurus();
         this.modelPlatycaraspis = new ModelPlatycaraspis();
@@ -604,7 +544,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelPlatysomus = new ModelPlatysomus();
         this.modelPoposaurus = new ModelPoposaurus();
         this.modelPoraspis = new ModelPoraspis();
-        this.modelPostosuchus = new ModelPostosuchus();
         this.modelPrionosuchus = new ModelPrionosuchus();
         this.modelPristerognathus = new ModelPristerognathus();
         this.modelPromissum = new ModelPromissum();
@@ -650,9 +589,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelXenacanthus = new ModelXenacanthus();
         this.modelYunguisaurus = new ModelYunguisaurus();
 
-
-        this.modelXinpusaurus = new ModelXinpusaurus();
-        this.modelEuchambersia = new ModelEuchambersia();
     }
 
     public void setRotations(EnumFacing facing, double x, double y, double z, double voffset, double offset, double hoffset, float currentRotation) {
@@ -802,6 +738,9 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_AEGIROCASSIS);
                                 modelAegirocassis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+                            //else if (classEntity == EntityPrehistoricFloraAetheolepis.class) {
+                            //    itemRender = !renderAetheolepis(facing, currentRotation, x, y, z);
+                            //}
                             else if (classEntity == EntityPrehistoricFloraAkmonistion.class) {
                                 double offset = 0.06;
                                 double voffset = 0.47;
@@ -1833,33 +1772,8 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(1.8, 1.8, 1.8);
                                 this.bindTexture(TEXTURE_COELACANTHUS);
                                 modelCoelacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraCoelophysis.class) {
-                                double offset = -0.23;
-                                double voffset = 0.07;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(2.9, 2.9, 2.9);
-                                this.bindTexture(TEXTURE_COELOPHYSIS);
-                                modelCoelophysis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraCoelurosauravus.class) {
+                            }
+                            else if (classEntity == EntityPrehistoricFloraCoelurosauravus.class) {
                                 double offset = 0.03;
                                 double voffset = 0.03;
                                 double hoffset = 0.01;
@@ -2126,32 +2040,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(4.3, 4.3, 4.3);
                                 this.bindTexture(TEXTURE_DIADECTES);
                                 modelDiadectes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraDimetrodon.class) {
-                                double offset = -0.28;
-                                double voffset = -0.07;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(4.3, 4.3, 4.3);
-                                this.bindTexture(TEXTURE_DIMETRODON);
-                                modelDimetrodon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraDoryaspis.class) {
                                 double offset = 0.23;
                                 double voffset = -0.01;
@@ -2395,32 +2283,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(4.5, 4.5, 4.5);
                                 this.bindTexture(TEXTURE_EGLONASPIS);
                                 modelEglonaspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraEoraptor.class) {
-                                double offset = -0.15;
-                                double voffset = 0.07;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(1.7, 1.7, 1.7);
-                                this.bindTexture(TEXTURE_EORAPTOR);
-                                modelEoraptor.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraEosaurichthys.class) {
                                 double offset = 0.07;
                                 double voffset = 0;
@@ -3154,32 +3016,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(1.4, 1.4, 1.4);
                                 this.bindTexture(TEXTURE_INIOPTERYX);
                                 modelIniopteryx.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraInostrancevia.class) {
-                                double offset = -0.29;
-                                double voffset = 0.02;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(4.3, 4.3, 4.3);
-                                this.bindTexture(TEXTURE_INOSTRANCEVIA);
-                                modelInostrancevia.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraJanassa.class) {
                                 double offset = 0.39;
                                 double voffset = -0.01;
@@ -3344,35 +3180,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(3.8, 3.8, 3.8);
                                 this.bindTexture(TEXTURE_LEBACHACANTHUS);
                                 modelLebachacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraLessemsaurus.class) {
-                                double offset = -0.3;
-                                //double voffset = 0.06;
-                                double voffset = 0;
-                                //double hoffset = 0.12;
-                                double hoffset = 0;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(5.5, 5.5, 5.5);
-                                this.bindTexture(TEXTURE_LESSEMSAURUS);
-                                modelLessemsaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraLiliensternus.class) {
                                 double offset = -0.32;
                                 double voffset = 0.1;
@@ -3887,6 +3694,9 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_MOSCHOPS);
                                 modelMoschops.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+                            //else if (classEntity == EntityPrehistoricFloraNotidanoides.class) {
+                            //    itemRender = !renderNotidanoides(facing, currentRotation, x, y, z);
+                            //}
                             else if (classEntity == EntityPrehistoricFloraNothosaurus.class) {
                                 double offset = -0.49;
                                 double voffset = 0;
@@ -4343,32 +4153,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(3.8, 3.8, 3.8);
                                 this.bindTexture(TEXTURE_PHOLIDERPETON);
                                 modelPholiderpeton.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPlacerias.class) {
-                                double offset = -0.36;
-                                double voffset = 0.14;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(2.8, 2.8, 2.8);
-                                this.bindTexture(TEXTURE_PLACERIAS);
-                                modelPlacerias.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraPlacodus.class) {
                                 double offset = -0.26;
                                 double voffset = 0;
@@ -4568,32 +4352,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(2, 2, 2);
                                 this.bindTexture(TEXTURE_PORASPIS);
                                 modelPoraspis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraPostosuchus.class) {
-                                double offset = -0.23;
-                                double voffset = 0;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(3.5, 3.5, 3.5);
-                                this.bindTexture(TEXTURE_POSTOSUCHUS);
-                                modelPostosuchus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraPrionosuchus.class) {
                                 double offset = -0.9;
                                 double voffset = 0.15;
@@ -5789,408 +5547,211 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 this.bindTexture(TEXTURE_XENACANTHUS);
                                 modelXenacanthus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
-                            else if (classEntity == EntityPrehistoricFloraAetheolepis.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_AETHEOLEPIS, RenderAetheolepis.getScaler(), modelAetheolepis,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraAphnelepis.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_APHNELEPIS, RenderAphnelepis.getScaler(), modelAphnelepis,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraArduafrons.class) {
-                                double offsetWall = 0.05;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.39;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.03;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = 0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_ARDUAFRONS, RenderArduafrons.getScaler(), modelArduafrons,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraAspidorhynchus.class) {
-                                double offsetWall = 0.21;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
+                            else {
+
+                                double offsetWall = 0;
+                                double upperfrontverticallinedepth = 0;
+                                double upperbackverticallinedepth = 0;
+                                double upperfrontlineoffset = 0;
+                                double upperfrontlineoffsetperpendiular = 0;
+                                double upperbacklineoffset = 0;
+                                double upperbacklineoffsetperpendiular = 0;
                                 double lowerfrontverticallinedepth = 0;
-                                double lowerbackverticallinedepth = 0.7;
-                                double lowerfrontlineoffset = 0;
-                                double lowerfrontlineoffsetperpendiular = 0F;
-                                double lowerbacklineoffset = -0.03;
-                                double lowerbacklineoffsetperpendiular = -0.14F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_ASPIDORHYNCHUS, RenderAspidorhynchus.getScaler(), modelAspidorhynchus,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
-                                    itemRender = true;
-                                }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraDapedium.class) {
-                                double offsetWall = 0.01;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.5;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = 0F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = 0F;
-                                double lowerfrontverticallinedepth = 0.8;
                                 double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = -0.01;
-                                double lowerfrontlineoffsetperpendiular = 0F;
+                                double lowerfrontlineoffset = 0;
+                                double lowerfrontlineoffsetperpendiular = 0;
                                 double lowerbacklineoffset = 0;
                                 double lowerbacklineoffsetperpendiular = 0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_DAPEDIUM, RenderDapedium.getScaler(), modelDapedium,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                }
-                                catch (Exception e) {
+                                ResourceLocation textureDisplay = null;
+                                ModelBase modelDisplay = null;
+                                float getScaler = 0;
+
+                                Method method = testAndGetMethod(classEntity, "offsetWall", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        offsetWall = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraEastmanosteus.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_EASTAMANOSTEUS, RenderEastmanosteus.getScaler(), modelEastmanosteus,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperfrontverticallinedepth", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperfrontverticallinedepth = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraPituriaspis.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_PITURIASPIS, RenderPituriaspis.getScaler(), modelPituriaspis,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperbackverticallinedepth", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperbackverticallinedepth = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraMacromesodon.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_MACROMESODON, RenderMacromesodon.getScaler(), modelMacromesodon,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperfrontlineoffset", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperfrontlineoffset = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraMussaurus.class) {
-                                double offsetWall = -0.96;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 1.2;
-                                double lowerbackverticallinedepth = 1.2;
-                                double lowerfrontlineoffset = 1;
-                                double lowerfrontlineoffsetperpendiular = -0F;
-                                double lowerbacklineoffset = 0.2;
-                                double lowerbacklineoffsetperpendiular = -0.04F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_MUSSAURUS, RenderMussaurus.getScaler(), modelMussaurus,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperfrontlineoffsetperpendiular", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperfrontlineoffsetperpendiular = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraNeeyambaspis.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_NEEYAMBASPIS, RenderNeeyambaspis.getScaler(), modelNeeyambaspis,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperbacklineoffset", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperbacklineoffset = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraNotidanoides.class) {
-                                double offsetWall = 0.09;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 0.7;
-                                double lowerbackverticallinedepth = 0;
-                                double lowerfrontlineoffset = 0.01;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0;
-                                double lowerbacklineoffsetperpendiular = -0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_NOTIDANOIDES, RenderNotidanoides.getScaler(), modelNotidanoides,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "upperbacklineoffsetperpendiular", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        upperbacklineoffsetperpendiular = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraOphthalmosaurus.class) {
-                                double offsetWall = -0.3;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 1.3;
-                                double lowerbackverticallinedepth = 1.2;
-                                double lowerfrontlineoffset = 0.7;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0.9;
-                                double lowerbacklineoffsetperpendiular = -0.4F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_OPHTHALMOSAURUS, RenderOphthalmosaurus.getScaler(), new ModelOphthalmosaurus(),
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "lowerfrontverticallinedepth", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerfrontverticallinedepth = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraXinpusaurus.class) {
-                                double offsetWall = 0.05;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.8;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = -0.04F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = -0.04F;
-                                double lowerfrontverticallinedepth = 1.1;
-                                double lowerbackverticallinedepth = 1.2;
-                                double lowerfrontlineoffset = 0.2;
-                                double lowerfrontlineoffsetperpendiular = -0.04F;
-                                double lowerbacklineoffset = 0.2;
-                                double lowerbacklineoffsetperpendiular = -0.04F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_XINPUSAURUS, RenderXinpusaurus.getScaler(), modelXinpusaurus,
-                                            offsetWall, voffset, hoffset,
-                                            upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
-                                            lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
+                                method = testAndGetMethod(classEntity, "lowerbackverticallinedepth", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerbackverticallinedepth = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
-                            else if (classEntity == EntityPrehistoricFloraEuchambersia.class) {
-                                double offsetWall = 0.05;
-                                double voffset = 0;
-                                double hoffset = 0;
-                                double upperfrontverticallinedepth = 0.8;
-                                double upperbackverticallinedepth = 0.5;
-                                double upperfrontlineoffset = 0.2;
-                                double upperfrontlineoffsetperpendiular = 0.0F;
-                                double upperbacklineoffset = 0.2;
-                                double upperbacklineoffsetperpendiular = 0.0F;
-                                double lowerfrontverticallinedepth = 0.8;
-                                double lowerbackverticallinedepth = 0.5;
-                                double lowerfrontlineoffset = 0.2;
-                                double lowerfrontlineoffsetperpendiular = 0.0F;
-                                double lowerbacklineoffset = 0.2;
-                                double lowerbacklineoffsetperpendiular = 0.0F;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                            TEXTURE_EUCHAMBERSIA, RenderEuchambersia.getScaler(), modelEuchambersia,
-                                            offsetWall, voffset, hoffset,
+                                method = testAndGetMethod(classEntity, "lowerfrontlineoffset", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerfrontlineoffset = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "lowerfrontlineoffsetperpendiular", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerfrontlineoffsetperpendiular = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "lowerbacklineoffset", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerbacklineoffset = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "lowerbacklineoffsetperpendiular", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        lowerbacklineoffsetperpendiular = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "textureDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        textureDisplay = (ResourceLocation) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "modelDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        modelDisplay = (ModelBase) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "getScaler", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        getScaler = (float) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+
+                                if (!itemRender) {
+                                    try {
+                                        itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                            textureDisplay, getScaler, modelDisplay,
+                                            offsetWall, 0, 0,
                                             upperfrontverticallinedepth, upperbackverticallinedepth, upperfrontlineoffset, upperfrontlineoffsetperpendiular, upperbacklineoffset, upperbacklineoffsetperpendiular,
                                             lowerfrontverticallinedepth, lowerbackverticallinedepth, lowerfrontlineoffset, lowerfrontlineoffsetperpendiular, lowerbacklineoffset, lowerbacklineoffsetperpendiular);
-                                } catch (Exception e) {
-                                    itemRender = true;
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
                                 }
                             }
 
-                                
-                            else if (classEntity == EntityPrehistoricFloraYunguisaurus.class) {
-                                double offset = -0.3;
-                                double voffset = 0;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(0.43, 0.43, 0.43);
-                                this.bindTexture(TEXTURE_YUNGUISAURUS);
-                                modelYunguisaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else {
-                                itemRender = true;
-                            }
+                           //else {
+                           //     itemRender = true;
+                           // }
+                        }
+                        else {
+                            itemRender = true;
                         }
                     }
 
 
                     // ********************************************************************
-                    else if (itemRender) { //standard items
+                    if (itemRender) { //standard items
                         itemRender = true;
 
                         GlStateManager.alphaFunc(516, 0.1F);
@@ -6200,7 +5761,15 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                         //GlStateManager.pushMatrix();
 
                         float scale = 0.6666F;
-                        if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
+                        if (facing == EnumFacing.UP) {
+                            GlStateManager.translate(x + 0.5, y + 0.02, z + 0.5);
+                            GlStateManager.scale(scale, scale, scale);
+                        }
+                        if (facing == EnumFacing.DOWN) {
+                            GlStateManager.translate(x + 0.5, y + 0.98, z + 0.5);
+                            GlStateManager.scale(scale, scale, scale);
+                        }
+                        if (facing == EnumFacing.NORTH) {
                             GlStateManager.translate(x + 0.5, y + 0.5, z + 0.98);
                             GlStateManager.scale(scale, scale, scale);
                         }
@@ -6246,7 +5815,26 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
             }
         }
     }
-    
+
+    /*
+    public boolean renderAetheolepis(EnumFacing facing, float currentRotation, double x, double y, double z) {
+        if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
+            return false;
+        }
+        double offset = 0.01;
+        double voffset = 0;
+        double hoffset = 0;
+        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
+        float scalerModel = RenderAetheolepis.getScaler();
+        GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
+        this.bindTexture(TEXTURE_AETHEOLEPIS);
+        modelAetheolepis.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+        return true;
+    }
+     */
+
+
+
     public boolean renderFadeniaCarboniferous(EnumFacing facing, float currentRotation, double x, double y, double z) {
         if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
             return false;
@@ -6276,6 +5864,25 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         modelFadenia.renderStaticPT(Minecraft.getMinecraft().player.ticksExisted);
         return true;
     }
+
+
+/*
+    public boolean renderNotidanoides(EnumFacing facing, float currentRotation, double x, double y, double z) {
+        if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
+            return false;
+        }
+        double offset = 0.59;
+        double voffset = 0;
+        double hoffset = 0;
+        setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
+        float scalerModel = RenderNotidanoides.getScaler();
+        GlStateManager.scale(this.scaler * scalerModel,this.scaler * scalerModel,this.scaler * scalerModel);
+        this.bindTexture(TEXTURE_NOTIDANOIDES);
+        modelNotidanoides.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
+        return true;
+    }
+ */
+
     public boolean renderSmok(EnumFacing facing, float currentRotation, double x, double y, double z) {
         if (facing == EnumFacing.DOWN || facing == EnumFacing.UP) {
             return false;
@@ -6373,14 +5980,14 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
            double lowerbacklineoffsetperpendiular
     ) {
         if (facing == EnumFacing.DOWN) {
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended");
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticSuspended", new Class[] { float.class });
             if (renderMethod != null) {
                 if (upperfrontverticallinedepth > 0) {
                     GL11.glPushMatrix();
                     GL11.glLineWidth(5);
                     GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
-                    GL11.glBegin(GL11.GL_QUADS);
+                    GL11.glBegin(GL11.GL_LINES);
                     float xoffsetter = (float) ((upperfrontlineoffset * Math.cos(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
                     float zoffsetter = (float) ((upperfrontlineoffset * Math.sin(Math.toRadians(-currentRotation))) + (upperfrontlineoffsetperpendiular * Math.cos(Math.toRadians(currentRotation))));
                     GL11.glVertex3f((float) x + 0.5F + xoffsetter, (float) y + 1, (float) z + 0.5F + zoffsetter);
@@ -6393,7 +6000,7 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                 if (upperbackverticallinedepth > 0) {
                     GL11.glPushMatrix();
                     GL11.glLineWidth(5);
-                    GL11.glDisable(GL11.GL_QUADS);
+                    GL11.glDisable(GL11.GL_TEXTURE_2D);
                     GL11.glColor3ub((byte) 128, (byte) 128, (byte) 128);
                     GL11.glBegin(GL11.GL_LINES);
                     float xoffsetter = (float) ((upperbacklineoffset * Math.cos(Math.toRadians(-currentRotation))) - (upperbacklineoffsetperpendiular * Math.sin(Math.toRadians(currentRotation))));
@@ -6404,26 +6011,48 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
                 }
-            }
 
-            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
-            GlStateManager.rotate(180, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            if (renderMethod != null) {
-                try {
-                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+                GlStateManager.rotate(180, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+                if (renderMethod != null) {
+                    try {
+                        renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                    return true;
+                } else {
+                    return false;
                 }
-                catch (Exception e) {return false;}
-                return true;
-            } else {
-                return false;
             }
         }
         else if (facing == EnumFacing.UP) {
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticFloor");
+            //Arrow to show location:
+            if (ClientProxyLepidodendronMod.keyB.isKeyDown()) {
+                GL11.glPushMatrix();
+                GL11.glLineWidth(12);
+                GL11.glDisable(GL11.GL_TEXTURE_2D);
+                GL11.glColor3ub((byte) 255, (byte) 0, (byte) 0);
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 1.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F + 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glBegin(GL11.GL_LINES);
+                GL11.glVertex3f((float) x + 0.5F, (float) y + 0.125F, (float) z + 0.5F);
+                GL11.glVertex3f((float) x + 0.5F - 0.5F, (float) y + 0.5F, (float) z + 0.5F);
+                GL11.glEnd();
+                GL11.glEnable(GL11.GL_TEXTURE_2D);
+                GL11.glPopMatrix();
+            }
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticFloor", new Class[] { float.class });
             if (renderMethod != null) {
                 if (lowerfrontverticallinedepth > 0) {
                     GL11.glPushMatrix();
@@ -6454,33 +6083,35 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                     GL11.glEnable(GL11.GL_TEXTURE_2D);
                     GL11.glPopMatrix();
                 }
-            }
 
-            setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
-            GlStateManager.rotate(180, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            if (renderMethod != null) {
-                try {
-                    renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                setRotations(facing, x, y, z, voffset, 0, 0, currentRotation);
+                GlStateManager.rotate(180, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+                if (renderMethod != null) {
+                    try {
+                        renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
+                    } catch (Exception e) {
+                        return false;
+                    }
+                    return true;
+                } else {
+                    return false;
                 }
-                catch (Exception e) {return false;}
-                return true;
-            } else {
-                return false;
             }
         }
         else if (facing == EnumFacing.NORTH || facing == EnumFacing.SOUTH || facing == EnumFacing.EAST || facing == EnumFacing.WEST) {
-            setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
-            //GlStateManager.rotate(90, 0, 0, 1);
-            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-            this.bindTexture(TEXTURE);
-            GlStateManager.enableLighting();
-            GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
-            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticWall");
+            Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticWall", new Class[] { float.class });
             if (renderMethod != null) {
+                setRotations(facing, x, y, z, voffset, offset, hoffset, currentRotation);
+                //GlStateManager.rotate(90, 0, 0, 1);
+                GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+                this.bindTexture(TEXTURE);
+                GlStateManager.enableLighting();
+                GL11.glColor3ub((byte) 255, (byte) 255, (byte) 255);
+
                 try {
                     renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
                 } catch (Exception e) {
@@ -6495,10 +6126,10 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     }
 
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname) {
+    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
         Method methodToFind = null;
         try {
-            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+            methodToFind = clazz.getMethod(methodname, params);
         } catch (NoSuchMethodException | SecurityException e) {
         }
         return methodToFind;

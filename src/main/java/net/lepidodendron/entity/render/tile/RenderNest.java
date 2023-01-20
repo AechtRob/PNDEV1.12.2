@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render.tile;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.tile.*;
+import net.lepidodendron.item.entities.ItemEggsPF;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -94,15 +96,25 @@ public class RenderNest extends TileEntitySpecialRenderer<BlockNest.TileEntityNe
             }
 
             //Render eggs:
-            String eggRenderType = "";
             TileEntity tileEntity = entity.getWorld().getTileEntity(pos);
+            String eggRenderType = "";
             if (tileEntity != null) {
-                if (tileEntity.getTileData().hasKey("egg")) {
-                    eggRenderType = tileEntity.getTileData().getString("egg");
+                if (tileEntity instanceof BlockNest.TileEntityNest) {
+                    BlockNest.TileEntityNest tileNest = (BlockNest.TileEntityNest) tileEntity;
+                    ItemStack eggStack = tileNest.getStackInSlot(0);
+                    if (eggStack.isEmpty()) {
+                        return; //There are no eggs here
+                    }
+                    else {
+                        if (eggStack.getItem() instanceof ItemEggsPF) {
+                            eggRenderType = ((ItemEggsPF)eggStack.getItem()).getMobString();
+                        }
+                        else {
+                            return; //There are no eggs here
+                        }
+                    }
                 }
             }
-
-            //System.err.println("eggRenderType " + eggRenderType);
 
             if (!eggRenderType.equalsIgnoreCase("")) {
                 EntityEntry ee = ForgeRegistries.ENTITIES.getValue(new ResourceLocation(eggRenderType));

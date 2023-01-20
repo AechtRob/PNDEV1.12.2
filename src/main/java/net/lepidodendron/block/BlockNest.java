@@ -14,14 +14,12 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ItemStackHelper;
@@ -142,23 +140,21 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		}
 
 		public static boolean isMound(IBlockAccess world, BlockPos pos) {
-			String nestType = new Object() {
-				public String getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(pos, "creature");
+			String nestType = "";
+			boolean isMound = false;
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null) {
+				if (te instanceof TileEntityNest) {
+					TileEntityNest nest = (TileEntityNest) te;
+					if (nest.getTileData().hasKey("creature")) {
+						nestType = nest.getTileData().getString("creature");
+					}
 
-			boolean isMound = new Object() {
-				public boolean getValue(BlockPos pos1, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos1);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getBoolean(tag);
-					return false;
+					if (nest.getTileData().hasKey("isMound")) {
+						isMound = nest.getTileData().getBoolean("isMound");
+					}
 				}
-			}.getValue(pos, "isMound");
+			}
 
 			if (!nestType.equalsIgnoreCase("")) {
 				if (isMound) {
@@ -256,7 +252,7 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 			if (classEntity != null) {
 				if (player != null) { //Aggro on the player
-					if (Minecraft.getMinecraft().gameSettings.difficulty != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
+					if (world.getDifficulty() != EnumDifficulty.PEACEFUL && !player.capabilities.isCreativeMode) {
 						List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(classEntity, new AxisAlignedBB(pos.add(-16, -8, -16), pos.add(16, 8, 16)));
 						for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
 							if (currentEntity.isPFAdult() && !player.isInvisible()) {
@@ -311,9 +307,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			if (!state.getValue(MOUND)) {
-				return new ItemStack(Items.STICK, (int) (1)).getItem();
-			}
 			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
 		}
 
@@ -355,15 +348,18 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
-		public void onBlockClicked(World worldIn, BlockPos pos, EntityPlayer playerIn) {
-			//if (worldIn.isRemote) {
-				ItemStack stack = playerIn.getHeldItemMainhand();
-				if (stack.getItem() == Items.SHEARS && !this.isMound(worldIn, pos)) {
-					//This will harvest:
-					AggroMob(worldIn, pos, getNestOwner(worldIn, pos), playerIn, false);
-			//	}
+		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
+			//if (!this.isMound(world, pos)) {
+				//Only aggro if there are eggs involved:
+				TileEntity te = world.getTileEntity(pos);
+				if (te instanceof TileEntityNest) {
+					TileEntityNest nest = (TileEntityNest) te;
+					if (!nest.getStackInSlot(0).isEmpty()) {
+						AggroMob(world, pos, getNestOwner(world, pos), player, false);
+					}
 				}
-			super.onBlockClicked(worldIn, pos, playerIn);
+			//}
+			return super.removedByPlayer(state, world, pos, player, willHarvest);
 		}
 
 		public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
@@ -372,80 +368,30 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				if (this.isMound(world, pos)) {
 					return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 				}
-				String eggRenderType = "";
-				eggRenderType = new Object() {
-					public String getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(new BlockPos(pos), "egg");
 
-				if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty()) || eggRenderType.equals("")) {
+				if ((!player.capabilities.allowEdit) || (!player.getHeldItemMainhand().isEmpty())) {
 					return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 				} else {
 					if (!((hand != player.getActiveHand()) && (hand == EnumHand.MAIN_HAND))) {
-						ItemStack stackEggs = getEggItemStack(eggRenderType);
-						if (stackEggs != null) {
-							stackEggs.setCount(1);
-							ItemHandlerHelper.giveItemToPlayer(player, stackEggs);
-							TileEntity te = world.getTileEntity(pos);
-							if (te != null) {
-								te.getTileData().setString("egg", "");
-								if (te instanceof TileEntityNest) {
-									TileEntityNest tee = (TileEntityNest) te;
-									tee.setInventorySlotContents(0, ItemStack.EMPTY);
-								}
-							}
+						TileEntity te = world.getTileEntity(pos);
+						TileEntityNest nest = (TileEntityNest) te;
+						if (!nest.getStackInSlot(0).isEmpty()) {
+							ItemStack stackEgg = new ItemStack(nest.getStackInSlot(0).getItem(), (int) (1));
+							nest.setInventorySlotContents(0, ItemStack.EMPTY);
+							ItemHandlerHelper.giveItemToPlayer(player, stackEgg);
 							IBlockState bstate = world.getBlockState(pos);
 							world.notifyBlockUpdate(pos, bstate, bstate, 3);
 							if (!player.capabilities.isCreativeMode) {
 								AggroMob(world, pos, getNestOwner(world, pos), player, false);
 							}
-							return true;
 						}
+						return true;
 					}
 					return true;
 				}
 			}
 			return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 		}
-
-		public boolean removedByPlayer(IBlockState state, World world, BlockPos pos, EntityPlayer player, boolean willHarvest) {
-			//Aggro nearby adults:
-			if (!player.capabilities.isCreativeMode) {
-				AggroMob(world, pos, getNestOwner(world, pos), player, false);
-			}
-			return super.removedByPlayer(state, world, pos, player, willHarvest);
-		}
-
-		/*
-		public void SpawnEggs(World world, BlockPos pos) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(pos), "egg");
-
-			EntityItem entityToSpawn = null;
-			if (!eggRenderType.equals("")) {
-				ItemStack itemEgg = getEggItemStack(eggRenderType);
-				//System.err.println("Block " + blockSpawn);
-				if (itemEgg != null) {
-					entityToSpawn = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(itemEgg.getItem(), (int) (1)));
-				}
-			}
-			if (!world.isRemote && entityToSpawn != null) {
-				entityToSpawn.setPickupDelay(10);
-				world.spawnEntity(entityToSpawn);
-				//System.err.println("Spawned " + entityToSpawn);
-			}
-		}
-		 */
 
 		@Override
 		public boolean hasTileEntity(IBlockState state) {
@@ -506,10 +452,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		}
 	}
 
-	public static class TileEntityNest extends TileEntityLockableLoot implements ITickable {
+	public static class TileEntityNest extends TileEntityLockableLoot {
 
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
-		private String egg;
 		private String creature;
 
 		@Override
@@ -538,9 +483,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		public void readFromNBT(NBTTagCompound compound)
 		{
 			super.readFromNBT(compound);
-			if (compound.hasKey("egg")) {
-				this.egg = compound.getString("egg");
-			}
 			if (compound.hasKey("creature")) {
 				this.creature = compound.getString("creature");
 			}
@@ -553,10 +495,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 		public NBTTagCompound writeToNBT(NBTTagCompound compound)
 		{
 			super.writeToNBT(compound);
-			if (this.hasEgg())
-			{
-				compound.setString("egg", this.egg);
-			}
 			if (this.hasCreature())
 			{
 				compound.setString("creature", this.creature);
@@ -564,11 +502,6 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			if (!this.checkLootAndWrite(compound))
 				ItemStackHelper.saveAllItems(compound, this.stacks);
 			return compound;
-		}
-
-		public boolean hasEgg()
-		{
-			return this.egg != null;
 		}
 
 		public boolean hasCreature()
@@ -627,49 +560,5 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 			return null;
 		}
 
-		@Override
-		public void update() {
-			//Check that this egg nbt tag matches the inventory contents:
-			//If they do not match then either a player has removed an egg or some event has removed from the inventory
-			//In either case, reset both to null and aggro the relevant mobs:
-			if (!world.isRemote) {
-				boolean flag = false;
-
-				String egg = this.getTileData().getString("egg");
-
-				//System.err.println("update tile: getStackInSlot(0) = " + getStackInSlot(0));
-				//System.err.println("update tile: egg = " + egg);
-
-				if (
-					(egg.equals(""))
-					&&
-					(getStackInSlot(0) != ItemStack.EMPTY && getStackInSlot(0).getItem() != Items.AIR)
-				) {
-					flag = true;
-				}
-				//if
-				//(egg != null) {
-				if (!egg.equals("")
-						&&
-						(getStackInSlot(0) == ItemStack.EMPTY || getStackInSlot(0).getItem() == Items.AIR)
-				) {
-					flag = true;
-					//System.err.println("Setting flag to true");
-				}
-				//}
-
-				World world = this.getWorld();
-				BlockPos pos = this.getPos();
-				if (flag && BlockNest.BlockCustom.isMound(world, pos)) {
-					world.setBlockToAir(pos);
-				}
-				else if (flag) {
-					setInventorySlotContents(0, ItemStack.EMPTY);
-					this.egg = "";
-					this.getTileData().setString("egg", "");
-					BlockNest.BlockCustom.AggroMob(world, pos, BlockNest.BlockCustom.getNestOwner(world, pos), null, true);
-				}
-			}
-		}
 	}
 }

@@ -6,20 +6,29 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.biome.BiomeColorHelper;
 import net.minecraftforge.client.model.obj.OBJLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nullable;
 
 public class ClientProxyLepidodendronMod implements IProxyLepidodendronMod {
+
+	public static KeyBinding keyB = new KeyBinding("key.lepidodendron.seetaxidermy", Keyboard.KEY_F10, "key.categories.misc");
+
+
 	@Override
 	public void init(FMLInitializationEvent event) {
+
+		ClientRegistry.registerKeyBinding(keyB);
 
 		//Bind the biome water colour to the glass block so its water-repair thing picks up the right colour:
 		BlockColors blockColors = Minecraft.getMinecraft().getBlockColors();

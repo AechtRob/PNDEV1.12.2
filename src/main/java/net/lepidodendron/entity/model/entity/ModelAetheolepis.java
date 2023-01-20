@@ -200,6 +200,7 @@ public class ModelAetheolepis extends AdvancedModelBase {
         this.main.offsetY = -0.15F;
         this.main.offsetX = -0.04F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
@@ -228,9 +229,10 @@ public class ModelAetheolepis extends AdvancedModelBase {
         this.setRotateAngle(frontleftfin, 0.9026F, 0.3879F, -0.2902F);
         this.setRotateAngle(frontrightfin, 0.9026F, -0.3879F, 0.2902F);
         //this.body.offsetX = -0.09F;
-        this.main.offsetY = -0.15F;
+        this.main.offsetY = -0.3F;
         this.main.offsetX = -0.04F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

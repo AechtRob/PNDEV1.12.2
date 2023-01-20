@@ -226,8 +226,13 @@ public class ModelNeeyambaspis extends AdvancedModelBase {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.rotateAngleZ = (float) Math.toRadians(90);
+        this.main.offsetX = -0.09F;
+        this.main.offsetY = -0.19F;
+        this.main.offsetZ = 0.051F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(main, -0.3927F, (float) Math.toRadians(90), 0.0F);
@@ -257,7 +262,10 @@ public class ModelNeeyambaspis extends AdvancedModelBase {
         this.setRotateAngle(tail, 0.0873F, -0.4363F, 0.0F);
         this.setRotateAngle(cube_r20, 0.1178F, 0.0F, 0.0F);
         this.setRotateAngle(tail2, 0.0F, -0.3927F, 0.0F);
+        this.main.offsetX = -0.08F;
+        this.main.offsetZ = -0.035F;
         this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

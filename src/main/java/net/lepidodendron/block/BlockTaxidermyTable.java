@@ -24,7 +24,6 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
@@ -538,13 +537,9 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 					for (int var2 = 0; var2 < var; ++var2) {
 						int oreDictID = oreDicts[var2];
 						String oreName = OreDictionary.getOreName(oreDictID);
-						if (oreName.equalsIgnoreCase("leavesHay")) {
+						if (oreName.equalsIgnoreCase("itemFluffy")) {
 							flag = true;
 						}
-					}
-
-					if (stack.getItem() == Item.getItemFromBlock(Blocks.WOOL)) {
-						flag = true;
 					}
 					//System.err.println(stack + " flag " + flag);
 				}

@@ -313,17 +313,63 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.495f);
+        this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Neckbase.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Shoulderquillsside, 0.084F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, -1.082F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfoot, 2.058F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailquillssideend, -0.021F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.0F, -0.063F, 0.0F);
+        this.setRotateAngle(Hips, -0.127F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Jawparting, -0.233F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, -1.061F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawend, -0.127F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckquillsbase, -0.084F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddle, -0.127F, 0.084F, 0.0F);
+        this.setRotateAngle(Headslope, 0.017F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperbackteeth, 0.087F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthand, -0.084F, 0.021F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.233F, -0.127F, 0.0F);
+        this.setRotateAngle(Tailend, -0.169F, 0.148F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.212F, -0.148F, 0.0F);
+        this.setRotateAngle(Snout, 0.318F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.955F, 0.0F, 0.0F);
+        this.setRotateAngle(Backquills, -0.254F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckend, 0.127F, 0.063F, 0.0F);
+        this.setRotateAngle(Shoulderquills, 0.169F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerteeth, -0.042F, -0.134F, 0.0F);
+        this.setRotateAngle(Neckbase, -0.063F, 0.106F, 0.0F);
+        this.setRotateAngle(Leftupperbackteeth, 0.087F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthand, -0.127F, 0.0F, 0.021F);
+        this.setRotateAngle(Lowerjawmiddle, -0.063F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailquillsdorsal, 0.042F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperarm, 0.574F, 0.0F, 0.403F);
+        this.setRotateAngle(Head, -0.063F, 0.084F, 0.0F);
+        this.setRotateAngle(Upperjawbase, 0.063F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfoot, -0.148F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightthigh, -0.912F, 0.191F, 0.042F);
+        this.setRotateAngle(Leftupperarm, 0.084F, 0.0F, -0.360F);
+        this.setRotateAngle(Bodymiddle, 0.042F, 0.021F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.636F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightankle, -1.761F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 1.528F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperfrontteeth, -0.042F, -0.233F, 0.148F);
+        this.setRotateAngle(Leftankle, -0.360F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodyfront, 0.191F, 0.191F, 0.0F);
+        this.setRotateAngle(Backquillsside, -0.148F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerteeth, -0.042F, 0.134F, 0.0F);
+        this.setRotateAngle(Leftupperfrontteeth, -0.042F, 0.233F, -0.148F);
+        this.setRotateAngle(Tailmiddleend, -0.191F, 0.169F, 0.0F);
+        this.setRotateAngle(Neckquillsend, -0.084F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawfront, 0.042F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.07F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -335,7 +381,7 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.75F;
+        this.Hips.offsetY = -0F;
         this.Hips.offsetZ = 0.2F;
 
         EntityPrehistoricFloraCoelophysis Coelophysis = (EntityPrehistoricFloraCoelophysis) e;
@@ -378,7 +424,7 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
 
             if (Coelophysis.getIsFast()) { //Running
                 float speed = masterSpeed / 2F;
-                this.Hips.offsetY = 0.75F;
+                this.Hips.offsetY = -0F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -424,7 +470,7 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 2.00F;
-                this.Hips.offsetY = 0.815F;
+                this.Hips.offsetY = -0F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 

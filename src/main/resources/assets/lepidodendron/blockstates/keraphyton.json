@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "inventory": {
+      "model": "lepidodendron:keraphyton_inventory"
+    },
+    "var=0": {"model": "lepidodendron:keraphyton_0"},
+    "var=1": {"model": "lepidodendron:keraphyton_1"},
+    "var=2": {"model": "lepidodendron:keraphyton_2"},
+    "var=3": {"model": "lepidodendron:keraphyton_3"},
+    "var=4": {"model": "lepidodendron:keraphyton_4"}
+  }
+}

@@ -15,6 +15,8 @@ public class RenderInostrancevia extends RenderLiving<EntityPrehistoricFloraInos
         super(mgr, new ModelInostrancevia(), 0.5f);
     }
 
+    public static float getScaler() {return 0.775f; }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraInostrancevia entity) {
         return RenderInostrancevia.TEXTURE;
@@ -27,7 +29,7 @@ public class RenderInostrancevia extends RenderLiving<EntityPrehistoricFloraInos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraInostrancevia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

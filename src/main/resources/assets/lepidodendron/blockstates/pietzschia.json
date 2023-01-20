@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:pietzschia_1"},
+      {"model": "lepidodendron:pietzschia_2"}
+    ]
+  }
+}

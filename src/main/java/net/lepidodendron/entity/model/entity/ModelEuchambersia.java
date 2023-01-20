@@ -255,6 +255,7 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
         this.RFoot.rotateAngleX = (float) Math.toRadians(5);
         this.Euchambersia.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
@@ -290,6 +291,7 @@ public class ModelEuchambersia extends AdvancedModelBaseExtended {
         this.RLeg2.rotateAngleX = (float) Math.toRadians(25);
         this.RFoot.rotateAngleX = (float) Math.toRadians(5);
         this.Euchambersia.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {

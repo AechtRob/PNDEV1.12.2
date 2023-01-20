@@ -170,6 +170,7 @@ public class BlockGreenAlgaeMat extends ElementsLepidodendronMod.ModElement {
 		}
 
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_brackish")
+		|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
 		)
 			multiplier = 36;
 

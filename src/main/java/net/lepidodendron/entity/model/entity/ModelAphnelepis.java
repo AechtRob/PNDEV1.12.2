@@ -185,10 +185,12 @@ public class ModelAphnelepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.aphnelepis.render(f5);
     }
-
     public void renderStaticWall(float f) {
-        this.aphnelepis.rotateAngleY = (float) Math.toRadians(90);
+        this.aphnelepis.rotateAngleY = (float) Math.toRadians(270);
+        this.aphnelepis.offsetX = -0.03F;
+        this.aphnelepis.offsetY = -0.18F;
         this.aphnelepis.render(0.01F);
+        resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, 0.3229F, 0.0F, 0.0F);
@@ -211,7 +213,11 @@ public class ModelAphnelepis extends AdvancedModelBase {
         this.setRotateAngle(jaw, -0.3491F, 0.0F, 0.0F);
         this.setRotateAngle(cube_r13, 0.0873F, 0.0F, 0.0F);
         this.aphnelepis.rotateAngleY = (float) Math.toRadians(90);
+        this.aphnelepis.offsetY = -0.34F;
+        this.aphnelepis.offsetX = -0.04F;
+        this.aphnelepis.offsetZ = 0.045F;
         this.aphnelepis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

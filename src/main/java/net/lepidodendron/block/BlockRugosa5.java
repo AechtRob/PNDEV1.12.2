@@ -203,6 +203,11 @@ public class BlockRugosa5 extends ElementsLepidodendronMod.ModElement {
 		{
 			dimWeight = 2;
 		}
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky"))
+		{
+			dimWeight = 2;
+			multiplier = 10;
+		}
 
 		int minWaterDepth = (int) Math.round(15D * dimWeight);
 		int maxWaterDepth = (int) Math.round(100D * dimWeight);

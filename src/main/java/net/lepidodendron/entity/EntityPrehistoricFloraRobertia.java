@@ -3,6 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
@@ -80,5 +81,8 @@ public class EntityPrehistoricFloraRobertia extends EntityPrehistoricFloraDiicto
 		}
 		return LepidodendronMod.ROBERTIA_LOOT;
 	}
-
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ROBERTIA;
+	}
 }

@@ -5,7 +5,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockDisplayCase;
 import net.lepidodendron.entity.*;
 import net.lepidodendron.entity.model.entity.*;
-import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.item.ItemTaxidermyDisplayItem;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -54,8 +53,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAmplectobelua modelAmplectobelua;
     private static final ResourceLocation TEXTURE_AMPYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
     private final ModelAmpyx modelAmpyx;
-    private static final ResourceLocation TEXTURE_ANOMALOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
-    private final ModelAnomalocaris modelAnomalocaris;
     private static final ResourceLocation TEXTURE_ANTARCTICARCINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
     private final ModelAntarcticarcinus modelAntarcticarcinus;
     private static final ResourceLocation TEXTURE_ARIDROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_arid.png");
@@ -312,7 +309,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAlacaris = new ModelAlacaris();
         this.modelAmplectobelua = new ModelAmplectobelua();
         this.modelAmpyx = new ModelAmpyx();
-        this.modelAnomalocaris = new ModelAnomalocaris();
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
         this.modelArchoblattina = new ModelArchoblattina();
         this.modelArctinurus = new ModelArctinurus();
@@ -712,39 +708,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.35F, 0.35F, 0.35F);
                                 this.bindTexture(TEXTURE_AMPYX);
                                 modelAmpyx.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraAnomalocaris.class) {
-                                double offset = 0.46;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1, 0.85, 1);
-                                this.bindTexture(TEXTURE_ANOMALOCARIS);
-                                modelAnomalocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraAntarcticarcinus.class) {
                                 double offset = 0.46;
                                 if (facing == EnumFacing.UP) {
@@ -4962,21 +4925,67 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 this.bindTexture(TEXTURE_YUNNANOZOON);
                                 modelYunnanozoon.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             }
+                            else {
 
-                            else if (classEntity == EntityPrehistoricFloraEryon.class) {
-                                double offset = 0.18;
-                                try {
-                                    itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
-                                        TEXTURE_ERYON, RenderEryon.getScaler(), modelEryon, offset);
-                                } catch (Exception e) {
+                                double offsetCase = 0F;
+                                ResourceLocation textureDisplay = null;
+                                ModelBase modelDisplay = null;
+                                float getScaler = 0;
+
+                                Method method = testAndGetMethod(classEntity, "offsetCase", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        offsetCase = (double) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
                                     itemRender = true;
                                 }
-                            }
+                                method = testAndGetMethod(classEntity, "textureDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        textureDisplay = (ResourceLocation) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "modelDisplay", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        modelDisplay = (ModelBase) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
+                                method = testAndGetMethod(classEntity, "getScaler", new Class[]{});
+                                if (method != null) {
+                                    try {
+                                        getScaler = (float) method.invoke(null, new Object[]{});
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                } else {
+                                    itemRender = true;
+                                }
 
-
-                            else {
-                                itemRender = true;
+                                if (!itemRender) {
+                                    try {
+                                        itemRender = !renderTaxidermy(facing, (float) x, (float) y, (float) z, currentRotation,
+                                                textureDisplay, getScaler, modelDisplay,
+                                                offsetCase);
+                                    } catch (Exception e) {
+                                        itemRender = true;
+                                    }
+                                }
                             }
+                        }
+                        else {
+                            itemRender = true;
                         }
                     }
 
@@ -5087,38 +5096,38 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
            ModelBase model,
            double offset
     ) {
-        if (facing == EnumFacing.UP) {
-            GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-        }
-        if (facing == EnumFacing.DOWN) {
-            GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-        }
-        if (facing == EnumFacing.NORTH) {
-            GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(90, 1F, 0F, 0F);
-        }
-        if (facing == EnumFacing.SOUTH) {
-            GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(270, 1F, 0F, 0F);
-        }
-        if (facing == EnumFacing.WEST) {
-            GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(90, 0F, 0F, 1F);
-        }
-        if (facing == EnumFacing.EAST) {
-            GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-            GlStateManager.rotate(180, 0F, 0F, 1F);
-            GlStateManager.rotate(270, 0F, 0F, 1F);
-        }
-        GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-        GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
-        this.bindTexture(TEXTURE);
-        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase");
+        Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[] { float.class });
         if (renderMethod != null) {
+            if (facing == EnumFacing.UP) {
+                GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+            }
+            if (facing == EnumFacing.DOWN) {
+                GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
+            }
+            if (facing == EnumFacing.NORTH) {
+                GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(90, 1F, 0F, 0F);
+            }
+            if (facing == EnumFacing.SOUTH) {
+                GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(270, 1F, 0F, 0F);
+            }
+            if (facing == EnumFacing.WEST) {
+                GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(90, 0F, 0F, 1F);
+            }
+            if (facing == EnumFacing.EAST) {
+                GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
+                GlStateManager.rotate(180, 0F, 0F, 1F);
+                GlStateManager.rotate(270, 0F, 0F, 1F);
+            }
+            GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
+            GlStateManager.scale(this.scaler * scalerModel, this.scaler * scalerModel, this.scaler * scalerModel);
+            this.bindTexture(TEXTURE);
             try {
                 renderMethod.invoke(model, Minecraft.getMinecraft().player.ticksExisted);
             } catch (Exception e) {
@@ -5130,11 +5139,13 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         }
     }
 
+
+
     @Nullable
-    public Method testAndGetMethod(Class clazz, String methodname) {
+    public Method testAndGetMethod(Class clazz, String methodname, Class[] params) {
         Method methodToFind = null;
         try {
-            methodToFind = clazz.getMethod(methodname, new Class[] { float.class });
+            methodToFind = clazz.getMethod(methodname, params);
         } catch (NoSuchMethodException | SecurityException e) {
         }
         return methodToFind;

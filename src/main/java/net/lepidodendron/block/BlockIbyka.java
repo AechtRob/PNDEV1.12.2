@@ -133,7 +133,7 @@ public class BlockIbyka extends ElementsLepidodendronMod.ModElement {
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Proto-plant/horsetail");
+				tooltip.add("Type: Iridopteridales proto-plant/horsetail");
 	        	tooltip.add("Periods: mid Devonian");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);

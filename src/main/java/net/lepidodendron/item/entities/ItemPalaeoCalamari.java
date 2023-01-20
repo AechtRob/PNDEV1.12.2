@@ -38,8 +38,6 @@ public class ItemPalaeoCalamari extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("listAllfishcooked", ItemPalaeoCalamari.block);
 		OreDictionary.registerOre("foodCooked", ItemPalaeoCalamari.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeoCalamari.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeoCalamari.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {

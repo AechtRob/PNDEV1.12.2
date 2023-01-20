@@ -8,6 +8,9 @@ import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.render.entity.RenderEuchambersia;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -181,5 +184,58 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 		}
 		return LepidodendronMod.EUCHAMBERSIA_LOOT;
 	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetPlinth() { return 0.47; }
+	public static double offsetWall() { return 0.05; }
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_EUCHAMBERSIA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelEuchambersia;
+	}
+	public static float getScaler() {
+		return RenderEuchambersia.getScaler();
+	}
+
 
 }
