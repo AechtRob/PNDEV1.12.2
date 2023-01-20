@@ -231,7 +231,9 @@ public class ModelEryon extends AdvancedModelBase {
         this.body.render(0.01F);
         resetToDefaultPose();
     }
+    
     public void renderStaticFloor(float f) {
+
         this.body.offsetZ = -0.04F;
         this.body.render(0.01F);
         resetToDefaultPose();

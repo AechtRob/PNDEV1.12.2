@@ -3,7 +3,7 @@ package net.lepidodendron.item.entities;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.creativetab.TabLepidodendronMobile;
+import net.lepidodendron.creativetab.TabLepidodendronMisc;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
@@ -36,10 +36,8 @@ public class ItemPalaeoScampi extends ElementsLepidodendronMod.ModElement {
 
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("listAllfishcooked", ItemPalaeoScampi.block);
-		OreDictionary.registerOre("foodCooked", ItemPalaeoScampi.block);
-		OreDictionary.registerOre("foodMeat", ItemPalaeoScampi.block);
-		OreDictionary.registerOre("listAllmeatcooked", ItemPalaeoScampi.block);
+		OreDictionary.registerOre("listAllfishcooked", ItemPalaeoCalamari.block);
+		OreDictionary.registerOre("foodCooked", ItemPalaeoCalamari.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {
@@ -47,7 +45,7 @@ public class ItemPalaeoScampi extends ElementsLepidodendronMod.ModElement {
 			super(5, 0.7f, false);
 			setTranslationKey("pf_palaeo_scampi");
 			setRegistryName("palaeo_scampi");
-			setCreativeTab(TabLepidodendronMobile.tab);
+			setCreativeTab(TabLepidodendronMisc.tab);
 			setMaxStackSize(64);
 		}
 

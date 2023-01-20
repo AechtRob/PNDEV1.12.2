@@ -5124,9 +5124,19 @@ item.pf_ottoia_cooked.name=Cooked Ottoia
 item.pf_ottoia_raw.name=Raw Ottoia
 item.pf_pagea_bucket.name=Bucket of Pagea
 item.pf_pagea_raw.name=Raw Pagea
+
 item.pf_palaeo_calamari.name=Palaeo-Calamari
 item.pf_palaeo_escargots.name=Palaeo-Escargots
 item.pf_palaeo_scampi.name=Palaeo-Scampi
+item.pf_palaeo_seafood.name=Palaeo-Exotic-Seafood
+item.pf_palaeo_fillet.name=Palaeo-Fillet
+item.pf_palaeo_fishcake.name=Palaeo-Fishcake
+item.pf_palaeo_insect_treat.name=Palaeo-Insect-Treat
+item.pf_palaeo_kebab.name=Palaeo-Ptero-Kebab
+item.pf_palaeo_steak.name=Palaeo-Steak
+item.pf_palaeo_thermidor.name=Palaeo-Thermidor
+item.pf_palaeo_drumstick.name=Palaeo-Drumstick
+
 item.pf_palaeocharinus_raw.name=Raw Palaeocharinus Trigonotarbid
 item.pf_palaeodictyoptera_delitzschala_raw.name=Raw Delitzschala Palaeodictyoptera
 item.pf_palaeodictyoptera_dunbaria_raw.name=Raw Dunbaria Palaeodictyoptera
