@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderEoraptor extends RenderLiving<EntityPrehistoricFloraEoraptor> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoraptor.png");
+    public static float getScaler() {
+        return 0.295f;
+    }
 
     public RenderEoraptor(RenderManager mgr) {
         super(mgr, new ModelEoraptor(), 0.2f);
@@ -27,7 +30,7 @@ public class RenderEoraptor extends RenderLiving<EntityPrehistoricFloraEoraptor>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEoraptor entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.12F;
     }

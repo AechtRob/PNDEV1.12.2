@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAnomalocaris extends RenderLiving<EntityPrehistoricFloraAnomalocaris> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
+    public static float getScaler() {
+        return 0.21F;
+    }
 
     public RenderAnomalocaris(RenderManager mgr) {
         super(mgr, new ModelAnomalocaris(), 0.2f);
@@ -27,7 +30,9 @@ public class RenderAnomalocaris extends RenderLiving<EntityPrehistoricFloraAnoma
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAnomalocaris entity, float f) {
-        GlStateManager.scale(1.4, 1.4, 1.4);
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.38F;
     }
 
 }

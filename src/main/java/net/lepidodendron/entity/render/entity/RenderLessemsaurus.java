@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderLessemsaurus extends RenderLiving<EntityPrehistoricFloraLessemsaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lessemsaurus.png");
+    public static float getScaler() {
+        return 1.00f;
+    }
 
     public RenderLessemsaurus(RenderManager mgr) {
         super(mgr, new ModelLessemsaurus(), 0.5f);
@@ -27,7 +30,7 @@ public class RenderLessemsaurus extends RenderLiving<EntityPrehistoricFloraLesse
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLessemsaurus entity, float f) {
-        float scale = entity.getAgeScale() * 0.82F;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }

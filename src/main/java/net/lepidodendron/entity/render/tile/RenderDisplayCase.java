@@ -53,8 +53,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelAmplectobelua modelAmplectobelua;
     private static final ResourceLocation TEXTURE_AMPYX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
     private final ModelAmpyx modelAmpyx;
-    private static final ResourceLocation TEXTURE_ANOMALOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
-    private final ModelAnomalocaris modelAnomalocaris;
     private static final ResourceLocation TEXTURE_ANTARCTICARCINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/antarcticarcinus.png");
     private final ModelAntarcticarcinus modelAntarcticarcinus;
     private static final ResourceLocation TEXTURE_ARIDROACHOID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/roachoid_arid.png");
@@ -311,7 +309,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelAlacaris = new ModelAlacaris();
         this.modelAmplectobelua = new ModelAmplectobelua();
         this.modelAmpyx = new ModelAmpyx();
-        this.modelAnomalocaris = new ModelAnomalocaris();
         this.modelAntarcticarcinus = new ModelAntarcticarcinus();
         this.modelArchoblattina = new ModelArchoblattina();
         this.modelArctinurus = new ModelArctinurus();
@@ -711,39 +708,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.35F, 0.35F, 0.35F);
                                 this.bindTexture(TEXTURE_AMPYX);
                                 modelAmpyx.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraAnomalocaris.class) {
-                                double offset = 0.46;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(1, 0.85, 1);
-                                this.bindTexture(TEXTURE_ANOMALOCARIS);
-                                modelAnomalocaris.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraAntarcticarcinus.class) {
                                 double offset = 0.46;
                                 if (facing == EnumFacing.UP) {

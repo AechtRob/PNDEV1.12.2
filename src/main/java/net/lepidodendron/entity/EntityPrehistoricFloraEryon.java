@@ -178,22 +178,22 @@ public class EntityPrehistoricFloraEryon extends EntityPrehistoricFloraTrilobite
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 1.3;
+		return 0;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 1.3;
+		return 0.06;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
 		return -0F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {

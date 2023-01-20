@@ -338,18 +338,55 @@ public class ModelEoraptor extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.root.render(f5 * 0.295f);
+        this.root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.jaw1.rotateAngleX = (float) Math.toRadians(23);
+        this.body.offsetY = -0.05F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(basin, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(chest, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(neck1, -0.5786F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.4539F, -0.0577F, -0.1176F);
+        this.setRotateAngle(neck3, 0.5732F, -0.1206F, 0.0257F);
+        this.setRotateAngle(head1, 0.4322F, -0.331F, -0.0284F);
+        this.setRotateAngle(head2, 0.0456F, 0.0F, 0.0F);
+        this.setRotateAngle(head3, 0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(head4, -1.8213F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth1, -0.0456F, 0.1367F, 0.0F);
+        this.setRotateAngle(teeth2, -0.0456F, -0.1367F, 0.0F);
+        this.setRotateAngle(jaw1, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw3, -0.0456F, 0.0F, 0.0F);
+        this.setRotateAngle(teeth3, -0.0911F, 0.1367F, 0.0F);
+        this.setRotateAngle(teeth21, -0.0456F, -0.1367F, 0.0F);
+        this.setRotateAngle(gums, -0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(crest, 0.0911F, 0.0F, 0.0F);
+        this.setRotateAngle(upperarm1, 0.336F, 0.5363F, -0.779F);
+        this.setRotateAngle(arm1, -1.2123F, -0.0937F, 0.2448F);
+        this.setRotateAngle(hand1, 0.0F, 0.0F, 0.2731F);
+        this.setRotateAngle(upperarm2, 0.3829F, -0.5056F, 0.6848F);
+        this.setRotateAngle(arm2, -1.123F, 0.0957F, -0.1964F);
+        this.setRotateAngle(hand2, 0.0F, 0.0F, -0.2731F);
+        this.setRotateAngle(tail1, 0.2932F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.3946F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.3889F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.2124F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg1, -1.0431F, -0.2845F, 0.1275F);
+        this.setRotateAngle(leg1, 0.8652F, 0.0F, 0.0F);
+        this.setRotateAngle(feet1, -0.5463F, 0.0F, 0.0F);
+        this.setRotateAngle(toe1, 0.1367F, 0.0F, 0.0F);
+        this.setRotateAngle(upperleg2, -1.0444F, 0.3323F, -0.2054F);
+        this.setRotateAngle(leg2, 0.8652F, 0.0F, 0.0F);
+        this.setRotateAngle(feet2, -0.5463F, 0.0F, 0.0F);
+        this.setRotateAngle(toe2, 0.1367F, 0.0F, 0.0F);
+        this.root.rotateAngleY = (float) Math.toRadians(90);
+        this.root.offsetY = 0.08F;
+        this.root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -361,7 +398,7 @@ public class ModelEoraptor extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.root.offsetY = 1.08F;
+        this.root.offsetY = 0F;
         //this.root.offsetZ = 0.2F;
 
         EntityPrehistoricFloraEoraptor Eoraptor = (EntityPrehistoricFloraEoraptor) e;
