@@ -15,6 +15,10 @@ public class RenderProsictodon extends RenderLiving<EntityPrehistoricFloraProsic
         super(mgr, new ModelDiictodon(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 0.85F * 0.30f;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraProsictodon entity) {
         return RenderProsictodon.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderProsictodon extends RenderLiving<EntityPrehistoricFloraProsic
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraProsictodon entity, float f) {
-        float scale = entity.getAgeScale() * 0.85F;
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

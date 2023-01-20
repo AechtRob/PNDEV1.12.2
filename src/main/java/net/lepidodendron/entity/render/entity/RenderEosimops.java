@@ -15,6 +15,11 @@ public class RenderEosimops extends RenderLiving<EntityPrehistoricFloraEosimops>
         super(mgr, new ModelDiictodon(), 0.5f);
     }
 
+    public static float getScaler() {
+        return 1F * 0.30f;
+    }
+
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEosimops entity) {
         return RenderEosimops.TEXTURE;
@@ -27,7 +32,7 @@ public class RenderEosimops extends RenderLiving<EntityPrehistoricFloraEosimops>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEosimops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

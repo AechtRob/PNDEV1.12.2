@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderRobertia extends RenderLiving<EntityPrehistoricFloraRobertia> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/robertia.png");
 
+    public static float getScaler() {
+        return 0.7F * 0.30f;
+    }
+
     public RenderRobertia(RenderManager mgr) {
         super(mgr, new ModelDiictodon(), 0.5f);
     }
@@ -27,7 +31,7 @@ public class RenderRobertia extends RenderLiving<EntityPrehistoricFloraRobertia>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraRobertia entity, float f) {
-        float scale = entity.getAgeScale() * 0.7F;
+        float scale = entity.getAgeScale() * getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }
