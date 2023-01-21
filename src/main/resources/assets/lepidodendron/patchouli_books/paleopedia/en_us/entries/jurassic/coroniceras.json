@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_coroniceras",
 			"type": "text",
-			"text": ""
+			"text": "Coroniceras is a species of Arietitid ammonite of the Lower Jurassic. The shell of this animal was coiled and discoidal, very thin in frontal view. The shell was moderately ribbed and single keeled, characteristic shared with may other genera inside the Psiloceratoidea, the superfamily it belonged to."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coroniceras",
+			"type": "text",
+			"text": "Coroniceras as a genus is not a very well defined animal, instead its description is very loose and its systematics unstable, covering a wide range of morphologies, aside from the one example explained above. Due to these unclarities, various attempts have been made to create a more solid definition of the cephalopod,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_coroniceras",
+			"type": "text",
+			"text": "with some authors dividing it in several subgenera based on morphological distinctions, clearing the waters so to speak in what is Coroniceras. Coroniceras fossils are widely distributed across the European landmass and are particularly famous from the UK, in digsites such as Lyme Regis, famous fossil locality and birthplace of Mary Anning."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_coroniceras",

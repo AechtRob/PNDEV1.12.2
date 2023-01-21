@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dunyu",
 			"type": "text",
-			"text": ""
+			"text": "Dunyu is a genus of Eugaleaspid jawless fish from the Silurian of Yunnan, China. Like in all Galeaspids, Dunyu possessed a dorsally placed median opening, which appeared as a very long and thin fissure running along the top of their cephalic shield."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dunyu",
+			"type": "text",
+			"text": "The head shield of Dunyu could reach up to 9 cm long, with horn like protrusions towards its back and anteriorly placed orbits. There are two known species under the genus; the largest, D. longiforus, has an oval shaped head and small horns while the smaller, D. xiushanensis, has a rounder head and pointier horns."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dunyu",
+			"type": "text",
+			"text": "Dunyu was first described in 2012 based on remains found in the Yulungssu Formation in Qujing city, Yunnan, while the second smaller species was reclassified under Dunyu from its previous classification inside the genus Eugaleaspis; the smaller species was originally found in the slightly older sediments of Chongqin."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dunyu",

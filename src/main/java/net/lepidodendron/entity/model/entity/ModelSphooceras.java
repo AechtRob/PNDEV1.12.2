@@ -109,7 +109,7 @@ public class ModelSphooceras extends AdvancedModelBaseExtended {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
 
         this.resetToDefaultPose();
-        this.shell.offsetY = 1.1F;
+        this.shell.offsetY = -0.5F;
         this.shell.rotateAngleY = (float) Math.toRadians(180);
         //this.body.offsetZ = -1F;
 
@@ -153,7 +153,6 @@ public class ModelSphooceras extends AdvancedModelBaseExtended {
         }
         else {
             this.shell.rotateAngleZ = (float) Math.toRadians(90);
-            this.shell.offsetY = 1.08F;
         }
 
     }
