@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderCoelophysis;
-import net.lepidodendron.entity.render.entity.RenderInostrancevia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -365,6 +364,7 @@ public class EntityPrehistoricFloraCoelophysis extends EntityPrehistoricFloraLan
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_COELOPHYSIS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelCoelophysis;
 	}

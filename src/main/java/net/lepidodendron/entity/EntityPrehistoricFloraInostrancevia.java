@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderDimetrodon;
 import net.lepidodendron.entity.render.entity.RenderInostrancevia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -315,6 +314,7 @@ public class EntityPrehistoricFloraInostrancevia extends EntityPrehistoricFloraL
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_INOSTRANCEVIA;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelInostrancevia;
 	}

@@ -9,7 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderInostrancevia;
 import net.lepidodendron.entity.render.entity.RenderLessemsaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -362,6 +361,7 @@ public class EntityPrehistoricFloraLessemsaurus extends EntityPrehistoricFloraLa
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_LESSEMSAURUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelLessemsaurus;
 	}

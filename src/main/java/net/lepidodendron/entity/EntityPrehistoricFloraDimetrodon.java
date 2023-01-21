@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDimetrodon;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -305,6 +304,7 @@ public class EntityPrehistoricFloraDimetrodon extends EntityPrehistoricFloraLand
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_DIMETRODON;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelDimetrodon;
 	}
