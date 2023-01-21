@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:kujdanowiaspis_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_kujdanowiaspis.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_kujdanowiaspis.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_kujdanowiaspis"
+		}
+	}
+}
+
+
