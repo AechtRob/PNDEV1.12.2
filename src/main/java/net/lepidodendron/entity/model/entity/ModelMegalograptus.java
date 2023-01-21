@@ -483,7 +483,7 @@ public class ModelMegalograptus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Megalograptus.offsetY = 1.0F;
+        this.Megalograptus.offsetY = 0F;
 
         float speedMultiplier = 1F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
@@ -572,7 +572,7 @@ public class ModelMegalograptus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.Megalograptus.offsetY = 1.1F;
+                this.Megalograptus.offsetY = 0F;
                 this.bob(Megalograptus, -speed * 1.5F, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
                 this.chainSwing(fishBody, speed, 0.1F, -2, f2, 1);

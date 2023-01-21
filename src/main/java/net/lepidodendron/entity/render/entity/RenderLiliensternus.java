@@ -14,6 +14,9 @@ public class RenderLiliensternus extends RenderLiving<EntityPrehistoricFloraLili
     public RenderLiliensternus(RenderManager mgr) {
         super(mgr, new ModelLiliensternus(), 0.68f);
     }
+    public static float getScaler() {
+        return 0.7f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraLiliensternus entity) {
@@ -27,7 +30,7 @@ public class RenderLiliensternus extends RenderLiving<EntityPrehistoricFloraLili
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLiliensternus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.68F;
     }

@@ -16,7 +16,7 @@ public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonis
     public RenderShonisaurus(RenderManager mgr) {
         super(mgr, new ModelShonisaurus(), 1.5f);
     }
-    public static float getScaler() {return 1.60F; }
+    public static float getScaler() {return 1.24F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraShonisaurus entity) {

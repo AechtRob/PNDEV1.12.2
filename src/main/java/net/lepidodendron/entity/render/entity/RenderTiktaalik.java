@@ -14,6 +14,9 @@ public class RenderTiktaalik extends RenderLiving<EntityPrehistoricFloraTiktaali
     public RenderTiktaalik(RenderManager mgr) {
         super(mgr, new ModelTiktaalik(), 0.4f);
     }
+    public static float getScaler() {
+        return 0.355f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTiktaalik entity) {
@@ -27,7 +30,7 @@ public class RenderTiktaalik extends RenderLiving<EntityPrehistoricFloraTiktaali
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTiktaalik entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.275F;
     }

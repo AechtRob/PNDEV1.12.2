@@ -14,6 +14,9 @@ public class RenderEdaphosaurus extends RenderLiving<EntityPrehistoricFloraEdaph
     public RenderEdaphosaurus(RenderManager mgr) {
         super(mgr, new ModelEdaphosaurus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.8f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEdaphosaurus entity) {
@@ -27,7 +30,7 @@ public class RenderEdaphosaurus extends RenderLiving<EntityPrehistoricFloraEdaph
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEdaphosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.350F;
     }

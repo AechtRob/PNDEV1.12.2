@@ -14,8 +14,12 @@ import net.lepidodendron.entity.ai.EntityHurtByTargetSmallerThanMeAI;
 import net.lepidodendron.entity.ai.EntityMateAIInsectFlyingBase;
 import net.lepidodendron.entity.ai.HuntSmallerThanMeAIInsect;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.entity.RenderMeganeuropsis;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -451,5 +455,4 @@ public class EntityPrehistoricFloraMeganeuropsis extends EntityPrehistoricFloraI
 		}
 
 	}
-
 }

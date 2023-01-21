@@ -15,7 +15,7 @@ public class RenderDunkleosteus extends RenderLiving<EntityPrehistoricFloraDunkl
     public RenderDunkleosteus(RenderManager mgr) {
         super(mgr, new ModelDunkleosteus(), 1.0f);
     }
-    public static float getScaler() {return 2.555F; }
+    public static float getScaler() {return 1.4F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDunkleosteus entity) {

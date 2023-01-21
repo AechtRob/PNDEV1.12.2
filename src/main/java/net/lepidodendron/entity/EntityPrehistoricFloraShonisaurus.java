@@ -274,10 +274,10 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 		return -1.3;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 4;
+		return 2;
 	}
 	public static double upperbackverticallinedepth() {
-		return 4;
+		return 1.5;
 	}
 	public static double upperfrontlineoffset() {
 		return 2.3;
@@ -295,7 +295,7 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 		return 1.2;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 4;
+		return 3.8;
 	}
 	public static double lowerfrontlineoffset() {
 		return 2;

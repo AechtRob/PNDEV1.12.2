@@ -400,23 +400,77 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.6f);
+        this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Neckbase.offsetZ = -0.3F;
         this.Head.rotateAngleY = (float)Math.toRadians(17.4);
         this.Neckmiddlebase.rotateAngleY = (float)Math.toRadians(-14.9);
         this.Neckmiddlefront.rotateAngleY = (float)Math.toRadians(-14.9);
         this.Neckfront.rotateAngleY = (float)Math.toRadians(17.4);
         this.Lowerjawback.rotateAngleX = (float)Math.toRadians(32.5);
-        this.Neckbase.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.Neckbase.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Rightlowerteeth, 0.169820528229565F, 0.0F, -0.33964105645913F);
+        this.setRotateAngle(Upperbackteeth, 0.04241150198859518F, 0.0F, 0.0F);
+        this.setRotateAngle(Nosebridge, 0.169820528229565F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckflab, 0.0986111044021553F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.1911135497644277F, 0.21223203437934937F, 0.0F);
+        this.setRotateAngle(Leftupperfang, -0.08482300397719036F, 0.0F, -0.21223203437934937F);
+        this.setRotateAngle(Bodyfront, 0.06370451936226872F, -0.27593656206399647F, 0.0F);
+        this.setRotateAngle(Lowerjawteethback, -0.06370451936226872F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerfrontteeth, 0.1911135497644277F, 0.0F, 0.4881685797985891F);
+        this.setRotateAngle(Tailmiddleend, 0.10611601718967469F, 0.36093409463874954F, 0.0F);
+        this.setRotateAngle(Tailmiddle, 0.04241150198859518F, 0.21223203437934937F, 0.0F);
+        this.setRotateAngle(Rightuppermidteeth, -0.169820528229565F, 0.0F, 0.36093409463874954F);
+        this.setRotateAngle(Rightlowerarm, 0.04241150198859518F, 0.06370451936226872F, -1.3372713208149547F);
+        this.setRotateAngle(Tailmiddlebase, 0.021293017373673524F, -0.12740903872453743F, 0.0F);
+        this.setRotateAngle(Hips, 0.021293017373673524F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Lowerjawfront, -0.021293017373673524F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailend, 0.169820528229565F, 0.4881685797985891F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, 0.169820528229565F, -0.21223203437934937F, 1.3796828269647392F);
+        this.setRotateAngle(Leftlowermidteeth, 0.169820528229565F, 0.0F, 0.33964105645913F);
+        this.setRotateAngle(Rightupperfrontteeth, -0.10611601718967469F, 0.0F, 0.4881685797985891F);
+        this.setRotateAngle(Lowerjawmiddlebase, -0.04241150198859518F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftuppermidteeth, -0.169820528229565F, 0.0F, -0.36093409463874954F);
+        this.setRotateAngle(Upperjawback, -0.04241150198859518F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthindfoot, 0.08482300397719036F, -0.2546435405291338F, 1.592089364974516F);
+        this.setRotateAngle(Lowerfrontteeth, 0.7853981633974483F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, -0.021293017373673524F, -0.21223203437934937F, 0.0F);
+        this.setRotateAngle(Upperfrontteeth, -0.7853981633974483F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailfinbase, 0.021293017373673524F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, 0.7005751510978795F, 0.8F, -0.4881685797985891F);
+        this.setRotateAngle(Throat, -0.12531463729713663F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawback, 0.5731661290180989F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, 0.10611601718967469F, 0.21223203437934937F, 1.7406169216034886F);
+        this.setRotateAngle(Neckbase, 0.1911135497644277F, -0.23352505591421208F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 0.04241150198859518F, 0.2546435405291338F, -1.8F);
+        this.setRotateAngle(Bellyflab, 0.12740903872453743F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, 0.23352505591421208F, 0.04241150198859518F, -1.7406169216034886F);
+        this.setRotateAngle(Rightthigh, 0.7641051252178287F, -0.7853981633974483F, 0.10611601718967469F);
+        this.setRotateAngle(Leftupperarm, 0.4457571069383183F, 0.67928211291826F, -0.36093409463874954F);
+        this.setRotateAngle(Neckfront, -0.08482300397719036F, 0.1911135497644277F, 0.0F);
+        this.setRotateAngle(Rightlowerfrontteeth, 0.1911135497644277F, 0.0F, -0.4881685797985891F);
+        this.setRotateAngle(Leftshin, 0.23352505591421208F, -0.04241150198859518F, 1.2524483085153861F);
+        this.setRotateAngle(Rightupperarm, 0.2293017373673524F, -0.67928211291826F, 0.31834805156902407F);
+        this.setRotateAngle(Rightshin, 0.42446406875869874F, 0.2546435405291338F, -1.0613347421062016F);
+        this.setRotateAngle(Neckmiddlebase, -0.1911135497644277F, 0.1911135497644277F, 0.0F);
+        this.setRotateAngle(Jawparting, -0.1911135497644277F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperfang, -0.08482300397719036F, 0.0F, 0.21223203437934937F);
+        this.setRotateAngle(Leftupperfrontteeth, -0.10611601718967469F, 0.0F, -0.4881685797985891F);
+        this.setRotateAngle(Lowerjawmiddlefront, -0.021293017373673524F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckmiddlefront, -0.31834805156902407F, 0.1485275233394591F, 0.0F);
+        this.setRotateAngle(Tailfinend, 0.04241150198859518F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawfront, -0.02617993877991494F, 0.0F, 0.0F);
+        this.setRotateAngle(Bodymiddle, 0.1485275233394591F, 0.1485275233394591F, 0.0F);
+        this.setRotateAngle(Upperjawmiddle, -0.021293017373673524F, 0.0F, 0.0F);
+        this.Hips.offsetY = -0.45F;
+        this.Hips.offsetZ = -0.16F;
+        this.Hips.offsetX = 0.12F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -428,7 +482,7 @@ public class ModelNothosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.6F;
+        this.Hips.offsetY = 0F;
 
         EntityPrehistoricFloraNothosaurus Nothosaurus = (EntityPrehistoricFloraNothosaurus) e;
 

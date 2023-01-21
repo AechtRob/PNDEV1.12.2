@@ -168,8 +168,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelThrinaxodon modelThrinaxodon;
     private static final ResourceLocation TEXTURE_TIARAJUDENS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiarajudens.png");
     private final ModelTiarajudens modelTiarajudens;
-    private static final ResourceLocation TEXTURE_TIKTAALIK = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tiktaalik.png");
-    private final ModelTiktaalik modelTiktaalik;
     private static final ResourceLocation TEXTURE_UROCORDYLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/urocordylus.png");
     private final ModelUrocordylus modelUrocordylus;
     private static final ResourceLocation TEXTURE_WHATCHEERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/whatcheeria.png");
@@ -249,7 +247,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelTetraceratops = new ModelTetraceratops();
         this.modelThrinaxodon = new ModelThrinaxodon();
         this.modelTiarajudens = new ModelTiarajudens();
-        this.modelTiktaalik = new ModelTiktaalik();
         this.modelUrocordylus = new ModelUrocordylus();
         this.modelWhatcheeria = new ModelWhatcheeria();
         this.modelWebsteroprion = new ModelWebsteroprion();
@@ -935,16 +932,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_TIARAJUDENS);
                                 GlStateManager.scale(2.6F, 2.6F, 2.6F);
                                 modelTiarajudens.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraTiktaalik.class) {
-                                double offset = 0.58;
-                                //double voffset = -0.15;
-                                double voffset = 0;
-                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                                GlStateManager.rotate(180, 0F, 0F, 1F);
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_TIKTAALIK);
-                                GlStateManager.scale(0.22F, 0.22F, 0.22F);
-                                modelTiktaalik.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraUrocordylus.class) {
                                 double offset = -0.09;
                                 //double voffset = -0.15;

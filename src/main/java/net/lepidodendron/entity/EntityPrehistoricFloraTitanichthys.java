@@ -10,7 +10,11 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderLiliensternus;
+import net.lepidodendron.entity.render.entity.RenderTitanichthys;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -203,5 +207,57 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 		return LepidodendronMod.TITANICHTHYS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -1.36;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 3;
+	}
+	public static double upperbackverticallinedepth() {
+		return 2.7;
+	}
+	public static double upperfrontlineoffset() {
+		return 1.3;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 1.3;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.8F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.5;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 2.2;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1.2;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 1.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.78F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_TITANICHTHYS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelTitanicthys;
+	}
+	public static float getScaler() {
+		return RenderTitanichthys.getScaler();
+	}
 }
 

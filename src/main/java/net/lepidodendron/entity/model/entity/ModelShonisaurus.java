@@ -664,7 +664,7 @@ public class ModelShonisaurus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.root.offsetY = -0.4F;
+        this.root.offsetY = -0F;
         this.root.offsetZ = 1.0F;
 
        AdvancedModelRenderer[] fishTail = {this.tail1, this.tail2, this.tail3, this.tail4};

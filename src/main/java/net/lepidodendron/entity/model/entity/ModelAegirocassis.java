@@ -682,7 +682,7 @@ public class ModelAegirocassis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.65F;
+        this.body.offsetY = 0F;
 
         AdvancedModelRenderer[] Body = {this.segment1, this.segment2, this.segment3, this.segment4, this.segment5, this.segment6, this.segment7, this.segment8, this.segment9, this.segment10, this.segment11};
 
@@ -777,7 +777,7 @@ public class ModelAegirocassis extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             //this.Body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.8F;
+            this.body.offsetY = 0F;
             this.chainWave(Body, speed * 2F, 0.3F, -3, f2, 0.2F);
             this.bob(body, -speed * 1.5F, 5F, false, f2, 1);
         }
