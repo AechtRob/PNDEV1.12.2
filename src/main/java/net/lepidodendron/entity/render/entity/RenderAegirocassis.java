@@ -16,6 +16,7 @@ public class RenderAegirocassis extends RenderLiving<EntityPrehistoricFloraAegir
     public RenderAegirocassis(RenderManager mgr) {
         super(mgr, new ModelAegirocassis(), 0.5f);
     }
+    public static float getScaler() {return 0.55F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAegirocassis entity) {
@@ -37,7 +38,7 @@ public class RenderAegirocassis extends RenderLiving<EntityPrehistoricFloraAegir
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAegirocassis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

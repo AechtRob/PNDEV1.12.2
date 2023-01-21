@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMegalograptus extends RenderLiving<EntityPrehistoricFloraMegalograptus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalograptus.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalograptus_baby.png");
+    public static float getScaler() {return 0.3F; }
 
 
     public RenderMegalograptus(RenderManager mgr) {
@@ -19,7 +20,7 @@ public class RenderMegalograptus extends RenderLiving<EntityPrehistoricFloraMega
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMegalograptus entity) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (entity.isSmall()) {
             return RenderMegalograptus.TEXTURE_BABY;
         }
@@ -33,7 +34,7 @@ public class RenderMegalograptus extends RenderLiving<EntityPrehistoricFloraMega
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMegalograptus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

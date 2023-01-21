@@ -10,6 +10,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
 
     public static final ResourceLocation TEXTURE_APHNELEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aphnelepis.png");
     public static final ModelAphnelepis modelAphnelepis = new ModelAphnelepis();
+    public static final ResourceLocation TEXTURE_AEGIROCASSIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aegirocassis.png");
+    public static final ModelAegirocassis modelAegirocassis = new ModelAegirocassis();
     public static final ResourceLocation TEXTURE_AETHEOLEPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aetheolepis.png");
     public static final ModelAetheolepis modelAetheolepis = new ModelAetheolepis();
     public static final ResourceLocation TEXTURE_ANOMALOCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/anomalocaris.png");
@@ -33,6 +35,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelDiictodon modelDiictodon = new ModelDiictodon();
     public static final ResourceLocation TEXTURE_DIMETRODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dimetrodon.png");
     public static final ModelDimetrodon modelDimetrodon = new ModelDimetrodon();
+    public static final ResourceLocation TEXTURE_DUNKLEOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunkleosteus.png");
+    public static final ModelDunkleosteus modelDunkleosteus = new ModelDunkleosteus();
     public static final ResourceLocation TEXTURE_DUNYU = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dunyu.png");
     public static final ModelDunyu modelDunyu = new ModelDunyu();
     public static final ResourceLocation TEXTURE_EASTMANOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eastmanosteus.png");
@@ -41,6 +45,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelEoraptor modelEoraptor = new ModelEoraptor();
     public static final ResourceLocation TEXTURE_ERYON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eryon.png");
     public static final ModelEryon modelEryon = new ModelEryon();
+    public static final ResourceLocation TEXTURE_ESTEMMENOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/estemmenosuchus.png");
+    public static final ModelEstemmenosuchus modelEstemmenosuchus = new ModelEstemmenosuchus();
     public static final ResourceLocation TEXTURE_EUCHAMBERSIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/euchambersia.png");
     public static final ModelEuchambersia modelEuchambersia = new ModelEuchambersia();
     public static final ResourceLocation TEXTURE_EUGALEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eugaleaspis.png");
@@ -53,6 +59,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelLessemsaurus modelLessemsaurus = new ModelLessemsaurus();
     public static final ResourceLocation TEXTURE_MACROMESODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/macromesodon.png");
     public static final ModelMacromesodon modelMacromesodon = new ModelMacromesodon();
+    public static final ResourceLocation TEXTURE_MEGALOGRAPTUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megalograptus.png");
+    public static final ModelMegalograptus modelMegalograptus = new ModelMegalograptus();
     public static final ResourceLocation TEXTURE_MUSSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/mussaurus.png");
     public static final ModelMussaurus modelMussaurus = new ModelMussaurus();
     public static final ResourceLocation TEXTURE_NEEYAMBASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/neeyambaspis.png");
@@ -67,6 +75,10 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelPostosuchus modelPostosuchus = new ModelPostosuchus();
     public static final ResourceLocation TEXTURE_PITURIASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/pituriaspis.png");
     public static final ModelPituriaspis modelPituriaspis = new ModelPituriaspis();
+    public static final ResourceLocation TEXTURE_PRIONOSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/prionosuchus.png");
+    public static final ModelPrionosuchus modelPrionosuchus = new ModelPrionosuchus();
+    public static final ResourceLocation TEXTURE_SHONISAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/shonisaurus.png");
+    public static final ModelShonisaurus modelShonisaurus = new ModelShonisaurus();
     public static final ResourceLocation TEXTURE_XINPUSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/xinpusaurus.png");
     public static final ModelXinpusaurus modelXinpusaurus = new ModelXinpusaurus();
 
