@@ -1841,6 +1841,12 @@ advancements.pf_base_cambrian_discovery.description=Unlock the entry for all Cam
 advancements.pf_base_cambrian_discovery.title=Cambrian expert
 advancements.pf_base_knowledge.description=Palaeopedia knowledge
 advancements.pf_base_knowledge.title=Prehistoric Nature
+
+
+
+
+
+
 advancements.pf_adv_book_aphnelepis.description=Unlock the entry for Aphnelepis in the Palaeopedia
 advancements.pf_adv_book_aetheolepis.description=Unlock the entry for Aetheolepis in the Palaeopedia
 advancements.pf_adv_book_arduafrons.description=Unlock the entry for Arduafrons in the Palaeopedia
@@ -1850,6 +1856,46 @@ advancements.pf_adv_book_notidanoides.description=Unlock the entry for Notidanoi
 advancements.pf_adv_book_eryon.description=Unlock the entry for Eryon in the Palaeopedia
 advancements.pf_adv_book_ophthalmosaurus.description=Unlock the entry for Ophthalmosaurus in the Palaeopedia
 advancements.pf_adv_book_lasanius.description=Unlock the entry for Lasanius in the Palaeopedia
+advancements.pf_adv_book_pentecopterus.description=Unlock the entry for Pentecopterus in the Palaeopedia
+advancements.pf_adv_book_oxyosteus.description=Unlock the entry for Oxyosteus in the Palaeopedia
+advancements.pf_adv_book_gooloogongia.description=Unlock the entry for Gooloogongia in the Palaeopedia
+advancements.pf_adv_book_warneticaris.description=Unlock the entry for Warneticaris in the Palaeopedia
+advancements.pf_adv_book_schugurocaris.description=Unlock the entry for Schugurocaris in the Palaeopedia
+advancements.pf_adv_book_griphognathus.description=Unlock the entry for Griphognathus in the Palaeopedia
+advancements.pf_adv_book_concavicaris.description=Unlock the entry for Concavicaris in the Palaeopedia
+advancements.pf_adv_book_gogonasus.description=Unlock the entry for Gogonasus in the Palaeopedia
+advancements.pf_adv_book_fallacosteus.description=Unlock the entry for Fallacosteus in the Palaeopedia
+advancements.pf_adv_book_rolfosteus.description=Unlock the entry for Rolfosteus in the Palaeopedia
+advancements.pf_adv_book_camuropiscis.description=Unlock the entry for Camuropiscis in the Palaeopedia
+advancements.pf_adv_book_ctenurella.description=Unlock the entry for Ctenurella in the Palaeopedia
+advancements.pf_adv_book_rhamphodopsis.description=Unlock the entry for Rhamphodopsis in the Palaeopedia
+advancements.pf_adv_book_goodradigbeeon.description=Unlock the entry for Goodradigbeeon in the Palaeopedia
+advancements.pf_adv_book_draconichthys.description=Unlock the entry for Draconichthys in the Palaeopedia
+advancements.pf_adv_book_materpiscis.description=Unlock the entry for Materpiscis in the Palaeopedia
+advancements.pf_adv_book_brindabellaspis.description=Unlock the entry for Brindabellaspis in the Palaeopedia
+advancements.pf_adv_book_wuttagoonaspis.description=Unlock the entry for Wuttagoonaspis in the Palaeopedia
+advancements.pf_adv_book_kujdanowiaspis.description=Unlock the entry for Kujdanowiaspis in the Palaeopedia
+advancements.pf_adv_book_phyllolepis.description=Unlock the entry for Phyllolepis in the Palaeopedia
+advancements.pf_adv_book_cowralepis.description=Unlock the entry for Cowralepis in the Palaeopedia
+advancements.pf_adv_book_gymnotrachelus.description=Unlock the entry for Gymnotrachelus in the Palaeopedia
+advancements.pf_adv_book_bungartius.description=Unlock the entry for Bungartius in the Palaeopedia
+advancements.pf_adv_book_rhadinacanthus.description=Unlock the entry for Rhadinacanthus in the Palaeopedia
+advancements.pf_adv_book_thrissops.description=Unlock the entry for Thrissops in the Palaeopedia
+advancements.pf_adv_book_belonostomus_jurassic.description=Unlock the entry for Jurassic Belonostomus in the Palaeopedia
+advancements.pf_adv_book_belonostomus_cretaceous.description=Unlock the entry for Cretaceous Belonostomus in the Palaeopedia
+advancements.pf_adv_book_muensterella.description=Unlock the entry for Muensterella in the Palaeopedia
+advancements.pf_adv_book_asteracanthus.description=Unlock the entry for Asteracanthus in the Palaeopedia
+advancements.pf_adv_book_turboscinetes.description=Unlock the entry for Turboscinetes in the Palaeopedia
+advancements.pf_adv_book_redfieldius.description=Unlock the entry for Redfieldius in the Palaeopedia
+advancements.pf_adv_book_leptolepis.description=Unlock the entry for Leptolepis in the Palaeopedia
+advancements.pf_adv_book_lepidotes.description=Unlock the entry for Lepidotes in the Palaeopedia
+advancements.pf_adv_book_dollocaris.description=Unlock the entry for Dollocaris in the Palaeopedia
+advancements.pf_adv_book_piranhamesodon.description=Unlock the entry for Piranhamesodon in the Palaeopedia
+advancements.pf_adv_book_silurolepis.description=Unlock the entry for Silurolepis in the Palaeopedia
+advancements.pf_adv_book_entelognathus.description=Unlock the entry for Entelognathus in the Palaeopedia
+
+
+
 
 
 
@@ -1862,6 +1908,53 @@ advancements.pf_adv_book_notidanoides.title=Notidanoides
 advancements.pf_adv_book_eryon.title=Eryon
 advancements.pf_adv_book_ophthalmosaurus.title=Ophthalmosaurus
 advancements.pf_adv_book_lasanius.title=Lasanius
+advancements.pf_adv_book_pentecopterus.title=Pentecopterus
+advancements.pf_adv_book_oxyosteus.title=Oxyosteus
+advancements.pf_adv_book_gooloogongia.title=Gooloogongia
+advancements.pf_adv_book_warneticaris.title=Warneticaris
+advancements.pf_adv_book_schugurocaris.title=Schugurocaris
+advancements.pf_adv_book_griphognathus.title=Griphognathus
+advancements.pf_adv_book_concavicaris.title=Concavicaris
+advancements.pf_adv_book_gogonasus.title=Gogonasus
+advancements.pf_adv_book_fallacosteus.title=Fallacosteus
+advancements.pf_adv_book_rolfosteus.title=Rolfosteus
+advancements.pf_adv_book_camuropiscis.title=Camuropiscis
+advancements.pf_adv_book_ctenurella.title=Ctenurella
+advancements.pf_adv_book_rhamphodopsis.title=Rhamphodopsis
+advancements.pf_adv_book_goodradigbeeon.title=Goodradigbeeon
+advancements.pf_adv_book_draconichthys.title=Draconichthys
+advancements.pf_adv_book_materpiscis.title=Materpiscis
+advancements.pf_adv_book_brindabellaspis.title=Brindabellaspis
+advancements.pf_adv_book_wuttagoonaspis.title=Wuttagoonaspis
+advancements.pf_adv_book_kujdanowiaspis.title=Kujdanowiaspis
+advancements.pf_adv_book_phyllolepis.title=Phyllolepis
+advancements.pf_adv_book_cowralepis.title=Cowralepis
+advancements.pf_adv_book_gymnotrachelus.title=Gymnotrachelus
+advancements.pf_adv_book_bungartius.title=Bungartius
+advancements.pf_adv_book_rhadinacanthus.title=Rhadinacanthus
+advancements.pf_adv_book_thrissops.title=Thrissops
+advancements.pf_adv_book_belonostomus_jurassic.title=Jurassic Belonostomus
+advancements.pf_adv_book_belonostomus_cretaceous.title=Cretaceous Belonostomus
+advancements.pf_adv_book_muensterella.title=Muensterella
+advancements.pf_adv_book_asteracanthus.title=Asteracanthus
+advancements.pf_adv_book_turboscinetes.title=Turboscinetes
+advancements.pf_adv_book_redfieldius.title=Redfieldius
+advancements.pf_adv_book_leptolepis.title=Leptolepis
+advancements.pf_adv_book_lepidotes.title=Lepidotes
+advancements.pf_adv_book_dollocaris.title=Dollocaris
+advancements.pf_adv_book_piranhamesodon.title=Piranhamesodon
+advancements.pf_adv_book_silurolepis.title=Silurolepis
+advancements.pf_adv_book_entelognathus.title=Entelognathus
+
+
+
+
+
+
+
+
+
+
 
 key.lepidodendron.seetaxidermy=Hold to view floor taxidermy hitbox
 
@@ -2439,6 +2532,46 @@ entity.prehistoric_flora_eryon.name=Eryon
 entity.prehistoric_flora_ophthalmosaurus.name=Ophthalmosaurus
 entity.prehistoric_flora_eastmanosteus.name=Eastmanosteus
 entity.prehistoric_flora_lasanius.name=Lasanius
+entity.prehistoric_flora_pentecopterus.name=Pentecopterus
+entity.prehistoric_flora_oxyosteus.name=Oxyosteus
+entity.prehistoric_flora_gooloogongia.name=Gooloogongia
+entity.prehistoric_flora_warneticaris.name=Warneticaris
+entity.prehistoric_flora_schugurocaris.name=Schugurocaris
+entity.prehistoric_flora_griphognathus.name=Griphognathus
+entity.prehistoric_flora_concavicaris.name=Concavicaris
+entity.prehistoric_flora_gogonasus.name=Gogonasus
+entity.prehistoric_flora_fallacosteus.name=Fallacosteus
+entity.prehistoric_flora_rolfosteus.name=Rolfosteus
+entity.prehistoric_flora_camuropiscis.name=Camuropiscis
+entity.prehistoric_flora_ctenurella.name=Ctenurella
+entity.prehistoric_flora_rhamphodopsis.name=Rhamphodopsis
+entity.prehistoric_flora_goodradigbeeon.name=Goodradigbeeon
+entity.prehistoric_flora_draconichthys.name=Draconichthys
+entity.prehistoric_flora_materpiscis.name=Materpiscis
+entity.prehistoric_flora_brindabellaspis.name=Brindabellaspis
+entity.prehistoric_flora_wuttagoonaspis.name=Wuttagoonaspis
+entity.prehistoric_flora_kujdanowiaspis.name=Kujdanowiaspis
+entity.prehistoric_flora_phyllolepis.name=Phyllolepis
+entity.prehistoric_flora_cowralepis.name=Cowralepis
+entity.prehistoric_flora_gymnotrachelus.name=Gymnotrachelus
+entity.prehistoric_flora_bungartius.name=Bungartius
+entity.prehistoric_flora_rhadinacanthus.name=Rhadinacanthus
+entity.prehistoric_flora_thrissops.name=Thrissops
+entity.prehistoric_flora_belonostomus_jurassic.name=Jurassic Belonostomus
+entity.prehistoric_flora_belonostomus_cretaceous.name=Cretaceous Belonostomus
+entity.prehistoric_flora_muensterella.name=Muensterella
+entity.prehistoric_flora_asteracanthus.name=Asteracanthus
+entity.prehistoric_flora_turboscinetes.name=Turboscinetes
+entity.prehistoric_flora_redfieldius.name=Redfieldius
+entity.prehistoric_flora_leptolepis.name=Leptolepis
+entity.prehistoric_flora_lepidotes.name=Lepidotes
+entity.prehistoric_flora_dollocaris.name=Dollocaris
+entity.prehistoric_flora_piranhamesodon.name=Piranhamesodon
+entity.prehistoric_flora_silurolepis.name=Silurolepis
+entity.prehistoric_flora_entelognathus.name=Entelognathus
+
+
+
 
 
 
@@ -2712,22 +2845,69 @@ item.egg_prehistoric_flora_yawunik.name=Yawunik Egg
 item.egg_prehistoric_flora_yilingia.name=Yilingia Reproductive Blob
 item.egg_prehistoric_flora_yohoia.name=Yohoia Egg
 item.egg_prehistoric_flora_yorgia.name=Yorgia Reproductive Blob
+item.egg_prehistoric_flora_vachonisia.name=Vachonisia Egg
+item.egg_prehistoric_flora_miguashaia.name=Miguashaia Egg
+item.egg_prehistoric_flora_cometicercus.name=Cometicercus Egg
+item.egg_prehistoric_flora_oxyosteus.name=Oxyosteus Egg
+item.egg_prehistoric_flora_tegeolepis.name=Tegeolepis Egg
+item.egg_prehistoric_flora_gooloogongia.name=Gooloogongia Egg
+item.egg_prehistoric_flora_warneticaris.name=Warneticaris Egg
+item.egg_prehistoric_flora_schugurocaris.name=Schugurocaris Egg
+item.egg_prehistoric_flora_ceratiocaris.name=Ceratiocaris Egg
+item.egg_prehistoric_flora_diplacanthus.name=Diplacanthus Egg
+item.egg_prehistoric_flora_climatius.name=Climatius Egg
+item.egg_prehistoric_flora_nerepisacanthus.name=Nerepisacanthus Egg
+item.egg_prehistoric_flora_griphognathus.name=Griphognathus Egg
+item.egg_prehistoric_flora_concavicaris.name=Concavicaris Egg
+item.egg_prehistoric_flora_gogonasus.name=Gogonasus Egg
+item.egg_prehistoric_flora_fallacosteus.name=Fallacosteus Egg
+item.egg_prehistoric_flora_rolfosteus.name=Rolfosteus Egg
+item.egg_prehistoric_flora_camuropiscis.name=Camuropiscis Egg
+item.egg_prehistoric_flora_goodradigbeeon.name=Goodradigbeeon Egg
+item.egg_prehistoric_flora_draconichthys.name=Draconichthys Egg
+item.egg_prehistoric_flora_microbrachius.name=Microbrachius Egg
+item.egg_prehistoric_flora_brindabellaspis.name=Brindabellaspis Egg
+item.egg_prehistoric_flora_wuttagoonaspis.name=Wuttagoonaspis Egg
+item.egg_prehistoric_flora_kujdanowiaspis.name=Kujdanowiaspis Egg
+item.egg_prehistoric_flora_phyllolepis.name=Phyllolepis Egg
+item.egg_prehistoric_flora_cowralepis.name=Cowralepis Egg
+item.egg_prehistoric_flora_gymnotrachelus.name=Gymnotrachelus Egg
+item.egg_prehistoric_flora_rhadinacanthus.name=Rhadinacanthus Egg
+item.egg_prehistoric_flora_thrissops.name=Thrissops Egg
+item.egg_prehistoric_flora_belonostomus_jurassic.name=Jurassic Belonostomus Egg
+item.egg_prehistoric_flora_belonostomus_cretaceous.name=Cretaceous Belonostomus Egg
+item.egg_prehistoric_flora_muensterella.name=Muensterella Egg
+item.egg_prehistoric_flora_turboscinetes.name=Turboscinetes Egg
+item.egg_prehistoric_flora_redfieldius.name=Redfieldius Egg
+item.egg_prehistoric_flora_leptolepis.name=Leptolepis Egg
+item.egg_prehistoric_flora_lepidotes.name=Lepidotes Egg
+item.egg_prehistoric_flora_dollocaris.name=Dollocaris Egg
+item.egg_prehistoric_flora_piranhamesodon.name=Piranhamesodon Egg
+item.egg_prehistoric_flora_entelognathus.name=Entelognathus Egg
 item.egg_prehistoric_flora_yunnanozoon.name=Yunnanozoon Egg
-item.pf_eggs_dunyu.name=Dunyu Eggs
-item.pf_eggs_eugaleaspis.name=Eugaleaspis Eggs
-item.pf_eggs_pituriaspis.name=Pituriaspis Eggs
-item.pf_eggs_neeyambaspis.name=Neeyambaspis Eggs
-item.pf_eggs_lasanius.name=Lasanius Eggs
-item.pf_eggs_bundenbachiellus.name=Bundenbachiellus Eggs
+item.egg_prehistoric_flora_dunyu.name=Dunyu Egg
+item.egg_prehistoric_flora_eugaleaspis.name=Eugaleaspis Egg
+item.egg_prehistoric_flora_pituriaspis.name=Pituriaspis Egg
+item.egg_prehistoric_flora_neeyambaspis.name=Neeyambaspis Egg
+item.egg_prehistoric_flora_lasanius.name=Lasanius Egg
+item.egg_prehistoric_flora_bundenbachiellus.name=Bundenbachiellus Egg
+item.egg_prehistoric_flora_balhuticaris.name=Balhuticaris Egg
+item.egg_prehistoric_flora_arduafrons.name=Arduafrons Egg
+item.egg_prehistoric_flora_aetheolepis.name=Aetheolepis Egg
+item.egg_prehistoric_flora_aphnelepis.name=Aphnelepis Egg
+item.egg_prehistoric_flora_aspidorhynchus.name=Aspidorhynchus Egg
+item.egg_prehistoric_flora_eryon.name=Eryon Egg
+item.egg_prehistoric_flora_macromesodon.name=Macromesodon Egg
+item.egg_prehistoric_flora_paramblypterus.name=Paramblypterus Egg
+
+
+
+
+
 item.pf_eggs_ivoites.name=Ivoites Eggs
 item.pf_eggs_sphooceras.name=Sphooceras Eggs
-item.pf_eggs_balhuticaris.name=Balhuticaris Eggs
-item.pf_eggs_arduafrons.name=Arduafrons Eggs
-item.pf_eggs_aetheolepis.name=Aetheolepis Eggs
-item.pf_eggs_aphnelepis.name=Aphnelepis Eggs
-item.pf_eggs_aspidorhynchus.name=Aspidorhynchus Eggs
-item.pf_eggs_eryon.name=Eryon Eggs
-item.pf_eggs_macromesodon.name=Macromesodon Eggs
+
+
 
 
 
@@ -2776,10 +2956,57 @@ item.pf_dunyu_raw.name=Raw Dunyu
 item.pf_lasanius_raw.name=Raw Lasanius
 item.pf_dunyu_cooked.name=Cooked Dunyu
 item.pf_lasanius_cooked.name=Cooked Lasanius
-
-
-
 item.pf_ophthalmosaurus_raw.name=Raw Ophthalmosaurus
+item.pf_pentecopterus_raw.name=Raw Pentecopterus
+item.pf_oxyosteus_raw.name=Raw Oxyosteus
+item.pf_gooloogongia_raw.name=Raw Gooloogongia
+item.pf_warneticaris_raw.name=Raw Warneticaris
+item.pf_schugurocaris_raw.name=Raw Schugurocaris
+item.pf_griphognathus_raw.name=Raw Griphognathus
+item.pf_concavicaris_raw.name=Raw Concavicaris
+item.pf_gogonasus_raw.name=Raw Gogonasus
+item.pf_fallacosteus_raw.name=Raw Fallacosteus
+item.pf_rolfosteus_raw.name=Raw Rolfosteus
+item.pf_camuropiscis_raw.name=Raw Camuropiscis
+item.pf_ctenurella_raw.name=Raw Ctenurella
+item.pf_rhamphodopsis_raw.name=Raw Rhamphodopsis
+item.pf_goodradigbeeon_raw.name=Raw Goodradigbeeon
+item.pf_draconichthys_raw.name=Raw Draconichthys
+item.pf_materpiscis_raw.name=Raw Materpiscis
+item.pf_brindabellaspis_raw.name=Raw Brindabellaspis
+item.pf_wuttagoonaspis_raw.name=Raw Wuttagoonaspis
+item.pf_kujdanowiaspis_raw.name=Raw Kujdanowiaspis
+item.pf_phyllolepis_raw.name=Raw Phyllolepis
+item.pf_cowralepis_raw.name=Raw Cowralepis
+item.pf_gymnotrachelus_raw.name=Raw Gymnotrachelus
+item.pf_bungartius_raw.name=Raw Bungartius
+item.pf_rhadinacanthus_raw.name=Raw Rhadinacanthus
+item.pf_thrissops_raw.name=Raw Thrissops
+item.pf_belonostomus_jurassic_raw.name=Raw Jurassic Belonostomus
+item.pf_belonostomus_cretaceous_raw.name=Raw Cretaceous Belonostomus
+item.pf_muensterella_raw.name=Raw Muensterella
+item.pf_asteracanthus_raw.name=Raw Asteracanthus
+item.pf_turboscinetes_raw.name=Raw Turboscinetes
+item.pf_redfieldius_raw.name=Raw Redfieldius
+item.pf_leptolepis_raw.name=Raw Leptolepis
+item.pf_lepidotes_raw.name=Raw Lepidotes
+item.pf_dollocaris_raw.name=Raw Dollocaris
+item.pf_piranhamesodon_raw.name=Raw Piranhamesodon
+item.pf_silurolepis_raw.name=Raw Silurolepis
+item.pf_entelognathus_raw.name=Raw Entelognathus
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.pf_acadoaradoxides_bucket.name=Bucket of Acadoparadoxides
 item.pf_pantylus_bucket.name=Bucket of Pantylus
 item.pf_acadoaradoxides_cooked.name=Cooked Acadoparadoxides
@@ -3349,7 +3576,6 @@ item.pf_eggs_edaphosaurus.name=Edaphosaurus Eggs
 item.pf_eggs_effigia.name=Effigia Eggs
 item.pf_eggs_elginia.name=Elginia Eggs
 item.pf_eggs_endoceras.name=Endoceras Eggs
-item.pf_eggs_enoploura.name=Enoploura Eggs
 item.pf_eggs_eoraptor.name=Eoraptor Eggs
 item.pf_eggs_eorhynchochelys.name=Eorhynchochelys Eggs
 item.pf_eggs_eosimops.name=Eosimops Eggs
@@ -3391,7 +3617,6 @@ item.pf_eggs_mooreoceras.name=Mooreoceras Eggs
 item.pf_eggs_morganucodon.name=Morganucodon Eggs
 item.pf_eggs_moschops.name=Moschops Eggs
 item.pf_eggs_mussaurus.name=Mussaurus Eggs
-item.pf_eggs_nerepisacanthus.name=Nerepisacanthus Eggs
 item.pf_eggs_nothosaurus.name=Nothosaurus Eggs
 item.pf_eggs_omnidens.name=Omnidens Eggs
 item.pf_eggs_ophiacodon.name=Ophiacodon Eggs
@@ -3401,7 +3626,6 @@ item.pf_eggs_orthoceras.name=Orthoceras Eggs
 item.pf_eggs_pachydesmoceras.name=Pachydesmoceras Ammonite Eggs
 item.pf_eggs_pachydiscus.name=Pachydiscus Ammonite Eggs
 item.pf_eggs_panzhousaurus.name=Panzhousaurus Eggs
-item.pf_eggs_paramblypterus.name=Paramblypterus Eggs
 item.pf_eggs_parapuzosia.name=Parapuzosia Ammonite Eggs
 item.pf_eggs_phragmoceras.name=Phragmoceras Eggs
 item.pf_eggs_placerias.name=Placerias Eggs
@@ -3431,7 +3655,6 @@ item.pf_eggs_seymouria.name=Seymouria Eggs
 item.pf_eggs_shringasaurus.name=Shringasaurus Eggs
 item.pf_eggs_silesaurus.name=Silesaurus Eggs
 item.pf_eggs_sillosuchus.name=Sillosuchus Eggs
-item.pf_eggs_skeemella.name=Skeemella Eggs
 item.pf_eggs_smilosuchus.name=Smilosuchus Eggs
 item.pf_eggs_smok.name=Smok Eggs
 item.pf_eggs_sphenacodon.name=Sphenacodon Eggs
@@ -3450,17 +3673,19 @@ item.pf_eggs_thecodontosaurus.name=Thecodontosaurus Eggs
 item.pf_eggs_thrinaxodon.name=Thrinaxodon Eggs
 item.pf_eggs_tiarajudens.name=Tiarajudens Eggs
 item.pf_eggs_titanites.name=Titanites Ammonite Eggs
-item.pf_eggs_torpedaspis.name=Torpedaspis Eggs
-item.pf_eggs_uralichas.name=Uralichas Eggs
 item.pf_eggs_vancleavea.name=Vancleavea Eggs
 item.pf_eggs_vestinautilus.name=Vestinautilus Eggs
 item.pf_eggs_vivaxosaurus.name=Vivaxosaurus Eggs
 item.pf_eggs_websteroprion.name=Websteroprion Eggs
 item.pf_eggs_weigeltisaurus.name=Weigeltisaurus Eggs
-item.pf_eggs_weinbergina.name=Weinbergina Eggs
-item.pf_eggs_wingertshellicus.name=Wingertshellicus Eggs
 item.pf_eggs_xinpusaurus.name=Xinpusaurus Eggs
 item.pf_eggs_notidanoides.name=Notidanoides Eggs
+item.pf_eggs_pentecopterus.name=Pentecopterus Eggs
+item.pf_eggs_asteracanthus.name=Asteracanthus Eggs
+
+
+
+
 
 item.pf_eglonaspis_bucket.name=Bucket of Eglonaspis
 item.pf_eglonaspis_cooked.name=Cooked Eglonaspis
@@ -4000,6 +4225,44 @@ item.pf_fossil_eryon_clean.name=Cleaned Eryon Fossil
 item.pf_fossil_ophthalmosaurus_clean.name=Cleaned Ophthalmosaurus Fossil
 item.pf_fossil_eastmanosteus_clean.name=Cleaned Eastmanosteus Fossil
 item.pf_fossil_lasanius_clean.name=Cleaned Lasanius Fossil
+item.pf_fossil_pentecopterus_clean.name=Cleaned Pentecopterus Fossil
+item.pf_fossil_oxyosteus_clean.name=Cleaned Oxyosteus Fossil
+item.pf_fossil_gooloogongia_clean.name=Cleaned Gooloogongia Fossil
+item.pf_fossil_warneticaris_clean.name=Cleaned Warneticaris Fossil
+item.pf_fossil_schugurocaris_clean.name=Cleaned Schugurocaris Fossil
+item.pf_fossil_griphognathus_clean.name=Cleaned Griphognathus Fossil
+item.pf_fossil_concavicaris_clean.name=Cleaned Concavicaris Fossil
+item.pf_fossil_gogonasus_clean.name=Cleaned Gogonasus Fossil
+item.pf_fossil_fallacosteus_clean.name=Cleaned Fallacosteus Fossil
+item.pf_fossil_rolfosteus_clean.name=Cleaned Rolfosteus Fossil
+item.pf_fossil_camuropiscis_clean.name=Cleaned Camuropiscis Fossil
+item.pf_fossil_ctenurella_clean.name=Cleaned Ctenurella Fossil
+item.pf_fossil_rhamphodopsis_clean.name=Cleaned Rhamphodopsis Fossil
+item.pf_fossil_goodradigbeeon_clean.name=Cleaned Goodradigbeeon Fossil
+item.pf_fossil_draconichthys_clean.name=Cleaned Draconichthys Fossil
+item.pf_fossil_materpiscis_clean.name=Cleaned Materpiscis Fossil
+item.pf_fossil_brindabellaspis_clean.name=Cleaned Brindabellaspis Fossil
+item.pf_fossil_wuttagoonaspis_clean.name=Cleaned Wuttagoonaspis Fossil
+item.pf_fossil_kujdanowiaspis_clean.name=Cleaned Kujdanowiaspis Fossil
+item.pf_fossil_phyllolepis_clean.name=Cleaned Phyllolepis Fossil
+item.pf_fossil_cowralepis_clean.name=Cleaned Cowralepis Fossil
+item.pf_fossil_gymnotrachelus_clean.name=Cleaned Gymnotrachelus Fossil
+item.pf_fossil_bungartius_clean.name=Cleaned Bungartius Fossil
+item.pf_fossil_rhadinacanthus_clean.name=Cleaned Rhadinacanthus Fossil
+item.pf_fossil_thrissops_clean.name=Cleaned Thrissops Fossil
+item.pf_fossil_belonostomus_jurassic_clean.name=Cleaned Jurassic Belonostomus Fossil
+item.pf_fossil_belonostomus_cretaceous_clean.name=Cleaned Cretaceous Belonostomus Fossil
+item.pf_fossil_muensterella_clean.name=Cleaned Muensterella Fossil
+item.pf_fossil_asteracanthus_clean.name=Cleaned Asteracanthus Fossil
+item.pf_fossil_turboscinetes_clean.name=Cleaned Turboscinetes Fossil
+item.pf_fossil_redfieldius_clean.name=Cleaned Redfieldius Fossil
+item.pf_fossil_leptolepis_clean.name=Cleaned Leptolepis Fossil
+item.pf_fossil_lepidotes_clean.name=Cleaned Lepidotes Fossil
+item.pf_fossil_dollocaris_clean.name=Cleaned Dollocaris Fossil
+item.pf_fossil_piranhamesodon_clean.name=Cleaned Piranhamesodon Fossil
+item.pf_fossil_silurolepis_clean.name=Cleaned Silurolepis Fossil
+item.pf_fossil_entelognathus_clean.name=Cleaned Entelognathus Fossil
+
 
 
 
@@ -5554,7 +5817,22 @@ item.pf_phial_eggs_urocordylus.name=Phial of Urocordylus Spawn
 item.pf_phial_eggs_whatcheeria.name=Phial of Whatcheeria Spawn
 item.pf_phial_eggs_xenacanthus.name=Phial of Xenacanthus Eggs
 item.pf_phial_eggs_notidanoides.name=Phial of Notidanoides Eggs
+item.pf_phial_eggs_pentecopterus.name=Phial of Pentecopterus Eggs
+item.pf_phial_eggs_asteracanthus.name=Phial of Asteracanthus Eggs
+
 item.pf_phial_empty.name=Phial
+
+
+
+
+
+
+
+
+
+
+
+
 item.pf_phlebolepis_bucket.name=Bucket of Phlebolepis
 item.pf_phlebolepis_cooked.name=Cooked Phlebolepis
 item.pf_phlebolepis_raw.name=Raw Phlebolepis
@@ -6050,6 +6328,32 @@ item.pf_ophthalmosaurus_bucket.name=Bucket of Ophthalmosaurus
 item.pf_eastmanosteus_bucket.name=Bucket of Eastmanosteus
 item.pf_dunyu_bucket.name=Bucket of Dunyu
 item.pf_lasanius_bucket.name=Bucket of Lasanius
+item.pf_pentecopterus_bucket.name=Bucket of Pentecopterus
+item.pf_oxyosteus_bucket.name=Bucket of Oxyosteus
+item.pf_gooloogongia_bucket.name=Bucket of Gooloogongia
+item.pf_warneticaris_bucket.name=Bucket of Warneticaris
+item.pf_griphognathus_bucket.name=Bucket of Griphognathus
+item.pf_concavicaris_bucket.name=Bucket of Concavicaris
+item.pf_rolfosteus_bucket.name=Bucket of Rolfosteus
+item.pf_materpiscis_bucket.name=Bucket of Materpiscis
+item.pf_cowralepis_bucket.name=Bucket of Cowralepis
+item.pf_bungartius_bucket.name=Bucket of Bungartius
+item.pf_rhadinacanthus_bucket.name=Bucket of Rhadinacanthus
+item.pf_thrissops_bucket.name=Bucket of Thrissops
+item.pf_belonostomus_jurassic_bucket.name=Bucket of Jurassic Belonostomus
+item.pf_belonostomus_cretaceous_bucket.name=Bucket of Cretaceous Belonostomus
+item.pf_muensterella_bucket.name=Bucket of Muensterella
+item.pf_asteracanthus_bucket.name=Bucket of Asteracanthus
+item.pf_turboscinetes_bucket.name=Bucket of Turboscinetes
+item.pf_redfieldius_bucket.name=Bucket of Redfieldius
+item.pf_leptolepis_bucket.name=Bucket of Leptolepis
+item.pf_lepidotes_bucket.name=Bucket of Lepidotes
+item.pf_dollocaris_bucket.name=Bucket of Dollocaris
+item.pf_piranhamesodon_bucket.name=Bucket of Piranhamesodon
+item.pf_entelognathus_bucket.name=Bucket of Entelognathus
+
+
+
 
 
 
@@ -6876,6 +7180,45 @@ item.phial_dna_prehistoric_flora_eryon.name=Phial of Eryon DNA
 item.phial_dna_prehistoric_flora_ophthalmosaurus.name=Phial of Ophthalmosaurus DNA
 item.phial_dna_prehistoric_flora_eastmanosteus.name=Phial of Eastmanosteus DNA
 item.phial_dna_prehistoric_flora_lasanius.name=Phial of Lasanius DNA
+item.phial_dna_prehistoric_flora_ctenurella.name=Phial of Ctenurella DNA
+item.phial_dna_prehistoric_flora_rhamphodopsis.name=Phial of Rhamphodopsis DNA
+item.phial_dna_prehistoric_flora_goodradigbeeon.name=Phial of Goodradigbeeon DNA
+item.phial_dna_prehistoric_flora_draconichthys.name=Phial of Draconichthys DNA
+item.phial_dna_prehistoric_flora_materpiscis.name=Phial of Materpiscis DNA
+item.phial_dna_prehistoric_flora_brindabellaspis.name=Phial of Brindabellaspis DNA
+item.phial_dna_prehistoric_flora_wuttagoonaspis.name=Phial of Wuttagoonaspis DNA
+item.phial_dna_prehistoric_flora_kujdanowiaspis.name=Phial of Kujdanowiaspis DNA
+item.phial_dna_prehistoric_flora_phyllolepis.name=Phial of Phyllolepis DNA
+item.phial_dna_prehistoric_flora_cowralepis.name=Phial of Cowralepis DNA
+item.phial_dna_prehistoric_flora_gymnotrachelus.name=Phial of Gymnotrachelus DNA
+item.phial_dna_prehistoric_flora_bungartius.name=Phial of Bungartius DNA
+item.phial_dna_prehistoric_flora_rhadinacanthus.name=Phial of Rhadinacanthus DNA
+item.phial_dna_prehistoric_flora_thrissops.name=Phial of Thrissops DNA
+item.phial_dna_prehistoric_flora_belonostomus_jurassic.name=Phial of Jurassic Belonostomus DNA
+item.phial_dna_prehistoric_flora_belonostomus_cretaceous.name=Phial of Cretaceous Belonostomus DNA
+item.phial_dna_prehistoric_flora_muensterella.name=Phial of Muensterella DNA
+item.phial_dna_prehistoric_flora_asteracanthus.name=Phial of Asteracanthus DNA
+item.phial_dna_prehistoric_flora_turboscinetes.name=Phial of Turboscinetes DNA
+item.phial_dna_prehistoric_flora_redfieldius.name=Phial of Redfieldius DNA
+item.phial_dna_prehistoric_flora_leptolepis.name=Phial of Leptolepis DNA
+item.phial_dna_prehistoric_flora_lepidotes.name=Phial of Lepidotes DNA
+item.phial_dna_prehistoric_flora_dollocaris.name=Phial of Dollocaris DNA
+item.phial_dna_prehistoric_flora_piranhamesodon.name=Phial of Piranhamesodon DNA
+item.phial_dna_prehistoric_flora_silurolepis.name=Phial of Silurolepis DNA
+item.phial_dna_prehistoric_flora_entelognathus.name=Phial of Entelognathus DNA
+item.phial_dna_prehistoric_flora_pentecopterus.name=Phial of Pentecopterus DNA
+item.phial_dna_prehistoric_flora_oxyosteus.name=Phial of Oxyosteus DNA
+item.phial_dna_prehistoric_flora_gooloogongia.name=Phial of Gooloogongia DNA
+item.phial_dna_prehistoric_flora_warneticaris.name=Phial of Warneticaris DNA
+item.phial_dna_prehistoric_flora_schugurocaris.name=Phial of Schugurocaris DNA
+item.phial_dna_prehistoric_flora_griphognathus.name=Phial of Griphognathus DNA
+item.phial_dna_prehistoric_flora_concavicaris.name=Phial of Concavicaris DNA
+item.phial_dna_prehistoric_flora_gogonasus.name=Phial of Gogonasus DNA
+item.phial_dna_prehistoric_flora_fallacosteus.name=Phial of Fallacosteus DNA
+item.phial_dna_prehistoric_flora_rolfosteus.name=Phial of Rolfosteus DNA
+item.phial_dna_prehistoric_flora_camuropiscis.name=Phial of Camuropiscis DNA
+
+
 
 
 
@@ -7824,6 +8167,45 @@ item.placeable_living_prehistoric_flora_notidanoides.name=Placeable Cultured Nod
 item.placeable_living_prehistoric_flora_eryon.name=Placeable Cultured Nodule of Eryon DNA
 item.placeable_living_prehistoric_flora_macromesodon.name=Placeable Cultured Nodule of Macromesodon DNA
 item.placeable_living_prehistoric_flora_ophthalmosaurus.name=Placeable Cultured Nodule of Ophthalmosaurus DNA
+item.placeable_living_prehistoric_flora_pentecopterus.name=Placeable Cultured Nodule of Pentecopterus DNA
+item.placeable_living_prehistoric_flora_oxyosteus.name=Placeable Cultured Nodule of Oxyosteus DNA
+item.placeable_living_prehistoric_flora_gooloogongia.name=Placeable Cultured Nodule of Gooloogongia DNA
+item.placeable_living_prehistoric_flora_warneticaris.name=Placeable Cultured Nodule of Warneticaris DNA
+item.placeable_living_prehistoric_flora_schugurocaris.name=Placeable Cultured Nodule of Schugurocaris DNA
+item.placeable_living_prehistoric_flora_griphognathus.name=Placeable Cultured Nodule of Griphognathus DNA
+item.placeable_living_prehistoric_flora_concavicaris.name=Placeable Cultured Nodule of Concavicaris DNA
+item.placeable_living_prehistoric_flora_gogonasus.name=Placeable Cultured Nodule of Gogonasus DNA
+item.placeable_living_prehistoric_flora_fallacosteus.name=Placeable Cultured Nodule of Fallacosteus DNA
+item.placeable_living_prehistoric_flora_rolfosteus.name=Placeable Cultured Nodule of Rolfosteus DNA
+item.placeable_living_prehistoric_flora_camuropiscis.name=Placeable Cultured Nodule of Camuropiscis DNA
+item.placeable_living_prehistoric_flora_ctenurella.name=Placeable Cultured Nodule of Ctenurella DNA
+item.placeable_living_prehistoric_flora_rhamphodopsis.name=Placeable Cultured Nodule of Rhamphodopsis DNA
+item.placeable_living_prehistoric_flora_goodradigbeeon.name=Placeable Cultured Nodule of Goodradigbeeon DNA
+item.placeable_living_prehistoric_flora_draconichthys.name=Placeable Cultured Nodule of Draconichthys DNA
+item.placeable_living_prehistoric_flora_materpiscis.name=Placeable Cultured Nodule of Materpiscis DNA
+item.placeable_living_prehistoric_flora_brindabellaspis.name=Placeable Cultured Nodule of Brindabellaspis DNA
+item.placeable_living_prehistoric_flora_wuttagoonaspis.name=Placeable Cultured Nodule of Wuttagoonaspis DNA
+item.placeable_living_prehistoric_flora_kujdanowiaspis.name=Placeable Cultured Nodule of Kujdanowiaspis DNA
+item.placeable_living_prehistoric_flora_phyllolepis.name=Placeable Cultured Nodule of Phyllolepis DNA
+item.placeable_living_prehistoric_flora_cowralepis.name=Placeable Cultured Nodule of Cowralepis DNA
+item.placeable_living_prehistoric_flora_gymnotrachelus.name=Placeable Cultured Nodule of Gymnotrachelus DNA
+item.placeable_living_prehistoric_flora_bungartius.name=Placeable Cultured Nodule of Bungartius DNA
+item.placeable_living_prehistoric_flora_rhadinacanthus.name=Placeable Cultured Nodule of Rhadinacanthus DNA
+item.placeable_living_prehistoric_flora_thrissops.name=Placeable Cultured Nodule of Thrissops DNA
+item.placeable_living_prehistoric_flora_belonostomus.name=Placeable Cultured Nodule of Belonostomus DNA
+item.placeable_living_prehistoric_flora_muensterella.name=Placeable Cultured Nodule of Muensterella DNA
+item.placeable_living_prehistoric_flora_asteracanthus.name=Placeable Cultured Nodule of Asteracanthus DNA
+item.placeable_living_prehistoric_flora_turboscinetes.name=Placeable Cultured Nodule of Turboscinetes DNA
+item.placeable_living_prehistoric_flora_redfieldius.name=Placeable Cultured Nodule of Redfieldius DNA
+item.placeable_living_prehistoric_flora_leptolepis.name=Placeable Cultured Nodule of Leptolepis DNA
+item.placeable_living_prehistoric_flora_lepidotes.name=Placeable Cultured Nodule of Lepidotes DNA
+item.placeable_living_prehistoric_flora_dollocaris.name=Placeable Cultured Nodule of Dollocaris DNA
+item.placeable_living_prehistoric_flora_piranhamesodon.name=Placeable Cultured Nodule of Piranhamesodon DNA
+item.placeable_living_prehistoric_flora_silurolepis.name=Placeable Cultured Nodule of Silurolepis DNA
+item.placeable_living_prehistoric_flora_entelognathus.name=Placeable Cultured Nodule of Entelognathus DNA
+
+
+
 
 
 
@@ -8758,6 +9140,17 @@ tile.pf_eggs_xenacanthus.name=Xenacanthus Egg
 tile.pf_eggs_xenacanthus_worldgen.name=Xenacanthus Egg
 tile.pf_eggs_notidanoides.name=Notidanoides Egg
 tile.pf_eggs_notidanoides_worldgen.name=Notidanoides Egg
+tile.pf_eggs_asteracanthus.name=Asteracanthus Egg
+tile.pf_eggs_asteracanthus_worldgen.name=Asteracanthus Egg
+tile.pf_eggs_pentecopterus.name=Pentecopterus Egg
+tile.pf_eggs_pentecopterus_worldgen.name=Pentecopterus Egg
+
+
+
+
+
+
+
 tile.pf_elkinsia.name=Elkinsia
 tile.pf_emplectopteris_fence_gate_thin.name=Thin Emplectopteris Fence Gate
 tile.pf_emplectopteris_fence_thin.name=Thin Emplectopteris Fence
