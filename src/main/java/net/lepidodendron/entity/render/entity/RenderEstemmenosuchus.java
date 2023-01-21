@@ -14,6 +14,7 @@ public class RenderEstemmenosuchus extends RenderLiving<EntityPrehistoricFloraEs
     public RenderEstemmenosuchus(RenderManager mgr) {
         super(mgr, new ModelEstemmenosuchus(), 0.5f);
     }
+    public static float getScaler() {return 1.0f; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEstemmenosuchus entity) {
@@ -27,7 +28,7 @@ public class RenderEstemmenosuchus extends RenderLiving<EntityPrehistoricFloraEs
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEstemmenosuchus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.55F;
     }

@@ -9,7 +9,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEoraptor;
 import net.lepidodendron.entity.render.entity.RenderPostosuchus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.material.Material;
@@ -367,6 +366,7 @@ public class EntityPrehistoricFloraPostosuchus extends EntityPrehistoricFloraLan
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_POSTOSUCHUS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelPostosuchus;
 	}

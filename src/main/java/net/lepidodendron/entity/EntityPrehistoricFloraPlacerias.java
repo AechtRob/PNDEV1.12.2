@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderCoelophysis;
 import net.lepidodendron.entity.render.entity.RenderPlacerias;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -344,6 +343,7 @@ public class EntityPrehistoricFloraPlacerias extends EntityPrehistoricFloraLandB
 	public static ResourceLocation textureDisplay() {
 		return RenderDisplays.TEXTURE_PLACERIAS;
 	}
+	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
 		return RenderDisplays.modelPlacerias;
 	}

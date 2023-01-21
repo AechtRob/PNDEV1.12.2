@@ -1208,6 +1208,22 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 //Does this mob have nests like this and is it OK to do this now?
                 if (this.hasNest() && (!this.isNestMound()) && (!this.placesNest()) && this.getAnimation() == this.NO_ANIMATION && this.getAttackTarget() == null && this.getEatTarget() == null) {
                     //Does the mob already have a nest?
+                    boolean newNest = false;
+                    if (this.getNestLocation() != null) {
+                        if (!world.isBlockLoaded(this.getNestLocation())) {
+                            this.setNestLocation(null);
+                            newNest = true;
+                        }
+                        else {
+                            TileEntity te = world.getTileEntity(this.getNestLocation());
+                            if (te instanceof BlockNest.TileEntityNest) {
+                                BlockNest.TileEntityNest tileNest = (BlockNest.TileEntityNest) te;
+                                if (!tileNest.getStackInSlot(0).isEmpty()) {
+                                    newNest = true;
+                                }
+                            }
+                        }
+                    }
                     if (this.getNestLocation() == null) {
                         //Can we make a nest in this exact spot?
                         if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
@@ -1217,6 +1233,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                                 if (world.isRemote) {
                                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
                                 }
+                                if (newNest) {
+                                    this.setNestLocation(null);
+                                }
                                 return true;
                             }
                         }
@@ -1225,6 +1244,9 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                             this.consumeItemFromStack(player, itemstack);
                             if (world.isRemote) {
                                 this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
+                            }
+                            if (newNest) {
+                                this.setNestLocation(null);
                             }
                             return true;
                         }

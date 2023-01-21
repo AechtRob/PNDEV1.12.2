@@ -16,6 +16,7 @@ public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonis
     public RenderShonisaurus(RenderManager mgr) {
         super(mgr, new ModelShonisaurus(), 1.5f);
     }
+    public static float getScaler() {return 1.60F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraShonisaurus entity) {
@@ -52,7 +53,7 @@ public class RenderShonisaurus extends RenderLiving<EntityPrehistoricFloraShonis
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraShonisaurus entity, float f) {
-        float scale = entity.getAgeScale() * 0.875F;
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.65F;
