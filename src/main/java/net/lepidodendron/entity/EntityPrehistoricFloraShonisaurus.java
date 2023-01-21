@@ -11,6 +11,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderMussaurus;
+import net.lepidodendron.entity.render.entity.RenderShonisaurus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
@@ -264,5 +268,57 @@ public class EntityPrehistoricFloraShonisaurus extends EntityPrehistoricFloraAge
 		return LepidodendronMod.SHONISAURUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -1.3;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 4;
+	}
+	public static double upperfrontlineoffset() {
+		return 2.3;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 1.1F;
+	}
+	public static double upperbacklineoffset() {
+		return 2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 4;
+	}
+	public static double lowerfrontlineoffset() {
+		return 2;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.8F;
+	}
+	public static double lowerbacklineoffset() {
+		return 3;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_SHONISAURUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelShonisaurus;
+	}
+	public static float getScaler() {
+		return RenderShonisaurus.getScaler();
+	}
 }
 

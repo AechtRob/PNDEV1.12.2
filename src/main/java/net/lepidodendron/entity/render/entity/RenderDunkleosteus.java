@@ -15,6 +15,7 @@ public class RenderDunkleosteus extends RenderLiving<EntityPrehistoricFloraDunkl
     public RenderDunkleosteus(RenderManager mgr) {
         super(mgr, new ModelDunkleosteus(), 1.0f);
     }
+    public static float getScaler() {return 2.555F; }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDunkleosteus entity) {
@@ -33,7 +34,7 @@ public class RenderDunkleosteus extends RenderLiving<EntityPrehistoricFloraDunkl
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDunkleosteus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();;
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

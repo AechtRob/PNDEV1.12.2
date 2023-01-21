@@ -11,6 +11,10 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderDunkleosteus;
+import net.lepidodendron.entity.render.entity.RenderMegalograptus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
@@ -257,7 +261,60 @@ public class EntityPrehistoricFloraDunkleosteus extends EntityPrehistoricFloraAg
 				this.getEntityWorld().playSound(null, this.getPosition(), soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 		}
+
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -1.4;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 3;
+	}
+	public static double upperfrontlineoffset() {
+		return 1;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 2.5;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.8F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 2;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 2;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 2.5;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.5F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_DUNKLEOSTEUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelDunkleosteus;
+	}
+	public static float getScaler() {
+		return RenderDunkleosteus.getScaler();
+	}
 }
 

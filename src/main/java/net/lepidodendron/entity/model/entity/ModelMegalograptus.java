@@ -406,21 +406,72 @@ public class ModelMegalograptus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Megalograptus.render(f5 * 0.3F);
+        this.Megalograptus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Megalograptus.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Megalograptus.rotateAngleX = (float) Math.toRadians(90);
+        this.Megalograptus.rotateAngleZ = (float) Math.toRadians(90);
         this.Megalograptus.offsetX = -0.06F;
-        this.Megalograptus.offsetY = 0F;
-        this.Megalograptus.offsetZ = -0.04F;
+        this.Megalograptus.offsetY = -0.21F;
+        this.Megalograptus.offsetZ = 0.15F;
         this.Megalograptus.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Megalograptus, -0.3927F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(MainTergites1, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail1, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail4, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail5, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(Trident, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Cube_r1, -0.1766F, 0.4011F, -0.4287F);
+        this.setRotateAngle(Cube_r2, -0.0846F, 0.2013F, -0.4013F);
+        this.setRotateAngle(Cube_r3, 0.0F, 0.0F, -0.3927F);
+        this.setRotateAngle(Cube_r4, 0.5018F, 1.1721F, 0.129F);
+        this.setRotateAngle(Cube_r5, 0.5018F, -1.1721F, -0.129F);
+        this.setRotateAngle(Cube_r6, 0.0F, 0.0F, 0.3927F);
+        this.setRotateAngle(Cube_r7, -0.0846F, -0.2013F, 0.4013F);
+        this.setRotateAngle(Cube_r8, -0.1766F, -0.4011F, 0.4287F);
+        this.setRotateAngle(Cube_r9, 0.2317F, -0.3405F, -0.0786F);
+        this.setRotateAngle(Cube_r10, 0.2214F, -0.1704F, -0.0381F);
+        this.setRotateAngle(Cube_r11, 0.2317F, 0.3405F, 0.0786F);
+        this.setRotateAngle(Cube_r12, 0.2214F, 0.1704F, 0.0381F);
+        this.setRotateAngle(Grasping1, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(Cube_r13, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(Grasping2, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(Cube_r14, 0.0F, -0.7418F, 0.0F);
+        this.setRotateAngle(Cube_r15, 0.0F, -0.5672F, 0.0F);
+        this.setRotateAngle(Grasping3, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(Cube_r16, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(Grasping4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Grasping5, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(Cube_r17, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(Grasping6, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(Cube_r18, 0.0F, 0.7418F, 0.0F);
+        this.setRotateAngle(Cube_r19, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(Grasping7, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(Cube_r20, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(Grasping8, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(Paddle1, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(Cube_r21, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(PaddleP1, 0.0F, 0.0F, -0.3927F);
+        this.setRotateAngle(Cube_r22, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(Paddle2, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(Cube_r23, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(PaddleP2, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(Cube_r24, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(FLeg1, 0.0F, 0.0F, 0.5236F);
+        this.setRotateAngle(FLeg2, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(BLeg1, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(Cube_r25, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(BLeg2, 0.0F, 0.0F, -0.3491F);
+        this.setRotateAngle(Cube_r26, 0.0F, 0.2182F, 0.0F);
+        this.Megalograptus.offsetZ = -0.05F;
+        this.Megalograptus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

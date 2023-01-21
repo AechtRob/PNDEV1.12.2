@@ -9,7 +9,11 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockAmphibianSpawnPrionosuchus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
+import net.lepidodendron.entity.render.entity.RenderMegalograptus;
+import net.lepidodendron.entity.render.entity.RenderPrionosuchus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -290,4 +294,56 @@ public class EntityPrehistoricFloraPrionosuchus extends EntityPrehistoricFloraSw
 		return LepidodendronMod.PRIONOSUCHUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.9;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.2;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1.9;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.1F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.06F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_PRIONOSUCHUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelPrionosuchus;
+	}
+	public static float getScaler() {
+		return RenderPrionosuchus.getScaler();
+	}
 }
