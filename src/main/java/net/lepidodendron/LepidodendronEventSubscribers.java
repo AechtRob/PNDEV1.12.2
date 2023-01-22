@@ -620,7 +620,7 @@ public class LepidodendronEventSubscribers {
 			if (event.getItemStack().getTagCompound() != null) {
 				if (event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
 					List<String> tt = event.getToolTip();
-					tt.add("Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.");
+					tt.add(I18n.translateToLocal("tooltip.palaeopedia.name").trim());
 				}
 			}
 		}
