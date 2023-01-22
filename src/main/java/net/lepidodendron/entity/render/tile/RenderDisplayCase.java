@@ -5090,11 +5090,11 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     }
 
     public boolean renderTaxidermy(EnumFacing facing, float x, float y, float z,
-           float currentRotation,
-           ResourceLocation TEXTURE,
-           float scalerModel,
-           ModelBase model,
-           double offset
+                                   float currentRotation,
+                                   ResourceLocation TEXTURE,
+                                   float scalerModel,
+                                   ModelBase model,
+                                   double offset
     ) {
         Method renderMethod = testAndGetMethod(model.getClass(), "renderStaticDisplayCase", new Class[] { float.class });
         if (renderMethod != null) {

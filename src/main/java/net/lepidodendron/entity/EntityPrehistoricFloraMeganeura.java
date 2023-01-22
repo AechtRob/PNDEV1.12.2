@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockGlassJar;
 import net.lepidodendron.block.BlockInsectEggsMeganeura;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -82,5 +83,4 @@ public class EntityPrehistoricFloraMeganeura extends EntityPrehistoricFloraMegan
 		}
 
 	}
-
 }

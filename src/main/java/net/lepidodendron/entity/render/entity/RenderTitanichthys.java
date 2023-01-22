@@ -17,6 +17,9 @@ public class RenderTitanichthys extends RenderLiving<EntityPrehistoricFloraTitan
     public RenderTitanichthys(RenderManager mgr) {
         super(mgr, new ModelTitanicthys(), 1.0f);
     }
+    public static float getScaler() {
+        return 1.07F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTitanichthys entity) {
@@ -58,7 +61,7 @@ public class RenderTitanichthys extends RenderLiving<EntityPrehistoricFloraTitan
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTitanichthys entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

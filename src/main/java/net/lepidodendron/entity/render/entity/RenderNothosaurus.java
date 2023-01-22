@@ -14,6 +14,9 @@ public class RenderNothosaurus extends RenderLiving<EntityPrehistoricFloraNothos
     public RenderNothosaurus(RenderManager mgr) {
         super(mgr, new ModelNothosaurus(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.6f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraNothosaurus entity) {
@@ -25,7 +28,7 @@ public class RenderNothosaurus extends RenderLiving<EntityPrehistoricFloraNothos
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
     protected void preRenderCallback(EntityPrehistoricFloraNothosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

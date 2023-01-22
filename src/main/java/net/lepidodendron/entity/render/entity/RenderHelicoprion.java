@@ -14,6 +14,9 @@ public class RenderHelicoprion extends RenderLiving<EntityPrehistoricFloraHelico
     public RenderHelicoprion(RenderManager mgr) {
         super(mgr, new ModelHelicoprion(), 0.5f);
     }
+    public static float getScaler() {
+        return 1.85F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHelicoprion entity) {

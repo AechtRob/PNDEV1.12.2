@@ -344,13 +344,9 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 0.7f);
+        this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Lowerjawbase.rotateAngleX = (float) Math.toRadians(45);
         this.Neckbase.rotateAngleY = (float) Math.toRadians(20);
         this.Neckbase.rotateAngleX = (float) Math.toRadians(-30);
@@ -364,9 +360,63 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
         this.Leftlowerarm.rotateAngleZ = (float) Math.toRadians(10);
         this.Head.rotateAngleX = (float) Math.toRadians(30);
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Upperjawbase, 0.10611601718967469F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftcrestfront, 0.6117378895082071F, -0.04241150198859518F, 0.021293017373673524F);
+        this.setRotateAngle(Leftshin, 0.7216936190680444F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperbackteeth, 0.08726646259971647F, -0.06370451936226872F, 0.0F);
+        this.setRotateAngle(Neckbase, -0.46705011182842415F, -0.23352505591421208F, -0.169820528229565F);
+        this.setRotateAngle(Jawparting, -0.23352505591421208F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightfoot, 1.209862232156147F, 0.0F, 0.0F);
+        this.setRotateAngle(Righthand, 0.1485275233394591F, 0.0F, -0.4457571069383183F);
+        this.setRotateAngle(Shoulderquills, 0.169820528229565F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailbase, 0.04241150198859518F, 0.169820528229565F, 0.0F);
+        this.setRotateAngle(Tailquillsdorsal, 0.10611601718967469F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, -0.9976301977767977F, 0.0F, 0.0F);
+        this.setRotateAngle(Hips, -0.2546435405291338F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Leftupperbackteeth, 0.08726646259971647F, 0.06370451936226872F, 0.0F);
+        this.setRotateAngle(Neckmiddle, -0.5518731241279929F, -0.06370451936226872F, 0.04241150198859518F);
+        this.setRotateAngle(Neckquillsbase, -0.08482300397719036F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawmiddle, 0.10611601718967469F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawunderside, -0.2546435405291338F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerteeth, -0.10611601718967469F, 0.134390349074612F, 0.0F);
+        this.setRotateAngle(Head, 0.6155776351678833F, 0.0F, 0.06370451936226872F);
+        this.setRotateAngle(Leftankle, -0.5942845969882637F, 0.0F, 0.0F);
+        this.setRotateAngle(Snout, 0.21223203437934937F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightshin, 1.35856422583652F, 0.0F, 0.0F);
+        this.setRotateAngle(Shoulderquillsside, 0.12740903872453743F, 0.0F, 0.0F);
+        this.setRotateAngle(Neckend, 0.7005751510978795F, -0.04241150198859518F, -0.04241150198859518F);
+        this.setRotateAngle(Lowerjawfront, -0.10611601718967469F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailmiddlebase, 0.23352505591421208F, -0.1485275233394591F, 0.0F);
+        this.setRotateAngle(Backquills, -0.169820528229565F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjawend, 0.021293017373673524F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftthigh, -0.12740903872453743F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightcrestfront, 0.6117378895082071F, 0.04241150198859518F, -0.021293017373673524F);
+        this.setRotateAngle(Tailend, -0.10611601718967469F, -0.169820528229565F, 0.0F);
+        this.setRotateAngle(Backquillsside, -0.12740903872453743F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightupperfrontteeth, 0.1485275233394591F, -0.23352505591421208F, 0.1485275233394591F);
+        this.setRotateAngle(Bodyfront, 0.10611601718967469F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightcrestbase, -0.38205256260891435F, -0.1485275233394591F, -0.2546435405291338F);
+        this.setRotateAngle(Leftcrestbase, -0.38205256260891435F, 0.1485275233394591F, 0.2546435405291338F);
+        this.setRotateAngle(Rightlowerarm, -0.9976301977767977F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfoot, 0.2546435405291338F, 0.0F, 0.0F);
+        this.setRotateAngle(Tailquillssideend, -0.021293017373673524F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjawbase, 0.169820528229565F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftupperfrontteeth, 0.1485275233394591F, 0.23352505591421208F, -0.1485275233394591F);
+        this.setRotateAngle(Rightupperarm, 0.8915142138766367F, -0.4881685797985891F, 0.4457571069383183F);
+        this.setRotateAngle(Neckquillsend, -0.08482300397719036F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerteeth, -0.10611601718967469F, -0.134390349074612F, 0.0F);
+        this.setRotateAngle(Headslope, 0.23352505591421208F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightankle, -1.35856422583652F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthand, 0.1485275233394591F, 0.0F, 0.4457571069383183F);
+        this.setRotateAngle(Tailmiddleend, 0.23352505591421208F, -0.1911135497644277F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.0F, 0.2972295835988592F, 0.12740903872453743F);
+        this.setRotateAngle(Leftupperarm, 0.67928211291826F, -0.1485275233394591F, -0.7641051252178287F);
+        this.Hips.offsetY = -0.12F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -378,7 +428,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.45F;
+        this.Hips.offsetY = 0F;
         this.Hips.offsetZ = 0.2F;
 
         EntityPrehistoricFloraLiliensternus Liliensternus = (EntityPrehistoricFloraLiliensternus) e;

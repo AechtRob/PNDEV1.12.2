@@ -373,8 +373,8 @@ public class ModelDunkleosteus extends AdvancedModelBase {
         this.swing(Rightpelvicfin, (float) (speed * 0.65), -0.2F * inwater, true, 0, 0, f2, 1 * inwater);
 
         if (!e.isInWater()) {
-            this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-            this.Bodyfront.offsetY = 0.7F;
+            //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
+            this.Bodyfront.offsetY = 1F;
             this.bob(Bodyfront, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

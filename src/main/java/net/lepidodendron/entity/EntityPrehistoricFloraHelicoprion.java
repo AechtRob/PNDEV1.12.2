@@ -10,7 +10,12 @@ import net.lepidodendron.block.BlockEggsHelicoprion;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.render.entity.RenderDunkleosteus;
+import net.lepidodendron.entity.render.entity.RenderHelenodora;
+import net.lepidodendron.entity.render.entity.RenderHelicoprion;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -253,5 +258,57 @@ public class EntityPrehistoricFloraHelicoprion extends EntityPrehistoricFloraAge
 		return LepidodendronMod.HELICOPRION_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -1.4;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 2.5;
+	}
+	public static double upperbackverticallinedepth() {
+		return 2.5;
+	}
+	public static double upperfrontlineoffset() {
+		return 1;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.17F;
+	}
+	public static double upperbacklineoffset() {
+		return 2.5;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.8F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 2;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 2;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.2F;
+	}
+	public static double lowerbacklineoffset() {
+		return 2.5;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.7F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_HELICOPRION;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelHelicoprion;
+	}
+	public static float getScaler() {
+		return RenderHelicoprion.getScaler();
+	}
 }
 
