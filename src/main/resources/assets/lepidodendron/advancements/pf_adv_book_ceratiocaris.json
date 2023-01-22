@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:ceratiocaris_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_ceratiocaris.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_ceratiocaris.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_ceratiocaris"
+		}
+	}
+}
+
+

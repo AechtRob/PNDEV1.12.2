@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_sphooceras",
 			"type": "text",
-			"text": ""
+			"text": "Sphooceras is a genus of Orthocerid cephalopod from the Silurian of the Czech Republic. Incredibly characteristic for this animal was the anatomy of the phragmocone itself, being among the only known shelled cephalopods to have shed pieces of its shell as it grew. After shedding the shell, the animal would cover the apical part of the remaining phragmocone in callus,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphooceras",
+			"type": "text",
+			"text": "sealing the otherwise open septal foramen; This gave Sphooceras' shell a distinctive sausage like appearance. The shell of this animal was at least partially covered by mantle, as seen by preserved vascular imprints found on it, making it among the earliest known examples of an endocochleate cephalopod in the fossil record; the same specimen preserved traces of pigmentation on its shell."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_sphooceras",
+			"type": "text",
+			"text": "These characters alongside preserved muscle placement, the uncalcified connecting rings and rarely preserved but seen radula make Sphooceras fascinatingly modern among the cephalopods of the time, lending believability to the idea that they were closer to coleoids than nautiloids, making their separation from the latter legitimate."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_sphooceras",

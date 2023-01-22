@@ -20,7 +20,27 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",
 			"type": "text",
-			"text": ""
+			"text": "Hybodus is a genus of ancient cartilaginous fish from the Jurassic of Europe. The genus is the namesake of the order Hybodontiformes, part of a very successful group of fishes that existed between the Late Devonian and the Late Cretaceous, when they disappeared under unclear circumstances."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": "Hybodus itself as a genus is considered a wastebasket taxon today and in serious need of re-evaluation, as remains assigned to the genus were described covering the whole temporal range of the order, a very unlikely proposition considering that would mean the same genus existed for more than 290 million years."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": "The reason for this inaccurate estimates and ranges is mostly due to the poorly preserved nature of their fossils, many of which consisting just of teeth or the stereotypical spines that grew at the base of their fins. Even though most of them are known from these poorly preserved remains,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": "a few hybodonts are known from full body fossils, usually coming from Lagerstatten sites, where exceptional preservation of fossil material was made possible by the poorly oxigenated environments they formed in. Thanks to these rare remains we are now able to reconstruct these animals and know their body shape more accurately,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_hybodus",
+			"type": "text",
+			"text": " a luxury many other prehistoric sharks don't have. Hybodonts lived in a wide range of environments and covered a wide array of lifestyles and diets. Due to the nature of the taxon and the muddy nature of what is Hybodus and what is not, defining what was Hybodus s.s. lifestyle becomes challenging."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_hybodus",
