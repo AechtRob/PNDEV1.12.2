@@ -69,12 +69,12 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getRoarLength() {
-		return 0;
+		return 80;
 	}
 
 	@Override
 	public int getNoiseLength() {
-		return 0;
+		return 40;
 	}
 
 	@Override
@@ -118,7 +118,11 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getTalkInterval() {
-		return 180;
+		return 360;
+	}
+
+	@Override
+	public int getRoarInterval() {return 900;
 	}
 
 	@Override
@@ -143,7 +147,7 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 	@Override
 	public float getEyeHeight()
 	{
-		return Math.max(super.getEyeHeight(), this.height * 0.8F);
+		return Math.max(super.getEyeHeight(), this.height * 0.9F);
 	}
 
 	@Override

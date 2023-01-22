@@ -53,8 +53,11 @@ public class LepidodendronBookSubscribers {
 				return;
 			}
 			RayTraceResult raytraceresult = this.rayTrace(event.getWorld(), event.getEntityPlayer(), true);
-			if (raytraceresult != null && !event.getEntityPlayer().isSneaking())
-			{
+			if (raytraceresult != null && !event.getEntityPlayer().isSneaking()) {
+				event.setCanceled(true);
+				return;
+			}
+			if (!event.getEntityPlayer().isSneaking()) {
 				event.setCanceled(true);
 				return;
 			}
@@ -69,6 +72,9 @@ public class LepidodendronBookSubscribers {
 		}
 		if (event.getItemStack().getTagCompound() != null) {
 			if (!event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
+				return;
+			}
+			if (event.getEntityPlayer().isSneaking()) {
 				return;
 			}
 			IBlockState state = event.getWorld().getBlockState(event.getPos());

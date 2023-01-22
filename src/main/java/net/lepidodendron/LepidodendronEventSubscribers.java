@@ -51,6 +51,16 @@ import java.util.Random;
 
 public class LepidodendronEventSubscribers {
 
+	@SubscribeEvent //Give the Palaeopedia on first join:
+	public void playerJoined(EntityJoinWorldEvent event) {
+		if (!LepidodendronConfig.giveBook) {
+			return;
+		}
+		if ((event.getEntity() instanceof EntityPlayerMP)) {
+			ModTriggers.PALAEOPEDIA_GIVEN.trigger((EntityPlayerMP) event.getEntity());
+		}
+	}
+
 	@SubscribeEvent //Replace petrified plants and incorrect phials:
 	public void petrifieds(PlayerContainerEvent event) {
 		Container container = event.getContainer();
@@ -605,6 +615,16 @@ public class LepidodendronEventSubscribers {
 	@SideOnly(Side.CLIENT) //Tooltips for vanilla items
 	@SubscribeEvent
 	public void onEvent(ItemTooltipEvent event) throws NoSuchMethodException {
+
+		if (event.getItemStack().getItem().getRegistryName().toString().equalsIgnoreCase("patchouli:guide_book")) {
+			if (event.getItemStack().getTagCompound() != null) {
+				if (event.getItemStack().getTagCompound().toString().contains("lepidodendron:paleopedia")) {
+					List<String> tt = event.getToolTip();
+					tt.add("Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.");
+				}
+			}
+		}
+
 		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
 			List<String> tt = event.getToolTip();
 			tt.add("NOTE: Used to build the portal to the Cambrian dimension");

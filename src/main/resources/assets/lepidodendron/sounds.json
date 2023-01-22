@@ -6023,5 +6023,57 @@
         "stream": false
       }
     ]
+  },
+
+
+  "megalosaurus_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:megalosaurus_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:megalosaurus_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:megalosaurus_living03",
+        "stream": false
+      }
+    ]
+  },
+  "megalosaurus_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:megalosaurus_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:megalosaurus_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "megalosaurus_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:megalosaurus_death",
+        "stream": false
+      }
+    ]
+  },
+  "megalosaurus_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:megalosaurus_roar01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:megalosaurus_roar02",
+        "stream": false
+      }
+    ]
   }
+  
+  
 }

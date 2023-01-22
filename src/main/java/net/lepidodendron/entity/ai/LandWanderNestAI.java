@@ -103,6 +103,7 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
             }
 
             if (this.PrehistoricFloraAgeableBase.isLayableNest(world, pos)) {
+                this.PrehistoricFloraAgeableBase.setNestLocation(pos);
                 vec3 = pos;
             } else {
                 vec3 = this.findBlockTarget(32);
@@ -157,6 +158,7 @@ public class LandWanderNestAI extends AnimationAINoAnimation<EntityPrehistoricFl
                 World world = this.PrehistoricFloraAgeableBase.world;
                 if (this.PrehistoricFloraAgeableBase.isLayableNest(world, randPos)) {
                     if (!(randPos.getY() < 1 || randPos.getY() >= 254)) {
+                        this.PrehistoricFloraAgeableBase.setNestLocation(randPos);
                         return randPos;
                     }
                 }

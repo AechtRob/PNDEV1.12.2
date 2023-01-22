@@ -1,0 +1,10 @@
+{
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_palaeopedia_given"
+		}
+	},
+	"rewards": {
+		"loot": ["lepidodendron:palaeopedia_given"]
+	}
+}

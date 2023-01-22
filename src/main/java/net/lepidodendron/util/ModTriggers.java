@@ -30,6 +30,7 @@ public class ModTriggers
     public static final CustomTrigger EPHEDRA = new CustomTrigger("pf_eat_ephedra");
     public static final CustomTrigger TAIL = new CustomTrigger("pf_eat_tail");
     public static final CustomTrigger DNA_CRAFT = new CustomTrigger("pf_dna_craft");
+    public static final CustomTrigger PALAEOPEDIA_GIVEN = new CustomTrigger("pf_palaeopedia_given");
 
     //Knowledge of blocks:
     public static final CustomTrigger CLICK_ACACIA = new CustomTrigger("pf_book_acacia");
@@ -982,6 +983,7 @@ public class ModTriggers
             EPHEDRA,
             TAIL,
             DNA_CRAFT,
+            PALAEOPEDIA_GIVEN,
 
             //BLOCKS:
             //----------

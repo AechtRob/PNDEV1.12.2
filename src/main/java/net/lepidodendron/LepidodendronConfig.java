@@ -26,6 +26,7 @@ public class LepidodendronConfig {
     public static boolean machinesRF = false;
     public static boolean sulphuricAcidGrief = true;
     public static boolean sulphuricAcidInfinite = false;
+    public static boolean giveBook = true;
 
     public static boolean genFossil = true;
     public static boolean genStone = true;
@@ -887,6 +888,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "machinesRF", machinesRF);
         prop.setComment("Prehistoric Nature machines need RF to function. [default: false]");
         machinesRF = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "giveBook", giveBook);
+        prop.setComment("Give new players a copy of the Palaeopedia when they join. [default: true]");
+        giveBook = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global World-Gen", "sulphuricAcidGrief", sulphuricAcidGrief);

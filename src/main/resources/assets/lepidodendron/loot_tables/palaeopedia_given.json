@@ -1,0 +1,20 @@
+{
+  "pools": [
+    {
+      "name": "palaeopedia_given",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "patchouli:guide_book",
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{\"patchouli:book\": \"lepidodendron:paleopedia\"}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
