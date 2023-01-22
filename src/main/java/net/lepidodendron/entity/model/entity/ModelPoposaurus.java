@@ -325,20 +325,62 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Poposaurus.render(f5 * 0.785F);
+        this.Poposaurus.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Neck.render(0.01F);
+    public void renderStaticWall(float f) {
         this.Neck.offsetY = -0.001F;
         this.Jaw.rotateAngleX = (float) Math.toRadians(35);
         this.Neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Poposaurus, -0.0436F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Basin, 0.0F, 0.0F, -0.2182F);
+        this.setRotateAngle(Body, 0.1056F, 0.1302F, 0.0138F);
+        this.setRotateAngle(cube_r1, 0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(Chest, 0.1072F, 0.217F, 0.0232F);
+        this.setRotateAngle(Neck, -0.1056F, 0.1302F, -0.0138F);
+        this.setRotateAngle(Neck2, -0.1318F, 0.1108F, 0.1607F);
+        this.setRotateAngle(cube_r3, 0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(Head, -0.0082F, 0.2531F, -0.1886F);
+        this.setRotateAngle(cube_r5, 0.2443F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0175F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.1222F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.2059F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.1047F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, -0.2094F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(LArm, 1.3526F, 0.0F, 0.0F);
+        this.setRotateAngle(LArm2, -1.7453F, 0.0F, 0.0F);
+        this.setRotateAngle(LHand, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(RArm, 1.2654F, 0.0F, 0.0F);
+        this.setRotateAngle(RArm2, -1.789F, 0.0F, 0.0F);
+        this.setRotateAngle(RHand, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(LLeg, -1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(LLeg2, 1.309F, 0.0F, 0.0F);
+        this.setRotateAngle(LFoot, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(LFoot2, 1.0908F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(RLeg2, 0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(RFoot, 1.1781F, 0.0F, 0.0F);
+        this.setRotateAngle(RFoot2, -1.7453F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail, -0.0438F, 0.0872F, -0.0038F);
+        this.setRotateAngle(Tail2, 0.0682F, 0.2031F, -0.0795F);
+        this.setRotateAngle(cube_r14, -0.4538F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.0698F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.0616F, 0.1307F, 0.008F);
+        this.setRotateAngle(Tail4, -0.1752F, -0.0859F, 0.0152F);
+        this.setRotateAngle(tail5, -0.3099F, -0.1664F, 0.053F);
+        this.Poposaurus.offsetY = -0.13F;
+        this.Poposaurus.offsetX = -0.12F;
+        this.Poposaurus.offsetZ = 0.13F;
+        this.Poposaurus.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

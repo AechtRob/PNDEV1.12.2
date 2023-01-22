@@ -224,18 +224,47 @@ public class ModelKaibabvenator extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.all.render(f5 * 1.00F);
+        this.all.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.lowerjaw.rotateAngleX = (float) Math.toRadians(26);
+    public void renderStaticWall(float f) {
+        this.head.offsetY = -0.001F;
+        this.lowerjaw.rotateAngleX = (float) Math.toRadians(35);
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.all.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, -0.3054F);
+        this.setRotateAngle(body2, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3491F, 0.0F);
+        this.all.offsetZ = 0.1F;
+        this.all.offsetX = -0.23F;
+        this.all.offsetY = -0.3F;
+        this.all.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.all.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, -0.3054F);
+        this.setRotateAngle(body2, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(body3, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3491F, 0.0F);
+        this.all.offsetZ = 0.1F;
+        this.all.offsetX = -0.23F;
+        this.all.offsetY = 0.01F;
+        this.all.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
