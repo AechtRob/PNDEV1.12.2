@@ -14,6 +14,9 @@ public class RenderSaivodus extends RenderLiving<EntityPrehistoricFloraSaivodus>
     public RenderSaivodus(RenderManager mgr) {
         super(mgr, new ModelSaivodus(), 0.5f);
     }
+    public static float getScaler() {
+        return 1.8F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSaivodus entity) {
@@ -27,7 +30,7 @@ public class RenderSaivodus extends RenderLiving<EntityPrehistoricFloraSaivodus>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSaivodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.75F;

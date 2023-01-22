@@ -14,6 +14,9 @@ public class RenderErythrosuchus extends RenderLiving<EntityPrehistoricFloraEryt
     public RenderErythrosuchus(RenderManager mgr) {
         super(mgr, new ModelErythrosuchus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.785F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraErythrosuchus entity) {
@@ -27,7 +30,7 @@ public class RenderErythrosuchus extends RenderLiving<EntityPrehistoricFloraEryt
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraErythrosuchus entity, float f) {
-        float scale = entity.getAgeScale() * 1.25F;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

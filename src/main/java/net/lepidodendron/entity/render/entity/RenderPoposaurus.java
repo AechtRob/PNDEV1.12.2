@@ -16,6 +16,9 @@ public class RenderPoposaurus extends RenderLiving<EntityPrehistoricFloraPoposau
     public RenderPoposaurus(RenderManager mgr) {
         super(mgr, new ModelPoposaurus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.785F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPoposaurus entity) {
@@ -34,7 +37,7 @@ public class RenderPoposaurus extends RenderLiving<EntityPrehistoricFloraPoposau
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPoposaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.42F;
     }

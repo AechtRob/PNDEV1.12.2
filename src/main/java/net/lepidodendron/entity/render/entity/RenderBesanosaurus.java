@@ -14,6 +14,9 @@ public class RenderBesanosaurus extends RenderLiving<EntityPrehistoricFloraBesan
     public RenderBesanosaurus(RenderManager mgr) {
         super(mgr, new ModelBesanosaurus(), 0.0f);
     }
+    public static float getScaler() {
+        return 1F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraBesanosaurus entity) {
@@ -27,7 +30,7 @@ public class RenderBesanosaurus extends RenderLiving<EntityPrehistoricFloraBesan
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraBesanosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

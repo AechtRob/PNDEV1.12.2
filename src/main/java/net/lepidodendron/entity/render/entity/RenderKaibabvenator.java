@@ -16,6 +16,9 @@ public class RenderKaibabvenator extends RenderLiving<EntityPrehistoricFloraKaib
     public RenderKaibabvenator(RenderManager mgr) {
         super(mgr, new ModelKaibabvenator(), 0.5f);
     }
+    public static float getScaler() {
+        return 1.00F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraKaibabvenator entity) {
@@ -52,7 +55,7 @@ public class RenderKaibabvenator extends RenderLiving<EntityPrehistoricFloraKaib
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraKaibabvenator entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
 
