@@ -6,10 +6,10 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderErythrosuchus;
 import net.lepidodendron.entity.render.entity.RenderMegalosaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -27,7 +27,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -64,8 +67,6 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	public static String getPeriod() {return "Jurassic";}
 
-	//public static String getHabitat() {return "Terrestrial Gorgonopsian";}
-
 	@Override
 	public int getEatLength() {
 		return 40;
@@ -73,13 +74,13 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public int getRoarLength() {
-		return 80;
-	}
+		return 40;
+	} //Idle
 
 	@Override
 	public int getNoiseLength() {
 		return 40;
-	}
+	} //Roar
 
 	@Override
 	public boolean hasNest() {
@@ -272,20 +273,8 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 		//System.err.println("Testing laying conditions");
 		BlockPos posNest = pos;
 		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
+			TileEntity te = world.getTileEntity(pos);
+			return (((BlockNest.TileEntityNest)te).getStackInSlot(0).isEmpty());
 		}
 		return false;
 	}

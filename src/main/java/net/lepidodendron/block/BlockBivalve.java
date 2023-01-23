@@ -2,6 +2,7 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -13,7 +14,6 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
@@ -136,7 +136,7 @@ import java.util.Random;
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+		return new ItemStack(ItemBivalveRaw.block, (int) (1)).getItem();
 	}
 
 	@Override

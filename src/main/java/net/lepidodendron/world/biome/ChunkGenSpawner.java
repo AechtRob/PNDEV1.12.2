@@ -317,7 +317,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                //DEVONIAN:
                else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep")
-                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hillsdevonian_ocean_deep_rocky")
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_deep_rocky")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_beach")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_forest")
                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_coastal")) {

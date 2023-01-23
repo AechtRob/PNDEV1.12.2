@@ -10403,6 +10403,7 @@ tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 tile.pf_zircon_glass_tile.name=Zircon Glass Tile
 item.pf_nesting.name=Nesting Material
+item.pf_bivalve_raw.name=Raw Shellfish
 tile.pf_sulfuric_acid.name=Lab-Grade Sulfuric Acid
 wordjoiner.for.name=for
 tooltip.palaeopedia.name="Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks."

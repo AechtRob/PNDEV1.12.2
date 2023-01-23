@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraParmastega extends EntityPrehistoricFloraSwim
 		minWidth = 0.1F;
 		maxWidth = 0.65F;
 		maxHeight = 0.4F;
-		maxHealthAgeable = 22.0D;
+		maxHealthAgeable = 10.0D;
 	}
 
 	@Override

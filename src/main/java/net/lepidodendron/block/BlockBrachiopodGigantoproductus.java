@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.item.entities.ItemBivalveRaw;
 import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.minecraft.block.Block;
@@ -366,7 +367,7 @@ public class BlockBrachiopodGigantoproductus extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-			return new ItemStack(Blocks.AIR, (int) (1)).getItem();
+			return new ItemStack(ItemBivalveRaw.block, (int) (1)).getItem();
 		}
 
 		@Override

@@ -170,9 +170,9 @@ public class BlockNest extends ElementsLepidodendronMod.ModElement {
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.0625, 0.9375));
 				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.1875, 0, 0.1875, 0.8125, 0.125, 0.8125));
 			}
-			else if (!this.getActualState(state, worldIn, pos).getValue(BIRD)){
-				addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.05, 0, 0.05, 0.95, 0.2, 0.95));
-			}
+			//else if (!this.getActualState(state, worldIn, pos).getValue(BIRD)){
+			//	addCollisionBoxToList(pos, entityBox, collidingBoxes, new AxisAlignedBB(0.05, 0, 0.05, 0.95, 0.2, 0.95));
+			//}
 		}
 
 		@Override

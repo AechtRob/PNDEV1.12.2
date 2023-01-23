@@ -1,8 +1,10 @@
 package net.lepidodendron.entity.ai;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraCaptorhinus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.item.entities.ItemCaptorhinusTail;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.item.EntityItem;
@@ -92,7 +94,10 @@ public class EatMeatItemsAI extends EntityAIBase {
             if (!currentItem.getItem().isEmpty()) {
                 if (((OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), currentItem.getItem()))
                     || (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatcooked"), currentItem.getItem())))
-                    && !cantReachItem(currentItem)) {
+                    && !cantReachItem(currentItem)
+                    //An exception so that Captorhinus wont't eat its own tail!
+                    && (!(this.entity instanceof EntityPrehistoricFloraCaptorhinus && currentItem.getItem().getItem() == ItemCaptorhinusTail.block))
+                ) {
                     return currentItem;
                 }
             }

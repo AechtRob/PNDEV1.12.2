@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraDiplocaulus extends EntityPrehistoricFloraSwi
 
 	@Override
 	public boolean isSmall() {
-		return this.getAgeScale() < 0.8;
+		return true;
 	}
 
 	public static String getPeriod() {return "Carboniferous - Permian";}
