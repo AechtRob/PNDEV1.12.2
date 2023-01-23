@@ -14,6 +14,9 @@ public class RenderDatheosaurus extends RenderLiving<EntityPrehistoricFloraDathe
     public RenderDatheosaurus(RenderManager mgr) {
         super(mgr, new ModelDatheosaurus(), 0.25F);
     }
+    public static float getScaler() {
+        return 0.558f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDatheosaurus entity) {
@@ -27,7 +30,7 @@ public class RenderDatheosaurus extends RenderLiving<EntityPrehistoricFloraDathe
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDatheosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.25F;
     }

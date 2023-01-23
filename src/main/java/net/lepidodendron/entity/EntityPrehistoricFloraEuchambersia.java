@@ -208,19 +208,19 @@ public class EntityPrehistoricFloraEuchambersia extends EntityPrehistoricFloraDi
 		return 0.0F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0.8;
+		return 0.2;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 0.5;
+		return 0.2;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.2;
+		return 0.14;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
-		return 0.0F;
+		return 0.02F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.2;
+		return 0.1;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
 		return 0.0F;

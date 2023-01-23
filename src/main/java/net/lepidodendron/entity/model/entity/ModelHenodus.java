@@ -242,19 +242,48 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.henodus.render(f5 * 0.45f);
+        this.henodus.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.henodus.offsetZ = -0.11F;
-        this.henodus.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticPlinth(float f) {
+        this.henodus.offsetZ = -0.F;
+        this.henodus.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.henodus.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(shell, 0.2382F, -0.1096F, 0.4232F);
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, -0.0436F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, 0.0436F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.5236F, -0.0436F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.5236F, 0.0436F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.7854F, -0.0436F);
+        this.setRotateAngle(cube_r6, 0.0F, -0.7854F, 0.0436F);
+        this.setRotateAngle(cube_r7, 0.0F, -0.1309F, -0.0436F);
+        this.setRotateAngle(cube_r8, 0.0F, 0.1309F, 0.0436F);
+        this.setRotateAngle(neck, 0.3934F, -0.1744F, -0.0077F);
+        this.setRotateAngle(cube_r9, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.3237F, -0.3323F, -0.109F);
+        this.setRotateAngle(cube_r10, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.18F, -0.3007F, -0.5509F);
+        this.setRotateAngle(cube_r14, 0.18F, 0.3007F, 0.5509F);
+        this.setRotateAngle(jaw, 0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg, 0.1309F, -0.3491F, 0.0F);
+        this.setRotateAngle(frontleftleg2, 0.4378F, -0.3751F, -0.7132F);
+        this.setRotateAngle(frontrightleg3, 0.1309F, 0.3491F, 0.0F);
+        this.setRotateAngle(frontrightleg4, 1.3847F, 0.0779F, 1.2752F);
+        this.setRotateAngle(backleftleg, -0.2182F, 0.3054F, 0.0F);
+        this.setRotateAngle(backleftleg2, -0.1808F, 0.1396F, 0.8845F);
+        this.setRotateAngle(backrightleg3, -0.2182F, -0.3054F, 0.0F);
+        this.setRotateAngle(backrightleg4, 0.1897F, -0.1084F, -1.0575F);
+        this.setRotateAngle(tail, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3491F, 0.0F);
+        this.henodus.offsetY = -0.23F;
+        this.henodus.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {

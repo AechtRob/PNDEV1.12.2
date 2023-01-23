@@ -216,18 +216,47 @@ public class ModelForeyia extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 * 0.2F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         //this.body.offsetX = -0.09F;
         this.body.offsetY = -0.19F;
         this.body.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.setRotateAngle(cube_r1, 0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r9, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(pelvicfinL, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(pelvicfinR, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.7854F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinL, -0.1745F, 0.3491F, 0.0F);
+        this.setRotateAngle(pectoralfinR, -0.1745F, -0.3491F, 0.0F);
+        //this.body.offsetX = -0.09F;
+        this.body.offsetY = -0.23F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;

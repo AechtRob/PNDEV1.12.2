@@ -14,6 +14,9 @@ public class RenderGemuendina extends RenderLiving<EntityPrehistoricFloraGemuend
     public RenderGemuendina(RenderManager mgr) {
         super(mgr, new ModelGemuendina(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.29F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraGemuendina entity) {
@@ -27,7 +30,7 @@ public class RenderGemuendina extends RenderLiving<EntityPrehistoricFloraGemuend
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraGemuendina entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         //this.shadowSize = entity.width * scale * 0.3f;
