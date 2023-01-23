@@ -363,6 +363,7 @@ public class ModTriggers
 
     public static final CustomTrigger CLICK_KERAPHYTON = new CustomTrigger("pf_book_keraphyton");
     public static final CustomTrigger CLICK_PIETZSCHIA = new CustomTrigger("pf_book_pietzschia");
+    public static final CustomTrigger CLICK_FLABELLOPTERIS = new CustomTrigger("pf_book_flabellopteris");
 
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
@@ -1315,6 +1316,7 @@ public class ModTriggers
             CLICK_AMENOTAXUS,
             CLICK_KERAPHYTON,
             CLICK_PIETZSCHIA,
+            CLICK_FLABELLOPTERIS,
         
             //Grouped ones:
             CLICK_BLASTOID,

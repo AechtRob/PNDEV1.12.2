@@ -4,9 +4,9 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.base.SeedSporeBushBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -37,13 +37,14 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:pietzschia")
+public class BlockFlabellopteris extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:flabellopteris")
 	public static final Block block = null;
-	public BlockPietzschia(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.pietzschia);
+	public BlockFlabellopteris(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.flabellopteris);
 	}
 
 	@Override
@@ -56,27 +57,27 @@ public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:pietzschia", "inventory"));
+				new ModelResourceLocation("lepidodendron:flabellopteris", "inventory"));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("plantdnaPNlepidodendron:pietzschia", BlockPietzschia.block);
-		OreDictionary.registerOre("plantPrehistoric", BlockPietzschia.block);
-		OreDictionary.registerOre("plant", BlockPietzschia.block);
+		OreDictionary.registerOre("plantdnaPNlepidodendron:flabellopteris", BlockFlabellopteris.block);
+		OreDictionary.registerOre("plantPrehistoric", BlockFlabellopteris.block);
+		OreDictionary.registerOre("plant", BlockFlabellopteris.block);
 	}
 
-	public static class BlockCustomFlower extends SeedSporeBushBase {
+
+	public static class BlockCustomFlower extends BlockBush {
 		public BlockCustomFlower() {
-			super(Material.PLANTS);
 			setSoundType(SoundType.PLANT);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			setHardness(0F);
 			setResistance(0F);
 			setLightLevel(0F);
-			setTranslationKey("pf_pietzschia");
-			setRegistryName("pietzschia");
+			setTranslationKey("pf_flabellopteris");
+			setRegistryName("flabellopteris");
 		}
 
 		@Override
@@ -118,6 +119,24 @@ public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 		}
+		
+		@Override
+		public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
+			super.updateTick(world, pos, state, random);
+	    	
+	        if (!world.isRemote)
+	        {
+	            if (!world.isAreaLoaded(pos, 3)) return;
+	            
+		        else {
+		        	if ((Math.random() > 0.7)) {
+						if ((Math.random() > 0.7)) {
+							world.setBlockState(pos, BlockFlabellopterisSpore.block.getDefaultState(), 3);
+						}
+		        	}
+				}
+			}
+		}
 
 		@Override
 		public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
@@ -133,25 +152,12 @@ public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 			return new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 		}
-
-		//@Override
-		//public BlockFlower.EnumFlowerColor getBlockType() {
-		//	return BlockFlower.EnumFlowerColor.YELLOW;
-		//}
-
-		//@SideOnly(Side.CLIENT)
-		//@Override
-		//public void getSubBlocks(CreativeTabs tab, net.minecraft.util.NonNullList<ItemStack> list) {
-		//	for (BlockFlower.EnumFlowerType blockflower$enumflowertype : BlockFlower.EnumFlowerType.getTypes(this.getBlockType())) {
-		//		list.add(new ItemStack(this, 1, blockflower$enumflowertype.getMeta()));
-		//	}
-		//}
 		
 	    @SideOnly(Side.CLIENT)
 		@Override
 	    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 	        if (LepidodendronConfig.showTooltips) {
-				tooltip.add("Type: Cladoxylopsid bush");
+				tooltip.add("Type: Iridopteridales(?)/Rhacophytales(?) proto-plant");
 	        	tooltip.add("Periods: late Devonian");
 	        	tooltip.add("Propagation: spores");}
 	        super.addInformation(stack, player, tooltip, advanced);
@@ -162,21 +168,6 @@ public class BlockPietzschia extends ElementsLepidodendronMod.ModElement {
 	    {
 	        return EnumOffsetType.XZ;
 	    }
-
-		@Override
-		public Block planted() {
-			return BlockPietzschia.block;
-		}
-
-		@Override
-		public int offsetY() {
-			return 1;
-		}
-
-		@Override
-		public Item blockItem() {
-			return null;
-		}
 	}
 	
 }

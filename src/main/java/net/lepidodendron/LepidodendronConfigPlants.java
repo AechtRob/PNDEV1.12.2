@@ -1189,6 +1189,13 @@ public class LepidodendronConfigPlants {
     public static int minheightPertica = 1;
     public static int maxheightPertica = 90;
     public static double multiplierPertica = 1;
+    public static boolean genFlabellopteris = false;
+    public static String[] genFlabellopterisBlacklistBiomes = new String[0];
+    public static String[] genFlabellopterisOverrideBiomes = new String[0];
+    public static int[] dimFlabellopteris = new int[]{0};
+    public static int minheightFlabellopteris = 1;
+    public static int maxheightFlabellopteris = 90;
+    public static double multiplierFlabellopteris = 1;
     public static boolean genTetraxylopteris = false;
     public static String[] genTetraxylopterisBlacklistBiomes = new String[0];
     public static String[] genTetraxylopterisOverrideBiomes = new String[0];
@@ -8598,6 +8605,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Pertica", "multiplierPertica", multiplierPertica);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPertica = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Flabellopteris", "genFlabellopteris", genFlabellopteris);
+        prop.setComment("Set to true to generate Flabellopteris naturally [default: false]");
+        genFlabellopteris = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Flabellopteris", "genFlabellopterisBlacklistBiomes", genFlabellopterisBlacklistBiomes);
+        prop.setComment("List of biomes Flabellopteris are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genFlabellopterisBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Flabellopteris", "genFlabellopterisOverrideBiomes", genFlabellopterisOverrideBiomes);
+        prop.setComment("List of biomes Flabellopteris are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genFlabellopterisOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Flabellopteris", "dimFlabellopteris", dimFlabellopteris);
+        prop.setComment("List of dimension IDs Flabellopteris can generate in [default: 0]");
+        dimFlabellopteris = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Flabellopteris", "minheightFlabellopteris", minheightFlabellopteris);
+        prop.setComment("Minimum height that Flabellopteris can generate (1 to 250) [default: 1]");
+        minheightFlabellopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Flabellopteris", "maxheightFlabellopteris", maxheightFlabellopteris);
+        prop.setComment("Maximum height that Flabellopteris can generate (1 to 250, or set to 0 for unlimited) [default: 85]");
+        maxheightFlabellopteris = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Flabellopteris", "multiplierFlabellopteris", multiplierFlabellopteris);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierFlabellopteris = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Tetraxylopteris", "genTetraxylopteris", genTetraxylopteris);
