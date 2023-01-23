@@ -118,7 +118,7 @@ public class BlockColumnarisLeaves1 extends ElementsLepidodendronMod.ModElement 
 		                }
 		            }
 		        }
-				if ((Math.random() >= 0.95) && (LepidodendronConfig.doPropagation)) {
+				if ((Math.random() >= 0.75) && (LepidodendronConfig.doPropagation)) {
 					IBlockState _bs = BlockColumnarisFruitBlock.block.getDefaultState();
 					worldIn.setBlockState(pos, _bs, 3);
 					}
@@ -152,7 +152,7 @@ public class BlockColumnarisLeaves1 extends ElementsLepidodendronMod.ModElement 
 	                }
 	            }
 	        }
-			if ((Math.random() >= 0.9) && (LepidodendronConfig.doPropagation)) {
+			if ((Math.random() >= 0.75) && (LepidodendronConfig.doPropagation)) {
 				IBlockState _bs = BlockColumnarisFruitBlock.block.getDefaultState();
 				worldIn.setBlockState(pos, _bs, 3);
 				}
