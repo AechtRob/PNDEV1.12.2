@@ -487,7 +487,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Tail, this.Tail2};
 
-        float speed = 0.1F;
+        float speed = 0.2F;
         float still = 1f;
         float inwater = 1f;
         if (f3 == 0.0F) {
@@ -521,7 +521,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.Eastmanosteus.rotateAngleZ = (float) Math.toRadians(90);
-            this.Eastmanosteus.offsetY = -0.6F;
+            this.Eastmanosteus.offsetY = -0.7F;
             this.Eastmanosteus.offsetX = -0.6F;
             this.bob(Eastmanosteus, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
