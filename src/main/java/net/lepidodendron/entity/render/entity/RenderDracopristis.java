@@ -14,6 +14,9 @@ public class RenderDracopristis extends RenderLiving<EntityPrehistoricFloraDraco
     public RenderDracopristis(RenderManager mgr) {
         super(mgr, new ModelDracopristis(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.6F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDracopristis entity) {
@@ -27,7 +30,7 @@ public class RenderDracopristis extends RenderLiving<EntityPrehistoricFloraDraco
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDracopristis entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;

@@ -14,6 +14,9 @@ public class RenderDeltoptychius extends RenderLiving<EntityPrehistoricFloraDelt
     public RenderDeltoptychius(RenderManager mgr) {
         super(mgr, new ModelDeltoptychius(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.3F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDeltoptychius entity) {
@@ -27,7 +30,7 @@ public class RenderDeltoptychius extends RenderLiving<EntityPrehistoricFloraDelt
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDeltoptychius entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

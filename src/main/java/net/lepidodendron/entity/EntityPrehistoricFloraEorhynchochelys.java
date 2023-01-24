@@ -9,8 +9,12 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
+import net.lepidodendron.entity.render.entity.RenderEorhynchochelys;
+import net.lepidodendron.entity.render.entity.RenderEuchambersia;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -329,4 +333,55 @@ public class EntityPrehistoricFloraEorhynchochelys extends EntityPrehistoricFlor
 		return LepidodendronMod.EORHYNCHOCHELYS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetPlinth() { return 0.62; }
+	public static double offsetWall() { return 0.05; }
+	public static double upperfrontverticallinedepth() {
+		return 1.3;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.1;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_EORHYNCHOCHELYS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelEorhynchochelys;
+	}
+	public static float getScaler() {
+		return RenderEorhynchochelys.getScaler();
+	}
 }
