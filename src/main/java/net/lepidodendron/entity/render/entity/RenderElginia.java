@@ -14,6 +14,9 @@ public class RenderElginia extends RenderLiving<EntityPrehistoricFloraElginia> {
     public RenderElginia(RenderManager mgr) {
         super(mgr, new ModelElginia(), 0.325f);
     }
+    public static float getScaler() {
+        return 0.42f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraElginia entity) {
@@ -27,7 +30,7 @@ public class RenderElginia extends RenderLiving<EntityPrehistoricFloraElginia> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraElginia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.325F;
     }

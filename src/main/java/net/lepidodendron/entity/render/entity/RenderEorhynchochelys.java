@@ -14,6 +14,9 @@ public class RenderEorhynchochelys extends RenderLiving<EntityPrehistoricFloraEo
     public RenderEorhynchochelys(RenderManager mgr) {
         super(mgr, new ModelEorhynchochelys(), 0.0f);
     }
+    public static float getScaler() {
+        return 0.42f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEorhynchochelys entity) {
@@ -27,7 +30,7 @@ public class RenderEorhynchochelys extends RenderLiving<EntityPrehistoricFloraEo
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEorhynchochelys entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

@@ -228,15 +228,11 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.42f);
+        this.body.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.8F;
+    public void renderStaticPlinth(float f) {
+        this.body.offsetZ = -0.12F;
         this.head.rotateAngleY = (float)Math.toRadians(-17.5);
         this.neck2.rotateAngleY = (float)Math.toRadians(-22.5);
         this.neck.rotateAngleY = (float)Math.toRadians(-17.5);
@@ -247,10 +243,78 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
         this.tail5.rotateAngleY = (float)Math.toRadians(32.5);
         this.tail6.rotateAngleY = (float)Math.toRadians(27.5);
         this.lowerjaw.rotateAngleX = (float)Math.toRadians(22.5);
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, -0.521F, -0.8538F, 0.8763F);
+        this.setRotateAngle(backleftleg2, -0.0411F, -0.3027F, 0.1372F);
+        this.setRotateAngle(backleftleg3, 0.0F, -0.4363F, 0.0873F);
+        this.setRotateAngle(backrightleg, -0.2856F, 0.5973F, -0.4812F);
+        this.setRotateAngle(backrightleg2, -0.0411F, 0.3027F, -0.1372F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.4363F, -0.0873F);
+        this.setRotateAngle(tail, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0876F, -0.0869F, -0.0076F);
+        this.setRotateAngle(tail3, -0.0443F, -0.1744F, 0.0077F);
+        this.setRotateAngle(tail4, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail5, 0.0962F, -0.4346F, -0.0406F);
+        this.setRotateAngle(tail6, 0.0472F, -0.3923F, -0.0181F);
+        this.setRotateAngle(neck, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftarm, -0.0455F, 0.5062F, 0.4291F);
+        this.setRotateAngle(frontleftarm2, 0.0233F, -0.2608F, 0.1715F);
+        this.setRotateAngle(frontleftarm3, 0.0406F, -0.4346F, -0.0962F);
+        this.setRotateAngle(frontrightarm, 0.0258F, 0.3211F, -0.6053F);
+        this.setRotateAngle(frontrightarm2, 0.0233F, 0.2608F, -0.1715F);
+        this.setRotateAngle(frontrightarm3, 0.0406F, 0.4346F, 0.0962F);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.rotateAngleZ = (float) Math.toRadians(15);
+        this.body.offsetX = -0.1F;
+        this.body.offsetY = -0.5F;
+        this.body.offsetZ = -0.01F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body3, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg, -0.521F, -0.8538F, 0.8763F);
+        this.setRotateAngle(backleftleg2, -0.0411F, -0.3027F, 0.1372F);
+        this.setRotateAngle(backleftleg3, 0.0F, -0.4363F, 0.0873F);
+        this.setRotateAngle(backrightleg, -0.2856F, 0.5973F, -0.4812F);
+        this.setRotateAngle(backrightleg2, -0.0411F, 0.3027F, -0.1372F);
+        this.setRotateAngle(backrightleg3, 0.0F, 0.4363F, -0.0873F);
+        this.setRotateAngle(tail, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0876F, -0.0869F, -0.0076F);
+        this.setRotateAngle(tail3, -0.0443F, -0.1744F, 0.0077F);
+        this.setRotateAngle(tail4, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail5, 0.0962F, -0.4346F, -0.0406F);
+        this.setRotateAngle(tail6, 0.0472F, -0.3923F, -0.0181F);
+        this.setRotateAngle(neck, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerjaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftarm, -0.0455F, 0.5062F, 0.4291F);
+        this.setRotateAngle(frontleftarm2, 0.0233F, -0.2608F, 0.1715F);
+        this.setRotateAngle(frontleftarm3, 0.0406F, -0.4346F, -0.0962F);
+        this.setRotateAngle(frontrightarm, 0.0258F, 0.3211F, -0.6053F);
+        this.setRotateAngle(frontrightarm2, 0.0233F, 0.2608F, -0.1715F);
+        this.setRotateAngle(frontrightarm3, 0.0406F, 0.4346F, 0.0962F);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.rotateAngleZ = (float) Math.toRadians(-20);
+        this.body.offsetX = -0.1F;
+        this.body.offsetY = 0.1F;
+        this.body.offsetZ = -0.016F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
@@ -263,7 +327,7 @@ public class ModelEorhynchochelys extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.88F;
+        this.body.offsetY = 0F;
         this.body.offsetZ = -0.2F;
 
         EntityPrehistoricFloraEorhynchochelys Eorhynchochelys = (EntityPrehistoricFloraEorhynchochelys) e;

@@ -291,18 +291,53 @@ public class ModelEryops extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.93F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.jaw.rotateAngleX = (float) Math.toRadians(26);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body3_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body2_r1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, -0.132F, 0.1298F, -0.0172F);
+        this.setRotateAngle(neck3_r1, -0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(neck2_r1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(head5_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(head4_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head5_r2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(eyeL_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(eyeR_r1, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw5_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw4_r1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(jaw2_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(head4_r2, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(head3_r1, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(tail, -0.2184F, -0.0426F, 0.0094F);
+        this.setRotateAngle(tail2, -0.0886F, -0.1739F, 0.0154F);
+        this.setRotateAngle(tail3, 0.0886F, -0.1739F, -0.0154F);
+        this.setRotateAngle(tail4, 0.1787F, 0.2148F, 0.0385F);
+        this.setRotateAngle(tail5, 0.1806F, 0.2577F, 0.0465F);
+        this.setRotateAngle(legFL, 0.0F, 0.5672F, 0.0F);
+        this.setRotateAngle(legFL1, -0.4181F, -0.5692F, 0.2351F);
+        this.setRotateAngle(legFL2, 0.2569F, 0.0594F, -0.1642F);
+        this.setRotateAngle(legFR, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(legFR1, 0.3722F, -0.3272F, 0.1238F);
+        this.setRotateAngle(legFR2, -0.431F, -0.0489F, -0.1211F);
+        this.setRotateAngle(legHL, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(legHL1, 0.7346F, 0.2739F, 0.0311F);
+        this.setRotateAngle(legHL2, -0.6109F, -0.3491F, 0.1309F);
+        this.setRotateAngle(legHR, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(legHR1, -0.2121F, 0.737F, 0.0376F);
+        this.setRotateAngle(legHR2, 0.231F, 0.1742F, 0.0215F);
+        this.body.offsetY = -0.15F;
+        this.body.offsetZ = -0.03F;
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -314,7 +349,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.1F; //72
+        this.body.offsetY = 0F; //72
 
         EntityPrehistoricFloraEryops Eryops = (EntityPrehistoricFloraEryops) e;
 
