@@ -75,8 +75,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelCyamodus modelCyamodus;
     private static final ResourceLocation TEXTURE_DASYCEPS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dasyceps.png");
     private final ModelDasyceps modelDasyceps;
-    private static final ResourceLocation TEXTURE_DATHEOSAURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/datheosaurus.png");
-    private final ModelDatheosaurus modelDatheosaurus;
     private static final ResourceLocation TEXTURE_DIPLOCAULUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diplocaulus.png");
     private final ModelDiplocaulus modelDiplocaulus;
     private static final ResourceLocation TEXTURE_DIPLOCERASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/diploceraspis.png");
@@ -99,8 +97,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
     private final ModelEuparkeria modelEuparkeria;
     private static final ResourceLocation TEXTURE_GERROTHORAX = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerrothorax.png");
     private final ModelGerrothorax modelGerrothorax;
-    private static final ResourceLocation TEXTURE_HENODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/henodus.png");
-    private final ModelHenodus modelHenodus;
     private static final ResourceLocation TEXTURE_HIBBERTOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hibbertopterus.png");
     private final ModelHibbertopterus modelHibbertopterus;
     private static final ResourceLocation TEXTURE_HYLONOMUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/hylonomus.png");
@@ -201,7 +197,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelClevosaurus = new ModelClevosaurus();
         this.modelCyamodus = new ModelCyamodus();
         this.modelDasyceps = new ModelDasyceps();
-        this.modelDatheosaurus = new ModelDatheosaurus();
         this.modelDiplocaulus = new ModelDiplocaulus();
         this.modelDiploceraspis = new ModelDiploceraspis();
         this.modelDvinia = new ModelDvinia();
@@ -213,7 +208,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
         this.modelEudimorphodon = new ModelEudimorphodon();
         this.modelEuparkeria = new ModelEuparkeria();
         this.modelGerrothorax = new ModelGerrothorax();
-        this.modelHenodus = new ModelHenodus();
         this.modelHibbertopterus = new ModelHibbertopterus();
         this.modelHylonomus = new ModelHylonomus();
         this.modelHypsognathus = new ModelHypsognathus();
@@ -469,16 +463,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_DASYCEPS);
                                 GlStateManager.scale(0.18F, 0.18F, 0.18F);
                                 modelDasyceps.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraDatheosaurus.class) {
-                                double offset = 0.85;
-                                //double voffset = -0.15;
-                                double voffset = 0;
-                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                                GlStateManager.rotate(180, 0F, 0F, 1F);
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_DATHEOSAURUS);
-                                GlStateManager.scale(0.35F, 0.35F, 0.35F);
-                                modelDatheosaurus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraDiplocaulus.class) {
                                 double offset = 0.55;
                                 GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5);
@@ -584,16 +568,6 @@ public class RenderDisplayPlinth extends TileEntitySpecialRenderer<BlockDisplayP
                                 this.bindTexture(TEXTURE_GERROTHORAX);
                                 GlStateManager.scale(0.34F, 0.34F, 0.34F);
                                 modelGerrothorax.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraHenodus.class) {
-                                double offset = 0.72;
-                                //double voffset = -0.15;
-                                double voffset = 0;
-                                GlStateManager.translate(x + 0.5, y + 0.5 + offset, z + 0.5 + voffset);
-                                GlStateManager.rotate(180, 0F, 0F, 1F);
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                this.bindTexture(TEXTURE_HENODUS);
-                                GlStateManager.scale(0.3F, 0.3F, 0.3F);
-                                modelHenodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraHibbertopterus.class) {
                                 double offset = 1.4;
                                 //double voffset = -0.15;
