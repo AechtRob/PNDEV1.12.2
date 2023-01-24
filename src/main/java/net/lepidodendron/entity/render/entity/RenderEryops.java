@@ -14,6 +14,9 @@ public class RenderEryops extends RenderLiving<EntityPrehistoricFloraEryops> {
     public RenderEryops(RenderManager mgr) {
         super(mgr, new ModelEryops(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.93F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEryops entity) {
@@ -27,7 +30,7 @@ public class RenderEryops extends RenderLiving<EntityPrehistoricFloraEryops> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEryops entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.5F;
     }

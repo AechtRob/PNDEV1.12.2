@@ -464,18 +464,60 @@ public class ModelElginia extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.elginia.render(f5 * 0.42f);
+        this.elginia.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.elginia.offsetZ = -0.6F;
-        this.elginia.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticPlinth(float f) {
+        this.setRotateAngle(lowerbody, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg4, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg5, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg6, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.1329F, 0.173F, -0.023F);
+        this.setRotateAngle(tail2, -0.264F, 0.1264F, -0.0341F);
+        this.setRotateAngle(tail3, -0.2214F, 0.1704F, -0.0381F);
+        this.setRotateAngle(upperbody, 0.3518F, -0.123F, -0.045F);
+        this.setRotateAngle(frontrightleg, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(frontrightleg2, -0.3927F, 0.3054F, 0.0F);
+        this.setRotateAngle(frontrightleg3, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg4, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(frontleftleg5, 0.3927F, 0.2618F, 0.0F);
+        this.setRotateAngle(frontleftleg6, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.2256F, -0.2555F, -0.0579F);
+        this.setRotateAngle(head, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.1745F, 0.0F, 0.0F);
+        this.elginia.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(lowerbody, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg2, 0.8727F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightleg3, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg4, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg5, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(backleftleg6, -0.6109F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, -0.1329F, 0.173F, -0.023F);
+        this.setRotateAngle(tail2, -0.264F, 0.1264F, -0.0341F);
+        this.setRotateAngle(tail3, -0.2214F, 0.1704F, -0.0381F);
+        this.setRotateAngle(upperbody, 0.3518F, -0.123F, -0.045F);
+        this.setRotateAngle(frontrightleg, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(frontrightleg2, -0.3927F, 0.3054F, 0.0F);
+        this.setRotateAngle(frontrightleg3, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftleg4, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(frontleftleg5, 0.3927F, 0.2618F, 0.0F);
+        this.setRotateAngle(frontleftleg6, -0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(neck, 0.2256F, -0.2555F, -0.0579F);
+        this.setRotateAngle(head, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(body, -0.1745F, 0.0F, 0.0F);
+        this.elginia.rotateAngleY = (float) Math.toRadians(90);
+        this.elginia.offsetY = -0.04F;
+        this.elginia.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -487,7 +529,7 @@ public class ModelElginia extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.elginia.offsetY = 0.85F;
+        this.elginia.offsetY = 0F;
 
         EntityPrehistoricFloraElginia Elginia = (EntityPrehistoricFloraElginia) e;
         float masterSpeed = Elginia.getTravelSpeed();

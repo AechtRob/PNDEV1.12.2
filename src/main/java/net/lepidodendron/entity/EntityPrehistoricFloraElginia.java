@@ -7,8 +7,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderElginia;
+import net.lepidodendron.entity.render.entity.RenderEorhynchochelys;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -263,4 +267,55 @@ public class EntityPrehistoricFloraElginia extends EntityPrehistoricFloraLandBas
 		return LepidodendronMod.ELGINIA_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetPlinth() { return 0.6; }
+	public static double offsetWall() { return 0.05; }
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.3;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.3;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.1;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.05F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ELGINIA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelElginia;
+	}
+	public static float getScaler() {
+		return RenderElginia.getScaler();
+	}
 }

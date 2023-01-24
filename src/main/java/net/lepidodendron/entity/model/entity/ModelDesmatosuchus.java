@@ -413,21 +413,44 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Desmatosuchus.render(f5 * 0.727f);
+        this.Desmatosuchus.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.disableCull();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
         this.neck.offsetY = -0.07F;
         this.jaw.rotateAngleX = (float) Math.toRadians(32.5);
         this.head.rotateAngleX = (float) Math.toRadians(-12.5);
         this.neck.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body3, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.0873F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(leftBackLeg, -0.0451F, -0.0301F, 0.0006F);
+        this.setRotateAngle(leftBjoint, 0.9163F, 0.0F, 0.0F);
+        this.setRotateAngle(leftBfoot, -0.6981F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBackLeg, -0.7418F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBjoint, 0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(rightBfoot, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(bodyfront, -0.0886F, -0F, 0.0154F);
+        this.setRotateAngle(neck, 0.2712F, -0.0497F, -0.1492F);
+        this.setRotateAngle(head, 0.0473F, -0.2556F, -0.0458F);
+        this.setRotateAngle(jaw, 0.2182F, 0.0F, 0.0F);
+        this.setRotateAngle(leftFrontLeg, -0.48F, 0.2618F, -0.3491F);
+        this.setRotateAngle(LeftFjoint, -0.5672F, -0.0436F, 0.3491F);
+        this.setRotateAngle(LeftFFoot, 1.3577F, -0.0983F, -0.1562F);
+        this.setRotateAngle(rightFrontLeg, 0.7854F, -0.2618F, 0.3491F);
+        this.setRotateAngle(RightFjoint, -0.3491F, 0.0436F, -0.3491F);
+        this.setRotateAngle(RightFFoot, 0.436F, 0.0184F, -0.0832F);
+        this.Desmatosuchus.rotateAngleY = (float) Math.toRadians(90);
+        this.Desmatosuchus.offsetY = -0.11F;
+        this.Desmatosuchus.offsetZ = -0.04F;
+        this.Desmatosuchus.render(0.01F);
+        resetToDefaultPose();
     }
 
 
@@ -461,7 +484,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
 
         if (entityDesmatosuchus.getAnimation() == entityDesmatosuchus.LAY_ANIMATION) {
-            this.Desmatosuchus.offsetY = 0.40F;
+            this.Desmatosuchus.offsetY = 0F;
             //this.Desmatosuchus.offsetZ = ZOffsetter;
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             this.walk(neck, 0.5F * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
@@ -470,7 +493,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
          }
 
         if (f3 == 0.0F || !entityDesmatosuchus.getIsMoving()) { //Not moving
-            this.Desmatosuchus.offsetY = 0.40F;
+            this.Desmatosuchus.offsetY = 0F;
             //this.Desmatosuchus.offsetZ = ZOffsetter;
             this.swing(neck, 0.06F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             this.walk(neck, 0.06F * 2F, -0.02F, false, 0.5F,0.01F, f2, 0.8F);
@@ -479,7 +502,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
             return;
          }
 
-        this.Desmatosuchus.offsetY = 0.44F;
+        this.Desmatosuchus.offsetY = 0F;
         float speed = masterSpeed / 2.225F;
         if (entityDesmatosuchus.getIsFast()) {
             speed = speed * 2;
