@@ -3307,6 +3307,264 @@ public class RenderHandler {
                 return new RenderSilurolepis(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCometicercus.class, new IRenderFactory<EntityPrehistoricFloraCometicercus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCometicercus> createRenderFor(RenderManager manager) {
+                return new RenderCometicercus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPentecopterus.class, new IRenderFactory<EntityPrehistoricFloraPentecopterus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPentecopterus> createRenderFor(RenderManager manager) {
+                return new RenderPentecopterus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraOxyosteus.class, new IRenderFactory<EntityPrehistoricFloraOxyosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraOxyosteus> createRenderFor(RenderManager manager) {
+                return new RenderOxyosteus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTegeolepis.class, new IRenderFactory<EntityPrehistoricFloraTegeolepis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTegeolepis> createRenderFor(RenderManager manager) {
+                return new RenderTegeolepis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGooloogongia.class, new IRenderFactory<EntityPrehistoricFloraGooloogongia>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGooloogongia> createRenderFor(RenderManager manager) {
+                return new RenderGooloogongia(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWarneticaris.class, new IRenderFactory<EntityPrehistoricFloraWarneticaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWarneticaris> createRenderFor(RenderManager manager) {
+                return new RenderWarneticaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSchugurocaris.class, new IRenderFactory<EntityPrehistoricFloraSchugurocaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSchugurocaris> createRenderFor(RenderManager manager) {
+                return new RenderSchugurocaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCeratiocaris.class, new IRenderFactory<EntityPrehistoricFloraCeratiocaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCeratiocaris> createRenderFor(RenderManager manager) {
+                return new RenderCeratiocaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplacanthus.class, new IRenderFactory<EntityPrehistoricFloraDiplacanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDiplacanthus> createRenderFor(RenderManager manager) {
+                return new RenderDiplacanthus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraClimatius.class, new IRenderFactory<EntityPrehistoricFloraClimatius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraClimatius> createRenderFor(RenderManager manager) {
+                return new RenderClimatius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraNerepisacanthus.class, new IRenderFactory<EntityPrehistoricFloraNerepisacanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraNerepisacanthus> createRenderFor(RenderManager manager) {
+                return new RenderNerepisacanthus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGriphognathus.class, new IRenderFactory<EntityPrehistoricFloraGriphognathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGriphognathus> createRenderFor(RenderManager manager) {
+                return new RenderGriphognathus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraConcavicaris.class, new IRenderFactory<EntityPrehistoricFloraConcavicaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraConcavicaris> createRenderFor(RenderManager manager) {
+                return new RenderConcavicaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGogonasus.class, new IRenderFactory<EntityPrehistoricFloraGogonasus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGogonasus> createRenderFor(RenderManager manager) {
+                return new RenderGogonasus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraFallacosteus.class, new IRenderFactory<EntityPrehistoricFloraFallacosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraFallacosteus> createRenderFor(RenderManager manager) {
+                return new RenderFallacosteus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRolfosteus.class, new IRenderFactory<EntityPrehistoricFloraRolfosteus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRolfosteus> createRenderFor(RenderManager manager) {
+                return new RenderRolfosteus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCamuropiscis.class, new IRenderFactory<EntityPrehistoricFloraCamuropiscis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCamuropiscis> createRenderFor(RenderManager manager) {
+                return new RenderCamuropiscis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCtenurella.class, new IRenderFactory<EntityPrehistoricFloraCtenurella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCtenurella> createRenderFor(RenderManager manager) {
+                return new RenderCtenurella(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhamphodopsis.class, new IRenderFactory<EntityPrehistoricFloraRhamphodopsis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhamphodopsis> createRenderFor(RenderManager manager) {
+                return new RenderRhamphodopsis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGoodradigbeeon.class, new IRenderFactory<EntityPrehistoricFloraGoodradigbeeon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGoodradigbeeon> createRenderFor(RenderManager manager) {
+                return new RenderGoodradigbeeon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDraconichthys.class, new IRenderFactory<EntityPrehistoricFloraDraconichthys>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDraconichthys> createRenderFor(RenderManager manager) {
+                return new RenderDraconichthys(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMaterpiscis.class, new IRenderFactory<EntityPrehistoricFloraMaterpiscis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMaterpiscis> createRenderFor(RenderManager manager) {
+                return new RenderMaterpiscis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMicrobrachius.class, new IRenderFactory<EntityPrehistoricFloraMicrobrachius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMicrobrachius> createRenderFor(RenderManager manager) {
+                return new RenderMicrobrachius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBrindabellaspis.class, new IRenderFactory<EntityPrehistoricFloraBrindabellaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBrindabellaspis> createRenderFor(RenderManager manager) {
+                return new RenderBrindabellaspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWuttagoonaspis.class, new IRenderFactory<EntityPrehistoricFloraWuttagoonaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraWuttagoonaspis> createRenderFor(RenderManager manager) {
+                return new RenderWuttagoonaspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKujdanowiaspis.class, new IRenderFactory<EntityPrehistoricFloraKujdanowiaspis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKujdanowiaspis> createRenderFor(RenderManager manager) {
+                return new RenderKujdanowiaspis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhyllolepis.class, new IRenderFactory<EntityPrehistoricFloraPhyllolepis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPhyllolepis> createRenderFor(RenderManager manager) {
+                return new RenderPhyllolepis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCowralepis.class, new IRenderFactory<EntityPrehistoricFloraCowralepis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraCowralepis> createRenderFor(RenderManager manager) {
+                return new RenderCowralepis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGymnotrachelus.class, new IRenderFactory<EntityPrehistoricFloraGymnotrachelus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraGymnotrachelus> createRenderFor(RenderManager manager) {
+                return new RenderGymnotrachelus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBungartius.class, new IRenderFactory<EntityPrehistoricFloraBungartius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBungartius> createRenderFor(RenderManager manager) {
+                return new RenderBungartius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRhadinacanthus.class, new IRenderFactory<EntityPrehistoricFloraRhadinacanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRhadinacanthus> createRenderFor(RenderManager manager) {
+                return new RenderRhadinacanthus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraThrissops.class, new IRenderFactory<EntityPrehistoricFloraThrissops>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraThrissops> createRenderFor(RenderManager manager) {
+                return new RenderThrissops(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMuensterella.class, new IRenderFactory<EntityPrehistoricFloraMuensterella>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraMuensterella> createRenderFor(RenderManager manager) {
+                return new RenderMuensterella(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBelonostomusJurassic.class, new IRenderFactory<EntityPrehistoricFloraBelonostomusJurassic>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBelonostomusJurassic> createRenderFor(RenderManager manager) {
+                return new RenderBelonostomusJurassic(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBelonostomusCretaceous.class, new IRenderFactory<EntityPrehistoricFloraBelonostomusCretaceous>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraBelonostomusCretaceous> createRenderFor(RenderManager manager) {
+                return new RenderBelonostomusCretaceous(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAsteracanthus.class, new IRenderFactory<EntityPrehistoricFloraAsteracanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraAsteracanthus> createRenderFor(RenderManager manager) {
+                return new RenderAsteracanthus(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurboscinetes.class, new IRenderFactory<EntityPrehistoricFloraTurboscinetes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraTurboscinetes> createRenderFor(RenderManager manager) {
+                return new RenderTurboscinetes(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLeptolepis.class, new IRenderFactory<EntityPrehistoricFloraLeptolepis>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLeptolepis> createRenderFor(RenderManager manager) {
+                return new RenderLeptolepis(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRedfieldius.class, new IRenderFactory<EntityPrehistoricFloraRedfieldius>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraRedfieldius> createRenderFor(RenderManager manager) {
+                return new RenderRedfieldius(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLepidotes.class, new IRenderFactory<EntityPrehistoricFloraLepidotes>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraLepidotes> createRenderFor(RenderManager manager) {
+                return new RenderLepidotes(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDollocaris.class, new IRenderFactory<EntityPrehistoricFloraDollocaris>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraDollocaris> createRenderFor(RenderManager manager) {
+                return new RenderDollocaris(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPiranhamesodon.class, new IRenderFactory<EntityPrehistoricFloraPiranhamesodon>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraPiranhamesodon> createRenderFor(RenderManager manager) {
+                return new RenderPiranhamesodon(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraEntelognathus.class, new IRenderFactory<EntityPrehistoricFloraEntelognathus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraEntelognathus> createRenderFor(RenderManager manager) {
+                return new RenderEntelognathus(manager);
+            }
+        });
         */
 
 
