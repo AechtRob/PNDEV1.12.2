@@ -299,7 +299,7 @@ public class ModelNeeyambaspis extends AdvancedModelBase {
         if (isAtBottom) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
+            taildegree = 0.25F;
         }
 
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
