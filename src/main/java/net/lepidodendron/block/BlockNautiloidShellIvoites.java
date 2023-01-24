@@ -94,7 +94,7 @@ public class BlockNautiloidShellIvoites extends ElementsLepidodendronMod.ModElem
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.3D, 0.6D);
+			return new AxisAlignedBB(0.4D, 0.0D, 0.4D, 0.6D, 0.2D, 0.6D);
 		}
 
 		@Override
