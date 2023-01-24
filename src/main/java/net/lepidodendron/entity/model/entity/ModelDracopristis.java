@@ -235,6 +235,9 @@ public class ModelDracopristis extends AdvancedModelBase {
     }
     public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.15F;
+        this.body.offsetZ = -0.02F;
         this.body.render(0.01F);
         resetToDefaultPose();
     }
