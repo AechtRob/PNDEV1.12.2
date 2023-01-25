@@ -2,7 +2,7 @@
 	"name": "Enoploura",
 	"read_by_default": true,
 	"icon": "paleopedia:textures/enoploura_icon.png",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:_animal",
 	"turnin": "lepidodendron:pf_adv_book_enoploura",
 	"pages": [
 		{

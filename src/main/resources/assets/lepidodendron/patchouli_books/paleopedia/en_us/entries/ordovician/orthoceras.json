@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_orthoceras",
 			"title": "Orthoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Orthoceratidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Frozen, Sponge, Bryozoan & Ocean$(br2)>Cephalopoda$(br)>Orthocerida$(br)>Orthoceratidae"
 		},
 		{
 			"type": "image",

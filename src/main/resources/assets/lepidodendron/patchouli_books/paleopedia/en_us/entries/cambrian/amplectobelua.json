@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_amplectobelua",
 			"title": "Amplectobelua",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Anomalocarididae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_sacabambaspis",
 			"title": "Sacabambaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Pteraspidomorphi$(br)>Sacabambaspidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Lagoon, Sponge Forest$(br2)>Pteraspidomorphi$(br)>Sacabambaspidae"
 		},
 		{
 			"type": "image",

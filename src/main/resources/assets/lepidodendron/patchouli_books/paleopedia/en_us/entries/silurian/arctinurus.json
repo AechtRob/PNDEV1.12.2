@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_arctinurus",
 			"title": "Arctinurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_maclurina",
 			"title": "Maclurina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Macluritoidea"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Ocean & Sponge Forest$(br2)>Gastropoda$(br)>Macluritoidea"
 		},
 		{
 			"type": "image",

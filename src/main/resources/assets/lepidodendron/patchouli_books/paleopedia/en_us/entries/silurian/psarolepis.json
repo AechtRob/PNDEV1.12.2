@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_psarolepis",
 			"title": "Psarolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteichthyes$(br)>Sarcopterygii"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Osteichthyes$(br)>Sarcopterygii"
 		},
 		{
 			"type": "image",

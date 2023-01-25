@@ -9,12 +9,12 @@
 			"trigger": "lepidodendron:pf_adv_book_aegirocassis",
 			"title": "Aegirocassis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Algal Reef$(br2)>Dinocaridida$(br)>Radiodonta$(br)>Hurdiidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/aegirocassis.png"],
-			"title": "Aegirocassis benmoulai",
+			"title": "A. benmoulai",
 			"text": ""
 		},
 		{

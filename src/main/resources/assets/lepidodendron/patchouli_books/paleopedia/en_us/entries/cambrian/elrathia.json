@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_elrathia",
 			"title": "Elrathia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean & Reef$(br2)>Trilobita$(br)>Ptychopariida$(br)>Alokistocaridae"
 		},
 		{
 			"type": "image",

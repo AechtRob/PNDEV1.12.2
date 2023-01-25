@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_calvapilosa",
 			"title": "Calvapilosa",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Siphogonuchitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Algal Reef$(br2)>Mollusca$(br)>Siphogonuchitidae"
 		},
 		{
 			"type": "image",

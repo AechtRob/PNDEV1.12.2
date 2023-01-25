@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hemicyclaspis",
 			"title": "Hemicyclaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Osteostraci$(br)>Ateleaspidiformes"
+			"text": "$(l)Temporal Range:$() Silurian-Devonian$(br2)$(l)Habitat:$() Ocean, Crinoid Garden$(br2)>Osteostraci$(br)>Ateleaspidiformes"
 		},
 		{
 			"type": "image",

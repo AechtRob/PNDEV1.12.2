@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_skeemella",
 			"title": "Skeemella",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Vetulicolia$(br)>Banffozoa$(br)>Banffidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Vetulicolia$(br)>Banffozoa$(br)>Banffidae"
 		},
 		{
 			"type": "image",

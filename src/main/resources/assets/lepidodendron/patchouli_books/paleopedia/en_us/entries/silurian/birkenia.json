@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_birkenia",
 			"title": "Birkenia",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Anaspida$(br)>Birkeniiformes$(br)>Birkeniidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Anaspida$(br)>Birkeniiformes$(br)>Birkeniidae"
 		},
 		{
 			"type": "image",

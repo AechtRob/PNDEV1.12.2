@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_profallotaspis",
 			"title": "Profallotaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Trilobita$(br)>Redlichiida"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Trilobita$(br)>Redlichiida"
 		},
 		{
 			"type": "image",

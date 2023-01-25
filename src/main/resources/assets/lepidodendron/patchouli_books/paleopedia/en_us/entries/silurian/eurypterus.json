@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_eurypterus",
 			"title": "Eurypterus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() All Aquatic$(br2)>Eurypterida$(br)>Eurypteroidea$(br)>Eurypteridae"
 		},
 		{
 			"type": "image",

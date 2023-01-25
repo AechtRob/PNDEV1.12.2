@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_microdictyon",
 			"title": "Microdictyon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuaries$(br2)>Onychophora"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Onychophora"
 		},
 		{
 			"type": "image",

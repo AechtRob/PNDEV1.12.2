@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ascoceras",
 			"title": "Ascoceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Crinoid Garden$(br2)>Cephalopoda$(br)>Orthoceratoidea$(br)>Ascocerida"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean$(br2)>Cephalopoda$(br)>Orthoceratoidea$(br)>Ascocerida"
 		},
 		{
 			"type": "image",

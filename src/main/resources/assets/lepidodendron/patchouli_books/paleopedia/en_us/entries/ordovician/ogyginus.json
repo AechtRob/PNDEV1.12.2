@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ogyginus",
 			"title": "Ogyginus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Frozen Ocean & Algal Reef$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
 		},
 		{
 			"type": "image",
