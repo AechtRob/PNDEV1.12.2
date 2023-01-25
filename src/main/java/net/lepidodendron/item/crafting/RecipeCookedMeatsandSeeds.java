@@ -56,6 +56,9 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSyllipsimopodiRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTemperocerasRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemVestinautilusRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
+		//GameRegistry.addSmelting(new ItemStack(ItemMuensterellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoCalamari.block, (int) (1)), 0.35F);
+
+
 
 		//Escargots - snails and similar
 		GameRegistry.addSmelting(new ItemStack(ItemCyclonema.block, (int) (1)), new ItemStack(ItemPalaeoEscargots.block, (int) (1)), 0.35F);
@@ -111,6 +114,13 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemSynophalosRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTokummiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTyrannophontesRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		/*
+		GameRegistry.addSmelting(new ItemStack(ItemWarneticarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemSchugurocarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCeratiocarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemConcavicarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemDollocarisRaw.block, (int) (1)), new ItemStack(ItemPalaeoScampi.block, (int) (1)), 0.35F);
+		 */
 
 		//Palaeo-Thermidor (other aquatic arthropods)
 		GameRegistry.addSmelting(new ItemStack(ItemAcadoaradoxidesRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
@@ -188,12 +198,22 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemWingertshellicusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemYawunikRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemYohoiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		/*
+		GameRegistry.addSmelting(new ItemStack(ItemVachonisiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemFurcaRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemTomlinsonusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPentecopterusRaw.block, (int) (1)), new ItemStack(ItemPalaeoThermidor.block, (int) (1)), 0.35F);
+		 */
+
 
 		//Palaeo-Ptero-Kebab (pterosaurs)
 		GameRegistry.addSmelting(new ItemStack(ItemAustriadactylusRaw.block, (int) (1)), new ItemStack(ItemPalaeoPteroKebab.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCaelestiventusRaw.block, (int) (1)), new ItemStack(ItemPalaeoPteroKebab.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemCaviramusRaw.block, (int) (1)), new ItemStack(ItemPalaeoPteroKebab.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemEudimorphodonRaw.block, (int) (1)), new ItemStack(ItemPalaeoPteroKebab.block, (int) (1)), 0.35F);
+
+
+
 
 		//Palaeo-Steak (meats)
 		GameRegistry.addSmelting(new ItemStack(ItemAnteosaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
@@ -300,6 +320,8 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemWeigeltisaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemXinpusaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemYunguisaurusRaw.block, (int) (1)), new ItemStack(ItemPalaeoSteak.block, (int) (1)), 0.35F);
+
+
 
 		//Palaeo-Fillet (amphibians)
 		GameRegistry.addSmelting(new ItemStack(ItemAcanthostegaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFillet.block, (int) (1)), 0.35F);
@@ -471,6 +493,50 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 		GameRegistry.addSmelting(new ItemStack(ItemThelodusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemTraquairiusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemVarialepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		/*
+		GameRegistry.addSmelting(new ItemStack(ItemMiguashaiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCometicercusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemOxyosteusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemTegeolepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemGooloogongiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemDiplacanthusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemClimatiusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemNerepisacanthusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemGriphognaathusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemGogonasusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemFallacosteusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemRolfosteusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCamuropiscisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCtenurellaRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemRhamphodopsisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemGoodradigbeeonRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemDraconichthysRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemMaterpiscisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemMicrobrachiusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemBrindabellaspisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemWuttagoonaspisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemKujdanowiaspisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPhyllolepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemCowralepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemGymnotrachelusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemBungartiusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemRhadinacanthusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemThrissopsRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemBelonostomusJurassicRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemBelonostomusCretaceousRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemAsteracanthusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemTurboscinetesRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemRedfieldiusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemLeptolepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemLepidotesRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemPiranhamesodonRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemSilurolepisRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemEntelognathusRaw.block, (int) (1)), new ItemStack(ItemPalaeoFishcake.block, (int) (1)), 0.35F);
+
+		 */
+
+
+
 
 		//Mixed Exotic Seafood (weird aquatic shit
 		GameRegistry.addSmelting(new ItemStack(ItemBanffiaRaw.block, (int) (1)), new ItemStack(ItemPalaeoSeafood.block, (int) (1)), 0.35F);

@@ -3290,4 +3290,51 @@ public class LepidodendronSorter {
     public static final int zosterophyllum_spore = 3286;
     public static final int advancement_placeholder = 3287;
 
+    public static final int furca_raw = 3288;
+    public static final int tomlinsonus_raw = 3289;
+    public static final int pentecopterus_raw = 3290;
+    public static final int oxyosteus_raw = 3291;
+    public static final int gooloogongia_raw = 3292;
+    public static final int warneticaris_raw = 3293;
+    public static final int schugurocaris_raw = 3294;
+    public static final int griphognathus_raw = 3295;
+    public static final int gogonasus_raw = 3296;
+    public static final int concavicaris_raw = 3297;
+    public static final int fallacosteus_raw = 3298;
+    public static final int rolfosteus_raw = 3299;
+    public static final int camuropiscis_raw = 3300;
+    public static final int ctenurella_raw = 3301;
+    public static final int rhamphodopsis_raw = 3302;
+    public static final int goodradigbeeon_raw = 3303;
+    public static final int draconichthys_raw = 3304;
+    public static final int materpiscis_raw = 3305;
+    public static final int brindabellaspis_raw = 3306;
+    public static final int wuttagoonaspis_raw = 3307;
+    public static final int kujdanowiaspis_raw = 3308;
+    public static final int phyllolepis_raw = 3309;
+    public static final int cowralepis_raw = 3310;
+    public static final int gymnotrachelus_raw = 3311;
+    public static final int bungartius_raw = 3312;
+    public static final int rhadinacanthus_raw = 3313;
+    public static final int thrissops_raw = 3314;
+    public static final int belonostomus_jurassic_raw = 3315;
+    public static final int belonostomus_cretaceous_raw = 3316;
+    public static final int muensterella_raw = 3317;
+    public static final int asteracanthus_raw = 3318;
+    public static final int turboscinetes_raw = 3319;
+    public static final int redfieldius_raw = 3320;
+    public static final int leptolepis_raw = 3321;
+    public static final int lepidotes_raw = 3322;
+    public static final int dollocaris_raw = 3323;
+    public static final int piranhamesodon_raw = 3324;
+    public static final int silurolepis_raw = 3325;
+    public static final int entelognathus_raw = 3326;
+    public static final int eurypterid_eggs_pentecopterus = 3327;
+    public static final int eurypterid_eggs_pentecopterus_worldgen = 3328;
+    public static final int eggs_asteracanthus = 3329;
+    public static final int eggs_asteracanthus_worldgen = 3330;
+    public static final int eggs_muensterella = 3331;
+
+
+
 }
