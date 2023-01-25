@@ -3675,6 +3675,7 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellAscoceras.TileEntityCustom.class, new RenderNautiloidShellAscoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellCassinoceras.TileEntityCustom.class, new RenderNautiloidShellCassinoceras());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellIvoites.TileEntityCustom.class, new RenderNautiloidShellIvoites());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockNautiloidShellSphooceras.TileEntityCustom.class, new RenderNautiloidShellSphooceras());
 
         //Flowers:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockMagnoliaFlower.TileEntityCustom.class, new RenderFlowerMagnolia());

@@ -94,7 +94,7 @@ public class BlockNautiloidShellSphooceras extends ElementsLepidodendronMod.ModE
 
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-			return new AxisAlignedBB(0.25D, 0.0D, 0.25D, 0.75D, 0.15D, 0.75D);
+			return new AxisAlignedBB(0.35D, 0.0D, 0.35D, 0.65D, 0.25D, 0.65D);
 		}
 
 		@Override

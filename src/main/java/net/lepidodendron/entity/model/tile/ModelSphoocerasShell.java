@@ -44,7 +44,7 @@ public class ModelSphoocerasShell extends AdvancedModelBase {
 
     public void renderAll(float f) {
         this.resetToDefaultPose();
-       // this.shell.offsetY = -0.45F; //negative makes higher
+        this.shell.offsetY = -0.75F; //negative makes higher
         this.shell.render(0.034f);
     }
 
