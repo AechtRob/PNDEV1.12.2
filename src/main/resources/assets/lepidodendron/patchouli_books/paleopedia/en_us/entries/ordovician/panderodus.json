@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_panderodus",
 			"title": "Panderodus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() Marine, Dead Reef(Devonian)$(br2)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
+			"text": "$(l)Temporal Range:$() Ordovician-Devonian$(br2)$(l)Habitat:$() (O)Bryozoan, (S)Marine Sponge Forest, (D)Dead Reef$(br2)>Conodonta$(br)>Conodontophorida$(br)>Distacodontidae"
 		},
 		{
 			"type": "image",

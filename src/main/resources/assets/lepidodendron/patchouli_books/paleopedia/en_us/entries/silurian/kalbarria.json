@@ -2,14 +2,14 @@
 	"name": "Kalbarria",
 	"read_by_default": true,
 	"icon": "lepidodendron:kalbarria_raw",
-	"category": "lepidodendron:ordovician_animal",
+	"category": "lepidodendron:silurian_animal",
 	"turnin": "lepidodendron:pf_adv_book_kalbarria",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_kalbarria",
 			"title": "Kalbarria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Freshwater$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Land$(br2)>Euthycarcinoidea$(br)>Euthycarcinida$(br)>Kottixerxidae"
 		},
 		{
 			"type": "image",

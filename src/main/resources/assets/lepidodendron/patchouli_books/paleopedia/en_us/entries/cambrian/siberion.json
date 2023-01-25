@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_siberion",
 			"title": "Siberion",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Reef$(br2)>Xenusia$(br)>Siberiida$(br)>Siberiidae"
 		},
 		{
 			"type": "image",

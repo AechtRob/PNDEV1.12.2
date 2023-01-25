@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_batofasciculus",
 			"title": "Batofasciculus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Ctenophora$(br)>Scleroctenophora"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Ctenophora$(br)>Scleroctenophora"
 		},
 		{
 			"type": "image",

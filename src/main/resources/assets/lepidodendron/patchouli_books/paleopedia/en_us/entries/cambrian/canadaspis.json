@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_canadaspis",
 			"title": "Canadaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Hymenocarina$(br)>Canadaspididae"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean & Estuary$(br2)>Arthropoda$(br)>Hymenocarina$(br)>Canadaspididae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kodymirus",
 			"title": "Kodymirus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Ocean$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata"
+			"text": "$(l)Temporal Range:$() Cambrian$(br2)$(l)Habitat:$() Cambrian Estuary$(br2)>Arthropoda$(br)>Artiopoda$(br)>Vicissicaudata"
 		},
 		{
 			"type": "image",

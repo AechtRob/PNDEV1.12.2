@@ -2,19 +2,19 @@
 	"name": "Cheirurus",
 	"read_by_default": true,
 	"icon": "lepidodendron:cheirurus_raw",
-	"category": "lepidodendron:cambrian_animal",
+	"category": "lepidodendron:ordovician_animal",
 	"turnin": "lepidodendron:pf_adv_book_cheirurus",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_cheirurus",
 			"title": "Cheirurus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Cambrian-Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
+			"text": "$(l)Temporal Range:$() Ordovician-Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Cheiruridae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/cheirurus.png"],
-			"title": "Cheirurus ingricus",
+			"title": "C. ingricus",
 			"text": ""
 		},
 		{

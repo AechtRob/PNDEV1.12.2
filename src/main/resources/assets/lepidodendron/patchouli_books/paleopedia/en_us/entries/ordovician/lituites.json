@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lituites",
 			"title": "Lituites",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Tarphycerida$(br)>Lituitidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean, Sponge, Bryozoan Reef$(br2)>Cephalopoda$(br)>Nautiloidea$(br)>Tarphycerida$(br)>Lituitidae"
 		},
 		{
 			"type": "image",

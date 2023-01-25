@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_boothiaspis",
 			"title": "Boothiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Marine$(br2)>Pteraspidomorphi$(br)>Cyathaspidida$(br)>Ctenaspidae"
+			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Ocean, Crinoid Garden$(br2)>Pteraspidomorphi$(br)>Cyathaspidida$(br)>Ctenaspidae"
 		},
 		{
 			"type": "image",

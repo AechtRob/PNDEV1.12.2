@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_isotelus",
 			"title": "Isotelus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Ocean, Sponge, Bryozoan Reef$(br2)>Trilobita$(br)>Asaphida$(br)>Asaphidae"
 		},
 		{
 			"type": "image",
