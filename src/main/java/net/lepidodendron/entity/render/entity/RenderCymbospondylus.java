@@ -15,6 +15,9 @@ public class RenderCymbospondylus extends RenderLiving<EntityPrehistoricFloraCym
     public RenderCymbospondylus(RenderManager mgr) {
         super(mgr, new ModelCymbospondylus(), 0.0f);
     }
+    public static float getScaler() {
+        return 1F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraCymbospondylus entity) {
@@ -31,7 +34,7 @@ public class RenderCymbospondylus extends RenderLiving<EntityPrehistoricFloraCym
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCymbospondylus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

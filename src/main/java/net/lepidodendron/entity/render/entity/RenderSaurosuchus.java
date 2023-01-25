@@ -14,6 +14,9 @@ public class RenderSaurosuchus extends RenderLiving<EntityPrehistoricFloraSauros
     public RenderSaurosuchus(RenderManager mgr) {
         super(mgr, new ModelSaurosuchus(), 0.6f);
     }
+    public static float getScaler() {
+        return 1.125F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraSaurosuchus entity) {
@@ -27,7 +30,7 @@ public class RenderSaurosuchus extends RenderLiving<EntityPrehistoricFloraSauros
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraSaurosuchus entity, float f) {
-        float scale = entity.getAgeScale() * 1.125F;
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.6F;
     }

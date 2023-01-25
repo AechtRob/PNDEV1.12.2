@@ -14,6 +14,9 @@ public class RenderHenodus extends RenderLiving<EntityPrehistoricFloraHenodus> {
     public RenderHenodus(RenderManager mgr) {
         super(mgr, new ModelHenodus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.45f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraHenodus entity) {
@@ -27,7 +30,7 @@ public class RenderHenodus extends RenderLiving<EntityPrehistoricFloraHenodus> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraHenodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.41F;
     }

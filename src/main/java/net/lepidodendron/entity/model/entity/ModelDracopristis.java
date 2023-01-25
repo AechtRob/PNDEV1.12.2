@@ -231,18 +231,52 @@ public class ModelDracopristis extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.6F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.2F;
+        this.body.offsetX = -0.15F;
+        this.body.offsetZ = -0.02F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(tailfin, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(fin2L, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(fin2R, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(fin1L, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(fin1R, 0.0F, 0.0F, -0.3054F);
+        this.body.offsetY = -0.5F;
+        this.body.offsetX = -0.12F;
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticSuspended(float f) {
+
+        this.setRotateAngle(lowerjaw, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(tailfin, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(fin2L, 0.0F, 0.0F, 0.7854F);
+        this.setRotateAngle(fin2R, 0.0F, 0.0F, -0.7854F);
+        this.setRotateAngle(fin1L, 0.0F, 0.0F, 0.3054F);
+        this.setRotateAngle(fin1R, 0.0F, 0.0F, -0.3054F);
+        this.body.offsetX = -0.12F;
+        this.body.offsetY = 0.04F;
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -255,7 +289,7 @@ public class ModelDracopristis extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 0.4F;
+        this.body.offsetY = 0.F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5};
 
@@ -296,7 +330,7 @@ public class ModelDracopristis extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 0.55F;
+            this.body.offsetY = 0F;
             this.bob(body, -speed * 1.8F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.5F, 0.02F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.5F, 0.2F, -0.55, f2, 0.4F * still);

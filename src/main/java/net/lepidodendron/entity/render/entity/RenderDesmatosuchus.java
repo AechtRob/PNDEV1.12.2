@@ -14,6 +14,10 @@ public class RenderDesmatosuchus extends RenderLiving<EntityPrehistoricFloraDesm
     public RenderDesmatosuchus(RenderManager mgr) {
         super(mgr, new ModelDesmatosuchus(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.727f;
+    }
+
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraDesmatosuchus entity) {
@@ -27,7 +31,7 @@ public class RenderDesmatosuchus extends RenderLiving<EntityPrehistoricFloraDesm
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraDesmatosuchus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }
