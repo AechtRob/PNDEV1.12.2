@@ -414,7 +414,7 @@ public class ModelTyrannophontes extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone.offsetY = 1.3F;
+        this.bone.offsetY = 0F;
 
         AdvancedModelRenderer[] Tail = {this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.talson, this.talson2};
 
@@ -509,7 +509,7 @@ public class ModelTyrannophontes extends AdvancedModelBase {
             }
 
             if (!e.isInWater()) {
-                this.bone.offsetY = 1.3F;
+                this.bone.offsetY = 0F;
                 this.bone.rotateAngleZ = (float)Math.toRadians(90);
             }
             else {

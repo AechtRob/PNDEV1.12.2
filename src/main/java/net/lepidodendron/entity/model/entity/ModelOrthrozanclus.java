@@ -441,7 +441,7 @@ public class ModelOrthrozanclus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 1.225F;
+        this.body.offsetY = 0F;
 
         EntityPrehistoricFloraOrthrozanclus ee = (EntityPrehistoricFloraOrthrozanclus) e;
 
