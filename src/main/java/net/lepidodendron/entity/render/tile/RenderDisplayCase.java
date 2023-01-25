@@ -208,8 +208,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_OPOLANKA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/opolanka.png");
     private final ModelOpolanka modelOpolanka;
     private static final ResourceLocation TEXTURE_OPSIEOBUTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus.png");
-    private static final ResourceLocation TEXTURE_ORTHROZANCLUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/orthrozanclus.png");
-    private final ModelOrthrozanclus modelOrthrozanclus;
     private static final ResourceLocation TEXTURE_OTTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
     private final ModelOttoia modelOttoia;
     private static final ResourceLocation TEXTURE_PALAEOCHARINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_4.png");
@@ -272,8 +270,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelTokummia modelTokummia;
     private static final ResourceLocation TEXTURE_TRIMERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trimerus.png");
     private final ModelTrimerus modelTrimerus;
-    private static final ResourceLocation TEXTURE_TYRANNOPHONTES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tyrannophontes.png");
-    private final ModelTyrannophontes modelTyrannophontes;
     private static final ResourceLocation TEXTURE_URALICHAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/uralichas.png");
     private final ModelUralichas modelUralichas;
     private static final ResourceLocation TEXTURE_VETULICOLA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/vetulicola.png");
@@ -370,7 +366,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelOgyginus = new ModelOgyginus();
         this.modelOpabinia = new ModelOpabinia();
         this.modelOpolanka = new ModelOpolanka();
-        this.modelOrthrozanclus = new ModelOrthrozanclus();
         this.modelOttoia = new ModelOttoia();
         this.modelPalaeodictyoptera = new ModelPalaeodictyoptera();
         this.modelPalaeoisopus = new ModelPalaeoisopus();
@@ -401,7 +396,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
         this.modelTokummia = new ModelTokummia();
         this.modelTrigonotarbid = new ModelTrigonotarbid();
         this.modelTrimerus = new ModelTrimerus();
-        this.modelTyrannophontes = new ModelTyrannophontes();
         this.modelUralichas = new ModelUralichas();
         this.modelVetulicola = new ModelVetulicola();
         this.modelWalliserops = new ModelWalliserops();
@@ -3425,39 +3419,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(0.61F, 0.61F, 0.61F);
                                 this.bindTexture(TEXTURE_OPSIEOBUTHUS);
                                 modelScorpion.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraOrthrozanclus.class) {
-                                double offset = 0.27;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(0.75F, 0.75F, 0.75F);
-                                this.bindTexture(TEXTURE_ORTHROZANCLUS);
-                                modelOrthrozanclus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraOttoia.class) {
                                 double offset = 0.05;
                                 if (facing == EnumFacing.UP) {
@@ -4531,39 +4492,6 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
                                 GlStateManager.scale(1F, 1F, 1F);
                                 this.bindTexture(TEXTURE_TRIMERUS);
                                 modelTrimerus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraTyrannophontes.class) {
-                                double offset = 0.19;
-                                if (facing == EnumFacing.UP) {
-                                    GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.DOWN) {
-                                    GlStateManager.translate(x + 0.5, y + (1 - offset), z + 0.5);
-                                }
-                                if (facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5, y + 0.5, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 1F, 0F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5, z + 0.5);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 0F, 1F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
-                                GlStateManager.scale(0.78F, 0.78F, 0.78F);
-                                this.bindTexture(TEXTURE_TYRANNOPHONTES);
-                                modelTyrannophontes.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraUralichas.class) {
                                 double offset = 0.45;
                                 if (facing == EnumFacing.UP) {

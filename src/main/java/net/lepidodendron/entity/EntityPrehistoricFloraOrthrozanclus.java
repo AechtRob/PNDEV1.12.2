@@ -7,6 +7,10 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EntityMateAISlitheringWaterBase;
 import net.lepidodendron.entity.ai.SlitheringWanderBottom;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSlitheringWaterBase;
+import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.entity.RenderOrthrozanclus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.util.DamageSource;
@@ -83,4 +87,56 @@ public class EntityPrehistoricFloraOrthrozanclus extends EntityPrehistoricFloraS
 		return LepidodendronMod.ORTHROZANCLUS_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.36; }
+
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {return 0.8;}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.02;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ORTHROZANCLUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelOrthrozanclus;
+	}
+	public static float getScaler() {
+		return RenderOrthrozanclus.getScaler();
+	}
 }

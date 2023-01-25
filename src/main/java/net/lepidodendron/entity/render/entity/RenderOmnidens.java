@@ -16,6 +16,9 @@ public class RenderOmnidens extends RenderLiving<EntityPrehistoricFloraOmnidens>
     public RenderOmnidens(RenderManager mgr) {
         super(mgr, new ModelOmnidens(), 0.5f);
     }
+    public static float getScaler() {
+        return 0.36F;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraOmnidens entity) {
@@ -37,7 +40,7 @@ public class RenderOmnidens extends RenderLiving<EntityPrehistoricFloraOmnidens>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOmnidens entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

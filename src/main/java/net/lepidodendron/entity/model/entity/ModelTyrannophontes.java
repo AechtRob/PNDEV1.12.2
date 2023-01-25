@@ -347,18 +347,62 @@ public class ModelTyrannophontes extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.bone.render(f5 * 0.13F);
+        this.bone.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticDisplayCase(float f) {
         this.bone.offsetZ = -0.04F;
         this.bone.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(bone, -0.7418F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(cube_r1, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR2, -0.8727F, 0.1745F, 0.0F);
+        this.setRotateAngle(antennaL2, -0.9599F, -0.1745F, 0.0F);
+        this.setRotateAngle(antennaR1, 0.3054F, 0.3054F, 0.0F);
+        this.setRotateAngle(antennaL1, 0.3054F, -0.3054F, 0.0F);
+        this.setRotateAngle(eyeR, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(eyeL, 0.0F, -0.2182F, 0.0F);
+        this.setRotateAngle(body1, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(body3, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(body5, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(pleopodR, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(pleopodL, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(body6, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(pleopodR2, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(pleopodL2, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(pleopodR3, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(pleopodL3, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(body8, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(pleopodR4, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(pleopodL4, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(pleopodR5, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(pleopodL5, 0.0F, 0.0F, -0.1745F);
+        this.setRotateAngle(body10, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(talson, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(talson2, 0.1745F, -0.3491F, 0.0F);
+        this.setRotateAngle(talson4, 0.1309F, 0.3491F, 0.0F);
+        this.setRotateAngle(talson3, 0.2765F, -1.0826F, -0.127F);
+        this.setRotateAngle(talson5, 0.3628F, 1.2962F, 0.2616F);
+        this.setRotateAngle(legR3, -0.202F, 0.0829F, 0.8206F);
+        this.setRotateAngle(legL3, -0.1615F, -0.0665F, -0.8236F);
+        this.setRotateAngle(legR2, -0.48F, 0.0F, 0.4363F);
+        this.setRotateAngle(legL2, -0.5236F, 0.0F, -0.4363F);
+        this.setRotateAngle(legR, -0.829F, 0.0F, 0.4363F);
+        this.setRotateAngle(legL, -0.7854F, 0.0F, -0.4363F);
+        this.setRotateAngle(armR, -0.2608F, 0.0226F, 0.6079F);
+        this.setRotateAngle(armL, -0.2502F, -0.0779F, -0.8192F);
+        this.setRotateAngle(armR2, -0.3491F, 0.0F, 0.4363F);
+        this.setRotateAngle(armL2, -0.3491F, 0.0F, -0.4363F);
+        this.setRotateAngle(armR3, -0.3491F, 0.0F, 0.3491F);
+        this.setRotateAngle(armL3, -0.3491F, 0.0F, -0.3491F);
+        this.setRotateAngle(armR4, -0.3491F, 0.0F, 0.2618F);
+        this.setRotateAngle(armL4, -0.3491F, 0.0F, -0.2618F);
+        this.bone.offsetY = 0.37F;
+        this.bone.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

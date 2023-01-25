@@ -255,18 +255,50 @@ public class ModelPederpes extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.main.render(f5 * 0.3f);
+        this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.7F;
-        this.body.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+    public void renderStaticPlinth(float f) {
+        this.body.offsetZ = -0.07F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(head, -0.1745F, -0.2182F, 0.0F);
+        this.setRotateAngle(upperhead, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(headU2_r1, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(headU1_r1, 0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(lowerhead, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(throat2_r1, -0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tail1, 0.0F, 0.0436F, 0.0F);
+        this.setRotateAngle(tail1_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(legBL, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(legBL1, 0.0F, 0.0F, 1.3526F);
+        this.setRotateAngle(footBL1, 0.2618F, 0.0F, 0.2182F);
+        this.setRotateAngle(legBR, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(legBR1, 0.0F, 0.0F, -1.3526F);
+        this.setRotateAngle(footBR1, 0.2618F, 0.0F, -0.2182F);
+        this.setRotateAngle(tail2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail2_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(tail3fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail4fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail5fin_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(tail5_r1, -0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(legFL, -0.3927F, 0.6545F, 0.0F);
+        this.setRotateAngle(legFL1, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(footFL1, 0.0F, 0.0F, 0.4363F);
+        this.setRotateAngle(legFR, -0.3927F, -0.6545F, 0.0F);
+        this.setRotateAngle(legFR1, -1.1345F, 0.0F, 0.0F);
+        this.setRotateAngle(footFR1, 0.0F, 0.0F, -0.4363F);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetX = -0.1F;
+        this.body.offsetY = 0.27F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

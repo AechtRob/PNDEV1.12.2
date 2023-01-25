@@ -416,16 +416,18 @@ public class ModelOrthrozanclus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Orthozanclus.render(f5 * 0.165F);
+        this.Orthozanclus.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticDisplayCase(float f) {
         this.Orthozanclus.render(0.015F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.Orthozanclus.rotateAngleY = (float) Math.toRadians(90);
+        this.Orthozanclus.offsetY = 0.14F;
+        this.Orthozanclus.render(0.015F);
+        resetToDefaultPose();
     }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
