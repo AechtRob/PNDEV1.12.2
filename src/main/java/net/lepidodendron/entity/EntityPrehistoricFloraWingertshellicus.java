@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraWingertshellicus extends EntityPrehistoricFlo
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.4f;
+		return 0.225f;
 	}
 
 	@Override

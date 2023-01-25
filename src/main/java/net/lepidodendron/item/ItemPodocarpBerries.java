@@ -54,7 +54,7 @@ public class ItemPodocarpBerries extends ElementsLepidodendronMod.ModElement {
 		@Override
 		protected void onFoodEaten(ItemStack itemStack, World world, EntityPlayer entity) {
 			super.onFoodEaten(itemStack, world, entity);
-			entity.attackEntityFrom(DamageSource.WITHER, (float) 5);
+			entity.attackEntityFrom(DamageSource.WITHER, (float) 4);
 		}
 	}
 }

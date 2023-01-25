@@ -54,7 +54,7 @@ public class ItemYewBerries extends ElementsLepidodendronMod.ModElement {
 		@Override
 		protected void onFoodEaten(ItemStack itemStack, World world, EntityPlayer entity) {
 			super.onFoodEaten(itemStack, world, entity);
-			entity.attackEntityFrom(DamageSource.WITHER, (float) 10);
+			entity.attackEntityFrom(DamageSource.WITHER, (float) 20);
 		}
 	}
 }
