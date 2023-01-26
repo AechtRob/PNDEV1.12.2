@@ -1,6 +1,7 @@
 package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockLepidodendronStrobilus;
 import net.lepidodendron.block.BlockTreeLeaves;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -35,15 +36,18 @@ public class ProcedureLepidodendronStrobilusNeighbourBlockChanges extends Elemen
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
+		boolean decayable = false;
+		TileEntity te = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+		if (te != null) {
+			if (te instanceof BlockLepidodendronStrobilus.TileEntityCustom) {
+				BlockLepidodendronStrobilus.TileEntityCustom tileStrobilus = (BlockLepidodendronStrobilus.TileEntityCustom) te;
+				if (tileStrobilus.getTileData().hasKey("decayable")) {
+					decayable = tileStrobilus.getTileData().getBoolean("decayable");
+				}
+			}
+		}
 		if (((!((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == BlockTreeLeaves.block.getDefaultState()
-				.getBlock())) && ((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "decayable")) == (true)))) {
+				.getBlock())) && (decayable))) {
 			world.setBlockToAir(new BlockPos((int) x, (int) y, (int) z));
 		}
 	}

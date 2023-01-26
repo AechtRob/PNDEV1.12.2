@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:lepidophloios_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:lepidophloios_slab_top"
+    }
+  }
+}

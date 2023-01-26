@@ -214,6 +214,13 @@ public class LepidodendronConfigPlants {
     public static int minheightDiaphorodendron = 1;
     public static int maxheightDiaphorodendron = 90;
     public static double multiplierDiaphorodendron = 1;
+    public static boolean genLepidophloios = false;
+    public static String[] genLepidophloiosBlacklistBiomes = new String[0];
+    public static String[] genLepidophloiosOverrideBiomes = new String[0];
+    public static int[] dimLepidophloios = new int[]{0};
+    public static int minheightLepidophloios = 1;
+    public static int maxheightLepidophloios = 90;
+    public static double multiplierLepidophloios = 1;
     public static boolean genMacroneuropteris = false;
     public static String[] genMacroneuropterisBlacklistBiomes = new String[0];
     public static String[] genMacroneuropterisOverrideBiomes = new String[0];
@@ -598,6 +605,7 @@ public class LepidodendronConfigPlants {
     public static boolean genSphenophyllalesCordaites = false;
     public static boolean genSphenophyllalesBothrodendron = false;
     public static boolean genSphenophyllalesDiaphorodendron = false;
+    public static boolean genSphenophyllalesLepidophloios = false;
     public static boolean genSphenophyllalesArthropitys = false;
     public static String[] genSphenophyllalesBlacklistBiomes = new String[0];
     public static String[] genSphenophyllalesOverrideBiomes = new String[0];
@@ -1249,6 +1257,7 @@ public class LepidodendronConfigPlants {
     public static String[] genPalaeognetaleanaOverrideBiomes = new String[0];
     public static int[] dimPalaeognetaleana = new int[]{0};
     public static boolean genOdontopterisLepidodendron = false;
+    public static boolean genOdontopterisLepidophloios = false;
     public static boolean genOdontopterisDiaphorodendron = false;
     public static boolean genOdontopterisCordaites = false;
     public static boolean genOdontopterisBothrodendron = false;
@@ -1865,6 +1874,7 @@ public class LepidodendronConfigPlants {
     public static double multiplierPalaeostachya = 1;
 
     public static boolean genCallistophytalesLepidodendron = false;
+    public static boolean genCallistophytalesLepidophloios = false;
     public static boolean genCallistophytalesCordaites = false;
     public static boolean genCallistophytalesBothrodendron = false;
     public static boolean genCallistophytalesDiaphorodendron = false;
@@ -3005,6 +3015,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Diaphorodendron", "multiplierDiaphorodendron", multiplierDiaphorodendron);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierDiaphorodendron = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Lepidophloios", "genLepidophloios", genLepidophloios);
+        prop.setComment("Set to true to generate Lepidophloios trees naturally [default: false]");
+        genLepidophloios = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidophloios", "genLepidophloiosBlacklistBiomes", genLepidophloiosBlacklistBiomes);
+        prop.setComment("List of biomes Lepidophloios trees are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genLepidophloiosBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidophloios", "genLepidophloiosOverrideBiomes", genLepidophloiosOverrideBiomes);
+        prop.setComment("List of biomes Lepidophloios trees are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genLepidophloiosOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Lepidophloios", "dimLepidophloios", dimLepidophloios);
+        prop.setComment("List of dimension IDs Lepidophloios trees can generate in [default: 0]");
+        dimLepidophloios = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidophloios", "minheightLepidophloios", minheightLepidophloios);
+        prop.setComment("Minimum height that Lepidophloios trees can generate (1 to 250) [default: 1]");
+        minheightLepidophloios = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidophloios", "maxheightLepidophloios", maxheightLepidophloios);
+        prop.setComment("Maximum height that Lepidophloios trees can generate (1 to 250, or set to 0 for unlimited) [default: 90]");
+        maxheightLepidophloios = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Lepidophloios", "multiplierLepidophloios", multiplierLepidophloios);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierLepidophloios = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Macroneuropteris", "genMacroneuropteris", genMacroneuropteris);
@@ -4445,6 +4483,10 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Sphenophyllales (Climbing)", "genSphenophyllalesArthropitys", genSphenophyllalesArthropitys);
         prop.setComment("Set to true to generate Climbing Sphenophyllales naturally on Arthropitys trees [default: false]");
         genSphenophyllalesArthropitys = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Sphenophyllales (Climbing)", "genSphenophyllalesLepidophloios", genSphenophyllalesLepidophloios);
+        prop.setComment("Set to true to generate Climbing Sphenophyllales naturally on Lepidophloios trees [default: false]");
+        genSphenophyllalesLepidophloios = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Sphenophyllales (Climbing)", "genSphenophyllalesBlacklistBiomes", genSphenophyllalesBlacklistBiomes);
         prop.setComment("List of biomes Climbing Sphenophyllales are blacklisted from, in the format: modid:biomeid [default: empty]");
@@ -8193,6 +8235,10 @@ public class LepidodendronConfigPlants {
         prop.setComment("Set to true to generate Callistophytales naturally on Lepidodendron trees [default: false]");
         genCallistophytalesLepidodendron = prop.getBoolean();
         propOrder.add(prop.getName());
+        propOrder.add(prop.getName());prop = cfg.get("WorldGen Callistophytales (Climbing)", "genCallistophytalesLepidophloios", genCallistophytalesLepidophloios);
+        prop.setComment("Set to true to generate Callistophytales naturally on Lepidophloios trees [default: false]");
+        genCallistophytalesLepidophloios = prop.getBoolean();
+        propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Callistophytales (Climbing)", "genCallistophytalesBothrodendron", genCallistophytalesBothrodendron);
         prop.setComment("Set to true to generate Callistophytales naturally on Bothrodendron trees [default: false]");
         genCallistophytalesBothrodendron = prop.getBoolean();
@@ -8675,6 +8721,10 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Odontopteris", "genOdontopterisLepidodendron", genOdontopterisLepidodendron);
         prop.setComment("Set to true to generate Odontopteris naturally on Lepidodendron trees [default: false]");
         genOdontopterisLepidodendron = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Odontopteris", "genOdontopterisLepidophloios", genOdontopterisLepidophloios);
+        prop.setComment("Set to true to generate Odontopteris naturally on Lepidophloios trees [default: false]");
+        genOdontopterisLepidophloios = prop.getBoolean();
         propOrder.add(prop.getName());
         prop = cfg.get("WorldGen Odontopteris", "genOdontopterisDiaphorodendron", genOdontopterisDiaphorodendron);
         prop.setComment("Set to true to generate Odontopteris naturally on Diaphorodendron trees [default: false]");

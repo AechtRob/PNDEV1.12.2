@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.procedure.ProcedureWorldGenBothrodendron;
+import net.lepidodendron.procedure.ProcedureWorldGenBothrodendronYoung;
 import net.lepidodendron.procedure.ProcedureWorldGenWalchia;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -95,7 +96,12 @@ public class WorldGenBothrodendronTree extends WorldGenAbstractTree
 						ProcedureWorldGenWalchia.executeProcedure($_dependencies);
 					}
 					else {
-						ProcedureWorldGenBothrodendron.executeProcedure($_dependencies);
+                        if (rand.nextInt(13) == 0) {
+                            ProcedureWorldGenBothrodendronYoung.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenBothrodendron.executeProcedure($_dependencies);
+                        }
 					}
                     return true;
                 }

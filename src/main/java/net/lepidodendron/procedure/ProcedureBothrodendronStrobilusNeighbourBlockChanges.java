@@ -2,6 +2,7 @@ package net.lepidodendron.procedure;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.BlockBothrodendronLeaves;
+import net.lepidodendron.block.BlockBothrodendronStrobilus;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -35,12 +36,14 @@ public class ProcedureBothrodendronStrobilusNeighbourBlockChanges extends Elemen
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-
 		boolean decayable = false;
-		TileEntity tileEntity = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-		if (tileEntity != null) {
-			if (tileEntity.getTileData().hasKey("decayable")) {
-				decayable = tileEntity.getTileData().getBoolean("decayable");
+		TileEntity te = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+		if (te != null) {
+			if (te instanceof BlockBothrodendronStrobilus.TileEntityCustom) {
+				BlockBothrodendronStrobilus.TileEntityCustom tileStrobilus = (BlockBothrodendronStrobilus.TileEntityCustom) te;
+				if (tileStrobilus.getTileData().hasKey("decayable")) {
+					decayable = tileStrobilus.getTileData().getBoolean("decayable");
+				}
 			}
 		}
 		if (((!((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock() == BlockBothrodendronLeaves.block.getDefaultState()
