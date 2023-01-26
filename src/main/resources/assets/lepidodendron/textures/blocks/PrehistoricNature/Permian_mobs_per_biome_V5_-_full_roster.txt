@@ -1,0 +1,248 @@
+------------------------------------BIOME LIST------------------------------------
+ARID LANDS
+DESERT
+WETLANDS
+GLOSSOPTERIS
+LOWLANDS
+LOWLAND FOREST
+OCEAN/BEACH
+HIGHLANDS
+FLOOD BASALTS
+__________________________________________________________________________________
+
+
+
+
+------------------------------------MOBS PER BIOME------------------------------------
+
+----ARID LANDS----
+	Acanthodes
+	Acrolepis
+	Gnathorhiza
+	Diictodon
+	Moschops
+	Tapinocephalus
+	Procynosuchus
+	Obsiebuthus
+	Arid cockroach
+	Permotarbus
+	Anteosaurus
+	Eunotosaurus
+	Protorosaurus
+	Rautiania
+	Sauroctonus
+
+----DESERT----
+	Acanthodes
+	Gnathorhiza
+	Scutosaurus
+	Prosictodon
+	Dvinia
+	Inostrancevia
+	Vivaxosaurus
+	Arid cockroach
+	Obsiebuthus
+	Archosaurus
+	Bunostegos
+
+----WETLANDS----
+	 [Coelacanth (F&A/Reborn)]
+	 [Diplocaulus (F&A/Reborn)]
+	 [Edaphosaurus (F&A)]
+	Acanthodes
+	Acrolepis
+	Coelacanthus
+	Gnathorhiza
+	Platysomus
+	Xenacanthus
+	Acanthostomatops
+	Eryops
+	Platyhystrix
+	Labidosaurus
+	Dimetrodon
+	Sphenacodon
+	Estemmenosuchus
+	Swamp cockroach
+	Meganeuropsis
+	Opsiebuthus
+	Dunbaria
+	Permotarbus
+	Cacops
+	Dasyceps
+	Phlegethontia
+	Seymouria
+	Glaurung
+
+----GLOSSOPTERIS----
+	Acanthodes
+	Acrolepis
+	Coelacanthus
+	Mesosaurus
+	Gorgonops
+	Moschops
+	Forest cockroach
+	Permotarbus
+	Coelurosauravus
+	Lystrosaurus
+
+----LOWLANDS----
+	 [Diplocaulus (F&A/Reborn)]
+	Acanthodes
+	Acrolepis
+	Coelacanthus
+	Gnathorhiza
+	Platysomus
+	Eryops
+	Prionosuchus
+	Eosimops
+	Cotylorhynchus
+	Diadectes
+	Moschops
+	Procynosuchus
+	Tapinocephalus
+	Arid cockroach
+	Swamp cockroach
+	Opsiebuthus
+	Permotarbus
+	Cacops
+	Pantylus
+	Archosaurus
+	Eunotosaurus
+	Protorosaurus
+	Jonkeria
+	Pristerognathus
+
+----LOWLAND FOREST----
+	Acanthodes
+	Platysomus
+	Gnathorhiza
+	Diadectes
+	Labidosaurus
+	Forest cockroach
+	Opsiebuthus
+	Permotarbus
+	Discosauriscus
+	Dasyceps
+	Elginia
+	Weigeltisaurus
+	Callibrachion
+	Suminia
+	Titanophoneus
+
+----OCEAN/BEACH----
+	 [Coelacanth (F&A/Reborn)]
+	Acanthodes
+	Acrolepis
+	Coelacanthus
+	Helicoprion
+	Janassa
+	Kaibavenator
+	Listracanthus
+	Menaspis
+	Platysomus
+	Mesosaurus
+	Cylolobus
+	Dolorthoceras
+	Goniatites
+	Mooreoceras
+	Jellyfish
+	Claudiosaurus
+	Dorypterus
+	Megactenopetalus
+	Sarcoprion
+	Cooperoceras
+	Hybodus
+
+----HIGHLANDS----
+	Acanthodes
+	Robertia
+	Gorgonops
+	Moschops
+	Forest cockroach
+	Permotarbus
+	Lystrosaurus
+	Sauroctonus
+
+----FLOOD BASALTS----
+N/A
+__________________________________________________________________________________
+
+
+	 [Coelacanth (F&A/Reborn)]	WETLANDS, OCEAN
+	 [Diplocaulus (F&A/Reborn)]	WETLANDS, LOWLANDS
+	 [Edaphosaurus (F&A)]		WETLANDS
+	Acanthodes			All biomes (except FLOOD BASALT)
+	Acanthostomatops		WETLANDS
+	Acrolepis			ARID LANDS, WETLANDS, GLOSSOPTERIS, LOWLANDS, OCEAN/BEACH
+	Anteosaurus			ARID LANDS
+	Archosaurus			DESERT
+	Arid cockroach			ARID LANDS, DESERT, LOWLANDS
+	Bunostegos			DESERT
+	Cacops				WETLANDS, LOWLANDS
+	Callibrachion			LOWLAND FOREST
+	Coelurosauravus			GLOSSOPTERIS
+	Claudiosaurus			OCEAN/BEACH
+	Coelacanthus			WETLANDS, GLOSSOPTERIS, LOWLANDS, OCEAN/BEACH
+	Cooperoceras			OCEAN/BEACH
+	Cotylorhynchus			LOWLANDS
+	Cylolobus			OCEAN/BEACH
+	Dasyceps			WETLANDS, LOWLAND FOREST
+	Diadectes			LOWLANDS, LOWLAND FOREST
+	Diictodon			ARID LANDS
+	Dimetrodon			WETLANDS
+	Discosauriscus			LOWLAND FOREST
+	Dolorthoceras			OCEAN/BEACH
+	Dorypterus			OCEAN/BEACH
+	Dunbaria			WETLANDS
+	Dvinia				DESERT
+	Elginia				LOWLAND FOREST
+	Eosimops			LOWLANDS
+	Eryops				WETLANDS, LOWLANDS
+	Estemmenosuchus			WETLANDS
+	Eunotosaurus			ARID LANDS, LOWLANDS
+	Forest cockroach		GLOSSOPTERIS, LOWLAND FOREST, HIGHLANDS
+	Glaurung			WETLANDS
+	Gnathorhiza			All biomes (except FLOOD BASALT, OCEAN/BEACH, and HIGHLANDS)
+	Goniatites			OCEAN/BEACH
+	Gorgonops			GLOSSOPTERIS, HIGHLANDS
+	Helicoprion			OCEAN/BEACH
+	Hybodus				OCEAN/BEACH
+	Inostrancevia			DESERT
+	Janassa				OCEAN/BEACH
+	Jellyfish			OCEAN/BEACH
+	Jonkeria			LOWLANDS
+	Kaibabvenator			OCEAN/BEACH
+	Labidosaurus			WETLANDS, LOWLAND FOREST
+	Listracanthus			OCEAN/BEACH
+	Lystrosaurus			GLOSSOPTERIS, HIGHLANDS
+	Megactenopetalus		OCEAN/BEACH
+	Meganeuropsis			WETLANDS
+	Menaspis			OCEAN/BEACH
+	Mesosaurus			GLOSSOPTERIS, OCEAN/BEACH
+	Mooreoceras			OCEAN/BEACH
+	Moschops			ARID LANDS, GLOSSOPTERIS, LOWLANDS, HIGHLANDS
+	Opsiebuthus			ARID LANDS, DESERT, WETLANDS, LOWLANDS, LOWLAND FOREST
+	Pantylus			LOWLANDS
+	Permotarbus			ARID LANDS, WETLANDS, GLOSSOPTERIS, LOWLANDS, LOWLAND FOREST, HIGHLANDS
+	Phlegethontia			WETLANDS
+	Platyhystrix			WETLANDS
+	Platysomus			WETLANDS, LOWLANDS, LOWLAND FOREST, OCEAN/BEACH
+	Prionosuchus			LOWLANDS
+	Pristerognathus			LOWLANDS
+	Procynosuchus			ARID LANDS, LOWLANDS
+	Prosictodon			DESERT
+	Protorosaurus			ARID LANDS, LOWLANDS
+	Rautiania			ARID LANDS
+	Robertia			HIGHLANDS
+	Sarcoprion			OCEAN/BEACH
+	Sauroctonus			ARID LANDS, HIGHLANDS
+	Scutosaurus			DESERT
+	Seymouria			WETLANDS
+	Sphenacodon			WETLANDS
+	Suminia				LOWLAND FOREST
+	Swamp cockroach			WETLANDS, LOWLANDS
+	Tapinocephalus			ARID LANDS, LOWLANDS
+	Titanophoneus			LOWLAND FOREST
+	Weigeltisaurus			LOWLAND FOREST
+	Vivaxosaurus			DESERT
+	Xenacanthus			WETLANDS

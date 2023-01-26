@@ -1,0 +1,42 @@
+NETHER:
+------
+
+Blazopterus: a lava-swimming giant fiery Eurypterid that rises to the surface and shoots fireballs from its tail at the player on land if close. Drops chitin that can be crafted into a fireproof suit of armour.
+
+Zombiesaurus: a zombified therapod - not too large (it's not a boss). Bite inflicts wither effect.
+
+Flammodactylus: a skeletal pterosaur that poops acid while in flight. Acid can be collected in an acid collection tub if it falls into it. No further uses for acid at this stage. Acid hurts mobs and players on contact.
+
+Arthroporka: a millipede with a piglin-like head. Ambient. If you hit one all piglins grief on you as if you hit one of them (?)
+
+Magma Jellies: jellyfish that floats around the air and stings, drops magma cream and gunpowder. Explodes when killed.
+
+Witherceratops: a small skeletal ceratopsian, bute influicts wither effect. Drops wither bones which can be crafted into wither skulls.
+
+Abaddotherium: A large, fast, rat-like creature. Eats dropped magmas cream. Attacks magma cubes.
+
+Hadesuchus: "Amphibous" lava-land croc-like. Hunts hoglins (later MC versions).
+
+Tartarodon: Aggressive spider-like creature. 8 legs from a central "head" which is a TRex like head.
+
+
+
+Netherwyrm: a skeletal sauropod BOSS, spawns in a cave with lots of ancient debris blocks and chests containing emeralds and diamonds (able to config to add other ochest loot). Drops an eye of Sheol (no use for that yet).
+
+
+Abyssopteris: Purple coloured fern like plants, just decorative
+
+Warped Cycad: Stinging cycad, decorative
+
+Crimson horsetail: Growable near to to lava. Dense stands of these by lava lakes. Similar to the Giant horsetail or Neocalamites, though the flower spikes explode damagingly when they die back. Can be crafted into Crimson thatch.
+
+
+
+
+END:
+---
+
+Enderhannes: flying bug that stings, though not terribly dangerous. Teleports when bit. Drops an item which can be anvilled onto an elytra to restore the elytra's damage somewhat.
+
+
+

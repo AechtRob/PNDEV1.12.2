@@ -1,0 +1,45 @@
+{
+  "ambientocclusion": false,
+  "textures": {
+    "tc": "lepidodendron:blocks/lepidosigillaria_immature_t",
+    "bc": "lepidodendron:blocks/lepidosigillaria_immature_b",
+    "particle": "lepidodendron:blocks/lepidosigillaria_stage_1"
+  },
+  "elements": [
+
+    {   "from": [ 0, 0, 8 ],
+      "to": [ 16, 16, 8 ],
+      "shade": false,
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#bc" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#bc" }
+      }
+    },
+    {   "from": [ 8, 0, 0 ],
+      "to": [ 8, 16, 16 ],
+      "shade": false,
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#bc" },
+        "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#bc" }
+      }
+    },
+
+
+    {   "from": [ 0, 16, 8 ],
+      "to": [ 16, 32, 8 ],
+      "shade": false,
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#tc" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#tc" }
+      }
+    },
+    {   "from": [ 8, 16, 0 ],
+      "to": [ 8, 32, 16 ],
+      "shade": false,
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 16 ], "texture": "#tc" },
+        "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#tc" }
+      }
+    }
+  ]
+}

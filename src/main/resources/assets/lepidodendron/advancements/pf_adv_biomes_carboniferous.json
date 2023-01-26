@@ -117,6 +117,18 @@
 			"conditions": {
 				"biome": "lepidodendron:carboniferous_estuary_helper"
 			}
+		},
+		"carboniferous_cold_savanna": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_cold_savanna"
+			}
+		},
+		"carboniferous_swamp_river_border": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:carboniferous_swamp_river_border"
+			}
 		}
 	},
 	"requirements": [
@@ -156,10 +168,14 @@
 		],
 		[
 			"carboniferous_swamp",
-			"carboniferous_swamp_hills"
+			"carboniferous_swamp_hills",
+			"carboniferous_swamp_river_border"
 		],
 		[
 			"carboniferous_swamp_burnt"
+		],
+		[
+			"carboniferous_cold_savanna"
 		]
 	]
 }

@@ -1,6 +1,8 @@
 package net.lepidodendron.world.gen;
 
+import net.lepidodendron.block.BlockThucydia;
 import net.lepidodendron.procedure.ProcedureWorldGenArchaeopteris;
+import net.lepidodendron.procedure.ProcedureWorldGenArchaeopterisStunted;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -89,7 +91,27 @@ public class WorldGenArchaeopterisTree extends WorldGenAbstractTree
 					$_dependencies.put("world", worldIn);
                     $_dependencies.put("SaplingSpawn", false);
                     $_dependencies.put("vines", vines);
-					ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
+                    if (rand.nextInt(3) != 0
+                            && (
+                                    biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_savanna")
+                                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+                            )
+                    ) {
+                        worldIn.setBlockState(position, BlockThucydia.block.getDefaultState(), 2);
+                        BlockThucydia.block.onBlockAdded(worldIn, position, BlockThucydia.block.getDefaultState());
+                    }
+                    else {
+                        if ((biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_cold_savanna")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_cold_savanna")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_mountains")
+                                || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_vale"))
+                            && rand.nextInt(3) != 0) {
+                            ProcedureWorldGenArchaeopterisStunted.executeProcedure($_dependencies);
+                        }
+                        else {
+                            ProcedureWorldGenArchaeopteris.executeProcedure($_dependencies);
+                        }
+                    }
                     return true;
                 }
                 else

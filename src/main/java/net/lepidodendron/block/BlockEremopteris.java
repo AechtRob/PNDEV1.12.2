@@ -114,14 +114,20 @@ public class BlockEremopteris extends ElementsLepidodendronMod.ModElement {
 
 		boolean heightCheck = false;
 
-		if (biome instanceof BiomeCarboniferous) {
-			BiomeCarboniferous biomePermian = (BiomeCarboniferous) biome;
-			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ice
-					|| biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-				biomeCriteria = false;
-			}
-			if (biomePermian.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
+		if (biome instanceof BiomeCarboniferous)
+		{
+			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary) {
 				heightCheck = true;
+			}
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
+				biomeCriteria = true;
+			}
+			else {
+				biomeCriteria = false;
 			}
 		}
 

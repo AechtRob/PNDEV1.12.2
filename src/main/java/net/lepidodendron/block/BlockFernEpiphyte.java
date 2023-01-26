@@ -4,9 +4,11 @@ package net.lepidodendron.block;
 import net.lepidodendron.*;
 import net.lepidodendron.block.base.SeedSporeFacingBlockBase;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypeJurassic;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
@@ -97,13 +99,20 @@ public class BlockFernEpiphyte extends ElementsLepidodendronMod.ModElement {
 			biomeCriteria = true;
 		if (!LepidodendronConfigPlants.genFernEpiphyte && !LepidodendronConfig.genAllPlants)
 			biomeCriteria = false;
-		if (
-			(dimID == LepidodendronConfig.dimCarboniferous
-			&& !(biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_burnt")))
-			)
-			{
+
+		if (biome instanceof BiomeCarboniferous)
+		{
+			BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
+			if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Swamp
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Estuary
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Marsh
+					|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Hills) {
 				biomeCriteria = true;
 			}
+			else {
+				biomeCriteria = false;
+			}
+		}
 
 		if (biome instanceof BiomePermian)
 		{

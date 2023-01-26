@@ -135,6 +135,10 @@ public class BlockProtolepidodendropsis extends ElementsLepidodendronMod.ModElem
 			GenChance = 256;
 		}
 
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_lycopsid_spinney")) {
+			GenChance = 1056;
+		}
+
 		int maxheight = LepidodendronConfigPlants.maxheightProtolepidodendropsis;
 		int minheight = LepidodendronConfigPlants.minheightProtolepidodendropsis;
 		if (maxheight < 0) {maxheight = 0;}

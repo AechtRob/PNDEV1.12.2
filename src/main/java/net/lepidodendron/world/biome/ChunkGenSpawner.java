@@ -378,7 +378,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     }
                }
                else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_hills")
-                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")) {
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_creek_forest")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_lycopsid_spinney")) {
                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimDevonianMobsForestPF);
                    }
@@ -558,7 +559,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     }
                 } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp")
                         || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_hills")
-                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")) {
+                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_creek_swamp")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_swamp_river_border")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                         MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCarboniferousMobsSwampPF);
                     }
