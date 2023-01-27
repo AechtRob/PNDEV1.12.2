@@ -1492,6 +1492,13 @@ public class LepidodendronConfigPlants {
     public static int minheightGrassyHorsetail = 1;
     public static int maxheightGrassyHorsetail = 0;
     public static double multiplierGrassyHorsetail = 1;
+    public static boolean genClubmoss = false;
+    public static String[] genClubmossBlacklistBiomes = new String[0];
+    public static String[] genClubmossOverrideBiomes = new String[0];
+    public static int[] dimClubmoss = new int[]{0};
+    public static int minheightClubmoss = 1;
+    public static int maxheightClubmoss = 0;
+    public static double multiplierClubmoss = 1;
     public static boolean genSpaciinodum = false;
     public static String[] genSpaciinodumBlacklistBiomes = new String[0];
     public static String[] genSpaciinodumOverrideBiomes = new String[0];
@@ -7560,6 +7567,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Pietzschia", "multiplierPietzschia", multiplierPietzschia);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierPietzschia = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Clubmoss", "genClubmoss", genClubmoss);
+        prop.setComment("Set to true to generate Clubmoss naturally [default: false]");
+        genClubmoss = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Clubmoss", "genClubmossBlacklistBiomes", genClubmossBlacklistBiomes);
+        prop.setComment("List of biomes Clubmoss is blacklisted from, in the format: modid:biomeid [default: empty]");
+        genClubmossBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Clubmoss", "genClubmossOverrideBiomes", genClubmossOverrideBiomes);
+        prop.setComment("List of biomes Clubmoss is forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genClubmossOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Clubmoss", "dimClubmoss", dimClubmoss);
+        prop.setComment("List of dimension IDs Clubmoss can generate in [default: 0]");
+        dimClubmoss = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Clubmoss", "minheightClubmoss", minheightClubmoss);
+        prop.setComment("Minimum height that Clubmoss can generate (1 to 250) [default: 1]");
+        minheightClubmoss = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Clubmoss", "maxheightClubmoss", maxheightClubmoss);
+        prop.setComment("Maximum height that Clubmoss can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightClubmoss = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Clubmoss", "multiplierClubmoss", multiplierClubmoss);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierClubmoss = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Grassy Horsetail", "genGrassyHorsetail", genGrassyHorsetail);

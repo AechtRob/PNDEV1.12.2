@@ -800,12 +800,11 @@ public class AcidBathOutputMobs {
     }
 
     public static String[] getCretaceousCleanedFossilsMobs() {
-        String[] resLoc = LepidodendronConfig.revMobsCretaceous;
-        /*
         String[] resLoc = {
-                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraBelonostomusCretaceous.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAmmonite_Parapuzosia.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAmmonite_Pachydesmoceras.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraAmmonite_Pachydiscus.class)).getRegistryName().toString()
         };
-         */
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsCretaceous);
         return resLoc;
     }

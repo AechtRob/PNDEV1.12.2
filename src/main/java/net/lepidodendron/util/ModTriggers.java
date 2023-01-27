@@ -272,6 +272,10 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PROTEA_1 = new CustomTrigger("pf_book_protea_1");
     public static final CustomTrigger CLICK_PROTEA = new CustomTrigger("pf_book_protea");
     public static final CustomTrigger CLICK_PROTOLEPIDODENDROPSIS = new CustomTrigger("pf_book_protolepidodendropsis");
+    public static final CustomTrigger CLICK_SUBLEPIDODENDRON = new CustomTrigger("pf_book_sublepidodendron");
+    public static final CustomTrigger CLICK_LEPIDOSIGILLARIA = new CustomTrigger("pf_book_lepidosigillaria");
+    public static final CustomTrigger CLICK_OMPRELOSTROBUS = new CustomTrigger("pf_book_omprelostrobus");
+    public static final CustomTrigger CLICK_CLUBMOSS = new CustomTrigger("pf_book_clubmoss");
     public static final CustomTrigger CLICK_PROTOTAXITES = new CustomTrigger("pf_book_prototaxites");
     public static final CustomTrigger CLICK_PSARONIUS = new CustomTrigger("pf_book_psaronius");
     public static final CustomTrigger CLICK_PSEUDOBORNIA = new CustomTrigger("pf_book_pseudobornia");
@@ -1228,6 +1232,10 @@ public class ModTriggers
             CLICK_PROTEA_1,
             CLICK_PROTEA,
             CLICK_PROTOLEPIDODENDROPSIS,
+            CLICK_SUBLEPIDODENDRON,
+            CLICK_LEPIDOSIGILLARIA,
+            CLICK_OMPRELOSTROBUS,
+            CLICK_CLUBMOSS,
             CLICK_PROTOTAXITES,
             CLICK_PSARONIUS,
             CLICK_PSEUDOBORNIA,
