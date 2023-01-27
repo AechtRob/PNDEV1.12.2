@@ -14,6 +14,9 @@ public class RenderPederpes extends RenderLiving<EntityPrehistoricFloraPederpes>
     public RenderPederpes(RenderManager mgr) {
         super(mgr, new ModelPederpes(), 0.3f);
     }
+    public static float getScaler() {
+        return 0.3f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraPederpes entity) {
@@ -27,7 +30,7 @@ public class RenderPederpes extends RenderLiving<EntityPrehistoricFloraPederpes>
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraPederpes entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.15F;
     }

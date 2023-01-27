@@ -155,21 +155,41 @@ public class ModelPygopterus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.342F);
+        this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetX = -0.16F;
         this.body.offsetY = -0.16F;
         this.body.offsetZ = 0.04F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, (float) Math.toRadians(90), (float) Math.toRadians(90), 2F);
+        this.setRotateAngle(cube_r1, -0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(body2, 0.0024F, 0.2192F, -0.0127F);
+        this.setRotateAngle(pelvicfinL, -0.7854F, 0.0F, 0.4363F);
+        this.setRotateAngle(pelvicfinR, -0.7854F, 0.0F, -0.4363F);
+        this.setRotateAngle(body3, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.2618F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.7418F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.3229F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinR, 0.4779F, -0.7405F, 0.526F);
+        this.setRotateAngle(pectoralfinL, 0.3499F, 0.4827F, -0.8744F);
+        this.setRotateAngle(head, 0.0F, -0.0436F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.4974F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.2356F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.3491F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.1571F, 0.0F, 0.0F);
+        this.body.offsetX = -0.1F;
+        this.body.offsetY = -0.26F;
+        this.body.offsetZ = 0.1F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
@@ -182,7 +202,7 @@ public class ModelPygopterus extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
-        this.body.offsetY = 1.0F;
+        this.body.offsetY = 0F;
 
         AdvancedModelRenderer[] fishTail = {this.body3, this.body4, this.body5};
 
@@ -218,7 +238,7 @@ public class ModelPygopterus extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.body.rotateAngleZ = (float) Math.toRadians(90);
-            this.body.offsetY = 1.05F;
+            this.body.offsetY = 0F;
             this.bob(body, -speed * 1.9F, 2.5F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.28F, -0.55, f2, 0.4F * still);

@@ -615,15 +615,9 @@ public class ModelOmnidens extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         //this.head.render(f5 * 0.2F);
-        this.body6.render(f5 * 0.36F);
+        this.body6.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        //this.Upperjaw1.rotateAngleX = (float) Math.toRadians(23);
-        //this.Lowerjaw1.rotateAngleX = (float) Math.toRadians(-23);
+    public void renderStaticPlinth(float f) {
         this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
         this.body4.rotateAngleX = (float) Math.toRadians(-15);
         this.body3.rotateAngleX = (float) Math.toRadians(-10);
@@ -636,11 +630,28 @@ public class ModelOmnidens extends AdvancedModelBase {
         this.body2.rotateAngleY = (float) Math.toRadians(-2.5);
         this.body1.rotateAngleY = (float) Math.toRadians(-2.5);
         this.head.rotateAngleY = (float) Math.toRadians(-7.5);
-        this.body6.offsetZ = -2.5F;
-        this.body6.render(0.1F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        this.body6.offsetZ = -0.25F;
+        this.body6.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.body5.rotateAngleX = (float) Math.toRadians(-27.5);
+        this.body4.rotateAngleX = (float) Math.toRadians(-15);
+        this.body3.rotateAngleX = (float) Math.toRadians(-10);
+        this.body2.rotateAngleX = (float) Math.toRadians(-5);
+        this.body1.rotateAngleX = (float) Math.toRadians(5);
+        this.head.rotateAngleX = (float) Math.toRadians(15);
+        this.body5.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body4.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body3.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body2.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.body1.rotateAngleY = (float) Math.toRadians(-2.5);
+        this.head.rotateAngleY = (float) Math.toRadians(-7.5);
+        this.body6.rotateAngleY = (float) Math.toRadians(90);
+        this.body6.offsetY = -0.02F;
+        this.body6.offsetZ = -0.2F;
+        this.body6.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -653,7 +664,7 @@ public class ModelOmnidens extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.head.offsetY = 1.075F;
-        this.body6.offsetY = 0.95F;
+        this.body6.offsetY = 0F;
 
         AdvancedModelRenderer[] legsL = {this.legL1, this.legL2, this.legL3, this.legL4, this.legL5, this.legL6, this.legL7, this.legL8, this.legL9, this.legL10, this.legL11};
         AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5, this.legR6, this.legR7, this.legR8, this.legR9, this.legR10, this.legR11};
