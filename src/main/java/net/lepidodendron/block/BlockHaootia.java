@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronConfigPlants;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronStatic;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
@@ -89,11 +90,12 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 		int startHeight;
 
 		boolean dimensionCriteria = false;
+		int multiplier = 1;
 		if (shouldGenerateInDimension(dimID, LepidodendronConfigPlants.dimEdiacaran))
 			dimensionCriteria = true;
 		if (dimID == LepidodendronConfig.dimPrecambrian) {
 			if (BlockArkarua.isPrecambrianUpdated()) {
-				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_trench")) {
+				if (world.getBiome(new BlockPos(chunkX + 16, 0, chunkZ + 16)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_trench")) {
 					dimensionCriteria = true;
 				}
 				else {
@@ -103,20 +105,20 @@ public class BlockHaootia extends ElementsLepidodendronMod.ModElement {
 			else {
 				if (world.getBiome(new BlockPos(chunkX, 0, chunkZ)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:precambrian_sea")) {
 					dimensionCriteria = true;
+					multiplier = 64;
 				}
 			}
 		}
 		if (!dimensionCriteria)
 			return;
 
-		minWaterDepth = 2;
-		maxWaterDepth = 15;
-		startHeight = world.getSeaLevel() - maxWaterDepth;
+		minWaterDepth = 40;
+		maxWaterDepth = 100;
 
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 8 * multiplier; i++) {
 			int l6 = chunkX + random.nextInt(16) + 8;
-			int i11 = random.nextInt(world.getSeaLevel() - startHeight) + startHeight;
 			int l14 = chunkZ + random.nextInt(16) + 8;
+			int i11 = ChunkGenSpawner.getTopSolidBlock(new BlockPos(l6, 0, l14), world).getY() + 1;
 			(new WorldGenReed() {
 				@Override
 				public boolean generate(World world, Random random, BlockPos pos) {

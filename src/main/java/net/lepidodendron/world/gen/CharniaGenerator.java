@@ -78,6 +78,7 @@ public class CharniaGenerator extends WorldGenerator
 				}
 			}
 
+			String hh = worldIn.getBiome(position).getRegistryName().toString();
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
@@ -87,6 +88,7 @@ public class CharniaGenerator extends WorldGenerator
 			{
 				dimensionCriteria = true;
 			}
+
 
 			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
@@ -129,7 +131,7 @@ public class CharniaGenerator extends WorldGenerator
 					)
 				)
 			{
-				multiplier = 5;
+				multiplier = (double)3.0 * edicarandensity;
 			}
 			//Frondose forest general:
 			else if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:ediacaran_frondose_forest")
@@ -229,7 +231,7 @@ public class CharniaGenerator extends WorldGenerator
 
 				int j = position.getX() + rand.nextInt(bound) - rand.nextInt(bound);
 				int l = position.getZ() + rand.nextInt(bound) - rand.nextInt(bound);
-				int k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY();
+				int k = ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, l), worldIn).getY() + 1;
 
 				if (this.charnia.canPlaceBlockAt(worldIn, new BlockPos(j, k, l))
 						&& (worldIn.getBlockState(new BlockPos(j, k, l)).getBlock() == Blocks.WATER)) {
