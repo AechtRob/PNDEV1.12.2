@@ -180,7 +180,8 @@ public class AcidBathOutputMobs {
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSynophalos.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraVetulicola.class)).getRegistryName().toString(),
                 (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraYunnanozoon.class)).getRegistryName().toString(),
-                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraBalhuticaris.class)).getRegistryName().toString()
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraBalhuticaris.class)).getRegistryName().toString(),
+                (net.minecraftforge.fml.common.registry.EntityRegistry.getEntry(EntityPrehistoricFloraSkeemella.class)).getRegistryName().toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revMobsCambrian);
         return resLoc;
