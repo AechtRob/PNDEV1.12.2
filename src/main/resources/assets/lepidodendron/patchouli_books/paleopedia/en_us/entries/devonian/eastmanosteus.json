@@ -14,14 +14,25 @@
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/eastmanosteus.png"],
-			"title": "E. pustulosus",
+			"title": "E. calliaspis",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
 			"type": "text",
-			"text": ""
+			"text": "Eastmanosteus is a genus of Placoderm fish from the Middle to Late Devonian of several regions of the world. Perhaps easily recognizable due to its rather obvious relation with the larger and more famous Dunkleosteus, this animal still had its set of unique bony features to distinguish it from the latter, aside from the more visible differences in size."
 		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
+			"type": "text",
+			"text": "Like its cousin, Eastmanosteus was probably an active predator using the sharp plates adorning its mouth as cutting edges in a similar fashion to teeth. The animal could reach around 3 m in length, with several specimen preserving a large part of the cranium attesting to it, such as the Australian species, E. calliaspis"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
+			"type": "text",
+			"text": "E. calliaspis preserved traces of the muscle fibers, circulatory structures and even nerve tissues, making it among the earliest known traces of soft tissues in gnathostomes. Eastmanosteus calliaspis was among the largest known fishes from the Gogo Formation in which it was found, although this species was only about half the size of the larger ones inside the genus, with an estimated length of 1.5 m."
+		},
+
 		{
 			"advancement": "lepidodendron:pf_adv_book_eastmanosteus",
 			"type": "text",

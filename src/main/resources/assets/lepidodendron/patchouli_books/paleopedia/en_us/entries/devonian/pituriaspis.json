@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
 			"type": "text",
-			"text": ""
+			"text": "Pituriaspis is one of two only known genera of Pituriaspid agnathans known. Both the genera known are from Australia and appear to be among the only moderately sized jawless fishes known from the continent. The animal is known from one headshield preserving its peculiar shape and anatomy, which lead them to be classified in their own clade."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
+			"type": "text",
+			"text": "Pituriaspids had peculiar openings under the eyes, not too dissimilar from the spiracles seen in modern day rays and skates, as well as pitted skulls next to the cornual processes, which indicate these animals might've had pectoral fins not unlike Osteostracans. The headshields of Pituriaspids were long and unfused, Pituriaspis having the longest of the two known genera, terminating in a thin and elongated rostrum."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_pituriaspis",
+			"type": "text",
+			"text": "Due to the known fossil material, we don't have any idea what the postcrania of these animals looked like, leaving us to speculate over what shape their body was like. The name Pituriaspis was assigned to the genus by Australian Palaeontologist Gavin Young in 1991 referencing the Pituri, a type of hallucinogen referencing how the author believed he was hallucinating while describing them."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_pituriaspis",

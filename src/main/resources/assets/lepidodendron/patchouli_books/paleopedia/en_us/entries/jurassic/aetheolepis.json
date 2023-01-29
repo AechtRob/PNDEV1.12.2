@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_aetheolepis",
 			"title": "Aetheolepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Dapediidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Freshwater$(br2)>Actinopterygii$(br)>Archaeomaenidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
 			"type": "text",
-			"text": ""
+			"text": "Aetheolepis mirabilis is a species of Archeomenid fish from the Late Jurassic of Australia. Only around 10 cm long on average, this fish possessed a round and short body, making it distinct from its coeval relatives such as Aphnelepis and Archaeomaene. The animal had a tall dorsal fin which originated from the second half of the animal's body,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
+			"type": "text",
+			"text": "visibly and rapidly getting shorter as it came closer to the bae of the tail; The anal fin was shorter but equally as long as the dorsal. The animal was covered in rhomboidal scales which would progressively get smaller, thinner and more circular as they got closer to the tail. Although the animal's shape might be reminiscent of other discoidal shaped fishes like Dapedium,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
+			"type": "text",
+			"text": "an analysis of the head anatomy and the shape of its scales reveals it to be closer to animals like Aphnelepis instead, even though the body shape is not as similar. Aetheolepis was described in 1895 by Arthur Smith Woodward on the basis of fossils from the Talbragar fossil site, famous for its terrestrial fossils."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_aetheolepis",
