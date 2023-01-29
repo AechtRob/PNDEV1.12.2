@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraLiliensternus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLiliensternus extends AdvancedModelBaseExtended {
@@ -471,7 +470,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
 
             if (Liliensternus.getIsFast()) { //Running
                 float speed = masterSpeed / 2F;
-                this.Hips.offsetY = 0.55F;
+                //this.Hips.offsetY = 0.55F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -517,7 +516,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 2.00F;
-                this.Hips.offsetY = 0.55F;
+                //this.Hips.offsetY = 0.55F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 3, f2, 1.5F);
                 this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.625), false, 0, f2, 1.5F);
 
