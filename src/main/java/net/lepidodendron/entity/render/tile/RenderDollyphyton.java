@@ -18,6 +18,7 @@ public class RenderDollyphyton extends TileEntitySpecialRenderer<BlockDollyphyto
 
     public static final PropertyDirection FACING = BlockDirectional.FACING;
     private final ModelInsectEggs insect_eggs;
+    private static final ResourceLocation TEXTURE_ARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_arthropleura.png");
     private static final ResourceLocation TEXTURE_EOARTHROPLEURA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_eoarthropleura.png");
     private static final ResourceLocation TEXTURE_PNEUMODESMUS_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/insect_eggs_pneumodesmus.png");
     private static final ResourceLocation TEXTURE_ARCHOBLATTINA_EGGS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/archoblattina_eggs.png");
@@ -94,6 +95,14 @@ public class RenderDollyphyton extends TileEntitySpecialRenderer<BlockDollyphyto
                 GlStateManager.pushMatrix();
                 GlStateManager.scale(0.5F, 0.5F, 0.5F);
                 Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_EOARTHROPLEURA_EGGS);
+                this.insect_eggs.renderAll(0.075F);
+                GlStateManager.popMatrix();
+            }
+
+            if (eggRenderType.equals(LepidodendronMod.MODID + ":insect_eggs_arthropleura")) {
+                GlStateManager.pushMatrix();
+                GlStateManager.scale(0.5F, 0.5F, 0.5F);
+                Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE_ARTHROPLEURA_EGGS);
                 this.insect_eggs.renderAll(0.075F);
                 GlStateManager.popMatrix();
             }

@@ -1103,7 +1103,7 @@ public class ModelArthropleura extends AdvancedModelBase {
 
         AdvancedModelRenderer[] bodySegments = new AdvancedModelRenderer[]{
                 FrontSegment2, Back2, Back, BackSegment1, BackSegment2, BackSegment3, AnalSegment};
-        Arthropleura.bodyBuffer.applyChainSwingBuffer(false, bodySegments);
+        Arthropleura.arthropleuraBuffer.applyChainSwingBuffer(false, bodySegments);
         
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             /*

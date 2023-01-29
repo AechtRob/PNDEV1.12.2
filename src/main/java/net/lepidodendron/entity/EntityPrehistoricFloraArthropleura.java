@@ -35,9 +35,10 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private int animationTick;
+	private int stepSoundTick;
 	private Animation animation = NO_ANIMATION;
 	@SideOnly(Side.CLIENT)
-	public ArthropleuraBuffer bodyBuffer;
+	public ArthropleuraBuffer arthropleuraBuffer;
 
 	public EntityPrehistoricFloraArthropleura(World world) {
 		super(world);
@@ -51,7 +52,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		maxHeight = 0.25F;
 		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
-			bodyBuffer = new ArthropleuraBuffer();
+			arthropleuraBuffer = new ArthropleuraBuffer();
 		}
 	}
 
@@ -119,7 +120,6 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new LandWanderAvoidWaterAI(this, 1.0D, 5));
 		tasks.addTask(3, new EntityAILookIdle(this));
-
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -141,7 +141,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			bodyBuffer.calculateChainSwingBuffer(120, 8, 2.5F, this);
+			arthropleuraBuffer.calculateChainSwingBuffer(120, 8, 2.5F, this);
 		}
 	}
 
@@ -170,9 +170,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	@Override
 	protected void playStepSound(BlockPos pos, Block blockIn)
 	{
-		net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
-		this.playSound(soundEvent, 1, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+
 	}
 
 	@Override
@@ -213,6 +211,15 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		) {
 			this.world.destroyBlock(pos,false);
 			this.setHealth(this.getHealth() + 0.5F);
+		}
+
+		this.stepSoundTick ++;
+
+		if (this.getIsMoving() && this.stepSoundTick > 80) {
+			net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+					.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
+			this.playSound(soundEvent, this.getSoundVolume(), 1);
+			this.stepSoundTick = 0;
 		}
 
 	}
