@@ -1,0 +1,32 @@
+{
+	"name": "Arthropleura",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/arthropleura_icon.png",
+	"category": "lepidodendron:_animal",
+	"turnin": "lepidodendron:pf_adv_book_",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_arthropleura",
+			"title": "Arthropleura",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Burnt Swamp$(br2)>Arthropoda$(br)>Myriapoda$(br)>Diplopoda"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/Arthropleura.png"],
+			"title": "A. armata",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arthropleura",
+			"type": "text",
+			"text": "Arthropleura is a giant millipede from the Carboniferous period and it would have been the largest known invertebrate on earth. They mainly lived in coal forests and may have been an herbivore, though there is no solid evidence of its diet."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arthropleura",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Moss/Log Eggs$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}
+
