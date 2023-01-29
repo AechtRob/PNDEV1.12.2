@@ -73,6 +73,7 @@ public class RecipeCookedMeatsandSeeds extends ElementsLepidodendronMod.ModEleme
 
 		//Insect-Treat - land insects/arthropods
 		GameRegistry.addSmelting(new ItemStack(ItemArchoblattinaRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
+		GameRegistry.addSmelting(new ItemStack(ItemArthropleuraRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemAttercopusRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemBugRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
 		GameRegistry.addSmelting(new ItemStack(ItemEoarthropleuraRaw.block, (int) (1)), new ItemStack(ItemPalaeoInsectTreat.block, (int) (1)), 0.35F);
