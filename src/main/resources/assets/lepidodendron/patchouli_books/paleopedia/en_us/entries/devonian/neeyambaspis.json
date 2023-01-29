@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
 			"type": "text",
-			"text": ""
+			"text": "Neeyambaspis is one of the only two known genera of Pituriaspids agnathans known. Found alongside the closely related Pituriaspis, Neeyambaspis was described alongside it in the same paper in 1991. The headshield of this animal, differently from Pituriaspis, was shorter and with a more triangular shaped and reduced rostrum."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
+			"type": "text",
+			"text": "The rostrum in this animal also appeared to thin out in two different sections; at first it would thin out into a small bulbous like shape and, shortly after that, thin out again into what becomes the tip of the rostrum in the known fossil. The short but wide headshield opened into two wide flaps on its sides which would run down to the base of the bony shield, giving it a rounded shape that can be reminiscent of several cartoon rockets."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
+			"type": "text",
+			"text": "Like its cousin, this animal too had pits at the base of the head hinting they might've possessed pectoral fins growing from the base of the shield. Due to the potential presence of these fins and a few characters of the headshield, Pituriaspids have been placed closer to Osteostracans compared to Galeaspids, although how they are related to each other is still unclear."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_neeyambaspis",
