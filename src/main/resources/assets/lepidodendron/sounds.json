@@ -6031,14 +6031,6 @@
       {
         "name": "lepidodendron:megalosaurus_living01",
         "stream": false
-      },
-      {
-        "name": "lepidodendron:megalosaurus_living02",
-        "stream": false
-      },
-      {
-        "name": "lepidodendron:megalosaurus_living03",
-        "stream": false
       }
     ]
   },
@@ -6067,9 +6059,14 @@
       {
         "name": "lepidodendron:megalosaurus_roar01",
         "stream": false
-      },
+      }
+    ]
+  },
+
+  "arthropleura_step": {
+    "sounds": [
       {
-        "name": "lepidodendron:megalosaurus_roar02",
+        "name": "lepidodendron:arthropleura_step",
         "stream": false
       }
     ]

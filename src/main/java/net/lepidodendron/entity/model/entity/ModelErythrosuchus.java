@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraErythrosuchus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelErythrosuchus extends AdvancedModelBaseExtended {
@@ -364,7 +363,7 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Hips.offsetY = 0.30F;
+        //this.Hips.offsetY = 0.30F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraErythrosuchus Erythrosuchus = (EntityPrehistoricFloraErythrosuchus) e;
@@ -402,7 +401,7 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
 
             if (Erythrosuchus.getIsFast()) { //Running
                 float speed = masterSpeed / 1.8F;
-                this.Hips.offsetY = 0.25F;
+                //this.Hips.offsetY = 0.25F;
                 //this.basin.offsetY = 0.75F;
                 //this.basin.offsetY = 0.815F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.1825), false, 3, f2, 1.5F);
@@ -457,7 +456,7 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
             }
             else { //Walking
                 float speed = masterSpeed / 2.50F;
-                this.Hips.offsetY = 0.25F;
+                //this.Hips.offsetY = 0.25F;
                 //this.basin.offsetY = 0.815F;
                 this.Leftthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.1825), false, 3, f2, 1.5F);
                 this.Rightthigh.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.1825), false, 0, f2, 1.5F);

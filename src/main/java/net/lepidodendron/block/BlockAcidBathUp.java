@@ -411,7 +411,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 				//We have filled our tank up:
 				this.isProcessing = true;
 				processTick = 0;
-				updated = true;
+				//updated = true;
 			}
 
 			if (this.isProcessing && this.processTick < this.processTickTime && (this.hasEnergy(minEnergyNeeded))) {
@@ -425,7 +425,7 @@ public class BlockAcidBathUp extends ElementsLepidodendronMod.ModElement {
 					if (this.getWorld().rand.nextInt(10) == 0) {
 						world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 2.6F + (this.getWorld().rand.nextFloat() - this.getWorld().rand.nextFloat()) * 0.8F);
 					}
-					this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+					//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 				}
 				updated = true;
 			}

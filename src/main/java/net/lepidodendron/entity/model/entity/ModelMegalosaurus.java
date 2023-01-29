@@ -523,10 +523,10 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
                     this.chainWave(Tail, (0.15F * 0.35F), 0.125F * 0.15F, 0.2F, f2, 1F);
                     this.chainSwing(Tail, (0.15F * 0.35F) * 4F, 0.05F * 0.35F, 0.12F, f2, 1F);
 
-                    this.chainWaveExtended(ArmL, 0.175F, 0.05F, 0.1F, 3F, f2, 1F);
-                    this.chainWave(ArmR, 0.175F, 0.05F, 0.1F, f2, 1F);
-                    this.chainFlapExtended(ArmL, 0.175F, 0.05F, 0.1F, 3F, f2, 1F);
-                    this.chainFlap(ArmR, 0.175F, -0.05F, -0.1F, f2, 1F);
+                    this.chainWaveExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
+                    this.chainWaveExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
+                    this.chainFlapExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
+                    this.chainFlapExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
                     this.walk(this.Leftarm1, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
                     this.walk(this.Rightarm1, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
                     this.flap(this.Leftarm1, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
