@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
+import net.lepidodendron.entity.EntityPrehistoricFloraMegalosaurus;
 import net.lepidodendron.entity.util.PathNavigateGroundNoWater;
 import net.lepidodendron.entity.util.PathNavigateSwimmerTopLayer;
 import net.lepidodendron.util.MaterialResin;
@@ -387,6 +388,10 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     public void onLivingUpdate()
     {
+        if (this instanceof EntityPrehistoricFloraMegalosaurus)
+        if (this.getAnimation() == ((EntityPrehistoricFloraMegalosaurus)this).HURT_ANIMATION) {
+            int lll = 1;
+        }
 
         if (this.getAnimation() == this.MAKE_NEST_ANIMATION) {
             if (this.getAnimationTick() >= this.MAKE_NEST_ANIMATION.getDuration() - 5) {

@@ -6,10 +6,10 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
@@ -17,22 +17,29 @@ import javax.annotation.Nullable;
 
 public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPrehistoricFloraLandBase {
 
-    //private static final DataParameter<Integer> BITETICKS = EntityDataManager.createKey(EntityPrehistoricFloraLandCarnivoreBase.class, DataSerializers.VARINT);
     public int roarSoundTime;
     public Animation NOISE_ANIMATION; //Additional roaring
+    public Animation HURT_ANIMATION;
+    private int inPFLove;
+    private BlockPos drinkingFrom;
 
     public EntityPrehistoricFloraLandCarnivoreBase(World world) {
         super(world);
         NOISE_ANIMATION = Animation.create(this.getNoiseLength());
+        HURT_ANIMATION = Animation.create(this.getHurtLength());
     }
 
     public int getNoiseLength() {
         return 60;
     }
 
+    public int getHurtLength() {
+        return 30;
+    }
+
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, MAKE_NEST_ANIMATION};
+        return new Animation[]{ATTACK_ANIMATION, DRINK_ANIMATION, ROAR_ANIMATION, HURT_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, NOISE_ANIMATION, MAKE_NEST_ANIMATION};
     }
 
     @Override
@@ -66,34 +73,6 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
         //this.setBiteTicks(0);
         return livingdata;
     }
-
-    @Override
-    protected void entityInit() {
-        super.entityInit();
-        //this.dataManager.register(BITETICKS, 0);
-    }
-
-    public void writeEntityToNBT(NBTTagCompound compound)
-    {
-        super.writeEntityToNBT(compound);
-        //compound.setInteger("biteTicks", this.getBiteTicks());
-    }
-
-    public void readEntityFromNBT(NBTTagCompound compound) {
-        super.readEntityFromNBT(compound);
-        //this.setBiteTicks(compound.getInteger("biteTicks"));
-    }
-
-    /*
-    public void setBiteTicks(int val)
-    {
-        this.dataManager.set(BITETICKS, val);
-    }
-
-    public int getBiteTicks() {
-        return this.dataManager.get(BITETICKS);
-    }
-     */
 
     public int getEatTick() {return 1;}
 

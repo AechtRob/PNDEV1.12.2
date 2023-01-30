@@ -653,7 +653,12 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
             //if (this.getAnimation() != null) {
                 if (this.getAnimation() == NO_ANIMATION) {
-                    this.setAnimation(ROAR_ANIMATION);
+                    if (this instanceof EntityPrehistoricFloraLandCarnivoreBase) {
+                        this.setAnimation(((EntityPrehistoricFloraLandCarnivoreBase)this).HURT_ANIMATION);
+                    }
+                    else {
+                        this.setAnimation(ROAR_ANIMATION);
+                    }
                 }
             //}
         }

@@ -215,7 +215,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 		this.stepSoundTick ++;
 
-		if (this.getIsMoving() && this.stepSoundTick > 80) {
+		if (this.getIsMoving() && this.stepSoundTick > 60) {
 			net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 					.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
 			this.playSound(soundEvent, this.getSoundVolume(), 1);
