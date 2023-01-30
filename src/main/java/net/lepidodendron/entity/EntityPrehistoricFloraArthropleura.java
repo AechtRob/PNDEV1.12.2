@@ -234,14 +234,13 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 			|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
 			|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
 		) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+			String eggRenderType = "";
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null) {
+				if (te.getTileData().hasKey("egg")) {
+					eggRenderType = te.getTileData().getString("egg");
 				}
-			}.getValue(new BlockPos(pos), "egg");
+			}
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {

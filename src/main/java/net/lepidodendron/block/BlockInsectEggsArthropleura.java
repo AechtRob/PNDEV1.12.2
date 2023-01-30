@@ -90,7 +90,7 @@ public class BlockInsectEggsArthropleura extends ElementsLepidodendronMod.ModEle
 			super.updateTick(worldIn, pos, state, rand);
 
 			if (!(worldIn.isRemote)) {
-				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraArthropleura.class).toString(), "", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
+				EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(EntityPrehistoricFloraArthropleura.class).toString(), "{AgeTicks:1}", (double)pos.getX() , (double)pos.getY(), (double)pos.getZ());
 			}
 			worldIn.destroyBlock(pos, false);
 		}

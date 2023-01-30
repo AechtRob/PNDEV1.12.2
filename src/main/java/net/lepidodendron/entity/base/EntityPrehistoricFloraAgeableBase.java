@@ -929,11 +929,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                     this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                     TileEntity te = world.getTileEntity(nestPos);
                     if (te != null) {
-                        te.getTileData().setString("creature", getEntityId(this));
                         if (te instanceof BlockNest.TileEntityNest) {
+                            te.getTileData().setString("creature", getEntityId(this));
                             ItemStack stack = BlockNest.BlockCustom.getEggItemStack(getEntityId(this));
                             stack.setCount(1);
                             ((BlockNest.TileEntityNest) te).setInventorySlotContents((int) (0), stack);
+                        }
+                        else { //It must be moss or wood:
+                            te.getTileData().setString("egg", this.getEggNBT());
                         }
                     }
                     IBlockState state = world.getBlockState(nestPos);
