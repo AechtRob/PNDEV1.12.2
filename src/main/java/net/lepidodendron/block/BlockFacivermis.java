@@ -299,6 +299,11 @@ public class BlockFacivermis extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Override
 		public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
 			super.onEntityCollision(world, pos, state, entity);
 			if (!(entity instanceof EntityItem)) {

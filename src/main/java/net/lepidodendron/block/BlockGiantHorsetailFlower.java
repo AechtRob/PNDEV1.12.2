@@ -55,6 +55,11 @@ public class BlockGiantHorsetailFlower extends ElementsLepidodendronMod.ModEleme
 		}
 
 		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 100;
 		}

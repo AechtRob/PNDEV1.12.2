@@ -56,6 +56,11 @@ public class BlockJurassicHorsetailFlowerShoot extends ElementsLepidodendronMod.
 		}
 
 		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Override
 		public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
 			return 100;
 		}
