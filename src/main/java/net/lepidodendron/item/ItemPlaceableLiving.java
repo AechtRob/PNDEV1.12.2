@@ -253,6 +253,10 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							}
 						}
 						if (!(worldIn.isRemote)) {
+							if (worldIn.getBlockState(blockpos).getBlock().getRegistryName().toString().equalsIgnoreCase("jaff:tank") && raytraceresult.sideHit == EnumFacing.UP) {
+								blockpos = blockpos.down(); // If it's a JAFF tank place it IN the tank if we are clicking above it
+							}
+
 							if (iblockstate.getMaterial() == Material.WATER) {
 								EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEntityFromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 							}

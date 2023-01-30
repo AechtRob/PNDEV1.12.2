@@ -7,7 +7,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.model.llibraryextensions.ArthropleuraBuffer;
+import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -38,7 +38,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	private int stepSoundTick;
 	private Animation animation = NO_ANIMATION;
 	@SideOnly(Side.CLIENT)
-	public ArthropleuraBuffer arthropleuraBuffer;
+	public MillipedeBuffer arthropleuraBuffer;
 
 	public EntityPrehistoricFloraArthropleura(World world) {
 		super(world);
@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		maxHeight = 0.25F;
 		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
-			arthropleuraBuffer = new ArthropleuraBuffer();
+			arthropleuraBuffer = new MillipedeBuffer();
 		}
 	}
 

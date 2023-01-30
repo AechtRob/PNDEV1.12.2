@@ -1084,7 +1084,6 @@ public class ModelArthropleura extends AdvancedModelBaseExtended {
         AdvancedModelRendererExtended[] Body5 = {this.BackSegment2, this.BackSegment3, this.AnalSegment};
         AdvancedModelRendererExtended[] Body6 = {this.BackSegment3, this.AnalSegment};
 
-        
         EntityPrehistoricFloraArthropleura Arthropleura = (EntityPrehistoricFloraArthropleura) e;
 
         this.faceTarget(f3, f4, 5, HeadSegment);

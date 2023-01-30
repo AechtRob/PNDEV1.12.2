@@ -8,6 +8,7 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.LandEntitySwimmingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
@@ -25,6 +26,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -39,6 +41,7 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 	public ChainBuffer chainBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
+	public MillipedeBuffer pneumodesmusBuffer;
 
 	public EntityPrehistoricFloraPneumodesmus(World world) {
 		super(world);
@@ -51,11 +54,22 @@ public class EntityPrehistoricFloraPneumodesmus extends EntityPrehistoricFloraLa
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 0.8D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			pneumodesmusBuffer = new MillipedeBuffer();
+		}
 	}
 
 	@Override
 	public boolean canJar() {
 		return true;
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			pneumodesmusBuffer.calculateChainSwingBuffer(120, 16, 12.5F, this);
+		}
 	}
 
 	@Override
