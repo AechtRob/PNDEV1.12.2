@@ -880,6 +880,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("slabWood", BlockWollemiSlab.block);
 		OreDictionary.registerOre("slabWood", BlockBothrodendronSlab.block);
 		OreDictionary.registerOre("slabWood", BlockDiaphorodendronSlab.block);
+		OreDictionary.registerOre("slabWood", BlockLepidophloiosSlab.block);
 		OreDictionary.registerOre("slabWood", BlockGinkgoSlab.block);
 		OreDictionary.registerOre("slabWood", BlockSphenobaieraSlab.block);
 		OreDictionary.registerOre("slabWood", BlockAgathisSlab.block);
@@ -934,6 +935,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("fenceWood", BlockWollemiFence.block);
 		OreDictionary.registerOre("fenceWood", BlockBothrodendronFence.block);
 		OreDictionary.registerOre("fenceWood", BlockDiaphorodendronFence.block);
+		OreDictionary.registerOre("fenceWood", BlockLepidophloiosFence.block);
 		OreDictionary.registerOre("fenceWood", BlockGinkgoFence.block);
 		OreDictionary.registerOre("fenceWood", BlockSphenobaieraFence.block);
 		OreDictionary.registerOre("fenceWood", BlockAgathisFence.block);
@@ -1006,6 +1008,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("fenceGateWood", BlockWollemiFenceGate.block);
 		OreDictionary.registerOre("fenceGateWood", BlockBothrodendronFenceGate.block);
 		OreDictionary.registerOre("fenceGateWood", BlockDiaphorodendronFenceGate.block);
+		OreDictionary.registerOre("fenceGateWood", BlockLepidophloiosFenceGate.block);
 		OreDictionary.registerOre("fenceGateWood", BlockGinkgoFenceGate.block);
 		OreDictionary.registerOre("fenceGateWood", BlockSphenobaieraFenceGate.block);
 		OreDictionary.registerOre("fenceGateWood", BlockAgathisFenceGate.block);
@@ -1074,6 +1077,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("doorWood", ItemGangamopterisDoorItem.block);
 		OreDictionary.registerOre("doorWood", ItemDicroidiumODoorItem.block);
 		OreDictionary.registerOre("doorWood", ItemDiaphorodendronDoorItem.block);
+		OreDictionary.registerOre("doorWood", ItemLepidophloiosDoorItem.block);
 		OreDictionary.registerOre("doorWood", ItemYewDoorItem.block);
 		OreDictionary.registerOre("doorWood", ItemAgathisDoorItem.block);
 		OreDictionary.registerOre("doorWood", ItemAlpiaDoorItem.block);
@@ -1137,6 +1141,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("plankWood", BlockWollemiPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockBothrodendronPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockDiaphorodendronPlanks.block);
+		OreDictionary.registerOre("plankWood", BlockLepidophloiosPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockGinkgoPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockSphenobaieraPlanks.block);
 		OreDictionary.registerOre("plankWood", BlockAgathisPlanks.block);
@@ -1191,6 +1196,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("stairWood", BlockWollemiStairs.block);
 		OreDictionary.registerOre("stairWood", BlockBothrodendronStairs.block);
 		OreDictionary.registerOre("stairWood", BlockDiaphorodendronStairs.block);
+		OreDictionary.registerOre("stairWood", BlockLepidophloiosStairs.block);
 		OreDictionary.registerOre("stairWood", BlockGinkgoStairs.block);
 		OreDictionary.registerOre("stairWood", BlockSphenobaieraStairs.block);
 		OreDictionary.registerOre("stairWood", BlockAgathisStairs.block);
@@ -1245,6 +1251,7 @@ public class OreDictRegistries extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("trapdoorWood", BlockWollemiTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockBothrodendronTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockDiaphorodendronTrapdoor.block);
+		OreDictionary.registerOre("trapdoorWood", BlockLepidophloiosTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockGinkgoTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockSphenobaieraTrapdoor.block);
 		OreDictionary.registerOre("trapdoorWood", BlockAgathisTrapdoor.block);

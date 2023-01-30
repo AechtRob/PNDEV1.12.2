@@ -183,6 +183,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_FURCULA = new CustomTrigger("pf_book_furcula");
     public static final CustomTrigger CLICK_GANGAMOPTERIS = new CustomTrigger("pf_book_gangamopteris");
     public static final CustomTrigger CLICK_GIANT_HORSETAIL = new CustomTrigger("pf_book_giant_horsetail");
+    public static final CustomTrigger CLICK_JURASSIC_HORSETAIL = new CustomTrigger("pf_book_jurassic_horsetail");
     public static final CustomTrigger CLICK_GIGANTOPTERID = new CustomTrigger("pf_book_gigantopterid");
     public static final CustomTrigger CLICK_GIGANTOSPONGIA = new CustomTrigger("pf_book_gigantospongia");
     public static final CustomTrigger CLICK_GINKGO = new CustomTrigger("pf_book_ginkgo");
@@ -1143,6 +1144,7 @@ public class ModTriggers
             CLICK_FURCULA,
             CLICK_GANGAMOPTERIS,
             CLICK_GIANT_HORSETAIL,
+            CLICK_JURASSIC_HORSETAIL,
             CLICK_GIGANTOPTERID,
             CLICK_GIGANTOSPONGIA,
             CLICK_GINKGO,
