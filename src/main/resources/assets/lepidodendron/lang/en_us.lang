@@ -2945,7 +2945,8 @@ item.pentoxylales_door_item.name=Pentoxylales Door
 item.pf_acacia_fruit.name=Acacia Fruit
 item.pf_acacia_seeds.name=Acacia Seeds
 
-
+item.pf_lepidodendron_boat_item.name=Lepidodendron Boat
+entity.prehistoric_flora_boat.name=Prehistoric Boat
 
 item.pf_aphnelepis_cooked.name=Cooked Aphnelepis
 item.pf_aetheolepis_cooked.name=Cooked Aetheolepis

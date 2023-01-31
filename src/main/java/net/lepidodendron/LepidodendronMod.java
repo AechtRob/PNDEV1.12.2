@@ -1372,6 +1372,8 @@ public class LepidodendronMod {
 	public static final ResourceLocation EASTMANOSTEUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/eastmanosteus_young"));
 
 
+	public static final int ENTITY_BOAT = 563;
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
@@ -3612,7 +3613,17 @@ public class RenderHandler {
             }
         });
 
+
 */
+
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {
+            @Override
+            public Render<? super EntityPNBoat> createRenderFor(RenderManager manager) {
+                return new RenderPNBoat(manager);
+            }
+        });
+
         //Tile Entities:
         //-------------
         if (LepidodendronConfig.renderAnimations) {
