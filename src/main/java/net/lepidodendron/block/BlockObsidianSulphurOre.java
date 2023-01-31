@@ -89,14 +89,15 @@ public class BlockObsidianSulphurOre extends ElementsLepidodendronMod.ModElement
 		@Override
 		public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 			Random rand = world instanceof World ? ((World)world).rand : RANDOM;
-
+			boolean dropped = false;
 			int count = quantityDropped(state, fortune, rand);
 			for (int i = 0; i < count; i++)
 			{
 				Item item = this.getItemDropped(state, rand, fortune);
-				if (item != Items.AIR)
+				if (item != Items.AIR && !dropped)
 				{
 					drops.add(new ItemStack(item, 1, this.damageDropped(state)));
+					dropped = true;
 				}
 				item = this.getSecondItemDropped(state, rand, fortune);
 				if (item != Items.AIR)
