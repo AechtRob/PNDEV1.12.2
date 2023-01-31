@@ -1,8 +1,10 @@
 package net.lepidodendron.entity.render.entity;
 
 import net.lepidodendron.LepidodendronMod;
+import net.lepidodendron.entity.EntityPrehistoricFloraMussaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraUrosthenes;
 import net.lepidodendron.entity.model.entity.ModelUrosthenes;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
@@ -12,6 +14,9 @@ public class RenderUrosthenes extends RenderLiving<EntityPrehistoricFloraUrosthe
 
     public RenderUrosthenes(RenderManager mgr) {
         super(mgr, new ModelUrosthenes(), 0.0f);
+    }
+    public static float getScaler() {
+        return 0.2F;
     }
 
     @Override
@@ -24,4 +29,10 @@ public class RenderUrosthenes extends RenderLiving<EntityPrehistoricFloraUrosthe
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
+    @Override
+    protected void preRenderCallback(EntityPrehistoricFloraUrosthenes entity, float f) {
+        float scale = this.getScaler();
+        GlStateManager.scale(scale, scale, scale);
+        this.shadowSize = entity.width * scale * 0.40F;
+    }
 }

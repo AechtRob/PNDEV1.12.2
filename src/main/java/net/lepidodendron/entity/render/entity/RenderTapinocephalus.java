@@ -14,6 +14,9 @@ public class RenderTapinocephalus extends RenderLiving<EntityPrehistoricFloraTap
     public RenderTapinocephalus(RenderManager mgr) {
         super(mgr, new ModelTapinocephalus(), 0.5f);
     }
+    public static float getScaler() {
+        return 1.00f;
+    }
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraTapinocephalus entity) {
@@ -27,7 +30,7 @@ public class RenderTapinocephalus extends RenderLiving<EntityPrehistoricFloraTap
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTapinocephalus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.50F;
     }

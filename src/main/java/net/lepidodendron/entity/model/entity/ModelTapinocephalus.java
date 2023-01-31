@@ -177,15 +177,45 @@ public class ModelTapinocephalus extends AdvancedModelBaseExtended {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.Hips.render(f5 * 1.00f);
+        this.Hips.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+    public void renderStaticWall(float f) {
+        this.Neck.offsetY = -0.02F;
         this.Neck.render(0.01F);
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Tail1, 0.06370451936226872F, 0.21223203437934937F, 0.0F);
+        this.setRotateAngle(Rightfrontfoot, 0.1485275233394591F, 0.4881685797985891F, 0.0F);
+        this.setRotateAngle(Hips, -0.4457571069383183F, (float) Math.toRadians(90), 0.0F);
+        this.setRotateAngle(Leftthigh, 0.10611601718967469F, 0.0F, -0.42446406875869874F);
+        this.setRotateAngle(Righthindfoot, -0.12740903872453743F, 0.0F, -0.08482300397719036F);
+        this.setRotateAngle(Leftupperarm, 0.9128071854772289F, 0.42446406875869874F, -0.67928211291826F);
+        this.setRotateAngle(Rightshin, 0.23352505591421208F, 0.0F, -0.38205256260891435F);
+        this.setRotateAngle(Rightupperarm, 0.21223203437934937F, -0.27593656206399647F, 0.9339256534473936F);
+        this.setRotateAngle(Head, 0.6579891413176677F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftshin, 0.33964105645913F, 0.0F, 0.38205256260891435F);
+        this.setRotateAngle(Belly, 0.1911135497644277F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftlowerarm, -0.40334560078853393F, 0.31834805156902407F, 0.5942845969882637F);
+        this.setRotateAngle(Tail2, 0.0F, 0.23352505591421208F, 0.0F);
+        this.setRotateAngle(Rightthigh, 0.8915142138766367F, -0.10611601718967469F, 0.46705011182842415F);
+        this.setRotateAngle(Front, 0.36093409463874954F, 0.0F, 0.0F);
+        this.setRotateAngle(Domebase, -0.08482300397719036F, 0.0F, 0.0F);
+        this.setRotateAngle(Domefront, 1.018923235956417F, 0.0F, 0.0F);
+        this.setRotateAngle(Leftfrontfoot, 0.33964105645913F, 0.0F, 0.0F);
+        this.setRotateAngle(Neck, 0.169820528229565F, 0.0F, 0.0F);
+        this.setRotateAngle(Rightlowerarm, -0.67928211291826F, -0.46705011182842415F, -0.5942845969882637F);
+        this.setRotateAngle(Headslope, 0.67928211291826F, 0.0F, 0.0F);
+        this.setRotateAngle(Upperjaw, 0.2546435405291338F, 0.0F, 0.0F);
+        this.setRotateAngle(Tail3, 0.08482300397719036F, 0.5094616179782085F, 0.0F);
+        this.setRotateAngle(Dome, 0.7641051252178287F, 0.0F, 0.0F);
+        this.setRotateAngle(Lowerjaw, 0.7216936190680444F, 0.0F, 0.0F);
+        this.setRotateAngle(Lefthindfoot, 0.021293017373673524F, 0.0F, 0.0F);
+        this.Hips.offsetX = 0.13F;
+        this.Hips.offsetZ = -0.13F;
+        this.Hips.offsetY = -0.155F;
+        this.Hips.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

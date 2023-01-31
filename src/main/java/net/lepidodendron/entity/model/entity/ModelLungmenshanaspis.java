@@ -103,21 +103,34 @@ public class ModelLungmenshanaspis extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 
-        this.Lungmenshanaspis.render(f5 * 0.18F);
+        this.Lungmenshanaspis.render(f5);
 
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Lungmenshanaspis.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Lungmenshanaspis.rotateAngleX = (float) Math.toRadians(90);
+        this.Lungmenshanaspis.rotateAngleZ = (float) Math.toRadians(90);
         this.Lungmenshanaspis.offsetX = -0.04F;
-        this.Lungmenshanaspis.offsetZ = -0.03F;
+        this.Lungmenshanaspis.offsetY = -0.22F;
         this.Lungmenshanaspis.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(Lungmenshanaspis, 0.0F, (float) Math.toRadians(90), 0.4363F);
+        this.setRotateAngle(CornualPlateL, 0.0F, 0.0F, 0.0873F);
+        this.setRotateAngle(CornualR2_r1, 0.0F, 0.3403F, 0.0F);
+        this.setRotateAngle(PlateSlatedR_r1, 0.0F, -0.9425F, 0.0F);
+        this.setRotateAngle(CornualplateR, 0.0F, 0.0F, -0.0873F);
+        this.setRotateAngle(Plateslated_r1, 0.0F, 0.9425F, 0.0F);
+        this.setRotateAngle(CornualL2_r1, 0.0F, -0.3403F, 0.0F);
+        this.setRotateAngle(Body1, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(Tail, 0.0F, -0.48F, 0.0F);
+        this.Lungmenshanaspis.offsetY = -0.3F;
+        this.Lungmenshanaspis.offsetX = -0.04F;
+        this.Lungmenshanaspis.offsetZ = -0.002F;
+        this.Lungmenshanaspis.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -129,7 +142,7 @@ public class ModelLungmenshanaspis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Lungmenshanaspis.offsetY = 1.3F;
+        this.Lungmenshanaspis.offsetY = 0F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Body1, this.Body2, this.Body3, this.Tail};
@@ -142,7 +155,7 @@ public class ModelLungmenshanaspis extends AdvancedModelBase {
             this.chainSwing(fishTail, speed, 0.4F, -3, f2, 0.8F);
             this.swing(Lungmenshanaspis, speed, 0.3F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
-                this.Lungmenshanaspis.offsetY = 1.3F;
+                this.Lungmenshanaspis.offsetY = 0F;
                 this.bob(Lungmenshanaspis, -speed, 5F, false, f2, 1);
             }
         }
