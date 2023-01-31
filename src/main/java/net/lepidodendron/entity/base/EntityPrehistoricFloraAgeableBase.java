@@ -329,7 +329,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.dataManager.register(ONEHIT, false);
         this.dataManager.register(NEST_BLOCK_POS, Optional.absent());
         this.dataManager.register(TICKOFFSET, rand.nextInt(1000));
-        this.setScaleForAge(false);
+        //this.setScaleForAge(false); //REMOVED!
     }
 
     @Override
