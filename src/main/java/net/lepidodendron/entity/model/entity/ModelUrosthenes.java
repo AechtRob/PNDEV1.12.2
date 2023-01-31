@@ -240,21 +240,53 @@ public class ModelUrosthenes extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Urosthenes.render(f5 * 0.2F);
+        this.Urosthenes.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.Urosthenes.rotateAngleY = (float) Math.toRadians(90);
         this.Urosthenes.offsetX = -0.09F;
         this.Urosthenes.offsetY = -0.16F;
         this.Urosthenes.offsetZ = 0.07F;
         this.Urosthenes.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(cube_r1, -0.0349F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.1396F, 0.0F, 0.0F);
+        this.setRotateAngle(PectoralR, 0.0F, 0.3491F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, -0.6981F, 0.0F);
+        this.setRotateAngle(PectoralL, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, 0.6981F, 0.0F);
+        this.setRotateAngle(PelvicR, 0.0F, 0.0F, 0.3491F);
+        this.setRotateAngle(cube_r5, 0.0F, 0.0F, 0.48F);
+        this.setRotateAngle(PelvicL, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(cube_r6, 0.0F, 0.0F, -0.48F);
+        this.setRotateAngle(Body2, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.2967F, 0.0F, 0.0F);
+        this.setRotateAngle(Body3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r10, -0.5149F, 0.0F, 0.0F);
+        this.setRotateAngle(Body4, 0.0F, -0.3491F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.7767F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, -0.5061F, 0.0F, 0.0F);
+        this.setRotateAngle(Body5, 0.0944F, -0.3911F, -0.0361F);
+        this.setRotateAngle(cube_r13, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.3665F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(Cephalon, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(cube_r16, -0.3054F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r17, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r18, -1.1432F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r19, -0.48F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r20, -0.9425F, 0.0F, 0.0F);
+        this.Urosthenes.rotateAngleY = (float) Math.toRadians(90);
+        this.Urosthenes.offsetX = -0.0F;
+        this.Urosthenes.offsetY = -0.3F;
+        this.Urosthenes.offsetZ = -0.002F;
+        this.Urosthenes.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
@@ -266,7 +298,7 @@ public class ModelUrosthenes extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Urosthenes.offsetY = 1.1F;
+        this.Urosthenes.offsetY = -0.6F;
 
         AdvancedModelRenderer[] fishTail = {this.Body4, this.Body5};
         float speed = 0.28F;
@@ -288,7 +320,7 @@ public class ModelUrosthenes extends AdvancedModelBase {
             this.swing(PelvicR, (float) (speed * 0.75), 0.4F, true, 2, 0, f2, 1);
             if (!e.isInWater()) {
                 this.Urosthenes.rotateAngleZ = (float) Math.toRadians(90);
-                this.Urosthenes.offsetY = 1.25F;
+                this.Urosthenes.offsetY = 0.3F;
                 this.bob(Urosthenes, -speed, 5F, false, f2, 1);
             }
         }

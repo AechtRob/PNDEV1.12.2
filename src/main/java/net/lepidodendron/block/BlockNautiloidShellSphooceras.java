@@ -55,7 +55,7 @@ public class BlockNautiloidShellSphooceras extends ElementsLepidodendronMod.ModE
 	@Override
 	public void init(FMLInitializationEvent event) {
 		GameRegistry.registerTileEntity(BlockNautiloidShellSphooceras.TileEntityCustom.class, "lepidodendron:tileentityshell_sphooceras");
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sphooceras_baby", BlockNautiloidShellSphooceras.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_sphooceras", BlockNautiloidShellSphooceras.block);
 	}
 
 	@SideOnly(Side.CLIENT)
