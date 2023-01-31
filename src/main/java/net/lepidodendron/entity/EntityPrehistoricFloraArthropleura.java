@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.render.entity.RenderArthropleura;
-import net.lepidodendron.entity.render.entity.RenderOmnidens;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -96,7 +95,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 	@Override
 	protected float getAISpeedLand() {
-		return 0.375f;
+		return 0.375f * (float)Math.max(0.6, this.getAgeScale());
 	}
 
 	@Override
@@ -219,10 +218,10 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 		this.stepSoundTick ++;
 
-		if (this.getIsMoving() && this.stepSoundTick > 60) {
+		if (this.getIsMoving() && this.stepSoundTick > 60 && this.getAgeScale() >= 0.6) {
 			net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 					.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
-			this.playSound(soundEvent, this.getSoundVolume(), 1);
+			this.playSound(soundEvent, this.getSoundVolume() * this.getAgeScale(), 1.5F - (0.5F * this.getAgeScale()));
 			this.stepSoundTick = 0;
 		}
 
