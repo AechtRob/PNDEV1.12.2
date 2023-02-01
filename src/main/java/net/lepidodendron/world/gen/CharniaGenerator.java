@@ -79,7 +79,9 @@ public class CharniaGenerator extends WorldGenerator
 			}
 
 			String hh = worldIn.getBiome(position).getRegistryName().toString();
-			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
+			if ((worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_shallows")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:paleoproterozoic_beach")
+					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_carpet")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:mesoproterozoic_beach")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_ocean")
 					|| worldIn.getBiome(position).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cryogenian_beach")
