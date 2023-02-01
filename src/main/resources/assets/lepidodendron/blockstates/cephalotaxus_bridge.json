@@ -1,5 +1,9 @@
 {
  "multipart": [
+ { "when": { "fence": true },
+ "apply": { "model": "lepidodendron:cephalotaxus_bridge_nub" }
+ },
+
  { "when": { "facing": "north", "variant": 0 },
  "apply": { "model": "lepidodendron:cephalotaxus_bridge_0", "y": 270, "uvlock": true}
  },

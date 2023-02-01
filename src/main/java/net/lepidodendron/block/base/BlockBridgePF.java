@@ -39,6 +39,7 @@ import java.util.List;
 public class BlockBridgePF extends BlockCompressedPowered implements ITileEntityProvider {
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
+	public static final PropertyBool FENCE = PropertyBool.create("fence");
 	public static final PropertyBool LEFT = PropertyBool.create("left");
 	public static final PropertyBool RIGHT = PropertyBool.create("right");
 	public static final PropertyBool FRONT = PropertyBool.create("front");
@@ -330,6 +331,12 @@ public class BlockBridgePF extends BlockCompressedPowered implements ITileEntity
 		boolean front = false;
 		boolean back = false;
 
+		boolean fence = ((worldIn.getBlockState(pos.down()).getBlock() instanceof BlockFence)
+				|| (worldIn.getBlockState(pos.down()).getBlock() instanceof BlockWall)
+				|| (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.CENTER)
+				|| (worldIn.getBlockState(pos.down()).getBlockFaceShape(worldIn, pos.down(), EnumFacing.UP) == BlockFaceShape.CENTER_BIG)
+			);
+
 		if (state.getValue(FACING) == EnumFacing.NORTH) {
 			if (worldIn.getBlockState(pos.east()).getBlock() instanceof BlockBridgePF) {
 				right = true;
@@ -407,7 +414,7 @@ public class BlockBridgePF extends BlockCompressedPowered implements ITileEntity
 				}
 			}
 		}
-		return state.withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right).withProperty(FRONT, front).withProperty(BACK, back);
+		return state.withProperty(FENCE, fence).withProperty(VARIANT, variant).withProperty(FACING, facing).withProperty(LEFT, !left).withProperty(RIGHT, !right).withProperty(FRONT, front).withProperty(BACK, back);
 	}
 
 	@Override
@@ -445,7 +452,7 @@ public class BlockBridgePF extends BlockCompressedPowered implements ITileEntity
 
 	@Override
 	protected BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[]{FACING, LEFT, RIGHT, FRONT, BACK, VARIANT});
+		return new BlockStateContainer(this, new IProperty[]{FACING, FENCE, LEFT, RIGHT, FRONT, BACK, VARIANT});
 	}
 
 	@SideOnly(Side.CLIENT)
