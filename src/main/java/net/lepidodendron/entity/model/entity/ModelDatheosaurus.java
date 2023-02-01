@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDatheosaurus extends AdvancedModelBaseExtended {
@@ -281,7 +280,7 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Datheosaurus.offsetY = 0.65F;
+        //this.Datheosaurus.offsetY = 0.65F;
 
         EntityPrehistoricFloraDatheosaurus DatheosaurusEntity = (EntityPrehistoricFloraDatheosaurus) e;
         float masterSpeed = DatheosaurusEntity.getTravelSpeed();

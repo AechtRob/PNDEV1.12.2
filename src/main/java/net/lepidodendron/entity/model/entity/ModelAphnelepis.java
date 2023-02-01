@@ -254,7 +254,7 @@ public class ModelAphnelepis extends AdvancedModelBase {
             this.swing(analFinR, (float) (speed * 0.75), 0.2F, true, 3, 0, f2, 1);
             if (!e.isInWater()) {
                 this.aphnelepis.rotateAngleZ = (float) Math.toRadians(90);
-                this.aphnelepis.offsetY = 0;
+                this.aphnelepis.offsetY = -0.1F;
                 this.bob(aphnelepis, -speed, 5F, false, f2, 1);
             }
         }
