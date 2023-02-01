@@ -20,7 +20,17 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_arthropleura",
 			"type": "text",
-			"text": "Arthropleura is a giant millipede from the Carboniferous period and it would have been the largest known invertebrate on earth. They mainly lived in coal forests and may have been an herbivore, though there is no solid evidence of its diet."
+			"text": "Arthropleura is a giant millipede from the Carboniferous period and it would have been the largest known terrestrial invertebrate on earth. Although there is no solid evidence of its diet, it may have been an herbivore. It was considered to have mainly lived in coal forests."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arthropleura",
+			"type": "text",
+			"text": "However, this is a misunderstanding due to the fact that research on the Carboniferous strata was biased towards the places where coal was collected. It is more likely that it lived in areas such as beaches where the density of plants was rather low, according to trackway fossils."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_arthropleura",
+			"type": "text",
+			"text": "It's not well understood why Arthropleura became gigantic. A popular theory is that high oxygen levels played a role, but this is questionable given that large Arthropleura are also known from early Permian with relatively low oxygen levels.  "
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_arthropleura",
