@@ -240,6 +240,7 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 
 	@Override
 	public void onLivingUpdate() {
+
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
 

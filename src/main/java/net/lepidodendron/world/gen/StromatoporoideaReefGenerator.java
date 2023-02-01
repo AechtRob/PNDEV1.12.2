@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.block.BlockStromatoporoideaReef;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -70,6 +71,19 @@ public class StromatoporoideaReefGenerator extends WorldGenerator
 					&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 				)
 				{
+					int ii = rand.nextInt(4);
+					if (ii == 0) {
+						this.state = this.state.withProperty(BlockStromatoporoideaReef.FACING, EnumFacing.NORTH);
+					}
+					if (ii == 1) {
+						this.state = this.state.withProperty(BlockStromatoporoideaReef.FACING, EnumFacing.EAST);
+					}
+					if (ii == 2) {
+						this.state = this.state.withProperty(BlockStromatoporoideaReef.FACING, EnumFacing.SOUTH);
+					}
+					if (ii == 3) {
+						this.state = this.state.withProperty(BlockStromatoporoideaReef.FACING, EnumFacing.WEST);
+					}
 					worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
 				}
 			}

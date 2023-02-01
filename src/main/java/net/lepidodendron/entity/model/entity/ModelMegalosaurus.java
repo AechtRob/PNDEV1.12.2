@@ -372,7 +372,7 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-       // animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
+        animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Hips.render(f5);
     }
 
@@ -525,11 +525,11 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
 
                     this.chainWaveExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
                     this.chainWaveExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
-                    this.chainFlapExtended(ArmL, 0.175F, 0.03F, 0.1F, 3F, f2, 1F);
+                    this.chainFlapExtended(ArmL, 0.175F, -0.03F, 0.1F, 3F, f2, 1F);
                     this.chainFlapExtended(ArmR, 0.175F, -0.03F, -0.1F, 0f, f2, 1F);
                     this.walk(this.Leftarm1, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
                     this.walk(this.Rightarm1, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
-                    this.flap(this.Leftarm1, 0.175F, 0.10F, true, 3F, 0.05F, f2, 1F);
+                    this.flap(this.Leftarm1, 0.175F, -0.10F, true, 3F, 0.05F, f2, 1F);
                     this.flap(this.Rightarm1, 0.175F, -0.10F, true, 0F, 0.05F, f2, 1F);
 
                     return;
@@ -4606,5 +4606,16 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
         EntityPrehistoricFloraMegalosaurus e = (EntityPrehistoricFloraMegalosaurus) entity;
         animator.update(entity);
 
+        animator.setAnimation(e.HURT_ANIMATION);
+        animator.startKeyframe(10);
+        animator.rotate(this.Neck1, (float) Math.toRadians(-10),0,0);
+        animator.rotate(this.Neck2, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck3, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Neck4, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Headbase, (float) Math.toRadians(-55), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.rotate(this.Lowerjaw, (float) Math.toRadians(35), (float) Math.toRadians(0), (float) Math.toRadians(0));
+        animator.endKeyframe();
+        animator.setStaticKeyframe(10);
+        animator.resetKeyframe(10);
     }
 }

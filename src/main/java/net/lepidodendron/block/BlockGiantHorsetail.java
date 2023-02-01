@@ -289,6 +289,11 @@ public class BlockGiantHorsetail extends ElementsLepidodendronMod.ModElement {
 		}
 
 		@Override
+		public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+			return true;
+		}
+
+		@Override
 		public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 			if (stack.getItem() == Items.SHEARS && LepidodendronConfig.doPropagation
 					&&

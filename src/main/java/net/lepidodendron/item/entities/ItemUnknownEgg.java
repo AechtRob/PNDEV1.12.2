@@ -428,6 +428,10 @@ public class ItemUnknownEgg extends ElementsLepidodendronMod.ModElement {
 							nbtStr = "{AgeTicks:0}";
 						}
 						if (!(worldIn.isRemote)) {
+							if (worldIn.getBlockState(blockpos).getBlock().getRegistryName().toString().equalsIgnoreCase("jaff:tank") && raytraceresult.sideHit == EnumFacing.UP) {
+								blockpos = blockpos.down(); // If it's a JAFF tank place it IN the tank if we are clicking above it
+							}
+
 							EntityPrehistoricFloraAgeableBase.summon(worldIn, EntityList.getKey(getEggClassfromNBT(itemstack)).toString(), nbtStr, blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5);
 						}
 						if (!playerIn.capabilities.isCreativeMode) {

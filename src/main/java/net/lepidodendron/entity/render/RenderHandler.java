@@ -3,6 +3,7 @@ package net.lepidodendron.entity.render;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.lepidodendron.entity.render.entity.*;
 import net.lepidodendron.entity.render.tile.*;
 import net.lepidodendron.tileentity.TileEntityFacivermis;
@@ -3612,7 +3613,17 @@ public class RenderHandler {
             }
         });
 
+
 */
+
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPNBoat.class, new IRenderFactory<EntityPNBoat>() {
+            @Override
+            public Render<? super EntityPNBoat> createRenderFor(RenderManager manager) {
+                return new RenderPNBoat(manager);
+            }
+        });
+
         //Tile Entities:
         //-------------
         if (LepidodendronConfig.renderAnimations) {
@@ -3685,6 +3696,7 @@ public class RenderHandler {
         //Rotten log and eggs:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockRottenLog.TileEntityCustom.class, new RenderRottenLog());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsAttercopus.TileEntityCustom.class, new RenderEggsAttercopus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsArthropleura.TileEntityCustom.class, new RenderEggsArthropleura());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsEoarthropleura.TileEntityCustom.class, new RenderEggsEoarthropleura());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsPneumodesmus.TileEntityCustom.class, new RenderEggsPneumodesmus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockInsectEggsTrigonotarbidOS.TileEntityCustom.class, new RenderEggsTrigonotarbidOS());

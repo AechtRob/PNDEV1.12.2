@@ -5,7 +5,6 @@ import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.lepidodendron.entity.EntityPrehistoricFloraPneumodesmus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -351,26 +350,30 @@ public class ModelPneumodesmus extends AdvancedModelBase {
             return;
         }
 
+        AdvancedModelRenderer[] bodySegments = new AdvancedModelRenderer[]{
+                body1, body2, body3, body4, body5, body6, body7, body8, body9, body10, body11, body12, bodyend };
+        Pneumodesmus.pneumodesmusBuffer.applyChainSwingBuffer(false, bodySegments);
+
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.head.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.4;
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
             this.chainWave(legsL, 0.2F, 0.2F, -3, f2, 1);
             this.chainWave(legsR, 0.6F, 0.2F, -3, f2, 1);
-            this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
+            //this.chainSwing(BodyHead, 0.2F, 0.3F, -3, f2, 1);
             //this.walk(head, 0.2F, 0.3F, false,0.3F, 0.5F, f2, 1);
 
-            this.chainSwing(Body1, 0.3F, -0.04F, -3, f2, 0.5F);
-            this.chainSwing(Body2, 0.3F, 0.04F, -3, f2, 0.5F);
-            this.chainSwing(Body3, 0.3F, -0.04F, -3, f2, 0.5F);
-            this.chainSwing(Body4, 0.3F, 0.05F, -3, f2, 0.5F);
-            this.chainSwing(Body5, 0.2F, -0.05F, -3, f2, 0.5F);
-            this.chainSwing(Body6, 0.2F, 0.05F, -3, f2, 0.5F);
-            this.chainSwing(Body7, 0.15F, -0.05F, -3, f2, 0.5F);
-            this.chainSwing(Body8, 0.15F, 0.06F, -3, f2, 0.5F);
-            this.chainSwing(Body9, 0.15F, -0.06F, -3, f2, 0.5F);
-            this.chainSwing(Body10, 0.10F, -0.06F, -3, f2, 0.5F);
-            this.chainSwing(Body11, 0.10F, -0.06F, -3, f2, 0.5F);
-            this.chainSwing(Body12, 0.10F, -0.06F, -3, f2, 0.5F);
+            this.chainSwing(Body1, 0.3F, -0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body2, 0.3F, 0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body3, 0.3F, -0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body4, 0.3F, 0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body5, 0.2F, -0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body6, 0.2F, 0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body7, 0.15F, -0.015F, -3, f2, 0.5F);
+            this.chainSwing(Body8, 0.15F, 0.016F, -3, f2, 0.5F);
+            this.chainSwing(Body9, 0.15F, -0.016F, -3, f2, 0.5F);
+            this.chainSwing(Body10, 0.10F, -0.016F, -3, f2, 0.5F);
+            this.chainSwing(Body11, 0.10F, -0.016F, -3, f2, 0.5F);
+            this.chainSwing(Body12, 0.10F, -0.016F, -3, f2, 0.5F);
 
             this.flap(legL_r1, 0.7F, -0.5F, false, 0, -0.5F, f2, 0.3F);
             this.flap(legR_r1, 0.7F, 0.5F, false, 0, 0.5F, f2, 0.3F);

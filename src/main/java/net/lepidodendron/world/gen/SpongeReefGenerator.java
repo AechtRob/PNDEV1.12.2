@@ -1,6 +1,7 @@
 package net.lepidodendron.world.gen;
 
 import net.lepidodendron.LepidodendronConfigPlants;
+import net.lepidodendron.block.BlockSpongeReef;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -80,6 +81,19 @@ public class SpongeReefGenerator extends WorldGenerator
 					&& (worldIn.getBlockState(pos).getBlockFaceShape(worldIn, pos, EnumFacing.UP) == BlockFaceShape.SOLID)
 				)
 				{
+					int ii = rand.nextInt(4);
+					if (ii == 0) {
+						this.state = this.state.withProperty(BlockSpongeReef.FACING, EnumFacing.NORTH);
+					}
+					if (ii == 1) {
+						this.state = this.state.withProperty(BlockSpongeReef.FACING, EnumFacing.EAST);
+					}
+					if (ii == 2) {
+						this.state = this.state.withProperty(BlockSpongeReef.FACING, EnumFacing.SOUTH);
+					}
+					if (ii == 3) {
+						this.state = this.state.withProperty(BlockSpongeReef.FACING, EnumFacing.WEST);
+					}
 					worldIn.setBlockState(new BlockPos(j, k, l), this.state, 2);
 				}
 			}

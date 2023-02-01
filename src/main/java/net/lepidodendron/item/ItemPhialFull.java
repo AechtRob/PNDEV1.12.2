@@ -43,6 +43,7 @@ public class ItemPhialFull extends ElementsLepidodendronMod.ModElement {
 		ModelBakery.registerItemVariants(block,
 				new ModelResourceLocation("lepidodendron:entities/phial", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_acutiramus", "inventory"),
+				new ModelResourceLocation("lepidodendron:entities/phial_eggs_arthropleura", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_attercopus", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_carcinosoma", "inventory"),
 				new ModelResourceLocation("lepidodendron:entities/phial_eggs_eoarthropleura", "inventory"),

@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderArthropleura extends RenderLiving<EntityPrehistoricFloraArthropleura> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arthropleura.png");
+    private static final ResourceLocation TEXTURE_YOUNG = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/arthropleura_baby.png");
 
     public static float getScaler() { return 0.435f; }
 
@@ -19,6 +20,10 @@ public class RenderArthropleura extends RenderLiving<EntityPrehistoricFloraArthr
 
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraArthropleura entity) {
+        float scale = entity.getAgeScale();
+        if (scale < 0.6F) {
+            return RenderArthropleura.TEXTURE_YOUNG;
+        }
         return RenderArthropleura.TEXTURE;
     }
 

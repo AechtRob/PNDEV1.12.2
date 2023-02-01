@@ -1,6 +1,7 @@
 package net.lepidodendron;
 
 import net.lepidodendron.entity.*;
+import net.lepidodendron.entity.boats.EntityPNBoat;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -405,7 +406,7 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_tyrannophontes", EntityPrehistoricFloraTyrannophontes.class, LepidodendronMod.ENTITY_TYRANNOPHONTES, 64,-5067864,-6851995);
         registerEntity("prehistoric_flora_urocordylus", EntityPrehistoricFloraUrocordylus.class, LepidodendronMod.ENTITY_UROCORDYLUS, 64,-8486581,-8293557);
         registerEntity("prehistoric_flora_edaphosaurus", EntityPrehistoricFloraEdaphosaurus.class, LepidodendronMod.ENTITY_EDAPHOSAURUS, 64,-13092808,-4079167);
-        registerEntity("prehistoric_flora_arthropleura", EntityPrehistoricFloraArthropleura.class, LepidodendronMod.ENTITY_ARTHROPLEURA, 64,0,0);
+        registerEntity("prehistoric_flora_arthropleura", EntityPrehistoricFloraArthropleura.class, LepidodendronMod.ENTITY_ARTHROPLEURA, 64,-11447982,-3269604);
         registerEntity("prehistoric_flora_cobelodus", EntityPrehistoricFloraCobelodus.class, LepidodendronMod.ENTITY_COBELODUS, 64,-5668543,-2110544);
         registerEntity("prehistoric_flora_megactenopetalus", EntityPrehistoricFloraMegactenopetalus.class, LepidodendronMod.ENTITY_MEGACTENOPETALUS, 64,-7909101,-9288947);
         //registerEntity("prehistoric_flora_rubidgea", EntityPrehistoricFloraRubidgea.class, LepidodendronMod.ENTITY_RUBIDGEA, 64,0,0);
@@ -459,7 +460,7 @@ public class EntityRegistries {
         //registerEntity("prehistoric_flora_longisquama", EntityPrehistoricFloraLongisquama.class, LepidodendronMod.ENTITY_LONGISQUAMA, 64,0,0);
         registerEntity("prehistoric_flora_lotosaurus", EntityPrehistoricFloraLotosaurus.class, LepidodendronMod.ENTITY_LOTOSAURUS, 64,-1119778,-3961028);
         registerEntity("prehistoric_flora_megazostrodon", EntityPrehistoricFloraMegazostrodon.class, LepidodendronMod.ENTITY_MEGAZOSTRODON, 64,-7909873,-1119778);
-        registerEntity("prehistoric_flora_metoposaurus", EntityPrehistoricFloraMetoposaurus.class, LepidodendronMod.ENTITY_METOPOSAURUS, 64,0,0);
+        registerEntity("prehistoric_flora_metoposaurus", EntityPrehistoricFloraMetoposaurus.class, LepidodendronMod.ENTITY_METOPOSAURUS, 64,-10728679,-8492497);
         registerEntity("prehistoric_flora_morganucodon", EntityPrehistoricFloraMorganucodon.class, LepidodendronMod.ENTITY_MORGANUCODON, 64,-13822202,-7653880);
         registerEntity("prehistoric_flora_mussaurus", EntityPrehistoricFloraMussaurus.class, LepidodendronMod.ENTITY_MUSSAURUS, 156,-12640488,-4691660);
         //registerEntity("prehistoric_flora_ornithosuchus", EntityPrehistoricFloraOrnithosuchus.class, LepidodendronMod.ENTITY_ORNITHOSUCHUS, 64,-11783126,-3291973);
@@ -617,6 +618,7 @@ public class EntityRegistries {
         //registerEntity("prehistoric_flora_", EntityPrehistoricFloraPiranhamesodon.class, LepidodendronMod.ENTITY_PIRANHAMESODON, 64,0,0);
         //registerEntity("prehistoric_flora_", EntityPrehistoricFloraDollocaris.class, LepidodendronMod.ENTITY_DOLLOCARIS, 64,0,0);
 
+        registerEntityNoEgg("prehistoric_flora_boat", EntityPNBoat.class, LepidodendronMod.ENTITY_BOAT, 80);
 
         //registerEntity("prehistoric_flora_", EntityPrehistoricFlora.class, LepidodendronMod.ENTITY_, 64,0,0); TEMPLATE
 

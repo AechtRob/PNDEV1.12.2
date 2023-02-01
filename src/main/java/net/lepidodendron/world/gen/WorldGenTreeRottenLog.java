@@ -3,8 +3,10 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockRottenLog;
+import net.lepidodendron.util.EnumBiomeTypeCarboniferous;
 import net.lepidodendron.util.EnumBiomeTypePermian;
 import net.lepidodendron.util.EnumBiomeTypeTriassic;
+import net.lepidodendron.world.biome.carboniferous.BiomeCarboniferous;
 import net.lepidodendron.world.biome.permian.BiomePermian;
 import net.lepidodendron.world.biome.triassic.BiomeTriassic;
 import net.minecraft.block.Block;
@@ -141,7 +143,15 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 			}
 
 			if (dimID == LepidodendronConfig.dimCarboniferous) {
-				i = rand.nextInt(7);
+				Biome biome = worldIn.getBiome(pos);
+				if (biome instanceof BiomeCarboniferous) {
+					BiomeCarboniferous biomeCarboniferous = (BiomeCarboniferous) biome;
+					if (biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Ice
+							|| biomeCarboniferous.getBiomeType() == EnumBiomeTypeCarboniferous.Savanna) {
+						return;
+					}
+				}
+				i = rand.nextInt(8);
 				if (i == 0) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_carb";}
 				if (i == 1) {stringEgg = LepidodendronMod.MODID + ":eggs_hylonomus";}
 				if (i == 2) {stringEgg = LepidodendronMod.MODID + ":eggs_casineria";}
@@ -149,6 +159,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 				if (i == 4) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_archoblattina";}
 				if (i == 5) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_roachoid_swamp";}
 				if (i == 6) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_harvestman";}
+				if (i == 7) {stringEgg = LepidodendronMod.MODID + ":insect_eggs_arthropleura";}
 			}
 
 			if (dimID == LepidodendronConfig.dimPermian) {
@@ -291,7 +302,7 @@ public class WorldGenTreeRottenLog extends WorldGenerator
 
 
 			TileEntity te = worldIn.getTileEntity(pos);
-			if (te != null) {
+			if (te != null && !stringEgg.equalsIgnoreCase("")) {
 				te.getTileData().setString("egg", stringEgg);
 			}
 			IBlockState state = worldIn.getBlockState(pos);

@@ -8,8 +8,12 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
+import net.lepidodendron.entity.render.entity.RenderLungmenshanaspis;
+import net.lepidodendron.entity.render.entity.RenderTapinocephalus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -334,6 +338,59 @@ public class EntityPrehistoricFloraTapinocephalus extends EntityPrehistoricFlora
 			return LepidodendronMod.TAPINOCEPHALUS_LOOT_YOUNG;
 		}
 		return LepidodendronMod.TAPINOCEPHALUS_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.7;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.4;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_TAPINOCEPHALUS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelTapinocephalus;
+	}
+	public static float getScaler() {
+		return RenderTapinocephalus.getScaler();
 	}
 
 }

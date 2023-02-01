@@ -7,11 +7,14 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.model.llibraryextensions.ArthropleuraBuffer;
+import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
+import net.lepidodendron.entity.render.entity.RenderArthropleura;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -35,9 +38,10 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private int animationTick;
+	private int stepSoundTick;
 	private Animation animation = NO_ANIMATION;
 	@SideOnly(Side.CLIENT)
-	public ArthropleuraBuffer bodyBuffer;
+	public MillipedeBuffer arthropleuraBuffer;
 
 	public EntityPrehistoricFloraArthropleura(World world) {
 		super(world);
@@ -51,7 +55,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		maxHeight = 0.25F;
 		maxHealthAgeable = 24.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
-			bodyBuffer = new ArthropleuraBuffer();
+			arthropleuraBuffer = new MillipedeBuffer();
 		}
 	}
 
@@ -91,7 +95,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 
 	@Override
 	protected float getAISpeedLand() {
-		return 0.375f;
+		return 0.375f * (float)Math.max(0.6, this.getAgeScale());
 	}
 
 	@Override
@@ -119,7 +123,6 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		tasks.addTask(1, new LandEntitySwimmingAI(this, 0.75, true));
 		tasks.addTask(2, new LandWanderAvoidWaterAI(this, 1.0D, 5));
 		tasks.addTask(3, new EntityAILookIdle(this));
-
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 	}
@@ -141,7 +144,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			bodyBuffer.calculateChainSwingBuffer(120, 8, 2.5F, this);
+			arthropleuraBuffer.calculateChainSwingBuffer(120, 8, 2.5F, this);
 		}
 	}
 
@@ -170,9 +173,7 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	@Override
 	protected void playStepSound(BlockPos pos, Block blockIn)
 	{
-		net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
-		this.playSound(soundEvent, 1, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+
 	}
 
 	@Override
@@ -215,6 +216,15 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 			this.setHealth(this.getHealth() + 0.5F);
 		}
 
+		this.stepSoundTick ++;
+
+		if (this.getIsMoving() && this.stepSoundTick > 60 && this.getAgeScale() >= 0.6) {
+			net.minecraft.util.SoundEvent soundEvent = (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+					.getObject(new ResourceLocation("lepidodendron:arthropleura_step"));
+			this.playSound(soundEvent, this.getSoundVolume() * this.getAgeScale(), 1.5F - (0.5F * this.getAgeScale()));
+			this.stepSoundTick = 0;
+		}
+
 	}
 
 	public static final PropertyDirection FACING = BlockDirectional.FACING;
@@ -227,14 +237,13 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 			|| world.getBlockState(pos).getBlock() == BlockEdwardsiphyton.block
 			|| world.getBlockState(pos).getBlock() == BlockSelaginella.block
 		) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
+			String eggRenderType = "";
+			TileEntity te = world.getTileEntity(pos);
+			if (te != null) {
+				if (te.getTileData().hasKey("egg")) {
+					eggRenderType = te.getTileData().getString("egg");
 				}
-			}.getValue(new BlockPos(pos), "egg");
+			}
 			if (eggRenderType.equals("")) {
 				//There is a space, is the orientation correct?
 				if (world.getBlockState(pos).getBlock() == BlockRottenLog.block) {
@@ -266,4 +275,55 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 		} return LepidodendronMod.ARTHROPLEURA_LOOT;
 	}
 
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetPlinth() { return 0.56; }
+	public static double offsetWall() { return 0.05; }
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.5;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.1;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.1;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return 0.05F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.3;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_ARTHROPLEURA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelArthropleura;
+	}
+	public static float getScaler() {
+		return RenderArthropleura.getScaler();
+	}
 }

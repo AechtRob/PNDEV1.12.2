@@ -422,6 +422,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockHermanophyton.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockIschnophyton.block).toString(),
                 ForgeRegistries.ITEMS.getKey(ItemIsoetesItem.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockJurassicHorsetail.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMatonia.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockMatoniaLarge.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockLeptopteris.block).toString(),

@@ -250,6 +250,12 @@ public class ModelIvoites extends AdvancedModelBaseExtended {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Shell1.render(f5);
     }
+    public void renderStaticFloor(float f) {
+        this.Shell1.rotateAngleY = (float) Math.toRadians(90);
+        this.Shell1.offsetY = -0.45F;
+        this.Shell1.render(0.01F);
+        resetToDefaultPose();
+    }
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

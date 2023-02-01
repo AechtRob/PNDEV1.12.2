@@ -1,0 +1,6 @@
+{
+	"parent": "lepidodendron:block/insect_eggs",
+	"textures": {
+		"texture": "lepidodendron:entities/insect_eggs_arthropleura"
+	}
+}
