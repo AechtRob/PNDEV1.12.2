@@ -155,6 +155,7 @@ public class AgeableFishWander extends AnimationAINoAnimation<EntityPrehistoricF
                 && this.PrehistoricFloraAgeableFishBase.getDistanceSq(path.getFinalPathPoint().x, path.getFinalPathPoint().y, path.getFinalPathPoint().z) <= Math.pow(this.PrehistoricFloraAgeableFishBase.width,2))
         ) {
             //System.err.println("No path found 2b");
+            this.PrehistoricFloraAgeableFishBase.getNavigator().clearPath();
             return false;
         }
 

@@ -332,8 +332,10 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
+        this.Ophthalmosaurus.offsetZ = -0.85F;
         this.Ophthalmosaurus.render(f5 * 1F);
     }
+
     public void renderStaticWall(float f) {
         this.Head.offsetY = -0.01F;
         this.Head.offsetX = 0.01F;

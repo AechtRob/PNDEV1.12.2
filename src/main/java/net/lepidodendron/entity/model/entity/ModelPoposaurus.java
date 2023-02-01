@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraPoposaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPoposaurus extends AdvancedModelBaseExtended {
@@ -392,7 +391,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Poposaurus.offsetY = 0.30F;
+        //this.Poposaurus.offsetY = 0.30F;
         //this.basin.offsetZ = 0.2F;
 
         EntityPrehistoricFloraPoposaurus PoposaurusEntity = (EntityPrehistoricFloraPoposaurus) e;
@@ -438,7 +437,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
                 this.setRotateAngle(LFoot2, 0, 0, 0);
                 this.setRotateAngle(RFoot2, 0, 0, 0);
 
-                this.Poposaurus.offsetY = 0.40F;
+                //this.Poposaurus.offsetY = 0.40F;
 
                 return;
            }
@@ -446,7 +445,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
             if (PoposaurusEntity.getIsFast()) { //Running
                 float speed = masterSpeed / 1.2F;
 
-                this.Poposaurus.offsetY = 0.40F;
+                //this.Poposaurus.offsetY = 0.40F;
                 this.LLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 3, f2, 1.5F);
                 this.RLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.825), false, 0, f2, 1.5F);
 
@@ -499,7 +498,7 @@ public class ModelPoposaurus extends AdvancedModelBaseExtended {
             else { //Walking
                 float speed = masterSpeed / 1.50F;
 
-                this.Poposaurus.offsetY = 0.40F;
+                //this.Poposaurus.offsetY = 0.40F;
 
                 this.LLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.325), false, 3, f2, 1.5F);
                 this.RLeg.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(0.325), false, 0, f2, 1.5F);

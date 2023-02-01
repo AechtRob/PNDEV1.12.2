@@ -1,0 +1,6 @@
+{
+ "parent": "lepidodendron:block/bridge_fence_down",
+ "textures": {
+ "wood": "blocks/planks_jungle"
+ }
+}

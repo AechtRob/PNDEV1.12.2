@@ -23,7 +23,7 @@ public class WorldGenAddSomethingToTopSolidBlock extends WorldGenerator
     public boolean generate(World worldIn, Random rand, BlockPos position, int minHeight, int maxHeight, IBlockState state, int offsetY)
     {
         BlockPos blockpos = position.add(rand.nextInt(16) - rand.nextInt(16), 0, rand.nextInt(16) - rand.nextInt(16));
-        blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn);
+        blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).add(0, 1 + offsetY, 0);
 
         if (blockpos.getY() > maxHeight || blockpos.getY() < minHeight) {
             return false;
