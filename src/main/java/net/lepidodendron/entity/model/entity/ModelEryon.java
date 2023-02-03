@@ -273,7 +273,7 @@ public class ModelEryon extends AdvancedModelBase {
             float tailHdegree = 0.3F;
 
             float bob = 1F;
-            float speedLeg = 0.8F;
+            float speedLeg = 0.5F;
             float speedArm = 0.35F;
             float degreeLeg = 0.2F;
             float degreeArm = 0.3F;
