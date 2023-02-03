@@ -334,8 +334,8 @@ public class BlockLitterbinPF extends Block implements ITileEntityProvider {
 				double xx = currentEntity.posX - currentEntity.getPosition().getX();
 				double yy = currentEntity.posY - currentEntity.getPosition().getY();
 				double zz = currentEntity.posZ - currentEntity.getPosition().getZ();
-				if (xx >= 0.2 && xx <= 0.8) {
-					if (zz >= 0.2 && zz <= 0.8) {
+				if (xx > 0.1 && xx < 0.9) {
+					if (zz > 0.1 && zz < 0.9) {
 						if (yy <= 0.6) {
 							currentEntity.setDead();
 						}
