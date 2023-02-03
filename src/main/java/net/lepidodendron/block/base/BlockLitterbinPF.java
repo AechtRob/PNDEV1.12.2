@@ -27,6 +27,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -36,7 +37,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Random;
 
 public class BlockLitterbinPF extends Block implements ITileEntityProvider {
 
@@ -49,7 +49,6 @@ public class BlockLitterbinPF extends Block implements ITileEntityProvider {
 		setHardness(2F);
 		setResistance(3F);
 		setCreativeTab(TabLepidodendronBuilding.tab);
-		setTickRandomly(true);
 	}
 
 	protected static final AxisAlignedBB AABBNORTH = new AxisAlignedBB(0.0D, 0.0D, 0.1D, 1.0D, 0.95D, 0.1D);
@@ -324,28 +323,10 @@ public class BlockLitterbinPF extends Block implements ITileEntityProvider {
 		return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
 	}
 
-	@Override
-	public void randomTick(World worldIn, BlockPos pos, IBlockState state, Random random) {
-		super.randomTick(worldIn, pos, state, random);
-		List<EntityItem> Entities = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos, pos));
-		for (EntityItem currentEntity : Entities) {
-			//Check it's inside the bin, and if so, kill it:
-			if (currentEntity instanceof EntityItem) {
-				double xx = currentEntity.posX - currentEntity.getPosition().getX();
-				double yy = currentEntity.posY - currentEntity.getPosition().getY();
-				double zz = currentEntity.posZ - currentEntity.getPosition().getZ();
-				if (xx > 0.1 && xx < 0.9) {
-					if (zz > 0.1 && zz < 0.9) {
-						if (yy <= 0.6) {
-							currentEntity.setDead();
-						}
-					}
-				}
-			}
-		}
-	}
 
-	public static class TileEntityLitterbin extends TileEntity {
+	public static class TileEntityLitterbin extends TileEntity implements ITickable {
+
+		private int binTick;
 
 		@Override
 		public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newSate) {
@@ -373,6 +354,29 @@ public class BlockLitterbinPF extends Block implements ITileEntityProvider {
 			this.readFromNBT(tag);
 		}
 
+		@Override
+		public void update() {
+			this.binTick ++;
+			if (binTick > 20) {
+				List<EntityItem> Entities = this.getWorld().getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(pos));
+				for (EntityItem currentEntity : Entities) {
+					//Check it's inside the bin, and if so, kill it:
+					if (currentEntity instanceof EntityItem) {
+						double xx = currentEntity.posX - currentEntity.getPosition().getX();
+						double yy = currentEntity.posY - currentEntity.getPosition().getY();
+						double zz = currentEntity.posZ - currentEntity.getPosition().getZ();
+						if (xx > 0.1 && xx < 0.9) {
+							if (zz > 0.1 && zz < 0.9) {
+								if (yy <= 0.2) {
+									currentEntity.setDead();
+								}
+							}
+						}
+					}
+				}
+				this.binTick = 0;
+			}
+		}
 	}
 }
 
