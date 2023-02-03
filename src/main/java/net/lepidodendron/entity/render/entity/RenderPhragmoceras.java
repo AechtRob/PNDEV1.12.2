@@ -12,7 +12,7 @@ public class RenderPhragmoceras extends RenderLiving<EntityPrehistoricFloraPhrag
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phragmoceras.png");
 
     public RenderPhragmoceras(RenderManager mgr) {
-        super(mgr, new ModelPhragmoceras(), 0.1f);
+        super(mgr, new ModelPhragmoceras(), 0f);
     }
 
     @Override
@@ -29,7 +29,7 @@ public class RenderPhragmoceras extends RenderLiving<EntityPrehistoricFloraPhrag
     protected void preRenderCallback(EntityPrehistoricFloraPhragmoceras entity, float f) {
         float scale = entity.getAgeScale();
         GlStateManager.scale(scale, scale, scale);
-        this.shadowSize = entity.width * scale * 0.45F;
+        this.shadowSize = 0F;
     }
 
 }
