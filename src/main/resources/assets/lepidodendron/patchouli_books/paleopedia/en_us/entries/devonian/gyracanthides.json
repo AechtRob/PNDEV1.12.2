@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_gyracanthides",
 			"title": "Gyracanthides",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Gyracanthidae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Brackish$(br2)>Acanthodii$(br)>Gyracanthidae"
 		},
 		{
 			"type": "image",

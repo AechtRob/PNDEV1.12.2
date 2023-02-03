@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ericixerxes",
 			"title": "Ericixerxes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater-Terrestrial$(br2)>Euthycarcinoidea"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish$(br2)>Euthycarcinoidea"
 		},
 		{
 			"type": "image",

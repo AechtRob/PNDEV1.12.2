@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_hyneria",
 			"title": "Hyneria",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Eotetrapodiformes$(br)>Tristichopteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest$(br2)>Eotetrapodiformes$(br)>Tristichopteridae"
 		},
 		{
 			"type": "image",

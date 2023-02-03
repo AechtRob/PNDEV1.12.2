@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_phanerotinus",
 			"title": "Phanerotinus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
+			"text": "$(l)Temporal Range:$() Devonian-Carboniferous$(br2)$(l)Habitat:$() Ocean$(br2)>Gastropoda$(br)>Euomphalina$(br)>Euomphalidae"
 		},
 		{
 			"type": "image",

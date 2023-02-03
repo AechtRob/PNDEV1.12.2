@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_clydagnathus",
 			"title": "Clydagnathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Marine$(br2)>Conodonta$(br)>Ozarkodinida$(br)>Cavusgnathidae"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Ocean$(br2)>Conodonta$(br)>Ozarkodinida$(br)>Cavusgnathidae"
 		},
 		{
 			"type": "image",

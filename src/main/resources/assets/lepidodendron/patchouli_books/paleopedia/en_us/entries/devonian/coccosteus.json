@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_coccosteus",
 			"title": "Coccosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Placodermi$(br)>Arthrodira$(br)>Coccosteidae"
+			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Ocean, Brackish, Forest, Floodplain, Vale$(br2)>Placodermi$(br)>Arthrodira$(br)>Coccosteidae"
 		},
 		{
 			"type": "image",

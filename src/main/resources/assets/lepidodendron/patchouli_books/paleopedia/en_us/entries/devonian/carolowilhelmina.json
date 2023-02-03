@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_carolowilhelmina",
 			"title": "Carolowilhelmina",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Placodermi$(br)>Arthrodira$(br)>$(o)incertae sedis"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Placodermi$(br)>Arthrodira$(br)>$(o)incertae sedis"
 		},
 		{
 			"type": "image",

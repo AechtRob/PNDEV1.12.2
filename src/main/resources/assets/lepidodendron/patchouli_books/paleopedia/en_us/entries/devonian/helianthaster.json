@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_helianthaster",
 			"title": "Helianthaster",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Echinodermata$(br)>Asteroidea$(br)>Hemizonida$(br)>Helianthasteridae"
 		},
 		{
 			"type": "image",
