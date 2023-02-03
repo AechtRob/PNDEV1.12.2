@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPane;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -42,6 +43,7 @@ public class BlockZirconGlassPane extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends BlockPane {
 		public BlockCustom() {
 			super(Material.GLASS, false);
+			setSoundType(SoundType.GLASS);
 			setTranslationKey("pf_zircon_glass_pane");
 			setHardness(0.3F);
 			setCreativeTab(TabLepidodendronBuilding.tab);
