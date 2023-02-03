@@ -1,8 +1,8 @@
 {
   "ambientocclusion":false,
   "textures": {
-    "all": "lepidodendron:blocks/zircon_glass_greenhouse",
-    "particle": "lepidodendron:blocks/zircon_glass_greenhouse"
+    "all": "lepidodendron:blocks/zircon_glass_greenhouse_wood",
+    "particle": "lepidodendron:blocks/zircon_glass_greenhouse_wood"
   },
   "elements":[
     {"name":"face",

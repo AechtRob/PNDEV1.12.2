@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelHenodus extends AdvancedModelBaseExtended {
@@ -250,6 +249,7 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
         this.henodus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.henodus.rotateAngleY = (float) Math.toRadians(90);
         this.setRotateAngle(shell, 0.2382F, -0.1096F, 0.4232F);
@@ -296,7 +296,7 @@ public class ModelHenodus extends AdvancedModelBaseExtended {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.henodus.offsetY = 0.82F;
+        //this.henodus.offsetY = 0.82F;
 
         EntityPrehistoricFloraHenodus Henodus = (EntityPrehistoricFloraHenodus) e;
 

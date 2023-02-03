@@ -28,16 +28,16 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockZirconGlassGreenhouse extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:zircon_glass_greenhouse")
+public class BlockZirconGlassGreenhouseWood extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:zircon_glass_greenhouse_wood")
 	public static final Block block = null;
-	public BlockZirconGlassGreenhouse(ElementsLepidodendronMod instance) {
+	public BlockZirconGlassGreenhouseWood(ElementsLepidodendronMod instance) {
 		super(instance, LepidodendronSorter.zircon_glass);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("zircon_glass_greenhouse"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("zircon_glass_greenhouse_wood"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -45,7 +45,7 @@ public class BlockZirconGlassGreenhouse extends ElementsLepidodendronMod.ModElem
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:zircon_glass_greenhouse", "inventory"));
+				new ModelResourceLocation("lepidodendron:zircon_glass_greenhouse_wood", "inventory"));
 	}
 
 	public static final PropertyBool NORTH = PropertyBool.create("north");
@@ -66,8 +66,8 @@ public class BlockZirconGlassGreenhouse extends ElementsLepidodendronMod.ModElem
 		public BlockCustom() {
 			super(Material.GLASS, false);
 			setSoundType(SoundType.GLASS);
-			setHardness(3.0F);
-			setTranslationKey("pf_zircon_glass_greenhouse");
+			setHardness(1.5F);
+			setTranslationKey("pf_zircon_glass_greenhouse_wood");
 			setCreativeTab(TabLepidodendronBuilding.tab);
 		}
 

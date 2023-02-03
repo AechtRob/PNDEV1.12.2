@@ -1,0 +1,37 @@
+{
+	"name": "Furniture and Similar",
+	"icon": "lepidodendron:lepidodendron_bench",
+	"category": "lepidodendron:basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The mod currently contains some special furniture: Benches, Bridges, Litter Bins, Rope Barriers.$(br2)All these blocks can be edited using the following items. Right-clicking the block with these items will apply the item as a decorative feature to the block:"
+		},
+		{
+			"type": "text",
+			"text": "Iron nugget$(br)Gold nugget$(br)Zircon chunk$(br)Emerald$(br)Diamond$(br)Baltic Amber chunk$(br)Dominican Amber chunk$(br)Quartz$(br)Lapis Lazuli$(br)Coal$(br)Petrified Araucarioxylon Log$(br)Redstone Torch$(br)Anthracite$(br)Salt$(br)Sulphur"
+		},
+		{
+			"type": "text",
+			"text": "Breaking the block will return the last item used (although applying a second item on top of a first item will cause the first item to be lost). $(br)$(br)Bridges can have rails placed on them, and will change the shape to connect to bridges next to them. If a bridge is trimmed with the redstone torch item it will behave as a redstone-powered block and power blocks placed on top of it (eg. powered rails, etc.)"
+		},
+		{
+			"type": "text",
+			"text": "In addition to this, the rope barrier has some extra functionality:$(br2)To add a rope, the barrier must be adjacent to another barrier. Click the rope onto the intended face of the barrier itself to attach it. The rope can also be dyed using any of the standard Minecraft dye items: to apply a dye, the rope must be attached to a barrier and then right-click the dye onto the barrier face which the rope is attached to."
+		},
+		{
+			"type": "text",
+			"text": "Dyes are consumed and not returned to the player. To remove a rope from a barrier, right click with an empty hand on the face the rope is attached to."
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lepidodendron_bench_recipe",
+			"recipe2": "lepidodendron:lepidodendron_bridge_recipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "lepidodendron:lepidodendron_litterbin_recipe",
+			"recipe2": "lepidodendron:rope_barrier"
+		}
+	]
+}
