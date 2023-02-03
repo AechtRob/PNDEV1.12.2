@@ -1,7 +1,7 @@
 {
   "parent": "lepidodendron:block/bridge",
   "textures": {
-    "wood": "lepidodendron:blocks/araucaria_planks",
+    "wood": "lepidodendron:blocks/araucaria_wood",
     "metal": "blocks/coal_block"
   }
 }

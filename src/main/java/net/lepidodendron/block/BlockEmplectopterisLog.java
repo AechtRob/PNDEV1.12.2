@@ -15,6 +15,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -200,7 +201,7 @@ public class BlockEmplectopterisLog extends ElementsLepidodendronMod.ModElement 
 	
 	    @SideOnly(Side.CLIENT)
 		@Override
-    public BlockRenderLayer getRenderLayer()
+    	public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
     }
@@ -294,8 +295,22 @@ public class BlockEmplectopterisLog extends ElementsLepidodendronMod.ModElement 
  		@Override
 		public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
 			super.neighborChanged(state, world, pos, neighborBlock, fromPos);
-			
-			if (world.isAirBlock(pos.down()) && fromPos.getY() == pos.getY()-1) {
+
+			boolean isSafeToStay = false;
+
+			if (world.isAirBlock(pos.down())
+				&& (world.getBlockState(pos.down().north()).getBlock() == Blocks.WATER
+					|| world.getBlockState(pos.down().east()).getBlock() == Blocks.WATER
+					|| world.getBlockState(pos.down().south()).getBlock() == Blocks.WATER
+					|| world.getBlockState(pos.down().west()).getBlock() == Blocks.WATER
+				)
+					&& (world.getBlockState(pos.down(2)).getBlockFaceShape(world, pos.down(2), EnumFacing.UP) == BlockFaceShape.SOLID)
+				)//In this case the water will flow back in and support the plant sufficiently
+			{
+				isSafeToStay = true;
+			}
+
+			if (world.isAirBlock(pos.down()) && fromPos.getY() == pos.getY()-1 && !isSafeToStay) {
 				world.destroyBlock(pos, true);
 			}
 				

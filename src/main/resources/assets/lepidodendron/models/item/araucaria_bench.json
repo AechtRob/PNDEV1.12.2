@@ -1,6 +1,6 @@
 {
   "parent": "lepidodendron:item/bench_item",
   "textures": {
-    "wood": "lepidodendron:blocks/araucaria_planks"
+    "wood": "lepidodendron:blocks/araucaria_wood"
   }
 }

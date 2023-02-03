@@ -10457,6 +10457,7 @@ tile.pf_zamites_shoot_top.name=Zamites Shoot
 tile.pf_zamites_shoot_worldgen.name=Zamites Shoot
 tile.pf_zircon_block.name=Zircon Block
 tile.pf_zircon_glass.name=Clear Zircon Glass
+tile.pf_zircon_glass_greenhouse.name=Zircon Greenhouse Glass
 tile.pf_zircon_glass_pane.name=Clear Zircon Glass Pane
 tile.pf_zircon_ore.name=Lava Rock Zircon Ore
 tile.pf_zircon_ore_obsidian.name=Obsidian Zircon Ore

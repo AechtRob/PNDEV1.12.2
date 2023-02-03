@@ -98,17 +98,20 @@ public class BlockRottenLog extends ElementsLepidodendronMod.ModElement {
 			int count = quantityDropped(state, fortune, rand);
 			for (int i = 0; i < count; i++)
 			{
-				Item item = this.getItemDropped(state, rand, fortune);
-				if (item != Items.AIR && !dropped)
+				Item item = this.getSecondItemDropped(state, rand, fortune);
+				if (item != Items.AIR && rand.nextInt(fortune + 2) != 0)
 				{
-					drops.add(new ItemStack(item, 1, this.damageDropped(state)));
-					dropped = true;
+					drops.add(new ItemStack(item, 1, 0));
+					drops.add(new ItemStack(Items.STICK, 1, 0));
 				}
-				item = this.getSecondItemDropped(state, rand, fortune);
-				if (item != Items.AIR && rand.nextInt(fortune + 1) != 0)
-				{
-					drops.add(new ItemStack(item, 1, this.damageDropped(state)));
+				else {
+					item = this.getItemDropped(state, rand, fortune);
+					if (item != Items.AIR && !dropped) {
+						drops.add(new ItemStack(item, 1, 0));
+						dropped = true;
+					}
 				}
+
 			}
 		}
 

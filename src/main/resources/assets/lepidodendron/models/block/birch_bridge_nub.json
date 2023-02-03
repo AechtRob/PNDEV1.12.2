@@ -1,6 +1,6 @@
 {
  "parent": "lepidodendron:block/bridge_fence_down",
  "textures": {
- "wood": "lepidodendron:blocks/birch_planks"
+ "wood": "blocks/planks_birch"
  }
 }
