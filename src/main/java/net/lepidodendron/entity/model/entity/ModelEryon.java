@@ -223,7 +223,7 @@ public class ModelEryon extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.body.render(f5 );
+        this.body.render(f5);
     }
 
     public void renderStaticDisplayCase(float f) {
@@ -284,10 +284,10 @@ public class ModelEryon extends AdvancedModelBase {
             }
             if(ee.isInWater()) {
                 this.chainWave(Tail, speed*0.6F, tailVdegree, -3, f2, 1);
-                this.swing(clawL, 0.08F, 0.6F, false, 0f, 0f, f2, 1F);
-                this.swing(clawR, 0.08F, -0.6F, false, 0f, -0f, f2, 1F);
-                this.swing(pincerL, 0.18F, -0.33F, true, 0f, 0.2f, f2, 1F);
-                this.swing(pincerR, 0.18F, 0.33F, true, 0f, -0.2f, f2, 1F);
+                this.swing(clawL, 0.08F, 0.3F, false, 0f, 0f, f2, 1F);
+                this.swing(clawR, 0.08F, -0.3F, false, 1.5f, -0f, f2, 1F);
+                this.swing(pincerL, 0.18F, -0.23F, true, 0f, 0.1f, f2, 1F);
+                this.swing(pincerR, 0.18F, 0.23F, true, 1.5f, -0.1f, f2, 1F);
 
                 this.flap(legL, speedLeg, -degreeLeg, true, 0, -0.5F, f2, 0.7F);
                 this.flap(legR, speedLeg, degreeLeg, true, 0, 0.5F, f2, 0.7F);
