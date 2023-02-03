@@ -281,7 +281,7 @@ public class ModelPhragmoceras extends AdvancedModelBaseExtended {
 
         this.resetToDefaultPose();
          float offsetY = 1.3F;
-         this.body.rotateAngleY = (float)Math.toRadians(180);
+
 
         AdvancedModelRendererExtended[] tentacle1 = {this.arm1, this.armb1};
         AdvancedModelRendererExtended[] tentacle2 = {this.arm2, this.armb2};
