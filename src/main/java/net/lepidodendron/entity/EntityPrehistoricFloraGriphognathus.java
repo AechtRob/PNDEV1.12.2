@@ -12,6 +12,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -19,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraGriphognathus extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -27,9 +28,9 @@ public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFi
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraCometicercus(World world) {
+	public EntityPrehistoricFloraGriphognathus(World world) {
 		super(world);
-		setSize(0.25F, 0.25F);
+		setSize(0.3F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -52,12 +53,12 @@ public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFi
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.4f;
+		return 0.25f;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -114,23 +115,23 @@ public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFi
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -150,8 +151,7 @@ public class EntityPrehistoricFloraCometicercus extends EntityPrehistoricFloraFi
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.COMETICERCUS_LOOT;
+		return LepidodendronMod.GRIPHOGNATHUS_LOOT;
 	}
 
 }
-

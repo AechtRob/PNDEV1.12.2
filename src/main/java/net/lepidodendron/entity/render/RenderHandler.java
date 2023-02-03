@@ -3308,12 +3308,14 @@ public class RenderHandler {
                 return new RenderSilurolepis(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCometicercus.class, new IRenderFactory<EntityPrehistoricFloraCometicercus>() {
             @Override
             public Render<? super EntityPrehistoricFloraCometicercus> createRenderFor(RenderManager manager) {
                 return new RenderCometicercus(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPentecopterus.class, new IRenderFactory<EntityPrehistoricFloraPentecopterus>() {
             @Override
             public Render<? super EntityPrehistoricFloraPentecopterus> createRenderFor(RenderManager manager) {
@@ -3374,12 +3376,15 @@ public class RenderHandler {
                 return new RenderNerepisacanthus(manager);
             }
         });
+
+         */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGriphognathus.class, new IRenderFactory<EntityPrehistoricFloraGriphognathus>() {
             @Override
             public Render<? super EntityPrehistoricFloraGriphognathus> createRenderFor(RenderManager manager) {
                 return new RenderGriphognathus(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraConcavicaris.class, new IRenderFactory<EntityPrehistoricFloraConcavicaris>() {
             @Override
             public Render<? super EntityPrehistoricFloraConcavicaris> createRenderFor(RenderManager manager) {
