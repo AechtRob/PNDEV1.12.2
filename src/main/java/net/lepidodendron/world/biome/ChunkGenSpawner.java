@@ -127,7 +127,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                         MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianMobsOceanReborn);
                     }
                }
-               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")) {
+               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_estuary_helper")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                         MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimCambrianEstuaryMobsPF);
                     }
@@ -180,7 +181,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianOceanIceMobsReborn);
                    }
                }
-               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_lagoon")) {
+               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_lagoon")
+                    || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_lagoon_helper")) {
                     if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                         MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimOrdovicianMobsLagoonPF);
                     }
@@ -254,7 +256,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianOceanMobsReborn);
                    }
                }
-               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lagoon")) {
+               else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lagoon")
+                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_lagoon_helper")) {
                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimSilurianMobsLagoonPF);
                    }

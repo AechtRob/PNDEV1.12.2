@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/litterbin",
+ "textures": {
+ "wood": "lepidodendron:blocks/glossopteris_planks",
+ "metal": "lepidodendron:blocks/araucarioxylon_wood_petrified"
+ }
+}

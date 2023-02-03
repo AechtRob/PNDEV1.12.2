@@ -362,12 +362,14 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.Eastmanosteus.render(f5);
     }
+
     public void renderStaticWall(float f) {
         this.Jaw.rotateAngleX = (float) Math.toRadians(20);
         this.Head.offsetY = 0.15F;
         this.Head.render(0.01F);
         resetToDefaultPose();
     }
+
     public void renderStaticFloor(float f) {
         this.setRotateAngle(cube_r1, -1.5708F, -1.4137F, 1.5746F);
         this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
@@ -474,6 +476,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.Eastmanosteus.render(0.01F);
         resetToDefaultPose();
     }
+
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
         modelRenderer.rotateAngleY = y;
@@ -502,7 +505,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         //}
 
         this.chainWave(fishTail, speed * still, 0.02F * still, -3, f2, 0.8F * still);
-        this.chainSwing(fishTail, speed * still, 0.4F * still, -3, f2, 0.6F * still);
+        this.chainSwing(fishTail, speed * still, 0.5F * still, -3, f2, 0.6F * still);
         if (e.isInWater()) {
             this.swing(Eastmanosteus, speed, 0.3F, true, 0, 0, f2, 1);
         }

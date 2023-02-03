@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/litterbin",
+ "textures": {
+ "wood": "lepidodendron:blocks/sigillaria_wood",
+ "metal": "lepidodendron:blocks/araucarioxylon_wood_petrified"
+ }
+}

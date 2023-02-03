@@ -1,0 +1,31 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "3 5",
+ "6 8",
+ " 7 "
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:cypress_planks"
+ },
+ "5": {
+ "item": "lepidodendron:cypress_planks"
+ },
+ "6": {
+ "item": "lepidodendron:cypress_planks"
+ },
+ "7": {
+ "item": "lepidodendron:cypress_slab",
+ "data": 0
+ },
+ "8": {
+ "item": "lepidodendron:cypress_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:cypress_litterbin",
+ "count": 4
+ }
+}

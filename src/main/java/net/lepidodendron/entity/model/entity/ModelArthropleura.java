@@ -1137,7 +1137,7 @@ public class ModelArthropleura extends AdvancedModelBaseExtended {
             this.body4.rotateAngleY += f3 / (180F / (float) Math.PI) * 0.3;
             */
 
-            this.bob(this.Arthropleura, 1.2F, 0.20F, false, f2, 1F);
+            this.bob(this.Arthropleura, 1.2F, 0.133F, false, f2, 1F);
             this.chainWaveExtended(bodySegments, 1.6F, 0.001F, 0.02F, 0, f2, 1f);
             this.chainWaveExtended(bodySegments2, 1.6F, -0.001F, 0.04F, 3, f2, 1f);
 

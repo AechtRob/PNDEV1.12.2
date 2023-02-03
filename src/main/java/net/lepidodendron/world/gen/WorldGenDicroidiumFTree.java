@@ -3,6 +3,8 @@ package net.lepidodendron.world.gen;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumF;
 import net.lepidodendron.procedure.ProcedureWorldGenDicroidiumO;
 import net.lepidodendron.procedure.ProcedureWorldGenTelemachus;
+import net.lepidodendron.util.EnumBiomeTypeJurassic;
+import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -94,6 +96,14 @@ public class WorldGenDicroidiumFTree extends WorldGenAbstractTree
                             if (Math.random() >= stoneFactor && Math.random() > 0.05) {
                                 return false;
                             }
+                        }
+                    }
+
+                    if (worldIn.getBiome(position) instanceof BiomeJurassic) {
+                        BiomeJurassic biomeJurassic = (BiomeJurassic) worldIn.getBiome(position);
+                        if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Taiga) {
+                            ProcedureWorldGenDicroidiumO.executeProcedure($_dependencies);
+                            return true;
                         }
                     }
 

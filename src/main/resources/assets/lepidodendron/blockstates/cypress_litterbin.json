@@ -1,0 +1,84 @@
+{
+ "multipart": [
+ { "when": { "variant": 0 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_0"}
+ ]
+ },
+ { "when": { "variant": 1 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_1"}
+ ]
+ },
+ { "when": { "variant": 2 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_2" }
+ ]
+ },
+ { "when": { "variant": 3 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_3"}
+ ]
+ },
+ { "when": { "variant": 4 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_4"}
+ ]
+ },
+ { "when": { "variant": 5 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_5"}
+ ]
+ },
+ { "when": { "variant": 6 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_6"}
+ ]
+ },
+ { "when": { "variant": 7 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_7"}
+ ]
+ },
+ { "when": { "variant": 8 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_8"}
+ ]
+ },
+ { "when": { "variant": 9},
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_9"}
+ ]
+ },
+ { "when": { "variant": 10 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_10"}
+ ]
+ },
+ { "when": { "variant": 11 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_11"}
+ ]
+ },
+ { "when": { "variant": 12 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_12"}
+ ]
+ },
+ { "when": { "variant": 13 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_13"}
+ ]
+ },
+ { "when": { "variant": 14 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_14"}
+ ]
+ },
+ { "when": { "variant": 15 },
+ "apply": [
+ { "model": "lepidodendron:cypress_litterbin_15"}
+ ]
+ }
+ ]
+}

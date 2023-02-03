@@ -1,0 +1,35 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "3 5",
+ "6 8",
+ " 7 "
+ ],
+ "key": {
+ "3": {
+  "item": "minecraft:planks",
+  "data": 4
+ },
+ "5": {
+  "item": "minecraft:planks",
+  "data": 4
+ },
+ "6": {
+  "item": "minecraft:planks",
+  "data": 4
+ },
+ "7": {
+  "item": "minecraft:wooden_slab",
+  "data": 4
+ },
+ "8": {
+  "item": "minecraft:planks",
+  "data": 4
+ }
+ },
+ "result": {
+ "item": "lepidodendron:acacia_litterbin",
+ "count": 4
+ }
+}

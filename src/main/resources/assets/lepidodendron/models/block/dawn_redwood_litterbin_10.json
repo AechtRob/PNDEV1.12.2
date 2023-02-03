@@ -1,0 +1,7 @@
+{
+ "parent": "lepidodendron:block/litterbin",
+ "textures": {
+ "wood": "lepidodendron:blocks/dawn_redwood_planks",
+ "metal": "blocks/coal_block"
+ }
+}

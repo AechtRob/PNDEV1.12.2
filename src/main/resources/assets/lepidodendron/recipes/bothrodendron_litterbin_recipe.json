@@ -1,0 +1,31 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "3 5",
+ "6 8",
+ " 7 "
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:bothrodendron_planks"
+ },
+ "5": {
+ "item": "lepidodendron:bothrodendron_planks"
+ },
+ "6": {
+ "item": "lepidodendron:bothrodendron_planks"
+ },
+ "7": {
+ "item": "lepidodendron:bothrodendron_slab",
+ "data": 0
+ },
+ "8": {
+ "item": "lepidodendron:bothrodendron_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:bothrodendron_litterbin",
+ "count": 4
+ }
+}

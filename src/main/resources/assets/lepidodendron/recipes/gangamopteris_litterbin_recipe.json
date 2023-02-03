@@ -1,0 +1,31 @@
+{
+ "group": "lepidodendron",
+ "type": "minecraft:crafting_shaped",
+ "pattern": [
+ "3 5",
+ "6 8",
+ " 7 "
+ ],
+ "key": {
+ "3": {
+ "item": "lepidodendron:gangamopteris_planks"
+ },
+ "5": {
+ "item": "lepidodendron:gangamopteris_planks"
+ },
+ "6": {
+ "item": "lepidodendron:gangamopteris_planks"
+ },
+ "7": {
+ "item": "lepidodendron:gangamopteris_slab",
+ "data": 0
+ },
+ "8": {
+ "item": "lepidodendron:gangamopteris_planks"
+ }
+ },
+ "result": {
+ "item": "lepidodendron:gangamopteris_litterbin",
+ "count": 4
+ }
+}
