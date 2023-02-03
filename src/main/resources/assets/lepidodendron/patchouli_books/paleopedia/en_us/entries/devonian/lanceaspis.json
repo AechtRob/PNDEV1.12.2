@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_lanceaspis",
 			"title": "Lanceaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Phacopida$(br)>Acastidae$(br)>Asteropyginae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Trilobita$(br)>Phacopida$(br)>Acastidae$(br)>Asteropyginae"
 		},
 		{
 			"type": "image",

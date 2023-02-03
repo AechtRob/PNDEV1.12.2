@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_archaeocidaris",
 			"title": "Archaeocidaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Permian$(br2)$(l)Habitat:$() Deep Marine$(br2)>Echinodermata$(br)>Echinoidea$(br)>Cidaroida$(br)>Archaeocidaridae"
+			"text": "$(l)Temporal Range:$() Devonian - Permian$(br2)$(l)Habitat:$() Ocean, Dead Reef$(br2)>Echinodermata$(br)>Echinoidea$(br)>Cidaroida$(br)>Archaeocidaridae"
 		},
 		{
 			"type": "image",

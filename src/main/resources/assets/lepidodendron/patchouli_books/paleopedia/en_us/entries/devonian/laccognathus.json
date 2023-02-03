@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_laccognathus",
 			"title": "Laccognathus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Porolepiformes$(br)>Holoptychiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish, Swamp, Forest$(br2)>Porolepiformes$(br)>Holoptychiidae"
 		},
 		{
 			"type": "image",

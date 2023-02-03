@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_terataspis",
 			"title": "Terataspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean, Dead Reef$(br2)>Trilobita$(br)>Lichida$(br)>Lichidae"
 		},
 		{
 			"type": "image",

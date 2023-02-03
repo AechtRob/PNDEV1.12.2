@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_adelophthalmus",
 			"title": "Adelophthalmus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)$(l)Habitat:$() Freshwater$(br2)>Eurypterida$(br)>Adelophthalmidae"
+			"text": "$(l)Temporal Range:$() Devonian-Permian$(br2)$(l)Habitat:$() Freshwater and Reefs$(br2)>Eurypterida$(br)>Adelophthalmidae"
 		},
 		{
 			"type": "image",

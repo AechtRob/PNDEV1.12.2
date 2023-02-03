@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_acanthodes",
 			"title": "Acanthodes",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian to Permian $(br2)$(l)Habitat:$() Oceans, Estuaries, Lakes in later periods$(br2)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
+			"text": "$(l)Temporal Range:$() Devonian - Permian $(br2)$(l)Habitat:$() (D)Oceans, (C-P) Lakes$(br2)>Acanthodii$(br)>Acanthodiformes$(br)>Acanthodidae"
 		},
 		{
 			"type": "image",

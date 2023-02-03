@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_ichthyostega",
 			"title": "Ichthyostega",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Stegocephalia$(br)>Ichthyostegidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Forest, Floodplain, Savannah, Vale$(br2)>Stegocephalia$(br)>Ichthyostegidae"
 		},
 		{
 			"type": "image",

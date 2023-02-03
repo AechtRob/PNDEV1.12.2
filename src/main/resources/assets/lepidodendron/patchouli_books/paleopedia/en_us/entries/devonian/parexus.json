@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_parexus",
 			"title": "Parexus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Marine$(br2)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Floodplain, Wet Meadow$(br2)>Acanthodii$(br)>Climatiiformes$(br)>Climatiidae"
 		},
 		{
 			"type": "image",
