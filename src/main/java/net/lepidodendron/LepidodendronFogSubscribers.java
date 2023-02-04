@@ -29,9 +29,15 @@ import net.minecraft.world.biome.Biome;
 import net.minecraftforge.client.event.EntityViewRenderEvent;
 import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class LepidodendronFogSubscribers {
 
@@ -60,6 +66,10 @@ public class LepidodendronFogSubscribers {
 		Block b = state.getBlock();
 
 		if (!LepidodendronConfig.renderFog) {
+			return;
+		}
+
+		if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
 			return;
 		}
 
@@ -138,7 +148,13 @@ public class LepidodendronFogSubscribers {
 		//	return;
 		//}
 
+
 		if (LepidodendronConfig.renderFog) {
+
+			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
+				return;
+			}
+
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
 
@@ -438,7 +454,12 @@ public class LepidodendronFogSubscribers {
 
 	public float getFogDensity(Entity player) {
 
+
 		if (LepidodendronConfig.renderFog) {
+
+			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
+				return 0;
+			}
 
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			//Block b = event.getState().getBlock();
@@ -570,6 +591,10 @@ public class LepidodendronFogSubscribers {
 		//NB NOT BEING USED:
 		if (LepidodendronConfig.renderFog && 1 == 2) {
 
+			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
+				return;
+			}
+
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			Block b = event.getState().getBlock();
 			Entity player = event.getEntity();
@@ -665,5 +690,37 @@ public class LepidodendronFogSubscribers {
 				}
 			}
 		}
+	}
+
+	public boolean isShaders() {
+		//Check if optifine is installed:
+		boolean isShaders = false;
+		if (FMLClientHandler.instance().hasOptifine()) {
+			//Read from the optionsshaders.txt file:
+			String strFile = null;
+			try {
+				strFile = Minecraft.getMinecraft().gameDir.getCanonicalPath() + "\\optionsshaders.txt";
+			} catch (IOException e) {
+			}
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(strFile));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					if (line.startsWith("shaderPack=")) {
+						if (!(line.substring(11).equalsIgnoreCase("(internal)")
+								|| line.substring(11).equalsIgnoreCase("OFF"))) {
+							isShaders = true;
+						}
+					}
+				}
+				reader.close();
+			} catch (FileNotFoundException e) {
+			} catch (IOException e) {
+			}
+		}
+		if (isShaders) { // Switch off fog rendering hooks as shaders seem to be in use
+			return true;
+		}
+		return false;
 	}
 }
