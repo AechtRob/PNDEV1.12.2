@@ -73,7 +73,7 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
-		if (player.getEntityWorld().isRainingAt(player.getPosition())) {
+		if (player.getEntityWorld().isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
 			return;
 		}
 
@@ -563,7 +563,7 @@ public class LepidodendronFogSubscribers {
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
-								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
+								if (player.world.isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
@@ -669,7 +669,7 @@ public class LepidodendronFogSubscribers {
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
-								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
+								if (player.world.isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
