@@ -49,33 +49,18 @@ public class LepidodendronFogSubscribers {
 			return;
 		}
 
-		//if (1 == 1) {
-		//	return;
-		//}
-
-		//int fogMode = event.getFogMode();
-
 		Entity player = event.getEntity();
-		//double y = player.posY;
-		//Block b = event.getState().getBlock();
-
-		//Biome biome = player.world.getBiome(player.getPosition());
-		IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
-		Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
-		//double y = vec3d.y;
+		IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, (float)event.getRenderPartialTicks());
+		Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, (float)event.getRenderPartialTicks());
 		Block b = state.getBlock();
 
 		if (!LepidodendronConfig.renderFog) {
 			return;
 		}
 
-		if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
-			return;
-		}
-
-		if (player.getEntityWorld().isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
-			return;
-		}
+		//if (player.getEntityWorld().isRainingAt(new BlockPos(vec3d))) {
+		//	return;
+		//}
 
 		if (player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPrecambrian
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimCambrian
@@ -90,6 +75,10 @@ public class LepidodendronFogSubscribers {
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPaleogene
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimNeogene
 			&& player.getEntityWorld().provider.getDimension() != LepidodendronConfig.dimPleistocene) {
+			return;
+		}
+
+		if (hasShaders()) {
 			return;
 		}
 
@@ -117,7 +106,7 @@ public class LepidodendronFogSubscribers {
 					BlockPos pos = new BlockPos(vec3d).add(x, 0, z);
 					if (player.getEntityWorld().isBlockLoaded(pos, false)) {
 						Biome biome = player.world.getBiome(pos);
-						float density = this.getFogDensity(player);
+						float density = this.getFogDensity(player, state, vec3d);
 						float biomeFog = getBiomeFactor(biome); //==0?
 						float foggy = biomeFog + (density * 5000F);
 						fog += 0.75f * f1 * (2.00f - Math.pow(foggy, 2) / 10000f);
@@ -129,7 +118,7 @@ public class LepidodendronFogSubscribers {
 			near = (fog / (float) divider);
 			far = f1;
 
-			float density = this.getFogDensity(player);
+			float density = this.getFogDensity(player, state, vec3d);
 			GlStateManager.setFogDensity(density);
 			if (density != 0) {
 				GlStateManager.setFogStart(near * 0.05F);
@@ -148,13 +137,7 @@ public class LepidodendronFogSubscribers {
 		//	return;
 		//}
 
-
 		if (LepidodendronConfig.renderFog) {
-
-			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
-				return;
-			}
-
 			Entity player = event.getEntity();
 			World world = player.getEntityWorld();
 
@@ -185,6 +168,11 @@ public class LepidodendronFogSubscribers {
 						|| world.provider.getDimension() == LepidodendronConfig.dimNeogene
 						|| world.provider.getDimension() == LepidodendronConfig.dimPleistocene
 				) {
+
+					if (hasShaders()) {
+						return;
+					}
+
 					if (!(player instanceof EntityLivingBase && ((EntityLivingBase) player).isPotionActive(MobEffects.BLINDNESS))) {
 						if (!((b instanceof BlockLiquid) || (b instanceof BlockFluidBase) || state.getMaterial() == Material.WATER)) {
 
@@ -452,30 +440,11 @@ public class LepidodendronFogSubscribers {
 	}
 
 
-	public float getFogDensity(Entity player) {
-
+	public float getFogDensity(Entity player, IBlockState state, Vec3d vec3d) {
 
 		if (LepidodendronConfig.renderFog) {
-
-			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
-				return 0;
-			}
-
-			//EntityPlayer player = Minecraft.getMinecraft().player;
-			//Block b = event.getState().getBlock();
-			//Entity player = event.getEntity();
-
 			World world = player.getEntityWorld();
-			//Biome biome = player.world.getBiome(player.getPosition());
-			//IBlockState state = world.getBlockState(player.getPosition());
-			//Block b = state.getBlock();
-
-			//Entity player = event.getEntity();
-			//Block b = event.getState().getBlock();
-			//Entity player = event.getEntity();
 			Biome biome = player.world.getBiome(player.getPosition());
-			IBlockState state = ActiveRenderInfo.getBlockStateAtEntityViewpoint(player.world, player, 0);
-			Vec3d vec3d = ActiveRenderInfo.projectViewFromEntity(player, 0);
 			double playerEyes = vec3d.y;
 			Block b = state.getBlock();
 
@@ -563,7 +532,7 @@ public class LepidodendronFogSubscribers {
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
-								if (player.world.isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
+								if (player.world.isRainingAt(new BlockPos(vec3d))) {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
@@ -584,16 +553,42 @@ public class LepidodendronFogSubscribers {
 		return 0F;
 	}
 
+	public boolean hasShaders() {
+		//Check if optifine is installed:
+		boolean isShaders = false;
+		if (FMLClientHandler.instance().hasOptifine()) {
+			//Read from the optionsshaders.txt file:
+			String strFile = null;
+			try {
+				strFile = Minecraft.getMinecraft().gameDir.getCanonicalPath() + "\\optionsshaders.txt";
+			} catch (IOException e) {
+			}
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(strFile));
+				String line;
+				while ((line = reader.readLine()) != null) {
+					if (line.startsWith("shaderPack=")) {
+						if (!(line.substring(11).equalsIgnoreCase("(internal)")
+								|| line.substring(11).equalsIgnoreCase("OFF"))) {
+							isShaders = true;
+						}
+					}
+				}
+				reader.close();
+			} catch (FileNotFoundException e) {
+			} catch (IOException e) {
+			}
+		}
+		return isShaders;
+	}
+
+	/*
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void onEvent(EntityViewRenderEvent.FogDensity event) {
 
 		//NB NOT BEING USED:
 		if (LepidodendronConfig.renderFog && 1 == 2) {
-
-			if (isShaders()) { // Switch off fog rendering hooks as shaders seem to be in use
-				return;
-			}
 
 			//EntityPlayer player = Minecraft.getMinecraft().player;
 			Block b = event.getState().getBlock();
@@ -669,7 +664,7 @@ public class LepidodendronFogSubscribers {
 
 							if (player.world.provider.doesXZShowFog((int) player.posX, (int) player.posZ) && playerEyes >= (double) player.world.getSeaLevel()) {
 								fog1 = backgroundFog + fullFogAddition;
-								if (player.world.isRainingAt(new BlockPos(ActiveRenderInfo.projectViewFromEntity(player, 0)))) {
+								if (player.world.isRainingAt(new BlockPos(player.getPosition()))) {
 									float d = player.world.rainingStrength;
 									fog1 = fog1 * d;
 								}
@@ -691,36 +686,6 @@ public class LepidodendronFogSubscribers {
 			}
 		}
 	}
+	 */
 
-	public boolean isShaders() {
-		//Check if optifine is installed:
-		boolean isShaders = false;
-		if (FMLClientHandler.instance().hasOptifine()) {
-			//Read from the optionsshaders.txt file:
-			String strFile = null;
-			try {
-				strFile = Minecraft.getMinecraft().gameDir.getCanonicalPath() + "\\optionsshaders.txt";
-			} catch (IOException e) {
-			}
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(strFile));
-				String line;
-				while ((line = reader.readLine()) != null) {
-					if (line.startsWith("shaderPack=")) {
-						if (!(line.substring(11).equalsIgnoreCase("(internal)")
-								|| line.substring(11).equalsIgnoreCase("OFF"))) {
-							isShaders = true;
-						}
-					}
-				}
-				reader.close();
-			} catch (FileNotFoundException e) {
-			} catch (IOException e) {
-			}
-		}
-		if (isShaders) { // Switch off fog rendering hooks as shaders seem to be in use
-			return true;
-		}
-		return false;
-	}
 }

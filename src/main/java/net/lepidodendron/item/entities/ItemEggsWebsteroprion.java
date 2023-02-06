@@ -9,7 +9,6 @@ import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
@@ -56,7 +55,6 @@ public class ItemEggsWebsteroprion extends ElementsLepidodendronMod.ModElement {
 
 		public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
 		{
-			boolean flag = false;
 			ItemStack itemstack = playerIn.getHeldItem(handIn);
 			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, false);
 
@@ -88,14 +86,15 @@ public class ItemEggsWebsteroprion extends ElementsLepidodendronMod.ModElement {
 					else if (BlockWebsteroprionBurrow.block.canPlaceBlockAt(worldIn, blockpos1) &&
 						worldIn.getBlockState(blockpos1).getBlock() != BlockWebsteroprionBurrow.block) {
 						worldIn.setBlockState(blockpos1, BlockWebsteroprionBurrow.block.getDefaultState());
-
 						if (playerIn instanceof EntityPlayerMP)
 						{
 							CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP)playerIn, blockpos1, itemstack);
 						}
-
+						if (!playerIn.capabilities.isCreativeMode) {
+							itemstack.shrink(1);
+						}
 						playerIn.addStat(StatList.getObjectUseStats(this));
-						return !playerIn.capabilities.isCreativeMode ? new ActionResult(EnumActionResult.SUCCESS, new ItemStack(Items.BUCKET)) : new ActionResult(EnumActionResult.SUCCESS, itemstack);
+						return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 					}
 					else
 					{

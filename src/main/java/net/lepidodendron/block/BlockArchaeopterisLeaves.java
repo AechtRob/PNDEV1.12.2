@@ -63,7 +63,7 @@ public class BlockArchaeopterisLeaves extends ElementsLepidodendronMod.ModElemen
 			setHardness(0.2F);
 			setResistance(0.2F);
 			setLightLevel(0F);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(null);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, true).withProperty(DECAYABLE, true).withProperty(FACING, EnumFacing.NORTH));
 		}
