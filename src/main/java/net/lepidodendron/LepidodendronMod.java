@@ -1420,7 +1420,7 @@ public class LepidodendronMod {
 	public static final int ENTITY_WUTTAGOONASPIS = 581;
 	public static final ResourceLocation WUTTAGOONASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/wuttagoonaspis"));
 	public static final int ENTITY_KUJDANOWIASPIS = 582;
-	public static final ResourceLocation kUJDANOWIASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kujdanowiaspis"));
+	public static final ResourceLocation KUJDANOWIASPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kujdanowiaspis"));
 	public static final int ENTITY_PHYLLOLEPIS = 583;
 	public static final ResourceLocation PHYLLOLEPIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/phyllolepis"));
 	public static final int ENTITY_COWRALEPIS = 584;

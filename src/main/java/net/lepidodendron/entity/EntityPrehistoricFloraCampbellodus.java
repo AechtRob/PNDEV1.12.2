@@ -40,9 +40,9 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
+		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 5.0D;
+		maxHealthAgeable = 4.0D;
 	}
 
 	@Override
@@ -77,12 +77,12 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.196f;
+		return 0.185f;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -180,19 +180,18 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 		super.onEntityUpdate();
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-
-	}
-
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.CAMPBELLODUS_LOOT;
 	}
 
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+	}
+
 }
+

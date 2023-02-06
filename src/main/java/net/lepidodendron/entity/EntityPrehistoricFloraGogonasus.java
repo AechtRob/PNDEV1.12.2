@@ -6,12 +6,13 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
+import net.lepidodendron.entity.ai.FishWanderBottomDweller;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -19,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraGogonasus extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -27,9 +28,9 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraClimatius(World world) {
+	public EntityPrehistoricFloraGogonasus(World world) {
 		super(world);
-		setSize(0.2F, 0.2F);
+		setSize(0.31F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -41,9 +42,9 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 		return true;
 	}
 
-	public static String getPeriod() {return "Silurian - Devonian";}
+	public static String getPeriod() {return "Devonian";}
 
-	//public static String getSize() {return "S";}
+	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {
@@ -52,12 +53,12 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		return 0.285f;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -87,7 +88,7 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(1, new FishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}
 
@@ -114,23 +115,23 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getAmbientSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
+	public SoundEvent getAmbientSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
 	@Override
-	public net.minecraft.util.SoundEvent getDeathSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
+	public SoundEvent getDeathSound() {
+		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
 	}
 
 	@Override
@@ -148,11 +149,19 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 		super.onEntityUpdate();
 	}
 
-	@Nullable
-	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CLIMATIUS_LOOT;
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
+
 	}
 
+	@Nullable
+	protected ResourceLocation getLootTable() {
+		return LepidodendronMod.GOGONASUS_LOOT;
+	}
 
 }
-

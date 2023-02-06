@@ -32,7 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAgeableFishBase {
 
 
 	public BlockPos currentTarget;
@@ -41,25 +41,21 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	int bottomCooldown;
 	boolean bottomFlag;
 
-	public EntityPrehistoricFloraMicrobrachius(World world) {
+	public EntityPrehistoricFloraGooloogongia(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraMicrobrachius.SwimmingMoveHelperBase();
+		this.moveHelper = new EntityPrehistoricFloraGooloogongia.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
-		setSize(1.45F, 1.85F);
+		setSize(1F, 1F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
-		maxHealthAgeable = 2.0D;
+		maxWidth = 0.5F;
+		maxHeight = 0.5F;
+		maxHealthAgeable = 12.0D;
 	}
 
-	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraMicrobrachius(this.world);
-	}
 
 	@Override
 	public boolean isSmall() {
@@ -81,7 +77,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -121,6 +117,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 	}
 
 	@Override
@@ -154,7 +151,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -221,7 +218,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MICROBRACHIUS_LOOT;
+		return LepidodendronMod.GOOLOOGONGIA_LOOT;
 	}
 
 	@Override
@@ -271,10 +268,10 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	}
 
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraMicrobrachius EntityBase = EntityPrehistoricFloraMicrobrachius.this;
+		private final EntityPrehistoricFloraGooloogongia EntityBase = EntityPrehistoricFloraGooloogongia.this;
 
 		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraMicrobrachius.this);
+			super(EntityPrehistoricFloraGooloogongia.this);
 		}
 
 		@Override

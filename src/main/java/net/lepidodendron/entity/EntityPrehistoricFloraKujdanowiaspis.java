@@ -1,18 +1,16 @@
 
 package net.lepidodendron.entity;
 
-import com.google.common.base.Predicate;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWander;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -23,26 +21,27 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraKujdanowiaspis extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 
-	public EntityPrehistoricFloraTegeolepis(World world) {
+	public EntityPrehistoricFloraKujdanowiaspis(World world) {
 		super(world);
-		setSize(0.5F, 0.4F);
+		setSize(0.9F, 0.9F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		//minSize = 0.1F;
+		//maxSize = 1.0F;
 		minWidth = 0.1F;
-		maxWidth = 0.5F;
-		maxHeight = 0.4F;
+		maxWidth = 0.35F;
+		maxHeight = 0.22F;
 		maxHealthAgeable = 8.0D;
 	}
 
@@ -51,18 +50,28 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 		return true;
 	}
 
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return stack.getItem() == ItemFishFood.block;
+	}
+
 	public static String getPeriod() {return "Devonian";}
 
-	//public static String getHabitat() {return "Aquatic";}
-	public static String getSize() {return "L";}
+	//public static String getHabitat() {return "Aquatic Lobe-Finned Fish (Coelacanth)";}
 
 	@Override
 	public void playLivingSound() {
 	}
 
 	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraKujdanowiaspis(this.world);
+	}
+
+	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 	
 	@Override
@@ -71,13 +80,18 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
+	public boolean divesToLay() {
+		return false;
+	}
+
+	@Override
 	public int getAdultAge() {
-		return 0;
-	} //Only adults!
+		return 36000;
+	}
 
 	@Override
 	protected float getAISpeedFish() {
-		float AIspeed = 0.231f;
+		float AIspeed = 0.211f;
 		if (this.getIsFast()) {
 			AIspeed = AIspeed * 2.2F;
 		}
@@ -89,31 +103,11 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 		return false;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
-	}
-
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
-		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		}
 
 	@Override
 	public boolean isAIDisabled() {
@@ -139,7 +133,7 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -163,33 +157,6 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 		return 1.0F;
 	}
 
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
-
-		//System.err.println(this.getAnimationTick());
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
-
-		AnimationHandler.INSTANCE.updateAnimations(this);
-	}
-
-	@Override
-	public boolean attackEntityAsMob(Entity entity) {
-		if (this.getAnimation() == NO_ANIMATION) {
-			this.setAnimation(ATTACK_ANIMATION);
-			//System.err.println("set attack");
-		}
-		return false;
-	}
-
-	@Override
-	public float getAgeScale() {
-		return 1;
-	}
-
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
 		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
 		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
@@ -197,8 +164,7 @@ public class EntityPrehistoricFloraTegeolepis extends EntityPrehistoricFloraAgea
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.TEGEOLEPIS_LOOT;
+		return LepidodendronMod.KUJDANOWIASPIS_LOOT;
 	}
 
 }
-

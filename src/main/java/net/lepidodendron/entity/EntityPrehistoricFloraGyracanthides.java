@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraGyracanthides extends EntityPrehistoricFloraF
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous";}
+	public static String getPeriod() {return "Devonian - Carboniferous";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

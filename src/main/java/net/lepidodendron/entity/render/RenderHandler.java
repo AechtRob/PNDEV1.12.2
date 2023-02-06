@@ -3302,13 +3302,13 @@ public class RenderHandler {
                 return new RenderMiguashaia(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSilurolepis.class, new IRenderFactory<EntityPrehistoricFloraSilurolepis>() {
             @Override
             public Render<? super EntityPrehistoricFloraSilurolepis> createRenderFor(RenderManager manager) {
                 return new RenderSilurolepis(manager);
             }
         });
-        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCometicercus.class, new IRenderFactory<EntityPrehistoricFloraCometicercus>() {
             @Override
             public Render<? super EntityPrehistoricFloraCometicercus> createRenderFor(RenderManager manager) {
@@ -3328,6 +3328,7 @@ public class RenderHandler {
                 return new RenderOxyosteus(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTegeolepis.class, new IRenderFactory<EntityPrehistoricFloraTegeolepis>() {
             @Override
             public Render<? super EntityPrehistoricFloraTegeolepis> createRenderFor(RenderManager manager) {
@@ -3340,6 +3341,7 @@ public class RenderHandler {
                 return new RenderGooloogongia(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWarneticaris.class, new IRenderFactory<EntityPrehistoricFloraWarneticaris>() {
             @Override
             public Render<? super EntityPrehistoricFloraWarneticaris> createRenderFor(RenderManager manager) {
@@ -3358,6 +3360,7 @@ public class RenderHandler {
                 return new RenderCeratiocaris(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDiplacanthus.class, new IRenderFactory<EntityPrehistoricFloraDiplacanthus>() {
             @Override
             public Render<? super EntityPrehistoricFloraDiplacanthus> createRenderFor(RenderManager manager) {
@@ -3377,7 +3380,7 @@ public class RenderHandler {
             }
         });
 
-         */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGriphognathus.class, new IRenderFactory<EntityPrehistoricFloraGriphognathus>() {
             @Override
             public Render<? super EntityPrehistoricFloraGriphognathus> createRenderFor(RenderManager manager) {
@@ -3391,6 +3394,7 @@ public class RenderHandler {
                 return new RenderConcavicaris(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraGogonasus.class, new IRenderFactory<EntityPrehistoricFloraGogonasus>() {
             @Override
             public Render<? super EntityPrehistoricFloraGogonasus> createRenderFor(RenderManager manager) {
@@ -3403,18 +3407,22 @@ public class RenderHandler {
                 return new RenderFallacosteus(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraRolfosteus.class, new IRenderFactory<EntityPrehistoricFloraRolfosteus>() {
             @Override
             public Render<? super EntityPrehistoricFloraRolfosteus> createRenderFor(RenderManager manager) {
                 return new RenderRolfosteus(manager);
             }
         });
+        */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCamuropiscis.class, new IRenderFactory<EntityPrehistoricFloraCamuropiscis>() {
             @Override
             public Render<? super EntityPrehistoricFloraCamuropiscis> createRenderFor(RenderManager manager) {
                 return new RenderCamuropiscis(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraCtenurella.class, new IRenderFactory<EntityPrehistoricFloraCtenurella>() {
             @Override
             public Render<? super EntityPrehistoricFloraCtenurella> createRenderFor(RenderManager manager) {
@@ -3439,6 +3447,7 @@ public class RenderHandler {
                 return new RenderDraconichthys(manager);
             }
         });
+        */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMaterpiscis.class, new IRenderFactory<EntityPrehistoricFloraMaterpiscis>() {
             @Override
             public Render<? super EntityPrehistoricFloraMaterpiscis> createRenderFor(RenderManager manager) {
@@ -3457,18 +3466,21 @@ public class RenderHandler {
                 return new RenderBrindabellaspis(manager);
             }
         });
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraWuttagoonaspis.class, new IRenderFactory<EntityPrehistoricFloraWuttagoonaspis>() {
             @Override
             public Render<? super EntityPrehistoricFloraWuttagoonaspis> createRenderFor(RenderManager manager) {
                 return new RenderWuttagoonaspis(manager);
             }
         });
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKujdanowiaspis.class, new IRenderFactory<EntityPrehistoricFloraKujdanowiaspis>() {
             @Override
             public Render<? super EntityPrehistoricFloraKujdanowiaspis> createRenderFor(RenderManager manager) {
                 return new RenderKujdanowiaspis(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPhyllolepis.class, new IRenderFactory<EntityPrehistoricFloraPhyllolepis>() {
             @Override
             public Render<? super EntityPrehistoricFloraPhyllolepis> createRenderFor(RenderManager manager) {
