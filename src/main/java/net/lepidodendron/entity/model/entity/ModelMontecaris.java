@@ -418,7 +418,8 @@ public class ModelMontecaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 1.1F;
+        this.body.offsetY = 0.9F;
+
 
         AdvancedModelRenderer[] Tail = {this.seg, this.seg2, this.seg3, this.seg4, this.seg5};
 
@@ -437,7 +438,7 @@ public class ModelMontecaris extends AdvancedModelBase {
 
             this.walk(antennaR2, 0.6F, 0.15F, false, 0f, 0f, f2, 1F);
 
-            float tailVdegree = 0.2F;
+            float tailVdegree = 0.01F;
             float tailHdegree = 0.3F;
             this.chainWave(Tail, speed*0.65F, tailVdegree, -2, f2, 1);
 
@@ -469,11 +470,6 @@ public class ModelMontecaris extends AdvancedModelBase {
             this.flap(legL12, speedLeg, -degreeLeg, false, 5.5F, -0.5F, f2, 0.7F);
             this.flap(legR12, speedLeg, degreeLeg, false, 5.5F, 0.5F, f2, 0.7F);
 
-            if (!e.isInWater()) {
-                this.body.offsetY = 1.2F;
-                this.bob(body, -speed * 1.5F, 3F, false, f2, 1);
-            }
-            else {
                 if (f3 == 0.0F) {
                     this.bob(body, -speed, 0.3F, false, f2, 2);
                 }
@@ -481,7 +477,7 @@ public class ModelMontecaris extends AdvancedModelBase {
                 {
                     this.bob(body, -speed, 1F, false, f2, 2);
                 }
-            }
+
         }
     }
 }

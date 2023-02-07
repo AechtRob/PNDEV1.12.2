@@ -316,7 +316,7 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.main.render(f5 * 0.4F);
+        this.main.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();

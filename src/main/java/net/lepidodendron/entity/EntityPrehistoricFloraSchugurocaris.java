@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.EatFishFoodAIFish;
 import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
+import net.lepidodendron.entity.ai.FishWanderSurface;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraSchugurocaris extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -28,9 +28,9 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraMiguashaia(World world) {
+	public EntityPrehistoricFloraSchugurocaris(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.4F, 0.4F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -53,12 +53,13 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		//return 0;
+		return 0.326f * 0.85F;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -88,7 +89,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
+		tasks.addTask(1, new FishWanderSurface(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}
 
@@ -104,7 +105,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -151,7 +152,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MIGUASHAIA_LOOT;
+		return LepidodendronMod.SCHUGUROCARIS_LOOT;
 	}
 
 }

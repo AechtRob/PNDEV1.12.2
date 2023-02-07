@@ -3,13 +3,18 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
+import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AgeableFishWander;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EatFishItemsAI;
+import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -20,7 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraRolfosteus extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -28,14 +33,29 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraMiguashaia(World world) {
+	public EntityPrehistoricFloraRolfosteus(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.4F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		minWidth = 0.2F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 6.0D;
 	}
+
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraRolfosteus(this.world);
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 32000;
+	}
+
 
 	@Override
 	public boolean isSmall() {
@@ -48,17 +68,22 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
+	}
+
+	@Override
+	public boolean laysEggs() {
+		return false;
 	}
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		return 0.185f;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -87,9 +112,16 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+		tasks.addTask(0, new EntityMateAI(this, 1));
+		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
+		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
+		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override
@@ -116,7 +148,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.27D);
 	}
 
 	@Override
@@ -143,6 +175,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
+		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	public void onEntityUpdate() {
@@ -151,7 +184,16 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MIGUASHAIA_LOOT;
+		return LepidodendronMod.ROLFOSTEUS_LOOT;
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+		if (source != DamageSource.DROWN) {
+			return super.attackEntityFrom(source, (amount * 0.5F));
+		}
+		return super.attackEntityFrom(source, amount);
 	}
 
 }
+

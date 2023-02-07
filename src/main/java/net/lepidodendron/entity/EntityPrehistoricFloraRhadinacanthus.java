@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFishBase {
+public class EntityPrehistoricFloraRhadinacanthus extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -28,9 +28,9 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraMiguashaia(World world) {
+	public EntityPrehistoricFloraRhadinacanthus(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.3F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
@@ -53,12 +53,13 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.3f;
+		//return 0;
+		return 0.15f;
 	}
 
 	@Override
 	protected boolean isBase() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -115,7 +116,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
@@ -151,7 +152,8 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.MIGUASHAIA_LOOT;
+		return LepidodendronMod.RHADINACANTHUS_LOOT;
 	}
 
 }
+

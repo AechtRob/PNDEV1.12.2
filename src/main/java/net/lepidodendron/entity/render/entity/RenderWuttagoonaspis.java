@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderWuttagoonaspis extends RenderLiving<EntityPrehistoricFloraWuttagoonaspis> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/wuttagoonaspis.png");
     public static float getScaler() {
-        return 0.95F;
+        return 0.95F * 0.4F;
     }
     public RenderWuttagoonaspis(RenderManager mgr) {
         super(mgr, new ModelWuttagoonaspis(), 0.0f);
