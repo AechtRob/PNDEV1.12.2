@@ -74,7 +74,7 @@ public class BlockArchaeopterisLeavesPlaceable extends ElementsLepidodendronMod.
 			setHardness(0.2F);
 			setResistance(0.2F);
 			setLightLevel(0F);
-			setLightOpacity(1);
+			setLightOpacity(0);
 			setCreativeTab(TabLepidodendronPlants.tab);
 			this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, false).withProperty(FACING, EnumFacing.NORTH));
 		}
