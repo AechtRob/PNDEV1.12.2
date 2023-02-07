@@ -3,10 +3,10 @@
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_dactylioceras",
 	"category": "lepidodendron:jurassic_animal",
-	"turnin": "lepidodendron:pf_adv_book_dactylioceras",
+	"turnin": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_dactylioceras",
+			"trigger": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"title": "Dactylioceras",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Ammonitida$(br)>Dactylioceratidae"
@@ -18,32 +18,32 @@
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "Dactylioceras is a genus of ammonite from the Jurassic of Europe, Asia, North Africa, Greenland and the Americas. This genus is among the most common and characteristic ammonites in the Jurassic, characterized by an evolute coiling of the shell and a serpenticone morphology, with non overlapping whorls and a wide umbilicus."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "The ammonite possessed rectiradiate ribs along its shell, meaning the crests adorning the shell were generally straight pointing, not moving towards either front or back of the shell; the ribs were thicker towards the inner side of the whorl and forked towards the ventral side. The Suture lines in Dactylioceras were of the Ammonitic type but not particularly jagged,"
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "unlike other suture lines in the typology, given that among ammonite suture lines they are the most jagged. Dactylioceras was a small ammonite with an average diameter of just 65 mm, however larger specimens are known which would range to diameters between 5 and 9 cm, although much rarer compared to the tiny ones they are most known for."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "With an extremely wide geographic distribution and a very limited stratigraphic one, Dactylioceras makes for an ideal guide fossil, especially for the species Dactylioceras communis, widely used to date the sediments it's found in."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "Due to their abundance and ease of collection, the existence of these fossil shells was widely known even in ancient times, an example of which seen in medieval Yorkshire, where the people of Whitby used to carve faces onto the shells of these cephalopods, believing them to be snakes petrified by Saint Hilda."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_dactylioceras",
+			"advancement": "lepidodendron:pf_adv_book_ammonite_dactylioceras",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
 		}

@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCampbellodus extends RenderLiving<EntityPrehistoricFloraCampbellodus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/campbellodus.png");
 
+    public static float getScaler() {
+        return 0.15F;
+    }
+
     public RenderCampbellodus(RenderManager mgr) {
         super(mgr, new ModelCampbellodus(), 0.0f);
     }
@@ -27,7 +31,7 @@ public class RenderCampbellodus extends RenderLiving<EntityPrehistoricFloraCampb
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCampbellodus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         if (scale < 0.1f) {scale = 0.1f;}
         GlStateManager.scale(scale, scale, scale);
         //this.shadowSize = entity.width * scale * 0.3f;

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/dollocaris_raw"
+    "layer0": "paleopedia:dollocaris_icon"
   }
 }

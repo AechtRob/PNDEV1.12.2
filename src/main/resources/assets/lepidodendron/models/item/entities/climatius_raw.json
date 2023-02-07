@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/climatius_raw"
+    "layer0": "paleopedia:climatius_icon"
   }
 }

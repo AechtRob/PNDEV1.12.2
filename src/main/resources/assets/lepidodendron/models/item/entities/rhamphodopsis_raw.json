@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/rhamphodopsis_raw"
+    "layer0": "paleopedia:rhamphodopsis_icon"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "lepidodendron:items/entities/piranhamesodon_raw"
+    "layer0": "paleopedia:piranhamesodon_icon"
   }
 }

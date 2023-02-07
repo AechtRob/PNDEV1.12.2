@@ -219,7 +219,7 @@ public class ModelCampbellodus extends AdvancedModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        this.Bodyfront.render(f5 * 0.175F);
+        this.Bodyfront.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
