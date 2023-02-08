@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderFallacosteus extends RenderLiving<EntityPrehistoricFloraFallacosteus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/fallacosteus.png");
     public static float getScaler() {
-        return 0.7F * 0.35F;
+        return 0.7F * 0.3F;
     }
     public RenderFallacosteus(RenderManager mgr) {
         super(mgr, new ModelFallacosteus(), 0.0f);

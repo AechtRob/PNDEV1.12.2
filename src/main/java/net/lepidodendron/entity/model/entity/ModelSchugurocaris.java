@@ -450,11 +450,15 @@ public class ModelSchugurocaris extends AdvancedModelBase {
             this.flap(legR13, speedLeg, degreeLeg, false, 6F, 0.5F, f2, 0.7F);
             this.flap(legL14, speedLeg, -degreeLeg, false, 6.5F, -0.5F, f2, 0.7F);
             this.flap(legR14, speedLeg, degreeLeg, false, 6.5F, 0.5F, f2, 0.7F);
-
+            if (!e.isInWater()) {
+                this.body.offsetY = 0.4F;
+                this.body.rotateAngleZ = (float) Math.toRadians(90);
+            }
 
 
                 if (f3 == 0.0F) {
                     this.bob(body, -speed, 0.3F, false, f2, 2);
+
                 }
                 else
                 {

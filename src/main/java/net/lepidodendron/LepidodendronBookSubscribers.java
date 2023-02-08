@@ -8126,6 +8126,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			*/
 			else if (event.getTarget() instanceof EntityPrehistoricFloraMiguashaia) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_MIGUASHAIA.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8144,6 +8145,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			/*
 			else if (event.getTarget() instanceof EntityPrehistoricFloraPentecopterus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_PENTECOPTERUS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8152,7 +8154,7 @@ public class LepidodendronBookSubscribers {
 				deliverStatsEntity(event);
 				event.setCanceled(true);
 				return;
-			}
+			}*/
 			else if (event.getTarget() instanceof EntityPrehistoricFloraOxyosteus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_OXYOSTEUS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8536,7 +8538,7 @@ public class LepidodendronBookSubscribers {
 			
 			
 			
-			 */
+
 
 
 

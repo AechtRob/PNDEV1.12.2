@@ -193,6 +193,7 @@ public class ModelMicrobrachius extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.bob(Body, -speed, 2F, false, f2, 1);
+                this.Body.offsetY = 0.08F;
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }
         }

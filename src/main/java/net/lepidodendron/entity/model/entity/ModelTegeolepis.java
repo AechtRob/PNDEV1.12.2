@@ -405,6 +405,7 @@ public class ModelTegeolepis extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.main.rotateAngleZ = (float) Math.toRadians(90);
+            this.main.offsetY = 0.15F;
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.15F, -0.55, f2, 0.4F * still);
 

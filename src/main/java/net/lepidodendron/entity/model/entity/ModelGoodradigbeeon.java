@@ -441,9 +441,9 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
             this.chainSwing(fishTail, speed *0.5F* bottomModifier, taildegree * bottomModifier, -3, f2, 1);
             this.swing(main, speed *0.5F* bottomModifier, 0.3F * bottomModifier * swingModifier, true, 0, 0, f2, 1 * swingModifier);
             if(isAtBottom && !goodra.getIsFast()) {
-                this.walk(jaw, (float) (speed * 0.2), (float) Math.toRadians(20), true, 0.5F, -0.3F, f2, 1);
+                this.walk(jaw, (float) (speed * 0.2), (float) Math.toRadians(7.5), true, 0.5F, -0.3F, f2, 1);
             } else {
-                this.walk(jaw, (float) (speed * 0.4), (float) Math.toRadians(15), true, 0.2F, -0.25F, f2, 1);
+                this.walk(jaw, (float) (speed * 0.4), (float) Math.toRadians(10), true, 0.2F, -0.25F, f2, 1);
             }
             this.flap(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, -3F, 0, f2, 1 * inwater);
             this.swing(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, -3F, 0, f2, 1 * inwater);

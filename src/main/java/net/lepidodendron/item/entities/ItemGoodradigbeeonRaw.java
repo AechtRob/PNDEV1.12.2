@@ -32,6 +32,8 @@ public class ItemGoodradigbeeonRaw extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/goodradigbeeon_raw", "inventory"));
 	}
+
+	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
 		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_goodradigbeeon", ItemGoodradigbeeonRaw.block);
@@ -39,6 +41,7 @@ public class ItemGoodradigbeeonRaw extends ElementsLepidodendronMod.ModElement {
 		OreDictionary.registerOre("listAllmeatraw", ItemGoodradigbeeonRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemGoodradigbeeonRaw.block);
 	}
+
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);

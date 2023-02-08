@@ -339,7 +339,7 @@ public class ModelGriphognathus extends AdvancedModelBase {
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainSwing(fishTail, speed, 0.5F, -3, f2, 1);
-            this.swing(body, speed, 0.3F, true, 0, 0, f2, 1);
+            this.swing(body, speed, 0.2F, true, 0, 0, f2, 1);
             this.walk(jaw, (float) (speed * 0.75), (float)Math.toRadians(10), true, 0, -0.2F, f2, 1);
             this.walk(pectorafin1, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             this.swing(pectorafin1, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
@@ -351,7 +351,7 @@ public class ModelGriphognathus extends AdvancedModelBase {
             this.swing(pelvicfins2, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);
             if (!e.isInWater()) {
                 this.body.rotateAngleZ = (float) Math.toRadians(90);
-                this.body.offsetY = 1.0F;
+                this.body.offsetY = 1.33F;
                 this.body.offsetX = -0.7F;
             }
         }

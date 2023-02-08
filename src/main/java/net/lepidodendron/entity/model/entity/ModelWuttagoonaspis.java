@@ -343,7 +343,7 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
-        this.main.offsetY = 0.7F;
+        //this.main.offsetY = 0.7F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
@@ -371,7 +371,7 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
         if (isAtBottom && !wuttagoon.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
+            taildegree = 0.12F;
             bottomModifier = 0.5F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);
@@ -386,30 +386,31 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
 
 
-
-            this.chainWave(fishTail, speed *0.5F* bottomModifier, 0.02F, -1, f2, 1);
-            this.chainSwing(fishTail, speed *0.5F* bottomModifier, taildegree * bottomModifier, -3, f2, 1);
-            this.swing(main, speed *0.5F* bottomModifier, 0.3F * bottomModifier * swingModifier, true, 0, 0, f2, 1 * swingModifier);
-            if(isAtBottom && !wuttagoon.getIsFast()) {
-                this.walk(jaw, (float) (speed * 0.25), (float) Math.toRadians(25), true, 0.5F, -0.3F, f2, 1);
-            } else {
-                this.walk(jaw, (float) (speed * 0.4), (float) Math.toRadians(15), true, 0.2F, -0.25F, f2, 1);
-            }
-            this.flap(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, -3F, 0, f2, 1 * inwater);
-            this.swing(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, -3F, 0, f2, 1 * inwater);
-            this.flap(frontrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, 0F, 0, f2, 1 * inwater);
-            this.swing(frontrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, 0, 0, f2, 1 * inwater);
-
-            this.flap(backleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.15F * inwater, true, -0.1F, 0.1F, f2, 1 * inwater);
-            this.swing(backleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.1F * inwater, true, 0, 0, f2, 1 * inwater);
-            this.flap(backrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), -0.15F * inwater, true, 0.1F, -0.1F, f2, 1 * inwater);
-            this.swing(backrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), -0.1F * inwater, true, 0, 0, f2, 1 * inwater);
-
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.main.offsetY = 0.9F;
-                this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
-                this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
+                //this.main.offsetY = 0.9F;
+                this.chainWave(fishTail, speed*0.4F, 0.01F, -1, f2, 1);
+                this.chainSwing(fishTail, speed*0.4F, 0.10F, -3, f2, 1);
+                this.swing(main, speed * 0.4F, 0.1F * bottomModifier * swingModifier, true, 0, 0, f2, 1 * swingModifier);
+            } else {
+
+                this.chainWave(fishTail, speed * 0.5F * bottomModifier, 0.01F, -1, f2, 1);
+                this.chainSwing(fishTail, speed * 0.5F * bottomModifier, taildegree * bottomModifier, -3, f2, 1);
+                this.swing(main, speed * 0.5F * bottomModifier, 0.3F * bottomModifier * swingModifier, true, 0, 0, f2, 1 * swingModifier);
+                if (isAtBottom && !wuttagoon.getIsFast()) {
+                    this.walk(jaw, (float) (speed * 0.25), (float) Math.toRadians(25), true, 0.5F, -0.3F, f2, 1);
+                } else {
+                    this.walk(jaw, (float) (speed * 0.4), (float) Math.toRadians(15), true, 0.2F, -0.25F, f2, 1);
+                }
+                this.flap(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, -3F, 0, f2, 1 * inwater);
+                this.swing(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, -3F, 0, f2, 1 * inwater);
+                this.flap(frontrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, 0F, 0, f2, 1 * inwater);
+                this.swing(frontrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, 0, 0, f2, 1 * inwater);
+
+                this.flap(backleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.15F * inwater, true, -0.1F, 0.1F, f2, 1 * inwater);
+                this.swing(backleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), 0.1F * inwater, true, 0, 0, f2, 1 * inwater);
+                this.flap(backrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), -0.15F * inwater, true, 0.1F, -0.1F, f2, 1 * inwater);
+                this.swing(backrightfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), -0.1F * inwater, true, 0, 0, f2, 1 * inwater);
             }
         }
     }
