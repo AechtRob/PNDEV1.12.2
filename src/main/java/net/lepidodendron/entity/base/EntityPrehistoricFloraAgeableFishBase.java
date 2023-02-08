@@ -282,7 +282,8 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 distanceY /= distance;
                 float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
 
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 1000);
+                //this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 1000);
+                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 

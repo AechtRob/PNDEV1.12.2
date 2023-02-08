@@ -110,4 +110,5 @@ public class FishWander extends AnimationAINoAnimation<EntityPrehistoricFloraFis
         }
         return null;
     }
+
 }
