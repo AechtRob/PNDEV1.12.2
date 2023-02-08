@@ -48,6 +48,7 @@ public class LepidodendronConfig {
     public static boolean doMeteoritesGriefing = true;
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
+    public static boolean doShoalingFlocking = true;
     
     public static boolean doShrinkBiomes = true;
 
@@ -754,6 +755,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global Mobs", "blockMobsFAExceptions", blockMobsFAExceptions);
         prop.setComment("Switch to false to allow Fossils and Archeology ambient spawns (Alligator Gar, Sturgeon, Nautilus and Coelacanth) to spawn in the correct dimensions [default: true]");
         blockMobsFAExceptions = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doShoalingFlocking", doShoalingFlocking);
+        prop.setComment("Allow appropriate fish to shoal and land mobs to flock (may be resource-intensive for weak PCs) [default: true]");
+        doShoalingFlocking = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "jarMobs", jarMobs);

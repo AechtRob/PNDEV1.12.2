@@ -6,6 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityAgeable;
@@ -48,6 +49,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public ChainBuffer chainBuffer;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
+    private EntityPrehistoricFloraFishBase shoalLeader;
     private int inPFLove;
 
     public EntityPrehistoricFloraFishBase(World world) {
@@ -63,6 +65,18 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
         }
+    }
+
+    public boolean canShoal() {
+        return false;
+    }
+
+    public int getShoalSize() {
+        return 0;
+    }
+
+    public int getShoalDist() {
+        return 0;
     }
 
     public static String getHabitat() {
@@ -135,6 +149,15 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
 
     public void setTicks(int ticks) {
         this.dataManager.set(TICKS, ticks);
+    }
+
+    @Nullable
+    public EntityPrehistoricFloraFishBase getShoalLeader() {
+        return this.shoalLeader;
+    }
+
+    public void setShoalLeader(@Nullable EntityPrehistoricFloraFishBase leader) {
+        this.shoalLeader = leader;
     }
 
     public boolean getCanBreed() {
@@ -351,6 +374,12 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
             //limit at 48000 (two MC days) and then reset:
             if (ii >= 48000) {ii = 0;}
             this.setTicks(ii);
+        }
+
+        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
+            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+                ShoalingHelper.updateShoalFishBase(this);
+            }
         }
 
         //Drop an egg perhaps:
