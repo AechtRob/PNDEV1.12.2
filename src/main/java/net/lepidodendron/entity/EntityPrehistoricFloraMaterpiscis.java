@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraMaterpiscis extends EntityPrehistoricFloraAge
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, 0));
+		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, -10));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
 

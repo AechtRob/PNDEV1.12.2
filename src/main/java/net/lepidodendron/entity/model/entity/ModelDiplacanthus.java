@@ -248,6 +248,7 @@ public class ModelDiplacanthus extends AdvancedModelBase {
         float speed = 0.3F;
         if (!e.isInWater()) {
             speed = 0.7F;
+
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
@@ -264,6 +265,7 @@ public class ModelDiplacanthus extends AdvancedModelBase {
             this.swing(backrightfin, (float) (speed * 0.75), 0.05F, true, 3.5F, 0, f2, 1);
             if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
+                this.main.offsetY = 0.2F;
 
             }
         }

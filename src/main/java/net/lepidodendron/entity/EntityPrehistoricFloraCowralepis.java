@@ -4,7 +4,10 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatAlgaeItemsAI;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.ItemFishFood;
@@ -29,7 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraCowralepis extends EntityPrehistoricFloraAgeableFishBase {
 
 
 	public BlockPos currentTarget;
@@ -38,9 +41,9 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 	int bottomCooldown;
 	boolean bottomFlag;
 
-	public EntityPrehistoricFloraSilurolepis(World world) {
+	public EntityPrehistoricFloraCowralepis(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraSilurolepis.SwimmingMoveHelperBase();
+		this.moveHelper = new EntityPrehistoricFloraCowralepis.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
 		setSize(1.45F, 1.85F);
 		experienceValue = 0;
@@ -48,11 +51,15 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 12.0D;
+		maxWidth = 0.4F;
+		maxHeight = 0.25F;
+		maxHealthAgeable = 13.0D;
 	}
 
+	@Override
+	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
+		return new EntityPrehistoricFloraCowralepis(this.world);
+	}
 
 	@Override
 	public boolean isSmall() {
@@ -74,7 +81,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 
 	@Override
 	public boolean dropsEggs() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -92,7 +99,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
 			return 0.2F;
 		}
-		return 0.242f;
+		return 0.3f;
 	}
 
 	@Override
@@ -111,10 +118,10 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
+		tasks.addTask(0, new EntityMateAI(this, 1));
 		tasks.addTask(3, new AgeableFishWanderBottomDweller(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+		this.targetTasks.addTask(0, new EatAlgaeItemsAI(this, 1.0));
 	}
 
 	@Override
@@ -215,7 +222,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.SILUROLEPIS_LOOT;
+		return LepidodendronMod.COWRALEPIS_LOOT;
 	}
 
 	@Override
@@ -265,10 +272,10 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 	}
 
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraSilurolepis EntityBase = EntityPrehistoricFloraSilurolepis.this;
+		private final EntityPrehistoricFloraCowralepis EntityBase = EntityPrehistoricFloraCowralepis.this;
 
 		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraSilurolepis.this);
+			super(EntityPrehistoricFloraCowralepis.this);
 		}
 
 		@Override

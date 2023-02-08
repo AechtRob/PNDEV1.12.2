@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgeableFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraCampbellodus(World world) {
+	public EntityPrehistoricFloraCtenurella(World world) {
 		super(world);
 		setSize(0.5F, 0.3F);
 		experienceValue = 0;
@@ -42,12 +42,12 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 4.0D;
+		maxHealthAgeable = 5.0D;
 	}
 
 	@Override
 	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraCampbellodus(this.world);
+		return new EntityPrehistoricFloraCtenurella(this.world);
 	}
 
 	@Override
@@ -146,7 +146,7 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
 	}
 
 	@Override
@@ -182,7 +182,7 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CAMPBELLODUS_LOOT;
+		return LepidodendronMod.CTENURELLA_LOOT;
 	}
 
 	@Override

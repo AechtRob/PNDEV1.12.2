@@ -256,6 +256,7 @@ public class ModelRolfosteus extends AdvancedModelBase {
         float speed = 0.3F;
         if (!e.isInWater()) {
             speed = 0.7F;
+            this.Root.offsetY = 0.1F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
             this.walk(Jaw, (float) (speed * 0.4), 0.25F, true, 0, -0.2F, f2, 1);

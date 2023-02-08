@@ -29,7 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraAgeableFishBase {
 
 
 	public BlockPos currentTarget;
@@ -38,9 +38,9 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 	int bottomCooldown;
 	boolean bottomFlag;
 
-	public EntityPrehistoricFloraSilurolepis(World world) {
+	public EntityPrehistoricFloraEntelognathus(World world) {
 		super(world);
-		this.moveHelper = new EntityPrehistoricFloraSilurolepis.SwimmingMoveHelperBase();
+		this.moveHelper = new EntityPrehistoricFloraEntelognathus.SwimmingMoveHelperBase();
 		this.navigator = new PathNavigateSwimmer(this, world);
 		setSize(1.45F, 1.85F);
 		experienceValue = 0;
@@ -48,10 +48,11 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
-		maxHealthAgeable = 12.0D;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
+		maxHealthAgeable = 7.0D;
 	}
+
 
 
 	@Override
@@ -92,7 +93,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
 			return 0.2F;
 		}
-		return 0.242f;
+		return 0.22f;
 	}
 
 	@Override
@@ -215,7 +216,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.SILUROLEPIS_LOOT;
+		return LepidodendronMod.ENTELOGNATHUS_LOOT;
 	}
 
 	@Override
@@ -265,10 +266,10 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 	}
 
 	class SwimmingMoveHelperBase extends EntityMoveHelper {
-		private final EntityPrehistoricFloraSilurolepis EntityBase = EntityPrehistoricFloraSilurolepis.this;
+		private final EntityPrehistoricFloraEntelognathus EntityBase = EntityPrehistoricFloraEntelognathus.this;
 
 		public SwimmingMoveHelperBase() {
-			super(EntityPrehistoricFloraSilurolepis.this);
+			super(EntityPrehistoricFloraEntelognathus.this);
 		}
 
 		@Override

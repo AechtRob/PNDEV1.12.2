@@ -15,11 +15,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemGoodradigbeeonRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:goodradigbeeon_raw")
+public class ItemCtenurellaRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:ctenurella_raw")
 	public static final Item block = null;
-	public ItemGoodradigbeeonRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.goodradigbeeon_raw);
+	public ItemCtenurellaRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.ctenurella_raw);
 	}
 
 	@Override
@@ -30,23 +30,20 @@ public class ItemGoodradigbeeonRaw extends ElementsLepidodendronMod.ModElement {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/goodradigbeeon_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/ctenurella_raw", "inventory"));
 	}
-
-	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_goodradigbeeon", ItemGoodradigbeeonRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemGoodradigbeeonRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemGoodradigbeeonRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemGoodradigbeeonRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_ctenurella", ItemCtenurellaRaw.block);
+		OreDictionary.registerOre("listAllfishraw", ItemCtenurellaRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemCtenurellaRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemCtenurellaRaw.block);
 	}
-
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
 			super(2, 0.1f, false);
-			setTranslationKey("pf_goodradigbeeon_raw");
-			setRegistryName("goodradigbeeon_raw");
+			setTranslationKey("pf_ctenurella_raw");
+			setRegistryName("ctenurella_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}
