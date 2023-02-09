@@ -49,7 +49,7 @@ public class EntityPrehistoricFloraFurcacauda extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalDist() {
-		return 2;
+		return 3;
 	}
 
 	@Override

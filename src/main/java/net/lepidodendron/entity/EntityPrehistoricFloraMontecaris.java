@@ -35,7 +35,6 @@ public class EntityPrehistoricFloraMontecaris extends EntityPrehistoricFloraFish
 		enablePersistence();
 	}
 
-
 	@Override
 	public boolean canShoal() {
 		return (!(this.getAlarmCooldown() > 0));

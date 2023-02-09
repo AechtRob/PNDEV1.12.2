@@ -1,4 +1,4 @@
-package net.lepidodendron.util;
+package net.lepidodendron.entity.util;
 
 import net.lepidodendron.entity.base.*;
 import net.minecraft.block.material.Material;
@@ -25,11 +25,16 @@ public class ShoalingHelper {
             //Do I have a shoal?
             boolean hasShoal = false;
             int myshoal = 0;
-            List<EntityPrehistoricFloraFishBase> Entities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
+            List<EntityPrehistoricFloraFishBase> Entities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(pos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), pos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
             for (EntityPrehistoricFloraFishBase currentEntity : Entities) {
                 if (currentEntity.getShoalLeader() == fishBase) {
                     hasShoal = true;
-                    myshoal ++;
+                    if (myshoal <= fishBase.getShoalSize()) {
+                        myshoal++;
+                    }
+                    else {
+                        currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed
+                    }
                 }
             }
             if (!hasShoal) {
@@ -46,7 +51,7 @@ public class ShoalingHelper {
                         //What is its shoal size?
                         int shoal = 0;
                         BlockPos leaderPos = currentEntity.getPosition();
-                        List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                        List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                         for (EntityPrehistoricFloraFishBase currentShoalEntity : ShoalEntities) {
                             if (currentShoalEntity.getShoalLeader() == currentEntity) {
                                 shoal ++;
@@ -75,8 +80,13 @@ public class ShoalingHelper {
             }
         }
         if (shoalLeader != null) {
-            //I am in a shoal, so that's all I care about right now
-            return;
+            //I am in a shoal, but is my leader too far away?
+            if (fishBase.getDistance(shoalLeader) > fishBase.getShoalDist() + 1) {
+                fishBase.setShoalLeader(null);
+            }
+            else {
+                return;
+            }
         }
         //Find me a shoal:
         List<EntityPrehistoricFloraFishBase> Entities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
@@ -87,7 +97,7 @@ public class ShoalingHelper {
                 //What is its shoal size?
                 int shoal = 0;
                 BlockPos leaderPos = currentEntity.getPosition();
-                List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(fishBase.getClass(), new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                 for (EntityPrehistoricFloraFishBase currentShoalEntity : ShoalEntities) {
                     if (currentShoalEntity.getShoalLeader() == currentEntity) {
                         shoal ++;
@@ -120,10 +130,16 @@ public class ShoalingHelper {
             //Do I have a shoal?
             boolean hasShoal = false;
             int myshoal = 0;
-            List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
+            List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), pos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
             for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
                 if (currentEntity.getShoalLeader() == ageableBase) {
                     hasShoal = true;
+                    if (myshoal <= ageableBase.getShoalSize()) {
+                        myshoal++;
+                    }
+                    else {
+                        currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed
+                    }
                     myshoal ++;
                 }
             }
@@ -141,7 +157,7 @@ public class ShoalingHelper {
                         //What is its shoal size?
                         int shoal = 0;
                         BlockPos leaderPos = currentEntity.getPosition();
-                        List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                        List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                         for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
                             if (currentShoalEntity.getShoalLeader() == currentEntity) {
                                 shoal ++;
@@ -186,8 +202,13 @@ public class ShoalingHelper {
             }
         }
         if (shoalLeader != null) {
-            //I am in a shoal, so that's all I care about right now
-            return;
+            //I am in a shoal, but is my leader too far away?
+            if (ageableBase.getDistance(shoalLeader) > ageableBase.getShoalDist() + 1) {
+                ageableBase.setShoalLeader(null);
+            }
+            else {
+                return;
+            }
         }
         //Find me a shoal:
         List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
@@ -198,7 +219,7 @@ public class ShoalingHelper {
                 //What is its shoal size?
                 int shoal = 0;
                 BlockPos leaderPos = currentEntity.getPosition();
-                List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                 for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
                     if (currentShoalEntity.getShoalLeader() == currentEntity) {
                         shoal ++;

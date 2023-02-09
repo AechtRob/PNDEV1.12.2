@@ -4,7 +4,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
-import net.lepidodendron.util.ShoalingHelper;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;

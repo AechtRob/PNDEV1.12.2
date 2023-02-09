@@ -11,7 +11,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.util.ShoalingHelper;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;

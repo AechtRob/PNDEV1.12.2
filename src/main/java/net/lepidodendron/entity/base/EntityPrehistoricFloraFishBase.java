@@ -6,7 +6,7 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
-import net.lepidodendron.util.ShoalingHelper;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;

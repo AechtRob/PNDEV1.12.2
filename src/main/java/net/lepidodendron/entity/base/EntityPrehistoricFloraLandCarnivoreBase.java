@@ -89,6 +89,9 @@ public abstract class EntityPrehistoricFloraLandCarnivoreBase extends EntityPreh
         else if (this.isEntityAlive() && this.rand.nextInt(1000) < this.roarSoundTime++ && !this.world.isRemote)
         {
             this.roarSoundTime = -this.getRoarInterval();
+            if (this.getAttackTarget() != null) {
+                this.roarSoundTime = -Math.max(this.getNoiseLength (), rand.nextInt((int)Math.round((double)this.getRoarInterval() / 2D)));
+            }
             SoundEvent soundevent = this.getRoarSound();
             if (soundevent != null)
             {
