@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.ai;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
@@ -32,6 +33,9 @@ public class ShoalFishAgeableAI extends EntityAIBase {
 
     @Override
     public boolean shouldExecute() {
+        if (!LepidodendronConfig.doShoalingFlocking) {
+            return false;
+        }
         EntityPrehistoricFloraAgeableBase target = this.entity.getShoalLeader();
         if (target == null || !target.isEntityAlive()) {
             return false;

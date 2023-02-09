@@ -7,14 +7,12 @@ import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.block.BlockGreenAlgaeMat;
 import net.lepidodendron.block.BlockRedAlgaeMat;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
+import net.lepidodendron.entity.util.ShoalingHelper;
 import net.lepidodendron.item.ItemFishFood;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
@@ -34,10 +32,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -47,6 +42,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTameable implements IAnimatedEntity {
     public BlockPos currentTarget;
@@ -56,6 +52,8 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraTrilobiteBottomBase.class, DataSerializers.VARINT);
     private int inPFLove;
+    private EntityPrehistoricFloraTrilobiteBottomBase shoalLeader;
+    private int alarmCooldown;
 
     public EntityPrehistoricFloraTrilobiteBottomBase(World world) {
         super(world);
@@ -65,6 +63,20 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             this.chainBuffer = new ChainBuffer();
         }
     }
+
+    public boolean canShoal() {
+        return false;
+    }
+
+    public int getShoalSize() {
+        return 0;
+    }
+
+    public int getShoalDist() {
+        return 0;
+    }
+
+    public int getAlarmCooldown() {return this.alarmCooldown;}
 
     @Override
     protected int getExperiencePoints(EntityPlayer player) {
@@ -171,6 +183,15 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         this.dataManager.set(TICKS, ticks);
     }
 
+    @Nullable
+    public EntityPrehistoricFloraTrilobiteBottomBase getShoalLeader() {
+        return this.shoalLeader;
+    }
+
+    public void setShoalLeader(@Nullable EntityPrehistoricFloraTrilobiteBottomBase leader) {
+        this.shoalLeader = leader;
+    }
+
     @Override
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata) {
         livingdata = super.onInitialSpawn(difficulty, livingdata);
@@ -210,6 +231,14 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         else
         {
             this.inPFLove = 0;
+            Entity e = ds.getTrueSource();
+            if (e instanceof EntityLivingBase) {
+                List<EntityPrehistoricFloraTrilobiteBottomBase> trilobiteBase = this.world.getEntitiesWithinAABB(this.getClass(), new AxisAlignedBB(this.getPosition().add(-this.getShoalDist(), -this.getShoalDist(), -this.getShoalDist()), this.getPosition().add(this.getShoalDist(), this.getShoalDist(), this.getShoalDist())));
+                for (EntityPrehistoricFloraTrilobiteBottomBase currenttrilobiteBase : trilobiteBase) {
+                    currenttrilobiteBase.setShoalLeader(null);
+                    currenttrilobiteBase.alarmCooldown = rand.nextInt(20) + 20;
+                }
+            }
             return super.attackEntityFrom(ds, i);
         }
     }
@@ -413,6 +442,16 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             //limit at 48000 (two MC days) and then reset:
             if (ii >= 48000) {ii = 0;}
             this.setTicks(ii);
+        }
+
+        if (this.alarmCooldown > 0) {
+            this.alarmCooldown -= 1;
+        }
+
+        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
+            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+                ShoalingHelper.updateShoalTrilobiteBottomBase(this);
+            }
         }
 
         //Drop an egg perhaps:

@@ -3,9 +3,7 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.ItemFishFood;
@@ -43,6 +41,21 @@ public class EntityPrehistoricFloraCoelacanthus extends EntityPrehistoricFloraAg
 		maxWidth = 0.45F;
 		maxHeight = 0.22F;
 		maxHealthAgeable = 12.0D;
+	}
+
+	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 3;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
 	}
 
 	@Override
@@ -105,7 +118,8 @@ public class EntityPrehistoricFloraCoelacanthus extends EntityPrehistoricFloraAg
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
+		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, -10));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 		}
 

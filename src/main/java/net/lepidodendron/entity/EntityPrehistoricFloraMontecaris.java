@@ -42,12 +42,12 @@ public class EntityPrehistoricFloraMontecaris extends EntityPrehistoricFloraFish
 
 	@Override
 	public int getShoalSize() {
-		return 4;
+		return 5;
 	}
 
 	@Override
 	public int getShoalDist() {
-		return 2;
+		return 3;
 	}
 
 	@Override
@@ -101,8 +101,8 @@ public class EntityPrehistoricFloraMontecaris extends EntityPrehistoricFloraFish
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new ShoalFishBaseAI(this, 1, true));
-		tasks.addTask(1, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
 		tasks.addTask(2, new FishWanderSurface(this, NO_ANIMATION));
 		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}

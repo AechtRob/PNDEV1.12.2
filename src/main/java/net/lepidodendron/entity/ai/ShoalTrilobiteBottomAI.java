@@ -1,26 +1,21 @@
 package net.lepidodendron.entity.ai;
 
 import net.lepidodendron.LepidodendronConfig;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.minecraft.block.material.Material;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraTrilobiteBottomBase;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.pathfinding.Path;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 
-import javax.annotation.Nullable;
 import java.util.Random;
 
-public class ShoalFishBaseAI extends EntityAIBase {
-    private final EntityPrehistoricFloraFishBase entity;
+public class ShoalTrilobiteBottomAI extends EntityAIBase {
+    private final EntityPrehistoricFloraTrilobiteBottomBase entity;
     private final double speed;
     private final boolean memory;
     private Path currentPath;
     private Random rand = new Random();
 
-    public ShoalFishBaseAI(EntityPrehistoricFloraFishBase entity, double speed, boolean memory) {
+    public ShoalTrilobiteBottomAI(EntityPrehistoricFloraTrilobiteBottomBase entity, double speed, boolean memory) {
         this.entity = entity;
         this.speed = speed;
         this.memory = memory;
@@ -32,7 +27,7 @@ public class ShoalFishBaseAI extends EntityAIBase {
         if (!LepidodendronConfig.doShoalingFlocking) {
             return false;
         }
-        EntityPrehistoricFloraFishBase target = this.entity.getShoalLeader();
+        EntityPrehistoricFloraTrilobiteBottomBase target = this.entity.getShoalLeader();
         if (target == null || !target.isEntityAlive()) {
             return false;
         }
@@ -71,24 +66,7 @@ public class ShoalFishBaseAI extends EntityAIBase {
             return;
         }
         if (this.entity.getControllingPassenger() == null) {
-            if (rand.nextInt(8) == 0) {
-                BlockPos targetPos = getOffsetTarget(this.entity.world, target.getPositionVector());
-                if (targetPos != null) {
-                    this.entity.getNavigator().tryMoveToXYZ(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, 1);
-                    return;
-                }
-            }
             this.entity.getNavigator().tryMoveToEntityLiving(target, this.speed);
         }
-    }
-
-    @Nullable
-    public BlockPos getOffsetTarget(World world, Vec3d vec3d) {
-        BlockPos blockpos = new BlockPos(vec3d);
-        blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
-        if (world.getBlockState(blockpos).getMaterial() == Material.WATER && this.entity.isDirectPathBetweenPoints(this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
-            return blockpos;
-        }
-        return null;
     }
 }
