@@ -291,7 +291,7 @@ public class ModelSilurolepis extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.chainSwing(fishTail, speed, 0.2F, -3, f2, 1);
+                this.chainSwing(fishTail, speed*0.5F, 0.2F, -3, f2, 1);
             }
         }
     }

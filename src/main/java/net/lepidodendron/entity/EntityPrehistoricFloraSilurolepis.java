@@ -50,8 +50,8 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.5F;
+		maxWidth = 0.3F;
+		maxHeight = 0.3F;
 		maxHealthAgeable = 12.0D;
 	}
 

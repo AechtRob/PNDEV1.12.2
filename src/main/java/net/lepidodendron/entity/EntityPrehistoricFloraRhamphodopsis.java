@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraRhamphodopsis extends EntityPrehistoricFloraA
 		enablePersistence();
 		minWidth = 0.2F;
 		maxWidth = 0.2F;
-		maxHeight = 0.3F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 4.0D;
 	}
 

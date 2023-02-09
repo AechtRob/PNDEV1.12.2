@@ -451,12 +451,12 @@ public class ModelGooloogongia extends AdvancedModelBase {
 
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
-            this.chainWave(fishTail, speed * still, 0.02F * still, -0.2, f2, 0.8F * still);
-            this.chainSwing(fishTail, speed * still, 0.43F * still, -0.65, f2, 0.5F * still);
+            this.chainWave(fishTail, speed * still, 0.02F * still, -0.3, f2, 0.8F * still);
+            this.chainSwing(fishTail, speed * still, 0.43F * still, -0.7, f2, 0.5F * still);
             this.swing(main, speed, 0.1F * still, true, 0, 0, f2, 0.7F * still);
         }
         else {
-            this.chainWave(fishTail, speed * 0.5F, 0.02F, -0.2, f2, 0.8F * still);
+            this.chainWave(fishTail, speed * 0.5F, 0.02F, -0.3, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 0.5F, 0.2F, -0.55, f2, 0.4F * still);
         }
         this.flap(frontleftfin, (float) (speed * 0.65), 0.2F, false, 0.8F, 0, f2, 0.5F);

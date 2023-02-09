@@ -40,8 +40,8 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 		setNoAI(!true);
 		enablePersistence();
 		minWidth = 0.2F;
-		maxWidth = 0.3F;
-		maxHeight = 0.3F;
+		maxWidth = 0.2F;
+		maxHeight = 0.2F;
 		maxHealthAgeable = 5.0D;
 	}
 

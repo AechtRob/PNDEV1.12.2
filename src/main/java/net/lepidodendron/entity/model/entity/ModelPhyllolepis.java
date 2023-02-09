@@ -321,8 +321,8 @@ public class ModelPhyllolepis extends AdvancedModelBase {
         if (isAtBottom && !phyllo.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
-            bottomModifier = 0.5F;
+            taildegree = 0.23F;
+            bottomModifier = 0.8F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(10);
             finDegreeY = (float)Math.toRadians(12.5);
@@ -358,6 +358,7 @@ public class ModelPhyllolepis extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = -0.02F;
+                this.main.offsetX = 0.1F;
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
             }

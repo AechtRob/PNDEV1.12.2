@@ -250,8 +250,8 @@ public class ModelCowralepis extends AdvancedModelBase {
         if (isAtBottom && !cowra.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
-            bottomModifier = 0.5F;
+            taildegree = 0.23F;
+            bottomModifier = 0.8F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);
             finDegreeY = (float)Math.toRadians(12.5);

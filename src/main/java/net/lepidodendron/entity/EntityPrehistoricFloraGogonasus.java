@@ -53,12 +53,12 @@ public class EntityPrehistoricFloraGogonasus extends EntityPrehistoricFloraFishB
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.285f;
+		return (0.13F);
 	}
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override

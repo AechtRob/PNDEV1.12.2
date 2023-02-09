@@ -25,7 +25,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_tetraceratops",
 			"type": "text",
-			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+			"text": "$(l)Eats:$() Plants(br)$(l)Breeds with:$() Plants(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
 		}
 	]
 }
