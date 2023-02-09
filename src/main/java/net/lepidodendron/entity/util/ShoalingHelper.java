@@ -81,7 +81,7 @@ public class ShoalingHelper {
         }
         if (shoalLeader != null) {
             //I am in a shoal, but is my leader too far away?
-            if (fishBase.getDistance(shoalLeader) > fishBase.getShoalDist() + 1) {
+            if (fishBase.getDistance(shoalLeader) > fishBase.getShoalDist() + fishBase.getEntityBoundingBox().getAverageEdgeLength()) {
                 fishBase.setShoalLeader(null);
             }
             else {
@@ -203,7 +203,7 @@ public class ShoalingHelper {
         }
         if (shoalLeader != null) {
             //I am in a shoal, but is my leader too far away?
-            if (ageableBase.getDistance(shoalLeader) > ageableBase.getShoalDist() + 1) {
+            if (ageableBase.getDistance(shoalLeader) > ageableBase.getShoalDist() + ageableBase.getEntityBoundingBox().getAverageEdgeLength()) {
                 ageableBase.setShoalLeader(null);
             }
             else {
@@ -308,7 +308,7 @@ public class ShoalingHelper {
         }
         if (shoalLeader != null) {
             //I am in a shoal, but is my leader too far away?
-            if (trilobiteBase.getDistance(shoalLeader) > trilobiteBase.getShoalDist() + 1) {
+            if (trilobiteBase.getDistance(shoalLeader) > trilobiteBase.getShoalDist() + trilobiteBase.getEntityBoundingBox().getAverageEdgeLength()) {
                 trilobiteBase.setShoalLeader(null);
             }
             else {
