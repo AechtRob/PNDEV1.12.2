@@ -266,6 +266,7 @@ public class ModelDiplacanthus extends AdvancedModelBase {
             if (!e.isInWater()) {
                 this.main.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = 0.2F;
+                this.bob(main, speed, 0.1F, false, f2, 1);
 
             }
         }

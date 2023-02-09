@@ -410,7 +410,7 @@ public class ModelTegeolepis extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
 
-        float speed = 0.186F;
+        float speed = 0.35F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
         if (ee.getIsFast()) {
             speed = speed * 2.6F;
@@ -448,7 +448,8 @@ public class ModelTegeolepis extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.main.rotateAngleZ = (float) Math.toRadians(90);
-            this.main.offsetY = 0.15F;
+            this.main.offsetY = 0.2F;
+            this.bob(main, speed, 0.1F, false, f2, 1);
             this.chainWave(fishTail, speed * 1.7F, 0.028F, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * 1.7F, 0.15F, -0.55, f2, 0.4F * still);
 

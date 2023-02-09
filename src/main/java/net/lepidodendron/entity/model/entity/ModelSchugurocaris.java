@@ -416,7 +416,7 @@ public class ModelSchugurocaris extends AdvancedModelBase {
 
             this.walk(antennaR2, 0.6F, 0.15F, false, 0f, 0f, f2, 1F);
 
-            float tailVdegree = 0.01F;
+            float tailVdegree = 0.05F;
             float tailHdegree = 0.3F;
             this.chainWave(Tail, speed*0.3F, tailVdegree, -2, f2, 1);
 
