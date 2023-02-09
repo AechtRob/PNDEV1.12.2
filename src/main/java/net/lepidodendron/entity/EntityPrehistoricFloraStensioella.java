@@ -83,7 +83,7 @@ public class EntityPrehistoricFloraStensioella extends EntityPrehistoricFloraAge
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override
