@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.util;
 
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.entity.base.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -9,10 +10,16 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Random;
 
 public class ShoalingHelper {
 
+    private static Random rand = new Random();
+
     public static void updateShoalFishBase(EntityPrehistoricFloraFishBase fishBase) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || fishBase.getShoalSize() < 1) {
+            return;
+        }
         World world = fishBase.world;
         boolean isLeader = false;
         EntityPrehistoricFloraFishBase shoalLeader = fishBase.getShoalLeader();
@@ -73,6 +80,10 @@ public class ShoalingHelper {
             if (shoalLeader.isDead) {
                 fishBase.setShoalLeader(null);
             }
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(fishBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
+                fishBase.setShoalLeader(null);
+                shoalLeader.setShoalLeader(shoalLeader);
+            }
             if (shoalLeader != null) {
                 if (!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && fishBase.isDirectPathBetweenPoints(fishBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) {
                     fishBase.setShoalLeader(null);
@@ -118,6 +129,9 @@ public class ShoalingHelper {
     }
 
     public static void updateShoalAgeableBase(EntityPrehistoricFloraAgeableBase ageableBase) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || ageableBase.getShoalSize() < 1) {
+            return;
+        }
         World world = ageableBase.world;
         boolean isLeader = false;
         EntityPrehistoricFloraAgeableBase shoalLeader = ageableBase.getShoalLeader();
@@ -178,6 +192,10 @@ public class ShoalingHelper {
             //I am following someone, but are they dead or impossible to reach?
             if (shoalLeader.isDead) {
                 ageableBase.setShoalLeader(null);
+            }
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(ageableBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
+                ageableBase.setShoalLeader(null);
+                shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
                 if ((!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && isDirectPathBetweenPoints(world, ageableBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) &&
@@ -240,6 +258,9 @@ public class ShoalingHelper {
     }
 
     public static void updateShoalTrilobiteBottomBase(EntityPrehistoricFloraTrilobiteBottomBase trilobiteBase) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBase.getShoalSize() < 1) {
+            return;
+        }
         World world = trilobiteBase.world;
         boolean isLeader = false;
         EntityPrehistoricFloraTrilobiteBottomBase shoalLeader = trilobiteBase.getShoalLeader();
@@ -299,6 +320,10 @@ public class ShoalingHelper {
             //I am following someone, but are they dead or impossible to reach?
             if (shoalLeader.isDead) {
                 trilobiteBase.setShoalLeader(null);
+            }
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(trilobiteBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
+                trilobiteBase.setShoalLeader(null);
+                shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
                 if (!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && trilobiteBase.isDirectPathBetweenPoints(trilobiteBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) {
