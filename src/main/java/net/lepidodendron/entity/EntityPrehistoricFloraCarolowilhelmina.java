@@ -79,7 +79,7 @@ public class EntityPrehistoricFloraCarolowilhelmina extends EntityPrehistoricFlo
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

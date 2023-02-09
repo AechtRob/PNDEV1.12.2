@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraMiguashaia extends EntityPrehistoricFloraFish
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

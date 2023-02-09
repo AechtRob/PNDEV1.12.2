@@ -102,7 +102,7 @@ public class EntityPrehistoricFloraPygopterus extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

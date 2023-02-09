@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraAteleaspis extends EntityPrehistoricFloraFish
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

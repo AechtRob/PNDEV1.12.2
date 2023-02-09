@@ -72,7 +72,7 @@ public class EntityPrehistoricFloraNerepisacanthus extends EntityPrehistoricFlor
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

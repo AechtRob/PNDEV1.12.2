@@ -71,7 +71,7 @@ public class EntityPrehistoricFloraAiniktozoon extends EntityPrehistoricFloraFis
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

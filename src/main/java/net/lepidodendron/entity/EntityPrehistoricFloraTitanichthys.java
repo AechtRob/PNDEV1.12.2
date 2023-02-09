@@ -91,7 +91,7 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraEdestus extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

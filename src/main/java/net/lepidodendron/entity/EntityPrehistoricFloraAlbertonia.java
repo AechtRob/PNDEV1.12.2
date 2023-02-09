@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraAlbertonia extends EntityPrehistoricFloraFish
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

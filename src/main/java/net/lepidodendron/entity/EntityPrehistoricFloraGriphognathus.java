@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraGriphognathus extends EntityPrehistoricFloraF
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

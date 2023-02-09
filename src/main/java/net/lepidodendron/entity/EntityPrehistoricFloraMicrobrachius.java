@@ -115,7 +115,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

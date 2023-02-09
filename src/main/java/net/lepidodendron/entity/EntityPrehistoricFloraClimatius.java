@@ -76,7 +76,7 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

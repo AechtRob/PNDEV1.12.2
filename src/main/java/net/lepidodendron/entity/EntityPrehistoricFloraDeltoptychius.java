@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.*;
 import net.lepidodendron.entity.render.entity.RenderDeltoptychius;
-import net.lepidodendron.entity.render.entity.RenderMussaurus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.client.model.ModelBase;
@@ -99,15 +98,15 @@ public class EntityPrehistoricFloraDeltoptychius extends EntityPrehistoricFloraA
 
 	@Override
 	protected float getAISpeedFish() {
-		if (this.isAtBottom()  && !this.getIsFast()) {
+		if (this.isAtBottom() && !this.getIsFast()) {
 			return 0.05f;
 		}
 		return 0.15f;
 	}
 
 	@Override
-	protected boolean isBase() {
-		return true;
+	protected boolean isSlowAtBottom() {
+		return false;
 	}
 
 	@Override

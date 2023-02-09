@@ -56,7 +56,7 @@ public class EntityPrehistoricFloraSquatinactis extends EntityPrehistoricFloraFi
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

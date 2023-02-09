@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraBalhuticaris extends EntityPrehistoricFloraFi
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 	@Override

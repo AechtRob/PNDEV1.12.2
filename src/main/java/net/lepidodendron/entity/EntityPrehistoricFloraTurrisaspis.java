@@ -93,7 +93,7 @@ public class EntityPrehistoricFloraTurrisaspis extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

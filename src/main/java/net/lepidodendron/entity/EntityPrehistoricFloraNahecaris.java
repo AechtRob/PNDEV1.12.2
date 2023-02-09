@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraNahecaris extends EntityPrehistoricFloraFishB
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

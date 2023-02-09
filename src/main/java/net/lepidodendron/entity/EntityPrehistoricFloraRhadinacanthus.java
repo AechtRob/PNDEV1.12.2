@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraRhadinacanthus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

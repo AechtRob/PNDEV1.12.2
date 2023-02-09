@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraWuttagoonaspis extends EntityPrehistoricFlora
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

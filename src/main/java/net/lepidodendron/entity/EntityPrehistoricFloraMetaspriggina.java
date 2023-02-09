@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraMetaspriggina extends EntityPrehistoricFloraF
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

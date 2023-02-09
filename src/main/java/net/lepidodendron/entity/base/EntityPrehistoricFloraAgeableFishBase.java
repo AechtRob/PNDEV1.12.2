@@ -70,7 +70,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         return this.getAISpeedFish();
     }
 
-    protected abstract boolean isBase();
+    protected abstract boolean isSlowAtBottom();
 
     public boolean isPushedByWater()
     {
@@ -282,7 +282,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
 
-                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isSlowAtBottom()) {
                     this.EntityBase.setAIMoveSpeed(speed * 0.25F);
                 }
 

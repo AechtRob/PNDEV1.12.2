@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraBelantsea extends EntityPrehistoricFloraFishB
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

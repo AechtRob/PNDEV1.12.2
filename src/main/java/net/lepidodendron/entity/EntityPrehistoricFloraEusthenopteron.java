@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraEusthenopteron extends EntityPrehistoricFlora
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

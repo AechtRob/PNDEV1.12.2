@@ -162,7 +162,7 @@ public class EntityPrehistoricFloraGemuendina extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

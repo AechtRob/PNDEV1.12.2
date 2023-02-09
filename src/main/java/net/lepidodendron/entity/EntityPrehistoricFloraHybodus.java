@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraHybodus extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

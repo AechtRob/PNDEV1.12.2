@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraOrnithoprion extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

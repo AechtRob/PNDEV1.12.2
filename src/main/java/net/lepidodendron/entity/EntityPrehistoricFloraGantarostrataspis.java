@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraGantarostrataspis extends EntityPrehistoricFl
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

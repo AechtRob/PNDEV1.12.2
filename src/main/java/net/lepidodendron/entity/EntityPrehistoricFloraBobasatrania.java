@@ -73,7 +73,7 @@ public class EntityPrehistoricFloraBobasatrania extends EntityPrehistoricFloraFi
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

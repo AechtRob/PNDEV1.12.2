@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

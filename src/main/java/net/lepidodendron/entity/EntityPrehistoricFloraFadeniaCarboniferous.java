@@ -99,7 +99,7 @@ public class EntityPrehistoricFloraFadeniaCarboniferous extends EntityPrehistori
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

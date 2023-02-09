@@ -81,7 +81,7 @@ public class EntityPrehistoricFloraCampbellodus extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

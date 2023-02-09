@@ -78,7 +78,7 @@ public class EntityPrehistoricFloraCeratiocaris extends EntityPrehistoricFloraFi
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

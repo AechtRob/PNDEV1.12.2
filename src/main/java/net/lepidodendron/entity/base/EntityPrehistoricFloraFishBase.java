@@ -51,7 +51,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
         //this.spawnableBlock = Blocks.WATER;
-        if (this.isBase()) {
+        if (this.isSlowAtBottom()) {
             this.moveHelper = new EntityPrehistoricFloraFishBase.SwimmingMoveHelperBase();
         }
         else{
@@ -207,7 +207,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
 
     protected abstract float getAISpeedFish();
 
-    protected abstract boolean isBase();
+    protected abstract boolean isSlowAtBottom();
 
     @Override
     public boolean isInWater() {

@@ -86,7 +86,7 @@ public class EntityPrehistoricFloraAkmonistion extends EntityPrehistoricFloraAge
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

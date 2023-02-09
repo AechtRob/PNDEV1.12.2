@@ -84,7 +84,7 @@ public class EntityPrehistoricFloraPsarolepis extends EntityPrehistoricFloraAgea
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

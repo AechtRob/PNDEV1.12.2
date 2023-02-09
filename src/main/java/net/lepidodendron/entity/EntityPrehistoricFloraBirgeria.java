@@ -100,7 +100,7 @@ public class EntityPrehistoricFloraBirgeria extends EntityPrehistoricFloraAgeabl
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

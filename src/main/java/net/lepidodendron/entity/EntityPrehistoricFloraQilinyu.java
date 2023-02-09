@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraQilinyu extends EntityPrehistoricFloraFishBas
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 

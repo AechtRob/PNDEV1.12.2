@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraYawunik extends EntityPrehistoricFloraFishBas
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

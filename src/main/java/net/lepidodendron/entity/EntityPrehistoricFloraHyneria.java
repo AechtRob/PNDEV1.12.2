@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraHyneria extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return false;
 	}
 

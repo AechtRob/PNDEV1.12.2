@@ -103,7 +103,7 @@ public class EntityPrehistoricFloraGooloogongia extends EntityPrehistoricFloraAg
 	}
 
 	@Override
-	protected boolean isBase() {
+	protected boolean isSlowAtBottom() {
 		return true;
 	}
 
