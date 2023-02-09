@@ -26,8 +26,13 @@ public class HuntSmallerThanMeAIAgeable<T extends EntityLivingBase> extends Enti
 
     @Override
     public boolean shouldExecute() {
-
-        boolean preliminaryTarget = super.shouldExecute();
+        boolean preliminaryTarget = false;
+        try {
+            preliminaryTarget = super.shouldExecute();
+        }
+        catch (Exception exception) {
+            //Let it go....... trips concurrent modifications rarely but I don't know why
+        }
         if (!this.entity.getWillHunt()) {
             //this.entity.setIsFast(false);
             return false;
