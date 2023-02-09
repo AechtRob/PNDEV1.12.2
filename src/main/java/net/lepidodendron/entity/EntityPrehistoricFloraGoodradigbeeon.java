@@ -104,10 +104,8 @@ public class EntityPrehistoricFloraGoodradigbeeon extends EntityPrehistoricFlora
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
-
-
 
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {

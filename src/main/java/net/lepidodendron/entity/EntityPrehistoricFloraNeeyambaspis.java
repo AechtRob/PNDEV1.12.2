@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraNeeyambaspis extends EntityPrehistoricFloraFi
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override

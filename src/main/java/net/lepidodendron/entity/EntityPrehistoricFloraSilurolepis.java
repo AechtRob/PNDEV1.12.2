@@ -4,8 +4,10 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.ai.AgeableFishWanderBottomDweller;
+import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
+import net.lepidodendron.entity.ai.EatFishItemsAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -97,7 +99,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 

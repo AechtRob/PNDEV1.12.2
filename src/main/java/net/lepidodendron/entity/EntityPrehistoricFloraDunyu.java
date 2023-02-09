@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraDunyu extends EntityPrehistoricFloraFishBase 
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override

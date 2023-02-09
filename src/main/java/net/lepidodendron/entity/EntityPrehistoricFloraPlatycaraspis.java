@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraPlatycaraspis extends EntityPrehistoricFloraF
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override

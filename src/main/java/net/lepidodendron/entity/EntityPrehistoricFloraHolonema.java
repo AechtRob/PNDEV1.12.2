@@ -104,7 +104,7 @@ public class EntityPrehistoricFloraHolonema extends EntityPrehistoricFloraAgeabl
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 
