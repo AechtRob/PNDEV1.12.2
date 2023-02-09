@@ -81,7 +81,9 @@ public class ShoalingHelper {
                 fishBase.setShoalLeader(null);
             }
             else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(fishBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                fishBase.setShoalLeader(null);
+                if (rand.nextInt(fishBase.getShoalSize()) == 0) {
+                    fishBase.setShoalLeader(null);
+                }
                 shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
@@ -194,7 +196,9 @@ public class ShoalingHelper {
                 ageableBase.setShoalLeader(null);
             }
             else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(ageableBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                ageableBase.setShoalLeader(null);
+                if (rand.nextInt(ageableBase.getShoalSize()) == 0) {
+                    ageableBase.setShoalLeader(null);
+                }
                 shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
@@ -322,7 +326,9 @@ public class ShoalingHelper {
                 trilobiteBase.setShoalLeader(null);
             }
             else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(trilobiteBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                trilobiteBase.setShoalLeader(null);
+                if (rand.nextInt(trilobiteBase.getShoalSize()) == 0) {
+                    trilobiteBase.setShoalLeader(null);
+                }
                 shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
