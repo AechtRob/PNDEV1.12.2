@@ -11,6 +11,8 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderBrindabellaspis;
+import net.lepidodendron.entity.render.entity.RenderCamuropiscis;
 import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
@@ -259,58 +261,56 @@ public class EntityPrehistoricFloraCamuropiscis extends EntityPrehistoricFloraAg
 		}
 	}
 
+
 	//Rendering taxidermy:
-	/*
+	//--------------------
 	public static double offsetWall() {
-		return 0.01;
+		return 0.05;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 1.4;
+		return 0.8;
 	}
 	public static double upperbackverticallinedepth() {
 		return 0.8;
 	}
 	public static double upperfrontlineoffset() {
-		return 0.4;
+		return 0.2;
 	}
 	public static double upperfrontlineoffsetperpendiular() {
-		return -0F;
+		return -0.04F;
 	}
 	public static double upperbacklineoffset() {
-		return 0.4;
+		return 0.2;
 	}
 	public static double upperbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 1.3;
+		return 0.65;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 1.3;
+		return 0;
 	}
-	public static double lowerfrontlineoffset() {
-		return 0.4;
-	}
+	public static double lowerfrontlineoffset() {return 0F;}
 	public static double lowerfrontlineoffsetperpendiular() {
 		return -0F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0.15F;
+		return 0F;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
+		return RenderDisplays.TEXTURE_CAMUROPISCIS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelEastmanosteus;
+		return RenderDisplays.modelCamuropiscis;
 	}
 	public static float getScaler() {
-		return RenderEastmanosteus.getScaler();
+		return RenderCamuropiscis.getScaler();
 	}
-*/
 }
 

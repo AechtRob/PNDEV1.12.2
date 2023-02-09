@@ -199,16 +199,41 @@ public class ModelClimatius extends AdvancedModelBase {
         this.main.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.22F;
+        this.main.offsetX = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(cube_r1, 0.0F, 0.0F, 1.0036F);
+        this.setRotateAngle(cube_r2, 0.0F, 0.0F, -1.0036F);
+        this.setRotateAngle(cube_r3, -0.1091F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r4, -0.7505F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r5, -0.0524F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r6, -0.0305F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0873F, 0.0F, 0.0F);
+        this.setRotateAngle(jaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r8, -0.0916F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.0F, 0.0F, 0.3927F);
+        this.setRotateAngle(frontrightfin, 0.0F, 0.0F, -0.3927F);
+        this.setRotateAngle(body, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.1896F, -0.2409F, 0.8933F);
+        this.setRotateAngle(cube_r10, 0.1896F, 0.2409F, -0.8933F);
+        this.setRotateAngle(cube_r11, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.1614F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0F, 0.0F, 0.6109F);
+        this.setRotateAngle(cube_r15, 0.0F, 0.0F, -0.6109F);
+        this.setRotateAngle(tail2, 0.4752F, -0.3931F, -0.1946F);
+        this.setRotateAngle(cube_r16, -0.4363F, 0.0F, 0.0F);
+        this.main.offsetY = -0.45F;
+        this.main.offsetZ = 0.01F;
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

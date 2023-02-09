@@ -352,16 +352,64 @@ public class ModelWarneticaris extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 );
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.19F;
         this.body.offsetZ = -0.05F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body, -0.3811F, (float) Math.toRadians(90), 0.2956F);
+        this.setRotateAngle(cube_r1, 0.6545F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, 0.5585F, 0.0F, 0.0F);
+        this.setRotateAngle(antennaR, -0.5672F, 0.2618F, -0.0436F);
+        this.setRotateAngle(antennaL, -0.0873F, -0.2618F, 0.0436F);
+        this.setRotateAngle(antennaR2, 0.829F, 0.0873F, 0.0436F);
+        this.setRotateAngle(antennaL2, 0.4363F, -0.0873F, -0.0436F);
+        this.setRotateAngle(eyeR, 0.4363F, 0.3927F, 0.0F);
+        this.setRotateAngle(eyeL, 0.4363F, -0.3927F, 0.0F);
+        this.setRotateAngle(legR, 1.2654F, 0.0436F, 0.2182F);
+        this.setRotateAngle(legRs, -2.2689F, 0.0F, 0.0F);
+        this.setRotateAngle(legRs2, -0.2182F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL, 1.6581F, -0.0436F, -0.2182F);
+        this.setRotateAngle(legLs, -2.7053F, 0.0F, 0.0F);
+        this.setRotateAngle(legLs2, 0.48F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR2, 0.0F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legL2, 0.0F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL3, 0.0436F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL4, 0.0873F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL5, 0.1309F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL6, 0.1745F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL7, 0.2182F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL8, 0.2618F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legL9, 0.3054F, 0.2618F, -0.3491F);
+        this.setRotateAngle(legR3, 0.0436F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR4, 0.0873F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR5, 0.1309F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR6, 0.1745F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR7, 0.2182F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR8, 0.2618F, -0.2618F, 0.3491F);
+        this.setRotateAngle(legR9, 0.3054F, -0.2618F, 0.3491F);
+        this.setRotateAngle(gillR, 0.4363F, -0.5236F, 0.0436F);
+        this.setRotateAngle(gillL, 0.4363F, 0.5236F, -0.0436F);
+        this.setRotateAngle(gillL2, 0.4363F, 0.5236F, -0.0436F);
+        this.setRotateAngle(gillL3, 0.4363F, 0.5236F, -0.0436F);
+        this.setRotateAngle(gillR2, 0.4363F, -0.5236F, 0.0436F);
+        this.setRotateAngle(gillR3, 0.4363F, -0.5236F, 0.0436F);
+        this.setRotateAngle(seg, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(gillR4, 0.6109F, -0.5236F, 0.0436F);
+        this.setRotateAngle(gillL4, 0.6109F, 0.5236F, -0.0436F);
+        this.setRotateAngle(seg2, 0.3044F, -0.218F, 0.0097F);
+        this.setRotateAngle(gillR5, 0.7854F, -0.5236F, 0.0436F);
+        this.setRotateAngle(gillL5, 0.7854F, 0.5236F, -0.0436F);
+        this.setRotateAngle(seg3, 0.2233F, -0.2129F, -0.0479F);
+        this.setRotateAngle(seg4, 0.3054F, -0.2182F, 0.0F);
+        this.setRotateAngle(cube_r3, 0.0F, 0.4363F, 0.3491F);
+        this.setRotateAngle(cube_r4, 0.0F, -0.4363F, -0.3491F);
+        this.body.offsetY = -0.4F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

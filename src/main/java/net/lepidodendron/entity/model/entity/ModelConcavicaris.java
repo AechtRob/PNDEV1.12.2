@@ -243,17 +243,19 @@ public class ModelConcavicaris extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5 );
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.body.offsetZ = -0.04F;
+    public void renderStaticDisplayCase(float f) {
+        this.body.offsetZ = -0.02F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
+    public void renderStaticFloor(float f) {
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetZ = 0.03F;
+        this.body.offsetY = -0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
+    }
+
 
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

@@ -270,10 +270,10 @@ public class EntityPrehistoricFloraDunkleosteus extends EntityPrehistoricFloraAg
 		return -1.4;
 	}
 	public static double upperfrontverticallinedepth() {
-		return 4;
+		return 2;
 	}
 	public static double upperbackverticallinedepth() {
-		return 3;
+		return 1.5;
 	}
 	public static double upperfrontlineoffset() {
 		return 1;

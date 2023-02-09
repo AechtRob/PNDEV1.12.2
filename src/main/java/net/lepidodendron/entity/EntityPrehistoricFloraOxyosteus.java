@@ -11,6 +11,11 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
+import net.lepidodendron.entity.render.entity.RenderMiguashaia;
+import net.lepidodendron.entity.render.entity.RenderOxyosteus;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
@@ -257,9 +262,9 @@ public class EntityPrehistoricFloraOxyosteus extends EntityPrehistoricFloraAgeab
 	}
 
 	//Rendering taxidermy:
-	/*
+	//--------------------
 	public static double offsetWall() {
-		return 0.01;
+		return -0.02;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 1.4;
@@ -280,34 +285,31 @@ public class EntityPrehistoricFloraOxyosteus extends EntityPrehistoricFloraAgeab
 		return -0.15F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 1.3;
+		return 0.5;
 	}
 	public static double lowerbackverticallinedepth() {
-		return 1.3;
+		return 0;
 	}
 	public static double lowerfrontlineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerfrontlineoffsetperpendiular() {
 		return -0F;
 	}
 	public static double lowerbacklineoffset() {
-		return 0.4;
+		return 0;
 	}
 	public static double lowerbacklineoffsetperpendiular() {
-		return -0.15F;
+		return -0;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_EASTMANOSTEUS;
+		return RenderDisplays.TEXTURE_OXYOSTEUS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelEastmanosteus;
+		return RenderDisplays.modelOxyosteus;
 	}
-	public static float getScaler() {
-		return RenderEastmanosteus.getScaler();
-	}
-*/
+	public static float getScaler() {return RenderOxyosteus.getScaler();}
 }
 

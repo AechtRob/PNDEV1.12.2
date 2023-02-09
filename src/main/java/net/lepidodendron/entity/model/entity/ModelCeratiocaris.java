@@ -275,16 +275,51 @@ public class ModelCeratiocaris extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.body.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticDisplayCase(float f) {
         this.body.offsetZ = -0.05F;
         this.body.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(body2, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(legR10, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legL10, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(body3, 0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r1, -0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(legR11, 0.6109F, 0.0873F, 0.0873F);
+        this.setRotateAngle(legL11, 0.6109F, -0.0873F, -0.0873F);
+        this.setRotateAngle(legR12, 0.6109F, 0.0873F, 0.1309F);
+        this.setRotateAngle(legL12, 0.6109F, -0.0873F, -0.1309F);
+        this.setRotateAngle(body4, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(legR13, 0.6109F, 0.0873F, 0.1745F);
+        this.setRotateAngle(legL13, 0.6109F, -0.0873F, -0.1745F);
+        this.setRotateAngle(body5, -1.0472F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r2, -0.2618F, 0.4363F, 0.0F);
+        this.setRotateAngle(cube_r3, -0.2618F, -0.4363F, 0.0F);
+        this.setRotateAngle(AntennaR, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(AntennaL, 0.3491F, -0.3054F, 0.0F);
+        this.setRotateAngle(legR, -0.3491F, 0.2618F, 0.0F);
+        this.setRotateAngle(legL, 0.0873F, -0.2618F, 0.0F);
+        this.setRotateAngle(legR2, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR3, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR4, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR5, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR6, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR7, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR8, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legR9, 0.6109F, 0.0873F, 0.0F);
+        this.setRotateAngle(legL9, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL2, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL3, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL4, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL5, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL6, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL7, 0.6109F, -0.0873F, 0.0F);
+        this.setRotateAngle(legL8, 0.6109F, -0.0873F, 0.0F);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.2F;
+        this.body.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
