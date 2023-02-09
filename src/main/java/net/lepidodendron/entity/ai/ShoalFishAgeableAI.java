@@ -1,6 +1,10 @@
 package net.lepidodendron.entity.ai;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
@@ -12,14 +16,14 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class ShoalFishBaseAI extends EntityAIBase {
-    private final EntityPrehistoricFloraFishBase entity;
+public class ShoalFishAgeableAI extends EntityAIBase {
+    private final EntityPrehistoricFloraAgeableBase entity;
     private final double speed;
     private final boolean memory;
     private Path currentPath;
     private Random rand = new Random();
 
-    public ShoalFishBaseAI(EntityPrehistoricFloraFishBase entity, double speed, boolean memory) {
+    public ShoalFishAgeableAI(EntityPrehistoricFloraAgeableBase entity, double speed, boolean memory) {
         this.entity = entity;
         this.speed = speed;
         this.memory = memory;
@@ -28,7 +32,7 @@ public class ShoalFishBaseAI extends EntityAIBase {
 
     @Override
     public boolean shouldExecute() {
-        EntityPrehistoricFloraFishBase target = this.entity.getShoalLeader();
+        EntityPrehistoricFloraAgeableBase target = this.entity.getShoalLeader();
         if (target == null || !target.isEntityAlive()) {
             return false;
         }
@@ -70,7 +74,7 @@ public class ShoalFishBaseAI extends EntityAIBase {
             if (rand.nextInt(8) == 0) {
                 BlockPos targetPos = getOffsetTarget(this.entity.world, target.getPositionVector());
                 if (targetPos != null) {
-                    this.entity.getNavigator().tryMoveToXYZ(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, 1);
+                    this.entity.getNavigator().tryMoveToXYZ(targetPos.getX() + 0.5, targetPos.getY() + 0.5, targetPos.getZ() + 0.5, this.speed);
                     return;
                 }
             }
@@ -81,9 +85,14 @@ public class ShoalFishBaseAI extends EntityAIBase {
     @Nullable
     public BlockPos getOffsetTarget(World world, Vec3d vec3d) {
         BlockPos blockpos = new BlockPos(vec3d);
-        blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
-        if (world.getBlockState(blockpos).getMaterial() == Material.WATER && this.entity.isDirectPathBetweenPoints(this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
-            return blockpos;
+        if (this.entity instanceof EntityPrehistoricFloraAgeableFishBase
+            || this.entity instanceof EntityPrehistoricFloraNautiloidBase
+            || this.entity instanceof EntityPrehistoricFloraEurypteridBase
+        ) {
+            blockpos = blockpos.add(rand.nextInt(3) - 1, rand.nextInt(3) - 1, rand.nextInt(3) - 1);
+            if (world.getBlockState(blockpos).getMaterial() == Material.WATER && ShoalingHelper.isDirectPathBetweenPoints(world, this.entity.getPositionVector(), new Vec3d(blockpos.getX() + 0.5, blockpos.getY() + 0.5, blockpos.getZ() + 0.5))) {
+                return blockpos;
+            }
         }
         return null;
     }

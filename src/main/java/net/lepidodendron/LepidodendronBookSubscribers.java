@@ -8416,6 +8416,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			/*
 			else if (event.getTarget() instanceof EntityPrehistoricFloraThrissops) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_THRISSOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8515,6 +8516,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			 */
 
 			else if (event.getTarget() instanceof EntityPrehistoricFloraEntelognathus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {

@@ -39,7 +39,7 @@ public class EntityPrehistoricFloraFurcacauda extends EntityPrehistoricFloraFish
 
 	@Override
 	public boolean canShoal() {
-		return true;
+		return (!(this.getAlarmCooldown() > 0));
 	}
 
 	@Override

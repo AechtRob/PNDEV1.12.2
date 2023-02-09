@@ -9,7 +9,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDiictodon;
-import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -47,7 +46,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private boolean screaming;
-	private int alarmCooldown;
+	private int screamAlarmCooldown;
 
 	public EntityPrehistoricFloraDiictodon(World world) {
 		super(world);
@@ -87,7 +86,7 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 			List<EntityPrehistoricFloraDiictodon> Diictodon = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDiictodon.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
 			for (EntityPrehistoricFloraDiictodon currentDiictodon : Diictodon) {
 				currentDiictodon.setRevengeTarget(ee);
-				currentDiictodon.alarmCooldown = rand.nextInt(20);
+				currentDiictodon.screamAlarmCooldown = rand.nextInt(20);
 			}
 		}
 		return super.attackEntityFrom(ds, i);
@@ -239,16 +238,16 @@ public class EntityPrehistoricFloraDiictodon extends EntityPrehistoricFloraLandB
 		{
 			//System.err.println("playing alarm sound");
 			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
-			this.alarmCooldown = 20;
+			this.screamAlarmCooldown = 20;
 		}
 	}
 
 	@Override
 	public void onEntityUpdate() {
-		if (this.alarmCooldown > 0) {
-			this.alarmCooldown -= 1;
+		if (this.screamAlarmCooldown > 0) {
+			this.screamAlarmCooldown -= 1;
 		}
-		if (this.getScreaming() && alarmCooldown <= 0) {
+		if (this.getScreaming() && screamAlarmCooldown <= 0) {
 			this.playAlarmSound();
 		}
 

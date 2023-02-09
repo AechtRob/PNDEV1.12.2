@@ -11,6 +11,7 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.EntityPrehistoricFloraDiictodon;
 import net.lepidodendron.item.ItemNesting;
 import net.lepidodendron.item.entities.ItemUnknownEgg;
+import net.lepidodendron.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.command.ICommandSender;
@@ -44,6 +45,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable implements IAnimatedEntity  {
 
@@ -72,13 +74,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public Animation LAY_ANIMATION;
     public Animation MAKE_NEST_ANIMATION;
     private Animation currentAnimation;
-
+    private EntityPrehistoricFloraAgeableBase shoalLeader;
     private int inPFLove;
     private int canGrow;
     private boolean laying;
     private EntityItem eatTarget;
     private EntityLiving grappleTarget;
     public boolean willGrapple;
+    private int alarmCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -87,6 +90,22 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         ROAR_ANIMATION = Animation.create(this.getRoarLength());
         LAY_ANIMATION = Animation.create(this.getLayLength());
         MAKE_NEST_ANIMATION = Animation.create(this.getLayLength()); //Same as laying length
+    }
+
+    public int getAlarmCooldown() {
+        return this.alarmCooldown;
+    }
+
+    public boolean canShoal() {
+        return false;
+    }
+
+    public int getShoalSize() {
+        return 0;
+    }
+
+    public int getShoalDist() {
+        return 0;
     }
 
     @SideOnly(Side.CLIENT)
@@ -410,6 +429,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 (this.getTicks() > 24000 || this.getTicks() < 0)); //If the mob has done not bred for a MC day
     }
 
+    @Nullable
+    public EntityPrehistoricFloraAgeableBase getShoalLeader() {
+        return this.shoalLeader;
+    }
+
+    public void setShoalLeader(@Nullable EntityPrehistoricFloraAgeableBase leader) {
+        this.shoalLeader = leader;
+    }
 
     public int getTickOffset() {
         return this.dataManager.get(TICKOFFSET);
@@ -649,7 +676,6 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             }
         }
 
-
         if (this.getHurtSound(DamageSource.GENERIC) != null && i >= 1) {
             //if (this.getAnimation() != null) {
                 if (this.getAnimation() == NO_ANIMATION) {
@@ -669,6 +695,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         else
         {
             this.inPFLove = 0;
+            Entity e = ds.getTrueSource();
+            if (e instanceof EntityLivingBase) {
+                List<EntityPrehistoricFloraAgeableBase> ageableBase = this.world.getEntitiesWithinAABB(this.getClass(), new AxisAlignedBB(this.getPosition().add(-this.getShoalDist(), -this.getShoalDist(), -this.getShoalDist()), this.getPosition().add(this.getShoalDist(), this.getShoalDist(), this.getShoalDist())));
+                for (EntityPrehistoricFloraAgeableBase currentageableBase : ageableBase) {
+                    currentageableBase.setShoalLeader(null);
+                    currentageableBase.alarmCooldown = rand.nextInt(20) + 20;
+                }
+            }
             return super.attackEntityFrom(ds, i);
         }
     }
@@ -821,6 +855,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             //limit at 24000 + 6000 (one MC day plus 5 minutes) and then reset:
             if (ii >= 30000) {ii = 0;}
             this.setTicks(ii);
+        }
+
+        if (this.alarmCooldown > 0) {
+            this.alarmCooldown -= 1;
+        }
+
+        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
+            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+                ShoalingHelper.updateShoalAgeableBase(this);
+            }
         }
 
         //if (world.isRemote) {

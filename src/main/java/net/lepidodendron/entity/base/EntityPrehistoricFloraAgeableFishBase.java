@@ -26,13 +26,7 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
 
     public EntityPrehistoricFloraAgeableFishBase(World world) {
         super(world);
-        //this.spawnableBlock = Blocks.WATER;
-        if (this.isBase()) {
-            this.moveHelper = new EntityPrehistoricFloraAgeableFishBase.SwimmingMoveHelperBase();
-        }
-        else{
-            this.moveHelper = new EntityPrehistoricFloraAgeableFishBase.SwimmingMoveHelper();
-        }
+        this.moveHelper = new EntityPrehistoricFloraAgeableFishBase.SwimmingMoveHelper();
         this.navigator = new PathNavigateSwimmer(this, world);
         if (FMLCommonHandler.instance().getSide().isClient()) {
             this.chainBuffer = new ChainBuffer();
@@ -264,60 +258,6 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         this.limbSwing += this.limbSwingAmount;
     }
 
-    class SwimmingMoveHelperBase extends EntityMoveHelper {
-        private final EntityPrehistoricFloraAgeableFishBase EntityBase = EntityPrehistoricFloraAgeableFishBase.this;
-
-        public SwimmingMoveHelperBase() {
-            super(EntityPrehistoricFloraAgeableFishBase.this);
-        }
-
-        @Override
-        public void onUpdateMoveHelper() {
-            if (this.action == Action.MOVE_TO && !this.EntityBase.getNavigator().noPath()) {
-                double distanceX = this.posX - this.EntityBase.posX;
-                double distanceY = this.posY - this.EntityBase.posY;
-                double distanceZ = this.posZ - this.EntityBase.posZ;
-                double distance = Math.abs(distanceX * distanceX + distanceY * distanceY + distanceZ * distanceZ);
-                distance = MathHelper.sqrt(distance);
-                distanceY /= distance;
-                float angle = (float) (Math.atan2(distanceZ, distanceX) * 180.0D / Math.PI) - 90.0F;
-
-                //this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, 1000);
-                this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
-                float speed = getAISpeedFish();
-                this.EntityBase.setAIMoveSpeed(speed);
-
-                if (this.EntityBase.isAtBottom()) {
-                    this.EntityBase.setAIMoveSpeed(speed * 0.25F);
-                }
-
-                if (this.EntityBase.getEatTarget() != null) {
-                    if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {
-                        //System.err.println("Above food");
-                        this.EntityBase.motionY = -0.075;
-                    }
-                    else {
-                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
-                    }
-                }
-                else if (this.EntityBase.getAttackTarget() != null) {
-                    if (this.EntityBase.posY > this.EntityBase.getAttackTarget().posY && distance <= 1) {
-                        //System.err.println("Above prey");
-                        this.EntityBase.motionY += -(double) this.EntityBase.getAIMoveSpeed() * 0.1D;
-                    }
-                    else {
-                        this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
-                    }
-                }
-                else {
-                    this.EntityBase.motionY += (double) this.EntityBase.getAIMoveSpeed() * distanceY * 0.1D;
-                }
-            } else {
-                this.EntityBase.setAIMoveSpeed(0.0F);
-            }
-        }
-    }
-
     class SwimmingMoveHelper extends EntityMoveHelper {
         private final EntityPrehistoricFloraAgeableFishBase EntityBase = EntityPrehistoricFloraAgeableFishBase.this;
 
@@ -341,6 +281,10 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
                 this.EntityBase.rotationYaw = this.limitAngle(this.EntityBase.rotationYaw, angle, this.EntityBase.maxTurnAngle());
                 float speed = getAISpeedFish();
                 this.EntityBase.setAIMoveSpeed(speed);
+
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                    this.EntityBase.setAIMoveSpeed(speed * 0.25F);
+                }
 
                 if (this.EntityBase.getEatTarget() != null) {
                     if (this.EntityBase.posY > this.EntityBase.getEatTarget().posY && distance <= 1) {

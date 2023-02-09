@@ -9,10 +9,7 @@ import net.lepidodendron.item.entities.ItemUnknownEgg;
 import net.lepidodendron.util.ShoalingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.MoverType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityTameable;
@@ -29,10 +26,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
@@ -42,6 +36,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public abstract class EntityPrehistoricFloraFishBase extends EntityTameable implements IAnimatedEntity {
     public BlockPos currentTarget;
@@ -51,6 +46,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
     private EntityPrehistoricFloraFishBase shoalLeader;
     private int inPFLove;
+    private int alarmCooldown;
 
     public EntityPrehistoricFloraFishBase(World world) {
         super(world);
@@ -78,6 +74,8 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public int getShoalDist() {
         return 0;
     }
+
+    public int getAlarmCooldown() {return this.alarmCooldown;}
 
     public static String getHabitat() {
         return I18n.translateToLocal("helper.pf_aquatic.name");
@@ -258,6 +256,14 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         else
         {
             this.inPFLove = 0;
+            Entity e = ds.getTrueSource();
+            if (e instanceof EntityLivingBase) {
+                List<EntityPrehistoricFloraFishBase> fishBase = this.world.getEntitiesWithinAABB(this.getClass(), new AxisAlignedBB(this.getPosition().add(-this.getShoalDist(), -this.getShoalDist(), -this.getShoalDist()), this.getPosition().add(this.getShoalDist(), this.getShoalDist(), this.getShoalDist())));
+                for (EntityPrehistoricFloraFishBase currentfishBase : fishBase) {
+                    currentfishBase.setShoalLeader(null);
+                    currentfishBase.alarmCooldown = rand.nextInt(20) + 20;
+                }
+            }
             return super.attackEntityFrom(ds, i);
         }
     }
@@ -374,6 +380,10 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
             //limit at 48000 (two MC days) and then reset:
             if (ii >= 48000) {ii = 0;}
             this.setTicks(ii);
+        }
+
+        if (this.alarmCooldown > 0) {
+            this.alarmCooldown -= 1;
         }
 
         if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {

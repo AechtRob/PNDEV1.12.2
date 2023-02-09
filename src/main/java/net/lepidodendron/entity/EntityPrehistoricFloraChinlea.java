@@ -47,6 +47,21 @@ public class EntityPrehistoricFloraChinlea extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 4;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 4;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
@@ -99,7 +114,8 @@ public class EntityPrehistoricFloraChinlea extends EntityPrehistoricFloraAgeable
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(2, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
+		tasks.addTask(2, new ShoalFishAgeableAI(this, 1, true));
+		tasks.addTask(3, new AgeableFishWander(this, NO_ANIMATION, 1D, 0));
 		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 		this.targetTasks.addTask(1, new HuntAI(this, EntityPrehistoricFloraFishBase.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));
 		this.targetTasks.addTask(1, new HuntAI(this, EntitySquid. class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

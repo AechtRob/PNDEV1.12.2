@@ -1,9 +1,10 @@
 package net.lepidodendron.util;
 
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.base.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -104,5 +105,121 @@ public class ShoalingHelper {
                 return;
             }
         }
+    }
+
+    public static void updateShoalAgeableBase(EntityPrehistoricFloraAgeableBase ageableBase) {
+        World world = ageableBase.world;
+        boolean isLeader = false;
+        EntityPrehistoricFloraAgeableBase shoalLeader = ageableBase.getShoalLeader();
+        if (shoalLeader != null) {
+            isLeader = shoalLeader == ageableBase;
+        }
+        BlockPos pos = ageableBase.getPosition();
+        int shoalDist = ageableBase.getShoalDist();
+        if (isLeader) { //I am a leader:
+            //Do I have a shoal?
+            boolean hasShoal = false;
+            int myshoal = 0;
+            List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
+            for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
+                if (currentEntity.getShoalLeader() == ageableBase) {
+                    hasShoal = true;
+                    myshoal ++;
+                }
+            }
+            if (!hasShoal) {
+                ageableBase.setShoalLeader(null);
+            }
+            else {
+                //I'm the leader - am I near a shoal I can join?
+                //Find me a shoal:
+                Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
+                for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
+                    //What are the requirements for setting a new fish as my leader?
+                    //It must be a leader of itself
+                    if (currentEntity.getShoalLeader() == currentEntity) {
+                        //What is its shoal size?
+                        int shoal = 0;
+                        BlockPos leaderPos = currentEntity.getPosition();
+                        List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                        for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
+                            if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                                shoal ++;
+                            }
+                        }
+                        if (shoal + myshoal <= ageableBase.getShoalSize()) {
+                            //Set that entity as the leader of this one:
+                            ageableBase.setShoalLeader(currentEntity);
+                            return;
+                        }
+                    }
+                }
+                return;
+            }
+        }
+        //So I am not be a leader, but am I in a shoal?
+        if (shoalLeader != null) {
+            //I am following someone, but are they dead or impossible to reach?
+            if (shoalLeader.isDead) {
+                ageableBase.setShoalLeader(null);
+            }
+            if (shoalLeader != null) {
+                if ((!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && isDirectPathBetweenPoints(world, ageableBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) &&
+                        (ageableBase instanceof EntityPrehistoricFloraAgeableFishBase
+                        || ageableBase instanceof EntityPrehistoricFloraNautiloidBase
+                        || ageableBase instanceof EntityPrehistoricFloraEurypteridBase
+                    )
+                ) {
+                    ageableBase.setShoalLeader(null);
+                }
+                if (!(ageableBase instanceof EntityPrehistoricFloraAgeableFishBase
+                        || ageableBase instanceof EntityPrehistoricFloraNautiloidBase
+                        || ageableBase instanceof EntityPrehistoricFloraEurypteridBase
+                    )) {
+                    if (ageableBase.getNavigator().getPath() == null) {
+                        ageableBase.setShoalLeader(null);
+                    }
+                    else if (ageableBase.getNavigator().noPath()) {
+                        ageableBase.setShoalLeader(null);
+                    }
+                }
+            }
+        }
+        if (shoalLeader != null) {
+            //I am in a shoal, so that's all I care about right now
+            return;
+        }
+        //Find me a shoal:
+        List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
+        for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
+            //What are the requirements for setting a new fish as my leader?
+            //It must either be a leader of itself, or else not have a leader at all
+            if (currentEntity.getShoalLeader() == currentEntity) {
+                //What is its shoal size?
+                int shoal = 0;
+                BlockPos leaderPos = currentEntity.getPosition();
+                List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(ageableBase.getClass(), new AxisAlignedBB(leaderPos.add(-shoalDist, -shoalDist, -shoalDist), leaderPos.add(shoalDist, shoalDist, shoalDist)));
+                for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
+                    if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                        shoal ++;
+                    }
+                }
+                if (shoal <= ageableBase.getShoalSize()) {
+                    //Set that entity as the leader of this one:
+                    ageableBase.setShoalLeader(currentEntity);
+                    return;
+                }
+            }
+            if (currentEntity.getShoalLeader() == null) {
+                //Set that entity as the leader of this one:
+                ageableBase.setShoalLeader(currentEntity);
+                return;
+            }
+        }
+    }
+
+    public static boolean isDirectPathBetweenPoints(World world, Vec3d vec1, Vec3d vec2) {
+        RayTraceResult movingobjectposition = world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
+        return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 }
