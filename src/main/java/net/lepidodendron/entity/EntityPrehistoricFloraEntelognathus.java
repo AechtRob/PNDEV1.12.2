@@ -31,7 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraAgeableFishBase {
+public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraAgeableFishBase {
 
 
 	public BlockPos currentTarget;
@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFloraA
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

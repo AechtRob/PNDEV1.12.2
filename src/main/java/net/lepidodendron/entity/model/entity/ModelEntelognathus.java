@@ -262,7 +262,7 @@ public class ModelEntelognathus extends AdvancedModelBase {
         if (isAtBottom && !entelo.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.23F;
+            taildegree = 0.27F;
             bottomModifier = 0.8F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);

@@ -343,7 +343,7 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
-        //this.main.offsetY = 0.7F;
+        this.main.offsetY = -0.1F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
@@ -371,8 +371,8 @@ public class ModelWuttagoonaspis extends AdvancedModelBase {
         if (isAtBottom && !wuttagoon.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.2F;
-            taildegree = 0.23F;
-            bottomModifier = 0.8F;
+            taildegree = 0.25F;
+            bottomModifier = 0.9F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);
             finDegreeY = (float)Math.toRadians(12.5);

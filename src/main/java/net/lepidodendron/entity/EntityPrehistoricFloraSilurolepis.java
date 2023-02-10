@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
