@@ -394,6 +394,7 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
         //this.main.offsetY = 0.7F;
+        this.main.offsetZ = -0.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
@@ -421,7 +422,7 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
         if (isAtBottom && !goodra.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.23F;
+            taildegree = 0.15F;
             bottomModifier = 0.8F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);
@@ -458,7 +459,7 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = -0.02F;
-                this.main.offsetX = 0.5F;
+                this.main.offsetZ = -0.5F;
                 //this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
             }

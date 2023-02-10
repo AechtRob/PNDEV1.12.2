@@ -292,6 +292,7 @@ public class ModelPhyllolepis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
+        this.main.offsetZ = -0.2F;
         //this.headshield.offsetZ = -0.4F;
         //this.main.offsetY = 0.7F;
 
@@ -358,7 +359,7 @@ public class ModelPhyllolepis extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = -0.02F;
-                this.main.offsetX = 0.1F;
+                this.main.offsetZ = -0.2F;
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
             }

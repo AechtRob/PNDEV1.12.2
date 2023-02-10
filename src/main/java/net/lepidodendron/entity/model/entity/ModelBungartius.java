@@ -340,13 +340,13 @@ public class ModelBungartius extends AdvancedModelBase {
         //    this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, -0.2F, f2, 1);
         //}
 
-        this.chainWave(fishTail, speed * still, 0.02F * still, -3, f2, 0.6F * still);
-        this.chainSwing(fishTail, speed * still, 0.5F, -3, f2, 0.6F * still);
+        this.chainWave(fishTail, speed * still, 0.02F * still, -3, f2, 0.8F * still);
+        this.chainSwing(fishTail, speed * still, 0.4F, -3, f2, 0.6F * still);
         if (e.isInWater()) {
-            this.swing(body, speed * still, 0.2F, true, 0, 0, f2, 1);
+            this.swing(body, speed * still, 0.05F, true, 0, 0, f2, 1);
         }
         else {
-            this.swing(body, speed, 0.1F, true, 0, 0, f2, 0.5F);
+            this.swing(body, speed* still, 0.05F, true, 0, 0, f2, 0.5F);
         }
         this.flap(pectoralfinL, (float) (speed * 0.65), 0.5F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
         this.swing(pectoralfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0, 0, f2, 1 * inwater);
