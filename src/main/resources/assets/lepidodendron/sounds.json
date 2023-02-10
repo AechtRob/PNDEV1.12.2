@@ -1047,7 +1047,8 @@
         "stream": false
       }
     ]
-  },"vivaxosaurus_idle": {
+  },
+  "vivaxosaurus_idle": {
     "sounds": [
       {
         "name": "lepidodendron:vivaxosaurus_living01",
@@ -6067,6 +6068,54 @@
     "sounds": [
       {
         "name": "lepidodendron:arthropleura_step",
+        "stream": false
+      }
+    ]
+  },
+  "endothiodon_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:endothiodon_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_living05",
+        "stream": false
+      }
+    ]
+  },
+  "endothiodon_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:endothiodon_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:endothiodon_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "endothiodon_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:endothiodon_death",
         "stream": false
       }
     ]

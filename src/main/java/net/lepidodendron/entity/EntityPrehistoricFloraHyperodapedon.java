@@ -281,6 +281,10 @@ public class EntityPrehistoricFloraHyperodapedon extends EntityPrehistoricFloraD
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
 			this.launchAttack();
+			if (this.getOneHit()) {
+				this.setAttackTarget(null);
+				this.setRevengeTarget(null);
+			}
 		}
 
 		//AnimationHandler.INSTANCE.updateAnimations(this);
