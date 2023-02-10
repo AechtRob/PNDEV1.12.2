@@ -74,7 +74,7 @@ public class EntityPrehistoricFloraScaumenacia extends EntityPrehistoricFloraFis
 
 	@Override
 	protected boolean isSlowAtBottom() {
-		return true;
+		return false;
 	}
 
 	@Override
