@@ -45,7 +45,6 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
 
-    private static final DataParameter<Boolean> ISMOVING = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.BOOLEAN);
 
     private EntityPrehistoricFloraFishBase shoalLeader;
     private int inPFLove;
@@ -78,9 +77,6 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return 0;
     }
 
-    public boolean getIsMoving() {
-        return this.dataManager.get(ISMOVING);
-    }
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
 
@@ -197,7 +193,6 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         super.entityInit();
         this.dataManager.register(TICKS, rand.nextInt(24000));
         this.dataManager.register(MATEABLE, 0);
-        this.dataManager.register(ISMOVING, false);
     }
 
     @Override
@@ -217,9 +212,6 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
 
     protected abstract boolean isSlowAtBottom();
 
-    public void setIsMoving(boolean isMoving) {
-        this.dataManager.set(ISMOVING, isMoving);
-    }
 
     @Override
     public boolean isInWater() {
