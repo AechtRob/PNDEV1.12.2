@@ -64,6 +64,18 @@
 				"biome": "lepidodendron:permian_cold_glossopteris_forest_ocean"
 			}
 		},
+		"permian_temperate_glossopteris_copse": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_temperate_glossopteris_copse"
+			}
+		},
+		"permian_temperate_glossopteris": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"biome": "lepidodendron:permian_temperate_glossopteris"
+			}
+		},
 		"permian_desert": {
 			"trigger": "minecraft:location",
 			"conditions": {
@@ -175,6 +187,12 @@
 			"permian_cold_glossopteris_forest",
 			"permian_cold_glossopteris_beach",
 			"permian_cold_glossopteris_forest_light"
+		],
+		[
+			"permian_temperate_glossopteris_copse"
+		],
+		[
+			"permian_temperate_glossopteris"
 		],
 		[
 			"permian_beach"

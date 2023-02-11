@@ -104,7 +104,10 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Wetlands
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_lowlands_floodplain")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")) {
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_river")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
+			) {
 				biomeCriteria = true;
 			}
 		}
@@ -147,6 +150,8 @@ public class BlockNeocalamites extends ElementsLepidodendronMod.ModElement {
 
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_coastal")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_cold_glossopteris")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_highlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_lowlands")
 				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_creek_wetlands"))
