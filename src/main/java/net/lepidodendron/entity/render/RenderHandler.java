@@ -3528,12 +3528,15 @@ public class RenderHandler {
                 return new RenderThrissops(manager);
             }
         });
+
+         */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMuensterella.class, new IRenderFactory<EntityPrehistoricFloraMuensterella>() {
             @Override
             public Render<? super EntityPrehistoricFloraMuensterella> createRenderFor(RenderManager manager) {
                 return new RenderMuensterella(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraBelonostomusJurassic.class, new IRenderFactory<EntityPrehistoricFloraBelonostomusJurassic>() {
             @Override
             public Render<? super EntityPrehistoricFloraBelonostomusJurassic> createRenderFor(RenderManager manager) {
