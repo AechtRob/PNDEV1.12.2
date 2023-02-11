@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraMegarachne extends EntityPrehistoricFloraEury
 		return true;
 	}
 
-	public static String getPeriod() {return "late Carboniferous";}
+	public static String getPeriod() {return "late Carboniferous - early Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

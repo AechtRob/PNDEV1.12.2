@@ -131,6 +131,10 @@ public class BlockPhyllotheca extends ElementsLepidodendronMod.ModElement {
 			if (biomePermian.getBiomeType() == EnumBiomeTypePermian.Glossopteris) {
 				GenChance = 20;
 			}
+			if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris")
+				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_temperate_glossopteris_copse")) {
+				GenChance = 92;
+			}
 		}
 
 		int maxheight = LepidodendronConfigPlants.maxheightPhyllotheca;
