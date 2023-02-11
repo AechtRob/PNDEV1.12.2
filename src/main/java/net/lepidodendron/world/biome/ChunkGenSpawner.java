@@ -1246,7 +1246,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                             errFound = true;
                                         } else {
                                             int maxSpawn = (int) Integer.parseInt(tmpStr);
-                                            if (maxSpawn < 1 || maxSpawn > 20) {
+                                            if (maxSpawn < 0 || maxSpawn > 20) {
                                                 errFound = true;
                                             }
 
@@ -1981,20 +1981,29 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
                                                         if ((Math.random() * weighter) <= (double) weight) {
                                                             //System.err.println("Trying......");
-                                                            int spawnQty = rand.nextInt(maxSpawn) + 1;
+                                                            int spawnQty = 0;
+                                                            if (maxSpawn >= 1) {
+                                                                spawnQty = rand.nextInt(maxSpawn) + 1;
+                                                            }
                                                             if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                if (((EntityPrehistoricFloraAgeableBase)entity).canShoal()) {
-                                                                    spawnQty = Math.max(3, rand.nextInt(((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() + 1));
+                                                                if (((EntityPrehistoricFloraAgeableBase)entity).canShoal() && maxSpawn == 0) {
+                                                                    int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraAgeableBase)entity).getShoalSize())/2D);
+                                                                    int remainingShoal = ((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() - halfShoal;
+                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
                                                                 }
                                                             }
                                                             if (entity instanceof EntityPrehistoricFloraFishBase) {
-                                                                if (((EntityPrehistoricFloraFishBase)entity).canShoal()) {
-                                                                    spawnQty = Math.max(3, rand.nextInt(((EntityPrehistoricFloraFishBase)entity).getShoalSize() + 1));
+                                                                if (((EntityPrehistoricFloraFishBase)entity).canShoal() && maxSpawn == 0) {
+                                                                    int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraFishBase)entity).getShoalSize())/2D);
+                                                                    int remainingShoal = ((EntityPrehistoricFloraFishBase)entity).getShoalSize() - halfShoal;
+                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
                                                                 }
                                                             }
                                                             if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
-                                                                if (((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal()) {
-                                                                    spawnQty = Math.max(3, rand.nextInt(((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() + 1));
+                                                                if (((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal() && maxSpawn == 0) {
+                                                                    int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize())/2D);
+                                                                    int remainingShoal = ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() - halfShoal;
+                                                                    spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
                                                                 }
                                                             }
                                                             //System.err.println("spawnQty: " + spawnQty);

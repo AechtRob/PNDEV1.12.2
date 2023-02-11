@@ -981,7 +981,8 @@ public class LepidodendronMod {
 	public static final int ENTITY_RUBIDGEA = 388;
 	//public static final ResourceLocation RUBIDGEA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/rubidgea"));
 	public static final int ENTITY_ENDOTHIODON = 389;
-	//public static final ResourceLocation ENDOTHIODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/endothiodon"));
+	public static final ResourceLocation ENDOTHIODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/endothiodon"));
+	public static final ResourceLocation ENDOTHIODON_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/endothiodon_young"));
 	public static final int ENTITY_AUSTROLIMULUS = 390;
 	public static final ResourceLocation AUSTROLIMULUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/austrolimulus"));
 	public static final int ENTITY_BEISHANICHTHYS = 391;

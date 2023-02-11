@@ -180,18 +180,19 @@ public class EntityPrehistoricFloraArthropleura extends EntityPrehistoricFloraLa
 	public net.minecraft.util.SoundEvent getAmbientSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 				.getObject(new ResourceLocation("lepidodendron:arthropleura_idle"));
+		//=null
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:arthropleura_hurt"));
+				.getObject(new ResourceLocation("lepidodendron:eoarthropleura_hurt"));
 	}
 
 	@Override
 	public net.minecraft.util.SoundEvent getDeathSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
-				.getObject(new ResourceLocation("lepidodendron:arthropleura_death"));
+				.getObject(new ResourceLocation("lepidodendron:eoarthropleura_death"));
 	}
 
 	@Override
