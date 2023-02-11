@@ -512,9 +512,9 @@ public class ModelTitanicthys extends AdvancedModelBase {
         else {
             this.swing(Body, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(PectoralfinL, (float) (speed * 0.65), 0.5F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
+        this.flap(PectoralfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
         this.swing(PectoralfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0, 0, f2, 1 * inwater);
-        this.flap(PectoralfinR, (float) (speed * 0.65), -0.5F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
+        this.flap(PectoralfinR, (float) (speed * 0.65), -0.3F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
         this.swing(PectoralfinR, (float) (speed * 0.65), -0.3F * inwater, true, 0, 0, f2, 1 * inwater);
 
         this.flap(PelvicfinR2, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.1F, f2, 1 * inwater);
