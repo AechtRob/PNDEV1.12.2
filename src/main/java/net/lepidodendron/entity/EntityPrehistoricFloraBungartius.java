@@ -52,8 +52,8 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 		//minSize = 0.05F;
 		//maxSize = 1.0F;
 		minWidth = 0.2F;
-		maxWidth = 0.5F;
-		maxHeight = 0.7F;
+		maxWidth = 0.8F;
+		maxHeight = 0.6F;
 		maxHealthAgeable = 27.0D;
 	}
 

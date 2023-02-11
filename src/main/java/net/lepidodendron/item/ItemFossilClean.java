@@ -40,10 +40,10 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 
 		ModelBakery.registerItemVariants(block,
-				/*
-				new ModelResourceLocation("lepidodendron:fossils/fossil_vachonisia_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_furca_clean", "inventory"),
-				new ModelResourceLocation("lepidodendron:fossils/fossil_tomlinsonus_clean", "inventory"),
+
+				//new ModelResourceLocation("lepidodendron:fossils/fossil_vachonisia_clean", "inventory"),
+				//new ModelResourceLocation("lepidodendron:fossils/fossil_furca_clean", "inventory"),
+				//new ModelResourceLocation("lepidodendron:fossils/fossil_tomlinsonus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_miguashaia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cometicercus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_pentecopterus_clean", "inventory"),
@@ -88,9 +88,6 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_piranhamesodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_silurolepis_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_entelognathus_clean", "inventory"),
-				 */
-
-
 
 				new ModelResourceLocation("lepidodendron:fossils/fossil_eastmanosteus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_aphnelepis_clean", "inventory"),

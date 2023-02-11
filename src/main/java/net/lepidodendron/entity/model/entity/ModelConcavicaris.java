@@ -279,7 +279,7 @@ public class ModelConcavicaris extends AdvancedModelBase {
             float tailVdegree = 0.1F;
             float tailHdegree = 0.3F;
 
-            float speedLeg = 2.5F;
+            float speedLeg = 0.9F;
             float degreeLeg = 0.2F;
             this.flap(legL, speedLeg, -degreeLeg, false, 0, -0.5F, f2, 0.7F);
             this.flap(legR1, speedLeg, degreeLeg, false, 0, 0.5F, f2, 0.7F);

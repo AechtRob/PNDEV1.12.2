@@ -3576,12 +3576,15 @@ public class RenderHandler {
                 return new RenderLepidotes(manager);
             }
         });
+
+         */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDollocaris.class, new IRenderFactory<EntityPrehistoricFloraDollocaris>() {
             @Override
             public Render<? super EntityPrehistoricFloraDollocaris> createRenderFor(RenderManager manager) {
                 return new RenderDollocaris(manager);
             }
         });
+        /*
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraPiranhamesodon.class, new IRenderFactory<EntityPrehistoricFloraPiranhamesodon>() {
             @Override
             public Render<? super EntityPrehistoricFloraPiranhamesodon> createRenderFor(RenderManager manager) {

@@ -44,6 +44,8 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public ChainBuffer chainBuffer;
     private static final DataParameter<Integer> TICKS = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
     private static final DataParameter<Integer> MATEABLE = EntityDataManager.createKey(EntityPrehistoricFloraFishBase.class, DataSerializers.VARINT);
+
+
     private EntityPrehistoricFloraFishBase shoalLeader;
     private int inPFLove;
     private int alarmCooldown;
@@ -74,6 +76,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     public int getShoalDist() {
         return 0;
     }
+
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
 
@@ -208,6 +211,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     protected abstract float getAISpeedFish();
 
     protected abstract boolean isSlowAtBottom();
+
 
     @Override
     public boolean isInWater() {

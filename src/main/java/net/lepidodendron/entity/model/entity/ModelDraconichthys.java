@@ -300,6 +300,7 @@ public class ModelDraconichthys extends AdvancedModelBase {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
 
+        this.main.offsetY = 0.1F;
 
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4};
 

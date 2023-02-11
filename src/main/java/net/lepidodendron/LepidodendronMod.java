@@ -1440,6 +1440,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation THRISSOPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/thrissops"));
 	public static final int ENTITY_MUENSTERELLA = 591;
 	public static final ResourceLocation MUENSTERELLA_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/muensterella"));
+	public static final ResourceLocation MUENSTERELLA_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/muensterella_young"));
 	public static final int ENTITY_BELONOSTOMUS_JURASSIC = 592;
 	public static final ResourceLocation BELONOSTOMUS_JURASSIC_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/belonostomus_jurassic"));
 	public static final int ENTITY_BELONOSTOMUS_CRETACEOUS = 593;

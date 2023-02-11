@@ -394,6 +394,7 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
         this.resetToDefaultPose();
         //this.headshield.offsetZ = -0.4F;
         //this.main.offsetY = 0.7F;
+        this.main.offsetZ = -0.25F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
@@ -421,8 +422,8 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
         if (isAtBottom && !goodra.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
-            bottomModifier = 0.5F;
+            taildegree = 0.23F;
+            bottomModifier = 0.8F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(15);
             finDegreeY = (float)Math.toRadians(12.5);
@@ -441,9 +442,9 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
             this.chainSwing(fishTail, speed *0.5F* bottomModifier, taildegree * bottomModifier, -3, f2, 1);
             this.swing(main, speed *0.5F* bottomModifier, 0.3F * bottomModifier * swingModifier, true, 0, 0, f2, 1 * swingModifier);
             if(isAtBottom && !goodra.getIsFast()) {
-                this.walk(jaw, (float) (speed * 0.2), (float) Math.toRadians(7.5), true, 0.5F, -0.3F, f2, 1);
+                this.walk(jaw, (float) (speed * 0.5), (float) Math.toRadians(5), true, 0.5F, -0.3F, f2, 1);
             } else {
-                this.walk(jaw, (float) (speed * 0.4), (float) Math.toRadians(10), true, 0.2F, -0.25F, f2, 1);
+                this.walk(jaw, (float) (speed * 0.5), (float) Math.toRadians(5), true, 0.2F, -0.25F, f2, 1);
             }
             this.flap(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeZ * inwater, true, -3F, 0, f2, 1 * inwater);
             this.swing(frontleftfin, (float) (speed * 0.45 * (bottomModifier * 2.5F)), finDegreeY * inwater, true, -3F, 0, f2, 1 * inwater);
@@ -458,7 +459,8 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = -0.02F;
-                this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
+                this.main.offsetZ = -0.5F;
+                //this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
             }
         }

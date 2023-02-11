@@ -176,7 +176,6 @@ public class ModelRhamphodopsis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.Root.offsetY = 0.45F;
 
         //this.Tailfin.setScale(1.1F, 1.1F, 1.1F);
         AdvancedModelRenderer[] fishTail = {this.Tail, this.Tail2, this.Tail3};
@@ -216,7 +215,7 @@ public class ModelRhamphodopsis extends AdvancedModelBase {
             this.swing(RPelvic, (float) (speed * 0.75), 0.11F, true, 1.5F, 0, f2, 1);
 
             if (!e.isInWater()) {
-                //this.Root.offsetY = -0.1F;
+                this.Root.offsetY = -0.1F;
                 this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
             }
         }

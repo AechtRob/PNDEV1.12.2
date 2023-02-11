@@ -347,7 +347,7 @@ public class ModelCeratiocaris extends AdvancedModelBase {
             this.walk(AntennaR, 0.3F, 0.15F, false, 2f, 0f, f2, 1F);
 
 
-            float tailVdegree = 0.01F;
+            float tailVdegree = 0.05F;
             float tailHdegree = 0.3F;
             this.chainWave(Tail, speed*0.25F, tailVdegree, -2, f2, 1);
 

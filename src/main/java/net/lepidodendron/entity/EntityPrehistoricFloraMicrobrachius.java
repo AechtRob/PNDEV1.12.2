@@ -111,7 +111,7 @@ public class EntityPrehistoricFloraMicrobrachius extends EntityPrehistoricFloraA
 		if (this.isAtBottom() && this.bottomCooldown > 0 && (!this.getIsFast()) && (!this.isInLove())) {
 			return 0.2F;
 		}
-		return 0.442f;
+		return 0.25f;
 	}
 
 	@Override

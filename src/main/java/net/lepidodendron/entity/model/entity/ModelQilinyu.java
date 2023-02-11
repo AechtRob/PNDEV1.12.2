@@ -251,7 +251,7 @@ public class ModelQilinyu extends AdvancedModelBase {
 
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.bob(head, -speed, 2F, false, f2, 1);
+                this.bob(head, -speed, 0.2F, false, f2, 1);
                 this.chainWave(fishTail, speed, 0.2F, -3, f2, 1);
             }
         }

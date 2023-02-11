@@ -3,17 +3,17 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AgeableFishWander;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAI;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.item.ItemFishFood;
+import net.lepidodendron.entity.ai.EatFishFoodAIFish;
+import net.lepidodendron.entity.ai.EntityMateAIFishBase;
+import net.lepidodendron.entity.ai.FishWanderSurface;
+import net.lepidodendron.entity.ai.ShoalFishBaseAI;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderConcavicaris;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgeableFishBase {
+public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFishBase {
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
@@ -32,52 +32,48 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
-	public EntityPrehistoricFloraCtenurella(World world) {
+	public EntityPrehistoricFloraDollocaris(World world) {
 		super(world);
-		setSize(0.5F, 0.3F);
+		setSize(0.3F, 0.3F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-		minWidth = 0.2F;
-		maxWidth = 0.2F;
-		maxHeight = 0.2F;
-		maxHealthAgeable = 5.0D;
 	}
 
 	@Override
-	public EntityPrehistoricFloraAgeableBase createPFChild(EntityPrehistoricFloraAgeableBase entity) {
-		return new EntityPrehistoricFloraCtenurella(this.world);
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
 	}
 
 	@Override
-	public int getAdultAge() {
-		return 32000;
+	public int getShoalSize() {
+		return 6;
 	}
 
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
 
 	@Override
 	public boolean isSmall() {
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
 	@Override
 	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean laysEggs() {
-		return false;
+		return true;
 	}
 
 	@Override
 	protected float getAISpeedFish() {
-		return 0.185f;
+		//return 0;
+		return 0.326f * 0.65F;
 	}
 
 	@Override
@@ -111,15 +107,10 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	}
 
 	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAI(this, 1));
-		tasks.addTask(1, new AgeableFishWander(this, NO_ANIMATION, 1, -10));
-		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
-	}
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (stack.getItem() == ItemFishFood.block);
+		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
+		tasks.addTask(1, new ShoalFishBaseAI(this, 1, true));
+		tasks.addTask(2, new FishWanderSurface(this, NO_ANIMATION));
+		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
 	}
 
 	@Override
@@ -134,7 +125,7 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
+		return EnumCreatureAttribute.ARTHROPOD;
 	}
 
 	@Override
@@ -145,8 +136,8 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 
 	@Override
@@ -173,7 +164,6 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		this.renderYawOffset = this.rotationYaw;
-		AnimationHandler.INSTANCE.updateAnimations(this);
 	}
 
 	public void onEntityUpdate() {
@@ -182,16 +172,62 @@ public class EntityPrehistoricFloraCtenurella extends EntityPrehistoricFloraAgea
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.CTENURELLA_LOOT;
+		return LepidodendronMod.DOLLOCARIS_LOOT;
 	}
 
-	@Override
-	public boolean attackEntityFrom(DamageSource source, float amount) {
-		if (source != DamageSource.DROWN) {
-			return super.attackEntityFrom(source, (amount * 0.5F));
-		}
-		return super.attackEntityFrom(source, amount);
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.3; }
+
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return -0.3;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.55;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_CONCAVICARIS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelConcavicaris;
+	}
+	public static float getScaler() {
+		return RenderConcavicaris.getScaler();
 	}
 
 }
-

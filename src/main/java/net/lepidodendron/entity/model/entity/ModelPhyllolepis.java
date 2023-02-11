@@ -34,17 +34,17 @@ public class ModelPhyllolepis extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r16;
     private final AdvancedModelRenderer cube_r17;
     private final AdvancedModelRenderer cube_r18;
+    private final AdvancedModelRenderer backleftfin;
+    private final AdvancedModelRenderer cube_r19;
+    private final AdvancedModelRenderer backrightfin;
+    private final AdvancedModelRenderer cube_r20;
     private final AdvancedModelRenderer frontleftfin;
     private final AdvancedModelRenderer frontrightfin;
     private final AdvancedModelRenderer tail;
-    private final AdvancedModelRenderer cube_r19;
-    private final AdvancedModelRenderer cube_r20;
     private final AdvancedModelRenderer cube_r21;
-    private final AdvancedModelRenderer tail2;
-    private final AdvancedModelRenderer backleftfin;
     private final AdvancedModelRenderer cube_r22;
-    private final AdvancedModelRenderer backrightfin;
     private final AdvancedModelRenderer cube_r23;
+    private final AdvancedModelRenderer tail2;
     private final AdvancedModelRenderer tail3;
     private final AdvancedModelRenderer tail4;
 
@@ -184,40 +184,62 @@ public class ModelPhyllolepis extends AdvancedModelBase {
         this.setRotateAngle(cube_r18, 0.0F, -0.24F, 0.0F);
         this.cube_r18.cubeList.add(new ModelBox(cube_r18, 37, 14, -1.0F, -1.0F, 0.0F, 1, 2, 4, -0.001F, false));
 
+        this.backleftfin = new AdvancedModelRenderer(this);
+        this.backleftfin.setRotationPoint(2.2092F, 1.65F, 2.733F);
+        this.body.addChild(backleftfin);
+
+
+        this.cube_r19 = new AdvancedModelRenderer(this);
+        this.cube_r19.setRotationPoint(-0.9592F, 0.0F, 0.292F);
+        this.backleftfin.addChild(cube_r19);
+        this.setRotateAngle(cube_r19, 0.0F, -0.3927F, 0.0F);
+        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 2, 44, -0.8619F, 0.0F, -1.3087F, 5, 0, 3, 0.0F, false));
+
+        this.backrightfin = new AdvancedModelRenderer(this);
+        this.backrightfin.setRotationPoint(-2.2092F, 1.65F, 2.733F);
+        this.body.addChild(backrightfin);
+
+
+        this.cube_r20 = new AdvancedModelRenderer(this);
+        this.cube_r20.setRotationPoint(0.9592F, 0.0F, 0.292F);
+        this.backrightfin.addChild(cube_r20);
+        this.setRotateAngle(cube_r20, 0.0F, 0.3927F, 0.0F);
+        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 2, 44, -4.1381F, 0.0F, -1.3087F, 5, 0, 3, 0.0F, true));
+
         this.frontleftfin = new AdvancedModelRenderer(this);
-        this.frontleftfin.setRotationPoint(2.9831F, 1.575F, 0.2496F);
+        this.frontleftfin.setRotationPoint(2.9831F, 1.575F, -0.5004F);
         this.body.addChild(frontleftfin);
         this.setRotateAngle(frontleftfin, 0.0F, 0.829F, 0.0F);
-        this.frontleftfin.cubeList.add(new ModelBox(frontleftfin, 10, 18, -3.9242F, 0.0F, -0.1267F, 4, 0, 5, 0.0F, false));
+        this.frontleftfin.cubeList.add(new ModelBox(frontleftfin, 10, 18, -1.5589F, 0.0F, -1.616F, 4, 0, 5, 0.0F, false));
 
         this.frontrightfin = new AdvancedModelRenderer(this);
-        this.frontrightfin.setRotationPoint(-2.9831F, 1.575F, 0.2496F);
+        this.frontrightfin.setRotationPoint(-2.9831F, 1.575F, -0.5004F);
         this.body.addChild(frontrightfin);
         this.setRotateAngle(frontrightfin, 0.0F, -0.829F, 0.0F);
-        this.frontrightfin.cubeList.add(new ModelBox(frontrightfin, 10, 18, -0.0758F, 0.0F, -0.1267F, 4, 0, 5, 0.0F, true));
+        this.frontrightfin.cubeList.add(new ModelBox(frontrightfin, 10, 18, -2.4411F, 0.0F, -1.616F, 4, 0, 5, 0.0F, true));
 
         this.tail = new AdvancedModelRenderer(this);
         this.tail.setRotationPoint(0.0F, 0.7109F, 3.525F);
         this.body.addChild(tail);
         this.tail.cubeList.add(new ModelBox(tail, 18, 20, -1.5F, -0.8109F, -0.2F, 3, 2, 5, 0.003F, false));
 
-        this.cube_r19 = new AdvancedModelRenderer(this);
-        this.cube_r19.setRotationPoint(0.0F, -0.8109F, 2.3F);
-        this.tail.addChild(cube_r19);
-        this.setRotateAngle(cube_r19, -0.1004F, 0.0F, 0.0F);
-        this.cube_r19.cubeList.add(new ModelBox(cube_r19, 0, 25, -1.5F, -0.25F, -2.55F, 3, 1, 5, -0.001F, false));
-
-        this.cube_r20 = new AdvancedModelRenderer(this);
-        this.cube_r20.setRotationPoint(-2.0F, 0.1891F, -0.2F);
-        this.tail.addChild(cube_r20);
-        this.setRotateAngle(cube_r20, 0.0F, 0.1004F, 0.0F);
-        this.cube_r20.cubeList.add(new ModelBox(cube_r20, 5, 31, 0.0F, -1.0F, 0.0F, 1, 2, 5, -0.001F, true));
-
         this.cube_r21 = new AdvancedModelRenderer(this);
-        this.cube_r21.setRotationPoint(2.0F, 0.1891F, -0.2F);
+        this.cube_r21.setRotationPoint(0.0F, -0.8109F, 2.3F);
         this.tail.addChild(cube_r21);
-        this.setRotateAngle(cube_r21, 0.0F, -0.1004F, 0.0F);
-        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 5, 31, -1.0F, -1.0F, 0.0F, 1, 2, 5, -0.001F, false));
+        this.setRotateAngle(cube_r21, -0.1004F, 0.0F, 0.0F);
+        this.cube_r21.cubeList.add(new ModelBox(cube_r21, 0, 25, -1.5F, -0.25F, -2.55F, 3, 1, 5, -0.001F, false));
+
+        this.cube_r22 = new AdvancedModelRenderer(this);
+        this.cube_r22.setRotationPoint(-2.0F, 0.1891F, -0.2F);
+        this.tail.addChild(cube_r22);
+        this.setRotateAngle(cube_r22, 0.0F, 0.1004F, 0.0F);
+        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 5, 31, 0.0F, -1.0F, 0.0F, 1, 2, 5, -0.001F, true));
+
+        this.cube_r23 = new AdvancedModelRenderer(this);
+        this.cube_r23.setRotationPoint(2.0F, 0.1891F, -0.2F);
+        this.tail.addChild(cube_r23);
+        this.setRotateAngle(cube_r23, 0.0F, -0.1004F, 0.0F);
+        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 5, 31, -1.0F, -1.0F, 0.0F, 1, 2, 5, -0.001F, false));
 
         this.tail2 = new AdvancedModelRenderer(this);
         this.tail2.setRotationPoint(0.0F, 0.1891F, 4.25F);
@@ -225,28 +247,6 @@ public class ModelPhyllolepis extends AdvancedModelBase {
         this.tail2.cubeList.add(new ModelBox(tail2, 23, 27, -1.0F, -1.0F, 0.0F, 2, 2, 5, 0.0F, false));
         this.tail2.cubeList.add(new ModelBox(tail2, 10, 5, 0.0F, -2.0F, 0.0F, 0, 1, 5, 0.0F, false));
         this.tail2.cubeList.add(new ModelBox(tail2, 0, 5, 0.0F, 1.0F, 0.0F, 0, 1, 5, 0.0F, false));
-
-        this.backleftfin = new AdvancedModelRenderer(this);
-        this.backleftfin.setRotationPoint(0.7092F, 0.75F, 2.208F);
-        this.tail2.addChild(backleftfin);
-
-
-        this.cube_r22 = new AdvancedModelRenderer(this);
-        this.cube_r22.setRotationPoint(0.2908F, 0.0F, 0.292F);
-        this.backleftfin.addChild(cube_r22);
-        this.setRotateAngle(cube_r22, 0.0F, -0.3927F, 0.0F);
-        this.cube_r22.cubeList.add(new ModelBox(cube_r22, 2, 44, -0.65F, 0.0F, -1.5F, 5, 0, 3, 0.0F, false));
-
-        this.backrightfin = new AdvancedModelRenderer(this);
-        this.backrightfin.setRotationPoint(-0.7092F, 0.75F, 2.208F);
-        this.tail2.addChild(backrightfin);
-
-
-        this.cube_r23 = new AdvancedModelRenderer(this);
-        this.cube_r23.setRotationPoint(-0.2908F, 0.0F, 0.292F);
-        this.backrightfin.addChild(cube_r23);
-        this.setRotateAngle(cube_r23, 0.0F, 0.3927F, 0.0F);
-        this.cube_r23.cubeList.add(new ModelBox(cube_r23, 2, 44, -4.35F, 0.0F, -1.5F, 5, 0, 3, 0.0F, true));
 
         this.tail3 = new AdvancedModelRenderer(this);
         this.tail3.setRotationPoint(0.0F, -0.25F, 5.0F);
@@ -292,6 +292,7 @@ public class ModelPhyllolepis extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
+        this.main.offsetZ = -0.2F;
         //this.headshield.offsetZ = -0.4F;
         //this.main.offsetY = 0.7F;
 
@@ -321,8 +322,8 @@ public class ModelPhyllolepis extends AdvancedModelBase {
         if (isAtBottom && !phyllo.getIsFast()) {
             //System.err.println("Animation at bottom");
             speed = 0.15F;
-            taildegree = 0.15F;
-            bottomModifier = 0.5F;
+            taildegree = 0.25F;
+            bottomModifier = 0.9F;
             swingModifier = 0.5F;
             finDegreeZ = (float)Math.toRadians(10);
             finDegreeY = (float)Math.toRadians(12.5);
@@ -358,6 +359,7 @@ public class ModelPhyllolepis extends AdvancedModelBase {
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
                 this.main.offsetY = -0.02F;
+                this.main.offsetZ = -0.2F;
                 this.chainWave(fishTail, speed, 0.05F, -1, f2, 1);
                 this.chainSwing(fishTail, speed, 0.10F, -3, f2, 1);
             }
