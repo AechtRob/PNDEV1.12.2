@@ -18,7 +18,7 @@ public class ShoalingHelper {
     private static Random rand = new Random();
 
     public static void updateShoalFishBase(EntityPrehistoricFloraFishBase fishBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || fishBase.getShoalSize() < 1) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || fishBase.canShoal()) {
             return;
         }
         World world = fishBase.world;
@@ -84,8 +84,8 @@ public class ShoalingHelper {
             if (shoalLeader.isDead) {
                 fishBase.setShoalLeader(null);
             }
-            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(fishBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                if (rand.nextInt(fishBase.getShoalSize()) == 0) {
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt((fishBase.getShoalSize() * 2) + 1) == 0) { //Am I following someone who is a follower?
+                if (rand.nextInt(shoalLeader.getShoalSize() + 1) == 0) {
                     fishBase.setShoalLeader(null);
                 }
                 shoalLeader.setShoalLeader(shoalLeader);
@@ -121,7 +121,7 @@ public class ShoalingHelper {
                             shoal++;
                         }
                     }
-                    if (shoal <= fishBase.getShoalSize()) {
+                    if (shoal <= currentEntity.getShoalSize()) {
                         //Set that entity as the leader of this one:
                         fishBase.setShoalLeader(currentEntity);
                         return;
@@ -137,7 +137,7 @@ public class ShoalingHelper {
     }
 
     public static void updateShoalAgeableBase(EntityPrehistoricFloraAgeableBase ageableBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || ageableBase.getShoalSize() < 1) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || ageableBase.canShoal()) {
             return;
         }
         World world = ageableBase.world;
@@ -174,7 +174,7 @@ public class ShoalingHelper {
                 Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
                 for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
                     if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                        //What are the requirements for setting a new ageable as my leader?
+                        //What are the requirements for setting a new fish as my leader?
                         //It must be a leader of itself
                         if (currentEntity.getShoalLeader() == currentEntity) {
                             //What is its shoal size?
@@ -203,8 +203,8 @@ public class ShoalingHelper {
             if (shoalLeader.isDead) {
                 ageableBase.setShoalLeader(null);
             }
-            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(ageableBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                if (rand.nextInt(ageableBase.getShoalSize()) == 0) {
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt((ageableBase.getShoalSize() * 2) + 1) == 0) { //Am I following someone who is a follower?
+                if (rand.nextInt(shoalLeader.getShoalSize() + 1) == 0) {
                     ageableBase.setShoalLeader(null);
                 }
                 shoalLeader.setShoalLeader(shoalLeader);
@@ -228,7 +228,7 @@ public class ShoalingHelper {
         List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
         for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
             if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                //What are the requirements for setting a new ageable as my leader?
+                //What are the requirements for setting a new fish as my leader?
                 //It must either be a leader of itself, or else not have a leader at all
                 if (currentEntity.getShoalLeader() == currentEntity) {
                     //What is its shoal size?
@@ -240,7 +240,7 @@ public class ShoalingHelper {
                             shoal++;
                         }
                     }
-                    if (shoal <= ageableBase.getShoalSize()) {
+                    if (shoal <= currentEntity.getShoalSize()) {
                         //Set that entity as the leader of this one:
                         ageableBase.setShoalLeader(currentEntity);
                         return;
@@ -255,8 +255,9 @@ public class ShoalingHelper {
         }
     }
 
+
     public static void updateShoalTrilobiteBottomBase(EntityPrehistoricFloraTrilobiteBottomBase trilobiteBottomBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBottomBase.getShoalSize() < 1) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBottomBase.canShoal()) {
             return;
         }
         World world = trilobiteBottomBase.world;
@@ -293,7 +294,7 @@ public class ShoalingHelper {
                 Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
                 for (EntityPrehistoricFloraTrilobiteBottomBase currentEntity : Entities) {
                     if (isInList(currentEntity, trilobiteBottomBase.canShoalWith())) {
-                        //What are the requirements for setting a new trilobiteBottom as my leader?
+                        //What are the requirements for setting a new fish as my leader?
                         //It must be a leader of itself
                         if (currentEntity.getShoalLeader() == currentEntity) {
                             //What is its shoal size?
@@ -322,8 +323,8 @@ public class ShoalingHelper {
             if (shoalLeader.isDead) {
                 trilobiteBottomBase.setShoalLeader(null);
             }
-            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(trilobiteBottomBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                if (rand.nextInt(trilobiteBottomBase.getShoalSize()) == 0) {
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt((trilobiteBottomBase.getShoalSize() * 2) + 1) == 0) { //Am I following someone who is a follower?
+                if (rand.nextInt(shoalLeader.getShoalSize() + 1) == 0) {
                     trilobiteBottomBase.setShoalLeader(null);
                 }
                 shoalLeader.setShoalLeader(shoalLeader);
@@ -347,7 +348,7 @@ public class ShoalingHelper {
         List<EntityPrehistoricFloraTrilobiteBottomBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
         for (EntityPrehistoricFloraTrilobiteBottomBase currentEntity : Entities) {
             if (isInList(currentEntity, trilobiteBottomBase.canShoalWith())) {
-                //What are the requirements for setting a new trilobiteBottom as my leader?
+                //What are the requirements for setting a new fish as my leader?
                 //It must either be a leader of itself, or else not have a leader at all
                 if (currentEntity.getShoalLeader() == currentEntity) {
                     //What is its shoal size?
@@ -359,7 +360,7 @@ public class ShoalingHelper {
                             shoal++;
                         }
                     }
-                    if (shoal <= trilobiteBottomBase.getShoalSize()) {
+                    if (shoal <= currentEntity.getShoalSize()) {
                         //Set that entity as the leader of this one:
                         trilobiteBottomBase.setShoalLeader(currentEntity);
                         return;
