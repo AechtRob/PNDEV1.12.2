@@ -77,6 +77,9 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         return 0;
     }
 
+    public EntityLivingBase[] canShoalWith() {
+        return new EntityLivingBase[]{this};
+    }
 
     public int getAlarmCooldown() {return this.alarmCooldown;}
 

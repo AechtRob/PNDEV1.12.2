@@ -108,6 +108,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return 0;
     }
 
+    public EntityLivingBase[] canShoalWith() {
+        return new EntityLivingBase[]{this};
+    }
+
     @SideOnly(Side.CLIENT)
     public AxisAlignedBB getRenderBoundingBox()
     {
