@@ -18,7 +18,7 @@ public class ShoalingHelper {
     private static Random rand = new Random();
 
     public static void updateShoalFishBase(EntityPrehistoricFloraFishBase fishBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || fishBase.canShoal()) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || !fishBase.canShoal()) {
             return;
         }
         World world = fishBase.world;
@@ -137,7 +137,7 @@ public class ShoalingHelper {
     }
 
     public static void updateShoalAgeableBase(EntityPrehistoricFloraAgeableBase ageableBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || ageableBase.canShoal()) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || !ageableBase.canShoal()) {
             return;
         }
         World world = ageableBase.world;
@@ -257,7 +257,7 @@ public class ShoalingHelper {
 
 
     public static void updateShoalTrilobiteBottomBase(EntityPrehistoricFloraTrilobiteBottomBase trilobiteBottomBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBottomBase.canShoal()) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || !trilobiteBottomBase.canShoal()) {
             return;
         }
         World world = trilobiteBottomBase.world;
