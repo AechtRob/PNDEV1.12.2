@@ -108,7 +108,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         return 0;
     }
 
-    public EntityLivingBase[] canShoalWith() {
+    public final EntityLivingBase[] canShoalWith() {
         return new EntityLivingBase[]{this};
     }
 
