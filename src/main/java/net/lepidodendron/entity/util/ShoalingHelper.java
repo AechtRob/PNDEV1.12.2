@@ -35,14 +35,14 @@ public class ShoalingHelper {
             int myshoal = 0;
             List<EntityPrehistoricFloraFishBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraFishBase.class, new AxisAlignedBB(pos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), pos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
             for (EntityPrehistoricFloraFishBase currentEntity : Entities) {
-                if (isInList(currentEntity, fishBase.canShoalWith())) {
-                    if (currentEntity.getShoalLeader() == fishBase) {
-                        hasShoal = true;
-                        if (myshoal <= fishBase.getShoalSize()) {
-                            myshoal++;
-                        } else {
-                            currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed
-                        }
+                if (currentEntity.getShoalLeader() == fishBase) {
+                    hasShoal = true;
+                    if (myshoal <= fishBase.getShoalSize()) {
+                        myshoal++;
+                    }
+                    if (myshoal > currentEntity.getShoalSize()) {
+                        myshoal--;
+                        currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed for it
                     }
                 }
             }
@@ -63,10 +63,8 @@ public class ShoalingHelper {
                             BlockPos leaderPos = currentEntity.getPosition();
                             List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraFishBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                             for (EntityPrehistoricFloraFishBase currentShoalEntity : ShoalEntities) {
-                                if (isInList(currentShoalEntity, fishBase.canShoalWith())) {
-                                    if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                        shoal++;
-                                    }
+                                if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                                    shoal++;
                                 }
                             }
                             if (shoal + myshoal <= fishBase.getShoalSize()) {
@@ -119,10 +117,8 @@ public class ShoalingHelper {
                     BlockPos leaderPos = currentEntity.getPosition();
                     List<EntityPrehistoricFloraFishBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraFishBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                     for (EntityPrehistoricFloraFishBase currentShoalEntity : ShoalEntities) {
-                        if (isInList(currentShoalEntity, fishBase.canShoalWith())) {
-                            if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                shoal++;
-                            }
+                        if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                            shoal++;
                         }
                     }
                     if (shoal <= fishBase.getShoalSize()) {
@@ -158,16 +154,14 @@ public class ShoalingHelper {
             int myshoal = 0;
             List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(pos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), pos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
             for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
-                if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                    if (currentEntity.getShoalLeader() == ageableBase) {
-                        hasShoal = true;
-                        if (myshoal <= ageableBase.getShoalSize()) {
-                            myshoal++;
-                        }
-                        else {
-                            currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed
-                        }
-                        myshoal ++;
+                if (currentEntity.getShoalLeader() == ageableBase) {
+                    hasShoal = true;
+                    if (myshoal <= ageableBase.getShoalSize()) {
+                        myshoal++;
+                    }
+                    if (myshoal > currentEntity.getShoalSize()) {
+                        myshoal--;
+                        currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed for it
                     }
                 }
             }
@@ -180,7 +174,7 @@ public class ShoalingHelper {
                 Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
                 for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
                     if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                        //What are the requirements for setting a new fish as my leader?
+                        //What are the requirements for setting a new ageable as my leader?
                         //It must be a leader of itself
                         if (currentEntity.getShoalLeader() == currentEntity) {
                             //What is its shoal size?
@@ -188,10 +182,8 @@ public class ShoalingHelper {
                             BlockPos leaderPos = currentEntity.getPosition();
                             List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                             for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
-                                if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                                    if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                        shoal++;
-                                    }
+                                if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                                    shoal++;
                                 }
                             }
                             if (shoal + myshoal <= ageableBase.getShoalSize()) {
@@ -218,24 +210,8 @@ public class ShoalingHelper {
                 shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
-                if ((!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && isDirectPathBetweenPoints(world, ageableBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) &&
-                        (ageableBase instanceof EntityPrehistoricFloraAgeableFishBase
-                        || ageableBase instanceof EntityPrehistoricFloraNautiloidBase
-                        || ageableBase instanceof EntityPrehistoricFloraEurypteridBase
-                    )
-                ) {
+                if (!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && isDirectPathBetweenPoints(world, ageableBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) {
                     ageableBase.setShoalLeader(null);
-                }
-                if (!(ageableBase instanceof EntityPrehistoricFloraAgeableFishBase
-                        || ageableBase instanceof EntityPrehistoricFloraNautiloidBase
-                        || ageableBase instanceof EntityPrehistoricFloraEurypteridBase
-                    )) {
-                    if (ageableBase.getNavigator().getPath() == null) {
-                        ageableBase.setShoalLeader(null);
-                    }
-                    else if (ageableBase.getNavigator().noPath()) {
-                        ageableBase.setShoalLeader(null);
-                    }
                 }
             }
         }
@@ -252,7 +228,7 @@ public class ShoalingHelper {
         List<EntityPrehistoricFloraAgeableBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
         for (EntityPrehistoricFloraAgeableBase currentEntity : Entities) {
             if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                //What are the requirements for setting a new fish as my leader?
+                //What are the requirements for setting a new ageable as my leader?
                 //It must either be a leader of itself, or else not have a leader at all
                 if (currentEntity.getShoalLeader() == currentEntity) {
                     //What is its shoal size?
@@ -260,10 +236,8 @@ public class ShoalingHelper {
                     BlockPos leaderPos = currentEntity.getPosition();
                     List<EntityPrehistoricFloraAgeableBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraAgeableBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                     for (EntityPrehistoricFloraAgeableBase currentShoalEntity : ShoalEntities) {
-                        if (isInList(currentEntity, ageableBase.canShoalWith())) {
-                            if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                shoal++;
-                            }
+                        if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                            shoal++;
                         }
                     }
                     if (shoal <= ageableBase.getShoalSize()) {
@@ -281,45 +255,45 @@ public class ShoalingHelper {
         }
     }
 
-    public static void updateShoalTrilobiteBottomBase(EntityPrehistoricFloraTrilobiteBottomBase trilobiteBase) {
-        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBase.getShoalSize() < 1) {
+    public static void updateShoalTrilobiteBottomBase(EntityPrehistoricFloraTrilobiteBottomBase trilobiteBottomBase) {
+        if ((!LepidodendronConfig.doShoalingFlocking) || trilobiteBottomBase.getShoalSize() < 1) {
             return;
         }
-        World world = trilobiteBase.world;
+        World world = trilobiteBottomBase.world;
         boolean isLeader = false;
-        EntityPrehistoricFloraTrilobiteBottomBase shoalLeader = trilobiteBase.getShoalLeader();
+        EntityPrehistoricFloraTrilobiteBottomBase shoalLeader = trilobiteBottomBase.getShoalLeader();
         if (shoalLeader != null) {
-            isLeader = shoalLeader == trilobiteBase;
+            isLeader = shoalLeader == trilobiteBottomBase;
         }
-        BlockPos pos = trilobiteBase.getPosition();
-        int shoalDist = trilobiteBase.getShoalDist();
+        BlockPos pos = trilobiteBottomBase.getPosition();
+        int shoalDist = trilobiteBottomBase.getShoalDist();
         if (isLeader) { //I am a leader:
             //Do I have a shoal?
             boolean hasShoal = false;
             int myshoal = 0;
             List<EntityPrehistoricFloraTrilobiteBottomBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(pos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), pos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
             for (EntityPrehistoricFloraTrilobiteBottomBase currentEntity : Entities) {
-                if (isInList(currentEntity, trilobiteBase.canShoalWith())) {
-                    if (currentEntity.getShoalLeader() == trilobiteBase) {
-                        hasShoal = true;
-                        if (myshoal <= trilobiteBase.getShoalSize()) {
-                            myshoal++;
-                        } else {
-                            currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed
-                        }
+                if (currentEntity.getShoalLeader() == trilobiteBottomBase) {
+                    hasShoal = true;
+                    if (myshoal <= trilobiteBottomBase.getShoalSize()) {
+                        myshoal++;
+                    }
+                    if (myshoal > currentEntity.getShoalSize()) {
+                        myshoal--;
+                        currentEntity.setShoalLeader(null); //This follower exceeds the shoal size allowed for it
                     }
                 }
             }
             if (!hasShoal) {
-                trilobiteBase.setShoalLeader(null);
+                trilobiteBottomBase.setShoalLeader(null);
             }
             else {
                 //I'm the leader - am I near a shoal I can join?
                 //Find me a shoal:
                 Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
                 for (EntityPrehistoricFloraTrilobiteBottomBase currentEntity : Entities) {
-                    if (isInList(currentEntity, trilobiteBase.canShoalWith())) {
-                        //What are the requirements for setting a new fish as my leader?
+                    if (isInList(currentEntity, trilobiteBottomBase.canShoalWith())) {
+                        //What are the requirements for setting a new trilobiteBottom as my leader?
                         //It must be a leader of itself
                         if (currentEntity.getShoalLeader() == currentEntity) {
                             //What is its shoal size?
@@ -327,15 +301,13 @@ public class ShoalingHelper {
                             BlockPos leaderPos = currentEntity.getPosition();
                             List<EntityPrehistoricFloraTrilobiteBottomBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                             for (EntityPrehistoricFloraTrilobiteBottomBase currentShoalEntity : ShoalEntities) {
-                                if (isInList(currentEntity, trilobiteBase.canShoalWith())) {
-                                    if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                        shoal++;
-                                    }
+                                if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                                    shoal++;
                                 }
                             }
-                            if (shoal + myshoal <= trilobiteBase.getShoalSize()) {
+                            if (shoal + myshoal <= trilobiteBottomBase.getShoalSize()) {
                                 //Set that entity as the leader of this one:
-                                trilobiteBase.setShoalLeader(currentEntity);
+                                trilobiteBottomBase.setShoalLeader(currentEntity);
                                 return;
                             }
                         }
@@ -348,24 +320,24 @@ public class ShoalingHelper {
         if (shoalLeader != null) {
             //I am following someone, but are they dead or impossible to reach?
             if (shoalLeader.isDead) {
-                trilobiteBase.setShoalLeader(null);
+                trilobiteBottomBase.setShoalLeader(null);
             }
-            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(trilobiteBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
-                if (rand.nextInt(trilobiteBase.getShoalSize()) == 0) {
-                    trilobiteBase.setShoalLeader(null);
+            else if (shoalLeader.getShoalLeader() != shoalLeader && rand.nextInt(trilobiteBottomBase.getShoalSize() * 2) == 0) { //Am I following someone who is a follower?
+                if (rand.nextInt(trilobiteBottomBase.getShoalSize()) == 0) {
+                    trilobiteBottomBase.setShoalLeader(null);
                 }
                 shoalLeader.setShoalLeader(shoalLeader);
             }
             if (shoalLeader != null) {
-                if (!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && trilobiteBase.isDirectPathBetweenPoints(trilobiteBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) {
-                    trilobiteBase.setShoalLeader(null);
+                if (!(world.getBlockState(shoalLeader.getPosition()).getMaterial() == Material.WATER && trilobiteBottomBase.isDirectPathBetweenPoints(trilobiteBottomBase.getPositionVector(), new Vec3d(shoalLeader.getPosition().getX() + 0.5, shoalLeader.getPosition().getY() + 0.5, shoalLeader.getPosition().getZ() + 0.5)))) {
+                    trilobiteBottomBase.setShoalLeader(null);
                 }
             }
         }
         if (shoalLeader != null) {
             //I am in a shoal, but is my leader too far away?
-            if (trilobiteBase.getDistance(shoalLeader) > trilobiteBase.getShoalDist() + trilobiteBase.getEntityBoundingBox().getAverageEdgeLength()) {
-                trilobiteBase.setShoalLeader(null);
+            if (trilobiteBottomBase.getDistance(shoalLeader) > trilobiteBottomBase.getShoalDist() + trilobiteBottomBase.getEntityBoundingBox().getAverageEdgeLength()) {
+                trilobiteBottomBase.setShoalLeader(null);
             }
             else {
                 return;
@@ -374,8 +346,8 @@ public class ShoalingHelper {
         //Find me a shoal:
         List<EntityPrehistoricFloraTrilobiteBottomBase> Entities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(pos.add(-shoalDist, -shoalDist, -shoalDist), pos.add(shoalDist, shoalDist, shoalDist)));
         for (EntityPrehistoricFloraTrilobiteBottomBase currentEntity : Entities) {
-            if (isInList(currentEntity, trilobiteBase.canShoalWith())) {
-                //What are the requirements for setting a new fish as my leader?
+            if (isInList(currentEntity, trilobiteBottomBase.canShoalWith())) {
+                //What are the requirements for setting a new trilobiteBottom as my leader?
                 //It must either be a leader of itself, or else not have a leader at all
                 if (currentEntity.getShoalLeader() == currentEntity) {
                     //What is its shoal size?
@@ -383,21 +355,19 @@ public class ShoalingHelper {
                     BlockPos leaderPos = currentEntity.getPosition();
                     List<EntityPrehistoricFloraTrilobiteBottomBase> ShoalEntities = world.getEntitiesWithinAABB(EntityPrehistoricFloraTrilobiteBottomBase.class, new AxisAlignedBB(leaderPos.add(-(shoalDist + 1), -(shoalDist + 1), -(shoalDist + 1)), leaderPos.add((shoalDist + 1), (shoalDist + 1), (shoalDist + 1))));
                     for (EntityPrehistoricFloraTrilobiteBottomBase currentShoalEntity : ShoalEntities) {
-                        if (isInList(currentEntity, trilobiteBase.canShoalWith())) {
-                            if (currentShoalEntity.getShoalLeader() == currentEntity) {
-                                shoal++;
-                            }
+                        if (currentShoalEntity.getShoalLeader() == currentEntity) {
+                            shoal++;
                         }
                     }
-                    if (shoal <= trilobiteBase.getShoalSize()) {
+                    if (shoal <= trilobiteBottomBase.getShoalSize()) {
                         //Set that entity as the leader of this one:
-                        trilobiteBase.setShoalLeader(currentEntity);
+                        trilobiteBottomBase.setShoalLeader(currentEntity);
                         return;
                     }
                 }
                 if (currentEntity.getShoalLeader() == null) {
                     //Set that entity as the leader of this one:
-                    trilobiteBase.setShoalLeader(currentEntity);
+                    trilobiteBottomBase.setShoalLeader(currentEntity);
                     return;
                 }
             }
