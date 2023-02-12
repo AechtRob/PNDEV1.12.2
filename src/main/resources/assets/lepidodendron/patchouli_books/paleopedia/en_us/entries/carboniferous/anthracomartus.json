@@ -6,9 +6,9 @@
     "turnin": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
     "pages": [
         {
-	    "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
-	    "title": "Cryptomartus",
-            "type": "text",
+            "trigger": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
+            "title": "Anthracomartus",
+            "type": "quest",
             "text": "$(l)Temporal Range:$() Carboniferous$(br2)$(l)Habitat:$() Terrestrial$(br)>Arachnida$(br)>Trigonotarbida$(br)>Anthracomartidae"
         },
 	{
