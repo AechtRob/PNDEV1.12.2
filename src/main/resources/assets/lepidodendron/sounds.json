@@ -827,7 +827,8 @@
         "stream": false
       }
     ]
-  },"gorgonops_idle": {
+  },
+  "gorgonops_idle": {
     "sounds": [
       {
         "name": "lepidodendron:gorgonops_living01",
@@ -6116,6 +6117,59 @@
     "sounds": [
       {
         "name": "lepidodendron:endothiodon_death",
+        "stream": false
+      }
+    ]
+  },
+
+  "rubidgea_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rubidgea_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_living05",
+        "stream": false
+      }
+    ]
+  },
+  "rubidgea_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rubidgea_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_hurt03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:rubidgea_hurt04",
+        "stream": false
+      }
+    ]
+  },
+  "rubidgea_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:rubidgea_death",
         "stream": false
       }
     ]
