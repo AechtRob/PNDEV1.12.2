@@ -207,16 +207,23 @@ public class ModelNerepisacanthus extends AdvancedModelBase {
         this.main.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.22F;
+        this.main.offsetX = -0.05F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(jaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(tail2, 0.4752F, -0.3931F, -0.1946F);
+        this.main.offsetY = -0.45F;
+        this.main.offsetZ = 0.0F;
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

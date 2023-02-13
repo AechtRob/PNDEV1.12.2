@@ -219,16 +219,21 @@ public class ModelDiplacanthus extends AdvancedModelBase {
         this.main.render(f5);
     }
 
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.21F;
+        this.main.offsetX = -0.03F;
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.tail2.rotateAngleY = (float) Math.toRadians(-32.5);
+        this.tail.rotateAngleY = (float) Math.toRadians(12.5);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetY = -0.4F;
+        this.main.offsetZ = 0.03F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(AdvancedModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
