@@ -97,8 +97,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
     private final ModelBrochoadmones modelBrochoadmones;
     private static final ResourceLocation TEXTURE_BUNOSTEGOS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/bunostegos.png");
     private final ModelBunostegos modelBunostegos;
-    private static final ResourceLocation TEXTURE_CAMPBELLODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/campbellodus.png");
-    private final ModelCampbellodus modelCampbellodus;
     private static final ResourceLocation TEXTURE_CAROLOWILHELMINA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/carolowilhelmina.png");
     private final ModelCarolowilhelmina modelCarolowilhelmina;
     private static final ResourceLocation TEXTURE_CATURUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caturus.png");
@@ -378,7 +376,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
         this.modelBrembodus = new ModelBrembodus();
         this.modelBrochoadmones = new ModelBrochoadmones();
         this.modelBunostegos = new ModelBunostegos();
-        this.modelCampbellodus = new ModelCampbellodus();
         this.modelCarolowilhelmina = new ModelCarolowilhelmina();
         this.modelCaturus = new ModelCaturus();
         this.modelCephalaspis = new ModelCephalaspis();
@@ -1331,33 +1328,6 @@ public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDispl
                                 GlStateManager.scale(4.8, 4.8, 4.8);
                                 this.bindTexture(TEXTURE_BUNOSTEGOS);
                                 modelBunostegos.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
-                            } else if (classEntity == EntityPrehistoricFloraCampbellodus.class) {
-                                double offset = 0.04;
-                                double voffset = 0.08;
-                                double hoffset = 0.13;
-                                if (facing == EnumFacing.UP || facing == EnumFacing.DOWN || facing == EnumFacing.NORTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + (1 - offset));
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                }
-                                if (facing == EnumFacing.SOUTH) {
-                                    GlStateManager.translate(x + 0.5 + hoffset, y + 0.5 + voffset, z + offset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(180, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.WEST) {
-                                    GlStateManager.translate(x + (1 - offset), y + 0.5 + voffset, z + 0.5 - hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(270, 0F, 1F, 0F);
-                                }
-                                if (facing == EnumFacing.EAST) {
-                                    GlStateManager.translate(x + offset, y + 0.5 + voffset, z + 0.5 + hoffset);
-                                    GlStateManager.rotate(180, 0F, 0F, 1F);
-                                    GlStateManager.rotate(90, 0F, 1F, 0F);
-                                }
-                                GlStateManager.rotate(currentRotation, 0F, 0F, 1F);
-                                GlStateManager.scale(1.1, 1.1, 1.1);
-                                this.bindTexture(TEXTURE_CAMPBELLODUS);
-                                modelCampbellodus.renderStatic(Minecraft.getMinecraft().player.ticksExisted);
                             } else if (classEntity == EntityPrehistoricFloraCarolowilhelmina.class) {
                                 double offset = 0.12;
                                 double voffset = 0;

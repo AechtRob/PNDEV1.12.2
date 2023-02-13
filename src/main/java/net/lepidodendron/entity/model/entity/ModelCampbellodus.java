@@ -221,16 +221,22 @@ public class ModelCampbellodus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Bodyfront.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
+        this.Bodyfront.offsetX = -0.1F;
+        this.Bodyfront.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.Bodyend.rotateAngleY = (float) Math.toRadians(14.8756);
+        this.Tailbase.rotateAngleY = (float) Math.toRadians(7.5);
+        this.Tailmiddlebase.rotateAngleY = (float) Math.toRadians(-14.9);
+        this.Tailmiddle.rotateAngleY = (float) Math.toRadians(-24.7);
+        this.Tailmiddleend.rotateAngleY = (float) Math.toRadians(-22.4);
+        this.Tailend.rotateAngleY = (float) Math.toRadians(20);
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
         this.Bodyfront.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
