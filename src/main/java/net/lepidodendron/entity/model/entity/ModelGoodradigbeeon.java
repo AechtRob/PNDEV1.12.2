@@ -368,19 +368,67 @@ public class ModelGoodradigbeeon extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.rotateAngleZ = (float) Math.toRadians(90);
+        this.main.offsetX = -0.1F;
+        this.main.offsetY = -0.23F;
+        this.main.offsetZ = 0.F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(cube_r1, 0.2086F, 0.9894F, 0.2481F);
+        this.setRotateAngle(cube_r2, 0.2086F, -0.9894F, -0.2481F);
+        this.setRotateAngle(cube_r3, 0.0F, 1.0036F, 0.0F);
+        this.setRotateAngle(cube_r4, 0.0F, -1.0036F, 0.0F);
+        this.setRotateAngle(cube_r5, 0.0F, -1.4835F, 0.0F);
+        this.setRotateAngle(cube_r6, 0.0F, 1.4835F, 0.0F);
+        this.setRotateAngle(cube_r7, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r8, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r9, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r10, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r11, 0.2225F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r12, 0.096F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r13, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r14, 0.0916F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r15, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(cube_r16, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(cube_r17, 0.0F, 1.0036F, 0.0F);
+        this.setRotateAngle(cube_r18, 0.0F, -1.0036F, 0.0F);
+        this.setRotateAngle(cube_r19, 0.0F, 1.4835F, 0.0F);
+        this.setRotateAngle(cube_r20, 0.0F, -1.4835F, 0.0F);
+        this.setRotateAngle(cube_r21, 0.3796F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r22, 0.1614F, 0.0F, 0.0F);
+        this.setRotateAngle(cube_r23, 0.0407F, 0.5183F, 0.0356F);
+        this.setRotateAngle(cube_r24, 0.0407F, -0.5183F, -0.0356F);
+        this.setRotateAngle(cube_r25, 0.0448F, -0.231F, -0.0103F);
+        this.setRotateAngle(cube_r26, 0.0448F, 0.231F, 0.0103F);
+        this.setRotateAngle(cube_r27, 0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(cube_r28, -0.0436F, 0.0F, 0.0F);
+        this.setRotateAngle(frontleftfin, 0.0F, 0.0F, 0.1745F);
+        this.setRotateAngle(cube_r29, 0.0F, -0.2618F, 0.0F);
+        this.setRotateAngle(frontrightfin, 0.0F, 0.0F, -0.0873F);
+        this.setRotateAngle(cube_r30, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(cube_r31, -0.0131F, 0.0F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.2182F, 0.0F);
+        this.setRotateAngle(cube_r32, -0.0218F, 0.0F, 0.0F);
+        this.setRotateAngle(backrightfin, 0.0F, 0.0F, -0.1309F);
+        this.setRotateAngle(cube_r33, 0.0F, 0.3927F, 0.0F);
+        this.setRotateAngle(backleftfin, 0.0F, 0.0F, 0.2182F);
+        this.setRotateAngle(cube_r34, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(cube_r35, 0.1134F, 0.0F, 0.0F);
+        this.setRotateAngle(tail4, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(tail5, 0.0F, -0.2182F, 0.0F);
         this.main.rotateAngleY = (float) Math.toRadians(90);
         this.main.offsetX = -0.1F;
-        this.main.offsetY = -0F;
-        this.main.offsetZ = 0.02F;
+        this.main.offsetY = -0.07F;
+        this.main.offsetZ = -0.02F;
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
