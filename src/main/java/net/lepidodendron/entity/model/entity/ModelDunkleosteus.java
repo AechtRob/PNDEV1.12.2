@@ -363,9 +363,9 @@ public class ModelDunkleosteus extends AdvancedModelBase {
         else {
             this.swing(Bodyfront, speed, 0.1F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(Leftpectoralfin, (float) (speed * 0.65), 0.5F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
+        this.flap(Leftpectoralfin, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
         this.swing(Leftpectoralfin, (float) (speed * 0.65), 0.3F * inwater, true, 0, 0, f2, 1 * inwater);
-        this.flap(Rightpectoralfin, (float) (speed * 0.65), -0.5F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
+        this.flap(Rightpectoralfin, (float) (speed * 0.65), -0.3F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
         this.swing(Rightpectoralfin, (float) (speed * 0.65), -0.3F * inwater, true, 0, 0, f2, 1 * inwater);
 
         this.flap(Leftpelvicfin, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.1F, f2, 1 * inwater);

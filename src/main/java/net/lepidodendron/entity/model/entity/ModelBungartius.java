@@ -348,9 +348,9 @@ public class ModelBungartius extends AdvancedModelBase {
         else {
             this.swing(body, speed* still, 0.05F, true, 0, 0, f2, 0.5F);
         }
-        this.flap(pectoralfinL, (float) (speed * 0.65), 0.5F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
+        this.flap(pectoralfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.3F, f2, 1 * inwater);
         this.swing(pectoralfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0, 0, f2, 1 * inwater);
-        this.flap(pectoralfinR, (float) (speed * 0.65), -0.5F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
+        this.flap(pectoralfinR, (float) (speed * 0.65), -0.3F * inwater, true, 0.8F, -0.3F, f2, 1 * inwater);
         this.swing(pectoralfinR, (float) (speed * 0.65), -0.3F * inwater, true, 0, 0, f2, 1 * inwater);
 
         this.flap(pelvecfinL, (float) (speed * 0.65), 0.3F * inwater, true, 0.8F, 0.1F, f2, 1 * inwater);

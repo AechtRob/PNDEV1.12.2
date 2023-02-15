@@ -91,7 +91,6 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(1, new ShoalFishAgeableAI(this, 1, true));
 		tasks.addTask(2, new NautiloidWanderSurface(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
