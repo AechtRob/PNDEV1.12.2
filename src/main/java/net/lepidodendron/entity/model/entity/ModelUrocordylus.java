@@ -229,6 +229,7 @@ public class ModelUrocordylus extends AdvancedModelBaseExtended {
             speed = speed * 1.52F;
         }
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
+        Urocordylus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Urocordylus.isReallyInWater()) {
             AdvancedModelRenderer[] FrontR = {this.ForelimbL, this.RoelimbLjoint};

@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
-import net.lepidodendron.entity.render.entity.RenderPoposaurus;
 import net.lepidodendron.entity.render.entity.RenderSaivodus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -31,6 +30,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -41,7 +41,7 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraSaivodus(World world) {
 		super(world);
@@ -56,6 +56,17 @@ public class EntityPrehistoricFloraSaivodus extends EntityPrehistoricFloraAgeabl
 		maxWidth = 1.59F;
 		maxHeight = 2.1F;
 		maxHealthAgeable = 66.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+		}
 	}
 
 	@SideOnly(Side.CLIENT)

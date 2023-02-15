@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelArchosaurus extends AdvancedModelBaseExtended {
@@ -305,6 +304,7 @@ public class ModelArchosaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
+        Archosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Archosaurus.getAnimation() == Archosaurus.LAY_ANIMATION) {
             this.swing(Neck1, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

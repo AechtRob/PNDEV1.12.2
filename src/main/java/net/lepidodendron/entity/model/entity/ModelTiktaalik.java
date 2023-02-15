@@ -9,7 +9,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelTiktaalik extends AdvancedModelBaseExtended {
@@ -323,6 +322,7 @@ public class ModelTiktaalik extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.body4, this.body5, this.body6};
         AdvancedModelRenderer[] Torso = {this.body, this.body2, this.body3};
+        Tiktaalik.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] LeftArm = {this.forelegL, this.forelegL2};
         AdvancedModelRenderer[] RightArm = {this.forelegR, this.forelegR2};

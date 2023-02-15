@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraMesosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelMesosaurus extends AdvancedModelBaseExtended {
@@ -315,6 +314,7 @@ public class ModelMesosaurus extends AdvancedModelBaseExtended {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.pelvis, this.tailbase, this.tail1, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.neck, this.neckbase, this.bodyfront};
+        Mesosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] FL = {this.leftarm1, this.leftarm2};
         AdvancedModelRenderer[] FR = {this.rightarm1, this.rightarm2};

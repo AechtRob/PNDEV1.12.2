@@ -394,6 +394,7 @@ public class ModelBatrachotomus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
         AdvancedModelRenderer[] Neck = {this.Neck, this.Neck2, this.Head};
+        Batrachotomus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Batrachotomus.getAnimation() == Batrachotomus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);

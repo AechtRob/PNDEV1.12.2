@@ -76,6 +76,10 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         return 0;
     }
 
+    public final EntityLivingBase[] canShoalWith() {
+        return new EntityLivingBase[]{this};
+    }
+
     public int getAlarmCooldown() {return this.alarmCooldown;}
 
     @Override

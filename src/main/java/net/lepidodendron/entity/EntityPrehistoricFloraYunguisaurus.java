@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -34,7 +35,7 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraYunguisaurus(World world) {
 		super(world);
@@ -49,6 +50,17 @@ public class EntityPrehistoricFloraYunguisaurus extends EntityPrehistoricFloraAg
 		maxWidth = 0.95F;
 		maxHeight = 0.925F;
 		maxHealthAgeable = 36.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+		}
 	}
 
 	@Override

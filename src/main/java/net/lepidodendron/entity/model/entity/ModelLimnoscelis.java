@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraLimnoscelis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLimnoscelis extends AdvancedModelBase {
@@ -232,6 +231,7 @@ public class ModelLimnoscelis extends AdvancedModelBase {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3};
         AdvancedModelRenderer[] Torso = {this.Head, this.Neck, this.Bodyfront, this.Belly, this.Hips};
+        Limnoscelis.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Limnoscelis.isReallyInWater()) {
             if (f3 == 0.0F || !Limnoscelis.getIsMoving()) {

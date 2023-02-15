@@ -38,6 +38,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -47,7 +48,7 @@ public class EntityPrehistoricFloraCaptorhinus extends EntityPrehistoricFloraLan
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	private static final DataParameter<Boolean> TAIL = EntityDataManager.createKey(EntityPrehistoricFloraCaptorhinus.class, DataSerializers.BOOLEAN);
 
 	public EntityPrehistoricFloraCaptorhinus(World world) {
@@ -61,6 +62,17 @@ public class EntityPrehistoricFloraCaptorhinus extends EntityPrehistoricFloraLan
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
 		maxHealthAgeable = 6.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+		}
 	}
 
 	@Override

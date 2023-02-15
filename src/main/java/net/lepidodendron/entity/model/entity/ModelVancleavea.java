@@ -8,7 +8,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelVancleavea extends AdvancedModelBaseExtended {
@@ -402,6 +401,7 @@ public class ModelVancleavea extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.neck1, this.neck2, this.head};
+        Vancleavea.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] Whole = {this.head, this.neck2, this.neck1, this.body2, this.body, this.body3, this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
 

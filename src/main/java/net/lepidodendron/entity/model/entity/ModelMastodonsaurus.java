@@ -451,6 +451,7 @@ public class ModelMastodonsaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2};
         AdvancedModelRenderer[] Torso = {this.Neck, this.Body, this.Body2, this.Body3};
+        Mastodonsaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         boolean isAtBottom = Mastodonsaurus.isAtBottom();
         float bottomModifierTail = 1F;

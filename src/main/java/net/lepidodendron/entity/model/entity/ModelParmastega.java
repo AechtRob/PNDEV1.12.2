@@ -4,13 +4,11 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraParmastega;
-import net.lepidodendron.entity.EntityPrehistoricFloraTiktaalik;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelParmastega extends AdvancedModelBaseExtended {
@@ -340,6 +338,7 @@ public class ModelParmastega extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] Torso = {this.Body, this.Body2};
+        Parmastega.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] LeftArm = {this.LArm, this.LArm2};
         AdvancedModelRenderer[] RightArm = {this.RArm, this.RArm2};

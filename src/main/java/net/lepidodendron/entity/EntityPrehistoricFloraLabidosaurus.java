@@ -33,6 +33,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -43,7 +44,7 @@ public class EntityPrehistoricFloraLabidosaurus extends EntityPrehistoricFloraLa
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraLabidosaurus(World world) {
 		super(world);
@@ -56,6 +57,17 @@ public class EntityPrehistoricFloraLabidosaurus extends EntityPrehistoricFloraLa
 		maxWidth = 0.438F;
 		maxHeight = 0.22F;
 		maxHealthAgeable = 6.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	public static String getPeriod() {return "Permian";}

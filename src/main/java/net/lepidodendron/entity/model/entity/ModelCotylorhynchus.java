@@ -483,6 +483,7 @@ public class ModelCotylorhynchus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
+        Cotylorhynchus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Cotylorhynchus.getAnimation() == Cotylorhynchus.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

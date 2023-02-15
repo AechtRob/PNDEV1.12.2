@@ -5,7 +5,7 @@
     {
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:spore_collection_envelope",
-	  "nbt": {"plant":"lepidodendron:nathorstiana_item", "offsetY":1}
+	  "nbt": {"plant":"lepidodendron:nathorstiana", "offsetY":1}
     },
     {
       "type": "forge:ore_dict",

@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDvinosaurus extends AdvancedModelBaseExtended {
@@ -406,6 +405,7 @@ public class ModelDvinosaurus extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.body4, this.body5, this.body6, this.body7, this.body8};
         AdvancedModelRenderer[] Torso = {this.head, this.body, this.body2, this.body3};
+        Dvinosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Dvinosaurus.isReallyInWater()) {
             this.body.offsetY = 0.75F;

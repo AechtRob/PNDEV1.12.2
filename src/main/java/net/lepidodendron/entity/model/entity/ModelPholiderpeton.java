@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPholiderpeton extends AdvancedModelBaseExtended {
@@ -348,6 +347,7 @@ public class ModelPholiderpeton extends AdvancedModelBaseExtended {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddle, this.Tailmiddleend, this.Tailend};
         AdvancedModelRenderer[] Torso = {this.Head, this.Bodyfront, this.Bodymiddle, this.Hips};
+        Pholiderpeton.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Pholiderpeton.isReallyInWater()) {
             if (f3 == 0.0F || !Pholiderpeton.getIsMoving()) {

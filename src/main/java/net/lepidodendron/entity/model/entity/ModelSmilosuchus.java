@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraSmilosuchus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelSmilosuchus extends AdvancedModelBaseExtended {
@@ -423,6 +422,7 @@ public class ModelSmilosuchus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
         AdvancedModelRenderer[] Neck = {this.neck, this.head};
         AdvancedModelRenderer[] SwimBody = {this.body2, this.tail, this.tail2, this.tail3, this.tail4, this.tail5, this.tail6};
+        Smilosuchus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmR = {this.forelegR, this.forelegR2, this.forelegR2};
         AdvancedModelRenderer[] ArmL = {this.forelegL, this.forelegL2, this.forelegL2};

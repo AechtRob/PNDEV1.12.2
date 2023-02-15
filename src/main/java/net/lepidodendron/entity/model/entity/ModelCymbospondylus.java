@@ -4,9 +4,9 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraCymbospondylus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCymbospondylus extends AdvancedModelBase {
@@ -506,6 +506,7 @@ public class ModelCymbospondylus extends AdvancedModelBase {
 
        AdvancedModelRenderer[] fishTail = {this.Body, this.Body2, this.Hips, this.Tail, this.Tail2, this.Tail3, this.Tail4, this.Tail5, this.Tail6};
         AdvancedModelRenderer[] upperBody = {this.Neck, this.Neck2, this.Head};
+        ((EntityPrehistoricFloraCymbospondylus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.15F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

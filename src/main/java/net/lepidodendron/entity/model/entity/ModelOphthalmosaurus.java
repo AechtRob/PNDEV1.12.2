@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraOphthalmosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
@@ -458,6 +459,7 @@ public class ModelOphthalmosaurus extends AdvancedModelBase {
 
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5, this.Body6, this.Body7, this.Body8};
         AdvancedModelRenderer[] upperBody = {this.Head};
+        ((EntityPrehistoricFloraOphthalmosaurus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.15F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

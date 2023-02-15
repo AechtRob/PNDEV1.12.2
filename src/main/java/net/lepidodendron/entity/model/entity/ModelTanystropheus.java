@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraTanystropheus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
@@ -464,6 +463,7 @@ public class ModelTanystropheus extends AdvancedModelBaseExtended {
         float speed = masterSpeed;
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.neck4, this.neck3, this.neck2, this.neck, this.neckbase};
+        Tanystropheus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] FL = {this.forelegL, this.forelegL2, this.forelegL3};
         AdvancedModelRenderer[] FR = {this.forelegR, this.forelegR2, this.forelegR3};

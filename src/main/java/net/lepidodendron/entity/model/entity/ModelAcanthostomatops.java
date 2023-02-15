@@ -9,7 +9,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
@@ -344,6 +343,7 @@ public class ModelAcanthostomatops extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.body2, this.tail, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.head, this.body};
+        Acanthostomatops.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Acanthostomatops.isReallyInWater()) {
 

@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.block.BlockAmphibianSpawnCrassigyrinus;
 import net.lepidodendron.block.BlockAmphibianSpawnUrocordylus;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -32,6 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraUrocordylus extends EntityPrehistoricFloraSwi
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	//public static final SoundEvent Crassigyrinus_ROAR = create("Crassigyrinus_roar");
 
 	public EntityPrehistoricFloraUrocordylus(World world) {
@@ -56,6 +56,17 @@ public class EntityPrehistoricFloraUrocordylus extends EntityPrehistoricFloraSwi
 		maxWidth = 0.2F;
 		maxHeight = 0.1F;
 		maxHealthAgeable = 8.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+		}
 	}
 
 	@Override

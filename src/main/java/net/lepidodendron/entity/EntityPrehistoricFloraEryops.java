@@ -11,7 +11,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderDesmatosuchus;
 import net.lepidodendron.entity.render.entity.RenderEryops;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -35,6 +34,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -45,7 +45,7 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	private int isBlinking;
 	//public static final SoundEvent Eryops_ROAR = create("Eryops_roar");
 
@@ -60,6 +60,17 @@ public class EntityPrehistoricFloraEryops extends EntityPrehistoricFloraSwimming
 		maxWidth = 0.7F;
 		maxHeight = 0.75F;
 		maxHealthAgeable = 26.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	@Override

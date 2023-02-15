@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraPristerognathus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPristerognathus extends AdvancedModelBaseExtended {
@@ -306,6 +305,7 @@ public class ModelPristerognathus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tail1, this.Tail2, this.Tail3};
+        Pristerognathus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Pristerognathus.getAnimation() == Pristerognathus.LAY_ANIMATION) {
             this.swing(Neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

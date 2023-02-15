@@ -5,7 +5,7 @@
     {
       "type": "minecraft:item_nbt",
       "item": "lepidodendron:spore_collection_envelope",
-	  "nbt": {"plant":"lepidodendron:swamp_horsetail_item", "offsetY":1}
+	  "nbt": {"plant":"lepidodendron:swamp_horsetail_water", "offsetY":1}
     },
     {
       "type": "forge:ore_dict",

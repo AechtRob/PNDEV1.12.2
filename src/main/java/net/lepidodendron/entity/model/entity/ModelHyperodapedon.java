@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelHyperodapedon extends AdvancedModelBaseExtended {
@@ -316,6 +315,7 @@ public class ModelHyperodapedon extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3};
+        Hyperodapedon.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Hyperodapedon.getAnimation() == Hyperodapedon.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

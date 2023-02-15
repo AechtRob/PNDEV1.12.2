@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraLotosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLotosaurus extends AdvancedModelBaseExtended {
@@ -344,6 +343,7 @@ public class ModelLotosaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddle, this.Tailmiddleend, this.Tailend};
+        Lotosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Lotosaurus.getAnimation() == Lotosaurus.LAY_ANIMATION) {
             //this.Lotosaurus.offsetZ = ZOffsetter;

@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLabidosaurus extends AdvancedModelBaseExtended {
@@ -282,6 +281,7 @@ public class ModelLabidosaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRendererExtended[] Tail = {this.bodyback, this.tail1, this.tail2, this.tail3};
         AdvancedModelRendererExtended[] Body = {this.neck, this.body};
+        Labidosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Labidosaurus.getAnimation() == Labidosaurus.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

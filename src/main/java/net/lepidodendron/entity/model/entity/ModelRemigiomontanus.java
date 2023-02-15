@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelRemigiomontanus extends AdvancedModelBaseExtended {
@@ -258,6 +257,7 @@ public class ModelRemigiomontanus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
+        Remigiomontanus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Remigiomontanus.getAnimation() == Remigiomontanus.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

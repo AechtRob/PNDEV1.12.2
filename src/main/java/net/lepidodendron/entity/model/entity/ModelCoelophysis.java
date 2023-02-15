@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCoelophysis;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCoelophysis extends AdvancedModelBaseExtended {
@@ -397,6 +396,7 @@ public class ModelCoelophysis extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
         AdvancedModelRenderer[] Neck = {this.Neckbase, this.Neckmiddle, this.Neckend};
+        Coelophysis.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.Leftupperarm, this.Leftlowerarm};
         AdvancedModelRenderer[] ArmR = {this.Rightupperarm, this.Rightlowerarm};

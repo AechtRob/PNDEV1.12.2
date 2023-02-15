@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraArizonasaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelArizonasaurus extends AdvancedModelBaseExtended {
@@ -303,6 +302,7 @@ public class ModelArizonasaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] LeftArm = {this.LeftArm, this.LeftArm2};
         AdvancedModelRenderer[] RightArm = {this.RightArm, this.RightArm2};
 
+        Arizonasaurus.tailBuffer.applyChainSwingBuffer(TailFull);
         //AdvancedModelRenderer[] Whole = {this.Neck2, this.neck, this.body, this.body2, this.body3, this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
 
         if (Arizonasaurus.getAnimation() == Arizonasaurus.LAY_ANIMATION) {

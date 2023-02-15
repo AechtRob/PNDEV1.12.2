@@ -246,20 +246,30 @@ public class ModelGogonasus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.rotateAngleX = (float) Math.toRadians(0);
-        this.main.offsetX = -0.027F;
-        this.main.offsetY = -0.15F;
+    public void renderStaticWall(float f) {
+        this.main.rotateAngleX = (float) Math.toRadians(90);
+        this.main.rotateAngleZ = (float) Math.toRadians(90);
+        this.main.offsetX = -0.03F;
+        this.main.offsetY = -0.21F;
         this.main.offsetZ = 0.07F;
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(frontrightfin, 0.0F, 0.0F, 0.2618F);
+        this.setRotateAngle(jaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(backleftfin, 0.0F, 0.0F, -0.2618F);
+        this.setRotateAngle(backrightfin, 0.0F, 0.0F, 0.2618F);
+        this.setRotateAngle(tail, 0.0F, 0.1309F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, -0.3927F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.3927F, 0.0F);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.F;
+        this.main.offsetY = -0.F;
+        this.main.offsetZ = 0.02F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

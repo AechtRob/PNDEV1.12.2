@@ -484,6 +484,7 @@ public class ModelThecodontosaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tail1, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] Neck = {this.Neck1, this.Neck2, this.Neck3, this.Head};
+        EntityThecodontosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (EntityThecodontosaurus.getAnimation() == EntityThecodontosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);

@@ -2,6 +2,7 @@ package net.lepidodendron.entity.model.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
+import net.lepidodendron.entity.EntityPrehistoricFloraTitanichthys;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -488,6 +489,7 @@ public class ModelTitanicthys extends AdvancedModelBase {
         this.resetToDefaultPose();
 
         AdvancedModelRenderer[] fishTail = {this.Body3, this.Body4, this.Body5, this.Body6, this.Tailfin};
+        ((EntityPrehistoricFloraTitanichthys)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.1F;
         float still = 1f;

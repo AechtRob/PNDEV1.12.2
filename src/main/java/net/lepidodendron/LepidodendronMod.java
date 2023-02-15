@@ -1460,6 +1460,9 @@ public class LepidodendronMod {
 	public static final ResourceLocation PIRANHAMESODON_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/piranhamesodon"));
 	public static final int ENTITY_DOLLOCARIS = 600;
 	public static final ResourceLocation DOLLOCARIS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/dollocaris"));
+	public static final int ENTITY_SALTRIOVENATOR = 601;
+	public static final ResourceLocation SALTRIOVENATOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saltriovenator"));
+	public static final ResourceLocation SALTRIOVENATOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saltriovenator_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

@@ -50,6 +50,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -60,7 +61,7 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 	private static final DataParameter<Boolean> ISFLYING = EntityDataManager.createKey(EntityPrehistoricFloraWeigeltisaurus.class, DataSerializers.BOOLEAN);
@@ -75,6 +76,17 @@ public class EntityPrehistoricFloraWeigeltisaurus extends EntityPrehistoricFlora
 		maxHealthAgeable = 5.0D;
 		setNoAI(!true);
 		enablePersistence();
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+		}
 	}
 
 	@Override

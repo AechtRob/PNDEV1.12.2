@@ -4,10 +4,10 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraXenacanthus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelXenacanthus extends AdvancedModelBase {
@@ -245,6 +245,7 @@ public class ModelXenacanthus extends AdvancedModelBase {
         this.body.offsetY = 0.4F;
 
         AdvancedModelRenderer[] fishTail = {this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11};
+        ((EntityPrehistoricFloraXenacanthus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.18F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

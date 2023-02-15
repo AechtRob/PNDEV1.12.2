@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPrionosuchus extends AdvancedModelBaseExtended {
@@ -586,6 +585,7 @@ public class ModelPrionosuchus extends AdvancedModelBaseExtended {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddle, this.Tailmiddleend, this.Tailend};
         AdvancedModelRenderer[] Torso = {this.Head, this.Neck, this.Bodyfront, this.Bodymiddle, this.Hips};
+        Prionosuchus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Prionosuchus.isReallyInWater()) {
             if (f3 == 0.0F || !Prionosuchus.getIsMoving()) {

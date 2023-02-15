@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelSphenotitan extends AdvancedModelBaseExtended {
@@ -293,6 +292,7 @@ public class ModelSphenotitan extends AdvancedModelBaseExtended {
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3};
         AdvancedModelRendererExtended[] Torso = {this.bodyfront, this.body};
+        entitySphenotitan.tailBuffer.applyChainSwingBuffer(Tail);
 
         float speed = 0.65F;
 

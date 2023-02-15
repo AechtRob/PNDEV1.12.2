@@ -8,6 +8,7 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.block.BlockWebsteroprionBurrow;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.model.llibraryextensions.MillipedeBuffer;
 import net.lepidodendron.entity.util.PathNavigateWaterBottom;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -46,6 +47,7 @@ public class EntityPrehistoricFloraWebsteroprion extends EntityPrehistoricFloraE
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	private int jumpTicks;
+	public MillipedeBuffer websteroprionBuffer;
 
 	private static final DataParameter<Integer> BURYTICK = EntityDataManager.createKey(EntityPrehistoricFloraWebsteroprion.class, DataSerializers.VARINT);
 	private static final DataParameter<Boolean> BURIED = EntityDataManager.createKey(EntityPrehistoricFloraWebsteroprion.class, DataSerializers.BOOLEAN);

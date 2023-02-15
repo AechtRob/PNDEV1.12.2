@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
@@ -482,6 +481,7 @@ public class ModelDesmatosuchus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
+        entityDesmatosuchus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (entityDesmatosuchus.getAnimation() == entityDesmatosuchus.LAY_ANIMATION) {
             this.Desmatosuchus.offsetY = 0F;

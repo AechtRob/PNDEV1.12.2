@@ -7,8 +7,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPlacodus extends AdvancedModelBaseExtended {
@@ -314,6 +312,7 @@ public class ModelPlacodus extends AdvancedModelBaseExtended {
 
         float speed = 0.2F;
         AdvancedModelRendererExtended[] Tail = {this.body2, this.tail, this.tail2, this.tail3, this.tail4};
+        Placodus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRendererExtended[] FL = {this.armL, this.armL2, this.armL3};
         AdvancedModelRendererExtended[] FR = {this.armR, this.armR2, this.armR3};

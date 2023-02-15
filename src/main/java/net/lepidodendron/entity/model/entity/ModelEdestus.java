@@ -4,9 +4,9 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraEdestus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEdestus extends AdvancedModelBase {
@@ -217,6 +217,7 @@ public class ModelEdestus extends AdvancedModelBase {
         this.Bodyfront.offsetZ = 1.1F;
 
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailmiddle, this.Tailendmiddle, this.Tailend};
+        ((EntityPrehistoricFloraEdestus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.21F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

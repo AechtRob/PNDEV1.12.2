@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraIchthyostega;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelIchthyostega extends AdvancedModelBase {
@@ -212,6 +211,7 @@ public class ModelIchthyostega extends AdvancedModelBase {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.tailbase, this.tail1, this.tail2};
         AdvancedModelRenderer[] Torso = {this.neck, this.bodyfront, this.body, this.bodyrear};
+        Ichthyostega.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Ichthyostega.isReallyInWater()) {
             this.leftarm2.rotateAngleY = (float) Math.toRadians(90);

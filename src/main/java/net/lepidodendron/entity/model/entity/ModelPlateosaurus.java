@@ -6,7 +6,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPlateosaurus extends AdvancedModelBaseExtended {
@@ -346,6 +345,8 @@ public class ModelPlateosaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.head1};
+
+        Plateosaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.upperarm1, this.arms1};
         AdvancedModelRenderer[] ArmR = {this.upperarm2, this.arms2};

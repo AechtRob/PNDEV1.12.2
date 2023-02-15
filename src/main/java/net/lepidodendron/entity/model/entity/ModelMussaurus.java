@@ -379,6 +379,7 @@ public class ModelMussaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.head1};
+        Mussaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.upperarm1, this.arms1};
         AdvancedModelRenderer[] ArmR = {this.upperarm2, this.arms2};

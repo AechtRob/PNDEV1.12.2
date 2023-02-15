@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
@@ -575,6 +574,8 @@ public class ModelYunguisaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] neckHead = {this.neck, this.neck2, this.neck3, this.neck4, this.neck5, this.head};
 
         EntityPrehistoricFloraYunguisaurus ee = (EntityPrehistoricFloraYunguisaurus) e;
+        ee.tailBuffer.applyChainSwingBuffer(fishTail);
+
         float speed = ee.getTravelSpeed()/2F;
         float still = 1f;
         if (f3 == 0.0F) {

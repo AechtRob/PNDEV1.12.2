@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraRhizodus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -339,6 +340,7 @@ public class ModelRhizodus extends AdvancedModelBase {
 
         this.bodybase.offsetY = -0.1F;
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.fin};
+        ((EntityPrehistoricFloraRhizodus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.125F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

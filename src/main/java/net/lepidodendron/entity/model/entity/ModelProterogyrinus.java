@@ -9,7 +9,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelProterogyrinus extends AdvancedModelBaseExtended {
@@ -320,6 +319,7 @@ public class ModelProterogyrinus extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.bodyback, this.tail2, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.upperhead, this.neck, this.bodyfront};
+        Proterogyrinus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Proterogyrinus.isReallyInWater()) {
 

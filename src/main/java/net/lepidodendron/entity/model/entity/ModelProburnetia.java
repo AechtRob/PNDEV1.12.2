@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelProburnetia extends AdvancedModelBaseExtended {
@@ -419,6 +418,7 @@ public class ModelProburnetia extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4, this.Tail5};
+        Proburnetia.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Proburnetia.getAnimation() == Proburnetia.LAY_ANIMATION) {
             this.swing(Neck1, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

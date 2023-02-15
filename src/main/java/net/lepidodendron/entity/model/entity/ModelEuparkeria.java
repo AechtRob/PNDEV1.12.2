@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraEuparkeria;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEuparkeria extends AdvancedModelBase {
@@ -223,6 +222,7 @@ public class ModelEuparkeria extends AdvancedModelBase {
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.upperbody, this.upperbodybase, this.bodybase};
+        Euparkeria.tailBuffer.applyChainSwingBuffer(Tail);
 
         float speed = 1.15F;
 

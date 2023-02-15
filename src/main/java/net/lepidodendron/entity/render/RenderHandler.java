@@ -3191,11 +3191,12 @@ public class RenderHandler {
                 return new RenderAspidorhynchus(manager);
             }
         });
-
-
-
-
-
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraSaltriovenator.class, new IRenderFactory<EntityPrehistoricFloraSaltriovenator>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraSaltriovenator> createRenderFor(RenderManager manager) {
+                return new RenderSaltriovenator(manager);
+            }
+        });
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMegalosaurus.class, new IRenderFactory<EntityPrehistoricFloraMegalosaurus>() {
             @Override
             public Render<? super EntityPrehistoricFloraMegalosaurus> createRenderFor(RenderManager manager) {

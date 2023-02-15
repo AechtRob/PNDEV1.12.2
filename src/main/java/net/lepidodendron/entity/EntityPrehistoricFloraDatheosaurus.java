@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderDatheosaurus;
-import net.lepidodendron.entity.render.entity.RenderEuchambersia;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
@@ -30,6 +29,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -40,7 +40,7 @@ public class EntityPrehistoricFloraDatheosaurus extends EntityPrehistoricFloraLa
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraDatheosaurus(World world) {
 		super(world);
@@ -53,6 +53,17 @@ public class EntityPrehistoricFloraDatheosaurus extends EntityPrehistoricFloraLa
 		maxWidth = 0.57F;
 		maxHeight = 0.587F;
 		maxHealthAgeable = 16.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	public static String getPeriod() {return "[Carboniferous -] Permian";}

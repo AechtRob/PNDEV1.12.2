@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
@@ -244,6 +243,7 @@ public class ModelPanzhousaurus extends AdvancedModelBaseExtended {
         float speed = 0.2F;
         AdvancedModelRenderer[] Tail = {this.body2, this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Torso = {this.neck3, this.neck2, this.neck};
+        Panzhousaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] FL = {this.frontleftleg, this.frontleftleg2, this.frontleftleg3};
         AdvancedModelRenderer[] FR = {this.frontrightleg, this.frontrightleg2, this.frontrightleg3};

@@ -509,6 +509,8 @@ public class ModelMegalosaurus extends AdvancedModelBaseExtended {
         AdvancedModelRenderer[] ArmL = {this.Leftarm1, this.Leftarm2, this.Leftarm3};
         AdvancedModelRenderer[] ArmR = {this.Rightarm1, this.Rightarm2, this.Rightarm3};
 
+        EntityMegalosaurus.tailBuffer.applyChainSwingBuffer(Tail);
+
         if (EntityMegalosaurus.getAnimation() == EntityMegalosaurus.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);
             this.chainWave(Neck, 0.5F * 2, -0.02F, 0.5F, f2, 0.8F);

@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
@@ -302,6 +301,7 @@ public class ModelAtopodentatus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] neckHead = {this.neck, this.neck3, this.head};
+        ((EntityPrehistoricFloraAtopodentatus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         AdvancedModelRenderer[] frontLeft = {this.arm1, this.armpiece1, this.arm1finger1};
         AdvancedModelRenderer[] frontRight = {this.arm2, this.armpiece2, this.arm1finger2};

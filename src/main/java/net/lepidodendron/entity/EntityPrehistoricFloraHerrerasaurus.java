@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -37,7 +38,7 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	public int ambientSoundTime;
 	public Animation NOISE_ANIMATION;
 
@@ -53,6 +54,17 @@ public class EntityPrehistoricFloraHerrerasaurus extends EntityPrehistoricFloraL
 		maxHeight = 1.82F;
 		maxHealthAgeable = 60.0D;
 		NOISE_ANIMATION = Animation.create(25);
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	@Override

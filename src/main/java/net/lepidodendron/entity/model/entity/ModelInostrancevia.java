@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraInostrancevia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelInostrancevia extends AdvancedModelBaseExtended {
@@ -309,6 +308,7 @@ public class ModelInostrancevia extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail1, this.tail2, this.tail3};
+        Inostrancevia.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Inostrancevia.getAnimation() == Inostrancevia.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
