@@ -103,7 +103,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     }
 
     public int warnCooldownTime() {
-        return 40; //how long between warning and attack
+        return 60; //how long between warning and attack
     }
 
     public void setWarnCooldown(int cooldown) {
@@ -898,11 +898,16 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
             this.warnCooldown --;
         }
 
-        if (this.getWarnTarget() != null && this.getWarnCooldown() == 1) {
-            this.setAttackTarget(this.getWarnTarget());
-            this.setOneHit(true);
-            this.setWarnTarget(null);
-            this.setWarnCooldown(0);
+        if (this.getWarnTarget() != null) {
+            this.faceEntity(this.getWarnTarget(), 20, 20);
+            this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+            if (this.getWarnCooldown() == 1) {
+                this.setAttackTarget(this.getWarnTarget());
+                this.setIsFast(true);
+                this.setOneHit(true);
+                this.setWarnTarget(null);
+                this.setWarnCooldown(0);
+            }
         }
 
         if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {

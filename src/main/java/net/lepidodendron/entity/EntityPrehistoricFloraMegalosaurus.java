@@ -148,8 +148,8 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 2.50F * this.getAgeScale();
-		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
+		float size = this.getRenderSizeModifier() * 1.50F * this.getAgeScale();
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.2F, 0.5F + size);
 	}
 
 	@Override

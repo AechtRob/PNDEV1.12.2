@@ -8,8 +8,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.world.EnumDifficulty;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -50,11 +52,7 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
     {
         if (this.entity instanceof EntityPrehistoricFloraAgeableBase) {
             EntityPrehistoricFloraAgeableBase ageableBase = (EntityPrehistoricFloraAgeableBase) this.entity;
-            if (ageableBase.getWarnTarget() != null || ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
-                if (ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
-                    ageableBase.setWarnTarget(null);
-                    ageableBase.setWarnCooldown(0);
-                }
+            if ((!ageableBase.isPFAdult()) || ageableBase.getWarnTarget() != null || ageableBase.getAttackTarget() != null || ageableBase.getEatTarget() != null) {
                 return false;
             }
             List<T> list = this.entity.world.<T>getEntitiesWithinAABB(this.classToWarn, this.entity.getEntityBoundingBox().grow((double)this.warnDistance, 3.0D, (double)this.warnDistance), Predicates.and(EntitySelectors.CAN_AI_TARGET, this.canBeSeenSelector, this.warnTargetSelector));
@@ -68,9 +66,13 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
             else
             {
                 this.closestLivingEntity = list.get(0);
+                if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity  instanceof EntityPlayer) {
+                    return false;
+                }
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
+                    ageableBase.faceEntity(this.closestLivingEntity, 20, 20);
                     ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
                     if (ageableBase instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         SoundEvent soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
