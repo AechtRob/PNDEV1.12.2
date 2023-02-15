@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEryops extends AdvancedModelBaseExtended {
@@ -361,6 +360,7 @@ public class ModelEryops extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.headpart, this.neck, this.body};
+        Eryops.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Eryops.isReallyInWater()) {
 

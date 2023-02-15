@@ -4,9 +4,9 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraDunkleosteus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDunkleosteus extends AdvancedModelBase {
@@ -339,6 +339,7 @@ public class ModelDunkleosteus extends AdvancedModelBase {
         this.resetToDefaultPose();
 
         AdvancedModelRenderer[] fishTail = {this.Bodymiddle, this.Bodyend, this.Tailbase, this.Tailend};
+        ((EntityPrehistoricFloraDunkleosteus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.1F;
         float still = 1f;

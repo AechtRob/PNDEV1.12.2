@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOphiacodon extends AdvancedModelBaseExtended {
@@ -423,6 +422,7 @@ public class ModelOphiacodon extends AdvancedModelBaseExtended {
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRendererExtended[] Body = {this.neck, this.front_body, this.middle_body, this.back_body};
+        Ophiacodon.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Ophiacodon.getAnimation() == Ophiacodon.LAY_ANIMATION) {
             this.swing(neck, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

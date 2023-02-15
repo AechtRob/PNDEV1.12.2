@@ -31,6 +31,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -41,7 +42,7 @@ public class EntityPrehistoricFloraAcanthostomatops extends EntityPrehistoricFlo
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 
 	public EntityPrehistoricFloraAcanthostomatops(World world) {
 		super(world);
@@ -54,6 +55,17 @@ public class EntityPrehistoricFloraAcanthostomatops extends EntityPrehistoricFlo
 		maxWidth = 0.5F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 11.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+		}
 	}
 
 	@Override

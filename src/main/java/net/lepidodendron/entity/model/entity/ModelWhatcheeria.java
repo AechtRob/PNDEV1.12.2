@@ -285,6 +285,7 @@ public class ModelWhatcheeria extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.body2};
+        Whatcheeria.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Whatcheeria.isReallyInWater()) {
 

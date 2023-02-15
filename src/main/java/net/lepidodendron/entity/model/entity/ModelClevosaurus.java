@@ -293,7 +293,7 @@ public class ModelClevosaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.bodyfront, this.body};
-
+        entityClevosaurus.tailBuffer.applyChainSwingBuffer(Tail);
         float speed = 0.75F;
 
         //EntityPrehistoricFloraentityClevosaurus entityClevosaurus = (EntityPrehistoricFloraentityClevosaurus) e;

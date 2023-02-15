@@ -3,6 +3,7 @@ package net.lepidodendron.entity.ai;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaptorhinus;
 import net.lepidodendron.entity.EntityPrehistoricFloraPlateosaurus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFlyingBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.item.entities.ItemCaptorhinusTail;
 import net.minecraft.entity.Entity;
@@ -80,6 +81,16 @@ public class EatMeatItemsAI extends EntityAIBase {
                 this.entity.setEatTarget(null);
                 this.entity.eatItem(this.targetItem.getItem());
                 this.targetItem.getItem().shrink(1);
+            }
+        }
+        //A helper for things flying above their targets:
+        if (this.entity instanceof EntityPrehistoricFloraAgeableFlyingBase) {
+            if (distance < Math.max(this.entity.maxHeight, this.entity.getEntityBoundingBox().getAverageEdgeLength()) && this.entity.getPosition() == this.targetItem.getPosition().up()) {
+                if (this.targetItem != null) {
+                    this.entity.setEatTarget(null);
+                    this.entity.eatItem(this.targetItem.getItem());
+                    this.targetItem.getItem().shrink(1);
+                }
             }
         }
         if (this.entity.getNavigator().noPath()) {

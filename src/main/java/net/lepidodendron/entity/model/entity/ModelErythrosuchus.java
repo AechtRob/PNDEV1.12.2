@@ -376,6 +376,7 @@ public class ModelErythrosuchus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddle, this.Tailmiddleend, this.Tailend};
         AdvancedModelRenderer[] NeckF = {this.Neck, this.Head};
+        Erythrosuchus.tailBuffer.applyChainSwingBuffer(Tail);
 
         //AdvancedModelRenderer[] Whole = {this.neck2, this.neck, this.body, this.body2, this.body3, this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
 

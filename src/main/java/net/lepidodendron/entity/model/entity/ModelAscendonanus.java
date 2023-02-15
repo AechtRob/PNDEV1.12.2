@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraAscendonanus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelAscendonanus extends AdvancedModelBase {
@@ -283,6 +282,7 @@ public class ModelAscendonanus extends AdvancedModelBase {
 
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] Torso = {this.Body2, this.Body, this.AscendonanusBase};
+        entityAscendonanus.tailBuffer.applyChainSwingBuffer(Tail);
 
         float speed = 0.95F;
 

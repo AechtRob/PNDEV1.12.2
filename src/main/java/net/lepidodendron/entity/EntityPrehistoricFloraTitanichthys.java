@@ -10,7 +10,6 @@ import net.lepidodendron.entity.ai.EntityMateAI;
 import net.lepidodendron.entity.ai.EntityTemptAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
-import net.lepidodendron.entity.render.entity.RenderLiliensternus;
 import net.lepidodendron.entity.render.entity.RenderTitanichthys;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
@@ -23,6 +22,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -32,7 +32,7 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
@@ -49,6 +49,17 @@ public class EntityPrehistoricFloraTitanichthys extends EntityPrehistoricFloraAg
 		maxWidth = 1.5F;
 		maxHeight = 2F;
 		maxHealthAgeable = 46.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+		}
 	}
 
 	@Override

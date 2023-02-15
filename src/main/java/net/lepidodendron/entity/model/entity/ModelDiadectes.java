@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraDiadectes;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDiadectes extends AdvancedModelBaseExtended {
@@ -251,7 +250,7 @@ public class ModelDiadectes extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
-
+        Diadectes.tailBuffer.applyChainSwingBuffer(Tail);
         // || (Diadectes.moveStrafing == 0 && Diadectes.moveVertical == 0 && Diadectes.moveForward == 0)
 
         if (Diadectes.getAnimation() == Diadectes.LAY_ANIMATION) {

@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraHyneria;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelHyneria extends AdvancedModelBase {
@@ -290,6 +289,7 @@ public class ModelHyneria extends AdvancedModelBase {
         this.body.offsetY = 0.25F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5, this.tailfin};
+        ((EntityPrehistoricFloraHyneria)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.16F;
 

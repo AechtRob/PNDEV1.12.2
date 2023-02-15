@@ -290,7 +290,7 @@ public class ModelDatheosaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 7, head);
 
         AdvancedModelRendererExtended[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
-
+        DatheosaurusEntity.tailBuffer.applyChainSwingBuffer(Tail);
         if (DatheosaurusEntity.getAnimation() == DatheosaurusEntity.LAY_ANIMATION) {
             this.swing(head, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
             this.walk(head, 0.5F * 2, -0.02F, false, 0.5F,0.01F, f2, 0.8F);

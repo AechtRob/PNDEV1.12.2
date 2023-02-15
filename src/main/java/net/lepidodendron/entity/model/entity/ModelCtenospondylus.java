@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCtenospondylus extends AdvancedModelBaseExtended {
@@ -399,6 +398,7 @@ public class ModelCtenospondylus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
+        Ctenospondylus.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Ctenospondylus.getAnimation() == Ctenospondylus.LAY_ANIMATION) {
             this.swing(Neckbase, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);

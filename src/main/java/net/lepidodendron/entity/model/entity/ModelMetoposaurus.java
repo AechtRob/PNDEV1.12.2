@@ -387,6 +387,7 @@ public class ModelMetoposaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.body2, this.body3};
+        Metoposaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         boolean isAtBottom = Metoposaurus.isAtBottom();
         float bottomModifierTail = 1F;

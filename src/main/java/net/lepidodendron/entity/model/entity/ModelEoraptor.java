@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraEoraptor;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEoraptor extends AdvancedModelBaseExtended {
@@ -413,6 +412,7 @@ public class ModelEoraptor extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.neck3, this.head1};
+        Eoraptor.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.upperarm1, this.arm1};
         AdvancedModelRenderer[] ArmR = {this.upperarm2, this.arm2};

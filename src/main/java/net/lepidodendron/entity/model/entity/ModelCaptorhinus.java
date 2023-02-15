@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraCaptorhinus;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelCaptorhinus extends AdvancedModelBase {
@@ -267,6 +266,7 @@ public class ModelCaptorhinus extends AdvancedModelBase {
         AdvancedModelRenderer[] Tail = {this.Tail, this.Tail2, this.Tail3};
         AdvancedModelRenderer[] Torso = {this.Captorhinus, this.Body, this.Body2};
 
+        entityCaptorhinus.tailBuffer.applyChainSwingBuffer(Tail);
         float speed = 0.95F;
 
         //EntityPrehistoricFloraentityCaptorhinus entityCaptorhinus = (EntityPrehistoricFloraentityCaptorhinus) e;

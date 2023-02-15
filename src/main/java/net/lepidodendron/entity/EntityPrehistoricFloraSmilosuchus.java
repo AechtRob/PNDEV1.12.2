@@ -26,6 +26,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -36,7 +37,7 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	public float maxHeightLand;
 
 	public EntityPrehistoricFloraSmilosuchus(World world) {
@@ -51,6 +52,17 @@ public class EntityPrehistoricFloraSmilosuchus extends EntityPrehistoricFloraSwi
 		maxHeight = 0.99F;
 		maxHeightLand = 1.66F;
 		maxHealthAgeable = 76.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
+		}
 	}
 
 	@Override

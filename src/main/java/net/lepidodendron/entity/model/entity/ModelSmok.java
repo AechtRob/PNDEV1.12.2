@@ -486,6 +486,7 @@ public class ModelSmok extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Neck = {this.neck1, this.neck2, this.head1};
+        Smok.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Smok.getAnimation() == Smok.LAY_ANIMATION) {
             this.chainSwing(Neck, 0.5F, 0.10F, 0.5, f2, 0.8F);

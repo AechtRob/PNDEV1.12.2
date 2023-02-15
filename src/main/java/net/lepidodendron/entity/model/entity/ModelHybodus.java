@@ -4,10 +4,10 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraHybodus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelHybodus extends AdvancedModelBase {
@@ -274,6 +274,7 @@ public class ModelHybodus extends AdvancedModelBase {
         this.Hybodus.offsetY = 0.9F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.tail, this.tail2, this.tail3, this.tail4};
+        ((EntityPrehistoricFloraHybodus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.18F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

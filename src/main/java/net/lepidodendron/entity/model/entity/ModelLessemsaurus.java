@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelLessemsaurus extends AdvancedModelBaseExtended {
@@ -416,6 +415,8 @@ public class ModelLessemsaurus extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 4, head1);
 
         AdvancedModelRendererExtended[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4};
+
+        Lessemsaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         float frontOffset = -0.07F;
         if (Lessemsaurus.getAnimation() == Lessemsaurus.LAY_ANIMATION) {

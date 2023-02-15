@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraEffigia;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelEffigia extends AdvancedModelBaseExtended {
@@ -346,6 +345,7 @@ public class ModelEffigia extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Neck = {this.neck, this.neck2, this.neck3};
+        Effigia.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.ArmL, this.ArmL2};
         AdvancedModelRenderer[] ArmR = {this.ArmR, this.ArmR2};

@@ -6173,7 +6173,47 @@
         "stream": false
       }
     ]
+  },
+
+
+  "saltriovenator_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:saltriovenator_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:saltriovenator_living02",
+        "stream": false
+      }
+    ]
+  },
+  "saltriovenator_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:saltriovenator_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:saltriovenator_hurt02",
+        "stream": false
+      }
+    ]
+  },
+  "saltriovenator_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:saltriovenator_death",
+        "stream": false
+      }
+    ]
+  },
+  "saltriovenator_roar": {
+    "sounds": [
+      {
+        "name": "lepidodendron:saltriovenator_roar01",
+        "stream": false
+      }
+    ]
   }
-  
-  
 }

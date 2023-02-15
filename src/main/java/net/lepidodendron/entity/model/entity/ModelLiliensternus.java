@@ -443,6 +443,7 @@ public class ModelLiliensternus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
         AdvancedModelRenderer[] Neck = {this.Neckbase, this.Neckmiddle, this.Neckend};
+        Liliensternus.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] ArmL = {this.Leftupperarm, this.Leftlowerarm};
         AdvancedModelRenderer[] ArmR = {this.Rightupperarm, this.Rightlowerarm};

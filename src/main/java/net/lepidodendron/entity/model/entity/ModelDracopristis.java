@@ -4,10 +4,10 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraDracopristis;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDracopristis extends AdvancedModelBase {
@@ -292,6 +292,7 @@ public class ModelDracopristis extends AdvancedModelBase {
         this.body.offsetY = 0.F;
 
         AdvancedModelRenderer[] fishTail = {this.body2, this.body3, this.body4, this.body5};
+        ((EntityPrehistoricFloraDracopristis) e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.21F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;

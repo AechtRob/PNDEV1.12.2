@@ -28,6 +28,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -38,7 +39,7 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	private int animationTick;
 	private Animation animation = NO_ANIMATION;
 
@@ -55,6 +56,17 @@ public class EntityPrehistoricFloraEastmanosteus extends EntityPrehistoricFloraA
 		maxWidth = 0.7F;
 		maxHeight = 0.5F;
 		maxHealthAgeable = 24.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(120, 5, 5F, this);
+		}
 	}
 
 	@Override

@@ -9,7 +9,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDasyceps extends AdvancedModelBaseExtended {
@@ -472,7 +471,7 @@ public class ModelDasyceps extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Body6};
         AdvancedModelRenderer[] Torso = {this.Neck, this.Body1};
-
+        DasycepsEntity.tailBuffer.applyChainSwingBuffer(Tail);
         if (!DasycepsEntity.isReallyInWater()) {
 
             if (f3 == 0.0F || !DasycepsEntity.getIsMoving()) { //Not moving

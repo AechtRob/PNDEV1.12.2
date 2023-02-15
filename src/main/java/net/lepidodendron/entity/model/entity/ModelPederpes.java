@@ -8,7 +8,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPederpes extends AdvancedModelBaseExtended {
@@ -322,6 +321,7 @@ public class ModelPederpes extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3, this.tail4, this.tail5};
         AdvancedModelRenderer[] Torso = {this.head, this.body};
+        Pederpes.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Pederpes.isReallyInWater()) {
 

@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraSwimmingAmphibianBase;
-import net.lepidodendron.entity.render.entity.RenderBalhuticaris;
 import net.lepidodendron.entity.render.entity.RenderTiktaalik;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
@@ -37,6 +36,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -47,7 +47,7 @@ public class EntityPrehistoricFloraTiktaalik extends EntityPrehistoricFloraSwimm
 
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
-	public ChainBuffer chainBuffer;
+	public ChainBuffer tailBuffer;
 	//public static final SoundEvent LIMNOSCELIS_ROAR = create("limnoscelis_roar");
 
 	public EntityPrehistoricFloraTiktaalik(World world) {
@@ -63,6 +63,17 @@ public class EntityPrehistoricFloraTiktaalik extends EntityPrehistoricFloraSwimm
 		maxWidth = 0.65F;
 		maxHeight = 0.4F;
 		maxHealthAgeable = 22.0D;
+		if (FMLCommonHandler.instance().getSide().isClient()) {
+			tailBuffer = new ChainBuffer();
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		super.onUpdate();
+		if (world.isRemote && !this.isAIDisabled()) {
+			tailBuffer.calculateChainSwingBuffer(45, 5, 5F, this);
+		}
 	}
 
 	@Override

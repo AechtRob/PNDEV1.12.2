@@ -7,7 +7,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelShringasaurus extends AdvancedModelBaseExtended {
@@ -328,6 +327,7 @@ public class ModelShringasaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRendererExtended[] Tail = {this.Tail, this.Tail2, this.Tail3};
         AdvancedModelRendererExtended[] NeckFull = {this.Neck, this.Neck2, this.Neck3};
+        Shringasaurus.tailBuffer.applyChainSwingBuffer(Tail);
 
         // || (Shringasaurus.moveStrafing == 0 && Shringasaurus.moveVertical == 0 && Shringasaurus.moveForward == 0)
 

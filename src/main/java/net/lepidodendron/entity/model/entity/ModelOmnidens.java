@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraOmnidens;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelOmnidens extends AdvancedModelBase {
@@ -675,6 +674,8 @@ public class ModelOmnidens extends AdvancedModelBase {
         AdvancedModelRenderer[] bodyA = {this.head, this.body1, this.body2, this.body3, this.body4, this.body5, this.body6, this.body7, this.body8, this.body9, this.body10, this.body11};
 
         EntityPrehistoricFloraOmnidens ee = (EntityPrehistoricFloraOmnidens) e;
+        ee.tailBuffer.applyChainSwingBuffer(false, bodyB);
+
         float fast = 1F;
         if (ee.getIsFast()) {
             fast = 1.6F;

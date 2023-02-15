@@ -9,7 +9,6 @@ import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtend
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 
@@ -416,6 +415,7 @@ public class ModelMelosaurus extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.Body2, this.Tail, this.Tail2, this.Tail3, this.Tail4};
         AdvancedModelRenderer[] Torso = {this.Neck, this.Body};
+        MelosaurusEntity.tailBuffer.applyChainSwingBuffer(Tail);
 
         boolean isAtBottom = false;
         if (e.getPosition().getY() - 1 > 1) {

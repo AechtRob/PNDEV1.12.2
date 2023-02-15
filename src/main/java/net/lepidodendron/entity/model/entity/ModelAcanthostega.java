@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelAcanthostega extends AdvancedModelBaseExtended {
@@ -235,6 +234,7 @@ public class ModelAcanthostega extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.body, this.basin, this.tail1, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.neck1};
+        Acanthostega.tailBuffer.applyChainSwingBuffer(Tail);
 
         AdvancedModelRenderer[] RearL = {this.upperleg2, this.leg2, this.feet2};
         AdvancedModelRenderer[] RearR = {this.upperleg1, this.leg1, this.feet1};

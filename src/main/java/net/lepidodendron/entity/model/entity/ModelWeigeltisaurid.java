@@ -10,7 +10,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraWeigeltisaurus;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
@@ -222,6 +221,7 @@ public class ModelWeigeltisaurid extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2, this.tail3};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.pelvis};
+        ee.tailBuffer.applyChainSwingBuffer(Tail);
 
         this.faceTarget(f3, f4, 2, neck);
         this.faceTarget(f3, f4, 1, head);

@@ -7,7 +7,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraPlatyhystrix;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelPlatyhystrix extends AdvancedModelBaseExtended {
@@ -238,6 +237,7 @@ public class ModelPlatyhystrix extends AdvancedModelBaseExtended {
         }
         AdvancedModelRenderer[] Tail = {this.tail1, this.tail2};
         AdvancedModelRenderer[] Torso = {this.head, this.body};
+        Platyhystrix.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (!Platyhystrix.isReallyInWater()) {
 

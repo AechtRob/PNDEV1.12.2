@@ -331,7 +331,7 @@ public class BlockBumbudendronLand extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockBumbudendronLand.block;
+			return BlockBumbudendronWater.block;
 		}
 
 		@Override

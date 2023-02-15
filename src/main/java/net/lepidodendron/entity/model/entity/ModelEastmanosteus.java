@@ -4,6 +4,7 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelBase;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
+import net.lepidodendron.entity.EntityPrehistoricFloraEastmanosteus;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
@@ -489,6 +490,7 @@ public class ModelEastmanosteus extends AdvancedModelBase {
         this.resetToDefaultPose();
 
         AdvancedModelRenderer[] fishTail = {this.Body2, this.Body3, this.Body4, this.Body5, this.Tail, this.Tail2};
+        ((EntityPrehistoricFloraEastmanosteus)e).tailBuffer.applyChainSwingBuffer(fishTail);
 
         float speed = 0.2F;
         float still = 1f;

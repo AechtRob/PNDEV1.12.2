@@ -304,7 +304,7 @@ public class BlockRhyniaLandSpore extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public Block planted() {
-			return BlockRhyniaLandSpore.block;
+			return BlockRhyniaWaterSpore.block;
 		}
 
 		@Override

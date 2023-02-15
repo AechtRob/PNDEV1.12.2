@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelUranocentrodon extends AdvancedModelBaseExtended {
@@ -403,6 +402,7 @@ public class ModelUranocentrodon extends AdvancedModelBaseExtended {
 
         AdvancedModelRenderer[] TailLand = {this.tail, this.tail2, this.tail3, this.tail4};
         AdvancedModelRenderer[] Torso = {this.neck, this.body, this.body2, this.body3, this.body4};
+        Uranocentrodon.tailBuffer.applyChainSwingBuffer(TailLand);
 
         if (!Uranocentrodon.isReallyInWater()) { //on land
 

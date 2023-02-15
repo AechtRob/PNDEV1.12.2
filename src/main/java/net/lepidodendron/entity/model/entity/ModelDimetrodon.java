@@ -6,7 +6,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraDimetrodon;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelRendererExtended;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelDimetrodon extends AdvancedModelBaseExtended {
@@ -369,6 +368,7 @@ public class ModelDimetrodon extends AdvancedModelBaseExtended {
         this.faceTarget(f3, f4, 5, Head);
 
         AdvancedModelRendererExtended[] Tail = {this.Tailbase, this.Tailmiddlebase, this.Tailmiddleend, this.Tailend};
+        Dimetrodon.tailBuffer.applyChainSwingBuffer(Tail);
 
         if (Dimetrodon.getAnimation() == Dimetrodon.LAY_ANIMATION) {
             this.swing(Neckbase, 0.5F, 0.10F, false, 0.5F,-0.05F, f2, 0.8F);
