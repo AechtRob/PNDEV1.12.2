@@ -1,0 +1,31 @@
+{
+	"name": "Cowralepis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/cowralepis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_cowralepis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_cowralepis",
+			"title": "Cowralepis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish, Floodplain$(br2)>Placodermi$(br)>Phyllolepida$(br)>Phyllolepididae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/cowralepis.png"],
+			"title": "C. mclachlani",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cowralepis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_cowralepis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

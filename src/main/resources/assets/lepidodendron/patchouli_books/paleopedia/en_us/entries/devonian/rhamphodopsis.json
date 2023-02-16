@@ -1,0 +1,31 @@
+{
+	"name": "Rhamphodopsis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/rhamphodopsis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rhamphodopsis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rhamphodopsis",
+			"title": "Rhamphodopsis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Placodermi$(br)>Ptyctodontida$(br)>Ptyctodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rhamphodopsis.png"],
+			"title": "R. thrieplandi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhamphodopsis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rhamphodopsis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

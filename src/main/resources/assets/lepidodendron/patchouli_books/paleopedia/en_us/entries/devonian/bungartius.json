@@ -1,0 +1,31 @@
+{
+	"name": "Bungartius",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/bungartius_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_bungartius",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_bungartius",
+			"title": "Bungartius",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Placodermi$(br)>Arthrodira$(br)>Bungartiidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/bungartius.png"],
+			"title": "B. perissus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bungartius",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_bungartius",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

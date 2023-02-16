@@ -1,0 +1,32 @@
+{
+	"name": "Rubidgea",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/rubidgea_icon.png",
+	"category": "lepidodendron:permian_animal",
+	"turnin": "lepidodendron:pf_adv_book_rubidgea",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_rubidgea",
+			"title": "Rubidgea",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Glossopteris Forest$(br2)>Therapsida$(br)>Gorgonopsia$(br)>Gorgonopsidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/rubidgea.png"],
+			"title": "R. atrox",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rubidgea",
+			"type": "text",
+			"text": "Rubidgea is a gorgonopsid from the Permian period whose fossils have been found in Tanzania and South Africa. It was a large bodied gorgonopsid that could grow up to 3.4 meters long and had thick saber like canines and are characterized by a robust build. Rubidgea was a fierce predator and would have roamed the wooded areas of its environment in search for prey."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_rubidgea",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}
+

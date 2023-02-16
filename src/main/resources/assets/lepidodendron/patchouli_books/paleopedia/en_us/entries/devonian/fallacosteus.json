@@ -1,0 +1,31 @@
+{
+	"name": "Fallacosteus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/fallacosteus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_fallacosteus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_fallacosteus",
+			"title": "Fallacosteus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Placodermi$(br)>Arthrodira$(br)>Camuropiscidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/fallacosteus.png"],
+			"title": "F. turneri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fallacosteus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_fallacosteus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

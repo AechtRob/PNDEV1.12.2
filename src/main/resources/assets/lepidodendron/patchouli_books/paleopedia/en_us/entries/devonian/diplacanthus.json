@@ -1,0 +1,31 @@
+{
+	"name": "Diplacanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/diplacanthus_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_diplacanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_diplacanthus",
+			"title": "Diplacanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/diplacanthus.png"],
+			"title": "D. acus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplacanthus",
+			"type": "text",
+			"text": "Diplacanthus is freshwater to brackish acanthodian from the Devonian. Although the genus itself is mainly known from Europe, in the mod it is based on D. acus from South Africa. D. acus had extremely deep body and long spine compared to any other acanthodians. Restudy of Diplacanthus did not include D. acus as a species, so it may be possible that it will be reclassified."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_diplacanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

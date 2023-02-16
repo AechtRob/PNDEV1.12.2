@@ -1,0 +1,31 @@
+{
+	"name": "Turboscinetes",
+	"read_by_default": true,
+	"icon": "lepidodendron:turboscinetes_raw",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_turboscinetes",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_turboscinetes",
+			"title": "Turboscinetes",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() $(br2)>Actinopterygii$(br)>Pycnodontiformes$(br)>Pycnodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/turboscinetes.png"],
+			"title": "T. egertoni",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turboscinetes",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_turboscinetes",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
