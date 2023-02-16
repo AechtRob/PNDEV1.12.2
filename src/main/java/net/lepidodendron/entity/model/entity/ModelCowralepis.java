@@ -197,19 +197,39 @@ public class ModelCowralepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Root.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Root.rotateAngleX = (float) Math.toRadians(90);
+        this.Root.rotateAngleZ = (float) Math.toRadians(90);
         this.Root.offsetX = -0.1F;
-        this.Root.offsetY = -0F;
+        this.Root.offsetY = -0.23F;
         this.Root.offsetZ = 0.02F;
         this.Root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(rside, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(rside2, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(RPectoral, 0.0F, 1.0472F, -0.0873F);
+        this.setRotateAngle(rside3, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(lside, 0.0F, 0.5236F, 0.0F);
+        this.setRotateAngle(lside2, 0.0F, -0.48F, 0.0F);
+        this.setRotateAngle(LPectoral, 0.0F, -0.1745F, 0.0873F);
+        this.setRotateAngle(lside3, 0.0F, 0.3054F, 0.0F);
+        this.setRotateAngle(forehead, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Body, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(RPelvic, -0.0503F, 0.5214F, -0.1007F);
+        this.setRotateAngle(LPelvic, -0.0503F, -0.5214F, 0.1007F);
+        this.setRotateAngle(Tail, 0.0915F, -0.3042F, -0.0275F);
+        this.setRotateAngle(Tail2, 0.1548F, -0.5618F, -0.083F);
+        this.setRotateAngle(Tail3, 0.3237F, -0.3323F, -0.109F);
+        this.setRotateAngle(Tail4, -0.1509F, 0.5187F, -0.0752F);
+        this.Root.rotateAngleY = (float) Math.toRadians(90);
+        this.Root.offsetX = -0.1F;
+        this.Root.offsetY = -0.05F;
+        this.Root.offsetZ = 0.03F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

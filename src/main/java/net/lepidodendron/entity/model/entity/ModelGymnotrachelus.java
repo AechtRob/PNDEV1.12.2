@@ -267,18 +267,29 @@ public class ModelGymnotrachelus extends AdvancedModelBase {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
         this.main.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetX = -0.14F;
+        this.main.offsetX = -0.12F;
         this.main.offsetY = -0.19F;
         this.main.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(frontleftfin, 0.0F, 0.0F, -0.9599F);
+        this.setRotateAngle(frontrightfin, 0.0F, 0.0F, 1.0036F);
+        this.setRotateAngle(jaw, 0.4363F, 0.0F, 0.0F);
+        this.setRotateAngle(body, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(backleftfin, 0.0F, 0.0F, 0.1309F);
+        this.setRotateAngle(backrightfin, 0.0F, 0.2618F, -0.1309F);
+        this.setRotateAngle(tail, 0.0F, 0.2618F, 0.0F);
+        this.setRotateAngle(tail2, 0.0F, 0.48F, 0.0F);
+        this.setRotateAngle(tail3, 0.0F, -0.3054F, 0.0F);
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.06F;
+        this.main.offsetZ = 0.03F;
+        this.main.offsetY = -0.5F;
+        this.main.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer AdvancedModelRenderer, float x, float y, float z) {
         AdvancedModelRenderer.rotateAngleX = x;
