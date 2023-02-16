@@ -52,7 +52,7 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 
