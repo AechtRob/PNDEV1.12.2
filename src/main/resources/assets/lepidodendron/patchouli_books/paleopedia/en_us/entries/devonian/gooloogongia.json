@@ -1,0 +1,31 @@
+{
+	"name": "Gooloogongia",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/gooloogongia_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_gooloogongia",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_gooloogongia",
+			"title": "Gooloogongia",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Sarcopterygii$(br)>Rhizodontida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/gooloogongia.png"],
+			"title": "G. loomesi",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_gooloogongia",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}

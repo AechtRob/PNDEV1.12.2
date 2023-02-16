@@ -52,7 +52,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 12.0D;
+		maxHealthAgeable = 7.0D;
 	}
 
 
@@ -150,7 +150,7 @@ public class EntityPrehistoricFloraSilurolepis extends EntityPrehistoricFloraAge
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(7.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

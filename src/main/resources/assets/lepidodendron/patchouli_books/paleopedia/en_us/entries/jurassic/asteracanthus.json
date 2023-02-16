@@ -1,0 +1,31 @@
+{
+	"name": "Asteracanthus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/asteracanthus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_asteracanthus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_asteracanthus",
+			"title": "Asteracanthus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic-Cretaceous$(br2)$(l)Habitat:$() N/A$(br2)>Chondrichthyes$(br)>Hybodontiformes$(br)>Hybodontidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/asteracanthus.png"],
+			"title": "A. ornatissimus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_asteracanthus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_asteracanthus",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Block Egg$(br)$(l)Method of Obtaining:$() Egg Collection Phial"
+		}
+	]
+}

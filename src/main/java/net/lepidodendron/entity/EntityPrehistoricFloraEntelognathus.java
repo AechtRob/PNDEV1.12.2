@@ -52,7 +52,7 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 		minWidth = 0.2F;
 		maxWidth = 0.3F;
 		maxHeight = 0.3F;
-		maxHealthAgeable = 7.0D;
+		maxHealthAgeable = 6.0D;
 	}
 
 
@@ -151,7 +151,7 @@ public class 	EntityPrehistoricFloraEntelognathus extends EntityPrehistoricFlora
 		super.applyEntityAttributes();
 		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(2D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(44.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
 

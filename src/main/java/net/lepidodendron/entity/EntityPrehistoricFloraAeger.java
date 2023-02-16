@@ -2,15 +2,23 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIFish;
-import net.lepidodendron.entity.ai.EntityMateAIFishBase;
-import net.lepidodendron.entity.ai.FishWander;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.ai.AttackAI;
+import net.lepidodendron.entity.ai.EatFishItemsAI;
+import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
+import net.lepidodendron.entity.ai.EurypteridWander;
+import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
+import net.lepidodendron.entity.render.entity.RenderTyrannophontes;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -23,26 +31,61 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
 
-public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase {
-
+public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraEurypteridBase {
 	private static final DataParameter<Integer> VARIANT= EntityDataManager.createKey(EntityPrehistoricFloraAeger.class, DataSerializers.VARINT);
-
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private int animationTick;
-	private Animation animation = NO_ANIMATION;
 
 	public EntityPrehistoricFloraAeger(World world) {
 		super(world);
-		setSize(0.2F, 0.15F);
+		setSize(0.2F, 0.2F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
+		//minSize = 0.2F;
+		//maxSize = 1.0F;
+		minWidth = 0.1F;
+		maxWidth = 0.25F;
+		maxHeight = 0.25F;
+		maxHealthAgeable = 2.0D;
+	}
+
+	@Override
+	public boolean isSmall() {
+		return true;
+	}
+
+	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
+
+	//public static String getHabitat() {return "Aquatic";}
+
+	@Override
+	public boolean dropsEggs() {
+		return true;
+	}
+	
+	@Override
+	public boolean laysEggs() {
+		return false;
+	}
+
+	@Override
+	public int getAdultAge() {
+		return 1;
+	}
+
+	protected void initEntityAI() {
+		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
+		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(2, new EurypteridWander(this, NO_ANIMATION));
+		tasks.addTask(3, new EntityAILookIdle(this));
+		this.targetTasks.addTask(0, new EatFishItemsAI(this));
 	}
 
 	protected void entityInit() {
@@ -79,59 +122,9 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 		this.dataManager.set(VARIANT, variant);
 	}
 	@Override
-	public boolean isSmall() {
-		return true;
-	}
-
-	public static String getPeriod() {return "Triassic - Jurassic - Cretaceous";}
-
-	public static String getSize() {return "S";}
-
-	@Override
-	public boolean dropsEggs() {
-		return true;
-	}
-
-	@Override
-	protected float getAISpeedFish() {
-		//return 0;
-		return 0.326f * 0.85F;
-	}
-
-	@Override
-	protected boolean isSlowAtBottom() {
-		return false;
-	}
-
-	@Override
-	public int getAnimationTick() {
-		return getAnimationTick();
-	}
-
-	@Override
-	public void setAnimationTick(int tick) {
-		animationTick = tick;
-	}
-
-	@Override
-	public Animation getAnimation() {
-		return null;
-	}
-
-	@Override
-	public void setAnimation(Animation animation) {
-		this.animation = animation;
-	}
-
-	@Override
-	public Animation[] getAnimations() {
-		return null;
-	}
-
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIFishBase(this, 1));
-		tasks.addTask(1, new FishWander(this, NO_ANIMATION));
-		this.targetTasks.addTask(0, new EatFishFoodAIFish(this));
+	public boolean isBreedingItem(ItemStack stack)
+	{
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override
@@ -157,20 +150,68 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+		//this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 	}
+
+	@Override
+	protected boolean canTriggerWalking() {
+		return false;
+	}
+
+	@Override
+	protected double getSwimSpeed() {
+		return this.getSwimSpeed();
+	}
+
+	@Override
+	protected float getAISpeedEurypterid() {
+		if (!this.isAtBottom()) {
+			return 0.1F;
+		}
+		return 0.202F;
+	}
+
+	@Override
+	public boolean isInWater() {
+		return super.isInWater() || this.isInsideOfMaterial(Material.WATER) || this.isInsideOfMaterial(Material.CORAL);
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource source, float amount) {
+
+		return super.attackEntityFrom(source, (amount * 0.7F));
+
+	}
+
+	//@Override
+	//public net.minecraft.util.SoundEvent getAmbientSound() {
+	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_idle"));
+	//}
 
 	@Override
 	public SoundEvent getAmbientSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation(""));
 	}
 
+
+	//@Override
+	//public net.minecraft.util.SoundEvent getHurtSound(DamageSource ds) {
+	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_hurt"));
+	//}
+
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.hurt"));
 	}
 
+	//@Override
+	//public net.minecraft.util.SoundEvent getDeathSound() {
+	//    return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
+	//            .getObject(new ResourceLocation("lepidodendron:eurypterus_death"));
+	//}
 	@Override
 	public SoundEvent getDeathSound() {
 		return (SoundEvent) SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.generic.death"));
@@ -182,20 +223,100 @@ public class EntityPrehistoricFloraAeger extends EntityPrehistoricFloraFishBase 
 	}
 
 	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		this.renderYawOffset = this.rotationYaw;
+	public boolean canBreatheUnderwater() {
+		return true;
 	}
 
+	@Override
+	public boolean getCanSpawnHere() {
+		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
+	}
 
+	public boolean isNotColliding() {
+		return this.world.checkNoEntityCollision(this.getEntityBoundingBox(), this);
+	}
 
-	public void onEntityUpdate() {
+	@Override
+	public int getTalkInterval() {
+		return 120;
+	}
+
+	@Override
+	protected int getExperiencePoints(EntityPlayer player) {
+		return 1 + this.world.rand.nextInt(3);
+	}
+
+	@Override
+	public boolean isOnLadder() {
+		return false;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+	}
+
+	public void onEntityUpdate()
+	{
 		super.onEntityUpdate();
 	}
 
 	@Nullable
 	protected ResourceLocation getLootTable() {
-		return LepidodendronMod.AEGER_LOOT;
+		return LepidodendronMod.TYRANNOPHONTES_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.19; }
+
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {return 0.8;}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.06;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_TYRANNOPHONTES;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelTyrannophontes;
+	}
+	public static float getScaler() {
+		return RenderTyrannophontes.getScaler();
 	}
 
 }

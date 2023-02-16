@@ -1,0 +1,31 @@
+{
+	"name": "Wuttagoonaspis",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/wuttagoonaspis_icon.png",
+	"category": "lepidodendron:devonian_animal",
+	"turnin": "lepidodendron:pf_adv_book_wuttagoonaspis",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"title": "Wuttagoonaspis",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Placodermi$(br)>Arthrodira$(br)>Wuttagoonaspidae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/wuttagoonaspis.png"],
+			"title": "W. fletcheri",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Live Birth$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
