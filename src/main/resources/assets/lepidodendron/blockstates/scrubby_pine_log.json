@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:scrubby_pine_log"
+    },
+    "facing=south": {
+      "model": "lepidodendron:scrubby_pine_log"
+    },
+    "facing=north": {
+      "model": "lepidodendron:scrubby_pine_log"
+    },
+    "facing=east": {
+      "model": "lepidodendron:scrubby_pine_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "lepidodendron:scrubby_pine_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "lepidodendron:scrubby_pine_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "lepidodendron:scrubby_pine_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

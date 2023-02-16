@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/scrubby_pine_log_end",
+    "up": "lepidodendron:blocks/scrubby_pine_log_end",
+    "north": "lepidodendron:blocks/scrubby_pine_log",
+    "east": "lepidodendron:blocks/scrubby_pine_log",
+    "south": "lepidodendron:blocks/scrubby_pine_log",
+    "west": "lepidodendron:blocks/scrubby_pine_log",
+    "particle": "lepidodendron:blocks/scrubby_pine_log_end"
+  }
+}

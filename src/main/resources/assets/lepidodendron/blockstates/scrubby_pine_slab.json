@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "lepidodendron:scrubby_pine_slab"
+    },
+    "half=top,variant=default": {
+      "model": "lepidodendron:scrubby_pine_slab_top"
+    }
+  }
+}

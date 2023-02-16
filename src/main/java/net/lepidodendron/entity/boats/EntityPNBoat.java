@@ -1,8 +1,10 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
+import net.lepidodendron.block.BlockScrubbyPinePlanks;
 import net.lepidodendron.block.BlockWoodenPlanks;
 import net.lepidodendron.item.ItemLepidodendronBoatItem;
+import net.lepidodendron.item.ItemScrubbyPineBoatItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
@@ -191,6 +193,9 @@ public class EntityPNBoat extends EntityBoat
             default:
                 return ItemLepidodendronBoatItem.block;
 
+            case SCRUBBY_PINE:
+                return ItemScrubbyPineBoatItem.block;
+
         }
     }
 
@@ -201,6 +206,9 @@ public class EntityPNBoat extends EntityBoat
             case LEPIDODENDRON:
             default:
                 return BlockWoodenPlanks.block;
+
+            case SCRUBBY_PINE:
+                return BlockScrubbyPinePlanks.block;
 
         }
     }
@@ -972,7 +980,8 @@ public class EntityPNBoat extends EntityBoat
 
     public static enum Type
     {
-        LEPIDODENDRON(0, "cherry");
+        LEPIDODENDRON(0, "lepidodendron"),
+        SCRUBBY_PINE(1, "scrubby_pine");
 
         private final String name;
         private final int metadata;

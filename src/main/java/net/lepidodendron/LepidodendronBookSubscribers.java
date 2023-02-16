@@ -22,6 +22,8 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
 
+import java.text.DecimalFormat;
+
 public class LepidodendronBookSubscribers {
 
 	protected RayTraceResult rayTrace(World worldIn, EntityPlayer playerIn, boolean useLiquids)
@@ -3327,19 +3329,21 @@ public class LepidodendronBookSubscribers {
 			actualHealth = ((EntityLivingBase) event.getTarget()).getHealth();
 		}
 		if (event.getTarget() instanceof EntityPrehistoricFloraLandBase) {
-			nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
-			if (nestPos != null
-					&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
-					&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
-				nestString = " has nest at " + nestPos.getX() + " "  + nestPos.getY() + " " + nestPos.getZ();
-			}
-			else {
-				nestString = " with no known nest";
+			if (((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()) {
+				nestPos = ((EntityPrehistoricFloraLandBase) event.getTarget()).getNestLocation();
+				if (nestPos != null
+						&& ((EntityPrehistoricFloraLandBase) event.getTarget()).hasNest()
+						&& !((EntityPrehistoricFloraLandBase) event.getTarget()).isNestMound()) {
+					nestString = " has nest at " + nestPos.getX() + " " + nestPos.getY() + " " + nestPos.getZ();
+				} else {
+					nestString = " with no known nest";
+				}
 			}
 		}
 
+		DecimalFormat df = new DecimalFormat("###.#");
 		if (event.getWorld().isRemote) {
-			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + actualHealth + "/" + maxHealth + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + df.format(agePercent) + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
 		}
 	}
 

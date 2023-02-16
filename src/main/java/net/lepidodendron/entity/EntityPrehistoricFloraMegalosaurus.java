@@ -148,8 +148,8 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 	}
 
 	public AxisAlignedBB getAttackBoundingBox() {
-		float size = this.getRenderSizeModifier() * 2.50F * this.getAgeScale();
-		return this.getEntityBoundingBox().grow(0.5F + size, 0.5F + size, 0.5F + size);
+		float size = this.getRenderSizeModifier() * 1.50F * this.getAgeScale();
+		return this.getEntityBoundingBox().grow(0.5F + size, 0.2F, 0.5F + size);
 	}
 
 	@Override
@@ -177,12 +177,13 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue() * 0.33F));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new LandWanderNestAI(this));
-		tasks.addTask(5, new LandWanderAvoidWaterAI(this, 1.0D, 45));
-		tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(8, new EntityAILookIdle(this));
+		tasks.addTask(3, new AgeableWarnEntity(this, EntityPlayer.class, 4));
+		tasks.addTask(4, new AttackAI(this, 1.0D, false, this.getAttackLength()));
+		tasks.addTask(5, new LandWanderNestAI(this));
+		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D, 45));
+		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(9, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatMeatItemsAI(this));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
 		this.targetTasks.addTask(2, new HuntPlayerAlwaysAI(this, EntityPlayer.class, true, (Predicate<Entity>) entity -> entity instanceof EntityLivingBase));

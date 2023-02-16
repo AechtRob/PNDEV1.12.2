@@ -79,9 +79,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     private int canGrow;
     private boolean laying;
     private EntityItem eatTarget;
+    private EntityLivingBase warnTarget;
     private EntityLiving grappleTarget;
     public boolean willGrapple;
     private int alarmCooldown;
+    private int warnCooldown;
 
     public EntityPrehistoricFloraAgeableBase(World worldIn) {
         super(worldIn);
@@ -94,6 +96,18 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
 
     public int getAlarmCooldown() {
         return this.alarmCooldown;
+    }
+
+    public int getWarnCooldown() {
+        return this.warnCooldown;
+    }
+
+    public int warnCooldownTime() {
+        return 60; //how long between warning and attack
+    }
+
+    public void setWarnCooldown(int cooldown) {
+        this.warnCooldown = cooldown;
     }
 
     public boolean canShoal() {
@@ -720,7 +734,17 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
     public void setEatTarget(@Nullable EntityItem entityItem)
     {
         this.eatTarget = entityItem;
-        //net.minecraftforge.common.ForgeHooks.onLivingSetAttackTarget(this, entityItem);
+    }
+
+    @Nullable
+    public EntityLivingBase getWarnTarget()
+    {
+        return this.warnTarget;
+    }
+
+    public void setWarnTarget(@Nullable EntityLivingBase entityLivingBase)
+    {
+        this.warnTarget = entityLivingBase;
     }
 
     @Nullable
@@ -814,6 +838,11 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
        }
     }
 
+    @Nullable
+    public SoundEvent getAmbientSoundPublic() {
+        return this.getAmbientSound();
+    }
+
     public void onEntityUpdate()
     {
         super.onEntityUpdate();
@@ -862,7 +891,23 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (this.alarmCooldown > 0) {
-            this.alarmCooldown -= 1;
+            this.alarmCooldown --;
+        }
+
+        if (this.warnCooldown > 0) {
+            this.warnCooldown --;
+        }
+
+        if (this.getWarnTarget() != null) {
+            this.faceEntity(this.getWarnTarget(), 20, 20);
+            this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+            if (this.getWarnCooldown() == 1) {
+                this.setAttackTarget(this.getWarnTarget());
+                this.setIsFast(true);
+                this.setOneHit(true);
+                this.setWarnTarget(null);
+                this.setWarnCooldown(0);
+            }
         }
 
         if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
