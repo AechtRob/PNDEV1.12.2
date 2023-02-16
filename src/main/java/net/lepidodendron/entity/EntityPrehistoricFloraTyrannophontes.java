@@ -3,14 +3,12 @@ package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.AttackAI;
-import net.lepidodendron.entity.ai.EatFishItemsAI;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.EurypteridWander;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraEurypteridBase;
 import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.entity.RenderTyrannophontes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.lepidodendron.item.ItemFishFood;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -18,6 +16,9 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -79,16 +80,13 @@ public class EntityPrehistoricFloraTyrannophontes extends EntityPrehistoricFlora
 		tasks.addTask(1, new AttackAI(this, 1.0D, false, this.getAttackLength()));
 		tasks.addTask(2, new EurypteridWander(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatFishItemsAI(this));
+
 	}
 
 	@Override
 	public boolean isBreedingItem(ItemStack stack)
 	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("listAllfishraw"), stack))
-					//	|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
+		return (stack.getItem() == ItemFishFood.block);
 	}
 
 	@Override
