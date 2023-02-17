@@ -297,12 +297,21 @@ public class ModelBungartius extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.jaw.rotateAngleX = (float) Math.toRadians(20);
-        this.head.offsetY = 0.15F;
+        this.head.offsetY = 0.035F;
         this.head.render(0.01F);
         resetToDefaultPose();
     }
 
     public void renderStaticFloor(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(pelvecfinR, 0.1745F, 0.0F, 0.6981F);
+        this.setRotateAngle(pelvecfinL, 0.1745F, 0.0F, -0.6981F);
+        this.setRotateAngle(body4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.6981F);
         this.body.rotateAngleY = (float) Math.toRadians(90);
         this.body.offsetY = -0.43F;
         this.body.offsetX = -0.1F;
@@ -310,6 +319,20 @@ public class ModelBungartius extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticSuspended(float f) {
+        this.setRotateAngle(body2, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, 0.0873F, 0.0F);
+        this.setRotateAngle(pelvecfinR, 0.1745F, 0.0F, 0.6981F);
+        this.setRotateAngle(pelvecfinL, 0.1745F, 0.0F, -0.6981F);
+        this.setRotateAngle(body4, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, 0.1745F, 0.0F);
+        this.setRotateAngle(jaw, 0.1745F, 0.0F, 0.0F);
+        this.setRotateAngle(pectoralfinR, 0.0F, 0.0F, 0.6981F);
+        this.setRotateAngle(pectoralfinL, 0.0F, 0.0F, -0.6981F);
+        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.offsetY = -0.02F;
+        this.body.offsetX = -0.1F;
+        this.body.offsetZ = 0.02F;
+        this.body.render(0.01F);
         resetToDefaultPose();
     }
 
