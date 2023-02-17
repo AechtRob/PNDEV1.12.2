@@ -619,15 +619,15 @@ public class EntityRegistries {
 
 
         registerEntity("prehistoric_flora_muensterella", EntityPrehistoricFloraMuensterella.class, LepidodendronMod.ENTITY_MUENSTERELLA, 48,0,0);
-     /*
+     
         registerEntity("prehistoric_flora_asteracanthus", EntityPrehistoricFloraAsteracanthus.class, LepidodendronMod.ENTITY_ASTERACANTHUS, 64,0,0);
-        */
+
         registerEntity("prehistoric_flora_redfieldius", EntityPrehistoricFloraRedfieldius.class, LepidodendronMod.ENTITY_REDFIELDIUS, 48,0,0);
         registerEntity("prehistoric_flora_leptolepis", EntityPrehistoricFloraLeptolepis.class, LepidodendronMod.ENTITY_LEPTOLEPIS, 48,0,0);
-        /*
+
         registerEntity("prehistoric_flora_lepidotes", EntityPrehistoricFloraLepidotes.class, LepidodendronMod.ENTITY_LEPIDOTES, 48,0,0);
 
-         */
+
         registerEntity("prehistoric_flora_thrissops", EntityPrehistoricFloraThrissops.class, LepidodendronMod.ENTITY_THRISSOPS, 48,0,0);
 
         registerEntity("prehistoric_flora_turboscinetes", EntityPrehistoricFloraTurboscinetes.class, LepidodendronMod.ENTITY_TURBOSCINETES, 48,0,0);
