@@ -34,10 +34,6 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 			System.err.println("Failed to load dependency world for procedure WorldGenScrubbyPine!");
 			return;
 		}
-		if (dependencies.get("SaplingSpawn") == null) {
-			System.err.println("Failed to load dependency SaplingSpawn for procedure WorldGenScrubbyPineLarge!");
-			return;
-		}
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
@@ -45,7 +41,6 @@ public class ProcedureWorldGenScrubbyPine extends ElementsLepidodendronMod.ModEl
 		int yy = (int) dependencies.get("y");
 		int zz = (int) dependencies.get("z");
 		World world = (World) dependencies.get("world");
-		boolean SaplingSpawn = (boolean) dependencies.get("SaplingSpawn");
 		double TrunkHeight = 0;
 		double counter = 0;
 		double counterext = 0;

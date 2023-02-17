@@ -380,12 +380,12 @@ public class ShoalingHelper {
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
     }
 
-    public static boolean isInList(EntityLivingBase entity, EntityLivingBase[] list) {
-        EntityLivingBase[] var2 = list;
+    public static boolean isInList(EntityLivingBase entity, Class[] list) {
+        Class[] var2 = list;
         int var3 = list.length;
         for (int var4 = 0; var4 < var3; ++var4) {
-            EntityLivingBase entityCheck = var2[var4];
-            if (entityCheck.getClass() == entity.getClass()) {
+            Class entityCheck = var2[var4];
+            if (entityCheck == entity.getClass()) {
                 return true;
             }
         }
