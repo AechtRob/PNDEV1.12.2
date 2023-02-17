@@ -1448,6 +1448,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation BELONOSTOMUS_CRETACEOUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/belonostomus_cretaceous"));
 	public static final int ENTITY_ASTERACANTHUS = 594;
 	public static final ResourceLocation ASTERACANTHUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/asteracanthus"));
+	public static final ResourceLocation ASTERACANTHUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/asteracanthus_young"));
 	public static final int ENTITY_REDFIELDIUS = 595;
 	public static final ResourceLocation REDFIELDIUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/redfieldius"));
 	public static final int ENTITY_LEPTOLEPIS = 596;

@@ -3550,13 +3550,15 @@ public class RenderHandler {
                 return new RenderBelonostomusCretaceous(manager);
             }
         });
+
+         */
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraAsteracanthus.class, new IRenderFactory<EntityPrehistoricFloraAsteracanthus>() {
             @Override
             public Render<? super EntityPrehistoricFloraAsteracanthus> createRenderFor(RenderManager manager) {
                 return new RenderAsteracanthus(manager);
             }
         });
-        */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraTurboscinetes.class, new IRenderFactory<EntityPrehistoricFloraTurboscinetes>() {
             @Override
             public Render<? super EntityPrehistoricFloraTurboscinetes> createRenderFor(RenderManager manager) {
@@ -3576,7 +3578,7 @@ public class RenderHandler {
                 return new RenderRedfieldius(manager);
             }
         });
-        /*
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraLepidotes.class, new IRenderFactory<EntityPrehistoricFloraLepidotes>() {
             @Override
             public Render<? super EntityPrehistoricFloraLepidotes> createRenderFor(RenderManager manager) {
@@ -3584,7 +3586,7 @@ public class RenderHandler {
             }
         });
 
-         */
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraDollocaris.class, new IRenderFactory<EntityPrehistoricFloraDollocaris>() {
             @Override
             public Render<? super EntityPrehistoricFloraDollocaris> createRenderFor(RenderManager manager) {
