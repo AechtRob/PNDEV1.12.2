@@ -1,26 +1,108 @@
 {
-  "variants": {
-    "normal": [
-      {"model": "lepidodendron:zircon_glass_tile"}
-    ],
-    "facing=north": [
-      {"model": "lepidodendron:zircon_glass_tile", "x": 90}
-    ],
-    "facing=east": [
-      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 90}
-    ],
-    "facing=south": [
-      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 180}
-    ],
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile", "x": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "up"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile"
+      }
+    },
+    {
+      "when": {
+        "facing": "down"
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_tile", "x": 180
+      }
+    },
 
-    "facing=west": [
-      {"model": "lepidodendron:zircon_glass_tile", "x": 90, "y": 270}
-    ],
-    "facing=up": [
-      {"model": "lepidodendron:zircon_glass_tile"}
-    ],
-    "facing=down": [
-      {"model": "lepidodendron:zircon_glass_tile", "x": 180}
-    ]
-  }
+
+
+    {
+      "when": {
+        "facing": "north", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "east", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "south", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water"
+      }
+    },
+    {
+      "when": {
+        "facing": "west", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "up", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+          "facing": "down", "water": true
+      },
+      "apply": {
+        "model": "lepidodendron:zircon_glass_water",
+        "x": 270
+      }
+    }
+  ]
 }
