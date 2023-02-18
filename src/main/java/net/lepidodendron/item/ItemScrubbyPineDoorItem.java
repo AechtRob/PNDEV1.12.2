@@ -3,7 +3,7 @@ package net.lepidodendron.item;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.block.BlockRedwoodDoor;
+import net.lepidodendron.block.BlockScrubbyPineDoor;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
@@ -68,13 +68,13 @@ public class ItemScrubbyPineDoorItem extends ElementsLepidodendronMod.ModElement
 	
 	            ItemStack itemstack = player.getHeldItem(hand);
 	
-	            if (player.canPlayerEdit(pos, facing, itemstack) && BlockRedwoodDoor.block.canPlaceBlockAt(worldIn, pos))
+	            if (player.canPlayerEdit(pos, facing, itemstack) && BlockScrubbyPineDoor.block.canPlaceBlockAt(worldIn, pos))
 	            {
 	                EnumFacing enumfacing = EnumFacing.fromAngle((double)player.rotationYaw);
 	                int i = enumfacing.getXOffset();
 	                int j = enumfacing.getZOffset();
 	                boolean flag = i < 0 && hitZ < 0.5F || i > 0 && hitZ > 0.5F || j < 0 && hitX > 0.5F || j > 0 && hitX < 0.5F;
-	                placeDoor(worldIn, pos, enumfacing, BlockRedwoodDoor.block, flag);
+	                placeDoor(worldIn, pos, enumfacing, BlockScrubbyPineDoor.block, flag);
 	                SoundType soundtype = worldIn.getBlockState(pos).getBlock().getSoundType(worldIn.getBlockState(pos), worldIn, pos, player);
 	                worldIn.playSound(player, pos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
 	                itemstack.shrink(1);

@@ -1351,6 +1351,14 @@ public class LepidodendronConfigPlants {
     public static int maxheightAmentotaxus = 0;
     public static double multiplierAmentotaxus = 1;
 
+    public static boolean genScrubbyPine = false;
+    public static String[] genScrubbyPineBlacklistBiomes = new String[0];
+    public static String[] genScrubbyPineOverrideBiomes = new String[0];
+    public static int[] dimScrubbyPine = new int[]{0};
+    public static int minheightScrubbyPine = 1;
+    public static int maxheightScrubbyPine = 0;
+    public static double multiplierScrubbyPine = 1;
+
     public static boolean genWachtlerina = false;
     public static String[] genWachtlerinaBlacklistBiomes = new String[0];
     public static String[] genWachtlerinaOverrideBiomes = new String[0];
@@ -8621,7 +8629,35 @@ public class LepidodendronConfigPlants {
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierAmentotaxus = prop.getDouble();
         propOrder.add(prop.getName());
-
+        
+        prop = cfg.get("WorldGen ScrubbyPine", "genScrubbyPine", genScrubbyPine);
+        prop.setComment("Set to true to generate Scrubby Pines naturally [default: false]");
+        genScrubbyPine = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ScrubbyPine", "genScrubbyPineBlacklistBiomes", genScrubbyPineBlacklistBiomes);
+        prop.setComment("List of biomes Scrubby Pines are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genScrubbyPineBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ScrubbyPine", "genScrubbyPineOverrideBiomes", genScrubbyPineOverrideBiomes);
+        prop.setComment("List of biomes Scrubby Pines are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genScrubbyPineOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen ScrubbyPine", "dimScrubbyPine", dimScrubbyPine);
+        prop.setComment("List of dimension IDs Scrubby Pines can generate in [default: 0]");
+        dimScrubbyPine = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ScrubbyPine", "minheightScrubbyPine", minheightScrubbyPine);
+        prop.setComment("Minimum height that Scrubby Pines can generate (1 to 250) [default: 1]");
+        minheightScrubbyPine = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ScrubbyPine", "maxheightScrubbyPine", maxheightScrubbyPine);
+        prop.setComment("Maximum height that Scrubby Pines can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightScrubbyPine = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen ScrubbyPine", "multiplierScrubbyPine", multiplierScrubbyPine);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierScrubbyPine = prop.getDouble();
+        propOrder.add(prop.getName());
+        
         prop = cfg.get("WorldGen Pseudovoltzia", "genPseudovoltzia", genPseudovoltzia);
         prop.setComment("Set to true to generate Pseudovoltzia naturally [default: false]");
         genPseudovoltzia = prop.getBoolean();

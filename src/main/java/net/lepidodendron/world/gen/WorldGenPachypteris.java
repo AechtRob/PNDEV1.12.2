@@ -25,7 +25,7 @@ public class WorldGenPachypteris extends WorldGenerator
 
             int yy = canSurviveAt(worldIn, blockpos);
 
-            if (blockpos.getY() >= worldIn.getSeaLevel()-6 && (!worldIn.provider.isNether() || blockpos.getY() < 254) && yy != 0)
+            if (blockpos.getY() >= worldIn.getSeaLevel() - 6 && yy != 0)
             {
                 BlockPos pos = new BlockPos(blockpos.getX(), yy + 1, blockpos.getZ());
                 if (isWaterBlock(worldIn, pos.up()) && isWaterBlock(worldIn, pos) && isWaterBlock(worldIn, pos.up(2))
@@ -99,28 +99,29 @@ public class WorldGenPachypteris extends WorldGenerator
         int k = pos.getZ();
         //Allow to spawn in 2-3 block water only. Spawns can be one block above ground due to prop-roots:
         if ((isWaterBlock(worldIn, new BlockPos(i, j, k))
-            && isWaterBlock(worldIn, new BlockPos(i, j - 1, k)))
+            && isWaterBlock(worldIn, new BlockPos(i, j - 1, k))
+            && worldIn.isAirBlock(new BlockPos(i, j + 1, k)))
             && (((worldIn.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.SAND)
             || ((worldIn.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.CLAY)
             || ((worldIn.getBlockState(new BlockPos(i, j - 2, k))).getMaterial() == Material.GROUND))) {
             j = j - 2;
             blockCriteria = true;
         }
-
-        if ((isWaterBlock(worldIn, new BlockPos(i, j, k))
+        else if ((isWaterBlock(worldIn, new BlockPos(i, j, k))
             && isWaterBlock(worldIn, new BlockPos(i, j - 1, k))
-            && isWaterBlock(worldIn, new BlockPos(i, j - 2, k)))
+            && isWaterBlock(worldIn, new BlockPos(i, j - 2, k))
+            && worldIn.isAirBlock(new BlockPos(i, j + 1, k)))
             && (((worldIn.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.SAND)
             || ((worldIn.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.CLAY)
             || ((worldIn.getBlockState(new BlockPos(i, j - 3, k))).getMaterial() == Material.GROUND))) {
             j = j - 3;
             blockCriteria = true;
         }
-
-        if ((isWaterBlock(worldIn, new BlockPos(i, j, k))
+        else if ((isWaterBlock(worldIn, new BlockPos(i, j, k))
             && isWaterBlock(worldIn, new BlockPos(i, j - 1, k))
             && isWaterBlock(worldIn, new BlockPos(i, j - 2, k))
-            && isWaterBlock(worldIn, new BlockPos(i, j - 3, k)))
+            && isWaterBlock(worldIn, new BlockPos(i, j - 3, k))
+            && worldIn.isAirBlock(new BlockPos(i, j + 1, k)))
             && (((worldIn.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.SAND)
             || ((worldIn.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.CLAY)
             || ((worldIn.getBlockState(new BlockPos(i, j - 4, k))).getMaterial() == Material.GROUND))) {
