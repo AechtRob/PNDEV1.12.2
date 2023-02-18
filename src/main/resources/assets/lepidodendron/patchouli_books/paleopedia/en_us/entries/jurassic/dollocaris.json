@@ -20,12 +20,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_dollocaris",
 			"type": "text",
-			"text": ""
+			"text": "Dollocaris is a thylacocephalan arthropod from the Jurassic. The larger species, D. ingens from La Voulte exceeds 30 cm, making it one of the largest members of the group. It is characterized by large eyes with around 18,000 lenses on each,"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dollocaris",
+			"type": "text",
+			"text": " and 3 pairs of raptorial appendages, meaning it was an active predator. Some researchers had examined eye function and resulted that eyes worked in illuminated environment. However, La Voulte is still considered as dim-light environment according to other fossil findings, so it is possible that was still able to move to deeper area, or just ported from shallower environment."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_dollocaris",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dollocaris",
+			"type": "text",
+			"text": ""
 		}
 	]
 }

@@ -1,31 +1,41 @@
 {
-	"name": "",
+	"name": "Saltriovenator",
 	"read_by_default": true,
-	"icon": "paleopedia:textures/_icon.png",
-	"category": "lepidodendron:_animal",
-	"turnin": "lepidodendron:pf_adv_book_",
+	"icon": "paleopedia:textures/saltriovenator_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_saltriovenator",
 	"pages": [
 		{
-			"trigger": "lepidodendron:pf_adv_book_",
-			"title": "",
+			"trigger": "lepidodendron:pf_adv_book_saltriovenator",
+			"title": "Saltriovenator",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() $(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Theropoda$(br)>Ceratosauria"
 		},
 		{
 			"type": "image",
-			"images": ["paleopedia:textures/.png"],
+			"images": ["paleopedia:textures/saltriovenator.png"],
 			"title": "S. zanellai",
 			"text": ""
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
 			"type": "text",
-			"text": ""
+			"text": "Saltriovenator is a ceratosaur from the Early Jurassic. The name of the animal comes from the place of its discovery, since it was found in the area around Saltrio in Italy, in the Salnova marble quarry."
 		},
 		{
-			"advancement": "lepidodendron:pf_adv_book_",
+			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
 			"type": "text",
-			"text": "$(l)Eats:$() $(br)$(l)Breeds with:$() $(br)$(l)Egg Type:$() $(br)$(l)Method of Obtaining:$() "
+			"text": "Originally discovered in 1996, the animal would remain unnamed, aside form the unofficial name \"Saltriosaur\", up until 2018, when it was formally described. The remains of the animal are not incredibly complete, which lead to several interpretations of the potential life appearance it might have had."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
+			"type": "text",
+			"text": "$(l)Eats:$() Meat$(br)$(l)Breeds with:$() Meat$(br)$(l)Egg Type:$() Nested Egg$(br)$(l)Method of Obtaining:$() Find Egg in Nest"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_saltriovenator",
+			"type": "text",
+			"text": ""
 		}
 	]
 }
