@@ -20,12 +20,22 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
 			"type": "text",
-			"text": ""
+			"text": "Piranhamesodon pinnatomus lurks among unsuspecting prey, masquerading as one of them in a display of what's known as aggressive mimicry. Piranhamesodon is, in fact, the oldest known occurrance of a piranha styled hunting lifestyle in the fossil record."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
+			"type": "text",
+			"text": "Despite being known from one single specimen, the fish's hunting behaviour has since been identified in several other fossils preserving fish with nibbled fins and damaged tissues seemingly matching this predator's bite. These fossils, in conjunction with its dentition and shape, were the origin of the aggressive mimicry hypothesis."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
 			"type": "text",
 			"text": "$(l)Eats:$() Fish $(br)$(l)Breeds with:$() Fish $(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_piranhamesodon",
+			"type": "text",
+			"text": ""
 		}
 	]
 }
