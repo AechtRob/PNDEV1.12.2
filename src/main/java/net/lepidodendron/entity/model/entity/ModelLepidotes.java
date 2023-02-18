@@ -342,17 +342,22 @@ public class ModelLepidotes extends AdvancedModelBase {
 
     public void renderStaticWall(float f) {
         this.Bodyfront.rotateAngleY = (float) Math.toRadians(90);
-        //this.body.offsetX = -0.09F;
         this.Bodyfront.offsetY = -0.13F;
         this.Bodyfront.offsetX = -0.06F;
         this.Bodyfront.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
+        this.Lowerjaw.rotateAngleX = (float) Math.toRadians(40.2);
+        this.Bodymiddle.rotateAngleY = (float) Math.toRadians(10);
+        this.Bodyend.rotateAngleY = (float) Math.toRadians(20);
+        this.Tailbase.rotateAngleY = (float) Math.toRadians(12.5);
+        this.Tailmiddlebase.rotateAngleY = (float) Math.toRadians(-17.5);
+        this.Tailmiddleend.rotateAngleY = (float) Math.toRadians(-20);
+        this.Tailend.rotateAngleY = (float) Math.toRadians(-18.2);
         this.setRotateAngle(Bodyfront, 0.7418F, (float) Math.toRadians(90), 0.0F);
-        //this.body.offsetX = -0.09F;
-        this.Bodyfront.offsetY = -0.13F;
-        this.Bodyfront.offsetZ = -0.04F;
+        this.Bodyfront.offsetY = -0.2F;
+        this.Bodyfront.offsetZ = 0.06F;
         this.Bodyfront.offsetX = -0.06F;
         this.Bodyfront.render(0.01F);
         resetToDefaultPose();

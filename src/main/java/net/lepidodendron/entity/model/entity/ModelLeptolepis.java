@@ -194,31 +194,19 @@ public class ModelLeptolepis extends AdvancedModelBase {
         this.main.render(f5);
     }
     public void renderStaticWall(float f) {
-        this.main.rotateAngleY = (float) Math.toRadians(270);
-        this.main.offsetX = -0.03F;
-        this.main.offsetY = -0.18F;
+        this.main.rotateAngleY = (float) Math.toRadians(90);
+        this.main.offsetX = -0.05F;
+        this.main.offsetY = -0.23F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.setRotateAngle(cube_r1, 0.3229F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r2, -0.3054F, 0.0F, 0.0F);
         this.setRotateAngle(tail, 0.0F, -0.3927F, 0.0F);
-        this.setRotateAngle(cube_r3, -0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r4, 0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r6, -0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r7, -0.0436F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r8, 0.0873F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r9, 0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r10, -0.8727F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r11, -0.0436F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r12, -0.2618F, 0.0F, 0.0F);
         this.setRotateAngle(jaw, -0.3491F, 0.0F, 0.0F);
-        this.setRotateAngle(cube_r13, 0.0873F, 0.0F, 0.0F);
         this.main.rotateAngleY = (float) Math.toRadians(90);
-        this.main.offsetY = -0.34F;
+        this.main.offsetY = -0.6F;
         this.main.offsetX = -0.04F;
-        this.main.offsetZ = 0.045F;
+        this.main.offsetZ = 0.0F;
         this.main.render(0.01F);
         resetToDefaultPose();
     }
