@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderArduafrons;
+import net.lepidodendron.entity.render.entity.RenderLepidotes;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -178,7 +179,7 @@ public class EntityPrehistoricFloraLepidotes extends EntityPrehistoricFloraFishB
 	//Rendering taxidermy:
 	//--------------------
 	public static double offsetWall() {
-		return 0.05;
+		return -0.12;
 	}
 	public static double upperfrontverticallinedepth() {
 		return 0.8;
@@ -199,7 +200,7 @@ public class EntityPrehistoricFloraLepidotes extends EntityPrehistoricFloraFishB
 		return -0.04F;
 	}
 	public static double lowerfrontverticallinedepth() {
-		return 0.39;
+		return 0.5F;
 	}
 	public static double lowerbackverticallinedepth() {
 		return 0;
@@ -218,14 +219,14 @@ public class EntityPrehistoricFloraLepidotes extends EntityPrehistoricFloraFishB
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_ARDUAFRONS;
+		return RenderDisplays.TEXTURE_LEPIDOTES;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelArduafrons;
+		return RenderDisplays.modelLepidotes;
 	}
 	public static float getScaler() {
-		return RenderArduafrons.getScaler();
+		return RenderLepidotes.getScaler();
 	}
 
 }

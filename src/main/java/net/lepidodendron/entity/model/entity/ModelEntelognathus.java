@@ -209,19 +209,40 @@ public class ModelEntelognathus extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.Root.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
-        this.Root.rotateAngleY = (float) Math.toRadians(90);
+    public void renderStaticWall(float f) {
+        this.Root.rotateAngleX = (float) Math.toRadians(90);
+        this.Root.rotateAngleZ = (float) Math.toRadians(90);
         this.Root.offsetX = -0.1F;
-        this.Root.offsetY = -0F;
+        this.Root.offsetY = -0.21F;
         this.Root.offsetZ = 0.02F;
         this.Root.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(forehead2, 0.1309F, 0.0F, 0.0F);
+        this.setRotateAngle(Jaw, -0.3927F, 0.0F, 0.0F);
+        this.setRotateAngle(lips, -0.5236F, 0.0F, 0.0F);
+        this.setRotateAngle(nose, -0.5672F, 0.0F, 0.0F);
+        this.setRotateAngle(forehead, -0.2531F, 0.0F, 0.0F);
+        this.setRotateAngle(eye, 0.0F, 0.0F, 0.5672F);
+        this.setRotateAngle(eye2, 0.0F, 0.0F, -0.5672F);
+        this.setRotateAngle(rfinspike, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(lfinspike, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(LPectoral, 0.0038F, -0.0872F, 0.1307F);
+        this.setRotateAngle(Body, 0.0F, -0.1309F, 0.0F);
+        this.setRotateAngle(Body2, 0.0F, -0.4363F, 0.0F);
+        this.setRotateAngle(Tail, 0.1064F, -0.6082F, -0.061F);
+        this.setRotateAngle(Tail2, 0.1962F, -0.4721F, -0.0902F);
+        this.setRotateAngle(Tail3, 0.2823F, 0.3786F, 0.1068F);
+        this.setRotateAngle(Tail4, -0.1064F, 0.6082F, -0.061F);
+        this.setRotateAngle(RPelvic, -0.0562F, 0.8653F, -0.2282F);
+        this.setRotateAngle(LPelvic, -0.0562F, -0.8653F, 0.2282F);
+        this.Root.rotateAngleY = (float) Math.toRadians(90);
+        this.Root.offsetX = -0.F;
+        this.Root.offsetY = 0.1F;
+        this.Root.offsetZ = -0.0F;
+        this.Root.render(0.01F);
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;

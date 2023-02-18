@@ -364,7 +364,7 @@ public class ModelDollocaris extends AdvancedModelBase {
         resetToDefaultPose();
     }
     public void renderStaticFloor(float f) {
-        this.body.rotateAngleY = (float) Math.toRadians(90);
+        this.body.rotateAngleY = (float) Math.toRadians(0);
         this.body.offsetZ = 0.03F;
         this.body.offsetY = -0.2F;
         this.body.render(0.01F);

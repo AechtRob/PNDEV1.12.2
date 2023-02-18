@@ -225,18 +225,31 @@ public class ModelSilurolepis extends AdvancedModelBase {
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         this.head.render(f5);
     }
-    public void renderStatic(float f) {
-        //GlStateManager.pushMatrix();
-        //GlStateManager.enableBlend();
-        //GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-        //GlStateManager.disableCull();
+    public void renderStaticWall(float f) {
+        this.head.rotateAngleX = (float) Math.toRadians(90);
+        this.head.rotateAngleZ = (float) Math.toRadians(90);
+        this.head.offsetX = -0.1F;
+        this.head.offsetZ = 0.F;
+        this.head.offsetY = -0.23F;
+        this.head.render(0.01F);
+        resetToDefaultPose();
+    }
+    public void renderStaticFloor(float f) {
+        this.setRotateAngle(fin2R, 0.0F, 0.7854F, 0.0F);
+        this.setRotateAngle(fin2L, 0.0F, -0.7854F, 0.0F);
+        this.setRotateAngle(body1, 0.0F, -0.1745F, 0.0F);
+        this.setRotateAngle(body2, 0.0F, -0.3054F, 0.0F);
+        this.setRotateAngle(body3, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(body4, 0.0F, -0.5236F, 0.0F);
+        this.setRotateAngle(body5, 0.0F, -0.7418F, 0.0F);
+        this.setRotateAngle(fin1R, 0.0F, 0.4363F, 0.0F);
+        this.setRotateAngle(fin1L, 0.0F, -0.4363F, 0.0F);
         this.head.rotateAngleY = (float) Math.toRadians(90);
         this.head.offsetX = -0.06F;
         this.head.offsetZ = 0.F;
+        this.head.offsetY = 0.1F;
         this.head.render(0.01F);
-        //GlStateManager.enableCull();
-        //GlStateManager.disableBlend();
-        //GlStateManager.popMatrix();
+        resetToDefaultPose();
     }
     public void setRotateAngle(ModelRenderer modelRenderer, float x, float y, float z) {
         modelRenderer.rotateAngleX = x;
