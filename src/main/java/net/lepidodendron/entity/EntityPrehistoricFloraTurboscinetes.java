@@ -5,7 +5,11 @@ import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
+import net.lepidodendron.entity.render.entity.RenderAsteracanthus;
+import net.lepidodendron.entity.render.entity.RenderTurboscinetes;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.ItemFishFood;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.item.ItemStack;
@@ -168,6 +172,59 @@ public class EntityPrehistoricFloraTurboscinetes extends EntityPrehistoricFloraA
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.TURBOSCINETES_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0.F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_TURBOSCINETES;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelTurboscinetes;
+	}
+	public static float getScaler() {
+		return RenderTurboscinetes.getScaler();
 	}
 
 }

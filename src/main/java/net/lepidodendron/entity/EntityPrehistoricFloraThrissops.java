@@ -9,6 +9,10 @@ import net.lepidodendron.entity.ai.EntityMateAIFishBase;
 import net.lepidodendron.entity.ai.FishWander;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
+import net.lepidodendron.entity.render.entity.RenderRhadinacanthus;
+import net.lepidodendron.entity.render.entity.RenderThrissops;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.DamageSource;
@@ -168,6 +172,59 @@ public class EntityPrehistoricFloraThrissops extends EntityPrehistoricFloraFishB
 	@Nullable
 	protected ResourceLocation getLootTable() {
 		return LepidodendronMod.THRISSOPS_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return 0.02;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0.1;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.2;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0.045F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_THRISSOPS;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelThrissops;
+	}
+	public static float getScaler() {
+		return RenderThrissops.getScaler();
 	}
 
 

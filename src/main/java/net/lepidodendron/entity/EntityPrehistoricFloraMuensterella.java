@@ -9,7 +9,11 @@ import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
 import net.lepidodendron.entity.ai.NautiloidWanderSurface;
 import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
+import net.lepidodendron.entity.render.entity.RenderEryon;
+import net.lepidodendron.entity.render.entity.RenderMuensterella;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.lepidodendron.item.entities.ItemNautiloidEggsMuensterella;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -141,6 +145,59 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 			return LepidodendronMod.MUENSTERELLA_LOOT_YOUNG;
 		}
 		return LepidodendronMod.MUENSTERELLA_LOOT;
+	}
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetCase() { return 0.3; }
+
+	public static double offsetWall() {
+		return 0.01;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 1.4;
+	}
+	public static double upperbackverticallinedepth() {return 0.8;}
+	public static double upperfrontlineoffset() {
+		return 0.4;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.4;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.15F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 0;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 0.6F;
+	}
+	public static double lowerfrontlineoffset() {
+		return 0;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return -0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_MUENSTERELLA;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelMuensterella;
+	}
+	public static float getScaler() {
+		return RenderMuensterella.getScaler();
 	}
 
 }
