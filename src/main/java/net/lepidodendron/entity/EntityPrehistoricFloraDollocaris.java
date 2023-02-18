@@ -10,6 +10,7 @@ import net.lepidodendron.entity.ai.FishWanderSurface;
 import net.lepidodendron.entity.ai.ShoalFishBaseAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderConcavicaris;
+import net.lepidodendron.entity.render.entity.RenderDollocaris;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -177,7 +178,7 @@ public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFish
 
 	//Rendering taxidermy:
 	//--------------------
-	public static double offsetCase() { return 0.3; }
+	public static double offsetCase() { return 0.36; }
 
 	public static double offsetWall() {
 		return 0.01;
@@ -220,14 +221,14 @@ public class EntityPrehistoricFloraDollocaris extends EntityPrehistoricFloraFish
 	}
 	@SideOnly(Side.CLIENT)
 	public static ResourceLocation textureDisplay() {
-		return RenderDisplays.TEXTURE_CONCAVICARIS;
+		return RenderDisplays.TEXTURE_DOLLOCARIS;
 	}
 	@SideOnly(Side.CLIENT)
 	public static ModelBase modelDisplay() {
-		return RenderDisplays.modelConcavicaris;
+		return RenderDisplays.modelDollocaris;
 	}
 	public static float getScaler() {
-		return RenderConcavicaris.getScaler();
+		return RenderDollocaris.getScaler();
 	}
 
 }
