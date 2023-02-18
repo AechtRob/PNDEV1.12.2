@@ -87,6 +87,8 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelEdaphosaurus modelEdaphosaurus = new ModelEdaphosaurus();
     public static final ResourceLocation TEXTURE_ELGINIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/elginia.png");
     public static final ModelElginia modelElginia = new ModelElginia();
+    public static final ResourceLocation TEXTURE_ENDOTHIODON = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/endothiodon.png");
+    public static final ModelEndothiodon modelEndothiodon = new ModelEndothiodon();
     public static final ResourceLocation TEXTURE_ENTELOGNATHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/entelognathus.png");
     public static final ModelEntelognathus modelEntelognathus = new ModelEntelognathus();
     public static final ResourceLocation TEXTURE_EORAPTOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoraptor.png");
@@ -207,8 +209,12 @@ public class RenderDisplays extends TileEntitySpecialRenderer<BlockDisplayWallMo
     public static final ModelRhamphodopsis modelRhamphodopsis = new ModelRhamphodopsis();
     public static final ResourceLocation TEXTURE_ROLFOSTEUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rolfosteus.png");
     public static final ModelRolfosteus modelRolfosteus = new ModelRolfosteus();
+    public static final ResourceLocation TEXTURE_RUBIDGEA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/rubidgea.png");
+    public static final ModelRubidgea modelRubidgea = new ModelRubidgea();
     public static final ResourceLocation TEXTURE_SAIVODUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saivodus.png");
     public static final ModelSaivodus modelSaivodus = new ModelSaivodus();
+    public static final ResourceLocation TEXTURE_SALTRIOVENATOR = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saltriovenator.png");
+    public static final ModelSaltriovenator modelSaltriovenator = new ModelSaltriovenator();
     public static final ResourceLocation TEXTURE_SAUROSUCHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/saurosuchus.png");
     public static final ModelSaurosuchus modelSaurosuchus = new ModelSaurosuchus();
     public static final ResourceLocation TEXTURE_SCHUGUROCARIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schugurocaris.png");
