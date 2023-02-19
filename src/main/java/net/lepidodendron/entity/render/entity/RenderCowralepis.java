@@ -11,7 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCowralepis extends RenderLiving<EntityPrehistoricFloraCowralepis> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cowralepis.png");
     public static float getScaler() {
-        return 0.7F * 0.55F;
+        return 0.7F * 0.3F;
     }
     public RenderCowralepis(RenderManager mgr) {
         super(mgr, new ModelCowralepis(), 0.0f);

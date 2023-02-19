@@ -4,10 +4,7 @@ package net.lepidodendron.entity;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.EatFishFoodAIAgeable;
-import net.lepidodendron.entity.ai.EntityMateAIAgeableBase;
-import net.lepidodendron.entity.ai.NautiloidWanderSurface;
-import net.lepidodendron.entity.ai.ShoalFishAgeableAI;
+import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraNautiloidBase;
 import net.lepidodendron.entity.render.entity.RenderEryon;
 import net.lepidodendron.entity.render.entity.RenderMuensterella;
@@ -95,7 +92,7 @@ public class EntityPrehistoricFloraMuensterella extends EntityPrehistoricFloraNa
 
 	protected void initEntityAI() {
 		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1));
-		tasks.addTask(2, new NautiloidWanderSurface(this, NO_ANIMATION));
+		tasks.addTask(2, new NautiloidWanderBottomDweller(this, NO_ANIMATION));
 		tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatFishFoodAIAgeable(this));
 	}
