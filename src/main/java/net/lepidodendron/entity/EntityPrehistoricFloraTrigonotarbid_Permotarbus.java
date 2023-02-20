@@ -11,10 +11,8 @@ import net.lepidodendron.entity.ai.LandWanderAvoidWaterClimbingAI;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandClimbingBase;
 import net.lepidodendron.item.entities.ItemBugRaw;
 import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -61,23 +59,6 @@ public class EntityPrehistoricFloraTrigonotarbid_Permotarbus extends EntityPrehi
 	@Override
 	public String getEggNBT() {
 		return LepidodendronMod.MODID + ":insect_eggs_trigonotarbid_perm";
-	}
-
-
-	@Override
-	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
-		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
-			return false;
-		}
-		IBlockState state = world.getBlockState(pos);
-		if (
-			(state.getMaterial() != Material.GLASS && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)
-			&& (state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.SOLID || state.getBlock().isFullCube(state))
-		)
-		{
-			return true;
-		}
-		return false;
 	}
 
 	@Override
