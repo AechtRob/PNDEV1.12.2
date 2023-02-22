@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_materpiscis",
 			"title": "Materpiscis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Placodermi$(br)>Ptyctodontida$(br)>Ptyctodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_materpiscis",
 			"type": "text",
-			"text": ""
+			"text": "Materpiscis is a Devonian ptyctodontid placoderm from the Gogo Formation of Australia. It was a small placoderm but is famous for being the oldest known vertebrate to exhibit birthing live young. Female Materpiscis had smooth pelvic fins while the males had claspers, making these one of the few placoderms to display sexual dimorphism."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_materpiscis",

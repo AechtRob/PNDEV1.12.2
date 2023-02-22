@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_wuttagoonaspis",
 			"title": "Wuttagoonaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Placodermi$(br)>Arthrodira$(br)>Wuttagoonaspidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthrodira$(br)>Wuttagoonaspidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",
 			"type": "text",
-			"text": ""
+			"text": "Wuttagoonaspis is arthrodiran known from Devonian Georgina Basin of central Australia. It is large placoderm with skull length about 21 cm, it had a pair of short spines on its armor. It probably had a benthic ecology, living in lacustrine environment."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_wuttagoonaspis",

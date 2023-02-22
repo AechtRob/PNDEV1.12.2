@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kujdanowiaspis",
 			"title": "Kujdanowiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Placodermi$(br)>Arthrodira$(br)>Actinolepidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthrodira$(br)>Actinolepidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_kujdanowiaspis",
 			"type": "text",
-			"text": ""
+			"text": "Kujdanowiaspis is antinolepid arthrodiran placoderm known from the Early Devonian of Europe. It had medium to large-sized spines on side, and sharply humped back. As an early form of arthrodiran placodrm, it had a relatively flat body and it was probably benthic."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_kujdanowiaspis",
