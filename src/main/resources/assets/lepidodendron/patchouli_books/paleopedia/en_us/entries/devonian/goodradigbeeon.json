@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_goodradigbeeon",
 			"title": "Goodradigbeeon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Placodermi$(br)>Arthrodira$(br)>Buchanosteidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Arthrodira$(br)>Buchanosteidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_goodradigbeeon",
 			"type": "text",
-			"text": ""
+			"text": "Goodradigbeeon is a buchanosteid arthrodiran placoderm described from the Devonian strata in Australia. Like other members in family, it had a flat skull, and it was probably a benthic fish, waiting for prey to swim by."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_goodradigbeeon",

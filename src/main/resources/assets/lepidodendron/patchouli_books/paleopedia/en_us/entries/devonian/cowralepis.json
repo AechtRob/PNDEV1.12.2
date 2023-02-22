@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cowralepis",
 			"title": "Cowralepis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish, Floodplain$(br2)>Placodermi$(br)>Phyllolepida$(br)>Phyllolepididae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Brackish, Floodplain$(br2)>Phyllolepida$(br)>Phyllolepididae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_cowralepis",
 			"type": "text",
-			"text": ""
+			"text": "Cowralepis is a genus of phyllolepid placoderm from the Devonian. Like other Phyllolepids, Cowralepis was incredibly flat, and likely an ambush predator like modern flatfish or wobbegongs. Several fossils of Cowralepis, including juveniles, have been found."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_cowralepis",

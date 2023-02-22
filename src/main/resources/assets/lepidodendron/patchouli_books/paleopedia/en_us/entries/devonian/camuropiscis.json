@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_camuropiscis",
 			"title": "Camuropiscis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Placodermi$(br)>Arthrodira$(br)>Camuropiscidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reef$(br2)>Arthrodira$(br)>Camuropiscidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_camuropiscis",
 			"type": "text",
-			"text": ""
+			"text": "Camuropiscis was a genus of arthrodire placoderm that lived during the Late Devonian (some 383 - 372 million years ago). Its fossils have been found at the famous Gogo Formation of Kimberly, Western Australia. Its name translates to \"flat-nosed fish\", and refers to its flattened, elongated snout, which may have been used for more streamlined swimming."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_camuropiscis",

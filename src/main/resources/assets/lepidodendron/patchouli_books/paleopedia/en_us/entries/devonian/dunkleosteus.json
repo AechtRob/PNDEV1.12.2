@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_dunkleosteus",
 			"title": "Dunkleosteus",
 			"type": "quest",
-			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Placodermi$(br)>Athrodira$(br)>Dunkleosteidae"
+			"text": "$(l)Temporal Range: $()Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Athrodira$(br)>Dunkleosteidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_brindabellaspis",
 			"title": "Brindabellaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reefs$(br2)>Placodermi$(br)>Brindabellaspida"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Reefs$(br2)>Brindabellaspida"
 		},
 		{
 			"type": "image",
