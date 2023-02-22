@@ -201,6 +201,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setTicks(0);
         this.setMateable(0);
+        ShoalingHelper.updateShoalTrilobiteBottomBase(this);
         return livingdata;
     }
 

@@ -524,6 +524,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         this.setWillHunt(false);
         this.heal(this.getMaxHealth());
         this.setNoAI(false);
+        ShoalingHelper.updateShoalAgeableBase(this);
         return livingdata;
     }
 

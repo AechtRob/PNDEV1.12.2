@@ -203,6 +203,7 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
         livingdata = super.onInitialSpawn(difficulty, livingdata);
         this.setTicks(0);
         this.setMateable(0);
+        ShoalingHelper.updateShoalFishBase(this);
         return livingdata;
     }
 
