@@ -602,9 +602,14 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockOligopoolMachine.BlockCustom.FACING).getOpposite();
-			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
-				return true;
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockOligopoolMachine.block) {
+					EnumFacing blockFacing = blockstate.getValue(BlockOligopoolMachine.BlockCustom.FACING).getOpposite();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
 			}
 			return super.hasCapability(capability, facing);
 		}

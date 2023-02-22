@@ -841,9 +841,14 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 
 		@Override
 		public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
-			if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
-				return true;
+			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
+			if (blockstate != null) {
+				if (blockstate.getBlock() == BlockDNARecombinerCentrifuge.block) {
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
+					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
+						return true;
+					}
+				}
 			}
 			return super.hasCapability(capability, facing);
 		}

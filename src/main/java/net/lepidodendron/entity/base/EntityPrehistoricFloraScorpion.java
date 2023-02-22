@@ -2,12 +2,8 @@
 package net.lepidodendron.entity.base;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.lepidodendron.block.BlockGlassJar;
 import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockFaceShape;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -20,7 +16,6 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
@@ -46,22 +41,6 @@ abstract public class EntityPrehistoricFloraScorpion extends EntityPrehistoricFl
 		this.isImmuneToFire = false;
 		setNoAI(!true);
 		enablePersistence();
-	}
-
-	@Override
-	public boolean isBlockClimbable(World world, BlockPos pos, EnumFacing facing) {
-		if (this.world.getBlockState(this.getPosition()).getBlock() == BlockGlassJar.block) {
-			return false;
-		}
-		IBlockState state = world.getBlockState(pos);
-		if (
-				(state.getMaterial() != Material.GLASS && state.getMaterial() != Material.WATER && state.getMaterial() != Material.LAVA && state.getMaterial() != Material.AIR)
-						&& (state.getBlockFaceShape(world, pos, facing) == BlockFaceShape.SOLID || state.getBlock().isFullCube(state))
-		)
-		{
-			return true;
-		}
-		return false;
 	}
 
 	public int getAttackLength() {

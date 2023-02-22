@@ -10,8 +10,12 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
+import net.lepidodendron.entity.render.entity.RenderRubidgea;
+import net.lepidodendron.entity.render.entity.RenderSaltriovenator;
+import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -311,5 +315,57 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		}
 		return LepidodendronMod.SALTRIOVENATOR_LOOT;
 	}
+
+
+	//Rendering taxidermy:
+	//--------------------
+	public static double offsetWall() {
+		return -0.3;
+	}
+	public static double upperfrontverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperbackverticallinedepth() {
+		return 0.8;
+	}
+	public static double upperfrontlineoffset() {
+		return 0.2;
+	}
+	public static double upperfrontlineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double upperbacklineoffset() {
+		return 0.2;
+	}
+	public static double upperbacklineoffsetperpendiular() {
+		return -0.04F;
+	}
+	public static double lowerfrontverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerbackverticallinedepth() {
+		return 1.3;
+	}
+	public static double lowerfrontlineoffset() {
+		return 1.4;
+	}
+	public static double lowerfrontlineoffsetperpendiular() {
+		return -0.17F;
+	}
+	public static double lowerbacklineoffset() {
+		return 0.6;
+	}
+	public static double lowerbacklineoffsetperpendiular() {
+		return 0F;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ResourceLocation textureDisplay() {
+		return RenderDisplays.TEXTURE_SALTRIOVENATOR;
+	}
+	@SideOnly(Side.CLIENT)
+	public static ModelBase modelDisplay() {
+		return RenderDisplays.modelSaltriovenator;
+	}
+	public static float getScaler() {return RenderSaltriovenator.getScaler();}
 
 }
