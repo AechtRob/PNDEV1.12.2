@@ -375,6 +375,7 @@ public class ModTriggers
     //Grouped ones:
     public static final CustomTrigger CLICK_BLASTOID = new CustomTrigger("pf_book_blastoid");
     public static final CustomTrigger CLICK_SPONGE = new CustomTrigger("pf_book_sponge");
+    public static final CustomTrigger CLICK_CORAL = new CustomTrigger("pf_book_coral");
     public static final CustomTrigger CLICK_CAYTONIALES = new CustomTrigger("pf_book_caytoniales");
     public static final CustomTrigger CLICK_FENESTELLA = new CustomTrigger("pf_book_fenestella");
     public static final CustomTrigger CLICK_MATONIA = new CustomTrigger("pf_book_matonia");
@@ -1335,6 +1336,7 @@ public class ModTriggers
             //Grouped ones:
             CLICK_BLASTOID,
             CLICK_SPONGE,
+            CLICK_CORAL,
             CLICK_CAYTONIALES,
             CLICK_FENESTELLA,
             CLICK_MATONIA,

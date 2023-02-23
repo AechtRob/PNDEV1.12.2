@@ -3300,6 +3300,46 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_bamboo"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_blue_crust"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_blue_staghorn"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_brain"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_carnation"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_red_tree"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_soft_fan"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_blooming"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_fractal_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_lumpy"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_pipe_stack"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_puffy"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_rough_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_sparse_branching"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_stony_tubular"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+					|| OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:coral_tan_staghorn"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))
+			) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CORAL.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 
 
 			//Special case:

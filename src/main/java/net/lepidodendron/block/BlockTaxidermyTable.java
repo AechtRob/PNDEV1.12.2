@@ -70,7 +70,7 @@ public class BlockTaxidermyTable extends ElementsLepidodendronMod.ModElement {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityTaxidermyTable.class, "lepidodendron:tileentitytaxidermy_table");
+		GameRegistry.registerTileEntity(BlockTaxidermyTable.TileEntityTaxidermyTable.class, "lepidodendron:tileentitytaxidermy_table");
 	}
 
 	@SideOnly(Side.CLIENT)

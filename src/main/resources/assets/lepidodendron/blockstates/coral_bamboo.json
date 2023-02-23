@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:coral_bamboo"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:coral_bamboo_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:coral_bamboo_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:coral_bamboo_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:coral_bamboo_side", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:coral_bamboo"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:coral_bamboo", "x": 180}
+    ]
+  }
+}

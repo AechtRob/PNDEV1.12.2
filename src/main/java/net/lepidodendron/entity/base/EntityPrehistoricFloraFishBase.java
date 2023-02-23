@@ -255,7 +255,9 @@ public abstract class EntityPrehistoricFloraFishBase extends EntityTameable impl
     @Override
     public boolean attackEntityFrom(DamageSource ds, float i) {
         if (ds == DamageSource.IN_WALL) {
-            return false;
+            if (this.isReallyInWater()) {
+                return false;
+            }
         }
         if (this.isEntityInvulnerable(ds))
         {

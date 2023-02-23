@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:coral_soft_fan"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:coral_soft_fan_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:coral_soft_fan_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:coral_soft_fan_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:coral_soft_fan_side", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:coral_soft_fan"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:coral_soft_fan", "x": 180}
+    ]
+  }
+}

@@ -173,6 +173,16 @@ public abstract class EntityPrehistoricFloraAgeableFishBase extends EntityPrehis
         return 10F - (i * 9F); //returns a number from 10 to 1
     }
 
+    @Override
+    public boolean attackEntityFrom(DamageSource ds, float i) {
+        if (ds == DamageSource.IN_WALL) {
+            if (this.isReallyInWater()) {
+                return false;
+            }
+        }
+        return super.attackEntityFrom(ds, i);
+    }
+
     public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
         RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
         return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;

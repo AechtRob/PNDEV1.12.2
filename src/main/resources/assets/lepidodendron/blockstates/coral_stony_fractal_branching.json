@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "normal": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching"}
+    ],
+    "facing=north": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching_side"}
+    ],
+    "facing=east": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching_side", "y": 90}
+    ],
+    "facing=south": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching_side", "y": 180}
+    ],
+    
+    "facing=west": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching_side", "y": 270}
+    ],
+  "facing=up": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching"}
+    ],
+    "facing=down": [
+      	{"model": "lepidodendron:coral_stony_fractal_branching", "x": 180}
+    ]
+  }
+}

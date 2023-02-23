@@ -1709,6 +1709,9 @@ public class LepidodendronConfigPlants {
     public static String[] genGreenStemmedAlgaeBlacklistBiomes = new String[0];
     public static String[] genGreenStemmedAlgaeOverrideBiomes = new String[0];
     public static int weightGreenStemmedAlgae = 100;
+    public static String[] genBrownAscendingAlgaeBlacklistBiomes = new String[0];
+    public static String[] genBrownAscendingAlgaeOverrideBiomes = new String[0];
+    public static int weightBrownAscendingAlgae = 100;
 
     public static String[] genOrangeSpongeBlacklistBiomes = new String[0];
     public static String[] genOrangeSpongeOverrideBiomes = new String[0];
@@ -1743,6 +1746,11 @@ public class LepidodendronConfigPlants {
     public static String[] genGigantospongiaBlacklistBiomes = new String[0];
     public static String[] genGigantospongiaOverrideBiomes = new String[0];
     public static int weightGigantospongia = 10;
+
+
+    public static String[] genCoralBlacklistBiomes = new String[0];
+    public static String[] genCoralOverrideBiomes = new String[0];
+    public static int weightCoral = 10;
 
     public static int[] dimRugosa = new int[0];
     public static String[] genRugosaBlacklistBiomes = new String[0];
@@ -2441,6 +2449,18 @@ public class LepidodendronConfigPlants {
         prop.setComment("Percentage chance that Green Stemmed Algae generates in a suitable chunk (0 to 100) [default: 100]");
         weightGreenStemmedAlgae = prop.getInt();
         propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "genBrownAscendingAlgaeBlacklistBiomes", genBrownAscendingAlgaeBlacklistBiomes);
+        prop.setComment("List of biomes that Brown Ascending Algae are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genBrownAscendingAlgaeBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "genBrownAscendingAlgaeOverrideBiomes", genBrownAscendingAlgaeOverrideBiomes);
+        prop.setComment("List of biomes that Brown Ascending Algae are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genBrownAscendingAlgaeOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Algae-Sponges", "weightBrownAscendingAlgae", weightBrownAscendingAlgae);
+        prop.setComment("Percentage chance that Brown Ascending Algae generates in a suitable chunk (0 to 100) [default: 100]");
+        weightBrownAscendingAlgae = prop.getInt();
+        propOrder.add(prop.getName());
 
 
         prop = cfg.get("WorldGen Algae-Sponges", "genPiledAlgaeBlacklistBiomes", genPiledAlgaeBlacklistBiomes);
@@ -2570,6 +2590,19 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Algae-Sponges", "weightBlueSponge", weightBlueSponge);
         prop.setComment("Percentage chance that Blue Sponges generates in a suitable chunk (0 to 100) [default: 10]");
         weightBlueSponge = prop.getInt();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Corals", "genCoralBlacklistBiomes", genCoralBlacklistBiomes);
+        prop.setComment("List of biomes Corals are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genCoralBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Corals", "genCoralOverrideBiomes", genCoralOverrideBiomes);
+        prop.setComment("List of biomes Corals are forced to generate in (provided the dimension is also valid), in the format: modid:biomeid [default: empty]");
+        genCoralOverrideBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Corals", "weightCoral", weightCoral);
+        prop.setComment("Percentage chance that Corals generate in a suitable chunk (0 to 100) [default: 10]");
+        weightCoral = prop.getInt();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Algae-Sponges", "genGigantospongiaBlacklistBiomes", genGigantospongiaBlacklistBiomes);

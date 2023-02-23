@@ -62,7 +62,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelArctinurus modelArctinurus;
     private static final ResourceLocation TEXTURE_ASAPHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/asaphus.png");
     private final ModelAsaphus modelAsaphus;
-    private static final ResourceLocation TEXTURE_ATTERCOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/attercopus.png");
+    private static final ResourceLocation TEXTURE_ATTERCOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_attercopus.png");
     private static final ResourceLocation TEXTURE_AULACOCERAS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/aulacoceras.png");
     private final ModelAulacoceras modelAulacoceras;
     private static final ResourceLocation TEXTURE_AUSTROLIMULUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/austrolimulus.png");
@@ -93,7 +93,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelTitanoptera modelTitanoptera;
     private static final ResourceLocation TEXTURE_CROTALOCEPHALUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/crotalocephalus.png");
     private final ModelCrotalocephalus modelCrotalocephalus;
-    private static final ResourceLocation TEXTURE_CRYPTOMARTUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_5.png");
+    private static final ResourceLocation TEXTURE_CRYPTOMARTUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_anthracomartus.png");
     private static final ResourceLocation TEXTURE_DALMANITES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/dalmanites.png");
     private final ModelDalmanites modelDalmanites;
     private static final ResourceLocation TEXTURE_DELITZSCHALA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/delitzschala.png");
@@ -112,7 +112,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelEnoploura modelEnoploura;
     private static final ResourceLocation TEXTURE_EOARTHROPLEURA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoarthropleura.png");
     private final ModelEoarthropleura modelEoarthropleura;
-    private static final ResourceLocation TEXTURE_EOPHRYNUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_6.png");
+    private static final ResourceLocation TEXTURE_EOPHRYNUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_eophrynus.png");
     private static final ResourceLocation TEXTURE_EOREDLICHIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/eoredlichia.png");
     private final ModelEoredlichia modelEoredlichia;
     private static final ResourceLocation TEXTURE_ERICIXERXES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ericixerxes.png");
@@ -158,7 +158,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelKodymirus modelKodymirus;
     private static final ResourceLocation TEXTURE_KOKOMOPTERUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/kokomopterus.png");
     private final ModelKokomopterus modelKokomopterus;
-    private static final ResourceLocation TEXTURE_KREISCHERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_2.png");
+    private static final ResourceLocation TEXTURE_KREISCHERIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_kreischeria.png");
     private static final ResourceLocation TEXTURE_LANCEASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lanceaspis.png");
     private final ModelLanceaspis modelLanceaspis;
     private static final ResourceLocation TEXTURE_LIMULID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limulid.png");
@@ -210,12 +210,12 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private static final ResourceLocation TEXTURE_OPSIEOBUTHUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/scorpion_opsieobuthus.png");
     private static final ResourceLocation TEXTURE_OTTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ottoia.png");
     private final ModelOttoia modelOttoia;
-    private static final ResourceLocation TEXTURE_PALAEOCHARINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_4.png");
+    private static final ResourceLocation TEXTURE_PALAEOCHARINUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_palaeocharinus.png");
     private static final ResourceLocation TEXTURE_PALAEOISOPUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeoisopus.png");
     private final ModelPalaeoisopus modelPalaeoisopus;
     private static final ResourceLocation TEXTURE_PALAEONTINID = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/palaeontinid.png");
     private final ModelPalaeontinid modelPalaeontinid;
-    private static final ResourceLocation TEXTURE_PALAEOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_1.png");
+    private static final ResourceLocation TEXTURE_PALAEOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_palaeotarbus.png");
     private static final ResourceLocation TEXTURE_PARADOXIDES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paradoxides.png");
     private final ModelParadoxides modelParadoxides;
     private static final ResourceLocation TEXTURE_PARAPEYTOIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/parapeytoia.png");
@@ -224,7 +224,7 @@ public class RenderDisplayCase extends TileEntitySpecialRenderer<BlockDisplayCas
     private final ModelParvancorina modelParvancorina;
     private static final ResourceLocation TEXTURE_PAUCIPODIA = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/paucipodia.png");
     private final ModelPaucipodia modelPaucipodia;
-    private static final ResourceLocation TEXTURE_PERMOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_3.png");
+    private static final ResourceLocation TEXTURE_PERMOTARBUS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/trigonotarbid_permotarbus.png");
     private final ModelTrigonotarbid modelTrigonotarbid;
     private static final ResourceLocation TEXTURE_PHANTASPIS = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/phantaspis.png");
     private final ModelPhantaspis modelPhantaspis;

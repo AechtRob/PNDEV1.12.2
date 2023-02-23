@@ -1,0 +1,99 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:coral_blue_crust_var1"},
+      {"model": "lepidodendron:coral_blue_crust_var2"},
+      {"model": "lepidodendron:coral_blue_crust_var3"},
+      {"model": "lepidodendron:coral_blue_crust_var4"},
+      {"model": "lepidodendron:coral_blue_crust_var1a"},
+      {"model": "lepidodendron:coral_blue_crust_var2a"},
+      {"model": "lepidodendron:coral_blue_crust_var3a"},
+      {"model": "lepidodendron:coral_blue_crust_var4a"}
+    ],
+    "facing=north": [
+      {"model": "lepidodendron:coral_blue_crust_var1", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "x": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "x": 90}
+    ],
+    "facing=east": [
+      {"model": "lepidodendron:coral_blue_crust_var1", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "x": 90, "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "x": 90, "y": 90}
+    ],
+    "facing=south": [
+      {"model": "lepidodendron:coral_blue_crust_var1", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "x": 90, "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "x": 90, "y": 180}
+    ],
+
+    "facing=west": [
+      {"model": "lepidodendron:coral_blue_crust_var1", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var2", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var3", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var4", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "x": 90, "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "x": 90, "y": 270}
+    ],
+    "facing=up": [
+      {"model": "lepidodendron:coral_blue_crust_var1"},
+      {"model": "lepidodendron:coral_blue_crust_var2"},
+      {"model": "lepidodendron:coral_blue_crust_var3"},
+      {"model": "lepidodendron:coral_blue_crust_var4"},
+      {"model": "lepidodendron:coral_blue_crust_var1", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var1", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var1", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var2", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var3", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var4", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var1a"},
+      {"model": "lepidodendron:coral_blue_crust_var2a"},
+      {"model": "lepidodendron:coral_blue_crust_var3a"},
+      {"model": "lepidodendron:coral_blue_crust_var4a"},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "y": 90},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "y": 180},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "y": 270},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "y": 270}
+    ],
+    "facing=down": [
+      {"model": "lepidodendron:coral_blue_crust_var1", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var1a", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var2a", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var3a", "x": 180},
+      {"model": "lepidodendron:coral_blue_crust_var4a", "x": 180}
+    ]
+  }
+}

@@ -14,6 +14,7 @@ import net.minecraft.pathfinding.NodeProcessor;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateSwimmer;
 import net.minecraft.pathfinding.PathNodeType;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -163,6 +164,16 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
             return; //Do not play footsteps when in one-block deep water - we animate this as swimming there
         }
         super.playStepSound(pos, blockIn);
+    }
+
+    @Override
+    public boolean attackEntityFrom(DamageSource ds, float i) {
+        if (ds == DamageSource.IN_WALL) {
+            if (this.isReallyInWater()) {
+                return false;
+            }
+        }
+        return super.attackEntityFrom(ds, i);
     }
 
     @Override

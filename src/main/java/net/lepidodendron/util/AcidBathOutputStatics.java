@@ -583,7 +583,23 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
         return resLoc;
@@ -618,7 +634,23 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveInoceramus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
@@ -651,7 +683,23 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPaleogene);
         return resLoc;
@@ -684,7 +732,23 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsNeogene);
         return resLoc;
@@ -717,7 +781,23 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveDark.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveGreen.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveUpright.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyTubular.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralTanStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBrain.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueStaghorn.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralRedTree.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBamboo.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralBlueCrust.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralCarnation.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralSoftFan.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyBlooming.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyFractalBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyLumpy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPleistocene);
         return resLoc;
