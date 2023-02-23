@@ -86,8 +86,12 @@ dependencies {
     // These dependencies get remapped to your current MCP mappings
     // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
 
-    compile "net.ilexiconn:llibrary:1.7.19-1.12.2"
+    //compile "net.ilexiconn:llibrary:1.7.19-1.12.2"
+
+    compile files('libs/llibrary-1.7.20-1.12.2.jar')
+
     compile "vazkii.patchouli:Patchouli:1.0-21.4"
+
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
@@ -164,10 +168,10 @@ sourceSets {
 }
 
 repositories {
-    maven {
-        name = "ilexiconn"
-        url = "https://maven.mcmoddev.com"
-    }
+    //maven {
+    //    name = "ilexiconn"
+    //    url = "https://maven.mcmoddev.com"
+    //}
     maven { url 'https://maven.blamejared.com' }
 }
 
