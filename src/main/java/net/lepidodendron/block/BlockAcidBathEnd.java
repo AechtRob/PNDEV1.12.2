@@ -361,7 +361,7 @@ public class BlockAcidBathEnd extends ElementsLepidodendronMod.ModElement {
 									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
 									powerBlockStorage.extractEnergy(energyTransferIn, false);
 									this.receiveEnergy(energyTransferIn, false);
-									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+									//this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
 								}
 							}
 						}

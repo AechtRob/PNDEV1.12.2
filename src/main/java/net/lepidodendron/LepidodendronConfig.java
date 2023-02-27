@@ -171,6 +171,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsOceanPF = new String[0];
     public static String[] dimJurassicMobsOceanGlassSpongePF = new String[0];
     public static String[] dimJurassicMobsOceanCoralPF = new String[0];
+    public static String[] dimJurassicMobsOceanRaftPF = new String[0];
     public static String[] dimJurassicMobsRiverPF = new String[0];
     public static String[] dimJurassicMobsGarriguePF = new String[0];
     public static String[] dimJurassicMobsGarrigueTreesPF = new String[0];
@@ -269,6 +270,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsOceanFA = new String[0];
     public static String[] dimJurassicMobsOceanGlassSpongeFA = new String[0];
     public static String[] dimJurassicMobsOceanCoralFA = new String[0];
+    public static String[] dimJurassicMobsOceanRaftFA = new String[0];
     public static String[] dimJurassicMobsRiverFA = new String[0];
     public static String[] dimJurassicMobsGarrigueFA = new String[0];
     public static String[] dimJurassicMobsGarrigueTreesFA = new String[0];
@@ -367,6 +369,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsOceanReborn = new String[0];
     public static String[] dimJurassicMobsOceanGlassSpongeReborn = new String[0];
     public static String[] dimJurassicMobsOceanCoralReborn = new String[0];
+    public static String[] dimJurassicMobsOceanRaftReborn = new String[0];
     public static String[] dimJurassicMobsRiverReborn = new String[0];
     public static String[] dimJurassicMobsGarrigueReborn = new String[0];
     public static String[] dimJurassicMobsGarrigueTreesReborn = new String[0];

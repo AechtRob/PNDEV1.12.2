@@ -129,9 +129,7 @@ public class BlockCoralBlueCrust extends ElementsLepidodendronMod.ModElement {
 
 		int multiplier = 1;
 
-		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_raised")
-				|| biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_sandbanks_solid"))
+		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))
 		{
 			multiplier = 20;
 		}

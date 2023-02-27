@@ -8,7 +8,6 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEndothiodon;
 import net.lepidodendron.entity.render.entity.RenderRubidgea;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -99,7 +98,7 @@ public class EntityPrehistoricFloraRubidgea extends EntityPrehistoricFloraLandBa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 2.47F;
+			speedBase = speedBase * 1.87F;
 		}
 		return speedBase;
 	}

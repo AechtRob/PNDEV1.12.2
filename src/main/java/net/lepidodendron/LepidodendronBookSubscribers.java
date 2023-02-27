@@ -3367,8 +3367,10 @@ public class LepidodendronBookSubscribers {
 		double actualHealth = 0;
 		BlockPos nestPos = null;
 		String nestString = "";
+
+		DecimalFormat df = new DecimalFormat("###.#");
 		if (event.getTarget() instanceof EntityPrehistoricFloraAgeableBase) {
-			agePercent = Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F) + "%";
+			agePercent = df.format(Math.floor(((EntityPrehistoricFloraAgeableBase)event.getTarget()).getAgeScale() * 100F)) + "%";
 		}
 		else {
 			agePercent = "100%";
@@ -3390,9 +3392,8 @@ public class LepidodendronBookSubscribers {
 			}
 		}
 
-		DecimalFormat df = new DecimalFormat("###.#");
 		if (event.getWorld().isRemote) {
-			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + df.format(agePercent) + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
+			event.getEntityPlayer().sendMessage(new TextComponentString(event.getTarget().getName() + " aged: " + agePercent + " health: " + df.format(actualHealth) + "/" + df.format(maxHealth) + " (" + Math.ceil((actualHealth/maxHealth) * 100) + "%)" + nestString));
 		}
 	}
 
@@ -8469,7 +8470,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			/*
+
 			else if (event.getTarget() instanceof EntityPrehistoricFloraThrissops) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_THRISSOPS.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8479,6 +8480,7 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			/*
 			else if (event.getTarget() instanceof EntityPrehistoricFloraBelonostomusJurassic) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_BELONOSTOMUS_JURASSIC.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8497,6 +8499,8 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			*/
+
 			else if (event.getTarget() instanceof EntityPrehistoricFloraMuensterella) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 					ModTriggers.CLICK_MUENSTERELLA.trigger((EntityPlayerMP) event.getEntityPlayer());
@@ -8569,7 +8573,6 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
-			 */
 
 			else if (event.getTarget() instanceof EntityPrehistoricFloraEntelognathus) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {

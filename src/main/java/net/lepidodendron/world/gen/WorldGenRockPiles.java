@@ -21,7 +21,11 @@ public class WorldGenRockPiles extends WorldGenerator
         this.startRadius = (int) Math.round(Math.random() * 2);
     }
 
-    public boolean generate(World worldIn, Random rand, BlockPos position)
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        return generate(worldIn, rand, position, false);
+    }
+
+    public boolean generate(World worldIn, Random rand, BlockPos position, boolean mossy)
     {
         while (true)
         {
@@ -74,6 +78,9 @@ public class WorldGenRockPiles extends WorldGenerator
                         	Block blockIn = Blocks.STONE;
                         	if (Math.random() > 0.65) {
                         		blockIn = Blocks.COBBLESTONE;
+                                if (mossy && Math.random() > 0.5) {
+                                    blockIn = Blocks.MOSSY_COBBLESTONE;
+                                }
                         	}
                         	if (Math.random() > 0.85) {
                         		blockIn = Blocks.GRAVEL;

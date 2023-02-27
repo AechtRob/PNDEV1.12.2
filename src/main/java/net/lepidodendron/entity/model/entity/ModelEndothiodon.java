@@ -390,7 +390,7 @@ public class ModelEndothiodon extends AdvancedModelBaseExtended {
         //float speed = masterSpeed / 2.625F;
         float speed = masterSpeed / 1.225F;
         if (Endothiodon.getIsFast()) {
-            speed = speed * 2;
+            speed = speed * 1.725F;
         }
 
         this.legRL1.offsetY = this.moveBoxExtended(speed, (float) Math.toRadians(1.8), false, 1, f2, 1.5F);;

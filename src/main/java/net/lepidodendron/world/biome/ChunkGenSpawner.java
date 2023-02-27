@@ -949,6 +949,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                    if (LepidodendronConfig.doSpawnsReborn) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOceanCoralReborn);
                    }
+               } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")) {
+                   if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOceanRaftPF);
+                   }
+                   if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOceanRaftFA);
+                   }
+                   if (LepidodendronConfig.doSpawnsReborn) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOceanRaftReborn);
+                   }
                } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_river")
                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_riverbank")
                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_mudflats")
@@ -1367,49 +1377,59 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                 Biome biome = world.getBiome(pos1);
                                                                 if (biome instanceof BiomeCambrian || biome instanceof BiomeOrdovician || biome instanceof BiomeSilurian || biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic || biome instanceof BiomeJurassic) {
-                                                                    boolean isOcean = false;
+                                                                    boolean isGenericOcean = false;
                                                                     if (biome instanceof BiomeCambrian) {
                                                                         if (((BiomeCambrian) biome).getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeOrdovician) {
                                                                         if (((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.Ocean
                                                                             || ((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeSilurian) {
                                                                         if (((BiomeSilurian) biome).getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeDevonian) {
-                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeCarboniferous) {
-                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomePermian) {
-                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
-                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeJurassic) {
-                                                                        if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
-                                                                    if (isOcean) { //Test if we are in a deep ocean biome:
+                                                                    if (isGenericOcean) { //Test if we are in a deep ocean biome:
                                                                         if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")
                                                                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea")
                                                                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
@@ -1497,44 +1517,59 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                 Biome biome = world.getBiome(pos1);
                                                                 if (biome instanceof BiomeCambrian || biome instanceof BiomeOrdovician || biome instanceof BiomeSilurian || biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic || biome instanceof BiomeJurassic) {
-                                                                    boolean isOcean = false;
+                                                                    boolean isGenericOcean = false;
                                                                     if (biome instanceof BiomeCambrian) {
                                                                         if (((BiomeCambrian) biome).getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeOrdovician) {
                                                                         if (((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.Ocean
                                                                                 || ((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeSilurian) {
                                                                         if (((BiomeSilurian) biome).getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeDevonian) {
-                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeCarboniferous) {
-                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomePermian) {
-                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
-                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
-                                                                    if (isOcean) {
+                                                                    if (biome instanceof BiomeJurassic) {
+                                                                        if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))) {
+                                                                            isGenericOcean = true;
+                                                                        }
+                                                                    }
+                                                                    if (isGenericOcean) {
                                                                         if ((!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea"))
                                                                                 && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea"))
                                                                                 && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice"))
@@ -1723,49 +1758,59 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                                 Biome biome = world.getBiome(pos1);
                                                                 if (biome instanceof BiomeCambrian || biome instanceof BiomeOrdovician || biome instanceof BiomeSilurian || biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                    boolean isOcean = false;
+                                                                    boolean isGenericOcean = false;
                                                                     if (biome instanceof BiomeCambrian) {
                                                                         if (((BiomeCambrian) biome).getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeOrdovician) {
                                                                         if (((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.Ocean
                                                                                 || ((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeSilurian) {
                                                                         if (((BiomeSilurian) biome).getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
-                                                                            isOcean = true;
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeDevonian) {
-                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeCarboniferous) {
-                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomePermian) {
-                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeTriassic) {
-                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
                                                                     if (biome instanceof BiomeJurassic) {
-                                                                        if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
-                                                                            isOcean = true;
+                                                                        if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
+                                                                                && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))) {
+                                                                            isGenericOcean = true;
                                                                         }
                                                                     }
-                                                                    if (isOcean) { //Test if we are in a deep ocean biome:
+                                                                    if (isGenericOcean) { //Test if we are in a deep ocean biome:
                                                                         if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")
                                                                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea")
                                                                                 || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")
@@ -1853,49 +1898,59 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                             //First check if we are in an ocean biome with distinct shallow and deep parts:
                                                             Biome biome = world.getBiome(pos1);
                                                             if (biome instanceof BiomeCambrian || biome instanceof BiomeOrdovician || biome instanceof BiomeSilurian || biome instanceof BiomeDevonian || biome instanceof BiomeCarboniferous || biome instanceof BiomePermian || biome instanceof BiomeTriassic) {
-                                                                boolean isOcean = false;
+                                                                boolean isGenericOcean = false;
                                                                 if (biome instanceof BiomeCambrian) {
                                                                     if (((BiomeCambrian) biome).getBiomeType() == EnumBiomeTypeCambrian.Ocean) {
-                                                                        isOcean = true;
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeOrdovician) {
                                                                     if (((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.Ocean
                                                                             || ((BiomeOrdovician) biome).getBiomeType() == EnumBiomeTypeOrdovician.FrozenOcean) {
-                                                                        isOcean = true;
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeSilurian) {
                                                                     if (((BiomeSilurian) biome).getBiomeType() == EnumBiomeTypeSilurian.Ocean) {
-                                                                        isOcean = true;
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeDevonian) {
-                                                                    if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean) {
-                                                                        isOcean = true;
+                                                                    if (((BiomeDevonian) biome).getBiomeType() == EnumBiomeTypeDevonian.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_ocean_dead_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:devonian_reef_transition"))) {
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeCarboniferous) {
-                                                                    if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean) {
-                                                                        isOcean = true;
+                                                                    if (((BiomeCarboniferous) biome).getBiomeType() == EnumBiomeTypeCarboniferous.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:carboniferous_ocean_cliff"))) {
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomePermian) {
-                                                                    if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean) {
-                                                                        isOcean = true;
+                                                                    if (((BiomePermian) biome).getBiomeType() == EnumBiomeTypePermian.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_cliff"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:permian_ocean_sponge_reef"))) {
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeTriassic) {
-                                                                    if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean) {
-                                                                        isOcean = true;
+                                                                    if (((BiomeTriassic) biome).getBiomeType() == EnumBiomeTypeTriassic.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:triassic_ocean_clam_beds"))) {
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
                                                                 if (biome instanceof BiomeJurassic) {
-                                                                    if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean) {
-                                                                        isOcean = true;
+                                                                    if (((BiomeJurassic) biome).getBiomeType() == EnumBiomeTypeJurassic.Ocean
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_glass_sponge_reef"))
+                                                                            && (!biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_coral"))) {
+                                                                        isGenericOcean = true;
                                                                     }
                                                                 }
-                                                                if (isOcean) { //Test if we are in a deep ocean biome:
+                                                                if (isGenericOcean) { //Test if we are in a deep ocean biome:
                                                                     if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:cambrian_sea")
                                                                             || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea")
                                                                             || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:ordovician_sea_ice")

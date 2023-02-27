@@ -312,6 +312,12 @@ public class BlockDisplayWallMount extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 		}
+
+		@Override
+		public boolean isOpaqueCube(IBlockState state)
+		{
+			return false;
+		}
 	}
 
 	public static class TileEntityDisplayWallMount extends TileEntityLockableLoot {

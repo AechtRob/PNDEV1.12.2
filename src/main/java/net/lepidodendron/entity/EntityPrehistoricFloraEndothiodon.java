@@ -8,7 +8,6 @@ import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.lepidodendron.entity.render.entity.RenderEndothiodon;
-import net.lepidodendron.entity.render.entity.RenderEntelognathus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
@@ -101,7 +100,7 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.25F;
+			speedBase = speedBase * 1.35F;
 		}
 		return speedBase;
 	}
