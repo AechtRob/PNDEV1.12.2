@@ -134,6 +134,9 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_SCYPHOCRINUS = new CustomTrigger("pf_book_crinoid_scyphocrinus");
     public static final CustomTrigger CLICK_CRINOID_SIPHONOCRINUS = new CustomTrigger("pf_book_crinoid_siphonocrinus");
     public static final CustomTrigger CLICK_CRINOID_TRAUMATOCRINUS = new CustomTrigger("pf_book_crinoid_traumatocrinus");
+    public static final CustomTrigger CLICK_CRINOID_SEIROCRINUS = new CustomTrigger("pf_book_crinoid_seirocrinus");
+    public static final CustomTrigger CLICK_CRINOID_APIOCRINITES = new CustomTrigger("pf_book_crinoid_apiocrinites");
+    public static final CustomTrigger CLICK_CRINOID_PENTACRINITES = new CustomTrigger("pf_book_crinoid_pentacrinites");
     public static final CustomTrigger CLICK_CRINOID_VADAROCRINUS = new CustomTrigger("pf_book_crinoid_vadarocrinus");
     public static final CustomTrigger CLICK_CRINOID_VOSTOCOVACRINUS = new CustomTrigger("pf_book_crinoid_vostocovacrinus");
     public static final CustomTrigger CLICK_CTENIS = new CustomTrigger("pf_book_ctenis");
@@ -1097,6 +1100,9 @@ public class ModTriggers
             CLICK_CRINOID_SCYPHOCRINUS,
             CLICK_CRINOID_SIPHONOCRINUS,
             CLICK_CRINOID_TRAUMATOCRINUS,
+            CLICK_CRINOID_SEIROCRINUS,
+            CLICK_CRINOID_APIOCRINITES,
+            CLICK_CRINOID_PENTACRINITES,
             CLICK_CRINOID_VADAROCRINUS,
             CLICK_CRINOID_VOSTOCOVACRINUS,
             CLICK_CTENIS,

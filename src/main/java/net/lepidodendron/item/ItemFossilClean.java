@@ -1054,6 +1054,9 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_endothiodon_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_rubidgea_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_saltriovenator_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_seirocrinus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_pentacrinites_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_apiocrinites_clean", "inventory"),
 
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
