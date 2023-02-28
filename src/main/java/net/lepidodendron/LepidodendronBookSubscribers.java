@@ -1018,6 +1018,33 @@ public class LepidodendronBookSubscribers {
 				event.setCanceled(true);
 				return;
 			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:crinoid_eugeniacrinites"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CRINOID_EUGENIACRINITES.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:crinoid_phyllocrinus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CRINOID_PHYLLOCRINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
+			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:crinoid_balanocrinus"),
+					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
+				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+					ModTriggers.CLICK_CRINOID_BALANOCRINUS.trigger((EntityPlayerMP) event.getEntityPlayer());
+				}
+				event.getEntityPlayer().swingArm(event.getHand());
+				event.setCanceled(true);
+				return;
+			}
 			else if (OreDictionary.containsMatch(false, OreDictionary.getOres("staticdnaPNlepidodendron:crinoid_pentacrinites"),
 					target.getPickBlock(state, new RayTraceResult(event.getEntityPlayer()), event.getWorld(), event.getPos(), event.getEntityPlayer()))) {
 				if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {

@@ -599,7 +599,12 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPipeStack.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyPuffy.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidSeirocrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidBalanocrinus.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidPentacrinites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidApiocrinites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidEugeniacrinites.block).toString(),
+                ForgeRegistries.BLOCKS.getKey(BlockCrinoidPhyllocrinus.block).toString()
         };
         ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
         return resLoc;

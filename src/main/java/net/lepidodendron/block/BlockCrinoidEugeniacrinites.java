@@ -52,11 +52,11 @@ import java.util.List;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockCrinoidApiocrinites extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:crinoid_apiocrinites")
+public class BlockCrinoidEugeniacrinites extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:crinoid_eugeniacrinites")
 	public static final Block block = null;
-	public BlockCrinoidApiocrinites(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.crinoid_apiocrinites);
+	public BlockCrinoidEugeniacrinites(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.crinoid_eugeniacrinites);
 	}
 
 	@Override
@@ -69,14 +69,14 @@ public class BlockCrinoidApiocrinites extends ElementsLepidodendronMod.ModElemen
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:crinoid_apiocrinites", "inventory"));
+				new ModelResourceLocation("lepidodendron:crinoid_eugeniacrinites", "inventory"));
 		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockMacrocystisKelp.LEVEL).build());
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_apiocrinites", BlockCrinoidApiocrinites.block);
+		OreDictionary.registerOre("staticdnaPNlepidodendron:crinoid_eugeniacrinites", BlockCrinoidEugeniacrinites.block);
 	}
 
 
@@ -168,10 +168,10 @@ public class BlockCrinoidApiocrinites extends ElementsLepidodendronMod.ModElemen
 	private static int crinoidHeight(World worldIn, BlockPos pos, Random random) {
 		if (worldIn.getBiome(pos).getRegistryName().toString().equalsIgnoreCase("lepidodendron:silurian_sea_garden")) {
 			if (random.nextInt(8) != 0) {
-				return BlockCrinoidApiocrinites.BlockCustom.crinoidheight;
+				return BlockCrinoidEugeniacrinites.BlockCustom.crinoidheight;
 			}
 		}
-		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidApiocrinites.BlockCustom.crinoidheight) + 1) + 1);
+		return 1 + random.nextInt(random.nextInt(random.nextInt(BlockCrinoidEugeniacrinites.BlockCustom.crinoidheight) + 1) + 1);
 	}
 	
 	public static class BlockCustom extends Block implements net.minecraftforge.common.IShearable  {
@@ -187,11 +187,11 @@ public class BlockCrinoidApiocrinites extends ElementsLepidodendronMod.ModElemen
 			setResistance(0F);
 			setLightLevel(0F);
 			setLightOpacity(3);
-			crinoidheight = 3;
+			crinoidheight = 4;
 			this.setDefaultState(this.blockState.getBaseState().withProperty(TOPSHOOT, false).withProperty(AGE, Integer.valueOf(0)));
         	this.setTickRandomly(true);
-			setTranslationKey("pf_crinoid_apiocrinites");
-			setRegistryName("crinoid_apiocrinites");
+			setTranslationKey("pf_crinoid_eugeniacrinites");
+			setRegistryName("crinoid_eugeniacrinites");
 		}
 
 		@Override
