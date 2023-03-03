@@ -114,7 +114,7 @@ public class BlockCoalTarProcessor extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up()) && isReplaceable(worldIn, pos.up(2));
+			return super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up()) && super.canPlaceBlockAt(worldIn, pos.up(2));
 		}
 
 		@Override
