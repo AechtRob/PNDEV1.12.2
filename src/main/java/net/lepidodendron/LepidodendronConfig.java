@@ -185,6 +185,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsMirePF = new String[0];
     public static String[] dimJurassicMobsMudflatsPF = new String[0];
     public static String[] dimJurassicMobsOutcropsPF = new String[0];
+    public static String[] dimJurassicMobsOutcropsRocksPF = new String[0];
     public static String[] dimJurassicMobsConiferousPF = new String[0];
     public static String[] dimJurassicMobsRoughHillsPF = new String[0];
     public static String[] dimJurassicMobsIslandsPF = new String[]{"lepidodendron:prehistoric_flora_megalosaurus:2:-1:1"};
@@ -284,6 +285,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsMireFA = new String[0];
     public static String[] dimJurassicMobsMudflatsFA = new String[0];
     public static String[] dimJurassicMobsOutcropsFA = new String[0];
+    public static String[] dimJurassicMobsOutcropsRocksFA = new String[0];
     public static String[] dimJurassicMobsConiferousFA = new String[0];
     public static String[] dimJurassicMobsRoughHillsFA = new String[0];
     public static String[] dimJurassicMobsIslandsFA = new String[0];
@@ -383,6 +385,7 @@ public class LepidodendronConfig {
     public static String[] dimJurassicMobsMireReborn = new String[0];
     public static String[] dimJurassicMobsMudflatsReborn = new String[0];
     public static String[] dimJurassicMobsOutcropsReborn = new String[0];
+    public static String[] dimJurassicMobsOutcropsRocksReborn = new String[0];
     public static String[] dimJurassicMobsConiferousReborn = new String[0];
     public static String[] dimJurassicMobsRoughHillsReborn = new String[0];
     public static String[] dimJurassicMobsIslandsReborn = new String[0];

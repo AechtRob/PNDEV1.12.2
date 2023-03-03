@@ -58,7 +58,8 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
 
         int spawnerCycle = 0;
         int spawnCounter = 0;
-        while (spawnerCycle < (int)Math.ceil((10D * spawnDensity))) {
+        int throttle = 0; //Used as an absolute maximum and for dealing with invalid entries on the list etc.
+        while (throttle <= 100 && spawnerCycle < (int)Math.ceil((10D * spawnDensity))) {
             BlockPos spawnPos = pos.add(16, 0, 16); //move to the centre of the 2x2 of chunks we are populating
             spawnPos = spawnPos.add(rand.nextInt(16) - 8, 0, rand.nextInt(16) - 8); //Pick a random coordinate around
 
@@ -1084,8 +1085,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsMudflatsReborn);
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsMudflatsReborn);
                    }
-               } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_outcrops_edge")
-                       || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_outcrops")) {
+               } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_outcrops_edge")) {
                    if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOutcropsPF);
                    }
@@ -1094,6 +1094,16 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                    }
                    if (LepidodendronConfig.doSpawnsReborn) {
                        MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOutcropsReborn);
+                   }
+               } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_outcrops")) {
+                   if (LepidodendronConfig.doSpawnsPrehistoricFloraDefault) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOutcropsRocksPF);
+                   }
+                   if (LepidodendronConfig.doSpawnsFossilsArcheology) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOutcropsRocksFA);
+                   }
+                   if (LepidodendronConfig.doSpawnsReborn) {
+                       MobString = ArrayUtils.addAll(MobString, LepidodendronConfig.dimJurassicMobsOutcropsRocksReborn);
                    }
                } else if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_redwood_forest")
                        || biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_redwood_hills")
@@ -2223,7 +2233,10 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                     System.err.println("Syntax error in mob spawn config: '" + checkEntity + "'!");
                 }
             }
-            spawnerCycle += 1;
+            if (!errFound) {
+                spawnerCycle += 1;
+            }
+            throttle ++;
         }
     }
 
