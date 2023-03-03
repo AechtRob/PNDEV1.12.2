@@ -912,8 +912,14 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
-            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
-                ShoalingHelper.updateShoalAgeableBase(this);
+            double factor = LepidodendronConfig.doShoalingFlockingFactor;
+            if (factor > 100) {
+                factor = 100;
+            }
+            if (factor > 0) {
+                if (((double) ii / Math.round(100D / factor)) == Math.round((double) ii / Math.round(100D / factor))) {
+                    ShoalingHelper.updateShoalAgeableBase(this);
+                }
             }
         }
 

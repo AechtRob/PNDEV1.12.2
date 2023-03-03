@@ -49,6 +49,7 @@ public class LepidodendronConfig {
     public static boolean fixApples = true;
     public static boolean doReSpawner = true;
     public static boolean doShoalingFlocking = true;
+    public static double doShoalingFlockingFactor = 1.0;
     
     public static boolean doShrinkBiomes = true;
 
@@ -769,6 +770,11 @@ public class LepidodendronConfig {
         prop = cfg.get("Global World-Gen", "doShoalingFlocking", doShoalingFlocking);
         prop.setComment("Allow appropriate fish to shoal and land mobs to flock (may be resource-intensive for weak PCs) [default: true]");
         doShoalingFlocking = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("Global World-Gen", "doShoalingFlockingFactor", doShoalingFlockingFactor);
+        prop.setComment("A factor to use to increase or decrease the frequency of game calculations done for shoaling and flocking (do not change this unless you have performance issues, and probably you want to decrease it, not increase it!) [default: 1.0]");
+        doShoalingFlockingFactor = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("Global Mobs", "jarMobs", jarMobs);

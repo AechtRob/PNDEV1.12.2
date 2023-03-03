@@ -97,7 +97,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 						ProcedureTreeLog.executeProcedure(x, y, z - ll, world, log, EnumFacing.EAST);
 						if (random.nextInt(3) != 0) {
 							c = 1;
-							cc = random.nextInt(8);
+							cc = random.nextInt(10);
 							while (c <= cc && (world.getBlockState(new BlockPos(x, (y - c), z - ll)).getMaterial() == Material.WATER
 									&& (world.getBlockState(new BlockPos(x, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
@@ -117,7 +117,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x, y - 1, z - ll, world, log, EnumFacing.NORTH);
 							if (random.nextInt(3) != 0) {
 								c = 0;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x, (y - 1 - c), z - ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x, (y - 1 - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x, (y - 1 - c), z - ll)).getBlock() instanceof BlockLiquid)
@@ -133,7 +133,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x + 1, y, z - ll, world, log, EnumFacing.UP);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x + 1, (y - c), z - ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x + 1, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + 1, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
@@ -149,7 +149,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x - 1, y, z - ll, world, log, EnumFacing.UP);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x - 1, (y - c), z - ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x - 1, (y - c), z - ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - 1, (y - c), z - ll)).getBlock() instanceof BlockLiquid)
@@ -170,7 +170,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 						ProcedureTreeLog.executeProcedure(x, y, z + ll, world, log, EnumFacing.EAST);
 						if (random.nextInt(3) != 0) {
 							c = 1;
-							cc = random.nextInt(8);
+							cc = random.nextInt(10);
 							while (c <= cc && (world.getBlockState(new BlockPos(x, (y - c), z + ll)).getMaterial() == Material.WATER
 									&& (world.getBlockState(new BlockPos(x, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
@@ -190,7 +190,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x, y - 1, z + ll, world, log, EnumFacing.NORTH);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x, (y - 1 - c), z + ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x, (y - 1 - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x, (y - 1 - c), z + ll)).getBlock() instanceof BlockLiquid)
@@ -206,7 +206,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x + 1, y, z + ll, world, log, EnumFacing.UP);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x + 1, (y - c), z + ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x + 1, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + 1, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
@@ -222,7 +222,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x - 1, y, z + ll, world, log, EnumFacing.UP);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x - 1, (y - c), z + ll)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x - 1, (y - c), z + ll)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - 1, (y - c), z + ll)).getBlock() instanceof BlockLiquid)
@@ -245,7 +245,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 						ProcedureTreeLog.executeProcedure(x - ll, y, z, world, log, EnumFacing.UP);
 						if (random.nextInt(3) != 0) {
 							c = 1;
-							cc = random.nextInt(8);
+							cc = random.nextInt(10);
 							while (c <= cc && (world.getBlockState(new BlockPos(x - ll, (y - c), z)).getMaterial() == Material.WATER
 									&& (world.getBlockState(new BlockPos(x - ll, (y - c), z)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x - ll, (y - c), z)).getBlock() instanceof BlockLiquid)
@@ -265,7 +265,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x - ll, y - 1, z, world, log, EnumFacing.NORTH);
 							if (random.nextInt(3) != 0) {
 								c = 0;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x - ll, (y - 1 - c), z)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x - ll, (y - 1 - c), z)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - 1 - c), z)).getBlock() instanceof BlockLiquid)
@@ -281,7 +281,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x - ll, y, z + 1, world, log, EnumFacing.EAST);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x - ll, (y - c), z + 1)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x - ll, (y - c), z + 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - c), z + 1)).getBlock() instanceof BlockLiquid)
@@ -297,7 +297,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x - ll, y, z - 1, world, log, EnumFacing.EAST);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x - ll, (y - c), z - 1)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x - ll, (y - c), z - 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x - ll, (y - c), z - 1)).getBlock() instanceof BlockLiquid)
@@ -318,7 +318,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 						ProcedureTreeLog.executeProcedure(x + ll, y, z, world, log, EnumFacing.UP);
 						if (random.nextInt(3) != 0) {
 							c = 1;
-							cc = random.nextInt(8);
+							cc = random.nextInt(10);
 							while (c <= cc && (world.getBlockState(new BlockPos(x + ll, (y - c), z)).getMaterial() == Material.WATER
 									&& (world.getBlockState(new BlockPos(x + ll, (y - c), z)).getBlock() instanceof BlockFluidBase
 									|| world.getBlockState(new BlockPos(x + ll, (y - c), z)).getBlock() instanceof BlockLiquid)
@@ -338,7 +338,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x + ll, y - 1, z, world, log, EnumFacing.NORTH);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x + ll, (y - 1 - c), z)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x + ll, (y - 1 - c), z)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - 1 - c), z)).getBlock() instanceof BlockLiquid)
@@ -354,7 +354,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x + ll, y, z + 1, world, log, EnumFacing.EAST);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x + ll, (y - c), z + 1)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x + ll, (y - c), z + 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - c), z + 1)).getBlock() instanceof BlockLiquid)
@@ -370,7 +370,7 @@ public class StructureTriassicDriftwood extends ElementsLepidodendronMod.ModElem
 							ProcedureTreeLog.executeProcedure(x + ll, y, z - 1, world, log, EnumFacing.EAST);
 							if (random.nextInt(3) != 0) {
 								c = 1;
-								cc = random.nextInt(8);
+								cc = random.nextInt(10);
 								while (c <= cc && (world.getBlockState(new BlockPos(x + ll, (y - c), z - 1)).getMaterial() == Material.WATER
 										&& (world.getBlockState(new BlockPos(x + ll, (y - c), z - 1)).getBlock() instanceof BlockFluidBase
 										|| world.getBlockState(new BlockPos(x + ll, (y - c), z - 1)).getBlock() instanceof BlockLiquid)

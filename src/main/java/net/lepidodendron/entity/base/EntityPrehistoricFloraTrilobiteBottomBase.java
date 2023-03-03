@@ -453,8 +453,12 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             this.alarmCooldown -= 1;
         }
 
-        if (LepidodendronConfig.doShoalingFlocking && this.canShoal() && !world.isRemote) {
-            if (((double)ii / 100D) == Math.round((double)ii / 100D)) {
+        double factor = LepidodendronConfig.doShoalingFlockingFactor;
+        if (factor > 100) {
+            factor = 100;
+        }
+        if (factor > 0) {
+            if (((double) ii / Math.round(100D / factor)) == Math.round((double) ii / Math.round(100D / factor))) {
                 ShoalingHelper.updateShoalTrilobiteBottomBase(this);
             }
         }
