@@ -171,6 +171,7 @@ public class BlockSlimyAlgaeLand extends ElementsLepidodendronMod.ModElement {
 					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GOURD)
 					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.IRON)
 					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.ROCK)
+					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.WOOD)
 					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.GRASS)
 					&& (worldIn.getBlockState(pos.down()).getMaterial() != Material.SAND))
 	    	{

@@ -147,9 +147,9 @@ public class ItemSlimyAlgaeItem extends ElementsLepidodendronMod.ModElement {
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.CLAY)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GLASS)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GOURD)
-			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.WOOD)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.IRON)
 			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.ROCK)
+			&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.WOOD)
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.GRASS)
     		&& (worldIn.getBlockState(pos.down(2)).getMaterial() != Material.SAND))
     	{

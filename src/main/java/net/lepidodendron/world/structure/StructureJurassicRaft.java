@@ -468,10 +468,13 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 		//Non-crinoid life:
 		BlockPos pos = new BlockPos(x, y, z);
 		//Moss:
-		if (random.nextInt(2) == 0 && BlockAncientMoss.block.canPlaceBlockAt(world, pos.up())) {
+		if (random.nextInt(3) == 0 && BlockSlimyAlgaeLand.block.canPlaceBlockAt(world, pos.up())) {
+			world.setBlockState(pos.up(), BlockSlimyAlgaeLand.block.getDefaultState());
+		}
+		else if (random.nextInt(5) == 0 && BlockAncientMoss.block.canPlaceBlockAt(world, pos.up())) {
 			world.setBlockState(pos.up(), BlockAncientMoss.block.getDefaultState().withProperty(BlockAncientMoss.BlockCustom.FACING, EnumFacing.UP));
 		}
-		else if (random.nextInt(4) == 0 && BlockSelaginella.block.canPlaceBlockAt(world, pos.up())) {
+		else if (random.nextInt(7) == 0 && BlockSelaginella.block.canPlaceBlockAt(world, pos.up())) {
 			world.setBlockState(pos.up(), BlockSelaginella.block.getDefaultState().withProperty(BlockSelaginella.BlockCustom.FACING, EnumFacing.UP));
 		}
 		//Algae:
