@@ -46,6 +46,21 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 6;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}
