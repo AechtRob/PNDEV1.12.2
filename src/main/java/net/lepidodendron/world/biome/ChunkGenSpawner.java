@@ -2103,21 +2103,21 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                                 spawnQty = rand.nextInt(maxSpawn) + 1;
                                                             }
                                                             if (entity instanceof EntityPrehistoricFloraAgeableBase) {
-                                                                if (((EntityPrehistoricFloraAgeableBase)entity).canShoal() && maxSpawn == 0) {
+                                                                if (((EntityPrehistoricFloraAgeableBase)entity).canShoal() && ((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraAgeableBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraAgeableBase)entity).getShoalSize() - halfShoal;
                                                                     spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
                                                                 }
                                                             }
                                                             if (entity instanceof EntityPrehistoricFloraFishBase) {
-                                                                if (((EntityPrehistoricFloraFishBase)entity).canShoal() && maxSpawn == 0) {
+                                                                if (((EntityPrehistoricFloraFishBase)entity).canShoal() && ((EntityPrehistoricFloraFishBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraFishBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraFishBase)entity).getShoalSize() - halfShoal;
                                                                     spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
                                                                 }
                                                             }
                                                             if (entity instanceof EntityPrehistoricFloraTrilobiteBottomBase) {
-                                                                if (((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal() && maxSpawn == 0) {
+                                                                if (((EntityPrehistoricFloraTrilobiteBottomBase)entity).canShoal() && ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() != 0) {
                                                                     int halfShoal = (int)Math.round((double)(((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize())/2D);
                                                                     int remainingShoal = ((EntityPrehistoricFloraTrilobiteBottomBase)entity).getShoalSize() - halfShoal;
                                                                     spawnQty = Math.max(1, halfShoal + rand.nextInt(remainingShoal + 1));
