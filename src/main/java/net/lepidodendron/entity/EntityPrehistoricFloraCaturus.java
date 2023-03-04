@@ -47,6 +47,21 @@ public class EntityPrehistoricFloraCaturus extends EntityPrehistoricFloraAgeable
 	}
 
 	@Override
+	public boolean canShoal() {
+		return (!(this.getAlarmCooldown() > 0));
+	}
+
+	@Override
+	public int getShoalSize() {
+		return 5;
+	}
+
+	@Override
+	public int getShoalDist() {
+		return 3;
+	}
+
+	@Override
 	public boolean isSmall() {
 		return true;
 	}

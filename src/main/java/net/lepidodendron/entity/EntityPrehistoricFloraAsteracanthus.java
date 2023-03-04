@@ -13,7 +13,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderAsteracanthus;
-import net.lepidodendron.entity.render.entity.RenderBungartius;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.model.ModelBase;
@@ -54,7 +53,7 @@ public class EntityPrehistoricFloraAsteracanthus extends EntityPrehistoricFloraA
 		//maxSize = 1.0F;
 		minWidth = 0.1F;
 		maxWidth = 0.8F;
-		maxHeight = 1.1F;
+		maxHeight = 0.9F;
 		maxHealthAgeable = 30.0D;
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();

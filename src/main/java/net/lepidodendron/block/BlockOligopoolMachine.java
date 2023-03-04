@@ -110,7 +110,7 @@ public class BlockOligopoolMachine extends ElementsLepidodendronMod.ModElement {
 
 		@Override
 		public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
-			return super.canPlaceBlockAt(worldIn, pos) && isReplaceable(worldIn, pos.up());
+			return super.canPlaceBlockAt(worldIn, pos) && super.canPlaceBlockAt(worldIn, pos.up());
 		}
 
 		@Override

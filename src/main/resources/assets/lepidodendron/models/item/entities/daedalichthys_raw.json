@@ -2,5 +2,14 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "paleopedia:daedalichthys_icon"
+  },
+  "display": {
+    "ground": {
+      "scale": [
+        0.275,
+        0.275,
+        0.275
+      ]
+    }
   }
 }

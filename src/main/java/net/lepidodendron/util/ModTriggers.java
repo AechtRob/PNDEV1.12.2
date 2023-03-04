@@ -134,6 +134,12 @@ public class ModTriggers
     public static final CustomTrigger CLICK_CRINOID_SCYPHOCRINUS = new CustomTrigger("pf_book_crinoid_scyphocrinus");
     public static final CustomTrigger CLICK_CRINOID_SIPHONOCRINUS = new CustomTrigger("pf_book_crinoid_siphonocrinus");
     public static final CustomTrigger CLICK_CRINOID_TRAUMATOCRINUS = new CustomTrigger("pf_book_crinoid_traumatocrinus");
+    public static final CustomTrigger CLICK_CRINOID_SEIROCRINUS = new CustomTrigger("pf_book_crinoid_seirocrinus");
+    public static final CustomTrigger CLICK_CRINOID_APIOCRINITES = new CustomTrigger("pf_book_crinoid_apiocrinites");
+    public static final CustomTrigger CLICK_CRINOID_BALANOCRINUS = new CustomTrigger("pf_book_crinoid_balanocrinus");
+    public static final CustomTrigger CLICK_CRINOID_EUGENIACRINITES = new CustomTrigger("pf_book_crinoid_eugenicrinites");
+    public static final CustomTrigger CLICK_CRINOID_PHYLLOCRINUS = new CustomTrigger("pf_book_crinoid_phyllocrinus");
+    public static final CustomTrigger CLICK_CRINOID_PENTACRINITES = new CustomTrigger("pf_book_crinoid_pentacrinites");
     public static final CustomTrigger CLICK_CRINOID_VADAROCRINUS = new CustomTrigger("pf_book_crinoid_vadarocrinus");
     public static final CustomTrigger CLICK_CRINOID_VOSTOCOVACRINUS = new CustomTrigger("pf_book_crinoid_vostocovacrinus");
     public static final CustomTrigger CLICK_CTENIS = new CustomTrigger("pf_book_ctenis");
@@ -673,6 +679,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ROBERTIA = new CustomTrigger("pf_book_robertia");
     public static final CustomTrigger CLICK_SACABAMBASPIS = new CustomTrigger("pf_book_sacabambaspis");
     public static final CustomTrigger CLICK_SAIVODUS = new CustomTrigger("pf_book_saivodus");
+    public static final CustomTrigger CLICK_SALTRIOVENATOR = new CustomTrigger("pf_book_saltriovenator");
     public static final CustomTrigger CLICK_SAURICHTHYS = new CustomTrigger("pf_book_saurichthys");
     public static final CustomTrigger CLICK_SAUROCTONUS = new CustomTrigger("pf_book_sauroctonus");
     public static final CustomTrigger CLICK_SCAUMENACIA = new CustomTrigger("pf_book_scaumenacia");
@@ -1097,6 +1104,12 @@ public class ModTriggers
             CLICK_CRINOID_SCYPHOCRINUS,
             CLICK_CRINOID_SIPHONOCRINUS,
             CLICK_CRINOID_TRAUMATOCRINUS,
+            CLICK_CRINOID_SEIROCRINUS,
+            CLICK_CRINOID_APIOCRINITES,
+            CLICK_CRINOID_BALANOCRINUS,
+            CLICK_CRINOID_EUGENIACRINITES,
+            CLICK_CRINOID_PHYLLOCRINUS,
+            CLICK_CRINOID_PENTACRINITES,
             CLICK_CRINOID_VADAROCRINUS,
             CLICK_CRINOID_VOSTOCOVACRINUS,
             CLICK_CTENIS,
@@ -1730,6 +1743,7 @@ public class ModTriggers
             CLICK_RUTIODON,
             CLICK_SACABAMBASPIS,
             CLICK_SAIVODUS,
+            CLICK_SALTRIOVENATOR,
             CLICK_SAURICHTHYS,
             CLICK_SAUROCTONUS,
             CLICK_SAUROSUCHUS,
