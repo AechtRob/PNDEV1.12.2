@@ -10,6 +10,7 @@ import net.lepidodendron.world.biome.jurassic.BiomeJurassic;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -44,11 +45,11 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 		else {
 			return;
 		}
-		int GenChance = 2000;
+		int GenChance = 1500;
 		int genTries = 1;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")) {
-			GenChance = 500000;
-			genTries = random.nextInt(6) + 1;
+			GenChance = 200000;
+			genTries = random.nextInt(5) + 1;
 		}
 		for (int tryGo = 1; tryGo <= genTries; tryGo++) {
 			if ((random.nextInt(1000000) + 1) <= GenChance) {
@@ -85,15 +86,15 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 				Block log = BlockBrachyphyllumLog.block;
 				boolean fat = false;
 				boolean big = true;
-				if (random.nextInt(6) == 0) {
+				if (random.nextInt(8) == 0) {
 					log = BlockDeadLog.block;
 					big = false;
 				}
-				if (random.nextInt(5) == 0) {
+				if (random.nextInt(6) == 0) {
 					log = BlockGinkgoLog.block;
 					big = false;
 				}
-				if (random.nextInt(5) == 0) {
+				if (random.nextInt(3) == 0) {
 					log = BlockTallAraucariaLog.block;
 					fat = true;
 				}
@@ -104,142 +105,333 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 					l = l * 2;
 				}
 				int ll;
-				switch (dir) {
-					case 0: { //North
-						ll = 0;
-						while (ll <= l) {
-							ProcedureTreeLog.executeProcedure(x, y, z - ll, world, log, EnumFacing.EAST);
-							spawnLife(world, x, y, z - ll, random);
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x, y + 1, z - ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x, y + 1, z - ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x, y + 1, z - ll, world, log, EnumFacing.NORTH);
-								spawnLife(world, x, y + 1, z - ll, random);
+				if (!fat) {
+					switch (dir) {
+						case 0: { //North
+							ll = 0;
+							while (ll <= l) {
+								ProcedureTreeLog.executeProcedure(x, y, z - ll, world, log, EnumFacing.EAST);
+								spawnLife(world, x, y, z - ll, random);
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x, y + 1, z - ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x, y + 1, z - ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x, y + 1, z - ll, world, log, EnumFacing.NORTH);
+									spawnLife(world, x, y + 1, z - ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x, y - 1, z - ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x, y - 1, z - ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x, y - 1, z - ll, world, log, EnumFacing.NORTH);
+									spawnLife(world, x, y - 1, z - ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + 1, y, z - ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + 1, y, z - ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + 1, y, z - ll, world, log, EnumFacing.UP);
+									spawnLife(world, x + 1, y, z - ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - 1, y, z - ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - 1, y, z - ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - 1, y, z - ll, world, log, EnumFacing.UP);
+									spawnLife(world, x - 1, y, z - ll, random);
+								}
+								ll += 1;
 							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x, y - 1, z - ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x, y - 1, z - ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x, y - 1, z - ll, world, log, EnumFacing.NORTH);
-								spawnLife(world, x, y - 1, z - ll, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + 1, y, z - ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + 1, y, z - ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + 1, y, z - ll, world, log, EnumFacing.UP);
-								spawnLife(world, x + 1, y, z - ll, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - 1, y, z - ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - 1, y, z - ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - 1, y, z - ll, world, log, EnumFacing.UP);
-								spawnLife(world, x - 1, y, z - ll, random);
-							}
-							ll += 1;
+							break;
 						}
-						break;
+
+						case 1: { //South
+							ll = 0;
+							while (ll <= l) {
+								ProcedureTreeLog.executeProcedure(x, y, z + ll, world, log, EnumFacing.EAST);
+								spawnLife(world, x, y, z + ll, random);
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x, y + 1, z + ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x, y + 1, z + ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x, y + 1, z + ll, world, log, EnumFacing.NORTH);
+									spawnLife(world, x, y + 1, z + ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x, y - 1, z + ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x, y - 1, z + ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x, y - 1, z + ll, world, log, EnumFacing.NORTH);
+									spawnLife(world, x, y - 1, z + ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + 1, y, z + ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + 1, y, z + ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + 1, y, z + ll, world, log, EnumFacing.UP);
+									spawnLife(world, x + 1, y, z + ll, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - 1, y, z + ll + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - 1, y, z + ll - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - 1, y, z + ll, world, log, EnumFacing.UP);
+									spawnLife(world, x - 1, y, z + ll, random);
+								}
+								ll += 1;
+							}
+							break;
+						}
+
+
+						case 2: { //West
+							ll = 0;
+							while (ll <= l) {
+								ProcedureTreeLog.executeProcedure(x - ll, y, z, world, log, EnumFacing.UP);
+								spawnLife(world, x - ll, y, z, random);
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - ll + 1, y + 1, z)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - ll - 1, y + 1, z)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - ll, y + 1, z, world, log, EnumFacing.NORTH);
+									spawnLife(world, x - ll, y + 1, z, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - ll + 1, y - 1, z)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - ll - 1, y - 1, z)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - ll, y - 1, z, world, log, EnumFacing.NORTH);
+									spawnLife(world, x - ll, y - 1, z, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - ll + 1, y, z + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - ll - 1, y, z + 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - ll, y, z + 1, world, log, EnumFacing.EAST);
+									spawnLife(world, x - ll, y, z + 1, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x - ll + 1, y, z - 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x - ll - 1, y, z - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x - ll, y, z - 1, world, log, EnumFacing.EAST);
+									spawnLife(world, x - ll, y, z - 1, random);
+								}
+								ll += 1;
+							}
+							break;
+						}
+
+						case 3: { //East
+							ll = 0;
+							while (ll <= l) {
+								ProcedureTreeLog.executeProcedure(x + ll, y, z, world, log, EnumFacing.UP);
+								spawnLife(world, x + ll, y, z, random);
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + ll + 1, y + 1, z)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + ll - 1, y + 1, z)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + ll, y + 1, z, world, log, EnumFacing.NORTH);
+									spawnLife(world, x + ll, y + 1, z, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + ll + 1, y - 1, z)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + ll - 1, y - 1, z)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + ll, y - 1, z, world, log, EnumFacing.NORTH);
+									spawnLife(world, x + ll, y - 1, z, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + ll + 1, y, z + 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + ll - 1, y, z + 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + ll, y, z + 1, world, log, EnumFacing.EAST);
+									spawnLife(world, x + ll, y, z + 1, random);
+								}
+								if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
+										&& !(world.getBlockState(new BlockPos(x + ll + 1, y, z - 1)).getBlock() == log
+										|| world.getBlockState(new BlockPos(x + ll - 1, y, z - 1)).getBlock() == log)) {
+									ProcedureTreeLog.executeProcedure(x + ll, y, z - 1, world, log, EnumFacing.EAST);
+									spawnLife(world, x + ll, y, z - 1, random);
+								}
+								ll += 1;
+							}
+							break;
+						}
 					}
-
-					case 1: { //South
-						ll = 0;
-						while (ll <= l) {
-							ProcedureTreeLog.executeProcedure(x, y, z + ll, world, log, EnumFacing.EAST);
-							spawnLife(world, x, y, z + ll, random);
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x, y + 1, z + ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x, y + 1, z + ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x, y + 1, z + ll, world, log, EnumFacing.NORTH);
-								spawnLife(world, x, y + 1, z + ll, random);
+				}
+				else {
+					//fat logs which can also do diagonal like shapes:
+					int diagonal = random.nextInt(3) - 1;
+					//if (random.nextInt(4) != 0) {
+					//	diagonal = 0;
+					//}
+					switch (dir) {
+						case 0: { //North
+							ll = 0;
+							while (ll <= l) {
+								if (random.nextInt(5) != 0) {
+									x = x + diagonal;
+									ProcedureTreeLog.executeProcedure(x, y, z - ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x + 1, y, z - ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x, y - 1, z - ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x + 1, y - 1, z - ll, world, log, EnumFacing.EAST);
+									spawnLife(world, x, y, z - ll, random);
+									spawnLife(world, x + 1, y, z - ll, random);
+									spawnLife(world, x, y - 1, z - ll, random);
+									spawnLife(world, x + 1, y - 1, z - ll, random);
+									if (random.nextInt(3) == 0) {
+										createBigBranch(world, x + (random.nextInt(2) - Math.abs(diagonal)), y - random.nextInt(2), z - ll, random, log, diagonal);
+									}
+									ll += 1;
+								}
 							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x, y - 1, z + ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x, y - 1, z + ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x, y - 1, z + ll, world, log, EnumFacing.NORTH);
-								spawnLife(world, x, y - 1, z + ll, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + 1, y, z + ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + 1, y, z + ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + 1, y, z + ll, world, log, EnumFacing.UP);
-								spawnLife(world, x + 1, y, z + ll, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - 1, y, z + ll + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - 1, y, z + ll - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - 1, y, z + ll, world, log, EnumFacing.UP);
-								spawnLife(world, x - 1, y, z + ll, random);
-							}
-							ll += 1;
+							break;
 						}
-						break;
+						case 1: { //South
+							ll = 0;
+							while (ll <= l) {
+								if (random.nextInt(5) != 0) {
+									x = x + diagonal;
+									ProcedureTreeLog.executeProcedure(x, y, z + ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x + 1, y, z + ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x, y - 1, z + ll, world, log, EnumFacing.EAST);
+									ProcedureTreeLog.executeProcedure(x + 1, y - 1, z + ll, world, log, EnumFacing.EAST);
+									spawnLife(world, x, y, z + ll, random);
+									spawnLife(world, x + 1, y, z + ll, random);
+									spawnLife(world, x, y - 1, z + ll, random);
+									spawnLife(world, x + 1, y - 1, z + ll, random);
+									if (random.nextInt(3) == 0) {
+										createBigBranch(world, x + (random.nextInt(2) - Math.abs(diagonal)), y - random.nextInt(2), z + ll, random, log, diagonal);
+									}
+									ll += 1;
+								}
+							}
+							break;
+						}
+						case 2: { //East
+							ll = 0;
+							while (ll <= l) {
+								if (random.nextInt(5) != 0) {
+									z = z + diagonal;
+									ProcedureTreeLog.executeProcedure(x + ll, y, z, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x + 1, y, z + 1, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x + ll, y - 1, z, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x + ll, y - 1, z + 1, world, log, EnumFacing.UP);
+									spawnLife(world, x + ll, y, z, random);
+									spawnLife(world, x + 1, y, z + 1, random);
+									spawnLife(world, x + ll, y - 1, z, random);
+									spawnLife(world, x + ll, y - 1, z + 1, random);
+									if (random.nextInt(3) == 0) {
+										createBigBranch(world, x + ll, y - random.nextInt(2), z + (random.nextInt(2) - Math.abs(diagonal)), random, log, diagonal);
+									}
+									ll += 1;
+								}
+							}
+							break;
+						}
+						case 3: { //West
+							ll = 0;
+							while (ll <= l) {
+								if (random.nextInt(5) != 0) {
+									z = z + diagonal;
+									ProcedureTreeLog.executeProcedure(x - ll, y, z, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x - ll, y, z + 1, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x - ll, y - 1, z, world, log, EnumFacing.UP);
+									ProcedureTreeLog.executeProcedure(x - ll, y - 1, z + 1, world, log, EnumFacing.UP);
+									spawnLife(world, x - ll, y, z, random);
+									spawnLife(world, x - ll, y, z + 1, random);
+									spawnLife(world, x - ll, y - 1, z, random);
+									spawnLife(world, x - ll, y - 1, z + 1, random);
+									if (random.nextInt(3) == 0) {
+										createBigBranch(world, x - ll, y - random.nextInt(2), z + (random.nextInt(2) - Math.abs(diagonal)), random, log, diagonal);
+									}
+									ll += 1;
+								}
+							}
+							break;
+						}
 					}
+				}
+			}
+		}
+	}
 
+	public void createBigBranch(World world, int x, int y, int z, Random random, Block log, int diagonal) {
+		if (random.nextInt(3) == 0) {
+			ProcedureTreeLog.executeProcedure(x, y + 1, z, world, log, EnumFacing.NORTH);
+			spawnLife(world, x, y + 1, z, random);
+			if (world.getBlockState(new BlockPos(x, y + 1, z)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x, y + 2, z, world, log, EnumFacing.NORTH);
+				spawnLife(world, x, y + 2, z, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x, y + 2, z)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x, y + 3, z, world, log, EnumFacing.NORTH);
+					spawnLife(world, x, y + 3, z, random);
+				}
+			}
+		}
 
-					case 2: { //West
-						ll = 0;
-						while (ll <= l) {
-							ProcedureTreeLog.executeProcedure(x - ll, y, z, world, log, EnumFacing.UP);
-							spawnLife(world, x - ll, y, z, random);
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - ll + 1, y + 1, z)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - ll - 1, y + 1, z)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - ll, y + 1, z, world, log, EnumFacing.NORTH);
-								spawnLife(world, x - ll, y + 1, z, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - ll + 1, y - 1, z)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - ll - 1, y - 1, z)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - ll, y - 1, z, world, log, EnumFacing.NORTH);
-								spawnLife(world, x - ll, y - 1, z, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - ll + 1, y, z + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - ll - 1, y, z + 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - ll, y, z + 1, world, log, EnumFacing.EAST);
-								spawnLife(world, x - ll, y, z + 1, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x - ll + 1, y, z - 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x - ll - 1, y, z - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x - ll, y, z - 1, world, log, EnumFacing.EAST);
-								spawnLife(world, x - ll, y, z - 1, random);
-							}
-							ll += 1;
-						}
-						break;
+		if (random.nextInt(5) == 0) {
+			ProcedureTreeLog.executeProcedure(x, y - 1, z, world, log, EnumFacing.NORTH);
+			spawnLife(world, x, y - 1, z, random);
+			if (world.getBlockState(new BlockPos(x, y - 1, z)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x, y - 2, z, world, log, EnumFacing.NORTH);
+				spawnLife(world, x, y - 2, z, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x, y - 2, z)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x, y - 3, z, world, log, EnumFacing.NORTH);
+					spawnLife(world, x, y - 3, z, random);
+				}
+			}
+		}
+
+		if (random.nextInt(5) == 0) {
+			ProcedureTreeLog.executeProcedure(x, y, z + 1, world, log, EnumFacing.EAST);
+			spawnLife(world, x, y, z + 1, random);
+			if (world.getBlockState(new BlockPos(x, y, z + 1)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x, y, z + 2, world, log, EnumFacing.EAST);
+				spawnLife(world, x, y, z, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x, y, z + 2)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x, y, z + 3, world, log, EnumFacing.EAST);
+					spawnLife(world, x, y, z + 3, random);
+					if (random.nextInt(2) == 0 && diagonal != 0 && world.getBlockState(new BlockPos(x, y, z + 3)).getBlock() == log) {
+						ProcedureTreeLog.executeProcedure(x, y, z + 4, world, log, EnumFacing.EAST);
+						spawnLife(world, x, y, z + 4, random);
 					}
+				}
+			}
+		}
 
-					case 3: { //East
-						ll = 0;
-						while (ll <= l) {
-							ProcedureTreeLog.executeProcedure(x + ll, y, z, world, log, EnumFacing.UP);
-							spawnLife(world, x + ll, y, z, random);
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + ll + 1, y + 1, z)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + ll - 1, y + 1, z)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + ll, y + 1, z, world, log, EnumFacing.NORTH);
-								spawnLife(world, x + ll, y + 1, z, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + ll + 1, y - 1, z)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + ll - 1, y - 1, z)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + ll, y - 1, z, world, log, EnumFacing.NORTH);
-								spawnLife(world, x + ll, y - 1, z, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + ll + 1, y, z + 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + ll - 1, y, z + 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + ll, y, z + 1, world, log, EnumFacing.EAST);
-								spawnLife(world, x + ll, y, z + 1, random);
-							}
-							if (ll <= 3 + random.nextInt(2) && random.nextInt(4) == 0
-									&& !(world.getBlockState(new BlockPos(x + ll + 1, y, z - 1)).getBlock() == log
-									|| world.getBlockState(new BlockPos(x + ll - 1, y, z - 1)).getBlock() == log)) {
-								ProcedureTreeLog.executeProcedure(x + ll, y, z - 1, world, log, EnumFacing.EAST);
-								spawnLife(world, x + ll, y, z - 1, random);
-							}
-							ll += 1;
-						}
-						break;
+		if (random.nextInt(5) == 0) {
+			ProcedureTreeLog.executeProcedure(x, y, z - 1, world, log, EnumFacing.EAST);
+			spawnLife(world, x, y, z - 1, random);
+			if (world.getBlockState(new BlockPos(x, y, z - 1)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x, y, z - 2, world, log, EnumFacing.EAST);
+				spawnLife(world, x, y, z - 2, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x, y, z - 2)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x, y, z - 3, world, log, EnumFacing.EAST);
+					spawnLife(world, x, y, z - 3, random);
+					if (random.nextInt(2) == 0 && diagonal != 0 && world.getBlockState(new BlockPos(x, y, z - 3)).getBlock() == log) {
+						ProcedureTreeLog.executeProcedure(x, y, z - 4, world, log, EnumFacing.EAST);
+						spawnLife(world, x, y, z - 4, random);
+					}
+				}
+			}
+		}
+
+		if (random.nextInt(5) == 0) {
+			ProcedureTreeLog.executeProcedure(x + 1, y, z, world, log, EnumFacing.UP);
+			spawnLife(world, x + 1, y, z, random);
+			if (world.getBlockState(new BlockPos(x + 1, y, z)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x + 2, y, z, world, log, EnumFacing.UP);
+				spawnLife(world, x + 2, y, z, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x + 2, y, z)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x + 3, y, z, world, log, EnumFacing.UP);
+					spawnLife(world, x + 3, y, z, random);
+					if (random.nextInt(2) == 0 && diagonal != 0 && world.getBlockState(new BlockPos(x + 3, y, z)).getBlock() == log) {
+						ProcedureTreeLog.executeProcedure(x + 4, y, z, world, log, EnumFacing.UP);
+						spawnLife(world, x + 4, y, z, random);
+					}
+				}
+			}
+		}
+
+		if (random.nextInt(5) == 0) {
+			ProcedureTreeLog.executeProcedure(x - 1, y, z, world, log, EnumFacing.UP);
+			spawnLife(world, x - 1, y, z, random);
+			if (world.getBlockState(new BlockPos(x - 1, y, z)).getBlock() == log) {
+				ProcedureTreeLog.executeProcedure(x - 2, y, z, world, log, EnumFacing.UP);
+				spawnLife(world, x - 2, y, z, random);
+				if (random.nextInt(2) == 0 && world.getBlockState(new BlockPos(x - 2, y, z)).getBlock() == log) {
+					ProcedureTreeLog.executeProcedure(x - 3, y, z, world, log, EnumFacing.UP);
+					spawnLife(world, x - 3, y, z, random);
+					if (random.nextInt(2) == 0 && diagonal != 0 && world.getBlockState(new BlockPos(x - 3, y, z)).getBlock() == log) {
+						ProcedureTreeLog.executeProcedure(x - 4, y, z, world, log, EnumFacing.UP);
+						spawnLife(world, x - 4, y, z, random);
 					}
 				}
 			}
@@ -272,29 +464,130 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 				}
 			}
 		}
-		//else { //Non-crinoid life:
-			BlockPos pos = new BlockPos(x, y, z);
-			//Moss:
-			if (random.nextInt(2) == 0 && BlockAncientMoss.block.canPlaceBlockAt(world, pos.up())) {
-				world.setBlockState(pos.up(), BlockAncientMoss.block.getDefaultState().withProperty(BlockAncientMoss.BlockCustom.FACING, EnumFacing.UP));
-			}
-			//Algae:
-			if (random.nextInt(3) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockAt(world, pos.north())) {
-				world.setBlockState(pos.north(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
-			}
-			if (random.nextInt(3) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockAt(world, pos.south())) {
-				world.setBlockState(pos.south(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
-			}
-			if (random.nextInt(3) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockAt(world, pos.east())) {
-				world.setBlockState(pos.east(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
-			}
-			if (random.nextInt(3) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockAt(world, pos.west())) {
-				world.setBlockState(pos.west(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
-			}
+
+		//Non-crinoid life:
+		BlockPos pos = new BlockPos(x, y, z);
+		//Moss:
+		if (random.nextInt(2) == 0 && BlockAncientMoss.block.canPlaceBlockAt(world, pos.up())) {
+			world.setBlockState(pos.up(), BlockAncientMoss.block.getDefaultState().withProperty(BlockAncientMoss.BlockCustom.FACING, EnumFacing.UP));
+		}
+		else if (random.nextInt(4) == 0 && BlockSelaginella.block.canPlaceBlockAt(world, pos.up())) {
+			world.setBlockState(pos.up(), BlockSelaginella.block.getDefaultState().withProperty(BlockSelaginella.BlockCustom.FACING, EnumFacing.UP));
+		}
+		//Algae:
+		if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(4) == 0 && BlockGreenAlgaeMat.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockGreenAlgaeMat.block.getDefaultState().withProperty(BlockGreenAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(4) == 0 && BlockRedAlgaeMat.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockRedAlgaeMat.block.getDefaultState().withProperty(BlockRedAlgaeMat.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && BlockGreenCodiumAlgae.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockGreenCodiumAlgae.block.getDefaultState().withProperty(BlockGreenCodiumAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenCodiumAlgae.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockGreenCodiumAlgae.block.getDefaultState().withProperty(BlockGreenCodiumAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenCodiumAlgae.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockGreenCodiumAlgae.block.getDefaultState().withProperty(BlockGreenCodiumAlgae.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenCodiumAlgae.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockGreenCodiumAlgae.block.getDefaultState().withProperty(BlockGreenCodiumAlgae.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(5) == 0 && BlockGreenSproutingAlgae.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockGreenSproutingAlgae.block.getDefaultState().withProperty(BlockGreenSproutingAlgae.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(5) == 0 && BlockStalkyBrownAlgae.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockStalkyBrownAlgae.block.getDefaultState().withProperty(BlockStalkyBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos.north(), EnumFacing.NORTH)) {
+			world.setBlockState(pos.north(), BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.NORTH));
+		}
+		if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos.south(), EnumFacing.SOUTH)) {
+			world.setBlockState(pos.south(), BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.SOUTH));
+		}
+		if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos.east(), EnumFacing.EAST)) {
+			world.setBlockState(pos.east(), BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.EAST));
+		}
+		if (random.nextInt(5) == 0 && BlockBrownAlgae.block.canPlaceBlockOnSide(world, pos.west(), EnumFacing.WEST)) {
+			world.setBlockState(pos.west(), BlockBrownAlgae.block.getDefaultState().withProperty(BlockBrownAlgae.BlockCustom.FACING, EnumFacing.WEST));
+		}
+
+		if (random.nextInt(5) == 0 && canSlimyAlgaeStay(world, pos.up(2))) {
+			world.setBlockState(pos.up(2), BlockSlimyAlgaeWater.block.getDefaultState());
+		}
 
 	}
 
- 	public static boolean matchBiome(Biome biome, String[] biomesList) {
+	public boolean canSlimyAlgaeStay(World worldIn, BlockPos pos)
+	{
+		if (pos.getY() >= 0 && pos.getY() < 256)
+		{
+			IBlockState iblockstate = worldIn.getBlockState(pos.down());
+			Material material = iblockstate.getMaterial();
+			return BlockSlimyAlgaeWater.BlockCustom.canSurviveAt(worldIn, pos) && (material == Material.WATER
+					|| material == Material.ICE);
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	public static boolean matchBiome(Biome biome, String[] biomesList) {
     	
     	//String regName = biome.getRegistryName().toString();
     	
