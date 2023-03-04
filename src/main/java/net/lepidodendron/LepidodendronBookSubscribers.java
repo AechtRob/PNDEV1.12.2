@@ -6914,6 +6914,15 @@ public class LepidodendronBookSubscribers {
 		event.setCanceled(true);
 		return;
 		}
+		else if (event.getTarget() instanceof EntityPrehistoricFloraSaltriovenator) {
+			if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
+				ModTriggers.CLICK_SALTRIOVENATOR.trigger((EntityPlayerMP) event.getEntityPlayer());
+			}
+			event.getEntityPlayer().swingArm(event.getHand());
+			deliverStatsEntity(event);
+			event.setCanceled(true);
+			return;
+		}
 		else if (event.getTarget() instanceof EntityPrehistoricFloraAustrolimulus) {
 		if ((event.getEntityPlayer() instanceof EntityPlayerMP)) {
 		ModTriggers.CLICK_AUSTROLIMULUS.trigger((EntityPlayerMP) event.getEntityPlayer());

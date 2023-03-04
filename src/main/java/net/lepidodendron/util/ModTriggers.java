@@ -679,6 +679,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_ROBERTIA = new CustomTrigger("pf_book_robertia");
     public static final CustomTrigger CLICK_SACABAMBASPIS = new CustomTrigger("pf_book_sacabambaspis");
     public static final CustomTrigger CLICK_SAIVODUS = new CustomTrigger("pf_book_saivodus");
+    public static final CustomTrigger CLICK_SALTRIOVENATOR = new CustomTrigger("pf_book_saltriovenator");
     public static final CustomTrigger CLICK_SAURICHTHYS = new CustomTrigger("pf_book_saurichthys");
     public static final CustomTrigger CLICK_SAUROCTONUS = new CustomTrigger("pf_book_sauroctonus");
     public static final CustomTrigger CLICK_SCAUMENACIA = new CustomTrigger("pf_book_scaumenacia");
@@ -1742,6 +1743,7 @@ public class ModTriggers
             CLICK_RUTIODON,
             CLICK_SACABAMBASPIS,
             CLICK_SAIVODUS,
+            CLICK_SALTRIOVENATOR,
             CLICK_SAURICHTHYS,
             CLICK_SAUROCTONUS,
             CLICK_SAUROSUCHUS,
