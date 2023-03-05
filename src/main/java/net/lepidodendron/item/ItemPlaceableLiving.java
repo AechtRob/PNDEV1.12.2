@@ -313,9 +313,9 @@ public class ItemPlaceableLiving extends ElementsLepidodendronMod.ModElement {
 							//	itemstack.shrink(1);
 							//}
 							if (result == EnumActionResult.SUCCESS) { //Things like floating water plant items:
-								if (!playerIn.isCreative()) {
-									itemstack.shrink(1);
-								}
+								//if (!playerIn.isCreative()) {
+									//itemstack.shrink(1);
+								//}
 								return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 							}
 							else {

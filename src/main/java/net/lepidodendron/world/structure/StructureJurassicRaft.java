@@ -49,7 +49,7 @@ public class StructureJurassicRaft extends ElementsLepidodendronMod.ModElement {
 		int genTries = 1;
 		if (biome.getRegistryName().toString().equalsIgnoreCase("lepidodendron:jurassic_ocean_rafts")) {
 			GenChance = 200000;
-			genTries = random.nextInt(5) + 1;
+			genTries = random.nextInt(4) + 1;
 		}
 		for (int tryGo = 1; tryGo <= genTries; tryGo++) {
 			if ((random.nextInt(1000000) + 1) <= GenChance) {
