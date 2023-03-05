@@ -1,7 +1,7 @@
 {
     "name": "Anthracomartus",
     "read_by_default": true,
-    "icon": "paleopedia:textures/cryptomartus_icon.png",
+    "icon": "paleopedia:textures/anthracomartus_icon.png",
     "category": "lepidodendron:carboniferous_animal",
     "turnin": "lepidodendron:pf_adv_book_trigonotarbid_cryptomartus",
     "pages": [

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhamphodopsis",
 			"title": "Rhamphodopsis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Ptyctodontida$(br)>Ptyctodontidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Swamp, Wattieza Forest$(br2)>Ptyctodontida$(br)>Ptyctodontidae"
 		},
 		{
 			"type": "image",

@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_concavicaris",
 			"title": "Concavicaris",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() $(br2)>Thylacocephala$(br)>Concavicarida"
+			"text": "$(l)Temporal Range:$() Devonian - Carboniferous$(br2)$(l)Habitat:$() Reefs$(br2)>Thylacocephala$(br)>Concavicarida"
 		},
 		{
 			"type": "image",

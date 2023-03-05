@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_endothiodon",
 			"title": "Endothiodon",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() $(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
+			"text": "$(l)Temporal Range:$() Permian$(br2)$(l)Habitat:$() Arid, Temperate Glossopteris$(br2)>Therapsida$(br)>Anomodontia$(br)>Dicynodontia$(br)>Endothiodontidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_endothiodon",
 			"type": "text",
-			"text": ""
+			"text": "Endothiodon was a common and widespread, fairly large-sized, dicynodont during the late Permian. It was herbivorous and lacked the tusks of related animals, instead having its front jaw modified into a beak for shearing plant matter. There were several species which all lived in the southern half of Pangaea."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_endothiodon",

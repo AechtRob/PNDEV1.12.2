@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_kujdanowiaspis",
 			"title": "Kujdanowiaspis",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Arthrodira$(br)>Actinolepidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Dead Reef$(br2)>Arthrodira$(br)>Actinolepidae"
 		},
 		{
 			"type": "image",
