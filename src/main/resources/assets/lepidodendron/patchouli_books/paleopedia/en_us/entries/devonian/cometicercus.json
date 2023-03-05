@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_cometicercus",
 			"title": "Cometicercus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() $(br2)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
+			"text": "$(l)Temporal Range:$() Devonian$(br2)$(l)Habitat:$() Ocean$(br2)>Thelodonti$(br)>Furcacaudiformes$(br)>Furcacaudidae"
 		},
 		{
 			"type": "image",

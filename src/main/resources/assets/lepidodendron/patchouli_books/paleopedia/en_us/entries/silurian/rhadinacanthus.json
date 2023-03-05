@@ -9,7 +9,7 @@
 			"trigger": "lepidodendron:pf_adv_book_rhadinacanthus",
 			"title": "Rhadinacanthus",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() $(br2)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
+			"text": "$(l)Temporal Range:$() Silurian - Devonian$(br2)$(l)Habitat:$() Freshwater$(br2)>Acanthodii$(br)>Diplacanthiformes$(br)>Diplacanthidae"
 		},
 		{
 			"type": "image",
