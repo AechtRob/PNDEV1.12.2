@@ -68,7 +68,7 @@ public class BlockStoneScoria extends ElementsLepidodendronMod.ModElement {
 			if (dimID == LepidodendronConfig.dimPrecambrian) {
 				height = 170;
 			}
-			for (int l1 = 0; l1 < 3; ++l1) {
+			for (int l1 = 0; l1 < 2; ++l1) {
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 				int y = random.nextInt(height) + 1; //Level y
 				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;

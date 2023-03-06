@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "lepidodendron:blocks/peridotite",
+    "top": "lepidodendron:blocks/peridotite",
+    "side": "lepidodendron:blocks/peridotite"
+  }
+}

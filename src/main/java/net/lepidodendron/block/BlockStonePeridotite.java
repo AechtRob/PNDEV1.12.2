@@ -28,16 +28,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:porphyry")
+public class BlockStonePeridotite extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:peridotite")
 	public static final Block block = null;
-	public BlockStonePorphyry(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.porphyry);
+	public BlockStonePeridotite(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.peridotite);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("porphyry"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("peridotite"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
@@ -45,9 +45,8 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:porphyry", "inventory"));
+				new ModelResourceLocation("lepidodendron:peridotite", "inventory"));
 	}
-
 
 	@Override
 	public void generateWorld(Random random, int chunkX, int chunkZ, World world, int dimID, IChunkGenerator cg, IChunkProvider cp) {
@@ -73,7 +72,7 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 				int x = chunkX + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
 				int y = random.nextInt(height) + 1; //Level y
 				int z = chunkZ + random.nextInt(16);// ffs they built in the offset to the vanilla WorldGenMineable! + 8;
-				(new WorldGenMinable(block.getDefaultState(), 13, new com.google.common.base.Predicate<IBlockState>() {
+				(new WorldGenMinable(block.getDefaultState(), 11, new com.google.common.base.Predicate<IBlockState>() {
 					public boolean apply(IBlockState blockAt) {
 						boolean blockCriteria = false;
 						IBlockState require;
@@ -89,7 +88,7 @@ public class BlockStonePorphyry extends ElementsLepidodendronMod.ModElement {
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
 			super(Material.ROCK, MapColor.RED);
-			setTranslationKey("pf_porphyry");
+			setTranslationKey("pf_peridotite");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 0);
 			setHardness(2.0F);
