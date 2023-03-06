@@ -40,7 +40,7 @@ public class BlockStonePeridotiteSmooth extends ElementsLepidodendronMod.ModElem
 
 	public static class BlockCustom extends Block {
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.RED);
+			super(Material.ROCK, MapColor.GREEN_STAINED_HARDENED_CLAY);
 			setTranslationKey("pf_peridotite_smooth");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 0);

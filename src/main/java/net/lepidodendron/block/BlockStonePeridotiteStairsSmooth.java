@@ -41,7 +41,7 @@ public class BlockStonePeridotiteStairsSmooth extends ElementsLepidodendronMod.M
 	}
 	public static class BlockCustom extends BlockStairs {
 		public BlockCustom() {
-			super(new Block(Material.ROCK, MapColor.RED).getDefaultState());
+			super(new Block(Material.ROCK, MapColor.GREEN_STAINED_HARDENED_CLAY).getDefaultState());
 			setTranslationKey("pf_peridotite_stairs_smooth");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 1);

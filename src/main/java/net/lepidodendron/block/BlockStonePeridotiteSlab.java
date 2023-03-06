@@ -54,7 +54,7 @@ public class BlockStonePeridotiteSlab extends ElementsLepidodendronMod.ModElemen
 	}
 	public static class BlockCustom extends BlockSlab {
 		public BlockCustom() {
-			super(Material.ROCK, MapColor.RED);
+			super(Material.ROCK, MapColor.STONE);
 			setTranslationKey("pf_peridotite_slab");
 			setSoundType(SoundType.STONE);
 			setHarvestLevel("pickaxe", 1);

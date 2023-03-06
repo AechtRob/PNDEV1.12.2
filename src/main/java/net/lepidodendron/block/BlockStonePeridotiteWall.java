@@ -58,7 +58,7 @@ public class BlockStonePeridotiteWall extends ElementsLepidodendronMod.ModElemen
 
 		@Override
 		public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-			return MapColor.RED;
+			return MapColor.STONE;
 		}
 	}
 
