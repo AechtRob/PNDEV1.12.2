@@ -10,7 +10,6 @@ import net.lepidodendron.block.BlockNest;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandCarnivoreBase;
-import net.lepidodendron.entity.render.entity.RenderRubidgea;
 import net.lepidodendron.entity.render.entity.RenderSaltriovenator;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
@@ -130,6 +129,7 @@ public class EntityPrehistoricFloraSaltriovenator extends EntityPrehistoricFlora
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
+			speedBase = speedBase / 0.80F;
 		}
 		return speedBase;
 	}

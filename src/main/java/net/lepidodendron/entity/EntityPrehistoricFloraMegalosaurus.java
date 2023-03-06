@@ -129,6 +129,7 @@ public class EntityPrehistoricFloraMegalosaurus extends EntityPrehistoricFloraLa
 		}
 		if (this.getIsFast()) {
 			speedBase = speedBase * 2.47F;
+			speedBase = speedBase / 0.80F;
 		}
 		return speedBase;
 	}
