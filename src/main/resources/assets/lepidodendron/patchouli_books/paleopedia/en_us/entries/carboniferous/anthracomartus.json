@@ -13,7 +13,7 @@
         },
 	{
             "type": "image",
-            "images": ["paleopedia:textures/Cryptomartus.png"],
+            "images": ["paleopedia:textures/anthracomartus.png"],
             "title": "A. hindi",
 	    "text": ""
         },

@@ -788,7 +788,9 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 double d0 = this.posX - this.EntityBase.posX;
                 double d1 = this.posZ - this.EntityBase.posZ;
                 double d2 = this.posY - this.EntityBase.posY;
+                double heightfactor = Math.max(0, Math.ceil(this.EntityBase.height) - 2);
                 double d3 = d0 * d0 + d2 * d2 + d1 * d1;
+                d2 = d2 + heightfactor;
 
                 if (d3 < 2.500000277905201E-7D) {
                     this.EntityBase.setMoveForward(0.0F);
