@@ -900,8 +900,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (this.getWarnTarget() != null) {
-            this.faceEntity(this.getWarnTarget(), 20, 20);
-            this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+            this.faceEntity(this.getWarnTarget(), 10, 10);
+            //this.getLookHelper().setLookPosition(this.getWarnTarget().posX, this.getWarnTarget().posY + (double)this.getWarnTarget().getEyeHeight(), this.getWarnTarget().posZ, (float)this.getHorizontalFaceSpeed(), (float)this.getVerticalFaceSpeed());
+            this.getLookHelper().setLookPositionWithEntity(this.getWarnTarget(), 10.0F, (float)this.getVerticalFaceSpeed());
+            //this.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
             if (this.getWarnCooldown() == 1) {
                 this.setAttackTarget(this.getWarnTarget());
                 this.setIsFast(true);

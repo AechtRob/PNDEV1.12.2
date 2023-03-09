@@ -1062,6 +1062,23 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				new ModelResourceLocation("lepidodendron:fossils/fossil_crinoid_phyllocrinus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_scrubby_pine_sapling_clean", "inventory"),
 
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_blooming_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_brain_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_fractal_branching_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_lumpy_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_pipe_stack_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_puffy_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_rough_branching_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_soft_fan_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_sparse_branching_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_stony_tubular_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_carnation_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_red_tree_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_blue_staghorn_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_tan_staghorn_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_blue_crust_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_coral_bamboo_clean", "inventory"),
+
 				new ModelResourceLocation("lepidodendron:fossil_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossil_clean_missing_texture", "inventory")
 

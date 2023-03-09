@@ -65,6 +65,11 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
             }
             else
             {
+                if (ageableBase.getWarnTarget() != null) {
+                    ageableBase.faceEntity(ageableBase.getWarnTarget(), 10, 10);
+                    ageableBase.getLookHelper().setLookPositionWithEntity(ageableBase.getWarnTarget(), 10.0F, (float)ageableBase.getVerticalFaceSpeed());
+                    return false;
+                }
                 this.closestLivingEntity = list.get(0);
                 if (this.entity.world.getDifficulty() == EnumDifficulty.PEACEFUL && this.closestLivingEntity  instanceof EntityPlayer) {
                     return false;
@@ -72,8 +77,12 @@ public class AgeableWarnEntity <T extends Entity> extends EntityAIBase
                 if (this.closestLivingEntity instanceof EntityLivingBase) {
                     ageableBase.setWarnTarget((EntityLivingBase) this.closestLivingEntity);
                     ageableBase.setWarnCooldown(ageableBase.warnCooldownTime());
-                    ageableBase.faceEntity(this.closestLivingEntity, 20, 20);
-                    ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
+                    ageableBase.faceEntity(this.closestLivingEntity, 10, 10);
+                    //ageableBase.getLookHelper().setLookPosition(this.closestLivingEntity.posX, this.closestLivingEntity.posY + (double)this.closestLivingEntity.getEyeHeight(), this.closestLivingEntity.posZ, (float)this.entity.getHorizontalFaceSpeed(), (float)this.entity.getVerticalFaceSpeed());
+
+                    ageableBase.getLookHelper().setLookPositionWithEntity(this.closestLivingEntity, 10.0F, (float)ageableBase.getVerticalFaceSpeed());
+                    //ageableBase.getNavigator().tryMoveToEntityLiving(this.closestLivingEntity, 1);
+
                     if (ageableBase instanceof EntityPrehistoricFloraLandCarnivoreBase) {
                         SoundEvent soundevent = ((EntityPrehistoricFloraLandCarnivoreBase) ageableBase).getRoarSound();
                         if (soundevent != null) {
