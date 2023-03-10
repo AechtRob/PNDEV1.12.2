@@ -140,7 +140,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockConomedusites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGrypania.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPrecambrian);
         return resLoc;
     }
 
@@ -188,7 +188,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockStromatolite.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThrombolite.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCambrian);
         return resLoc;
     }
 
@@ -251,7 +251,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockThamnobeatriceaSapling.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsOrdovician);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsOrdovician);
         return resLoc;
     }
 
@@ -313,7 +313,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidSiphonocrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCystoidPseudocrinites.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsSilurian);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsSilurian);
         return resLoc;
     }
 
@@ -377,7 +377,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidCupressocrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidVadarocrinus.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsDevonian);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsDevonian);
         return resLoc;
     }
 
@@ -445,7 +445,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantRed.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockFenestellaGiantYellow.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCarboniferous);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCarboniferous);
         return resLoc;
     }
 
@@ -504,7 +504,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidJimbacrinus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockGigantospongia.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPermian);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPermian);
         return resLoc;
     }
 
@@ -549,7 +549,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockTentaculita.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockBivalveWhite.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsTriassic);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsTriassic);
         return resLoc;
     }
 
@@ -606,7 +606,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidEugeniacrinites.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCrinoidPhyllocrinus.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsJurassic);
         return resLoc;
     }
 
@@ -657,7 +657,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsCretaceous);
         return resLoc;
     }
 
@@ -706,7 +706,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPaleogene);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPaleogene);
         return resLoc;
     }
 
@@ -755,7 +755,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsNeogene);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsNeogene);
         return resLoc;
     }
 
@@ -804,7 +804,7 @@ public class AcidBathOutputStatics {
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonyRoughBranching.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockCoralStonySparseBranching.block).toString()
         };
-        ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPleistocene);
+        resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revStaticsPleistocene);
         return resLoc;
     }
 
