@@ -635,7 +635,7 @@ public class EntityRegistries {
 
 
         registerEntity("prehistoric_flora_dollocaris", EntityPrehistoricFloraDollocaris.class, LepidodendronMod.ENTITY_DOLLOCARIS, 48,-4889795,-6408921);
-        registerEntity("prehistoric_flora_yinlong", EntityPrehistoricFloraYinlong.class, LepidodendronMod.ENTITY_YINLONG, 64,0,0);
+        registerEntity("prehistoric_flora_yinlong", EntityPrehistoricFloraYinlong.class, LepidodendronMod.ENTITY_YINLONG, 64,-7111094,-2845857);
 
 
 
