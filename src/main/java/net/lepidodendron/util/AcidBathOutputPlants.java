@@ -468,7 +468,8 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockHoopSapling.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
-                ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString()
+                ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString()
         };
         resLoc = ArrayUtils.addAll(resLoc, LepidodendronConfig.revPlantsJurassic);
         return resLoc;
@@ -584,6 +585,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:dark_oak_sapling",
                 "minecraft:spruce_sapling"
@@ -661,6 +663,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -737,6 +740,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",
@@ -813,6 +817,7 @@ public class AcidBathOutputPlants {
                 ForgeRegistries.BLOCKS.getKey(BlockAncientMoss.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockAmentotaxus.block).toString(),
                 ForgeRegistries.BLOCKS.getKey(BlockScrubbyPineSapling.block).toString(),
+                ForgeRegistries.ITEMS.getKey(ItemWaterCloverItem.block).toString(),
                 "minecraft:oak_sapling",
                 "minecraft:acacia_sapling",
                 "minecraft:dark_oak_sapling",

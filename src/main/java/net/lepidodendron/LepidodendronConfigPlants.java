@@ -659,6 +659,15 @@ public class LepidodendronConfigPlants {
     public static double multiplierRhynia = 1;
     public static boolean spreadRhynia = true;
 
+    public static boolean genWaterClover = false;
+    public static String[] genWaterCloverBlacklistBiomes = new String[0];
+    public static String[] genWaterCloverOverrideBiomes = new String[0];
+    public static int[] dimWaterClover = new int[]{0};
+    public static int minheightWaterClover = 1;
+    public static int maxheightWaterClover = 0;
+    public static double multiplierWaterClover = 1;
+    public static boolean spreadWaterClover = true;
+
     public static boolean genFoozia = false;
     public static String[] genFooziaBlacklistBiomes = new String[0];
     public static String[] genFooziaOverrideBiomes = new String[0];
@@ -9239,6 +9248,38 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Rhynia", "spreadRhynia", spreadRhynia);
         prop.setComment("Set to true for Rhynia to spread naturally, and to false to require bonemeal to spread [default: true]");
         spreadRhynia = prop.getBoolean();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen WaterClover", "genWaterClover", genWaterClover);
+        prop.setComment("Set to true to generate Water Clover naturally [default: false]");
+        genWaterClover = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "genWaterCloverBlacklistBiomes", genWaterCloverBlacklistBiomes);
+        prop.setComment("List of biomes Water Clover are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genWaterCloverBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "genWaterCloverOverrideBiomes", genWaterCloverOverrideBiomes);
+        prop.setComment("List of biomes Water Clover are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genWaterCloverOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen WaterClover", "dimWaterClover", dimWaterClover);
+        prop.setComment("List of dimension IDs Water Clover can generate in [default: 0]");
+        dimWaterClover = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "minheightWaterClover", minheightWaterClover);
+        prop.setComment("Minimum height that Water Clover can generate (1 to 250) [default: 1]");
+        minheightWaterClover = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "maxheightWaterClover", maxheightWaterClover);
+        prop.setComment("Maximum height that Water Clover can generate (1 to 250, or set to 0 for unlimited) [default: 0]");
+        maxheightWaterClover = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "multiplierWaterClover", multiplierWaterClover);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierWaterClover = prop.getDouble();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen WaterClover", "spreadWaterClover", spreadWaterClover);
+        prop.setComment("Set to true for Water Clover to spread naturally, and to false to require bonemeal to spread [default: true]");
+        spreadWaterClover = prop.getBoolean();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Pitys", "genPitys", genPitys);

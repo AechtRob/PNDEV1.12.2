@@ -1,0 +1,36 @@
+{
+  "multipart": [
+      {
+        "apply": [
+          {"model": "lepidodendron:water_clover_1" },
+          {"model": "lepidodendron:water_clover_2" },
+          {"model": "lepidodendron:water_clover_3" },
+          {"model": "lepidodendron:water_clover_4" },
+          {"model": "lepidodendron:water_clover_5" },
+          {"model": "lepidodendron:water_clover_1", "y": 90 },
+          {"model": "lepidodendron:water_clover_2", "y": 90 },
+          {"model": "lepidodendron:water_clover_3", "y": 90 },
+          {"model": "lepidodendron:water_clover_4", "y": 90 },
+          {"model": "lepidodendron:water_clover_5", "y": 90 },
+          {"model": "lepidodendron:water_clover_1", "y": 180 },
+          {"model": "lepidodendron:water_clover_2", "y": 180 },
+          {"model": "lepidodendron:water_clover_3", "y": 180 },
+          {"model": "lepidodendron:water_clover_4", "y": 180 },
+          {"model": "lepidodendron:water_clover_5", "y": 180 },
+          {"model": "lepidodendron:water_clover_1", "y": 270 },
+          {"model": "lepidodendron:water_clover_2", "y": 270 },
+          {"model": "lepidodendron:water_clover_3", "y": 270 },
+          {"model": "lepidodendron:water_clover_4", "y": 270 },
+          {"model": "lepidodendron:water_clover_5", "y": 270 }
+        ]
+      },
+    {
+      "apply": [
+        {"model": "lepidodendron:water_clover_stem_1" },
+        {"model": "lepidodendron:water_clover_stem_2" },
+        {"model": "lepidodendron:water_clover_stem_3" },
+        {"model": "lepidodendron:water_clover_stem_4" }
+      ]
+    }
+  ]
+}
