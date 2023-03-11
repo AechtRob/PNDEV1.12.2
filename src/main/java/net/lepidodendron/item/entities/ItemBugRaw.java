@@ -39,6 +39,8 @@ public class ItemBugRaw extends ElementsLepidodendronMod.ModElement {
 		super.init(event);
 		OreDictionary.registerOre("listAllmeatraw", ItemBugRaw.block);
 		OreDictionary.registerOre("foodMeat", ItemBugRaw.block);
+		OreDictionary.registerOre("listAllinsectraw", ItemBugRaw.block);
+		OreDictionary.registerOre("foodInsect", ItemBugRaw.block);
 	}
 
 	public static class ItemFoodCustom extends ItemFood {
