@@ -587,13 +587,122 @@ public class ModelYinlong extends AdvancedModelBaseExtended {
         else if (ee.getAnimation() == ee.LAY_ANIMATION) {
             animLay(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
-        else if (ee.getAnimation() == ee.DRINK_ANIMATION) { //The graze noise/anim
+        else if (ee.getAnimation() == ee.DRINK_ANIMATION) { //The graze anim
             animGraze(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
+        }
+        else if (ee.getAnimation() == ee.ROAR_ANIMATION) { //The noise anim
+            animNoise(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime, ee.getAnimationTick());
         }
 
     }
 
-    public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+    public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
+        EntityPrehistoricFloraYinlong entity = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
+
+        int animCycle = 20;
+        double tickAnim = animTick + partialTickTime;
+        double xx = 0;
+        double yy = 0;
+        double zz = 0;
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0D + (((tickAnim - 0D) / 3D) * (-30D-(0D)));
+            yy = 0D + (((tickAnim - 0D) / 3D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 0D) / 3D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 20) {
+            xx = -30D + (((tickAnim - 3D) / 17D) * (0D-(-30D)));
+            yy = 0D + (((tickAnim - 3D) / 17D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 3D) / 17D) * (0D-(0D)));
+        }
+        this.setRotateAngle(upperbody, upperbody.rotateAngleX + (float) Math.toRadians(xx), upperbody.rotateAngleY + (float) Math.toRadians(yy), upperbody.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 4) {
+            xx = 0D + (((tickAnim - 0D) / 4D) * (20D-(0D)));
+            yy = 0D + (((tickAnim - 0D) / 4D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 0D) / 4D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 4 && tickAnim < 13) {
+            xx = 20D + (((tickAnim - 4D) / 9D) * (-5D-(20D)));
+            yy = 0D + (((tickAnim - 4D) / 9D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 4D) / 9D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 20) {
+            xx = -5D + (((tickAnim - 13D) / 7D) * (0D-(-5D)));
+            yy = 0D + (((tickAnim - 13D) / 7D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 13D) / 7D) * (0D-(0D)));
+        }
+        this.setRotateAngle(neck, neck.rotateAngleX + (float) Math.toRadians(xx), neck.rotateAngleY + (float) Math.toRadians(yy), neck.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+        if (tickAnim >= 0 && tickAnim < 3) {
+            xx = 0D + (((tickAnim - 0D) / 3D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 0D) / 3D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 0D) / 3D) * (1D-(0D)));
+        }
+        else if (tickAnim >= 3 && tickAnim < 8) {
+            xx = 0D + (((tickAnim - 3D) / 5D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 3D) / 5D) * (0D-(0D)));
+            zz = 1D + (((tickAnim - 3D) / 5D) * (0D-(1D)));
+        }
+        else if (tickAnim >= 8 && tickAnim < 20) {
+            xx = 0D + (((tickAnim - 8D) / 12D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 8D) / 12D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 8D) / 12D) * (0D-(0D)));
+        }
+        this.neck.offsetX = (float) Math.toRadians(xx);
+        this.neck.offsetY = (float) Math.toRadians(yy);
+        this.neck.offsetZ = (float) Math.toRadians(zz);
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 9) {
+            xx = 0D + (((tickAnim - 0D) / 9D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 0D) / 9D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 0D) / 9D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 9 && tickAnim < 13) {
+            xx = 0D + (((tickAnim - 9D) / 4D) * (20D-(0D)));
+            yy = 0D + (((tickAnim - 9D) / 4D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 9D) / 4D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 13 && tickAnim < 20) {
+            xx = 20D + (((tickAnim - 13D) / 7D) * (0D-(20D)));
+            yy = 0D + (((tickAnim - 13D) / 7D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 13D) / 7D) * (0D-(0D)));
+        }
+        this.setRotateAngle(head, head.rotateAngleX + (float) Math.toRadians(xx), head.rotateAngleY + (float) Math.toRadians(yy), head.rotateAngleZ + (float) Math.toRadians(zz));
+
+
+
+
+        if (tickAnim >= 0 && tickAnim < 1) {
+            xx = 0D + (((tickAnim - 0D) / 1D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 0D) / 1D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 0D) / 1D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 1 && tickAnim < 5) {
+            xx = 0D + (((tickAnim - 1D) / 4D) * (25D-(0D)));
+            yy = 0D + (((tickAnim - 1D) / 4D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 1D) / 4D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 5 && tickAnim < 10) {
+            xx = 25D + (((tickAnim - 5D) / 5D) * (0D-(25D)));
+            yy = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 5D) / 5D) * (0D-(0D)));
+        }
+        else if (tickAnim >= 10 && tickAnim < 20) {
+            xx = 0D + (((tickAnim - 10D) / 10D) * (0D-(0D)));
+            yy = 0D + (((tickAnim - 10D) / 10D) * (0D-(0D)));
+            zz = 0D + (((tickAnim - 10D) / 10D) * (0D-(0D)));
+        }
+        this.setRotateAngle(jaw, jaw.rotateAngleX + (float) Math.toRadians(xx), jaw.rotateAngleY + (float) Math.toRadians(yy), jaw.rotateAngleZ + (float) Math.toRadians(zz));
+
+    }
+        public void animLay(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
         EntityPrehistoricFloraYinlong entity = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
 
         int animCycle = 50;
@@ -3615,13 +3724,5 @@ public class ModelYinlong extends AdvancedModelBaseExtended {
         animator.setStaticKeyframe(3);
         animator.resetKeyframe(3);
 
-        animator.setAnimation(e.ROAR_ANIMATION);
-        animator.startKeyframe(10);
-        animator.rotate(this.neck, (float) Math.toRadians(-10),0,0);
-        animator.rotate(this.head, (float) Math.toRadians(-10), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.rotate(this.jaw, (float) Math.toRadians(25), (float) Math.toRadians(0), (float) Math.toRadians(0));
-        animator.endKeyframe();
-        animator.setStaticKeyframe(10);
-        animator.resetKeyframe(10);
     }
 }

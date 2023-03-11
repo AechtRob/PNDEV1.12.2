@@ -6215,5 +6215,80 @@
         "stream": false
       }
     ]
+  },
+
+  "chaoyangsauridae_idle": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chaoyangsauridae_living01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_living02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_living03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_living04",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_living05",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_living06",
+        "stream": false
+      }
+    ]
+  },
+  "chaoyangsauridae_hurt": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chaoyangsauridae_hurt01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_hurt02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_hurt03",
+        "stream": false
+      }
+    ]
+  },
+  "chaoyangsauridae_alarm": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chaoyangsauridae_alarm01",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_alarm02",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_alarm03",
+        "stream": false
+      },
+      {
+        "name": "lepidodendron:chaoyangsauridae_alarm04",
+        "stream": false
+      }
+    ]
+  },
+  "chaoyangsauridae_death": {
+    "sounds": [
+      {
+        "name": "lepidodendron:chaoyangsauridae_death",
+        "stream": false
+      }
+    ]
   }
+
+
 }

@@ -10,10 +10,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -35,6 +32,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBase {
 
@@ -44,6 +42,8 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	private int inPFLove;
 	public ChainBuffer tailBuffer;
 	private BlockPos drinkingFrom;
+	private boolean screaming;
+	private int alarmCooldown;
 
 	public EntityPrehistoricFloraYinlong(World world) {
 		super(world);
@@ -70,8 +70,30 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	}
 
 	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraYinlong> Yinlong = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraYinlong.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraYinlong currentYinlong : Yinlong) {
+				currentYinlong.setRevengeTarget(ee);
+				currentYinlong.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
+	}
+
+	@Override
 	public int getEggType() {
 		return 0; //small
+	}
+
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
 	}
 
 	@Nullable
@@ -96,7 +118,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 
 	@Override
 	public int getRoarLength() {
-		return 30;
+		return 20;
 	}
 
 	@Override
@@ -154,7 +176,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(4, new PanicAI(this, 1.0));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
 		tasks.addTask(5, new LandWanderNestAI(this));
 		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
 		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -271,19 +293,36 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	@Override
 	public SoundEvent getAmbientSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yinlong_idle"));
+	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_idle"));
 	}
 
 	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yinlong_hurt"));
+	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
 	    return (SoundEvent) SoundEvent.REGISTRY
-	            .getObject(new ResourceLocation("lepidodendron:yinlong_death"));
+	            .getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_death"));
+	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:chaoyangsauridae_alarm"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null)
+		{
+			//System.err.println("playing alarm sound");
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
 	}
 
 	@Override
@@ -362,6 +401,17 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+
+	@Override
+	public void onEntityUpdate() {
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+		super.onEntityUpdate();
 	}
 
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
