@@ -4,13 +4,13 @@ import net.ilexiconn.llibrary.client.model.ModelAnimator;
 import net.ilexiconn.llibrary.client.model.tools.AdvancedModelRenderer;
 import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
-import net.lepidodendron.entity.EntityPrehistoricFloraSilesaurus;
+import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.model.llibraryextensions.AdvancedModelBaseExtended;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 
-public class ModelSilesaurus extends AdvancedModelBaseExtended {
+public class ModelPlaceholderLand extends AdvancedModelBaseExtended {
     private final AdvancedModelRenderer Silesaurus;
     private final AdvancedModelRenderer LegL;
     private final AdvancedModelRenderer KneeL;
@@ -64,7 +64,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
 
     private ModelAnimator animator;
 
-    public ModelSilesaurus() {
+    public ModelPlaceholderLand() {
         this.textureWidth = 95;
         this.textureHeight = 95;
 
@@ -465,7 +465,7 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
     public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
         super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
         this.resetToDefaultPose();
-        EntityPrehistoricFloraSilesaurus ee = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraYinlong ee = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
 
         if (!ee.isReallyInWater()) {
             if (ee.getIsMoving()) {
@@ -508,25 +508,25 @@ public class ModelSilesaurus extends AdvancedModelBaseExtended {
     }
 
     public void animNoise(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime, double animTick) {
-        EntityPrehistoricFloraSilesaurus entity = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraYinlong entity = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
 
     }
 
 
 
     public void animRunning(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-        EntityPrehistoricFloraSilesaurus entity = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+        EntityPrehistoricFloraYinlong entity = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
 
     }
 
     public void animWalking(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime) {
-    EntityPrehistoricFloraSilesaurus entity = (EntityPrehistoricFloraSilesaurus) entitylivingbaseIn;
+    EntityPrehistoricFloraYinlong entity = (EntityPrehistoricFloraYinlong) entitylivingbaseIn;
 
 
 }
 
         public void animate(IAnimatedEntity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-        EntityPrehistoricFloraSilesaurus e = (EntityPrehistoricFloraSilesaurus) entity;
+        EntityPrehistoricFloraYinlong e = (EntityPrehistoricFloraYinlong) entity;
         animator.update(entity);
 
 //        animator.setAnimation(e.EAT_ANIMATION); //10 ticks

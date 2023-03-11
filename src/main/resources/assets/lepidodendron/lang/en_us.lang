@@ -1934,6 +1934,12 @@ advancements.pf_adv_book_zygopteridaceae.description=Unlock the entry for Symplo
 advancements.pf_adv_book_zygopteridaceae.title=Symplocopteris
 advancements.pf_adv_book_zygopteris.description=Unlock the entry for Zygopteris in the Palaeopedia
 advancements.pf_adv_book_zygopteris.title=Zygopteris
+
+
+
+
+
+
 advancements.pf_adv_cambrian.description=Enter the Cambrian dimension
 advancements.pf_adv_cambrian.title=The Cambrian explosion
 advancements.pf_adv_carboniferous.description=Enter the Carboniferous dimension
@@ -1980,6 +1986,15 @@ advancements.pf_base_cambrian_discovery.description=Unlock the entry for all Cam
 advancements.pf_base_cambrian_discovery.title=Cambrian expert
 advancements.pf_base_knowledge.description=Palaeopedia knowledge
 advancements.pf_base_knowledge.title=Prehistoric Nature
+
+
+
+
+
+
+
+
+
 death.attack.acid.player=%1$s took a terminal dip in acid because of %2$s
 death.attack.acid=%1$s took a terminal dip in acid
 death.attack.caustic.player=%1$s got seared by caustic conditions because of %2$s
@@ -6078,7 +6093,6 @@ item.pf_sidneyia_bucket.name=Bucket of Sidneyia
 item.pf_sidneyia_cooked.name=Cooked Sidneyia
 item.pf_sidneyia_raw.name=Raw Sidneyia
 item.pf_sigillaria_door_item.name=Sigillaria Door
-item.pf_silesaurus_cooked.name=Cooked Silesaurus
 item.pf_silesaurus_raw.name=Raw Silesaurus
 item.pf_sillosuchus_cooked.name=Cooked Sillosuchus
 item.pf_sillosuchus_raw.name=Raw Sillosuchus
