@@ -22,7 +22,6 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -45,7 +44,7 @@ import java.util.function.Supplier;
 public class LepidodendronMod {
 	public static final String MODID = "lepidodendron";
 	public static final String NAME = "Prehistoric Nature";
-	public static final String VERSION = "55.03";
+	public static final String VERSION = "56.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("lepidodendron:a");
     @SidedProxy(clientSide = "net.lepidodendron.ClientProxyLepidodendronMod", serverSide = "net.lepidodendron.ServerProxyLepidodendronMod")
 	public static IProxyLepidodendronMod proxy;
@@ -1464,6 +1463,9 @@ public class LepidodendronMod {
 	public static final int ENTITY_SALTRIOVENATOR = 601;
 	public static final ResourceLocation SALTRIOVENATOR_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saltriovenator"));
 	public static final ResourceLocation SALTRIOVENATOR_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/saltriovenator_young"));
+	public static final int ENTITY_YINLONG = 602;
+	public static final ResourceLocation YINLONG_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yinlong"));
+	public static final ResourceLocation YINLONG_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yinlong_young"));
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

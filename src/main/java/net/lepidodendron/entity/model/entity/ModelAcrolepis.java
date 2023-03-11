@@ -343,7 +343,7 @@ public class ModelAcrolepis extends AdvancedModelBase {
 
         //if (f3 != 0.0F) {this.walk(Jaw, (float) (speed * 1.5), 0.2F, true, 0, 0, f2, 1);}
         if (e.isInWater()) {
-            this.chainWave(fishTail, speed * still, 0.02F * still, -0.2, f2, 0.8F * still);
+            this.chainWave(fishTail, speed * still * 2, 0.02F * still, -0.2, f2, 0.8F * still);
             this.chainSwing(fishTail, speed * still, 0.29F * still, -0.85, f2, 0.5F * still);
             this.swing(Acrolepis, speed, 0.2F, true, 0, 0, f2, 0.8F);
         }

@@ -149,7 +149,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 }
                 if (facing != null) {
                     this.drinkingFrom = this.getPosition().offset(facing);
-                    this.faceBlock(this.drinkingFrom, 1000, 1000);
+                    this.faceBlock(this.drinkingFrom, 10F, 10F);
                 }
             }
             return test;
@@ -188,7 +188,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 }
                 if (facing != null) {
                     this.drinkingFrom = this.getPosition().offset(facing);
-                    this.faceBlock(this.drinkingFrom, 1000, 1000);
+                    this.faceBlock(this.drinkingFrom, 10F, 10F);
                 }
             }
             return test;
@@ -265,7 +265,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
 
     @Override
     public Animation[] getAnimations() {
-        return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION};
+        return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION};
     }
 
     @Override
@@ -376,7 +376,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setAnimation(NO_ANIMATION);
             }
             if (this.drinkingFrom != null) {
-                this.faceBlock(this.drinkingFrom, 1000, 1000);
+                this.faceBlock(this.drinkingFrom, 10F, 10F);
             }
         }
 

@@ -38,6 +38,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerContainerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
@@ -627,7 +628,12 @@ public class LepidodendronEventSubscribers {
 
 		if (event.getItemStack().getItem() == Item.getItemFromBlock(Blocks.SPONGE)) {
 			List<String> tt = event.getToolTip();
-			tt.add("NOTE: Used to build the portal to the Cambrian dimension");
+			if (!Loader.isModLoaded("pncambrian")) {
+				tt.add("NOTE: Used to build the portal to the Cambrian dimension but you do not have that dimension mod installed");
+			}
+			else {
+				tt.add("NOTE: Used to build the portal to the Cambrian dimension");
+			}
 		}
 
 		if (event.getItemStack().getItem() == Items.SPAWN_EGG) {

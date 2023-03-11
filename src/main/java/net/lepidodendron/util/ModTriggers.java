@@ -774,6 +774,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_MEGACTENOPETALUS = new CustomTrigger("pf_book_megactenopetalus");
     public static final CustomTrigger CLICK_RUBIDGEA = new CustomTrigger("pf_book_rubidgea");
     public static final CustomTrigger CLICK_ENDOTHIODON = new CustomTrigger("pf_book_endothiodon");
+    public static final CustomTrigger CLICK_YINLONG = new CustomTrigger("pf_book_yinlong");
     public static final CustomTrigger CLICK_AUSTROLIMULUS = new CustomTrigger("pf_book_austrolimulus");
     public static final CustomTrigger CLICK_BEISHANICHTHYS = new CustomTrigger("pf_book_beishanichthys");
     public static final CustomTrigger CLICK_BIRGERIA = new CustomTrigger("pf_book_birgeria");
@@ -1512,6 +1513,7 @@ public class ModTriggers
             CLICK_ELRATHIA,
             CLICK_ENDOCERAS,
             CLICK_ENDOTHIODON,
+            CLICK_YINLONG,
             CLICK_ENOPLOURA,
             CLICK_EOANDROMEDA,
             CLICK_EOARTHROPLEURA,

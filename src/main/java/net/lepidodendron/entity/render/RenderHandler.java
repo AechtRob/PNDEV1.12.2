@@ -3608,6 +3608,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraYinlong.class, new IRenderFactory<EntityPrehistoricFloraYinlong>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraYinlong> createRenderFor(RenderManager manager) {
+                return new RenderYinlong(manager);
+            }
+        });
+
 
 
 

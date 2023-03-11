@@ -401,17 +401,19 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 					if (te.getEnergyStored() < te.getMaxEnergyStored()) {
 						//Is there a power-supplying block in the right place?
 						EnumFacing facing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING);
-						BlockPos powerBlockPos = this.pos.offset(facing.rotateY());
-						TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
-						if (teStorage != null) {
-							IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing.rotateY().rotateY().rotateY());
-							if (powerBlockStorage != null) {
-								if (powerBlockStorage.canExtract()) {
-									int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
-									int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
-									powerBlockStorage.extractEnergy(energyTransferIn, false);
-									this.receiveEnergy(energyTransferIn, false);
-									this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+						if (facing != EnumFacing.UP && facing != EnumFacing.DOWN) {
+							BlockPos powerBlockPos = this.pos.offset(facing.rotateY());
+							TileEntity teStorage = this.getWorld().getTileEntity(powerBlockPos);
+							if (teStorage != null) {
+								IEnergyStorage powerBlockStorage = teStorage.getCapability(CapabilityEnergy.ENERGY, facing.rotateY().rotateY().rotateY());
+								if (powerBlockStorage != null) {
+									if (powerBlockStorage.canExtract()) {
+										int energyTransferOut = powerBlockStorage.extractEnergy(this.maxReceive, true);
+										int energyTransferIn = this.receiveEnergy(energyTransferOut, true);
+										powerBlockStorage.extractEnergy(energyTransferIn, false);
+										this.receiveEnergy(energyTransferIn, false);
+										this.getWorld().notifyBlockUpdate(this.getPos(), this.getWorld().getBlockState(this.getPos()), this.getWorld().getBlockState(this.getPos()), 3);
+									}
 								}
 							}
 						}
@@ -804,7 +806,11 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 				}
 
 			}
-			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
+			EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING);
+			if (blockFacing == EnumFacing.UP || blockFacing == EnumFacing.DOWN) {
+				return null;
+			}
+			blockFacing = blockFacing.rotateY();
 			return (capability == CapabilityEnergy.ENERGY && facing == blockFacing) ? (T) this : null;
 		}
 
@@ -844,7 +850,11 @@ public class BlockDNARecombinerCentrifuge extends ElementsLepidodendronMod.ModEl
 			IBlockState blockstate = this.getWorld().getBlockState(this.getPos());
 			if (blockstate != null) {
 				if (blockstate.getBlock() == BlockDNARecombinerCentrifuge.block) {
-					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING).rotateY();
+					EnumFacing blockFacing = this.getWorld().getBlockState(this.getPos()).getValue(BlockDNARecombinerCentrifuge.BlockCustom.FACING);
+					if (blockFacing == EnumFacing.UP || blockFacing == EnumFacing.DOWN) {
+						return false;
+					}
+					blockFacing = blockFacing.rotateY();
 					if (capability == CapabilityEnergy.ENERGY && facing == blockFacing) {
 						return true;
 					}

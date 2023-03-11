@@ -167,7 +167,7 @@ public class ModelAcanthodes extends AdvancedModelBase {
             speed = 0.7F;
         }
         if (e instanceof EntityLiving && !((EntityLiving) e).isAIDisabled()) {
-            this.chainWave(fishTail, speed, 0.05F, -3, f2, 1);
+            this.chainWave(fishTail, speed * 2, 0.05F, -3, f2, 1);
             this.chainSwing(fishTail, speed, 0.5F, -3, f2, 1);
             this.swing(Bodyfront, speed, 0.3F, true, 0, 0, f2, 1);
             this.walk(Lowerjaw, (float) (speed * 0.75), 0.2F, true, 0, 0, f2, 1);

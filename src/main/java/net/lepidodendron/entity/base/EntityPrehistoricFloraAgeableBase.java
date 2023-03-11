@@ -1339,6 +1339,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         if (this instanceof EntityPrehistoricFloraDiictodon) { //Burrowing creatures:
                             if (this.getPosition().getY() > 8) {
                                 this.setAnimation(MAKE_NEST_ANIMATION);
+                                player.swingArm(hand);
                                 this.consumeItemFromStack(player, itemstack);
                                 if (world.isRemote) {
                                     this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);
@@ -1351,6 +1352,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                         }
                         else if (BlockNest.block.canPlaceBlockAt(this.world, this.getPosition())) {
                             this.setAnimation(MAKE_NEST_ANIMATION);
+                            player.swingArm(hand);
                             this.consumeItemFromStack(player, itemstack);
                             if (world.isRemote) {
                                 this.spawnParticles(EnumParticleTypes.VILLAGER_HAPPY);

@@ -24,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -118,7 +119,12 @@ public class BlockPrototaxitesBlock extends ElementsLepidodendronMod.ModElement 
 		@Override
 		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
 			if (LepidodendronConfig.showTooltips) {
-				tooltip.add("NOTE: Used to build the portal to the Silurian dimension");
+				if (!Loader.isModLoaded("pnsilurian")) {
+					tooltip.add("NOTE: Used to build the portal to the Silurian dimension but you do not have that dimension mod installed");
+				}
+				else {
+					tooltip.add("NOTE: Used to build the portal to the Silurian dimension");
+				}
 				super.addInformation(stack, player, tooltip, advanced);
 			}
 		}
