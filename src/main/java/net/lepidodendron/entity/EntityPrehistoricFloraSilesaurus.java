@@ -112,7 +112,7 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 1.35F;
+			speedBase = speedBase * 3.2F;
 		}
 		return speedBase;
 	}
