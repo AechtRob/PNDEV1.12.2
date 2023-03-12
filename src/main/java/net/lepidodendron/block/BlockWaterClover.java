@@ -89,9 +89,10 @@ public class BlockWaterClover extends ElementsLepidodendronMod.ModElement {
 		{
 			BiomeJurassic biomeJurassic = (BiomeJurassic) biome;
 			if (biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Lake
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
-					|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain) {
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.River
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Mire
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Ginkgo
+				|| biomeJurassic.getBiomeType() == EnumBiomeTypeJurassic.Floodplain) {
 				biomeCriteria = true;
 			}
 			else {
