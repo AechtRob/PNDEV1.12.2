@@ -235,7 +235,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.GRASS
 				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.PLANTS
 				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.LEAVES
-				|| this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.SAND)
+				|| this.world.getBlockState(this.getPosition().offset(facing).down()).getMaterial() == Material.SAND)
 		);
 		if (test) {
 			//Which one is water?
