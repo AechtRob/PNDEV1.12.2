@@ -15,37 +15,34 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class ItemVachonisiaRaw extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:vachonisia_raw")
+public class ItemKentrosaurusRaw extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:kentrosaurus_raw")
 	public static final Item block = null;
-	public ItemVachonisiaRaw(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.vachonisia_raw);
+	public ItemKentrosaurusRaw(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.kentrosaurus_raw);
 	}
 
 	@Override
 	public void initElements() {
-
 		elements.items.add(() -> new ItemFoodCustom());
 	}
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		OreDictionary.registerOre("dnaPNVachonisia", ItemVachonisiaRaw.block);
-		OreDictionary.registerOre("listAllfishraw", ItemVachonisiaRaw.block);
-		OreDictionary.registerOre("listAllmeatraw", ItemVachonisiaRaw.block);
-		OreDictionary.registerOre("foodMeat", ItemVachonisiaRaw.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_kentrosaurus", ItemKentrosaurusRaw.block);
+		OreDictionary.registerOre("listAllmeatraw", ItemKentrosaurusRaw.block);
+		OreDictionary.registerOre("foodMeat", ItemKentrosaurusRaw.block);
 	}
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/vachonisia_raw", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:entities/kentrosaurus_raw", "inventory"));
 	}
-
 	public static class ItemFoodCustom extends ItemPNTaxidermyItem {
 		public ItemFoodCustom() {
-			super(2, 0.1f, false);
-			setTranslationKey("pf_vachonisia_raw");
-			setRegistryName("vachonisia_raw");
+			super(3, 0.3f, false);
+			setTranslationKey("pf_kentrosaurus_raw");
+			setRegistryName("kentrosaurus_raw");
 			setCreativeTab(TabLepidodendronMobile.tab);
 			setMaxStackSize(64);
 		}

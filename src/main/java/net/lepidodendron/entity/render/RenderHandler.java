@@ -3277,7 +3277,7 @@ public class RenderHandler {
                 return new RenderEastmanosteus(manager);
             }
         });
-        /*
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVachonisia.class, new IRenderFactory<EntityPrehistoricFloraVachonisia>() {
             @Override
             public Render<? super EntityPrehistoricFloraVachonisia> createRenderFor(RenderManager manager) {
@@ -3296,7 +3296,7 @@ public class RenderHandler {
                 return new RenderFurca(manager);
             }
         });
-        */
+
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMiguashaia.class, new IRenderFactory<EntityPrehistoricFloraMiguashaia>() {
             @Override
@@ -3612,6 +3612,13 @@ public class RenderHandler {
             @Override
             public Render<? super EntityPrehistoricFloraYinlong> createRenderFor(RenderManager manager) {
                 return new RenderYinlong(manager);
+            }
+        });
+
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKentrosaurus.class, new IRenderFactory<EntityPrehistoricFloraKentrosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKentrosaurus> createRenderFor(RenderManager manager) {
+                return new RenderKentrosaurus(manager);
             }
         });
 

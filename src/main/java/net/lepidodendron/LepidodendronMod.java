@@ -1468,6 +1468,10 @@ public class LepidodendronMod {
 	public static final ResourceLocation YINLONG_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yinlong"));
 	public static final ResourceLocation YINLONG_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/yinlong_young"));
 
+	public static final int ENTITY_KENTROSAURUS = 603;
+	public static final ResourceLocation KENTROSAURUS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kentrosaurus"));
+	public static final ResourceLocation KENTROSAURUS_LOOT_YOUNG = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/kentrosaurus_young"));
+
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		LepidodendronConfig.load(event);

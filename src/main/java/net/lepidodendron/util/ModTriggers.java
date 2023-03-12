@@ -974,6 +974,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PIRANHAMESODON = new CustomTrigger("pf_book_piranhamesodon");
     public static final CustomTrigger CLICK_SILUROLEPIS = new CustomTrigger("pf_book_silurolepis");
     public static final CustomTrigger CLICK_ENTELOGNATHUS = new CustomTrigger("pf_book_entelognathus");
+
+    public static final CustomTrigger CLICK_KENTROSAURUS = new CustomTrigger("pf_book_kentrosaurus");
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
 
@@ -1938,7 +1940,8 @@ public class ModTriggers
             CLICK_DOLLOCARIS,
             CLICK_SILUROLEPIS,
             CLICK_ENTELOGNATHUS,
-            CLICK_PIRANHAMESODON
+            CLICK_PIRANHAMESODON,
+            CLICK_KENTROSAURUS
 
 
 

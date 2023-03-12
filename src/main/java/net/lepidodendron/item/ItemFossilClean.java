@@ -47,6 +47,7 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 				//new ModelResourceLocation("lepidodendron:fossils/fossil_belonostomus_jurassic_clean", "inventory"),
 				//new ModelResourceLocation("lepidodendron:fossils/fossil_belonostomus_cretaceous_clean", "inventory"),
 				//new ModelResourceLocation("lepidodendron:fossils/fossil_pentecopterus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_kentrosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_miguashaia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_cometicercus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_oxyosteus_clean", "inventory"),

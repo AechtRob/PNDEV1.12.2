@@ -10585,3 +10585,12 @@ tile.pf_zygopteris_sapling.name=Zygopteris Sapling
 tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.
+
+item.pf_fossil_kentrosaurus_clean.name=Cleaned Kentrosaurus Fossil
+item.phial_dna_prehistoric_flora_kentrosaurus.name=Phial of Kentrosaurus DNA
+advancements.pf_adv_book_kentrosaurus.description=Unlock the entry for Kentrosaurus in the Palaeopedia
+advancements.pf_adv_book_kentrosaurus.title=Kentrosaurus
+item.pf_kentrosaurus_raw.name=Raw Kentrosaurus
+entity.prehistoric_flora_kentrosaurus.name=Kentrosaurus
+item.pf_eggs_kentrosaurus.name=Kentrosaurus Egg
+item.placeable_living_prehistoric_flora_kentrosaurus.name=Placeable Cultured Nodule of Kentrosaurus DNA
