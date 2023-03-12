@@ -337,6 +337,15 @@ public class ModelTomlinsonus extends AdvancedModelBase {
             //AdvancedModelRenderer[] legsL = {this.legL1, this.legL2, this.legL3, this.legL4, this.legL5, this.legL6, this.legL7, this.legL8, this.legL9, this.legL10, this.legL11, this.legL12, this.legL13, this.legL14, this.legL15, this.legL16, this.legL17};
             //AdvancedModelRenderer[] legsR = {this.legR1, this.legR2, this.legR3, this.legR4, this.legR5, this.legR6, this.legR7, this.legR8, this.legR9, this.legR10, this.legR11, this.legR12, this.legR13, this.legR14, this.legR15, this.legR16, this.legR17};
 
+            float floatMove = this.moveBox(0.2F, 0.03F, false, f2, 1);
+
+            if (f3 != 0) {
+                this.swing(frontlegL, 0.2F, -0.4F, false, 0, -0.1F, f2, 0.8F);
+                this.swing(frontlegR, 0.2F, 0.4F, false, 0, 0.1F, f2, 0.8F);
+                this.swing(frontlegL2, 0.2F, -0.4F, false, 0, -0.1F, f2, 0.8F);
+                this.swing(frontlegR2, 0.2F, 0.4F, false, 0, 0.1F, f2, 0.8F);
+                this.body.offsetZ = floatMove;
+            }
                 //swim legs:
                 float speedLeg = 1.5F;
                 float degreeLeg = 0.3F;
@@ -345,10 +354,6 @@ public class ModelTomlinsonus extends AdvancedModelBase {
                 this.swing(antennaL2, 0.4F, 0.2F, false, 0.5F, 0.1F, f2, 0.8F);
                 this.walk(antennaL, 0.4F, -0.2F, false, 0.5F, -0.1F, f2, 0.8F);
                 this.walk(antennaL2, 0.4F, -0.2F, false, 0.5F, -0.1F, f2, 0.8F);
-                this.swing(frontlegL, 0.2F, -0.4F, false, 0, -0.1F, f2, 0.8F);
-                this.swing(frontlegR, 0.2F, 0.4F, false, 0, 0.1F, f2, 0.8F);
-                this.swing(frontlegL2, 0.2F, -0.4F, false, 0, -0.1F, f2, 0.8F);
-                this.swing(frontlegR2, 0.2F, 0.4F, false, 0, 0.1F, f2, 0.8F);
                 this.flap(legL1, speedLeg, -degreeLeg, false, 0, -weightLeg, f2, 0.7F);
                 this.flap(legR1, speedLeg, degreeLeg, false, 0, weightLeg, f2, 0.7F);
                 this.flap(legL2, speedLeg, -degreeLeg, false, 0.5F, -weightLeg, f2, 0.7F);
