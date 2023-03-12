@@ -7,12 +7,9 @@ import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.lepidodendron.entity.render.entity.RenderEndothiodon;
-import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -104,7 +101,7 @@ public class EntityPrehistoricFloraSilesaurus extends EntityPrehistoricFloraLand
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.410F;
+		float speedBase = 0.425F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
