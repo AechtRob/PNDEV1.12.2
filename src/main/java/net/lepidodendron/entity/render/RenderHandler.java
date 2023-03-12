@@ -3277,7 +3277,7 @@ public class RenderHandler {
                 return new RenderEastmanosteus(manager);
             }
         });
-        /*
+
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraVachonisia.class, new IRenderFactory<EntityPrehistoricFloraVachonisia>() {
             @Override
             public Render<? super EntityPrehistoricFloraVachonisia> createRenderFor(RenderManager manager) {
@@ -3296,7 +3296,7 @@ public class RenderHandler {
                 return new RenderFurca(manager);
             }
         });
-        */
+
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraMiguashaia.class, new IRenderFactory<EntityPrehistoricFloraMiguashaia>() {
             @Override

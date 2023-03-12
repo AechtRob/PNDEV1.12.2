@@ -560,12 +560,12 @@ public class EntityRegistries {
         registerEntity("prehistoric_flora_wingertshellicus", EntityPrehistoricFloraWingertshellicus.class, LepidodendronMod.ENTITY_WINGERTSHELLICUS, 48,-10752,-7045795);
         registerEntity("prehistoric_flora_chotecops", EntityPrehistoricFloraChotecops.class, LepidodendronMod.ENTITY_CHOTECOPS, 48,-1596545,-9419988);
         registerEntity("prehistoric_flora_nahecaris", EntityPrehistoricFloraNahecaris.class, LepidodendronMod.ENTITY_NAHECARIS, 48, -2143808, -1990957);
-        //registerEntity("prehistoric_flora_vachonisia", EntityPrehistoricFloraVachonisia.class, LepidodendronMod.ENTITY_VACHONISIA, 64,0,0);
+        registerEntity("prehistoric_flora_vachonisia", EntityPrehistoricFloraVachonisia.class, LepidodendronMod.ENTITY_VACHONISIA, 48,-13623273, -5009860);
         registerEntity("prehistoric_flora_ceratiocaris", EntityPrehistoricFloraCeratiocaris.class, LepidodendronMod.ENTITY_CERATIOCARIS, 48,-2906819,-1514121);
         //registerEntity("prehistoric_flora_mazothairos", EntityPrehistoricFloraMazothairos.class, LepidodendronMod.ENTITY_MAZOTHAIROS, 64,0,0);
         registerEntity("prehistoric_flora_torpedaspis", EntityPrehistoricFloraTorpedaspis.class, LepidodendronMod.ENTITY_TORPEDASPIS, 48,-11386578,-4474221);
-        //registerEntity("prehistoric_flora_furca", EntityPrehistoricFloraFurca.class, LepidodendronMod.ENTITY_FURCA, 64,0,0);
-        //registerEntity("prehistoric_flora_tomlinsonus", EntityPrehistoricFloraTomlinsonus.class, LepidodendronMod.ENTITY_TOMLINSONUS, 64,0,0);
+        registerEntity("prehistoric_flora_furca", EntityPrehistoricFloraFurca.class, LepidodendronMod.ENTITY_FURCA, 64, -1156206,-2194857);
+        registerEntity("prehistoric_flora_tomlinsonus", EntityPrehistoricFloraTomlinsonus.class, LepidodendronMod.ENTITY_TOMLINSONUS, 64,-14012323,-2169980);
         //registerEntity("prehistoric_flora_jamoytius", EntityPrehistoricFloraJamoytius.class, LepidodendronMod.ENTITY_JAMOYTIUS, 64,0,0);
         registerEntity("prehistoric_flora_ophthalmosaurus", EntityPrehistoricFloraOphthalmosaurus.class, LepidodendronMod.ENTITY_OPHTHALMOSAURUS, 82,-1,0);
         registerEntity("prehistoric_flora_aphnelepis", EntityPrehistoricFloraAphnelepis.class, LepidodendronMod.ENTITY_APHNELEPIS, 48,-26368, -16711681);
