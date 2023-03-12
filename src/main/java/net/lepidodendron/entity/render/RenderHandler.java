@@ -3615,6 +3615,13 @@ public class RenderHandler {
             }
         });
 
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraKentrosaurus.class, new IRenderFactory<EntityPrehistoricFloraKentrosaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraKentrosaurus> createRenderFor(RenderManager manager) {
+                return new RenderKentrosaurus(manager);
+            }
+        });
+
 
 
 
