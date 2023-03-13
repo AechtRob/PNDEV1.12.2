@@ -10588,6 +10588,8 @@ tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click 
 
 tile.pf_skeleton_yinlong.name=Yinlong Displayable Fossil
 tile.pf_skeleton_mixopterus.name=Mixopterus Displayable Fossil
+tile.pf_skeleton_silesaurus.name=Silesaurus Displayable Fossil
+tile.pf_skeleton_liliensternus.name=Liliensternus Displayable Fossil
 tile.pf_skeleton_henodus.name=Henodus Displayable Fossil
 item.pf_fossil_kentrosaurus_clean.name=Cleaned Kentrosaurus Fossil
 item.phial_dna_prehistoric_flora_kentrosaurus.name=Phial of Kentrosaurus DNA
