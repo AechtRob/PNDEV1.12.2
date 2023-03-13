@@ -4,13 +4,19 @@ package net.lepidodendron.block.base;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.creativetab.TabLepidodendronMobile;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -20,6 +26,8 @@ import javax.annotation.Nullable;
 
 public class BlockSkeletonBase  extends Block {
 
+	public static final PropertyDirection FACING = BlockDirectional.FACING;
+
 	public BlockSkeletonBase() {
 		super(Material.ROCK);
 		setSoundType(LepidodendronMod.SKELETON);
@@ -28,6 +36,15 @@ public class BlockSkeletonBase  extends Block {
 		setLightLevel(0F);
 		setLightOpacity(0);
 		setCreativeTab(TabLepidodendronMobile.tab);
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
+	}
+
+	@Override
+	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+		if (!this.isSlab()) {
+			return state.withProperty(FACING, EnumFacing.UP);
+		}
+		return super.getActualState(state, worldIn, pos);
 	}
 
 	public int getRotation(World world, BlockPos pos) {
@@ -50,6 +67,10 @@ public class BlockSkeletonBase  extends Block {
 			}
 		}
 		return currentStage;
+	}
+
+	public boolean isSlab() {
+		return false;
 	}
 
 	@Override
@@ -93,6 +114,38 @@ public class BlockSkeletonBase  extends Block {
 	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
 		return BlockFaceShape.UNDEFINED;
 	}
+
+	@Override
+	protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+		return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+	}
+
+	@Override
+	public IBlockState withRotation(IBlockState state, Rotation rot) {
+		return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
+	}
+
+	@Override
+	public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+		return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing) state.getValue(FACING)).getIndex();
+	}
+
+	@Override
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+											EntityLivingBase placer) {
+		return this.getDefaultState().withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer));
+	}
+
 
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {

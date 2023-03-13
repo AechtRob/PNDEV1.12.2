@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
+import net.lepidodendron.entity.EntityPrehistoricFloraHenodus;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -99,7 +100,7 @@ public class BlockSkeletonHenodus extends ElementsLepidodendronMod.ModElement {
 						}
 					}
 				}
-				return false;
+				return true;
 			}
 
 			int newRotation = getRotation(worldIn, pos) + 15;
@@ -127,6 +128,12 @@ public class BlockSkeletonHenodus extends ElementsLepidodendronMod.ModElement {
 
 		public int getStages() {
 			return this.stages;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public double getMaxRenderDistanceSquared() {
+			return Math.pow(EntityPrehistoricFloraHenodus.getRenderDistanceWeight(), 2);
 		}
 
 		@Override

@@ -4,9 +4,12 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
+import net.lepidodendron.entity.EntityPrehistoricFloraDollocaris;
+import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -58,7 +61,9 @@ public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:entities/skeleton_yinlong", "inventory"));
+		ModelLoader.setCustomStateMapper(block, (new StateMap.Builder()).ignore(BlockSkeletonBase.FACING).build());
 	}
+
 	public static class BlockCustom extends BlockSkeletonBase {
 
 		public BlockCustom() {
@@ -99,7 +104,7 @@ public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
 						}
 					}
 				}
-				return false;
+				return true;
 			}
 
 			int newRotation = getRotation(worldIn, pos) + 15;
@@ -127,6 +132,14 @@ public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
 
 		public int getStages() {
 			return this.stages;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public double getMaxRenderDistanceSquared() {
+			double h = EntityPrehistoricFloraYinlong.getRenderDistanceWeight();
+			double hh = EntityPrehistoricFloraDollocaris.getRenderDistanceWeight();
+			return Math.pow(EntityPrehistoricFloraYinlong.getRenderDistanceWeight() * 64, 2);
 		}
 
 		@Override

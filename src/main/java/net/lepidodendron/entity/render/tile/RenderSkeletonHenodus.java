@@ -26,6 +26,7 @@ public class RenderSkeletonHenodus extends TileEntitySpecialRenderer<BlockSkelet
 
     @Override
     public void render(BlockSkeletonHenodus.TileEntitySkeletonHenodus entity, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+
         int currentRotation = 0;
         int currentStage = 0;
         if (entity != null && entity.hasWorld()) {
