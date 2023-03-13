@@ -39,14 +39,6 @@ public class BlockSkeletonBase  extends Block {
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.UP));
 	}
 
-	@Override
-	public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-		if (!this.isSlab()) {
-			return state.withProperty(FACING, EnumFacing.UP);
-		}
-		return super.getActualState(state, worldIn, pos);
-	}
-
 	public int getRotation(World world, BlockPos pos) {
 		int currentRotation = 0;
 		TileEntity tileEntity = world.getTileEntity(pos);
@@ -67,10 +59,6 @@ public class BlockSkeletonBase  extends Block {
 			}
 		}
 		return currentStage;
-	}
-
-	public boolean isSlab() {
-		return false;
 	}
 
 	@Override
@@ -143,9 +131,8 @@ public class BlockSkeletonBase  extends Block {
 	@Override
 	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
 											EntityLivingBase placer) {
-		return this.getDefaultState().withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer));
+		return this.getDefaultState().withProperty(FACING, facing);
 	}
-
 
 	@Override
 	public void onBlockAdded(World world, BlockPos pos, IBlockState state) {

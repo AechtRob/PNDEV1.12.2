@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
 import net.lepidodendron.entity.EntityPrehistoricFloraMixopterus;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -63,6 +64,7 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 	public static class BlockCustom extends BlockSkeletonBase {
 
 		public BlockCustom() {
+			setSoundType(SoundType.STONE);
 			setTranslationKey("pf_skeleton_mixopterus");
 		}
 
@@ -93,7 +95,7 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 									playerIn.getHeldItemMainhand().shrink(1);
 								}
 								worldIn.notifyBlockUpdate(pos, blockstate, blockstate, 3);
-								SoundEvent soundevent = SoundEvents.ENTITY_SKELETON_STEP;
+								SoundEvent soundevent = SoundEvents.BLOCK_STONE_HIT;
 								((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 								return true;
 							}
@@ -113,7 +115,7 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 					tileEntity.getTileData().setInteger("rotation", newRotation);
 				}
 				worldIn.notifyBlockUpdate(pos, blockstate, blockstate, 3);
-				SoundEvent soundevent = SoundEvents.ENTITY_SKELETON_HURT;
+				SoundEvent soundevent = SoundEvents.BLOCK_STONE_HIT;
 				((WorldServer) playerIn.getEntityWorld()).playSound(null, pos, soundevent, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 
@@ -133,7 +135,7 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 		@SideOnly(Side.CLIENT)
 		@Override
 		public double getMaxRenderDistanceSquared() {
-			return Math.pow(EntityPrehistoricFloraMixopterus.getRenderDistanceWeight(), 2);
+			return Math.pow(EntityPrehistoricFloraMixopterus.getRenderDistanceWeight() * 64, 2);
 		}
 
 		@Override

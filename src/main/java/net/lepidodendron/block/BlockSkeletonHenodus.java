@@ -21,6 +21,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -64,6 +65,11 @@ public class BlockSkeletonHenodus extends ElementsLepidodendronMod.ModElement {
 
 		public BlockCustom() {
 			setTranslationKey("pf_skeleton_henodus");
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(FACING, EnumFacing.UP);
 		}
 
 		@Nullable
@@ -133,7 +139,7 @@ public class BlockSkeletonHenodus extends ElementsLepidodendronMod.ModElement {
 		@SideOnly(Side.CLIENT)
 		@Override
 		public double getMaxRenderDistanceSquared() {
-			return Math.pow(EntityPrehistoricFloraHenodus.getRenderDistanceWeight(), 2);
+			return Math.pow(EntityPrehistoricFloraHenodus.getRenderDistanceWeight() * 64, 2);
 		}
 
 		@Override

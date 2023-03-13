@@ -4,6 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
+import net.lepidodendron.entity.EntityPrehistoricFloraLiliensternus;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -20,6 +21,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -63,6 +65,11 @@ public class BlockSkeletonLiliensternus extends ElementsLepidodendronMod.ModElem
 
 		public BlockCustom() {
 			setTranslationKey("pf_skeleton_liliensternus");
+		}
+
+		@Override
+		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+			return state.withProperty(FACING, EnumFacing.UP);
 		}
 
 		@Nullable
@@ -127,6 +134,12 @@ public class BlockSkeletonLiliensternus extends ElementsLepidodendronMod.ModElem
 
 		public int getStages() {
 			return this.stages;
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public double getMaxRenderDistanceSquared() {
+			return Math.pow(EntityPrehistoricFloraLiliensternus.getRenderDistanceWeight() * 64, 2);
 		}
 
 		@Override
