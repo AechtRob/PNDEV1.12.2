@@ -102,7 +102,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.425F;
+		float speedBase = 0.330F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
@@ -110,7 +110,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 			return 0.0F;
 		}
 		if (this.getIsFast()) {
-			speedBase = speedBase * 3.2F;
+			speedBase = speedBase * 1.8F;
 		}
 		return speedBase;
 	}
