@@ -8,7 +8,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.math.BlockPos;
@@ -226,8 +225,9 @@ public class ModelMixopterus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.carapace.render(f5 * 0.3F);
+        this.carapace.render(f5);
     }
+
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
         //GlStateManager.enableBlend();
@@ -252,7 +252,7 @@ public class ModelMixopterus extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.carapace.offsetY = 1.0F;
+        //this.carapace.offsetY = 1.0F;
 
         float speedMultiplier = 1F;
         EntityPrehistoricFloraAgeableBase ee = (EntityPrehistoricFloraAgeableBase) e;
@@ -340,7 +340,7 @@ public class ModelMixopterus extends AdvancedModelBase {
             }
             if (!e.isInWater()) {
                 //this.Bodyfront.rotateAngleZ = (float) Math.toRadians(90);
-                this.carapace.offsetY = 1.1F;
+                this.carapace.offsetY = 0.1F;
                 this.bob(carapace, -speed * 1.5F, 2F, false, f2, 1);
                 this.chainWave(fishTail, speed, tailHdegree, -3, f2, 1);
                 this.chainSwing(fishBody, speed, 0.1F, -2, f2, 1);

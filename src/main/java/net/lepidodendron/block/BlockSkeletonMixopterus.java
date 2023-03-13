@@ -33,46 +33,46 @@ import net.minecraftforge.oredict.OreDictionary;
 import javax.annotation.Nullable;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:skeleton_yinlong")
+public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:skeleton_mixopterus")
 	public static final Block block = null;
-	public BlockSkeletonYinlong(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.skeleton_yinlong);
+	public BlockSkeletonMixopterus(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.skeleton_mixopterus);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("skeleton_yinlong"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("skeleton_mixopterus"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()).setMaxStackSize(64));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntitySkeletonYinlong.class, "lepidodendron:tileentityskeleton_yinlong");
-		OreDictionary.registerOre("bone", BlockSkeletonYinlong.block);
-		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_yinlong", BlockSkeletonYinlong.block);
+		GameRegistry.registerTileEntity(TileEntitySkeletonMixopterus.class, "lepidodendron:tileentityskeleton_mixopterus");
+		OreDictionary.registerOre("bone", BlockSkeletonMixopterus.block);
+		OreDictionary.registerOre("mobdnaPNlepidodendron:prehistoric_flora_mixopterus", BlockSkeletonMixopterus.block);
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:entities/skeleton_yinlong", "inventory"));
+				new ModelResourceLocation("lepidodendron:entities/skeleton_mixopterus", "inventory"));
 	}
 	public static class BlockCustom extends BlockSkeletonBase {
 
 		public BlockCustom() {
-			setTranslationKey("pf_skeleton_yinlong");
+			setTranslationKey("pf_skeleton_mixopterus");
 		}
 
 		@Nullable
 		@Override
 		public TileEntity createTileEntity(World world, IBlockState state) {
-			return new TileEntitySkeletonYinlong();
+			return new TileEntitySkeletonMixopterus();
 		}
 
-		public TileEntitySkeletonYinlong createNewTileEntity(World worldIn, int meta) {
-			return new TileEntitySkeletonYinlong();
+		public TileEntitySkeletonMixopterus createNewTileEntity(World worldIn, int meta) {
+			return new TileEntitySkeletonMixopterus();
 		}
 
 		@Override
@@ -85,8 +85,8 @@ public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
 					TileEntity tileEntity = worldIn.getTileEntity(pos);
 					IBlockState blockstate = worldIn.getBlockState(pos);
 					if (tileEntity != null) {
-						if (tileEntity instanceof TileEntitySkeletonYinlong) {
-							if (((TileEntitySkeletonYinlong) tileEntity).getStages() >= newStage) {
+						if (tileEntity instanceof TileEntitySkeletonMixopterus) {
+							if (((TileEntitySkeletonMixopterus) tileEntity).getStages() >= newStage) {
 								tileEntity.getTileData().setInteger("stage", newStage);
 								if (!playerIn.isCreative()) {
 									playerIn.getHeldItemMainhand().shrink(1);
@@ -121,9 +121,9 @@ public class BlockSkeletonYinlong extends ElementsLepidodendronMod.ModElement {
 
 	}
 
-	public static class TileEntitySkeletonYinlong extends TileEntity {
+	public static class TileEntitySkeletonMixopterus extends TileEntity {
 
-		int stages = 5;
+		int stages = 1;
 
 		public int getStages() {
 			return this.stages;

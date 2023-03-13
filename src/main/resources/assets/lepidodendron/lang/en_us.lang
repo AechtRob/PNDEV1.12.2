@@ -10586,7 +10586,8 @@ tile.pf_zygopteris_shoot.name=Zygopteris Shoot
 tile.pf_zygopteris_shoot_worldgen.name=Zygopteris Shoot
 tooltip.palaeopedia.name=Shift-right-click to open the book. Normal right-click to use the book on mobs and blocks.
 
-tile.pf_skeleton_yinlong.name=Yinlong Bones
+tile.pf_skeleton_yinlong.name=Yinlong Displayable Fossil
+tile.pf_skeleton_mixopterus.name=Mixopterus Displayable Fossil
 item.pf_fossil_kentrosaurus_clean.name=Cleaned Kentrosaurus Fossil
 item.phial_dna_prehistoric_flora_kentrosaurus.name=Phial of Kentrosaurus DNA
 advancements.pf_adv_book_kentrosaurus.description=Unlock the entry for Kentrosaurus in the Palaeopedia

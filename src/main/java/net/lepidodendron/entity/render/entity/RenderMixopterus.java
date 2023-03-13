@@ -17,6 +17,10 @@ public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopte
         super(mgr, new ModelMixopterus(), 0.0f);
     }
 
+    public static float getScaler() {
+        return 0.3F;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMixopterus entity) {
         float scale = entity.getAgeScale();
@@ -33,7 +37,7 @@ public class RenderMixopterus extends RenderLiving<EntityPrehistoricFloraMixopte
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMixopterus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }
