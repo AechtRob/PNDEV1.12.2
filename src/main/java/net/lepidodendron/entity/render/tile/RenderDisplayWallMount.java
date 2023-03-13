@@ -35,7 +35,7 @@ import java.lang.reflect.Method;
 
 public class RenderDisplayWallMount extends TileEntitySpecialRenderer<BlockDisplayWallMount.TileEntityDisplayWallMount> {
 
-    public final float scaler = 6.0F;
+    public static final float scaler = 6.0F;
 
     public static final PropertyDirection FACING = BlockDirectional.FACING;
     private static final ResourceLocation TEXTURE_ACANTHODES = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/acanthodes.png");

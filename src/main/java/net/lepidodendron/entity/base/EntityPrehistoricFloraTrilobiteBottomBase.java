@@ -80,6 +80,10 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
         return new Class[]{this.getClass()};
     }
 
+    public int getShoalInterval() {
+        return 100;
+    }
+
     public int getAlarmCooldown() {return this.alarmCooldown;}
 
     @Override
@@ -458,7 +462,7 @@ public abstract class EntityPrehistoricFloraTrilobiteBottomBase extends EntityTa
             factor = 100;
         }
         if (factor > 0) {
-            if (((double) ii / Math.round(100D / factor)) == Math.round((double) ii / Math.round(100D / factor))) {
+            if (((double) ii / Math.round((float)this.getShoalInterval() / factor)) == Math.round((double) ii / Math.round((float)this.getShoalInterval() / factor))) {
                 ShoalingHelper.updateShoalTrilobiteBottomBase(this);
             }
         }

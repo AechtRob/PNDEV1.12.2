@@ -10,8 +10,10 @@ import net.lepidodendron.world.lootconditions.EntityInBiomes;
 import net.lepidodendron.world.lootconditions.EntityInDimensionID;
 import net.lepidodendron.world.lootconditions.EntityInDimensionName;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
@@ -55,6 +57,7 @@ public class LepidodendronMod {
 	public static final ResourceLocation PALAEOBOTANIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeobotanist_chest"));
 	public static final ResourceLocation PALAEONTOLOGIST_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "palaeontologist_chest"));
 	public static final ResourceLocation ORCHARD_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "orchard_chest"));
+	public static final SoundType SKELETON = new SoundType(1.0F, 1.0F, SoundEvents.ENTITY_SKELETON_DEATH, SoundEvents.BLOCK_STONE_STEP, SoundEvents.ENTITY_SKELETON_STEP, SoundEvents.ENTITY_SKELETON_HURT, SoundEvents.BLOCK_STONE_STEP);
 
 	public static final int ENTITY_WALLISEROPS = 1;
 	public static final ResourceLocation WALLISEROPS_LOOT = LootTableList.register(new ResourceLocation(LepidodendronMod.MODID, "entity/walliserops"));

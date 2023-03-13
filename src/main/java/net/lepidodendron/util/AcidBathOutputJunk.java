@@ -405,14 +405,16 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1),
+                new ItemStack(BlockSkeletonYinlong.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getJurassicJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1)
+                new ItemStack(Items.DIAMOND, 1),
+                new ItemStack(BlockSkeletonYinlong.block, 1)
         };
         return itemStack;
     }
