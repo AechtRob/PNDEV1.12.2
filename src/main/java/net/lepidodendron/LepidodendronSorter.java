@@ -3483,6 +3483,11 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3479;
     public static final int zosterophyllum_spore = 3480;
     public static final int advancement_placeholder = 3481;
+
+
+
+
+
     public static final int eggs_silesaurus = 3482;
     public static final int eggs_kentrosaurus = 3483;
     public static final int kentrosaurus_raw = 3484;
@@ -3491,5 +3496,6 @@ public class LepidodendronSorter {
 
     public static final int skeleton_yinlong = 3487;
     public static final int skeleton_mixopterus = 3488;
+    public static final int skeleton_henodus = 3489;
 
 }

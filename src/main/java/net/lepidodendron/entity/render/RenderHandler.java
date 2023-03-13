@@ -3805,6 +3805,7 @@ public class RenderHandler {
         //Skeletons:
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonYinlong.TileEntitySkeletonYinlong.class, new RenderSkeletonYinlong());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMixopterus.TileEntitySkeletonMixopterus.class, new RenderSkeletonMixopterus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonHenodus.TileEntitySkeletonHenodus.class, new RenderSkeletonHenodus());
 
     }
 }
