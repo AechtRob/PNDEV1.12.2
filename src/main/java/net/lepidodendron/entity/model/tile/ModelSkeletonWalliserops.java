@@ -12,7 +12,6 @@ public class ModelSkeletonWalliserops extends AdvancedModelBase {
     private final AdvancedModelRenderer folk;
     private final AdvancedModelRenderer cube_r1;
     private final AdvancedModelRenderer cube_r2;
-    private final AdvancedModelRenderer bb_main;
 
     public ModelSkeletonWalliserops() {
         this.textureWidth = 64;
@@ -20,7 +19,12 @@ public class ModelSkeletonWalliserops extends AdvancedModelBase {
 
         this.fossil = new AdvancedModelRenderer(this);
         this.fossil.setRotationPoint(0.0F, 24.0F, 0.0F);
-
+        this.fossil.cubeList.add(new ModelBox(fossil, 0, 49, -7.0F, -1.0F, -9.0F, 13, 1, 14, 0.0F, false));
+        this.fossil.cubeList.add(new ModelBox(fossil, 14, 54, -3.0F, -4.0F, -7.0F, 6, 3, 7, 0.0F, false));
+        this.fossil.cubeList.add(new ModelBox(fossil, 11, 54, -4.0F, -2.0F, -5.0F, 8, 1, 9, 0.0F, false));
+        this.fossil.cubeList.add(new ModelBox(fossil, 14, 54, -2.5F, -5.0F, -6.0F, 5, 1, 5, 0.0F, false));
+        this.fossil.cubeList.add(new ModelBox(fossil, 14, 54, -3.0F, -3.0F, 0.0F, 5, 1, 3, 0.0F, false));
+        this.fossil.cubeList.add(new ModelBox(fossil, 14, 54, -2.5F, -4.0F, 0.0F, 4, 1, 2, 0.0F, false));
 
         this.body = new AdvancedModelRenderer(this);
         this.body.setRotationPoint(0.0F, -3.25F, 2.0F);
@@ -61,15 +65,6 @@ public class ModelSkeletonWalliserops extends AdvancedModelBase {
         this.folk.addChild(cube_r2);
         this.setRotateAngle(cube_r2, -0.1745F, 0.0F, 0.0F);
         this.cube_r2.cubeList.add(new ModelBox(cube_r2, 3, 3, -0.5F, 0.0F, -3.0F, 1, 0, 3, 0.0F, false));
-
-        this.bb_main = new AdvancedModelRenderer(this);
-        this.bb_main.setRotationPoint(0.0F, 24.0F, 0.0F);
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 0, 49, -7.0F, -1.0F, -9.0F, 13, 1, 14, 0.0F, false));
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 14, 54, -3.0F, -4.0F, -7.0F, 6, 3, 7, 0.0F, false));
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 14, 54, -2.5F, -5.0F, -6.0F, 5, 1, 5, 0.0F, false));
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 11, 54, -4.0F, -2.0F, -5.0F, 8, 1, 9, 0.0F, false));
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 14, 54, -3.0F, -3.0F, 0.0F, 5, 1, 3, 0.0F, false));
-        this.bb_main.cubeList.add(new ModelBox(bb_main, 14, 54, -2.5F, -4.0F, 0.0F, 4, 1, 2, 0.0F, false));
 
         updateDefaultPose();
     }

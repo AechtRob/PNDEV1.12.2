@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderSchinderhannes extends RenderLiving<EntityPrehistoricFloraSchinderhannes> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/schinderhannes.png");
     public static float getScaler() {
-        return 0.775F;
+        return 0.18F;
     }
 
     public RenderSchinderhannes(RenderManager mgr) {

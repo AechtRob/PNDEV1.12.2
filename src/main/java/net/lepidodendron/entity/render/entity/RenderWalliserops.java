@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderWalliserops extends RenderLiving<EntityPrehistoricFloraWalliserops> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/walliserops.png");
     public static float getScaler() {
-        return 0.775F;
+        return  0.38F;
     }
 
 

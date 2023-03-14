@@ -12,7 +12,7 @@ public class RenderMegarachne extends RenderLiving<EntityPrehistoricFloraMegarac
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne_baby.png");
     public static float getScaler() {
-        return 0.775F;
+        return  0.55F;
     }
 
 

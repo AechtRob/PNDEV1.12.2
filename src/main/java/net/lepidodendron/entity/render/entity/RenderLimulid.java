@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderLimulid extends RenderLiving<EntityPrehistoricFloraLimulid> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/limulid.png");
     public static float getScaler() {
-        return 0.775F;
+        return 0.55F;
     }
 
     public RenderLimulid(RenderManager mgr) {

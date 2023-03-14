@@ -24,7 +24,7 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
     }
 
     public static float getScaler() {
-        return 1;
+        return 1* 0.29f * 0.88F;
     }
 
     @Override
