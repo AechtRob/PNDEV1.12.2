@@ -3501,5 +3501,10 @@ public class LepidodendronSorter {
     public static final int skeleton_silesaurus = 3490;
 
     public static final int skeleton_liliensternus = 3491;
-
+    public static final int skeleton_kentrosaurus = 3492;
+    public static final int skeleton_bungartius = 3493;
+    public static final int skeleton_dunkleosteus = 3494;
+    public static final int skeleton_megalosaurus = 3495;
+    public static final int skeleton_ophiacodon = 3496;
+    public static final int skeleton_scutosaurus = 3497;
 }
