@@ -2247,6 +2247,7 @@ public class ChunkGenSpawner extends ElementsLepidodendronMod.ModElement {
                                                         }
                                                         //System.err.println("Failed rarity test " + mobToSpawn);
                                                     }
+                                                    entity.setDead();
                                                 }
                                             }
                                         }

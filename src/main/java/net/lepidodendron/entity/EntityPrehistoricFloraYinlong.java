@@ -137,7 +137,7 @@ public class EntityPrehistoricFloraYinlong extends EntityPrehistoricFloraLandBas
 	}
 
 	protected float getAISpeedLand() {
-		float speedBase = 0.315F;
+		float speedBase = 0.335F;
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}

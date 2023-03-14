@@ -20,6 +20,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -87,8 +88,8 @@ public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement
 			super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 
 			int newStage = getStage(worldIn, pos) + 1;
-			if (playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(this)) {
-				if (!worldIn.isRemote) {
+			if (!worldIn.isRemote) {
+				if (playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(this)) {
 					TileEntity tileEntity = worldIn.getTileEntity(pos);
 					IBlockState blockstate = worldIn.getBlockState(pos);
 					if (tileEntity != null) {
@@ -106,7 +107,6 @@ public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement
 						}
 					}
 				}
-				return false;
 			}
 
 			int newRotation = getRotation(worldIn, pos) + 15;
@@ -136,10 +136,9 @@ public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement
 			return this.stages;
 		}
 
-		@SideOnly(Side.CLIENT)
 		@Override
-		public double getMaxRenderDistanceSquared() {
-			return Math.pow(EntityPrehistoricFloraOphiacodon.getRenderDistanceWeight() * 64, 2);
+		public AxisAlignedBB getRenderBoundingBox() {
+			return (new EntityPrehistoricFloraOphiacodon(world)).getRenderBoundingBox();
 		}
 
 		@Override

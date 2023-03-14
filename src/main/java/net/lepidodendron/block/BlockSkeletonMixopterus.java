@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
-import net.lepidodendron.entity.EntityPrehistoricFloraMixopterus;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -21,6 +20,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -83,8 +83,8 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 			super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 
 			int newStage = getStage(worldIn, pos) + 1;
-			if (playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(this)) {
-				if (!worldIn.isRemote) {
+			if (!worldIn.isRemote) {
+				if (playerIn.getHeldItemMainhand().getItem() == Item.getItemFromBlock(this)) {
 					TileEntity tileEntity = worldIn.getTileEntity(pos);
 					IBlockState blockstate = worldIn.getBlockState(pos);
 					if (tileEntity != null) {
@@ -102,7 +102,6 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 						}
 					}
 				}
-				return true;
 			}
 
 			int newRotation = getRotation(worldIn, pos) + 15;
@@ -132,10 +131,9 @@ public class BlockSkeletonMixopterus extends ElementsLepidodendronMod.ModElement
 			return this.stages;
 		}
 
-		@SideOnly(Side.CLIENT)
 		@Override
-		public double getMaxRenderDistanceSquared() {
-			return Math.pow(EntityPrehistoricFloraMixopterus.getRenderDistanceWeight() * 64, 2);
+		public AxisAlignedBB getRenderBoundingBox() {
+			return INFINITE_EXTENT_AABB;
 		}
 
 		@Override
