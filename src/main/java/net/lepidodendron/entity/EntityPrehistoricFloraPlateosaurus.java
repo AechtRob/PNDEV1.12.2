@@ -269,7 +269,7 @@ public class EntityPrehistoricFloraPlateosaurus extends EntityPrehistoricFloraLa
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 10F, 10F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {

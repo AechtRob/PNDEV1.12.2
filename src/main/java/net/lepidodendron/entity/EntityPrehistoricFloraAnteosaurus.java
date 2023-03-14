@@ -279,7 +279,7 @@ public class EntityPrehistoricFloraAnteosaurus extends EntityPrehistoricFloraLan
 		}
 
 		if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getGrappleTarget() != null) {
-			this.faceEntity(this.getGrappleTarget(), 100F, 100F);
+			this.faceEntity(this.getGrappleTarget(), 10, 10);
 			if (!this.world.isRemote && this.getAnimationTick() == 110) {
 				this.playSound((net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY
 						.getObject(this.ThreatSound()), this.getSoundVolume(), 1);

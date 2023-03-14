@@ -42,7 +42,6 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 	public BlockPos currentTarget;
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
-	private BlockPos drinkingFrom;
 
 	public EntityPrehistoricFloraEndothiodon(World world) {
 		super(world);
@@ -217,8 +216,8 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.drinkingFrom = this.getPosition().offset(facing);
-				this.faceBlock(this.drinkingFrom, 10F, 10F);
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
 		return test;
@@ -276,7 +275,7 @@ public class EntityPrehistoricFloraEndothiodon extends EntityPrehistoricFloraLan
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 10F, 10F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {

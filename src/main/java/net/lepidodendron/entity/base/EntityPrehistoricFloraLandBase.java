@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.base;
 
+import com.google.common.base.Optional;
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
 import net.ilexiconn.llibrary.server.animation.Animation;
 import net.lepidodendron.block.BlockNest;
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
 public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFloraAgeableBase {
 
     private static final DataParameter<Integer> PFDRINKING = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.VARINT);
+    private static final DataParameter<Optional<BlockPos>> DRINKINGFROM = EntityDataManager.createKey(EntityPrehistoricFloraLandBase.class, DataSerializers.OPTIONAL_BLOCK_POS);
 
     public BlockPos currentTarget;
     @SideOnly(Side.CLIENT)
@@ -54,7 +56,6 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     public Animation EAT_ANIMATION;
     public Animation DRINK_ANIMATION;
     private int inPFLove;
-    private BlockPos drinkingFrom;
 
     public EntityPrehistoricFloraLandBase(World world) {
         super(world);
@@ -85,7 +86,17 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
     protected void entityInit() {
         super.entityInit();
         this.dataManager.register(PFDRINKING, rand.nextInt(1000));
+        this.dataManager.register(DRINKINGFROM, Optional.absent());
         this.setScaleForAge(false);
+    }
+
+    @Nullable
+    public BlockPos getDrinkingFrom() {
+        return (BlockPos) ((Optional) this.dataManager.get(DRINKINGFROM)).orNull();
+    }
+
+    public void setDrinkingFrom(@Nullable BlockPos pos) {
+        this.dataManager.set(DRINKINGFROM, Optional.fromNullable(pos));
     }
 
     public boolean canSwim() {
@@ -148,8 +159,8 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     facing = EnumFacing.WEST;
                 }
                 if (facing != null) {
-                    this.drinkingFrom = this.getPosition().offset(facing);
-                    this.faceBlock(this.drinkingFrom, 10F, 10F);
+                    this.setDrinkingFrom(this.getPosition().offset(facing));
+                    this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
                 }
             }
             return test;
@@ -187,21 +198,25 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                     facing = EnumFacing.WEST;
                 }
                 if (facing != null) {
-                    this.drinkingFrom = this.getPosition().offset(facing);
-                    this.faceBlock(this.drinkingFrom, 10F, 10F);
+                    this.setDrinkingFrom(this.getPosition().offset(facing));
+                    this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
                 }
             }
             return test;
         }
     }
 
-    public void faceBlock(BlockPos pos, float maxYawIncrease, float maxPitchIncrease)
+    public void faceBlock(@Nullable BlockPos pos, float maxYawIncrease, float maxPitchIncrease)
     {
-        double d0 = (pos.getX() + 0.8) - this.posX;
-        double d2 = (pos.getZ() + 0.8) - this.posZ;
+        if (pos == null) {
+            return;
+        }
+
+        double d0 = (pos.getX() + 0.5) - this.posX;
+        double d2 = (pos.getZ() + 0.5) - this.posZ;
         double d1;
 
-        d1 = 1D - (this.posY + (double)this.getEyeHeight());
+        d1 = (pos.getY() + 0.5D) - (this.posY + (double)this.getEyeHeight());
 
         double d3 = (double)MathHelper.sqrt(d0 * d0 + d2 * d2);
         float f = (float)(MathHelper.atan2(d2, d0) * (180D / Math.PI)) - 90.0F;
@@ -273,7 +288,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         this.setIsDrinking(1000);
         this.setAnimation(NO_ANIMATION);
         this.getNavigator().clearPath();
-        this.drinkingFrom = null;
+        this.setDrinkingFrom(null);
         return super.attackEntityFrom(ds, i);
     }
 
@@ -368,15 +383,21 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
                 this.setAnimation(DRINK_ANIMATION);
                 //this.setIsDrinking(rand.nextInt(800) + 700);
             }
+            if (this.getAnimation() == DRINK_ANIMATION){
+                int k = this.getAnimationTick();
+                int l = DRINK_ANIMATION.getDuration();
+                int p = 1;
+            }
+
             if (this.getAnimation() == DRINK_ANIMATION && this.getAnimationTick() >= DRINK_ANIMATION.getDuration() - 1) {
                 int i = Math.max((int)Math.round(getDrinkCooldown()/2), 1);
                 this.setIsDrinking(rand.nextInt(i) + i);
                 this.getNavigator().clearPath();
-                this.drinkingFrom = null;
+                this.setDrinkingFrom(null);
                 this.setAnimation(NO_ANIMATION);
             }
-            if (this.drinkingFrom != null) {
-                this.faceBlock(this.drinkingFrom, 10F, 10F);
+            if (this.getDrinkingFrom() != null) {
+                this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
             }
         }
 
@@ -549,7 +570,7 @@ public abstract class EntityPrehistoricFloraLandBase extends EntityPrehistoricFl
         }
 
         if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == this.headbutTick() && this.getGrappleTarget() != null) {
-            this.faceEntity(this.getGrappleTarget(), 1000F, 1000F);
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);
