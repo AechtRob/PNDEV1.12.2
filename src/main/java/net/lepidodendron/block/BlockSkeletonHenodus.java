@@ -61,6 +61,7 @@ public class BlockSkeletonHenodus extends ElementsLepidodendronMod.ModElement {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
 				new ModelResourceLocation("lepidodendron:entities/skeleton_henodus", "inventory"));
 	}
+
 	public static class BlockCustom extends BlockSkeletonBase {
 
 		public BlockCustom() {
