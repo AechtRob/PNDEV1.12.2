@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderAmpyx extends RenderLiving<EntityPrehistoricFloraAmpyx> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ampyx.png");
+    public static float getScaler() {
+        return 0.7F * 1.65F;
+    }
 
     public RenderAmpyx(RenderManager mgr) {
         super(mgr, new ModelAmpyx(), 0.0f);
@@ -26,7 +29,7 @@ public class RenderAmpyx extends RenderLiving<EntityPrehistoricFloraAmpyx> {
     }
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAmpyx entity, float f) {
-        float scale = 0.7F * 1.65F;
+        float scale = this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = 0;
     }

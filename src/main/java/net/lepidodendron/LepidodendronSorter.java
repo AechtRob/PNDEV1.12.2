@@ -3528,6 +3528,12 @@ public class LepidodendronSorter {
     public static final int skeleton_walliserops = 3531;
     public static final int skeleton_meganeura = 3532;
     public static final int skeleton_megarachne = 3533;
+    public static final int skeleton_limulid = 3534;
+
+    public static final int eggs_dryosaurus = 3535;
+    public static final int eggs_dysalotosaurus = 3536;
+    public static final int dryosaurus_raw = 3537;
+    public static final int dysalotosaurus_raw = 3538;
 
 
 
