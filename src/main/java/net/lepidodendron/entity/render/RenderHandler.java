@@ -3808,6 +3808,12 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonHenodus.TileEntitySkeletonHenodus.class, new RenderSkeletonHenodus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonSilesaurus.TileEntitySkeletonSilesaurus.class, new RenderSkeletonSilesaurus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonLiliensternus.TileEntitySkeletonLiliensternus.class, new RenderSkeletonLiliensternus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonKentrosaurus.TileEntitySkeletonKentrosaurus.class, new RenderSkeletonKentrosaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDunkleosteus.TileEntitySkeletonDunkleosteus.class, new RenderSkeletonDunkleosteus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonBungartius.TileEntitySkeletonBungartius.class, new RenderSkeletonBungartius());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMegalosaurus.TileEntitySkeletonMegalosaurus.class, new RenderSkeletonMegalosaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonOphiacodon.TileEntitySkeletonOphiacodon.class, new RenderSkeletonOphiacodon());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonScutosaurus.TileEntitySkeletonScutosaurus.class, new RenderSkeletonScutosaurus());
 
     }
 }

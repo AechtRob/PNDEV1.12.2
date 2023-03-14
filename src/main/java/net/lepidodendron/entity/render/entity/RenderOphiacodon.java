@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderOphiacodon extends RenderLiving<EntityPrehistoricFloraOphiacodon> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/ophiacodon.png");
+    public static float getScaler() {
+        return 0.385f;
+    }
 
     public RenderOphiacodon(RenderManager mgr) {
         super(mgr, new ModelOphiacodon(), 0.5f);
@@ -27,7 +30,7 @@ public class RenderOphiacodon extends RenderLiving<EntityPrehistoricFloraOphiaco
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraOphiacodon entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.525F;
     }
