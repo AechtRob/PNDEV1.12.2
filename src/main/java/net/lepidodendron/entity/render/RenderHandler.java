@@ -3621,6 +3621,12 @@ public class RenderHandler {
                 return new RenderKentrosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraStethacanthus.class, new IRenderFactory<EntityPrehistoricFloraStethacanthus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraStethacanthus> createRenderFor(RenderManager manager) {
+                return new RenderStethacanthus(manager);
+            }
+        });
 
 
 
