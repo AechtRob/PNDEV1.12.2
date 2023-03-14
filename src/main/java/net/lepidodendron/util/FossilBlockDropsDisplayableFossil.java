@@ -160,11 +160,13 @@ public class FossilBlockDropsDisplayableFossil {
 
     public static ItemStack[] getTriassicDisplayableFossilDrops() {
         ItemStack[] itemStack = {
+                new ItemStack(BlockSkeletonArizonasaurus.block, 1),
                 new ItemStack(BlockSkeletonHenodus.block, 1),
                 new ItemStack(BlockSkeletonLiliensternus.block, 1),
                 new ItemStack(BlockSkeletonShringasaurus.block, 1),
                 new ItemStack(BlockSkeletonErythrosuchus.block, 1),
-                new ItemStack(BlockSkeletonSilesaurus.block, 1)
+                new ItemStack(BlockSkeletonSilesaurus.block, 1),
+                new ItemStack(BlockSkeletonLotosaurus.block, 1)
         };
         return itemStack;
     }

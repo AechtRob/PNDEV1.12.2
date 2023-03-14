@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderLotosaurus extends RenderLiving<EntityPrehistoricFloraLotosaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/lotosaurus.png");
 
+    public static float getScaler() {return 0.500f * 1.8F;}
+
     public RenderLotosaurus(RenderManager mgr) {
         super(mgr, new ModelLotosaurus(), 0.4f);
     }
@@ -27,7 +29,7 @@ public class RenderLotosaurus extends RenderLiving<EntityPrehistoricFloraLotosau
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraLotosaurus entity, float f) {
-        float scale = entity.getAgeScale() * 1.8F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.40F;
     }
