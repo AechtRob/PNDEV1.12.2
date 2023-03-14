@@ -189,16 +189,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(Blocks.SAND, 1, 0),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonMixopterus.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
        };
         return itemStack;
     }
 
     public static ItemStack[] getOrdovicianJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonMixopterus.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -255,18 +253,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockSandWhite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonBungartius.block, 1),
-                new ItemStack(BlockSkeletonDunkleosteus.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
        };
         return itemStack;
     }
 
     public static ItemStack[] getDevonianJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonBungartius.block, 1),
-                new ItemStack(BlockSkeletonDunkleosteus.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -293,16 +287,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonOphiacodon.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getCarboniferousJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonOphiacodon.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -332,18 +324,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonOphiacodon.block, 1),
-                new ItemStack(BlockSkeletonScutosaurus.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
                };
         return itemStack;
     }
 
     public static ItemStack[] getPermianJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonOphiacodon.block, 1),
-                new ItemStack(BlockSkeletonScutosaurus.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -377,24 +365,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonHenodus.block, 1),
-                new ItemStack(BlockSkeletonLiliensternus.block, 1),
-                new ItemStack(BlockSkeletonShringasaurus.block, 1),
-                new ItemStack(BlockSkeletonErythrosuchus.block, 1),
-                new ItemStack(BlockSkeletonSilesaurus.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getTriassicJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonHenodus.block, 1),
-                new ItemStack(BlockSkeletonLiliensternus.block, 1),
-                new ItemStack(BlockSkeletonShringasaurus.block, 1),
-                new ItemStack(BlockSkeletonErythrosuchus.block, 1),
-                new ItemStack(BlockSkeletonSilesaurus.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -427,20 +405,14 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1),
-                new ItemStack(BlockSkeletonYinlong.block, 1),
-                new ItemStack(BlockSkeletonKentrosaurus.block, 1),
-                new ItemStack(BlockSkeletonMegalosaurus.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getJurassicJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1),
-                new ItemStack(BlockSkeletonYinlong.block, 1),
-                new ItemStack(BlockSkeletonKentrosaurus.block, 1),
-                new ItemStack(BlockSkeletonMegalosaurus.block, 1)
+                new ItemStack(Items.DIAMOND, 1)
         };
         return itemStack;
     }
@@ -459,11 +431,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1),
-                new ItemStack(BlockStonePeridotite.block, 1),
-                new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -489,11 +457,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1),
-                new ItemStack(BlockStonePeridotite.block, 1),
-                new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -519,11 +483,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.REDSTONE, 1),
                 new ItemStack(Items.COAL, 1, 0),
                 new ItemStack(Items.CLAY_BALL, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1),
-                new ItemStack(BlockStonePeridotite.block, 1),
-                new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
@@ -551,11 +511,7 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.CLAY_BALL, 1),
                 new ItemStack(Items.FLINT, 1),
                 new ItemStack(Items.FLINT, 1),
-                new ItemStack(Items.FLINT, 1),
-                new ItemStack(ItemAnthracite.block, 1),
-                new ItemStack(BlockStonePeridotite.block, 1),
-                new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(Items.FLINT, 1)
         };
         return itemStack;
     }
