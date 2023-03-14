@@ -293,14 +293,16 @@ public class AcidBathOutputJunk {
                 new ItemStack(ItemAnthracite.block, 1),
                 new ItemStack(BlockStonePeridotite.block, 1),
                 new ItemStack(BlockStoneScoria.block, 1),
-                new ItemStack(BlockStonePorphyry.block, 1)
+                new ItemStack(BlockStonePorphyry.block, 1),
+                new ItemStack(BlockSkeletonOphiacodon.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getCarboniferousJunkBonus() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.DIAMOND, 1)
+                new ItemStack(Items.DIAMOND, 1),
+                new ItemStack(BlockSkeletonOphiacodon.block, 1)
         };
         return itemStack;
     }
@@ -378,6 +380,8 @@ public class AcidBathOutputJunk {
                 new ItemStack(BlockStonePorphyry.block, 1),
                 new ItemStack(BlockSkeletonHenodus.block, 1),
                 new ItemStack(BlockSkeletonLiliensternus.block, 1),
+                new ItemStack(BlockSkeletonShringasaurus.block, 1),
+                new ItemStack(BlockSkeletonErythrosuchus.block, 1),
                 new ItemStack(BlockSkeletonSilesaurus.block, 1)
         };
         return itemStack;
@@ -388,6 +392,8 @@ public class AcidBathOutputJunk {
                 new ItemStack(Items.DIAMOND, 1),
                 new ItemStack(BlockSkeletonHenodus.block, 1),
                 new ItemStack(BlockSkeletonLiliensternus.block, 1),
+                new ItemStack(BlockSkeletonShringasaurus.block, 1),
+                new ItemStack(BlockSkeletonErythrosuchus.block, 1),
                 new ItemStack(BlockSkeletonSilesaurus.block, 1)
         };
         return itemStack;
