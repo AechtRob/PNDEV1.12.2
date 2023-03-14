@@ -25,13 +25,16 @@ public class RenderFalcatus extends RenderLiving<EntityPrehistoricFloraFalcatus>
     }
 
 
+    public static float getScaler() {
+        return 0.28F;
+    }
     @Override
     protected void applyRotations(EntityPrehistoricFloraFalcatus entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);
     }
 
     protected void preRenderCallback(EntityPrehistoricFloraFalcatus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale() * this.getScaler();
         if (entity.getIsFemale()) {
             scale = scale * 0.8F;
         }

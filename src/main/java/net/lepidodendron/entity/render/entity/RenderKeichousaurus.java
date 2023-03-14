@@ -10,6 +10,9 @@ import net.minecraft.util.ResourceLocation;
 
 public class RenderKeichousaurus extends RenderLiving<EntityPrehistoricFloraKeichousaurus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/keichousaurus.png");
+    public static float getScaler() {
+        return 0.25f;
+    }
 
     public RenderKeichousaurus(RenderManager mgr) {
         super(mgr, new ModelKeichousaurus(), 0.0f);
@@ -27,7 +30,7 @@ public class RenderKeichousaurus extends RenderLiving<EntityPrehistoricFloraKeic
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraKeichousaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }
