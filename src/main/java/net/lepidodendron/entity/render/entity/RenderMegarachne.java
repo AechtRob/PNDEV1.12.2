@@ -11,6 +11,9 @@ import net.minecraft.util.ResourceLocation;
 public class RenderMegarachne extends RenderLiving<EntityPrehistoricFloraMegarachne> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne.png");
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/megarachne_baby.png");
+    public static float getScaler() {
+        return  0.55F;
+    }
 
 
     public RenderMegarachne(RenderManager mgr) {
@@ -33,7 +36,7 @@ public class RenderMegarachne extends RenderLiving<EntityPrehistoricFloraMegarac
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMegarachne entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

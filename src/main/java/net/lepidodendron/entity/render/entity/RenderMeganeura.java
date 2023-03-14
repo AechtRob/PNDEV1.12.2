@@ -17,9 +17,14 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
         this.addLayer(new LayerMeganeuraWing(this));
     }
 
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraMeganeura entity) {
         return RenderMeganeura.TEXTURE;
+    }
+
+    public static float getScaler() {
+        return 1* 0.29f * 0.88F;
     }
 
     @Override
@@ -56,7 +61,7 @@ public class RenderMeganeura extends RenderLiving<EntityPrehistoricFloraMeganeur
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraMeganeura entity, float f) {
-        float scale = 1.0F;
+        float scale = this.getScaler();
         if (entity.world.getBlockState(entity.getPosition()).getBlock() == BlockGlassJar.block) {
             scale = 0.6F;
         }

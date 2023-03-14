@@ -65,6 +65,8 @@ public class ItemFossilClean extends ElementsLepidodendronMod.ModElement {
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_greererpeton_clean", "inventory"),
 //				new ModelResourceLocation("lepidodendron:fossils/fossil_ciurcopterus_clean", "inventory"),
 
+				new ModelResourceLocation("lepidodendron:fossils/fossil_dryosaurus_clean", "inventory"),
+				new ModelResourceLocation("lepidodendron:fossils/fossil_dysalotosaurus_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_vachonisia_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_furca_clean", "inventory"),
 				new ModelResourceLocation("lepidodendron:fossils/fossil_tomlinsonus_clean", "inventory"),
