@@ -4,7 +4,6 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
-import net.lepidodendron.entity.EntityPrehistoricFloraMegalosaurus;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -138,7 +137,7 @@ public class BlockSkeletonMegalosaurus extends ElementsLepidodendronMod.ModEleme
 
 		@Override
 		public AxisAlignedBB getRenderBoundingBox() {
-			return (new EntityPrehistoricFloraMegalosaurus(world)).getRenderBoundingBox();
+			return INFINITE_EXTENT_AABB;
 		}
 
 		@Override
