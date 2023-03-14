@@ -12,7 +12,6 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableFishBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAmphibianBase;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraFishBase;
 import net.lepidodendron.entity.render.entity.RenderBungartius;
-import net.lepidodendron.entity.render.entity.RenderEastmanosteus;
 import net.lepidodendron.entity.render.tile.RenderDisplays;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.*;
@@ -45,7 +44,7 @@ public class EntityPrehistoricFloraBungartius extends EntityPrehistoricFloraAgea
 
 	public EntityPrehistoricFloraBungartius(World world) {
 		super(world);
-		setSize(0.5F, 0.5F);
+		setSize(0.8F, 0.6F);
 		experienceValue = 0;
 		this.isImmuneToFire = false;
 		setNoAI(!true);
