@@ -7,7 +7,6 @@ import net.ilexiconn.llibrary.server.animation.IAnimatedEntity;
 import net.lepidodendron.entity.EntityPrehistoricFloraTullimonstrum;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 public class ModelTullimonstrum extends AdvancedModelBase {
@@ -171,7 +170,7 @@ public class ModelTullimonstrum extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.bone.rotateAngleZ = (float) Math.toRadians(90);
-            //this.bone.offsetY = 0.7F;
+            this.bone.offsetY = -0.2F;
             this.bob(bone, -speed, 5F, false, f2, 1);
         }
     }

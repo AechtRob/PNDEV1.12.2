@@ -8,7 +8,6 @@ import net.lepidodendron.entity.EntityPrehistoricFloraAnomalocaris;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
@@ -511,7 +510,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0F;
+        //this.body.offsetY = 0F;
 
         float speed = 0.4F;
         if (!e.isInWater()) {
@@ -593,7 +592,7 @@ public class ModelAnomalocaris extends AdvancedModelBase {
             this.chainWave(bodyF, 0.28F, 0.18f, -3, f2, 0.6F);
 
             if (!e.isInWater()) {
-                this.body.offsetY = 0F;
+                //this.body.offsetY = 0F;
                 this.bob(body, -speed * 1.5F, 2.5F, false, f2, 1);
             } else {
                 if (f3 == 0.0F) {
