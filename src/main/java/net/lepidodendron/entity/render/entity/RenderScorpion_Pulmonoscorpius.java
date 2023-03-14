@@ -37,6 +37,10 @@ public class RenderScorpion_Pulmonoscorpius extends RenderLiving<EntityPrehistor
         return RenderScorpion_Pulmonoscorpius.TEXTURE;
     }
 
+    public static float getScaler() {
+        return 0.3f;
+    }
+
     @Override
     protected void applyRotations(EntityPrehistoricFloraScorpion_Pulmonoscorpius entityLiving, float ageInTicks, float rotationYaw, float partialTicks) {
         super.applyRotations(entityLiving, ageInTicks, rotationYaw, partialTicks);

@@ -117,7 +117,7 @@ public class ModelTullimonstrum extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.bone.render(f5 * 0.4f);
+        this.bone.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -143,7 +143,7 @@ public class ModelTullimonstrum extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.bone.offsetY = 0.9F;
+        //this.bone.offsetY = 0.9F;
 
         EntityPrehistoricFloraTullimonstrum Tullimonstrum = (EntityPrehistoricFloraTullimonstrum) e;
 
@@ -171,7 +171,7 @@ public class ModelTullimonstrum extends AdvancedModelBase {
 
         if (!e.isInWater()) {
             this.bone.rotateAngleZ = (float) Math.toRadians(90);
-            this.bone.offsetY = 0.7F;
+            //this.bone.offsetY = 0.7F;
             this.bob(bone, -speed, 5F, false, f2, 1);
         }
     }

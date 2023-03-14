@@ -170,7 +170,7 @@ public class ModelFalcatus extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.28F);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
