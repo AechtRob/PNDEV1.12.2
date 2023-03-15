@@ -126,7 +126,7 @@ public class BlockSkeletonArthropleura extends ElementsLepidodendronMod.ModEleme
 
 	public static class TileEntitySkeletonArthropleura extends TileEntity {
 
-		int stages = 1;
+		int stages = 4;
 
 		public int getStages() {
 			return this.stages;

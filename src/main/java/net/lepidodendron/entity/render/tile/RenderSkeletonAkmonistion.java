@@ -47,7 +47,7 @@ public class RenderSkeletonAkmonistion extends TileEntitySpecialRenderer<BlockSk
         ModelSkeletonAkmonistion modelSkeleton = this.modelSkeleton;
         double scale = RenderAkmonistion.getScaler() * RenderDisplayWallMount.scaler;
 
-        double offset = 0.43;
+        double offset = 0.45;
         if (facing == EnumFacing.UP) {
             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
             GlStateManager.rotate(180, 0F, 0F, 1F);

@@ -116,21 +116,23 @@ public class FossilBlockDropsDisplayableFossil {
 
     public static ItemStack[] getCambrianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.AIR, 1)
+                new ItemStack(BlockSkeletonAnomalocaris.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getOrdovicianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
-                new ItemStack(BlockSkeletonMixopterus.block, 1)
+                new ItemStack(BlockSkeletonMixopterus.block, 1),
+                new ItemStack(BlockSkeletonAsaphus.block, 1),
+
         };
         return itemStack;
     }
 
     public static ItemStack[] getSilurianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
-                new ItemStack(Items.AIR, 1)
+                new ItemStack(BlockSkeletonAmpyx.block, 1)
         };
         return itemStack;
     }
@@ -138,14 +140,26 @@ public class FossilBlockDropsDisplayableFossil {
     public static ItemStack[] getDevonianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
                 new ItemStack(BlockSkeletonBungartius.block, 1),
-                new ItemStack(BlockSkeletonDunkleosteus.block, 1)
+                new ItemStack(BlockSkeletonDunkleosteus.block, 1),
+                new ItemStack(BlockSkeletonSchinderhannes.block, 1),
+                new ItemStack(BlockSkeletonWalliserops.block, 1),
+                new ItemStack(BlockSkeletonTiktaalik.block, 1)
         };
         return itemStack;
     }
 
     public static ItemStack[] getCarboniferousDisplayableFossilDrops() {
         ItemStack[] itemStack = {
-                new ItemStack(BlockSkeletonOphiacodon.block, 1)
+                new ItemStack(BlockSkeletonOphiacodon.block, 1),
+                new ItemStack(BlockSkeletonArthropleura.block, 1),
+                new ItemStack(BlockSkeletonMegarachne.block, 1),
+                new ItemStack(BlockSkeletonPulmonoscorpius.block, 1),
+                new ItemStack(BlockSkeletonMeganeura.block, 1),
+                new ItemStack(BlockSkeletonTullimonstrum.block, 1),
+                new ItemStack(BlockSkeletonSharkEmbryo.block, 1),
+                new ItemStack(BlockSkeletonAkmonistion.block, 1),
+                new ItemStack(BlockSkeletonFalcatus.block, 1),
+                new ItemStack(BlockSkeletonDiplocaulus.block, 1)
         };
         return itemStack;
     }
@@ -153,7 +167,8 @@ public class FossilBlockDropsDisplayableFossil {
     public static ItemStack[] getPermianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
                 new ItemStack(BlockSkeletonOphiacodon.block, 1),
-                new ItemStack(BlockSkeletonScutosaurus.block, 1)
+                new ItemStack(BlockSkeletonScutosaurus.block, 1),
+                new ItemStack(BlockSkeletonDiplocaulus.block, 1)
         };
         return itemStack;
     }
@@ -166,7 +181,10 @@ public class FossilBlockDropsDisplayableFossil {
                 new ItemStack(BlockSkeletonShringasaurus.block, 1),
                 new ItemStack(BlockSkeletonErythrosuchus.block, 1),
                 new ItemStack(BlockSkeletonSilesaurus.block, 1),
-                new ItemStack(BlockSkeletonLotosaurus.block, 1)
+                new ItemStack(BlockSkeletonLotosaurus.block, 1),
+                new ItemStack(BlockSkeletonKeichousaurus.block, 1),
+                new ItemStack(BlockSkeletonCymbospondylus.block, 1),
+                new ItemStack(BlockSkeletonEffigia.block, 1)
         };
         return itemStack;
     }
@@ -175,7 +193,8 @@ public class FossilBlockDropsDisplayableFossil {
         ItemStack[] itemStack = {
                 new ItemStack(BlockSkeletonYinlong.block, 1),
                 new ItemStack(BlockSkeletonKentrosaurus.block, 1),
-                new ItemStack(BlockSkeletonMegalosaurus.block, 1)
+                new ItemStack(BlockSkeletonMegalosaurus.block, 1),
+                new ItemStack(BlockSkeletonLimulid.block, 1)
         };
         return itemStack;
     }
