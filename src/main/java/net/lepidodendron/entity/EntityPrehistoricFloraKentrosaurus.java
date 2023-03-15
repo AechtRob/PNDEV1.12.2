@@ -42,7 +42,6 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	@SideOnly(Side.CLIENT)
 	public ChainBuffer chainBuffer;
 	public ChainBuffer tailBuffer;
-	private BlockPos drinkingFrom;
 
 	public EntityPrehistoricFloraKentrosaurus(World world) {
 		super(world);
@@ -64,7 +63,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 	public void onUpdate() {
 		super.onUpdate();
 		if (world.isRemote && !this.isAIDisabled()) {
-			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
+			tailBuffer.calculateChainSwingBuffer(120, 10, 5F, this);
 		}
 	}
 
@@ -224,8 +223,8 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.drinkingFrom = this.getPosition().offset(facing);
-				this.faceBlock(this.drinkingFrom, 10F, 10F);
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
 		return test;
@@ -283,7 +282,7 @@ public class EntityPrehistoricFloraKentrosaurus extends EntityPrehistoricFloraLa
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
 			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 10F, 10F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {

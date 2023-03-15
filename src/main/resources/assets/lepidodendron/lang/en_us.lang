@@ -10629,6 +10629,10 @@ tile.pf_skeleton_platyhystrix.name=Platyhystrix Displayable Fossil
 tile.pf_skeleton_lystrosaurus.name=Lystrosaurus Displayable Fossil
 tile.pf_skeleton_moschops.name=Moschops Displayable Fossil
 tile.pf_skeleton_caviramus.name=Caviramus Displayable Fossil
+tile.pf_skeleton_cymbospondylus.name=Cymbospondylus Displayable Fossil
+tile.pf_skeleton_effigia.name=Effigia Displayable Fossil
+tile.pf_skeleton_tiktaalik.name=Tiktaalik Displayable Fossil
+tile.pf_skeleton_diplocaulus.name=Diplocaulus Displayable Fossil
 
 
 item.pf_fossil_stethacanthus_clean.name=Cleaned Stethacanthus Fossil
@@ -10841,3 +10845,18 @@ item.pf_kentrosaurus_raw.name=Raw Kentrosaurus
 entity.prehistoric_flora_kentrosaurus.name=Kentrosaurus
 item.pf_eggs_kentrosaurus.name=Kentrosaurus Egg
 item.placeable_living_prehistoric_flora_kentrosaurus.name=Placeable Cultured Nodule of Kentrosaurus DNA
+
+item.pf_fossil_dryosaurus_clean.name=Cleaned Dryosaurus Fossil
+item.pf_fossil_dysalotosaurus_clean.name=Cleaned Dysalotosaurus Fossil
+item.phial_dna_prehistoric_flora_dryosaurus.name=Phial of Dryosaurus DNA
+item.phial_dna_prehistoric_flora_dysalotosaurus.name=Phial of Dysalotosaurus DNA
+advancements.pf_adv_book_dryosaurus.title=Dryosaurus
+advancements.pf_adv_book_dysalotosaurus.title=Dysalotosaurus
+item.pf_dryosaurus_raw.name=Raw Dryosaurus
+item.pf_dysalotosaurus_raw.name=Raw Dysalotosaurus
+entity.prehistoric_flora_dryosaurus.name=Dryosaurus
+entity.prehistoric_flora_dysalotosaurus.name=Dysalotosaurus
+item.pf_eggs_dryosaurus.name=Dryosaurus Eggs
+item.pf_eggs_dysalotosaurus.name=Dysalotosaurus Eggs
+item.placeable_living_prehistoric_flora_dryosaurus.name=Placeable Cultured Nodule of Dryosaurus DNA
+item.placeable_living_prehistoric_flora_dysalotosaurus.name=Placeable Cultured Nodule of Dysalotosaurus DNA

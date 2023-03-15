@@ -228,7 +228,7 @@ public class ModelMegarachne extends AdvancedModelBase {
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         //animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.body.render(f5 * 0.55F);
+        this.body.render(f5);
     }
     public void renderStatic(float f) {
         //GlStateManager.pushMatrix();
@@ -250,7 +250,7 @@ public class ModelMegarachne extends AdvancedModelBase {
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
         super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
         this.resetToDefaultPose();
-        this.body.offsetY = 0.69F;
+        //this.body.offsetY = 0.69F;
 
         AdvancedModelRenderer[] Leg1L = {this.leg1L, this.leg1L2, this.leg1L3};
         AdvancedModelRenderer[] Leg1R = {this.leg1R, this.leg1R2, this.leg1R3};
