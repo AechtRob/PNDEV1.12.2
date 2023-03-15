@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/acrocomia_shoot_end",
+    "up": "lepidodendron:blocks/acrocomia_shoot_end",
+    "north": "lepidodendron:blocks/acrocomia_shoot",
+    "east": "lepidodendron:blocks/acrocomia_shoot",
+    "south": "lepidodendron:blocks/acrocomia_shoot",
+    "west": "lepidodendron:blocks/acrocomia_shoot",
+    "particle": "lepidodendron:blocks/acrocomia_shoot_end"
+  }
+}

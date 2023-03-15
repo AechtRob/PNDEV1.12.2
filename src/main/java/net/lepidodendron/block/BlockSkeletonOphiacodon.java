@@ -2,15 +2,18 @@
 package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.block.base.BlockSkeletonBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
@@ -33,6 +36,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement {
@@ -65,6 +69,15 @@ public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement
 
 		public BlockCustom() {
 			setTranslationKey("pf_skeleton_ophiacodon");
+		}
+
+		@SideOnly(Side.CLIENT)
+		@Override
+		public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+			if (LepidodendronConfig.showTooltips) {
+				tooltip.add("When completed contains " + TileEntitySkeletonOphiacodon.getStages() + " part(s)");
+				super.addInformation(stack, player, tooltip, advanced);
+			}
 		}
 
 		@Override
@@ -129,10 +142,10 @@ public class BlockSkeletonOphiacodon extends ElementsLepidodendronMod.ModElement
 
 	public static class TileEntitySkeletonOphiacodon extends TileEntity {
 
-		int stages = 10;
+		static int stages = 10;
 
-		public int getStages() {
-			return this.stages;
+		public static int getStages() {
+			return stages;
 		}
 
 		@Override

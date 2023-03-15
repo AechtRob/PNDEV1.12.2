@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/caviramus.png");
 
+    public static float getScaler() {
+        return 0.260F;
+    }
+
     public RenderCaviramus(RenderManager mgr) {
         super(mgr, new ModelCaviramus(), 0.12f);
     }
@@ -27,7 +31,7 @@ public class RenderCaviramus extends RenderLiving<EntityPrehistoricFloraCaviramu
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCaviramus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.35F;
     }

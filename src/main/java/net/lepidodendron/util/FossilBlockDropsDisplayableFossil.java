@@ -167,6 +167,14 @@ public class FossilBlockDropsDisplayableFossil {
     public static ItemStack[] getPermianDisplayableFossilDrops() {
         ItemStack[] itemStack = {
                 new ItemStack(BlockSkeletonOphiacodon.block, 1),
+                new ItemStack(BlockSkeletonRubidgea.block, 1),
+                new ItemStack(BlockSkeletonEstemmenosuchus.block, 1),
+                new ItemStack(BlockSkeletonPrionosuchus.block, 1),
+                new ItemStack(BlockSkeletonLystrosaurus.block, 1),
+                new ItemStack(BlockSkeletonMoschops.block, 1),
+                new ItemStack(BlockSkeletonSuminia.block, 1),
+                new ItemStack(BlockSkeletonPlatyhystrix.block, 1),
+                new ItemStack(BlockSkeletonTiarajudens.block, 1),
                 new ItemStack(BlockSkeletonScutosaurus.block, 1),
                 new ItemStack(BlockSkeletonDiplocaulus.block, 1)
         };
@@ -179,6 +187,9 @@ public class FossilBlockDropsDisplayableFossil {
                 new ItemStack(BlockSkeletonHenodus.block, 1),
                 new ItemStack(BlockSkeletonLiliensternus.block, 1),
                 new ItemStack(BlockSkeletonShringasaurus.block, 1),
+                new ItemStack(BlockSkeletonCaviramus.block, 1),
+                new ItemStack(BlockSkeletonCyamodus.block, 1),
+                new ItemStack(BlockSkeletonLystrosaurus.block, 1),
                 new ItemStack(BlockSkeletonErythrosuchus.block, 1),
                 new ItemStack(BlockSkeletonSilesaurus.block, 1),
                 new ItemStack(BlockSkeletonLotosaurus.block, 1),

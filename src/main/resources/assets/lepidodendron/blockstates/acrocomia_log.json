@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:acrocomia_log"
+    },
+    "facing=south,shoot=false": {
+      "model": "lepidodendron:acrocomia_log"
+    },
+    "facing=north,shoot=false": {
+      "model": "lepidodendron:acrocomia_log"
+    },
+    "facing=east,shoot=false": {
+      "model": "lepidodendron:acrocomia_log",
+      "x": 90
+    },
+    "facing=west,shoot=false": {
+      "model": "lepidodendron:acrocomia_log",
+      "x": 90
+    },
+    "facing=up,shoot=false": {
+      "model": "lepidodendron:acrocomia_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,shoot=false": {
+      "model": "lepidodendron:acrocomia_log",
+      "x": 90,
+      "y": 90
+    },
+
+
+    "facing=south,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot"
+    },
+    "facing=north,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot"
+    },
+    "facing=east,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot",
+      "x": 90
+    },
+    "facing=west,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot",
+      "x": 90
+    },
+    "facing=up,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down,shoot=true": {
+      "model": "lepidodendron:acrocomia_shoot",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
