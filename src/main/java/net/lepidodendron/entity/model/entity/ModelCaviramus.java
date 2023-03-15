@@ -304,13 +304,12 @@ public class ModelCaviramus extends AdvancedModelBaseExtended {
 
         updateDefaultPose();
         animator = ModelAnimator.create();
-        scaler = 0.260F;
     }
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
         animate((IAnimatedEntity) entity, f, f1, f2, f3, f4, f5);
-        this.hips.render(f5 * this.scaler);
+        this.hips.render(f5);
     }
 
     public void renderStatic(float f) {
