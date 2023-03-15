@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "lepidodendron:blocks/acrocomia_leaves",
+    "particle": "lepidodendron:blocks/acrocomia_leaves"
+  }
+}

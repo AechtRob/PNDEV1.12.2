@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lepidodendron:blocks/acrocomia_log_end",
+    "up": "lepidodendron:blocks/acrocomia_log_end",
+    "north": "lepidodendron:blocks/acrocomia_log",
+    "east": "lepidodendron:blocks/acrocomia_log",
+    "south": "lepidodendron:blocks/acrocomia_log",
+    "west": "lepidodendron:blocks/acrocomia_log",
+    "particle": "lepidodendron:blocks/acrocomia_log_end"
+  }
+}
