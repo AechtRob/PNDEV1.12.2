@@ -587,6 +587,13 @@ public class LepidodendronConfigPlants {
     public static int minheightBlackTreefern = 1;
     public static int maxheightBlackTreefern = 190;
     public static double multiplierBlackTreefern = 1;
+    public static boolean genAcrocomia = false;
+    public static String[] genAcrocomiaBlacklistBiomes = new String[0];
+    public static String[] genAcrocomiaOverrideBiomes = new String[0];
+    public static int[] dimAcrocomia = new int[]{0};
+    public static int minheightAcrocomia = 1;
+    public static int maxheightAcrocomia = 190;
+    public static double multiplierAcrocomia = 1;
     public static boolean genZygopteridaceae = false;
     public static String[] genZygopteridaceaeBlacklistBiomes = new String[0];
     public static String[] genZygopteridaceaeOverrideBiomes = new String[0];
@@ -4484,6 +4491,34 @@ public class LepidodendronConfigPlants {
         prop = cfg.get("WorldGen Black Treefern", "multiplierBlackTreefern", multiplierBlackTreefern);
         prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
         multiplierBlackTreefern = prop.getDouble();
+        propOrder.add(prop.getName());
+
+        prop = cfg.get("WorldGen Acrocomia", "genAcrocomia", genAcrocomia);
+        prop.setComment("Set to true to generate Acrocomia Palms naturally [default: false]");
+        genAcrocomia = prop.getBoolean();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Acrocomia", "genAcrocomiaBlacklistBiomes", genAcrocomiaBlacklistBiomes);
+        prop.setComment("List of biomes Acrocomia Palms are blacklisted from, in the format: modid:biomeid [default: empty]");
+        genAcrocomiaBlacklistBiomes = prop.getStringList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Acrocomia", "genAcrocomiaOverrideBiomes", genAcrocomiaOverrideBiomes);
+        prop.setComment("List of biomes Acrocomia Palms are forced to generate in provided the dimension is also valid (this will override the global blacklist setting), in the format: modid:biomeid [default: empty]");
+        genAcrocomiaOverrideBiomes = prop.getStringList();
+        prop = cfg.get("WorldGen Acrocomia", "dimAcrocomia", dimAcrocomia);
+        prop.setComment("List of dimension IDs Acrocomia Palms can generate in [default: 0]");
+        dimAcrocomia = prop.getIntList();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Acrocomia", "minheightAcrocomia", minheightAcrocomia);
+        prop.setComment("Minimum height that Acrocomia Palms can generate (1 to 250) [default: 1]");
+        minheightAcrocomia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Acrocomia", "maxheightAcrocomia", maxheightAcrocomia);
+        prop.setComment("Maximum height that Acrocomia Palms can generate (1 to 250, or set to 0 for unlimited) [default: 190]");
+        maxheightAcrocomia = prop.getInt();
+        propOrder.add(prop.getName());
+        prop = cfg.get("WorldGen Acrocomia", "multiplierAcrocomia", multiplierAcrocomia);
+        prop.setComment("Number to multiply the spawn chance by (eg. 0.5 will halve the chance, and 2 will double it, etc., up to some fixed internal values) [default: 1]");
+        multiplierAcrocomia = prop.getDouble();
         propOrder.add(prop.getName());
 
         prop = cfg.get("WorldGen Symplocopteris", "genZygopteridaceae", genZygopteridaceae);
