@@ -806,7 +806,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         //Grapple with mates?
-        if (rand.nextInt(500) == 0) {
+        if (rand.nextInt(this.grappleChance()) == 0) {
             //Are there any nearby to grapple with?
             this.findGrappleTarget();
         }
@@ -818,6 +818,10 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
                 this.setGrappleTarget(null);
             }
         }
+    }
+
+    public int grappleChance() {
+        return 500;
     }
 
     public Animation getGrappleAnimation() {
