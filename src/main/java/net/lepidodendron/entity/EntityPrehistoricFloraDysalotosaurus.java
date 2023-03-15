@@ -2,37 +2,22 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
-import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
-import net.lepidodendron.entity.ai.*;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
-import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
-import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
-import java.util.List;
 
 public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFloraDryosaurus {
 
@@ -41,7 +26,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	public ChainBuffer chainBuffer;
 	private int inPFLove;
 	public ChainBuffer tailBuffer;
-	private BlockPos drinkingFrom;
 
 	public EntityPrehistoricFloraDysalotosaurus(World world) {
 		super(world);
@@ -67,27 +51,12 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		}
 	}
 
-
 	@Override
 	public int getEggType() {
 		return 0; //small
 	}
 
-
-	@Nullable
-	@Override
-	public EntityAgeable createChild(EntityAgeable ageable) {
-		return null;
-	}
-
 	public static String getPeriod() {return "Jurassic";}
-
-	//public static String getHabitat() {return "Terrestrial Therapsid";}
-
-	@Override
-	public boolean hasNest() {
-		return true;
-	}
 
 	@Override
 	public int getAttackLength() {
@@ -100,20 +69,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	}
 
 	@Override
-	public String getTexture() {
-		return this.getTexture();
-	}
-
-	@Override
-	public boolean dropsEggs() {
-		return false;
-	}
-
-	@Override
-	public boolean laysEggs() {
-		return true;
-	}
-
 	protected float getAISpeedLand() {
 		float speedBase = 0.335F;
 		if (this.getTicks() < 0) {
@@ -143,40 +98,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		return this.getEntityBoundingBox().grow(1.0F + size, 1.0F + size, 1.0F + size);
 	}
 
-	@Override
-	public float getEyeHeight()
-	{
-		return Math.max(super.getEyeHeight(), this.height * 1.05F);
-	}
-
-	protected void initEntityAI() {
-		tasks.addTask(0, new EntityMateAIAgeableBase(this, 1.0D));
-		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
-		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
-		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
-		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
-		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
-	}
-
-
-	@Override
-	public boolean isBreedingItem(ItemStack stack)
-	{
-		return (
-				(OreDictionary.containsMatch(false, OreDictionary.getOres("plant"), stack))
-						//|| (OreDictionary.containsMatch(false, OreDictionary.getOres("listAllmeatraw"), stack))
-		);
-	}
-	
-	@Override
-	public EnumCreatureAttribute getCreatureAttribute() {
-		return EnumCreatureAttribute.UNDEFINED;
-	}
 
 	@Override
 	public boolean drinksWater() {
@@ -193,50 +114,44 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 		return 400;
 	}
 
+	@Override
 	public boolean isDrinking()
 	{
-			boolean test = (this.getPFDrinking() <= 0
-					&& !world.isRemote
-					&& !this.getIsFast()
-					&& !this.getIsMoving()
-					&& this.DRINK_ANIMATION.getDuration() > 0
-					&& this.getAnimation() == NO_ANIMATION
-					&& !this.isReallyInWater()
-					&&
-					(this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
-							|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
-							|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
-							|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
-					)
-			);
-			if (test) {
-				//Which one is water?
-				EnumFacing facing = null;
-				if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
-					facing = EnumFacing.NORTH;
-				}
-				else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
-					facing = EnumFacing.SOUTH;
-				}
-				else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
-					facing = EnumFacing.EAST;
-				}
-				else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
-					facing = EnumFacing.WEST;
-				}
-				if (facing != null) {
-					this.drinkingFrom = this.getPosition().offset(facing);
-					this.faceBlock(this.drinkingFrom, 10F, 10F);
-				}
+		boolean test = (this.getPFDrinking() <= 0
+				&& !world.isRemote
+				&& !this.getIsFast()
+				&& !this.getIsMoving()
+				&& this.DRINK_ANIMATION.getDuration() > 0
+				&& this.getAnimation() == NO_ANIMATION
+				&& !this.isReallyInWater()
+				&&
+				(this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER
+						|| this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER
+				)
+		);
+		if (test) {
+			//Which one is water?
+			EnumFacing facing = null;
+			if (this.world.getBlockState(this.getPosition().north().down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.NORTH;
 			}
-			return test;
+			else if (this.world.getBlockState(this.getPosition().south().down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.SOUTH;
+			}
+			else if (this.world.getBlockState(this.getPosition().east().down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.EAST;
+			}
+			else if (this.world.getBlockState(this.getPosition().west().down()).getMaterial() == Material.WATER) {
+				facing = EnumFacing.WEST;
+			}
+			if (facing != null) {
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
+			}
 		}
-
-
-
-	@Override
-	protected boolean canDespawn() {
-		return false;
+		return test;
 	}
 
 	@Override
@@ -265,39 +180,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 	            .getObject(new ResourceLocation("lepidodendron:dysalotosaurus_death"));
 	}
 
-
-	@Override
-	protected float getSoundVolume() {
-		return 1.0F;
-	}
-
-	@Override
-	public boolean getCanSpawnHere() {
-		return this.posY < (double) this.world.getSeaLevel() && this.isInWater();
-	}
-	
-
-	@Override
-	public void onLivingUpdate() {
-		super.onLivingUpdate();
-		if (this.getAnimation() != DRINK_ANIMATION) {
-			this.renderYawOffset = this.rotationYaw;
-		}
-		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 10F, 10F);
-		}
-
-		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
-			launchAttack();
-		}
-
-		//System.err.println("this.getMateable() " + this.getMateable() + " inPFLove " + this.inPFLove);
-
-		AnimationHandler.INSTANCE.updateAnimations(this);
-
-	}
-
 	@Override
 	public void launchAttack() {
 		if (this.getAttackTarget() != null) {
@@ -309,44 +191,6 @@ public class EntityPrehistoricFloraDysalotosaurus extends EntityPrehistoricFlora
 				this.setRevengeTarget(null);
 			}
 		}
-	}
-
-	public static final PropertyDirection FACING = BlockDirectional.FACING;
-
-	public boolean testLay(World world, BlockPos pos) {
-		//System.err.println("Testing laying conditions");
-		BlockPos posNest = pos;
-		if (isLayableNest(world, posNest)) {
-			String eggRenderType = new Object() {
-				public String getValue(BlockPos posNest, String tag) {
-					TileEntity tileEntity = world.getTileEntity(posNest);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getString(tag);
-					return "";
-				}
-			}.getValue(new BlockPos(posNest), "egg");
-
-			//System.err.println("eggRenderType " + eggRenderType);
-
-			if (eggRenderType.equals("")) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	@Override
-	public boolean attackEntityAsMob(Entity entity) {
-		if (this.getAnimation() == NO_ANIMATION) {
-			this.setAnimation(ATTACK_ANIMATION);
-			//System.err.println("set attack");
-		}
-		return false;
-	}
-
-	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {
-		RayTraceResult movingobjectposition = this.world.rayTraceBlocks(vec1, new Vec3d(vec2.x, vec2.y, vec2.z), false, true, false);
-		return movingobjectposition == null || movingobjectposition.typeOfHit != RayTraceResult.Type.BLOCK;
 	}
 
 	@Nullable

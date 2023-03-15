@@ -812,7 +812,7 @@ public abstract class EntityPrehistoricFloraAgeableBase extends EntityTameable i
         }
 
         if (this.willGrapple && this.getAnimation() == this.getGrappleAnimation() && this.getAnimationTick() == 5 && this.getGrappleTarget() != null) {
-            this.faceEntity(this.getGrappleTarget(), 100F, 100F);
+            this.faceEntity(this.getGrappleTarget(), 10, 10);
             launchGrapple();
             if (this.getOneHit()) {
                 this.setGrappleTarget(null);

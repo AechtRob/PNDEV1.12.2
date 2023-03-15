@@ -43,7 +43,6 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	public ChainBuffer chainBuffer;
 	private int inPFLove;
 	public ChainBuffer tailBuffer;
-	private BlockPos drinkingFrom;
 
 	public EntityPrehistoricFloraDryosaurus(World world) {
 		super(world);
@@ -195,6 +194,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		return 400;
 	}
 
+	@Override
 	public boolean isDrinking()
 	{
 		//Is GRAZING!
@@ -229,8 +229,8 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 				facing = EnumFacing.WEST;
 			}
 			if (facing != null) {
-				this.drinkingFrom = this.getPosition().offset(facing);
-				this.faceBlock(this.drinkingFrom, 10F, 10F);
+				this.setDrinkingFrom(this.getPosition().offset(facing));
+				this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 			}
 		}
 		return test;
@@ -287,8 +287,7 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			this.renderYawOffset = this.rotationYaw;
 		}
 		if (this.getAnimation() == DRINK_ANIMATION) {
-			EnumFacing facing = this.getAdjustedHorizontalFacing();
-			this.faceBlock(this.getPosition().offset(facing), 10F, 10F);
+			this.faceBlock(this.getDrinkingFrom(), 10F, 10F);
 		}
 
 		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 11 && this.getAttackTarget() != null) {
