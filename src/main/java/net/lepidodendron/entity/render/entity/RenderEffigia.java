@@ -15,6 +15,10 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
         super(mgr, new ModelEffigia(), 0.5f);
     }
 
+    public static float getScaler() {
+        return  0.355f;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraEffigia entity) {
         return RenderEffigia.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderEffigia extends RenderLiving<EntityPrehistoricFloraEffigia> {
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraEffigia entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.28F;
     }

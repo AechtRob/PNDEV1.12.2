@@ -16,6 +16,9 @@ import org.lwjgl.opengl.GL11;
 public class RenderSkeletonArthropleura extends TileEntitySpecialRenderer<BlockSkeletonArthropleura.TileEntitySkeletonArthropleura> {
 
     private static final ResourceLocation TEXTURE1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/arthropleura_stage1.png");
+    private static final ResourceLocation TEXTURE2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/arthropleura_stage2.png");
+    private static final ResourceLocation TEXTURE3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/arthropleura_stage3.png");
+    private static final ResourceLocation TEXTURE4 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/arthropleura_stage4.png");
     private final ModelSkeletonArthropleura modelSkeleton;
 
     public RenderSkeletonArthropleura() {
@@ -39,6 +42,15 @@ public class RenderSkeletonArthropleura extends TileEntitySpecialRenderer<BlockS
 
             case 1: default:
                 this.bindTexture(TEXTURE1);
+                break;
+            case 2:
+                this.bindTexture(TEXTURE2);
+                break;
+            case 3:
+                this.bindTexture(TEXTURE3);
+                break;
+            case 4:
+                this.bindTexture(TEXTURE4);
                 break;
 
         }

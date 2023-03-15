@@ -10619,6 +10619,10 @@ tile.pf_skeleton_erythrosuchus.name=Erythrosuchus Displayable Fossil
 tile.pf_skeleton_lotosaurus.name=Lotosaurus Displayable Fossil
 tile.pf_skeleton_arizonasaurus.name=Arizonasaurus Displayable Fossil
 tile.pf_skeleton_henodus.name=Henodus Displayable Fossil
+tile.pf_skeleton_cymbospondylus.name=Cymbospondylus Displayable Fossil
+tile.pf_skeleton_effigia.name=Effigia Displayable Fossil
+tile.pf_skeleton_tiktaalik.name=Tiktaalik Displayable Fossil
+tile.pf_skeleton_diplocaulus.name=Diplocaulus Displayable Fossil
 
 
 item.pf_fossil_stethacanthus_clean.name=Cleaned Stethacanthus Fossil

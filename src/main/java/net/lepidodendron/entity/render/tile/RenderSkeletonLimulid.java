@@ -49,7 +49,7 @@ public class RenderSkeletonLimulid extends TileEntitySpecialRenderer<BlockSkelet
         ModelSkeletonLimulid modelSkeleton = this.modelSkeleton;
         double scale = RenderLimulid.getScaler() * RenderDisplayWallMount.scaler;
 
-        double offset = 0.43;
+        double offset = 0.76;
         if (facing == EnumFacing.UP) {
             GlStateManager.translate(x + 0.5, y + offset, z + 0.5);
             GlStateManager.rotate(180, 0F, 0F, 1F);
