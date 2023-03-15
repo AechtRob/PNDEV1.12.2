@@ -10633,6 +10633,14 @@ tile.pf_skeleton_cymbospondylus.name=Cymbospondylus Displayable Fossil
 tile.pf_skeleton_effigia.name=Effigia Displayable Fossil
 tile.pf_skeleton_tiktaalik.name=Tiktaalik Displayable Fossil
 tile.pf_skeleton_diplocaulus.name=Diplocaulus Displayable Fossil
+tile.pf_skeleton_cotylorhynchus.name=Cotylorhynchus Displayable Fossil
+tile.pf_skeleton_poposaurus.name=Poposaurus Displayable Fossil
+tile.pf_skeleton_thecodontosaurus.name=Thecodontosaurus Displayable Fossil
+tile.pf_skeleton_gerrothorax.name=Gerrothorax Displayable Fossil
+tile.pf_skeleton_tanystropheus.name=Tanystropheus Displayable Fossil
+tile.pf_skeleton_ophthalmosaurus.name=Ophthalmosaurus Displayable Fossil
+tile.pf_skeleton_mastodonsaurus.name=Mastodonsaurus Displayable Fossil
+tile.pf_skeleton_dimetrodon.name=Dimetrodon Displayable Fossil
 
 
 item.pf_fossil_stethacanthus_clean.name=Cleaned Stethacanthus Fossil

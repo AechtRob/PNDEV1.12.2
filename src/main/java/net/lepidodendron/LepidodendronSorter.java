@@ -3565,5 +3565,13 @@ public class LepidodendronSorter {
     public static final int zosterophyllum = 3561;
     public static final int zosterophyllum_spore = 3562;
     public static final int advancement_placeholder = 3563;
+    public static final int skeleton_cotylorhynchus = 3564;
+    public static final int skeleton_poposaurus = 3565;
+    public static final int skeleton_thecodontosaurus = 3566;
+    public static final int skeleton_gerrothorax = 3566;
+    public static final int skeleton_tanystropheus = 3567;
+    public static final int skeleton_ophthalmosaurus = 3568;
+    public static final int skeleton_mastodonsaurus = 3569;
+    public static final int skeleton_dimetrodon = 3570;
 
 }

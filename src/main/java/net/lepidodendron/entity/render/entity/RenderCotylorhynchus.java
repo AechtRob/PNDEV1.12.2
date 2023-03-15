@@ -11,6 +11,10 @@ import net.minecraft.util.ResourceLocation;
 public class RenderCotylorhynchus extends RenderLiving<EntityPrehistoricFloraCotylorhynchus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/cotylorhynchus.png");
 
+    public static float getScaler() {
+        return 1.041f;
+    }
+
     public RenderCotylorhynchus(RenderManager mgr) {
         super(mgr, new ModelCotylorhynchus(), 0.5f);
     }
@@ -27,7 +31,7 @@ public class RenderCotylorhynchus extends RenderLiving<EntityPrehistoricFloraCot
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraCotylorhynchus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 1.0F;
     }

@@ -3870,6 +3870,14 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTiktaalik.TileEntitySkeletonTiktaalik.class, new RenderSkeletonTiktaalik());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCymbospondylus.TileEntitySkeletonCymbospondylus.class, new RenderSkeletonCymbospondylus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonEffigia.TileEntitySkeletonEffigia.class, new RenderSkeletonEffigia());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonCotylorhynchus.TileEntitySkeletonCotylorhynchus.class, new RenderSkeletonCotylorhynchus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonPoposaurus.TileEntitySkeletonPoposaurus.class, new RenderSkeletonPoposaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonThecodontosaurus.TileEntitySkeletonThecodontosaurus.class, new RenderSkeletonThecodontosaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonGerrothorax.TileEntitySkeletonGerrothorax.class, new RenderSkeletonGerrothorax());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonTanystropheus.TileEntitySkeletonTanystropheus.class, new RenderSkeletonTanystropheus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonOphthalmosaurus.TileEntitySkeletonOphthalmosaurus.class, new RenderSkeletonOphthalmosaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMastodonsaurus.TileEntitySkeletonMastodonsaurus.class, new RenderSkeletonMastodonsaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDimetrodon.TileEntitySkeletonDimetrodon.class, new RenderSkeletonDimetrodon());
 
     }
 }
