@@ -23,11 +23,6 @@ public class RenderSkeletonEdaphosaurus extends TileEntitySpecialRenderer<BlockS
     private static final ResourceLocation TEXTURE8 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage8.png");
     private static final ResourceLocation TEXTURE9 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage9.png");
     private static final ResourceLocation TEXTURE10 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage10.png");
-    private static final ResourceLocation TEXTURE11 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage11.png");
-    private static final ResourceLocation TEXTURE12 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage12.png");
-    private static final ResourceLocation TEXTURE13 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage13.png");
-    private static final ResourceLocation TEXTURE14 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage14.png");
-    private static final ResourceLocation TEXTURE15 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/edaphosaurus_stage15.png");
 
     private final ModelSkeletonEdaphosaurus modelSkeleton;
 
@@ -82,28 +77,13 @@ public class RenderSkeletonEdaphosaurus extends TileEntitySpecialRenderer<BlockS
             case 10:
                 this.bindTexture(TEXTURE10);
                 break;
-            case 11:
-                this.bindTexture(TEXTURE11);
-                break;
-            case 12:
-                this.bindTexture(TEXTURE12);
-                break;
-            case 13:
-                this.bindTexture(TEXTURE13);
-                break;
-            case 14:
-                this.bindTexture(TEXTURE14);
-                break;
-            case 15:
-                this.bindTexture(TEXTURE15);
-                break;
         }
 
         GlStateManager.enableAlpha();
         ModelSkeletonEdaphosaurus modelSkeleton = this.modelSkeleton;
         double scale = RenderEdaphosaurus.getScaler() * RenderDisplayWallMount.scaler;
 
-        GlStateManager.translate(x + 0.5, y + 1, z + 0.5);
+        GlStateManager.translate(x + 0.5, y + 1.15, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
