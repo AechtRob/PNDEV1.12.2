@@ -1,0 +1,32 @@
+{
+	"name": "Furca",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/furca_icon.png",
+	"category": "lepidodendron:ordovician_animal",
+	"turnin": "lepidodendron:pf_adv_book_furca",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_furca",
+			"title": "Furca",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Ordovician$(br2)$(l)Habitat:$() Marine$(br2)>Arthropoda$(br)>Marrellomorpha$(br)>Marrellida"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/furca.png"],
+			"title": "F. bohemica",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furca",
+			"type": "text",
+			"text": "Furca is a marrellomorph from the Late Ordovician period. It possessed a broad head shield with 3 pairs of spines along its body with smaller spines lining the entire head shield."
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_furca",
+			"type": "text",
+			"text": "$(l)Eats:$() Fish Food$(br)$(l)Breeds with:$() Fish Food$(br)$(l)Egg Type:$() Drops Egg$(br)$(l)Method of Obtaining:$() Bucket"
+		}
+	]
+}
+

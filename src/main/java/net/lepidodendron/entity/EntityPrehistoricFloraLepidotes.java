@@ -62,7 +62,7 @@ public class EntityPrehistoricFloraLepidotes extends EntityPrehistoricFloraFishB
 		return true;
 	}
 
-	public static String getPeriod() {return "Jurassic - Cretaceous";}
+	public static String getPeriod() {return "Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 
