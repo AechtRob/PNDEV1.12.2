@@ -49,6 +49,15 @@ public class EntityPrehistoricFloraLasanius extends EntityPrehistoricFloraFishBa
 		FEED_ANIMATION = Animation.create(getFeedLength());
 	}
 
+	public void onEntityUpdate()
+	{
+		if (this.getShoalLeader() != null) {
+			if (this.getShoalLeader() instanceof EntityPrehistoricFloraLasanius) {
+				this.setFeedTicks(((EntityPrehistoricFloraLasanius)this.getShoalLeader()).getFeedTicks());
+			}
+		}
+	}
+
 	@Override
 	public boolean canShoal() {
 		return (!(this.getAlarmCooldown() > 0));

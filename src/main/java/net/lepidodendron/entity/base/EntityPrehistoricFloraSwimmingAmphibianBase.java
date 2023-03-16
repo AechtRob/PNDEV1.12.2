@@ -557,7 +557,7 @@ public abstract class EntityPrehistoricFloraSwimmingAmphibianBase extends Entity
                 float speed = getAISpeedSwimmingAmphibian();
                 this.EntityBase.setAIMoveSpeed(speed);
 
-                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase()) {
+                if (this.EntityBase.isAtBottom() && this.EntityBase.isBase() && (!this.EntityBase.getIsFast())) {
                     this.EntityBase.setAIMoveSpeed(speed * 0.25F);
                 }
 
