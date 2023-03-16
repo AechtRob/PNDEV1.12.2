@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "lepidodendron:items/water_clover_stem_1",
+        "particle": "lepidodendron:blocks/water_clover_stem_1",
         "bottom": "lepidodendron:blocks/water_clover_stem_1"
     },
     "elements": [
