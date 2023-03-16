@@ -2,14 +2,14 @@
 	"name": "Asteroceras",
 	"read_by_default": true,
 	"icon": "lepidodendron:shell_asteroceras",
-	"category": "lepidodendron:triassic_animal",
+	"category": "lepidodendron:jurassic_animal",
 	"turnin": "lepidodendron:pf_adv_book_ammonite_asteroceras",
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_ammonite_asteroceras",
 			"title": "Asteroceras",
 			"type": "quest",
-			"text": "$(l)Temporal Range:$() Triassic-Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Arietitidae"
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() Marine$(br2)>Mollusca$(br)>Cephalopoda$(br)>Ammonitida$(br)>Arietitidae"
 		},
 		{
 			"type": "image",
@@ -20,7 +20,7 @@
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
 			"type": "text",
-			"text": "Asteroceras is widespread genus of Triassic and Jurassic ammonite. The genus Asteroceras was first described by Alpheus Hyatt in 1867, from the Greek astron \"star\" and keras \"horn\". Asteroceras was a fast swimming marine predator that inhabited mostly shallow waters."
+			"text": "Asteroceras is widespread genus of Jurassic ammonite. The genus Asteroceras was first described by Alpheus Hyatt in 1867, from the Greek astron \"star\" and keras \"horn\". Asteroceras was a fast swimming marine predator that inhabited mostly shallow waters."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_ammonite_asteroceras",
