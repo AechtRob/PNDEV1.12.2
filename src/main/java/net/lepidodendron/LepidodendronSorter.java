@@ -3581,5 +3581,7 @@ public class LepidodendronSorter {
     public static final int advancement_placeholder = 3577;
     public static final int skeleton_edaphosaurus = 3578;
     public static final int skeleton_anteosaurus = 3579;
+    public static final int skeleton_desmatosuchus = 3580;
+    public static final int skeleton_dryosaurus = 3581;
 
 }

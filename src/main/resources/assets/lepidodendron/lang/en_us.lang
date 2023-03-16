@@ -10682,8 +10682,10 @@ tile.pf_skeleton_tanystropheus.name=Tanystropheus Displayable Fossil
 tile.pf_skeleton_ophthalmosaurus.name=Ophthalmosaurus Displayable Fossil
 tile.pf_skeleton_mastodonsaurus.name=Mastodonsaurus Displayable Fossil
 tile.pf_skeleton_dimetrodon.name=Dimetrodon Displayable Fossil
+tile.pf_skeleton_desmatosuchus.name=Desmatosuchus Displayable Fossil
+tile.pf_skeleton_dryosaurus.name=Dryosaurus Displayable Fossil
 
-item.pf_acrocomia_nut.name=Acrocomia Fruit
+item.pf_acrocomia_nut.name=Acrocomia Nut
 item.pf_phoenix_seeds.name=Phoenix Seed
 item.pf_acrocomia_fruit.name=Acrocomia Fruit
 item.pf_phoenix_fruit.name=Phoenix Fruit

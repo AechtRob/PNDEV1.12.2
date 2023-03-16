@@ -176,7 +176,7 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
         if (this.getIsFast() && this.isReallyInWater()) {
             calcSpeed = calcSpeed * 1.52F;
         }
-		if (this.isAtBottom() && !this.getIsFast() && !this.isInLove() && this.getEatTarget() == null) {
+		if (this.isAtBottom() && (!this.getIsFast()) && (!this.isInLove()) && this.getEatTarget() == null) {
 			return 0;
 		}
 		return Math.min(1F, (this.getAgeScale() * 2F)) * calcSpeed;
@@ -328,6 +328,10 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 				this.setSwimCooldown(0);
 			}
 
+		}
+
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
 		}
 
 		AnimationHandler.INSTANCE.updateAnimations(this);

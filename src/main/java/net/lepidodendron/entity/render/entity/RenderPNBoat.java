@@ -10,6 +10,7 @@ import net.minecraft.util.ResourceLocation;
 public class RenderPNBoat extends RenderBoat {
     private static final ResourceLocation TEXTURE_LEPIDODENDRON = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_lepidodendron.png");
     private static final ResourceLocation TEXTURE_SCRUBBY_PINE = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_scrubby_pine.png");
+    private static final ResourceLocation TEXTURE_PHOENIX = new ResourceLocation(LepidodendronMod.MODID + ":textures/boats/boat_phoenix.png");
 
     public RenderPNBoat(RenderManager renderManagerIn) {
         super(renderManagerIn);
@@ -26,6 +27,9 @@ public class RenderPNBoat extends RenderBoat {
 
             case SCRUBBY_PINE:
                 return TEXTURE_SCRUBBY_PINE;
+
+            case PHOENIX:
+                return TEXTURE_PHOENIX;
         }
     }
 }
