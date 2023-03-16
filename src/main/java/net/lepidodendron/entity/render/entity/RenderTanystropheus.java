@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 public class RenderTanystropheus extends RenderLiving<EntityPrehistoricFloraTanystropheus> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/tanystropheus.png");
 
+    public static float getScaler() {return 0.25f* 1.75F;}
+
     public RenderTanystropheus(RenderManager mgr) {
         super(mgr, new ModelTanystropheus(), 0.0f);
     }
@@ -27,7 +29,7 @@ public class RenderTanystropheus extends RenderLiving<EntityPrehistoricFloraTany
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraTanystropheus entity, float f) {
-        float scale = entity.getAgeScale() * 1.75F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.45F;
     }

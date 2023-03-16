@@ -19,6 +19,10 @@ public class RenderGerrothorax extends RenderLiving<EntityPrehistoricFloraGerrot
 
     private static final ResourceLocation TEXTURE_BABY = new ResourceLocation(LepidodendronMod.MODID + ":textures/entities/gerrothorax_baby.png");
 
+    public static float getScaler() {
+        return 1.375F *0.39F;
+    }
+
     public RenderGerrothorax(RenderManager mgr) {
         super(mgr, new ModelGerrothorax(), 0.0f);
     }
@@ -37,7 +41,7 @@ public class RenderGerrothorax extends RenderLiving<EntityPrehistoricFloraGerrot
     }
 
     protected void preRenderCallback(EntityPrehistoricFloraGerrothorax entity, float f) {
-        float scale = entity.getAgeScale()*0.39F;
+        float scale = entity.getAgeScale()*getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.67F;
     }
