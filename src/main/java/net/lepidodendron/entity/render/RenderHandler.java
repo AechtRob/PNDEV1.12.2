@@ -3641,6 +3641,18 @@ public class RenderHandler {
                 return new RenderDysalotosaurus(manager);
             }
         });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraHualianceratops.class, new IRenderFactory<EntityPrehistoricFloraHualianceratops>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraHualianceratops> createRenderFor(RenderManager manager) {
+                return new RenderHualianceratops(manager);
+            }
+        });
+        RenderingRegistry.registerEntityRenderingHandler(EntityPrehistoricFloraChaoyangsaurus.class, new IRenderFactory<EntityPrehistoricFloraChaoyangsaurus>() {
+            @Override
+            public Render<? super EntityPrehistoricFloraChaoyangsaurus> createRenderFor(RenderManager manager) {
+                return new RenderChaoyangsaurus(manager);
+            }
+        });
 
 
 
@@ -3878,6 +3890,8 @@ public class RenderHandler {
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonOphthalmosaurus.TileEntitySkeletonOphthalmosaurus.class, new RenderSkeletonOphthalmosaurus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonMastodonsaurus.TileEntitySkeletonMastodonsaurus.class, new RenderSkeletonMastodonsaurus());
         ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonDimetrodon.TileEntitySkeletonDimetrodon.class, new RenderSkeletonDimetrodon());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonAnteosaurus.TileEntitySkeletonAnteosaurus.class, new RenderSkeletonAnteosaurus());
+        ClientRegistry.bindTileEntitySpecialRenderer(BlockSkeletonEdaphosaurus.TileEntitySkeletonEdaphosaurus.class, new RenderSkeletonEdaphosaurus());
 
     }
 }

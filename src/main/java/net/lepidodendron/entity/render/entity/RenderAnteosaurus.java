@@ -15,6 +15,10 @@ public class RenderAnteosaurus extends RenderLiving<EntityPrehistoricFloraAnteos
         super(mgr, new ModelAnteosaurus(), 0.5f);
     }
 
+    public static float getScaler(){
+         return 1.08f;
+    }
+
     @Override
     public ResourceLocation getEntityTexture(EntityPrehistoricFloraAnteosaurus entity) {
         return RenderAnteosaurus.TEXTURE;
@@ -27,7 +31,7 @@ public class RenderAnteosaurus extends RenderLiving<EntityPrehistoricFloraAnteos
 
     @Override
     protected void preRenderCallback(EntityPrehistoricFloraAnteosaurus entity, float f) {
-        float scale = entity.getAgeScale();
+        float scale = entity.getAgeScale()*this.getScaler();
         GlStateManager.scale(scale, scale, scale);
         this.shadowSize = entity.width * scale * 0.85F;
     }

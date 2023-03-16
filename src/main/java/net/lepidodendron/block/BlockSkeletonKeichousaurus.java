@@ -139,7 +139,7 @@ public class BlockSkeletonKeichousaurus extends ElementsLepidodendronMod.ModElem
 
 	public static class TileEntitySkeletonKeichousaurus extends TileEntity {
 
-		static int stages = 1;
+		static int stages = 5;
 
 		public static int getStages() {
 			return stages;

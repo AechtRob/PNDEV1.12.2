@@ -16,6 +16,10 @@ import org.lwjgl.opengl.GL11;
 public class RenderSkeletonKeichousaurus extends TileEntitySpecialRenderer<BlockSkeletonKeichousaurus.TileEntitySkeletonKeichousaurus> {
 
     private static final ResourceLocation TEXTURE1 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/keichousaurus_stage1.png");
+    private static final ResourceLocation TEXTURE2 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/keichousaurus_stage2.png");
+    private static final ResourceLocation TEXTURE3 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/keichousaurus_stage3.png");
+    private static final ResourceLocation TEXTURE4 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/keichousaurus_stage4.png");
+    private static final ResourceLocation TEXTURE5 = new ResourceLocation(LepidodendronMod.MODID + ":textures/skeletons/keichousaurus_stage5.png");
     private final ModelSkeletonKeichousaurus modelSkeleton;
 
     public RenderSkeletonKeichousaurus() {
@@ -39,6 +43,18 @@ public class RenderSkeletonKeichousaurus extends TileEntitySpecialRenderer<Block
 
             case 1: default:
                 this.bindTexture(TEXTURE1);
+                break;
+            case 2:
+                this.bindTexture(TEXTURE2);
+                break;
+            case 3:
+                this.bindTexture(TEXTURE3);
+                break;
+            case 4:
+                this.bindTexture(TEXTURE4);
+                break;
+            case 5:
+                this.bindTexture(TEXTURE5);
                 break;
 
         }
