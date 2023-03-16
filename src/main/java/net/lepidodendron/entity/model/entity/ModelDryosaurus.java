@@ -2436,7 +2436,7 @@ public class ModelDryosaurus extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 10D) / 5D) * (0D-(0D)));
         }
         this.Dryosaurus.offsetX = (float) Math.toRadians(xx);
-        this.Dryosaurus.offsetY = (float) Math.toRadians(yy) - 0.225F;
+        this.Dryosaurus.offsetY = (float) Math.toRadians(yy) - 0.20F;
         this.Dryosaurus.offsetZ = (float) Math.toRadians(zz);
 
 
@@ -3246,7 +3246,7 @@ public class ModelDryosaurus extends AdvancedModelBaseExtended {
             zz = 0D + (((tickAnim - 11D) / 6D) * (0D-(0D)));
         }
         this.Dryosaurus.offsetX = (float) Math.toRadians(xx);
-        this.Dryosaurus.offsetY = (float) Math.toRadians(yy) - 0.225F;
+        this.Dryosaurus.offsetY = (float) Math.toRadians(yy) - 0.20F;
         this.Dryosaurus.offsetZ = (float) Math.toRadians(zz);
 
 

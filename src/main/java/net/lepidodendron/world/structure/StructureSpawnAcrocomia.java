@@ -38,7 +38,7 @@ public class StructureSpawnAcrocomia extends ElementsLepidodendronMod.ModElement
 		Biome biome = world.getBiome(new BlockPos(i2, world.getSeaLevel(), k2));
 		if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAcrocomiaBlacklistBiomes))) {
 			biomeCriteria = false;
-			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 				biomeCriteria = true;
 			if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
 				biomeCriteria = false;
@@ -54,7 +54,7 @@ public class StructureSpawnAcrocomia extends ElementsLepidodendronMod.ModElement
 		if (!biomeCriteria)
 			return;
 
-		int GenChance = 40000;
+		int GenChance = 5000;
 		double GenMultiplier = LepidodendronConfigPlants.multiplierAcrocomia;
 		if (GenMultiplier < 0) {GenMultiplier = 0;}
 		GenChance = Math.min(300000, (int) Math.round((double) GenChance * GenMultiplier));
@@ -123,7 +123,7 @@ public class StructureSpawnAcrocomia extends ElementsLepidodendronMod.ModElement
 				biome = world.getBiome(new BlockPos(i, j + 1, k));
 				if ((!matchBiome(biome, LepidodendronConfig.genGlobalBlacklist)) && (!matchBiome(biome, LepidodendronConfigPlants.genAcrocomiaBlacklistBiomes))) {
 					biomeCriteria = false;
-					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.JUNGLE))
+					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.BEACH))
 						biomeCriteria = true;
 					if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.DRY))
 						biomeCriteria = false;

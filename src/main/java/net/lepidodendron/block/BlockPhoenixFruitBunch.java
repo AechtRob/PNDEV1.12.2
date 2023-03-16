@@ -4,7 +4,7 @@ package net.lepidodendron.block;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureAcrocomiaFruitNeighbourBlockChanges;
+import net.lepidodendron.procedure.ProcedurePhoenixFruitNeighbourBlockChanges;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.ITileEntityProvider;
@@ -42,35 +42,35 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:acrocomia_fruit_bunch")
+public class BlockPhoenixFruitBunch extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:phoenix_fruit_bunch")
 	public static final Block block = null;
-	public BlockAcrocomiaFruitBunch(ElementsLepidodendronMod instance) {
-		super(instance, LepidodendronSorter.acrocomia_fruit_bunch);
+	public BlockPhoenixFruitBunch(ElementsLepidodendronMod instance) {
+		super(instance, LepidodendronSorter.phoenix_fruit_bunch);
 	}
 
 	@Override
 	public void initElements() {
-		elements.blocks.add(() -> new BlockCustom().setRegistryName("acrocomia_fruit_bunch"));
+		elements.blocks.add(() -> new BlockCustom().setRegistryName("phoenix_fruit_bunch"));
 		elements.items.add(() -> new ItemBlock(block).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentityacrocomia_fruit_bunch");
+		GameRegistry.registerTileEntity(TileEntityCustom.class, "lepidodendron:tileentityphoenix_fruit_bunch");
 	}
 
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
-				new ModelResourceLocation("lepidodendron:acrocomia_fruit_bunch", "inventory"));
+				new ModelResourceLocation("lepidodendron:phoenix_fruit_bunch", "inventory"));
 	}
 	public static class BlockCustom extends Block implements ITileEntityProvider, IShearable {
 		public static final PropertyDirection FACING = BlockDirectional.FACING;
 		public BlockCustom() {
 			super(Material.PLANTS);
-			setTranslationKey("pf_acrocomia_fruit_bunch");
+			setTranslationKey("pf_phoenix_fruit_bunch");
 			setSoundType(SoundType.PLANT);
 			setHardness(0F);
 			setResistance(0F);
@@ -95,9 +95,9 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 		@SideOnly(Side.CLIENT)
 		@Override
     	public BlockRenderLayer getRenderLayer()
-    {
-        return BlockRenderLayer.CUTOUT;
-    }
+    	{
+        	return BlockRenderLayer.CUTOUT;
+    	}
 		
 		@Override
 		public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
@@ -220,7 +220,7 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				ProcedureAcrocomiaFruitNeighbourBlockChanges.executeProcedure($_dependencies);
+				ProcedurePhoenixFruitNeighbourBlockChanges.executeProcedure($_dependencies);
 			}
 		}
 
@@ -244,7 +244,7 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", worldIn);
-					ProcedureAcrocomiaFruitNeighbourBlockChanges.executeProcedure($_dependencies);
+					ProcedurePhoenixFruitNeighbourBlockChanges.executeProcedure($_dependencies);
 				}
 		    }
 	    }
@@ -258,6 +258,7 @@ public class BlockAcrocomiaFruitBunch extends ElementsLepidodendronMod.ModElemen
 		public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 			return NonNullList.withSize(1, new ItemStack(this, (int) (1)));
 		}
+
 	}
 
 	public static class TileEntityCustom extends TileEntity {
