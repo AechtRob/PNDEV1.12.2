@@ -61,7 +61,7 @@ public class EntityPrehistoricFloraClimatius extends EntityPrehistoricFloraFishB
 		return true;
 	}
 
-	public static String getPeriod() {return "Silurian - Devonian";}
+	public static String getPeriod() {return "Devonian";}
 
 	//public static String getSize() {return "S";}
 

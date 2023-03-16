@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraPlatysomus extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "Carboniferous - Permian - Triassic";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

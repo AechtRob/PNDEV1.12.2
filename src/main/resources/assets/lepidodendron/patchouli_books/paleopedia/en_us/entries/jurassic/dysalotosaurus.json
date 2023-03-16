@@ -1,0 +1,31 @@
+{
+	"name": "Dysalotosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/dysalotosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_dysalotosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_dysalotosaurus",
+			"title": "Dysalotosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Dryosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/dysalotosaurus.png"],
+			"title": "D. lettowvorbecki",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dysalotosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_dysalotosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

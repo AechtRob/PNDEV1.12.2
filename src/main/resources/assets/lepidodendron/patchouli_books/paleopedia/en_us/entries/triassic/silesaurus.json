@@ -1,0 +1,31 @@
+{
+	"name": "Silesaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/silesaurus_icon.png",
+	"category": "lepidodendron:triassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_silesaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_silesaurus",
+			"title": "Silesaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Triassic$(br2)$(l)Habitat:$() $(br2)>Ornithodira$(br)>Silesauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/silesaurus.png"],
+			"title": "S. opolensis",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silesaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_silesaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Bug Meat$(br)$(l)Breeds with:$() Bug Meat$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}

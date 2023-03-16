@@ -63,7 +63,7 @@ public class EntityPrehistoricFloraClaudiosaurus extends EntityPrehistoricFloraS
 	}
 
 	public static String getPeriod() {
-		return "late Permian - early Triassic";
+		return "Permian";
 	}
 
 	@Override

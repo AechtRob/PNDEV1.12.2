@@ -1,0 +1,31 @@
+{
+	"name": "Kentrosaurus",
+	"read_by_default": true,
+	"icon": "paleopedia:textures/kentrosaurus_icon.png",
+	"category": "lepidodendron:jurassic_animal",
+	"turnin": "lepidodendron:pf_adv_book_kentrosaurus",
+	"pages": [
+		{
+			"trigger": "lepidodendron:pf_adv_book_kentrosaurus",
+			"title": "Kentrosaurus",
+			"type": "quest",
+			"text": "$(l)Temporal Range:$() Jurassic$(br2)$(l)Habitat:$() N/A$(br2)>Dinosauria$(br)>Ornithischia$(br)>Stegosauria$(br)>Stegosauridae"
+		},
+		{
+			"type": "image",
+			"images": ["paleopedia:textures/kentrosaurus.png"],
+			"title": "K. aethiopicus",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
+			"type": "text",
+			"text": ""
+		},
+		{
+			"advancement": "lepidodendron:pf_adv_book_kentrosaurus",
+			"type": "text",
+			"text": "$(l)Eats:$() Plants$(br)$(l)Breeds with:$() Plants$(br)$(l)Egg Type:$() Nest Egg$(br)$(l)Method of Obtaining:$() Find Eggs in Nest"
+		}
+	]
+}
