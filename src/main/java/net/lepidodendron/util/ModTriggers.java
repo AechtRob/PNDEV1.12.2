@@ -267,6 +267,7 @@ public class ModTriggers
     public static final CustomTrigger CLICK_PETRIELLALES = new CustomTrigger("pf_book_petriellales");
     public static final CustomTrigger CLICK_PHASMATOCYCAS = new CustomTrigger("pf_book_phasmatocycas");
     public static final CustomTrigger CLICK_PHOENICOPSIS = new CustomTrigger("pf_book_phoenicopsis");
+    public static final CustomTrigger CLICK_PHOENIX = new CustomTrigger("pf_book_phoenix");
     public static final CustomTrigger CLICK_PHYLLOTHECA = new CustomTrigger("pf_book_phyllotheca");
     public static final CustomTrigger CLICK_PIRANIA = new CustomTrigger("pf_book_pirania");
     public static final CustomTrigger CLICK_PITYS = new CustomTrigger("pf_book_pitys");
@@ -1245,6 +1246,7 @@ public class ModTriggers
             CLICK_PETRIELLALES,
             CLICK_PHASMATOCYCAS,
             CLICK_PHOENICOPSIS,
+            CLICK_PHOENIX,
             CLICK_PHYLLOTHECA,
             CLICK_PIRANIA,
             CLICK_PITYS,

@@ -1,69 +1,72 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "lepidodendron:block/cube_noao",
-    "textures": {
-        "particle": "lepidodendron:blocks/psaronius_thatch",
-        "texture": "lepidodendron:blocks/psaronius_thatch",
-        "wood": "lepidodendron:blocks/psaronius_branch"
-    },
-    "elements": [
-        {   "from": [1, 0, 1 ],
-            "to": [ 15, 1, 15 ],
-            "faces": {
-                "up": { "uv": [ 0, 0, 16, 16 ],  "texture": "#texture" },
-                "down": { "uv": [ 16, 0, 0, 16 ],  "texture": "#texture" }
-            }
-        },        {"name":"wood",
-			"from": [ 0, 0, 0 ],
-            "to": [ 16, 1, 1 ],
-            "shade":false,
-            "faces": {
-                "down":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90, "cullface": "down"},
-                "up":    { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90  },
-                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90 },
-                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90 },
-                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#wood" },
-                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood"}
-            }
-        },
-        {
-			"from": [ 0, 0, 15 ],
-            "to": [ 16, 1, 16 ],
-            "shade":false,
-            "faces": {
-                "down":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90, "cullface": "down" },
-                "up":    { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90  },
-                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90 },
-                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90 },
-                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#wood" },
-                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood"}
-            }
-        },
-        {
-			"from": [ 0, 0, 0 ],
-            "to": [ 1, 1, 16 ],
-            "shade":false,
-            "faces": {
-                "down":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90, "cullface": "down" },
-                "up":    { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90  },
-                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood" },
-                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood" },
-                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90 },
-                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90}
-            }
-        },
-        {
-			"from": [ 15, 0, 0 ],
-            "to": [ 16, 1, 16 ],
-            "shade":false,
-            "faces": {
-                "down":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90, "cullface": "down" },
-                "up":    { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90  },
-                "north": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood" },
-                "south": { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood" },
-                "west":  { "uv": [ 7, 0, 8, 16 ], "texture": "#wood", "rotation": 90 },
-                "east":  { "uv": [ 7, 0, 8, 16 ],  "texture": "#wood", "rotation": 90}
-            }
-        }
-        
-    ]
+	"textures": {
+		"particle": "lepidodendron:blocks/psaronius_thatch",
+		"texture": "lepidodendron:blocks/psaronius_thatch",
+		"wood": "lepidodendron:blocks/psaronius_branch"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#texture"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "wood",
+			"from": [0, 0, 0],
+			"to": [16, 1, 1],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"south": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"up": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"down": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 15],
+			"to": [16, 1, 16],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"south": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"up": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood"},
+				"down": {"uv": [7, 0, 8, 16], "rotation": 90, "texture": "#wood", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 1],
+			"to": [1, 1, 15],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"east": {"uv": [7, 0, 8, 14], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"west": {"uv": [7, 0, 8, 14], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [2, 0, 16, 1], "rotation": 90, "texture": "#wood"},
+				"down": {"uv": [2, 0, 16, 1], "rotation": 90, "texture": "#wood", "cullface": "down"}
+			}
+		},
+		{
+			"from": [15, 0, 1],
+			"to": [16, 1, 15],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"east": {"uv": [7, 0, 8, 14], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [7, 0, 8, 1], "texture": "#wood"},
+				"west": {"uv": [7, 0, 8, 14], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [2, 0, 16, 1], "rotation": 90, "texture": "#wood"},
+				"down": {"uv": [2, 0, 16, 1], "rotation": 90, "texture": "#wood", "cullface": "down"}
+			}
+		}
+	]
 }

@@ -3,7 +3,6 @@ package net.lepidodendron.block;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronSorter;
-import net.lepidodendron.item.ItemRedwoodDoorItem;
 import net.lepidodendron.item.ItemScrubbyPineDoorItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
@@ -70,13 +69,13 @@ public class BlockScrubbyPineDoor extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
 	    {
-	        return new ItemStack(ItemRedwoodDoorItem.block, (int) (1));
+	        return new ItemStack(ItemScrubbyPineDoorItem.block, (int) (1));
 	    }
 
 		@Override
 	    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player)
 	    {
-	        return new ItemStack(ItemRedwoodDoorItem.block, (int) (1));
+	        return new ItemStack(ItemScrubbyPineDoorItem.block, (int) (1));
 	    }
 
 		@Override

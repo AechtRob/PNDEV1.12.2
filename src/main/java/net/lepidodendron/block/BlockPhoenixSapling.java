@@ -5,7 +5,7 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.LepidodendronConfig;
 import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronPlants;
-import net.lepidodendron.procedure.ProcedureWorldGenArtocarpus;
+import net.lepidodendron.procedure.ProcedureWorldGenPhoenix;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
@@ -154,7 +154,7 @@ public class BlockPhoenixSapling extends ElementsLepidodendronMod.ModElement {
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-					ProcedureWorldGenArtocarpus.executeProcedure($_dependencies);
+					ProcedureWorldGenPhoenix.executeProcedure($_dependencies);
 				}
 	        }
 	    }

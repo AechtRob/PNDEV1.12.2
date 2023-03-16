@@ -68,6 +68,7 @@ public class BlockAcrocomiaShootPlaceable extends ElementsLepidodendronMod.ModEl
 		OreDictionary.registerOre("plantPrehistoric", BlockAcrocomiaShootPlaceable.block);
 		OreDictionary.registerOre("plant", BlockAcrocomiaShootPlaceable.block);
 		OreDictionary.registerOre("treeLeaves", BlockAcrocomiaShootPlaceable.block);
+		OreDictionary.registerOre("leavesPalm", BlockAcrocomiaShootPlaceable.block);
 	}
 
 	public static class BlockCustom extends BlockLeaves {

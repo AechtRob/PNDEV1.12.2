@@ -14,10 +14,13 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -113,6 +116,18 @@ public class BlockAcrocomiaLog extends ElementsLepidodendronMod.ModElement {
 			
 	        return state.withProperty(DOWN, Boolean.valueOf(block == this || block != Blocks.AIR)).withProperty(UP, Boolean.valueOf(block1 == this || leavesattached)).withProperty(NORTH, Boolean.valueOf(block2 == this)).withProperty(EAST, Boolean.valueOf(block3 == this)).withProperty(SOUTH, Boolean.valueOf(block4 == this)).withProperty(WEST, Boolean.valueOf(block5 == this));
 	    }
+
+		@Override
+		public void onEntityCollision(World world, BlockPos pos, IBlockState state, Entity entity) {
+			super.onEntityCollision(world, pos, state, entity);
+			if (entity instanceof EntityPlayer) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
+			if (entity instanceof EntityVillager) {entity.attackEntityFrom(DamageSource.CACTUS, (float) 2);}
+		}
+
+		public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+		{
+			return new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.9375D, 0.9375D);
+		}
 
 	    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	    {
