@@ -196,6 +196,7 @@ public class FossilBlockDropsDisplayableFossil {
                 new ItemStack(BlockSkeletonSilesaurus.block, 1),
                 new ItemStack(BlockSkeletonLotosaurus.block, 1),
                 new ItemStack(BlockSkeletonTanystropheus.block, 1),
+                new ItemStack(BlockSkeletonDesmatosuchus.block, 1),
                 new ItemStack(BlockSkeletonKeichousaurus.block, 1),
                 new ItemStack(BlockSkeletonCymbospondylus.block, 1),
                 new ItemStack(BlockSkeletonThecodontosaurus.block, 1),
@@ -213,6 +214,7 @@ public class FossilBlockDropsDisplayableFossil {
                 new ItemStack(BlockSkeletonKentrosaurus.block, 1),
                 new ItemStack(BlockSkeletonMegalosaurus.block, 1),
                 new ItemStack(BlockSkeletonOphthalmosaurus.block, 1),
+                new ItemStack(BlockSkeletonDryosaurus.block, 1),
                 new ItemStack(BlockSkeletonLimulid.block, 1)
         };
         return itemStack;

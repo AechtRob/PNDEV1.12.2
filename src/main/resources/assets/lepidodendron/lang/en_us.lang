@@ -10641,6 +10641,8 @@ tile.pf_skeleton_tanystropheus.name=Tanystropheus Displayable Fossil
 tile.pf_skeleton_ophthalmosaurus.name=Ophthalmosaurus Displayable Fossil
 tile.pf_skeleton_mastodonsaurus.name=Mastodonsaurus Displayable Fossil
 tile.pf_skeleton_dimetrodon.name=Dimetrodon Displayable Fossil
+tile.pf_skeleton_desmatosuchus.name=Desmatosuchus Displayable Fossil
+tile.pf_skeleton_dryosaurus.name=Dryosaurus Displayable Fossil
 
 
 item.pf_fossil_stethacanthus_clean.name=Cleaned Stethacanthus Fossil
