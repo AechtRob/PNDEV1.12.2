@@ -1,5 +1,5 @@
 {
-	"name": "Platycaraspis",
+	"name": "Microphymaspis",
 	"read_by_default": true,
 	"icon": "lepidodendron:platycaraspis_raw",
 	"category": "lepidodendron:silurian_animal",
@@ -7,20 +7,20 @@
 	"pages": [
 		{
 			"trigger": "lepidodendron:pf_adv_book_platycaraspis",
-			"title": "Platycaraspis",
+			"title": "Microphymaspis",
 			"type": "quest",
 			"text": "$(l)Temporal Range:$() Silurian$(br2)$(l)Habitat:$() Lagoon$(br2)>Galeaspida$(br)>Dayongaspidae"
 		},
 		{
 			"type": "image",
 			"images": ["paleopedia:textures/platycaraspis.png"],
-			"title": "P. tianshanensis",
+			"title": "M. tianshanensis",
 			"text": ""
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platycaraspis",
 			"type": "text",
-			"text": "Platycaraspis was a jawless fish from the Silurian with a very unique headshield. Like other galeaspids, which all had weird looking headshields, Platycaraspis also had a hole on the top of its head, which was not its actual mouth. It probably was an active swimmer, and searched for food on the seafloor."
+			"text": "Microphymaspis was a jawless fish from the Silurian with a very unique headshield. Like other galeaspids, which all had weird looking headshields, Microphymaspis also had a hole on the top of its head, which was not its actual mouth. It probably was an active swimmer, and searched for food on the seafloor."
 		},
 		{
 			"advancement": "lepidodendron:pf_adv_book_platycaraspis",

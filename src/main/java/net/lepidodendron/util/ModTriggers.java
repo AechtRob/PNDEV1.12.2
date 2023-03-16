@@ -981,6 +981,8 @@ public class ModTriggers
     public static final CustomTrigger CLICK_DRYOSAURUS = new CustomTrigger("pf_book_dryosaurus");
     public static final CustomTrigger CLICK_STETHACANTHUS = new CustomTrigger("pf_book_stethacanthus");
     public static final CustomTrigger CLICK_DYSALOTOSAURUS = new CustomTrigger("pf_book_dysalotosaurus");
+    public static final CustomTrigger CLICK_HUALIANCERATOPS = new CustomTrigger("pf_book_hualianceratops");
+    public static final CustomTrigger CLICK_CHAOYANGSAURUS = new CustomTrigger("pf_book_chaoyangsaurus");
     // public static final CustomTrigger CLICK_ = new CustomTrigger("pf_book_"); TEMPLATE
 
 
@@ -1951,7 +1953,9 @@ public class ModTriggers
             CLICK_KENTROSAURUS,
             CLICK_DRYOSAURUS,
             CLICK_DYSALOTOSAURUS,
-            CLICK_STETHACANTHUS
+            CLICK_STETHACANTHUS,
+            CLICK_HUALIANCERATOPS,
+            CLICK_CHAOYANGSAURUS
 
 
 

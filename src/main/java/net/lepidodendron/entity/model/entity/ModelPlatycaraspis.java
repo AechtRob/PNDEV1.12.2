@@ -19,6 +19,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
     private final AdvancedModelRenderer cube_r4;
     private final AdvancedModelRenderer cube_r5;
     private final AdvancedModelRenderer cube_r6;
+    private final AdvancedModelRenderer cube_r7;
     private final AdvancedModelRenderer HEadinclination;
     private final AdvancedModelRenderer Bodystatic;
     private final AdvancedModelRenderer Body1;
@@ -31,7 +32,7 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
         this.textureHeight = 64;
 
         this.platycaraspis = new AdvancedModelRenderer(this);
-        this.platycaraspis.setRotationPoint(0.0F, 23.0F, 0.0F);
+        this.platycaraspis.setRotationPoint(0.0F, 20.0F, 0.0F);
 
 
         this.Cephalon = new AdvancedModelRenderer(this);
@@ -39,17 +40,11 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
         this.platycaraspis.addChild(Cephalon);
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 0, -6.0F, 0.0F, -14.0F, 12, 1, 8, 0.0F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 16, 41, -4.0F, 0.0F, -16.0F, 8, 1, 2, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 32, 0, -9.0F, 0.0F, -12.0F, 3, 1, 7, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 44, 27, 9.0F, 0.0F, -10.0F, 3, 1, 4, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 16, 44, -12.0F, 0.0F, -10.0F, 3, 1, 4, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 3, -14.0F, 0.0F, -8.0F, 2, 1, 2, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 0, 12.0F, 0.0F, -8.0F, 2, 1, 2, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 9, 29, 6.0F, 0.0F, -12.0F, 3, 1, 7, 0.0F, false));
+        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 44, 27, 8.0F, 0.0F, -10.0F, 3, 1, 4, 0.0F, false));
+        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 9, 29, 6.0F, 0.0F, -12.0F, 3, 1, 7, 0.01F, false));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 0, 19, -4.0F, -1.0F, -14.0F, 8, 1, 8, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 46, 21, -6.0F, 0.0F, -6.0F, 2, 1, 3, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 22, 28, 4.0F, 0.0F, -6.0F, 2, 1, 3, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 24, 22, -17.6F, 0.0F, -8.0F, 1, 1, 2, 0.0F, false));
-        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 24, 19, 16.8F, 0.0F, -8.0F, 1, 1, 2, 0.0F, false));
+        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 9, 29, -9.0F, 0.0F, -12.0F, 3, 1, 7, 0.01F, true));
+        this.Cephalon.cubeList.add(new ModelBox(Cephalon, 44, 27, -11.0F, 0.0F, -10.0F, 3, 1, 4, 0.0F, true));
         this.Cephalon.cubeList.add(new ModelBox(Cephalon, 25, 27, -3.0F, -1.6F, -13.0F, 6, 1, 7, 0.0F, false));
 
         this.cube_r1 = new AdvancedModelRenderer(this);
@@ -59,35 +54,40 @@ public class ModelPlatycaraspis extends AdvancedModelBase {
         this.cube_r1.cubeList.add(new ModelBox(cube_r1, 0, 22, -0.7F, -1.0F, -0.7F, 1, 1, 2, -0.01F, false));
 
         this.cube_r2 = new AdvancedModelRenderer(this);
-        this.cube_r2.setRotationPoint(-14.0F, 1.0F, -6.0F);
+        this.cube_r2.setRotationPoint(-4.2F, 1.0F, -17.0F);
         this.Cephalon.addChild(cube_r2);
-        this.setRotateAngle(cube_r2, -3.1416F, 1.5533F, 3.1416F);
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 45, 0, -0.5F, -1.0F, 27.8F, 3, 1, 3, -0.01F, false));
-        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 46, 17, 0.0F, -1.0F, -2.6F, 3, 1, 3, -0.01F, false));
+        this.setRotateAngle(cube_r2, -3.1416F, -0.7243F, -3.1416F);
+        this.cube_r2.cubeList.add(new ModelBox(cube_r2, 0, 9, -0.0422F, -1.0F, -4.1931F, 14, 1, 4, -0.02F, true));
 
         this.cube_r3 = new AdvancedModelRenderer(this);
-        this.cube_r3.setRotationPoint(0.0F, 1.0F, -17.0F);
+        this.cube_r3.setRotationPoint(-6.3F, 1.0F, -2.9F);
         this.Cephalon.addChild(cube_r3);
-        this.setRotateAngle(cube_r3, 0.0F, 0.5672F, 0.0F);
-        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 0, 14, -17.6F, -1.0F, -2.1365F, 14, 1, 4, -0.02F, false));
+        this.setRotateAngle(cube_r3, 0.0F, -2.426F, 0.0F);
+        this.cube_r3.cubeList.add(new ModelBox(cube_r3, 22, 28, -3.6304F, -1.0F, -0.9391F, 2, 1, 3, -0.01F, true));
 
         this.cube_r4 = new AdvancedModelRenderer(this);
-        this.cube_r4.setRotationPoint(-4.0F, 1.0F, -16.0F);
+        this.cube_r4.setRotationPoint(6.3F, 1.0F, -2.9F);
         this.Cephalon.addChild(cube_r4);
-        this.setRotateAngle(cube_r4, -0.0008F, 0.2444F, 0.0F);
-        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 0, 44, -0.1784F, -1.0F, -0.847F, 4, 1, 4, -0.02F, false));
+        this.setRotateAngle(cube_r4, 0.0F, 2.426F, 0.0F);
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 22, 28, 1.6304F, -1.0F, -0.9391F, 2, 1, 3, -0.01F, false));
 
         this.cube_r5 = new AdvancedModelRenderer(this);
-        this.cube_r5.setRotationPoint(0.0F, 1.0F, -17.0F);
+        this.cube_r5.setRotationPoint(-4.0F, 1.0F, -16.0F);
         this.Cephalon.addChild(cube_r5);
-        this.setRotateAngle(cube_r5, -3.1416F, 0.5672F, 3.1416F);
-        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 9, -17.5F, -1.0F, -1.9365F, 14, 1, 4, -0.02F, false));
+        this.setRotateAngle(cube_r5, -0.0008F, 0.2444F, 0.0F);
+        this.cube_r5.cubeList.add(new ModelBox(cube_r5, 0, 44, -0.1784F, -1.0F, -0.847F, 4, 1, 4, -0.02F, false));
 
         this.cube_r6 = new AdvancedModelRenderer(this);
-        this.cube_r6.setRotationPoint(4.0F, 1.0F, -16.0F);
+        this.cube_r6.setRotationPoint(4.2F, 1.0F, -17.0F);
         this.Cephalon.addChild(cube_r6);
-        this.setRotateAngle(cube_r6, -3.1416F, 0.2182F, 3.1416F);
-        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 44, 8, 0.1216F, -1.0F, -3.1259F, 4, 1, 4, -0.02F, false));
+        this.setRotateAngle(cube_r6, -3.1416F, 0.7243F, 3.1416F);
+        this.cube_r6.cubeList.add(new ModelBox(cube_r6, 0, 9, -13.9578F, -1.0F, -4.1931F, 14, 1, 4, -0.02F, false));
+
+        this.cube_r7 = new AdvancedModelRenderer(this);
+        this.cube_r7.setRotationPoint(4.0F, 1.0F, -16.0F);
+        this.Cephalon.addChild(cube_r7);
+        this.setRotateAngle(cube_r7, -3.1416F, 0.2182F, 3.1416F);
+        this.cube_r7.cubeList.add(new ModelBox(cube_r7, 44, 8, 0.1216F, -1.0F, -3.1259F, 4, 1, 4, -0.02F, false));
 
         this.HEadinclination = new AdvancedModelRenderer(this);
         this.HEadinclination.setRotationPoint(0.0F, 0.0F, -14.0F);

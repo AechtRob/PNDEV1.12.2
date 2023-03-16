@@ -194,12 +194,14 @@ public class ModelYinlong extends AdvancedModelBaseExtended {
         this.upperbody = new AdvancedModelRenderer(this);
         this.upperbody.setRotationPoint(0.0F, -0.2867F, -8.001F);
         this.upperbody2.addChild(upperbody);
+        this.setRotateAngle(upperbody, -0.0436F, 0.0F, 0.0F);
 
 
         this.cube_r4 = new AdvancedModelRenderer(this);
         this.cube_r4.setRotationPoint(0.0F, -0.191F, 0.0724F);
         this.upperbody.addChild(cube_r4);
         this.setRotateAngle(cube_r4, 0.3054F, 0.0F, 0.0F);
+        this.cube_r4.cubeList.add(new ModelBox(cube_r4, 26, 25, -2.0F, 0.934F, -0.121F, 4, 6, 2, -0.03F, false));
         this.cube_r4.cubeList.add(new ModelBox(cube_r4, 22, 21, -2.0F, -0.066F, -6.046F, 4, 7, 6, 0.0F, false));
 
         this.rightarm = new AdvancedModelRenderer(this);
