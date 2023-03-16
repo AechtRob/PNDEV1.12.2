@@ -47,6 +47,7 @@ public class ItemPhoenixBoatItem extends ElementsLepidodendronMod.ModElement {
 	public void registerModels(ModelRegistryEvent event) {
 		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("lepidodendron:phoenix_boat_item", "inventory"));
 	}
+
 	public static class ItemCustom extends Item
 	{
 

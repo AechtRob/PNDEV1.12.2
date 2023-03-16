@@ -1,9 +1,11 @@
 package net.lepidodendron.entity.boats;
 
 import com.google.common.collect.Lists;
+import net.lepidodendron.block.BlockPhoenixPlanks;
 import net.lepidodendron.block.BlockScrubbyPinePlanks;
 import net.lepidodendron.block.BlockWoodenPlanks;
 import net.lepidodendron.item.ItemLepidodendronBoatItem;
+import net.lepidodendron.item.ItemPhoenixBoatItem;
 import net.lepidodendron.item.ItemScrubbyPineBoatItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
@@ -196,6 +198,9 @@ public class EntityPNBoat extends EntityBoat
             case SCRUBBY_PINE:
                 return ItemScrubbyPineBoatItem.block;
 
+            case PHOENIX:
+                return ItemPhoenixBoatItem.block;
+
         }
     }
 
@@ -209,6 +214,9 @@ public class EntityPNBoat extends EntityBoat
 
             case SCRUBBY_PINE:
                 return BlockScrubbyPinePlanks.block;
+
+            case PHOENIX:
+                return BlockPhoenixPlanks.block;
 
         }
     }
