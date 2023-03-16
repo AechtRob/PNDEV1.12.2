@@ -123,7 +123,7 @@ public class RenderSkeletonAnteosaurus extends TileEntitySpecialRenderer<BlockSk
         ModelSkeletonAnteosaurus modelSkeleton = this.modelSkeleton;
         double scale = RenderAnteosaurus.getScaler() * RenderDisplayWallMount.scaler;
 
-        GlStateManager.translate(x + 0.5, y + 1.5, z + 0.5);
+        GlStateManager.translate(x + 0.5, y + 1.55, z + 0.5);
         GlStateManager.scale(scale,scale,scale);
         GlStateManager.rotate(180, 0F, 0F, 1F);
         GlStateManager.rotate(currentRotation, 0F, 1F, 0F);
