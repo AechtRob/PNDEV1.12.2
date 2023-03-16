@@ -981,7 +981,8 @@ public class EntityPNBoat extends EntityBoat
     public static enum Type
     {
         LEPIDODENDRON(0, "lepidodendron"),
-        SCRUBBY_PINE(1, "scrubby_pine");
+        SCRUBBY_PINE(1, "scrubby_pine"),
+        PHOENIX(2, "phoenix");
 
         private final String name;
         private final int metadata;

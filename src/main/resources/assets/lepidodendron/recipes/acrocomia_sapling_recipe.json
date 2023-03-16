@@ -1,11 +1,9 @@
 {
   "group": "lepidodendron",
-  "type": "forge:ore_shapeless",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "type": "minecraft:item_nbt",
-      "item": "lepidodendron:spore_collection_envelope",
-	  "nbt": {"plant":"lepidodendron:acrocomia_sapling", "offsetY":1}
+      "item": "lepidodendron:acrocomia_nut"
     },
     {
       "type": "forge:ore_dict",

@@ -70,6 +70,8 @@ public class BlockPhoenixLog extends ElementsLepidodendronMod.ModElement {
 				return;
 			}
 			if (worldIn.getBlockState(pos.up()).getBlock() != this
+				&& (state.getValue(FACING) == EnumFacing.NORTH
+					|| state.getValue(FACING) == EnumFacing.SOUTH)
 				&& worldIn.getBlockState(pos.up().north()).getBlock() != this
 				&& worldIn.getBlockState(pos.up().east()).getBlock() != this
 				&& worldIn.getBlockState(pos.up().south()).getBlock() != this
@@ -117,6 +119,8 @@ public class BlockPhoenixLog extends ElementsLepidodendronMod.ModElement {
 		@Override
 		public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
 			if (worldIn.getBlockState(pos.up()).getBlock() != this
+					&& (state.getValue(FACING) == EnumFacing.NORTH
+						|| state.getValue(FACING) == EnumFacing.SOUTH)
 					&& worldIn.getBlockState(pos.up().north()).getBlock() != this
 					&& worldIn.getBlockState(pos.up().east()).getBlock() != this
 					&& worldIn.getBlockState(pos.up().south()).getBlock() != this
