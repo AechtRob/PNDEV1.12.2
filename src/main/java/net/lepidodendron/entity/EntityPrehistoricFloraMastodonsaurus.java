@@ -330,6 +330,10 @@ public class EntityPrehistoricFloraMastodonsaurus extends EntityPrehistoricFlora
 
 		}
 
+		if (this.getAnimation() == ATTACK_ANIMATION && this.getAnimationTick() == 5 && this.getAttackTarget() != null) {
+			launchAttack();
+		}
+
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
 	}
