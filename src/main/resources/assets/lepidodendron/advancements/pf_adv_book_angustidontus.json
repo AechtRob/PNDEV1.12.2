@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"item": "lepidodendron:angustidontus_raw"
+		  },
+		"title": {
+			"translate": "advancements.pf_adv_book_angustidontus.title"
+		},
+		"description": {
+			"translate": "advancements.pf_adv_book_angustidontus.description"
+		}
+	},
+	"parent": "lepidodendron:pf_base_adv_knowledge",
+	"hidden": true,
+	"criteria": {
+		"pf_trigger": {
+			"trigger": "pf_book_angustidontus"
+		}
+	}
+}
+
+
