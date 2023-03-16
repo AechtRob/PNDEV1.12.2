@@ -1,5 +1,6 @@
 package net.lepidodendron.entity.ai;
 
+import net.lepidodendron.entity.EntityPrehistoricFloraDryosaurus;
 import net.lepidodendron.entity.EntityPrehistoricFloraSuminia;
 import net.lepidodendron.entity.EntityPrehistoricFloraYinlong;
 import net.lepidodendron.entity.base.EntityPrehistoricFloraAgeableBase;
@@ -44,6 +45,9 @@ public class PanicScreamAI extends EntityAIBase
                 if (this.creature instanceof EntityPrehistoricFloraYinlong) {
                     ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(false);
                 }
+                if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
+                    ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(false);
+                }
             }
             return false;
         }
@@ -64,6 +68,9 @@ public class PanicScreamAI extends EntityAIBase
                     }
                     if (this.creature instanceof EntityPrehistoricFloraYinlong) {
                         ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(true);
+                    }
+                    if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
+                        ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
                     }
 
                     return true;
@@ -93,6 +100,9 @@ public class PanicScreamAI extends EntityAIBase
             }
             if (this.creature instanceof EntityPrehistoricFloraYinlong) {
                 ((EntityPrehistoricFloraYinlong) this.creature).setScreaming(true);
+            }
+            if (this.creature instanceof EntityPrehistoricFloraDryosaurus) {
+                ((EntityPrehistoricFloraDryosaurus) this.creature).setScreaming(true);
             }
 
             return true;

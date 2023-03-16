@@ -57,7 +57,7 @@ public class EntityPrehistoricFloraAcanthodes extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian - Carboniferous - Permian";}
+	public static String getPeriod() {return "Carboniferous - Permian";}
 
 	//public static String getSize() {return "S";}
 

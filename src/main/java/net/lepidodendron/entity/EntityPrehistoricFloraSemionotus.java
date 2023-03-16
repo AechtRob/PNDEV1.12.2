@@ -58,7 +58,7 @@ public class EntityPrehistoricFloraSemionotus extends EntityPrehistoricFloraFish
 		return true;
 	}
 
-	public static String getPeriod() {return "late Triassic";}
+	public static String getPeriod() {return "late Triassic - early Jurassic";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

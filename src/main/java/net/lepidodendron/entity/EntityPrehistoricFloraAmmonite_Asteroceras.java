@@ -65,7 +65,7 @@ public class EntityPrehistoricFloraAmmonite_Asteroceras extends EntityPrehistori
 		return true;
 	}
 
-	public static String getPeriod() {return "Triassic - Jurassic";}
+	public static String getPeriod() {return "Jurassic";}
 
 	public static String getSize() {return "S";}
 

@@ -6,6 +6,7 @@ import net.lepidodendron.LepidodendronSorter;
 import net.lepidodendron.creativetab.TabLepidodendronBuilding;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
@@ -44,6 +45,7 @@ public class BlockArchaeopterisThatchBundle extends ElementsLepidodendronMod.Mod
 	public static class BlockCustom extends BlockRotatedPillar {
 		public BlockCustom() {
 			super(Material.LEAVES);
+			setSoundType(SoundType.PLANT);
 			setTranslationKey("pf_archaeopteris_thatch_bundle");
 			setCreativeTab(TabLepidodendronBuilding.tab);
         	this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Y));

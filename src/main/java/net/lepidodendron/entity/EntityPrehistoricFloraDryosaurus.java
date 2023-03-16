@@ -2,6 +2,7 @@
 package net.lepidodendron.entity;
 
 import net.ilexiconn.llibrary.client.model.tools.ChainBuffer;
+import net.ilexiconn.llibrary.server.animation.Animation;
 import net.ilexiconn.llibrary.server.animation.AnimationHandler;
 import net.lepidodendron.LepidodendronMod;
 import net.lepidodendron.entity.ai.*;
@@ -10,10 +11,7 @@ import net.lepidodendron.entity.base.EntityPrehistoricFloraLandBase;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -35,6 +33,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLandBase {
 
@@ -43,6 +42,10 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	public ChainBuffer chainBuffer;
 	private int inPFLove;
 	public ChainBuffer tailBuffer;
+	private boolean screaming;
+	private int alarmCooldown;
+	public Animation CHATTER_ANIMATION;
+	public Animation ALARM_ANIMATION;
 
 	public EntityPrehistoricFloraDryosaurus(World world) {
 		super(world);
@@ -58,6 +61,35 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		if (FMLCommonHandler.instance().getSide().isClient()) {
 			tailBuffer = new ChainBuffer();
 		}
+		CHATTER_ANIMATION = Animation.create(this.getChatterLength());
+		ALARM_ANIMATION = Animation.create(this.getPanicLength());
+	}
+
+	public int getChatterLength() {
+		return 20;
+	}
+
+	public int getPanicLength() {
+		return 20;
+	}
+
+	@Override
+	public Animation[] getAnimations() {
+		return new Animation[]{DRINK_ANIMATION, ATTACK_ANIMATION, ROAR_ANIMATION, LAY_ANIMATION, EAT_ANIMATION, MAKE_NEST_ANIMATION, CHATTER_ANIMATION, ALARM_ANIMATION};
+	}
+
+	@Override
+	public boolean attackEntityFrom(DamageSource ds, float i) {
+		Entity e = ds.getTrueSource();
+		if (e instanceof EntityLivingBase) {
+			EntityLivingBase ee = (EntityLivingBase) e;
+			List<EntityPrehistoricFloraDryosaurus> Dryosaurus = this.world.getEntitiesWithinAABB(EntityPrehistoricFloraDryosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+			for (EntityPrehistoricFloraDryosaurus currentDryosaurus : Dryosaurus) {
+				currentDryosaurus.setRevengeTarget(ee);
+				currentDryosaurus.alarmCooldown = rand.nextInt(20);
+			}
+		}
+		return super.attackEntityFrom(ds, i);
 	}
 
 	@Override
@@ -67,13 +99,19 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			tailBuffer.calculateChainSwingBuffer(60, 10, 5F, this);
 		}
 	}
-	
 
 	@Override
 	public int getEggType() {
 		return 0; //small
 	}
 
+	public void setScreaming(boolean screaming) {
+		this.screaming = screaming;
+	}
+
+	public boolean getScreaming() {
+		return this.screaming;
+	}
 
 	@Nullable
 	@Override
@@ -120,6 +158,9 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		if (this.getTicks() < 0) {
 			return 0.0F; //Is laying eggs
 		}
+		if (this.getAnimation() == CHATTER_ANIMATION && (this.willGrapple) && this.getGrappleTarget() != null) {
+			return 0.0F; //Is talking to a colleague!
+		}
 		if (this.getAnimation() == DRINK_ANIMATION || this.getAnimation() == MAKE_NEST_ANIMATION) {
 			return 0.0F;
 		}
@@ -127,6 +168,11 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			speedBase = speedBase * 2.65F;
 		}
 		return speedBase;
+	}
+
+	@Override
+	public int grappleChance() {
+		return 200;
 	}
 
 	@Override
@@ -145,6 +191,45 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	}
 
 	@Override
+	public AxisAlignedBB getGrappleBoundingBox() {
+		float size = this.getRenderSizeModifier() * 0.25F;
+		return this.getEntityBoundingBox().grow(3.0F + size, 2.0F + size, 3.0F + size);
+	}
+
+	@Override
+	public boolean findGrappleTarget() {
+		//System.err.println("finding grapple target");
+		if (this.willGrapple) {
+			return false;
+		}
+		List<EntityPrehistoricFloraDryosaurus> Dryosaurus = world.getEntitiesWithinAABB(EntityPrehistoricFloraDryosaurus.class, new AxisAlignedBB(this.getPosition().add(-8, -4, -8), this.getPosition().add(8, 4, 8)));
+		for (EntityPrehistoricFloraDryosaurus currentDryosaurus : Dryosaurus) {
+			if (currentDryosaurus.isPFAdult() && this.isPFAdult() && currentDryosaurus != this && !currentDryosaurus.willGrapple) {
+				this.setGrappleTarget(currentDryosaurus);
+				currentDryosaurus.willGrapple=true;
+				this.willGrapple = true;
+				currentDryosaurus.setGrappleTarget(this);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean grappleEntityAsMob(Entity entity) {
+		if (this.getAnimation() == NO_ANIMATION) {
+			this.setAnimation(this.getGrappleAnimation());
+			//System.err.println("set attack");
+		}
+		return false;
+	}
+
+	@Override
+	public Animation getGrappleAnimation() {
+		return this.CHATTER_ANIMATION;
+	}
+
+	@Override
 	public float getEyeHeight()
 	{
 		return Math.max(super.getEyeHeight(), this.height * 1.05F);
@@ -155,13 +240,20 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 		tasks.addTask(1, new EntityTemptAI(this, 1, false, true, 0));
 		tasks.addTask(2, new LandEntitySwimmingAI(this, 0.75, false));
 		tasks.addTask(3, new AttackAI(this, 1.0D, false, this.getAttackLength()));
-		tasks.addTask(5, new LandWanderNestAI(this));
-		tasks.addTask(6, new LandWanderAvoidWaterAI(this, 1.0D));
-		tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
-		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
-		tasks.addTask(9, new EntityAILookIdle(this));
+		tasks.addTask(4, new PanicScreamAI(this, 1.0));
+		tasks.addTask(5, new GrappleAI(this, 1.0D, false, this.getAttackLength(), this.getGrappleAnimation(), 0.25));
+		tasks.addTask(6, new LandWanderNestAI(this));
+		tasks.addTask(7, new LandWanderAvoidWaterAI(this, 1.0D));
+		tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+		tasks.addTask(9, new EntityAIWatchClosest(this, EntityPrehistoricFloraAgeableBase.class, 8.0F));
+		tasks.addTask(10, new EntityAILookIdle(this));
 		this.targetTasks.addTask(0, new EatPlantItemsAI(this, 1D));
 		this.targetTasks.addTask(1, new EntityHurtByTargetSmallerThanMeAI(this, false));
+	}
+
+	@Override
+	public boolean panics() {
+		return true;
 	}
 	
 
@@ -267,6 +359,29 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 	    return (SoundEvent) SoundEvent.REGISTRY
 	            .getObject(new ResourceLocation("lepidodendron:dryosaurus_death"));
 	}
+
+	public SoundEvent getAlarmSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurus_alarm"));
+	}
+
+	public SoundEvent getChatterSound() {
+		return (SoundEvent) SoundEvent.REGISTRY
+				.getObject(new ResourceLocation("lepidodendron:dryosaurus_chatter"));
+	}
+
+	public void playAlarmSound()
+	{
+		SoundEvent soundevent = this.getAlarmSound();
+		//System.err.println("looking for alarm sound");
+		if (soundevent != null && this.getAnimation() == NO_ANIMATION)
+		{
+			//System.err.println("playing alarm sound");
+			this.setAnimation(ALARM_ANIMATION);
+			this.playSound(soundevent, this.getSoundVolume(), this.getSoundPitch());
+			this.alarmCooldown = 20;
+		}
+	}
 	
 
 	@Override
@@ -298,6 +413,24 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 
 		AnimationHandler.INSTANCE.updateAnimations(this);
 
+	}
+
+	@Override
+	public void launchGrapple() {
+		if (this.getGrappleTarget() != null) {
+			if (!this.world.isRemote) {
+				this.playSound(this.getChatterSound(), this.getSoundVolume(), 1);
+			}
+
+			if (this.getGrappleTarget() instanceof EntityPrehistoricFloraAgeableBase) {
+				EntityPrehistoricFloraAgeableBase grappleTarget = (EntityPrehistoricFloraAgeableBase) this.getGrappleTarget();
+				grappleTarget.setGrappleTarget(null);
+				grappleTarget.willGrapple = false;
+			}
+			this.setGrappleTarget(null);
+			this.willGrapple = false;
+
+		}
 	}
 
 	@Override
@@ -344,6 +477,17 @@ public class EntityPrehistoricFloraDryosaurus extends EntityPrehistoricFloraLand
 			//System.err.println("set attack");
 		}
 		return false;
+	}
+	
+	@Override
+	public void onEntityUpdate() {
+		if (this.alarmCooldown > 0) {
+			this.alarmCooldown -= 1;
+		}
+		if (this.getScreaming() && alarmCooldown <= 0) {
+			this.playAlarmSound();
+		}
+		super.onEntityUpdate();
 	}
 	
 	public boolean isDirectPathBetweenPoints(Vec3d vec1, Vec3d vec2) {

@@ -1,0 +1,42 @@
+{
+  "group": "lepidodendron",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "1": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "2": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "3": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "4": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "5": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "6": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "7": {
+      "item": "lepidodendron:palm_thatch"
+    },
+    "8": {
+      "item": "lepidodendron:palm_thatch"
+    }
+  },
+  "result": {
+    "item": "lepidodendron:palm_thatch_bundle",
+    "count": 1
+  }
+}

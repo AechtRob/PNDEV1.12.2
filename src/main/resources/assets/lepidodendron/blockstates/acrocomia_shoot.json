@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "normal": [
+      {"model": "lepidodendron:acrocomia_shoot"}
+    ],
+    
+    "inventory": {
+      "model": "lepidodendron:acrocomia_shoot_inventory"
+    }
+  }
+}

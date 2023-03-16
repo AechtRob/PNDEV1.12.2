@@ -42,7 +42,7 @@ public class EntityPrehistoricFloraHemicyclaspis extends EntityPrehistoricFloraF
 		return true;
 	}
 
-	public static String getPeriod() {return "Devonian";}
+	public static String getPeriod() {return "Silurian - [Devonian]";}
 
 	//public static String getHabitat() {return "Aquatic";}
 

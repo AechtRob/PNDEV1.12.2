@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "normal": {
+      "model": "lepidodendron:acrocomia_fruit_bunch"
+    },
+    "facing=north": {
+      "model": "lepidodendron:acrocomia_fruit_bunch",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "lepidodendron:acrocomia_fruit_bunch",
+      "x": 90,
+      "y": 90
+    },
+    "facing=south": {
+      "model": "lepidodendron:acrocomia_fruit_bunch",
+      "x": 90,
+      "y": 180
+    },
+    
+    "facing=west": {
+      "model": "lepidodendron:acrocomia_fruit_bunch",
+      "x": 90,
+      "y": 270
+    },
+  "facing=up": {
+      "model": "lepidodendron:acrocomia_fruit_bunch"
+    },
+    "facing=down": {
+      "model": "lepidodendron:acrocomia_fruit_bunch",
+      "x": 180
+    }
+  }
+}

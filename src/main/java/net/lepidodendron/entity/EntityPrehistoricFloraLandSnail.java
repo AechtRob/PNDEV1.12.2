@@ -60,7 +60,7 @@ public class EntityPrehistoricFloraLandSnail extends EntityPrehistoricFloraLandS
 	}
 
 
-	public static String getPeriod() {return "Carboniferous - Present";}
+	public static String getPeriod() {return "Carboniferous - Permian - Triassic - Jurassic - Cretaceous - Palaeogene - Neogene - Pleistocene - Present";}
 
 	//public static String getHabitat() {return "Terrestrial";}
 
